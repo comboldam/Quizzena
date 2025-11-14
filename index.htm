@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Master</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- ================================ -->
+  <!-- 🏠 HOME SCREEN -->
+  <!-- ================================ -->
+  <div id="home-screen">
+    <h1>🌍 Flag Master</h1>
+    <p>Test your world flag knowledge!</p>
+    <div class="mode-buttons">
+      <button id="single-player-btn">🎮 Single Player</button>
+      <button id="two-player-btn">👥 2 Players</button>
+    </div>
+  </div>
+  
+ <!-- ================================ -->
+  <!-- 🎯 TOPIC SELECTION SCREEN -->
+  <!-- ================================ -->
+  <div id="topic-select" class="hidden">
+    <h2>Choose Quiz Topic</h2>
+    <div class="mode-buttons">
+      <button id="flags-topic-btn">🏳️ Country Flags</button>
+      <button id="capitals-topic-btn">🏛️ Capitals</button>
+      <button id="back-to-home-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎯 MODE SELECT SCREEN -->
+  <!-- ================================ -->
+  <div id="mode-select" class="hidden">
+    <h2>Choose Game Mode</h2>
+    <div class="mode-buttons">
+      <button id="time-attack-btn">⚡ Time Attack (60s)</button>
+      <button id="quick-game-btn">🎯 Quick Game (10 questions)</button>
+      <button id="three-strikes-btn">❤️ Three Strikes</button>
+      <button id="back-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎮 GAME SCREEN -->
+  <!-- ================================ -->
+  <div id="game-screen" class="hidden">
+    <!-- Exit Button (Top Left) -->
+    <button id="back-to-menu" class="exit-btn">←</button>
+    
+    <!-- Question Counter (Top Right) -->
+    <div id="question-counter" class="question-counter" style="display:none;"></div>
+    
+    <header>
+      <h2 id="question">Which country's flag is this?</h2>
+      <div id="score">Score: 0</div>
+      <div id="timer">⏳ 60s</div>
+    </header>
+
+    <main>
+      <img id="flag" src="" alt="Flag">
+      <div id="answers"></div>
+      <div id="result"></div>
+    </main>
+
+    <footer>
+      <button id="play-again" style="display:none;">🔁 Play Again</button>
+      <button id="main-menu" style="display:none;">🏠 Main Menu</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

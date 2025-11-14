@@ -1,0 +1,283 @@
+/* ========================================
+   🎨 GLOBAL STYLES
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.hidden { 
+  display: none; 
+}
+
+/* ========================================
+   🏠 HOME SCREEN STYLES
+   ======================================== */
+#home-screen {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
+
+#home-screen h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 15px;
+}
+
+#home-screen p {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  margin-bottom: 25px;
+  color: #aaa;
+}
+
+/* ========================================
+   🎯 MODE SELECT SCREEN STYLES
+   ======================================== */
+#mode-select {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
+
+#mode-select h2 {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 25px;
+}
+
+/* ========================================
+   🔘 BUTTON STYLES - GENERAL
+   ======================================== */
+.mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  font-weight: bold;
+  transition: all 0.2s ease;
+  margin: 5px auto;
+  min-height: 44px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button:hover {
+  background: #0056cc;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ========================================
+   🔴 BACK BUTTON (RED)
+   ======================================== */
+.back-btn {
+  background: #dc3545 !important;
+  margin-top: 10px;
+}
+
+.back-btn:hover {
+  background: #c82333 !important;
+}
+
+/* ========================================
+   🔴 EXIT BUTTON (TOP LEFT ARROW)
+   ======================================== */
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #dc3545;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  width: 44px;
+  min-height: 44px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exit-btn:hover {
+  background: #c82333;
+}
+
+/* ========================================
+   🟢 QUESTION COUNTER (TOP RIGHT)
+   ======================================== */
+.question-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #28a745;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 100;
+}
+
+/* ========================================
+   🎮 GAME SCREEN LAYOUT
+   ======================================== */
+#game-screen {
+  max-width: 600px;
+  width: 100%;
+  padding: 15px;
+  padding-top: 60px;
+  position: relative;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+/* ========================================
+   📝 GAME SCREEN TEXT ELEMENTS
+   ======================================== */
+#question {
+  font-size: clamp(1rem, 4vw, 1.3rem);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+#score {
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  color: #4CAF50;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+#timer {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: #ff9800;
+  font-weight: bold;
+}
+
+#result {
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  font-weight: bold;
+  margin: 20px 0;
+  min-height: 30px;
+  color: #ffd700;
+}
+
+/* ========================================
+   🏳️ FLAG IMAGE
+   ======================================== */
+img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border: 3px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   🟢 ANSWER BUTTONS (GREEN)
+   ======================================== */
+#answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+#answers button {
+  background: #28a745;
+  width: 100%;
+}
+
+#answers button:hover {
+  background: #218838;
+}
+
+/* ========================================
+   ⬇️ FOOTER BUTTONS (PLAY AGAIN / MAIN MENU)
+   ======================================== */
+footer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+footer button {
+  background: #6c757d;
+  max-width: 250px;
+}
+
+footer button:hover {
+  background: #5a6268;
+}
+
+/* ========================================
+   📱 RESPONSIVE - TABLET & UP
+   ======================================== */
+@media (min-width: 600px) {
+  #answers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  #answers button {
+    width: calc(50% - 10px);
+    max-width: 200px;
+  }
+  
+  footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ========================================
+   💻 RESPONSIVE - DESKTOP
+   ======================================== */
+@media (min-width: 900px) {
+  img {
+    max-width: 320px;
+  }
+  
+  #answers button {
+    width: calc(50% - 10px);
+  }
+}
