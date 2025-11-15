@@ -14,29 +14,40 @@ let answered = false;
 let gameMode = '';
 let singlePlayerScore = 0;
 let livesRemaining = 3;
-let currentTopic = ''; // 'flags' or 'capitals'
-let capitalsData = []; // Will store capital data
+let currentTopic = '';
 
 // ========================================
 // 🎯 DOM ELEMENTS - SCREENS
 // ========================================
 const home = document.getElementById("home-screen");
-const game = document.getElementById("game-screen");
+const playerSelect = document.getElementById("player-select");
 const modeSelect = document.getElementById("mode-select");
+const game = document.getElementById("game-screen");
 
 // ========================================
-// 🎯 DOM ELEMENTS - TOPIC SELECTION
+// 🎯 DOM ELEMENTS - BUTTONS (HOME)
 // ========================================
-const topicSelect = document.getElementById("topic-select");
 const flagsTopicBtn = document.getElementById("flags-topic-btn");
 const capitalsTopicBtn = document.getElementById("capitals-topic-btn");
-const backToHomeBtn = document.getElementById("back-to-home-btn");
+
+// ========================================
+// 🎯 DOM ELEMENTS - BUTTONS (PLAYER SELECT)
+// ========================================
 const singlePlayerBtn = document.getElementById("single-player-btn");
 const twoPlayerBtn = document.getElementById("two-player-btn");
+const backToHomeBtn = document.getElementById("back-to-home-btn");
+
+// ========================================
+// 🎯 DOM ELEMENTS - BUTTONS (MODE SELECT)
+// ========================================
 const timeAttackBtn = document.getElementById("time-attack-btn");
 const quickGameBtn = document.getElementById("quick-game-btn");
 const threeStrikesBtn = document.getElementById("three-strikes-btn");
 const backBtn = document.getElementById("back-btn");
+
+// ========================================
+// 🎯 DOM ELEMENTS - BUTTONS (GAME)
+// ========================================
 const backToMenuBtn = document.getElementById("back-to-menu");
 
 // ========================================
@@ -57,34 +68,27 @@ const playAgainBtn = document.getElementById("play-again");
 const mainMenuBtn = document.getElementById("main-menu");
 
 // ========================================
-// 🎯 DOM ELEMENTS - DYNAMICALLY CREATED
-// ========================================
-const skipBtn = document.createElement("button");
-skipBtn.textContent = "⏭️ End Game";
-skipBtn.style.display = "none";
-
-// ========================================
 // ⚙️ GAME CONFIGURATION - EDIT THESE VALUES
 // ========================================
 const GAME_CONFIG = {
-  TIME_ATTACK_DURATION: 60,        // Time Attack: 60 seconds
-  QUICK_GAME_QUESTIONS: 10,        // Quick Game: 10 questions
-  QUICK_GAME_TIME_PER_Q: 10,       // Quick Game: 10 seconds per question
-  THREE_STRIKES_LIVES: 3,          // Three Strikes: 3 lives
-  TWO_PLAYER_QUESTIONS: 5,         // 2 Player: 5 questions
-  TWO_PLAYER_TIME_PER_Q: 20,       // 2 Player: 20 seconds per question
-  FEEDBACK_DELAY_FAST: 500,        // Fast feedback: 0.5 seconds
-  FEEDBACK_DELAY_NORMAL: 1500,     // Normal feedback: 1.5 seconds
-  FEEDBACK_DELAY_SLOW: 2000        // Slow feedback: 2 seconds
+  TIME_ATTACK_DURATION: 60,
+  QUICK_GAME_QUESTIONS: 10,
+  QUICK_GAME_TIME_PER_Q: 10,
+  THREE_STRIKES_LIVES: 3,
+  TWO_PLAYER_QUESTIONS: 5,
+  TWO_PLAYER_TIME_PER_Q: 20,
+  FEEDBACK_DELAY_FAST: 500,
+  FEEDBACK_DELAY_NORMAL: 1500,
+  FEEDBACK_DELAY_SLOW: 2000
 };
 
 // ========================================
 // ⚙️ POINT SYSTEM - EDIT SCORING RULES
 // ========================================
 function calculatePoints() {
-  if (timeLeft >= 15) return timeLeft;      // 20-15s = that many points
-  else if (timeLeft >= 10) return 15;       // 14-10s = 15 points
-  else return 10;                           // 9s and under = 10 points
+  if (timeLeft >= 15) return timeLeft;
+  else if (timeLeft >= 10) return 15;
+  else return 10;
 }
 
 // ========================================
@@ -101,7 +105,6 @@ function resetGame() {
   currentPlayer = 1;
   answered = false;
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
-  skipBtn.style.display = "none";
 }
 
 // ========================================
@@ -112,46 +115,48 @@ function shuffle(arr) {
 }
 
 // ========================================
-// 🏠 NAVIGATION - HOME SCREEN BUTTONS
+// 🏠 NAVIGATION - HOME SCREEN (TOPIC SELECTION)
 // ========================================
-singlePlayerBtn.onclick = () => {
+flagsTopicBtn.onclick = () => {
+  currentTopic = 'flags';
   home.classList.add("hidden");
-  topicSelect.classList.remove("hidden");
+  playerSelect.classList.remove("hidden");
+};
+
+capitalsTopicBtn.onclick = () => {
+  currentTopic = 'capitals';
+  home.classList.add("hidden");
+  playerSelect.classList.remove("hidden");
+};
+
+// ========================================
+// 👥 NAVIGATION - PLAYER SELECTION
+// ========================================
+backToHomeBtn.onclick = () => {
+  playerSelect.classList.add("hidden");
+  home.classList.remove("hidden");
+};
+
+singlePlayerBtn.onclick = () => {
+  playerSelect.classList.add("hidden");
+  modeSelect.classList.remove("hidden");
 };
 
 twoPlayerBtn.onclick = () => {
   resetGame();
   gameMode = 'two';
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
-  home.classList.add("hidden");
+  playerSelect.classList.add("hidden");
   game.classList.remove("hidden");
   loadFlags();
 };
-// ========================================
-// 🎯 TOPIC SELECTION - NAVIGATION
-// ========================================
-backToHomeBtn.onclick = () => {
-  topicSelect.classList.add("hidden");
-  home.classList.remove("hidden");
-};
 
-flagsTopicBtn.onclick = () => {
-  currentTopic = 'flags';
-  topicSelect.classList.add("hidden");
-  modeSelect.classList.remove("hidden");
-};
-
-capitalsTopicBtn.onclick = () => {
-  currentTopic = 'capitals';
-  topicSelect.classList.add("hidden");
-  modeSelect.classList.remove("hidden");
-};
 // ========================================
 // 🏠 NAVIGATION - MODE SELECT BUTTONS
 // ========================================
 backBtn.onclick = () => {
   modeSelect.classList.add("hidden");
-  home.classList.remove("hidden");
+  playerSelect.classList.remove("hidden");
 };
 
 timeAttackBtn.onclick = () => {
@@ -192,18 +197,12 @@ backToMenuBtn.onclick = () => {
   mainMenuBtn.style.display = "none";
 };
 
-skipBtn.onclick = () => {
-  clearInterval(timer);
-  endGame();
-};
-
 // ========================================
 // 📡 API - LOAD DATA (FLAGS OR CAPITALS)
 // ========================================
 async function loadFlags() {
   try {
     if (currentTopic === 'flags') {
-      // Load flags (existing code)
       const res = await fetch("https://flagcdn.com/en/codes.json");
       const data = await res.json();
       
@@ -219,22 +218,23 @@ async function loadFlags() {
         }));
         
     } else if (currentTopic === 'capitals') {
-      // Load capitals (NEW)
-      const res = await fetch("https://restcountries.com/v3.1/all");
-      const data = await res.json();
-      
-      flags = data
-        .filter(country => country.capital && country.capital.length > 0)
-        .map(country => ({
-          country: country.name.common.replace(/\bStates\b/gi, '').trim(),
-          capital: country.capital[0],
-          originalName: country.name.common
-        }));
-    }
+  const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+  if (!res.ok) throw new Error('API failed');
+  const data = await res.json();
+  
+  flags = data
+    .filter(country => country.capital && country.capital.length > 0)
+    .map(country => ({
+      country: country.name.common.replace(/\bStates\b/gi, '').trim(),
+      capital: country.capital[0],
+      originalName: country.name.common
+    }));
+}
     
     startRound();
   } catch (err) {
     resultBox.textContent = "Failed to load data. Check your internet and reload.";
+    console.error("Load error:", err);
   }
 }
 
@@ -372,24 +372,29 @@ function startRound() {
   usedFlags.push(randomFlag.country);
   questionCount++;
   
- // SET QUESTION TEXT
-if (gameMode === 'quick-game') {
-  questionCounter.style.display = "block";
-  questionCounter.textContent = `${questionCount}/10`;
-} else {
-  questionCounter.style.display = "none";
-}
-
-if (currentTopic === 'capitals') {
-  question.textContent = `What is the capital of ${randomFlag.country}?`;
-} else {
-  question.textContent = "Which country's flag is this?";
-}
+  // SET QUESTION COUNTER
+  if (gameMode === 'quick-game') {
+    questionCounter.style.display = "block";
+    questionCounter.textContent = `${questionCount}/10`;
+  } else {
+    questionCounter.style.display = "none";
+  }
+  
+  // SET QUESTION TEXT
+  if (currentTopic === 'capitals') {
+    question.textContent = `What is the capital of ${randomFlag.country}?`;
+  } else {
+    question.textContent = "Which country's flag is this?";
+  }
   
   // SET IMAGE OR HIDE IT
-if (currentTopic === 'flags') {
+  if (currentTopic === 'flags') {
   flagImg.style.display = "block";
   flagImg.src = randomFlag.flag;
+} else if (currentTopic === 'capitals') {
+  flagImg.style.display = "block";
+  const seed = randomFlag.capital.toLowerCase().replace(/\s+/g, '-');
+  flagImg.src = `https://picsum.photos/seed/${seed}/800/600`;
 } else {
   flagImg.style.display = "none";
 }
@@ -398,21 +403,20 @@ if (currentTopic === 'flags') {
   const options = shuffle([randomFlag, ...wrongAnswers]);
   
   options.forEach(opt => {
-  const btn = document.createElement("button");
+    const btn = document.createElement("button");
+    
+    if (currentTopic === 'capitals') {
+      btn.textContent = opt.capital;
+      btn.onclick = () => checkAnswer(opt.capital, randomFlag.capital);
+    } else {
+      btn.textContent = opt.country;
+      btn.onclick = () => checkAnswer(opt.country, randomFlag.country);
+    }
+    
+    answersDiv.appendChild(btn);
+  });
   
-  // Show country for flags, capital for capitals
-  if (currentTopic === 'capitals') {
-    btn.textContent = opt.capital;
-    btn.onclick = () => checkAnswer(opt.capital, randomFlag.capital);
-  } else {
-    btn.textContent = opt.country;
-    btn.onclick = () => checkAnswer(opt.country, randomFlag.country);
-  }
-  
-  answersDiv.appendChild(btn);
-});
-  
-  startTimer(randomFlag.country);
+  startTimer(currentTopic === 'capitals' ? randomFlag.capital : randomFlag.country);
 }
 
 // ========================================
@@ -422,7 +426,6 @@ function generateBaitAnswers(correctFlag) {
   const wrongAnswers = [];
   
   if (currentTopic === 'flags') {
-    // Existing bait logic for flags
     const correctName = correctFlag.country;
     const baitWords = ["Island", "Republic", "Democratic", "United", "Kingdom", "Federation"];
     const matchingBaitWords = baitWords.filter(word => correctName.includes(word));
@@ -444,7 +447,6 @@ function generateBaitAnswers(correctFlag) {
     wrongAnswers.push(...randomFlags);
     
   } else if (currentTopic === 'capitals') {
-    // For capitals, just get random wrong answers
     const availableFlags = flags.filter(f => f.country !== correctFlag.country);
     wrongAnswers.push(...shuffle(availableFlags).slice(0, 3));
   }
@@ -553,7 +555,6 @@ function endGame() {
   flagImg.src = "";
   timerDisplay.textContent = "";
   question.textContent = "";
-  skipBtn.style.display = "none";
   questionCounter.style.display = "none";
   
   if (gameMode === 'time-attack') {
@@ -583,7 +584,6 @@ playAgainBtn.onclick = () => {
   mainMenuBtn.style.display = "none";
   
   if (gameMode === 'two') {
-    skipBtn.style.display = "inline-block";
     maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
   } else if (gameMode === 'quick-game') {
     maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
