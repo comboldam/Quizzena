@@ -387,17 +387,30 @@ function startRound() {
     question.textContent = "Which country's flag is this?";
   }
   
-  // SET IMAGE OR HIDE IT
+  // ========================================
+  // ✅ FIX: USE DOWNLOADED WIKIPEDIA IMAGES
+  // ========================================
   if (currentTopic === 'flags') {
-  flagImg.style.display = "block";
-  flagImg.src = randomFlag.flag;
-} else if (currentTopic === 'capitals') {
-  flagImg.style.display = "block";
-  const seed = randomFlag.capital.toLowerCase().replace(/\s+/g, '-');
-  flagImg.src = `https://picsum.photos/seed/${seed}/800/600`;
-} else {
-  flagImg.style.display = "none";
-}
+    flagImg.style.display = "block";
+    flagImg.src = randomFlag.flag;
+  } else if (currentTopic === 'capitals') {
+    flagImg.style.display = "block";
+    
+    // Sanitize capital name to match downloaded filename
+    const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
+    
+    // Try to load the downloaded Wikipedia image first
+    flagImg.src = `./capital_images/${sanitizedCapital}.jpg`;
+    
+    // Fallback to placeholder if image doesn't exist
+    flagImg.onerror = function() {
+      const seed = randomFlag.capital.toLowerCase().replace(/\s+/g, '-');
+      this.src = `https://picsum.photos/seed/${seed}/800/600`;
+      this.onerror = null; // Prevent infinite loop
+    };
+  } else {
+    flagImg.style.display = "none";
+  }
   
   const wrongAnswers = generateBaitAnswers(randomFlag);
   const options = shuffle([randomFlag, ...wrongAnswers]);
@@ -552,7 +565,7 @@ function disableAnswers() {
 function endGame() {
   clearInterval(timer);
   answersDiv.innerHTML = "";
-  flagImg.src = "";
+  flagImg.style.display = "none";;
   timerDisplay.textContent = "";
   question.textContent = "";
   questionCounter.style.display = "none";
