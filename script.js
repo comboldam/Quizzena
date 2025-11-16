@@ -29,6 +29,7 @@ const game = document.getElementById("game-screen");
 // ========================================
 const flagsTopicBtn = document.getElementById("flags-topic-btn");
 const capitalsTopicBtn = document.getElementById("capitals-topic-btn");
+const bordersTopicBtn = document.getElementById("borders-topic-btn");
 
 // ========================================
 // 🎯 DOM ELEMENTS - BUTTONS (PLAYER SELECT)
@@ -129,6 +130,12 @@ capitalsTopicBtn.onclick = () => {
   playerSelect.classList.remove("hidden");
 };
 
+bordersTopicBtn.onclick = () => {
+  currentTopic = 'borders';
+  home.classList.add("hidden");
+  playerSelect.classList.remove("hidden");
+};
+
 // ========================================
 // 👥 NAVIGATION - PLAYER SELECTION
 // ========================================
@@ -221,12 +228,24 @@ async function loadFlags() {
   const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
   if (!res.ok) throw new Error('API failed');
   const data = await res.json();
-  
+
   flags = data
     .filter(country => country.capital && country.capital.length > 0)
     .map(country => ({
       country: country.name.common.replace(/\bStates\b/gi, '').trim(),
       capital: country.capital[0],
+      originalName: country.name.common
+    }));
+} else if (currentTopic === 'borders') {
+  const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+  if (!res.ok) throw new Error('API failed');
+  const data = await res.json();
+
+  flags = data
+    .filter(country => country.cca2)
+    .map(country => ({
+      country: country.name.common.replace(/\bStates\b/gi, '').trim(),
+      isoCode: country.cca2.toLowerCase(),
       originalName: country.name.common
     }));
 }
@@ -383,6 +402,8 @@ function startRound() {
   // SET QUESTION TEXT
   if (currentTopic === 'capitals') {
     question.textContent = `What is the capital of ${randomFlag.country}?`;
+  } else if (currentTopic === 'borders') {
+    question.textContent = "Which country's border is this?";
   } else {
     question.textContent = "Which country's flag is this?";
   }
@@ -392,24 +413,44 @@ function startRound() {
   // ========================================
   if (currentTopic === 'flags') {
     flagImg.style.display = "block";
+    flagImg.className = "";
     flagImg.src = randomFlag.flag;
   } else if (currentTopic === 'capitals') {
     flagImg.style.display = "block";
-    
+    flagImg.className = "";
+
     // Sanitize capital name to match downloaded filename
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
-    
+
     // Try to load the downloaded Wikipedia image first
     flagImg.src = `./capital_images/${sanitizedCapital}.jpg`;
-    
+
     // Fallback to placeholder if image doesn't exist
     flagImg.onerror = function() {
       const seed = randomFlag.capital.toLowerCase().replace(/\s+/g, '-');
       this.src = `https://picsum.photos/seed/${seed}/800/600`;
       this.onerror = null; // Prevent infinite loop
     };
+  } else if (currentTopic === 'borders') {
+    flagImg.style.display = "block";
+    flagImg.className = "border-image";
+
+    // Use absolute path for border images
+    const borderPath = `country_silhouettes/${randomFlag.isoCode}.png`;
+    flagImg.src = borderPath;
+
+    console.log('Loading border image:', borderPath);
+    console.log('Country:', randomFlag.country);
+    console.log('ISO Code:', randomFlag.isoCode);
+
+    flagImg.onerror = function() {
+      console.error(`Failed to load border image: ${borderPath}`);
+      console.error('Full path attempted:', this.src);
+      this.onerror = null;
+    };
   } else {
     flagImg.style.display = "none";
+    flagImg.className = "";
   }
   
   const wrongAnswers = generateBaitAnswers(randomFlag);
@@ -462,8 +503,11 @@ function generateBaitAnswers(correctFlag) {
   } else if (currentTopic === 'capitals') {
     const availableFlags = flags.filter(f => f.country !== correctFlag.country);
     wrongAnswers.push(...shuffle(availableFlags).slice(0, 3));
+  } else if (currentTopic === 'borders') {
+    const availableFlags = flags.filter(f => f.country !== correctFlag.country);
+    wrongAnswers.push(...shuffle(availableFlags).slice(0, 3));
   }
-  
+
   return wrongAnswers.slice(0, 3);
 }
 
