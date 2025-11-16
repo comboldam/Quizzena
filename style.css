@@ -358,8 +358,226 @@ footer button:hover {
   img {
     max-width: 320px;
   }
-  
+
   #answers button {
     width: calc(50% - 10px);
+  }
+}
+
+/* ========================================
+   🏠 NEW HOME SCREEN - QUIZUP STYLE
+   ======================================== */
+
+/* App Container */
+#home-screen {
+  max-width: 480px;
+  width: 100%;
+  padding: 0;
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-profile {
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 15px;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 30px 20px 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero-section p {
+  font-size: 1rem;
+  color: #aaa;
+  margin: 0;
+}
+
+/* Topics Grid (2x2) */
+.topics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+}
+
+/* Topic Card */
+.topic-card {
+  background: #252525;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Status Border Colors */
+.status-active {
+  border-color: #28a745; /* Green */
+}
+
+.status-process {
+  border-color: #ffc107; /* Yellow */
+}
+
+.status-hold {
+  border-color: #007bff; /* Blue */
+}
+
+/* Topic Icon */
+.topic-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Topic Title */
+.topic-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+/* Topic Description */
+.topic-desc {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* Topic Button */
+.topic-btn {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.topic-btn:hover {
+  background: #0056cc;
+}
+
+/* Game Modes Section */
+.game-modes-section {
+  padding: 20px;
+  background: #1f1f1f;
+  margin: 0 20px 20px;
+  border-radius: 12px;
+}
+
+.game-modes-section h3 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #aaa;
+  text-align: center;
+}
+
+.modes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mode-item {
+  background: #333;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Bottom Navigation Bar */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  background: #0d0d0d;
+  border-top: 1px solid #333;
+}
+
+.nav-item {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.nav-item span {
+  display: block;
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+
+.nav-item.active {
+  color: #007bff;
+}
+
+.nav-item:hover {
+  color: #007bff;
+}
+
+/* Responsive - Mobile Adjustments */
+@media (max-width: 400px) {
+  .topics-grid {
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .topic-card {
+    padding: 15px;
+  }
+
+  .topic-icon {
+    font-size: 2.5rem;
+  }
+
+  .topic-title {
+    font-size: 1rem;
+  }
+
+  .topic-desc {
+    font-size: 0.75rem;
   }
 }

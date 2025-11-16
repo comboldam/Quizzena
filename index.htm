@@ -12,14 +12,76 @@
   <!-- 🏠 HOME SCREEN (TOPIC SELECTION) -->
   <!-- ================================ -->
   <div id="home-screen">
-    <h1>🌍 Quizzena</h1>
-    <p>Test your world geography knowledge!</p>
-    <div class="mode-buttons">
-      <button id="flags-topic-btn">🏳️ Country Flags</button>
-      <button id="capitals-topic-btn">🏛️ Capitals</button>
-      <button id="borders-topic-btn">🗺️ Country Borders</button>
-      <button id="area-topic-btn">📏 Country Area</button>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="app-title">Quizzena</div>
+      <div class="user-profile">Guest 👤</div>
     </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1>Learn the world, one quiz at a time.</h1>
+      <p>Choose a topic to begin.</p>
+    </div>
+
+    <!-- Topics Grid (2x2) -->
+    <div class="topics-grid">
+
+      <!-- Flags Topic Card -->
+      <div class="topic-card status-active">
+        <div class="topic-icon">🏳️</div>
+        <div class="topic-title">Flags</div>
+        <div class="topic-desc">195 countries</div>
+        <button id="flags-topic-btn" class="topic-btn">Play</button>
+      </div>
+
+      <!-- Capitals Topic Card -->
+      <div class="topic-card status-active">
+        <div class="topic-icon">🏛️</div>
+        <div class="topic-title">Capitals</div>
+        <div class="topic-desc">185 cities</div>
+        <button id="capitals-topic-btn" class="topic-btn">Play</button>
+      </div>
+
+      <!-- Area Topic Card -->
+      <div class="topic-card status-process">
+        <div class="topic-icon">📏</div>
+        <div class="topic-title">Area</div>
+        <div class="topic-desc">3 difficulties</div>
+        <button id="area-topic-btn" class="topic-btn">Play</button>
+      </div>
+
+      <!-- Borders Topic Card -->
+      <div class="topic-card status-hold">
+        <div class="topic-icon">🗺️</div>
+        <div class="topic-title">Borders</div>
+        <div class="topic-desc">Coming soon</div>
+        <button id="borders-topic-btn" class="topic-btn">Play</button>
+      </div>
+
+    </div>
+
+    <!-- Game Modes Section -->
+    <div class="game-modes-section">
+      <h3>Play Styles (Prototype)</h3>
+      <div class="modes-list">
+        <div class="mode-item">⚡ Time Attack</div>
+        <div class="mode-item">❤️ Three Strikes</div>
+        <div class="mode-item">🎯 Quick Game</div>
+        <div class="mode-item">👥 Two Player</div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+      <div class="nav-item active">🏠<br><span>Home</span></div>
+      <div class="nav-item">⚡<br><span>Play</span></div>
+      <div class="nav-item">🌍<br><span>Topics</span></div>
+      <div class="nav-item">📊<br><span>Stats</span></div>
+      <div class="nav-item">🔔<br><span>Alerts</span></div>
+    </div>
+
   </div>
 
   <!-- ================================ -->
