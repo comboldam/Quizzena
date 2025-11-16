@@ -74,6 +74,62 @@ body {
 }
 
 /* ========================================
+   🎯 DIFFICULTY SELECTION SCREEN STYLES
+   ======================================== */
+#area-difficulty-screen {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
+
+#area-difficulty-screen h2 {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.difficulty-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.difficulty-btn {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.difficulty-btn:hover {
+  background: #0056cc;
+  transform: translateY(-2px);
+}
+
+.difficulty-icon {
+  font-size: 2em;
+}
+
+.difficulty-name {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.difficulty-desc {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* ========================================
    🔘 BUTTON STYLES - GENERAL
    ======================================== */
 .mode-buttons {

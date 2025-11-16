@@ -15,6 +15,9 @@ let gameMode = '';
 let singlePlayerScore = 0;
 let livesRemaining = 3;
 let currentTopic = '';
+let selectedDifficulty = '';
+let areaQuestions = { easy: [], medium: [], hard: [] };
+let allCountriesData = [];
 
 // ========================================
 // 🎯 DOM ELEMENTS - SCREENS
@@ -22,6 +25,7 @@ let currentTopic = '';
 const home = document.getElementById("home-screen");
 const playerSelect = document.getElementById("player-select");
 const modeSelect = document.getElementById("mode-select");
+const areaDifficultyScreen = document.getElementById("area-difficulty-screen");
 const game = document.getElementById("game-screen");
 
 // ========================================
@@ -30,6 +34,7 @@ const game = document.getElementById("game-screen");
 const flagsTopicBtn = document.getElementById("flags-topic-btn");
 const capitalsTopicBtn = document.getElementById("capitals-topic-btn");
 const bordersTopicBtn = document.getElementById("borders-topic-btn");
+const areaTopicBtn = document.getElementById("area-topic-btn");
 
 // ========================================
 // 🎯 DOM ELEMENTS - BUTTONS (PLAYER SELECT)
@@ -67,6 +72,14 @@ const questionCounter = document.getElementById("question-counter");
 // ========================================
 const playAgainBtn = document.getElementById("play-again");
 const mainMenuBtn = document.getElementById("main-menu");
+
+// ========================================
+// 🎯 DOM ELEMENTS - DIFFICULTY BUTTONS
+// ========================================
+const areaEasyBtn = document.getElementById("area-easy-btn");
+const areaMediumBtn = document.getElementById("area-medium-btn");
+const areaHardBtn = document.getElementById("area-hard-btn");
+const backFromDifficultyBtn = document.getElementById("back-from-difficulty");
 
 // ========================================
 // ⚙️ GAME CONFIGURATION - EDIT THESE VALUES
@@ -116,6 +129,139 @@ function shuffle(arr) {
 }
 
 // ========================================
+// 📏 AREA QUIZ - GENERATE QUESTIONS
+// ========================================
+async function generateAreaQuestions() {
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+    if (!res.ok) throw new Error('API failed');
+    const data = await res.json();
+
+    // Store all countries with area data
+    allCountriesData = data
+      .filter(country => country.area && country.cca2)
+      .map(country => ({
+        country: country.name.common.replace(/\bStates\b/gi, '').trim(),
+        area: country.area,
+        isoCode: country.cca2.toLowerCase(),
+        originalName: country.name.common
+      }))
+      .sort((a, b) => b.area - a.area); // Sort by area descending
+
+    // Generate Easy questions (top 10 largest)
+    const easyCountries = allCountriesData.slice(0, 10);
+    areaQuestions.easy = easyCountries.map(country => ({
+      ...country,
+      wrongAnswers: generateRandomWrongAnswers(country, allCountriesData, 3)
+    }));
+
+    // Generate Medium questions (positions 11-165)
+    const mediumCountries = allCountriesData.slice(10, 165);
+    areaQuestions.medium = mediumCountries.map(country => ({
+      ...country,
+      wrongAnswers: generateSmartWrongAnswers(country, allCountriesData, 'medium')
+    }));
+
+    // Generate Hard questions (bottom 25 smallest)
+    const hardCountries = allCountriesData.slice(-25);
+    areaQuestions.hard = hardCountries.map(country => ({
+      ...country,
+      wrongAnswers: generateSmartWrongAnswers(country, allCountriesData, 'hard')
+    }));
+
+    console.log('Area questions generated:', {
+      easy: areaQuestions.easy.length,
+      medium: areaQuestions.medium.length,
+      hard: areaQuestions.hard.length
+    });
+  } catch (err) {
+    console.error("Failed to generate area questions:", err);
+  }
+}
+
+// Generate random wrong answers
+function generateRandomWrongAnswers(correctCountry, pool, count) {
+  const available = pool.filter(c => c.country !== correctCountry.country);
+  return shuffle(available).slice(0, count).map(c => c.area);
+}
+
+// Generate smart wrong answers based on difficulty
+function generateSmartWrongAnswers(correctCountry, pool, difficulty) {
+  const wrongAnswers = [];
+  const correctArea = correctCountry.area;
+  const available = pool.filter(c => c.country !== correctCountry.country);
+
+  if (difficulty === 'medium') {
+    // Wrong Answer 1: ~20% different (18-25% acceptable)
+    const target20 = correctArea * (Math.random() > 0.5 ? 1.20 : 0.80);
+    const closest20 = available.reduce((prev, curr) => {
+      const prevDiff = Math.abs(prev.area - target20);
+      const currDiff = Math.abs(curr.area - target20);
+      return currDiff < prevDiff ? curr : prev;
+    });
+    wrongAnswers.push(closest20.area);
+
+    // Wrong Answer 2: 30-70% range (closest to 50%)
+    const target50 = correctArea * (Math.random() > 0.5 ? 1.50 : 0.50);
+    const inRange = available.filter(c => {
+      const ratio = c.area / correctArea;
+      return (ratio >= 0.30 && ratio <= 0.70) || (ratio >= 1.30 && ratio <= 1.70);
+    });
+    if (inRange.length > 0) {
+      const closest50 = inRange.reduce((prev, curr) => {
+        const prevDiff = Math.abs(prev.area - target50);
+        const currDiff = Math.abs(curr.area - target50);
+        return currDiff < prevDiff ? curr : prev;
+      });
+      wrongAnswers.push(closest50.area);
+    } else {
+      wrongAnswers.push(available[Math.floor(Math.random() * available.length)].area);
+    }
+
+    // Wrong Answer 3: Completely random
+    const remaining = available.filter(c => !wrongAnswers.includes(c.area));
+    wrongAnswers.push(remaining[Math.floor(Math.random() * remaining.length)].area);
+
+  } else if (difficulty === 'hard') {
+    // Wrong Answer 1: Absolute nearest
+    const nearest = available.reduce((prev, curr) => {
+      const prevDiff = Math.abs(prev.area - correctArea);
+      const currDiff = Math.abs(curr.area - correctArea);
+      return currDiff < prevDiff ? curr : prev;
+    });
+    wrongAnswers.push(nearest.area);
+
+    // Wrong Answer 2: 30-70% range
+    const target50 = correctArea * (Math.random() > 0.5 ? 1.50 : 0.50);
+    const inRange = available.filter(c => {
+      const ratio = c.area / correctArea;
+      return (ratio >= 0.30 && ratio <= 0.70) || (ratio >= 1.30 && ratio <= 1.70);
+    });
+    if (inRange.length > 0) {
+      const closest50 = inRange.reduce((prev, curr) => {
+        const prevDiff = Math.abs(prev.area - target50);
+        const currDiff = Math.abs(curr.area - target50);
+        return currDiff < prevDiff ? curr : prev;
+      });
+      wrongAnswers.push(closest50.area);
+    } else {
+      wrongAnswers.push(available[Math.floor(Math.random() * available.length)].area);
+    }
+
+    // Wrong Answer 3: Random
+    const remaining = available.filter(c => !wrongAnswers.includes(c.area));
+    wrongAnswers.push(remaining[Math.floor(Math.random() * remaining.length)].area);
+  }
+
+  return wrongAnswers;
+}
+
+// Format area with commas
+function formatArea(area) {
+  return area.toLocaleString('en-US') + ' km²';
+}
+
+// ========================================
 // 🏠 NAVIGATION - HOME SCREEN (TOPIC SELECTION)
 // ========================================
 flagsTopicBtn.onclick = () => {
@@ -132,6 +278,12 @@ capitalsTopicBtn.onclick = () => {
 
 bordersTopicBtn.onclick = () => {
   currentTopic = 'borders';
+  home.classList.add("hidden");
+  playerSelect.classList.remove("hidden");
+};
+
+areaTopicBtn.onclick = () => {
+  currentTopic = 'area';
   home.classList.add("hidden");
   playerSelect.classList.remove("hidden");
 };
@@ -154,8 +306,13 @@ twoPlayerBtn.onclick = () => {
   gameMode = 'two';
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
   playerSelect.classList.add("hidden");
-  game.classList.remove("hidden");
-  loadFlags();
+
+  if (currentTopic === 'area') {
+    areaDifficultyScreen.classList.remove("hidden");
+  } else {
+    game.classList.remove("hidden");
+    loadFlags();
+  }
 };
 
 // ========================================
@@ -170,8 +327,13 @@ timeAttackBtn.onclick = () => {
   resetGame();
   gameMode = 'time-attack';
   modeSelect.classList.add("hidden");
-  game.classList.remove("hidden");
-  loadFlags();
+
+  if (currentTopic === 'area') {
+    areaDifficultyScreen.classList.remove("hidden");
+  } else {
+    game.classList.remove("hidden");
+    loadFlags();
+  }
 };
 
 quickGameBtn.onclick = () => {
@@ -179,8 +341,13 @@ quickGameBtn.onclick = () => {
   gameMode = 'quick-game';
   maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
   modeSelect.classList.add("hidden");
-  game.classList.remove("hidden");
-  loadFlags();
+
+  if (currentTopic === 'area') {
+    areaDifficultyScreen.classList.remove("hidden");
+  } else {
+    game.classList.remove("hidden");
+    loadFlags();
+  }
 };
 
 threeStrikesBtn.onclick = () => {
@@ -188,6 +355,40 @@ threeStrikesBtn.onclick = () => {
   gameMode = 'three-strikes';
   livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
   modeSelect.classList.add("hidden");
+
+  if (currentTopic === 'area') {
+    areaDifficultyScreen.classList.remove("hidden");
+  } else {
+    game.classList.remove("hidden");
+    loadFlags();
+  }
+};
+
+// ========================================
+// 🎯 NAVIGATION - DIFFICULTY SELECTION
+// ========================================
+backFromDifficultyBtn.onclick = () => {
+  areaDifficultyScreen.classList.add("hidden");
+  modeSelect.classList.remove("hidden");
+};
+
+areaEasyBtn.onclick = () => {
+  selectedDifficulty = 'easy';
+  areaDifficultyScreen.classList.add("hidden");
+  game.classList.remove("hidden");
+  loadFlags();
+};
+
+areaMediumBtn.onclick = () => {
+  selectedDifficulty = 'medium';
+  areaDifficultyScreen.classList.add("hidden");
+  game.classList.remove("hidden");
+  loadFlags();
+};
+
+areaHardBtn.onclick = () => {
+  selectedDifficulty = 'hard';
+  areaDifficultyScreen.classList.add("hidden");
   game.classList.remove("hidden");
   loadFlags();
 };
@@ -248,8 +449,16 @@ async function loadFlags() {
       isoCode: country.cca2.toLowerCase(),
       originalName: country.name.common
     }));
+} else if (currentTopic === 'area') {
+  // Check if questions are already generated
+  if (areaQuestions[selectedDifficulty].length === 0) {
+    await generateAreaQuestions();
+  }
+
+  // Load questions from selected difficulty
+  flags = areaQuestions[selectedDifficulty];
 }
-    
+
     startRound();
   } catch (err) {
     resultBox.textContent = "Failed to load data. Check your internet and reload.";
@@ -404,6 +613,8 @@ function startRound() {
     question.textContent = `What is the capital of ${randomFlag.country}?`;
   } else if (currentTopic === 'borders') {
     question.textContent = "Which country's border is this?";
+  } else if (currentTopic === 'area') {
+    question.textContent = `What is the area of ${randomFlag.country}?`;
   } else {
     question.textContent = "Which country's flag is this?";
   }
@@ -448,29 +659,69 @@ function startRound() {
       console.error('Full path attempted:', this.src);
       this.onerror = null;
     };
+  } else if (currentTopic === 'area') {
+    flagImg.style.display = "block";
+    flagImg.className = "border-image";
+
+    // Countries without border images
+    const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
+
+    if (missingBorders.includes(randomFlag.isoCode)) {
+      // Use flag fallback for missing borders
+      flagImg.src = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+      flagImg.classList.add('fallback-flag');
+    } else {
+      // Use border silhouette
+      flagImg.src = `country_silhouettes/${randomFlag.isoCode}.png`;
+      flagImg.classList.remove('fallback-flag');
+    }
+
+    flagImg.onerror = function() {
+      // Fallback to flag if border image fails
+      this.src = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+      this.classList.add('fallback-flag');
+      this.onerror = null;
+    };
   } else {
     flagImg.style.display = "none";
     flagImg.className = "";
   }
   
   const wrongAnswers = generateBaitAnswers(randomFlag);
-  const options = shuffle([randomFlag, ...wrongAnswers]);
-  
+
+  let options;
+  if (currentTopic === 'area') {
+    // For area quiz, create options with correct and wrong areas
+    options = [
+      { area: randomFlag.area, isCorrect: true },
+      ...randomFlag.wrongAnswers.map(area => ({ area, isCorrect: false }))
+    ];
+    options = shuffle(options);
+  } else {
+    options = shuffle([randomFlag, ...wrongAnswers]);
+  }
+
   options.forEach(opt => {
     const btn = document.createElement("button");
-    
+
     if (currentTopic === 'capitals') {
       btn.textContent = opt.capital;
       btn.onclick = () => checkAnswer(opt.capital, randomFlag.capital);
+    } else if (currentTopic === 'area') {
+      btn.textContent = formatArea(opt.area);
+      btn.onclick = () => checkAnswer(formatArea(opt.area), formatArea(randomFlag.area));
     } else {
       btn.textContent = opt.country;
       btn.onclick = () => checkAnswer(opt.country, randomFlag.country);
     }
-    
+
     answersDiv.appendChild(btn);
   });
-  
-  startTimer(currentTopic === 'capitals' ? randomFlag.capital : randomFlag.country);
+
+  const correctAnswer = currentTopic === 'capitals' ? randomFlag.capital :
+                        currentTopic === 'area' ? formatArea(randomFlag.area) :
+                        randomFlag.country;
+  startTimer(correctAnswer);
 }
 
 // ========================================
@@ -506,6 +757,9 @@ function generateBaitAnswers(correctFlag) {
   } else if (currentTopic === 'borders') {
     const availableFlags = flags.filter(f => f.country !== correctFlag.country);
     wrongAnswers.push(...shuffle(availableFlags).slice(0, 3));
+  } else if (currentTopic === 'area') {
+    // Area quiz has pre-generated answers, return empty array
+    return [];
   }
 
   return wrongAnswers.slice(0, 3);
