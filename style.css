@@ -497,36 +497,6 @@ footer button:hover {
   background: #0056cc;
 }
 
-/* Game Modes Section */
-.game-modes-section {
-  padding: 20px;
-  background: #1f1f1f;
-  margin: 0 20px 20px;
-  border-radius: 12px;
-}
-
-.game-modes-section h3 {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #aaa;
-  text-align: center;
-}
-
-.modes-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.mode-item {
-  background: #333;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  color: #ccc;
-}
-
 /* Bottom Navigation Bar */
 .bottom-nav {
   display: flex;
