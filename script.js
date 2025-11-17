@@ -920,3 +920,13 @@ mainMenuBtn.onclick = () => {
   playAgainBtn.style.display = "none";
   mainMenuBtn.style.display = "none";
 };
+
+// ========================================
+// 👥 POPULATION TOPIC - COMING SOON
+// ========================================
+const populationTopicBtn = document.getElementById("population-topic-btn");
+if (populationTopicBtn) {
+  populationTopicBtn.onclick = () => {
+    alert("Population quiz coming soon! 🚀");
+  };
+}

@@ -19,45 +19,61 @@
       <div class="user-profile">Guest 👤</div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-      <h1>Learn the world, one quiz at a time.</h1>
-      <p>Choose a topic to begin.</p>
-    </div>
+    <!-- Scrollable Content Area -->
+    <div class="content-area">
 
-    <!-- Topics Grid (2x2) -->
-    <div class="topics-grid">
-
-      <!-- Flags Topic Card -->
-      <div class="topic-card status-active">
-        <div class="topic-icon">🏳️</div>
-        <div class="topic-title">Flags</div>
-        <div class="topic-desc">195 countries</div>
-        <button id="flags-topic-btn" class="topic-btn">Play</button>
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h1>Learn the world, one quiz at a time.</h1>
+        <p>Choose a topic to begin.</p>
       </div>
 
-      <!-- Capitals Topic Card -->
-      <div class="topic-card status-active">
-        <div class="topic-icon">🏛️</div>
-        <div class="topic-title">Capitals</div>
-        <div class="topic-desc">185 cities</div>
-        <button id="capitals-topic-btn" class="topic-btn">Play</button>
-      </div>
+      <!-- Geography Row -->
+      <div class="geography-section">
+        <h3 class="geography-title">Geography</h3>
+        <div class="topics-scroll-row">
 
-      <!-- Area Topic Card -->
-      <div class="topic-card status-process">
-        <div class="topic-icon">📏</div>
-        <div class="topic-title">Area</div>
-        <div class="topic-desc">3 difficulties</div>
-        <button id="area-topic-btn" class="topic-btn">Play</button>
-      </div>
+          <!-- Flags Card -->
+          <div class="topic-card-small status-active">
+            <button id="flags-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏳️</div>
+              <div class="topic-name-small">Flags</div>
+            </button>
+          </div>
 
-      <!-- Borders Topic Card -->
-      <div class="topic-card status-hold">
-        <div class="topic-icon">🗺️</div>
-        <div class="topic-title">Borders</div>
-        <div class="topic-desc">Coming soon</div>
-        <button id="borders-topic-btn" class="topic-btn">Play</button>
+          <!-- Capitals Card -->
+          <div class="topic-card-small status-active">
+            <button id="capitals-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏛️</div>
+              <div class="topic-name-small">Capitals</div>
+            </button>
+          </div>
+
+          <!-- Area Card -->
+          <div class="topic-card-small status-process">
+            <button id="area-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">📏</div>
+              <div class="topic-name-small">Area</div>
+            </button>
+          </div>
+
+          <!-- Borders Card -->
+          <div class="topic-card-small status-hold">
+            <button id="borders-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🗺️</div>
+              <div class="topic-name-small">Borders</div>
+            </button>
+          </div>
+
+          <!-- Population Card -->
+          <div class="topic-card-small status-coming">
+            <button id="population-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">👥</div>
+              <div class="topic-name-small">Population</div>
+            </button>
+          </div>
+
+        </div>
       </div>
 
     </div>
