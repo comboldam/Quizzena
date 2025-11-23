@@ -943,6 +943,7 @@ const navProfile = document.getElementById('nav-profile');
 
 const homeView = document.getElementById('home-view');
 const topicsView = document.getElementById('topics-view');
+const profileView = document.getElementById('profile-view');
 
 const browseAllBtn = document.getElementById('browse-all-topics');
 
@@ -950,6 +951,7 @@ const browseAllBtn = document.getElementById('browse-all-topics');
 function showHome() {
   homeView.classList.remove('hidden');
   topicsView.classList.add('hidden');
+  profileView.classList.add('hidden');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -960,10 +962,22 @@ function showHome() {
 function showTopics() {
   homeView.classList.add('hidden');
   topicsView.classList.remove('hidden');
+  profileView.classList.add('hidden');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navTopics.classList.add('active');
+}
+
+// Show Profile screen
+function showProfile() {
+  homeView.classList.add('hidden');
+  topicsView.classList.add('hidden');
+  profileView.classList.remove('hidden');
+
+  // Update active state
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  navProfile.classList.add('active');
 }
 
 // Nav button click handlers
@@ -988,9 +1002,19 @@ navPlay.onclick = () => {
 };
 
 navStats.onclick = () => {
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  navStats.classList.add('active');
   alert('Stats coming soon! 📊');
 };
 
 navProfile.onclick = () => {
-  alert('Profile coming soon! 👤');
+  showProfile();
 };
+
+// Settings button placeholder
+const profileSettings = document.querySelector('.profile-settings');
+if (profileSettings) {
+  profileSettings.onclick = () => {
+    alert('Settings coming soon! ⚙️');
+  };
+}

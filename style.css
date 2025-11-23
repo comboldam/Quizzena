@@ -1296,3 +1296,317 @@ footer button:hover {
     font-size: 0.65rem;
   }
 }
+
+/* ========================================
+   👤 PROFILE SCREEN
+   ======================================== */
+
+.profile-view {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+.profile-view::-webkit-scrollbar {
+  width: 8px;
+}
+
+.profile-view::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.profile-view::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.6), rgba(72, 52, 212, 0.6));
+  border-radius: 4px;
+}
+
+/* Profile Top Bar */
+.profile-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(72, 52, 212, 0.9));
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.profile-settings {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-settings:hover {
+  transform: scale(1.1);
+}
+
+.profile-username-top {
+  font-size: 1.2rem;
+  font-weight: 700;
+  flex: 1;
+  text-align: center;
+}
+
+.profile-spacer {
+  width: 24px;
+}
+
+/* Profile Header Section */
+.profile-header {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.profile-banner {
+  height: 180px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  width: 100%;
+}
+
+.profile-avatar {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info {
+  text-align: center;
+  padding: 60px 20px 15px;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.profile-bio {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.profile-location {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+}
+
+.profile-active {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Achievement Ribbon */
+.profile-achievement {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  margin: 0 20px;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.achievement-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.achievement-location {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 3px 0;
+}
+
+.achievement-progress {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 5px;
+}
+
+/* Stats Row */
+.profile-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 15px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Statistics Bar */
+.profile-statistics {
+  padding: 20px;
+}
+
+.profile-statistics h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.stats-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.5px;
+}
+
+.stats-bar {
+  display: flex;
+  height: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.stat-wins {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-draws {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-losses {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.stats-percentages {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.win-percent {
+  color: #10b981;
+}
+
+.draw-percent {
+  color: #f59e0b;
+  text-align: center;
+  flex: 1;
+}
+
+.loss-percent {
+  color: #ef4444;
+  text-align: right;
+}
+
+/* Topic Progress Section */
+.profile-topics {
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+.profile-topics h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.topic-progress-item {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.topic-progress-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.topic-progress-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.topic-progress-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.topic-progress-level {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.topic-progress-bar-container {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.topic-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+.topic-progress-xp {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: right;
+}
