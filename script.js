@@ -939,7 +939,7 @@ const navHome = document.getElementById('nav-home');
 const navPlay = document.getElementById('nav-play');
 const navTopics = document.getElementById('nav-topics');
 const navStats = document.getElementById('nav-stats');
-const navAlerts = document.getElementById('nav-alerts');
+const navProfile = document.getElementById('nav-profile');
 
 const homeView = document.getElementById('home-view');
 const topicsView = document.getElementById('topics-view');
@@ -991,6 +991,6 @@ navStats.onclick = () => {
   alert('Stats coming soon! 📊');
 };
 
-navAlerts.onclick = () => {
-  alert('Alerts coming soon! 🔔');
+navProfile.onclick = () => {
+  alert('Profile coming soon! 👤');
 };
