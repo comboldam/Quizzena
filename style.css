@@ -572,6 +572,118 @@ footer button:hover {
   margin-bottom: 20px;
 }
 
+/* ========================================
+   🔥 TRENDING SECTION
+   ======================================== */
+.trending-section {
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.trending-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trending-section p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 18px;
+}
+
+.trending-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 18px;
+  background: linear-gradient(145deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.trending-item:hover {
+  transform: translateX(8px) scale(1.02);
+  background: linear-gradient(145deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 100%);
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+.trending-rank {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #1a1a2e;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.trending-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.3s ease;
+}
+
+.trending-item:hover .trending-icon {
+  transform: scale(1.15);
+}
+
+.trending-info {
+  flex: 1;
+  text-align: left;
+}
+
+.trending-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.trending-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.trending-arrow {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.trending-item:hover .trending-arrow {
+  color: #fbbf24;
+  transform: translateX(5px);
+}
+
 /* Quick Start Cards */
 .quick-start-cards {
   display: grid;
@@ -700,68 +812,6 @@ footer button:hover {
 .browse-all-btn:active {
   transform: translateY(-1px) scale(0.98);
 }
-
-/* Topics Grid (2x2) - COMMENTED OUT FOR HORIZONTAL SCROLL */
-/*
-.topics-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  padding: 20px;
-}
-
-.topic-card {
-  background: #252525;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 3px solid transparent;
-  position: relative;
-}
-
-.topic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-}
-
-.topic-icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.topic-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #ffffff;
-}
-
-.topic-desc {
-  font-size: 0.85rem;
-  color: #aaa;
-  margin-bottom: 15px;
-}
-
-.topic-btn {
-  width: 100%;
-  max-width: 100%;
-  padding: 10px;
-  font-size: 0.95rem;
-  background: #007bff;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
-  margin: 0;
-}
-
-.topic-btn:hover {
-  background: #0056cc;
-}
-*/
 
 /* ========================================
    🌍 GEOGRAPHY HORIZONTAL SCROLL ROW
@@ -1099,29 +1149,6 @@ footer button:hover {
   transform: translateY(-3px) scale(1.05);
 }
 
-/* Responsive - Mobile Adjustments */
-@media (max-width: 400px) {
-  .topics-grid {
-    gap: 10px;
-    padding: 15px;
-  }
-
-  .topic-card {
-    padding: 15px;
-  }
-
-  .topic-icon {
-    font-size: 2.5rem;
-  }
-
-  .topic-title {
-    font-size: 1rem;
-  }
-
-  .topic-desc {
-    font-size: 0.75rem;
-  }
-}
 
 /* ========================================
    ✨ PULSING GLOW ANIMATIONS FOR STATUS CARDS
@@ -1179,4 +1206,93 @@ footer button:hover {
 
 .status-hold {
   animation: pulseBlue 3s ease-in-out infinite;
+}
+
+/* ========================================
+   📱 MOBILE FIXES - CENTERING & OVERFLOW
+   ======================================== */
+@media (max-width: 500px) {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  #home-screen {
+    max-width: 100%;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .top-bar {
+    padding: 15px 20px;
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 30px 20px 25px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .home-view, .topics-view {
+    padding: 15px;
+  }
+
+  .featured-section,
+  .trending-section {
+    padding: 15px;
+  }
+
+  .quick-start-cards {
+    gap: 12px;
+  }
+
+  .quick-start-btn {
+    padding: 18px;
+    min-height: 100px;
+  }
+
+  .quick-icon {
+    font-size: 2.8rem;
+  }
+
+  .quick-name {
+    font-size: 0.95rem;
+  }
+
+  .trending-item {
+    padding: 14px 15px;
+  }
+
+  .trending-icon {
+    font-size: 1.8rem;
+  }
+
+  .trending-name {
+    font-size: 0.95rem;
+  }
+
+  .trending-desc {
+    font-size: 0.8rem;
+  }
+
+  .bottom-nav {
+    padding: 10px 0;
+  }
+
+  .nav-item {
+    font-size: 1.4rem;
+    padding: 6px 8px;
+  }
+
+  .nav-item span {
+    font-size: 0.65rem;
+  }
 }

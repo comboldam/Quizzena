@@ -169,11 +169,6 @@ async function generateAreaQuestions() {
       wrongAnswers: generateSmartWrongAnswers(country, allCountriesData, 'hard')
     }));
 
-    console.log('Area questions generated:', {
-      easy: areaQuestions.easy.length,
-      medium: areaQuestions.medium.length,
-      hard: areaQuestions.hard.length
-    });
   } catch (err) {
     console.error("Failed to generate area questions:", err);
   }
@@ -650,13 +645,7 @@ function startRound() {
     const borderPath = `country_silhouettes/${randomFlag.isoCode}.png`;
     flagImg.src = borderPath;
 
-    console.log('Loading border image:', borderPath);
-    console.log('Country:', randomFlag.country);
-    console.log('ISO Code:', randomFlag.isoCode);
-
     flagImg.onerror = function() {
-      console.error(`Failed to load border image: ${borderPath}`);
-      console.error('Full path attempted:', this.src);
       this.onerror = null;
     };
   } else if (currentTopic === 'area') {
