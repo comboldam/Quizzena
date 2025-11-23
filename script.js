@@ -922,11 +922,86 @@ mainMenuBtn.onclick = () => {
 };
 
 // ========================================
-// 👥 POPULATION TOPIC - COMING SOON
+// 🚀 COMING SOON TOPICS - PLACEHOLDER ALERTS
 // ========================================
-const populationTopicBtn = document.getElementById("population-topic-btn");
-if (populationTopicBtn) {
-  populationTopicBtn.onclick = () => {
-    alert("Population quiz coming soon! 🚀");
+const comingSoonTopics = [
+  'population', 'landmarks', 'currency', 'rivers', 'mountains', 'deserts', 'lakes',
+  'oceans', 'volcanoes', 'earthquakes', 'gdp', 'weather', 'disasters',
+  'africa', 'asia', 'europe', 'south-america', 'north-america', 'oceania',
+  'borders-adv', 'area-adv', 'population-adv', 'density', 'wonders', 'parks',
+  'timezones', 'extra', 'urbanization', 'megacities', 'biomes', 'climate',
+  'agriculture', 'trade', 'travel', 'airports', 'navigation', 'gps', 'trivia'
+];
+
+comingSoonTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 🚀");
+    };
+  }
+});
+
+// ========================================
+// 🧭 BOTTOM NAV - SCREEN SWITCHING
+// ========================================
+
+const navHome = document.getElementById('nav-home');
+const navPlay = document.getElementById('nav-play');
+const navTopics = document.getElementById('nav-topics');
+const navStats = document.getElementById('nav-stats');
+const navAlerts = document.getElementById('nav-alerts');
+
+const homeView = document.getElementById('home-view');
+const topicsView = document.getElementById('topics-view');
+
+const browseAllBtn = document.getElementById('browse-all-topics');
+
+// Show Home screen
+function showHome() {
+  homeView.classList.remove('hidden');
+  topicsView.classList.add('hidden');
+
+  // Update active state
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  navHome.classList.add('active');
+}
+
+// Show Topics screen
+function showTopics() {
+  homeView.classList.add('hidden');
+  topicsView.classList.remove('hidden');
+
+  // Update active state
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  navTopics.classList.add('active');
+}
+
+// Nav button click handlers
+navHome.onclick = () => {
+  showHome();
+};
+
+navTopics.onclick = () => {
+  showTopics();
+};
+
+// Browse All Topics button (on home screen)
+if (browseAllBtn) {
+  browseAllBtn.onclick = () => {
+    showTopics();
   };
 }
+
+// Placeholder for other nav items
+navPlay.onclick = () => {
+  alert('Quick Play coming soon! 🎮');
+};
+
+navStats.onclick = () => {
+  alert('Stats coming soon! 📊');
+};
+
+navAlerts.onclick = () => {
+  alert('Alerts coming soon! 🔔');
+};

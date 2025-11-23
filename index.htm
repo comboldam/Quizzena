@@ -19,8 +19,8 @@
       <div class="user-profile">Guest 👤</div>
     </div>
 
-    <!-- Scrollable Content Area -->
-    <div class="content-area">
+    <!-- HOME SCREEN VIEW -->
+    <div class="home-view" id="home-view">
 
       <!-- Hero Section -->
       <div class="hero-section">
@@ -28,7 +28,39 @@
         <p>Choose a topic to begin.</p>
       </div>
 
-      <!-- Geography Row -->
+      <!-- Featured/Quick Start Section -->
+      <div class="featured-section">
+        <h2>Quick Start</h2>
+        <p>Jump right into our most popular quizzes</p>
+        <div class="quick-start-cards">
+          <button class="quick-start-btn" onclick="document.getElementById('flags-topic-btn').click()">
+            <div class="quick-icon">🏳️</div>
+            <div class="quick-name">Flags Quiz</div>
+          </button>
+          <button class="quick-start-btn" onclick="document.getElementById('capitals-topic-btn').click()">
+            <div class="quick-icon">🏛️</div>
+            <div class="quick-name">Capitals Quiz</div>
+          </button>
+          <button class="quick-start-btn" onclick="document.getElementById('area-topic-btn').click()">
+            <div class="quick-icon">📏</div>
+            <div class="quick-name">Area Quiz</div>
+          </button>
+          <button class="quick-start-btn" onclick="document.getElementById('borders-topic-btn').click()">
+            <div class="quick-icon">🗺️</div>
+            <div class="quick-name">Borders Quiz</div>
+          </button>
+        </div>
+        <button class="browse-all-btn" id="browse-all-topics">
+          Browse All Topics →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TOPICS SCREEN VIEW -->
+    <div class="topics-view hidden" id="topics-view">
+
+      <!-- Geography Category -->
       <div class="geography-section">
         <h3 class="geography-title">Geography</h3>
         <div class="topics-scroll-row">
@@ -73,6 +105,302 @@
             </button>
           </div>
 
+          <!-- Card 6: Famous Landmarks -->
+          <div class="topic-card-small status-coming">
+            <button id="landmarks-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🗼</div>
+              <div class="topic-name-small">Landmarks</div>
+            </button>
+          </div>
+
+          <!-- Card 7: Currency -->
+          <div class="topic-card-small status-coming">
+            <button id="currency-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">💱</div>
+              <div class="topic-name-small">Currency</div>
+            </button>
+          </div>
+
+          <!-- Card 8: Rivers -->
+          <div class="topic-card-small status-coming">
+            <button id="rivers-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏞️</div>
+              <div class="topic-name-small">Rivers</div>
+            </button>
+          </div>
+
+          <!-- Card 9: Mountains -->
+          <div class="topic-card-small status-coming">
+            <button id="mountains-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">⛰️</div>
+              <div class="topic-name-small">Mountains</div>
+            </button>
+          </div>
+
+          <!-- Card 10: Deserts -->
+          <div class="topic-card-small status-coming">
+            <button id="deserts-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏜️</div>
+              <div class="topic-name-small">Deserts</div>
+            </button>
+          </div>
+
+          <!-- Card 11: Lakes -->
+          <div class="topic-card-small status-coming">
+            <button id="lakes-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏞️</div>
+              <div class="topic-name-small">Lakes</div>
+            </button>
+          </div>
+
+          <!-- Card 12: Oceans -->
+          <div class="topic-card-small status-coming">
+            <button id="oceans-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌊</div>
+              <div class="topic-name-small">Oceans</div>
+            </button>
+          </div>
+
+          <!-- Card 13: Volcanoes -->
+          <div class="topic-card-small status-coming">
+            <button id="volcanoes-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌋</div>
+              <div class="topic-name-small">Volcanoes</div>
+            </button>
+          </div>
+
+          <!-- Card 14: Earthquakes -->
+          <div class="topic-card-small status-coming">
+            <button id="earthquakes-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">📊</div>
+              <div class="topic-name-small">Earthquakes</div>
+            </button>
+          </div>
+
+          <!-- Card 15: GDP -->
+          <div class="topic-card-small status-coming">
+            <button id="gdp-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">💰</div>
+              <div class="topic-name-small">GDP</div>
+            </button>
+          </div>
+
+          <!-- Card 16: Weather -->
+          <div class="topic-card-small status-coming">
+            <button id="weather-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌤️</div>
+              <div class="topic-name-small">Weather</div>
+            </button>
+          </div>
+
+          <!-- Card 17: Disasters -->
+          <div class="topic-card-small status-coming">
+            <button id="disasters-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌪️</div>
+              <div class="topic-name-small">Disasters</div>
+            </button>
+          </div>
+
+          <!-- Card 18: Africa -->
+          <div class="topic-card-small status-coming">
+            <button id="africa-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌍</div>
+              <div class="topic-name-small">Africa</div>
+            </button>
+          </div>
+
+          <!-- Card 19: Asia -->
+          <div class="topic-card-small status-coming">
+            <button id="asia-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌏</div>
+              <div class="topic-name-small">Asia</div>
+            </button>
+          </div>
+
+          <!-- Card 20: Europe -->
+          <div class="topic-card-small status-coming">
+            <button id="europe-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌍</div>
+              <div class="topic-name-small">Europe</div>
+            </button>
+          </div>
+
+          <!-- Card 21: S. America -->
+          <div class="topic-card-small status-coming">
+            <button id="south-america-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌎</div>
+              <div class="topic-name-small">S. America</div>
+            </button>
+          </div>
+
+          <!-- Card 22: N. America -->
+          <div class="topic-card-small status-coming">
+            <button id="north-america-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌎</div>
+              <div class="topic-name-small">N. America</div>
+            </button>
+          </div>
+
+          <!-- Card 23: Oceania -->
+          <div class="topic-card-small status-coming">
+            <button id="oceania-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌏</div>
+              <div class="topic-name-small">Oceania</div>
+            </button>
+          </div>
+
+          <!-- Card 24: Borders+ -->
+          <div class="topic-card-small status-coming">
+            <button id="borders-adv-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🗺️</div>
+              <div class="topic-name-small">Borders+</div>
+            </button>
+          </div>
+
+          <!-- Card 25: Area+ -->
+          <div class="topic-card-small status-coming">
+            <button id="area-adv-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">📏</div>
+              <div class="topic-name-small">Area+</div>
+            </button>
+          </div>
+
+          <!-- Card 26: Population+ -->
+          <div class="topic-card-small status-coming">
+            <button id="population-adv-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">👥</div>
+              <div class="topic-name-small">Population+</div>
+            </button>
+          </div>
+
+          <!-- Card 27: Density -->
+          <div class="topic-card-small status-coming">
+            <button id="density-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">📊</div>
+              <div class="topic-name-small">Density</div>
+            </button>
+          </div>
+
+          <!-- Card 28: Wonders -->
+          <div class="topic-card-small status-coming">
+            <button id="wonders-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">✨</div>
+              <div class="topic-name-small">Wonders</div>
+            </button>
+          </div>
+
+          <!-- Card 29: Parks -->
+          <div class="topic-card-small status-coming">
+            <button id="parks-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏕️</div>
+              <div class="topic-name-small">Parks</div>
+            </button>
+          </div>
+
+          <!-- Card 30: Time Zones -->
+          <div class="topic-card-small status-coming">
+            <button id="timezones-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🕐</div>
+              <div class="topic-name-small">Time Zones</div>
+            </button>
+          </div>
+
+          <!-- Card 31: Extra -->
+          <div class="topic-card-small status-coming">
+            <button id="extra-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">➕</div>
+              <div class="topic-name-small">Extra</div>
+            </button>
+          </div>
+
+          <!-- Card 32: Urban -->
+          <div class="topic-card-small status-coming">
+            <button id="urbanization-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏙️</div>
+              <div class="topic-name-small">Urban</div>
+            </button>
+          </div>
+
+          <!-- Card 33: Megacities -->
+          <div class="topic-card-small status-coming">
+            <button id="megacities-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌆</div>
+              <div class="topic-name-small">Megacities</div>
+            </button>
+          </div>
+
+          <!-- Card 34: Biomes -->
+          <div class="topic-card-small status-coming">
+            <button id="biomes-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌳</div>
+              <div class="topic-name-small">Biomes</div>
+            </button>
+          </div>
+
+          <!-- Card 35: Climate -->
+          <div class="topic-card-small status-coming">
+            <button id="climate-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌡️</div>
+              <div class="topic-name-small">Climate</div>
+            </button>
+          </div>
+
+          <!-- Card 36: Agriculture -->
+          <div class="topic-card-small status-coming">
+            <button id="agriculture-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🌾</div>
+              <div class="topic-name-small">Agriculture</div>
+            </button>
+          </div>
+
+          <!-- Card 37: Trade -->
+          <div class="topic-card-small status-coming">
+            <button id="trade-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🚢</div>
+              <div class="topic-name-small">Trade</div>
+            </button>
+          </div>
+
+          <!-- Card 38: Travel -->
+          <div class="topic-card-small status-coming">
+            <button id="travel-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">✈️</div>
+              <div class="topic-name-small">Travel</div>
+            </button>
+          </div>
+
+          <!-- Card 39: Airports -->
+          <div class="topic-card-small status-coming">
+            <button id="airports-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🛫</div>
+              <div class="topic-name-small">Airports</div>
+            </button>
+          </div>
+
+          <!-- Card 40: Navigation -->
+          <div class="topic-card-small status-coming">
+            <button id="navigation-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🧭</div>
+              <div class="topic-name-small">Navigation</div>
+            </button>
+          </div>
+
+          <!-- Card 41: GPS -->
+          <div class="topic-card-small status-coming">
+            <button id="gps-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">📍</div>
+              <div class="topic-name-small">GPS</div>
+            </button>
+          </div>
+
+          <!-- Card 42: Trivia -->
+          <div class="topic-card-small status-coming">
+            <button id="trivia-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🎲</div>
+              <div class="topic-name-small">Trivia</div>
+            </button>
+          </div>
+
         </div>
       </div>
 
@@ -80,11 +408,11 @@
 
     <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
-      <div class="nav-item active">🏠<br><span>Home</span></div>
-      <div class="nav-item">⚡<br><span>Play</span></div>
-      <div class="nav-item">🌍<br><span>Topics</span></div>
-      <div class="nav-item">📊<br><span>Stats</span></div>
-      <div class="nav-item">🔔<br><span>Alerts</span></div>
+      <div class="nav-item active" id="nav-home">🏠<br><span>Home</span></div>
+      <div class="nav-item" id="nav-play">⚡<br><span>Play</span></div>
+      <div class="nav-item" id="nav-topics">🌍<br><span>Topics</span></div>
+      <div class="nav-item" id="nav-stats">📊<br><span>Stats</span></div>
+      <div class="nav-item" id="nav-alerts">🔔<br><span>Alerts</span></div>
     </div>
 
   </div>
