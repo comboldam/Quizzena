@@ -931,6 +931,24 @@ comingSoonTopics.forEach(topic => {
   }
 });
 
+// Football topics placeholders
+const footballTopics = [
+  'football-general', 'premier-league', 'champions-league', 'world-cup',
+  'uefa-euro', 'la-liga', 'serie-a', 'bundesliga', 'ligue-1',
+  'ballon-dor', 'messi-ronaldo', 'current-stars', 'legends',
+  'transfers', 'records', 'managers', 'iconic-matches',
+  'historic-teams', 'stadiums', 'finals', 'derbies', 'messi', 'ronaldo'
+];
+
+footballTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! ⚽");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
