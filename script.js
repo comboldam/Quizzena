@@ -1228,25 +1228,36 @@ function selectAreaDifficulty(difficulty) {
 
 // Start game with selected mode
 function startUnifiedGame(mode) {
-  // Hide mode selection
+  // Hide mode selection screen
   const modeScreen = document.getElementById('unified-mode-screen');
-  if (modeScreen) modeScreen.classList.add('hidden');
+  if (modeScreen) modeScreen.remove();
 
-  // Set game mode and reset
-  resetGame();
+  // CRITICAL: Reset ALL game state variables
+  resetGame(); // Call the existing resetGame() function
+
+  // Set game mode and parameters
+  gameMode = mode;
 
   if (mode === 'time-attack') {
-    gameMode = 'time-attack';
+    timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
+    maxQuestions = 9999; // Unlimited questions
   } else if (mode === 'quick-game') {
-    gameMode = 'quick-game';
     maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+    timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
   } else if (mode === 'three-strikes') {
-    gameMode = 'three-strikes';
     livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
-  } else if (mode === 'two-player') {
-    gameMode = 'two';
+    maxQuestions = 9999; // Unlimited until 3 strikes
+  } else if (mode === 'two') {
     maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
+    timeLeft = GAME_CONFIG.TWO_PLAYER_TIME_PER_Q;
   }
+
+  // Reset scores explicitly (belt-and-suspenders approach)
+  singlePlayerScore = 0;
+  player1Score = 0;
+  player2Score = 0;
+  questionCount = 0;
+  currentPlayer = 1;
 
   // Show old game screen for now (will be replaced in later phases)
   game.classList.remove('hidden');
