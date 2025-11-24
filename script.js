@@ -448,6 +448,24 @@ async function loadFlags() {
 
   // Load questions from selected difficulty
   flags = areaQuestions[selectedDifficulty];
+} else if (currentTopic === 'football') {
+  // Load football questions from JSON
+  const response = await fetch('topics/football-general/questions.json');
+  const questions = await response.json();
+
+  // Convert football format to unified format
+  flags = questions.map(q => ({
+    question: q.question,
+    correctAnswer: q.answer,
+    options: q.options,
+    type: 'football'
+  }));
+
+  // Shuffle the questions
+  for (let i = flags.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flags[i], flags[j]] = [flags[j], flags[i]];
+  }
 }
 
     // Check if using unified system
@@ -1038,12 +1056,13 @@ comingSoonTopics.forEach(topic => {
   }
 });
 
-// Football General - separate handler (has questions)
+// Football General - now uses unified system
 const footballGeneralBtn = document.getElementById('football-general-topic-btn');
 if (footballGeneralBtn) {
-  footballGeneralBtn.onclick = () => {
-    loadFootballGeneralQuiz();
-  };
+  footballGeneralBtn.addEventListener('click', () => {
+    currentTopic = 'football';
+    showUnifiedModeSelection('Football', '⚽');
+  });
 }
 
 // Football topics placeholders (excluding football-general which is implemented)
@@ -1394,16 +1413,31 @@ function displayUnifiedQuestion() {
   if (!quizScreen) return;
 
   // Get current question data
-  const remaining = flags.filter(f => !usedFlags.includes(f.country));
-  if (remaining.length === 0) usedFlags = [];
+  let randomFlag, questionIdentifier;
 
-  const randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
-  usedFlags.push(randomFlag.country);
+  if (currentTopic === 'football') {
+    // Football uses different tracking - track by question text
+    const remaining = flags.filter(f => !usedFlags.includes(f.question));
+    if (remaining.length === 0) usedFlags = [];
+    randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
+    usedFlags.push(randomFlag.question);
+    questionIdentifier = randomFlag.question;
+  } else {
+    // Other topics track by country
+    const remaining = flags.filter(f => !usedFlags.includes(f.country));
+    if (remaining.length === 0) usedFlags = [];
+    randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
+    usedFlags.push(randomFlag.country);
+    questionIdentifier = randomFlag.country;
+  }
+
   questionCount++;
 
   // Determine question text
   let questionText = '';
-  if (currentTopic === 'capitals') {
+  if (currentTopic === 'football') {
+    questionText = randomFlag.question;
+  } else if (currentTopic === 'capitals') {
     questionText = `What is the capital of ${randomFlag.country}?`;
   } else if (currentTopic === 'borders') {
     questionText = "Which country's border is this?";
@@ -1416,7 +1450,12 @@ function displayUnifiedQuestion() {
   // Determine image source
   let imageSrc = '';
   let imageClass = '';
-  if (currentTopic === 'flags') {
+  let imageHTML = '';
+
+  if (currentTopic === 'football') {
+    // Football has no image - show football icon instead
+    imageHTML = `<div style="font-size:80px;margin:20px 0;">⚽</div>`;
+  } else if (currentTopic === 'flags') {
     imageSrc = randomFlag.flag;
   } else if (currentTopic === 'capitals') {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
@@ -1435,22 +1474,25 @@ function displayUnifiedQuestion() {
   }
 
   // Generate answer options
-  const wrongAnswers = generateBaitAnswers(randomFlag);
   let options;
-  if (currentTopic === 'area') {
+  let correctAnswer;
+
+  if (currentTopic === 'football') {
+    // Football already has options in the question data
+    options = randomFlag.options.map(opt => ({ text: opt }));
+    correctAnswer = randomFlag.correctAnswer;
+  } else if (currentTopic === 'area') {
     options = [
       { area: randomFlag.area, isCorrect: true },
       ...randomFlag.wrongAnswers.map(area => ({ area, isCorrect: false }))
     ];
     options = shuffle(options);
+    correctAnswer = formatArea(randomFlag.area);
   } else {
+    const wrongAnswers = generateBaitAnswers(randomFlag);
     options = shuffle([randomFlag, ...wrongAnswers]);
+    correctAnswer = currentTopic === 'capitals' ? randomFlag.capital : randomFlag.country;
   }
-
-  // Determine correct answer
-  const correctAnswer = currentTopic === 'capitals' ? randomFlag.capital :
-                        currentTopic === 'area' ? formatArea(randomFlag.area) :
-                        randomFlag.country;
 
   // Build header info
   let headerInfo = '';
@@ -1485,7 +1527,10 @@ function displayUnifiedQuestion() {
     let btnText = '';
     let btnAnswer = '';
 
-    if (currentTopic === 'capitals') {
+    if (currentTopic === 'football') {
+      btnText = opt.text;
+      btnAnswer = opt.text;
+    } else if (currentTopic === 'capitals') {
       btnText = opt.capital;
       btnAnswer = opt.capital;
     } else if (currentTopic === 'area') {
@@ -1508,7 +1553,7 @@ function displayUnifiedQuestion() {
       ${headerInfo}
       ${playerInfo}
       ${scoreDisplay}
-      ${imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
+      ${currentTopic === 'football' ? imageHTML : (imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : '')}
       <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
         <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
       </div>
@@ -1637,7 +1682,8 @@ function restartUnifiedQuiz() {
   resetGame();
   const topicIcon = currentTopic === 'flags' ? '🏳️' :
                     currentTopic === 'capitals' ? '🏛️' :
-                    currentTopic === 'borders' ? '🗺️' : '📏';
+                    currentTopic === 'borders' ? '🗺️' :
+                    currentTopic === 'football' ? '⚽' : '📏';
   const topicName = currentTopic.charAt(0).toUpperCase() + currentTopic.slice(1);
   showUnifiedModeSelection(topicName, topicIcon);
 }
@@ -1658,299 +1704,3 @@ function exitUnifiedQuiz() {
   showTopics();
 }
 
-// ============================================
-// FOOTBALL GENERAL QUIZ - COMPLETELY INDEPENDENT
-// ============================================
-
-let footballQuestions = [];
-let footballCurrentQuestion = 0;
-let footballScore = 0;
-let footballStrikes = 0;
-let footballTimer = null;
-let footballTimeLeft = 60;
-let footballGameMode = '';
-let footballQuestionLimit = 10;
-let footballPlayerCount = 1;
-let footballPlayer1Score = 0;
-let footballPlayer2Score = 0;
-let footballCurrentPlayer = 1;
-
-// Load Football Quiz
-async function loadFootballGeneralQuiz() {
-  try {
-    const response = await fetch('topics/football-general/questions.json');
-    footballQuestions = await response.json();
-    shuffleArray(footballQuestions);
-    showFootballModeSelection();
-  } catch (error) {
-    alert('Failed to load Football questions. Please try again.');
-    console.error('Error loading football questions:', error);
-  }
-}
-
-// Shuffle array helper
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-// Show Football Mode Selection (dynamic creation)
-function showFootballModeSelection() {
-  // Hide home screen
-  home.classList.add('hidden');
-
-  // Remove existing football screens if any
-  const existingScreen = document.getElementById('football-quiz-screen');
-  if (existingScreen) existingScreen.remove();
-
-  // Create mode selection screen
-  const modeScreen = document.createElement('div');
-  modeScreen.id = 'football-quiz-screen';
-  modeScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
-
-  modeScreen.innerHTML = `
-    <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">Football General</h2>
-    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Choose Number of Players</h3>
-    <button id="fb-single-btn" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Single Player</button>
-    <button id="fb-two-btn" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">2 Players</button>
-    <button id="fb-back-btn" style="width:80%;max-width:300px;padding:15px;margin-top:20px;font-size:16px;border:2px solid #fff;border-radius:12px;background:transparent;color:#fff;cursor:pointer;">Back to Topics</button>
-  `;
-
-  document.body.appendChild(modeScreen);
-
-  // Add click handlers
-  document.getElementById('fb-single-btn').onclick = () => {
-    footballPlayerCount = 1;
-    showFootballGameModes();
-  };
-
-  document.getElementById('fb-two-btn').onclick = () => {
-    footballPlayerCount = 2;
-    showFootballGameModes();
-  };
-
-  document.getElementById('fb-back-btn').onclick = () => {
-    exitFootballQuiz();
-  };
-}
-
-// Show Football Game Modes
-function showFootballGameModes() {
-  const screen = document.getElementById('football-quiz-screen');
-
-  screen.innerHTML = `
-    <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">Football General</h2>
-    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">${footballPlayerCount === 1 ? 'Single Player' : '2 Players'} - Select Mode</h3>
-    <button id="fb-time-btn" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">Time Attack (60s)</button>
-    <button id="fb-quick-btn" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Quick Game (10 Q)</button>
-    <button id="fb-strikes-btn" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">Three Strikes</button>
-    <button id="fb-mode-back-btn" style="width:80%;max-width:300px;padding:15px;margin-top:20px;font-size:16px;border:2px solid #fff;border-radius:12px;background:transparent;color:#fff;cursor:pointer;">Back</button>
-  `;
-
-  document.getElementById('fb-time-btn').onclick = () => startFootballGame('time-attack');
-  document.getElementById('fb-quick-btn').onclick = () => startFootballGame('quick-game');
-  document.getElementById('fb-strikes-btn').onclick = () => startFootballGame('three-strikes');
-  document.getElementById('fb-mode-back-btn').onclick = () => showFootballModeSelection();
-}
-
-// Start Football Game
-function startFootballGame(mode) {
-  footballGameMode = mode;
-  footballCurrentQuestion = 0;
-  footballScore = 0;
-  footballStrikes = 0;
-  footballPlayer1Score = 0;
-  footballPlayer2Score = 0;
-  footballCurrentPlayer = 1;
-  footballTimeLeft = 60;
-
-  if (mode === 'time-attack') {
-    footballQuestionLimit = footballQuestions.length;
-    startFootballTimer();
-  } else if (mode === 'quick-game') {
-    footballQuestionLimit = 10;
-  } else if (mode === 'three-strikes') {
-    footballQuestionLimit = footballQuestions.length;
-  }
-
-  shuffleArray(footballQuestions);
-  displayFootballQuestion();
-}
-
-// Start Football Timer
-function startFootballTimer() {
-  footballTimer = setInterval(() => {
-    footballTimeLeft--;
-    updateFootballTimerDisplay();
-    if (footballTimeLeft <= 0) {
-      clearInterval(footballTimer);
-      showFootballResults();
-    }
-  }, 1000);
-}
-
-// Update Timer Display
-function updateFootballTimerDisplay() {
-  const timerEl = document.getElementById('fb-timer');
-  if (timerEl) {
-    timerEl.textContent = `${footballTimeLeft}s`;
-    timerEl.style.color = footballTimeLeft <= 10 ? '#FF6B6B' : '#a78bfa';
-  }
-}
-
-// Display Football Question
-function displayFootballQuestion() {
-  if (footballCurrentQuestion >= footballQuestionLimit || footballCurrentQuestion >= footballQuestions.length) {
-    if (footballTimer) clearInterval(footballTimer);
-    showFootballResults();
-    return;
-  }
-
-  const q = footballQuestions[footballCurrentQuestion];
-  const screen = document.getElementById('football-quiz-screen');
-
-  let headerInfo = '';
-  if (footballGameMode === 'time-attack') {
-    headerInfo = `<span id="fb-timer" style="color:#a78bfa;font-size:24px;font-weight:bold;">${footballTimeLeft}s</span>`;
-  } else if (footballGameMode === 'three-strikes') {
-    headerInfo = `<span style="color:#FF6B6B;font-size:20px;">${'X'.repeat(footballStrikes)}${'O'.repeat(3-footballStrikes)}</span>`;
-  } else {
-    headerInfo = `<span style="color:#a78bfa;font-size:18px;">Q ${footballCurrentQuestion + 1}/${footballQuestionLimit}</span>`;
-  }
-
-  let playerInfo = '';
-  if (footballPlayerCount === 2) {
-    playerInfo = `<div style="color:#fff;margin-bottom:10px;font-size:16px;">
-      <span style="${footballCurrentPlayer === 1 ? 'background:rgba(124, 58, 237, 0.9);padding:5px 10px;border-radius:5px;' : ''}">P1: ${footballPlayer1Score}</span>
-      <span style="margin:0 10px;">|</span>
-      <span style="${footballCurrentPlayer === 2 ? 'background:rgba(124, 58, 237, 0.9);padding:5px 10px;border-radius:5px;' : ''}">P2: ${footballPlayer2Score}</span>
-    </div>`;
-  }
-
-  // Shuffle options
-  const shuffledOptions = [...q.options];
-  shuffleArray(shuffledOptions);
-
-  screen.innerHTML = `
-    <div style="width:100%;max-width:500px;text-align:center;">
-      ${headerInfo}
-      ${playerInfo}
-      <div style="color:#a78bfa;font-size:16px;margin:10px 0;font-weight:bold;">Score: ${footballScore}</div>
-      <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
-        <p style="color:#fff;font-size:20px;line-height:1.4;">${q.question}</p>
-      </div>
-      <div id="fb-options" style="display:flex;flex-direction:column;gap:12px;">
-        ${shuffledOptions.map((opt, i) => `
-          <button class="fb-option-btn" data-answer="${opt}" style="width:100%;padding:16px;font-size:16px;border:2px solid rgba(167, 139, 250, 0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;transition:all 0.2s;">${opt}</button>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  // Add click handlers to options
-  document.querySelectorAll('.fb-option-btn').forEach(btn => {
-    btn.onclick = () => checkFootballAnswer(btn.dataset.answer, q.answer);
-  });
-}
-
-// Check Football Answer
-function checkFootballAnswer(selected, correct) {
-  const buttons = document.querySelectorAll('.fb-option-btn');
-  buttons.forEach(btn => {
-    btn.onclick = null;
-    if (btn.dataset.answer === correct) {
-      btn.style.background = 'rgba(34, 197, 94, 0.9)';
-      btn.style.borderColor = 'rgba(34, 197, 94, 0.9)';
-      btn.style.boxShadow = '0 4px 15px rgba(34, 197, 94, 0.4)';
-    } else if (btn.dataset.answer === selected && selected !== correct) {
-      btn.style.background = '#f44336';
-      btn.style.borderColor = '#f44336';
-      btn.style.boxShadow = '0 4px 15px rgba(244, 67, 54, 0.4)';
-    }
-  });
-
-  if (selected === correct) {
-    footballScore++;
-    if (footballPlayerCount === 2) {
-      if (footballCurrentPlayer === 1) footballPlayer1Score++;
-      else footballPlayer2Score++;
-    }
-  } else {
-    if (footballGameMode === 'three-strikes') {
-      footballStrikes++;
-      if (footballStrikes >= 3) {
-        if (footballTimer) clearInterval(footballTimer);
-        setTimeout(() => showFootballResults(), 800);
-        return;
-      }
-    }
-  }
-
-  // Switch player in 2-player mode
-  if (footballPlayerCount === 2) {
-    footballCurrentPlayer = footballCurrentPlayer === 1 ? 2 : 1;
-  }
-
-  footballCurrentQuestion++;
-  setTimeout(() => displayFootballQuestion(), 800);
-}
-
-// Show Football Results
-function showFootballResults() {
-  if (footballTimer) {
-    clearInterval(footballTimer);
-    footballTimer = null;
-  }
-
-  const screen = document.getElementById('football-quiz-screen');
-  const percentage = Math.round((footballScore / footballCurrentQuestion) * 100) || 0;
-
-  let resultMessage = '';
-  if (percentage >= 80) resultMessage = 'Excellent! You\'re a Football Expert!';
-  else if (percentage >= 60) resultMessage = 'Great job! Good football knowledge!';
-  else if (percentage >= 40) resultMessage = 'Not bad! Keep learning!';
-  else resultMessage = 'Keep practicing! You\'ll improve!';
-
-  let playerResults = '';
-  if (footballPlayerCount === 2) {
-    const winner = footballPlayer1Score > footballPlayer2Score ? 'Player 1 Wins!' :
-                   footballPlayer2Score > footballPlayer1Score ? 'Player 2 Wins!' : 'It\'s a Tie!';
-    playerResults = `
-      <div style="color:#a78bfa;font-size:24px;margin:20px 0;">${winner}</div>
-      <div style="color:#fff;font-size:18px;">Player 1: ${footballPlayer1Score} | Player 2: ${footballPlayer2Score}</div>
-    `;
-  }
-
-  screen.innerHTML = `
-    <div style="text-align:center;max-width:400px;">
-      <h2 style="color:#FFD700;font-size:32px;margin-bottom:10px;">Game Over!</h2>
-      ${playerResults}
-      <div style="background:rgba(255,255,255,0.1);border-radius:20px;padding:30px;margin:20px 0;box-shadow:0 8px 30px rgba(124, 58, 237, 0.3);">
-        <div style="color:#a78bfa;font-size:48px;font-weight:bold;">${footballScore}/${footballCurrentQuestion}</div>
-        <div style="color:#fff;font-size:20px;margin-top:10px;">${percentage}% Correct</div>
-      </div>
-      <p style="color:#a78bfa;font-size:18px;margin:20px 0;">${resultMessage}</p>
-      <button id="fb-restart-btn" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Play Again</button>
-      <button id="fb-exit-btn" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#666,#555);color:#fff;cursor:pointer;">Back to Topics</button>
-    </div>
-  `;
-
-  document.getElementById('fb-restart-btn').onclick = () => showFootballModeSelection();
-  document.getElementById('fb-exit-btn').onclick = () => exitFootballQuiz();
-}
-
-// Exit Football Quiz
-function exitFootballQuiz() {
-  if (footballTimer) {
-    clearInterval(footballTimer);
-    footballTimer = null;
-  }
-
-  const screen = document.getElementById('football-quiz-screen');
-  if (screen) screen.remove();
-
-  home.classList.remove('hidden');
-  showTopics();
-}
