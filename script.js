@@ -997,6 +997,24 @@ logosTopics.forEach(topic => {
   }
 });
 
+// History topics placeholders
+const historyTopics = [
+  'world-history', 'ancient-civs', 'egyptian', 'greek-roman', 'medieval',
+  'ww2', 'ww1', 'cold-war', 'civil-war', 'british-monarchy',
+  'roman-empire', 'ottoman-empire', 'crusades', 'explorers', 'industrial-rev',
+  'fall-rome', 'silk-road', 'famous-leaders', 'dictators', 'scientists',
+  'inventors', 'historical-maps', 'battles', 'timeline', 'archaeology'
+];
+
+historyTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 📜");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
