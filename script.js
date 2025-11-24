@@ -261,8 +261,7 @@ function formatArea(area) {
 // ========================================
 flagsTopicBtn.onclick = () => {
   currentTopic = 'flags';
-  home.classList.add("hidden");
-  playerSelect.classList.remove("hidden");
+  showUnifiedModeSelection('Flags', '🏳️');
 };
 
 capitalsTopicBtn.onclick = () => {
