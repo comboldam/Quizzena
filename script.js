@@ -266,8 +266,7 @@ flagsTopicBtn.onclick = () => {
 
 capitalsTopicBtn.onclick = () => {
   currentTopic = 'capitals';
-  home.classList.add("hidden");
-  playerSelect.classList.remove("hidden");
+  showUnifiedModeSelection('Capitals', '🏛️');
 };
 
 bordersTopicBtn.onclick = () => {
