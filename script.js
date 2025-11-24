@@ -453,7 +453,13 @@ async function loadFlags() {
   flags = areaQuestions[selectedDifficulty];
 }
 
-    startRound();
+    // Check if using unified system
+    const unifiedScreen = document.getElementById('unified-quiz-screen');
+    if (unifiedScreen) {
+      displayUnifiedQuestion();
+    } else {
+      startRound();
+    }
   } catch (err) {
     resultBox.textContent = "Failed to load data. Check your internet and reload.";
     console.error("Load error:", err);
@@ -495,55 +501,160 @@ function getEntityType(name) {
 // ========================================
 function startTimer(correctAnswer) {
   clearInterval(timer);
-  
+
+  // Check if using unified system
+  const unifiedScreen = document.getElementById('unified-quiz-screen');
+  const isUnified = unifiedScreen !== null;
+
   if (gameMode === 'time-attack') {
     if (questionCount === 1) {
       timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
     }
     answered = false;
-    timerDisplay.textContent = `⏳ ${timeLeft}s`;
-    
-    timer = setInterval(() => {
-      timeLeft--;
+
+    // Update initial display
+    if (isUnified) {
+      const unifiedTimer = document.getElementById('unified-timer');
+      if (unifiedTimer) unifiedTimer.textContent = `${timeLeft}s`;
+    } else {
       timerDisplay.textContent = `⏳ ${timeLeft}s`;
-      
+    }
+
+    timer = setInterval(() => {
+      // CHECK BEFORE DECREMENTING - Prevents negative numbers
       if (timeLeft <= 0) {
         clearInterval(timer);
-        endGame();
+        if (isUnified) {
+          showUnifiedResults();
+        } else {
+          endGame();
+        }
+        return; // STOP HERE
+      }
+
+      timeLeft--;
+
+      // UPDATE TIMER DISPLAY IN REAL-TIME
+      if (isUnified) {
+        const unifiedTimer = document.getElementById('unified-timer');
+        if (unifiedTimer) {
+          unifiedTimer.textContent = `${timeLeft}s`;
+          // Red warning at 10 seconds
+          if (timeLeft <= 10) {
+            unifiedTimer.style.color = '#FF6B6B';
+          }
+        }
+      } else {
+        timerDisplay.textContent = `⏳ ${timeLeft}s`;
       }
     }, 1000);
+
   } else if (gameMode === 'quick-game') {
     timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
     answered = false;
-    timerDisplay.textContent = `⏳ ${timeLeft}s`;
-    
-    timer = setInterval(() => {
-      timeLeft--;
+
+    // Update initial display
+    if (isUnified) {
+      const unifiedTimer = document.getElementById('unified-timer');
+      if (unifiedTimer) unifiedTimer.textContent = `${timeLeft}s`;
+    } else {
       timerDisplay.textContent = `⏳ ${timeLeft}s`;
-      
+    }
+
+    timer = setInterval(() => {
+      // CHECK BEFORE DECREMENTING
       if (timeLeft <= 0) {
         clearInterval(timer);
         if (!answered) {
-          handleTimeout(correctAnswer);
+          if (isUnified) {
+            // Move to next question or end game
+            if (questionCount >= maxQuestions) {
+              showUnifiedResults();
+            } else {
+              setTimeout(() => {
+                answered = false;
+                displayUnifiedQuestion();
+              }, 800);
+            }
+          } else {
+            handleTimeout(correctAnswer);
+          }
         }
+        return;
+      }
+
+      timeLeft--;
+
+      // UPDATE TIMER DISPLAY IN REAL-TIME
+      if (isUnified) {
+        const unifiedTimer = document.getElementById('unified-timer');
+        if (unifiedTimer) {
+          unifiedTimer.textContent = `${timeLeft}s`;
+          // Red warning at 5 seconds
+          if (timeLeft <= 5) {
+            unifiedTimer.style.color = '#FF6B6B';
+          }
+        }
+      } else {
+        timerDisplay.textContent = `⏳ ${timeLeft}s`;
       }
     }, 1000);
+
   } else if (gameMode === 'three-strikes') {
-    timerDisplay.textContent = `❤️ Lives: ${livesRemaining}`;
+    if (!isUnified) {
+      timerDisplay.textContent = `❤️ Lives: ${livesRemaining}`;
+    }
+
   } else {
+    // Two-player mode
     timeLeft = GAME_CONFIG.TWO_PLAYER_TIME_PER_Q;
     answered = false;
-    timerDisplay.textContent = `⏳ ${timeLeft}s`;
-    
-    timer = setInterval(() => {
-      timeLeft--;
+
+    // Update initial display
+    if (isUnified) {
+      const unifiedTimer = document.getElementById('unified-timer');
+      if (unifiedTimer) unifiedTimer.textContent = `${timeLeft}s`;
+    } else {
       timerDisplay.textContent = `⏳ ${timeLeft}s`;
-      
+    }
+
+    timer = setInterval(() => {
+      // CHECK BEFORE DECREMENTING
       if (timeLeft <= 0) {
         clearInterval(timer);
         if (!answered) {
-          handleTimeout(correctAnswer);
+          if (isUnified) {
+            // Move to next question or end game
+            if (questionCount >= maxQuestions) {
+              showUnifiedResults();
+            } else {
+              // Switch player and continue
+              currentPlayer = currentPlayer === 1 ? 2 : 1;
+              setTimeout(() => {
+                answered = false;
+                displayUnifiedQuestion();
+              }, 800);
+            }
+          } else {
+            handleTimeout(correctAnswer);
+          }
         }
+        return;
+      }
+
+      timeLeft--;
+
+      // UPDATE TIMER DISPLAY IN REAL-TIME
+      if (isUnified) {
+        const unifiedTimer = document.getElementById('unified-timer');
+        if (unifiedTimer) {
+          unifiedTimer.textContent = `${timeLeft}s`;
+          if (timeLeft <= 5) {
+            unifiedTimer.style.color = '#FF6B6B';
+          }
+        }
+      } else {
+        timerDisplay.textContent = `⏳ ${timeLeft}s`;
       }
     }, 1000);
   }
@@ -1259,32 +1370,295 @@ function startUnifiedGame(mode) {
   questionCount = 0;
   currentPlayer = 1;
 
-  // Show old game screen for now (will be replaced in later phases)
-  game.classList.remove('hidden');
+  // Create unified quiz screen
+  buildUnifiedQuizScreen();
+
+  // Load questions and start
   loadFlags();
+}
+
+// Build unified quiz screen (matches Football quiz design)
+function buildUnifiedQuizScreen() {
+  // Remove existing screen if present
+  let quizScreen = document.getElementById('unified-quiz-screen');
+  if (quizScreen) quizScreen.remove();
+
+  // Create new full-screen quiz overlay
+  quizScreen = document.createElement('div');
+  quizScreen.id = 'unified-quiz-screen';
+  quizScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow-y:auto;';
+
+  document.body.appendChild(quizScreen);
+}
+
+// Display question in unified quiz screen
+function displayUnifiedQuestion() {
+  const quizScreen = document.getElementById('unified-quiz-screen');
+  if (!quizScreen) return;
+
+  // Get current question data
+  const remaining = flags.filter(f => !usedFlags.includes(f.country));
+  if (remaining.length === 0) usedFlags = [];
+
+  const randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
+  usedFlags.push(randomFlag.country);
+  questionCount++;
+
+  // Determine question text
+  let questionText = '';
+  if (currentTopic === 'capitals') {
+    questionText = `What is the capital of ${randomFlag.country}?`;
+  } else if (currentTopic === 'borders') {
+    questionText = "Which country's border is this?";
+  } else if (currentTopic === 'area') {
+    questionText = `What is the area of ${randomFlag.country}?`;
+  } else {
+    questionText = "Which country's flag is this?";
+  }
+
+  // Determine image source
+  let imageSrc = '';
+  let imageClass = '';
+  if (currentTopic === 'flags') {
+    imageSrc = randomFlag.flag;
+  } else if (currentTopic === 'capitals') {
+    const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
+    imageSrc = `./capital_images/${sanitizedCapital}.jpg`;
+  } else if (currentTopic === 'borders') {
+    imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
+    imageClass = 'border-style';
+  } else if (currentTopic === 'area') {
+    const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
+    if (missingBorders.includes(randomFlag.isoCode)) {
+      imageSrc = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+    } else {
+      imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
+      imageClass = 'border-style';
+    }
+  }
+
+  // Generate answer options
+  const wrongAnswers = generateBaitAnswers(randomFlag);
+  let options;
+  if (currentTopic === 'area') {
+    options = [
+      { area: randomFlag.area, isCorrect: true },
+      ...randomFlag.wrongAnswers.map(area => ({ area, isCorrect: false }))
+    ];
+    options = shuffle(options);
+  } else {
+    options = shuffle([randomFlag, ...wrongAnswers]);
+  }
+
+  // Determine correct answer
+  const correctAnswer = currentTopic === 'capitals' ? randomFlag.capital :
+                        currentTopic === 'area' ? formatArea(randomFlag.area) :
+                        randomFlag.country;
+
+  // Build header info
+  let headerInfo = '';
+  if (gameMode === 'time-attack') {
+    headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:24px;font-weight:bold;">⏳ ${timeLeft}s</span>`;
+  } else if (gameMode === 'quick-game') {
+    headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:20px;font-weight:bold;">⏳ ${timeLeft}s | Q ${questionCount}/${maxQuestions}</span>`;
+  } else if (gameMode === 'three-strikes') {
+    headerInfo = `<span style="color:#FF6B6B;font-size:20px;">${'❤️'.repeat(livesRemaining)}${'🖤'.repeat(3-livesRemaining)}</span>`;
+  } else if (gameMode === 'two') {
+    headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:18px;">⏳ ${timeLeft}s | Q ${questionCount}/${maxQuestions}</span>`;
+  } else {
+    headerInfo = `<span style="color:#a78bfa;font-size:18px;">Q ${questionCount}/${maxQuestions}</span>`;
+  }
+
+  // Build player info (for 2-player mode)
+  let playerInfo = '';
+  if (gameMode === 'two') {
+    playerInfo = `<div style="color:#fff;margin-bottom:10px;font-size:16px;">
+      <span style="${currentPlayer === 1 ? 'background:rgba(124, 58, 237, 0.9);padding:5px 10px;border-radius:5px;' : ''}">P1: ${player1Score}</span>
+      <span style="margin:0 10px;">|</span>
+      <span style="${currentPlayer === 2 ? 'background:rgba(124, 58, 237, 0.9);padding:5px 10px;border-radius:5px;' : ''}">P2: ${player2Score}</span>
+    </div>`;
+  }
+
+  // Build score display
+  const scoreDisplay = gameMode === 'two' ? '' : `<div style="color:#a78bfa;font-size:16px;margin:10px 0;font-weight:bold;">Score: ${singlePlayerScore}</div>`;
+
+  // Build options HTML
+  let optionsHTML = '';
+  options.forEach(opt => {
+    let btnText = '';
+    let btnAnswer = '';
+
+    if (currentTopic === 'capitals') {
+      btnText = opt.capital;
+      btnAnswer = opt.capital;
+    } else if (currentTopic === 'area') {
+      btnText = formatArea(opt.area);
+      btnAnswer = formatArea(opt.area);
+    } else {
+      btnText = opt.country;
+      btnAnswer = opt.country;
+    }
+
+    optionsHTML += `<button class="unified-option-btn" data-answer="${btnAnswer.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}" style="width:100%;padding:16px;font-size:16px;border:2px solid rgba(167, 139, 250, 0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;transition:all 0.2s;">${btnText}</button>`;
+  });
+
+  // Render the screen
+  quizScreen.innerHTML = `
+    <div style="position:absolute;top:15px;left:15px;">
+      <button onclick="exitUnifiedQuiz()" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;">←</button>
+    </div>
+    <div style="width:100%;max-width:500px;text-align:center;">
+      ${headerInfo}
+      ${playerInfo}
+      ${scoreDisplay}
+      ${imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
+      <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
+        <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
+      </div>
+      <div id="unified-options" style="display:flex;flex-direction:column;gap:12px;">
+        ${optionsHTML}
+      </div>
+    </div>
+  `;
+
+  // Add click handlers to options
+  document.querySelectorAll('.unified-option-btn').forEach(btn => {
+    btn.onclick = () => checkUnifiedAnswer(btn.dataset.answer, btn.dataset.correct);
+  });
+
+  // Start timer
+  startTimer(correctAnswer);
+}
+
+// Check answer in unified quiz
+function checkUnifiedAnswer(selected, correct) {
+  if (answered) return;
+  answered = true;
+
+  const buttons = document.querySelectorAll('.unified-option-btn');
+  buttons.forEach(btn => {
+    btn.onclick = null;
+    if (btn.dataset.answer === correct) {
+      btn.style.background = 'rgba(34, 197, 94, 0.9)';
+      btn.style.borderColor = 'rgba(34, 197, 94, 0.9)';
+      btn.style.boxShadow = '0 4px 15px rgba(34, 197, 94, 0.4)';
+    } else if (btn.dataset.answer === selected && selected !== correct) {
+      btn.style.background = '#f44336';
+      btn.style.borderColor = '#f44336';
+      btn.style.boxShadow = '0 4px 15px rgba(244, 67, 54, 0.4)';
+    }
+  });
+
+  // Update scores
+  if (selected === correct) {
+    if (gameMode === 'two') {
+      if (currentPlayer === 1) player1Score++;
+      else player2Score++;
+    } else {
+      singlePlayerScore++;
+    }
+  } else {
+    if (gameMode === 'three-strikes') {
+      livesRemaining--;
+      if (livesRemaining <= 0) {
+        clearInterval(timer);
+        setTimeout(() => showUnifiedResults(), 800);
+        return;
+      }
+    }
+  }
+
+  // Check if game should end
+  if (gameMode === 'two' && questionCount >= maxQuestions) {
+    clearInterval(timer);
+    setTimeout(() => showUnifiedResults(), 800);
+    return;
+  } else if (gameMode === 'quick-game' && questionCount >= maxQuestions) {
+    clearInterval(timer);
+    setTimeout(() => showUnifiedResults(), 800);
+    return;
+  }
+
+  // Switch player in 2-player mode
+  if (gameMode === 'two') {
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+  }
+
+  // Next question
+  setTimeout(() => {
+    answered = false;
+    displayUnifiedQuestion();
+  }, 800);
+}
+
+// Show unified results screen
+function showUnifiedResults() {
+  clearInterval(timer);
+
+  const quizScreen = document.getElementById('unified-quiz-screen');
+  if (!quizScreen) return;
+
+  let resultText = '';
+  let scoreDisplay = '';
+
+  if (gameMode === 'time-attack') {
+    resultText = 'Time Attack Complete!';
+    scoreDisplay = `${singlePlayerScore}`;
+  } else if (gameMode === 'quick-game') {
+    resultText = 'Quick Game Complete!';
+    scoreDisplay = `${singlePlayerScore} / ${maxQuestions}`;
+  } else if (gameMode === 'three-strikes') {
+    resultText = 'Three Strikes Complete!';
+    scoreDisplay = `${singlePlayerScore}`;
+  } else {
+    resultText = 'Game Over!';
+    scoreDisplay = player1Score > player2Score ? `Player 1 Wins! ${player1Score} - ${player2Score}` :
+                   player2Score > player1Score ? `Player 2 Wins! ${player2Score} - ${player1Score}` :
+                   `Tie! ${player1Score} - ${player2Score}`;
+  }
+
+  const percentage = gameMode === 'two' ? 0 : Math.round((singlePlayerScore / questionCount) * 100);
+  const message = percentage >= 80 ? '🏆 Excellent!' : percentage >= 60 ? '⭐ Great Job!' : percentage >= 40 ? '👍 Good Effort!' : '💪 Keep Practicing!';
+
+  quizScreen.innerHTML = `
+    <div style="text-align:center;max-width:400px;">
+      <h2 style="color:#FFD700;font-size:32px;margin-bottom:10px;">${resultText}</h2>
+      <div style="background:rgba(255,255,255,0.1);border-radius:20px;padding:30px;margin:20px 0;box-shadow:0 8px 30px rgba(124, 58, 237, 0.3);">
+        <div style="color:#a78bfa;font-size:48px;font-weight:bold;">${scoreDisplay}</div>
+        ${gameMode !== 'two' ? `<div style="color:#fff;font-size:20px;margin-top:10px;">${percentage}% Correct</div>` : ''}
+      </div>
+      ${gameMode !== 'two' ? `<p style="color:#a78bfa;font-size:18px;margin:20px 0;">${message}</p>` : ''}
+
+      <button onclick="restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Play Again</button>
+      <button onclick="exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#666,#555);color:#fff;cursor:pointer;">Back to Topics</button>
+    </div>
+  `;
+}
+
+// Restart unified quiz
+function restartUnifiedQuiz() {
+  resetGame();
+  const topicIcon = currentTopic === 'flags' ? '🏳️' :
+                    currentTopic === 'capitals' ? '🏛️' :
+                    currentTopic === 'borders' ? '🗺️' : '📏';
+  const topicName = currentTopic.charAt(0).toUpperCase() + currentTopic.slice(1);
+  showUnifiedModeSelection(topicName, topicIcon);
 }
 
 // Exit quiz
 function exitUnifiedQuiz() {
-  // Remove quiz screen
   const quizScreen = document.getElementById('unified-quiz-screen');
-  if (quizScreen) quizScreen.remove();
-
-  // Remove mode screen
   const modeScreen = document.getElementById('unified-mode-screen');
+
+  if (quizScreen) quizScreen.remove();
   if (modeScreen) modeScreen.remove();
 
-  // CRITICAL: Reset game state when exiting
+  clearInterval(timer);
   resetGame();
 
-  // Clear timer
-  clearInterval(timer);
-
   // Return to topics (home view)
-  const topicsView = document.getElementById('topics-view');
-  const homeView = document.getElementById('home-view');
-  if (topicsView) topicsView.classList.remove('hidden');
-  if (homeView) homeView.classList.add('hidden');
+  home.classList.remove('hidden');
+  showTopics();
 }
 
 // ============================================
