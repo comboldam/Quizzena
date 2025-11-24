@@ -1212,36 +1212,36 @@ function showProfile() {
   navProfile.classList.add('active');
 }
 
-// Nav button click handlers
-navHome.onclick = () => {
+// Nav button click handlers - using addEventListener for iOS compatibility
+navHome.addEventListener('click', () => {
   showHome();
-};
+});
 
-navTopics.onclick = () => {
+navTopics.addEventListener('click', () => {
   showTopics();
-};
+});
 
 // Browse All Topics button (on home screen)
 if (browseAllBtn) {
-  browseAllBtn.onclick = () => {
+  browseAllBtn.addEventListener('click', () => {
     showTopics();
-  };
+  });
 }
 
-// Placeholder for other nav items
-navPlay.onclick = () => {
+// Placeholder for other nav items - using addEventListener for iOS compatibility
+navPlay.addEventListener('click', () => {
   alert('Quick Play coming soon! 🎮');
-};
+});
 
-navStats.onclick = () => {
+navStats.addEventListener('click', () => {
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navStats.classList.add('active');
   alert('Stats coming soon! 📊');
-};
+});
 
-navProfile.onclick = () => {
+navProfile.addEventListener('click', () => {
   showProfile();
-};
+});
 
 // Settings button placeholder
 const profileSettings = document.querySelector('.profile-settings');
