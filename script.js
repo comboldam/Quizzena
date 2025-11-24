@@ -1266,13 +1266,25 @@ function startUnifiedGame(mode) {
 
 // Exit quiz
 function exitUnifiedQuiz() {
+  // Remove quiz screen
+  const quizScreen = document.getElementById('unified-quiz-screen');
+  if (quizScreen) quizScreen.remove();
+
+  // Remove mode screen
   const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) modeScreen.remove();
 
-  if (modeScreen) modeScreen.classList.add('hidden');
-
+  // CRITICAL: Reset game state when exiting
   resetGame();
-  home.classList.remove('hidden');
-  showTopics();
+
+  // Clear timer
+  clearInterval(timer);
+
+  // Return to topics (home view)
+  const topicsView = document.getElementById('topics-view');
+  const homeView = document.getElementById('home-view');
+  if (topicsView) topicsView.classList.remove('hidden');
+  if (homeView) homeView.classList.add('hidden');
 }
 
 // ============================================
