@@ -841,6 +841,16 @@ footer button:hover {
   padding: 20px 25px;
 }
 
+/* Movies Section */
+.movies-section {
+  padding: 20px 25px;
+}
+
+/* TV Shows Section */
+.tvshows-section {
+  padding: 20px 25px;
+}
+
 .section-title {
   font-size: 1.3rem;
   font-weight: 800;

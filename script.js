@@ -949,6 +949,38 @@ footballTopics.forEach(topic => {
   }
 });
 
+// Movies topics placeholders
+const moviesTopics = [
+  'marvel-movies', 'dc-movies', 'harry-potter', 'star-wars', 'lotr',
+  'disney-movies', 'pixar-movies', 'animated-movies', 'horror-movies',
+  'action-movies', 'scifi-movies', 'comedy-movies', 'thriller-movies',
+  'classic-movies', 'movie-quotes', 'movie-villains'
+];
+
+moviesTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 🎬");
+    };
+  }
+});
+
+// TV Shows topics placeholders
+const tvTopics = [
+  'tv-general', 'sitcoms', 'drama-tv', 'thriller-tv',
+  'comedy-tv', 'fantasy-tv', 'crime-tv', 'animated-tv'
+];
+
+tvTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 📺");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
