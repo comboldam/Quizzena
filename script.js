@@ -981,6 +981,22 @@ tvTopics.forEach(topic => {
   }
 });
 
+// Logos topics placeholders
+const logosTopics = [
+  'logos-general', 'brand-logos', 'car-logos', 'tech-logos',
+  'fastfood-logos', 'football-club-logos', 'social-media-logos',
+  'luxury-logos', 'app-icons', 'nba-logos', 'nfl-logos'
+];
+
+logosTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! ✨");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
