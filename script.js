@@ -1015,6 +1015,23 @@ historyTopics.forEach(topic => {
   }
 });
 
+// Animals topics placeholders
+const animalsTopics = [
+  'animals-general', 'marine-animals', 'big-cats', 'dogs', 'cats',
+  'birds', 'reptiles', 'dinosaurs', 'mythical', 'endangered',
+  'fastest-animals', 'smartest-animals', 'predators-prey', 'weird-animals',
+  'animal-patterns', 'farm-animals'
+];
+
+animalsTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 🦁");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
