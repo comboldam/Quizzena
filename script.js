@@ -951,7 +951,7 @@ footballTopics.forEach(topic => {
 
 // Movies topics placeholders
 const moviesTopics = [
-  'marvel-movies', 'dc-movies', 'harry-potter', 'star-wars', 'lotr',
+  'movies-general', 'marvel-movies', 'dc-movies', 'harry-potter', 'star-wars', 'lotr',
   'disney-movies', 'pixar-movies', 'animated-movies', 'horror-movies',
   'action-movies', 'scifi-movies', 'comedy-movies', 'thriller-movies',
   'classic-movies', 'movie-quotes', 'movie-villains'
