@@ -1032,6 +1032,22 @@ animalsTopics.forEach(topic => {
   }
 });
 
+// Food topics placeholders
+const foodTopics = [
+  'food-trivia', 'world-cuisines', 'famous-dishes', 'desserts',
+  'spices', 'fruits', 'vegetables', 'cheese', 'street-food',
+  'fast-food', 'pizza', 'food-closeups', 'candy', 'chocolate'
+];
+
+foodTopics.forEach(topic => {
+  const btn = document.getElementById(`${topic}-topic-btn`);
+  if (btn) {
+    btn.onclick = () => {
+      alert("Coming soon! 🍕");
+    };
+  }
+});
+
 // ========================================
 // 🧭 BOTTOM NAV - SCREEN SWITCHING
 // ========================================
