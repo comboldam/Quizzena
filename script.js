@@ -1145,6 +1145,127 @@ if (profileSettings) {
 }
 
 // ============================================
+// 🎮 UNIFIED QUIZ SYSTEM - ALL QUIZZES USE THIS
+// ============================================
+
+function showUnifiedModeSelection(quizName, icon) {
+  // Hide home screen
+  home.classList.add('hidden');
+
+  // Create or get mode selection screen
+  let modeScreen = document.getElementById('unified-mode-screen');
+  if (!modeScreen) {
+    modeScreen = document.createElement('div');
+    modeScreen.id = 'unified-mode-screen';
+    modeScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
+    document.body.appendChild(modeScreen);
+  }
+
+  // Show difficulty selection for Area quiz
+  if (currentTopic === 'area') {
+    modeScreen.innerHTML = `
+      <button onclick="exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
+      <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
+      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Select Difficulty</h3>
+
+      <button onclick="selectAreaDifficulty('easy')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(76, 175, 80, 0.4);">
+        <div style="font-size:2em;margin-bottom:5px;">🟢</div>
+        <div style="font-weight:bold;">Easy</div>
+        <div style="font-size:0.9em;opacity:0.9;">10 Largest Countries</div>
+      </button>
+
+      <button onclick="selectAreaDifficulty('medium')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FFA726,#FB8C00);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 167, 38, 0.4);">
+        <div style="font-size:2em;margin-bottom:5px;">🟡</div>
+        <div style="font-weight:bold;">Medium</div>
+        <div style="font-size:0.9em;opacity:0.9;">155 Mid-size Countries</div>
+      </button>
+
+      <button onclick="selectAreaDifficulty('hard')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#EF5350,#E53935);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(239, 83, 80, 0.4);">
+        <div style="font-size:2em;margin-bottom:5px;">🔴</div>
+        <div style="font-weight:bold;">Hard</div>
+        <div style="font-size:0.9em;opacity:0.9;">25 Smallest Countries</div>
+      </button>
+    `;
+  } else {
+    // Show mode selection for other quizzes
+    modeScreen.innerHTML = `
+      <button onclick="exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
+      <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
+      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Choose Game Mode</h3>
+
+      <button onclick="startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+
+      <button onclick="startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+
+      <button onclick="startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+
+      <button onclick="startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+    `;
+  }
+
+  modeScreen.classList.remove('hidden');
+}
+
+// Area difficulty selection handler
+function selectAreaDifficulty(difficulty) {
+  selectedDifficulty = difficulty;
+
+  // Update mode screen to show game modes
+  const modeScreen = document.getElementById('unified-mode-screen');
+  modeScreen.innerHTML = `
+    <button onclick="showUnifiedModeSelection('Area', '📏')" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
+    <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">📏 Area Quiz</h2>
+    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>
+
+    <button onclick="startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+
+    <button onclick="startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+
+    <button onclick="startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+
+    <button onclick="startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+  `;
+}
+
+// Start game with selected mode
+function startUnifiedGame(mode) {
+  // Hide mode selection
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) modeScreen.classList.add('hidden');
+
+  // Set game mode and reset
+  resetGame();
+
+  if (mode === 'time-attack') {
+    gameMode = 'time-attack';
+  } else if (mode === 'quick-game') {
+    gameMode = 'quick-game';
+    maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+  } else if (mode === 'three-strikes') {
+    gameMode = 'three-strikes';
+    livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
+  } else if (mode === 'two-player') {
+    gameMode = 'two';
+    maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
+  }
+
+  // Show old game screen for now (will be replaced in later phases)
+  game.classList.remove('hidden');
+  loadFlags();
+}
+
+// Exit quiz
+function exitUnifiedQuiz() {
+  const modeScreen = document.getElementById('unified-mode-screen');
+
+  if (modeScreen) modeScreen.classList.add('hidden');
+
+  resetGame();
+  home.classList.remove('hidden');
+  showTopics();
+}
+
+// ============================================
 // FOOTBALL GENERAL QUIZ - COMPLETELY INDEPENDENT
 // ============================================
 
