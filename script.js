@@ -271,8 +271,7 @@ capitalsTopicBtn.onclick = () => {
 
 bordersTopicBtn.onclick = () => {
   currentTopic = 'borders';
-  home.classList.add("hidden");
-  playerSelect.classList.remove("hidden");
+  showUnifiedModeSelection('Borders', '🗺️');
 };
 
 areaTopicBtn.onclick = () => {
