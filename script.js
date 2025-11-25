@@ -5,7 +5,7 @@
 // Instructions: See CLOUDINARY_SETUP.md for setup details
 const CLOUDINARY_CLOUD_NAME = 'duuvz88ph';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/`;
-const USE_LOCAL_IMAGES = false; // Set to 'true' for local development, 'false' for production CDN
+const USE_LOCAL_IMAGES = true; // Set to 'true' for local development, 'false' for production CDN
 
 // ========================================
 // 🎮 GAME STATE VARIABLES
@@ -763,14 +763,19 @@ function startRound() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
 
     // Use Cloudinary CDN or local images based on configuration
-    if (USE_LOCAL_IMAGES) {
-      flagImg.src = `./capital_images/${sanitizedCapital}.jpg`;
-    } else {
-      flagImg.src = `${CLOUDINARY_BASE_URL}capitals/${sanitizedCapital}.jpg`;
-    }
+    const imageBase = USE_LOCAL_IMAGES ? './capital_images/' : `${CLOUDINARY_BASE_URL}capitals/`;
+    const finalUrl = `${imageBase}${sanitizedCapital}.jpg`;
+
+    // DEBUG: Log the URL being used
+    console.log('Loading capital image:', finalUrl);
+    console.log('USE_LOCAL_IMAGES:', USE_LOCAL_IMAGES);
+    console.log('CLOUDINARY_BASE_URL:', CLOUDINARY_BASE_URL);
+
+    flagImg.src = finalUrl;
 
     // Fallback to placeholder if image doesn't exist
     flagImg.onerror = function() {
+      console.log('Image failed to load:', finalUrl);
       const seed = randomFlag.capital.toLowerCase().replace(/\s+/g, '-');
       this.src = `https://picsum.photos/seed/${seed}/800/600`;
       this.onerror = null; // Prevent infinite loop
@@ -1492,6 +1497,8 @@ function displayUnifiedQuestion() {
     imageSrc = USE_LOCAL_IMAGES
       ? `./capital_images/${sanitizedCapital}.jpg`
       : `${CLOUDINARY_BASE_URL}capitals/${sanitizedCapital}.jpg`;
+    // DEBUG: Log unified quiz system image URL
+    console.log('[Unified Quiz] Loading capital image:', imageSrc);
   } else if (currentTopic === 'borders') {
     imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
     imageClass = 'border-style';
