@@ -1,4 +1,13 @@
 // ========================================
+// ☁️ CLOUDINARY CDN CONFIGURATION
+// ========================================
+// IMPORTANT: Replace 'YOUR_CLOUD_NAME' with your actual Cloudinary cloud name!
+// Instructions: See CLOUDINARY_SETUP.md for setup details
+const CLOUDINARY_CLOUD_NAME = 'YOUR_CLOUD_NAME';
+const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/`;
+const USE_LOCAL_IMAGES = false; // Set to 'true' for local development, 'false' for production CDN
+
+// ========================================
 // 🎮 GAME STATE VARIABLES
 // ========================================
 let flags = [];
@@ -750,11 +759,15 @@ function startRound() {
     flagImg.style.display = "block";
     flagImg.className = "";
 
-    // Sanitize capital name to match downloaded filename
+    // Sanitize capital name to match filename (both local and Cloudinary)
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
 
-    // Try to load the downloaded Wikipedia image first
-    flagImg.src = `./capital_images/${sanitizedCapital}.jpg`;
+    // Use Cloudinary CDN or local images based on configuration
+    if (USE_LOCAL_IMAGES) {
+      flagImg.src = `./capital_images/${sanitizedCapital}.jpg`;
+    } else {
+      flagImg.src = `${CLOUDINARY_BASE_URL}capitals/${sanitizedCapital}.jpg`;
+    }
 
     // Fallback to placeholder if image doesn't exist
     flagImg.onerror = function() {
@@ -1475,7 +1488,10 @@ function displayUnifiedQuestion() {
     imageSrc = randomFlag.flag;
   } else if (currentTopic === 'capitals') {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
-    imageSrc = `./capital_images/${sanitizedCapital}.jpg`;
+    // Use Cloudinary CDN or local images based on configuration
+    imageSrc = USE_LOCAL_IMAGES
+      ? `./capital_images/${sanitizedCapital}.jpg`
+      : `${CLOUDINARY_BASE_URL}capitals/${sanitizedCapital}.jpg`;
   } else if (currentTopic === 'borders') {
     imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
     imageClass = 'border-style';
