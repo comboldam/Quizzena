@@ -1677,11 +1677,17 @@ footer button:hover {
 
   /* Content sections - centered with max-width for readability */
   .home-view,
-  .topics-view,
-  .profile-view {
+  .topics-view {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px 50px;
+  }
+
+  /* Profile view - full width container */
+  .profile-view {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
   /* Top bar - more padding on desktop */
@@ -1804,41 +1810,57 @@ footer button:hover {
     padding: 15px 5px;
   }
 
-  /* Profile screen adjustments */
+  /* Profile screen adjustments - fullscreen layout */
+  .profile-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .profile-banner {
-    height: 250px;
+    width: 100%;
+    height: 280px;
   }
 
   .profile-avatar {
     width: 130px;
     height: 130px;
     font-size: 4.5rem;
-    top: 180px;
+    top: 210px;
+  }
+
+  .profile-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px 20px;
   }
 
   .profile-name {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .profile-bio {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .profile-location,
   .profile-active {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .profile-achievement {
-    padding: 15px 25px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 20px;
   }
 
   .achievement-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
   }
 
   .profile-stats-row {
-    padding: 25px 0;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px 50px;
   }
 
   .stat-value {
@@ -1846,22 +1868,39 @@ footer button:hover {
   }
 
   .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
-  /* Profile statistics */
-  .profile-statistics,
+  /* Profile statistics - wider with taller bars */
+  .profile-statistics {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 50px;
+  }
+
+  .profile-statistics h3 {
+    font-size: 1.6rem;
+  }
+
+  .stats-bar {
+    height: 40px;
+    border-radius: 20px;
+  }
+
+  /* Topic progress - wider */
   .profile-topics {
-    padding: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 50px;
   }
 
-  .profile-statistics h3,
   .profile-topics h3 {
     font-size: 1.6rem;
   }
 
   .topic-progress-item {
-    padding: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
   }
 
   .topic-progress-icon {
@@ -1876,10 +1915,16 @@ footer button:hover {
 /* Large Desktop - even wider and more spacious */
 @media (min-width: 1200px) {
   .home-view,
-  .topics-view,
-  .profile-view {
+  .topics-view {
     max-width: 1400px;
     padding: 40px 80px;
+  }
+
+  /* Profile view - keep fullscreen */
+  .profile-view {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
   .top-bar {
@@ -1946,15 +1991,51 @@ footer button:hover {
     padding: 20px 10px;
   }
 
-  /* Profile banner */
+  /* Profile - larger desktop sizes */
   .profile-banner {
-    height: 300px;
+    height: 320px;
   }
 
   .profile-avatar {
     width: 150px;
     height: 150px;
     font-size: 5rem;
-    top: 220px;
+    top: 250px;
+  }
+
+  .profile-info {
+    max-width: 1000px;
+    padding: 70px 50px 25px;
+  }
+
+  .profile-achievement {
+    max-width: 800px;
+  }
+
+  .profile-stats-row {
+    max-width: 900px;
+    padding: 40px 80px;
+  }
+
+  .profile-statistics {
+    max-width: 1000px;
+    padding: 40px 80px;
+  }
+
+  /* Topic progress - 2 column grid on large screens */
+  .profile-topics {
+    max-width: 1100px;
+    padding: 40px 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .profile-topics h3 {
+    grid-column: 1 / -1;
+  }
+
+  .topic-progress-item {
+    margin-bottom: 0;
   }
 }
