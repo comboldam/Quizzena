@@ -1997,7 +1997,9 @@ if (setupSaveBtn) {
   setupSaveBtn.onclick = () => {
     userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
     userData.profile.avatar = selectedAvatar;
-    userData.profile.country = document.getElementById('setup-country').value;
+    const countrySelect = document.getElementById('setup-country');
+    userData.profile.country = countrySelect.value;
+    userData.profile.countryName = countrySelect.options[countrySelect.selectedIndex].text;
     userData.profile.createdAt = new Date().toISOString();
     userData.isSetupComplete = true;
 
@@ -2009,14 +2011,29 @@ if (setupSaveBtn) {
 }
 
 function updateProfileDisplay() {
+  // Top bar
   const topBar = document.querySelector('.user-profile');
   if (topBar) topBar.textContent = userData.profile.username + ' ' + userData.profile.avatar;
 
+  // Profile avatar
   const avatar = document.querySelector('.profile-avatar');
   if (avatar) avatar.textContent = userData.profile.avatar;
 
+  // Profile name
   const name = document.querySelector('.profile-name');
   if (name) name.textContent = userData.profile.username;
+
+  // Profile location/country
+  const location = document.querySelector('.profile-location');
+  if (location) {
+    if (userData.profile.country && userData.profile.countryName) {
+      location.textContent = '🌍 ' + userData.profile.countryName;
+    } else if (userData.profile.country) {
+      location.textContent = '🌍 ' + userData.profile.country;
+    } else {
+      location.textContent = '🌍 Location not set';
+    }
+  }
 }
 
 // Run on page load
