@@ -1253,9 +1253,7 @@ navPlay.addEventListener('click', () => {
 });
 
 navStats.addEventListener('click', () => {
-  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-  navStats.classList.add('active');
-  alert('Stats coming soon! 📊');
+  showStats();
 });
 
 navProfile.addEventListener('click', () => {
@@ -1702,5 +1700,46 @@ function exitUnifiedQuiz() {
   // Return to topics (home view)
   home.classList.remove('hidden');
   showTopics();
+}
+
+// ========================================
+// 📊 STATS PAGE FUNCTIONS
+// ========================================
+
+// Toggle stats box expand/collapse
+function toggleStatsBox(boxId) {
+  const content = document.getElementById(boxId + '-content');
+  const arrow = document.getElementById(boxId + '-arrow');
+
+  if (content.classList.contains('expanded')) {
+    // Collapse
+    content.classList.remove('expanded');
+    content.classList.add('hidden');
+    arrow.classList.remove('rotated');
+  } else {
+    // Expand
+    content.classList.remove('hidden');
+    content.classList.add('expanded');
+    arrow.classList.add('rotated');
+  }
+}
+
+// Show Stats screen
+function showStats() {
+  // Hide all views
+  const homeView = document.getElementById('home-view');
+  const topicsView = document.getElementById('topics-view');
+  const profileView = document.getElementById('profile-view');
+  const statsView = document.getElementById('stats-view');
+
+  if (homeView) homeView.classList.add('hidden');
+  if (topicsView) topicsView.classList.add('hidden');
+  if (profileView) profileView.classList.add('hidden');
+  if (statsView) statsView.classList.remove('hidden');
+
+  // Update nav active state
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  const navStats = document.getElementById('nav-stats');
+  if (navStats) navStats.classList.add('active');
 }
 

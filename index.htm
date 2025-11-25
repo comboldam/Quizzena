@@ -1535,6 +1535,71 @@
 
     </div>
 
+    <!-- STATS SCREEN VIEW -->
+    <div class="stats-view hidden" id="stats-view">
+
+      <!-- Stats Title -->
+      <div class="stats-header">
+        <h1>Stats</h1>
+      </div>
+
+      <!-- Stats Content Area -->
+      <div class="stats-content">
+
+        <!-- Overall Performance Box -->
+        <div class="stats-box" id="overall-performance-box">
+
+          <!-- Box Header (clickable) -->
+          <div class="stats-box-header" onclick="toggleStatsBox('overall-performance')">
+            <span class="stats-box-icon">📊</span>
+            <span class="stats-box-title">Overall Performance</span>
+            <span class="stats-box-arrow" id="overall-performance-arrow">▼</span>
+          </div>
+
+          <!-- Box Content (expandable) -->
+          <div class="stats-box-content hidden" id="overall-performance-content">
+            <table class="stats-table">
+              <tr>
+                <td class="stat-name">Total Games Played</td>
+                <td class="stat-value" id="stat-total-games">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Total Questions Answered</td>
+                <td class="stat-value" id="stat-total-questions">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Correct Answers</td>
+                <td class="stat-value" id="stat-correct">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Wrong Answers</td>
+                <td class="stat-value" id="stat-wrong">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Overall Accuracy</td>
+                <td class="stat-value" id="stat-accuracy">0%</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Avg Time per Question</td>
+                <td class="stat-value" id="stat-avg-time">0.0s</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Best Streak</td>
+                <td class="stat-value" id="stat-best-streak">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name">Total Time Played</td>
+                <td class="stat-value" id="stat-total-time">0m 0s</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
     <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
       <div class="nav-item active" id="nav-home">🏠<br><span>Home</span></div>
