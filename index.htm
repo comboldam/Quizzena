@@ -1596,226 +1596,100 @@
 
         </div>
 
-        <!-- Performance by Quiz Topic Box -->
-        <div class="stats-box" id="topic-performance-box">
+        <!-- Most Played Topics Box -->
+        <div class="stats-box" id="most-played-box">
 
           <!-- Box Header (clickable) -->
-          <div class="stats-box-header" onclick="toggleStatsBox('topic-performance')">
-            <span class="stats-box-icon">🎯</span>
-            <span class="stats-box-title">Performance by Quiz Topic</span>
-            <span class="stats-box-arrow" id="topic-performance-arrow">▼</span>
+          <div class="stats-box-header" onclick="toggleStatsBox('most-played')">
+            <span class="stats-box-icon">🔥</span>
+            <span class="stats-box-title">Most Played</span>
+            <span class="stats-box-arrow" id="most-played-arrow">▼</span>
           </div>
 
           <!-- Box Content (expandable) -->
-          <div class="stats-box-content hidden" id="topic-performance-content">
+          <div class="stats-box-content hidden" id="most-played-content">
 
-            <div class="stats-box-content-inner">
+            <div class="most-played-grid">
 
-              <!-- Flags Stats -->
-              <div class="topic-stats">
-                <h3 class="topic-stats-title">🏳️ Flags</h3>
-                <table class="stats-table">
-                  <tr>
-                    <td class="stat-name">Games Played</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Total Questions</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Correct</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Wrong</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Accuracy</td>
-                    <td class="stat-value">0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Avg Time/Question</td>
-                    <td class="stat-value">0.0s</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Score</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Streak</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                </table>
+              <!-- Card 1: Flags (Top 1) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">1</div>
+                <div class="most-played-icon">🏳️</div>
+                <div class="most-played-name">Flags</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Divider -->
-              <div class="stats-divider"></div>
-
-              <!-- Capitals Stats -->
-              <div class="topic-stats">
-                <h3 class="topic-stats-title">🏛️ Capitals</h3>
-                <table class="stats-table">
-                  <tr>
-                    <td class="stat-name">Games Played</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Total Questions</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Correct</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Wrong</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Accuracy</td>
-                    <td class="stat-value">0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Avg Time/Question</td>
-                    <td class="stat-value">0.0s</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Score</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Streak</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                </table>
+              <!-- Card 2: Capitals (Top 2) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">2</div>
+                <div class="most-played-icon">🏛️</div>
+                <div class="most-played-name">Capitals</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Divider -->
-              <div class="stats-divider"></div>
-
-              <!-- Borders Stats -->
-              <div class="topic-stats">
-                <h3 class="topic-stats-title">🗺️ Borders</h3>
-                <table class="stats-table">
-                  <tr>
-                    <td class="stat-name">Games Played</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Total Questions</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Correct</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Wrong</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Accuracy</td>
-                    <td class="stat-value">0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Avg Time/Question</td>
-                    <td class="stat-value">0.0s</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Score</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Streak</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                </table>
+              <!-- Card 3: Football (Top 3) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">3</div>
+                <div class="most-played-icon">⚽</div>
+                <div class="most-played-name">Football</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
               </div>
 
-              <!-- Divider -->
-              <div class="stats-divider"></div>
-
-              <!-- Area Stats -->
-              <div class="topic-stats">
-                <h3 class="topic-stats-title">📏 Area</h3>
-                <table class="stats-table">
-                  <tr>
-                    <td class="stat-name">Games Played</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Total Questions</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Correct</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Wrong</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Accuracy</td>
-                    <td class="stat-value">0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Avg Time/Question</td>
-                    <td class="stat-value">0.0s</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Score</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Streak</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                </table>
-              </div>
-
-              <!-- Divider -->
-              <div class="stats-divider"></div>
-
-              <!-- Football Stats -->
-              <div class="topic-stats">
-                <h3 class="topic-stats-title">⚽ Football</h3>
-                <table class="stats-table">
-                  <tr>
-                    <td class="stat-name">Games Played</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Total Questions</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Correct</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Wrong</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Accuracy</td>
-                    <td class="stat-value">0%</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Avg Time/Question</td>
-                    <td class="stat-value">0.0s</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Score</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                  <tr>
-                    <td class="stat-name">Best Streak</td>
-                    <td class="stat-value">0</td>
-                  </tr>
-                </table>
+              <!-- Card 4: Search Box -->
+              <div class="most-played-card search-card">
+                <div class="most-played-icon">🔍</div>
+                <div class="most-played-name">Search Topic</div>
+                <div class="search-input-wrapper">
+                  <input
+                    type="text"
+                    id="topic-search-input"
+                    class="topic-search-input"
+                    placeholder="Type topic name..."
+                    oninput="searchTopic(this.value)"
+                  />
+                </div>
+                <div id="search-result" class="search-result hidden">
+                  <!-- Search results appear here -->
+                </div>
               </div>
 
             </div>

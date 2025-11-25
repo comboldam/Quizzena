@@ -2192,80 +2192,218 @@ footer button:hover {
   }
 }
 
-/* Second stats box - teal/cyan color for topics */
-#topic-performance-box {
-  background: linear-gradient(145deg, rgba(56, 178, 172, 0.9), rgba(45, 140, 135, 0.9));
+/* Most Played Box - orange/fire color */
+#most-played-box {
+  background: linear-gradient(145deg, rgba(251, 146, 60, 0.9), rgba(234, 88, 12, 0.9));
 }
 
-#topic-performance-box:hover {
+#most-played-box:hover {
   box-shadow:
-    0 12px 40px rgba(56, 178, 172, 0.4),
+    0 12px 40px rgba(251, 146, 60, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Topic stats sections */
-.topic-stats {
-  margin-bottom: 25px;
+/* Most Played Grid - 2x2 layout */
+.most-played-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 0;
 }
 
-.topic-stats:last-child {
-  margin-bottom: 0;
+/* Most Played Card */
+.most-played-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.topic-stats-title {
-  font-size: 1.2rem;
+.most-played-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Rank badge (top left) */
+.most-played-rank {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Topic icon and name */
+.most-played-icon {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.most-played-name {
+  font-size: 1.1rem;
   font-weight: 700;
   color: #ffffff;
+  text-align: center;
   margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Stats divider between topics */
-.stats-divider {
-  height: 1px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 100%);
-  margin: 30px 0;
+/* Mini stats (Games, Accuracy, Best) */
+.most-played-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
 }
 
-/* Wrapper for responsive layout */
-.stats-box-content-inner {
+.mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.mini-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.mini-stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #90EE90;
+}
+
+/* Search Card Specific Styles */
+.search-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-card .most-played-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.search-card .most-played-name {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+/* Search Input */
+.search-input-wrapper {
+  margin-bottom: 10px;
+}
+
+.topic-search-input {
   width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-/* Make expanded content taller for topics */
-#topic-performance-content.expanded {
-  max-height: 1600px; /* Tall enough for 5 topics */
+.topic-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-/* Desktop adjustments for topic stats */
+.topic-search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Search Result */
+.search-result {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.search-result.hidden {
+  display: none;
+}
+
+.search-result-found {
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.search-result-topic {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.search-result-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+
+.search-result-empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Expanded content height */
+#most-played-content.expanded {
+  max-height: 600px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .most-played-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .most-played-icon {
+    font-size: 2.5rem;
+  }
+
+  #most-played-content.expanded {
+    max-height: 900px;
+  }
+}
+
+/* Desktop adjustments */
 @media (min-width: 768px) {
-  .topic-stats-title {
-    font-size: 1.4rem;
-  }
-}
-
-/* Large desktop - show topics in 2 columns */
-@media (min-width: 1200px) {
-  #topic-performance-content .stats-box-content-inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    column-gap: 50px;
+  .most-played-card {
+    padding: 25px;
   }
 
-  .stats-divider {
-    display: none; /* Hide dividers in column layout */
+  .most-played-icon {
+    font-size: 3.5rem;
   }
 
-  .topic-stats {
-    margin-bottom: 0;
-  }
-
-  #topic-performance-content.expanded {
-    max-height: 1000px; /* Shorter when in 2 columns */
+  .most-played-name {
+    font-size: 1.2rem;
   }
 }

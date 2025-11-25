@@ -1752,3 +1752,66 @@ function showStats() {
   if (navStats) navStats.classList.add('active');
 }
 
+// ========================================
+// 🔍 TOPIC SEARCH FUNCTION
+// ========================================
+
+// Available topics with their icons
+const availableTopics = {
+  'flags': { icon: '🏳️', name: 'Flags' },
+  'capitals': { icon: '🏛️', name: 'Capitals' },
+  'borders': { icon: '🗺️', name: 'Borders' },
+  'area': { icon: '📏', name: 'Area' },
+  'football': { icon: '⚽', name: 'Football' }
+};
+
+function searchTopic(query) {
+  const searchResult = document.getElementById('search-result');
+
+  if (!query || query.trim() === '') {
+    // Hide result if empty
+    searchResult.classList.add('hidden');
+    return;
+  }
+
+  // Search for matching topic
+  const lowerQuery = query.toLowerCase().trim();
+  let found = null;
+
+  for (const [key, topic] of Object.entries(availableTopics)) {
+    if (key.includes(lowerQuery) || topic.name.toLowerCase().includes(lowerQuery)) {
+      found = topic;
+      break;
+    }
+  }
+
+  if (found) {
+    // Show found topic with stats (all 0 for now)
+    searchResult.innerHTML = `
+      <div class="search-result-found">Found:</div>
+      <div class="search-result-topic">${found.icon} ${found.name}</div>
+      <div class="search-result-stats">
+        <div class="mini-stat">
+          <span class="mini-stat-label">Games</span>
+          <span class="mini-stat-value">0</span>
+        </div>
+        <div class="mini-stat">
+          <span class="mini-stat-label">Accuracy</span>
+          <span class="mini-stat-value">0%</span>
+        </div>
+        <div class="mini-stat">
+          <span class="mini-stat-label">Best</span>
+          <span class="mini-stat-value">0</span>
+        </div>
+      </div>
+    `;
+    searchResult.classList.remove('hidden');
+  } else {
+    // Show "not found" message
+    searchResult.innerHTML = `
+      <div class="search-result-empty">Topic not found</div>
+    `;
+    searchResult.classList.remove('hidden');
+  }
+}
+
