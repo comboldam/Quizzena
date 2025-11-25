@@ -1,3 +1,48 @@
+// ============================================
+// USER DATA SYSTEM
+// ============================================
+
+const defaultUserData = {
+  isSetupComplete: false,
+  profile: {
+    username: "Guest",
+    avatar: "👤",
+    country: "",
+    createdAt: null
+  },
+  stats: {
+    totalGames: 0,
+    totalQuestions: 0,
+    correctAnswers: 0,
+    wrongAnswers: 0,
+    accuracy: 0,
+    bestStreak: 0,
+    totalTimeSeconds: 0,
+    topics: {}
+  }
+};
+
+function loadUserData() {
+  const saved = localStorage.getItem('quizzena_user_data');
+  if (saved) {
+    return JSON.parse(saved);
+  }
+  return JSON.parse(JSON.stringify(defaultUserData));
+}
+
+function saveUserData() {
+  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+}
+
+function resetUserData() {
+  localStorage.removeItem('quizzena_user_data');
+  location.reload();
+}
+
+let userData = loadUserData();
+
+console.log('User Data System loaded:', userData);
+
 // ========================================
 // ☁️ CLOUDINARY CDN CONFIGURATION
 // ========================================
@@ -27,6 +72,16 @@ let currentTopic = '';
 let selectedDifficulty = '';
 let areaQuestions = { easy: [], medium: [], hard: [] };
 let allCountriesData = [];
+
+// ========================================
+// 📊 STATS TRACKING VARIABLES
+// ========================================
+let currentSessionCorrect = 0;
+let currentSessionWrong = 0;
+let currentStreak = 0;
+let bestSessionStreak = 0;
+let sessionStartTime = null;
+let gameEnded = false;
 
 // ========================================
 // 🎯 DOM ELEMENTS - SCREENS
@@ -128,6 +183,14 @@ function resetGame() {
   currentPlayer = 1;
   answered = false;
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
+
+  // Reset session stats
+  currentSessionCorrect = 0;
+  currentSessionWrong = 0;
+  currentStreak = 0;
+  bestSessionStreak = 0;
+  sessionStartTime = new Date();
+  gameEnded = false;
 }
 
 // ========================================
@@ -397,6 +460,11 @@ areaHardBtn.onclick = () => {
 // 🏠 NAVIGATION - IN-GAME MENU BUTTON
 // ========================================
 backToMenuBtn.onclick = () => {
+  // Save stats before exiting (completed = false because user quit early)
+  if (currentTopic === 'flags') {
+    saveQuizStats('flags', false);
+  }
+
   resetGame();
   questionCounter.style.display = "none";
   game.classList.add("hidden");
@@ -566,6 +634,7 @@ function startTimer(correctAnswer) {
     timer = setInterval(() => {
       // CHECK BEFORE DECREMENTING - Prevents negative numbers
       if (timeLeft <= 0) {
+        gameEnded = true;  // SET THIS FIRST to prevent question flash!
         clearInterval(timer);
         if (isUnified) {
           showUnifiedResults();
@@ -708,7 +777,13 @@ function startTimer(correctAnswer) {
 // ========================================
 function handleTimeout(correctAnswer) {
   answered = true;
-  
+
+  // Track timeout as wrong answer for Flags
+  if (currentTopic === 'flags') {
+    currentSessionWrong++;
+    currentStreak = 0;
+  }
+
   if (gameMode === 'quick-game') {
     resultBox.textContent = `⏰ Time's up! It was ${correctAnswer}`;
     disableAnswers();
@@ -732,9 +807,12 @@ function handleTimeout(correctAnswer) {
 // 🎮 GAME LOGIC - START NEW ROUND
 // ========================================
 function startRound() {
+  // Don't start new round if game ended
+  if (gameEnded) return;
+
   if (gameMode === 'two' && questionCount >= maxQuestions) return endGame();
   if (gameMode === 'quick-game' && questionCount >= maxQuestions) return endGame();
-  
+
   resultBox.textContent = "";
   answersDiv.innerHTML = "";
   answered = false;
@@ -926,8 +1004,21 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionCorrect++;
+        currentStreak++;
+        if (currentStreak > bestSessionStreak) {
+          bestSessionStreak = currentStreak;
+        }
+      }
     } else {
       resultBox.textContent = `❌ Wrong!`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionWrong++;
+        currentStreak = 0;
+      }
     }
     score.textContent = `Score: ${singlePlayerScore}`;
     
@@ -940,12 +1031,25 @@ function checkAnswer(selected, correct) {
     answered = true;
     clearInterval(timer);
     disableAnswers();
-    
+
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionCorrect++;
+        currentStreak++;
+        if (currentStreak > bestSessionStreak) {
+          bestSessionStreak = currentStreak;
+        }
+      }
     } else {
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionWrong++;
+        currentStreak = 0;
+      }
     }
     score.textContent = `Score: ${singlePlayerScore}`;
     
@@ -961,11 +1065,24 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionCorrect++;
+        currentStreak++;
+        if (currentStreak > bestSessionStreak) {
+          bestSessionStreak = currentStreak;
+        }
+      }
     } else {
       livesRemaining--;
       timerDisplay.textContent = `❤️ Lives: ${livesRemaining}`;
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
-      
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionWrong++;
+        currentStreak = 0;
+      }
+
       if (livesRemaining <= 0) {
         setTimeout(() => {
           endGame();
@@ -984,16 +1101,29 @@ function checkAnswer(selected, correct) {
     answered = true;
     clearInterval(timer);
     disableAnswers();
-    
+
     if (selected === correct) {
       const points = calculatePoints();
       if (currentPlayer === 1) player1Score += points;
       else player2Score += points;
       resultBox.textContent = `✅ Correct! +${points} points`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionCorrect++;
+        currentStreak++;
+        if (currentStreak > bestSessionStreak) {
+          bestSessionStreak = currentStreak;
+        }
+      }
     } else {
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
+      // Track stats for Flags quiz
+      if (currentTopic === 'flags') {
+        currentSessionWrong++;
+        currentStreak = 0;
+      }
     }
-    
+
     score.textContent = `P1: ${player1Score} | P2: ${player2Score}`;
     currentPlayer = currentPlayer === 1 ? 2 : 1;
     setTimeout(startRound, GAME_CONFIG.FEEDBACK_DELAY_SLOW);
@@ -1012,6 +1142,15 @@ function disableAnswers() {
 // 🏁 END GAME - SHOW FINAL SCORE
 // ========================================
 function endGame() {
+  // Prevent double calls
+  if (gameEnded) return;
+  gameEnded = true;
+
+  // SAVE STATS FIRST (completed = true because quiz finished naturally)
+  if (currentTopic === 'flags') {
+    saveQuizStats('flags', true);
+  }
+
   clearInterval(timer);
   answersDiv.innerHTML = "";
   flagImg.style.display = "none";;
@@ -1471,6 +1610,9 @@ function buildUnifiedQuizScreen() {
 
 // Display question in unified quiz screen
 function displayUnifiedQuestion() {
+  // Don't display new question if game ended
+  if (gameEnded) return;
+
   const quizScreen = document.getElementById('unified-quiz-screen');
   if (!quizScreen) return;
 
@@ -1674,6 +1816,14 @@ function checkUnifiedAnswer(selected, correct) {
     } else {
       singlePlayerScore++;
     }
+    // Track stats for Flags quiz
+    if (currentTopic === 'flags') {
+      currentSessionCorrect++;
+      currentStreak++;
+      if (currentStreak > bestSessionStreak) {
+        bestSessionStreak = currentStreak;
+      }
+    }
   } else {
     if (gameMode === 'three-strikes') {
       livesRemaining--;
@@ -1682,6 +1832,11 @@ function checkUnifiedAnswer(selected, correct) {
         setTimeout(() => showUnifiedResults(), 800);
         return;
       }
+    }
+    // Track stats for Flags quiz
+    if (currentTopic === 'flags') {
+      currentSessionWrong++;
+      currentStreak = 0;
     }
   }
 
@@ -1710,6 +1865,11 @@ function checkUnifiedAnswer(selected, correct) {
 
 // Show unified results screen
 function showUnifiedResults() {
+  // SAVE STATS FIRST (completed = true because quiz finished naturally)
+  if (currentTopic === 'flags') {
+    saveQuizStats('flags', true);
+  }
+
   clearInterval(timer);
 
   const quizScreen = document.getElementById('unified-quiz-screen');
@@ -1734,7 +1894,9 @@ function showUnifiedResults() {
                    `Tie! ${player1Score} - ${player2Score}`;
   }
 
-  const percentage = gameMode === 'two' ? 0 : Math.round((singlePlayerScore / questionCount) * 100);
+  // Use session tracking for accurate percentage (avoids phantom +1 bug)
+  const totalAnswered = currentSessionCorrect + currentSessionWrong;
+  const percentage = gameMode === 'two' ? 0 : (totalAnswered > 0 ? Math.round((currentSessionCorrect / totalAnswered) * 100) : 0);
   const message = percentage >= 80 ? '🏆 Excellent!' : percentage >= 60 ? '⭐ Great Job!' : percentage >= 40 ? '👍 Good Effort!' : '💪 Keep Practicing!';
 
   quizScreen.innerHTML = `
@@ -1767,6 +1929,11 @@ function restartUnifiedQuiz() {
 
 // Exit quiz
 function exitUnifiedQuiz() {
+  // Save stats before exiting (completed = false because user quit early)
+  if (currentTopic === 'flags') {
+    saveQuizStats('flags', false);
+  }
+
   const quizScreen = document.getElementById('unified-quiz-screen');
   const modeScreen = document.getElementById('unified-mode-screen');
 
@@ -1822,6 +1989,57 @@ function showStats() {
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   const navStats = document.getElementById('nav-stats');
   if (navStats) navStats.classList.add('active');
+
+  // Populate Overall Performance stats from userData
+  const totalGames = userData.stats.totalGames || 0;
+  const correctAnswers = userData.stats.correctAnswers || 0;
+  const wrongAnswers = userData.stats.wrongAnswers || 0;
+  const totalQuestions = correctAnswers + wrongAnswers;
+  const accuracy = userData.stats.accuracy || 0;
+  const bestStreak = userData.stats.bestStreak || 0;
+  const totalTimeSeconds = userData.stats.totalTimeSeconds || 0;
+
+  // Update stat elements
+  const statTotalGames = document.getElementById('stat-total-games');
+  if (statTotalGames) statTotalGames.textContent = totalGames;
+
+  const statTotalQuestions = document.getElementById('stat-total-questions');
+  if (statTotalQuestions) statTotalQuestions.textContent = totalQuestions;
+
+  const statCorrect = document.getElementById('stat-correct');
+  if (statCorrect) statCorrect.textContent = correctAnswers;
+
+  const statWrong = document.getElementById('stat-wrong');
+  if (statWrong) statWrong.textContent = wrongAnswers;
+
+  const statAccuracy = document.getElementById('stat-accuracy');
+  if (statAccuracy) statAccuracy.textContent = accuracy + '%';
+
+  const statBestStreak = document.getElementById('stat-best-streak');
+  if (statBestStreak) statBestStreak.textContent = bestStreak;
+
+  // Calculate avg time per question
+  const avgTime = totalQuestions > 0 ? (totalTimeSeconds / totalQuestions).toFixed(1) : '0.0';
+  const statAvgTime = document.getElementById('stat-avg-time');
+  if (statAvgTime) statAvgTime.textContent = avgTime + 's';
+
+  // Format total time played
+  const minutes = Math.floor(totalTimeSeconds / 60);
+  const seconds = totalTimeSeconds % 60;
+  const statTotalTime = document.getElementById('stat-total-time');
+  if (statTotalTime) statTotalTime.textContent = `${minutes}m ${seconds}s`;
+
+  // Update Most Played section - Flags card (Card 1)
+  const flagsStats = userData.stats.topics.flags || { games: 0, accuracy: 0, bestStreak: 0 };
+  const flagsCard = document.querySelector('#most-played-content .most-played-card:nth-child(1)');
+  if (flagsCard) {
+    const miniStatValues = flagsCard.querySelectorAll('.mini-stat-value');
+    if (miniStatValues[0]) miniStatValues[0].textContent = flagsStats.games || 0;
+    if (miniStatValues[1]) miniStatValues[1].textContent = (flagsStats.accuracy || 0) + '%';
+    if (miniStatValues[2]) miniStatValues[2].textContent = flagsStats.bestStreak || 0;
+  }
+
+  console.log('Stats page populated:', { totalGames, totalQuestions, accuracy, bestStreak });
 }
 
 // ========================================
@@ -1912,3 +2130,173 @@ function showLeaderboard() {
   const navLeaderboard = document.getElementById('nav-leaderboard');
   if (navLeaderboard) navLeaderboard.classList.add('active');
 }
+
+// ============================================
+// WELCOME & SETUP LOGIC
+// ============================================
+
+let selectedAvatar = '👤';
+
+function checkFirstTimeUser() {
+  if (!userData.isSetupComplete) {
+    document.getElementById('welcome-screen').classList.remove('hidden');
+  }
+}
+
+// Welcome button
+const welcomeStartBtn = document.getElementById('welcome-start-btn');
+if (welcomeStartBtn) {
+  welcomeStartBtn.onclick = () => {
+    document.getElementById('welcome-screen').classList.add('hidden');
+    document.getElementById('setup-screen').classList.remove('hidden');
+  };
+}
+
+// Avatar selection
+const avatarGrid = document.getElementById('avatar-grid');
+if (avatarGrid) {
+  avatarGrid.onclick = (e) => {
+    if (e.target.classList.contains('avatar-btn')) {
+      document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
+      e.target.classList.add('selected');
+      selectedAvatar = e.target.dataset.avatar;
+    }
+  };
+}
+
+// Save profile
+const setupSaveBtn = document.getElementById('setup-save-btn');
+if (setupSaveBtn) {
+  setupSaveBtn.onclick = () => {
+    userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
+    userData.profile.avatar = selectedAvatar;
+    const countrySelect = document.getElementById('setup-country');
+    userData.profile.country = countrySelect.value;
+    userData.profile.countryName = countrySelect.options[countrySelect.selectedIndex].text;
+    userData.profile.createdAt = new Date().toISOString();
+    userData.isSetupComplete = true;
+
+    saveUserData();
+    document.getElementById('setup-screen').classList.add('hidden');
+    updateProfileDisplay();
+    console.log('Profile saved:', userData.profile);
+  };
+}
+
+function updateProfileDisplay() {
+  // Top bar
+  const topBar = document.querySelector('.user-profile');
+  if (topBar) topBar.textContent = userData.profile.username + ' ' + userData.profile.avatar;
+
+  // Profile avatar
+  const avatar = document.querySelector('.profile-avatar');
+  if (avatar) avatar.textContent = userData.profile.avatar;
+
+  // Profile name
+  const name = document.querySelector('.profile-name');
+  if (name) name.textContent = userData.profile.username;
+
+  // Profile location/country
+  const location = document.querySelector('.profile-location');
+  if (location) {
+    if (userData.profile.country && userData.profile.countryName) {
+      location.textContent = '🌍 ' + userData.profile.countryName;
+    } else if (userData.profile.country) {
+      location.textContent = '🌍 ' + userData.profile.country;
+    } else {
+      location.textContent = '🌍 Location not set';
+    }
+  }
+}
+
+// Update all stats displays (Profile + Overall Performance use same data)
+function updateAllStatsDisplays() {
+  const accuracy = userData.stats.accuracy || 0;
+  const totalGames = userData.stats.totalGames || 0;
+
+  // Update Profile Stats Row - Games (1st stat-item)
+  const statItems = document.querySelectorAll('.profile-stats-row .stat-item');
+  if (statItems[0]) statItems[0].querySelector('.stat-value').textContent = totalGames;
+
+  // Update Profile Stats Row - Accuracy (2nd stat-item)
+  if (statItems[1]) statItems[1].querySelector('.stat-value').textContent = accuracy + '%';
+
+  console.log('Stats displays updated:', { totalGames, accuracy });
+}
+
+// ============================================
+// SAVE QUIZ STATS
+// ============================================
+function saveQuizStats(topicId, completed) {
+  // Don't save stats if player exits early
+  if (!completed) {
+    console.log('Quiz exited early - stats not saved');
+    return;
+  }
+
+  // Only save for flags quiz for now
+  if (topicId !== 'flags') return;
+
+  // Initialize topic stats if not exists
+  if (!userData.stats.topics[topicId]) {
+    userData.stats.topics[topicId] = {
+      games: 0,
+      correct: 0,
+      wrong: 0,
+      accuracy: 0,
+      bestStreak: 0
+    };
+  }
+
+  const topic = userData.stats.topics[topicId];
+
+  // Update topic stats
+  if (completed) {
+    topic.games++;
+    userData.stats.totalGames++;
+  }
+
+  topic.correct += currentSessionCorrect;
+  topic.wrong += currentSessionWrong;
+
+  // Calculate topic accuracy
+  const totalAnswers = topic.correct + topic.wrong;
+  topic.accuracy = totalAnswers > 0 ? Math.round((topic.correct / totalAnswers) * 100) : 0;
+
+  // Update best streak
+  if (bestSessionStreak > topic.bestStreak) {
+    topic.bestStreak = bestSessionStreak;
+  }
+  if (bestSessionStreak > userData.stats.bestStreak) {
+    userData.stats.bestStreak = bestSessionStreak;
+  }
+
+  // Update global stats
+  userData.stats.correctAnswers += currentSessionCorrect;
+  userData.stats.wrongAnswers += currentSessionWrong;
+
+  // Calculate global accuracy
+  const globalTotal = userData.stats.correctAnswers + userData.stats.wrongAnswers;
+  userData.stats.accuracy = globalTotal > 0 ? Math.round((userData.stats.correctAnswers / globalTotal) * 100) : 0;
+
+  // Save to localStorage
+  saveUserData();
+
+  // Update displays
+  updateAllStatsDisplays();
+
+  console.log('Quiz stats saved:', {
+    topic: topicId,
+    completed: completed,
+    sessionCorrect: currentSessionCorrect,
+    sessionWrong: currentSessionWrong,
+    bestStreak: bestSessionStreak,
+    topicStats: topic,
+    globalAccuracy: userData.stats.accuracy
+  });
+}
+
+// Run on page load
+checkFirstTimeUser();
+updateProfileDisplay();
+updateAllStatsDisplays();
