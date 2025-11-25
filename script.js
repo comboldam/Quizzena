@@ -1204,6 +1204,9 @@ function showHome() {
   topicsView.classList.add('hidden');
   profileView.classList.add('hidden');
 
+  const statsView = document.getElementById('stats-view');
+  if (statsView) statsView.classList.add('hidden');
+
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navHome.classList.add('active');
@@ -1215,6 +1218,9 @@ function showTopics() {
   topicsView.classList.remove('hidden');
   profileView.classList.add('hidden');
 
+  const statsView = document.getElementById('stats-view');
+  if (statsView) statsView.classList.add('hidden');
+
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navTopics.classList.add('active');
@@ -1225,6 +1231,9 @@ function showProfile() {
   homeView.classList.add('hidden');
   topicsView.classList.add('hidden');
   profileView.classList.remove('hidden');
+
+  const statsView = document.getElementById('stats-view');
+  if (statsView) statsView.classList.add('hidden');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
