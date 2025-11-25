@@ -5,7 +5,16 @@
       "Bash(git reset:*)",
       "Bash(git checkout:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(then)",
+      "Bash(else)",
+      "Bash(fi)",
+      "Bash(cat:*)",
+      "Bash(dir:*)",
+      "Bash(git revert:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
