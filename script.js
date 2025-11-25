@@ -3,7 +3,7 @@
 // ========================================
 // IMPORTANT: Replace 'YOUR_CLOUD_NAME' with your actual Cloudinary cloud name!
 // Instructions: See CLOUDINARY_SETUP.md for setup details
-const CLOUDINARY_CLOUD_NAME = 'YOUR_CLOUD_NAME';
+const CLOUDINARY_CLOUD_NAME = 'duuvz88ph';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/`;
 const USE_LOCAL_IMAGES = false; // Set to 'true' for local development, 'false' for production CDN
 
