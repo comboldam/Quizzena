@@ -448,11 +448,8 @@ footer button:hover {
   font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .user-profile {
@@ -482,20 +479,16 @@ footer button:hover {
 .hero-section h1 {
   font-size: 2rem;
   margin-bottom: 12px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 800;
   line-height: 1.2;
-  background: linear-gradient(135deg, #ffffff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.4));
+  text-shadow: 0 4px 12px rgba(124, 58, 237, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
   animation: titleGlow 3s ease-in-out infinite;
 }
 
 @keyframes titleGlow {
-  0%, 100% { filter: drop-shadow(0 4px 8px rgba(124, 58, 237, 0.4)); }
-  50% { filter: drop-shadow(0 6px 12px rgba(124, 58, 237, 0.6)); }
+  0%, 100% { text-shadow: 0 4px 12px rgba(124, 58, 237, 0.5), 0 0 30px rgba(255, 255, 255, 0.2); }
+  50% { text-shadow: 0 6px 16px rgba(124, 58, 237, 0.7), 0 0 40px rgba(255, 255, 255, 0.3); }
 }
 
 .hero-section p {
@@ -559,12 +552,9 @@ footer button:hover {
 .featured-section h2 {
   font-size: 1.4rem;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 .featured-section p {
@@ -584,12 +574,9 @@ footer button:hover {
 .trending-section h2 {
   font-size: 1.4rem;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 700;
-  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
 }
 
 .trending-section p {
@@ -825,16 +812,12 @@ footer button:hover {
 .geography-title {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 18px;
   text-align: left;
   padding-left: 8px;
   letter-spacing: -0.3px;
-  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.3));
+  text-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 /* Football Section */
@@ -876,16 +859,12 @@ footer button:hover {
 .section-title {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #ffffff !important;
   margin-bottom: 18px;
   text-align: left;
   padding-left: 8px;
   letter-spacing: -0.3px;
-  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.3));
+  text-shadow: 0 2px 8px rgba(124, 58, 237, 0.4);
 }
 
 .topics-scroll-row {
