@@ -1989,6 +1989,57 @@ function showStats() {
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   const navStats = document.getElementById('nav-stats');
   if (navStats) navStats.classList.add('active');
+
+  // Populate Overall Performance stats from userData
+  const totalGames = userData.stats.totalGames || 0;
+  const correctAnswers = userData.stats.correctAnswers || 0;
+  const wrongAnswers = userData.stats.wrongAnswers || 0;
+  const totalQuestions = correctAnswers + wrongAnswers;
+  const accuracy = userData.stats.accuracy || 0;
+  const bestStreak = userData.stats.bestStreak || 0;
+  const totalTimeSeconds = userData.stats.totalTimeSeconds || 0;
+
+  // Update stat elements
+  const statTotalGames = document.getElementById('stat-total-games');
+  if (statTotalGames) statTotalGames.textContent = totalGames;
+
+  const statTotalQuestions = document.getElementById('stat-total-questions');
+  if (statTotalQuestions) statTotalQuestions.textContent = totalQuestions;
+
+  const statCorrect = document.getElementById('stat-correct');
+  if (statCorrect) statCorrect.textContent = correctAnswers;
+
+  const statWrong = document.getElementById('stat-wrong');
+  if (statWrong) statWrong.textContent = wrongAnswers;
+
+  const statAccuracy = document.getElementById('stat-accuracy');
+  if (statAccuracy) statAccuracy.textContent = accuracy + '%';
+
+  const statBestStreak = document.getElementById('stat-best-streak');
+  if (statBestStreak) statBestStreak.textContent = bestStreak;
+
+  // Calculate avg time per question
+  const avgTime = totalQuestions > 0 ? (totalTimeSeconds / totalQuestions).toFixed(1) : '0.0';
+  const statAvgTime = document.getElementById('stat-avg-time');
+  if (statAvgTime) statAvgTime.textContent = avgTime + 's';
+
+  // Format total time played
+  const minutes = Math.floor(totalTimeSeconds / 60);
+  const seconds = totalTimeSeconds % 60;
+  const statTotalTime = document.getElementById('stat-total-time');
+  if (statTotalTime) statTotalTime.textContent = `${minutes}m ${seconds}s`;
+
+  // Update Most Played section - Flags card (Card 1)
+  const flagsStats = userData.stats.topics.flags || { games: 0, accuracy: 0, bestStreak: 0 };
+  const flagsCard = document.querySelector('#most-played-content .most-played-card:nth-child(1)');
+  if (flagsCard) {
+    const miniStatValues = flagsCard.querySelectorAll('.mini-stat-value');
+    if (miniStatValues[0]) miniStatValues[0].textContent = flagsStats.games || 0;
+    if (miniStatValues[1]) miniStatValues[1].textContent = (flagsStats.accuracy || 0) + '%';
+    if (miniStatValues[2]) miniStatValues[2].textContent = flagsStats.bestStreak || 0;
+  }
+
+  console.log('Stats page populated:', { totalGames, totalQuestions, accuracy, bestStreak });
 }
 
 // ========================================
