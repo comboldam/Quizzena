@@ -14,7 +14,10 @@
       "Bash(cat:*)",
       "Bash(dir:*)",
       "Bash(git revert:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
