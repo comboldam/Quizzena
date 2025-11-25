@@ -1662,3 +1662,299 @@ footer button:hover {
   color: rgba(255, 255, 255, 0.6);
   text-align: right;
 }
+
+/* ========================================
+   💻 DESKTOP RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet and Desktop - Make app fullscreen */
+@media (min-width: 768px) {
+  /* Home screen container - fullscreen on desktop */
+  #home-screen {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Content sections - centered with max-width for readability */
+  .home-view,
+  .topics-view,
+  .profile-view {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 50px;
+  }
+
+  /* Top bar - more padding on desktop */
+  .top-bar {
+    padding: 20px 50px;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .user-profile {
+    font-size: 1.1rem;
+  }
+
+  /* Bottom nav - full width with more padding */
+  .bottom-nav {
+    padding: 15px 50px;
+  }
+
+  .nav-item {
+    font-size: 1.8rem;
+    padding: 8px 15px;
+  }
+
+  .nav-item span {
+    font-size: 0.8rem;
+  }
+
+  /* Hero section - bigger text */
+  .hero-section {
+    padding: 50px 30px 40px;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1.3rem;
+  }
+
+  /* Quick start cards - 4 columns on desktop */
+  .quick-start-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+
+  .quick-start-btn {
+    padding: 30px;
+    min-height: 150px;
+  }
+
+  .quick-icon {
+    font-size: 4rem;
+  }
+
+  .quick-name {
+    font-size: 1.1rem;
+  }
+
+  /* Browse all button */
+  .browse-all-btn {
+    padding: 16px 35px;
+    font-size: 1.1rem;
+  }
+
+  /* Featured & Trending sections */
+  .featured-section,
+  .trending-section {
+    padding: 25px;
+  }
+
+  .featured-section h2,
+  .trending-section h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Trending items */
+  .trending-item {
+    padding: 20px 25px;
+  }
+
+  .trending-icon {
+    font-size: 2.5rem;
+  }
+
+  .trending-name {
+    font-size: 1.15rem;
+  }
+
+  .trending-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Section titles */
+  .section-title,
+  .geography-title {
+    font-size: 1.8rem;
+    padding: 15px 0;
+  }
+
+  /* Topic cards - bigger on desktop */
+  .topic-card-small {
+    width: 140px;
+    height: 165px;
+  }
+
+  .topic-icon-small {
+    font-size: 4rem;
+  }
+
+  .topic-name-small {
+    font-size: 1.1rem;
+  }
+
+  /* Topic scroll rows */
+  .topics-scroll-row {
+    gap: 20px;
+    padding: 15px 5px;
+  }
+
+  /* Profile screen adjustments */
+  .profile-banner {
+    height: 250px;
+  }
+
+  .profile-avatar {
+    width: 130px;
+    height: 130px;
+    font-size: 4.5rem;
+    top: 180px;
+  }
+
+  .profile-name {
+    font-size: 2.2rem;
+  }
+
+  .profile-bio {
+    font-size: 1.05rem;
+  }
+
+  .profile-location,
+  .profile-active {
+    font-size: 0.95rem;
+  }
+
+  .profile-achievement {
+    padding: 15px 25px;
+  }
+
+  .achievement-text {
+    font-size: 1.05rem;
+  }
+
+  .profile-stats-row {
+    padding: 25px 0;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+
+  /* Profile statistics */
+  .profile-statistics,
+  .profile-topics {
+    padding: 25px;
+  }
+
+  .profile-statistics h3,
+  .profile-topics h3 {
+    font-size: 1.6rem;
+  }
+
+  .topic-progress-item {
+    padding: 20px;
+  }
+
+  .topic-progress-icon {
+    font-size: 2.5rem;
+  }
+
+  .topic-progress-name {
+    font-size: 1.15rem;
+  }
+}
+
+/* Large Desktop - even wider and more spacious */
+@media (min-width: 1200px) {
+  .home-view,
+  .topics-view,
+  .profile-view {
+    max-width: 1400px;
+    padding: 40px 80px;
+  }
+
+  .top-bar {
+    padding: 25px 80px;
+  }
+
+  .bottom-nav {
+    padding: 18px 80px;
+  }
+
+  /* Hero section */
+  .hero-section {
+    padding: 60px 40px 50px;
+  }
+
+  .hero-section h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.5rem;
+  }
+
+  /* Quick start cards - larger */
+  .quick-start-cards {
+    gap: 35px;
+  }
+
+  .quick-start-btn {
+    padding: 35px;
+    min-height: 170px;
+  }
+
+  .quick-icon {
+    font-size: 5rem;
+  }
+
+  .quick-name {
+    font-size: 1.2rem;
+  }
+
+  /* Featured sections */
+  .featured-section,
+  .trending-section {
+    padding: 30px 40px;
+  }
+
+  /* Topic cards - even bigger */
+  .topic-card-small {
+    width: 160px;
+    height: 185px;
+  }
+
+  .topic-icon-small {
+    font-size: 4.5rem;
+  }
+
+  .topic-name-small {
+    font-size: 1.2rem;
+  }
+
+  .topics-scroll-row {
+    gap: 25px;
+    padding: 20px 10px;
+  }
+
+  /* Profile banner */
+  .profile-banner {
+    height: 300px;
+  }
+
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+    font-size: 5rem;
+    top: 220px;
+  }
+}
