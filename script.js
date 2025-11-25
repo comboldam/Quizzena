@@ -3,8 +3,8 @@
 // ========================================
 // IMPORTANT: Replace 'YOUR_CLOUD_NAME' with your actual Cloudinary cloud name!
 // Instructions: See CLOUDINARY_SETUP.md for setup details
-const CLOUDINARY_CLOUD_NAME = 'duuvz88ph';
-const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/`;
+const CLOUDINARY_CLOUD_NAME = 'duuvz86ph';
+const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/capital_images/`;
 const USE_LOCAL_IMAGES = true; // Set to 'true' for local development, 'false' for production CDN
 
 // ========================================
@@ -763,7 +763,7 @@ function startRound() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
 
     // Use Cloudinary CDN or local images based on configuration
-    const imageBase = USE_LOCAL_IMAGES ? './capital_images/' : `${CLOUDINARY_BASE_URL}capitals/`;
+    const imageBase = USE_LOCAL_IMAGES ? './capital_images/' : CLOUDINARY_BASE_URL;
     const finalUrl = `${imageBase}${sanitizedCapital}.jpg`;
 
     // DEBUG: Log the URL being used
@@ -1496,7 +1496,7 @@ function displayUnifiedQuestion() {
     // Use Cloudinary CDN or local images based on configuration
     imageSrc = USE_LOCAL_IMAGES
       ? `./capital_images/${sanitizedCapital}.jpg`
-      : `${CLOUDINARY_BASE_URL}capitals/${sanitizedCapital}.jpg`;
+      : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
     // DEBUG: Log unified quiz system image URL
     console.log('[Unified Quiz] Loading capital image:', imageSrc);
   } else if (currentTopic === 'borders') {
