@@ -1083,15 +1083,6 @@ if (footballGeneralBtn) {
   });
 }
 
-// World History - uses unified system
-const worldHistoryBtn = document.getElementById('world-history-topic-btn');
-if (worldHistoryBtn) {
-  worldHistoryBtn.addEventListener('click', () => {
-    currentTopic = 'world-history';
-    showUnifiedModeSelection('World History', '🌍');
-  });
-}
-
 // Football topics placeholders (excluding football-general which is implemented)
 const footballTopics = [
   'premier-league', 'champions-league', 'world-cup',
