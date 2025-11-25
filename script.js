@@ -369,13 +369,8 @@ twoPlayerBtn.onclick = () => {
   gameMode = 'two';
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
   playerSelect.classList.add("hidden");
-
-  if (currentTopic === 'area') {
-    areaDifficultyScreen.classList.remove("hidden");
-  } else {
-    game.classList.remove("hidden");
-    loadFlags();
-  }
+  game.classList.remove("hidden");
+  loadFlags();
 };
 
 // ========================================
@@ -390,13 +385,8 @@ timeAttackBtn.onclick = () => {
   resetGame();
   gameMode = 'time-attack';
   modeSelect.classList.add("hidden");
-
-  if (currentTopic === 'area') {
-    areaDifficultyScreen.classList.remove("hidden");
-  } else {
-    game.classList.remove("hidden");
-    loadFlags();
-  }
+  game.classList.remove("hidden");
+  loadFlags();
 };
 
 quickGameBtn.onclick = () => {
@@ -404,13 +394,8 @@ quickGameBtn.onclick = () => {
   gameMode = 'quick-game';
   maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
   modeSelect.classList.add("hidden");
-
-  if (currentTopic === 'area') {
-    areaDifficultyScreen.classList.remove("hidden");
-  } else {
-    game.classList.remove("hidden");
-    loadFlags();
-  }
+  game.classList.remove("hidden");
+  loadFlags();
 };
 
 threeStrikesBtn.onclick = () => {
@@ -418,13 +403,8 @@ threeStrikesBtn.onclick = () => {
   gameMode = 'three-strikes';
   livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
   modeSelect.classList.add("hidden");
-
-  if (currentTopic === 'area') {
-    areaDifficultyScreen.classList.remove("hidden");
-  } else {
-    game.classList.remove("hidden");
-    loadFlags();
-  }
+  game.classList.remove("hidden");
+  loadFlags();
 };
 
 // ========================================
@@ -518,6 +498,9 @@ async function loadFlags() {
       originalName: country.name.common
     }));
 } else if (currentTopic === 'area') {
+  // Set default difficulty to medium (no difficulty selection screen)
+  selectedDifficulty = 'medium';
+
   // Check if questions are already generated
   if (areaQuestions[selectedDifficulty].length === 0) {
     await generateAreaQuestions();
@@ -1488,34 +1471,8 @@ function showUnifiedModeSelection(quizName, icon) {
     document.body.appendChild(modeScreen);
   }
 
-  // Show difficulty selection for Area quiz
-  if (currentTopic === 'area') {
-    modeScreen.innerHTML = `
-      <button onclick="exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-      <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
-      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Select Difficulty</h3>
-
-      <button onclick="selectAreaDifficulty('easy')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#4CAF50,#45a049);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(76, 175, 80, 0.4);">
-        <div style="font-size:2em;margin-bottom:5px;">🟢</div>
-        <div style="font-weight:bold;">Easy</div>
-        <div style="font-size:0.9em;opacity:0.9;">10 Largest Countries</div>
-      </button>
-
-      <button onclick="selectAreaDifficulty('medium')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FFA726,#FB8C00);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 167, 38, 0.4);">
-        <div style="font-size:2em;margin-bottom:5px;">🟡</div>
-        <div style="font-weight:bold;">Medium</div>
-        <div style="font-size:0.9em;opacity:0.9;">155 Mid-size Countries</div>
-      </button>
-
-      <button onclick="selectAreaDifficulty('hard')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#EF5350,#E53935);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(239, 83, 80, 0.4);">
-        <div style="font-size:2em;margin-bottom:5px;">🔴</div>
-        <div style="font-weight:bold;">Hard</div>
-        <div style="font-size:0.9em;opacity:0.9;">25 Smallest Countries</div>
-      </button>
-    `;
-  } else {
-    // Show mode selection for other quizzes
-    modeScreen.innerHTML = `
+  // Show mode selection for all quizzes (Area uses medium difficulty by default)
+  modeScreen.innerHTML = `
       <button onclick="exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
       <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
       <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Choose Game Mode</h3>
@@ -1528,7 +1485,6 @@ function showUnifiedModeSelection(quizName, icon) {
 
       <button onclick="startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
     `;
-  }
 
   modeScreen.classList.remove('hidden');
 }
