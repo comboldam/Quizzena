@@ -475,6 +475,25 @@ async function loadFlags() {
     const j = Math.floor(Math.random() * (i + 1));
     [flags[i], flags[j]] = [flags[j], flags[i]];
   }
+} else if (currentTopic === 'world-history') {
+  // Load world history questions from JSON (exact copy of football structure)
+  const response = await fetch('topics/world-history/questions.json');
+  const questions = await response.json();
+
+  // Convert history format to unified format
+  flags = questions.map(q => ({
+    question: q.question,
+    correctAnswer: q.answer,
+    options: q.options,
+    image: q.image, // Add image support
+    type: 'world-history'
+  }));
+
+  // Shuffle the questions
+  for (let i = flags.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flags[i], flags[j]] = [flags[j], flags[i]];
+  }
 }
 
     // Check if using unified system
@@ -1083,6 +1102,15 @@ if (footballGeneralBtn) {
   });
 }
 
+// World History - uses unified system (exact copy of football structure)
+const worldHistoryBtn = document.getElementById('world-history-topic-btn');
+if (worldHistoryBtn) {
+  worldHistoryBtn.addEventListener('click', () => {
+    currentTopic = 'world-history';
+    showUnifiedModeSelection('World History', '🌍');
+  });
+}
+
 // Football topics placeholders (excluding football-general which is implemented)
 const footballTopics = [
   'premier-league', 'champions-league', 'world-cup',
@@ -1449,8 +1477,8 @@ function displayUnifiedQuestion() {
   // Get current question data
   let randomFlag, questionIdentifier;
 
-  if (currentTopic === 'football') {
-    // Football uses different tracking - track by question text
+  if (currentTopic === 'football' || currentTopic === 'world-history') {
+    // Football and history use different tracking - track by question text
     const remaining = flags.filter(f => !usedFlags.includes(f.question));
     if (remaining.length === 0) usedFlags = [];
     randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
@@ -1469,7 +1497,7 @@ function displayUnifiedQuestion() {
 
   // Determine question text
   let questionText = '';
-  if (currentTopic === 'football') {
+  if (currentTopic === 'football' || currentTopic === 'world-history') {
     questionText = randomFlag.question;
   } else if (currentTopic === 'capitals') {
     questionText = `What is the capital of ${randomFlag.country}?`;
@@ -1489,6 +1517,13 @@ function displayUnifiedQuestion() {
   if (currentTopic === 'football') {
     // Football has no image - show football icon instead
     imageHTML = `<div style="font-size:80px;margin:20px 0;">⚽</div>`;
+  } else if (currentTopic === 'world-history') {
+    // History quiz - use image from question data if available, otherwise show history icon
+    if (randomFlag.image) {
+      imageSrc = randomFlag.image;
+    } else {
+      imageHTML = `<div style="font-size:80px;margin:20px 0;">📜</div>`;
+    }
   } else if (currentTopic === 'flags') {
     imageSrc = randomFlag.flag;
   } else if (currentTopic === 'capitals') {
@@ -1516,8 +1551,8 @@ function displayUnifiedQuestion() {
   let options;
   let correctAnswer;
 
-  if (currentTopic === 'football') {
-    // Football already has options in the question data
+  if (currentTopic === 'football' || currentTopic === 'world-history') {
+    // Football and history already have options in the question data
     options = randomFlag.options.map(opt => ({ text: opt }));
     correctAnswer = randomFlag.correctAnswer;
   } else if (currentTopic === 'area') {
@@ -1566,7 +1601,7 @@ function displayUnifiedQuestion() {
     let btnText = '';
     let btnAnswer = '';
 
-    if (currentTopic === 'football') {
+    if (currentTopic === 'football' || currentTopic === 'world-history') {
       btnText = opt.text;
       btnAnswer = opt.text;
     } else if (currentTopic === 'capitals') {
@@ -1592,7 +1627,8 @@ function displayUnifiedQuestion() {
       ${headerInfo}
       ${playerInfo}
       ${scoreDisplay}
-      ${currentTopic === 'football' ? imageHTML : (imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : '')}
+      ${(currentTopic === 'football' || currentTopic === 'world-history') ? imageHTML : (imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : '')}
+      ${currentTopic === 'world-history' && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
       <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
         <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
       </div>
@@ -1722,8 +1758,10 @@ function restartUnifiedQuiz() {
   const topicIcon = currentTopic === 'flags' ? '🏳️' :
                     currentTopic === 'capitals' ? '🏛️' :
                     currentTopic === 'borders' ? '🗺️' :
-                    currentTopic === 'football' ? '⚽' : '📏';
-  const topicName = currentTopic.charAt(0).toUpperCase() + currentTopic.slice(1);
+                    currentTopic === 'football' ? '⚽' :
+                    currentTopic === 'world-history' ? '🌍' : '📏';
+  const topicName = currentTopic === 'world-history' ? 'World History' :
+                    currentTopic.charAt(0).toUpperCase() + currentTopic.slice(1);
   showUnifiedModeSelection(topicName, topicIcon);
 }
 
