@@ -2065,7 +2065,7 @@ footer button:hover {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-bottom: 100px; /* Space for bottom nav */
+  padding-bottom: 140px; /* Extra space for two boxes */
 }
 
 /* Stats Box - Expandable rectangle */
@@ -2189,5 +2189,83 @@ footer button:hover {
 
   .stat-value {
     font-size: 1.2rem;
+  }
+}
+
+/* Second stats box - teal/cyan color for topics */
+#topic-performance-box {
+  background: linear-gradient(145deg, rgba(56, 178, 172, 0.9), rgba(45, 140, 135, 0.9));
+}
+
+#topic-performance-box:hover {
+  box-shadow:
+    0 12px 40px rgba(56, 178, 172, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Topic stats sections */
+.topic-stats {
+  margin-bottom: 25px;
+}
+
+.topic-stats:last-child {
+  margin-bottom: 0;
+}
+
+.topic-stats-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Stats divider between topics */
+.stats-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%);
+  margin: 30px 0;
+}
+
+/* Wrapper for responsive layout */
+.stats-box-content-inner {
+  width: 100%;
+}
+
+/* Make expanded content taller for topics */
+#topic-performance-content.expanded {
+  max-height: 1600px; /* Tall enough for 5 topics */
+}
+
+/* Desktop adjustments for topic stats */
+@media (min-width: 768px) {
+  .topic-stats-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Large desktop - show topics in 2 columns */
+@media (min-width: 1200px) {
+  #topic-performance-content .stats-box-content-inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    column-gap: 50px;
+  }
+
+  .stats-divider {
+    display: none; /* Hide dividers in column layout */
+  }
+
+  .topic-stats {
+    margin-bottom: 0;
+  }
+
+  #topic-performance-content.expanded {
+    max-height: 1000px; /* Shorter when in 2 columns */
   }
 }
