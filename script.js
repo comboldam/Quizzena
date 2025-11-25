@@ -1177,9 +1177,9 @@ logosTopics.forEach(topic => {
   }
 });
 
-// History topics placeholders
+// History topics placeholders (excluding world-history which is implemented)
 const historyTopics = [
-  'world-history', 'ancient-civs', 'egyptian', 'greek-roman', 'medieval',
+  'ancient-civs', 'egyptian', 'greek-roman', 'medieval',
   'ww2', 'ww1', 'cold-war', 'civil-war', 'british-monarchy',
   'roman-empire', 'ottoman-empire', 'crusades', 'explorers', 'industrial-rev',
   'fall-rome', 'silk-road', 'famous-leaders', 'dictators', 'scientists',
