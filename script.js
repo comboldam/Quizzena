@@ -5,7 +5,7 @@
 // Instructions: See CLOUDINARY_SETUP.md for setup details
 const CLOUDINARY_CLOUD_NAME = 'duuvz86ph';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/v1/Quizzena/capital_images/`;
-const USE_LOCAL_IMAGES = true; // Set to 'true' for local development, 'false' for production CDN
+const USE_LOCAL_IMAGES = false; // Set to 'true' for local development, 'false' for production CDN
 
 // ========================================
 // 🎮 GAME STATE VARIABLES
