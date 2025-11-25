@@ -7,7 +7,68 @@
   <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-  
+
+  <!-- WELCOME SCREEN -->
+  <div id="welcome-screen" class="welcome-overlay hidden">
+    <div class="welcome-container">
+      <div class="welcome-logo">🎯</div>
+      <h1 class="welcome-title">Welcome to Quizzena!</h1>
+      <p class="welcome-subtitle">Learn the world, one quiz at a time.</p>
+      <button id="welcome-start-btn" class="welcome-btn">Get Started</button>
+    </div>
+  </div>
+
+  <!-- SETUP SCREEN -->
+  <div id="setup-screen" class="setup-overlay hidden">
+    <div class="setup-container">
+      <h2 class="setup-title">Create Your Profile</h2>
+
+      <div class="setup-section">
+        <label class="setup-label">Username</label>
+        <input type="text" id="setup-username" class="setup-input" placeholder="Enter username" maxlength="15">
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Avatar</label>
+        <div class="avatar-grid" id="avatar-grid">
+          <button class="avatar-btn selected" data-avatar="👤">👤</button>
+          <button class="avatar-btn" data-avatar="👨">👨</button>
+          <button class="avatar-btn" data-avatar="👩">👩</button>
+          <button class="avatar-btn" data-avatar="🧑">🧑</button>
+          <button class="avatar-btn" data-avatar="🎮">🎮</button>
+          <button class="avatar-btn" data-avatar="⚽">⚽</button>
+          <button class="avatar-btn" data-avatar="🦊">🦊</button>
+          <button class="avatar-btn" data-avatar="🐼">🐼</button>
+          <button class="avatar-btn" data-avatar="🤖">🤖</button>
+          <button class="avatar-btn" data-avatar="👽">👽</button>
+          <button class="avatar-btn" data-avatar="🦁">🦁</button>
+          <button class="avatar-btn" data-avatar="🐸">🐸</button>
+        </div>
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Country</label>
+        <select id="setup-country" class="setup-select">
+          <option value="">-- Select --</option>
+          <option value="US">United States</option>
+          <option value="GB">United Kingdom</option>
+          <option value="CA">Canada</option>
+          <option value="AU">Australia</option>
+          <option value="DE">Germany</option>
+          <option value="FR">France</option>
+          <option value="IT">Italy</option>
+          <option value="ES">Spain</option>
+          <option value="BR">Brazil</option>
+          <option value="IN">India</option>
+          <option value="JP">Japan</option>
+          <option value="AZ">Azerbaijan</option>
+        </select>
+      </div>
+
+      <button id="setup-save-btn" class="setup-btn">Save & Start</button>
+    </div>
+  </div>
+
   <!-- ================================ -->
   <!-- 🏠 HOME SCREEN (TOPIC SELECTION) -->
   <!-- ================================ -->
@@ -1531,6 +1592,13 @@
           <div class="topic-progress-xp">450 / 1,200 XP</div>
         </div>
 
+      </div>
+
+      <!-- Reset Data Button (Testing) -->
+      <div style="padding: 20px; text-align: center;">
+        <button class="reset-data-btn" onclick="if(confirm('Reset ALL data?')) resetUserData();">
+          🗑️ Reset Data (Testing)
+        </button>
       </div>
 
     </div>

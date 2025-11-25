@@ -1,3 +1,48 @@
+// ============================================
+// USER DATA SYSTEM
+// ============================================
+
+const defaultUserData = {
+  isSetupComplete: false,
+  profile: {
+    username: "Guest",
+    avatar: "👤",
+    country: "",
+    createdAt: null
+  },
+  stats: {
+    totalGames: 0,
+    totalQuestions: 0,
+    correctAnswers: 0,
+    wrongAnswers: 0,
+    accuracy: 0,
+    bestStreak: 0,
+    totalTimeSeconds: 0,
+    topics: {}
+  }
+};
+
+function loadUserData() {
+  const saved = localStorage.getItem('quizzena_user_data');
+  if (saved) {
+    return JSON.parse(saved);
+  }
+  return JSON.parse(JSON.stringify(defaultUserData));
+}
+
+function saveUserData() {
+  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+}
+
+function resetUserData() {
+  localStorage.removeItem('quizzena_user_data');
+  location.reload();
+}
+
+let userData = loadUserData();
+
+console.log('User Data System loaded:', userData);
+
 // ========================================
 // ☁️ CLOUDINARY CDN CONFIGURATION
 // ========================================
@@ -1912,3 +1957,68 @@ function showLeaderboard() {
   const navLeaderboard = document.getElementById('nav-leaderboard');
   if (navLeaderboard) navLeaderboard.classList.add('active');
 }
+
+// ============================================
+// WELCOME & SETUP LOGIC
+// ============================================
+
+let selectedAvatar = '👤';
+
+function checkFirstTimeUser() {
+  if (!userData.isSetupComplete) {
+    document.getElementById('welcome-screen').classList.remove('hidden');
+  }
+}
+
+// Welcome button
+const welcomeStartBtn = document.getElementById('welcome-start-btn');
+if (welcomeStartBtn) {
+  welcomeStartBtn.onclick = () => {
+    document.getElementById('welcome-screen').classList.add('hidden');
+    document.getElementById('setup-screen').classList.remove('hidden');
+  };
+}
+
+// Avatar selection
+const avatarGrid = document.getElementById('avatar-grid');
+if (avatarGrid) {
+  avatarGrid.onclick = (e) => {
+    if (e.target.classList.contains('avatar-btn')) {
+      document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
+      e.target.classList.add('selected');
+      selectedAvatar = e.target.dataset.avatar;
+    }
+  };
+}
+
+// Save profile
+const setupSaveBtn = document.getElementById('setup-save-btn');
+if (setupSaveBtn) {
+  setupSaveBtn.onclick = () => {
+    userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
+    userData.profile.avatar = selectedAvatar;
+    userData.profile.country = document.getElementById('setup-country').value;
+    userData.profile.createdAt = new Date().toISOString();
+    userData.isSetupComplete = true;
+
+    saveUserData();
+    document.getElementById('setup-screen').classList.add('hidden');
+    updateProfileDisplay();
+    console.log('Profile saved:', userData.profile);
+  };
+}
+
+function updateProfileDisplay() {
+  const topBar = document.querySelector('.user-profile');
+  if (topBar) topBar.textContent = userData.profile.username + ' ' + userData.profile.avatar;
+
+  const avatar = document.querySelector('.profile-avatar');
+  if (avatar) avatar.textContent = userData.profile.avatar;
+
+  const name = document.querySelector('.profile-name');
+  if (name) name.textContent = userData.profile.username;
+}
+
+// Run on page load
+checkFirstTimeUser();
+updateProfileDisplay();
