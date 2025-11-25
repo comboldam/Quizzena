@@ -1187,9 +1187,9 @@ foodTopics.forEach(topic => {
 // ========================================
 
 const navHome = document.getElementById('nav-home');
-const navPlay = document.getElementById('nav-play');
 const navTopics = document.getElementById('nav-topics');
 const navStats = document.getElementById('nav-stats');
+const navLeaderboard = document.getElementById('nav-leaderboard');
 const navProfile = document.getElementById('nav-profile');
 
 const homeView = document.getElementById('home-view');
@@ -1207,6 +1207,9 @@ function showHome() {
   const statsView = document.getElementById('stats-view');
   if (statsView) statsView.classList.add('hidden');
 
+  const leaderboardView = document.getElementById('leaderboard-view');
+  if (leaderboardView) leaderboardView.classList.add('hidden');
+
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navHome.classList.add('active');
@@ -1221,6 +1224,9 @@ function showTopics() {
   const statsView = document.getElementById('stats-view');
   if (statsView) statsView.classList.add('hidden');
 
+  const leaderboardView = document.getElementById('leaderboard-view');
+  if (leaderboardView) leaderboardView.classList.add('hidden');
+
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navTopics.classList.add('active');
@@ -1234,6 +1240,9 @@ function showProfile() {
 
   const statsView = document.getElementById('stats-view');
   if (statsView) statsView.classList.add('hidden');
+
+  const leaderboardView = document.getElementById('leaderboard-view');
+  if (leaderboardView) leaderboardView.classList.add('hidden');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -1256,9 +1265,9 @@ if (browseAllBtn) {
   });
 }
 
-// Placeholder for other nav items - using addEventListener for iOS compatibility
-navPlay.addEventListener('click', () => {
-  alert('Quick Play coming soon! 🎮');
+// Leaderboard button - using addEventListener for iOS compatibility
+navLeaderboard.addEventListener('click', () => {
+  showLeaderboard();
 });
 
 navStats.addEventListener('click', () => {
@@ -1740,11 +1749,13 @@ function showStats() {
   const topicsView = document.getElementById('topics-view');
   const profileView = document.getElementById('profile-view');
   const statsView = document.getElementById('stats-view');
+  const leaderboardView = document.getElementById('leaderboard-view');
 
   if (homeView) homeView.classList.add('hidden');
   if (topicsView) topicsView.classList.add('hidden');
   if (profileView) profileView.classList.add('hidden');
   if (statsView) statsView.classList.remove('hidden');
+  if (leaderboardView) leaderboardView.classList.add('hidden');
 
   // Update nav active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -1815,3 +1826,28 @@ function searchTopic(query) {
   }
 }
 
+
+// ========================================
+// 🏆 LEADERBOARD PAGE FUNCTIONS
+// ========================================
+
+// Show Leaderboard screen
+function showLeaderboard() {
+  // Hide all views
+  const homeView = document.getElementById('home-view');
+  const topicsView = document.getElementById('topics-view');
+  const profileView = document.getElementById('profile-view');
+  const statsView = document.getElementById('stats-view');
+  const leaderboardView = document.getElementById('leaderboard-view');
+
+  if (homeView) homeView.classList.add('hidden');
+  if (topicsView) topicsView.classList.add('hidden');
+  if (profileView) profileView.classList.add('hidden');
+  if (statsView) statsView.classList.add('hidden');
+  if (leaderboardView) leaderboardView.classList.remove('hidden');
+
+  // Update nav active state
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  const navLeaderboard = document.getElementById('nav-leaderboard');
+  if (navLeaderboard) navLeaderboard.classList.add('active');
+}
