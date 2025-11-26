@@ -17,7 +17,9 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git merge:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(node --check:*)",
+      "Bash(node -e:*)"
     ],
     "deny": [],
     "ask": []

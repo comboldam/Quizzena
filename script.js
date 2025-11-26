@@ -441,8 +441,10 @@ areaHardBtn.onclick = () => {
 // ========================================
 backToMenuBtn.onclick = () => {
   // Save stats before exiting (completed = false because user quit early)
-  if (currentTopic === 'flags') {
-    saveQuizStats('flags', false);
+  // This applies to all tracked topics - stats won't be saved for early exits
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+  if (trackedTopics.includes(currentTopic)) {
+    saveQuizStats(currentTopic, false);
   }
 
   resetGame();
@@ -538,6 +540,44 @@ async function loadFlags() {
     options: q.options,
     image: q.image, // Add image support
     type: 'world-history'
+  }));
+
+  // Shuffle the questions
+  for (let i = flags.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flags[i], flags[j]] = [flags[j], flags[i]];
+  }
+} else if (currentTopic === 'movies') {
+  // Load movies questions from JSON
+  const response = await fetch('topics/movies-general/questions.json');
+  const questions = await response.json();
+
+  // Convert movies format to unified format
+  flags = questions.map(q => ({
+    question: q.question,
+    correctAnswer: q.answer,
+    options: q.options,
+    image: q.image, // Add image support (optional)
+    type: 'movies'
+  }));
+
+  // Shuffle the questions
+  for (let i = flags.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flags[i], flags[j]] = [flags[j], flags[i]];
+  }
+} else if (currentTopic === 'marvel') {
+  // Load Marvel movies questions from JSON
+  const response = await fetch('topics/marvel-movies/questions.json');
+  const questions = await response.json();
+
+  // Convert marvel format to unified format
+  flags = questions.map(q => ({
+    question: q.question,
+    correctAnswer: q.answer,
+    options: q.options,
+    image: q.image, // Add image support (optional)
+    type: 'marvel'
   }));
 
   // Shuffle the questions
@@ -761,8 +801,11 @@ function startTimer(correctAnswer) {
 function handleTimeout(correctAnswer) {
   answered = true;
 
-  // Track timeout as wrong answer for Flags
-  if (currentTopic === 'flags') {
+  // List of topics that track stats
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+
+  // Track timeout as wrong answer for all supported topics
+  if (trackedTopics.includes(currentTopic)) {
     currentSessionWrong++;
     currentStreak = 0;
   }
@@ -983,12 +1026,15 @@ function generateBaitAnswers(correctFlag) {
 function checkAnswer(selected, correct) {
   if (answered) return;
   
+  // List of topics that track stats
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+
   if (gameMode === 'time-attack') {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
         currentStreak++;
         if (currentStreak > bestSessionStreak) {
@@ -997,8 +1043,8 @@ function checkAnswer(selected, correct) {
       }
     } else {
       resultBox.textContent = `❌ Wrong!`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
         currentStreak = 0;
       }
@@ -1018,8 +1064,8 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
         currentStreak++;
         if (currentStreak > bestSessionStreak) {
@@ -1028,8 +1074,8 @@ function checkAnswer(selected, correct) {
       }
     } else {
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
         currentStreak = 0;
       }
@@ -1048,8 +1094,8 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
         currentStreak++;
         if (currentStreak > bestSessionStreak) {
@@ -1060,8 +1106,8 @@ function checkAnswer(selected, correct) {
       livesRemaining--;
       timerDisplay.textContent = `❤️ Lives: ${livesRemaining}`;
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
         currentStreak = 0;
       }
@@ -1090,8 +1136,8 @@ function checkAnswer(selected, correct) {
       if (currentPlayer === 1) player1Score += points;
       else player2Score += points;
       resultBox.textContent = `✅ Correct! +${points} points`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
         currentStreak++;
         if (currentStreak > bestSessionStreak) {
@@ -1100,8 +1146,8 @@ function checkAnswer(selected, correct) {
       }
     } else {
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
-      // Track stats for Flags quiz
-      if (currentTopic === 'flags') {
+      // Track stats for all supported topics
+      if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
         currentStreak = 0;
       }
@@ -1130,8 +1176,9 @@ function endGame() {
   gameEnded = true;
 
   // SAVE STATS FIRST (completed = true because quiz finished naturally)
-  if (currentTopic === 'flags') {
-    saveQuizStats('flags', true);
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+  if (trackedTopics.includes(currentTopic)) {
+    saveQuizStats(currentTopic, true);
   }
 
   clearInterval(timer);
@@ -1233,6 +1280,24 @@ if (worldHistoryBtn) {
   });
 }
 
+// Movies General - uses unified system
+const moviesGeneralBtn = document.getElementById('movies-general-topic-btn');
+if (moviesGeneralBtn) {
+  moviesGeneralBtn.addEventListener('click', () => {
+    currentTopic = 'movies';
+    showUnifiedModeSelection('Movies', '🎬');
+  });
+}
+
+// Marvel Movies - uses unified system
+const marvelMoviesBtn = document.getElementById('marvel-movies-topic-btn');
+if (marvelMoviesBtn) {
+  marvelMoviesBtn.addEventListener('click', () => {
+    currentTopic = 'marvel';
+    showUnifiedModeSelection('Marvel', '🦸');
+  });
+}
+
 // Football topics placeholders (excluding football-general which is implemented)
 const footballTopics = [
   'premier-league', 'champions-league', 'world-cup',
@@ -1253,7 +1318,7 @@ footballTopics.forEach(topic => {
 
 // Movies topics placeholders
 const moviesTopics = [
-  'movies-general', 'marvel-movies', 'dc-movies', 'harry-potter', 'star-wars', 'lotr',
+  'dc-movies', 'harry-potter', 'star-wars', 'lotr',
   'disney-movies', 'pixar-movies', 'animated-movies', 'horror-movies',
   'action-movies', 'scifi-movies', 'comedy-movies', 'thriller-movies',
   'classic-movies', 'movie-quotes', 'movie-villains'
@@ -1575,8 +1640,8 @@ function displayUnifiedQuestion() {
   // Get current question data
   let randomFlag, questionIdentifier;
 
-  if (currentTopic === 'football' || currentTopic === 'world-history') {
-    // Football and history use different tracking - track by question text
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel') {
+    // Football, history, movies, and marvel use different tracking - track by question text
     const remaining = flags.filter(f => !usedFlags.includes(f.question));
     if (remaining.length === 0) usedFlags = [];
     randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
@@ -1595,7 +1660,7 @@ function displayUnifiedQuestion() {
 
   // Determine question text
   let questionText = '';
-  if (currentTopic === 'football' || currentTopic === 'world-history') {
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel') {
     questionText = randomFlag.question;
   } else if (currentTopic === 'capitals') {
     questionText = `What is the capital of ${randomFlag.country}?`;
@@ -1621,6 +1686,20 @@ function displayUnifiedQuestion() {
       imageSrc = randomFlag.image;
     } else {
       imageHTML = `<div style="font-size:80px;margin:20px 0;">📜</div>`;
+    }
+  } else if (currentTopic === 'movies') {
+    // Movies quiz - use image from question data if available, otherwise show movie icon
+    if (randomFlag.image) {
+      imageSrc = randomFlag.image;
+    } else {
+      imageHTML = `<div style="font-size:80px;margin:20px 0;">🎬</div>`;
+    }
+  } else if (currentTopic === 'marvel') {
+    // Marvel quiz - use image from question data if available, otherwise show superhero icon
+    if (randomFlag.image) {
+      imageSrc = randomFlag.image;
+    } else {
+      imageHTML = `<div style="font-size:80px;margin:20px 0;">🦸</div>`;
     }
   } else if (currentTopic === 'flags') {
     imageSrc = randomFlag.flag;
@@ -1649,8 +1728,8 @@ function displayUnifiedQuestion() {
   let options;
   let correctAnswer;
 
-  if (currentTopic === 'football' || currentTopic === 'world-history') {
-    // Football and history already have options in the question data
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel') {
+    // Football, history, movies, and marvel already have options in the question data
     options = randomFlag.options.map(opt => ({ text: opt }));
     correctAnswer = randomFlag.correctAnswer;
   } else if (currentTopic === 'area') {
@@ -1699,7 +1778,7 @@ function displayUnifiedQuestion() {
     let btnText = '';
     let btnAnswer = '';
 
-    if (currentTopic === 'football' || currentTopic === 'world-history') {
+    if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel') {
       btnText = opt.text;
       btnAnswer = opt.text;
     } else if (currentTopic === 'capitals') {
@@ -1725,8 +1804,11 @@ function displayUnifiedQuestion() {
       ${headerInfo}
       ${playerInfo}
       ${scoreDisplay}
-      ${(currentTopic === 'football' || currentTopic === 'world-history') ? imageHTML : (imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : '')}
-      ${currentTopic === 'world-history' && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
+      ${currentTopic === 'football' ? imageHTML : ''}
+      ${currentTopic === 'world-history' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">📜</div></div>` : imageHTML) : ''}
+      ${currentTopic === 'movies' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">🎬</div></div>` : imageHTML) : ''}
+      ${currentTopic === 'marvel' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">🦸</div></div>` : imageHTML) : ''}
+      ${(currentTopic !== 'football' && currentTopic !== 'world-history' && currentTopic !== 'movies' && currentTopic !== 'marvel') && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
       <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
         <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
       </div>
@@ -1750,6 +1832,9 @@ function checkUnifiedAnswer(selected, correct) {
   if (answered) return;
   answered = true;
 
+  // List of topics that track stats
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+
   const buttons = document.querySelectorAll('.unified-option-btn');
   buttons.forEach(btn => {
     btn.onclick = null;
@@ -1772,8 +1857,8 @@ function checkUnifiedAnswer(selected, correct) {
     } else {
       singlePlayerScore++;
     }
-    // Track stats for Flags quiz
-    if (currentTopic === 'flags') {
+    // Track stats for all supported topics
+    if (trackedTopics.includes(currentTopic)) {
       currentSessionCorrect++;
       currentStreak++;
       if (currentStreak > bestSessionStreak) {
@@ -1789,8 +1874,8 @@ function checkUnifiedAnswer(selected, correct) {
         return;
       }
     }
-    // Track stats for Flags quiz
-    if (currentTopic === 'flags') {
+    // Track stats for all supported topics
+    if (trackedTopics.includes(currentTopic)) {
       currentSessionWrong++;
       currentStreak = 0;
     }
@@ -1822,8 +1907,9 @@ function checkUnifiedAnswer(selected, correct) {
 // Show unified results screen
 function showUnifiedResults() {
   // SAVE STATS FIRST (completed = true because quiz finished naturally)
-  if (currentTopic === 'flags') {
-    saveQuizStats('flags', true);
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+  if (trackedTopics.includes(currentTopic)) {
+    saveQuizStats(currentTopic, true);
   }
 
   clearInterval(timer);
@@ -1886,8 +1972,10 @@ function restartUnifiedQuiz() {
 // Exit quiz
 function exitUnifiedQuiz() {
   // Save stats before exiting (completed = false because user quit early)
-  if (currentTopic === 'flags') {
-    saveQuizStats('flags', false);
+  // This applies to all tracked topics - stats won't be saved for early exits
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+  if (trackedTopics.includes(currentTopic)) {
+    saveQuizStats(currentTopic, false);
   }
 
   const quizScreen = document.getElementById('unified-quiz-screen');
@@ -1985,17 +2073,60 @@ function showStats() {
   const statTotalTime = document.getElementById('stat-total-time');
   if (statTotalTime) statTotalTime.textContent = `${minutes}m ${seconds}s`;
 
-  // Update Most Played section - Flags card (Card 1)
-  const flagsStats = userData.stats.topics.flags || { games: 0, accuracy: 0, bestStreak: 0 };
-  const flagsCard = document.querySelector('#most-played-content .most-played-card:nth-child(1)');
-  if (flagsCard) {
-    const miniStatValues = flagsCard.querySelectorAll('.mini-stat-value');
-    if (miniStatValues[0]) miniStatValues[0].textContent = flagsStats.games || 0;
-    if (miniStatValues[1]) miniStatValues[1].textContent = (flagsStats.accuracy || 0) + '%';
-    if (miniStatValues[2]) miniStatValues[2].textContent = flagsStats.bestStreak || 0;
+  // Update Most Played section - dynamically sorted by games played
+  const topicDefinitions = [
+    { id: 'area', name: 'Area', icon: '📏' },
+    { id: 'capitals', name: 'Capitals', icon: '🏛️' },
+    { id: 'flags', name: 'Flags', icon: '🏳️' },
+    { id: 'football', name: 'Football General', icon: '⚽' },
+    { id: 'marvel', name: 'Marvel Movies', icon: '🦸' },
+    { id: 'movies', name: 'Movies General', icon: '🎬' },
+    { id: 'world-history', name: 'World History', icon: '📜' }
+  ];
+
+  // Get stats for each topic and sort by games played (descending), then alphabetically
+  const topicsWithStats = topicDefinitions.map(topic => {
+    const stats = userData.stats.topics[topic.id] || { games: 0, accuracy: 0, bestStreak: 0 };
+    return {
+      ...topic,
+      games: stats.games || 0,
+      accuracy: stats.accuracy || 0,
+      bestStreak: stats.bestStreak || 0
+    };
+  });
+
+  // Sort: by games (descending), then by name (alphabetically) for ties
+  topicsWithStats.sort((a, b) => {
+    if (b.games !== a.games) return b.games - a.games;
+    return a.name.localeCompare(b.name);
+  });
+
+  // Update the 3 Most Played cards
+  const mostPlayedCards = document.querySelectorAll('#most-played-content .most-played-card:not(.search-card)');
+  for (let i = 0; i < 3 && i < mostPlayedCards.length; i++) {
+    const card = mostPlayedCards[i];
+    const topic = topicsWithStats[i];
+
+    // Update rank
+    const rankEl = card.querySelector('.most-played-rank');
+    if (rankEl) rankEl.textContent = i + 1;
+
+    // Update icon
+    const iconEl = card.querySelector('.most-played-icon');
+    if (iconEl) iconEl.textContent = topic.icon;
+
+    // Update name
+    const nameEl = card.querySelector('.most-played-name');
+    if (nameEl) nameEl.textContent = topic.name;
+
+    // Update stats
+    const miniStatValues = card.querySelectorAll('.mini-stat-value');
+    if (miniStatValues[0]) miniStatValues[0].textContent = topic.games;
+    if (miniStatValues[1]) miniStatValues[1].textContent = topic.accuracy + '%';
+    if (miniStatValues[2]) miniStatValues[2].textContent = topic.bestStreak;
   }
 
-  console.log('Stats page populated:', { totalGames, totalQuestions, accuracy, bestStreak });
+  console.log('Stats page populated:', { totalGames, totalQuestions, accuracy, bestStreak, topicsWithStats });
 }
 
 // ========================================
@@ -2008,7 +2139,10 @@ const availableTopics = {
   'capitals': { icon: '🏛️', name: 'Capitals' },
   'borders': { icon: '🗺️', name: 'Borders' },
   'area': { icon: '📏', name: 'Area' },
-  'football': { icon: '⚽', name: 'Football' }
+  'football': { icon: '⚽', name: 'Football General' },
+  'marvel': { icon: '🦸', name: 'Marvel Movies' },
+  'movies': { icon: '🎬', name: 'Movies General' },
+  'world-history': { icon: '📜', name: 'World History' }
 };
 
 function searchTopic(query) {
@@ -2022,32 +2156,40 @@ function searchTopic(query) {
 
   // Search for matching topic
   const lowerQuery = query.toLowerCase().trim();
-  let found = null;
+  let foundKey = null;
+  let foundTopic = null;
 
   for (const [key, topic] of Object.entries(availableTopics)) {
     if (key.includes(lowerQuery) || topic.name.toLowerCase().includes(lowerQuery)) {
-      found = topic;
+      foundKey = key;
+      foundTopic = topic;
       break;
     }
   }
 
-  if (found) {
-    // Show found topic with stats (all 0 for now)
+  if (foundTopic) {
+    // Get real stats for this topic from userData
+    const topicStats = userData.stats.topics[foundKey] || { games: 0, accuracy: 0, bestStreak: 0 };
+    const games = topicStats.games || 0;
+    const accuracy = topicStats.accuracy || 0;
+    const bestStreak = topicStats.bestStreak || 0;
+
+    // Show found topic with real stats
     searchResult.innerHTML = `
       <div class="search-result-found">Found:</div>
-      <div class="search-result-topic">${found.icon} ${found.name}</div>
+      <div class="search-result-topic">${foundTopic.icon} ${foundTopic.name}</div>
       <div class="search-result-stats">
         <div class="mini-stat">
           <span class="mini-stat-label">Games</span>
-          <span class="mini-stat-value">0</span>
+          <span class="mini-stat-value">${games}</span>
         </div>
         <div class="mini-stat">
           <span class="mini-stat-label">Accuracy</span>
-          <span class="mini-stat-value">0%</span>
+          <span class="mini-stat-value">${accuracy}%</span>
         </div>
         <div class="mini-stat">
           <span class="mini-stat-label">Best</span>
-          <span class="mini-stat-value">0</span>
+          <span class="mini-stat-value">${bestStreak}</span>
         </div>
       </div>
     `;
@@ -2190,8 +2332,9 @@ function saveQuizStats(topicId, completed) {
     return;
   }
 
-  // Only save for flags quiz for now
-  if (topicId !== 'flags') return;
+  // List of supported topics for stats tracking
+  const supportedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel'];
+  if (!supportedTopics.includes(topicId)) return;
 
   // Initialize topic stats if not exists
   if (!userData.stats.topics[topicId]) {
@@ -2219,13 +2362,19 @@ function saveQuizStats(topicId, completed) {
   const totalAnswers = topic.correct + topic.wrong;
   topic.accuracy = totalAnswers > 0 ? Math.round((topic.correct / totalAnswers) * 100) : 0;
 
-  // Update best streak
+  // Update best streak for this topic
   if (bestSessionStreak > topic.bestStreak) {
     topic.bestStreak = bestSessionStreak;
   }
-  if (bestSessionStreak > userData.stats.bestStreak) {
-    userData.stats.bestStreak = bestSessionStreak;
+
+  // Update global best streak (highest across ALL topics)
+  let highestBestStreak = 0;
+  for (const tid of supportedTopics) {
+    if (userData.stats.topics[tid] && userData.stats.topics[tid].bestStreak > highestBestStreak) {
+      highestBestStreak = userData.stats.topics[tid].bestStreak;
+    }
   }
+  userData.stats.bestStreak = highestBestStreak;
 
   // Update global stats
   userData.stats.correctAnswers += currentSessionCorrect;
