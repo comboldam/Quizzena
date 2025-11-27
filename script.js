@@ -73,6 +73,7 @@ const TOPIC_CONFIG = {
   'egyptian':         { path: 'topics/egyptian/questions.json', icon: '🔺', name: 'Ancient Egypt', category: 'history' },
   'roman-empire':     { path: 'topics/roman-empire/questions.json', icon: '🏛️', name: 'Roman Empire', category: 'history' },
   'ottoman':          { path: 'topics/ottoman/questions.json', icon: '🕌', name: 'Ottoman Empire', category: 'history' },
+  'british-monarchy': { path: 'topics/british-monarchy/questions.json', icon: '👑', name: 'British Monarchy', category: 'history' },
 
   // Movies (JSON-based)
   'movies':           { path: 'topics/movies-general/questions.json', icon: '🎬', name: 'Movies', category: 'movies' },
@@ -1362,7 +1363,7 @@ logosTopics.forEach(topic => {
 // History topics placeholders (excluding world-history, ancient-civs, ww2 which are implemented)
 const historyTopics = [
   'greek-roman', 'medieval',
-  'cold-war', 'civil-war', 'british-monarchy',
+  'cold-war', 'civil-war',
   'crusades', 'explorers', 'industrial-rev',
   'fall-rome', 'silk-road', 'famous-leaders', 'dictators', 'scientists',
   'inventors', 'historical-maps', 'battles', 'timeline', 'archaeology'
