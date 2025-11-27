@@ -197,5 +197,6 @@
   {"question": "What animated show features Randy Marsh prominently?", "options": ["South Park", "Family Guy", "American Dad", "King of the Hill"], "answer": "South Park", "category": "animated"},
   {"question": "Which show is based on Margaret Atwood's dystopian novel?", "options": ["The Handmaid's Tale", "Brave New World", "1984", "The Man in the High Castle"], "answer": "The Handmaid's Tale", "category": "drama"},
   {"question": "What is the name of the android in Westworld played by Evan Rachel Wood?", "options": ["Dolores", "Maeve", "Clementine", "Angela"], "answer": "Dolores", "category": "sci-fi"},
-  {"question": "Who plays Geralt in The Witcher starting Season 4?", "options": ["Liam Hemsworth", "Henry Cavill", "Chris Hemsworth", "Jason Momoa"], "answer": "Liam Hemsworth", "category": "actors"}
+  {"question": "Who plays Geralt in The Witcher starting Season 4?", "options": ["Liam Hemsworth", "Henry Cavill", "Chris Hemsworth", "Jason Momoa"], "answer": "Liam Hemsworth", "category": "actors"},
+  {"question": "Which show features a group of strangers waking up on a train with no memory?", "options": ["Snowpiercer", "Dark", "Westworld", "Lost"], "answer": "Snowpiercer", "category": "sci-fi"}
 ]
