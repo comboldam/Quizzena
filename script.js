@@ -74,6 +74,7 @@ const TOPIC_CONFIG = {
   'movies':           { path: 'topics/movies-general/questions.json', icon: '🎬', name: 'Movies', category: 'movies' },
   'marvel':           { path: 'topics/marvel-movies/questions.json', icon: '🦸', name: 'Marvel', category: 'movies' },
   'dc':               { path: 'topics/dc/questions.json', icon: '🦇', name: 'DC', category: 'movies' },
+  'harry-potter':     { path: 'topics/harry-potter/questions.json', icon: '⚡', name: 'Harry Potter', category: 'movies' },
 
   // TV Shows (JSON-based)
   'tv-shows':         { path: 'topics/tv-shows/questions.json', icon: '📺', name: 'TV Shows', category: 'tv-shows' },
@@ -1300,9 +1301,9 @@ footballTopics.forEach(topic => {
   }
 });
 
-// Movies topics placeholders (excluding dc which is implemented)
+// Movies topics placeholders (excluding dc, harry-potter which are implemented)
 const moviesTopics = [
-  'harry-potter', 'star-wars', 'lotr',
+  'star-wars', 'lotr',
   'disney-movies', 'pixar-movies', 'animated-movies', 'horror-movies',
   'action-movies', 'scifi-movies', 'comedy-movies', 'thriller-movies',
   'classic-movies', 'movie-quotes', 'movie-villains'

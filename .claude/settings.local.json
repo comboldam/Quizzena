@@ -21,7 +21,15 @@
       "Bash(node --check:*)",
       "Bash(node -e:*)",
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" add .)",
-      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd DC quiz with 200 questions\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd DC quiz with 200 questions\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" push origin dev)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" checkout main)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" merge dev)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" push origin main)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" checkout dev)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" stash)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" stash pop)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd Harry Potter quiz with 200 questions\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
