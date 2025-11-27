@@ -1084,5 +1084,119 @@
     "answer": "Ludendorff Bridge at Remagen",
     "options": ["Bridge at Arnhem", "Ludendorff Bridge at Remagen", "Nijmegen Bridge", "Bridge at Cologne"],
     "category": "general"
+  },
+  {
+    "question": "What was the code name for the German offensive in the Ardennes in December 1944?",
+    "answer": "Watch on the Rhine",
+    "options": ["Watch on the Rhine", "Operation Nordwind", "Case White", "Fall Gelb"],
+    "category": "battles"
+  },
+  {
+    "question": "Which country had the largest army at the start of World War II?",
+    "answer": "Soviet Union",
+    "options": ["Germany", "Soviet Union", "France", "Japan"],
+    "category": "general"
+  },
+  {
+    "question": "What was the name of the German air force?",
+    "answer": "Luftwaffe",
+    "options": ["Wehrmacht", "Luftwaffe", "Kriegsmarine", "Waffen-SS"],
+    "category": "general"
+  },
+  {
+    "question": "Who was the British Field Marshal known for his beret and ego?",
+    "answer": "Bernard Montgomery",
+    "options": ["Bernard Montgomery", "Harold Alexander", "Alan Brooke", "Archibald Wavell"],
+    "category": "leaders"
+  },
+  {
+    "question": "What was the name of Hitler's mountain retreat in Bavaria?",
+    "answer": "Berghof (Eagle's Nest area)",
+    "options": ["Wolf's Lair", "Berghof (Eagle's Nest area)", "Führerbunker", "Adlerhorst"],
+    "category": "general"
+  },
+  {
+    "question": "Which battle saw the first large-scale use of paratroopers by Germany?",
+    "answer": "Battle of Crete",
+    "options": ["Battle of France", "Battle of Crete", "Operation Market Garden", "D-Day"],
+    "category": "battles"
+  },
+  {
+    "question": "What country did Germany invade on April 9, 1940, along with Norway?",
+    "answer": "Denmark",
+    "options": ["Netherlands", "Belgium", "Denmark", "Poland"],
+    "category": "timeline"
+  },
+  {
+    "question": "What was the German navy called?",
+    "answer": "Kriegsmarine",
+    "options": ["Luftwaffe", "Wehrmacht", "Kriegsmarine", "Bundesmarine"],
+    "category": "general"
+  },
+  {
+    "question": "Who was the Soviet general who led the defense of Stalingrad?",
+    "answer": "Vasily Chuikov",
+    "options": ["Georgy Zhukov", "Vasily Chuikov", "Konstantin Rokossovsky", "Ivan Konev"],
+    "category": "leaders"
+  },
+  {
+    "question": "What conference in 1943 saw Roosevelt and Churchill meet in North Africa?",
+    "answer": "Casablanca Conference",
+    "options": ["Yalta Conference", "Tehran Conference", "Casablanca Conference", "Potsdam Conference"],
+    "category": "alliances"
+  },
+  {
+    "question": "What was the name of the Japanese attack strategy using suicide pilots?",
+    "answer": "Kamikaze",
+    "options": ["Banzai", "Kamikaze", "Bushido", "Gyokusai"],
+    "category": "pacific"
+  },
+  {
+    "question": "Which Pacific island was nicknamed 'The Rock' by American soldiers?",
+    "answer": "Corregidor",
+    "options": ["Iwo Jima", "Okinawa", "Corregidor", "Guadalcanal"],
+    "category": "pacific"
+  },
+  {
+    "question": "What was the main rifle used by German infantry?",
+    "answer": "Karabiner 98k",
+    "options": ["StG 44", "Karabiner 98k", "MP 40", "Gewehr 43"],
+    "category": "weapons"
+  },
+  {
+    "question": "Who commanded the German forces at the Battle of the Bulge?",
+    "answer": "Gerd von Rundstedt",
+    "options": ["Erwin Rommel", "Gerd von Rundstedt", "Heinz Guderian", "Walter Model"],
+    "category": "leaders"
+  },
+  {
+    "question": "What was the Holocaust also known as in Hebrew?",
+    "answer": "Shoah",
+    "options": ["Shoah", "Nakba", "Aliyah", "Pogrom"],
+    "category": "holocaust"
+  },
+  {
+    "question": "Which Allied operation liberated the Philippines in 1944-45?",
+    "answer": "Operation Musketeer",
+    "options": ["Operation Cartwheel", "Operation Musketeer", "Battle of Leyte", "Operation Iceberg"],
+    "category": "pacific"
+  },
+  {
+    "question": "What type of warfare characterized the Eastern Front?",
+    "answer": "War of annihilation",
+    "options": ["Trench warfare", "War of annihilation", "Island hopping", "Guerrilla warfare"],
+    "category": "european"
+  },
+  {
+    "question": "Who was the American general known as 'Ike'?",
+    "answer": "Dwight D. Eisenhower",
+    "options": ["Douglas MacArthur", "George Patton", "Dwight D. Eisenhower", "Omar Bradley"],
+    "category": "leaders"
+  },
+  {
+    "question": "What was the first German city to be captured by Allied forces?",
+    "answer": "Aachen",
+    "options": ["Berlin", "Cologne", "Aachen", "Munich"],
+    "category": "european"
   }
 ]
