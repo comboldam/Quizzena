@@ -73,6 +73,9 @@ const TOPIC_CONFIG = {
   // Movies (JSON-based)
   'movies':           { path: 'topics/movies-general/questions.json', icon: '🎬', name: 'Movies', category: 'movies' },
   'marvel':           { path: 'topics/marvel-movies/questions.json', icon: '🦸', name: 'Marvel', category: 'movies' },
+
+  // TV Shows (JSON-based)
+  'tv-shows':         { path: 'topics/tv-shows/questions.json', icon: '📺', name: 'TV Shows', category: 'tv-shows' },
 };
 
 // Auto-generated arrays from config (NO MORE MANUAL UPDATES EVER!)
@@ -1260,6 +1263,8 @@ JSON_TOPICS.forEach(topicId => {
     btnId = 'movies-general-topic-btn';
   } else if (topicId === 'marvel') {
     btnId = 'marvel-movies-topic-btn';
+  } else if (topicId === 'tv-shows') {
+    btnId = 'tv-general-topic-btn';
   } else {
     btnId = `${topicId}-topic-btn`;
   }
@@ -1308,9 +1313,9 @@ moviesTopics.forEach(topic => {
   }
 });
 
-// TV Shows topics placeholders
+// TV Shows topics placeholders (excluding tv-general which is implemented as tv-shows)
 const tvTopics = [
-  'tv-general', 'sitcoms', 'drama-tv', 'thriller-tv',
+  'sitcoms', 'drama-tv', 'thriller-tv',
   'comedy-tv', 'fantasy-tv', 'crime-tv', 'animated-tv'
 ];
 
