@@ -76,6 +76,7 @@ const TOPIC_CONFIG = {
 
   // TV Shows (JSON-based)
   'tv-shows':         { path: 'topics/tv-shows/questions.json', icon: '📺', name: 'TV Shows', category: 'tv-shows' },
+  'sitcoms':          { path: 'topics/sitcoms/questions.json', icon: '😂', name: 'Sitcoms', category: 'tv-shows' },
 };
 
 // Auto-generated arrays from config (NO MORE MANUAL UPDATES EVER!)
@@ -1313,9 +1314,9 @@ moviesTopics.forEach(topic => {
   }
 });
 
-// TV Shows topics placeholders (excluding tv-general which is implemented as tv-shows)
+// TV Shows topics placeholders (excluding tv-general, sitcoms which are implemented)
 const tvTopics = [
-  'sitcoms', 'drama-tv', 'thriller-tv',
+  'drama-tv', 'thriller-tv',
   'comedy-tv', 'fantasy-tv', 'crime-tv', 'animated-tv'
 ];
 
