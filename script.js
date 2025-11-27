@@ -442,7 +442,7 @@ areaHardBtn.onclick = () => {
 backToMenuBtn.onclick = () => {
   // Save stats before exiting (completed = false because user quit early)
   // This applies to all tracked topics - stats won't be saved for early exits
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
@@ -680,6 +680,25 @@ async function loadFlags() {
     const j = Math.floor(Math.random() * (i + 1));
     [flags[i], flags[j]] = [flags[j], flags[i]];
   }
+} else if (currentTopic === 'derbies') {
+  // Load Derbies questions from JSON
+  const response = await fetch('topics/derbies/questions.json');
+  const questions = await response.json();
+
+  // Convert derbies format to unified format
+  flags = questions.map(q => ({
+    question: q.question,
+    correctAnswer: q.answer,
+    options: q.options,
+    image: q.image,
+    type: 'derbies'
+  }));
+
+  // Shuffle the questions
+  for (let i = flags.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [flags[i], flags[j]] = [flags[j], flags[i]];
+  }
 }
 
     // Check if using unified system
@@ -897,7 +916,7 @@ function handleTimeout(correctAnswer) {
   answered = true;
 
   // List of topics that track stats
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
 
   // Track timeout as wrong answer for all supported topics
   if (trackedTopics.includes(currentTopic)) {
@@ -1122,7 +1141,7 @@ function checkAnswer(selected, correct) {
   if (answered) return;
   
   // List of topics that track stats
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
 
   if (gameMode === 'time-attack') {
     if (selected === correct) {
@@ -1271,7 +1290,7 @@ function endGame() {
   gameEnded = true;
 
   // SAVE STATS FIRST (completed = true because quiz finished naturally)
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, true);
   }
@@ -1436,12 +1455,20 @@ if (ronaldoBtn) {
   });
 }
 
-// Football topics placeholders (excluding football-general, premier-league, champions-league, world-cup, messi, and ronaldo which are implemented)
+const derbiesBtn = document.getElementById('derbies-topic-btn');
+if (derbiesBtn) {
+  derbiesBtn.addEventListener('click', () => {
+    currentTopic = 'derbies';
+    showUnifiedModeSelection('Football Derbies', '🏟️');
+  });
+}
+
+// Football topics placeholders (excluding football-general, premier-league, champions-league, world-cup, messi, ronaldo, and derbies which are implemented)
 const footballTopics = [
   'uefa-euro', 'la-liga', 'serie-a', 'bundesliga', 'ligue-1',
   'ballon-dor', 'messi-ronaldo', 'current-stars', 'legends',
   'transfers', 'records', 'managers', 'iconic-matches',
-  'historic-teams', 'stadiums', 'finals', 'derbies'
+  'historic-teams', 'stadiums', 'finals'
 ];
 
 footballTopics.forEach(topic => {
@@ -1777,7 +1804,7 @@ function displayUnifiedQuestion() {
   // Get current question data
   let randomFlag, questionIdentifier;
 
-  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo') {
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo' || currentTopic === 'derbies') {
     // Football, history, movies, marvel, premier-league, champions-league, world-cup, and messi use different tracking - track by question text
     const remaining = flags.filter(f => !usedFlags.includes(f.question));
     if (remaining.length === 0) usedFlags = [];
@@ -1797,7 +1824,7 @@ function displayUnifiedQuestion() {
 
   // Determine question text
   let questionText = '';
-  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo') {
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo' || currentTopic === 'derbies') {
     questionText = randomFlag.question;
   } else if (currentTopic === 'capitals') {
     questionText = `What is the capital of ${randomFlag.country}?`;
@@ -1873,6 +1900,13 @@ function displayUnifiedQuestion() {
     } else {
       imageHTML = `<div style="font-size:80px;margin:20px 0;">👑</div>`;
     }
+  } else if (currentTopic === 'derbies') {
+    // Derbies quiz - use image from question data if available, otherwise show stadium icon
+    if (randomFlag.image) {
+      imageSrc = randomFlag.image;
+    } else {
+      imageHTML = `<div style="font-size:80px;margin:20px 0;">🏟️</div>`;
+    }
   } else if (currentTopic === 'flags') {
     imageSrc = randomFlag.flag;
   } else if (currentTopic === 'capitals') {
@@ -1900,7 +1934,7 @@ function displayUnifiedQuestion() {
   let options;
   let correctAnswer;
 
-  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo') {
+  if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo' || currentTopic === 'derbies') {
     // Football, history, movies, marvel, premier-league, champions-league, world-cup, and messi already have options in the question data
     options = randomFlag.options.map(opt => ({ text: opt }));
     correctAnswer = randomFlag.correctAnswer;
@@ -1950,7 +1984,7 @@ function displayUnifiedQuestion() {
     let btnText = '';
     let btnAnswer = '';
 
-    if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo') {
+    if (currentTopic === 'football' || currentTopic === 'world-history' || currentTopic === 'movies' || currentTopic === 'marvel' || currentTopic === 'premier-league' || currentTopic === 'champions-league' || currentTopic === 'world-cup' || currentTopic === 'messi' || currentTopic === 'ronaldo' || currentTopic === 'derbies') {
       btnText = opt.text;
       btnAnswer = opt.text;
     } else if (currentTopic === 'capitals') {
@@ -1985,7 +2019,8 @@ function displayUnifiedQuestion() {
       ${currentTopic === 'world-cup' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">🌍</div></div>` : imageHTML) : ''}
       ${currentTopic === 'messi' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">⚽</div></div>` : imageHTML) : ''}
       ${currentTopic === 'ronaldo' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">👑</div></div>` : imageHTML) : ''}
-      ${(currentTopic !== 'football' && currentTopic !== 'world-history' && currentTopic !== 'movies' && currentTopic !== 'marvel' && currentTopic !== 'premier-league' && currentTopic !== 'champions-league' && currentTopic !== 'world-cup' && currentTopic !== 'messi' && currentTopic !== 'ronaldo') && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
+      ${currentTopic === 'derbies' ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">🏟️</div></div>` : imageHTML) : ''}
+      ${(currentTopic !== 'football' && currentTopic !== 'world-history' && currentTopic !== 'movies' && currentTopic !== 'marvel' && currentTopic !== 'premier-league' && currentTopic !== 'champions-league' && currentTopic !== 'world-cup' && currentTopic !== 'messi' && currentTopic !== 'ronaldo' && currentTopic !== 'derbies') && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
       <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
         <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
       </div>
@@ -2010,7 +2045,7 @@ function checkUnifiedAnswer(selected, correct) {
   answered = true;
 
   // List of topics that track stats
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
 
   const buttons = document.querySelectorAll('.unified-option-btn');
   buttons.forEach(btn => {
@@ -2084,7 +2119,7 @@ function checkUnifiedAnswer(selected, correct) {
 // Show unified results screen
 function showUnifiedResults() {
   // SAVE STATS FIRST (completed = true because quiz finished naturally)
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, true);
   }
@@ -2150,7 +2185,7 @@ function restartUnifiedQuiz() {
 function exitUnifiedQuiz() {
   // Save stats before exiting (completed = false because user quit early)
   // This applies to all tracked topics - stats won't be saved for early exits
-  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const trackedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
@@ -2257,6 +2292,7 @@ function showStats() {
     { id: 'champions-league', name: 'Champions League', icon: '🏆' },
     { id: 'flags', name: 'Flags', icon: '🏳️' },
     { id: 'football', name: 'Football General', icon: '⚽' },
+    { id: 'derbies', name: 'Football Derbies', icon: '🏟️' },
     { id: 'marvel', name: 'Marvel Movies', icon: '🦸' },
     { id: 'messi', name: 'Messi', icon: '⚽' },
     { id: 'movies', name: 'Movies General', icon: '🎬' },
@@ -2322,6 +2358,7 @@ const availableTopics = {
   'borders': { icon: '🗺️', name: 'Borders' },
   'area': { icon: '📏', name: 'Area' },
   'champions-league': { icon: '🏆', name: 'Champions League' },
+  'derbies': { icon: '🏟️', name: 'Football Derbies' },
   'football': { icon: '⚽', name: 'Football General' },
   'marvel': { icon: '🦸', name: 'Marvel Movies' },
   'messi': { icon: '⚽', name: 'Messi' },
@@ -2520,7 +2557,7 @@ function saveQuizStats(topicId, completed) {
   }
 
   // List of supported topics for stats tracking
-  const supportedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo'];
+  const supportedTopics = ['flags', 'capitals', 'area', 'football', 'world-history', 'movies', 'marvel', 'premier-league', 'champions-league', 'world-cup', 'messi', 'ronaldo', 'derbies'];
   if (!supportedTopics.includes(topicId)) return;
 
   // Initialize topic stats if not exists
