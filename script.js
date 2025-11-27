@@ -71,6 +71,7 @@ const TOPIC_CONFIG = {
   'ww2':              { path: 'topics/ww2/questions.json', icon: '✈️', name: 'World War II', category: 'history' },
   'ww1':              { path: 'topics/ww1/questions.json', icon: '🪖', name: 'World War I', category: 'history' },
   'egyptian':         { path: 'topics/egyptian/questions.json', icon: '🔺', name: 'Ancient Egypt', category: 'history' },
+  'roman-empire':     { path: 'topics/roman-empire/questions.json', icon: '🏛️', name: 'Roman Empire', category: 'history' },
 
   // Movies (JSON-based)
   'movies':           { path: 'topics/movies-general/questions.json', icon: '🎬', name: 'Movies', category: 'movies' },
@@ -1359,7 +1360,7 @@ logosTopics.forEach(topic => {
 const historyTopics = [
   'greek-roman', 'medieval',
   'cold-war', 'civil-war', 'british-monarchy',
-  'roman-empire', 'ottoman-empire', 'crusades', 'explorers', 'industrial-rev',
+  'ottoman-empire', 'crusades', 'explorers', 'industrial-rev',
   'fall-rome', 'silk-road', 'famous-leaders', 'dictators', 'scientists',
   'inventors', 'historical-maps', 'battles', 'timeline', 'archaeology'
 ];
