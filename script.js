@@ -72,6 +72,7 @@ const TOPIC_CONFIG = {
   'ww1':              { path: 'topics/ww1/questions.json', icon: '🪖', name: 'World War I', category: 'history' },
   'egyptian':         { path: 'topics/egyptian/questions.json', icon: '🔺', name: 'Ancient Egypt', category: 'history' },
   'roman-empire':     { path: 'topics/roman-empire/questions.json', icon: '🏛️', name: 'Roman Empire', category: 'history' },
+  'ottoman':          { path: 'topics/ottoman/questions.json', icon: '🕌', name: 'Ottoman Empire', category: 'history' },
 
   // Movies (JSON-based)
   'movies':           { path: 'topics/movies-general/questions.json', icon: '🎬', name: 'Movies', category: 'movies' },
@@ -1278,6 +1279,8 @@ JSON_TOPICS.forEach(topicId => {
     btnId = 'dc-movies-topic-btn';
   } else if (topicId === 'disney') {
     btnId = 'disney-movies-topic-btn';
+  } else if (topicId === 'ottoman') {
+    btnId = 'ottoman-empire-topic-btn';
   } else {
     btnId = `${topicId}-topic-btn`;
   }
@@ -1360,7 +1363,7 @@ logosTopics.forEach(topic => {
 const historyTopics = [
   'greek-roman', 'medieval',
   'cold-war', 'civil-war', 'british-monarchy',
-  'ottoman-empire', 'crusades', 'explorers', 'industrial-rev',
+  'crusades', 'explorers', 'industrial-rev',
   'fall-rome', 'silk-road', 'famous-leaders', 'dictators', 'scientists',
   'inventors', 'historical-maps', 'battles', 'timeline', 'archaeology'
 ];
