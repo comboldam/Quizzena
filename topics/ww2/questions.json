@@ -1,0 +1,1088 @@
+[
+  {
+    "question": "In what year did World War II begin?",
+    "answer": "1939",
+    "options": ["1937", "1938", "1939", "1940"],
+    "category": "timeline"
+  },
+  {
+    "question": "In what year did World War II end?",
+    "answer": "1945",
+    "options": ["1944", "1945", "1946", "1947"],
+    "category": "timeline"
+  },
+  {
+    "question": "Which event is considered the start of World War II in Europe?",
+    "answer": "Germany's invasion of Poland",
+    "options": ["Invasion of France", "Germany's invasion of Poland", "Attack on Pearl Harbor", "Annexation of Austria"],
+    "category": "timeline"
+  },
+  {
+    "question": "On what date did D-Day occur?",
+    "answer": "June 6, 1944",
+    "options": ["June 6, 1944", "July 4, 1944", "May 8, 1944", "August 15, 1944"],
+    "category": "timeline"
+  },
+  {
+    "question": "When did Japan attack Pearl Harbor?",
+    "answer": "December 7, 1941",
+    "options": ["November 7, 1941", "December 7, 1941", "January 7, 1942", "October 7, 1941"],
+    "category": "timeline"
+  },
+  {
+    "question": "What year did the United States enter World War II?",
+    "answer": "1941",
+    "options": ["1939", "1940", "1941", "1942"],
+    "category": "timeline"
+  },
+  {
+    "question": "When was the atomic bomb dropped on Hiroshima?",
+    "answer": "August 6, 1945",
+    "options": ["August 6, 1945", "August 9, 1945", "July 16, 1945", "September 2, 1945"],
+    "category": "timeline"
+  },
+  {
+    "question": "When was the atomic bomb dropped on Nagasaki?",
+    "answer": "August 9, 1945",
+    "options": ["August 6, 1945", "August 9, 1945", "August 12, 1945", "August 15, 1945"],
+    "category": "timeline"
+  },
+  {
+    "question": "What date is V-E Day (Victory in Europe)?",
+    "answer": "May 8, 1945",
+    "options": ["May 8, 1945", "June 6, 1945", "April 30, 1945", "August 15, 1945"],
+    "category": "timeline"
+  },
+  {
+    "question": "What date is V-J Day (Victory over Japan)?",
+    "answer": "August 15, 1945",
+    "options": ["August 6, 1945", "August 9, 1945", "August 15, 1945", "September 2, 1945"],
+    "category": "timeline"
+  },
+  {
+    "question": "When did Germany invade the Soviet Union (Operation Barbarossa)?",
+    "answer": "June 22, 1941",
+    "options": ["June 22, 1941", "December 7, 1941", "September 1, 1939", "May 10, 1940"],
+    "category": "timeline"
+  },
+  {
+    "question": "When did Italy surrender to the Allies?",
+    "answer": "September 1943",
+    "options": ["June 1943", "September 1943", "May 1944", "April 1945"],
+    "category": "timeline"
+  },
+  {
+    "question": "When did the Battle of Stalingrad end?",
+    "answer": "February 1943",
+    "options": ["August 1942", "November 1942", "February 1943", "May 1943"],
+    "category": "timeline"
+  },
+  {
+    "question": "What year did Germany annex Austria (Anschluss)?",
+    "answer": "1938",
+    "options": ["1936", "1937", "1938", "1939"],
+    "category": "timeline"
+  },
+  {
+    "question": "When was the Munich Agreement signed?",
+    "answer": "September 1938",
+    "options": ["March 1938", "September 1938", "March 1939", "August 1939"],
+    "category": "timeline"
+  },
+  {
+    "question": "Who was the leader of Nazi Germany?",
+    "answer": "Adolf Hitler",
+    "options": ["Adolf Hitler", "Heinrich Himmler", "Hermann Goering", "Joseph Goebbels"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the Prime Minister of the United Kingdom for most of World War II?",
+    "answer": "Winston Churchill",
+    "options": ["Neville Chamberlain", "Winston Churchill", "Clement Attlee", "Anthony Eden"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the leader of the Soviet Union during World War II?",
+    "answer": "Joseph Stalin",
+    "options": ["Vladimir Lenin", "Joseph Stalin", "Leon Trotsky", "Nikita Khrushchev"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the President of the United States when Pearl Harbor was attacked?",
+    "answer": "Franklin D. Roosevelt",
+    "options": ["Harry S. Truman", "Franklin D. Roosevelt", "Dwight D. Eisenhower", "Herbert Hoover"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the leader of Fascist Italy during World War II?",
+    "answer": "Benito Mussolini",
+    "options": ["Benito Mussolini", "Victor Emmanuel III", "Pietro Badoglio", "Galeazzo Ciano"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the Emperor of Japan during World War II?",
+    "answer": "Emperor Hirohito",
+    "options": ["Emperor Meiji", "Emperor Hirohito", "Emperor Taisho", "Emperor Akihito"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the Supreme Commander of Allied Forces in Europe?",
+    "answer": "Dwight D. Eisenhower",
+    "options": ["George Patton", "Douglas MacArthur", "Dwight D. Eisenhower", "Omar Bradley"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who commanded the U.S. forces in the Pacific Theater?",
+    "answer": "Douglas MacArthur",
+    "options": ["Dwight D. Eisenhower", "Douglas MacArthur", "Chester Nimitz", "George Patton"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the head of the SS and architect of the Holocaust?",
+    "answer": "Heinrich Himmler",
+    "options": ["Adolf Eichmann", "Heinrich Himmler", "Reinhard Heydrich", "Joseph Goebbels"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who led the Free French Forces during World War II?",
+    "answer": "Charles de Gaulle",
+    "options": ["Philippe Petain", "Charles de Gaulle", "Jean Moulin", "Henri Giraud"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was Germany's Minister of Propaganda?",
+    "answer": "Joseph Goebbels",
+    "options": ["Heinrich Himmler", "Joseph Goebbels", "Hermann Goering", "Rudolf Hess"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who commanded the German Afrika Korps and was known as the 'Desert Fox'?",
+    "answer": "Erwin Rommel",
+    "options": ["Heinz Guderian", "Erwin Rommel", "Erich von Manstein", "Wilhelm Keitel"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the British Prime Minister who signed the Munich Agreement?",
+    "answer": "Neville Chamberlain",
+    "options": ["Winston Churchill", "Neville Chamberlain", "Stanley Baldwin", "Clement Attlee"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who became U.S. President after Roosevelt's death in 1945?",
+    "answer": "Harry S. Truman",
+    "options": ["Harry S. Truman", "Dwight D. Eisenhower", "Thomas Dewey", "Henry Wallace"],
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the Japanese Prime Minister who authorized the attack on Pearl Harbor?",
+    "answer": "Hideki Tojo",
+    "options": ["Hideki Tojo", "Fumimaro Konoe", "Isoroku Yamamoto", "Hirohito"],
+    "category": "leaders"
+  },
+  {
+    "question": "What was the codename for the Allied invasion of Normandy?",
+    "answer": "Operation Overlord",
+    "options": ["Operation Barbarossa", "Operation Overlord", "Operation Sea Lion", "Operation Market Garden"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the largest naval battle in World War II?",
+    "answer": "Battle of Leyte Gulf",
+    "options": ["Battle of Midway", "Battle of the Philippine Sea", "Battle of Leyte Gulf", "Battle of the Coral Sea"],
+    "category": "battles"
+  },
+  {
+    "question": "Which battle is considered the turning point on the Eastern Front?",
+    "answer": "Battle of Stalingrad",
+    "options": ["Battle of Kursk", "Battle of Stalingrad", "Battle of Moscow", "Battle of Leningrad"],
+    "category": "battles"
+  },
+  {
+    "question": "Which battle was the turning point in the Pacific Theater?",
+    "answer": "Battle of Midway",
+    "options": ["Battle of Coral Sea", "Battle of Midway", "Battle of Guadalcanal", "Battle of Iwo Jima"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the last major German offensive on the Western Front?",
+    "answer": "Battle of the Bulge",
+    "options": ["Battle of the Bulge", "Operation Market Garden", "Battle of Hurtgen Forest", "Battle of Aachen"],
+    "category": "battles"
+  },
+  {
+    "question": "Which Allied operation aimed to capture bridges in the Netherlands?",
+    "answer": "Operation Market Garden",
+    "options": ["Operation Overlord", "Operation Market Garden", "Operation Dragoon", "Operation Torch"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the codename for the German invasion of the Soviet Union?",
+    "answer": "Operation Barbarossa",
+    "options": ["Operation Typhoon", "Operation Barbarossa", "Case Blue", "Operation Citadel"],
+    "category": "battles"
+  },
+  {
+    "question": "Which island battle featured the famous flag-raising photograph?",
+    "answer": "Battle of Iwo Jima",
+    "options": ["Battle of Okinawa", "Battle of Iwo Jima", "Battle of Guadalcanal", "Battle of Saipan"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the planned German invasion of Britain called?",
+    "answer": "Operation Sea Lion",
+    "options": ["Operation Overlord", "Operation Sea Lion", "Operation Barbarossa", "The Blitz"],
+    "category": "battles"
+  },
+  {
+    "question": "Which air battle prevented Germany from invading Britain?",
+    "answer": "Battle of Britain",
+    "options": ["Battle of Britain", "The Blitz", "Operation Sea Lion", "Battle of the Atlantic"],
+    "category": "battles"
+  },
+  {
+    "question": "What naval campaign fought for control of Atlantic shipping lanes?",
+    "answer": "Battle of the Atlantic",
+    "options": ["Battle of Midway", "Battle of the Atlantic", "Battle of Leyte Gulf", "Operation Torch"],
+    "category": "battles"
+  },
+  {
+    "question": "Which beach was NOT one of the D-Day landing beaches?",
+    "answer": "Dunkirk",
+    "options": ["Utah", "Omaha", "Juno", "Dunkirk"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the Allied invasion of North Africa called?",
+    "answer": "Operation Torch",
+    "options": ["Operation Torch", "Operation Husky", "Operation Avalanche", "Operation Dragoon"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the Allied invasion of Sicily called?",
+    "answer": "Operation Husky",
+    "options": ["Operation Torch", "Operation Husky", "Operation Avalanche", "Operation Shingle"],
+    "category": "battles"
+  },
+  {
+    "question": "Which tank battle was the largest in history?",
+    "answer": "Battle of Kursk",
+    "options": ["Battle of Stalingrad", "Battle of Kursk", "Battle of El Alamein", "Battle of the Bulge"],
+    "category": "battles"
+  },
+  {
+    "question": "What was the first major Japanese land defeat in WWII?",
+    "answer": "Battle of Guadalcanal",
+    "options": ["Battle of Midway", "Battle of Guadalcanal", "Battle of the Coral Sea", "Battle of Wake Island"],
+    "category": "battles"
+  },
+  {
+    "question": "What term describes Nazi Germany's systematic genocide of Jews?",
+    "answer": "The Holocaust",
+    "options": ["The Final Solution", "The Holocaust", "Kristallnacht", "The Nuremberg Laws"],
+    "category": "holocaust"
+  },
+  {
+    "question": "Approximately how many Jews were killed in the Holocaust?",
+    "answer": "6 million",
+    "options": ["3 million", "6 million", "9 million", "12 million"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What was Auschwitz?",
+    "answer": "A Nazi concentration and extermination camp",
+    "options": ["A German military base", "A Nazi concentration and extermination camp", "A prisoner of war camp", "A German factory complex"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What was the Nazi plan to exterminate all European Jews called?",
+    "answer": "The Final Solution",
+    "options": ["The Holocaust", "The Final Solution", "Kristallnacht", "The Nuremberg Laws"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What was Kristallnacht?",
+    "answer": "A coordinated attack on Jews in Nazi Germany in 1938",
+    "options": ["The start of WWII", "A coordinated attack on Jews in Nazi Germany in 1938", "Germany's surrender", "A peace conference"],
+    "category": "holocaust"
+  },
+  {
+    "question": "Who wrote 'The Diary of a Young Girl' while hiding from the Nazis?",
+    "answer": "Anne Frank",
+    "options": ["Anne Frank", "Edith Stein", "Hannah Senesh", "Corrie ten Boom"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What were the trials of Nazi war criminals called?",
+    "answer": "Nuremberg Trials",
+    "options": ["Geneva Trials", "Nuremberg Trials", "Berlin Trials", "Hague Trials"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What were the ghettos in Nazi-occupied territories?",
+    "answer": "Enclosed areas where Jews were forced to live",
+    "options": ["German military camps", "Enclosed areas where Jews were forced to live", "Allied refugee camps", "Underground resistance hideouts"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What was the Warsaw Ghetto Uprising?",
+    "answer": "A Jewish resistance against Nazi deportations in 1943",
+    "options": ["A Nazi attack on Warsaw", "A Jewish resistance against Nazi deportations in 1943", "The liberation of Warsaw", "A Polish military offensive"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What group was also targeted by the Nazis besides Jews?",
+    "answer": "All of these",
+    "options": ["Roma (Gypsies)", "Disabled people", "Homosexuals", "All of these"],
+    "category": "holocaust"
+  },
+  {
+    "question": "What was the main German fighter aircraft in WWII?",
+    "answer": "Messerschmitt Bf 109",
+    "options": ["Focke-Wulf Fw 190", "Messerschmitt Bf 109", "Junkers Ju 87", "Heinkel He 111"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the iconic British fighter plane of the Battle of Britain?",
+    "answer": "Spitfire",
+    "options": ["Hurricane", "Spitfire", "Lancaster", "Mosquito"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the primary American battle rifle in WWII?",
+    "answer": "M1 Garand",
+    "options": ["M1 Carbine", "M1 Garand", "Thompson SMG", "BAR"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the German 'buzz bomb' called?",
+    "answer": "V-1 flying bomb",
+    "options": ["V-1 flying bomb", "V-2 rocket", "Stuka", "Tiger tank"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the first ballistic missile used in warfare?",
+    "answer": "V-2 rocket",
+    "options": ["V-1 flying bomb", "V-2 rocket", "Katyusha", "Nebelwerfer"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the main American heavy bomber in the European Theater?",
+    "answer": "B-17 Flying Fortress",
+    "options": ["B-17 Flying Fortress", "B-24 Liberator", "B-29 Superfortress", "B-25 Mitchell"],
+    "category": "weapons"
+  },
+  {
+    "question": "What aircraft dropped the atomic bomb on Hiroshima?",
+    "answer": "B-29 Superfortress (Enola Gay)",
+    "options": ["B-17 Flying Fortress", "B-24 Liberator", "B-29 Superfortress (Enola Gay)", "B-25 Mitchell"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the most feared German tank?",
+    "answer": "Tiger tank",
+    "options": ["Panzer IV", "Tiger tank", "Panther tank", "King Tiger"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the main American medium tank?",
+    "answer": "M4 Sherman",
+    "options": ["M3 Stuart", "M4 Sherman", "M26 Pershing", "M18 Hellcat"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the Soviet workhorse tank of WWII?",
+    "answer": "T-34",
+    "options": ["KV-1", "T-34", "IS-2", "BT-7"],
+    "category": "weapons"
+  },
+  {
+    "question": "What German dive bomber was famous for its siren?",
+    "answer": "Junkers Ju 87 Stuka",
+    "options": ["Messerschmitt Bf 109", "Heinkel He 111", "Junkers Ju 87 Stuka", "Focke-Wulf Fw 190"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the German submarine called?",
+    "answer": "U-boat",
+    "options": ["Submarine", "U-boat", "Torpedo boat", "Destroyer"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the codename for the atomic bomb project?",
+    "answer": "Manhattan Project",
+    "options": ["Project X", "Manhattan Project", "Trinity Project", "Los Alamos Project"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the name of the atomic bomb dropped on Hiroshima?",
+    "answer": "Little Boy",
+    "options": ["Fat Man", "Little Boy", "Trinity", "Gadget"],
+    "category": "weapons"
+  },
+  {
+    "question": "What was the name of the atomic bomb dropped on Nagasaki?",
+    "answer": "Fat Man",
+    "options": ["Fat Man", "Little Boy", "Trinity", "Gadget"],
+    "category": "weapons"
+  },
+  {
+    "question": "What major naval base did Japan attack to bring the US into WWII?",
+    "answer": "Pearl Harbor",
+    "options": ["Midway", "Pearl Harbor", "Wake Island", "Guam"],
+    "category": "pacific"
+  },
+  {
+    "question": "What strategy did the US use to advance across the Pacific?",
+    "answer": "Island hopping",
+    "options": ["Blitzkrieg", "Island hopping", "Total war", "Scorched earth"],
+    "category": "pacific"
+  },
+  {
+    "question": "What was the last major battle of the Pacific War?",
+    "answer": "Battle of Okinawa",
+    "options": ["Battle of Iwo Jima", "Battle of Okinawa", "Battle of Leyte Gulf", "Battle of the Philippine Sea"],
+    "category": "pacific"
+  },
+  {
+    "question": "What were Japanese suicide pilots called?",
+    "answer": "Kamikaze",
+    "options": ["Kamikaze", "Banzai", "Bushido", "Shogun"],
+    "category": "pacific"
+  },
+  {
+    "question": "Which Philippine islands did MacArthur promise to return to?",
+    "answer": "The Philippines",
+    "options": ["The Philippines", "Guam", "Wake Island", "Midway"],
+    "category": "pacific"
+  },
+  {
+    "question": "What was the infamous march of American and Filipino POWs in 1942?",
+    "answer": "Bataan Death March",
+    "options": ["Bataan Death March", "Manila March", "Corregidor March", "Luzon March"],
+    "category": "pacific"
+  },
+  {
+    "question": "What Japanese city was NOT one of the atomic bomb targets?",
+    "answer": "Tokyo",
+    "options": ["Hiroshima", "Nagasaki", "Tokyo", "Both were targets"],
+    "category": "pacific"
+  },
+  {
+    "question": "Who planned the attack on Pearl Harbor?",
+    "answer": "Admiral Isoroku Yamamoto",
+    "options": ["Admiral Isoroku Yamamoto", "General Hideki Tojo", "Emperor Hirohito", "Admiral Chuichi Nagumo"],
+    "category": "pacific"
+  },
+  {
+    "question": "What group of pilots volunteered to fight Japan before US entry?",
+    "answer": "Flying Tigers",
+    "options": ["Flying Tigers", "Tuskegee Airmen", "Red Tails", "Eagle Squadron"],
+    "category": "pacific"
+  },
+  {
+    "question": "Where did Japan formally surrender to end WWII?",
+    "answer": "USS Missouri",
+    "options": ["USS Enterprise", "USS Missouri", "USS Arizona", "Tokyo Bay (land)"],
+    "category": "pacific"
+  },
+  {
+    "question": "What supply route kept China fighting against Japan?",
+    "answer": "Burma Road / The Hump",
+    "options": ["Burma Road / The Hump", "Silk Road", "Pacific Highway", "Manila Route"],
+    "category": "pacific"
+  },
+  {
+    "question": "What was the code name for the planned invasion of Japan?",
+    "answer": "Operation Downfall",
+    "options": ["Operation Olympic", "Operation Downfall", "Operation Coronet", "Operation Iceberg"],
+    "category": "pacific"
+  },
+  {
+    "question": "What nations made up the Axis Powers?",
+    "answer": "Germany, Italy, and Japan",
+    "options": ["Germany, Italy, and Japan", "Germany, USSR, and Japan", "Germany, France, and Italy", "Germany, Austria, and Italy"],
+    "category": "alliances"
+  },
+  {
+    "question": "What nations were the 'Big Three' Allied Powers?",
+    "answer": "USA, UK, and USSR",
+    "options": ["USA, UK, and France", "USA, UK, and USSR", "USA, UK, and China", "USA, USSR, and China"],
+    "category": "alliances"
+  },
+  {
+    "question": "What was the German-Soviet non-aggression agreement called?",
+    "answer": "Molotov-Ribbentrop Pact",
+    "options": ["Munich Agreement", "Molotov-Ribbentrop Pact", "Tripartite Pact", "Anti-Comintern Pact"],
+    "category": "alliances"
+  },
+  {
+    "question": "What agreement divided Poland between Germany and the USSR?",
+    "answer": "Molotov-Ribbentrop Pact",
+    "options": ["Munich Agreement", "Molotov-Ribbentrop Pact", "Yalta Agreement", "Treaty of Versailles"],
+    "category": "alliances"
+  },
+  {
+    "question": "What conference established plans for post-war Europe?",
+    "answer": "Yalta Conference",
+    "options": ["Tehran Conference", "Yalta Conference", "Potsdam Conference", "Casablanca Conference"],
+    "category": "alliances"
+  },
+  {
+    "question": "Which country switched from Axis to Allies in 1943?",
+    "answer": "Italy",
+    "options": ["Japan", "Italy", "Hungary", "Romania"],
+    "category": "alliances"
+  },
+  {
+    "question": "What was Britain's policy of giving in to Hitler's demands called?",
+    "answer": "Appeasement",
+    "options": ["Appeasement", "Containment", "Isolationism", "Neutrality"],
+    "category": "alliances"
+  },
+  {
+    "question": "What US law allowed the sale of military equipment to Allies?",
+    "answer": "Lend-Lease Act",
+    "options": ["Neutrality Act", "Lend-Lease Act", "Cash and Carry", "Marshall Plan"],
+    "category": "alliances"
+  },
+  {
+    "question": "What neutral country was invaded by Germany despite neutrality?",
+    "answer": "All of these",
+    "options": ["Belgium", "Netherlands", "Norway", "All of these"],
+    "category": "alliances"
+  },
+  {
+    "question": "What was the Tripartite Pact?",
+    "answer": "Military alliance between Germany, Italy, and Japan",
+    "options": ["Peace treaty ending WWI", "Military alliance between Germany, Italy, and Japan", "US neutrality agreement", "Soviet-German pact"],
+    "category": "alliances"
+  },
+  {
+    "question": "What conference demanded Japan's unconditional surrender?",
+    "answer": "Potsdam Conference",
+    "options": ["Yalta Conference", "Tehran Conference", "Potsdam Conference", "Casablanca Conference"],
+    "category": "european"
+  },
+  {
+    "question": "What was Germany's rapid attack strategy called?",
+    "answer": "Blitzkrieg",
+    "options": ["Blitzkrieg", "Trench warfare", "Siege warfare", "Attrition"],
+    "category": "european"
+  },
+  {
+    "question": "How long did it take Germany to defeat France?",
+    "answer": "About 6 weeks",
+    "options": ["About 2 weeks", "About 6 weeks", "About 3 months", "About 6 months"],
+    "category": "european"
+  },
+  {
+    "question": "What was the evacuation of Allied troops from France called?",
+    "answer": "Dunkirk evacuation",
+    "options": ["D-Day", "Dunkirk evacuation", "Operation Torch", "The Blitz"],
+    "category": "european"
+  },
+  {
+    "question": "What was the German air campaign against Britain called?",
+    "answer": "The Blitz",
+    "options": ["Battle of Britain", "The Blitz", "Operation Sea Lion", "Operation Overlord"],
+    "category": "european"
+  },
+  {
+    "question": "What divided France into occupied and 'free' zones?",
+    "answer": "Vichy France agreement",
+    "options": ["Treaty of Versailles", "Vichy France agreement", "Maginot Line", "Paris Treaty"],
+    "category": "european"
+  },
+  {
+    "question": "What was the French defensive line that Germany bypassed?",
+    "answer": "Maginot Line",
+    "options": ["Siegfried Line", "Maginot Line", "Atlantic Wall", "Gustav Line"],
+    "category": "european"
+  },
+  {
+    "question": "What underground organization resisted Nazi occupation in France?",
+    "answer": "French Resistance",
+    "options": ["Free French Forces", "French Resistance", "Maquis", "All of these"],
+    "category": "european"
+  },
+  {
+    "question": "When was Paris liberated from German occupation?",
+    "answer": "August 1944",
+    "options": ["June 1944", "August 1944", "December 1944", "May 1945"],
+    "category": "european"
+  },
+  {
+    "question": "What was the German defensive line in Italy?",
+    "answer": "Gustav Line",
+    "options": ["Siegfried Line", "Maginot Line", "Atlantic Wall", "Gustav Line"],
+    "category": "european"
+  },
+  {
+    "question": "What city was besieged by Germany for nearly 900 days?",
+    "answer": "Leningrad",
+    "options": ["Moscow", "Stalingrad", "Leningrad", "Kiev"],
+    "category": "european"
+  },
+  {
+    "question": "How did Hitler die?",
+    "answer": "Suicide in his bunker",
+    "options": ["Killed in battle", "Suicide in his bunker", "Executed by Allies", "Assassinated"],
+    "category": "european"
+  },
+  {
+    "question": "What was the Atlantic Wall?",
+    "answer": "German coastal fortifications",
+    "options": ["British naval blockade", "German coastal fortifications", "Allied invasion plan", "Submarine defense system"],
+    "category": "european"
+  },
+  {
+    "question": "Which country suffered the most military deaths in WWII?",
+    "answer": "Soviet Union",
+    "options": ["Germany", "Soviet Union", "China", "Japan"],
+    "category": "european"
+  },
+  {
+    "question": "What happened to Germany after WWII?",
+    "answer": "Divided into four occupation zones",
+    "options": ["Remained unified", "Divided into four occupation zones", "Given to the USSR", "Made part of France"],
+    "category": "european"
+  },
+  {
+    "question": "What did women primarily do on the home front during WWII?",
+    "answer": "Worked in factories and industry",
+    "options": ["Stayed at home only", "Worked in factories and industry", "Served in combat", "Led political parties"],
+    "category": "homefront"
+  },
+  {
+    "question": "What iconic figure encouraged American women to work in factories?",
+    "answer": "Rosie the Riveter",
+    "options": ["Rosie the Riveter", "Lady Liberty", "Victory Girl", "Factory Annie"],
+    "category": "homefront"
+  },
+  {
+    "question": "What system limited civilian access to goods during wartime?",
+    "answer": "Rationing",
+    "options": ["Rationing", "Embargo", "Blackout", "Curfew"],
+    "category": "homefront"
+  },
+  {
+    "question": "What were Americans encouraged to buy to fund the war?",
+    "answer": "War bonds",
+    "options": ["War bonds", "Victory stamps", "Ration books", "Military stock"],
+    "category": "homefront"
+  },
+  {
+    "question": "What happened to Japanese Americans on the US West Coast?",
+    "answer": "Sent to internment camps",
+    "options": ["Deported to Japan", "Sent to internment camps", "Drafted into the military", "Nothing special"],
+    "category": "homefront"
+  },
+  {
+    "question": "What were 'Victory Gardens'?",
+    "answer": "Home vegetable gardens to supplement rationing",
+    "options": ["Military cemeteries", "Home vegetable gardens to supplement rationing", "Government farms", "Parks renamed for victories"],
+    "category": "homefront"
+  },
+  {
+    "question": "What was propaganda primarily used for during WWII?",
+    "answer": "All of these",
+    "options": ["Encouraging enlistment", "Promoting war bonds", "Maintaining morale", "All of these"],
+    "category": "homefront"
+  },
+  {
+    "question": "What items were commonly rationed in the US?",
+    "answer": "All of these",
+    "options": ["Sugar and coffee", "Meat and butter", "Gasoline and rubber", "All of these"],
+    "category": "homefront"
+  },
+  {
+    "question": "What code was used by Navajo soldiers that Japan never broke?",
+    "answer": "Navajo Code Talkers",
+    "options": ["Enigma Code", "Navajo Code Talkers", "Purple Code", "Morse Code"],
+    "category": "homefront"
+  },
+  {
+    "question": "What African American unit became famous fighter pilots?",
+    "answer": "Tuskegee Airmen",
+    "options": ["Flying Tigers", "Tuskegee Airmen", "Red Tails", "Harlem Hellfighters"],
+    "category": "homefront"
+  },
+  {
+    "question": "What was the US military's policy on racial segregation during WWII?",
+    "answer": "Segregated units",
+    "options": ["Fully integrated", "Segregated units", "No minorities allowed", "Combat units only"],
+    "category": "homefront"
+  },
+  {
+    "question": "What was scrap metal collection used for?",
+    "answer": "Making weapons and military equipment",
+    "options": ["Building shelters", "Making weapons and military equipment", "Repairing roads", "Civilian products"],
+    "category": "homefront"
+  },
+  {
+    "question": "What did 'blackout' mean on the home front?",
+    "answer": "Covering windows to hide lights from enemy aircraft",
+    "options": ["Power outages", "Covering windows to hide lights from enemy aircraft", "Media censorship", "Night curfew"],
+    "category": "homefront"
+  },
+  {
+    "question": "Which famous baseball player served in WWII?",
+    "answer": "Ted Williams",
+    "options": ["Babe Ruth", "Ted Williams", "Lou Gehrig", "Jackie Robinson"],
+    "category": "homefront"
+  },
+  {
+    "question": "What was the Women's Army Corps called?",
+    "answer": "WAC",
+    "options": ["WAC", "WASP", "WAVES", "WLA"],
+    "category": "homefront"
+  },
+  {
+    "question": "What was the total estimated death toll of World War II?",
+    "answer": "70-85 million",
+    "options": ["20-30 million", "40-50 million", "70-85 million", "100-120 million"],
+    "category": "general"
+  },
+  {
+    "question": "How many countries were involved in World War II?",
+    "answer": "Over 30 countries",
+    "options": ["About 10 countries", "About 20 countries", "Over 30 countries", "Over 50 countries"],
+    "category": "general"
+  },
+  {
+    "question": "What treaty ending WWI contributed to WWII?",
+    "answer": "Treaty of Versailles",
+    "options": ["Treaty of Paris", "Treaty of Versailles", "Treaty of Vienna", "Treaty of Berlin"],
+    "category": "general"
+  },
+  {
+    "question": "What economic event helped Hitler rise to power?",
+    "answer": "The Great Depression",
+    "options": ["Industrial Revolution", "The Great Depression", "Post-war boom", "Gold standard collapse"],
+    "category": "general"
+  },
+  {
+    "question": "What political party did Hitler lead?",
+    "answer": "Nazi Party (NSDAP)",
+    "options": ["Communist Party", "Nazi Party (NSDAP)", "Social Democrats", "People's Party"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Nazi ideology based on?",
+    "answer": "Racial superiority and nationalism",
+    "options": ["Religious principles", "Racial superiority and nationalism", "Economic equality", "Democratic values"],
+    "category": "general"
+  },
+  {
+    "question": "What is Fascism?",
+    "answer": "Authoritarian ultranationalist political ideology",
+    "options": ["Democratic government", "Authoritarian ultranationalist political ideology", "Communist system", "Monarchy"],
+    "category": "general"
+  },
+  {
+    "question": "What was Hitler's book outlining his ideology?",
+    "answer": "Mein Kampf",
+    "options": ["Das Kapital", "Mein Kampf", "The Communist Manifesto", "On War"],
+    "category": "general"
+  },
+  {
+    "question": "What German parliament building was set on fire in 1933?",
+    "answer": "Reichstag",
+    "options": ["Bundestag", "Reichstag", "Brandenburg Gate", "Chancellery"],
+    "category": "general"
+  },
+  {
+    "question": "What organization was formed after WWII to prevent future wars?",
+    "answer": "United Nations",
+    "options": ["League of Nations", "United Nations", "NATO", "European Union"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Marshall Plan?",
+    "answer": "US economic aid to rebuild Europe",
+    "options": ["Military strategy for D-Day", "US economic aid to rebuild Europe", "Soviet expansion plan", "British defense strategy"],
+    "category": "general"
+  },
+  {
+    "question": "What conflict began shortly after WWII ended?",
+    "answer": "The Cold War",
+    "options": ["Korean War", "The Cold War", "Vietnam War", "Chinese Civil War"],
+    "category": "general"
+  },
+  {
+    "question": "What machine helped the Allies break German codes?",
+    "answer": "The Bombe (Enigma decoder)",
+    "options": ["ENIAC", "The Bombe (Enigma decoder)", "Colossus", "Analytical Engine"],
+    "category": "general"
+  },
+  {
+    "question": "Who was the British mathematician who helped break the Enigma code?",
+    "answer": "Alan Turing",
+    "options": ["Charles Babbage", "Alan Turing", "John von Neumann", "Tommy Flowers"],
+    "category": "general"
+  },
+  {
+    "question": "What was 'D-Day' short for?",
+    "answer": "Designated Day",
+    "options": ["Deliverance Day", "Designated Day", "Decision Day", "Deployment Day"],
+    "category": "general"
+  },
+  {
+    "question": "What country was neutral but surrounded by Axis powers?",
+    "answer": "Switzerland",
+    "options": ["Sweden", "Switzerland", "Spain", "Portugal"],
+    "category": "general"
+  },
+  {
+    "question": "What were the Nuremberg Laws?",
+    "answer": "Anti-Jewish laws in Nazi Germany",
+    "options": ["Post-war trial procedures", "Anti-Jewish laws in Nazi Germany", "German constitution", "International war rules"],
+    "category": "general"
+  },
+  {
+    "question": "What did 'unconditional surrender' mean for the Axis powers?",
+    "answer": "Complete surrender with no negotiated terms",
+    "options": ["Partial surrender", "Complete surrender with no negotiated terms", "Ceasefire agreement", "Peace with conditions"],
+    "category": "general"
+  },
+  {
+    "question": "What was the 'Phoney War'?",
+    "answer": "Period of little military action after war declaration (1939-1940)",
+    "options": ["A propaganda campaign", "Period of little military action after war declaration (1939-1940)", "Fake German invasion", "Allied deception operation"],
+    "category": "general"
+  },
+  {
+    "question": "What was the name of Germany's secret police?",
+    "answer": "Gestapo",
+    "options": ["SS", "Gestapo", "Stasi", "Wehrmacht"],
+    "category": "general"
+  },
+  {
+    "question": "What was the famous speech where Churchill promised 'blood, toil, tears and sweat'?",
+    "answer": "His first speech as Prime Minister (May 1940)",
+    "options": ["VE Day speech", "His first speech as Prime Minister (May 1940)", "Battle of Britain speech", "D-Day address"],
+    "category": "general"
+  },
+  {
+    "question": "What German general was involved in the plot to assassinate Hitler?",
+    "answer": "Claus von Stauffenberg",
+    "options": ["Erwin Rommel", "Claus von Stauffenberg", "Heinz Guderian", "Friedrich Paulus"],
+    "category": "general"
+  },
+  {
+    "question": "What was the largest amphibious invasion in history?",
+    "answer": "D-Day (Normandy landings)",
+    "options": ["Gallipoli", "D-Day (Normandy landings)", "Sicily invasion", "Inchon landing"],
+    "category": "general"
+  },
+  {
+    "question": "Who said 'I shall return' when leaving the Philippines?",
+    "answer": "Douglas MacArthur",
+    "options": ["Chester Nimitz", "Douglas MacArthur", "Franklin Roosevelt", "Dwight Eisenhower"],
+    "category": "general"
+  },
+  {
+    "question": "What was the largest battleship ever built?",
+    "answer": "Yamato (Japan)",
+    "options": ["Bismarck (Germany)", "Yamato (Japan)", "Iowa (USA)", "Hood (Britain)"],
+    "category": "general"
+  },
+  {
+    "question": "What German battleship was sunk after being hunted by the Royal Navy?",
+    "answer": "Bismarck",
+    "options": ["Tirpitz", "Bismarck", "Graf Spee", "Scharnhorst"],
+    "category": "general"
+  },
+  {
+    "question": "What city was known as 'Stalingrad' during WWII?",
+    "answer": "Volgograd",
+    "options": ["St. Petersburg", "Moscow", "Volgograd", "Kyiv"],
+    "category": "general"
+  },
+  {
+    "question": "What famous quote is attributed to Admiral Yamamoto about awakening a 'sleeping giant'?",
+    "answer": "After Pearl Harbor attack",
+    "options": ["Before Pearl Harbor", "After Pearl Harbor attack", "After Midway", "At war's end"],
+    "category": "general"
+  },
+  {
+    "question": "What was the SS?",
+    "answer": "Nazi paramilitary organization",
+    "options": ["German navy", "Nazi paramilitary organization", "Secret police", "Air force division"],
+    "category": "general"
+  },
+  {
+    "question": "Which scientist led the Manhattan Project?",
+    "answer": "J. Robert Oppenheimer",
+    "options": ["Albert Einstein", "J. Robert Oppenheimer", "Enrico Fermi", "Niels Bohr"],
+    "category": "general"
+  },
+  {
+    "question": "What country did Finland fight against during WWII?",
+    "answer": "Soviet Union",
+    "options": ["Germany", "Soviet Union", "Britain", "Sweden"],
+    "category": "general"
+  },
+  {
+    "question": "What was Lebensraum?",
+    "answer": "Nazi concept of territorial expansion for 'living space'",
+    "options": ["German military strategy", "Nazi concept of territorial expansion for 'living space'", "Type of concentration camp", "Peace negotiation tactic"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Anschluss?",
+    "answer": "German annexation of Austria in 1938",
+    "options": ["German invasion of Poland", "German annexation of Austria in 1938", "Nazi-Soviet pact", "German surrender"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Sudetenland?",
+    "answer": "German-speaking region of Czechoslovakia annexed by Germany",
+    "options": ["German-speaking region of Czechoslovakia annexed by Germany", "Austrian province", "Polish territory", "French border region"],
+    "category": "general"
+  },
+  {
+    "question": "Who was known as 'Il Duce'?",
+    "answer": "Benito Mussolini",
+    "options": ["Adolf Hitler", "Benito Mussolini", "Francisco Franco", "Victor Emmanuel III"],
+    "category": "general"
+  },
+  {
+    "question": "What was the 'Afrika Korps'?",
+    "answer": "German expeditionary force in North Africa",
+    "options": ["Italian army in Africa", "German expeditionary force in North Africa", "Allied force in Africa", "Free French army"],
+    "category": "general"
+  },
+  {
+    "question": "What battle ended German expansion in North Africa?",
+    "answer": "Second Battle of El Alamein",
+    "options": ["Battle of Tobruk", "Second Battle of El Alamein", "Battle of Kasserine Pass", "Battle of Tunisia"],
+    "category": "general"
+  },
+  {
+    "question": "Who commanded British forces at El Alamein?",
+    "answer": "Bernard Montgomery",
+    "options": ["Erwin Rommel", "Bernard Montgomery", "Dwight Eisenhower", "Harold Alexander"],
+    "category": "general"
+  },
+  {
+    "question": "What was the 'Wolf Pack' tactic?",
+    "answer": "German submarine group attack strategy",
+    "options": ["Luftwaffe bombing raids", "German submarine group attack strategy", "Panzer division formation", "Infantry assault tactic"],
+    "category": "general"
+  },
+  {
+    "question": "What radar technology helped win the Battle of Britain?",
+    "answer": "Chain Home radar system",
+    "options": ["RADAR", "Chain Home radar system", "Magnetron", "Sonar"],
+    "category": "general"
+  },
+  {
+    "question": "What was Operation Citadel?",
+    "answer": "German offensive at Kursk",
+    "options": ["D-Day planning", "German offensive at Kursk", "Allied invasion of Italy", "Battle of the Bulge"],
+    "category": "general"
+  },
+  {
+    "question": "What country was called the 'arsenal of democracy'?",
+    "answer": "United States",
+    "options": ["Britain", "United States", "Soviet Union", "Canada"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Battle of Monte Cassino fought over?",
+    "answer": "A strategic monastery and German defensive position in Italy",
+    "options": ["A bridge in Netherlands", "A strategic monastery and German defensive position in Italy", "An airfield in France", "A port in Greece"],
+    "category": "general"
+  },
+  {
+    "question": "What Japanese code did American codebreakers famously crack?",
+    "answer": "JN-25 (Japanese Naval Code)",
+    "options": ["Enigma", "JN-25 (Japanese Naval Code)", "Purple", "Ultra"],
+    "category": "general"
+  },
+  {
+    "question": "Where was the 'Bridge Too Far' located?",
+    "answer": "Arnhem, Netherlands",
+    "options": ["Remagen, Germany", "Arnhem, Netherlands", "Nijmegen, Netherlands", "Antwerp, Belgium"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Siegfried Line?",
+    "answer": "German defensive fortification along western border",
+    "options": ["French border defense", "German defensive fortification along western border", "Italian defense line", "Soviet front line"],
+    "category": "general"
+  },
+  {
+    "question": "Which US general was famous for his aggressive tank tactics?",
+    "answer": "George S. Patton",
+    "options": ["Omar Bradley", "George S. Patton", "Mark Clark", "Courtney Hodges"],
+    "category": "general"
+  },
+  {
+    "question": "What was the code name for Allied intelligence from broken German codes?",
+    "answer": "Ultra",
+    "options": ["Magic", "Ultra", "Enigma", "Venona"],
+    "category": "general"
+  },
+  {
+    "question": "What was the deadliest day for the US Navy in history?",
+    "answer": "Pearl Harbor attack",
+    "options": ["Battle of Midway", "Pearl Harbor attack", "Battle of Leyte Gulf", "D-Day"],
+    "category": "general"
+  },
+  {
+    "question": "Which US aircraft carrier survived the entire Pacific War?",
+    "answer": "USS Enterprise",
+    "options": ["USS Yorktown", "USS Enterprise", "USS Hornet", "USS Lexington"],
+    "category": "general"
+  },
+  {
+    "question": "What city hosted the Casablanca Conference?",
+    "answer": "Casablanca, Morocco",
+    "options": ["Cairo, Egypt", "Casablanca, Morocco", "Algiers, Algeria", "Tunis, Tunisia"],
+    "category": "general"
+  },
+  {
+    "question": "What was the 'Doolittle Raid'?",
+    "answer": "First US air raid on Japanese mainland",
+    "options": ["Attack on Pearl Harbor", "First US air raid on Japanese mainland", "Bombing of Hiroshima", "Raid on Tokyo 1945"],
+    "category": "general"
+  },
+  {
+    "question": "Who led the US bombing raid on Tokyo in April 1942?",
+    "answer": "Lt. Col. James Doolittle",
+    "options": ["General Curtis LeMay", "Lt. Col. James Doolittle", "Admiral Chester Nimitz", "General Henry Arnold"],
+    "category": "general"
+  },
+  {
+    "question": "What was the Winter War?",
+    "answer": "Soviet-Finnish War (1939-1940)",
+    "options": ["Battle of Stalingrad", "Soviet-Finnish War (1939-1940)", "Siege of Leningrad", "German retreat from Moscow"],
+    "category": "general"
+  },
+  {
+    "question": "What type of government did Vichy France have?",
+    "answer": "Nazi collaborationist regime",
+    "options": ["Democratic republic", "Nazi collaborationist regime", "Military dictatorship", "Communist state"],
+    "category": "general"
+  },
+  {
+    "question": "Who was the head of Vichy France?",
+    "answer": "Philippe Petain",
+    "options": ["Charles de Gaulle", "Philippe Petain", "Pierre Laval", "Jean Moulin"],
+    "category": "general"
+  },
+  {
+    "question": "What was Operation Dragoon?",
+    "answer": "Allied invasion of Southern France",
+    "options": ["D-Day", "Allied invasion of Southern France", "Liberation of Paris", "Invasion of Italy"],
+    "category": "general"
+  },
+  {
+    "question": "What bridge did US forces famously capture intact in Germany?",
+    "answer": "Ludendorff Bridge at Remagen",
+    "options": ["Bridge at Arnhem", "Ludendorff Bridge at Remagen", "Nijmegen Bridge", "Bridge at Cologne"],
+    "category": "general"
+  }
+]
