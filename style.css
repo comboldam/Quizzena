@@ -3330,3 +3330,63 @@ footer button:hover {
 .topic-card-small:hover .spire-topic::before {
   box-shadow: 0 0 14px rgba(212,175,55,1);
 }
+
+/* ===== CLEAN ALIGNMENT FOR 3D ICONS ===== */
+/* Quick Start - Flag and Capitol containers */
+.flag-container-qs,
+.capitol-container-qs {
+  transform: scale(1.1);
+  margin-top: 5px;
+}
+
+/* Topics row - Flag and Capitol containers */
+.flag-container-topic,
+.capitol-container-topic {
+  transform: scale(0.95);
+  margin-top: 0;
+}
+
+/* Ensure all quick-icon have same height */
+.quick-icon {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure all topic-icon-small have same height */
+.topic-icon-small {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick Start button layout */
+.quick-start-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+}
+
+/* Topic card button layout */
+.topic-card-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 10px;
+  gap: 8px;
+}
+
+/* Consistent text alignment */
+.quick-name {
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.topic-name-small {
+  margin-top: auto;
+}
