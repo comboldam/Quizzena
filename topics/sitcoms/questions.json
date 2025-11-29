@@ -1,202 +1,2202 @@
 [
-  {"question": "What is the name of the coffee shop in Friends?", "options": ["Central Perk", "The Coffee House", "Java Joe's", "Cup O' Joe"], "answer": "Central Perk", "category": "friends"},
-  {"question": "Who plays Michael Scott in The Office?", "options": ["Steve Carell", "Rainn Wilson", "John Krasinski", "Ed Helms"], "answer": "Steve Carell", "category": "the-office"},
-  {"question": "What is Sheldon Cooper's catchphrase?", "options": ["Bazinga!", "How you doin'?", "Suit up!", "That's what she said"], "answer": "Bazinga!", "category": "big-bang-theory"},
-  {"question": "Which sitcom is set in the fictional town of Pawnee, Indiana?", "options": ["Parks and Recreation", "The Office", "Scrubs", "Community"], "answer": "Parks and Recreation", "category": "parks-and-rec"},
-  {"question": "What is the name of the bar in How I Met Your Mother?", "options": ["MacLaren's", "Paddy's Pub", "Cheers", "Moe's Tavern"], "answer": "MacLaren's", "category": "himym"},
-  {"question": "Who is Joey Tribbiani's agent in Friends?", "options": ["Estelle Leonard", "Janice Litman", "Gunther", "Mr. Treeger"], "answer": "Estelle Leonard", "category": "friends"},
-  {"question": "What fictional company does Michael Scott work for?", "options": ["Dunder Mifflin", "Wernham Hogg", "Prestige Worldwide", "Initech"], "answer": "Dunder Mifflin", "category": "the-office"},
-  {"question": "What is Barney Stinson's catchphrase?", "options": ["Suit up!", "Bazinga!", "How you doin'?", "Legendary"], "answer": "Suit up!", "category": "himym"},
-  {"question": "Which character says 'That's what she said'?", "options": ["Michael Scott", "Dwight Schrute", "Jim Halpert", "Kevin Malone"], "answer": "Michael Scott", "category": "the-office"},
-  {"question": "What is Ross Geller's profession in Friends?", "options": ["Paleontologist", "Archaeologist", "Geologist", "Biologist"], "answer": "Paleontologist", "category": "friends"},
-  {"question": "Who plays Leslie Knope in Parks and Recreation?", "options": ["Amy Poehler", "Rashida Jones", "Aubrey Plaza", "Retta"], "answer": "Amy Poehler", "category": "parks-and-rec"},
-  {"question": "What is the name of Sheldon's roommate agreement?", "options": ["The Roommate Agreement", "The Sheldon Contract", "The Apartment Rules", "The Cooper Clause"], "answer": "The Roommate Agreement", "category": "big-bang-theory"},
-  {"question": "Which Friends character was a chef?", "options": ["Monica Geller", "Rachel Green", "Phoebe Buffay", "Ross Geller"], "answer": "Monica Geller", "category": "friends"},
-  {"question": "What is Dwight Schrute's farm called?", "options": ["Schrute Farms", "Dunder Farm", "Beet Manor", "The Schrute Estate"], "answer": "Schrute Farms", "category": "the-office"},
-  {"question": "Who plays Barney Stinson in How I Met Your Mother?", "options": ["Neil Patrick Harris", "Josh Radnor", "Jason Segel", "Alyson Hannigan"], "answer": "Neil Patrick Harris", "category": "himym"},
-  {"question": "What is Joey's famous pickup line?", "options": ["How you doin'?", "Hey beautiful", "What's your sign?", "Come here often?"], "answer": "How you doin'?", "category": "friends"},
-  {"question": "Which sitcom features Greendale Community College?", "options": ["Community", "Undeclared", "Greek", "Saved by the Bell"], "answer": "Community", "category": "community"},
-  {"question": "What does Jim sell at Dunder Mifflin?", "options": ["Paper", "Printers", "Office supplies", "Computers"], "answer": "Paper", "category": "the-office"},
-  {"question": "Who is Chandler's annoying ex-girlfriend?", "options": ["Janice", "Emily", "Julie", "Mona"], "answer": "Janice", "category": "friends"},
-  {"question": "What is Ron Swanson's favorite food?", "options": ["Bacon/Meat", "Salad", "Fish", "Pasta"], "answer": "Bacon/Meat", "category": "parks-and-rec"},
-  {"question": "Which character in The Office loves cats?", "options": ["Angela Martin", "Phyllis Vance", "Pam Beesly", "Kelly Kapoor"], "answer": "Angela Martin", "category": "the-office"},
-  {"question": "What instrument does Phoebe play in Friends?", "options": ["Guitar", "Piano", "Drums", "Violin"], "answer": "Guitar", "category": "friends"},
-  {"question": "Who plays Jeff Winger in Community?", "options": ["Joel McHale", "Donald Glover", "Danny Pudi", "Chevy Chase"], "answer": "Joel McHale", "category": "community"},
-  {"question": "What is Sheldon's favorite spot on the couch?", "options": ["His spot (0,0,0,0)", "The middle", "The right side", "Near the window"], "answer": "His spot (0,0,0,0)", "category": "big-bang-theory"},
-  {"question": "Which Friends character had a twin?", "options": ["Phoebe Buffay", "Monica Geller", "Rachel Green", "Ross Geller"], "answer": "Phoebe Buffay", "category": "friends"},
-  {"question": "What is the name of Ted Mosby's future wife?", "options": ["Tracy McConnell", "Robin Scherbatsky", "Victoria", "Stella"], "answer": "Tracy McConnell", "category": "himym"},
-  {"question": "Who plays Dwight Schrute?", "options": ["Rainn Wilson", "Steve Carell", "John Krasinski", "B.J. Novak"], "answer": "Rainn Wilson", "category": "the-office"},
-  {"question": "What is Abed's favorite TV show in Community?", "options": ["Inspector Spacetime", "Doctor Who", "Star Trek", "Cougar Town"], "answer": "Inspector Spacetime", "category": "community"},
-  {"question": "How many seasons did Friends run?", "options": ["10", "8", "12", "9"], "answer": "10", "category": "friends"},
-  {"question": "What is the name of the dog in Modern Family?", "options": ["Stella", "Buster", "Max", "Buddy"], "answer": "Stella", "category": "modern-family"},
-  {"question": "Who plays Phil Dunphy in Modern Family?", "options": ["Ty Burrell", "Ed O'Neill", "Jesse Tyler Ferguson", "Eric Stonestreet"], "answer": "Ty Burrell", "category": "modern-family"},
-  {"question": "What game does Sheldon create?", "options": ["Rock Paper Scissors Lizard Spock", "Three-Person Chess", "Physics Pictionary", "Sheldon Says"], "answer": "Rock Paper Scissors Lizard Spock", "category": "big-bang-theory"},
-  {"question": "Which Office character starts a fire with a cheesy pita?", "options": ["Ryan Howard", "Kevin Malone", "Creed Bratton", "Stanley Hudson"], "answer": "Ryan Howard", "category": "the-office"},
-  {"question": "What is Phoebe's most famous song?", "options": ["Smelly Cat", "Sticky Shoes", "Two of Them Kissed Last Night", "Grandma"], "answer": "Smelly Cat", "category": "friends"},
-  {"question": "Who plays Ron Swanson?", "options": ["Nick Offerman", "Chris Pratt", "Adam Scott", "Rob Lowe"], "answer": "Nick Offerman", "category": "parks-and-rec"},
-  {"question": "What is the Slap Bet in HIMYM?", "options": ["Marshall can slap Barney 5 times", "A drinking game", "A bet about Robin", "A poker rule"], "answer": "Marshall can slap Barney 5 times", "category": "himym"},
-  {"question": "Which character in The Office has a gambling problem?", "options": ["Kevin Malone", "Creed Bratton", "Stanley Hudson", "Meredith Palmer"], "answer": "Kevin Malone", "category": "the-office"},
-  {"question": "What is Monica's biggest personality trait?", "options": ["Competitiveness/Cleaning", "Laziness", "Shyness", "Clumsiness"], "answer": "Competitiveness/Cleaning", "category": "friends"},
-  {"question": "Who plays Penny in The Big Bang Theory?", "options": ["Kaley Cuoco", "Melissa Rauch", "Mayim Bialik", "Sara Gilbert"], "answer": "Kaley Cuoco", "category": "big-bang-theory"},
-  {"question": "What fictional disease does Andy Dwyer diagnose himself with?", "options": ["Network Connectivity Problems", "Wi-Fi Fever", "Internet Flu", "Computer Virus"], "answer": "Network Connectivity Problems", "category": "parks-and-rec"},
-  {"question": "Who does Jim marry in The Office?", "options": ["Pam Beesly", "Karen Filippelli", "Katy", "Cathy"], "answer": "Pam Beesly", "category": "the-office"},
-  {"question": "What is Chandler Bing's job for most of Friends?", "options": ["Statistical analysis/Data processing", "Accountant", "Lawyer", "Marketing"], "answer": "Statistical analysis/Data processing", "category": "friends"},
-  {"question": "Which HIMYM character is Canadian?", "options": ["Robin Scherbatsky", "Lily Aldrin", "Marshall Eriksen", "Ted Mosby"], "answer": "Robin Scherbatsky", "category": "himym"},
-  {"question": "What is Troy and Abed's morning show called?", "options": ["Troy and Abed in the Morning", "Good Morning Greendale", "The Study Group Show", "Community TV"], "answer": "Troy and Abed in the Morning", "category": "community"},
-  {"question": "Who plays Gloria Pritchett in Modern Family?", "options": ["Sofía Vergara", "Julie Bowen", "Sarah Hyland", "Ariel Winter"], "answer": "Sofía Vergara", "category": "modern-family"},
-  {"question": "What does Creed Bratton do at Dunder Mifflin?", "options": ["Quality Assurance", "Sales", "Accounting", "Nobody knows"], "answer": "Quality Assurance", "category": "the-office"},
-  {"question": "How many times has Ross been divorced?", "options": ["3", "2", "4", "1"], "answer": "3", "category": "friends"},
-  {"question": "What university does Sheldon work at?", "options": ["Caltech", "MIT", "Stanford", "Princeton"], "answer": "Caltech", "category": "big-bang-theory"},
-  {"question": "Who plays Andy Dwyer in Parks and Rec?", "options": ["Chris Pratt", "Adam Scott", "Rob Lowe", "Aziz Ansari"], "answer": "Chris Pratt", "category": "parks-and-rec"},
-  {"question": "What is the name of Barney's blog?", "options": ["Barney's Blog", "Legendary Blog", "Suit Up Blog", "Stinson's Secrets"], "answer": "Barney's Blog", "category": "himym"},
-  {"question": "Which Office character is in a band called Scrantonicity?", "options": ["Kevin Malone", "Andy Bernard", "Darryl Philbin", "Jim Halpert"], "answer": "Kevin Malone", "category": "the-office"},
-  {"question": "What is Rachel's last name in Friends?", "options": ["Green", "Geller", "Buffay", "Bing"], "answer": "Green", "category": "friends"},
-  {"question": "Who plays Dean Pelton in Community?", "options": ["Jim Rash", "Ken Jeong", "Chevy Chase", "John Oliver"], "answer": "Jim Rash", "category": "community"},
-  {"question": "What is the name of Jay's dog in Modern Family?", "options": ["Stella", "Jay Jr.", "Buster", "Gloria"], "answer": "Stella", "category": "modern-family"},
-  {"question": "What is Leonard's last name in Big Bang Theory?", "options": ["Hofstadter", "Cooper", "Wolowitz", "Koothrappali"], "answer": "Hofstadter", "category": "big-bang-theory"},
-  {"question": "Who is the office administrator after Michael leaves?", "options": ["Andy Bernard", "Dwight Schrute", "Jim Halpert", "Robert California"], "answer": "Andy Bernard", "category": "the-office"},
-  {"question": "What is the name of Phoebe's twin sister?", "options": ["Ursula", "Lily", "Susan", "Alice"], "answer": "Ursula", "category": "friends"},
-  {"question": "What does Tom Haverford call his failed business ventures?", "options": ["Entertainment 720", "Rent-A-Swag", "Tom's Bistro", "All of the above"], "answer": "All of the above", "category": "parks-and-rec"},
-  {"question": "Who plays Marshall Eriksen in HIMYM?", "options": ["Jason Segel", "Josh Radnor", "Neil Patrick Harris", "Alyson Hannigan"], "answer": "Jason Segel", "category": "himym"},
-  {"question": "What is the name of the study group's table in Community?", "options": ["The Study Room Table", "Table Mk II", "Their spot", "The Greendale Table"], "answer": "The Study Room Table", "category": "community"},
-  {"question": "Which Friends character worked at Bloomingdale's?", "options": ["Rachel Green", "Monica Geller", "Phoebe Buffay", "Emily Waltham"], "answer": "Rachel Green", "category": "friends"},
-  {"question": "What is Michael Scott's improv character?", "options": ["Michael Scarn", "Prison Mike", "Date Mike", "Agent Michael Scarn"], "answer": "Michael Scarn", "category": "the-office"},
-  {"question": "What field does Amy Farrah Fowler work in?", "options": ["Neurobiology", "Physics", "Chemistry", "Astronomy"], "answer": "Neurobiology", "category": "big-bang-theory"},
-  {"question": "Who plays Cameron Tucker in Modern Family?", "options": ["Eric Stonestreet", "Jesse Tyler Ferguson", "Ty Burrell", "Ed O'Neill"], "answer": "Eric Stonestreet", "category": "modern-family"},
-  {"question": "What is April Ludgate's demeanor?", "options": ["Sarcastic/Dark", "Cheerful", "Anxious", "Hyper"], "answer": "Sarcastic/Dark", "category": "parks-and-rec"},
-  {"question": "What does Robin Scherbatsky do for work?", "options": ["News anchor/Reporter", "Lawyer", "Doctor", "Teacher"], "answer": "News anchor/Reporter", "category": "himym"},
-  {"question": "Which character says 'I declare bankruptcy!'?", "options": ["Michael Scott", "Kevin Malone", "Creed Bratton", "Andy Bernard"], "answer": "Michael Scott", "category": "the-office"},
-  {"question": "What is the name of Joey's stuffed penguin?", "options": ["Hugsy", "Waddles", "Penny", "Pete"], "answer": "Hugsy", "category": "friends"},
-  {"question": "Who plays Britta Perry in Community?", "options": ["Gillian Jacobs", "Alison Brie", "Yvette Nicole Brown", "Chevy Chase"], "answer": "Gillian Jacobs", "category": "community"},
-  {"question": "What is Howard Wolowitz's job?", "options": ["Aerospace Engineer", "Physicist", "Astrophysicist", "Biologist"], "answer": "Aerospace Engineer", "category": "big-bang-theory"},
-  {"question": "Who plays Jay Pritchett in Modern Family?", "options": ["Ed O'Neill", "Ty Burrell", "Jesse Tyler Ferguson", "Eric Stonestreet"], "answer": "Ed O'Neill", "category": "modern-family"},
-  {"question": "What is the name of Ben Wyatt's failed project?", "options": ["Ice Town", "Snow City", "Winter World", "Frost Village"], "answer": "Ice Town", "category": "parks-and-rec"},
-  {"question": "What does Lily Aldrin do for work?", "options": ["Kindergarten teacher/Artist", "Lawyer", "Doctor", "Journalist"], "answer": "Kindergarten teacher/Artist", "category": "himym"},
-  {"question": "Who replaced Michael Scott as manager?", "options": ["Multiple people", "Dwight Schrute", "Jim Halpert", "Andy Bernard"], "answer": "Multiple people", "category": "the-office"},
-  {"question": "What is Chandler's middle name?", "options": ["Muriel", "Michael", "Matthew", "Martin"], "answer": "Muriel", "category": "friends"},
-  {"question": "What is Raj Koothrappali's selective mutism about?", "options": ["Talking to women", "Public speaking", "Talking to strangers", "Phone calls"], "answer": "Talking to women", "category": "big-bang-theory"},
-  {"question": "Who plays Annie Edison in Community?", "options": ["Alison Brie", "Gillian Jacobs", "Yvette Nicole Brown", "Paget Brewster"], "answer": "Alison Brie", "category": "community"},
-  {"question": "What is Claire Dunphy's maiden name?", "options": ["Pritchett", "Johnson", "Williams", "Smith"], "answer": "Pritchett", "category": "modern-family"},
-  {"question": "What food is Ron Swanson obsessed with?", "options": ["Bacon and eggs", "Pizza", "Tacos", "Burgers"], "answer": "Bacon and eggs", "category": "parks-and-rec"},
-  {"question": "What is Ted Mosby's profession?", "options": ["Architect", "Lawyer", "Doctor", "Professor"], "answer": "Architect", "category": "himym"},
-  {"question": "What is Stanley Hudson known for loving?", "options": ["Pretzel Day", "Pizza Friday", "Donut Monday", "Taco Tuesday"], "answer": "Pretzel Day", "category": "the-office"},
-  {"question": "Who does Monica marry in Friends?", "options": ["Chandler Bing", "Richard Burke", "Pete Becker", "Ross Geller"], "answer": "Chandler Bing", "category": "friends"},
-  {"question": "What is Penny's last name in Big Bang Theory?", "options": ["Never revealed", "Hofstadter", "Cooper", "Smith"], "answer": "Never revealed", "category": "big-bang-theory"},
-  {"question": "Who plays Troy Barnes in Community?", "options": ["Donald Glover", "Danny Pudi", "Joel McHale", "Ken Jeong"], "answer": "Donald Glover", "category": "community"},
-  {"question": "What country is Gloria from in Modern Family?", "options": ["Colombia", "Mexico", "Brazil", "Argentina"], "answer": "Colombia", "category": "modern-family"},
-  {"question": "Who plays Tom Haverford?", "options": ["Aziz Ansari", "Chris Pratt", "Adam Scott", "Rob Lowe"], "answer": "Aziz Ansari", "category": "parks-and-rec"},
-  {"question": "What is the name of Barney's playbook?", "options": ["The Playbook", "The Bro Code", "Barney's Rules", "The Stinson Guide"], "answer": "The Playbook", "category": "himym"},
-  {"question": "Who plays Angela Martin?", "options": ["Angela Kinsey", "Jenna Fischer", "Mindy Kaling", "Kate Flannery"], "answer": "Angela Kinsey", "category": "the-office"},
-  {"question": "What is the name of Rachel and Ross's daughter?", "options": ["Emma", "Emily", "Ella", "Eva"], "answer": "Emma", "category": "friends"},
-  {"question": "What does Sheldon knock three times and say?", "options": ["Penny, Penny, Penny", "Knock knock knock", "Hello hello hello", "Open open open"], "answer": "Penny, Penny, Penny", "category": "big-bang-theory"},
-  {"question": "Who is the Spanish teacher at Greendale?", "options": ["Señor Chang", "Señor Rodriguez", "Señor Martinez", "Señor Garcia"], "answer": "Señor Chang", "category": "community"},
-  {"question": "What is Manny's relationship to Jay in Modern Family?", "options": ["Stepson", "Nephew", "Grandson", "Son"], "answer": "Stepson", "category": "modern-family"},
-  {"question": "What department does Leslie Knope work in?", "options": ["Parks Department", "City Planning", "Sanitation", "Public Works"], "answer": "Parks Department", "category": "parks-and-rec"},
-  {"question": "Who plays Lily Aldrin?", "options": ["Alyson Hannigan", "Cobie Smulders", "Cristin Milioti", "Ashley Williams"], "answer": "Alyson Hannigan", "category": "himym"},
-  {"question": "What is Prison Mike afraid of?", "options": ["The Dementors", "The guards", "Solitary", "The food"], "answer": "The Dementors", "category": "the-office"},
-  {"question": "Who does Joey fall in love with in later seasons?", "options": ["Rachel Green", "Phoebe Buffay", "Monica Geller", "Charlie Wheeler"], "answer": "Rachel Green", "category": "friends"},
-  {"question": "What is the name of Sheldon's mother?", "options": ["Mary Cooper", "Martha Cooper", "Margaret Cooper", "Marie Cooper"], "answer": "Mary Cooper", "category": "big-bang-theory"},
-  {"question": "Who plays Abed Nadir?", "options": ["Danny Pudi", "Donald Glover", "Joel McHale", "Ken Jeong"], "answer": "Danny Pudi", "category": "community"},
-  {"question": "What is Phil Dunphy's catchphrase style?", "options": ["Phil's-osophy", "Dunphy-isms", "Phil Facts", "Dunphy's Rules"], "answer": "Phil's-osophy", "category": "modern-family"},
-  {"question": "What does Andy Dwyer rename himself?", "options": ["Burt Macklin, FBI", "Johnny Karate", "All of the above", "None of the above"], "answer": "All of the above", "category": "parks-and-rec"},
-  {"question": "What item does Ted steal for Robin?", "options": ["Blue French Horn", "Yellow Umbrella", "Red Cowboy Boots", "Purple Guitar"], "answer": "Blue French Horn", "category": "himym"},
-  {"question": "Who plays Pam Beesly?", "options": ["Jenna Fischer", "Angela Kinsey", "Mindy Kaling", "Ellie Kemper"], "answer": "Jenna Fischer", "category": "the-office"},
-  {"question": "What is the name of Ross's monkey?", "options": ["Marcel", "George", "Clyde", "Darwin"], "answer": "Marcel", "category": "friends"},
-  {"question": "Who plays Leonard Hofstadter?", "options": ["Johnny Galecki", "Jim Parsons", "Simon Helberg", "Kunal Nayyar"], "answer": "Johnny Galecki", "category": "big-bang-theory"},
-  {"question": "What does the group paint on their chests in Community?", "options": ["E Pluribus Anus", "Go Greendale", "Human Beings", "Study Group"], "answer": "E Pluribus Anus", "category": "community"},
-  {"question": "Who adopts Lily in Modern Family?", "options": ["Mitch and Cam", "Jay and Gloria", "Phil and Claire", "Haley"], "answer": "Mitch and Cam", "category": "modern-family"},
-  {"question": "What is Li'l Sebastian?", "options": ["A miniature horse", "A dog", "A cat", "A mascot"], "answer": "A miniature horse", "category": "parks-and-rec"},
-  {"question": "Where is the apartment located in HIMYM?", "options": ["New York", "Los Angeles", "Chicago", "Boston"], "answer": "New York", "category": "himym"},
-  {"question": "What branch of Dunder Mifflin does the show focus on?", "options": ["Scranton", "New York", "Stamford", "Utica"], "answer": "Scranton", "category": "the-office"},
-  {"question": "Who plays Gunther in Friends?", "options": ["James Michael Tyler", "David Schwimmer", "Matthew Perry", "Matt LeBlanc"], "answer": "James Michael Tyler", "category": "friends"},
-  {"question": "What is Bernadette's voice like?", "options": ["High-pitched", "Deep", "Normal", "Raspy"], "answer": "High-pitched", "category": "big-bang-theory"},
-  {"question": "What is the mascot of Greendale?", "options": ["The Human Being", "The Greendale Goat", "The Eagle", "The Bear"], "answer": "The Human Being", "category": "community"},
-  {"question": "Who plays Luke Dunphy?", "options": ["Nolan Gould", "Rico Rodriguez", "Ty Burrell", "Ed O'Neill"], "answer": "Nolan Gould", "category": "modern-family"},
-  {"question": "What is Donna Meagle's catchphrase?", "options": ["Treat Yo Self", "Parks Life", "Girl Power", "Meagle Style"], "answer": "Treat Yo Self", "category": "parks-and-rec"},
-  {"question": "What color is the Mother's umbrella?", "options": ["Yellow", "Red", "Blue", "Green"], "answer": "Yellow", "category": "himym"},
-  {"question": "What holiday does the Dundies celebrate?", "options": ["Any occasion", "Christmas", "New Year", "Halloween"], "answer": "Any occasion", "category": "the-office"},
-  {"question": "What is Joey's acting catchphrase?", "options": ["Smell the fart acting", "Method acting", "Natural acting", "Feel the scene"], "answer": "Smell the fart acting", "category": "friends"},
-  {"question": "Who plays Raj Koothrappali?", "options": ["Kunal Nayyar", "Simon Helberg", "Johnny Galecki", "Jim Parsons"], "answer": "Kunal Nayyar", "category": "big-bang-theory"},
-  {"question": "What movie does Community parody in paintball episodes?", "options": ["Multiple action movies", "Star Wars only", "Die Hard only", "Rambo only"], "answer": "Multiple action movies", "category": "community"},
-  {"question": "What is Mitchell's profession in Modern Family?", "options": ["Lawyer", "Doctor", "Teacher", "Accountant"], "answer": "Lawyer", "category": "modern-family"},
-  {"question": "Who plays Ben Wyatt?", "options": ["Adam Scott", "Chris Pratt", "Rob Lowe", "Nick Offerman"], "answer": "Adam Scott", "category": "parks-and-rec"},
-  {"question": "What is Barney's job revealed to be?", "options": ["Please (PLEASE)", "Banker", "Lawyer", "Unknown"], "answer": "Please (PLEASE)", "category": "himym"},
-  {"question": "Who starts the fire at the office?", "options": ["Ryan Howard", "Dwight Schrute", "Michael Scott", "Kevin Malone"], "answer": "Ryan Howard", "category": "the-office"},
-  {"question": "What does Monica's apartment number change to?", "options": ["20 (originally 5)", "19", "21", "25"], "answer": "20 (originally 5)", "category": "friends"},
-  {"question": "What state is Sheldon from?", "options": ["Texas", "California", "Oklahoma", "Kansas"], "answer": "Texas", "category": "big-bang-theory"},
-  {"question": "Who plays Shirley Bennett?", "options": ["Yvette Nicole Brown", "Gillian Jacobs", "Alison Brie", "Paget Brewster"], "answer": "Yvette Nicole Brown", "category": "community"},
-  {"question": "What is Haley Dunphy's personality?", "options": ["Popular/Boy-crazy", "Nerdy", "Athletic", "Artistic"], "answer": "Popular/Boy-crazy", "category": "modern-family"},
-  {"question": "What is Jerry Gergich's actual name?", "options": ["Garry", "Jerry", "Larry", "Terry"], "answer": "Garry", "category": "parks-and-rec"},
-  {"question": "Who plays Ted Mosby?", "options": ["Josh Radnor", "Neil Patrick Harris", "Jason Segel", "Alyson Hannigan"], "answer": "Josh Radnor", "category": "himym"},
-  {"question": "What does Kevin spill in The Office?", "options": ["Chili", "Soup", "Coffee", "Pasta"], "answer": "Chili", "category": "the-office"},
-  {"question": "What is the name of Ross's ex-wife?", "options": ["Carol", "Emily", "Rachel", "Mona"], "answer": "Carol", "category": "friends"},
-  {"question": "What comic does Sheldon love?", "options": ["The Flash", "Batman", "Spider-Man", "Superman"], "answer": "The Flash", "category": "big-bang-theory"},
-  {"question": "Who plays Pierce Hawthorne?", "options": ["Chevy Chase", "Joel McHale", "Ken Jeong", "Jim Rash"], "answer": "Chevy Chase", "category": "community"},
-  {"question": "What is Alex Dunphy's personality?", "options": ["Smart/Nerdy", "Popular", "Athletic", "Rebellious"], "answer": "Smart/Nerdy", "category": "modern-family"},
-  {"question": "What is Chris Traeger's catchphrase?", "options": ["Literally", "Actually", "Basically", "Seriously"], "answer": "Literally", "category": "parks-and-rec"},
-  {"question": "Who plays Robin Scherbatsky?", "options": ["Cobie Smulders", "Alyson Hannigan", "Cristin Milioti", "Sarah Chalke"], "answer": "Cobie Smulders", "category": "himym"},
-  {"question": "What is Andy Bernard's college acapella group?", "options": ["Here Comes Treble", "The Harmonics", "Dunder Singers", "The Scrantonics"], "answer": "Here Comes Treble", "category": "the-office"},
-  {"question": "Who is Rachel's sister in Friends?", "options": ["Jill and Amy", "Jill only", "Amy only", "Sarah"], "answer": "Jill and Amy", "category": "friends"},
-  {"question": "What does Howard wear instead of a tie?", "options": ["Dickie/Turtleneck", "Bowtie", "Scarf", "Nothing"], "answer": "Dickie/Turtleneck", "category": "big-bang-theory"},
-  {"question": "What is the darkest timeline in Community?", "options": ["Evil timeline", "Prime timeline", "Best timeline", "Alternate timeline"], "answer": "Evil timeline", "category": "community"},
-  {"question": "Who plays Manny Delgado?", "options": ["Rico Rodriguez", "Nolan Gould", "Ed O'Neill", "Ty Burrell"], "answer": "Rico Rodriguez", "category": "modern-family"},
-  {"question": "What does Ann Perkins do for work?", "options": ["Nurse", "Doctor", "Teacher", "Lawyer"], "answer": "Nurse", "category": "parks-and-rec"},
-  {"question": "What is the Bro Code?", "options": ["Rules for bros", "A drinking game", "A bet", "A song"], "answer": "Rules for bros", "category": "himym"},
-  {"question": "Who plays Kelly Kapoor?", "options": ["Mindy Kaling", "Angela Kinsey", "Jenna Fischer", "Ellie Kemper"], "answer": "Mindy Kaling", "category": "the-office"},
-  {"question": "What show does Joey star in?", "options": ["Days of Our Lives", "General Hospital", "The Young and the Restless", "All My Children"], "answer": "Days of Our Lives", "category": "friends"},
-  {"question": "Who plays Amy Farrah Fowler?", "options": ["Mayim Bialik", "Kaley Cuoco", "Melissa Rauch", "Sara Gilbert"], "answer": "Mayim Bialik", "category": "big-bang-theory"},
-  {"question": "What gas does the study room leak in Community?", "options": ["No gas, just chaos", "Carbon monoxide", "Natural gas", "Chlorine"], "answer": "No gas, just chaos", "category": "community"},
-  {"question": "Who plays Dylan Marshall in Modern Family?", "options": ["Reid Ewing", "Adam DeVine", "Nathan Fillion", "James Marsden"], "answer": "Reid Ewing", "category": "modern-family"},
-  {"question": "Who plays Ann Perkins?", "options": ["Rashida Jones", "Amy Poehler", "Aubrey Plaza", "Retta"], "answer": "Rashida Jones", "category": "parks-and-rec"},
-  {"question": "What is Marshall's dream job?", "options": ["Environmental lawyer", "Judge", "Corporate lawyer", "Professor"], "answer": "Environmental lawyer", "category": "himym"},
-  {"question": "What award does Michael desperately want?", "options": ["A Dundie", "Employee of the Month", "Best Boss", "Salesman of the Year"], "answer": "A Dundie", "category": "the-office"},
-  {"question": "Where do the Friends live?", "options": ["New York", "Los Angeles", "Chicago", "Boston"], "answer": "New York", "category": "friends"},
-  {"question": "Who plays Stuart Bloom?", "options": ["Kevin Sussman", "Johnny Galecki", "Simon Helberg", "Kunal Nayyar"], "answer": "Kevin Sussman", "category": "big-bang-theory"},
-  {"question": "What is the Dreamatorium in Community?", "options": ["Imagination room", "Actual dream lab", "Study room", "Dorm room"], "answer": "Imagination room", "category": "community"},
-  {"question": "What does Cameron do for work in Modern Family?", "options": ["Teacher/Football coach", "Lawyer", "Clown", "Stay-at-home dad"], "answer": "Teacher/Football coach", "category": "modern-family"},
-  {"question": "What does Ron Swanson think of government?", "options": ["Hates it", "Loves it", "Indifferent", "Wants to expand it"], "answer": "Hates it", "category": "parks-and-rec"},
-  {"question": "What is the restaurant under the apartment in HIMYM?", "options": ["MacLaren's Pub", "The Burger Joint", "Ted's Diner", "Robin's Cafe"], "answer": "MacLaren's Pub", "category": "himym"},
-  {"question": "Who plays Oscar Martinez?", "options": ["Oscar Nunez", "Brian Baumgartner", "Craig Robinson", "Ed Helms"], "answer": "Oscar Nunez", "category": "the-office"},
-  {"question": "What is the name of the ugly naked guy's apartment?", "options": ["Across the street", "Next door", "Upstairs", "Downstairs"], "answer": "Across the street", "category": "friends"},
-  {"question": "What does Sheldon want to win?", "options": ["Nobel Prize", "Oscar", "Emmy", "Grammy"], "answer": "Nobel Prize", "category": "big-bang-theory"},
-  {"question": "Who is the villain in Community's paintball?", "options": ["Multiple villains", "The Dean", "Chang", "Pierce"], "answer": "Multiple villains", "category": "community"},
-  {"question": "What is Jay Pritchett's business?", "options": ["Closets", "Cars", "Real estate", "Construction"], "answer": "Closets", "category": "modern-family"},
-  {"question": "What band does Andy Dwyer form?", "options": ["Mouse Rat", "Scarecrow Boat", "Nothing Rhymes with Orange", "All of these"], "answer": "All of these", "category": "parks-and-rec"},
-  {"question": "What did Marshall's dad call him?", "options": ["Marshmallow", "Marsh", "Little M", "Junior"], "answer": "Marshmallow", "category": "himym"},
-  {"question": "What does Dwight raise on his farm?", "options": ["Beets", "Corn", "Wheat", "Potatoes"], "answer": "Beets", "category": "the-office"},
-  {"question": "What is Rachel's favorite movie?", "options": ["Dangerous Liaisons", "Weekend at Bernie's", "Die Hard", "Breakfast at Tiffany's"], "answer": "Dangerous Liaisons", "category": "friends"},
-  {"question": "Who plays Bernadette?", "options": ["Melissa Rauch", "Kaley Cuoco", "Mayim Bialik", "Sara Gilbert"], "answer": "Melissa Rauch", "category": "big-bang-theory"},
-  {"question": "What is the Hawthorne family business?", "options": ["Moist towelettes", "Paper", "Chemicals", "Food"], "answer": "Moist towelettes", "category": "community"},
-  {"question": "Who plays Haley Dunphy?", "options": ["Sarah Hyland", "Ariel Winter", "Sofia Vergara", "Julie Bowen"], "answer": "Sarah Hyland", "category": "modern-family"},
-  {"question": "What nickname does Leslie give Ann?", "options": ["Many complimentary ones", "Ann Perkins", "Beautiful", "All compliments"], "answer": "Many complimentary ones", "category": "parks-and-rec"},
-  {"question": "Who does Barney marry?", "options": ["Robin Scherbatsky", "Nora", "Quinn", "Patrice"], "answer": "Robin Scherbatsky", "category": "himym"},
-  {"question": "What is Threat Level Midnight?", "options": ["Michael's movie", "An episode title", "A Dundie category", "A sales competition"], "answer": "Michael's movie", "category": "the-office"},
-  {"question": "How many sisters does Joey have?", "options": ["7", "5", "3", "6"], "answer": "7", "category": "friends"},
-  {"question": "What is the comic book store called?", "options": ["The Comic Center of Pasadena", "Stuart's Comics", "Sheldon's Stop", "Nerd Heaven"], "answer": "The Comic Center of Pasadena", "category": "big-bang-theory"},
-  {"question": "Who plays Ben Chang?", "options": ["Ken Jeong", "Danny Pudi", "Donald Glover", "Joel McHale"], "answer": "Ken Jeong", "category": "community"},
-  {"question": "Who plays Claire Dunphy?", "options": ["Julie Bowen", "Sofia Vergara", "Sarah Hyland", "Ariel Winter"], "answer": "Julie Bowen", "category": "modern-family"},
-  {"question": "What food does Leslie love?", "options": ["Waffles", "Pancakes", "Pizza", "Burgers"], "answer": "Waffles", "category": "parks-and-rec"},
-  {"question": "Who narrates HIMYM?", "options": ["Future Ted (Bob Saget)", "Ted Mosby", "Marshall", "Barney"], "answer": "Future Ted (Bob Saget)", "category": "himym"},
-  {"question": "Who plays Darryl Philbin?", "options": ["Craig Robinson", "Leslie David Baker", "Brian Baumgartner", "Oscar Nunez"], "answer": "Craig Robinson", "category": "the-office"},
-  {"question": "What does Ross yell about his sandwich?", "options": ["MY SANDWICH", "WHO ATE IT", "THAT WAS MINE", "THE MOISTMAKER"], "answer": "MY SANDWICH", "category": "friends"},
-  {"question": "What day does Sheldon like Thai food?", "options": ["Tuesday", "Monday", "Wednesday", "Thursday"], "answer": "Tuesday", "category": "big-bang-theory"},
-  {"question": "What is Advanced Dungeons & Dragons episode about?", "options": ["Helping Fat Neil", "Playing a game", "A Halloween party", "A class"], "answer": "Helping Fat Neil", "category": "community"},
-  {"question": "Who plays Mitchell Pritchett?", "options": ["Jesse Tyler Ferguson", "Eric Stonestreet", "Ty Burrell", "Ed O'Neill"], "answer": "Jesse Tyler Ferguson", "category": "modern-family"},
-  {"question": "What does Ron Swanson make?", "options": ["Woodwork", "Pottery", "Paintings", "Metalwork"], "answer": "Woodwork", "category": "parks-and-rec"},
-  {"question": "What is the cockamouse?", "options": ["Roach-mouse hybrid", "A drink", "A game", "An inside joke"], "answer": "Roach-mouse hybrid", "category": "himym"},
-  {"question": "What does Jan make in her condo?", "options": ["Candles", "Soap", "Jewelry", "Pottery"], "answer": "Candles", "category": "the-office"},
-  {"question": "What is the name of Phoebe's husband?", "options": ["Mike Hannigan", "David", "Gary", "Parker"], "answer": "Mike Hannigan", "category": "friends"},
-  {"question": "Who plays Howard Wolowitz?", "options": ["Simon Helberg", "Kunal Nayyar", "Johnny Galecki", "Kevin Sussman"], "answer": "Simon Helberg", "category": "big-bang-theory"},
-  {"question": "What show does Abed love to reference?", "options": ["Many (especially Community itself)", "Star Trek only", "Star Wars only", "Doctor Who only"], "answer": "Many (especially Community itself)", "category": "community"},
-  {"question": "Who plays Alex Dunphy?", "options": ["Ariel Winter", "Sarah Hyland", "Sofia Vergara", "Julie Bowen"], "answer": "Ariel Winter", "category": "modern-family"},
-  {"question": "What is Perd Hapley known for?", "options": ["Obvious statements", "Breaking news", "Weather reports", "Sports"], "answer": "Obvious statements", "category": "parks-and-rec"},
-  {"question": "What is Marshall afraid of?", "options": ["Crocodiles", "Snakes", "Spiders", "Heights"], "answer": "Crocodiles", "category": "himym"},
-  {"question": "What game does The Office play at the beach?", "options": ["Various team games", "Only volleyball", "Only frisbee", "Only football"], "answer": "Various team games", "category": "the-office"},
-  {"question": "What nickname does Chandler hate?", "options": ["Bing-a-ling", "Chan-Chan", "Chandler Bing", "Mr. Bing"], "answer": "Bing-a-ling", "category": "friends"},
-  {"question": "Who plays Sheldon Cooper?", "options": ["Jim Parsons", "Johnny Galecki", "Simon Helberg", "Kunal Nayyar"], "answer": "Jim Parsons", "category": "big-bang-theory"},
-  {"question": "Six seasons and a...?", "options": ["Movie", "Spin-off", "Reunion", "Revival"], "answer": "Movie", "category": "community"},
-  {"question": "What show did Ed O'Neill star in before Modern Family?", "options": ["Married with Children", "Seinfeld", "Friends", "Cheers"], "answer": "Married with Children", "category": "modern-family"},
-  {"question": "Who plays April Ludgate?", "options": ["Aubrey Plaza", "Rashida Jones", "Amy Poehler", "Retta"], "answer": "Aubrey Plaza", "category": "parks-and-rec"},
-  {"question": "How long does Ted tell the story in HIMYM?", "options": ["9 years (9 seasons)", "5 years", "7 years", "10 years"], "answer": "9 years (9 seasons)", "category": "himym"},
-  {"question": "Who plays Jim Halpert?", "options": ["John Krasinski", "Steve Carell", "Rainn Wilson", "B.J. Novak"], "answer": "John Krasinski", "category": "the-office"}
+  {
+    "question": "What is the name of the coffee shop in Friends?",
+    "options": [
+      "Central Perk",
+      "Cup O' Joe",
+      "Java Joe's",
+      "The Coffee House"
+    ],
+    "answer": "Central Perk",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Michael Scott in The Office?",
+    "options": [
+      "Rainn Wilson",
+      "John Krasinski",
+      "Steve Carell",
+      "Ed Helms"
+    ],
+    "answer": "Steve Carell",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Sheldon Cooper's catchphrase?",
+    "options": [
+      "How you doin'?",
+      "That's what she said",
+      "Bazinga!",
+      "Suit up!"
+    ],
+    "answer": "Bazinga!",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Which sitcom is set in the fictional town of Pawnee, Indiana?",
+    "options": [
+      "The Office",
+      "Scrubs",
+      "Parks and Recreation",
+      "Community"
+    ],
+    "answer": "Parks and Recreation",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the name of the bar in How I Met Your Mother?",
+    "options": [
+      "MacLaren's",
+      "Paddy's Pub",
+      "Moe's Tavern",
+      "Cheers"
+    ],
+    "answer": "MacLaren's",
+    "category": "himym"
+  },
+  {
+    "question": "Who is Joey Tribbiani's agent in Friends?",
+    "options": [
+      "Janice Litman",
+      "Estelle Leonard",
+      "Gunther",
+      "Mr. Treeger"
+    ],
+    "answer": "Estelle Leonard",
+    "category": "friends"
+  },
+  {
+    "question": "What fictional company does Michael Scott work for?",
+    "options": [
+      "Wernham Hogg",
+      "Dunder Mifflin",
+      "Prestige Worldwide",
+      "Initech"
+    ],
+    "answer": "Dunder Mifflin",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Barney Stinson's catchphrase?",
+    "options": [
+      "Suit up!",
+      "How you doin'?",
+      "Legendary",
+      "Bazinga!"
+    ],
+    "answer": "Suit up!",
+    "category": "himym"
+  },
+  {
+    "question": "Which character says 'That's what she said'?",
+    "options": [
+      "Michael Scott",
+      "Dwight Schrute",
+      "Jim Halpert",
+      "Kevin Malone"
+    ],
+    "answer": "Michael Scott",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Ross Geller's profession in Friends?",
+    "options": [
+      "Paleontologist",
+      "Archaeologist",
+      "Geologist",
+      "Biologist"
+    ],
+    "answer": "Paleontologist",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Leslie Knope in Parks and Recreation?",
+    "options": [
+      "Aubrey Plaza",
+      "Retta",
+      "Rashida Jones",
+      "Amy Poehler"
+    ],
+    "answer": "Amy Poehler",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the name of Sheldon's roommate agreement?",
+    "options": [
+      "The Cooper Clause",
+      "The Apartment Rules",
+      "The Roommate Agreement",
+      "The Sheldon Contract"
+    ],
+    "answer": "The Roommate Agreement",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Which Friends character was a chef?",
+    "options": [
+      "Phoebe Buffay",
+      "Ross Geller",
+      "Rachel Green",
+      "Monica Geller"
+    ],
+    "answer": "Monica Geller",
+    "category": "friends"
+  },
+  {
+    "question": "What is Dwight Schrute's farm called?",
+    "options": [
+      "Schrute Farms",
+      "Beet Manor",
+      "Dunder Farm",
+      "The Schrute Estate"
+    ],
+    "answer": "Schrute Farms",
+    "category": "the-office"
+  },
+  {
+    "question": "Who plays Barney Stinson in How I Met Your Mother?",
+    "options": [
+      "Alyson Hannigan",
+      "Jason Segel",
+      "Josh Radnor",
+      "Neil Patrick Harris"
+    ],
+    "answer": "Neil Patrick Harris",
+    "category": "himym"
+  },
+  {
+    "question": "What is Joey's famous pickup line?",
+    "options": [
+      "What's your sign?",
+      "Hey beautiful",
+      "Come here often?",
+      "How you doin'?"
+    ],
+    "answer": "How you doin'?",
+    "category": "friends"
+  },
+  {
+    "question": "Which sitcom features Greendale Community College?",
+    "options": [
+      "Saved by the Bell",
+      "Undeclared",
+      "Community",
+      "Greek"
+    ],
+    "answer": "Community",
+    "category": "community"
+  },
+  {
+    "question": "What does Jim sell at Dunder Mifflin?",
+    "options": [
+      "Computers",
+      "Paper",
+      "Office supplies",
+      "Printers"
+    ],
+    "answer": "Paper",
+    "category": "the-office"
+  },
+  {
+    "question": "Who is Chandler's annoying ex-girlfriend?",
+    "options": [
+      "Janice",
+      "Julie",
+      "Emily",
+      "Mona"
+    ],
+    "answer": "Janice",
+    "category": "friends"
+  },
+  {
+    "question": "What is Ron Swanson's favorite food?",
+    "options": [
+      "Bacon/Meat",
+      "Salad",
+      "Pasta",
+      "Fish"
+    ],
+    "answer": "Bacon/Meat",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Which character in The Office loves cats?",
+    "options": [
+      "Phyllis Vance",
+      "Pam Beesly",
+      "Angela Martin",
+      "Kelly Kapoor"
+    ],
+    "answer": "Angela Martin",
+    "category": "the-office"
+  },
+  {
+    "question": "What instrument does Phoebe play in Friends?",
+    "options": [
+      "Piano",
+      "Guitar",
+      "Violin",
+      "Drums"
+    ],
+    "answer": "Guitar",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Jeff Winger in Community?",
+    "options": [
+      "Danny Pudi",
+      "Joel McHale",
+      "Chevy Chase",
+      "Donald Glover"
+    ],
+    "answer": "Joel McHale",
+    "category": "community"
+  },
+  {
+    "question": "What is Sheldon's favorite spot on the couch?",
+    "options": [
+      "Near the window",
+      "The right side",
+      "His spot (0,0,0,0)",
+      "The middle"
+    ],
+    "answer": "His spot (0,0,0,0)",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Which Friends character had a twin?",
+    "options": [
+      "Monica Geller",
+      "Phoebe Buffay",
+      "Ross Geller",
+      "Rachel Green"
+    ],
+    "answer": "Phoebe Buffay",
+    "category": "friends"
+  },
+  {
+    "question": "What is the name of Ted Mosby's future wife?",
+    "options": [
+      "Victoria",
+      "Tracy McConnell",
+      "Stella",
+      "Robin Scherbatsky"
+    ],
+    "answer": "Tracy McConnell",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Dwight Schrute?",
+    "options": [
+      "Steve Carell",
+      "B.J. Novak",
+      "Rainn Wilson",
+      "John Krasinski"
+    ],
+    "answer": "Rainn Wilson",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Abed's favorite TV show in Community?",
+    "options": [
+      "Cougar Town",
+      "Star Trek",
+      "Doctor Who",
+      "Inspector Spacetime"
+    ],
+    "answer": "Inspector Spacetime",
+    "category": "community"
+  },
+  {
+    "question": "How many seasons did Friends run?",
+    "options": [
+      "12",
+      "9",
+      "8",
+      "10"
+    ],
+    "answer": "10",
+    "category": "friends"
+  },
+  {
+    "question": "What is the name of the dog in Modern Family?",
+    "options": [
+      "Stella",
+      "Buddy",
+      "Buster",
+      "Max"
+    ],
+    "answer": "Stella",
+    "category": "modern-family"
+  },
+  {
+    "question": "Who plays Phil Dunphy in Modern Family?",
+    "options": [
+      "Eric Stonestreet",
+      "Ed O'Neill",
+      "Jesse Tyler Ferguson",
+      "Ty Burrell"
+    ],
+    "answer": "Ty Burrell",
+    "category": "modern-family"
+  },
+  {
+    "question": "What game does Sheldon create?",
+    "options": [
+      "Rock Paper Scissors Lizard Spock",
+      "Physics Pictionary",
+      "Three-Person Chess",
+      "Sheldon Says"
+    ],
+    "answer": "Rock Paper Scissors Lizard Spock",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Which Office character starts a fire with a cheesy pita?",
+    "options": [
+      "Stanley Hudson",
+      "Ryan Howard",
+      "Creed Bratton",
+      "Kevin Malone"
+    ],
+    "answer": "Ryan Howard",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Phoebe's most famous song?",
+    "options": [
+      "Sticky Shoes",
+      "Grandma",
+      "Smelly Cat",
+      "Two of Them Kissed Last Night"
+    ],
+    "answer": "Smelly Cat",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Ron Swanson?",
+    "options": [
+      "Nick Offerman",
+      "Chris Pratt",
+      "Adam Scott",
+      "Rob Lowe"
+    ],
+    "answer": "Nick Offerman",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the Slap Bet in HIMYM?",
+    "options": [
+      "A poker rule",
+      "Marshall can slap Barney 5 times",
+      "A bet about Robin",
+      "A drinking game"
+    ],
+    "answer": "Marshall can slap Barney 5 times",
+    "category": "himym"
+  },
+  {
+    "question": "Which character in The Office has a gambling problem?",
+    "options": [
+      "Kevin Malone",
+      "Meredith Palmer",
+      "Stanley Hudson",
+      "Creed Bratton"
+    ],
+    "answer": "Kevin Malone",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Monica's biggest personality trait?",
+    "options": [
+      "Competitiveness/Cleaning",
+      "Clumsiness",
+      "Laziness",
+      "Shyness"
+    ],
+    "answer": "Competitiveness/Cleaning",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Penny in The Big Bang Theory?",
+    "options": [
+      "Mayim Bialik",
+      "Kaley Cuoco",
+      "Melissa Rauch",
+      "Sara Gilbert"
+    ],
+    "answer": "Kaley Cuoco",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What fictional disease does Andy Dwyer diagnose himself with?",
+    "options": [
+      "Computer Virus",
+      "Network Connectivity Problems",
+      "Internet Flu",
+      "Wi-Fi Fever"
+    ],
+    "answer": "Network Connectivity Problems",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who does Jim marry in The Office?",
+    "options": [
+      "Katy",
+      "Karen Filippelli",
+      "Pam Beesly",
+      "Cathy"
+    ],
+    "answer": "Pam Beesly",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Chandler Bing's job for most of Friends?",
+    "options": [
+      "Lawyer",
+      "Marketing",
+      "Statistical analysis/Data processing",
+      "Accountant"
+    ],
+    "answer": "Statistical analysis/Data processing",
+    "category": "friends"
+  },
+  {
+    "question": "Which HIMYM character is Canadian?",
+    "options": [
+      "Marshall Eriksen",
+      "Ted Mosby",
+      "Robin Scherbatsky",
+      "Lily Aldrin"
+    ],
+    "answer": "Robin Scherbatsky",
+    "category": "himym"
+  },
+  {
+    "question": "What is Troy and Abed's morning show called?",
+    "options": [
+      "Troy and Abed in the Morning",
+      "The Study Group Show",
+      "Good Morning Greendale",
+      "Community TV"
+    ],
+    "answer": "Troy and Abed in the Morning",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Gloria Pritchett in Modern Family?",
+    "options": [
+      "Ariel Winter",
+      "Sarah Hyland",
+      "Sofía Vergara",
+      "Julie Bowen"
+    ],
+    "answer": "Sofía Vergara",
+    "category": "modern-family"
+  },
+  {
+    "question": "What does Creed Bratton do at Dunder Mifflin?",
+    "options": [
+      "Quality Assurance",
+      "Accounting",
+      "Sales",
+      "Nobody knows"
+    ],
+    "answer": "Quality Assurance",
+    "category": "the-office"
+  },
+  {
+    "question": "How many times has Ross been divorced?",
+    "options": [
+      "4",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "3",
+    "category": "friends"
+  },
+  {
+    "question": "What university does Sheldon work at?",
+    "options": [
+      "MIT",
+      "Princeton",
+      "Stanford",
+      "Caltech"
+    ],
+    "answer": "Caltech",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Andy Dwyer in Parks and Rec?",
+    "options": [
+      "Adam Scott",
+      "Aziz Ansari",
+      "Chris Pratt",
+      "Rob Lowe"
+    ],
+    "answer": "Chris Pratt",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the name of Barney's blog?",
+    "options": [
+      "Stinson's Secrets",
+      "Legendary Blog",
+      "Barney's Blog",
+      "Suit Up Blog"
+    ],
+    "answer": "Barney's Blog",
+    "category": "himym"
+  },
+  {
+    "question": "Which Office character is in a band called Scrantonicity?",
+    "options": [
+      "Kevin Malone",
+      "Andy Bernard",
+      "Jim Halpert",
+      "Darryl Philbin"
+    ],
+    "answer": "Kevin Malone",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Rachel's last name in Friends?",
+    "options": [
+      "Buffay",
+      "Green",
+      "Bing",
+      "Geller"
+    ],
+    "answer": "Green",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Dean Pelton in Community?",
+    "options": [
+      "John Oliver",
+      "Jim Rash",
+      "Ken Jeong",
+      "Chevy Chase"
+    ],
+    "answer": "Jim Rash",
+    "category": "community"
+  },
+  {
+    "question": "What is the name of Jay's dog in Modern Family?",
+    "options": [
+      "Stella",
+      "Jay Jr.",
+      "Gloria",
+      "Buster"
+    ],
+    "answer": "Stella",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Leonard's last name in Big Bang Theory?",
+    "options": [
+      "Cooper",
+      "Koothrappali",
+      "Wolowitz",
+      "Hofstadter"
+    ],
+    "answer": "Hofstadter",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who is the office administrator after Michael leaves?",
+    "options": [
+      "Robert California",
+      "Dwight Schrute",
+      "Andy Bernard",
+      "Jim Halpert"
+    ],
+    "answer": "Andy Bernard",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Phoebe's twin sister?",
+    "options": [
+      "Lily",
+      "Ursula",
+      "Alice",
+      "Susan"
+    ],
+    "answer": "Ursula",
+    "category": "friends"
+  },
+  {
+    "question": "What does Tom Haverford call his failed business ventures?",
+    "options": [
+      "Rent-A-Swag",
+      "All of the above",
+      "Tom's Bistro",
+      "Entertainment 720"
+    ],
+    "answer": "All of the above",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who plays Marshall Eriksen in HIMYM?",
+    "options": [
+      "Neil Patrick Harris",
+      "Alyson Hannigan",
+      "Josh Radnor",
+      "Jason Segel"
+    ],
+    "answer": "Jason Segel",
+    "category": "himym"
+  },
+  {
+    "question": "What is the name of the study group's table in Community?",
+    "options": [
+      "The Study Room Table",
+      "The Greendale Table",
+      "Table Mk II",
+      "Their spot"
+    ],
+    "answer": "The Study Room Table",
+    "category": "community"
+  },
+  {
+    "question": "Which Friends character worked at Bloomingdale's?",
+    "options": [
+      "Rachel Green",
+      "Phoebe Buffay",
+      "Monica Geller",
+      "Emily Waltham"
+    ],
+    "answer": "Rachel Green",
+    "category": "friends"
+  },
+  {
+    "question": "What is Michael Scott's improv character?",
+    "options": [
+      "Michael Scarn",
+      "Date Mike",
+      "Prison Mike",
+      "Agent Michael Scarn"
+    ],
+    "answer": "Michael Scarn",
+    "category": "the-office"
+  },
+  {
+    "question": "What field does Amy Farrah Fowler work in?",
+    "options": [
+      "Astronomy",
+      "Neurobiology",
+      "Physics",
+      "Chemistry"
+    ],
+    "answer": "Neurobiology",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Cameron Tucker in Modern Family?",
+    "options": [
+      "Ed O'Neill",
+      "Eric Stonestreet",
+      "Jesse Tyler Ferguson",
+      "Ty Burrell"
+    ],
+    "answer": "Eric Stonestreet",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is April Ludgate's demeanor?",
+    "options": [
+      "Cheerful",
+      "Anxious",
+      "Sarcastic/Dark",
+      "Hyper"
+    ],
+    "answer": "Sarcastic/Dark",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What does Robin Scherbatsky do for work?",
+    "options": [
+      "Doctor",
+      "Lawyer",
+      "Teacher",
+      "News anchor/Reporter"
+    ],
+    "answer": "News anchor/Reporter",
+    "category": "himym"
+  },
+  {
+    "question": "Which character says 'I declare bankruptcy!'?",
+    "options": [
+      "Andy Bernard",
+      "Creed Bratton",
+      "Michael Scott",
+      "Kevin Malone"
+    ],
+    "answer": "Michael Scott",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Joey's stuffed penguin?",
+    "options": [
+      "Hugsy",
+      "Penny",
+      "Waddles",
+      "Pete"
+    ],
+    "answer": "Hugsy",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Britta Perry in Community?",
+    "options": [
+      "Gillian Jacobs",
+      "Chevy Chase",
+      "Yvette Nicole Brown",
+      "Alison Brie"
+    ],
+    "answer": "Gillian Jacobs",
+    "category": "community"
+  },
+  {
+    "question": "What is Howard Wolowitz's job?",
+    "options": [
+      "Biologist",
+      "Aerospace Engineer",
+      "Astrophysicist",
+      "Physicist"
+    ],
+    "answer": "Aerospace Engineer",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Jay Pritchett in Modern Family?",
+    "options": [
+      "Ed O'Neill",
+      "Ty Burrell",
+      "Eric Stonestreet",
+      "Jesse Tyler Ferguson"
+    ],
+    "answer": "Ed O'Neill",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is the name of Ben Wyatt's failed project?",
+    "options": [
+      "Ice Town",
+      "Winter World",
+      "Snow City",
+      "Frost Village"
+    ],
+    "answer": "Ice Town",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What does Lily Aldrin do for work?",
+    "options": [
+      "Journalist",
+      "Doctor",
+      "Kindergarten teacher/Artist",
+      "Lawyer"
+    ],
+    "answer": "Kindergarten teacher/Artist",
+    "category": "himym"
+  },
+  {
+    "question": "Who replaced Michael Scott as manager?",
+    "options": [
+      "Multiple people",
+      "Jim Halpert",
+      "Dwight Schrute",
+      "Andy Bernard"
+    ],
+    "answer": "Multiple people",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Chandler's middle name?",
+    "options": [
+      "Matthew",
+      "Muriel",
+      "Martin",
+      "Michael"
+    ],
+    "answer": "Muriel",
+    "category": "friends"
+  },
+  {
+    "question": "What is Raj Koothrappali's selective mutism about?",
+    "options": [
+      "Talking to women",
+      "Public speaking",
+      "Phone calls",
+      "Talking to strangers"
+    ],
+    "answer": "Talking to women",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Annie Edison in Community?",
+    "options": [
+      "Paget Brewster",
+      "Gillian Jacobs",
+      "Yvette Nicole Brown",
+      "Alison Brie"
+    ],
+    "answer": "Alison Brie",
+    "category": "community"
+  },
+  {
+    "question": "What is Claire Dunphy's maiden name?",
+    "options": [
+      "Smith",
+      "Pritchett",
+      "Williams",
+      "Johnson"
+    ],
+    "answer": "Pritchett",
+    "category": "modern-family"
+  },
+  {
+    "question": "What food is Ron Swanson obsessed with?",
+    "options": [
+      "Pizza",
+      "Bacon and eggs",
+      "Burgers",
+      "Tacos"
+    ],
+    "answer": "Bacon and eggs",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is Ted Mosby's profession?",
+    "options": [
+      "Architect",
+      "Lawyer",
+      "Professor",
+      "Doctor"
+    ],
+    "answer": "Architect",
+    "category": "himym"
+  },
+  {
+    "question": "What is Stanley Hudson known for loving?",
+    "options": [
+      "Donut Monday",
+      "Pizza Friday",
+      "Pretzel Day",
+      "Taco Tuesday"
+    ],
+    "answer": "Pretzel Day",
+    "category": "the-office"
+  },
+  {
+    "question": "Who does Monica marry in Friends?",
+    "options": [
+      "Pete Becker",
+      "Richard Burke",
+      "Chandler Bing",
+      "Ross Geller"
+    ],
+    "answer": "Chandler Bing",
+    "category": "friends"
+  },
+  {
+    "question": "What is Penny's last name in Big Bang Theory?",
+    "options": [
+      "Never revealed",
+      "Smith",
+      "Cooper",
+      "Hofstadter"
+    ],
+    "answer": "Never revealed",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Troy Barnes in Community?",
+    "options": [
+      "Donald Glover",
+      "Joel McHale",
+      "Danny Pudi",
+      "Ken Jeong"
+    ],
+    "answer": "Donald Glover",
+    "category": "community"
+  },
+  {
+    "question": "What country is Gloria from in Modern Family?",
+    "options": [
+      "Argentina",
+      "Colombia",
+      "Brazil",
+      "Mexico"
+    ],
+    "answer": "Colombia",
+    "category": "modern-family"
+  },
+  {
+    "question": "Who plays Tom Haverford?",
+    "options": [
+      "Adam Scott",
+      "Chris Pratt",
+      "Rob Lowe",
+      "Aziz Ansari"
+    ],
+    "answer": "Aziz Ansari",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the name of Barney's playbook?",
+    "options": [
+      "The Playbook",
+      "The Stinson Guide",
+      "Barney's Rules",
+      "The Bro Code"
+    ],
+    "answer": "The Playbook",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Angela Martin?",
+    "options": [
+      "Kate Flannery",
+      "Angela Kinsey",
+      "Mindy Kaling",
+      "Jenna Fischer"
+    ],
+    "answer": "Angela Kinsey",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Rachel and Ross's daughter?",
+    "options": [
+      "Eva",
+      "Emily",
+      "Emma",
+      "Ella"
+    ],
+    "answer": "Emma",
+    "category": "friends"
+  },
+  {
+    "question": "What does Sheldon knock three times and say?",
+    "options": [
+      "Hello hello hello",
+      "Knock knock knock",
+      "Open open open",
+      "Penny, Penny, Penny"
+    ],
+    "answer": "Penny, Penny, Penny",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who is the Spanish teacher at Greendale?",
+    "options": [
+      "Señor Garcia",
+      "Señor Martinez",
+      "Señor Rodriguez",
+      "Señor Chang"
+    ],
+    "answer": "Señor Chang",
+    "category": "community"
+  },
+  {
+    "question": "What is Manny's relationship to Jay in Modern Family?",
+    "options": [
+      "Nephew",
+      "Son",
+      "Grandson",
+      "Stepson"
+    ],
+    "answer": "Stepson",
+    "category": "modern-family"
+  },
+  {
+    "question": "What department does Leslie Knope work in?",
+    "options": [
+      "Sanitation",
+      "City Planning",
+      "Parks Department",
+      "Public Works"
+    ],
+    "answer": "Parks Department",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who plays Lily Aldrin?",
+    "options": [
+      "Ashley Williams",
+      "Cobie Smulders",
+      "Alyson Hannigan",
+      "Cristin Milioti"
+    ],
+    "answer": "Alyson Hannigan",
+    "category": "himym"
+  },
+  {
+    "question": "What is Prison Mike afraid of?",
+    "options": [
+      "Solitary",
+      "The food",
+      "The Dementors",
+      "The guards"
+    ],
+    "answer": "The Dementors",
+    "category": "the-office"
+  },
+  {
+    "question": "Who does Joey fall in love with in later seasons?",
+    "options": [
+      "Monica Geller",
+      "Rachel Green",
+      "Phoebe Buffay",
+      "Charlie Wheeler"
+    ],
+    "answer": "Rachel Green",
+    "category": "friends"
+  },
+  {
+    "question": "What is the name of Sheldon's mother?",
+    "options": [
+      "Margaret Cooper",
+      "Martha Cooper",
+      "Marie Cooper",
+      "Mary Cooper"
+    ],
+    "answer": "Mary Cooper",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Abed Nadir?",
+    "options": [
+      "Donald Glover",
+      "Ken Jeong",
+      "Danny Pudi",
+      "Joel McHale"
+    ],
+    "answer": "Danny Pudi",
+    "category": "community"
+  },
+  {
+    "question": "What is Phil Dunphy's catchphrase style?",
+    "options": [
+      "Dunphy's Rules",
+      "Phil's-osophy",
+      "Dunphy-isms",
+      "Phil Facts"
+    ],
+    "answer": "Phil's-osophy",
+    "category": "modern-family"
+  },
+  {
+    "question": "What does Andy Dwyer rename himself?",
+    "options": [
+      "None of the above",
+      "Burt Macklin, FBI",
+      "Johnny Karate",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What item does Ted steal for Robin?",
+    "options": [
+      "Red Cowboy Boots",
+      "Purple Guitar",
+      "Yellow Umbrella",
+      "Blue French Horn"
+    ],
+    "answer": "Blue French Horn",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Pam Beesly?",
+    "options": [
+      "Ellie Kemper",
+      "Angela Kinsey",
+      "Jenna Fischer",
+      "Mindy Kaling"
+    ],
+    "answer": "Jenna Fischer",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Ross's monkey?",
+    "options": [
+      "Clyde",
+      "George",
+      "Darwin",
+      "Marcel"
+    ],
+    "answer": "Marcel",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Leonard Hofstadter?",
+    "options": [
+      "Johnny Galecki",
+      "Simon Helberg",
+      "Kunal Nayyar",
+      "Jim Parsons"
+    ],
+    "answer": "Johnny Galecki",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What does the group paint on their chests in Community?",
+    "options": [
+      "E Pluribus Anus",
+      "Human Beings",
+      "Go Greendale",
+      "Study Group"
+    ],
+    "answer": "E Pluribus Anus",
+    "category": "community"
+  },
+  {
+    "question": "Who adopts Lily in Modern Family?",
+    "options": [
+      "Jay and Gloria",
+      "Phil and Claire",
+      "Haley",
+      "Mitch and Cam"
+    ],
+    "answer": "Mitch and Cam",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Li'l Sebastian?",
+    "options": [
+      "A cat",
+      "A miniature horse",
+      "A dog",
+      "A mascot"
+    ],
+    "answer": "A miniature horse",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Where is the apartment located in HIMYM?",
+    "options": [
+      "Boston",
+      "New York",
+      "Los Angeles",
+      "Chicago"
+    ],
+    "answer": "New York",
+    "category": "himym"
+  },
+  {
+    "question": "What branch of Dunder Mifflin does the show focus on?",
+    "options": [
+      "Utica",
+      "Stamford",
+      "New York",
+      "Scranton"
+    ],
+    "answer": "Scranton",
+    "category": "the-office"
+  },
+  {
+    "question": "Who plays Gunther in Friends?",
+    "options": [
+      "Matt LeBlanc",
+      "David Schwimmer",
+      "James Michael Tyler",
+      "Matthew Perry"
+    ],
+    "answer": "James Michael Tyler",
+    "category": "friends"
+  },
+  {
+    "question": "What is Bernadette's voice like?",
+    "options": [
+      "Normal",
+      "Raspy",
+      "Deep",
+      "High-pitched"
+    ],
+    "answer": "High-pitched",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What is the mascot of Greendale?",
+    "options": [
+      "The Eagle",
+      "The Greendale Goat",
+      "The Human Being",
+      "The Bear"
+    ],
+    "answer": "The Human Being",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Luke Dunphy?",
+    "options": [
+      "Ty Burrell",
+      "Rico Rodriguez",
+      "Nolan Gould",
+      "Ed O'Neill"
+    ],
+    "answer": "Nolan Gould",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Donna Meagle's catchphrase?",
+    "options": [
+      "Treat Yo Self",
+      "Meagle Style",
+      "Parks Life",
+      "Girl Power"
+    ],
+    "answer": "Treat Yo Self",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What color is the Mother's umbrella?",
+    "options": [
+      "Yellow",
+      "Red",
+      "Green",
+      "Blue"
+    ],
+    "answer": "Yellow",
+    "category": "himym"
+  },
+  {
+    "question": "What holiday does the Dundies celebrate?",
+    "options": [
+      "Christmas",
+      "Any occasion",
+      "New Year",
+      "Halloween"
+    ],
+    "answer": "Any occasion",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Joey's acting catchphrase?",
+    "options": [
+      "Method acting",
+      "Natural acting",
+      "Smell the fart acting",
+      "Feel the scene"
+    ],
+    "answer": "Smell the fart acting",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Raj Koothrappali?",
+    "options": [
+      "Johnny Galecki",
+      "Kunal Nayyar",
+      "Simon Helberg",
+      "Jim Parsons"
+    ],
+    "answer": "Kunal Nayyar",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What movie does Community parody in paintball episodes?",
+    "options": [
+      "Rambo only",
+      "Multiple action movies",
+      "Star Wars only",
+      "Die Hard only"
+    ],
+    "answer": "Multiple action movies",
+    "category": "community"
+  },
+  {
+    "question": "What is Mitchell's profession in Modern Family?",
+    "options": [
+      "Lawyer",
+      "Doctor",
+      "Teacher",
+      "Accountant"
+    ],
+    "answer": "Lawyer",
+    "category": "modern-family"
+  },
+  {
+    "question": "Who plays Ben Wyatt?",
+    "options": [
+      "Adam Scott",
+      "Rob Lowe",
+      "Chris Pratt",
+      "Nick Offerman"
+    ],
+    "answer": "Adam Scott",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is Barney's job revealed to be?",
+    "options": [
+      "Lawyer",
+      "Banker",
+      "Unknown",
+      "Please (PLEASE)"
+    ],
+    "answer": "Please (PLEASE)",
+    "category": "himym"
+  },
+  {
+    "question": "Who starts the fire at the office?",
+    "options": [
+      "Kevin Malone",
+      "Ryan Howard",
+      "Dwight Schrute",
+      "Michael Scott"
+    ],
+    "answer": "Ryan Howard",
+    "category": "the-office"
+  },
+  {
+    "question": "What does Monica's apartment number change to?",
+    "options": [
+      "21",
+      "25",
+      "19",
+      "20 (originally 5)"
+    ],
+    "answer": "20 (originally 5)",
+    "category": "friends"
+  },
+  {
+    "question": "What state is Sheldon from?",
+    "options": [
+      "Oklahoma",
+      "Kansas",
+      "California",
+      "Texas"
+    ],
+    "answer": "Texas",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Shirley Bennett?",
+    "options": [
+      "Gillian Jacobs",
+      "Paget Brewster",
+      "Yvette Nicole Brown",
+      "Alison Brie"
+    ],
+    "answer": "Yvette Nicole Brown",
+    "category": "community"
+  },
+  {
+    "question": "What is Haley Dunphy's personality?",
+    "options": [
+      "Popular/Boy-crazy",
+      "Artistic",
+      "Athletic",
+      "Nerdy"
+    ],
+    "answer": "Popular/Boy-crazy",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Jerry Gergich's actual name?",
+    "options": [
+      "Terry",
+      "Larry",
+      "Garry",
+      "Jerry"
+    ],
+    "answer": "Garry",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who plays Ted Mosby?",
+    "options": [
+      "Neil Patrick Harris",
+      "Alyson Hannigan",
+      "Josh Radnor",
+      "Jason Segel"
+    ],
+    "answer": "Josh Radnor",
+    "category": "himym"
+  },
+  {
+    "question": "What does Kevin spill in The Office?",
+    "options": [
+      "Soup",
+      "Coffee",
+      "Chili",
+      "Pasta"
+    ],
+    "answer": "Chili",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Ross's ex-wife?",
+    "options": [
+      "Carol",
+      "Rachel",
+      "Mona",
+      "Emily"
+    ],
+    "answer": "Carol",
+    "category": "friends"
+  },
+  {
+    "question": "What comic does Sheldon love?",
+    "options": [
+      "Spider-Man",
+      "The Flash",
+      "Superman",
+      "Batman"
+    ],
+    "answer": "The Flash",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Pierce Hawthorne?",
+    "options": [
+      "Joel McHale",
+      "Jim Rash",
+      "Ken Jeong",
+      "Chevy Chase"
+    ],
+    "answer": "Chevy Chase",
+    "category": "community"
+  },
+  {
+    "question": "What is Alex Dunphy's personality?",
+    "options": [
+      "Smart/Nerdy",
+      "Rebellious",
+      "Athletic",
+      "Popular"
+    ],
+    "answer": "Smart/Nerdy",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Chris Traeger's catchphrase?",
+    "options": [
+      "Literally",
+      "Seriously",
+      "Actually",
+      "Basically"
+    ],
+    "answer": "Literally",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who plays Robin Scherbatsky?",
+    "options": [
+      "Cristin Milioti",
+      "Sarah Chalke",
+      "Alyson Hannigan",
+      "Cobie Smulders"
+    ],
+    "answer": "Cobie Smulders",
+    "category": "himym"
+  },
+  {
+    "question": "What is Andy Bernard's college acapella group?",
+    "options": [
+      "The Harmonics",
+      "The Scrantonics",
+      "Dunder Singers",
+      "Here Comes Treble"
+    ],
+    "answer": "Here Comes Treble",
+    "category": "the-office"
+  },
+  {
+    "question": "Who is Rachel's sister in Friends?",
+    "options": [
+      "Sarah",
+      "Jill and Amy",
+      "Jill only",
+      "Amy only"
+    ],
+    "answer": "Jill and Amy",
+    "category": "friends"
+  },
+  {
+    "question": "What does Howard wear instead of a tie?",
+    "options": [
+      "Bowtie",
+      "Scarf",
+      "Dickie/Turtleneck",
+      "Nothing"
+    ],
+    "answer": "Dickie/Turtleneck",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What is the darkest timeline in Community?",
+    "options": [
+      "Evil timeline",
+      "Prime timeline",
+      "Alternate timeline",
+      "Best timeline"
+    ],
+    "answer": "Evil timeline",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Manny Delgado?",
+    "options": [
+      "Nolan Gould",
+      "Ty Burrell",
+      "Ed O'Neill",
+      "Rico Rodriguez"
+    ],
+    "answer": "Rico Rodriguez",
+    "category": "modern-family"
+  },
+  {
+    "question": "What does Ann Perkins do for work?",
+    "options": [
+      "Doctor",
+      "Teacher",
+      "Nurse",
+      "Lawyer"
+    ],
+    "answer": "Nurse",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the Bro Code?",
+    "options": [
+      "A drinking game",
+      "A bet",
+      "A song",
+      "Rules for bros"
+    ],
+    "answer": "Rules for bros",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Kelly Kapoor?",
+    "options": [
+      "Mindy Kaling",
+      "Angela Kinsey",
+      "Jenna Fischer",
+      "Ellie Kemper"
+    ],
+    "answer": "Mindy Kaling",
+    "category": "the-office"
+  },
+  {
+    "question": "What show does Joey star in?",
+    "options": [
+      "Days of Our Lives",
+      "All My Children",
+      "General Hospital",
+      "The Young and the Restless"
+    ],
+    "answer": "Days of Our Lives",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Amy Farrah Fowler?",
+    "options": [
+      "Melissa Rauch",
+      "Kaley Cuoco",
+      "Sara Gilbert",
+      "Mayim Bialik"
+    ],
+    "answer": "Mayim Bialik",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What gas does the study room leak in Community?",
+    "options": [
+      "No gas, just chaos",
+      "Carbon monoxide",
+      "Natural gas",
+      "Chlorine"
+    ],
+    "answer": "No gas, just chaos",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Dylan Marshall in Modern Family?",
+    "options": [
+      "Nathan Fillion",
+      "James Marsden",
+      "Adam DeVine",
+      "Reid Ewing"
+    ],
+    "answer": "Reid Ewing",
+    "category": "modern-family"
+  },
+  {
+    "question": "Who plays Ann Perkins?",
+    "options": [
+      "Retta",
+      "Aubrey Plaza",
+      "Rashida Jones",
+      "Amy Poehler"
+    ],
+    "answer": "Rashida Jones",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is Marshall's dream job?",
+    "options": [
+      "Professor",
+      "Environmental lawyer",
+      "Judge",
+      "Corporate lawyer"
+    ],
+    "answer": "Environmental lawyer",
+    "category": "himym"
+  },
+  {
+    "question": "What award does Michael desperately want?",
+    "options": [
+      "Best Boss",
+      "Salesman of the Year",
+      "A Dundie",
+      "Employee of the Month"
+    ],
+    "answer": "A Dundie",
+    "category": "the-office"
+  },
+  {
+    "question": "Where do the Friends live?",
+    "options": [
+      "Chicago",
+      "Boston",
+      "Los Angeles",
+      "New York"
+    ],
+    "answer": "New York",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Stuart Bloom?",
+    "options": [
+      "Kevin Sussman",
+      "Simon Helberg",
+      "Johnny Galecki",
+      "Kunal Nayyar"
+    ],
+    "answer": "Kevin Sussman",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What is the Dreamatorium in Community?",
+    "options": [
+      "Imagination room",
+      "Study room",
+      "Dorm room",
+      "Actual dream lab"
+    ],
+    "answer": "Imagination room",
+    "category": "community"
+  },
+  {
+    "question": "What does Cameron do for work in Modern Family?",
+    "options": [
+      "Lawyer",
+      "Clown",
+      "Stay-at-home dad",
+      "Teacher/Football coach"
+    ],
+    "answer": "Teacher/Football coach",
+    "category": "modern-family"
+  },
+  {
+    "question": "What does Ron Swanson think of government?",
+    "options": [
+      "Loves it",
+      "Hates it",
+      "Wants to expand it",
+      "Indifferent"
+    ],
+    "answer": "Hates it",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the restaurant under the apartment in HIMYM?",
+    "options": [
+      "The Burger Joint",
+      "MacLaren's Pub",
+      "Ted's Diner",
+      "Robin's Cafe"
+    ],
+    "answer": "MacLaren's Pub",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Oscar Martinez?",
+    "options": [
+      "Craig Robinson",
+      "Brian Baumgartner",
+      "Ed Helms",
+      "Oscar Nunez"
+    ],
+    "answer": "Oscar Nunez",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of the ugly naked guy's apartment?",
+    "options": [
+      "Upstairs",
+      "Next door",
+      "Across the street",
+      "Downstairs"
+    ],
+    "answer": "Across the street",
+    "category": "friends"
+  },
+  {
+    "question": "What does Sheldon want to win?",
+    "options": [
+      "Emmy",
+      "Nobel Prize",
+      "Oscar",
+      "Grammy"
+    ],
+    "answer": "Nobel Prize",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who is the villain in Community's paintball?",
+    "options": [
+      "Chang",
+      "Pierce",
+      "The Dean",
+      "Multiple villains"
+    ],
+    "answer": "Multiple villains",
+    "category": "community"
+  },
+  {
+    "question": "What is Jay Pritchett's business?",
+    "options": [
+      "Closets",
+      "Construction",
+      "Cars",
+      "Real estate"
+    ],
+    "answer": "Closets",
+    "category": "modern-family"
+  },
+  {
+    "question": "What band does Andy Dwyer form?",
+    "options": [
+      "Scarecrow Boat",
+      "Mouse Rat",
+      "Nothing Rhymes with Orange",
+      "All of these"
+    ],
+    "answer": "All of these",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What did Marshall's dad call him?",
+    "options": [
+      "Little M",
+      "Marsh",
+      "Junior",
+      "Marshmallow"
+    ],
+    "answer": "Marshmallow",
+    "category": "himym"
+  },
+  {
+    "question": "What does Dwight raise on his farm?",
+    "options": [
+      "Potatoes",
+      "Wheat",
+      "Corn",
+      "Beets"
+    ],
+    "answer": "Beets",
+    "category": "the-office"
+  },
+  {
+    "question": "What is Rachel's favorite movie?",
+    "options": [
+      "Dangerous Liaisons",
+      "Breakfast at Tiffany's",
+      "Die Hard",
+      "Weekend at Bernie's"
+    ],
+    "answer": "Dangerous Liaisons",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Bernadette?",
+    "options": [
+      "Kaley Cuoco",
+      "Melissa Rauch",
+      "Sara Gilbert",
+      "Mayim Bialik"
+    ],
+    "answer": "Melissa Rauch",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What is the Hawthorne family business?",
+    "options": [
+      "Paper",
+      "Chemicals",
+      "Food",
+      "Moist towelettes"
+    ],
+    "answer": "Moist towelettes",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Haley Dunphy?",
+    "options": [
+      "Julie Bowen",
+      "Sarah Hyland",
+      "Sofia Vergara",
+      "Ariel Winter"
+    ],
+    "answer": "Sarah Hyland",
+    "category": "modern-family"
+  },
+  {
+    "question": "What nickname does Leslie give Ann?",
+    "options": [
+      "Beautiful",
+      "Many complimentary ones",
+      "All compliments",
+      "Ann Perkins"
+    ],
+    "answer": "Many complimentary ones",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who does Barney marry?",
+    "options": [
+      "Quinn",
+      "Patrice",
+      "Nora",
+      "Robin Scherbatsky"
+    ],
+    "answer": "Robin Scherbatsky",
+    "category": "himym"
+  },
+  {
+    "question": "What is Threat Level Midnight?",
+    "options": [
+      "A Dundie category",
+      "Michael's movie",
+      "An episode title",
+      "A sales competition"
+    ],
+    "answer": "Michael's movie",
+    "category": "the-office"
+  },
+  {
+    "question": "How many sisters does Joey have?",
+    "options": [
+      "3",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "7",
+    "category": "friends"
+  },
+  {
+    "question": "What is the comic book store called?",
+    "options": [
+      "Nerd Heaven",
+      "Stuart's Comics",
+      "Sheldon's Stop",
+      "The Comic Center of Pasadena"
+    ],
+    "answer": "The Comic Center of Pasadena",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Who plays Ben Chang?",
+    "options": [
+      "Donald Glover",
+      "Danny Pudi",
+      "Joel McHale",
+      "Ken Jeong"
+    ],
+    "answer": "Ken Jeong",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Claire Dunphy?",
+    "options": [
+      "Sarah Hyland",
+      "Julie Bowen",
+      "Ariel Winter",
+      "Sofia Vergara"
+    ],
+    "answer": "Julie Bowen",
+    "category": "modern-family"
+  },
+  {
+    "question": "What food does Leslie love?",
+    "options": [
+      "Pizza",
+      "Waffles",
+      "Burgers",
+      "Pancakes"
+    ],
+    "answer": "Waffles",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "Who narrates HIMYM?",
+    "options": [
+      "Future Ted (Bob Saget)",
+      "Barney",
+      "Ted Mosby",
+      "Marshall"
+    ],
+    "answer": "Future Ted (Bob Saget)",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Darryl Philbin?",
+    "options": [
+      "Brian Baumgartner",
+      "Craig Robinson",
+      "Leslie David Baker",
+      "Oscar Nunez"
+    ],
+    "answer": "Craig Robinson",
+    "category": "the-office"
+  },
+  {
+    "question": "What does Ross yell about his sandwich?",
+    "options": [
+      "THE MOISTMAKER",
+      "MY SANDWICH",
+      "THAT WAS MINE",
+      "WHO ATE IT"
+    ],
+    "answer": "MY SANDWICH",
+    "category": "friends"
+  },
+  {
+    "question": "What day does Sheldon like Thai food?",
+    "options": [
+      "Thursday",
+      "Monday",
+      "Wednesday",
+      "Tuesday"
+    ],
+    "answer": "Tuesday",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What is Advanced Dungeons & Dragons episode about?",
+    "options": [
+      "Helping Fat Neil",
+      "Playing a game",
+      "A Halloween party",
+      "A class"
+    ],
+    "answer": "Helping Fat Neil",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Mitchell Pritchett?",
+    "options": [
+      "Eric Stonestreet",
+      "Ed O'Neill",
+      "Ty Burrell",
+      "Jesse Tyler Ferguson"
+    ],
+    "answer": "Jesse Tyler Ferguson",
+    "category": "modern-family"
+  },
+  {
+    "question": "What does Ron Swanson make?",
+    "options": [
+      "Woodwork",
+      "Metalwork",
+      "Paintings",
+      "Pottery"
+    ],
+    "answer": "Woodwork",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is the cockamouse?",
+    "options": [
+      "Roach-mouse hybrid",
+      "An inside joke",
+      "A drink",
+      "A game"
+    ],
+    "answer": "Roach-mouse hybrid",
+    "category": "himym"
+  },
+  {
+    "question": "What does Jan make in her condo?",
+    "options": [
+      "Pottery",
+      "Candles",
+      "Soap",
+      "Jewelry"
+    ],
+    "answer": "Candles",
+    "category": "the-office"
+  },
+  {
+    "question": "What is the name of Phoebe's husband?",
+    "options": [
+      "Gary",
+      "Parker",
+      "Mike Hannigan",
+      "David"
+    ],
+    "answer": "Mike Hannigan",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Howard Wolowitz?",
+    "options": [
+      "Johnny Galecki",
+      "Kevin Sussman",
+      "Kunal Nayyar",
+      "Simon Helberg"
+    ],
+    "answer": "Simon Helberg",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "What show does Abed love to reference?",
+    "options": [
+      "Star Trek only",
+      "Star Wars only",
+      "Many (especially Community itself)",
+      "Doctor Who only"
+    ],
+    "answer": "Many (especially Community itself)",
+    "category": "community"
+  },
+  {
+    "question": "Who plays Alex Dunphy?",
+    "options": [
+      "Sofia Vergara",
+      "Ariel Winter",
+      "Sarah Hyland",
+      "Julie Bowen"
+    ],
+    "answer": "Ariel Winter",
+    "category": "modern-family"
+  },
+  {
+    "question": "What is Perd Hapley known for?",
+    "options": [
+      "Sports",
+      "Breaking news",
+      "Weather reports",
+      "Obvious statements"
+    ],
+    "answer": "Obvious statements",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "What is Marshall afraid of?",
+    "options": [
+      "Snakes",
+      "Heights",
+      "Crocodiles",
+      "Spiders"
+    ],
+    "answer": "Crocodiles",
+    "category": "himym"
+  },
+  {
+    "question": "What game does The Office play at the beach?",
+    "options": [
+      "Only frisbee",
+      "Only volleyball",
+      "Only football",
+      "Various team games"
+    ],
+    "answer": "Various team games",
+    "category": "the-office"
+  },
+  {
+    "question": "What nickname does Chandler hate?",
+    "options": [
+      "Chandler Bing",
+      "Bing-a-ling",
+      "Mr. Bing",
+      "Chan-Chan"
+    ],
+    "answer": "Bing-a-ling",
+    "category": "friends"
+  },
+  {
+    "question": "Who plays Sheldon Cooper?",
+    "options": [
+      "Johnny Galecki",
+      "Jim Parsons",
+      "Kunal Nayyar",
+      "Simon Helberg"
+    ],
+    "answer": "Jim Parsons",
+    "category": "big-bang-theory"
+  },
+  {
+    "question": "Six seasons and a...?",
+    "options": [
+      "Spin-off",
+      "Reunion",
+      "Revival",
+      "Movie"
+    ],
+    "answer": "Movie",
+    "category": "community"
+  },
+  {
+    "question": "What show did Ed O'Neill star in before Modern Family?",
+    "options": [
+      "Friends",
+      "Married with Children",
+      "Cheers",
+      "Seinfeld"
+    ],
+    "answer": "Married with Children",
+    "category": "modern-family"
+  },
+  {
+    "question": "Who plays April Ludgate?",
+    "options": [
+      "Amy Poehler",
+      "Aubrey Plaza",
+      "Rashida Jones",
+      "Retta"
+    ],
+    "answer": "Aubrey Plaza",
+    "category": "parks-and-rec"
+  },
+  {
+    "question": "How long does Ted tell the story in HIMYM?",
+    "options": [
+      "9 years (9 seasons)",
+      "5 years",
+      "7 years",
+      "10 years"
+    ],
+    "answer": "9 years (9 seasons)",
+    "category": "himym"
+  },
+  {
+    "question": "Who plays Jim Halpert?",
+    "options": [
+      "Steve Carell",
+      "John Krasinski",
+      "Rainn Wilson",
+      "B.J. Novak"
+    ],
+    "answer": "John Krasinski",
+    "category": "the-office"
+  }
 ]

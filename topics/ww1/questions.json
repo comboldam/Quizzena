@@ -1,202 +1,2202 @@
 [
-  {"question": "What year did World War 1 begin?", "options": ["1914", "1915", "1913", "1916"], "answer": "1914", "category": "timeline"},
-  {"question": "What year did World War 1 end?", "options": ["1918", "1917", "1919", "1920"], "answer": "1918", "category": "timeline"},
-  {"question": "What event triggered the start of WW1?", "options": ["Assassination of Archduke Franz Ferdinand", "Sinking of Lusitania", "German invasion of Poland", "Russian Revolution"], "answer": "Assassination of Archduke Franz Ferdinand", "category": "causes"},
-  {"question": "Where was Archduke Franz Ferdinand assassinated?", "options": ["Sarajevo", "Vienna", "Belgrade", "Budapest"], "answer": "Sarajevo", "category": "causes"},
-  {"question": "Who assassinated Archduke Franz Ferdinand?", "options": ["Gavrilo Princip", "Leon Czolgosz", "Nedeljko Čabrinović", "Dragutin Dimitrijević"], "answer": "Gavrilo Princip", "category": "causes"},
-  {"question": "What was the alliance of Germany, Austria-Hungary, and Italy called?", "options": ["Triple Alliance", "Triple Entente", "Axis Powers", "Central Powers"], "answer": "Triple Alliance", "category": "alliances"},
-  {"question": "What was the alliance of Britain, France, and Russia called?", "options": ["Triple Entente", "Triple Alliance", "Allied Powers", "NATO"], "answer": "Triple Entente", "category": "alliances"},
-  {"question": "Which countries made up the Central Powers?", "options": ["Germany, Austria-Hungary, Ottoman Empire, Bulgaria", "Germany, Italy, Japan", "Britain, France, Russia", "USA, Britain, France"], "answer": "Germany, Austria-Hungary, Ottoman Empire, Bulgaria", "category": "alliances"},
-  {"question": "What was Germany's plan to defeat France quickly called?", "options": ["Schlieffen Plan", "Blitzkrieg", "Operation Barbarossa", "Maginot Plan"], "answer": "Schlieffen Plan", "category": "battles"},
-  {"question": "Which neutral country did Germany invade to attack France?", "options": ["Belgium", "Netherlands", "Switzerland", "Luxembourg"], "answer": "Belgium", "category": "battles"},
-  {"question": "What type of warfare characterized the Western Front?", "options": ["Trench warfare", "Naval warfare", "Guerrilla warfare", "Aerial warfare"], "answer": "Trench warfare", "category": "warfare"},
-  {"question": "What was the area between opposing trenches called?", "options": ["No Man's Land", "Dead Zone", "Kill Zone", "Buffer Zone"], "answer": "No Man's Land", "category": "warfare"},
-  {"question": "What new weapon was first used at the Battle of the Somme?", "options": ["Tank", "Submarine", "Machine gun", "Poison gas"], "answer": "Tank", "category": "weapons"},
-  {"question": "What poison gas was commonly used in WW1?", "options": ["Mustard gas", "Sarin", "VX", "Chlorine only"], "answer": "Mustard gas", "category": "weapons"},
-  {"question": "What was the German submarine called?", "options": ["U-boat", "Destroyer", "Cruiser", "Dreadnought"], "answer": "U-boat", "category": "weapons"},
-  {"question": "What British ship was sunk in 1915, killing 1,198 people?", "options": ["Lusitania", "Titanic", "Britannic", "Olympic"], "answer": "Lusitania", "category": "naval"},
-  {"question": "How many Americans died on the Lusitania?", "options": ["128", "256", "500", "1000"], "answer": "128", "category": "naval"},
-  {"question": "What year did the United States enter WW1?", "options": ["1917", "1914", "1915", "1918"], "answer": "1917", "category": "timeline"},
-  {"question": "Who was the President of the United States during WW1?", "options": ["Woodrow Wilson", "Theodore Roosevelt", "William Taft", "Warren Harding"], "answer": "Woodrow Wilson", "category": "leaders"},
-  {"question": "What telegram helped bring the US into the war?", "options": ["Zimmermann Telegram", "Berlin Telegram", "Mexico Telegram", "Washington Telegram"], "answer": "Zimmermann Telegram", "category": "causes"},
-  {"question": "What did the Zimmermann Telegram propose?", "options": ["German-Mexican alliance against US", "Peace treaty", "Trade agreement", "Military surrender"], "answer": "German-Mexican alliance against US", "category": "causes"},
-  {"question": "Who was the Kaiser of Germany during WW1?", "options": ["Wilhelm II", "Wilhelm I", "Frederick III", "Otto von Bismarck"], "answer": "Wilhelm II", "category": "leaders"},
-  {"question": "Who was the British Prime Minister for most of WW1?", "options": ["David Lloyd George", "Winston Churchill", "Herbert Asquith", "Neville Chamberlain"], "answer": "David Lloyd George", "category": "leaders"},
-  {"question": "Who was the French Commander at the Battle of Verdun?", "options": ["Philippe Pétain", "Ferdinand Foch", "Joseph Joffre", "Robert Nivelle"], "answer": "Philippe Pétain", "category": "leaders"},
-  {"question": "What was the longest battle of WW1?", "options": ["Battle of Verdun", "Battle of the Somme", "Battle of Ypres", "Battle of Marne"], "answer": "Battle of Verdun", "category": "battles"},
-  {"question": "How long did the Battle of Verdun last?", "options": ["10 months", "6 months", "3 months", "1 year"], "answer": "10 months", "category": "battles"},
-  {"question": "What was the deadliest day in British military history?", "options": ["First day of the Somme", "D-Day", "Battle of Waterloo", "Gallipoli landing"], "answer": "First day of the Somme", "category": "battles"},
-  {"question": "How many British soldiers died on the first day of the Somme?", "options": ["Nearly 20,000", "10,000", "5,000", "30,000"], "answer": "Nearly 20,000", "category": "battles"},
-  {"question": "What date did the Battle of the Somme begin?", "options": ["July 1, 1916", "June 1, 1916", "August 1, 1916", "July 1, 1917"], "answer": "July 1, 1916", "category": "timeline"},
-  {"question": "What was the Christmas Truce of 1914?", "options": ["Unofficial ceasefire between enemies", "Official peace treaty", "German surrender", "Allied victory"], "answer": "Unofficial ceasefire between enemies", "category": "events"},
-  {"question": "What sport did soldiers reportedly play during the Christmas Truce?", "options": ["Football/Soccer", "Cricket", "Rugby", "Baseball"], "answer": "Football/Soccer", "category": "events"},
-  {"question": "What revolution occurred in Russia in 1917?", "options": ["Russian Revolution", "French Revolution", "Industrial Revolution", "Bolshevik only"], "answer": "Russian Revolution", "category": "events"},
-  {"question": "Who led the Bolsheviks in Russia?", "options": ["Vladimir Lenin", "Joseph Stalin", "Leon Trotsky", "Tsar Nicholas II"], "answer": "Vladimir Lenin", "category": "leaders"},
-  {"question": "What treaty ended Russia's involvement in WW1?", "options": ["Treaty of Brest-Litovsk", "Treaty of Versailles", "Treaty of Paris", "Treaty of Moscow"], "answer": "Treaty of Brest-Litovsk", "category": "treaties"},
-  {"question": "What happened to Tsar Nicholas II?", "options": ["Executed with his family", "Exiled to France", "Died of illness", "Escaped to England"], "answer": "Executed with his family", "category": "leaders"},
-  {"question": "What was the failed Allied campaign in Turkey called?", "options": ["Gallipoli Campaign", "Dardanelles Victory", "Ottoman Offensive", "Turkish Front"], "answer": "Gallipoli Campaign", "category": "battles"},
-  {"question": "Which future leader planned the Gallipoli Campaign?", "options": ["Winston Churchill", "David Lloyd George", "Douglas Haig", "John French"], "answer": "Winston Churchill", "category": "leaders"},
-  {"question": "What country suffered the most casualties at Gallipoli?", "options": ["Ottoman Empire", "Britain", "Australia", "France"], "answer": "Ottoman Empire", "category": "battles"},
-  {"question": "What is ANZAC Day commemorating?", "options": ["Gallipoli landing", "End of WW1", "Australian independence", "New Zealand founding"], "answer": "Gallipoli landing", "category": "events"},
-  {"question": "What date is ANZAC Day?", "options": ["April 25", "November 11", "July 1", "August 4"], "answer": "April 25", "category": "events"},
-  {"question": "What was the major naval battle between Britain and Germany?", "options": ["Battle of Jutland", "Battle of the Atlantic", "Battle of Trafalgar", "Battle of Midway"], "answer": "Battle of Jutland", "category": "naval"},
-  {"question": "What year was the Battle of Jutland?", "options": ["1916", "1915", "1917", "1918"], "answer": "1916", "category": "naval"},
-  {"question": "What type of warship revolutionized naval warfare?", "options": ["Dreadnought", "Ironclad", "Aircraft carrier", "Submarine"], "answer": "Dreadnought", "category": "naval"},
-  {"question": "What was unrestricted submarine warfare?", "options": ["Attacking all ships without warning", "Only attacking military ships", "Defensive submarine use", "Submarine blockades"], "answer": "Attacking all ships without warning", "category": "naval"},
-  {"question": "What flying ace was known as the Red Baron?", "options": ["Manfred von Richthofen", "Eddie Rickenbacker", "Billy Bishop", "Albert Ball"], "answer": "Manfred von Richthofen", "category": "aviation"},
-  {"question": "How many aerial victories did the Red Baron have?", "options": ["80", "100", "50", "60"], "answer": "80", "category": "aviation"},
-  {"question": "What country was the Red Baron from?", "options": ["Germany", "Britain", "France", "Austria"], "answer": "Germany", "category": "aviation"},
-  {"question": "What was the top American flying ace?", "options": ["Eddie Rickenbacker", "Billy Mitchell", "Frank Luke", "Raoul Lufbery"], "answer": "Eddie Rickenbacker", "category": "aviation"},
-  {"question": "What were WWI fighter pilots called?", "options": ["Aces", "Knights", "Eagles", "Hawks"], "answer": "Aces", "category": "aviation"},
-  {"question": "What disease killed more people than combat in WW1?", "options": ["Spanish Flu", "Typhoid", "Cholera", "Malaria"], "answer": "Spanish Flu", "category": "homefront"},
-  {"question": "What year did the Spanish Flu pandemic begin?", "options": ["1918", "1917", "1919", "1916"], "answer": "1918", "category": "homefront"},
-  {"question": "What condition affected soldiers from constant shelling?", "options": ["Shell shock/PTSD", "Trench foot", "Gas blindness", "Combat fatigue"], "answer": "Shell shock/PTSD", "category": "warfare"},
-  {"question": "What foot condition affected soldiers in wet trenches?", "options": ["Trench foot", "Gangrene", "Frostbite", "Athlete's foot"], "answer": "Trench foot", "category": "warfare"},
-  {"question": "What animals were commonly found in trenches?", "options": ["Rats", "Dogs", "Cats", "Horses only"], "answer": "Rats", "category": "warfare"},
-  {"question": "What treaty officially ended WW1?", "options": ["Treaty of Versailles", "Treaty of Paris", "Treaty of Berlin", "Treaty of London"], "answer": "Treaty of Versailles", "category": "treaties"},
-  {"question": "What date was the Armistice signed?", "options": ["November 11, 1918", "November 11, 1917", "December 25, 1918", "October 1, 1918"], "answer": "November 11, 1918", "category": "timeline"},
-  {"question": "What time did the fighting stop on Armistice Day?", "options": ["11:00 AM", "12:00 PM", "6:00 AM", "9:00 AM"], "answer": "11:00 AM", "category": "timeline"},
-  {"question": "Where was the Armistice signed?", "options": ["Railway carriage in Compiègne", "Paris", "Versailles", "Berlin"], "answer": "Railway carriage in Compiègne", "category": "treaties"},
-  {"question": "What was Article 231 of the Treaty of Versailles?", "options": ["War Guilt Clause", "Reparations clause", "Territory clause", "Military clause"], "answer": "War Guilt Clause", "category": "treaties"},
-  {"question": "Which country had to accept blame for WW1?", "options": ["Germany", "Austria-Hungary", "Serbia", "Russia"], "answer": "Germany", "category": "treaties"},
-  {"question": "How much did Germany have to pay in reparations?", "options": ["132 billion gold marks", "50 billion gold marks", "200 billion gold marks", "10 billion gold marks"], "answer": "132 billion gold marks", "category": "treaties"},
-  {"question": "What international organization was created after WW1?", "options": ["League of Nations", "United Nations", "NATO", "European Union"], "answer": "League of Nations", "category": "aftermath"},
-  {"question": "Which major power did NOT join the League of Nations?", "options": ["United States", "Britain", "France", "Italy"], "answer": "United States", "category": "aftermath"},
-  {"question": "What empire collapsed after WW1?", "options": ["All of the below", "Austro-Hungarian Empire", "Ottoman Empire", "German Empire"], "answer": "All of the below", "category": "aftermath"},
-  {"question": "What new country was created from Austria-Hungary?", "options": ["Czechoslovakia", "Poland", "Hungary only", "Austria only"], "answer": "Czechoslovakia", "category": "aftermath"},
-  {"question": "What became of the Ottoman Empire after WW1?", "options": ["Became Turkey and Middle East nations", "Remained intact", "Joined Russia", "Became British colony"], "answer": "Became Turkey and Middle East nations", "category": "aftermath"},
-  {"question": "Who proposed the Fourteen Points?", "options": ["Woodrow Wilson", "David Lloyd George", "Georges Clemenceau", "Vittorio Orlando"], "answer": "Woodrow Wilson", "category": "leaders"},
-  {"question": "What was the main idea of Wilson's Fourteen Points?", "options": ["Self-determination and peace", "Punishment of Germany", "Colonial expansion", "Military alliances"], "answer": "Self-determination and peace", "category": "aftermath"},
-  {"question": "Who was the Supreme Allied Commander at the end of WW1?", "options": ["Ferdinand Foch", "Douglas Haig", "John Pershing", "Philippe Pétain"], "answer": "Ferdinand Foch", "category": "leaders"},
-  {"question": "Who commanded the American Expeditionary Force?", "options": ["John J. Pershing", "Douglas MacArthur", "Dwight Eisenhower", "George Patton"], "answer": "John J. Pershing", "category": "leaders"},
-  {"question": "What was the nickname for American soldiers in WW1?", "options": ["Doughboys", "GIs", "Yanks", "Tommies"], "answer": "Doughboys", "category": "homefront"},
-  {"question": "What was the nickname for British soldiers?", "options": ["Tommies", "Doughboys", "Poilus", "Anzacs"], "answer": "Tommies", "category": "homefront"},
-  {"question": "What was the nickname for French soldiers?", "options": ["Poilus", "Tommies", "Doughboys", "Boche"], "answer": "Poilus", "category": "homefront"},
-  {"question": "How many soldiers died in WW1 approximately?", "options": ["10 million", "5 million", "20 million", "2 million"], "answer": "10 million", "category": "casualties"},
-  {"question": "How many total deaths (military and civilian) in WW1?", "options": ["20 million", "10 million", "30 million", "15 million"], "answer": "20 million", "category": "casualties"},
-  {"question": "Which country lost the most soldiers in WW1?", "options": ["Germany", "Russia", "France", "Britain"], "answer": "Germany", "category": "casualties"},
-  {"question": "What percentage of French men aged 18-27 died in WW1?", "options": ["About 25%", "About 10%", "About 50%", "About 5%"], "answer": "About 25%", "category": "casualties"},
-  {"question": "What was the Battle of Tannenberg?", "options": ["German victory over Russia", "British victory over Germany", "French victory at Verdun", "Ottoman victory"], "answer": "German victory over Russia", "category": "eastern-front"},
-  {"question": "Who commanded the German forces at Tannenberg?", "options": ["Paul von Hindenburg", "Erich Ludendorff", "Helmuth von Moltke", "Erich von Falkenhayn"], "answer": "Paul von Hindenburg", "category": "eastern-front"},
-  {"question": "What front was between Germany and Russia?", "options": ["Eastern Front", "Western Front", "Southern Front", "Northern Front"], "answer": "Eastern Front", "category": "eastern-front"},
-  {"question": "What country joined the Allies in 1915 despite being in the Triple Alliance?", "options": ["Italy", "Bulgaria", "Ottoman Empire", "Romania"], "answer": "Italy", "category": "alliances"},
-  {"question": "What battle was Italy's major defeat in 1917?", "options": ["Battle of Caporetto", "Battle of Isonzo", "Battle of Vittorio Veneto", "Battle of Piave"], "answer": "Battle of Caporetto", "category": "battles"},
-  {"question": "What was the Brusilov Offensive?", "options": ["Successful Russian attack on Austria-Hungary", "German attack on Russia", "British attack on Germany", "Failed French offensive"], "answer": "Successful Russian attack on Austria-Hungary", "category": "eastern-front"},
-  {"question": "What new country gained independence from Russia?", "options": ["Finland", "Poland", "Ukraine", "All of the above"], "answer": "All of the above", "category": "aftermath"},
-  {"question": "What empire was called 'the sick man of Europe'?", "options": ["Ottoman Empire", "Austro-Hungarian Empire", "Russian Empire", "German Empire"], "answer": "Ottoman Empire", "category": "causes"},
-  {"question": "What region was a major cause of tension before WW1?", "options": ["Balkans", "Rhineland", "Alsace-Lorraine", "Poland"], "answer": "Balkans", "category": "causes"},
-  {"question": "What war in 1912-1913 increased Balkan tensions?", "options": ["Balkan Wars", "Crimean War", "Russo-Turkish War", "Greco-Turkish War"], "answer": "Balkan Wars", "category": "causes"},
-  {"question": "What territory did France want back from Germany?", "options": ["Alsace-Lorraine", "Belgium", "Rhine Valley", "Saar"], "answer": "Alsace-Lorraine", "category": "causes"},
-  {"question": "What was the naval arms race between Britain and Germany about?", "options": ["Building the largest fleet", "Submarine development", "Trade routes", "Colonial ports"], "answer": "Building the largest fleet", "category": "causes"},
-  {"question": "What policy involved European powers competing for colonies?", "options": ["Imperialism", "Nationalism", "Militarism", "Alliances"], "answer": "Imperialism", "category": "causes"},
-  {"question": "What is MAIN an acronym for in WW1 causes?", "options": ["Militarism, Alliances, Imperialism, Nationalism", "Military, Armaments, Industry, Navy", "Major Allied International Nations", "None of the above"], "answer": "Militarism, Alliances, Imperialism, Nationalism", "category": "causes"},
-  {"question": "What was the First Battle of the Marne significant for?", "options": ["Stopped German advance on Paris", "German victory", "End of trench warfare", "American entry"], "answer": "Stopped German advance on Paris", "category": "battles"},
-  {"question": "What year was the First Battle of the Marne?", "options": ["1914", "1915", "1916", "1917"], "answer": "1914", "category": "battles"},
-  {"question": "How did Paris taxis help in the Battle of the Marne?", "options": ["Transported troops to the front", "Evacuated civilians", "Carried supplies", "Served as ambulances"], "answer": "Transported troops to the front", "category": "battles"},
-  {"question": "What battle in 1917 was a major British offensive?", "options": ["Battle of Passchendaele", "Battle of Verdun", "Battle of the Somme", "Battle of Marne"], "answer": "Battle of Passchendaele", "category": "battles"},
-  {"question": "What was another name for Passchendaele?", "options": ["Third Battle of Ypres", "Second Battle of Ypres", "First Battle of Ypres", "Battle of Flanders"], "answer": "Third Battle of Ypres", "category": "battles"},
-  {"question": "What made Passchendaele particularly difficult?", "options": ["Mud and rain", "Snow", "Heat", "Mountains"], "answer": "Mud and rain", "category": "battles"},
-  {"question": "What was the first major use of poison gas?", "options": ["Second Battle of Ypres", "Battle of Verdun", "Battle of the Somme", "First Battle of Marne"], "answer": "Second Battle of Ypres", "category": "weapons"},
-  {"question": "What country first used poison gas in WW1?", "options": ["Germany", "France", "Britain", "Russia"], "answer": "Germany", "category": "weapons"},
-  {"question": "What protective equipment was developed for gas attacks?", "options": ["Gas masks", "Helmets", "Body armor", "Goggles"], "answer": "Gas masks", "category": "weapons"},
-  {"question": "What was the main rifle used by British soldiers?", "options": ["Lee-Enfield", "Mauser", "Springfield", "Mosin-Nagant"], "answer": "Lee-Enfield", "category": "weapons"},
-  {"question": "What machine gun was widely used in WW1?", "options": ["Maxim gun", "M60", "AK-47", "Browning"], "answer": "Maxim gun", "category": "weapons"},
-  {"question": "What was 'Big Bertha'?", "options": ["German siege gun", "British tank", "French battleship", "American plane"], "answer": "German siege gun", "category": "weapons"},
-  {"question": "What gun could hit Paris from 75 miles away?", "options": ["Paris Gun", "Big Bertha", "Kaiser Wilhelm Gun", "Long Max"], "answer": "Paris Gun", "category": "weapons"},
-  {"question": "What was the first tank used in combat?", "options": ["British Mark I", "French Renault FT", "German A7V", "American M1917"], "answer": "British Mark I", "category": "weapons"},
-  {"question": "What nickname were tanks given to keep them secret?", "options": ["Water tanks", "Land ships", "Iron horses", "Metal boxes"], "answer": "Water tanks", "category": "weapons"},
-  {"question": "What was the German Spring Offensive of 1918?", "options": ["Last major German attack", "First German attack", "Defensive operation", "Naval attack"], "answer": "Last major German attack", "category": "battles"},
-  {"question": "What was the code name for the Spring Offensive?", "options": ["Operation Michael", "Operation Barbarossa", "Fall Gelb", "Schlieffen"], "answer": "Operation Michael", "category": "battles"},
-  {"question": "What Allied offensive ended the war?", "options": ["Hundred Days Offensive", "Spring Offensive", "Somme Offensive", "Verdun Counter-offensive"], "answer": "Hundred Days Offensive", "category": "battles"},
-  {"question": "What was the Hindenburg Line?", "options": ["German defensive fortification", "British trench system", "French border", "Russian front"], "answer": "German defensive fortification", "category": "warfare"},
-  {"question": "What role did women play during WW1?", "options": ["Factory workers and nurses", "Only nurses", "Only factory workers", "No role"], "answer": "Factory workers and nurses", "category": "homefront"},
-  {"question": "What were female munitions workers called in Britain?", "options": ["Munitionettes", "Tommettes", "War women", "Factory girls"], "answer": "Munitionettes", "category": "homefront"},
-  {"question": "What movement gained support due to women's war work?", "options": ["Women's suffrage", "Labor unions", "Pacifism", "Socialism"], "answer": "Women's suffrage", "category": "homefront"},
-  {"question": "What was conscription?", "options": ["Mandatory military service", "Volunteer service", "Medical exemption", "Officer training"], "answer": "Mandatory military service", "category": "homefront"},
-  {"question": "When did Britain introduce conscription?", "options": ["1916", "1914", "1917", "1918"], "answer": "1916", "category": "homefront"},
-  {"question": "What were conscientious objectors?", "options": ["Those who refused to fight on moral grounds", "Volunteer soldiers", "Officers", "Medics"], "answer": "Those who refused to fight on moral grounds", "category": "homefront"},
-  {"question": "What was rationing?", "options": ["Limiting food and goods per person", "Military training", "Trench building", "Weapon manufacturing"], "answer": "Limiting food and goods per person", "category": "homefront"},
-  {"question": "What propaganda poster featured Lord Kitchener?", "options": ["Your Country Needs You", "Uncle Sam Wants You", "Join the Army", "Enlist Today"], "answer": "Your Country Needs You", "category": "homefront"},
-  {"question": "What American poster featured Uncle Sam?", "options": ["I Want You for U.S. Army", "Join the Fight", "America Needs You", "Enlist Now"], "answer": "I Want You for U.S. Army", "category": "homefront"},
-  {"question": "What poet wrote 'Dulce et Decorum Est'?", "options": ["Wilfred Owen", "Siegfried Sassoon", "Rupert Brooke", "John McCrae"], "answer": "Wilfred Owen", "category": "culture"},
-  {"question": "What poem mentions 'In Flanders Fields'?", "options": ["In Flanders Fields by John McCrae", "Dulce et Decorum Est", "The Soldier", "Anthem for Doomed Youth"], "answer": "In Flanders Fields by John McCrae", "category": "culture"},
-  {"question": "What flower became a symbol of WW1 remembrance?", "options": ["Poppy", "Rose", "Lily", "Daisy"], "answer": "Poppy", "category": "culture"},
-  {"question": "Why is the poppy associated with WW1?", "options": ["Grew on battlefields in Flanders", "National flower of Britain", "Red like blood", "Soldiers carried them"], "answer": "Grew on battlefields in Flanders", "category": "culture"},
-  {"question": "What is Remembrance Day?", "options": ["November 11 commemoration of WW1 end", "Victory celebration", "Start of WW1 memorial", "Armistice signing"], "answer": "November 11 commemoration of WW1 end", "category": "culture"},
-  {"question": "What is the Two Minutes Silence for?", "options": ["To remember fallen soldiers", "Prayer time", "Official announcement", "Victory celebration"], "answer": "To remember fallen soldiers", "category": "culture"},
-  {"question": "What memorial honors unknown soldiers in many countries?", "options": ["Tomb of the Unknown Soldier", "War Memorial", "Victory Arch", "Peace Monument"], "answer": "Tomb of the Unknown Soldier", "category": "culture"},
-  {"question": "What was the Middle East theater called?", "options": ["Mesopotamian Campaign", "Desert War", "Arabian Front", "Ottoman Theater"], "answer": "Mesopotamian Campaign", "category": "middle-east"},
-  {"question": "Who led the Arab Revolt against the Ottomans?", "options": ["Sharif Hussein with T.E. Lawrence", "Mustafa Kemal", "Enver Pasha", "Ibn Saud"], "answer": "Sharif Hussein with T.E. Lawrence", "category": "middle-east"},
-  {"question": "What was T.E. Lawrence known as?", "options": ["Lawrence of Arabia", "Lawrence of the Desert", "British Lawrence", "Colonel Lawrence"], "answer": "Lawrence of Arabia", "category": "leaders"},
-  {"question": "What declaration promised a Jewish homeland?", "options": ["Balfour Declaration", "Sykes-Picot Agreement", "Treaty of Sèvres", "McMahon-Hussein Correspondence"], "answer": "Balfour Declaration", "category": "middle-east"},
-  {"question": "What year was the Balfour Declaration?", "options": ["1917", "1916", "1918", "1919"], "answer": "1917", "category": "middle-east"},
-  {"question": "What secret agreement divided the Middle East?", "options": ["Sykes-Picot Agreement", "Balfour Declaration", "Treaty of Versailles", "McMahon Letters"], "answer": "Sykes-Picot Agreement", "category": "middle-east"},
-  {"question": "What genocide occurred during WW1?", "options": ["Armenian Genocide", "Holocaust", "Rwandan Genocide", "Bosnian Genocide"], "answer": "Armenian Genocide", "category": "events"},
-  {"question": "Who perpetrated the Armenian Genocide?", "options": ["Ottoman Empire", "Germany", "Russia", "Austria-Hungary"], "answer": "Ottoman Empire", "category": "events"},
-  {"question": "How many Armenians died in the genocide?", "options": ["1.5 million", "500,000", "3 million", "100,000"], "answer": "1.5 million", "category": "events"},
-  {"question": "What Turkish leader fought at Gallipoli?", "options": ["Mustafa Kemal (Atatürk)", "Enver Pasha", "Talat Pasha", "Cemal Pasha"], "answer": "Mustafa Kemal (Atatürk)", "category": "leaders"},
-  {"question": "What did Mustafa Kemal become after the war?", "options": ["Founder of modern Turkey", "Ottoman Sultan", "British ally", "Exiled leader"], "answer": "Founder of modern Turkey", "category": "aftermath"},
-  {"question": "What was the German naval mutiny of 1918?", "options": ["Kiel Mutiny", "Hamburg Revolt", "Berlin Uprising", "Munich Rebellion"], "answer": "Kiel Mutiny", "category": "events"},
-  {"question": "What did the Kiel Mutiny lead to?", "options": ["German Revolution and Kaiser's abdication", "Allied victory", "Naval battle", "Peace treaty"], "answer": "German Revolution and Kaiser's abdication", "category": "events"},
-  {"question": "Where did Kaiser Wilhelm II flee after abdication?", "options": ["Netherlands", "Switzerland", "Sweden", "Denmark"], "answer": "Netherlands", "category": "leaders"},
-  {"question": "What government replaced the German Empire?", "options": ["Weimar Republic", "Nazi Germany", "German Federation", "Prussian State"], "answer": "Weimar Republic", "category": "aftermath"},
-  {"question": "What Indian troops fought for Britain in WW1?", "options": ["Indian Army/Sepoys", "Indian Legion", "Bengal Regiment", "Gurkhas only"], "answer": "Indian Army/Sepoys", "category": "colonial"},
-  {"question": "How many Indian soldiers served in WW1?", "options": ["Over 1 million", "500,000", "100,000", "2 million"], "answer": "Over 1 million", "category": "colonial"},
-  {"question": "What African campaigns occurred during WW1?", "options": ["East Africa and others", "None", "Only Egypt", "Only South Africa"], "answer": "East Africa and others", "category": "colonial"},
-  {"question": "Who led German forces in East Africa?", "options": ["Paul von Lettow-Vorbeck", "Erich von Falkenhayn", "August von Mackensen", "Otto von Below"], "answer": "Paul von Lettow-Vorbeck", "category": "colonial"},
-  {"question": "What made von Lettow-Vorbeck's campaign notable?", "options": ["Never surrendered, fought entire war", "Quick victory", "Naval expertise", "Air superiority"], "answer": "Never surrendered, fought entire war", "category": "colonial"},
-  {"question": "What was the British blockade of Germany?", "options": ["Naval blockade to starve Germany", "Land invasion", "Air campaign", "Submarine warfare"], "answer": "Naval blockade to starve Germany", "category": "naval"},
-  {"question": "What was the Turnip Winter in Germany?", "options": ["1916-17 food crisis from blockade", "Cold weather battle", "Agricultural program", "Victory celebration"], "answer": "1916-17 food crisis from blockade", "category": "homefront"},
-  {"question": "What did Germany scuttle at Scapa Flow?", "options": ["Their High Seas Fleet", "Submarines only", "Merchant ships", "Nothing"], "answer": "Their High Seas Fleet", "category": "naval"},
-  {"question": "When was the Scapa Flow scuttling?", "options": ["1919", "1918", "1920", "1917"], "answer": "1919", "category": "naval"},
-  {"question": "What was the Harlem Hellfighters?", "options": ["African American infantry regiment", "German unit", "British tank corps", "French air squadron"], "answer": "African American infantry regiment", "category": "american"},
-  {"question": "What was notable about the Harlem Hellfighters?", "options": ["Served 191 days in combat, never lost ground", "First to reach Germany", "Captured most prisoners", "Largest casualties"], "answer": "Served 191 days in combat, never lost ground", "category": "american"},
-  {"question": "How many American soldiers served in WW1?", "options": ["Over 4 million", "2 million", "1 million", "6 million"], "answer": "Over 4 million", "category": "american"},
-  {"question": "How many American soldiers died in WW1?", "options": ["About 116,000", "50,000", "200,000", "300,000"], "answer": "About 116,000", "category": "american"},
-  {"question": "What was the Selective Service Act of 1917?", "options": ["American conscription/draft", "Volunteer program", "Naval recruitment", "Officer training"], "answer": "American conscription/draft", "category": "american"},
-  {"question": "What was the Espionage Act of 1917?", "options": ["Law against spying and war opposition", "Spy recruitment", "Intelligence gathering", "Military code"], "answer": "Law against spying and war opposition", "category": "american"},
-  {"question": "What were Liberty Bonds?", "options": ["War bonds to fund the war", "Victory medals", "Military units", "Peace treaties"], "answer": "War bonds to fund the war", "category": "american"},
-  {"question": "What battle was the costliest for Americans?", "options": ["Meuse-Argonne Offensive", "Battle of Belleau Wood", "Battle of Cantigny", "St. Mihiel Offensive"], "answer": "Meuse-Argonne Offensive", "category": "american"},
-  {"question": "What forest did Marines capture in 1918?", "options": ["Belleau Wood", "Argonne Forest", "Black Forest", "Sherwood Forest"], "answer": "Belleau Wood", "category": "american"},
-  {"question": "What did Germans call American Marines at Belleau Wood?", "options": ["Devil Dogs", "Doughboys", "Yankee Devils", "American Wolves"], "answer": "Devil Dogs", "category": "american"},
-  {"question": "What was the St. Mihiel Offensive?", "options": ["First major American-led offensive", "British offensive", "French counter-attack", "German retreat"], "answer": "First major American-led offensive", "category": "american"},
-  {"question": "Who was Sergeant Alvin York?", "options": ["American war hero who captured 132 Germans", "British officer", "French commander", "German defector"], "answer": "American war hero who captured 132 Germans", "category": "american"},
-  {"question": "What was the Lost Battalion?", "options": ["American unit trapped behind German lines", "British regiment", "French battalion", "Missing soldiers"], "answer": "American unit trapped behind German lines", "category": "american"},
-  {"question": "What messenger pigeon became famous in WW1?", "options": ["Cher Ami", "White Dove", "War Bird", "Messenger"], "answer": "Cher Ami", "category": "events"},
-  {"question": "What did Cher Ami do?", "options": ["Delivered message saving the Lost Battalion", "Carried surrender terms", "Scouted enemy lines", "Attacked enemy"], "answer": "Delivered message saving the Lost Battalion", "category": "events"},
-  {"question": "What was trench raiding?", "options": ["Surprise attacks on enemy trenches", "Building trenches", "Defending trenches", "Retreating from trenches"], "answer": "Surprise attacks on enemy trenches", "category": "warfare"},
-  {"question": "What melee weapon was used in trench raids?", "options": ["Trench clubs and knives", "Swords", "Spears", "Bayonets only"], "answer": "Trench clubs and knives", "category": "warfare"},
-  {"question": "What was a creeping barrage?", "options": ["Artillery fire moving ahead of infantry", "Slow retreat", "Defensive fire", "Naval bombardment"], "answer": "Artillery fire moving ahead of infantry", "category": "warfare"},
-  {"question": "What was going 'over the top'?", "options": ["Leaving trenches to attack", "Celebrating victory", "Retreating", "Surrendering"], "answer": "Leaving trenches to attack", "category": "warfare"},
-  {"question": "What was a fire step in a trench?", "options": ["Raised platform for shooting", "Heating area", "Emergency exit", "Command post"], "answer": "Raised platform for shooting", "category": "warfare"},
-  {"question": "What was a duckboard?", "options": ["Wooden slats in muddy trenches", "Shooting platform", "Target practice", "Communication device"], "answer": "Wooden slats in muddy trenches", "category": "warfare"},
-  {"question": "What was a sap in trench warfare?", "options": ["Tunnel toward enemy lines", "Water drainage", "Communication trench", "Defensive wall"], "answer": "Tunnel toward enemy lines", "category": "warfare"},
-  {"question": "What was mining in WW1?", "options": ["Digging tunnels to plant explosives", "Metal extraction", "Defensive digging", "Trench building"], "answer": "Digging tunnels to plant explosives", "category": "warfare"},
-  {"question": "What massive explosion occurred at Messines Ridge?", "options": ["19 mines detonated under German lines", "Artillery barrage", "Gas attack", "Air raid"], "answer": "19 mines detonated under German lines", "category": "battles"},
-  {"question": "What was the Battle of Cambrai known for?", "options": ["First mass tank attack", "First gas attack", "First air battle", "First naval victory"], "answer": "First mass tank attack", "category": "battles"},
-  {"question": "What year was the Battle of Cambrai?", "options": ["1917", "1916", "1918", "1915"], "answer": "1917", "category": "battles"},
-  {"question": "What new territory did Britain promise to Arabs?", "options": ["Independent Arab state", "Palestine only", "Egypt", "Iraq only"], "answer": "Independent Arab state", "category": "middle-east"},
-  {"question": "What city did the British capture from Ottomans in 1917?", "options": ["Jerusalem", "Damascus", "Baghdad", "Cairo"], "answer": "Jerusalem", "category": "middle-east"},
-  {"question": "Who captured Damascus in 1918?", "options": ["Arab forces with British support", "British alone", "French forces", "Ottoman defectors"], "answer": "Arab forces with British support", "category": "middle-east"},
-  {"question": "What was the mandate system after WW1?", "options": ["League supervision of former colonies", "Military occupation", "Direct rule", "Independence"], "answer": "League supervision of former colonies", "category": "aftermath"},
-  {"question": "What became a British mandate?", "options": ["Palestine and Iraq", "Only Egypt", "Only India", "Only Sudan"], "answer": "Palestine and Iraq", "category": "aftermath"},
-  {"question": "What became a French mandate?", "options": ["Syria and Lebanon", "Palestine", "Iraq", "Jordan"], "answer": "Syria and Lebanon", "category": "aftermath"},
-  {"question": "What country was created from Ottoman defeat?", "options": ["Republic of Turkey", "Ottoman Empire remained", "Persian Empire", "Arab Kingdom"], "answer": "Republic of Turkey", "category": "aftermath"},
-  {"question": "What was the Treaty of Sèvres?", "options": ["Treaty with Ottoman Empire", "German peace treaty", "Russian treaty", "Austrian treaty"], "answer": "Treaty with Ottoman Empire", "category": "treaties"},
-  {"question": "What treaty replaced Sèvres for Turkey?", "options": ["Treaty of Lausanne", "Treaty of Versailles", "Treaty of Trianon", "Treaty of Berlin"], "answer": "Treaty of Lausanne", "category": "treaties"},
-  {"question": "What happened to Austria-Hungary after WW1?", "options": ["Split into multiple nations", "Remained unified", "Joined Germany", "Became part of Russia"], "answer": "Split into multiple nations", "category": "aftermath"},
-  {"question": "What new nation was Yugoslavia?", "options": ["Kingdom of Serbs, Croats and Slovenes", "Just Serbia", "Austrian territory", "Hungarian province"], "answer": "Kingdom of Serbs, Croats and Slovenes", "category": "aftermath"},
-  {"question": "What territory did Poland regain after WW1?", "options": ["Independence after 123 years", "Prussian lands only", "Russian lands only", "Austrian lands only"], "answer": "Independence after 123 years", "category": "aftermath"},
-  {"question": "What was the Polish Corridor?", "options": ["Land giving Poland access to sea", "Railway line", "River passage", "Mountain pass"], "answer": "Land giving Poland access to sea", "category": "aftermath"},
-  {"question": "What German city was separated by the Polish Corridor?", "options": ["East Prussia", "Berlin", "Hamburg", "Munich"], "answer": "East Prussia", "category": "aftermath"},
-  {"question": "What was hyperinflation in Germany?", "options": ["Extreme currency devaluation in 1920s", "High unemployment", "Food shortage", "Military build-up"], "answer": "Extreme currency devaluation in 1920s", "category": "aftermath"},
-  {"question": "What was the 'stab in the back' myth?", "options": ["Claim that Germany was betrayed from within", "Military strategy", "Political alliance", "Peace proposal"], "answer": "Claim that Germany was betrayed from within", "category": "aftermath"},
-  {"question": "What veteran became leader of Nazi Germany?", "options": ["Adolf Hitler", "Paul von Hindenburg", "Erich Ludendorff", "Wilhelm II"], "answer": "Adolf Hitler", "category": "aftermath"},
-  {"question": "What rank did Hitler hold in WW1?", "options": ["Corporal", "Private", "Sergeant", "Lieutenant"], "answer": "Corporal", "category": "aftermath"},
-  {"question": "What award did Hitler receive in WW1?", "options": ["Iron Cross", "Medal of Honor", "Victoria Cross", "Croix de Guerre"], "answer": "Iron Cross", "category": "aftermath"},
-  {"question": "What was 'the war to end all wars'?", "options": ["World War 1", "Franco-Prussian War", "Crimean War", "Napoleonic Wars"], "answer": "World War 1", "category": "culture"},
-  {"question": "What was the 'Lost Generation'?", "options": ["Generation that came of age during WW1", "German youth", "Orphaned children", "Wounded soldiers"], "answer": "Generation that came of age during WW1", "category": "culture"},
-  {"question": "What writer served as ambulance driver in WW1?", "options": ["Ernest Hemingway", "F. Scott Fitzgerald", "Wilfred Owen", "John Steinbeck"], "answer": "Ernest Hemingway", "category": "culture"},
-  {"question": "How did WW1 contribute to WW2?", "options": ["Treaty of Versailles created resentment", "Had no connection", "Prevented future war", "Created lasting peace"], "answer": "Treaty of Versailles created resentment", "category": "aftermath"},
-  {"question": "What is WW1 also known as?", "options": ["The Great War", "The World War", "The European War", "All of the above"], "answer": "All of the above", "category": "general"}
+  {
+    "question": "What year did World War 1 begin?",
+    "options": [
+      "1916",
+      "1913",
+      "1914",
+      "1915"
+    ],
+    "answer": "1914",
+    "category": "timeline"
+  },
+  {
+    "question": "What year did World War 1 end?",
+    "options": [
+      "1919",
+      "1917",
+      "1920",
+      "1918"
+    ],
+    "answer": "1918",
+    "category": "timeline"
+  },
+  {
+    "question": "What event triggered the start of WW1?",
+    "options": [
+      "German invasion of Poland",
+      "Russian Revolution",
+      "Assassination of Archduke Franz Ferdinand",
+      "Sinking of Lusitania"
+    ],
+    "answer": "Assassination of Archduke Franz Ferdinand",
+    "category": "causes"
+  },
+  {
+    "question": "Where was Archduke Franz Ferdinand assassinated?",
+    "options": [
+      "Sarajevo",
+      "Belgrade",
+      "Budapest",
+      "Vienna"
+    ],
+    "answer": "Sarajevo",
+    "category": "causes"
+  },
+  {
+    "question": "Who assassinated Archduke Franz Ferdinand?",
+    "options": [
+      "Nedeljko Čabrinović",
+      "Dragutin Dimitrijević",
+      "Leon Czolgosz",
+      "Gavrilo Princip"
+    ],
+    "answer": "Gavrilo Princip",
+    "category": "causes"
+  },
+  {
+    "question": "What was the alliance of Germany, Austria-Hungary, and Italy called?",
+    "options": [
+      "Triple Entente",
+      "Axis Powers",
+      "Triple Alliance",
+      "Central Powers"
+    ],
+    "answer": "Triple Alliance",
+    "category": "alliances"
+  },
+  {
+    "question": "What was the alliance of Britain, France, and Russia called?",
+    "options": [
+      "Triple Entente",
+      "Triple Alliance",
+      "NATO",
+      "Allied Powers"
+    ],
+    "answer": "Triple Entente",
+    "category": "alliances"
+  },
+  {
+    "question": "Which countries made up the Central Powers?",
+    "options": [
+      "USA, Britain, France",
+      "Germany, Italy, Japan",
+      "Germany, Austria-Hungary, Ottoman Empire, Bulgaria",
+      "Britain, France, Russia"
+    ],
+    "answer": "Germany, Austria-Hungary, Ottoman Empire, Bulgaria",
+    "category": "alliances"
+  },
+  {
+    "question": "What was Germany's plan to defeat France quickly called?",
+    "options": [
+      "Schlieffen Plan",
+      "Operation Barbarossa",
+      "Blitzkrieg",
+      "Maginot Plan"
+    ],
+    "answer": "Schlieffen Plan",
+    "category": "battles"
+  },
+  {
+    "question": "Which neutral country did Germany invade to attack France?",
+    "options": [
+      "Belgium",
+      "Switzerland",
+      "Luxembourg",
+      "Netherlands"
+    ],
+    "answer": "Belgium",
+    "category": "battles"
+  },
+  {
+    "question": "What type of warfare characterized the Western Front?",
+    "options": [
+      "Aerial warfare",
+      "Naval warfare",
+      "Guerrilla warfare",
+      "Trench warfare"
+    ],
+    "answer": "Trench warfare",
+    "category": "warfare"
+  },
+  {
+    "question": "What was the area between opposing trenches called?",
+    "options": [
+      "No Man's Land",
+      "Kill Zone",
+      "Buffer Zone",
+      "Dead Zone"
+    ],
+    "answer": "No Man's Land",
+    "category": "warfare"
+  },
+  {
+    "question": "What new weapon was first used at the Battle of the Somme?",
+    "options": [
+      "Poison gas",
+      "Machine gun",
+      "Submarine",
+      "Tank"
+    ],
+    "answer": "Tank",
+    "category": "weapons"
+  },
+  {
+    "question": "What poison gas was commonly used in WW1?",
+    "options": [
+      "Sarin",
+      "VX",
+      "Chlorine only",
+      "Mustard gas"
+    ],
+    "answer": "Mustard gas",
+    "category": "weapons"
+  },
+  {
+    "question": "What was the German submarine called?",
+    "options": [
+      "Dreadnought",
+      "Cruiser",
+      "U-boat",
+      "Destroyer"
+    ],
+    "answer": "U-boat",
+    "category": "weapons"
+  },
+  {
+    "question": "What British ship was sunk in 1915, killing 1,198 people?",
+    "options": [
+      "Titanic",
+      "Britannic",
+      "Olympic",
+      "Lusitania"
+    ],
+    "answer": "Lusitania",
+    "category": "naval"
+  },
+  {
+    "question": "How many Americans died on the Lusitania?",
+    "options": [
+      "500",
+      "128",
+      "256",
+      "1000"
+    ],
+    "answer": "128",
+    "category": "naval"
+  },
+  {
+    "question": "What year did the United States enter WW1?",
+    "options": [
+      "1915",
+      "1917",
+      "1914",
+      "1918"
+    ],
+    "answer": "1917",
+    "category": "timeline"
+  },
+  {
+    "question": "Who was the President of the United States during WW1?",
+    "options": [
+      "Woodrow Wilson",
+      "William Taft",
+      "Theodore Roosevelt",
+      "Warren Harding"
+    ],
+    "answer": "Woodrow Wilson",
+    "category": "leaders"
+  },
+  {
+    "question": "What telegram helped bring the US into the war?",
+    "options": [
+      "Zimmermann Telegram",
+      "Berlin Telegram",
+      "Mexico Telegram",
+      "Washington Telegram"
+    ],
+    "answer": "Zimmermann Telegram",
+    "category": "causes"
+  },
+  {
+    "question": "What did the Zimmermann Telegram propose?",
+    "options": [
+      "Peace treaty",
+      "Military surrender",
+      "Trade agreement",
+      "German-Mexican alliance against US"
+    ],
+    "answer": "German-Mexican alliance against US",
+    "category": "causes"
+  },
+  {
+    "question": "Who was the Kaiser of Germany during WW1?",
+    "options": [
+      "Wilhelm I",
+      "Wilhelm II",
+      "Otto von Bismarck",
+      "Frederick III"
+    ],
+    "answer": "Wilhelm II",
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the British Prime Minister for most of WW1?",
+    "options": [
+      "Neville Chamberlain",
+      "Winston Churchill",
+      "Herbert Asquith",
+      "David Lloyd George"
+    ],
+    "answer": "David Lloyd George",
+    "category": "leaders"
+  },
+  {
+    "question": "Who was the French Commander at the Battle of Verdun?",
+    "options": [
+      "Philippe Pétain",
+      "Robert Nivelle",
+      "Ferdinand Foch",
+      "Joseph Joffre"
+    ],
+    "answer": "Philippe Pétain",
+    "category": "leaders"
+  },
+  {
+    "question": "What was the longest battle of WW1?",
+    "options": [
+      "Battle of Verdun",
+      "Battle of Marne",
+      "Battle of Ypres",
+      "Battle of the Somme"
+    ],
+    "answer": "Battle of Verdun",
+    "category": "battles"
+  },
+  {
+    "question": "How long did the Battle of Verdun last?",
+    "options": [
+      "1 year",
+      "3 months",
+      "6 months",
+      "10 months"
+    ],
+    "answer": "10 months",
+    "category": "battles"
+  },
+  {
+    "question": "What was the deadliest day in British military history?",
+    "options": [
+      "Gallipoli landing",
+      "First day of the Somme",
+      "Battle of Waterloo",
+      "D-Day"
+    ],
+    "answer": "First day of the Somme",
+    "category": "battles"
+  },
+  {
+    "question": "How many British soldiers died on the first day of the Somme?",
+    "options": [
+      "5,000",
+      "10,000",
+      "Nearly 20,000",
+      "30,000"
+    ],
+    "answer": "Nearly 20,000",
+    "category": "battles"
+  },
+  {
+    "question": "What date did the Battle of the Somme begin?",
+    "options": [
+      "July 1, 1917",
+      "August 1, 1916",
+      "July 1, 1916",
+      "June 1, 1916"
+    ],
+    "answer": "July 1, 1916",
+    "category": "timeline"
+  },
+  {
+    "question": "What was the Christmas Truce of 1914?",
+    "options": [
+      "German surrender",
+      "Official peace treaty",
+      "Unofficial ceasefire between enemies",
+      "Allied victory"
+    ],
+    "answer": "Unofficial ceasefire between enemies",
+    "category": "events"
+  },
+  {
+    "question": "What sport did soldiers reportedly play during the Christmas Truce?",
+    "options": [
+      "Baseball",
+      "Cricket",
+      "Rugby",
+      "Football/Soccer"
+    ],
+    "answer": "Football/Soccer",
+    "category": "events"
+  },
+  {
+    "question": "What revolution occurred in Russia in 1917?",
+    "options": [
+      "Industrial Revolution",
+      "Russian Revolution",
+      "Bolshevik only",
+      "French Revolution"
+    ],
+    "answer": "Russian Revolution",
+    "category": "events"
+  },
+  {
+    "question": "Who led the Bolsheviks in Russia?",
+    "options": [
+      "Tsar Nicholas II",
+      "Leon Trotsky",
+      "Joseph Stalin",
+      "Vladimir Lenin"
+    ],
+    "answer": "Vladimir Lenin",
+    "category": "leaders"
+  },
+  {
+    "question": "What treaty ended Russia's involvement in WW1?",
+    "options": [
+      "Treaty of Moscow",
+      "Treaty of Versailles",
+      "Treaty of Brest-Litovsk",
+      "Treaty of Paris"
+    ],
+    "answer": "Treaty of Brest-Litovsk",
+    "category": "treaties"
+  },
+  {
+    "question": "What happened to Tsar Nicholas II?",
+    "options": [
+      "Escaped to England",
+      "Exiled to France",
+      "Died of illness",
+      "Executed with his family"
+    ],
+    "answer": "Executed with his family",
+    "category": "leaders"
+  },
+  {
+    "question": "What was the failed Allied campaign in Turkey called?",
+    "options": [
+      "Gallipoli Campaign",
+      "Ottoman Offensive",
+      "Dardanelles Victory",
+      "Turkish Front"
+    ],
+    "answer": "Gallipoli Campaign",
+    "category": "battles"
+  },
+  {
+    "question": "Which future leader planned the Gallipoli Campaign?",
+    "options": [
+      "Winston Churchill",
+      "Douglas Haig",
+      "John French",
+      "David Lloyd George"
+    ],
+    "answer": "Winston Churchill",
+    "category": "leaders"
+  },
+  {
+    "question": "What country suffered the most casualties at Gallipoli?",
+    "options": [
+      "Australia",
+      "Britain",
+      "France",
+      "Ottoman Empire"
+    ],
+    "answer": "Ottoman Empire",
+    "category": "battles"
+  },
+  {
+    "question": "What is ANZAC Day commemorating?",
+    "options": [
+      "End of WW1",
+      "Australian independence",
+      "Gallipoli landing",
+      "New Zealand founding"
+    ],
+    "answer": "Gallipoli landing",
+    "category": "events"
+  },
+  {
+    "question": "What date is ANZAC Day?",
+    "options": [
+      "November 11",
+      "August 4",
+      "July 1",
+      "April 25"
+    ],
+    "answer": "April 25",
+    "category": "events"
+  },
+  {
+    "question": "What was the major naval battle between Britain and Germany?",
+    "options": [
+      "Battle of the Atlantic",
+      "Battle of Midway",
+      "Battle of Trafalgar",
+      "Battle of Jutland"
+    ],
+    "answer": "Battle of Jutland",
+    "category": "naval"
+  },
+  {
+    "question": "What year was the Battle of Jutland?",
+    "options": [
+      "1916",
+      "1918",
+      "1917",
+      "1915"
+    ],
+    "answer": "1916",
+    "category": "naval"
+  },
+  {
+    "question": "What type of warship revolutionized naval warfare?",
+    "options": [
+      "Aircraft carrier",
+      "Dreadnought",
+      "Submarine",
+      "Ironclad"
+    ],
+    "answer": "Dreadnought",
+    "category": "naval"
+  },
+  {
+    "question": "What was unrestricted submarine warfare?",
+    "options": [
+      "Attacking all ships without warning",
+      "Only attacking military ships",
+      "Defensive submarine use",
+      "Submarine blockades"
+    ],
+    "answer": "Attacking all ships without warning",
+    "category": "naval"
+  },
+  {
+    "question": "What flying ace was known as the Red Baron?",
+    "options": [
+      "Albert Ball",
+      "Manfred von Richthofen",
+      "Billy Bishop",
+      "Eddie Rickenbacker"
+    ],
+    "answer": "Manfred von Richthofen",
+    "category": "aviation"
+  },
+  {
+    "question": "How many aerial victories did the Red Baron have?",
+    "options": [
+      "60",
+      "100",
+      "80",
+      "50"
+    ],
+    "answer": "80",
+    "category": "aviation"
+  },
+  {
+    "question": "What country was the Red Baron from?",
+    "options": [
+      "Austria",
+      "France",
+      "Britain",
+      "Germany"
+    ],
+    "answer": "Germany",
+    "category": "aviation"
+  },
+  {
+    "question": "What was the top American flying ace?",
+    "options": [
+      "Raoul Lufbery",
+      "Billy Mitchell",
+      "Eddie Rickenbacker",
+      "Frank Luke"
+    ],
+    "answer": "Eddie Rickenbacker",
+    "category": "aviation"
+  },
+  {
+    "question": "What were WWI fighter pilots called?",
+    "options": [
+      "Hawks",
+      "Knights",
+      "Aces",
+      "Eagles"
+    ],
+    "answer": "Aces",
+    "category": "aviation"
+  },
+  {
+    "question": "What disease killed more people than combat in WW1?",
+    "options": [
+      "Cholera",
+      "Spanish Flu",
+      "Typhoid",
+      "Malaria"
+    ],
+    "answer": "Spanish Flu",
+    "category": "homefront"
+  },
+  {
+    "question": "What year did the Spanish Flu pandemic begin?",
+    "options": [
+      "1919",
+      "1917",
+      "1916",
+      "1918"
+    ],
+    "answer": "1918",
+    "category": "homefront"
+  },
+  {
+    "question": "What condition affected soldiers from constant shelling?",
+    "options": [
+      "Shell shock/PTSD",
+      "Trench foot",
+      "Gas blindness",
+      "Combat fatigue"
+    ],
+    "answer": "Shell shock/PTSD",
+    "category": "warfare"
+  },
+  {
+    "question": "What foot condition affected soldiers in wet trenches?",
+    "options": [
+      "Frostbite",
+      "Gangrene",
+      "Athlete's foot",
+      "Trench foot"
+    ],
+    "answer": "Trench foot",
+    "category": "warfare"
+  },
+  {
+    "question": "What animals were commonly found in trenches?",
+    "options": [
+      "Dogs",
+      "Rats",
+      "Horses only",
+      "Cats"
+    ],
+    "answer": "Rats",
+    "category": "warfare"
+  },
+  {
+    "question": "What treaty officially ended WW1?",
+    "options": [
+      "Treaty of Versailles",
+      "Treaty of Paris",
+      "Treaty of London",
+      "Treaty of Berlin"
+    ],
+    "answer": "Treaty of Versailles",
+    "category": "treaties"
+  },
+  {
+    "question": "What date was the Armistice signed?",
+    "options": [
+      "November 11, 1918",
+      "November 11, 1917",
+      "December 25, 1918",
+      "October 1, 1918"
+    ],
+    "answer": "November 11, 1918",
+    "category": "timeline"
+  },
+  {
+    "question": "What time did the fighting stop on Armistice Day?",
+    "options": [
+      "11:00 AM",
+      "9:00 AM",
+      "12:00 PM",
+      "6:00 AM"
+    ],
+    "answer": "11:00 AM",
+    "category": "timeline"
+  },
+  {
+    "question": "Where was the Armistice signed?",
+    "options": [
+      "Railway carriage in Compiègne",
+      "Versailles",
+      "Berlin",
+      "Paris"
+    ],
+    "answer": "Railway carriage in Compiègne",
+    "category": "treaties"
+  },
+  {
+    "question": "What was Article 231 of the Treaty of Versailles?",
+    "options": [
+      "Military clause",
+      "War Guilt Clause",
+      "Reparations clause",
+      "Territory clause"
+    ],
+    "answer": "War Guilt Clause",
+    "category": "treaties"
+  },
+  {
+    "question": "Which country had to accept blame for WW1?",
+    "options": [
+      "Germany",
+      "Serbia",
+      "Russia",
+      "Austria-Hungary"
+    ],
+    "answer": "Germany",
+    "category": "treaties"
+  },
+  {
+    "question": "How much did Germany have to pay in reparations?",
+    "options": [
+      "132 billion gold marks",
+      "10 billion gold marks",
+      "50 billion gold marks",
+      "200 billion gold marks"
+    ],
+    "answer": "132 billion gold marks",
+    "category": "treaties"
+  },
+  {
+    "question": "What international organization was created after WW1?",
+    "options": [
+      "NATO",
+      "United Nations",
+      "League of Nations",
+      "European Union"
+    ],
+    "answer": "League of Nations",
+    "category": "aftermath"
+  },
+  {
+    "question": "Which major power did NOT join the League of Nations?",
+    "options": [
+      "Britain",
+      "United States",
+      "Italy",
+      "France"
+    ],
+    "answer": "United States",
+    "category": "aftermath"
+  },
+  {
+    "question": "What empire collapsed after WW1?",
+    "options": [
+      "Ottoman Empire",
+      "All of the below",
+      "German Empire",
+      "Austro-Hungarian Empire"
+    ],
+    "answer": "All of the below",
+    "category": "aftermath"
+  },
+  {
+    "question": "What new country was created from Austria-Hungary?",
+    "options": [
+      "Hungary only",
+      "Poland",
+      "Czechoslovakia",
+      "Austria only"
+    ],
+    "answer": "Czechoslovakia",
+    "category": "aftermath"
+  },
+  {
+    "question": "What became of the Ottoman Empire after WW1?",
+    "options": [
+      "Joined Russia",
+      "Remained intact",
+      "Became British colony",
+      "Became Turkey and Middle East nations"
+    ],
+    "answer": "Became Turkey and Middle East nations",
+    "category": "aftermath"
+  },
+  {
+    "question": "Who proposed the Fourteen Points?",
+    "options": [
+      "David Lloyd George",
+      "Woodrow Wilson",
+      "Vittorio Orlando",
+      "Georges Clemenceau"
+    ],
+    "answer": "Woodrow Wilson",
+    "category": "leaders"
+  },
+  {
+    "question": "What was the main idea of Wilson's Fourteen Points?",
+    "options": [
+      "Punishment of Germany",
+      "Colonial expansion",
+      "Military alliances",
+      "Self-determination and peace"
+    ],
+    "answer": "Self-determination and peace",
+    "category": "aftermath"
+  },
+  {
+    "question": "Who was the Supreme Allied Commander at the end of WW1?",
+    "options": [
+      "Ferdinand Foch",
+      "John Pershing",
+      "Douglas Haig",
+      "Philippe Pétain"
+    ],
+    "answer": "Ferdinand Foch",
+    "category": "leaders"
+  },
+  {
+    "question": "Who commanded the American Expeditionary Force?",
+    "options": [
+      "Dwight Eisenhower",
+      "John J. Pershing",
+      "Douglas MacArthur",
+      "George Patton"
+    ],
+    "answer": "John J. Pershing",
+    "category": "leaders"
+  },
+  {
+    "question": "What was the nickname for American soldiers in WW1?",
+    "options": [
+      "Yanks",
+      "Tommies",
+      "Doughboys",
+      "GIs"
+    ],
+    "answer": "Doughboys",
+    "category": "homefront"
+  },
+  {
+    "question": "What was the nickname for British soldiers?",
+    "options": [
+      "Doughboys",
+      "Anzacs",
+      "Poilus",
+      "Tommies"
+    ],
+    "answer": "Tommies",
+    "category": "homefront"
+  },
+  {
+    "question": "What was the nickname for French soldiers?",
+    "options": [
+      "Poilus",
+      "Boche",
+      "Tommies",
+      "Doughboys"
+    ],
+    "answer": "Poilus",
+    "category": "homefront"
+  },
+  {
+    "question": "How many soldiers died in WW1 approximately?",
+    "options": [
+      "2 million",
+      "20 million",
+      "10 million",
+      "5 million"
+    ],
+    "answer": "10 million",
+    "category": "casualties"
+  },
+  {
+    "question": "How many total deaths (military and civilian) in WW1?",
+    "options": [
+      "30 million",
+      "15 million",
+      "20 million",
+      "10 million"
+    ],
+    "answer": "20 million",
+    "category": "casualties"
+  },
+  {
+    "question": "Which country lost the most soldiers in WW1?",
+    "options": [
+      "France",
+      "Russia",
+      "Germany",
+      "Britain"
+    ],
+    "answer": "Germany",
+    "category": "casualties"
+  },
+  {
+    "question": "What percentage of French men aged 18-27 died in WW1?",
+    "options": [
+      "About 50%",
+      "About 25%",
+      "About 5%",
+      "About 10%"
+    ],
+    "answer": "About 25%",
+    "category": "casualties"
+  },
+  {
+    "question": "What was the Battle of Tannenberg?",
+    "options": [
+      "German victory over Russia",
+      "Ottoman victory",
+      "British victory over Germany",
+      "French victory at Verdun"
+    ],
+    "answer": "German victory over Russia",
+    "category": "eastern-front"
+  },
+  {
+    "question": "Who commanded the German forces at Tannenberg?",
+    "options": [
+      "Paul von Hindenburg",
+      "Erich von Falkenhayn",
+      "Helmuth von Moltke",
+      "Erich Ludendorff"
+    ],
+    "answer": "Paul von Hindenburg",
+    "category": "eastern-front"
+  },
+  {
+    "question": "What front was between Germany and Russia?",
+    "options": [
+      "Eastern Front",
+      "Northern Front",
+      "Western Front",
+      "Southern Front"
+    ],
+    "answer": "Eastern Front",
+    "category": "eastern-front"
+  },
+  {
+    "question": "What country joined the Allies in 1915 despite being in the Triple Alliance?",
+    "options": [
+      "Ottoman Empire",
+      "Italy",
+      "Bulgaria",
+      "Romania"
+    ],
+    "answer": "Italy",
+    "category": "alliances"
+  },
+  {
+    "question": "What battle was Italy's major defeat in 1917?",
+    "options": [
+      "Battle of Vittorio Veneto",
+      "Battle of Caporetto",
+      "Battle of Piave",
+      "Battle of Isonzo"
+    ],
+    "answer": "Battle of Caporetto",
+    "category": "battles"
+  },
+  {
+    "question": "What was the Brusilov Offensive?",
+    "options": [
+      "Failed French offensive",
+      "British attack on Germany",
+      "Successful Russian attack on Austria-Hungary",
+      "German attack on Russia"
+    ],
+    "answer": "Successful Russian attack on Austria-Hungary",
+    "category": "eastern-front"
+  },
+  {
+    "question": "What new country gained independence from Russia?",
+    "options": [
+      "All of the above",
+      "Poland",
+      "Finland",
+      "Ukraine"
+    ],
+    "answer": "All of the above",
+    "category": "aftermath"
+  },
+  {
+    "question": "What empire was called 'the sick man of Europe'?",
+    "options": [
+      "Ottoman Empire",
+      "Austro-Hungarian Empire",
+      "Russian Empire",
+      "German Empire"
+    ],
+    "answer": "Ottoman Empire",
+    "category": "causes"
+  },
+  {
+    "question": "What region was a major cause of tension before WW1?",
+    "options": [
+      "Alsace-Lorraine",
+      "Poland",
+      "Balkans",
+      "Rhineland"
+    ],
+    "answer": "Balkans",
+    "category": "causes"
+  },
+  {
+    "question": "What war in 1912-1913 increased Balkan tensions?",
+    "options": [
+      "Balkan Wars",
+      "Crimean War",
+      "Greco-Turkish War",
+      "Russo-Turkish War"
+    ],
+    "answer": "Balkan Wars",
+    "category": "causes"
+  },
+  {
+    "question": "What territory did France want back from Germany?",
+    "options": [
+      "Belgium",
+      "Rhine Valley",
+      "Saar",
+      "Alsace-Lorraine"
+    ],
+    "answer": "Alsace-Lorraine",
+    "category": "causes"
+  },
+  {
+    "question": "What was the naval arms race between Britain and Germany about?",
+    "options": [
+      "Building the largest fleet",
+      "Submarine development",
+      "Colonial ports",
+      "Trade routes"
+    ],
+    "answer": "Building the largest fleet",
+    "category": "causes"
+  },
+  {
+    "question": "What policy involved European powers competing for colonies?",
+    "options": [
+      "Alliances",
+      "Nationalism",
+      "Imperialism",
+      "Militarism"
+    ],
+    "answer": "Imperialism",
+    "category": "causes"
+  },
+  {
+    "question": "What is MAIN an acronym for in WW1 causes?",
+    "options": [
+      "Militarism, Alliances, Imperialism, Nationalism",
+      "Military, Armaments, Industry, Navy",
+      "None of the above",
+      "Major Allied International Nations"
+    ],
+    "answer": "Militarism, Alliances, Imperialism, Nationalism",
+    "category": "causes"
+  },
+  {
+    "question": "What was the First Battle of the Marne significant for?",
+    "options": [
+      "End of trench warfare",
+      "Stopped German advance on Paris",
+      "American entry",
+      "German victory"
+    ],
+    "answer": "Stopped German advance on Paris",
+    "category": "battles"
+  },
+  {
+    "question": "What year was the First Battle of the Marne?",
+    "options": [
+      "1916",
+      "1917",
+      "1914",
+      "1915"
+    ],
+    "answer": "1914",
+    "category": "battles"
+  },
+  {
+    "question": "How did Paris taxis help in the Battle of the Marne?",
+    "options": [
+      "Served as ambulances",
+      "Transported troops to the front",
+      "Carried supplies",
+      "Evacuated civilians"
+    ],
+    "answer": "Transported troops to the front",
+    "category": "battles"
+  },
+  {
+    "question": "What battle in 1917 was a major British offensive?",
+    "options": [
+      "Battle of Verdun",
+      "Battle of Passchendaele",
+      "Battle of Marne",
+      "Battle of the Somme"
+    ],
+    "answer": "Battle of Passchendaele",
+    "category": "battles"
+  },
+  {
+    "question": "What was another name for Passchendaele?",
+    "options": [
+      "Third Battle of Ypres",
+      "First Battle of Ypres",
+      "Second Battle of Ypres",
+      "Battle of Flanders"
+    ],
+    "answer": "Third Battle of Ypres",
+    "category": "battles"
+  },
+  {
+    "question": "What made Passchendaele particularly difficult?",
+    "options": [
+      "Heat",
+      "Snow",
+      "Mud and rain",
+      "Mountains"
+    ],
+    "answer": "Mud and rain",
+    "category": "battles"
+  },
+  {
+    "question": "What was the first major use of poison gas?",
+    "options": [
+      "Battle of the Somme",
+      "Second Battle of Ypres",
+      "Battle of Verdun",
+      "First Battle of Marne"
+    ],
+    "answer": "Second Battle of Ypres",
+    "category": "weapons"
+  },
+  {
+    "question": "What country first used poison gas in WW1?",
+    "options": [
+      "France",
+      "Russia",
+      "Britain",
+      "Germany"
+    ],
+    "answer": "Germany",
+    "category": "weapons"
+  },
+  {
+    "question": "What protective equipment was developed for gas attacks?",
+    "options": [
+      "Body armor",
+      "Gas masks",
+      "Helmets",
+      "Goggles"
+    ],
+    "answer": "Gas masks",
+    "category": "weapons"
+  },
+  {
+    "question": "What was the main rifle used by British soldiers?",
+    "options": [
+      "Mauser",
+      "Springfield",
+      "Lee-Enfield",
+      "Mosin-Nagant"
+    ],
+    "answer": "Lee-Enfield",
+    "category": "weapons"
+  },
+  {
+    "question": "What machine gun was widely used in WW1?",
+    "options": [
+      "Browning",
+      "Maxim gun",
+      "M60",
+      "AK-47"
+    ],
+    "answer": "Maxim gun",
+    "category": "weapons"
+  },
+  {
+    "question": "What was 'Big Bertha'?",
+    "options": [
+      "French battleship",
+      "German siege gun",
+      "American plane",
+      "British tank"
+    ],
+    "answer": "German siege gun",
+    "category": "weapons"
+  },
+  {
+    "question": "What gun could hit Paris from 75 miles away?",
+    "options": [
+      "Long Max",
+      "Kaiser Wilhelm Gun",
+      "Paris Gun",
+      "Big Bertha"
+    ],
+    "answer": "Paris Gun",
+    "category": "weapons"
+  },
+  {
+    "question": "What was the first tank used in combat?",
+    "options": [
+      "British Mark I",
+      "American M1917",
+      "German A7V",
+      "French Renault FT"
+    ],
+    "answer": "British Mark I",
+    "category": "weapons"
+  },
+  {
+    "question": "What nickname were tanks given to keep them secret?",
+    "options": [
+      "Iron horses",
+      "Land ships",
+      "Water tanks",
+      "Metal boxes"
+    ],
+    "answer": "Water tanks",
+    "category": "weapons"
+  },
+  {
+    "question": "What was the German Spring Offensive of 1918?",
+    "options": [
+      "First German attack",
+      "Last major German attack",
+      "Naval attack",
+      "Defensive operation"
+    ],
+    "answer": "Last major German attack",
+    "category": "battles"
+  },
+  {
+    "question": "What was the code name for the Spring Offensive?",
+    "options": [
+      "Schlieffen",
+      "Fall Gelb",
+      "Operation Barbarossa",
+      "Operation Michael"
+    ],
+    "answer": "Operation Michael",
+    "category": "battles"
+  },
+  {
+    "question": "What Allied offensive ended the war?",
+    "options": [
+      "Verdun Counter-offensive",
+      "Somme Offensive",
+      "Spring Offensive",
+      "Hundred Days Offensive"
+    ],
+    "answer": "Hundred Days Offensive",
+    "category": "battles"
+  },
+  {
+    "question": "What was the Hindenburg Line?",
+    "options": [
+      "Russian front",
+      "German defensive fortification",
+      "British trench system",
+      "French border"
+    ],
+    "answer": "German defensive fortification",
+    "category": "warfare"
+  },
+  {
+    "question": "What role did women play during WW1?",
+    "options": [
+      "Factory workers and nurses",
+      "Only factory workers",
+      "No role",
+      "Only nurses"
+    ],
+    "answer": "Factory workers and nurses",
+    "category": "homefront"
+  },
+  {
+    "question": "What were female munitions workers called in Britain?",
+    "options": [
+      "Munitionettes",
+      "War women",
+      "Tommettes",
+      "Factory girls"
+    ],
+    "answer": "Munitionettes",
+    "category": "homefront"
+  },
+  {
+    "question": "What movement gained support due to women's war work?",
+    "options": [
+      "Socialism",
+      "Labor unions",
+      "Women's suffrage",
+      "Pacifism"
+    ],
+    "answer": "Women's suffrage",
+    "category": "homefront"
+  },
+  {
+    "question": "What was conscription?",
+    "options": [
+      "Volunteer service",
+      "Mandatory military service",
+      "Medical exemption",
+      "Officer training"
+    ],
+    "answer": "Mandatory military service",
+    "category": "homefront"
+  },
+  {
+    "question": "When did Britain introduce conscription?",
+    "options": [
+      "1917",
+      "1916",
+      "1914",
+      "1918"
+    ],
+    "answer": "1916",
+    "category": "homefront"
+  },
+  {
+    "question": "What were conscientious objectors?",
+    "options": [
+      "Those who refused to fight on moral grounds",
+      "Volunteer soldiers",
+      "Officers",
+      "Medics"
+    ],
+    "answer": "Those who refused to fight on moral grounds",
+    "category": "homefront"
+  },
+  {
+    "question": "What was rationing?",
+    "options": [
+      "Military training",
+      "Trench building",
+      "Limiting food and goods per person",
+      "Weapon manufacturing"
+    ],
+    "answer": "Limiting food and goods per person",
+    "category": "homefront"
+  },
+  {
+    "question": "What propaganda poster featured Lord Kitchener?",
+    "options": [
+      "Enlist Today",
+      "Join the Army",
+      "Uncle Sam Wants You",
+      "Your Country Needs You"
+    ],
+    "answer": "Your Country Needs You",
+    "category": "homefront"
+  },
+  {
+    "question": "What American poster featured Uncle Sam?",
+    "options": [
+      "America Needs You",
+      "Join the Fight",
+      "I Want You for U.S. Army",
+      "Enlist Now"
+    ],
+    "answer": "I Want You for U.S. Army",
+    "category": "homefront"
+  },
+  {
+    "question": "What poet wrote 'Dulce et Decorum Est'?",
+    "options": [
+      "John McCrae",
+      "Rupert Brooke",
+      "Wilfred Owen",
+      "Siegfried Sassoon"
+    ],
+    "answer": "Wilfred Owen",
+    "category": "culture"
+  },
+  {
+    "question": "What poem mentions 'In Flanders Fields'?",
+    "options": [
+      "Anthem for Doomed Youth",
+      "The Soldier",
+      "In Flanders Fields by John McCrae",
+      "Dulce et Decorum Est"
+    ],
+    "answer": "In Flanders Fields by John McCrae",
+    "category": "culture"
+  },
+  {
+    "question": "What flower became a symbol of WW1 remembrance?",
+    "options": [
+      "Daisy",
+      "Lily",
+      "Poppy",
+      "Rose"
+    ],
+    "answer": "Poppy",
+    "category": "culture"
+  },
+  {
+    "question": "Why is the poppy associated with WW1?",
+    "options": [
+      "National flower of Britain",
+      "Soldiers carried them",
+      "Grew on battlefields in Flanders",
+      "Red like blood"
+    ],
+    "answer": "Grew on battlefields in Flanders",
+    "category": "culture"
+  },
+  {
+    "question": "What is Remembrance Day?",
+    "options": [
+      "Victory celebration",
+      "Start of WW1 memorial",
+      "November 11 commemoration of WW1 end",
+      "Armistice signing"
+    ],
+    "answer": "November 11 commemoration of WW1 end",
+    "category": "culture"
+  },
+  {
+    "question": "What is the Two Minutes Silence for?",
+    "options": [
+      "Victory celebration",
+      "Official announcement",
+      "To remember fallen soldiers",
+      "Prayer time"
+    ],
+    "answer": "To remember fallen soldiers",
+    "category": "culture"
+  },
+  {
+    "question": "What memorial honors unknown soldiers in many countries?",
+    "options": [
+      "Peace Monument",
+      "War Memorial",
+      "Tomb of the Unknown Soldier",
+      "Victory Arch"
+    ],
+    "answer": "Tomb of the Unknown Soldier",
+    "category": "culture"
+  },
+  {
+    "question": "What was the Middle East theater called?",
+    "options": [
+      "Mesopotamian Campaign",
+      "Ottoman Theater",
+      "Arabian Front",
+      "Desert War"
+    ],
+    "answer": "Mesopotamian Campaign",
+    "category": "middle-east"
+  },
+  {
+    "question": "Who led the Arab Revolt against the Ottomans?",
+    "options": [
+      "Enver Pasha",
+      "Mustafa Kemal",
+      "Sharif Hussein with T.E. Lawrence",
+      "Ibn Saud"
+    ],
+    "answer": "Sharif Hussein with T.E. Lawrence",
+    "category": "middle-east"
+  },
+  {
+    "question": "What was T.E. Lawrence known as?",
+    "options": [
+      "Colonel Lawrence",
+      "British Lawrence",
+      "Lawrence of the Desert",
+      "Lawrence of Arabia"
+    ],
+    "answer": "Lawrence of Arabia",
+    "category": "leaders"
+  },
+  {
+    "question": "What declaration promised a Jewish homeland?",
+    "options": [
+      "McMahon-Hussein Correspondence",
+      "Balfour Declaration",
+      "Treaty of Sèvres",
+      "Sykes-Picot Agreement"
+    ],
+    "answer": "Balfour Declaration",
+    "category": "middle-east"
+  },
+  {
+    "question": "What year was the Balfour Declaration?",
+    "options": [
+      "1919",
+      "1917",
+      "1916",
+      "1918"
+    ],
+    "answer": "1917",
+    "category": "middle-east"
+  },
+  {
+    "question": "What secret agreement divided the Middle East?",
+    "options": [
+      "McMahon Letters",
+      "Treaty of Versailles",
+      "Balfour Declaration",
+      "Sykes-Picot Agreement"
+    ],
+    "answer": "Sykes-Picot Agreement",
+    "category": "middle-east"
+  },
+  {
+    "question": "What genocide occurred during WW1?",
+    "options": [
+      "Armenian Genocide",
+      "Bosnian Genocide",
+      "Rwandan Genocide",
+      "Holocaust"
+    ],
+    "answer": "Armenian Genocide",
+    "category": "events"
+  },
+  {
+    "question": "Who perpetrated the Armenian Genocide?",
+    "options": [
+      "Ottoman Empire",
+      "Russia",
+      "Germany",
+      "Austria-Hungary"
+    ],
+    "answer": "Ottoman Empire",
+    "category": "events"
+  },
+  {
+    "question": "How many Armenians died in the genocide?",
+    "options": [
+      "100,000",
+      "3 million",
+      "500,000",
+      "1.5 million"
+    ],
+    "answer": "1.5 million",
+    "category": "events"
+  },
+  {
+    "question": "What Turkish leader fought at Gallipoli?",
+    "options": [
+      "Enver Pasha",
+      "Cemal Pasha",
+      "Talat Pasha",
+      "Mustafa Kemal (Atatürk)"
+    ],
+    "answer": "Mustafa Kemal (Atatürk)",
+    "category": "leaders"
+  },
+  {
+    "question": "What did Mustafa Kemal become after the war?",
+    "options": [
+      "Ottoman Sultan",
+      "Exiled leader",
+      "British ally",
+      "Founder of modern Turkey"
+    ],
+    "answer": "Founder of modern Turkey",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was the German naval mutiny of 1918?",
+    "options": [
+      "Hamburg Revolt",
+      "Munich Rebellion",
+      "Berlin Uprising",
+      "Kiel Mutiny"
+    ],
+    "answer": "Kiel Mutiny",
+    "category": "events"
+  },
+  {
+    "question": "What did the Kiel Mutiny lead to?",
+    "options": [
+      "German Revolution and Kaiser's abdication",
+      "Naval battle",
+      "Allied victory",
+      "Peace treaty"
+    ],
+    "answer": "German Revolution and Kaiser's abdication",
+    "category": "events"
+  },
+  {
+    "question": "Where did Kaiser Wilhelm II flee after abdication?",
+    "options": [
+      "Denmark",
+      "Netherlands",
+      "Switzerland",
+      "Sweden"
+    ],
+    "answer": "Netherlands",
+    "category": "leaders"
+  },
+  {
+    "question": "What government replaced the German Empire?",
+    "options": [
+      "Prussian State",
+      "German Federation",
+      "Nazi Germany",
+      "Weimar Republic"
+    ],
+    "answer": "Weimar Republic",
+    "category": "aftermath"
+  },
+  {
+    "question": "What Indian troops fought for Britain in WW1?",
+    "options": [
+      "Indian Legion",
+      "Indian Army/Sepoys",
+      "Gurkhas only",
+      "Bengal Regiment"
+    ],
+    "answer": "Indian Army/Sepoys",
+    "category": "colonial"
+  },
+  {
+    "question": "How many Indian soldiers served in WW1?",
+    "options": [
+      "2 million",
+      "100,000",
+      "500,000",
+      "Over 1 million"
+    ],
+    "answer": "Over 1 million",
+    "category": "colonial"
+  },
+  {
+    "question": "What African campaigns occurred during WW1?",
+    "options": [
+      "Only Egypt",
+      "None",
+      "Only South Africa",
+      "East Africa and others"
+    ],
+    "answer": "East Africa and others",
+    "category": "colonial"
+  },
+  {
+    "question": "Who led German forces in East Africa?",
+    "options": [
+      "Otto von Below",
+      "Paul von Lettow-Vorbeck",
+      "August von Mackensen",
+      "Erich von Falkenhayn"
+    ],
+    "answer": "Paul von Lettow-Vorbeck",
+    "category": "colonial"
+  },
+  {
+    "question": "What made von Lettow-Vorbeck's campaign notable?",
+    "options": [
+      "Never surrendered, fought entire war",
+      "Naval expertise",
+      "Quick victory",
+      "Air superiority"
+    ],
+    "answer": "Never surrendered, fought entire war",
+    "category": "colonial"
+  },
+  {
+    "question": "What was the British blockade of Germany?",
+    "options": [
+      "Naval blockade to starve Germany",
+      "Submarine warfare",
+      "Air campaign",
+      "Land invasion"
+    ],
+    "answer": "Naval blockade to starve Germany",
+    "category": "naval"
+  },
+  {
+    "question": "What was the Turnip Winter in Germany?",
+    "options": [
+      "Agricultural program",
+      "Cold weather battle",
+      "Victory celebration",
+      "1916-17 food crisis from blockade"
+    ],
+    "answer": "1916-17 food crisis from blockade",
+    "category": "homefront"
+  },
+  {
+    "question": "What did Germany scuttle at Scapa Flow?",
+    "options": [
+      "Their High Seas Fleet",
+      "Nothing",
+      "Submarines only",
+      "Merchant ships"
+    ],
+    "answer": "Their High Seas Fleet",
+    "category": "naval"
+  },
+  {
+    "question": "When was the Scapa Flow scuttling?",
+    "options": [
+      "1917",
+      "1919",
+      "1920",
+      "1918"
+    ],
+    "answer": "1919",
+    "category": "naval"
+  },
+  {
+    "question": "What was the Harlem Hellfighters?",
+    "options": [
+      "British tank corps",
+      "German unit",
+      "French air squadron",
+      "African American infantry regiment"
+    ],
+    "answer": "African American infantry regiment",
+    "category": "american"
+  },
+  {
+    "question": "What was notable about the Harlem Hellfighters?",
+    "options": [
+      "Served 191 days in combat, never lost ground",
+      "First to reach Germany",
+      "Largest casualties",
+      "Captured most prisoners"
+    ],
+    "answer": "Served 191 days in combat, never lost ground",
+    "category": "american"
+  },
+  {
+    "question": "How many American soldiers served in WW1?",
+    "options": [
+      "1 million",
+      "6 million",
+      "2 million",
+      "Over 4 million"
+    ],
+    "answer": "Over 4 million",
+    "category": "american"
+  },
+  {
+    "question": "How many American soldiers died in WW1?",
+    "options": [
+      "50,000",
+      "200,000",
+      "About 116,000",
+      "300,000"
+    ],
+    "answer": "About 116,000",
+    "category": "american"
+  },
+  {
+    "question": "What was the Selective Service Act of 1917?",
+    "options": [
+      "Naval recruitment",
+      "Officer training",
+      "American conscription/draft",
+      "Volunteer program"
+    ],
+    "answer": "American conscription/draft",
+    "category": "american"
+  },
+  {
+    "question": "What was the Espionage Act of 1917?",
+    "options": [
+      "Spy recruitment",
+      "Intelligence gathering",
+      "Law against spying and war opposition",
+      "Military code"
+    ],
+    "answer": "Law against spying and war opposition",
+    "category": "american"
+  },
+  {
+    "question": "What were Liberty Bonds?",
+    "options": [
+      "War bonds to fund the war",
+      "Victory medals",
+      "Peace treaties",
+      "Military units"
+    ],
+    "answer": "War bonds to fund the war",
+    "category": "american"
+  },
+  {
+    "question": "What battle was the costliest for Americans?",
+    "options": [
+      "Battle of Cantigny",
+      "St. Mihiel Offensive",
+      "Battle of Belleau Wood",
+      "Meuse-Argonne Offensive"
+    ],
+    "answer": "Meuse-Argonne Offensive",
+    "category": "american"
+  },
+  {
+    "question": "What forest did Marines capture in 1918?",
+    "options": [
+      "Sherwood Forest",
+      "Black Forest",
+      "Belleau Wood",
+      "Argonne Forest"
+    ],
+    "answer": "Belleau Wood",
+    "category": "american"
+  },
+  {
+    "question": "What did Germans call American Marines at Belleau Wood?",
+    "options": [
+      "Doughboys",
+      "Devil Dogs",
+      "Yankee Devils",
+      "American Wolves"
+    ],
+    "answer": "Devil Dogs",
+    "category": "american"
+  },
+  {
+    "question": "What was the St. Mihiel Offensive?",
+    "options": [
+      "British offensive",
+      "French counter-attack",
+      "German retreat",
+      "First major American-led offensive"
+    ],
+    "answer": "First major American-led offensive",
+    "category": "american"
+  },
+  {
+    "question": "Who was Sergeant Alvin York?",
+    "options": [
+      "British officer",
+      "German defector",
+      "American war hero who captured 132 Germans",
+      "French commander"
+    ],
+    "answer": "American war hero who captured 132 Germans",
+    "category": "american"
+  },
+  {
+    "question": "What was the Lost Battalion?",
+    "options": [
+      "British regiment",
+      "Missing soldiers",
+      "French battalion",
+      "American unit trapped behind German lines"
+    ],
+    "answer": "American unit trapped behind German lines",
+    "category": "american"
+  },
+  {
+    "question": "What messenger pigeon became famous in WW1?",
+    "options": [
+      "Cher Ami",
+      "War Bird",
+      "Messenger",
+      "White Dove"
+    ],
+    "answer": "Cher Ami",
+    "category": "events"
+  },
+  {
+    "question": "What did Cher Ami do?",
+    "options": [
+      "Attacked enemy",
+      "Delivered message saving the Lost Battalion",
+      "Scouted enemy lines",
+      "Carried surrender terms"
+    ],
+    "answer": "Delivered message saving the Lost Battalion",
+    "category": "events"
+  },
+  {
+    "question": "What was trench raiding?",
+    "options": [
+      "Defending trenches",
+      "Retreating from trenches",
+      "Building trenches",
+      "Surprise attacks on enemy trenches"
+    ],
+    "answer": "Surprise attacks on enemy trenches",
+    "category": "warfare"
+  },
+  {
+    "question": "What melee weapon was used in trench raids?",
+    "options": [
+      "Spears",
+      "Trench clubs and knives",
+      "Swords",
+      "Bayonets only"
+    ],
+    "answer": "Trench clubs and knives",
+    "category": "warfare"
+  },
+  {
+    "question": "What was a creeping barrage?",
+    "options": [
+      "Artillery fire moving ahead of infantry",
+      "Defensive fire",
+      "Slow retreat",
+      "Naval bombardment"
+    ],
+    "answer": "Artillery fire moving ahead of infantry",
+    "category": "warfare"
+  },
+  {
+    "question": "What was going 'over the top'?",
+    "options": [
+      "Leaving trenches to attack",
+      "Retreating",
+      "Surrendering",
+      "Celebrating victory"
+    ],
+    "answer": "Leaving trenches to attack",
+    "category": "warfare"
+  },
+  {
+    "question": "What was a fire step in a trench?",
+    "options": [
+      "Raised platform for shooting",
+      "Heating area",
+      "Command post",
+      "Emergency exit"
+    ],
+    "answer": "Raised platform for shooting",
+    "category": "warfare"
+  },
+  {
+    "question": "What was a duckboard?",
+    "options": [
+      "Wooden slats in muddy trenches",
+      "Shooting platform",
+      "Communication device",
+      "Target practice"
+    ],
+    "answer": "Wooden slats in muddy trenches",
+    "category": "warfare"
+  },
+  {
+    "question": "What was a sap in trench warfare?",
+    "options": [
+      "Tunnel toward enemy lines",
+      "Communication trench",
+      "Water drainage",
+      "Defensive wall"
+    ],
+    "answer": "Tunnel toward enemy lines",
+    "category": "warfare"
+  },
+  {
+    "question": "What was mining in WW1?",
+    "options": [
+      "Digging tunnels to plant explosives",
+      "Metal extraction",
+      "Defensive digging",
+      "Trench building"
+    ],
+    "answer": "Digging tunnels to plant explosives",
+    "category": "warfare"
+  },
+  {
+    "question": "What massive explosion occurred at Messines Ridge?",
+    "options": [
+      "19 mines detonated under German lines",
+      "Gas attack",
+      "Artillery barrage",
+      "Air raid"
+    ],
+    "answer": "19 mines detonated under German lines",
+    "category": "battles"
+  },
+  {
+    "question": "What was the Battle of Cambrai known for?",
+    "options": [
+      "First naval victory",
+      "First mass tank attack",
+      "First gas attack",
+      "First air battle"
+    ],
+    "answer": "First mass tank attack",
+    "category": "battles"
+  },
+  {
+    "question": "What year was the Battle of Cambrai?",
+    "options": [
+      "1915",
+      "1916",
+      "1918",
+      "1917"
+    ],
+    "answer": "1917",
+    "category": "battles"
+  },
+  {
+    "question": "What new territory did Britain promise to Arabs?",
+    "options": [
+      "Palestine only",
+      "Independent Arab state",
+      "Egypt",
+      "Iraq only"
+    ],
+    "answer": "Independent Arab state",
+    "category": "middle-east"
+  },
+  {
+    "question": "What city did the British capture from Ottomans in 1917?",
+    "options": [
+      "Jerusalem",
+      "Damascus",
+      "Cairo",
+      "Baghdad"
+    ],
+    "answer": "Jerusalem",
+    "category": "middle-east"
+  },
+  {
+    "question": "Who captured Damascus in 1918?",
+    "options": [
+      "Arab forces with British support",
+      "British alone",
+      "Ottoman defectors",
+      "French forces"
+    ],
+    "answer": "Arab forces with British support",
+    "category": "middle-east"
+  },
+  {
+    "question": "What was the mandate system after WW1?",
+    "options": [
+      "League supervision of former colonies",
+      "Military occupation",
+      "Direct rule",
+      "Independence"
+    ],
+    "answer": "League supervision of former colonies",
+    "category": "aftermath"
+  },
+  {
+    "question": "What became a British mandate?",
+    "options": [
+      "Palestine and Iraq",
+      "Only Sudan",
+      "Only India",
+      "Only Egypt"
+    ],
+    "answer": "Palestine and Iraq",
+    "category": "aftermath"
+  },
+  {
+    "question": "What became a French mandate?",
+    "options": [
+      "Palestine",
+      "Iraq",
+      "Jordan",
+      "Syria and Lebanon"
+    ],
+    "answer": "Syria and Lebanon",
+    "category": "aftermath"
+  },
+  {
+    "question": "What country was created from Ottoman defeat?",
+    "options": [
+      "Ottoman Empire remained",
+      "Arab Kingdom",
+      "Persian Empire",
+      "Republic of Turkey"
+    ],
+    "answer": "Republic of Turkey",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was the Treaty of Sèvres?",
+    "options": [
+      "Austrian treaty",
+      "Russian treaty",
+      "German peace treaty",
+      "Treaty with Ottoman Empire"
+    ],
+    "answer": "Treaty with Ottoman Empire",
+    "category": "treaties"
+  },
+  {
+    "question": "What treaty replaced Sèvres for Turkey?",
+    "options": [
+      "Treaty of Berlin",
+      "Treaty of Versailles",
+      "Treaty of Trianon",
+      "Treaty of Lausanne"
+    ],
+    "answer": "Treaty of Lausanne",
+    "category": "treaties"
+  },
+  {
+    "question": "What happened to Austria-Hungary after WW1?",
+    "options": [
+      "Joined Germany",
+      "Remained unified",
+      "Became part of Russia",
+      "Split into multiple nations"
+    ],
+    "answer": "Split into multiple nations",
+    "category": "aftermath"
+  },
+  {
+    "question": "What new nation was Yugoslavia?",
+    "options": [
+      "Hungarian province",
+      "Austrian territory",
+      "Just Serbia",
+      "Kingdom of Serbs, Croats and Slovenes"
+    ],
+    "answer": "Kingdom of Serbs, Croats and Slovenes",
+    "category": "aftermath"
+  },
+  {
+    "question": "What territory did Poland regain after WW1?",
+    "options": [
+      "Russian lands only",
+      "Austrian lands only",
+      "Prussian lands only",
+      "Independence after 123 years"
+    ],
+    "answer": "Independence after 123 years",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was the Polish Corridor?",
+    "options": [
+      "River passage",
+      "Railway line",
+      "Land giving Poland access to sea",
+      "Mountain pass"
+    ],
+    "answer": "Land giving Poland access to sea",
+    "category": "aftermath"
+  },
+  {
+    "question": "What German city was separated by the Polish Corridor?",
+    "options": [
+      "Hamburg",
+      "Munich",
+      "East Prussia",
+      "Berlin"
+    ],
+    "answer": "East Prussia",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was hyperinflation in Germany?",
+    "options": [
+      "High unemployment",
+      "Food shortage",
+      "Military build-up",
+      "Extreme currency devaluation in 1920s"
+    ],
+    "answer": "Extreme currency devaluation in 1920s",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was the 'stab in the back' myth?",
+    "options": [
+      "Claim that Germany was betrayed from within",
+      "Peace proposal",
+      "Military strategy",
+      "Political alliance"
+    ],
+    "answer": "Claim that Germany was betrayed from within",
+    "category": "aftermath"
+  },
+  {
+    "question": "What veteran became leader of Nazi Germany?",
+    "options": [
+      "Erich Ludendorff",
+      "Adolf Hitler",
+      "Paul von Hindenburg",
+      "Wilhelm II"
+    ],
+    "answer": "Adolf Hitler",
+    "category": "aftermath"
+  },
+  {
+    "question": "What rank did Hitler hold in WW1?",
+    "options": [
+      "Corporal",
+      "Private",
+      "Sergeant",
+      "Lieutenant"
+    ],
+    "answer": "Corporal",
+    "category": "aftermath"
+  },
+  {
+    "question": "What award did Hitler receive in WW1?",
+    "options": [
+      "Medal of Honor",
+      "Croix de Guerre",
+      "Iron Cross",
+      "Victoria Cross"
+    ],
+    "answer": "Iron Cross",
+    "category": "aftermath"
+  },
+  {
+    "question": "What was 'the war to end all wars'?",
+    "options": [
+      "Franco-Prussian War",
+      "Napoleonic Wars",
+      "World War 1",
+      "Crimean War"
+    ],
+    "answer": "World War 1",
+    "category": "culture"
+  },
+  {
+    "question": "What was the 'Lost Generation'?",
+    "options": [
+      "Wounded soldiers",
+      "Generation that came of age during WW1",
+      "Orphaned children",
+      "German youth"
+    ],
+    "answer": "Generation that came of age during WW1",
+    "category": "culture"
+  },
+  {
+    "question": "What writer served as ambulance driver in WW1?",
+    "options": [
+      "John Steinbeck",
+      "Ernest Hemingway",
+      "F. Scott Fitzgerald",
+      "Wilfred Owen"
+    ],
+    "answer": "Ernest Hemingway",
+    "category": "culture"
+  },
+  {
+    "question": "How did WW1 contribute to WW2?",
+    "options": [
+      "Created lasting peace",
+      "Had no connection",
+      "Treaty of Versailles created resentment",
+      "Prevented future war"
+    ],
+    "answer": "Treaty of Versailles created resentment",
+    "category": "aftermath"
+  },
+  {
+    "question": "What is WW1 also known as?",
+    "options": [
+      "All of the above",
+      "The Great War",
+      "The World War",
+      "The European War"
+    ],
+    "answer": "All of the above",
+    "category": "general"
+  }
 ]

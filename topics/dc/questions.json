@@ -1,202 +1,2202 @@
 [
-  {"question": "Who directed The Dark Knight trilogy?", "options": ["Christopher Nolan", "Zack Snyder", "Tim Burton", "Matt Reeves"], "answer": "Christopher Nolan", "category": "directors"},
-  {"question": "Who plays Batman in The Dark Knight?", "options": ["Christian Bale", "Ben Affleck", "Michael Keaton", "Robert Pattinson"], "answer": "Christian Bale", "category": "actors"},
-  {"question": "Which actor played the Joker in The Dark Knight?", "options": ["Heath Ledger", "Joaquin Phoenix", "Jared Leto", "Jack Nicholson"], "answer": "Heath Ledger", "category": "actors"},
-  {"question": "What year was The Dark Knight released?", "options": ["2008", "2005", "2012", "2010"], "answer": "2008", "category": "batman"},
-  {"question": "Who plays Superman in Man of Steel?", "options": ["Henry Cavill", "Christopher Reeve", "Brandon Routh", "Tom Welling"], "answer": "Henry Cavill", "category": "actors"},
-  {"question": "Who plays Wonder Woman in the DCEU?", "options": ["Gal Gadot", "Lynda Carter", "Adrianne Palicki", "Morena Baccarin"], "answer": "Gal Gadot", "category": "actors"},
-  {"question": "What is Batman's real name?", "options": ["Bruce Wayne", "Clark Kent", "Barry Allen", "Arthur Curry"], "answer": "Bruce Wayne", "category": "batman"},
-  {"question": "What is Superman's birth name?", "options": ["Kal-El", "Jor-El", "Zod", "Lor-Zod"], "answer": "Kal-El", "category": "superman"},
-  {"question": "Which city does Batman protect?", "options": ["Gotham City", "Metropolis", "Central City", "Star City"], "answer": "Gotham City", "category": "batman"},
-  {"question": "Which city does Superman protect?", "options": ["Metropolis", "Gotham City", "Central City", "Coast City"], "answer": "Metropolis", "category": "superman"},
-  {"question": "Who directed Man of Steel?", "options": ["Zack Snyder", "Christopher Nolan", "Patty Jenkins", "James Wan"], "answer": "Zack Snyder", "category": "directors"},
-  {"question": "What is the Joker's real name in The Dark Knight?", "options": ["Never revealed", "Jack Napier", "Arthur Fleck", "Jerome Valeska"], "answer": "Never revealed", "category": "batman"},
-  {"question": "Who plays Aquaman in the DCEU?", "options": ["Jason Momoa", "Patrick Wilson", "Willem Dafoe", "Yahya Abdul-Mateen II"], "answer": "Jason Momoa", "category": "actors"},
-  {"question": "What is Aquaman's real name?", "options": ["Arthur Curry", "Orm Marius", "Nuidis Vulko", "Tom Curry"], "answer": "Arthur Curry", "category": "aquaman"},
-  {"question": "Who plays The Flash in the DCEU?", "options": ["Ezra Miller", "Grant Gustin", "Wally West", "Jay Garrick"], "answer": "Ezra Miller", "category": "actors"},
-  {"question": "What is The Flash's real name (DCEU)?", "options": ["Barry Allen", "Wally West", "Jay Garrick", "Bart Allen"], "answer": "Barry Allen", "category": "justice-league"},
-  {"question": "Who directed Wonder Woman (2017)?", "options": ["Patty Jenkins", "Zack Snyder", "Joss Whedon", "James Wan"], "answer": "Patty Jenkins", "category": "directors"},
-  {"question": "In which war is Wonder Woman (2017) set?", "options": ["World War I", "World War II", "Vietnam War", "Cold War"], "answer": "World War I", "category": "wonder-woman"},
-  {"question": "Who plays Alfred in The Dark Knight trilogy?", "options": ["Michael Caine", "Jeremy Irons", "Michael Gough", "Alan Napier"], "answer": "Michael Caine", "category": "actors"},
-  {"question": "What is the first film in The Dark Knight trilogy?", "options": ["Batman Begins", "The Dark Knight", "The Dark Knight Rises", "Batman Forever"], "answer": "Batman Begins", "category": "batman"},
-  {"question": "Who plays Catwoman in The Dark Knight Rises?", "options": ["Anne Hathaway", "Michelle Pfeiffer", "Halle Berry", "Zoë Kravitz"], "answer": "Anne Hathaway", "category": "actors"},
-  {"question": "Who is the main villain in The Dark Knight Rises?", "options": ["Bane", "Joker", "Scarecrow", "Ra's al Ghul"], "answer": "Bane", "category": "batman"},
-  {"question": "Who plays Bane in The Dark Knight Rises?", "options": ["Tom Hardy", "Dave Bautista", "Javier Bardem", "Michael Shannon"], "answer": "Tom Hardy", "category": "actors"},
-  {"question": "What is Wonder Woman's real name?", "options": ["Diana Prince", "Diana Troy", "Donna Troy", "Hippolyta"], "answer": "Diana Prince", "category": "wonder-woman"},
-  {"question": "Who plays Lex Luthor in Batman v Superman?", "options": ["Jesse Eisenberg", "Kevin Spacey", "Gene Hackman", "Michael Rosenbaum"], "answer": "Jesse Eisenberg", "category": "actors"},
-  {"question": "What year was Batman Begins released?", "options": ["2005", "2008", "2003", "2012"], "answer": "2005", "category": "batman"},
-  {"question": "Who plays General Zod in Man of Steel?", "options": ["Michael Shannon", "Terence Stamp", "Callum Blue", "Antje Traue"], "answer": "Michael Shannon", "category": "actors"},
-  {"question": "What is Superman's weakness?", "options": ["Kryptonite", "Magic", "Fire", "Silver"], "answer": "Kryptonite", "category": "superman"},
-  {"question": "Who plays Lois Lane in Man of Steel?", "options": ["Amy Adams", "Kate Bosworth", "Margot Kidder", "Erica Durance"], "answer": "Amy Adams", "category": "actors"},
-  {"question": "What is the name of Batman's butler?", "options": ["Alfred Pennyworth", "Jarvis", "Edwin", "Geoffrey"], "answer": "Alfred Pennyworth", "category": "batman"},
-  {"question": "Who directed Aquaman (2018)?", "options": ["James Wan", "Zack Snyder", "Patty Jenkins", "David F. Sandberg"], "answer": "James Wan", "category": "directors"},
-  {"question": "What is the name of Aquaman's half-brother?", "options": ["Orm/Ocean Master", "Black Manta", "Vulko", "Atlan"], "answer": "Orm/Ocean Master", "category": "aquaman"},
-  {"question": "Who plays Mera in Aquaman?", "options": ["Amber Heard", "Nicole Kidman", "Dolph Lundgren", "Patrick Wilson"], "answer": "Amber Heard", "category": "actors"},
-  {"question": "What is Cyborg's real name?", "options": ["Victor Stone", "Vic Sage", "Victor Fries", "Vincent Stone"], "answer": "Victor Stone", "category": "justice-league"},
-  {"question": "Who plays Cyborg in Justice League?", "options": ["Ray Fisher", "Joivan Wade", "Lee Thompson Young", "Shemar Moore"], "answer": "Ray Fisher", "category": "actors"},
-  {"question": "Who is the main villain in Justice League (2017)?", "options": ["Steppenwolf", "Darkseid", "Doomsday", "Ares"], "answer": "Steppenwolf", "category": "justice-league"},
-  {"question": "What are the three Mother Boxes guarded by?", "options": ["Amazons, Atlanteans, Humans", "Gods, Titans, Humans", "Kryptonians, Amazons, Atlanteans", "New Gods, Old Gods, Humans"], "answer": "Amazons, Atlanteans, Humans", "category": "justice-league"},
-  {"question": "Who plays Commissioner Gordon in The Dark Knight?", "options": ["Gary Oldman", "J.K. Simmons", "Pat Hingle", "Jeffrey Wright"], "answer": "Gary Oldman", "category": "actors"},
-  {"question": "What is Harvey Dent's villain name?", "options": ["Two-Face", "Hush", "Black Mask", "Clayface"], "answer": "Two-Face", "category": "batman"},
-  {"question": "Who plays Harvey Dent in The Dark Knight?", "options": ["Aaron Eckhart", "Tommy Lee Jones", "Billy Dee Williams", "Josh Hartnett"], "answer": "Aaron Eckhart", "category": "actors"},
-  {"question": "What does the Joker say about chaos in The Dark Knight?", "options": ["I'm an agent of chaos", "Chaos is fair", "Chaos is freedom", "Embrace the chaos"], "answer": "I'm an agent of chaos", "category": "quotes"},
-  {"question": "Who directed the 2019 Joker film?", "options": ["Todd Phillips", "Zack Snyder", "Christopher Nolan", "Matt Reeves"], "answer": "Todd Phillips", "category": "directors"},
-  {"question": "Who plays Joker in the 2019 Joker film?", "options": ["Joaquin Phoenix", "Heath Ledger", "Jared Leto", "Jack Nicholson"], "answer": "Joaquin Phoenix", "category": "actors"},
-  {"question": "What is the Joker's name in Joker (2019)?", "options": ["Arthur Fleck", "Jack Napier", "Jerome Valeska", "John Doe"], "answer": "Arthur Fleck", "category": "villains"},
-  {"question": "Who plays Batman in The Batman (2022)?", "options": ["Robert Pattinson", "Ben Affleck", "Christian Bale", "George Clooney"], "answer": "Robert Pattinson", "category": "actors"},
-  {"question": "Who directed The Batman (2022)?", "options": ["Matt Reeves", "Christopher Nolan", "Zack Snyder", "Todd Phillips"], "answer": "Matt Reeves", "category": "directors"},
-  {"question": "Who plays the Riddler in The Batman (2022)?", "options": ["Paul Dano", "Jim Carrey", "Frank Gorshin", "Cory Michael Smith"], "answer": "Paul Dano", "category": "actors"},
-  {"question": "Who plays Catwoman in The Batman (2022)?", "options": ["Zoë Kravitz", "Anne Hathaway", "Michelle Pfeiffer", "Halle Berry"], "answer": "Zoë Kravitz", "category": "actors"},
-  {"question": "What is the Penguin's real name?", "options": ["Oswald Cobblepot", "Edward Nygma", "Harvey Dent", "Victor Fries"], "answer": "Oswald Cobblepot", "category": "villains"},
-  {"question": "Who plays the Penguin in The Batman (2022)?", "options": ["Colin Farrell", "Danny DeVito", "Robin Lord Taylor", "Burgess Meredith"], "answer": "Colin Farrell", "category": "actors"},
-  {"question": "What is the Riddler's real name?", "options": ["Edward Nygma", "Oswald Cobblepot", "Victor Fries", "Jonathan Crane"], "answer": "Edward Nygma", "category": "villains"},
-  {"question": "Who plays Ra's al Ghul in Batman Begins?", "options": ["Liam Neeson", "Ken Watanabe", "Cillian Murphy", "Tom Wilkinson"], "answer": "Liam Neeson", "category": "actors"},
-  {"question": "What is the Scarecrow's real name?", "options": ["Jonathan Crane", "Edward Nygma", "Jervis Tetch", "Hugo Strange"], "answer": "Jonathan Crane", "category": "villains"},
-  {"question": "Who plays Scarecrow in The Dark Knight trilogy?", "options": ["Cillian Murphy", "Tom Hardy", "Liam Neeson", "Aaron Eckhart"], "answer": "Cillian Murphy", "category": "actors"},
-  {"question": "What organization trains Bruce Wayne in Batman Begins?", "options": ["League of Shadows", "Court of Owls", "League of Assassins", "ARGUS"], "answer": "League of Shadows", "category": "batman"},
-  {"question": "Who is Wonder Woman's mother?", "options": ["Hippolyta", "Hera", "Athena", "Antiope"], "answer": "Hippolyta", "category": "wonder-woman"},
-  {"question": "Who plays Hippolyta in Wonder Woman?", "options": ["Connie Nielsen", "Robin Wright", "Elena Anaya", "Lucy Davis"], "answer": "Connie Nielsen", "category": "actors"},
-  {"question": "Who plays Antiope in Wonder Woman?", "options": ["Robin Wright", "Connie Nielsen", "Gal Gadot", "Elena Anaya"], "answer": "Robin Wright", "category": "actors"},
-  {"question": "What is the island of the Amazons called?", "options": ["Themyscira", "Paradise Island", "Atlantis", "Krypton"], "answer": "Themyscira", "category": "wonder-woman"},
-  {"question": "Who is the main villain in Wonder Woman (2017)?", "options": ["Ares", "Cheetah", "Circe", "Doctor Poison"], "answer": "Ares", "category": "wonder-woman"},
-  {"question": "Who plays Steve Trevor in Wonder Woman?", "options": ["Chris Pine", "Chris Hemsworth", "Chris Evans", "Chris Pratt"], "answer": "Chris Pine", "category": "actors"},
-  {"question": "What is Superman's father's name?", "options": ["Jor-El", "Zor-El", "Kal-El", "Jonathan Kent"], "answer": "Jor-El", "category": "superman"},
-  {"question": "Who plays Jor-El in Man of Steel?", "options": ["Russell Crowe", "Marlon Brando", "Julian Sands", "Kevin Costner"], "answer": "Russell Crowe", "category": "actors"},
-  {"question": "Who plays Jonathan Kent in Man of Steel?", "options": ["Kevin Costner", "Russell Crowe", "Glenn Ford", "John Schneider"], "answer": "Kevin Costner", "category": "actors"},
-  {"question": "What is the name of Superman's adoptive mother?", "options": ["Martha Kent", "Martha Wayne", "Mary Kent", "Margaret Kent"], "answer": "Martha Kent", "category": "superman"},
-  {"question": "Who plays Martha Kent in Man of Steel?", "options": ["Diane Lane", "Annette O'Toole", "Eva Marie Saint", "Phyllis Thaxter"], "answer": "Diane Lane", "category": "actors"},
-  {"question": "What newspaper does Clark Kent work for?", "options": ["Daily Planet", "Daily Bugle", "Gotham Gazette", "Central City Citizen"], "answer": "Daily Planet", "category": "superman"},
-  {"question": "Who plays Perry White in Man of Steel?", "options": ["Laurence Fishburne", "Frank Langella", "Jackie Cooper", "Michael McKean"], "answer": "Laurence Fishburne", "category": "actors"},
-  {"question": "What kills Superman in Batman v Superman?", "options": ["Doomsday", "Lex Luthor", "Batman", "Kryptonite"], "answer": "Doomsday", "category": "superman"},
-  {"question": "What is the subtitle of the Batman v Superman film?", "options": ["Dawn of Justice", "Age of Heroes", "Rise of Justice", "Battle for Tomorrow"], "answer": "Dawn of Justice", "category": "justice-league"},
-  {"question": "Who plays Alfred in Batman v Superman?", "options": ["Jeremy Irons", "Michael Caine", "Michael Gough", "Sean Pertwee"], "answer": "Jeremy Irons", "category": "actors"},
-  {"question": "What year was Suicide Squad released?", "options": ["2016", "2017", "2018", "2015"], "answer": "2016", "category": "villains"},
-  {"question": "Who plays Harley Quinn in Suicide Squad?", "options": ["Margot Robbie", "Kaley Cuoco", "Tara Strong", "Melissa Rauch"], "answer": "Margot Robbie", "category": "actors"},
-  {"question": "Who plays Deadshot in Suicide Squad?", "options": ["Will Smith", "Idris Elba", "Michael B. Jordan", "Denzel Washington"], "answer": "Will Smith", "category": "actors"},
-  {"question": "What is Harley Quinn's real name?", "options": ["Harleen Quinzel", "Harley Quinn", "Helena Bertinelli", "Holly Robinson"], "answer": "Harleen Quinzel", "category": "villains"},
-  {"question": "Who directed Suicide Squad (2016)?", "options": ["David Ayer", "James Gunn", "Zack Snyder", "Patty Jenkins"], "answer": "David Ayer", "category": "directors"},
-  {"question": "Who plays Amanda Waller in Suicide Squad?", "options": ["Viola Davis", "Angela Bassett", "CCH Pounder", "Pam Grier"], "answer": "Viola Davis", "category": "actors"},
-  {"question": "What is the villain's name in Suicide Squad (2016)?", "options": ["Enchantress", "Steppenwolf", "Joker", "Black Adam"], "answer": "Enchantress", "category": "villains"},
-  {"question": "Who plays Joker in Suicide Squad (2016)?", "options": ["Jared Leto", "Joaquin Phoenix", "Heath Ledger", "Cameron Monaghan"], "answer": "Jared Leto", "category": "actors"},
-  {"question": "What year was The Suicide Squad (reboot) released?", "options": ["2021", "2020", "2022", "2019"], "answer": "2021", "category": "villains"},
-  {"question": "Who directed The Suicide Squad (2021)?", "options": ["James Gunn", "David Ayer", "Zack Snyder", "Matt Reeves"], "answer": "James Gunn", "category": "directors"},
-  {"question": "Who plays Bloodsport in The Suicide Squad?", "options": ["Idris Elba", "John Cena", "Will Smith", "Michael B. Jordan"], "answer": "Idris Elba", "category": "actors"},
-  {"question": "Who plays Peacemaker in The Suicide Squad?", "options": ["John Cena", "Dave Bautista", "Idris Elba", "Joel Kinnaman"], "answer": "John Cena", "category": "actors"},
-  {"question": "What is the giant starfish villain called?", "options": ["Starro", "Parallax", "Eclipso", "Brainiac"], "answer": "Starro", "category": "villains"},
-  {"question": "Who plays King Shark's voice in The Suicide Squad?", "options": ["Sylvester Stallone", "Vin Diesel", "Bradley Cooper", "Dave Bautista"], "answer": "Sylvester Stallone", "category": "actors"},
-  {"question": "What year was Wonder Woman 1984 released?", "options": ["2020", "2021", "2019", "2022"], "answer": "2020", "category": "wonder-woman"},
-  {"question": "Who is the main villain in Wonder Woman 1984?", "options": ["Maxwell Lord and Cheetah", "Ares", "Circe", "Doctor Psycho"], "answer": "Maxwell Lord and Cheetah", "category": "wonder-woman"},
-  {"question": "Who plays Cheetah in Wonder Woman 1984?", "options": ["Kristen Wiig", "Charlize Theron", "Elena Anaya", "Gal Gadot"], "answer": "Kristen Wiig", "category": "actors"},
-  {"question": "Who plays Maxwell Lord in Wonder Woman 1984?", "options": ["Pedro Pascal", "Oscar Isaac", "Diego Luna", "Javier Bardem"], "answer": "Pedro Pascal", "category": "actors"},
-  {"question": "What brings Steve Trevor back in WW84?", "options": ["The Dreamstone", "Magic", "Time travel", "Resurrection"], "answer": "The Dreamstone", "category": "wonder-woman"},
-  {"question": "Who plays Billy Batson in Shazam!?", "options": ["Asher Angel", "Zachary Levi", "Jack Dylan Grazer", "Mark Strong"], "answer": "Asher Angel", "category": "actors"},
-  {"question": "Who plays Shazam (adult form)?", "options": ["Zachary Levi", "Asher Angel", "Dwayne Johnson", "Mark Strong"], "answer": "Zachary Levi", "category": "actors"},
-  {"question": "What word does Billy say to transform?", "options": ["Shazam", "Captain Marvel", "Power", "Transform"], "answer": "Shazam", "category": "shazam"},
-  {"question": "Who is the villain in Shazam!?", "options": ["Dr. Sivana", "Black Adam", "Mr. Mind", "Mister Mind"], "answer": "Dr. Sivana", "category": "villains"},
-  {"question": "Who plays Dr. Sivana in Shazam!?", "options": ["Mark Strong", "Ben Kingsley", "Michael Shannon", "Javier Bardem"], "answer": "Mark Strong", "category": "actors"},
-  {"question": "Who directed Shazam!?", "options": ["David F. Sandberg", "James Wan", "Zack Snyder", "Patty Jenkins"], "answer": "David F. Sandberg", "category": "directors"},
-  {"question": "Who plays Black Adam?", "options": ["Dwayne Johnson", "Jason Momoa", "Henry Cavill", "Zachary Levi"], "answer": "Dwayne Johnson", "category": "actors"},
-  {"question": "What year was Black Adam released?", "options": ["2022", "2021", "2023", "2020"], "answer": "2022", "category": "shazam"},
-  {"question": "Who directed Black Adam?", "options": ["Jaume Collet-Serra", "James Wan", "David F. Sandberg", "Zack Snyder"], "answer": "Jaume Collet-Serra", "category": "directors"},
-  {"question": "What team appears in Black Adam?", "options": ["Justice Society of America", "Justice League", "Suicide Squad", "Teen Titans"], "answer": "Justice Society of America", "category": "justice-league"},
-  {"question": "Who plays Hawkman in Black Adam?", "options": ["Aldis Hodge", "Dwayne Johnson", "Noah Centineo", "Pierce Brosnan"], "answer": "Aldis Hodge", "category": "actors"},
-  {"question": "Who plays Doctor Fate in Black Adam?", "options": ["Pierce Brosnan", "Aldis Hodge", "Noah Centineo", "Dwayne Johnson"], "answer": "Pierce Brosnan", "category": "actors"},
-  {"question": "What is Doctor Fate's helmet called?", "options": ["Helmet of Nabu", "Helmet of Fate", "Helmet of Magic", "Helmet of Order"], "answer": "Helmet of Nabu", "category": "justice-league"},
-  {"question": "Who plays Atom Smasher in Black Adam?", "options": ["Noah Centineo", "Aldis Hodge", "Pierce Brosnan", "Quintessa Swindell"], "answer": "Noah Centineo", "category": "actors"},
-  {"question": "Who plays Cyclone in Black Adam?", "options": ["Quintessa Swindell", "Noah Centineo", "Sarah Shahi", "Marwan Kenzari"], "answer": "Quintessa Swindell", "category": "actors"},
-  {"question": "What is Batman's famous quote about being the night?", "options": ["I am vengeance, I am the night, I am Batman", "I am the Dark Knight", "The night is my ally", "Fear the night"], "answer": "I am vengeance, I am the night, I am Batman", "category": "quotes"},
-  {"question": "Who says 'Why so serious?'", "options": ["Joker (Heath Ledger)", "Joker (Joaquin Phoenix)", "Batman", "Two-Face"], "answer": "Joker (Heath Ledger)", "category": "quotes"},
-  {"question": "What does Joker ask in his pencil trick scene?", "options": ["How about a magic trick?", "Want to see a trick?", "Watch this trick", "Magic time"], "answer": "How about a magic trick?", "category": "quotes"},
-  {"question": "Complete the quote: 'You either die a hero or...'", "options": ["Live long enough to see yourself become the villain", "Become what you hate", "Lose everything", "Watch the world burn"], "answer": "Live long enough to see yourself become the villain", "category": "quotes"},
-  {"question": "Who says the 'die a hero' quote?", "options": ["Harvey Dent", "Batman", "Joker", "Gordon"], "answer": "Harvey Dent", "category": "quotes"},
-  {"question": "What does Superman's 'S' symbol mean on Krypton?", "options": ["Hope", "Superman", "Strength", "House of El"], "answer": "Hope", "category": "superman"},
-  {"question": "Who plays Tim Drake in any DC film?", "options": ["No film appearance yet", "Joseph Gordon-Levitt", "Chris O'Donnell", "Brenton Thwaites"], "answer": "No film appearance yet", "category": "batman"},
-  {"question": "Who plays Robin in Batman Forever?", "options": ["Chris O'Donnell", "Joseph Gordon-Levitt", "Burt Ward", "Brenton Thwaites"], "answer": "Chris O'Donnell", "category": "actors"},
-  {"question": "Who plays Batman in Batman Forever?", "options": ["Val Kilmer", "George Clooney", "Michael Keaton", "Adam West"], "answer": "Val Kilmer", "category": "actors"},
-  {"question": "Who plays Batman in Batman & Robin?", "options": ["George Clooney", "Val Kilmer", "Michael Keaton", "Ben Affleck"], "answer": "George Clooney", "category": "actors"},
-  {"question": "Who plays Mr. Freeze in Batman & Robin?", "options": ["Arnold Schwarzenegger", "Patrick Stewart", "Victor Garber", "Nathan Darrow"], "answer": "Arnold Schwarzenegger", "category": "actors"},
-  {"question": "Who plays Poison Ivy in Batman & Robin?", "options": ["Uma Thurman", "Nicole Kidman", "Drew Barrymore", "Clare Foley"], "answer": "Uma Thurman", "category": "actors"},
-  {"question": "Who directed Batman (1989)?", "options": ["Tim Burton", "Joel Schumacher", "Christopher Nolan", "Richard Donner"], "answer": "Tim Burton", "category": "directors"},
-  {"question": "Who plays Batman in Batman (1989)?", "options": ["Michael Keaton", "Adam West", "Val Kilmer", "Christian Bale"], "answer": "Michael Keaton", "category": "actors"},
-  {"question": "Who plays Joker in Batman (1989)?", "options": ["Jack Nicholson", "Cesar Romero", "Heath Ledger", "Mark Hamill"], "answer": "Jack Nicholson", "category": "actors"},
-  {"question": "Who plays Vicki Vale in Batman (1989)?", "options": ["Kim Basinger", "Michelle Pfeiffer", "Nicole Kidman", "Drew Barrymore"], "answer": "Kim Basinger", "category": "actors"},
-  {"question": "What year was Batman Returns released?", "options": ["1992", "1989", "1995", "1997"], "answer": "1992", "category": "batman"},
-  {"question": "Who plays Catwoman in Batman Returns?", "options": ["Michelle Pfeiffer", "Anne Hathaway", "Halle Berry", "Eartha Kitt"], "answer": "Michelle Pfeiffer", "category": "actors"},
-  {"question": "Who plays Penguin in Batman Returns?", "options": ["Danny DeVito", "Colin Farrell", "Burgess Meredith", "Robin Lord Taylor"], "answer": "Danny DeVito", "category": "actors"},
-  {"question": "Who composed The Dark Knight score?", "options": ["Hans Zimmer and James Newton Howard", "Danny Elfman", "John Williams", "Howard Shore"], "answer": "Hans Zimmer and James Newton Howard", "category": "batman"},
-  {"question": "What vehicle does Batman use to escape in The Dark Knight?", "options": ["Batpod", "Batmobile", "Batwing", "Bat-Tank"], "answer": "Batpod", "category": "batman"},
-  {"question": "What is the nickname for Batman's plane in The Dark Knight Rises?", "options": ["The Bat", "Batwing", "Batplane", "Batjet"], "answer": "The Bat", "category": "batman"},
-  {"question": "What is Bane's famous quote?", "options": ["You merely adopted the dark. I was born in it", "I am your reckoning", "Break the Bat", "The fire rises"], "answer": "You merely adopted the dark. I was born in it", "category": "quotes"},
-  {"question": "Where is Bane from in The Dark Knight Rises?", "options": ["The Pit", "Gotham", "Santa Prisca", "League of Shadows"], "answer": "The Pit", "category": "batman"},
-  {"question": "Who is revealed to be Talia al Ghul?", "options": ["Miranda Tate", "Selina Kyle", "Holly Robinson", "Jen"], "answer": "Miranda Tate", "category": "batman"},
-  {"question": "Who plays Miranda Tate/Talia?", "options": ["Marion Cotillard", "Anne Hathaway", "Maggie Gyllenhaal", "Katie Holmes"], "answer": "Marion Cotillard", "category": "actors"},
-  {"question": "Who plays Rachel Dawes in Batman Begins?", "options": ["Katie Holmes", "Maggie Gyllenhaal", "Anne Hathaway", "Marion Cotillard"], "answer": "Katie Holmes", "category": "actors"},
-  {"question": "Who plays Rachel Dawes in The Dark Knight?", "options": ["Maggie Gyllenhaal", "Katie Holmes", "Anne Hathaway", "Marion Cotillard"], "answer": "Maggie Gyllenhaal", "category": "actors"},
-  {"question": "What happens to Rachel in The Dark Knight?", "options": ["She dies in an explosion", "She survives", "She becomes a villain", "She leaves Gotham"], "answer": "She dies in an explosion", "category": "batman"},
-  {"question": "Who plays John Blake in The Dark Knight Rises?", "options": ["Joseph Gordon-Levitt", "Tom Hardy", "Matthew Modine", "Ben Mendelsohn"], "answer": "Joseph Gordon-Levitt", "category": "actors"},
-  {"question": "What is John Blake's first name revealed to be?", "options": ["Robin", "Dick", "Jason", "Tim"], "answer": "Robin", "category": "batman"},
-  {"question": "What is the name of Superman's cousin?", "options": ["Kara Zor-El/Supergirl", "Power Girl", "Superwoman", "Lara"], "answer": "Kara Zor-El/Supergirl", "category": "superman"},
-  {"question": "What is Darkseid's home planet?", "options": ["Apokolips", "New Genesis", "Krypton", "Oa"], "answer": "Apokolips", "category": "villains"},
-  {"question": "What does Darkseid seek in the Snyder Cut?", "options": ["Anti-Life Equation", "Mother Boxes", "Kryptonite", "Infinity Stones"], "answer": "Anti-Life Equation", "category": "justice-league"},
-  {"question": "What year was Zack Snyder's Justice League released?", "options": ["2021", "2017", "2020", "2022"], "answer": "2021", "category": "justice-league"},
-  {"question": "How long is Zack Snyder's Justice League?", "options": ["4 hours", "3 hours", "2.5 hours", "5 hours"], "answer": "4 hours", "category": "justice-league"},
-  {"question": "Who plays Martha Wayne in Batman v Superman?", "options": ["Lauren Cohan", "Diane Lane", "Amy Adams", "Gal Gadot"], "answer": "Lauren Cohan", "category": "actors"},
-  {"question": "What is the famous 'Martha' moment about?", "options": ["Both mothers named Martha", "A secret code", "Martha Wayne's death", "Martha Kent's rescue"], "answer": "Both mothers named Martha", "category": "batman"},
-  {"question": "What armor does Batman wear to fight Superman?", "options": ["Mech Suit/Power Armor", "Standard Batsuit", "Tank Armor", "Kryptonite Suit"], "answer": "Mech Suit/Power Armor", "category": "batman"},
-  {"question": "What does Batman use to weaken Superman?", "options": ["Kryptonite gas", "Kryptonite bullets", "Kryptonite sword", "Red sun lamp"], "answer": "Kryptonite gas", "category": "batman"},
-  {"question": "Who is the main villain in Birds of Prey?", "options": ["Black Mask", "Joker", "Penguin", "Two-Face"], "answer": "Black Mask", "category": "villains"},
-  {"question": "Who plays Black Mask in Birds of Prey?", "options": ["Ewan McGregor", "Colin Farrell", "Jared Leto", "Jim Carrey"], "answer": "Ewan McGregor", "category": "actors"},
-  {"question": "What is the full title of Birds of Prey?", "options": ["Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)", "Birds of Prey: Harley's Revenge", "Birds of Prey: Gotham Sirens", "Harley Quinn: Birds of Prey"], "answer": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)", "category": "villains"},
-  {"question": "Who plays Huntress in Birds of Prey?", "options": ["Mary Elizabeth Winstead", "Jurnee Smollett", "Rosie Perez", "Ella Jay Basco"], "answer": "Mary Elizabeth Winstead", "category": "actors"},
-  {"question": "Who plays Black Canary in Birds of Prey?", "options": ["Jurnee Smollett", "Mary Elizabeth Winstead", "Rosie Perez", "Margot Robbie"], "answer": "Jurnee Smollett", "category": "actors"},
-  {"question": "What is Black Canary's power?", "options": ["Canary Cry (sonic scream)", "Super strength", "Flight", "Telepathy"], "answer": "Canary Cry (sonic scream)", "category": "justice-league"},
-  {"question": "Who plays Renee Montoya in Birds of Prey?", "options": ["Rosie Perez", "Jurnee Smollett", "Mary Elizabeth Winstead", "Ella Jay Basco"], "answer": "Rosie Perez", "category": "actors"},
-  {"question": "What is Aquaman's weapon called?", "options": ["Trident of Atlan", "Trident of Poseidon", "Neptune's Trident", "King's Trident"], "answer": "Trident of Atlan", "category": "aquaman"},
-  {"question": "Who plays Aquaman's mother?", "options": ["Nicole Kidman", "Amber Heard", "Dolph Lundgren", "Temuera Morrison"], "answer": "Nicole Kidman", "category": "actors"},
-  {"question": "What is the name of Aquaman's father?", "options": ["Tom Curry", "Arthur Curry Sr.", "Thomas Curry", "William Curry"], "answer": "Tom Curry", "category": "aquaman"},
-  {"question": "Who plays Black Manta in Aquaman?", "options": ["Yahya Abdul-Mateen II", "Patrick Wilson", "Dolph Lundgren", "Willem Dafoe"], "answer": "Yahya Abdul-Mateen II", "category": "actors"},
-  {"question": "What does Black Manta want from Aquaman?", "options": ["Revenge for his father's death", "The throne", "The trident", "Atlantis"], "answer": "Revenge for his father's death", "category": "aquaman"},
-  {"question": "What year was Aquaman released?", "options": ["2018", "2017", "2019", "2020"], "answer": "2018", "category": "aquaman"},
-  {"question": "What is the hidden kingdom in Aquaman?", "options": ["The Hidden Sea/Trench Kingdom", "Xebel", "Atlantis", "Fisherman Kingdom"], "answer": "The Hidden Sea/Trench Kingdom", "category": "aquaman"},
-  {"question": "Who plays Vulko in Aquaman?", "options": ["Willem Dafoe", "Patrick Wilson", "Dolph Lundgren", "Temuera Morrison"], "answer": "Willem Dafoe", "category": "actors"},
-  {"question": "Who is Robin in the DCEU?", "options": ["Dead (killed by Joker)", "Dick Grayson", "Jason Todd", "Tim Drake"], "answer": "Dead (killed by Joker)", "category": "batman"},
-  {"question": "What is written on Robin's suit in BvS?", "options": ["Ha Ha Ha Joke's on you Batman", "RIP Robin", "Why so serious", "Dead bird"], "answer": "Ha Ha Ha Joke's on you Batman", "category": "batman"},
-  {"question": "Who is the Flash's father?", "options": ["Henry Allen", "Barry Allen Sr.", "Jay Allen", "Nora Allen"], "answer": "Henry Allen", "category": "justice-league"},
-  {"question": "What is Flash's power source?", "options": ["Speed Force", "Kinetic Energy", "Lightning", "Cosmic Energy"], "answer": "Speed Force", "category": "justice-league"},
-  {"question": "What year was The Flash released?", "options": ["2023", "2022", "2021", "2024"], "answer": "2023", "category": "justice-league"},
-  {"question": "Who directed The Flash (2023)?", "options": ["Andy Muschietti", "Zack Snyder", "James Wan", "David F. Sandberg"], "answer": "Andy Muschietti", "category": "directors"},
-  {"question": "Who returns as Batman in The Flash?", "options": ["Michael Keaton and Ben Affleck", "Christian Bale", "Robert Pattinson", "George Clooney"], "answer": "Michael Keaton and Ben Affleck", "category": "actors"},
-  {"question": "Who plays Supergirl in The Flash?", "options": ["Sasha Calle", "Melissa Benoist", "Helen Slater", "Laura Vandervoort"], "answer": "Sasha Calle", "category": "actors"},
-  {"question": "What Batman gadget does Bruce use to glide?", "options": ["Cape (Memory cloth)", "Glider", "Jetpack", "Wings"], "answer": "Cape (Memory cloth)", "category": "batman"},
-  {"question": "What is the Batcave's entrance in The Dark Knight trilogy?", "options": ["Waterfall", "Grandfather clock", "Bookshelf", "Elevator"], "answer": "Waterfall", "category": "batman"},
-  {"question": "Who provides Batman's tech in The Dark Knight trilogy?", "options": ["Lucius Fox", "Alfred", "Wayne Enterprises R&D", "Oracle"], "answer": "Lucius Fox", "category": "batman"},
-  {"question": "Who plays Lucius Fox?", "options": ["Morgan Freeman", "Samuel L. Jackson", "Laurence Fishburne", "Denzel Washington"], "answer": "Morgan Freeman", "category": "actors"},
-  {"question": "What is Wonder Woman's signature weapon?", "options": ["Lasso of Truth", "Sword", "Shield", "Bracelets"], "answer": "Lasso of Truth", "category": "wonder-woman"},
-  {"question": "What are Wonder Woman's bracelets called?", "options": ["Bracelets of Submission", "Bracelets of Power", "Amazonian Gauntlets", "Bracelets of Hephaestus"], "answer": "Bracelets of Submission", "category": "wonder-woman"},
-  {"question": "Who forged Wonder Woman's weapons?", "options": ["Hephaestus", "Zeus", "Ares", "Athena"], "answer": "Hephaestus", "category": "wonder-woman"},
-  {"question": "Who is Wonder Woman's father in the DCEU?", "options": ["Zeus", "Ares", "Hades", "Hippolytus"], "answer": "Zeus", "category": "wonder-woman"},
-  {"question": "What is Joker's occupation before becoming Joker (2019)?", "options": ["Party clown", "Comedian", "Criminal", "Accountant"], "answer": "Party clown", "category": "villains"},
-  {"question": "What mental condition does Arthur Fleck have?", "options": ["Pseudobulbar affect (uncontrollable laughter)", "Schizophrenia", "Bipolar", "Depression"], "answer": "Pseudobulbar affect (uncontrollable laughter)", "category": "villains"},
-  {"question": "Who plays Arthur's mother in Joker?", "options": ["Frances Conroy", "Glenn Close", "Jessica Lange", "Kathy Bates"], "answer": "Frances Conroy", "category": "actors"},
-  {"question": "What talk show host does Arthur appear on?", "options": ["Murray Franklin", "Johnny Carson", "David Letterman", "Jay Leno"], "answer": "Murray Franklin", "category": "villains"},
-  {"question": "Who plays Murray Franklin in Joker?", "options": ["Robert De Niro", "Al Pacino", "Joe Pesci", "Harvey Keitel"], "answer": "Robert De Niro", "category": "actors"},
-  {"question": "What award did Joaquin Phoenix win for Joker?", "options": ["Academy Award for Best Actor", "Golden Globe only", "BAFTA only", "No major awards"], "answer": "Academy Award for Best Actor", "category": "actors"},
-  {"question": "What year is The Batman (2022) set in?", "options": ["Year Two of Batman", "Year One", "Year Five", "Year Ten"], "answer": "Year Two of Batman", "category": "batman"},
-  {"question": "What is the Riddler's signature in The Batman?", "options": ["Question mark", "Riddles", "Green", "E. Nygma"], "answer": "Question mark", "category": "batman"},
-  {"question": "Who plays Carmine Falcone in The Batman?", "options": ["John Turturro", "Tom Wilkinson", "Eric Roberts", "David Zayas"], "answer": "John Turturro", "category": "actors"},
-  {"question": "What is Selina Kyle looking for in The Batman?", "options": ["Her missing friend Annika", "Money", "Revenge on Batman", "The Riddler"], "answer": "Her missing friend Annika", "category": "batman"},
-  {"question": "Who plays the Riddler in Batman Forever?", "options": ["Jim Carrey", "Paul Dano", "Frank Gorshin", "Cory Michael Smith"], "answer": "Jim Carrey", "category": "actors"},
-  {"question": "Who plays Two-Face in Batman Forever?", "options": ["Tommy Lee Jones", "Aaron Eckhart", "Billy Dee Williams", "Richard Moll"], "answer": "Tommy Lee Jones", "category": "actors"},
-  {"question": "Who plays Commissioner Gordon in The Batman?", "options": ["Jeffrey Wright", "Gary Oldman", "J.K. Simmons", "Pat Hingle"], "answer": "Jeffrey Wright", "category": "actors"},
-  {"question": "What is the name of the club in The Batman?", "options": ["Iceberg Lounge", "The Penguin's Nest", "Gotham Club", "44 Below"], "answer": "Iceberg Lounge", "category": "batman"},
-  {"question": "What drug is being distributed in The Batman?", "options": ["Drops", "Venom", "Fear Toxin", "Joker Gas"], "answer": "Drops", "category": "batman"},
-  {"question": "How long is The Batman (2022)?", "options": ["Nearly 3 hours", "2 hours", "2.5 hours", "3.5 hours"], "answer": "Nearly 3 hours", "category": "batman"},
-  {"question": "What Nirvana song is featured in The Batman?", "options": ["Something in the Way", "Smells Like Teen Spirit", "Come As You Are", "Heart-Shaped Box"], "answer": "Something in the Way", "category": "batman"},
-  {"question": "Who is the Joker teased at the end of The Batman?", "options": ["Barry Keoghan", "Joaquin Phoenix", "Jared Leto", "Cameron Monaghan"], "answer": "Barry Keoghan", "category": "actors"},
-  {"question": "What is the rating of most DC films?", "options": ["PG-13", "R", "PG", "G"], "answer": "PG-13", "category": "directors"},
-  {"question": "Which DC film is rated R?", "options": ["Joker, The Suicide Squad, The Batman", "Man of Steel", "Wonder Woman", "Aquaman"], "answer": "Joker, The Suicide Squad, The Batman", "category": "directors"},
-  {"question": "Who composed Man of Steel's score?", "options": ["Hans Zimmer", "John Williams", "Danny Elfman", "James Newton Howard"], "answer": "Hans Zimmer", "category": "superman"},
-  {"question": "What is the famous Superman theme by?", "options": ["John Williams", "Hans Zimmer", "Danny Elfman", "James Horner"], "answer": "John Williams", "category": "superman"},
-  {"question": "Who plays General Swanwick in Man of Steel?", "options": ["Harry Lennix", "Laurence Fishburne", "Michael Shannon", "Christopher Meloni"], "answer": "Harry Lennix", "category": "actors"},
-  {"question": "What is the new DC film universe called (2023+)?", "options": ["DCU (DC Universe)", "DCEU", "DC Films", "DC Cinematic Universe"], "answer": "DCU (DC Universe)", "category": "directors"}
+  {
+    "question": "Who directed The Dark Knight trilogy?",
+    "options": [
+      "Matt Reeves",
+      "Christopher Nolan",
+      "Tim Burton",
+      "Zack Snyder"
+    ],
+    "answer": "Christopher Nolan",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Batman in The Dark Knight?",
+    "options": [
+      "Robert Pattinson",
+      "Michael Keaton",
+      "Christian Bale",
+      "Ben Affleck"
+    ],
+    "answer": "Christian Bale",
+    "category": "actors"
+  },
+  {
+    "question": "Which actor played the Joker in The Dark Knight?",
+    "options": [
+      "Jared Leto",
+      "Joaquin Phoenix",
+      "Jack Nicholson",
+      "Heath Ledger"
+    ],
+    "answer": "Heath Ledger",
+    "category": "actors"
+  },
+  {
+    "question": "What year was The Dark Knight released?",
+    "options": [
+      "2008",
+      "2005",
+      "2010",
+      "2012"
+    ],
+    "answer": "2008",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Superman in Man of Steel?",
+    "options": [
+      "Henry Cavill",
+      "Brandon Routh",
+      "Tom Welling",
+      "Christopher Reeve"
+    ],
+    "answer": "Henry Cavill",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Wonder Woman in the DCEU?",
+    "options": [
+      "Adrianne Palicki",
+      "Gal Gadot",
+      "Morena Baccarin",
+      "Lynda Carter"
+    ],
+    "answer": "Gal Gadot",
+    "category": "actors"
+  },
+  {
+    "question": "What is Batman's real name?",
+    "options": [
+      "Barry Allen",
+      "Clark Kent",
+      "Bruce Wayne",
+      "Arthur Curry"
+    ],
+    "answer": "Bruce Wayne",
+    "category": "batman"
+  },
+  {
+    "question": "What is Superman's birth name?",
+    "options": [
+      "Zod",
+      "Jor-El",
+      "Lor-Zod",
+      "Kal-El"
+    ],
+    "answer": "Kal-El",
+    "category": "superman"
+  },
+  {
+    "question": "Which city does Batman protect?",
+    "options": [
+      "Star City",
+      "Central City",
+      "Gotham City",
+      "Metropolis"
+    ],
+    "answer": "Gotham City",
+    "category": "batman"
+  },
+  {
+    "question": "Which city does Superman protect?",
+    "options": [
+      "Metropolis",
+      "Coast City",
+      "Central City",
+      "Gotham City"
+    ],
+    "answer": "Metropolis",
+    "category": "superman"
+  },
+  {
+    "question": "Who directed Man of Steel?",
+    "options": [
+      "Christopher Nolan",
+      "Patty Jenkins",
+      "James Wan",
+      "Zack Snyder"
+    ],
+    "answer": "Zack Snyder",
+    "category": "directors"
+  },
+  {
+    "question": "What is the Joker's real name in The Dark Knight?",
+    "options": [
+      "Jerome Valeska",
+      "Jack Napier",
+      "Never revealed",
+      "Arthur Fleck"
+    ],
+    "answer": "Never revealed",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Aquaman in the DCEU?",
+    "options": [
+      "Yahya Abdul-Mateen II",
+      "Jason Momoa",
+      "Patrick Wilson",
+      "Willem Dafoe"
+    ],
+    "answer": "Jason Momoa",
+    "category": "actors"
+  },
+  {
+    "question": "What is Aquaman's real name?",
+    "options": [
+      "Tom Curry",
+      "Arthur Curry",
+      "Nuidis Vulko",
+      "Orm Marius"
+    ],
+    "answer": "Arthur Curry",
+    "category": "aquaman"
+  },
+  {
+    "question": "Who plays The Flash in the DCEU?",
+    "options": [
+      "Ezra Miller",
+      "Jay Garrick",
+      "Wally West",
+      "Grant Gustin"
+    ],
+    "answer": "Ezra Miller",
+    "category": "actors"
+  },
+  {
+    "question": "What is The Flash's real name (DCEU)?",
+    "options": [
+      "Barry Allen",
+      "Jay Garrick",
+      "Bart Allen",
+      "Wally West"
+    ],
+    "answer": "Barry Allen",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who directed Wonder Woman (2017)?",
+    "options": [
+      "James Wan",
+      "Joss Whedon",
+      "Patty Jenkins",
+      "Zack Snyder"
+    ],
+    "answer": "Patty Jenkins",
+    "category": "directors"
+  },
+  {
+    "question": "In which war is Wonder Woman (2017) set?",
+    "options": [
+      "World War I",
+      "World War II",
+      "Cold War",
+      "Vietnam War"
+    ],
+    "answer": "World War I",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Alfred in The Dark Knight trilogy?",
+    "options": [
+      "Jeremy Irons",
+      "Michael Caine",
+      "Michael Gough",
+      "Alan Napier"
+    ],
+    "answer": "Michael Caine",
+    "category": "actors"
+  },
+  {
+    "question": "What is the first film in The Dark Knight trilogy?",
+    "options": [
+      "The Dark Knight",
+      "Batman Forever",
+      "The Dark Knight Rises",
+      "Batman Begins"
+    ],
+    "answer": "Batman Begins",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Catwoman in The Dark Knight Rises?",
+    "options": [
+      "Zoë Kravitz",
+      "Halle Berry",
+      "Anne Hathaway",
+      "Michelle Pfeiffer"
+    ],
+    "answer": "Anne Hathaway",
+    "category": "actors"
+  },
+  {
+    "question": "Who is the main villain in The Dark Knight Rises?",
+    "options": [
+      "Bane",
+      "Scarecrow",
+      "Ra's al Ghul",
+      "Joker"
+    ],
+    "answer": "Bane",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Bane in The Dark Knight Rises?",
+    "options": [
+      "Tom Hardy",
+      "Michael Shannon",
+      "Javier Bardem",
+      "Dave Bautista"
+    ],
+    "answer": "Tom Hardy",
+    "category": "actors"
+  },
+  {
+    "question": "What is Wonder Woman's real name?",
+    "options": [
+      "Donna Troy",
+      "Diana Prince",
+      "Diana Troy",
+      "Hippolyta"
+    ],
+    "answer": "Diana Prince",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Lex Luthor in Batman v Superman?",
+    "options": [
+      "Michael Rosenbaum",
+      "Jesse Eisenberg",
+      "Kevin Spacey",
+      "Gene Hackman"
+    ],
+    "answer": "Jesse Eisenberg",
+    "category": "actors"
+  },
+  {
+    "question": "What year was Batman Begins released?",
+    "options": [
+      "2003",
+      "2005",
+      "2012",
+      "2008"
+    ],
+    "answer": "2005",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays General Zod in Man of Steel?",
+    "options": [
+      "Michael Shannon",
+      "Antje Traue",
+      "Callum Blue",
+      "Terence Stamp"
+    ],
+    "answer": "Michael Shannon",
+    "category": "actors"
+  },
+  {
+    "question": "What is Superman's weakness?",
+    "options": [
+      "Fire",
+      "Magic",
+      "Silver",
+      "Kryptonite"
+    ],
+    "answer": "Kryptonite",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays Lois Lane in Man of Steel?",
+    "options": [
+      "Kate Bosworth",
+      "Erica Durance",
+      "Margot Kidder",
+      "Amy Adams"
+    ],
+    "answer": "Amy Adams",
+    "category": "actors"
+  },
+  {
+    "question": "What is the name of Batman's butler?",
+    "options": [
+      "Jarvis",
+      "Geoffrey",
+      "Edwin",
+      "Alfred Pennyworth"
+    ],
+    "answer": "Alfred Pennyworth",
+    "category": "batman"
+  },
+  {
+    "question": "Who directed Aquaman (2018)?",
+    "options": [
+      "David F. Sandberg",
+      "Patty Jenkins",
+      "Zack Snyder",
+      "James Wan"
+    ],
+    "answer": "James Wan",
+    "category": "directors"
+  },
+  {
+    "question": "What is the name of Aquaman's half-brother?",
+    "options": [
+      "Orm/Ocean Master",
+      "Black Manta",
+      "Vulko",
+      "Atlan"
+    ],
+    "answer": "Orm/Ocean Master",
+    "category": "aquaman"
+  },
+  {
+    "question": "Who plays Mera in Aquaman?",
+    "options": [
+      "Dolph Lundgren",
+      "Patrick Wilson",
+      "Amber Heard",
+      "Nicole Kidman"
+    ],
+    "answer": "Amber Heard",
+    "category": "actors"
+  },
+  {
+    "question": "What is Cyborg's real name?",
+    "options": [
+      "Vic Sage",
+      "Victor Stone",
+      "Victor Fries",
+      "Vincent Stone"
+    ],
+    "answer": "Victor Stone",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Cyborg in Justice League?",
+    "options": [
+      "Lee Thompson Young",
+      "Ray Fisher",
+      "Shemar Moore",
+      "Joivan Wade"
+    ],
+    "answer": "Ray Fisher",
+    "category": "actors"
+  },
+  {
+    "question": "Who is the main villain in Justice League (2017)?",
+    "options": [
+      "Darkseid",
+      "Steppenwolf",
+      "Ares",
+      "Doomsday"
+    ],
+    "answer": "Steppenwolf",
+    "category": "justice-league"
+  },
+  {
+    "question": "What are the three Mother Boxes guarded by?",
+    "options": [
+      "Kryptonians, Amazons, Atlanteans",
+      "New Gods, Old Gods, Humans",
+      "Gods, Titans, Humans",
+      "Amazons, Atlanteans, Humans"
+    ],
+    "answer": "Amazons, Atlanteans, Humans",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Commissioner Gordon in The Dark Knight?",
+    "options": [
+      "Jeffrey Wright",
+      "Gary Oldman",
+      "J.K. Simmons",
+      "Pat Hingle"
+    ],
+    "answer": "Gary Oldman",
+    "category": "actors"
+  },
+  {
+    "question": "What is Harvey Dent's villain name?",
+    "options": [
+      "Hush",
+      "Black Mask",
+      "Two-Face",
+      "Clayface"
+    ],
+    "answer": "Two-Face",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Harvey Dent in The Dark Knight?",
+    "options": [
+      "Josh Hartnett",
+      "Billy Dee Williams",
+      "Tommy Lee Jones",
+      "Aaron Eckhart"
+    ],
+    "answer": "Aaron Eckhart",
+    "category": "actors"
+  },
+  {
+    "question": "What does the Joker say about chaos in The Dark Knight?",
+    "options": [
+      "I'm an agent of chaos",
+      "Chaos is freedom",
+      "Embrace the chaos",
+      "Chaos is fair"
+    ],
+    "answer": "I'm an agent of chaos",
+    "category": "quotes"
+  },
+  {
+    "question": "Who directed the 2019 Joker film?",
+    "options": [
+      "Zack Snyder",
+      "Matt Reeves",
+      "Todd Phillips",
+      "Christopher Nolan"
+    ],
+    "answer": "Todd Phillips",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Joker in the 2019 Joker film?",
+    "options": [
+      "Joaquin Phoenix",
+      "Jack Nicholson",
+      "Heath Ledger",
+      "Jared Leto"
+    ],
+    "answer": "Joaquin Phoenix",
+    "category": "actors"
+  },
+  {
+    "question": "What is the Joker's name in Joker (2019)?",
+    "options": [
+      "Jerome Valeska",
+      "John Doe",
+      "Jack Napier",
+      "Arthur Fleck"
+    ],
+    "answer": "Arthur Fleck",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Batman in The Batman (2022)?",
+    "options": [
+      "Ben Affleck",
+      "Christian Bale",
+      "Robert Pattinson",
+      "George Clooney"
+    ],
+    "answer": "Robert Pattinson",
+    "category": "actors"
+  },
+  {
+    "question": "Who directed The Batman (2022)?",
+    "options": [
+      "Christopher Nolan",
+      "Zack Snyder",
+      "Matt Reeves",
+      "Todd Phillips"
+    ],
+    "answer": "Matt Reeves",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays the Riddler in The Batman (2022)?",
+    "options": [
+      "Paul Dano",
+      "Frank Gorshin",
+      "Jim Carrey",
+      "Cory Michael Smith"
+    ],
+    "answer": "Paul Dano",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Catwoman in The Batman (2022)?",
+    "options": [
+      "Anne Hathaway",
+      "Zoë Kravitz",
+      "Michelle Pfeiffer",
+      "Halle Berry"
+    ],
+    "answer": "Zoë Kravitz",
+    "category": "actors"
+  },
+  {
+    "question": "What is the Penguin's real name?",
+    "options": [
+      "Oswald Cobblepot",
+      "Victor Fries",
+      "Edward Nygma",
+      "Harvey Dent"
+    ],
+    "answer": "Oswald Cobblepot",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays the Penguin in The Batman (2022)?",
+    "options": [
+      "Burgess Meredith",
+      "Robin Lord Taylor",
+      "Danny DeVito",
+      "Colin Farrell"
+    ],
+    "answer": "Colin Farrell",
+    "category": "actors"
+  },
+  {
+    "question": "What is the Riddler's real name?",
+    "options": [
+      "Oswald Cobblepot",
+      "Edward Nygma",
+      "Jonathan Crane",
+      "Victor Fries"
+    ],
+    "answer": "Edward Nygma",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Ra's al Ghul in Batman Begins?",
+    "options": [
+      "Tom Wilkinson",
+      "Liam Neeson",
+      "Ken Watanabe",
+      "Cillian Murphy"
+    ],
+    "answer": "Liam Neeson",
+    "category": "actors"
+  },
+  {
+    "question": "What is the Scarecrow's real name?",
+    "options": [
+      "Hugo Strange",
+      "Jonathan Crane",
+      "Jervis Tetch",
+      "Edward Nygma"
+    ],
+    "answer": "Jonathan Crane",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Scarecrow in The Dark Knight trilogy?",
+    "options": [
+      "Tom Hardy",
+      "Aaron Eckhart",
+      "Liam Neeson",
+      "Cillian Murphy"
+    ],
+    "answer": "Cillian Murphy",
+    "category": "actors"
+  },
+  {
+    "question": "What organization trains Bruce Wayne in Batman Begins?",
+    "options": [
+      "ARGUS",
+      "Court of Owls",
+      "League of Shadows",
+      "League of Assassins"
+    ],
+    "answer": "League of Shadows",
+    "category": "batman"
+  },
+  {
+    "question": "Who is Wonder Woman's mother?",
+    "options": [
+      "Antiope",
+      "Hera",
+      "Hippolyta",
+      "Athena"
+    ],
+    "answer": "Hippolyta",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Hippolyta in Wonder Woman?",
+    "options": [
+      "Lucy Davis",
+      "Connie Nielsen",
+      "Robin Wright",
+      "Elena Anaya"
+    ],
+    "answer": "Connie Nielsen",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Antiope in Wonder Woman?",
+    "options": [
+      "Gal Gadot",
+      "Robin Wright",
+      "Connie Nielsen",
+      "Elena Anaya"
+    ],
+    "answer": "Robin Wright",
+    "category": "actors"
+  },
+  {
+    "question": "What is the island of the Amazons called?",
+    "options": [
+      "Krypton",
+      "Themyscira",
+      "Paradise Island",
+      "Atlantis"
+    ],
+    "answer": "Themyscira",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who is the main villain in Wonder Woman (2017)?",
+    "options": [
+      "Doctor Poison",
+      "Cheetah",
+      "Circe",
+      "Ares"
+    ],
+    "answer": "Ares",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Steve Trevor in Wonder Woman?",
+    "options": [
+      "Chris Pine",
+      "Chris Hemsworth",
+      "Chris Pratt",
+      "Chris Evans"
+    ],
+    "answer": "Chris Pine",
+    "category": "actors"
+  },
+  {
+    "question": "What is Superman's father's name?",
+    "options": [
+      "Kal-El",
+      "Zor-El",
+      "Jor-El",
+      "Jonathan Kent"
+    ],
+    "answer": "Jor-El",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays Jor-El in Man of Steel?",
+    "options": [
+      "Russell Crowe",
+      "Marlon Brando",
+      "Kevin Costner",
+      "Julian Sands"
+    ],
+    "answer": "Russell Crowe",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Jonathan Kent in Man of Steel?",
+    "options": [
+      "Kevin Costner",
+      "Glenn Ford",
+      "John Schneider",
+      "Russell Crowe"
+    ],
+    "answer": "Kevin Costner",
+    "category": "actors"
+  },
+  {
+    "question": "What is the name of Superman's adoptive mother?",
+    "options": [
+      "Mary Kent",
+      "Margaret Kent",
+      "Martha Wayne",
+      "Martha Kent"
+    ],
+    "answer": "Martha Kent",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays Martha Kent in Man of Steel?",
+    "options": [
+      "Eva Marie Saint",
+      "Annette O'Toole",
+      "Diane Lane",
+      "Phyllis Thaxter"
+    ],
+    "answer": "Diane Lane",
+    "category": "actors"
+  },
+  {
+    "question": "What newspaper does Clark Kent work for?",
+    "options": [
+      "Central City Citizen",
+      "Gotham Gazette",
+      "Daily Bugle",
+      "Daily Planet"
+    ],
+    "answer": "Daily Planet",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays Perry White in Man of Steel?",
+    "options": [
+      "Laurence Fishburne",
+      "Michael McKean",
+      "Frank Langella",
+      "Jackie Cooper"
+    ],
+    "answer": "Laurence Fishburne",
+    "category": "actors"
+  },
+  {
+    "question": "What kills Superman in Batman v Superman?",
+    "options": [
+      "Doomsday",
+      "Batman",
+      "Lex Luthor",
+      "Kryptonite"
+    ],
+    "answer": "Doomsday",
+    "category": "superman"
+  },
+  {
+    "question": "What is the subtitle of the Batman v Superman film?",
+    "options": [
+      "Age of Heroes",
+      "Dawn of Justice",
+      "Battle for Tomorrow",
+      "Rise of Justice"
+    ],
+    "answer": "Dawn of Justice",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Alfred in Batman v Superman?",
+    "options": [
+      "Jeremy Irons",
+      "Michael Caine",
+      "Sean Pertwee",
+      "Michael Gough"
+    ],
+    "answer": "Jeremy Irons",
+    "category": "actors"
+  },
+  {
+    "question": "What year was Suicide Squad released?",
+    "options": [
+      "2015",
+      "2017",
+      "2018",
+      "2016"
+    ],
+    "answer": "2016",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Harley Quinn in Suicide Squad?",
+    "options": [
+      "Tara Strong",
+      "Margot Robbie",
+      "Melissa Rauch",
+      "Kaley Cuoco"
+    ],
+    "answer": "Margot Robbie",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Deadshot in Suicide Squad?",
+    "options": [
+      "Michael B. Jordan",
+      "Idris Elba",
+      "Will Smith",
+      "Denzel Washington"
+    ],
+    "answer": "Will Smith",
+    "category": "actors"
+  },
+  {
+    "question": "What is Harley Quinn's real name?",
+    "options": [
+      "Holly Robinson",
+      "Harleen Quinzel",
+      "Helena Bertinelli",
+      "Harley Quinn"
+    ],
+    "answer": "Harleen Quinzel",
+    "category": "villains"
+  },
+  {
+    "question": "Who directed Suicide Squad (2016)?",
+    "options": [
+      "David Ayer",
+      "Patty Jenkins",
+      "James Gunn",
+      "Zack Snyder"
+    ],
+    "answer": "David Ayer",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Amanda Waller in Suicide Squad?",
+    "options": [
+      "Viola Davis",
+      "CCH Pounder",
+      "Pam Grier",
+      "Angela Bassett"
+    ],
+    "answer": "Viola Davis",
+    "category": "actors"
+  },
+  {
+    "question": "What is the villain's name in Suicide Squad (2016)?",
+    "options": [
+      "Steppenwolf",
+      "Black Adam",
+      "Enchantress",
+      "Joker"
+    ],
+    "answer": "Enchantress",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Joker in Suicide Squad (2016)?",
+    "options": [
+      "Joaquin Phoenix",
+      "Heath Ledger",
+      "Jared Leto",
+      "Cameron Monaghan"
+    ],
+    "answer": "Jared Leto",
+    "category": "actors"
+  },
+  {
+    "question": "What year was The Suicide Squad (reboot) released?",
+    "options": [
+      "2021",
+      "2020",
+      "2022",
+      "2019"
+    ],
+    "answer": "2021",
+    "category": "villains"
+  },
+  {
+    "question": "Who directed The Suicide Squad (2021)?",
+    "options": [
+      "David Ayer",
+      "James Gunn",
+      "Zack Snyder",
+      "Matt Reeves"
+    ],
+    "answer": "James Gunn",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Bloodsport in The Suicide Squad?",
+    "options": [
+      "Will Smith",
+      "Michael B. Jordan",
+      "John Cena",
+      "Idris Elba"
+    ],
+    "answer": "Idris Elba",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Peacemaker in The Suicide Squad?",
+    "options": [
+      "Joel Kinnaman",
+      "Dave Bautista",
+      "John Cena",
+      "Idris Elba"
+    ],
+    "answer": "John Cena",
+    "category": "actors"
+  },
+  {
+    "question": "What is the giant starfish villain called?",
+    "options": [
+      "Eclipso",
+      "Brainiac",
+      "Parallax",
+      "Starro"
+    ],
+    "answer": "Starro",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays King Shark's voice in The Suicide Squad?",
+    "options": [
+      "Dave Bautista",
+      "Vin Diesel",
+      "Bradley Cooper",
+      "Sylvester Stallone"
+    ],
+    "answer": "Sylvester Stallone",
+    "category": "actors"
+  },
+  {
+    "question": "What year was Wonder Woman 1984 released?",
+    "options": [
+      "2022",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answer": "2020",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who is the main villain in Wonder Woman 1984?",
+    "options": [
+      "Doctor Psycho",
+      "Circe",
+      "Ares",
+      "Maxwell Lord and Cheetah"
+    ],
+    "answer": "Maxwell Lord and Cheetah",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Cheetah in Wonder Woman 1984?",
+    "options": [
+      "Elena Anaya",
+      "Gal Gadot",
+      "Charlize Theron",
+      "Kristen Wiig"
+    ],
+    "answer": "Kristen Wiig",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Maxwell Lord in Wonder Woman 1984?",
+    "options": [
+      "Javier Bardem",
+      "Oscar Isaac",
+      "Pedro Pascal",
+      "Diego Luna"
+    ],
+    "answer": "Pedro Pascal",
+    "category": "actors"
+  },
+  {
+    "question": "What brings Steve Trevor back in WW84?",
+    "options": [
+      "Time travel",
+      "Magic",
+      "Resurrection",
+      "The Dreamstone"
+    ],
+    "answer": "The Dreamstone",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who plays Billy Batson in Shazam!?",
+    "options": [
+      "Asher Angel",
+      "Zachary Levi",
+      "Jack Dylan Grazer",
+      "Mark Strong"
+    ],
+    "answer": "Asher Angel",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Shazam (adult form)?",
+    "options": [
+      "Zachary Levi",
+      "Mark Strong",
+      "Asher Angel",
+      "Dwayne Johnson"
+    ],
+    "answer": "Zachary Levi",
+    "category": "actors"
+  },
+  {
+    "question": "What word does Billy say to transform?",
+    "options": [
+      "Captain Marvel",
+      "Power",
+      "Transform",
+      "Shazam"
+    ],
+    "answer": "Shazam",
+    "category": "shazam"
+  },
+  {
+    "question": "Who is the villain in Shazam!?",
+    "options": [
+      "Black Adam",
+      "Mr. Mind",
+      "Dr. Sivana",
+      "Mister Mind"
+    ],
+    "answer": "Dr. Sivana",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Dr. Sivana in Shazam!?",
+    "options": [
+      "Michael Shannon",
+      "Javier Bardem",
+      "Ben Kingsley",
+      "Mark Strong"
+    ],
+    "answer": "Mark Strong",
+    "category": "actors"
+  },
+  {
+    "question": "Who directed Shazam!?",
+    "options": [
+      "James Wan",
+      "Patty Jenkins",
+      "David F. Sandberg",
+      "Zack Snyder"
+    ],
+    "answer": "David F. Sandberg",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Black Adam?",
+    "options": [
+      "Zachary Levi",
+      "Jason Momoa",
+      "Henry Cavill",
+      "Dwayne Johnson"
+    ],
+    "answer": "Dwayne Johnson",
+    "category": "actors"
+  },
+  {
+    "question": "What year was Black Adam released?",
+    "options": [
+      "2021",
+      "2022",
+      "2023",
+      "2020"
+    ],
+    "answer": "2022",
+    "category": "shazam"
+  },
+  {
+    "question": "Who directed Black Adam?",
+    "options": [
+      "Zack Snyder",
+      "David F. Sandberg",
+      "Jaume Collet-Serra",
+      "James Wan"
+    ],
+    "answer": "Jaume Collet-Serra",
+    "category": "directors"
+  },
+  {
+    "question": "What team appears in Black Adam?",
+    "options": [
+      "Justice League",
+      "Suicide Squad",
+      "Teen Titans",
+      "Justice Society of America"
+    ],
+    "answer": "Justice Society of America",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Hawkman in Black Adam?",
+    "options": [
+      "Dwayne Johnson",
+      "Aldis Hodge",
+      "Pierce Brosnan",
+      "Noah Centineo"
+    ],
+    "answer": "Aldis Hodge",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Doctor Fate in Black Adam?",
+    "options": [
+      "Dwayne Johnson",
+      "Pierce Brosnan",
+      "Aldis Hodge",
+      "Noah Centineo"
+    ],
+    "answer": "Pierce Brosnan",
+    "category": "actors"
+  },
+  {
+    "question": "What is Doctor Fate's helmet called?",
+    "options": [
+      "Helmet of Magic",
+      "Helmet of Order",
+      "Helmet of Fate",
+      "Helmet of Nabu"
+    ],
+    "answer": "Helmet of Nabu",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Atom Smasher in Black Adam?",
+    "options": [
+      "Noah Centineo",
+      "Aldis Hodge",
+      "Quintessa Swindell",
+      "Pierce Brosnan"
+    ],
+    "answer": "Noah Centineo",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Cyclone in Black Adam?",
+    "options": [
+      "Marwan Kenzari",
+      "Noah Centineo",
+      "Quintessa Swindell",
+      "Sarah Shahi"
+    ],
+    "answer": "Quintessa Swindell",
+    "category": "actors"
+  },
+  {
+    "question": "What is Batman's famous quote about being the night?",
+    "options": [
+      "Fear the night",
+      "The night is my ally",
+      "I am vengeance, I am the night, I am Batman",
+      "I am the Dark Knight"
+    ],
+    "answer": "I am vengeance, I am the night, I am Batman",
+    "category": "quotes"
+  },
+  {
+    "question": "Who says 'Why so serious?'",
+    "options": [
+      "Batman",
+      "Two-Face",
+      "Joker (Joaquin Phoenix)",
+      "Joker (Heath Ledger)"
+    ],
+    "answer": "Joker (Heath Ledger)",
+    "category": "quotes"
+  },
+  {
+    "question": "What does Joker ask in his pencil trick scene?",
+    "options": [
+      "Watch this trick",
+      "Want to see a trick?",
+      "How about a magic trick?",
+      "Magic time"
+    ],
+    "answer": "How about a magic trick?",
+    "category": "quotes"
+  },
+  {
+    "question": "Complete the quote: 'You either die a hero or...'",
+    "options": [
+      "Lose everything",
+      "Become what you hate",
+      "Watch the world burn",
+      "Live long enough to see yourself become the villain"
+    ],
+    "answer": "Live long enough to see yourself become the villain",
+    "category": "quotes"
+  },
+  {
+    "question": "Who says the 'die a hero' quote?",
+    "options": [
+      "Harvey Dent",
+      "Gordon",
+      "Batman",
+      "Joker"
+    ],
+    "answer": "Harvey Dent",
+    "category": "quotes"
+  },
+  {
+    "question": "What does Superman's 'S' symbol mean on Krypton?",
+    "options": [
+      "House of El",
+      "Strength",
+      "Superman",
+      "Hope"
+    ],
+    "answer": "Hope",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays Tim Drake in any DC film?",
+    "options": [
+      "Chris O'Donnell",
+      "Brenton Thwaites",
+      "No film appearance yet",
+      "Joseph Gordon-Levitt"
+    ],
+    "answer": "No film appearance yet",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Robin in Batman Forever?",
+    "options": [
+      "Joseph Gordon-Levitt",
+      "Burt Ward",
+      "Brenton Thwaites",
+      "Chris O'Donnell"
+    ],
+    "answer": "Chris O'Donnell",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Batman in Batman Forever?",
+    "options": [
+      "Michael Keaton",
+      "Val Kilmer",
+      "Adam West",
+      "George Clooney"
+    ],
+    "answer": "Val Kilmer",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Batman in Batman & Robin?",
+    "options": [
+      "Michael Keaton",
+      "Ben Affleck",
+      "George Clooney",
+      "Val Kilmer"
+    ],
+    "answer": "George Clooney",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Mr. Freeze in Batman & Robin?",
+    "options": [
+      "Arnold Schwarzenegger",
+      "Nathan Darrow",
+      "Victor Garber",
+      "Patrick Stewart"
+    ],
+    "answer": "Arnold Schwarzenegger",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Poison Ivy in Batman & Robin?",
+    "options": [
+      "Uma Thurman",
+      "Nicole Kidman",
+      "Clare Foley",
+      "Drew Barrymore"
+    ],
+    "answer": "Uma Thurman",
+    "category": "actors"
+  },
+  {
+    "question": "Who directed Batman (1989)?",
+    "options": [
+      "Joel Schumacher",
+      "Christopher Nolan",
+      "Tim Burton",
+      "Richard Donner"
+    ],
+    "answer": "Tim Burton",
+    "category": "directors"
+  },
+  {
+    "question": "Who plays Batman in Batman (1989)?",
+    "options": [
+      "Michael Keaton",
+      "Adam West",
+      "Val Kilmer",
+      "Christian Bale"
+    ],
+    "answer": "Michael Keaton",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Joker in Batman (1989)?",
+    "options": [
+      "Cesar Romero",
+      "Jack Nicholson",
+      "Heath Ledger",
+      "Mark Hamill"
+    ],
+    "answer": "Jack Nicholson",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Vicki Vale in Batman (1989)?",
+    "options": [
+      "Kim Basinger",
+      "Michelle Pfeiffer",
+      "Nicole Kidman",
+      "Drew Barrymore"
+    ],
+    "answer": "Kim Basinger",
+    "category": "actors"
+  },
+  {
+    "question": "What year was Batman Returns released?",
+    "options": [
+      "1997",
+      "1992",
+      "1989",
+      "1995"
+    ],
+    "answer": "1992",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Catwoman in Batman Returns?",
+    "options": [
+      "Halle Berry",
+      "Eartha Kitt",
+      "Michelle Pfeiffer",
+      "Anne Hathaway"
+    ],
+    "answer": "Michelle Pfeiffer",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Penguin in Batman Returns?",
+    "options": [
+      "Danny DeVito",
+      "Burgess Meredith",
+      "Robin Lord Taylor",
+      "Colin Farrell"
+    ],
+    "answer": "Danny DeVito",
+    "category": "actors"
+  },
+  {
+    "question": "Who composed The Dark Knight score?",
+    "options": [
+      "Danny Elfman",
+      "Howard Shore",
+      "Hans Zimmer and James Newton Howard",
+      "John Williams"
+    ],
+    "answer": "Hans Zimmer and James Newton Howard",
+    "category": "batman"
+  },
+  {
+    "question": "What vehicle does Batman use to escape in The Dark Knight?",
+    "options": [
+      "Batpod",
+      "Bat-Tank",
+      "Batmobile",
+      "Batwing"
+    ],
+    "answer": "Batpod",
+    "category": "batman"
+  },
+  {
+    "question": "What is the nickname for Batman's plane in The Dark Knight Rises?",
+    "options": [
+      "Batwing",
+      "Batplane",
+      "Batjet",
+      "The Bat"
+    ],
+    "answer": "The Bat",
+    "category": "batman"
+  },
+  {
+    "question": "What is Bane's famous quote?",
+    "options": [
+      "Break the Bat",
+      "I am your reckoning",
+      "You merely adopted the dark. I was born in it",
+      "The fire rises"
+    ],
+    "answer": "You merely adopted the dark. I was born in it",
+    "category": "quotes"
+  },
+  {
+    "question": "Where is Bane from in The Dark Knight Rises?",
+    "options": [
+      "Santa Prisca",
+      "League of Shadows",
+      "Gotham",
+      "The Pit"
+    ],
+    "answer": "The Pit",
+    "category": "batman"
+  },
+  {
+    "question": "Who is revealed to be Talia al Ghul?",
+    "options": [
+      "Holly Robinson",
+      "Selina Kyle",
+      "Miranda Tate",
+      "Jen"
+    ],
+    "answer": "Miranda Tate",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Miranda Tate/Talia?",
+    "options": [
+      "Anne Hathaway",
+      "Maggie Gyllenhaal",
+      "Marion Cotillard",
+      "Katie Holmes"
+    ],
+    "answer": "Marion Cotillard",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Rachel Dawes in Batman Begins?",
+    "options": [
+      "Anne Hathaway",
+      "Maggie Gyllenhaal",
+      "Katie Holmes",
+      "Marion Cotillard"
+    ],
+    "answer": "Katie Holmes",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Rachel Dawes in The Dark Knight?",
+    "options": [
+      "Maggie Gyllenhaal",
+      "Anne Hathaway",
+      "Marion Cotillard",
+      "Katie Holmes"
+    ],
+    "answer": "Maggie Gyllenhaal",
+    "category": "actors"
+  },
+  {
+    "question": "What happens to Rachel in The Dark Knight?",
+    "options": [
+      "She dies in an explosion",
+      "She leaves Gotham",
+      "She survives",
+      "She becomes a villain"
+    ],
+    "answer": "She dies in an explosion",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays John Blake in The Dark Knight Rises?",
+    "options": [
+      "Tom Hardy",
+      "Matthew Modine",
+      "Joseph Gordon-Levitt",
+      "Ben Mendelsohn"
+    ],
+    "answer": "Joseph Gordon-Levitt",
+    "category": "actors"
+  },
+  {
+    "question": "What is John Blake's first name revealed to be?",
+    "options": [
+      "Jason",
+      "Robin",
+      "Dick",
+      "Tim"
+    ],
+    "answer": "Robin",
+    "category": "batman"
+  },
+  {
+    "question": "What is the name of Superman's cousin?",
+    "options": [
+      "Lara",
+      "Kara Zor-El/Supergirl",
+      "Superwoman",
+      "Power Girl"
+    ],
+    "answer": "Kara Zor-El/Supergirl",
+    "category": "superman"
+  },
+  {
+    "question": "What is Darkseid's home planet?",
+    "options": [
+      "New Genesis",
+      "Oa",
+      "Apokolips",
+      "Krypton"
+    ],
+    "answer": "Apokolips",
+    "category": "villains"
+  },
+  {
+    "question": "What does Darkseid seek in the Snyder Cut?",
+    "options": [
+      "Infinity Stones",
+      "Kryptonite",
+      "Mother Boxes",
+      "Anti-Life Equation"
+    ],
+    "answer": "Anti-Life Equation",
+    "category": "justice-league"
+  },
+  {
+    "question": "What year was Zack Snyder's Justice League released?",
+    "options": [
+      "2017",
+      "2020",
+      "2022",
+      "2021"
+    ],
+    "answer": "2021",
+    "category": "justice-league"
+  },
+  {
+    "question": "How long is Zack Snyder's Justice League?",
+    "options": [
+      "5 hours",
+      "2.5 hours",
+      "3 hours",
+      "4 hours"
+    ],
+    "answer": "4 hours",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Martha Wayne in Batman v Superman?",
+    "options": [
+      "Diane Lane",
+      "Gal Gadot",
+      "Amy Adams",
+      "Lauren Cohan"
+    ],
+    "answer": "Lauren Cohan",
+    "category": "actors"
+  },
+  {
+    "question": "What is the famous 'Martha' moment about?",
+    "options": [
+      "Martha Wayne's death",
+      "Both mothers named Martha",
+      "Martha Kent's rescue",
+      "A secret code"
+    ],
+    "answer": "Both mothers named Martha",
+    "category": "batman"
+  },
+  {
+    "question": "What armor does Batman wear to fight Superman?",
+    "options": [
+      "Mech Suit/Power Armor",
+      "Kryptonite Suit",
+      "Tank Armor",
+      "Standard Batsuit"
+    ],
+    "answer": "Mech Suit/Power Armor",
+    "category": "batman"
+  },
+  {
+    "question": "What does Batman use to weaken Superman?",
+    "options": [
+      "Kryptonite sword",
+      "Kryptonite gas",
+      "Red sun lamp",
+      "Kryptonite bullets"
+    ],
+    "answer": "Kryptonite gas",
+    "category": "batman"
+  },
+  {
+    "question": "Who is the main villain in Birds of Prey?",
+    "options": [
+      "Black Mask",
+      "Two-Face",
+      "Penguin",
+      "Joker"
+    ],
+    "answer": "Black Mask",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Black Mask in Birds of Prey?",
+    "options": [
+      "Colin Farrell",
+      "Jared Leto",
+      "Ewan McGregor",
+      "Jim Carrey"
+    ],
+    "answer": "Ewan McGregor",
+    "category": "actors"
+  },
+  {
+    "question": "What is the full title of Birds of Prey?",
+    "options": [
+      "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+      "Birds of Prey: Gotham Sirens",
+      "Harley Quinn: Birds of Prey",
+      "Birds of Prey: Harley's Revenge"
+    ],
+    "answer": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Huntress in Birds of Prey?",
+    "options": [
+      "Rosie Perez",
+      "Jurnee Smollett",
+      "Ella Jay Basco",
+      "Mary Elizabeth Winstead"
+    ],
+    "answer": "Mary Elizabeth Winstead",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Black Canary in Birds of Prey?",
+    "options": [
+      "Margot Robbie",
+      "Mary Elizabeth Winstead",
+      "Jurnee Smollett",
+      "Rosie Perez"
+    ],
+    "answer": "Jurnee Smollett",
+    "category": "actors"
+  },
+  {
+    "question": "What is Black Canary's power?",
+    "options": [
+      "Flight",
+      "Canary Cry (sonic scream)",
+      "Super strength",
+      "Telepathy"
+    ],
+    "answer": "Canary Cry (sonic scream)",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who plays Renee Montoya in Birds of Prey?",
+    "options": [
+      "Mary Elizabeth Winstead",
+      "Rosie Perez",
+      "Jurnee Smollett",
+      "Ella Jay Basco"
+    ],
+    "answer": "Rosie Perez",
+    "category": "actors"
+  },
+  {
+    "question": "What is Aquaman's weapon called?",
+    "options": [
+      "Trident of Atlan",
+      "Trident of Poseidon",
+      "King's Trident",
+      "Neptune's Trident"
+    ],
+    "answer": "Trident of Atlan",
+    "category": "aquaman"
+  },
+  {
+    "question": "Who plays Aquaman's mother?",
+    "options": [
+      "Dolph Lundgren",
+      "Temuera Morrison",
+      "Nicole Kidman",
+      "Amber Heard"
+    ],
+    "answer": "Nicole Kidman",
+    "category": "actors"
+  },
+  {
+    "question": "What is the name of Aquaman's father?",
+    "options": [
+      "William Curry",
+      "Tom Curry",
+      "Arthur Curry Sr.",
+      "Thomas Curry"
+    ],
+    "answer": "Tom Curry",
+    "category": "aquaman"
+  },
+  {
+    "question": "Who plays Black Manta in Aquaman?",
+    "options": [
+      "Willem Dafoe",
+      "Patrick Wilson",
+      "Yahya Abdul-Mateen II",
+      "Dolph Lundgren"
+    ],
+    "answer": "Yahya Abdul-Mateen II",
+    "category": "actors"
+  },
+  {
+    "question": "What does Black Manta want from Aquaman?",
+    "options": [
+      "The throne",
+      "Atlantis",
+      "Revenge for his father's death",
+      "The trident"
+    ],
+    "answer": "Revenge for his father's death",
+    "category": "aquaman"
+  },
+  {
+    "question": "What year was Aquaman released?",
+    "options": [
+      "2017",
+      "2020",
+      "2018",
+      "2019"
+    ],
+    "answer": "2018",
+    "category": "aquaman"
+  },
+  {
+    "question": "What is the hidden kingdom in Aquaman?",
+    "options": [
+      "Xebel",
+      "The Hidden Sea/Trench Kingdom",
+      "Atlantis",
+      "Fisherman Kingdom"
+    ],
+    "answer": "The Hidden Sea/Trench Kingdom",
+    "category": "aquaman"
+  },
+  {
+    "question": "Who plays Vulko in Aquaman?",
+    "options": [
+      "Dolph Lundgren",
+      "Temuera Morrison",
+      "Willem Dafoe",
+      "Patrick Wilson"
+    ],
+    "answer": "Willem Dafoe",
+    "category": "actors"
+  },
+  {
+    "question": "Who is Robin in the DCEU?",
+    "options": [
+      "Tim Drake",
+      "Dead (killed by Joker)",
+      "Dick Grayson",
+      "Jason Todd"
+    ],
+    "answer": "Dead (killed by Joker)",
+    "category": "batman"
+  },
+  {
+    "question": "What is written on Robin's suit in BvS?",
+    "options": [
+      "Why so serious",
+      "Ha Ha Ha Joke's on you Batman",
+      "Dead bird",
+      "RIP Robin"
+    ],
+    "answer": "Ha Ha Ha Joke's on you Batman",
+    "category": "batman"
+  },
+  {
+    "question": "Who is the Flash's father?",
+    "options": [
+      "Jay Allen",
+      "Henry Allen",
+      "Nora Allen",
+      "Barry Allen Sr."
+    ],
+    "answer": "Henry Allen",
+    "category": "justice-league"
+  },
+  {
+    "question": "What is Flash's power source?",
+    "options": [
+      "Cosmic Energy",
+      "Speed Force",
+      "Lightning",
+      "Kinetic Energy"
+    ],
+    "answer": "Speed Force",
+    "category": "justice-league"
+  },
+  {
+    "question": "What year was The Flash released?",
+    "options": [
+      "2022",
+      "2021",
+      "2023",
+      "2024"
+    ],
+    "answer": "2023",
+    "category": "justice-league"
+  },
+  {
+    "question": "Who directed The Flash (2023)?",
+    "options": [
+      "Zack Snyder",
+      "James Wan",
+      "Andy Muschietti",
+      "David F. Sandberg"
+    ],
+    "answer": "Andy Muschietti",
+    "category": "directors"
+  },
+  {
+    "question": "Who returns as Batman in The Flash?",
+    "options": [
+      "Robert Pattinson",
+      "Christian Bale",
+      "George Clooney",
+      "Michael Keaton and Ben Affleck"
+    ],
+    "answer": "Michael Keaton and Ben Affleck",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Supergirl in The Flash?",
+    "options": [
+      "Laura Vandervoort",
+      "Sasha Calle",
+      "Melissa Benoist",
+      "Helen Slater"
+    ],
+    "answer": "Sasha Calle",
+    "category": "actors"
+  },
+  {
+    "question": "What Batman gadget does Bruce use to glide?",
+    "options": [
+      "Jetpack",
+      "Wings",
+      "Glider",
+      "Cape (Memory cloth)"
+    ],
+    "answer": "Cape (Memory cloth)",
+    "category": "batman"
+  },
+  {
+    "question": "What is the Batcave's entrance in The Dark Knight trilogy?",
+    "options": [
+      "Bookshelf",
+      "Elevator",
+      "Grandfather clock",
+      "Waterfall"
+    ],
+    "answer": "Waterfall",
+    "category": "batman"
+  },
+  {
+    "question": "Who provides Batman's tech in The Dark Knight trilogy?",
+    "options": [
+      "Oracle",
+      "Lucius Fox",
+      "Wayne Enterprises R&D",
+      "Alfred"
+    ],
+    "answer": "Lucius Fox",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Lucius Fox?",
+    "options": [
+      "Laurence Fishburne",
+      "Denzel Washington",
+      "Morgan Freeman",
+      "Samuel L. Jackson"
+    ],
+    "answer": "Morgan Freeman",
+    "category": "actors"
+  },
+  {
+    "question": "What is Wonder Woman's signature weapon?",
+    "options": [
+      "Bracelets",
+      "Lasso of Truth",
+      "Shield",
+      "Sword"
+    ],
+    "answer": "Lasso of Truth",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "What are Wonder Woman's bracelets called?",
+    "options": [
+      "Bracelets of Power",
+      "Bracelets of Submission",
+      "Bracelets of Hephaestus",
+      "Amazonian Gauntlets"
+    ],
+    "answer": "Bracelets of Submission",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who forged Wonder Woman's weapons?",
+    "options": [
+      "Hephaestus",
+      "Ares",
+      "Athena",
+      "Zeus"
+    ],
+    "answer": "Hephaestus",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "Who is Wonder Woman's father in the DCEU?",
+    "options": [
+      "Hippolytus",
+      "Zeus",
+      "Hades",
+      "Ares"
+    ],
+    "answer": "Zeus",
+    "category": "wonder-woman"
+  },
+  {
+    "question": "What is Joker's occupation before becoming Joker (2019)?",
+    "options": [
+      "Criminal",
+      "Accountant",
+      "Comedian",
+      "Party clown"
+    ],
+    "answer": "Party clown",
+    "category": "villains"
+  },
+  {
+    "question": "What mental condition does Arthur Fleck have?",
+    "options": [
+      "Depression",
+      "Bipolar",
+      "Pseudobulbar affect (uncontrollable laughter)",
+      "Schizophrenia"
+    ],
+    "answer": "Pseudobulbar affect (uncontrollable laughter)",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Arthur's mother in Joker?",
+    "options": [
+      "Kathy Bates",
+      "Jessica Lange",
+      "Frances Conroy",
+      "Glenn Close"
+    ],
+    "answer": "Frances Conroy",
+    "category": "actors"
+  },
+  {
+    "question": "What talk show host does Arthur appear on?",
+    "options": [
+      "Johnny Carson",
+      "Jay Leno",
+      "David Letterman",
+      "Murray Franklin"
+    ],
+    "answer": "Murray Franklin",
+    "category": "villains"
+  },
+  {
+    "question": "Who plays Murray Franklin in Joker?",
+    "options": [
+      "Joe Pesci",
+      "Robert De Niro",
+      "Harvey Keitel",
+      "Al Pacino"
+    ],
+    "answer": "Robert De Niro",
+    "category": "actors"
+  },
+  {
+    "question": "What award did Joaquin Phoenix win for Joker?",
+    "options": [
+      "Golden Globe only",
+      "BAFTA only",
+      "No major awards",
+      "Academy Award for Best Actor"
+    ],
+    "answer": "Academy Award for Best Actor",
+    "category": "actors"
+  },
+  {
+    "question": "What year is The Batman (2022) set in?",
+    "options": [
+      "Year Two of Batman",
+      "Year Five",
+      "Year Ten",
+      "Year One"
+    ],
+    "answer": "Year Two of Batman",
+    "category": "batman"
+  },
+  {
+    "question": "What is the Riddler's signature in The Batman?",
+    "options": [
+      "Riddles",
+      "Question mark",
+      "Green",
+      "E. Nygma"
+    ],
+    "answer": "Question mark",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays Carmine Falcone in The Batman?",
+    "options": [
+      "John Turturro",
+      "David Zayas",
+      "Eric Roberts",
+      "Tom Wilkinson"
+    ],
+    "answer": "John Turturro",
+    "category": "actors"
+  },
+  {
+    "question": "What is Selina Kyle looking for in The Batman?",
+    "options": [
+      "Her missing friend Annika",
+      "Revenge on Batman",
+      "Money",
+      "The Riddler"
+    ],
+    "answer": "Her missing friend Annika",
+    "category": "batman"
+  },
+  {
+    "question": "Who plays the Riddler in Batman Forever?",
+    "options": [
+      "Cory Michael Smith",
+      "Frank Gorshin",
+      "Jim Carrey",
+      "Paul Dano"
+    ],
+    "answer": "Jim Carrey",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Two-Face in Batman Forever?",
+    "options": [
+      "Aaron Eckhart",
+      "Tommy Lee Jones",
+      "Billy Dee Williams",
+      "Richard Moll"
+    ],
+    "answer": "Tommy Lee Jones",
+    "category": "actors"
+  },
+  {
+    "question": "Who plays Commissioner Gordon in The Batman?",
+    "options": [
+      "Pat Hingle",
+      "J.K. Simmons",
+      "Gary Oldman",
+      "Jeffrey Wright"
+    ],
+    "answer": "Jeffrey Wright",
+    "category": "actors"
+  },
+  {
+    "question": "What is the name of the club in The Batman?",
+    "options": [
+      "44 Below",
+      "Gotham Club",
+      "Iceberg Lounge",
+      "The Penguin's Nest"
+    ],
+    "answer": "Iceberg Lounge",
+    "category": "batman"
+  },
+  {
+    "question": "What drug is being distributed in The Batman?",
+    "options": [
+      "Drops",
+      "Venom",
+      "Joker Gas",
+      "Fear Toxin"
+    ],
+    "answer": "Drops",
+    "category": "batman"
+  },
+  {
+    "question": "How long is The Batman (2022)?",
+    "options": [
+      "2.5 hours",
+      "2 hours",
+      "3.5 hours",
+      "Nearly 3 hours"
+    ],
+    "answer": "Nearly 3 hours",
+    "category": "batman"
+  },
+  {
+    "question": "What Nirvana song is featured in The Batman?",
+    "options": [
+      "Come As You Are",
+      "Smells Like Teen Spirit",
+      "Something in the Way",
+      "Heart-Shaped Box"
+    ],
+    "answer": "Something in the Way",
+    "category": "batman"
+  },
+  {
+    "question": "Who is the Joker teased at the end of The Batman?",
+    "options": [
+      "Joaquin Phoenix",
+      "Barry Keoghan",
+      "Jared Leto",
+      "Cameron Monaghan"
+    ],
+    "answer": "Barry Keoghan",
+    "category": "actors"
+  },
+  {
+    "question": "What is the rating of most DC films?",
+    "options": [
+      "R",
+      "PG-13",
+      "G",
+      "PG"
+    ],
+    "answer": "PG-13",
+    "category": "directors"
+  },
+  {
+    "question": "Which DC film is rated R?",
+    "options": [
+      "Wonder Woman",
+      "Man of Steel",
+      "Aquaman",
+      "Joker, The Suicide Squad, The Batman"
+    ],
+    "answer": "Joker, The Suicide Squad, The Batman",
+    "category": "directors"
+  },
+  {
+    "question": "Who composed Man of Steel's score?",
+    "options": [
+      "James Newton Howard",
+      "Danny Elfman",
+      "John Williams",
+      "Hans Zimmer"
+    ],
+    "answer": "Hans Zimmer",
+    "category": "superman"
+  },
+  {
+    "question": "What is the famous Superman theme by?",
+    "options": [
+      "Hans Zimmer",
+      "John Williams",
+      "James Horner",
+      "Danny Elfman"
+    ],
+    "answer": "John Williams",
+    "category": "superman"
+  },
+  {
+    "question": "Who plays General Swanwick in Man of Steel?",
+    "options": [
+      "Laurence Fishburne",
+      "Harry Lennix",
+      "Christopher Meloni",
+      "Michael Shannon"
+    ],
+    "answer": "Harry Lennix",
+    "category": "actors"
+  },
+  {
+    "question": "What is the new DC film universe called (2023+)?",
+    "options": [
+      "DCU (DC Universe)",
+      "DC Films",
+      "DCEU",
+      "DC Cinematic Universe"
+    ],
+    "answer": "DCU (DC Universe)",
+    "category": "directors"
+  }
 ]

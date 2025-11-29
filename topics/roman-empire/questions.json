@@ -1,202 +1,2202 @@
 [
-  {"question": "Who was the first Roman Emperor?", "options": ["Augustus", "Julius Caesar", "Nero", "Caligula"], "answer": "Augustus", "category": "emperors"},
-  {"question": "Was Julius Caesar actually an emperor?", "options": ["No, he was a dictator", "Yes, the first one", "Yes, the last one", "No, he was a senator only"], "answer": "No, he was a dictator", "category": "emperors"},
-  {"question": "What famous words did Caesar say when crossing the Rubicon?", "options": ["The die is cast", "I came, I saw, I conquered", "Et tu, Brute?", "Veni, vidi, vici"], "answer": "The die is cast", "category": "emperors"},
-  {"question": "What does 'Veni, vidi, vici' mean?", "options": ["I came, I saw, I conquered", "The die is cast", "Hail Caesar", "Glory to Rome"], "answer": "I came, I saw, I conquered", "category": "culture"},
-  {"question": "Who assassinated Julius Caesar?", "options": ["Group of senators including Brutus", "Mark Antony", "Augustus", "Cleopatra"], "answer": "Group of senators including Brutus", "category": "emperors"},
-  {"question": "What date was Caesar assassinated?", "options": ["March 15 (Ides of March)", "January 1", "December 25", "July 4"], "answer": "March 15 (Ides of March)", "category": "emperors"},
-  {"question": "What were Caesar's last words according to Shakespeare?", "options": ["Et tu, Brute?", "The die is cast", "I came, I saw, I conquered", "Long live Rome"], "answer": "Et tu, Brute?", "category": "emperors"},
-  {"question": "What massive arena hosted gladiator fights?", "options": ["Colosseum", "Circus Maximus", "Pantheon", "Forum"], "answer": "Colosseum", "category": "architecture"},
-  {"question": "How many spectators could the Colosseum hold?", "options": ["50,000-80,000", "10,000", "100,000", "500,000"], "answer": "50,000-80,000", "category": "architecture"},
-  {"question": "What was the Colosseum's original name?", "options": ["Flavian Amphitheatre", "Caesar's Arena", "Imperial Stadium", "Roman Colosseum"], "answer": "Flavian Amphitheatre", "category": "architecture"},
-  {"question": "What was a vomitorium actually used for?", "options": ["Exit passageways for crowds", "Vomiting between courses", "Bathrooms", "Storage"], "answer": "Exit passageways for crowds", "category": "daily-life"},
-  {"question": "Did Romans really vomit to eat more at feasts?", "options": ["Mostly a myth", "Yes, commonly", "Only emperors", "Never"], "answer": "Mostly a myth", "category": "daily-life"},
-  {"question": "What emperor reportedly made his horse a consul?", "options": ["Caligula", "Nero", "Augustus", "Tiberius"], "answer": "Caligula", "category": "emperors"},
-  {"question": "What was the horse's name?", "options": ["Incitatus", "Bucephalus", "Pegasus", "Maximus"], "answer": "Incitatus", "category": "emperors"},
-  {"question": "What emperor 'fiddled while Rome burned'?", "options": ["Nero", "Caligula", "Commodus", "Domitian"], "answer": "Nero", "category": "emperors"},
-  {"question": "Did Nero actually play a fiddle during the fire?", "options": ["No, fiddles didn't exist yet", "Yes, eyewitnesses confirmed", "Only briefly", "Unknown"], "answer": "No, fiddles didn't exist yet", "category": "emperors"},
-  {"question": "What instrument might Nero have actually played?", "options": ["Lyre", "Fiddle", "Flute", "Drums"], "answer": "Lyre", "category": "emperors"},
-  {"question": "Who blamed Christians for the Great Fire of Rome?", "options": ["Nero", "Caligula", "Augustus", "Trajan"], "answer": "Nero", "category": "emperors"},
-  {"question": "What was the Roman Senate?", "options": ["Governing council of elders", "Military unit", "Religious order", "Trading company"], "answer": "Governing council of elders", "category": "government"},
-  {"question": "What letters represent 'The Senate and People of Rome'?", "options": ["SPQR", "ROMA", "SENATE", "CIVS"], "answer": "SPQR", "category": "government"},
-  {"question": "Who was the king of Roman gods?", "options": ["Jupiter", "Mars", "Neptune", "Apollo"], "answer": "Jupiter", "category": "gods"},
-  {"question": "What Greek god is Jupiter equivalent to?", "options": ["Zeus", "Ares", "Poseidon", "Apollo"], "answer": "Zeus", "category": "gods"},
-  {"question": "Who was the Roman god of war?", "options": ["Mars", "Jupiter", "Neptune", "Vulcan"], "answer": "Mars", "category": "gods"},
-  {"question": "What month is named after Mars?", "options": ["March", "May", "June", "January"], "answer": "March", "category": "gods"},
-  {"question": "Who was Neptune?", "options": ["God of the sea", "God of war", "God of wine", "God of fire"], "answer": "God of the sea", "category": "gods"},
-  {"question": "Who was Venus?", "options": ["Goddess of love", "Goddess of war", "Goddess of wisdom", "Goddess of harvest"], "answer": "Goddess of love", "category": "gods"},
-  {"question": "What were the Vestal Virgins?", "options": ["Priestesses who tended sacred fire", "Female gladiators", "Emperor's wives", "Senators' daughters"], "answer": "Priestesses who tended sacred fire", "category": "gods"},
-  {"question": "What happened if a Vestal Virgin broke her vow?", "options": ["Buried alive", "Exiled", "Fined", "Nothing"], "answer": "Buried alive", "category": "gods"},
-  {"question": "What structure has the world's largest unreinforced concrete dome?", "options": ["Pantheon", "Colosseum", "St. Peter's", "Hagia Sophia"], "answer": "Pantheon", "category": "architecture"},
-  {"question": "What is the hole in the Pantheon's dome called?", "options": ["Oculus", "Window", "Skylight", "Opening"], "answer": "Oculus", "category": "architecture"},
-  {"question": "What carried water to Roman cities?", "options": ["Aqueducts", "Rivers only", "Wells only", "Slaves"], "answer": "Aqueducts", "category": "architecture"},
-  {"question": "How long was the Roman road network?", "options": ["Over 250,000 miles", "50,000 miles", "10,000 miles", "1 million miles"], "answer": "Over 250,000 miles", "category": "architecture"},
-  {"question": "What phrase means 'All roads lead to Rome'?", "options": ["All paths connect to the capital", "Romans built many roads", "Rome is the center", "Travel is easy"], "answer": "All paths connect to the capital", "category": "culture"},
-  {"question": "What were Roman soldiers called?", "options": ["Legionaries", "Knights", "Warriors", "Soldiers"], "answer": "Legionaries", "category": "military"},
-  {"question": "How many soldiers in a Roman legion?", "options": ["About 5,000", "1,000", "10,000", "500"], "answer": "About 5,000", "category": "military"},
-  {"question": "What formation had soldiers lock shields together?", "options": ["Testudo (tortoise)", "Phalanx", "Square", "Circle"], "answer": "Testudo (tortoise)", "category": "military"},
-  {"question": "What was the main Roman sword called?", "options": ["Gladius", "Spatha", "Falcata", "Xiphos"], "answer": "Gladius", "category": "military"},
-  {"question": "What word comes from 'gladius'?", "options": ["Gladiator", "Glad", "Glory", "Glade"], "answer": "Gladiator", "category": "military"},
-  {"question": "What was the Roman shield called?", "options": ["Scutum", "Clipeus", "Parma", "Shield"], "answer": "Scutum", "category": "military"},
-  {"question": "What was decimation?", "options": ["Killing 1 in 10 soldiers as punishment", "Complete destruction", "Dividing army", "Victory celebration"], "answer": "Killing 1 in 10 soldiers as punishment", "category": "military"},
-  {"question": "What general crossed the Alps with elephants?", "options": ["Hannibal", "Julius Caesar", "Scipio", "Pompey"], "answer": "Hannibal", "category": "military"},
-  {"question": "What wars were fought between Rome and Carthage?", "options": ["Punic Wars", "Gallic Wars", "Persian Wars", "Macedonian Wars"], "answer": "Punic Wars", "category": "military"},
-  {"question": "How many Punic Wars were there?", "options": ["3", "2", "4", "5"], "answer": "3", "category": "military"},
-  {"question": "What happened to Carthage after the Third Punic War?", "options": ["Destroyed and salted", "Became Roman ally", "Remained independent", "Conquered Rome"], "answer": "Destroyed and salted", "category": "military"},
-  {"question": "Who said 'Carthage must be destroyed'?", "options": ["Cato the Elder", "Julius Caesar", "Scipio", "Augustus"], "answer": "Cato the Elder", "category": "military"},
-  {"question": "Who was Spartacus?", "options": ["Gladiator who led slave revolt", "Roman general", "Emperor", "Senator"], "answer": "Gladiator who led slave revolt", "category": "daily-life"},
-  {"question": "What happened to Spartacus's rebellion?", "options": ["Crushed, survivors crucified", "Successful", "Pardoned", "Exiled"], "answer": "Crushed, survivors crucified", "category": "daily-life"},
-  {"question": "How many slaves were crucified along the Appian Way?", "options": ["About 6,000", "100", "1,000", "10,000"], "answer": "About 6,000", "category": "daily-life"},
-  {"question": "Were gladiator fights always to the death?", "options": ["No, deaths were actually costly", "Yes, always", "Only for criminals", "Never"], "answer": "No, deaths were actually costly", "category": "daily-life"},
-  {"question": "Did crowds really give thumbs up or down for gladiators?", "options": ["Probably not as shown in movies", "Yes, exactly like movies", "Never", "Only emperors decided"], "answer": "Probably not as shown in movies", "category": "daily-life"},
-  {"question": "What did gladiators eat to build mass?", "options": ["Mostly barley and beans", "Meat only", "Bread only", "Very little"], "answer": "Mostly barley and beans", "category": "daily-life"},
-  {"question": "Were gladiators celebrities?", "options": ["Yes, with fans and endorsements", "No, they were despised", "Only winners", "Only in Rome"], "answer": "Yes, with fans and endorsements", "category": "daily-life"},
-  {"question": "What were public baths called?", "options": ["Thermae", "Aquae", "Balneum", "Lavacrum"], "answer": "Thermae", "category": "daily-life"},
-  {"question": "What did Romans use to clean themselves at baths?", "options": ["Oil and a scraper (strigil)", "Soap", "Just water", "Sand"], "answer": "Oil and a scraper (strigil)", "category": "daily-life"},
-  {"question": "What unusual substance was used in Roman laundry?", "options": ["Urine", "Wine", "Olive oil", "Honey"], "answer": "Urine", "category": "daily-life"},
-  {"question": "Why was urine used for laundry?", "options": ["Ammonia content cleaned clothes", "Smell repelled insects", "Religious reasons", "It was free"], "answer": "Ammonia content cleaned clothes", "category": "daily-life"},
-  {"question": "What was the main Roman garment called?", "options": ["Toga", "Tunic", "Robe", "Cloak"], "answer": "Toga", "category": "daily-life"},
-  {"question": "Who could wear a toga?", "options": ["Roman citizens only", "Anyone", "Only senators", "Only men"], "answer": "Roman citizens only", "category": "daily-life"},
-  {"question": "What color toga showed you were running for office?", "options": ["White (toga candida)", "Purple", "Red", "Blue"], "answer": "White (toga candida)", "category": "daily-life"},
-  {"question": "Where does 'candidate' come from?", "options": ["Toga candida (white toga)", "Latin for runner", "Greek word", "Unknown"], "answer": "Toga candida (white toga)", "category": "culture"},
-  {"question": "What expensive dye was reserved for emperors?", "options": ["Tyrian purple", "Red", "Gold", "Blue"], "answer": "Tyrian purple", "category": "daily-life"},
-  {"question": "Where did Tyrian purple come from?", "options": ["Sea snails", "Berries", "Minerals", "Flowers"], "answer": "Sea snails", "category": "daily-life"},
-  {"question": "What was a Roman apartment building called?", "options": ["Insula", "Domus", "Villa", "Casa"], "answer": "Insula", "category": "architecture"},
-  {"question": "What was a wealthy Roman's house called?", "options": ["Domus", "Insula", "Villa", "Palace"], "answer": "Domus", "category": "architecture"},
-  {"question": "What was the Circus Maximus used for?", "options": ["Chariot racing", "Gladiator fights", "Theater", "Markets"], "answer": "Chariot racing", "category": "architecture"},
-  {"question": "How many spectators could Circus Maximus hold?", "options": ["About 250,000", "50,000", "100,000", "500,000"], "answer": "About 250,000", "category": "architecture"},
-  {"question": "What were the chariot racing teams called by?", "options": ["Colors (Blues, Greens, etc.)", "Numbers", "Animals", "Regions"], "answer": "Colors (Blues, Greens, etc.)", "category": "daily-life"},
-  {"question": "What happened in the Nika riots?", "options": ["Chariot fans nearly overthrew emperor", "Slave rebellion", "Military coup", "Food riot"], "answer": "Chariot fans nearly overthrew emperor", "category": "events"},
-  {"question": "What emperor built Hadrian's Wall?", "options": ["Hadrian", "Trajan", "Augustus", "Constantine"], "answer": "Hadrian", "category": "emperors"},
-  {"question": "Where is Hadrian's Wall?", "options": ["Britain", "Gaul", "Germany", "Spain"], "answer": "Britain", "category": "architecture"},
-  {"question": "What was Hadrian's Wall meant to do?", "options": ["Mark frontier and control movement", "Keep out barbarians entirely", "Collect taxes", "Display power"], "answer": "Mark frontier and control movement", "category": "architecture"},
-  {"question": "What emperor made Christianity legal?", "options": ["Constantine", "Nero", "Augustus", "Theodosius"], "answer": "Constantine", "category": "emperors"},
-  {"question": "What edict made Christianity legal?", "options": ["Edict of Milan", "Edict of Rome", "Edict of Constantine", "Edict of Tolerance"], "answer": "Edict of Milan", "category": "events"},
-  {"question": "What year was the Edict of Milan?", "options": ["313 AD", "380 AD", "100 AD", "476 AD"], "answer": "313 AD", "category": "events"},
-  {"question": "What emperor made Christianity the state religion?", "options": ["Theodosius I", "Constantine", "Nero", "Julian"], "answer": "Theodosius I", "category": "emperors"},
-  {"question": "What vision did Constantine reportedly see before battle?", "options": ["Cross in the sky", "Eagle", "Lightning", "Angel"], "answer": "Cross in the sky", "category": "emperors"},
-  {"question": "What city did Constantine found as new capital?", "options": ["Constantinople", "Rome", "Milan", "Ravenna"], "answer": "Constantinople", "category": "emperors"},
-  {"question": "What city is Constantinople today?", "options": ["Istanbul", "Athens", "Rome", "Cairo"], "answer": "Istanbul", "category": "geography"},
-  {"question": "Who was Marcus Aurelius?", "options": ["Philosopher emperor", "Gladiator", "General", "Senator"], "answer": "Philosopher emperor", "category": "emperors"},
-  {"question": "What book did Marcus Aurelius write?", "options": ["Meditations", "Republic", "The Prince", "Confessions"], "answer": "Meditations", "category": "emperors"},
-  {"question": "What philosophy did Marcus Aurelius follow?", "options": ["Stoicism", "Epicureanism", "Cynicism", "Platonism"], "answer": "Stoicism", "category": "culture"},
-  {"question": "What emperor expanded Rome to its largest extent?", "options": ["Trajan", "Augustus", "Hadrian", "Constantine"], "answer": "Trajan", "category": "emperors"},
-  {"question": "What structure celebrates Trajan's military victories?", "options": ["Trajan's Column", "Colosseum", "Pantheon", "Arch of Titus"], "answer": "Trajan's Column", "category": "architecture"},
-  {"question": "What was the Pax Romana?", "options": ["About 200 years of relative peace", "Peace treaty", "Religious festival", "Military strategy"], "answer": "About 200 years of relative peace", "category": "events"},
-  {"question": "When was the Pax Romana?", "options": ["27 BC - 180 AD", "500 BC - 1 AD", "1 AD - 500 AD", "100 BC - 100 AD"], "answer": "27 BC - 180 AD", "category": "events"},
-  {"question": "What were patricians?", "options": ["Noble/aristocratic class", "Common people", "Slaves", "Soldiers"], "answer": "Noble/aristocratic class", "category": "government"},
-  {"question": "What were plebeians?", "options": ["Common citizens", "Nobles", "Slaves", "Foreigners"], "answer": "Common citizens", "category": "government"},
-  {"question": "What were slaves called in Latin?", "options": ["Servi", "Plebis", "Civitas", "Liberti"], "answer": "Servi", "category": "daily-life"},
-  {"question": "Could Roman slaves ever become free?", "options": ["Yes, through manumission", "Never", "Only by escaping", "Only if born free"], "answer": "Yes, through manumission", "category": "daily-life"},
-  {"question": "What were freed slaves called?", "options": ["Freedmen (liberti)", "Citizens", "Plebeians", "Clients"], "answer": "Freedmen (liberti)", "category": "daily-life"},
-  {"question": "What percentage of Roman Italy were slaves?", "options": ["About 30-40%", "5%", "10%", "Over 50%"], "answer": "About 30-40%", "category": "daily-life"},
-  {"question": "What destroyed Pompeii?", "options": ["Mount Vesuvius eruption", "Earthquake", "Invasion", "Flood"], "answer": "Mount Vesuvius eruption", "category": "events"},
-  {"question": "What year was Pompeii destroyed?", "options": ["79 AD", "100 BC", "200 AD", "50 AD"], "answer": "79 AD", "category": "events"},
-  {"question": "What preserved Pompeii so well?", "options": ["Volcanic ash", "Sand", "Mud", "Ice"], "answer": "Volcanic ash", "category": "events"},
-  {"question": "What city was also destroyed with Pompeii?", "options": ["Herculaneum", "Naples", "Rome", "Ostia"], "answer": "Herculaneum", "category": "events"},
-  {"question": "Who wrote about the Vesuvius eruption?", "options": ["Pliny the Younger", "Tacitus", "Livy", "Cicero"], "answer": "Pliny the Younger", "category": "events"},
-  {"question": "What type of eruption is named after Vesuvius?", "options": ["Plinian eruption", "Vesuvian eruption", "Roman eruption", "Italian eruption"], "answer": "Plinian eruption", "category": "events"},
-  {"question": "What Roman writer was killed in the eruption?", "options": ["Pliny the Elder", "Pliny the Younger", "Tacitus", "Seneca"], "answer": "Pliny the Elder", "category": "events"},
-  {"question": "What was the Roman Forum?", "options": ["Central public space for business and politics", "Market only", "Temple", "Stadium"], "answer": "Central public space for business and politics", "category": "architecture"},
-  {"question": "What is 'forum' used for today?", "options": ["Place for discussion", "Shopping center", "Government building", "Temple"], "answer": "Place for discussion", "category": "culture"},
-  {"question": "What Roman concrete could set underwater?", "options": ["Roman concrete with volcanic ash", "Regular concrete", "Stone blocks", "Brick only"], "answer": "Roman concrete with volcanic ash", "category": "architecture"},
-  {"question": "Why is Roman concrete sometimes stronger than modern?", "options": ["Chemical reaction with seawater", "Magic", "Lost technology", "It isn't"], "answer": "Chemical reaction with seawater", "category": "architecture"},
-  {"question": "What was Latin?", "options": ["Language of Romans", "Type of dance", "Religion", "Army formation"], "answer": "Language of Romans", "category": "culture"},
-  {"question": "What languages descended from Latin?", "options": ["Spanish, French, Italian, Portuguese, Romanian", "English, German", "Greek, Arabic", "Chinese, Japanese"], "answer": "Spanish, French, Italian, Portuguese, Romanian", "category": "culture"},
-  {"question": "What calendar did Julius Caesar create?", "options": ["Julian calendar", "Gregorian calendar", "Roman calendar", "Caesar calendar"], "answer": "Julian calendar", "category": "achievements"},
-  {"question": "What month is named after Julius Caesar?", "options": ["July", "June", "January", "March"], "answer": "July", "category": "achievements"},
-  {"question": "What month is named after Augustus?", "options": ["August", "September", "October", "November"], "answer": "August", "category": "achievements"},
-  {"question": "What year did the Western Roman Empire fall?", "options": ["476 AD", "410 AD", "500 AD", "400 AD"], "answer": "476 AD", "category": "events"},
-  {"question": "Who was the last Western Roman Emperor?", "options": ["Romulus Augustulus", "Constantine", "Augustus", "Nero"], "answer": "Romulus Augustulus", "category": "emperors"},
-  {"question": "What peoples sacked Rome in 410 AD?", "options": ["Visigoths", "Vandals", "Huns", "Ostrogoths"], "answer": "Visigoths", "category": "events"},
-  {"question": "Who led the Visigoths to sack Rome?", "options": ["Alaric", "Attila", "Odoacer", "Genseric"], "answer": "Alaric", "category": "events"},
-  {"question": "What peoples sacked Rome in 455 AD?", "options": ["Vandals", "Visigoths", "Huns", "Goths"], "answer": "Vandals", "category": "events"},
-  {"question": "Who was Attila?", "options": ["Leader of the Huns", "Roman emperor", "Gladiator", "Senator"], "answer": "Leader of the Huns", "category": "events"},
-  {"question": "What was Attila called?", "options": ["Scourge of God", "King of Kings", "Great Conqueror", "Lord of War"], "answer": "Scourge of God", "category": "events"},
-  {"question": "What empire continued after Western Rome fell?", "options": ["Byzantine (Eastern Roman) Empire", "Holy Roman Empire", "Ottoman Empire", "Persian Empire"], "answer": "Byzantine (Eastern Roman) Empire", "category": "events"},
-  {"question": "How long did the Byzantine Empire last?", "options": ["Until 1453 AD", "Until 500 AD", "Until 800 AD", "Until 1000 AD"], "answer": "Until 1453 AD", "category": "events"},
-  {"question": "What was a Roman triumph?", "options": ["Victory parade for successful generals", "Battle formation", "Holiday", "Election"], "answer": "Victory parade for successful generals", "category": "military"},
-  {"question": "What was whispered to generals during triumph?", "options": ["Remember you are mortal", "Hail Caesar", "Glory to Rome", "Victory is yours"], "answer": "Remember you are mortal", "category": "military"},
-  {"question": "What was a Roman triumph arch?", "options": ["Monument celebrating military victory", "Gateway to city", "Temple entrance", "Bridge support"], "answer": "Monument celebrating military victory", "category": "architecture"},
-  {"question": "What famous arch celebrates Titus's victory?", "options": ["Arch of Titus", "Arch of Constantine", "Arch of Trajan", "Arch of Augustus"], "answer": "Arch of Titus", "category": "architecture"},
-  {"question": "What event does the Arch of Titus commemorate?", "options": ["Destruction of Jerusalem Temple", "Conquest of Gaul", "Punic Wars", "British conquest"], "answer": "Destruction of Jerusalem Temple", "category": "architecture"},
-  {"question": "What were the Twelve Tables?", "options": ["First written Roman laws", "Calendar", "Tax records", "Census"], "answer": "First written Roman laws", "category": "government"},
-  {"question": "What principle means 'innocent until proven guilty'?", "options": ["Roman legal tradition", "Greek tradition", "Egyptian law", "Babylonian code"], "answer": "Roman legal tradition", "category": "government"},
-  {"question": "What was a consul?", "options": ["Highest elected official (2 per year)", "Military general", "Judge", "Senator"], "answer": "Highest elected official (2 per year)", "category": "government"},
-  {"question": "Why were there two consuls?", "options": ["To prevent one person having too much power", "More efficient", "Religious requirement", "Tradition"], "answer": "To prevent one person having too much power", "category": "government"},
-  {"question": "What was a dictator in Roman times?", "options": ["Emergency leader with temporary absolute power", "Tyrant", "King", "General"], "answer": "Emergency leader with temporary absolute power", "category": "government"},
-  {"question": "How long could a Roman dictator serve?", "options": ["6 months maximum", "1 year", "Life", "10 years"], "answer": "6 months maximum", "category": "government"},
-  {"question": "What did 'crossing the Rubicon' mean?", "options": ["Point of no return/starting civil war", "Entering Rome", "Winning battle", "Becoming emperor"], "answer": "Point of no return/starting civil war", "category": "events"},
-  {"question": "What was the Rubicon?", "options": ["River marking boundary of Italy proper", "Mountain", "City", "Bridge"], "answer": "River marking boundary of Italy proper", "category": "geography"},
-  {"question": "Who were the First Triumvirate?", "options": ["Caesar, Pompey, Crassus", "Augustus, Antony, Lepidus", "Nero, Caligula, Claudius", "Trajan, Hadrian, Marcus Aurelius"], "answer": "Caesar, Pompey, Crassus", "category": "government"},
-  {"question": "Who were the Second Triumvirate?", "options": ["Octavian, Antony, Lepidus", "Caesar, Pompey, Crassus", "Brutus, Cassius, Cicero", "Tiberius, Caligula, Claudius"], "answer": "Octavian, Antony, Lepidus", "category": "government"},
-  {"question": "Who was Octavian?", "options": ["Augustus before taking that name", "Julius Caesar", "Nero", "Tiberius"], "answer": "Augustus before taking that name", "category": "emperors"},
-  {"question": "What battle ended the Roman Republic?", "options": ["Battle of Actium", "Battle of Philippi", "Battle of Zama", "Battle of Cannae"], "answer": "Battle of Actium", "category": "military"},
-  {"question": "Who did Octavian defeat at Actium?", "options": ["Mark Antony and Cleopatra", "Pompey", "Brutus", "Hannibal"], "answer": "Mark Antony and Cleopatra", "category": "military"},
-  {"question": "What did 'bread and circuses' mean?", "options": ["Free food and entertainment to keep people happy", "Festival", "Market day", "Religious holiday"], "answer": "Free food and entertainment to keep people happy", "category": "daily-life"},
-  {"question": "Who criticized 'bread and circuses'?", "options": ["Juvenal", "Cicero", "Caesar", "Augustus"], "answer": "Juvenal", "category": "culture"},
-  {"question": "What was the Praetorian Guard?", "options": ["Emperor's personal bodyguards", "Regular army", "Navy", "Police"], "answer": "Emperor's personal bodyguards", "category": "military"},
-  {"question": "What dangerous power did Praetorians have?", "options": ["Could make or kill emperors", "Tax collection", "Judge trials", "Declare war"], "answer": "Could make or kill emperors", "category": "military"},
-  {"question": "How many emperors did Praetorians kill or help kill?", "options": ["Many, including Caligula, Commodus", "None", "Only one", "Only two"], "answer": "Many, including Caligula, Commodus", "category": "military"},
-  {"question": "Who was Commodus?", "options": ["Emperor who fought as gladiator", "Gladiator champion", "General", "Senator"], "answer": "Emperor who fought as gladiator", "category": "emperors"},
-  {"question": "What movie featured Commodus?", "options": ["Gladiator", "Spartacus", "Ben-Hur", "Troy"], "answer": "Gladiator", "category": "culture"},
-  {"question": "Was Commodus really killed in the arena?", "options": ["No, strangled in bath", "Yes, in combat", "Poisoned", "Old age"], "answer": "No, strangled in bath", "category": "emperors"},
-  {"question": "What was the Year of Four Emperors?", "options": ["69 AD - four emperors in one year", "First year of empire", "Last year of empire", "Civil war period"], "answer": "69 AD - four emperors in one year", "category": "events"},
-  {"question": "What was the Crisis of the Third Century?", "options": ["Period of civil wars and instability", "Economic boom", "Golden age", "Religious conflict"], "answer": "Period of civil wars and instability", "category": "events"},
-  {"question": "How many emperors ruled during the Crisis (235-284 AD)?", "options": ["Over 50", "About 10", "About 20", "About 5"], "answer": "Over 50", "category": "events"},
-  {"question": "What did Emperor Diocletian do?", "options": ["Split empire into East and West", "United empire", "Abolished Christianity", "Built Colosseum"], "answer": "Split empire into East and West", "category": "emperors"},
-  {"question": "What was the Tetrarchy?", "options": ["Rule by four emperors", "Four-year term", "Tax system", "Army structure"], "answer": "Rule by four emperors", "category": "government"},
-  {"question": "What Roman province was modern France?", "options": ["Gaul", "Germania", "Hispania", "Britannia"], "answer": "Gaul", "category": "geography"},
-  {"question": "What Roman province was modern Spain?", "options": ["Hispania", "Gaul", "Lusitania", "Iberia"], "answer": "Hispania", "category": "geography"},
-  {"question": "What Roman province was modern England?", "options": ["Britannia", "Gaul", "Germania", "Caledonia"], "answer": "Britannia", "category": "geography"},
-  {"question": "Did Romans conquer Scotland?", "options": ["Briefly, then built walls to mark boundary", "Yes, permanently", "Never tried", "Only once"], "answer": "Briefly, then built walls to mark boundary", "category": "geography"},
-  {"question": "What did Romans call Scotland?", "options": ["Caledonia", "Scotia", "Britannia", "Hibernia"], "answer": "Caledonia", "category": "geography"},
-  {"question": "What did Romans call Ireland?", "options": ["Hibernia", "Eire", "Caledonia", "Britannia"], "answer": "Hibernia", "category": "geography"},
-  {"question": "Did Romans ever invade Ireland?", "options": ["No", "Yes, conquered it", "Briefly occupied", "Only traded"], "answer": "No", "category": "geography"},
-  {"question": "What sea did Romans call 'Mare Nostrum'?", "options": ["Mediterranean (Our Sea)", "Atlantic", "Black Sea", "Red Sea"], "answer": "Mediterranean (Our Sea)", "category": "geography"},
-  {"question": "What was the main Roman port?", "options": ["Ostia", "Naples", "Carthage", "Alexandria"], "answer": "Ostia", "category": "geography"},
-  {"question": "What is Latin phrase 'Carpe Diem'?", "options": ["Seize the day", "Hello friend", "Goodbye", "Thank you"], "answer": "Seize the day", "category": "culture"},
-  {"question": "What is 'Memento Mori'?", "options": ["Remember you will die", "Remember Rome", "Remember victory", "Remember the fallen"], "answer": "Remember you will die", "category": "culture"},
-  {"question": "What does 'Alea iacta est' mean?", "options": ["The die is cast", "I came, I saw, I conquered", "Hail Caesar", "Glory to Rome"], "answer": "The die is cast", "category": "culture"},
-  {"question": "What were the Ides of any month?", "options": ["The 13th or 15th of the month", "First day", "Last day", "Holidays"], "answer": "The 13th or 15th of the month", "category": "culture"},
-  {"question": "What did wealthy Romans eat while reclining on?", "options": ["Couches/triclinium", "Chairs", "Floor", "Standing"], "answer": "Couches/triclinium", "category": "daily-life"},
-  {"question": "What was garum?", "options": ["Fermented fish sauce", "Wine", "Bread", "Meat"], "answer": "Fermented fish sauce", "category": "daily-life"},
-  {"question": "Was garum popular?", "options": ["Yes, used like ketchup today", "No, only poor ate it", "Only for medicine", "Religious use only"], "answer": "Yes, used like ketchup today", "category": "daily-life"},
-  {"question": "What exotic foods did wealthy Romans eat?", "options": ["Flamingo tongues, dormice, peacock brains", "Only bread", "Only meat", "Only vegetables"], "answer": "Flamingo tongues, dormice, peacock brains", "category": "daily-life"},
-  {"question": "What was the main drink in Rome?", "options": ["Wine (usually watered down)", "Beer", "Water only", "Milk"], "answer": "Wine (usually watered down)", "category": "daily-life"},
-  {"question": "Was drinking undiluted wine considered proper?", "options": ["No, seen as barbaric", "Yes, always", "Only for celebrations", "Only for emperors"], "answer": "No, seen as barbaric", "category": "daily-life"},
-  {"question": "What happened on Saturnalia?", "options": ["Roles reversed, slaves served by masters", "Regular work day", "Military parade", "Religious fasting"], "answer": "Roles reversed, slaves served by masters", "category": "daily-life"},
-  {"question": "When was Saturnalia celebrated?", "options": ["December", "March", "July", "September"], "answer": "December", "category": "daily-life"},
-  {"question": "What holiday influenced Saturnalia?", "options": ["Christmas traditions", "Easter", "Halloween", "New Year"], "answer": "Christmas traditions", "category": "culture"},
-  {"question": "What Roman structure inspired the US Capitol?", "options": ["Roman temples and domes", "Colosseum", "Circus Maximus", "Aqueducts"], "answer": "Roman temples and domes", "category": "architecture"},
-  {"question": "What Roman concept influenced American government?", "options": ["Republic with Senate", "Emperor system", "Military rule", "Theocracy"], "answer": "Republic with Senate", "category": "government"},
-  {"question": "What Roman concept is 'habeas corpus'?", "options": ["Protection from unlawful detention", "Death penalty", "Taxation", "Voting rights"], "answer": "Protection from unlawful detention", "category": "government"},
-  {"question": "What animal was sacred to Rome?", "options": ["Wolf", "Eagle only", "Lion", "Bear"], "answer": "Wolf", "category": "gods"},
-  {"question": "Who were Romulus and Remus?", "options": ["Mythical founders of Rome raised by wolf", "First emperors", "Gods", "Gladiators"], "answer": "Mythical founders of Rome raised by wolf", "category": "gods"},
-  {"question": "Who killed whom - Romulus or Remus?", "options": ["Romulus killed Remus", "Remus killed Romulus", "Neither", "Both died together"], "answer": "Romulus killed Remus", "category": "gods"},
-  {"question": "What was the Roman symbol of power - the fasces?", "options": ["Bundle of rods with axe", "Eagle", "Wolf", "Sword"], "answer": "Bundle of rods with axe", "category": "government"},
-  {"question": "What word comes from 'fasces'?", "options": ["Fascism", "Fashion", "Fast", "Feast"], "answer": "Fascism", "category": "culture"},
-  {"question": "What was a Roman aqueduct's gradient?", "options": ["Very slight - about 1:4800", "Very steep", "Flat", "Random"], "answer": "Very slight - about 1:4800", "category": "architecture"},
-  {"question": "How did Romans heat their baths?", "options": ["Hypocaust (underfloor heating)", "Open fires only", "Hot springs only", "Sun only"], "answer": "Hypocaust (underfloor heating)", "category": "architecture"},
-  {"question": "What was the Cloaca Maxima?", "options": ["Rome's main sewer", "Temple", "Market", "Road"], "answer": "Rome's main sewer", "category": "architecture"},
-  {"question": "Is the Cloaca Maxima still in use?", "options": ["Parts still drain into Tiber", "Completely destroyed", "Museum only", "Filled in"], "answer": "Parts still drain into Tiber", "category": "architecture"},
-  {"question": "What was a Roman mile?", "options": ["About 4,850 feet (1,000 paces)", "5,280 feet", "Exactly same as today", "3,000 feet"], "answer": "About 4,850 feet (1,000 paces)", "category": "culture"},
-  {"question": "What does 'mile' come from?", "options": ["Mille passus (thousand paces)", "Military", "Mile marker", "Milestone"], "answer": "Mille passus (thousand paces)", "category": "culture"},
-  {"question": "What were Roman milestones?", "options": ["Stone markers showing distance from Rome", "Random rocks", "Border markers", "Grave markers"], "answer": "Stone markers showing distance from Rome", "category": "architecture"},
-  {"question": "What was the most common Roman name?", "options": ["Gaius", "Marcus", "Julius", "Augustus"], "answer": "Gaius", "category": "culture"},
-  {"question": "How many names did Romans typically have?", "options": ["Three (praenomen, nomen, cognomen)", "One", "Two", "Four"], "answer": "Three (praenomen, nomen, cognomen)", "category": "culture"},
-  {"question": "What philosopher was Nero's tutor?", "options": ["Seneca", "Plato", "Aristotle", "Cicero"], "answer": "Seneca", "category": "emperors"},
-  {"question": "How did Seneca die?", "options": ["Forced suicide by Nero", "Natural causes", "Battle", "Assassination"], "answer": "Forced suicide by Nero", "category": "emperors"},
-  {"question": "Who wrote about the Gallic Wars?", "options": ["Julius Caesar", "Tacitus", "Livy", "Cicero"], "answer": "Julius Caesar", "category": "military"},
-  {"question": "Who was Rome's greatest orator?", "options": ["Cicero", "Caesar", "Augustus", "Seneca"], "answer": "Cicero", "category": "culture"},
-  {"question": "Who wrote the Aeneid?", "options": ["Virgil", "Homer", "Ovid", "Horace"], "answer": "Virgil", "category": "culture"},
-  {"question": "What is the Aeneid about?", "options": ["Trojan hero Aeneas founding Rome", "Julius Caesar", "Augustus", "Romulus and Remus"], "answer": "Trojan hero Aeneas founding Rome", "category": "culture"},
-  {"question": "What percentage of Rome's population received free grain?", "options": ["About 30-40%", "5%", "10%", "Over 50%"], "answer": "About 30-40%", "category": "daily-life"},
-  {"question": "What was the average life expectancy in Rome?", "options": ["About 25-35 years", "50 years", "60 years", "70 years"], "answer": "About 25-35 years", "category": "daily-life"},
-  {"question": "Could Roman women vote?", "options": ["No", "Yes", "Only wealthy", "Only noble"], "answer": "No", "category": "government"},
-  {"question": "Could Roman women own property?", "options": ["Yes, with some restrictions", "No", "Only widows", "Only nobles"], "answer": "Yes, with some restrictions", "category": "daily-life"},
-  {"question": "What was the population of Rome at its peak?", "options": ["About 1 million", "500,000", "2 million", "100,000"], "answer": "About 1 million", "category": "geography"},
-  {"question": "Was Rome the largest city in the ancient world?", "options": ["Yes, first city to reach 1 million", "No, Alexandria was larger", "No, Babylon was larger", "No, Athens was larger"], "answer": "Yes, first city to reach 1 million", "category": "geography"},
-  {"question": "How long did the Roman Empire last (including Byzantine)?", "options": ["About 1,500 years", "500 years", "1,000 years", "2,000 years"], "answer": "About 1,500 years", "category": "events"},
-  {"question": "What modern countries were part of the Roman Empire?", "options": ["Most of Europe, North Africa, Middle East", "Only Italy", "Only Europe", "Only Mediterranean"], "answer": "Most of Europe, North Africa, Middle East", "category": "geography"}
+  {
+    "question": "Who was the first Roman Emperor?",
+    "options": [
+      "Augustus",
+      "Julius Caesar",
+      "Caligula",
+      "Nero"
+    ],
+    "answer": "Augustus",
+    "category": "emperors"
+  },
+  {
+    "question": "Was Julius Caesar actually an emperor?",
+    "options": [
+      "No, he was a senator only",
+      "No, he was a dictator",
+      "Yes, the first one",
+      "Yes, the last one"
+    ],
+    "answer": "No, he was a dictator",
+    "category": "emperors"
+  },
+  {
+    "question": "What famous words did Caesar say when crossing the Rubicon?",
+    "options": [
+      "Veni, vidi, vici",
+      "Et tu, Brute?",
+      "The die is cast",
+      "I came, I saw, I conquered"
+    ],
+    "answer": "The die is cast",
+    "category": "emperors"
+  },
+  {
+    "question": "What does 'Veni, vidi, vici' mean?",
+    "options": [
+      "The die is cast",
+      "I came, I saw, I conquered",
+      "Glory to Rome",
+      "Hail Caesar"
+    ],
+    "answer": "I came, I saw, I conquered",
+    "category": "culture"
+  },
+  {
+    "question": "Who assassinated Julius Caesar?",
+    "options": [
+      "Augustus",
+      "Group of senators including Brutus",
+      "Mark Antony",
+      "Cleopatra"
+    ],
+    "answer": "Group of senators including Brutus",
+    "category": "emperors"
+  },
+  {
+    "question": "What date was Caesar assassinated?",
+    "options": [
+      "January 1",
+      "March 15 (Ides of March)",
+      "December 25",
+      "July 4"
+    ],
+    "answer": "March 15 (Ides of March)",
+    "category": "emperors"
+  },
+  {
+    "question": "What were Caesar's last words according to Shakespeare?",
+    "options": [
+      "Long live Rome",
+      "I came, I saw, I conquered",
+      "Et tu, Brute?",
+      "The die is cast"
+    ],
+    "answer": "Et tu, Brute?",
+    "category": "emperors"
+  },
+  {
+    "question": "What massive arena hosted gladiator fights?",
+    "options": [
+      "Circus Maximus",
+      "Colosseum",
+      "Pantheon",
+      "Forum"
+    ],
+    "answer": "Colosseum",
+    "category": "architecture"
+  },
+  {
+    "question": "How many spectators could the Colosseum hold?",
+    "options": [
+      "50,000-80,000",
+      "100,000",
+      "500,000",
+      "10,000"
+    ],
+    "answer": "50,000-80,000",
+    "category": "architecture"
+  },
+  {
+    "question": "What was the Colosseum's original name?",
+    "options": [
+      "Flavian Amphitheatre",
+      "Roman Colosseum",
+      "Caesar's Arena",
+      "Imperial Stadium"
+    ],
+    "answer": "Flavian Amphitheatre",
+    "category": "architecture"
+  },
+  {
+    "question": "What was a vomitorium actually used for?",
+    "options": [
+      "Bathrooms",
+      "Storage",
+      "Vomiting between courses",
+      "Exit passageways for crowds"
+    ],
+    "answer": "Exit passageways for crowds",
+    "category": "daily-life"
+  },
+  {
+    "question": "Did Romans really vomit to eat more at feasts?",
+    "options": [
+      "Only emperors",
+      "Mostly a myth",
+      "Never",
+      "Yes, commonly"
+    ],
+    "answer": "Mostly a myth",
+    "category": "daily-life"
+  },
+  {
+    "question": "What emperor reportedly made his horse a consul?",
+    "options": [
+      "Tiberius",
+      "Augustus",
+      "Nero",
+      "Caligula"
+    ],
+    "answer": "Caligula",
+    "category": "emperors"
+  },
+  {
+    "question": "What was the horse's name?",
+    "options": [
+      "Pegasus",
+      "Maximus",
+      "Bucephalus",
+      "Incitatus"
+    ],
+    "answer": "Incitatus",
+    "category": "emperors"
+  },
+  {
+    "question": "What emperor 'fiddled while Rome burned'?",
+    "options": [
+      "Caligula",
+      "Commodus",
+      "Domitian",
+      "Nero"
+    ],
+    "answer": "Nero",
+    "category": "emperors"
+  },
+  {
+    "question": "Did Nero actually play a fiddle during the fire?",
+    "options": [
+      "No, fiddles didn't exist yet",
+      "Only briefly",
+      "Unknown",
+      "Yes, eyewitnesses confirmed"
+    ],
+    "answer": "No, fiddles didn't exist yet",
+    "category": "emperors"
+  },
+  {
+    "question": "What instrument might Nero have actually played?",
+    "options": [
+      "Fiddle",
+      "Lyre",
+      "Flute",
+      "Drums"
+    ],
+    "answer": "Lyre",
+    "category": "emperors"
+  },
+  {
+    "question": "Who blamed Christians for the Great Fire of Rome?",
+    "options": [
+      "Nero",
+      "Trajan",
+      "Augustus",
+      "Caligula"
+    ],
+    "answer": "Nero",
+    "category": "emperors"
+  },
+  {
+    "question": "What was the Roman Senate?",
+    "options": [
+      "Religious order",
+      "Trading company",
+      "Governing council of elders",
+      "Military unit"
+    ],
+    "answer": "Governing council of elders",
+    "category": "government"
+  },
+  {
+    "question": "What letters represent 'The Senate and People of Rome'?",
+    "options": [
+      "SENATE",
+      "ROMA",
+      "CIVS",
+      "SPQR"
+    ],
+    "answer": "SPQR",
+    "category": "government"
+  },
+  {
+    "question": "Who was the king of Roman gods?",
+    "options": [
+      "Apollo",
+      "Neptune",
+      "Jupiter",
+      "Mars"
+    ],
+    "answer": "Jupiter",
+    "category": "gods"
+  },
+  {
+    "question": "What Greek god is Jupiter equivalent to?",
+    "options": [
+      "Ares",
+      "Apollo",
+      "Poseidon",
+      "Zeus"
+    ],
+    "answer": "Zeus",
+    "category": "gods"
+  },
+  {
+    "question": "Who was the Roman god of war?",
+    "options": [
+      "Neptune",
+      "Vulcan",
+      "Mars",
+      "Jupiter"
+    ],
+    "answer": "Mars",
+    "category": "gods"
+  },
+  {
+    "question": "What month is named after Mars?",
+    "options": [
+      "June",
+      "March",
+      "January",
+      "May"
+    ],
+    "answer": "March",
+    "category": "gods"
+  },
+  {
+    "question": "Who was Neptune?",
+    "options": [
+      "God of wine",
+      "God of war",
+      "God of the sea",
+      "God of fire"
+    ],
+    "answer": "God of the sea",
+    "category": "gods"
+  },
+  {
+    "question": "Who was Venus?",
+    "options": [
+      "Goddess of war",
+      "Goddess of wisdom",
+      "Goddess of love",
+      "Goddess of harvest"
+    ],
+    "answer": "Goddess of love",
+    "category": "gods"
+  },
+  {
+    "question": "What were the Vestal Virgins?",
+    "options": [
+      "Female gladiators",
+      "Priestesses who tended sacred fire",
+      "Senators' daughters",
+      "Emperor's wives"
+    ],
+    "answer": "Priestesses who tended sacred fire",
+    "category": "gods"
+  },
+  {
+    "question": "What happened if a Vestal Virgin broke her vow?",
+    "options": [
+      "Nothing",
+      "Buried alive",
+      "Exiled",
+      "Fined"
+    ],
+    "answer": "Buried alive",
+    "category": "gods"
+  },
+  {
+    "question": "What structure has the world's largest unreinforced concrete dome?",
+    "options": [
+      "Hagia Sophia",
+      "Colosseum",
+      "Pantheon",
+      "St. Peter's"
+    ],
+    "answer": "Pantheon",
+    "category": "architecture"
+  },
+  {
+    "question": "What is the hole in the Pantheon's dome called?",
+    "options": [
+      "Skylight",
+      "Opening",
+      "Oculus",
+      "Window"
+    ],
+    "answer": "Oculus",
+    "category": "architecture"
+  },
+  {
+    "question": "What carried water to Roman cities?",
+    "options": [
+      "Aqueducts",
+      "Slaves",
+      "Rivers only",
+      "Wells only"
+    ],
+    "answer": "Aqueducts",
+    "category": "architecture"
+  },
+  {
+    "question": "How long was the Roman road network?",
+    "options": [
+      "50,000 miles",
+      "1 million miles",
+      "10,000 miles",
+      "Over 250,000 miles"
+    ],
+    "answer": "Over 250,000 miles",
+    "category": "architecture"
+  },
+  {
+    "question": "What phrase means 'All roads lead to Rome'?",
+    "options": [
+      "Romans built many roads",
+      "Rome is the center",
+      "All paths connect to the capital",
+      "Travel is easy"
+    ],
+    "answer": "All paths connect to the capital",
+    "category": "culture"
+  },
+  {
+    "question": "What were Roman soldiers called?",
+    "options": [
+      "Warriors",
+      "Soldiers",
+      "Legionaries",
+      "Knights"
+    ],
+    "answer": "Legionaries",
+    "category": "military"
+  },
+  {
+    "question": "How many soldiers in a Roman legion?",
+    "options": [
+      "500",
+      "1,000",
+      "10,000",
+      "About 5,000"
+    ],
+    "answer": "About 5,000",
+    "category": "military"
+  },
+  {
+    "question": "What formation had soldiers lock shields together?",
+    "options": [
+      "Testudo (tortoise)",
+      "Square",
+      "Phalanx",
+      "Circle"
+    ],
+    "answer": "Testudo (tortoise)",
+    "category": "military"
+  },
+  {
+    "question": "What was the main Roman sword called?",
+    "options": [
+      "Spatha",
+      "Gladius",
+      "Falcata",
+      "Xiphos"
+    ],
+    "answer": "Gladius",
+    "category": "military"
+  },
+  {
+    "question": "What word comes from 'gladius'?",
+    "options": [
+      "Glory",
+      "Glade",
+      "Glad",
+      "Gladiator"
+    ],
+    "answer": "Gladiator",
+    "category": "military"
+  },
+  {
+    "question": "What was the Roman shield called?",
+    "options": [
+      "Scutum",
+      "Parma",
+      "Shield",
+      "Clipeus"
+    ],
+    "answer": "Scutum",
+    "category": "military"
+  },
+  {
+    "question": "What was decimation?",
+    "options": [
+      "Dividing army",
+      "Killing 1 in 10 soldiers as punishment",
+      "Victory celebration",
+      "Complete destruction"
+    ],
+    "answer": "Killing 1 in 10 soldiers as punishment",
+    "category": "military"
+  },
+  {
+    "question": "What general crossed the Alps with elephants?",
+    "options": [
+      "Hannibal",
+      "Julius Caesar",
+      "Pompey",
+      "Scipio"
+    ],
+    "answer": "Hannibal",
+    "category": "military"
+  },
+  {
+    "question": "What wars were fought between Rome and Carthage?",
+    "options": [
+      "Macedonian Wars",
+      "Gallic Wars",
+      "Punic Wars",
+      "Persian Wars"
+    ],
+    "answer": "Punic Wars",
+    "category": "military"
+  },
+  {
+    "question": "How many Punic Wars were there?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "4"
+    ],
+    "answer": "3",
+    "category": "military"
+  },
+  {
+    "question": "What happened to Carthage after the Third Punic War?",
+    "options": [
+      "Destroyed and salted",
+      "Became Roman ally",
+      "Conquered Rome",
+      "Remained independent"
+    ],
+    "answer": "Destroyed and salted",
+    "category": "military"
+  },
+  {
+    "question": "Who said 'Carthage must be destroyed'?",
+    "options": [
+      "Augustus",
+      "Julius Caesar",
+      "Cato the Elder",
+      "Scipio"
+    ],
+    "answer": "Cato the Elder",
+    "category": "military"
+  },
+  {
+    "question": "Who was Spartacus?",
+    "options": [
+      "Emperor",
+      "Gladiator who led slave revolt",
+      "Senator",
+      "Roman general"
+    ],
+    "answer": "Gladiator who led slave revolt",
+    "category": "daily-life"
+  },
+  {
+    "question": "What happened to Spartacus's rebellion?",
+    "options": [
+      "Exiled",
+      "Crushed, survivors crucified",
+      "Successful",
+      "Pardoned"
+    ],
+    "answer": "Crushed, survivors crucified",
+    "category": "daily-life"
+  },
+  {
+    "question": "How many slaves were crucified along the Appian Way?",
+    "options": [
+      "1,000",
+      "10,000",
+      "About 6,000",
+      "100"
+    ],
+    "answer": "About 6,000",
+    "category": "daily-life"
+  },
+  {
+    "question": "Were gladiator fights always to the death?",
+    "options": [
+      "Never",
+      "No, deaths were actually costly",
+      "Only for criminals",
+      "Yes, always"
+    ],
+    "answer": "No, deaths were actually costly",
+    "category": "daily-life"
+  },
+  {
+    "question": "Did crowds really give thumbs up or down for gladiators?",
+    "options": [
+      "Probably not as shown in movies",
+      "Only emperors decided",
+      "Never",
+      "Yes, exactly like movies"
+    ],
+    "answer": "Probably not as shown in movies",
+    "category": "daily-life"
+  },
+  {
+    "question": "What did gladiators eat to build mass?",
+    "options": [
+      "Very little",
+      "Bread only",
+      "Mostly barley and beans",
+      "Meat only"
+    ],
+    "answer": "Mostly barley and beans",
+    "category": "daily-life"
+  },
+  {
+    "question": "Were gladiators celebrities?",
+    "options": [
+      "Yes, with fans and endorsements",
+      "Only winners",
+      "No, they were despised",
+      "Only in Rome"
+    ],
+    "answer": "Yes, with fans and endorsements",
+    "category": "daily-life"
+  },
+  {
+    "question": "What were public baths called?",
+    "options": [
+      "Balneum",
+      "Aquae",
+      "Thermae",
+      "Lavacrum"
+    ],
+    "answer": "Thermae",
+    "category": "daily-life"
+  },
+  {
+    "question": "What did Romans use to clean themselves at baths?",
+    "options": [
+      "Just water",
+      "Oil and a scraper (strigil)",
+      "Soap",
+      "Sand"
+    ],
+    "answer": "Oil and a scraper (strigil)",
+    "category": "daily-life"
+  },
+  {
+    "question": "What unusual substance was used in Roman laundry?",
+    "options": [
+      "Urine",
+      "Wine",
+      "Olive oil",
+      "Honey"
+    ],
+    "answer": "Urine",
+    "category": "daily-life"
+  },
+  {
+    "question": "Why was urine used for laundry?",
+    "options": [
+      "Religious reasons",
+      "Ammonia content cleaned clothes",
+      "Smell repelled insects",
+      "It was free"
+    ],
+    "answer": "Ammonia content cleaned clothes",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was the main Roman garment called?",
+    "options": [
+      "Tunic",
+      "Robe",
+      "Cloak",
+      "Toga"
+    ],
+    "answer": "Toga",
+    "category": "daily-life"
+  },
+  {
+    "question": "Who could wear a toga?",
+    "options": [
+      "Only men",
+      "Only senators",
+      "Anyone",
+      "Roman citizens only"
+    ],
+    "answer": "Roman citizens only",
+    "category": "daily-life"
+  },
+  {
+    "question": "What color toga showed you were running for office?",
+    "options": [
+      "Blue",
+      "Red",
+      "Purple",
+      "White (toga candida)"
+    ],
+    "answer": "White (toga candida)",
+    "category": "daily-life"
+  },
+  {
+    "question": "Where does 'candidate' come from?",
+    "options": [
+      "Unknown",
+      "Toga candida (white toga)",
+      "Latin for runner",
+      "Greek word"
+    ],
+    "answer": "Toga candida (white toga)",
+    "category": "culture"
+  },
+  {
+    "question": "What expensive dye was reserved for emperors?",
+    "options": [
+      "Blue",
+      "Gold",
+      "Tyrian purple",
+      "Red"
+    ],
+    "answer": "Tyrian purple",
+    "category": "daily-life"
+  },
+  {
+    "question": "Where did Tyrian purple come from?",
+    "options": [
+      "Minerals",
+      "Sea snails",
+      "Berries",
+      "Flowers"
+    ],
+    "answer": "Sea snails",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was a Roman apartment building called?",
+    "options": [
+      "Domus",
+      "Insula",
+      "Villa",
+      "Casa"
+    ],
+    "answer": "Insula",
+    "category": "architecture"
+  },
+  {
+    "question": "What was a wealthy Roman's house called?",
+    "options": [
+      "Domus",
+      "Palace",
+      "Insula",
+      "Villa"
+    ],
+    "answer": "Domus",
+    "category": "architecture"
+  },
+  {
+    "question": "What was the Circus Maximus used for?",
+    "options": [
+      "Markets",
+      "Gladiator fights",
+      "Theater",
+      "Chariot racing"
+    ],
+    "answer": "Chariot racing",
+    "category": "architecture"
+  },
+  {
+    "question": "How many spectators could Circus Maximus hold?",
+    "options": [
+      "500,000",
+      "50,000",
+      "100,000",
+      "About 250,000"
+    ],
+    "answer": "About 250,000",
+    "category": "architecture"
+  },
+  {
+    "question": "What were the chariot racing teams called by?",
+    "options": [
+      "Animals",
+      "Numbers",
+      "Regions",
+      "Colors (Blues, Greens, etc.)"
+    ],
+    "answer": "Colors (Blues, Greens, etc.)",
+    "category": "daily-life"
+  },
+  {
+    "question": "What happened in the Nika riots?",
+    "options": [
+      "Food riot",
+      "Military coup",
+      "Slave rebellion",
+      "Chariot fans nearly overthrew emperor"
+    ],
+    "answer": "Chariot fans nearly overthrew emperor",
+    "category": "events"
+  },
+  {
+    "question": "What emperor built Hadrian's Wall?",
+    "options": [
+      "Constantine",
+      "Augustus",
+      "Hadrian",
+      "Trajan"
+    ],
+    "answer": "Hadrian",
+    "category": "emperors"
+  },
+  {
+    "question": "Where is Hadrian's Wall?",
+    "options": [
+      "Britain",
+      "Spain",
+      "Gaul",
+      "Germany"
+    ],
+    "answer": "Britain",
+    "category": "architecture"
+  },
+  {
+    "question": "What was Hadrian's Wall meant to do?",
+    "options": [
+      "Keep out barbarians entirely",
+      "Mark frontier and control movement",
+      "Collect taxes",
+      "Display power"
+    ],
+    "answer": "Mark frontier and control movement",
+    "category": "architecture"
+  },
+  {
+    "question": "What emperor made Christianity legal?",
+    "options": [
+      "Nero",
+      "Augustus",
+      "Theodosius",
+      "Constantine"
+    ],
+    "answer": "Constantine",
+    "category": "emperors"
+  },
+  {
+    "question": "What edict made Christianity legal?",
+    "options": [
+      "Edict of Constantine",
+      "Edict of Rome",
+      "Edict of Tolerance",
+      "Edict of Milan"
+    ],
+    "answer": "Edict of Milan",
+    "category": "events"
+  },
+  {
+    "question": "What year was the Edict of Milan?",
+    "options": [
+      "476 AD",
+      "380 AD",
+      "100 AD",
+      "313 AD"
+    ],
+    "answer": "313 AD",
+    "category": "events"
+  },
+  {
+    "question": "What emperor made Christianity the state religion?",
+    "options": [
+      "Theodosius I",
+      "Julian",
+      "Constantine",
+      "Nero"
+    ],
+    "answer": "Theodosius I",
+    "category": "emperors"
+  },
+  {
+    "question": "What vision did Constantine reportedly see before battle?",
+    "options": [
+      "Eagle",
+      "Angel",
+      "Cross in the sky",
+      "Lightning"
+    ],
+    "answer": "Cross in the sky",
+    "category": "emperors"
+  },
+  {
+    "question": "What city did Constantine found as new capital?",
+    "options": [
+      "Ravenna",
+      "Rome",
+      "Milan",
+      "Constantinople"
+    ],
+    "answer": "Constantinople",
+    "category": "emperors"
+  },
+  {
+    "question": "What city is Constantinople today?",
+    "options": [
+      "Rome",
+      "Cairo",
+      "Istanbul",
+      "Athens"
+    ],
+    "answer": "Istanbul",
+    "category": "geography"
+  },
+  {
+    "question": "Who was Marcus Aurelius?",
+    "options": [
+      "Gladiator",
+      "General",
+      "Senator",
+      "Philosopher emperor"
+    ],
+    "answer": "Philosopher emperor",
+    "category": "emperors"
+  },
+  {
+    "question": "What book did Marcus Aurelius write?",
+    "options": [
+      "The Prince",
+      "Meditations",
+      "Confessions",
+      "Republic"
+    ],
+    "answer": "Meditations",
+    "category": "emperors"
+  },
+  {
+    "question": "What philosophy did Marcus Aurelius follow?",
+    "options": [
+      "Stoicism",
+      "Platonism",
+      "Epicureanism",
+      "Cynicism"
+    ],
+    "answer": "Stoicism",
+    "category": "culture"
+  },
+  {
+    "question": "What emperor expanded Rome to its largest extent?",
+    "options": [
+      "Augustus",
+      "Trajan",
+      "Constantine",
+      "Hadrian"
+    ],
+    "answer": "Trajan",
+    "category": "emperors"
+  },
+  {
+    "question": "What structure celebrates Trajan's military victories?",
+    "options": [
+      "Trajan's Column",
+      "Pantheon",
+      "Colosseum",
+      "Arch of Titus"
+    ],
+    "answer": "Trajan's Column",
+    "category": "architecture"
+  },
+  {
+    "question": "What was the Pax Romana?",
+    "options": [
+      "Military strategy",
+      "Peace treaty",
+      "Religious festival",
+      "About 200 years of relative peace"
+    ],
+    "answer": "About 200 years of relative peace",
+    "category": "events"
+  },
+  {
+    "question": "When was the Pax Romana?",
+    "options": [
+      "500 BC - 1 AD",
+      "27 BC - 180 AD",
+      "100 BC - 100 AD",
+      "1 AD - 500 AD"
+    ],
+    "answer": "27 BC - 180 AD",
+    "category": "events"
+  },
+  {
+    "question": "What were patricians?",
+    "options": [
+      "Noble/aristocratic class",
+      "Soldiers",
+      "Common people",
+      "Slaves"
+    ],
+    "answer": "Noble/aristocratic class",
+    "category": "government"
+  },
+  {
+    "question": "What were plebeians?",
+    "options": [
+      "Common citizens",
+      "Foreigners",
+      "Nobles",
+      "Slaves"
+    ],
+    "answer": "Common citizens",
+    "category": "government"
+  },
+  {
+    "question": "What were slaves called in Latin?",
+    "options": [
+      "Liberti",
+      "Plebis",
+      "Civitas",
+      "Servi"
+    ],
+    "answer": "Servi",
+    "category": "daily-life"
+  },
+  {
+    "question": "Could Roman slaves ever become free?",
+    "options": [
+      "Never",
+      "Only by escaping",
+      "Yes, through manumission",
+      "Only if born free"
+    ],
+    "answer": "Yes, through manumission",
+    "category": "daily-life"
+  },
+  {
+    "question": "What were freed slaves called?",
+    "options": [
+      "Citizens",
+      "Clients",
+      "Freedmen (liberti)",
+      "Plebeians"
+    ],
+    "answer": "Freedmen (liberti)",
+    "category": "daily-life"
+  },
+  {
+    "question": "What percentage of Roman Italy were slaves?",
+    "options": [
+      "5%",
+      "Over 50%",
+      "About 30-40%",
+      "10%"
+    ],
+    "answer": "About 30-40%",
+    "category": "daily-life"
+  },
+  {
+    "question": "What destroyed Pompeii?",
+    "options": [
+      "Invasion",
+      "Flood",
+      "Earthquake",
+      "Mount Vesuvius eruption"
+    ],
+    "answer": "Mount Vesuvius eruption",
+    "category": "events"
+  },
+  {
+    "question": "What year was Pompeii destroyed?",
+    "options": [
+      "79 AD",
+      "100 BC",
+      "200 AD",
+      "50 AD"
+    ],
+    "answer": "79 AD",
+    "category": "events"
+  },
+  {
+    "question": "What preserved Pompeii so well?",
+    "options": [
+      "Sand",
+      "Mud",
+      "Ice",
+      "Volcanic ash"
+    ],
+    "answer": "Volcanic ash",
+    "category": "events"
+  },
+  {
+    "question": "What city was also destroyed with Pompeii?",
+    "options": [
+      "Ostia",
+      "Herculaneum",
+      "Rome",
+      "Naples"
+    ],
+    "answer": "Herculaneum",
+    "category": "events"
+  },
+  {
+    "question": "Who wrote about the Vesuvius eruption?",
+    "options": [
+      "Cicero",
+      "Tacitus",
+      "Livy",
+      "Pliny the Younger"
+    ],
+    "answer": "Pliny the Younger",
+    "category": "events"
+  },
+  {
+    "question": "What type of eruption is named after Vesuvius?",
+    "options": [
+      "Plinian eruption",
+      "Roman eruption",
+      "Italian eruption",
+      "Vesuvian eruption"
+    ],
+    "answer": "Plinian eruption",
+    "category": "events"
+  },
+  {
+    "question": "What Roman writer was killed in the eruption?",
+    "options": [
+      "Pliny the Elder",
+      "Seneca",
+      "Tacitus",
+      "Pliny the Younger"
+    ],
+    "answer": "Pliny the Elder",
+    "category": "events"
+  },
+  {
+    "question": "What was the Roman Forum?",
+    "options": [
+      "Central public space for business and politics",
+      "Market only",
+      "Temple",
+      "Stadium"
+    ],
+    "answer": "Central public space for business and politics",
+    "category": "architecture"
+  },
+  {
+    "question": "What is 'forum' used for today?",
+    "options": [
+      "Place for discussion",
+      "Temple",
+      "Shopping center",
+      "Government building"
+    ],
+    "answer": "Place for discussion",
+    "category": "culture"
+  },
+  {
+    "question": "What Roman concrete could set underwater?",
+    "options": [
+      "Brick only",
+      "Roman concrete with volcanic ash",
+      "Regular concrete",
+      "Stone blocks"
+    ],
+    "answer": "Roman concrete with volcanic ash",
+    "category": "architecture"
+  },
+  {
+    "question": "Why is Roman concrete sometimes stronger than modern?",
+    "options": [
+      "Magic",
+      "Chemical reaction with seawater",
+      "Lost technology",
+      "It isn't"
+    ],
+    "answer": "Chemical reaction with seawater",
+    "category": "architecture"
+  },
+  {
+    "question": "What was Latin?",
+    "options": [
+      "Type of dance",
+      "Religion",
+      "Army formation",
+      "Language of Romans"
+    ],
+    "answer": "Language of Romans",
+    "category": "culture"
+  },
+  {
+    "question": "What languages descended from Latin?",
+    "options": [
+      "Chinese, Japanese",
+      "Greek, Arabic",
+      "Spanish, French, Italian, Portuguese, Romanian",
+      "English, German"
+    ],
+    "answer": "Spanish, French, Italian, Portuguese, Romanian",
+    "category": "culture"
+  },
+  {
+    "question": "What calendar did Julius Caesar create?",
+    "options": [
+      "Julian calendar",
+      "Gregorian calendar",
+      "Roman calendar",
+      "Caesar calendar"
+    ],
+    "answer": "Julian calendar",
+    "category": "achievements"
+  },
+  {
+    "question": "What month is named after Julius Caesar?",
+    "options": [
+      "March",
+      "June",
+      "January",
+      "July"
+    ],
+    "answer": "July",
+    "category": "achievements"
+  },
+  {
+    "question": "What month is named after Augustus?",
+    "options": [
+      "September",
+      "November",
+      "August",
+      "October"
+    ],
+    "answer": "August",
+    "category": "achievements"
+  },
+  {
+    "question": "What year did the Western Roman Empire fall?",
+    "options": [
+      "410 AD",
+      "500 AD",
+      "476 AD",
+      "400 AD"
+    ],
+    "answer": "476 AD",
+    "category": "events"
+  },
+  {
+    "question": "Who was the last Western Roman Emperor?",
+    "options": [
+      "Constantine",
+      "Romulus Augustulus",
+      "Augustus",
+      "Nero"
+    ],
+    "answer": "Romulus Augustulus",
+    "category": "emperors"
+  },
+  {
+    "question": "What peoples sacked Rome in 410 AD?",
+    "options": [
+      "Visigoths",
+      "Vandals",
+      "Huns",
+      "Ostrogoths"
+    ],
+    "answer": "Visigoths",
+    "category": "events"
+  },
+  {
+    "question": "Who led the Visigoths to sack Rome?",
+    "options": [
+      "Odoacer",
+      "Attila",
+      "Alaric",
+      "Genseric"
+    ],
+    "answer": "Alaric",
+    "category": "events"
+  },
+  {
+    "question": "What peoples sacked Rome in 455 AD?",
+    "options": [
+      "Huns",
+      "Visigoths",
+      "Goths",
+      "Vandals"
+    ],
+    "answer": "Vandals",
+    "category": "events"
+  },
+  {
+    "question": "Who was Attila?",
+    "options": [
+      "Leader of the Huns",
+      "Roman emperor",
+      "Gladiator",
+      "Senator"
+    ],
+    "answer": "Leader of the Huns",
+    "category": "events"
+  },
+  {
+    "question": "What was Attila called?",
+    "options": [
+      "Great Conqueror",
+      "Scourge of God",
+      "King of Kings",
+      "Lord of War"
+    ],
+    "answer": "Scourge of God",
+    "category": "events"
+  },
+  {
+    "question": "What empire continued after Western Rome fell?",
+    "options": [
+      "Byzantine (Eastern Roman) Empire",
+      "Holy Roman Empire",
+      "Ottoman Empire",
+      "Persian Empire"
+    ],
+    "answer": "Byzantine (Eastern Roman) Empire",
+    "category": "events"
+  },
+  {
+    "question": "How long did the Byzantine Empire last?",
+    "options": [
+      "Until 1453 AD",
+      "Until 500 AD",
+      "Until 1000 AD",
+      "Until 800 AD"
+    ],
+    "answer": "Until 1453 AD",
+    "category": "events"
+  },
+  {
+    "question": "What was a Roman triumph?",
+    "options": [
+      "Holiday",
+      "Victory parade for successful generals",
+      "Election",
+      "Battle formation"
+    ],
+    "answer": "Victory parade for successful generals",
+    "category": "military"
+  },
+  {
+    "question": "What was whispered to generals during triumph?",
+    "options": [
+      "Remember you are mortal",
+      "Glory to Rome",
+      "Victory is yours",
+      "Hail Caesar"
+    ],
+    "answer": "Remember you are mortal",
+    "category": "military"
+  },
+  {
+    "question": "What was a Roman triumph arch?",
+    "options": [
+      "Temple entrance",
+      "Monument celebrating military victory",
+      "Gateway to city",
+      "Bridge support"
+    ],
+    "answer": "Monument celebrating military victory",
+    "category": "architecture"
+  },
+  {
+    "question": "What famous arch celebrates Titus's victory?",
+    "options": [
+      "Arch of Augustus",
+      "Arch of Titus",
+      "Arch of Constantine",
+      "Arch of Trajan"
+    ],
+    "answer": "Arch of Titus",
+    "category": "architecture"
+  },
+  {
+    "question": "What event does the Arch of Titus commemorate?",
+    "options": [
+      "Conquest of Gaul",
+      "Destruction of Jerusalem Temple",
+      "Punic Wars",
+      "British conquest"
+    ],
+    "answer": "Destruction of Jerusalem Temple",
+    "category": "architecture"
+  },
+  {
+    "question": "What were the Twelve Tables?",
+    "options": [
+      "Calendar",
+      "First written Roman laws",
+      "Tax records",
+      "Census"
+    ],
+    "answer": "First written Roman laws",
+    "category": "government"
+  },
+  {
+    "question": "What principle means 'innocent until proven guilty'?",
+    "options": [
+      "Egyptian law",
+      "Greek tradition",
+      "Babylonian code",
+      "Roman legal tradition"
+    ],
+    "answer": "Roman legal tradition",
+    "category": "government"
+  },
+  {
+    "question": "What was a consul?",
+    "options": [
+      "Highest elected official (2 per year)",
+      "Senator",
+      "Military general",
+      "Judge"
+    ],
+    "answer": "Highest elected official (2 per year)",
+    "category": "government"
+  },
+  {
+    "question": "Why were there two consuls?",
+    "options": [
+      "To prevent one person having too much power",
+      "Religious requirement",
+      "More efficient",
+      "Tradition"
+    ],
+    "answer": "To prevent one person having too much power",
+    "category": "government"
+  },
+  {
+    "question": "What was a dictator in Roman times?",
+    "options": [
+      "General",
+      "Tyrant",
+      "Emergency leader with temporary absolute power",
+      "King"
+    ],
+    "answer": "Emergency leader with temporary absolute power",
+    "category": "government"
+  },
+  {
+    "question": "How long could a Roman dictator serve?",
+    "options": [
+      "1 year",
+      "6 months maximum",
+      "Life",
+      "10 years"
+    ],
+    "answer": "6 months maximum",
+    "category": "government"
+  },
+  {
+    "question": "What did 'crossing the Rubicon' mean?",
+    "options": [
+      "Winning battle",
+      "Entering Rome",
+      "Point of no return/starting civil war",
+      "Becoming emperor"
+    ],
+    "answer": "Point of no return/starting civil war",
+    "category": "events"
+  },
+  {
+    "question": "What was the Rubicon?",
+    "options": [
+      "River marking boundary of Italy proper",
+      "City",
+      "Mountain",
+      "Bridge"
+    ],
+    "answer": "River marking boundary of Italy proper",
+    "category": "geography"
+  },
+  {
+    "question": "Who were the First Triumvirate?",
+    "options": [
+      "Trajan, Hadrian, Marcus Aurelius",
+      "Nero, Caligula, Claudius",
+      "Caesar, Pompey, Crassus",
+      "Augustus, Antony, Lepidus"
+    ],
+    "answer": "Caesar, Pompey, Crassus",
+    "category": "government"
+  },
+  {
+    "question": "Who were the Second Triumvirate?",
+    "options": [
+      "Tiberius, Caligula, Claudius",
+      "Caesar, Pompey, Crassus",
+      "Octavian, Antony, Lepidus",
+      "Brutus, Cassius, Cicero"
+    ],
+    "answer": "Octavian, Antony, Lepidus",
+    "category": "government"
+  },
+  {
+    "question": "Who was Octavian?",
+    "options": [
+      "Nero",
+      "Augustus before taking that name",
+      "Tiberius",
+      "Julius Caesar"
+    ],
+    "answer": "Augustus before taking that name",
+    "category": "emperors"
+  },
+  {
+    "question": "What battle ended the Roman Republic?",
+    "options": [
+      "Battle of Cannae",
+      "Battle of Philippi",
+      "Battle of Zama",
+      "Battle of Actium"
+    ],
+    "answer": "Battle of Actium",
+    "category": "military"
+  },
+  {
+    "question": "Who did Octavian defeat at Actium?",
+    "options": [
+      "Brutus",
+      "Mark Antony and Cleopatra",
+      "Pompey",
+      "Hannibal"
+    ],
+    "answer": "Mark Antony and Cleopatra",
+    "category": "military"
+  },
+  {
+    "question": "What did 'bread and circuses' mean?",
+    "options": [
+      "Religious holiday",
+      "Festival",
+      "Market day",
+      "Free food and entertainment to keep people happy"
+    ],
+    "answer": "Free food and entertainment to keep people happy",
+    "category": "daily-life"
+  },
+  {
+    "question": "Who criticized 'bread and circuses'?",
+    "options": [
+      "Cicero",
+      "Caesar",
+      "Augustus",
+      "Juvenal"
+    ],
+    "answer": "Juvenal",
+    "category": "culture"
+  },
+  {
+    "question": "What was the Praetorian Guard?",
+    "options": [
+      "Regular army",
+      "Police",
+      "Emperor's personal bodyguards",
+      "Navy"
+    ],
+    "answer": "Emperor's personal bodyguards",
+    "category": "military"
+  },
+  {
+    "question": "What dangerous power did Praetorians have?",
+    "options": [
+      "Tax collection",
+      "Judge trials",
+      "Declare war",
+      "Could make or kill emperors"
+    ],
+    "answer": "Could make or kill emperors",
+    "category": "military"
+  },
+  {
+    "question": "How many emperors did Praetorians kill or help kill?",
+    "options": [
+      "Many, including Caligula, Commodus",
+      "Only two",
+      "None",
+      "Only one"
+    ],
+    "answer": "Many, including Caligula, Commodus",
+    "category": "military"
+  },
+  {
+    "question": "Who was Commodus?",
+    "options": [
+      "Gladiator champion",
+      "Senator",
+      "General",
+      "Emperor who fought as gladiator"
+    ],
+    "answer": "Emperor who fought as gladiator",
+    "category": "emperors"
+  },
+  {
+    "question": "What movie featured Commodus?",
+    "options": [
+      "Gladiator",
+      "Spartacus",
+      "Troy",
+      "Ben-Hur"
+    ],
+    "answer": "Gladiator",
+    "category": "culture"
+  },
+  {
+    "question": "Was Commodus really killed in the arena?",
+    "options": [
+      "Old age",
+      "No, strangled in bath",
+      "Yes, in combat",
+      "Poisoned"
+    ],
+    "answer": "No, strangled in bath",
+    "category": "emperors"
+  },
+  {
+    "question": "What was the Year of Four Emperors?",
+    "options": [
+      "First year of empire",
+      "Civil war period",
+      "69 AD - four emperors in one year",
+      "Last year of empire"
+    ],
+    "answer": "69 AD - four emperors in one year",
+    "category": "events"
+  },
+  {
+    "question": "What was the Crisis of the Third Century?",
+    "options": [
+      "Period of civil wars and instability",
+      "Religious conflict",
+      "Economic boom",
+      "Golden age"
+    ],
+    "answer": "Period of civil wars and instability",
+    "category": "events"
+  },
+  {
+    "question": "How many emperors ruled during the Crisis (235-284 AD)?",
+    "options": [
+      "About 10",
+      "Over 50",
+      "About 20",
+      "About 5"
+    ],
+    "answer": "Over 50",
+    "category": "events"
+  },
+  {
+    "question": "What did Emperor Diocletian do?",
+    "options": [
+      "Split empire into East and West",
+      "United empire",
+      "Built Colosseum",
+      "Abolished Christianity"
+    ],
+    "answer": "Split empire into East and West",
+    "category": "emperors"
+  },
+  {
+    "question": "What was the Tetrarchy?",
+    "options": [
+      "Army structure",
+      "Tax system",
+      "Rule by four emperors",
+      "Four-year term"
+    ],
+    "answer": "Rule by four emperors",
+    "category": "government"
+  },
+  {
+    "question": "What Roman province was modern France?",
+    "options": [
+      "Britannia",
+      "Hispania",
+      "Germania",
+      "Gaul"
+    ],
+    "answer": "Gaul",
+    "category": "geography"
+  },
+  {
+    "question": "What Roman province was modern Spain?",
+    "options": [
+      "Iberia",
+      "Hispania",
+      "Gaul",
+      "Lusitania"
+    ],
+    "answer": "Hispania",
+    "category": "geography"
+  },
+  {
+    "question": "What Roman province was modern England?",
+    "options": [
+      "Germania",
+      "Gaul",
+      "Caledonia",
+      "Britannia"
+    ],
+    "answer": "Britannia",
+    "category": "geography"
+  },
+  {
+    "question": "Did Romans conquer Scotland?",
+    "options": [
+      "Never tried",
+      "Only once",
+      "Yes, permanently",
+      "Briefly, then built walls to mark boundary"
+    ],
+    "answer": "Briefly, then built walls to mark boundary",
+    "category": "geography"
+  },
+  {
+    "question": "What did Romans call Scotland?",
+    "options": [
+      "Britannia",
+      "Hibernia",
+      "Scotia",
+      "Caledonia"
+    ],
+    "answer": "Caledonia",
+    "category": "geography"
+  },
+  {
+    "question": "What did Romans call Ireland?",
+    "options": [
+      "Britannia",
+      "Hibernia",
+      "Eire",
+      "Caledonia"
+    ],
+    "answer": "Hibernia",
+    "category": "geography"
+  },
+  {
+    "question": "Did Romans ever invade Ireland?",
+    "options": [
+      "No",
+      "Briefly occupied",
+      "Yes, conquered it",
+      "Only traded"
+    ],
+    "answer": "No",
+    "category": "geography"
+  },
+  {
+    "question": "What sea did Romans call 'Mare Nostrum'?",
+    "options": [
+      "Atlantic",
+      "Red Sea",
+      "Mediterranean (Our Sea)",
+      "Black Sea"
+    ],
+    "answer": "Mediterranean (Our Sea)",
+    "category": "geography"
+  },
+  {
+    "question": "What was the main Roman port?",
+    "options": [
+      "Alexandria",
+      "Naples",
+      "Ostia",
+      "Carthage"
+    ],
+    "answer": "Ostia",
+    "category": "geography"
+  },
+  {
+    "question": "What is Latin phrase 'Carpe Diem'?",
+    "options": [
+      "Hello friend",
+      "Thank you",
+      "Seize the day",
+      "Goodbye"
+    ],
+    "answer": "Seize the day",
+    "category": "culture"
+  },
+  {
+    "question": "What is 'Memento Mori'?",
+    "options": [
+      "Remember the fallen",
+      "Remember you will die",
+      "Remember Rome",
+      "Remember victory"
+    ],
+    "answer": "Remember you will die",
+    "category": "culture"
+  },
+  {
+    "question": "What does 'Alea iacta est' mean?",
+    "options": [
+      "Hail Caesar",
+      "The die is cast",
+      "Glory to Rome",
+      "I came, I saw, I conquered"
+    ],
+    "answer": "The die is cast",
+    "category": "culture"
+  },
+  {
+    "question": "What were the Ides of any month?",
+    "options": [
+      "First day",
+      "Last day",
+      "The 13th or 15th of the month",
+      "Holidays"
+    ],
+    "answer": "The 13th or 15th of the month",
+    "category": "culture"
+  },
+  {
+    "question": "What did wealthy Romans eat while reclining on?",
+    "options": [
+      "Standing",
+      "Floor",
+      "Couches/triclinium",
+      "Chairs"
+    ],
+    "answer": "Couches/triclinium",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was garum?",
+    "options": [
+      "Meat",
+      "Fermented fish sauce",
+      "Wine",
+      "Bread"
+    ],
+    "answer": "Fermented fish sauce",
+    "category": "daily-life"
+  },
+  {
+    "question": "Was garum popular?",
+    "options": [
+      "Religious use only",
+      "Only for medicine",
+      "Yes, used like ketchup today",
+      "No, only poor ate it"
+    ],
+    "answer": "Yes, used like ketchup today",
+    "category": "daily-life"
+  },
+  {
+    "question": "What exotic foods did wealthy Romans eat?",
+    "options": [
+      "Only vegetables",
+      "Only meat",
+      "Only bread",
+      "Flamingo tongues, dormice, peacock brains"
+    ],
+    "answer": "Flamingo tongues, dormice, peacock brains",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was the main drink in Rome?",
+    "options": [
+      "Milk",
+      "Beer",
+      "Water only",
+      "Wine (usually watered down)"
+    ],
+    "answer": "Wine (usually watered down)",
+    "category": "daily-life"
+  },
+  {
+    "question": "Was drinking undiluted wine considered proper?",
+    "options": [
+      "Yes, always",
+      "Only for celebrations",
+      "Only for emperors",
+      "No, seen as barbaric"
+    ],
+    "answer": "No, seen as barbaric",
+    "category": "daily-life"
+  },
+  {
+    "question": "What happened on Saturnalia?",
+    "options": [
+      "Regular work day",
+      "Roles reversed, slaves served by masters",
+      "Military parade",
+      "Religious fasting"
+    ],
+    "answer": "Roles reversed, slaves served by masters",
+    "category": "daily-life"
+  },
+  {
+    "question": "When was Saturnalia celebrated?",
+    "options": [
+      "July",
+      "September",
+      "March",
+      "December"
+    ],
+    "answer": "December",
+    "category": "daily-life"
+  },
+  {
+    "question": "What holiday influenced Saturnalia?",
+    "options": [
+      "Christmas traditions",
+      "Easter",
+      "Halloween",
+      "New Year"
+    ],
+    "answer": "Christmas traditions",
+    "category": "culture"
+  },
+  {
+    "question": "What Roman structure inspired the US Capitol?",
+    "options": [
+      "Roman temples and domes",
+      "Circus Maximus",
+      "Aqueducts",
+      "Colosseum"
+    ],
+    "answer": "Roman temples and domes",
+    "category": "architecture"
+  },
+  {
+    "question": "What Roman concept influenced American government?",
+    "options": [
+      "Theocracy",
+      "Emperor system",
+      "Military rule",
+      "Republic with Senate"
+    ],
+    "answer": "Republic with Senate",
+    "category": "government"
+  },
+  {
+    "question": "What Roman concept is 'habeas corpus'?",
+    "options": [
+      "Taxation",
+      "Death penalty",
+      "Voting rights",
+      "Protection from unlawful detention"
+    ],
+    "answer": "Protection from unlawful detention",
+    "category": "government"
+  },
+  {
+    "question": "What animal was sacred to Rome?",
+    "options": [
+      "Bear",
+      "Lion",
+      "Wolf",
+      "Eagle only"
+    ],
+    "answer": "Wolf",
+    "category": "gods"
+  },
+  {
+    "question": "Who were Romulus and Remus?",
+    "options": [
+      "First emperors",
+      "Gods",
+      "Mythical founders of Rome raised by wolf",
+      "Gladiators"
+    ],
+    "answer": "Mythical founders of Rome raised by wolf",
+    "category": "gods"
+  },
+  {
+    "question": "Who killed whom - Romulus or Remus?",
+    "options": [
+      "Both died together",
+      "Remus killed Romulus",
+      "Neither",
+      "Romulus killed Remus"
+    ],
+    "answer": "Romulus killed Remus",
+    "category": "gods"
+  },
+  {
+    "question": "What was the Roman symbol of power - the fasces?",
+    "options": [
+      "Sword",
+      "Eagle",
+      "Bundle of rods with axe",
+      "Wolf"
+    ],
+    "answer": "Bundle of rods with axe",
+    "category": "government"
+  },
+  {
+    "question": "What word comes from 'fasces'?",
+    "options": [
+      "Fast",
+      "Fascism",
+      "Feast",
+      "Fashion"
+    ],
+    "answer": "Fascism",
+    "category": "culture"
+  },
+  {
+    "question": "What was a Roman aqueduct's gradient?",
+    "options": [
+      "Random",
+      "Flat",
+      "Very slight - about 1:4800",
+      "Very steep"
+    ],
+    "answer": "Very slight - about 1:4800",
+    "category": "architecture"
+  },
+  {
+    "question": "How did Romans heat their baths?",
+    "options": [
+      "Hot springs only",
+      "Sun only",
+      "Open fires only",
+      "Hypocaust (underfloor heating)"
+    ],
+    "answer": "Hypocaust (underfloor heating)",
+    "category": "architecture"
+  },
+  {
+    "question": "What was the Cloaca Maxima?",
+    "options": [
+      "Temple",
+      "Road",
+      "Market",
+      "Rome's main sewer"
+    ],
+    "answer": "Rome's main sewer",
+    "category": "architecture"
+  },
+  {
+    "question": "Is the Cloaca Maxima still in use?",
+    "options": [
+      "Filled in",
+      "Museum only",
+      "Completely destroyed",
+      "Parts still drain into Tiber"
+    ],
+    "answer": "Parts still drain into Tiber",
+    "category": "architecture"
+  },
+  {
+    "question": "What was a Roman mile?",
+    "options": [
+      "3,000 feet",
+      "About 4,850 feet (1,000 paces)",
+      "5,280 feet",
+      "Exactly same as today"
+    ],
+    "answer": "About 4,850 feet (1,000 paces)",
+    "category": "culture"
+  },
+  {
+    "question": "What does 'mile' come from?",
+    "options": [
+      "Milestone",
+      "Mille passus (thousand paces)",
+      "Mile marker",
+      "Military"
+    ],
+    "answer": "Mille passus (thousand paces)",
+    "category": "culture"
+  },
+  {
+    "question": "What were Roman milestones?",
+    "options": [
+      "Grave markers",
+      "Stone markers showing distance from Rome",
+      "Border markers",
+      "Random rocks"
+    ],
+    "answer": "Stone markers showing distance from Rome",
+    "category": "architecture"
+  },
+  {
+    "question": "What was the most common Roman name?",
+    "options": [
+      "Gaius",
+      "Julius",
+      "Marcus",
+      "Augustus"
+    ],
+    "answer": "Gaius",
+    "category": "culture"
+  },
+  {
+    "question": "How many names did Romans typically have?",
+    "options": [
+      "One",
+      "Three (praenomen, nomen, cognomen)",
+      "Two",
+      "Four"
+    ],
+    "answer": "Three (praenomen, nomen, cognomen)",
+    "category": "culture"
+  },
+  {
+    "question": "What philosopher was Nero's tutor?",
+    "options": [
+      "Cicero",
+      "Aristotle",
+      "Seneca",
+      "Plato"
+    ],
+    "answer": "Seneca",
+    "category": "emperors"
+  },
+  {
+    "question": "How did Seneca die?",
+    "options": [
+      "Forced suicide by Nero",
+      "Assassination",
+      "Battle",
+      "Natural causes"
+    ],
+    "answer": "Forced suicide by Nero",
+    "category": "emperors"
+  },
+  {
+    "question": "Who wrote about the Gallic Wars?",
+    "options": [
+      "Tacitus",
+      "Cicero",
+      "Julius Caesar",
+      "Livy"
+    ],
+    "answer": "Julius Caesar",
+    "category": "military"
+  },
+  {
+    "question": "Who was Rome's greatest orator?",
+    "options": [
+      "Seneca",
+      "Caesar",
+      "Cicero",
+      "Augustus"
+    ],
+    "answer": "Cicero",
+    "category": "culture"
+  },
+  {
+    "question": "Who wrote the Aeneid?",
+    "options": [
+      "Ovid",
+      "Horace",
+      "Homer",
+      "Virgil"
+    ],
+    "answer": "Virgil",
+    "category": "culture"
+  },
+  {
+    "question": "What is the Aeneid about?",
+    "options": [
+      "Trojan hero Aeneas founding Rome",
+      "Romulus and Remus",
+      "Julius Caesar",
+      "Augustus"
+    ],
+    "answer": "Trojan hero Aeneas founding Rome",
+    "category": "culture"
+  },
+  {
+    "question": "What percentage of Rome's population received free grain?",
+    "options": [
+      "5%",
+      "Over 50%",
+      "About 30-40%",
+      "10%"
+    ],
+    "answer": "About 30-40%",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was the average life expectancy in Rome?",
+    "options": [
+      "70 years",
+      "60 years",
+      "50 years",
+      "About 25-35 years"
+    ],
+    "answer": "About 25-35 years",
+    "category": "daily-life"
+  },
+  {
+    "question": "Could Roman women vote?",
+    "options": [
+      "No",
+      "Only wealthy",
+      "Only noble",
+      "Yes"
+    ],
+    "answer": "No",
+    "category": "government"
+  },
+  {
+    "question": "Could Roman women own property?",
+    "options": [
+      "Yes, with some restrictions",
+      "No",
+      "Only nobles",
+      "Only widows"
+    ],
+    "answer": "Yes, with some restrictions",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was the population of Rome at its peak?",
+    "options": [
+      "100,000",
+      "2 million",
+      "500,000",
+      "About 1 million"
+    ],
+    "answer": "About 1 million",
+    "category": "geography"
+  },
+  {
+    "question": "Was Rome the largest city in the ancient world?",
+    "options": [
+      "No, Athens was larger",
+      "No, Babylon was larger",
+      "No, Alexandria was larger",
+      "Yes, first city to reach 1 million"
+    ],
+    "answer": "Yes, first city to reach 1 million",
+    "category": "geography"
+  },
+  {
+    "question": "How long did the Roman Empire last (including Byzantine)?",
+    "options": [
+      "1,000 years",
+      "500 years",
+      "2,000 years",
+      "About 1,500 years"
+    ],
+    "answer": "About 1,500 years",
+    "category": "events"
+  },
+  {
+    "question": "What modern countries were part of the Roman Empire?",
+    "options": [
+      "Most of Europe, North Africa, Middle East",
+      "Only Mediterranean",
+      "Only Italy",
+      "Only Europe"
+    ],
+    "answer": "Most of Europe, North Africa, Middle East",
+    "category": "geography"
+  }
 ]
