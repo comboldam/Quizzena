@@ -2771,6 +2771,14 @@ footer button:hover {
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.8), inset -1px -1px 3px rgba(0,0,0,0.3);
 }
 
+/* ===== FLOOR WRAPPER FOR SHADOW ALIGNMENT ===== */
+.icon-floor-qs {
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
 /* ===== CLEAN ALIGNMENT FOR 3D ICONS ===== */
 /* Quick Start - Flag and Capitol containers */
 .flag-container-qs,
