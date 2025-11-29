@@ -47,7 +47,14 @@
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" add index.htm script.js style.css topics/logos/)",
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" diff --stat --staged)",
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd Logo Quiz with 230 brand logos\n\n- Add logos topic to TOPIC_CONFIG\n- Create questions.json with 230 logos across 19 categories\n- Add Cloudinary URL handling for logo SVGs\n- Add animated purple glow styling for logo display\n- Track questions by image path (all have same question text)\n- Update HTML button to status-active\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" diff script.js)"
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" diff script.js)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" checkout -- index.htm style.css)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" ls-tree:*)",
+      "Bash(git -C c:/Users/combo/Desktop/flag_quiz ls-tree:*)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" add index.htm style.css)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd shadow alignment fix for Quick Start icons\n\n- Add icon-floor-qs wrapper for Flags, Capitals, Area icons\n- Use flexbox align-items: flex-end to align shadows on same floor\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" checkout -- style.css)",
+      "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" checkout -- style.css script.js)"
     ],
     "deny": [],
     "ask": []
