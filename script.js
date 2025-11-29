@@ -1334,12 +1334,11 @@ moviesTopics.forEach(topic => {
 });
 
 // TV Shows topics placeholders (excluding tv-general, sitcoms which are implemented)
-const tvTopics = [
-  'drama-tv', 'thriller-tv',
-  'comedy-tv', 'fantasy-tv', 'crime-tv', 'animated-tv'
+const tvShowsTopics = [
+  'game-of-thrones', 'breaking-bad', 'stranger-things', 'money-heist', 'the-office', 'animated-tv'
 ];
 
-tvTopics.forEach(topic => {
+tvShowsTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
