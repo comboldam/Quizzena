@@ -88,6 +88,9 @@ const TOPIC_CONFIG = {
   // TV Shows (JSON-based)
   'tv-shows':         { path: 'topics/tv-shows/questions.json', icon: '📺', name: 'TV Shows', category: 'tv-shows' },
   'sitcoms':          { path: 'topics/sitcoms/questions.json', icon: '😂', name: 'Sitcoms', category: 'tv-shows' },
+
+  // Logos (JSON-based)
+  'logos':            { path: 'topics/logos/questions.json', icon: '🏷️', name: 'Logos', category: 'logos' },
 };
 
 // Auto-generated arrays from config (NO MORE MANUAL UPDATES EVER!)
@@ -1345,9 +1348,9 @@ tvTopics.forEach(topic => {
   }
 });
 
-// Logos topics placeholders
+// Logos topics placeholders (logos-general is now implemented as 'logos')
 const logosTopics = [
-  'logos-general', 'brand-logos', 'car-logos', 'tech-logos',
+  'brand-logos', 'car-logos', 'tech-logos',
   'fastfood-logos', 'football-club-logos', 'social-media-logos',
   'luxury-logos', 'app-icons', 'nba-logos', 'nfl-logos'
 ];
@@ -1638,12 +1641,13 @@ function displayUnifiedQuestion() {
   let randomFlag, questionIdentifier;
 
   if (JSON_TOPICS.includes(currentTopic)) {
-    // Football, history, movies, marvel, premier-league, champions-league, world-cup, and messi use different tracking - track by question text
-    const remaining = flags.filter(f => !usedFlags.includes(f.question));
+    // JSON topics - track by question text (or by image for logos since all have same question)
+    const trackingKey = currentTopic === 'logos' ? 'image' : 'question';
+    const remaining = flags.filter(f => !usedFlags.includes(f[trackingKey]));
     if (remaining.length === 0) usedFlags = [];
     randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
-    usedFlags.push(randomFlag.question);
-    questionIdentifier = randomFlag.question;
+    usedFlags.push(randomFlag[trackingKey]);
+    questionIdentifier = randomFlag[trackingKey];
   } else {
     // Other topics track by country
     const remaining = flags.filter(f => !usedFlags.includes(f.country));
@@ -1678,7 +1682,14 @@ function displayUnifiedQuestion() {
     // UNIFIED image handling for all JSON topics
     const config = getTopicConfig(currentTopic);
     if (randomFlag.image) {
-      imageSrc = randomFlag.image;
+      // Special handling for logos - use Cloudinary SVG
+      if (currentTopic === 'logos') {
+        const filename = randomFlag.image.replace('logo_images/', '');
+        imageSrc = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/Quizzena/logos/${filename}`;
+        imageClass = 'logo-image';
+      } else {
+        imageSrc = randomFlag.image;
+      }
     } else {
       imageHTML = `<div style="font-size:80px;margin:20px 0;">${config.icon}</div>`;
     }
@@ -1785,7 +1796,7 @@ function displayUnifiedQuestion() {
       ${headerInfo}
       ${playerInfo}
       ${scoreDisplay}
-      ${JSON_TOPICS.includes(currentTopic) ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">${getTopicConfig(currentTopic).icon}</div></div>` : imageHTML) : ''}
+      ${JSON_TOPICS.includes(currentTopic) ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" class="${imageClass}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">${getTopicConfig(currentTopic).icon}</div></div>` : imageHTML) : ''}
       ${!JSON_TOPICS.includes(currentTopic) && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
       <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
         <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>

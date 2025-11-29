@@ -7,6 +7,39 @@
   box-sizing: border-box;
 }
 
+/* ========================================
+   🏷️ LOGO QUIZ STYLES
+   ======================================== */
+.logo-image {
+  background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f0c29 100%) !important;
+  padding: 25px !important;
+  border-radius: 16px !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+  object-fit: contain !important;
+  box-shadow:
+    0 8px 32px rgba(124, 58, 237, 0.3),
+    0 0 60px rgba(124, 58, 237, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(167, 139, 250, 0.3) !important;
+  animation: logoGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes logoGlow {
+  0% {
+    box-shadow:
+      0 8px 32px rgba(124, 58, 237, 0.3),
+      0 0 60px rgba(124, 58, 237, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 8px 40px rgba(124, 58, 237, 0.5),
+      0 0 80px rgba(167, 139, 250, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
 body {
   font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
