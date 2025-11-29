@@ -892,7 +892,7 @@ function startRound() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
 
     // Use Cloudinary CDN or local images based on configuration
-    const imageBase = USE_LOCAL_IMAGES ? './capital_images/' : CLOUDINARY_BASE_URL;
+    const imageBase = USE_LOCAL_IMAGES ? './images.js/capital_images/' : CLOUDINARY_BASE_URL;
     const finalUrl = `${imageBase}${sanitizedCapital}.jpg`;
 
     // DEBUG: Log the URL being used
@@ -914,7 +914,7 @@ function startRound() {
     flagImg.className = "border-image";
 
     // Use absolute path for border images
-    const borderPath = `country_silhouettes/${randomFlag.isoCode}.png`;
+    const borderPath = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
     flagImg.src = borderPath;
 
     flagImg.onerror = function() {
@@ -933,7 +933,7 @@ function startRound() {
       flagImg.classList.add('fallback-flag');
     } else {
       // Use border silhouette
-      flagImg.src = `country_silhouettes/${randomFlag.isoCode}.png`;
+      flagImg.src = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
       flagImg.classList.remove('fallback-flag');
     }
 
@@ -1699,19 +1699,19 @@ function displayUnifiedQuestion() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
     // Use Cloudinary CDN or local images based on configuration
     imageSrc = USE_LOCAL_IMAGES
-      ? `./capital_images/${sanitizedCapital}.jpg`
+      ? `./images.js/capital_images/${sanitizedCapital}.jpg`
       : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
     // DEBUG: Log unified quiz system image URL
     console.log('[Unified Quiz] Loading capital image:', imageSrc);
   } else if (currentTopic === 'borders') {
-    imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
+    imageSrc = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
     imageClass = 'border-style';
   } else if (currentTopic === 'area') {
     const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
     if (missingBorders.includes(randomFlag.isoCode)) {
       imageSrc = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
     } else {
-      imageSrc = `country_silhouettes/${randomFlag.isoCode}.png`;
+      imageSrc = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
       imageClass = 'border-style';
     }
   }
