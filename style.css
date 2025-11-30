@@ -2791,8 +2791,11 @@ footer button:hover {
 /* Topics row - Flag and Capitol containers */
 .flag-container-topic,
 .capitol-container-topic,
-.area-container-topic {
-
+.area-container-topic,
+.breaking-bad-container-topic,
+.stranger-things-container-topic,
+.money-heist-container-topic,
+.the-office-container-topic {
   transform: scale(1.15);
   margin-top: 0;
 }
@@ -2842,28 +2845,206 @@ footer button:hover {
   margin-top: auto;
 }
 /* ========================================
-   🏳️ FLAG V4 - EXACT COPY (no hover transform)
+   🏳️ FLAGS V5 - UN STYLE (QUICK START - BIG)
    ======================================== */
 
 .flag-container-qs {
-  perspective: 1000px;
-  transform-style: preserve-3d;
   position: relative;
   width: 100px;
-  height: 110px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.pole-qs {
+/* Sky background */
+.flag-sky-qs {
   position: absolute;
-  left: 10px;
-  bottom: 5px;
-  width: 7px;
-  height: 98px;
-  transform-style: preserve-3d;
-  transform: rotateY(-15deg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #87CEEB 0%, #5BA3D0 50%, #3A83B0 100%);
 }
 
-.pole-front-qs {
+/* Clouds */
+.flag-cloud-qs {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.flag-cloud-qs:nth-child(1) { width: 35px; height: 10px; top: 8%; left: -10%; animation: flagCloudMoveQS 18s linear infinite; }
+.flag-cloud-qs:nth-child(2) { width: 25px; height: 8px; top: 18%; left: 70%; animation: flagCloudMoveQS 22s linear infinite 6s; }
+.flag-cloud-qs:nth-child(3) { width: 30px; height: 9px; top: 5%; left: 30%; animation: flagCloudMoveQS 20s linear infinite 12s; }
+
+@keyframes flagCloudMoveQS {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120px); }
+}
+
+/* Flag row */
+.flag-row-qs {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 2;
+}
+
+/* Individual pole */
+.flag-pole-qs {
+  width: 3px;
+  height: 55px;
+  background: linear-gradient(90deg, #A0A0A0 0%, #E8E8E8 50%, #A0A0A0 100%);
+  border-radius: 1px;
+  position: relative;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+}
+
+/* Gold ball */
+.flag-pole-qs::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle at 35% 35%, #FFD700 0%, #DAA520 50%, #B8860B 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Base */
+.flag-pole-qs::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 3px;
+  background: linear-gradient(180deg, #888 0%, #555 100%);
+  border-radius: 1px;
+}
+
+/* Flags */
+.flag-mini-qs {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 16px;
+  height: 10px;
+  border-radius: 0 1px 1px 0;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+  transform-origin: left center;
+}
+
+.flag-mini-qs.f1 { animation: flagWaveQS1 2.8s ease-in-out infinite; }
+.flag-mini-qs.f2 { animation: flagWaveQS2 3s ease-in-out infinite 0.2s; }
+.flag-mini-qs.f3 { animation: flagWaveQS1 2.6s ease-in-out infinite 0.4s; }
+.flag-mini-qs.f4 { animation: flagWaveQS2 2.9s ease-in-out infinite 0.6s; }
+.flag-mini-qs.f5 { animation: flagWaveQS1 3.1s ease-in-out infinite 0.3s; }
+.flag-mini-qs.f6 { animation: flagWaveQS2 2.7s ease-in-out infinite 0.5s; }
+.flag-mini-qs.f7 { animation: flagWaveQS1 3s ease-in-out infinite 0.1s; }
+
+@keyframes flagWaveQS1 {
+  0%, 100% { transform: perspective(40px) rotateY(0deg); }
+  50% { transform: perspective(40px) rotateY(7deg); }
+}
+@keyframes flagWaveQS2 {
+  0%, 100% { transform: perspective(40px) rotateY(0deg); }
+  50% { transform: perspective(40px) rotateY(-6deg); }
+}
+
+/* Flag designs */
+.flag-france-qs { background: linear-gradient(90deg, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%); }
+.flag-germany-qs { background: linear-gradient(180deg, #000 33%, #DD0000 33%, #DD0000 66%, #FFCC00 66%); }
+.flag-usa-qs { 
+  background: linear-gradient(180deg, #BF0A30 0%, #BF0A30 14%, #fff 14%, #fff 28%, #BF0A30 28%, #BF0A30 42%, #fff 42%, #fff 56%, #BF0A30 56%, #BF0A30 70%, #fff 70%, #fff 84%, #BF0A30 84%);
+}
+.flag-usa-qs::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 50%;
+  background: #3C3B6E;
+}
+.flag-uk-qs { background: #012169; }
+.flag-uk-qs::before {
+  content: '';
+  position: absolute;
+  top: 42%; left: 0;
+  width: 100%; height: 16%;
+  background: #fff;
+}
+.flag-japan-qs { background: #fff; }
+.flag-japan-qs::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px; height: 5px;
+  background: #BC002D;
+  border-radius: 50%;
+}
+.flag-brazil-qs { background: #009C3B; }
+.flag-brazil-qs::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 7px; height: 7px;
+  background: #FFDF00;
+}
+.flag-canada-qs { background: linear-gradient(90deg, #FF0000 28%, #fff 28%, #fff 72%, #FF0000 72%); }
+
+/* Ground/Plaza */
+.flag-ground-qs {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 28px;
+  background: linear-gradient(180deg, #E8E4DE 0%, #D4CFC6 30%, #C8C2B8 60%, #A8A298 100%);
+  border-radius: 0 0 8px 8px;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.4);
+}
+
+/* Gold trim */
+.flag-ground-qs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8B7355 0%, #D4AF37 20%, #FFD700 50%, #D4AF37 80%, #8B7355 100%);
+  box-shadow: 0 0 5px rgba(212,175,55,0.4);
+}
+
+/* Gold inlay */
+.flag-ground-qs::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(90deg, transparent 0px, transparent 13px, rgba(212,175,55,0.35) 13px, rgba(212,175,55,0.35) 14px);
+  border-radius: 0 0 8px 8px;
+}
+
+/* PLACEHOLDER - hide old elements */
+.pole-qs, .pole-front-qs, .pole-side-qs, .pole-ball-qs,
+.flag-qs, .flag-segment-qs, .segment-front-qs, .segment-back-qs, .flag-shadow-qs {
+  display: none;
+}
+
+/* OLD CODE BELOW - kept for reference */
+.pole-front-qs-OLD {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -3010,87 +3191,190 @@ footer button:hover {
    🏳️ 3D FLAG V4 - TOPICS ROW (60% SCALE)
    ======================================== */
 
+/* ========================================
+   🏳️ FLAGS V5 - UN STYLE (TOPIC CARD)
+   ======================================== */
+
 .flag-container-topic {
-  perspective: 1000px;
-  transform-style: preserve-3d;
   position: relative;
   width: 60px;
-  height: 66px;
+  height: 62px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-/* 3D Pole - Topics */
-.pole-topic {
+/* Sky background */
+.flag-sky-topic {
   position: absolute;
-  left: 6px;
-  bottom: 3px;
-  width: 4px;
-  height: 59px;
-  transform-style: preserve-3d;
-  transform: rotateY(-15deg);
-}
-
-.pole-front-topic {
-  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, #d4af37 0%, #f5d982 25%, #fff5cc 40%, #f5d982 55%, #d4af37 70%, #aa8c2c 100%);
-  border-radius: 2px;
-  transform: translateZ(1.2px);
+  background: linear-gradient(180deg, #87CEEB 0%, #5BA3D0 50%, #3A83B0 100%);
 }
 
-.pole-side-topic {
+/* Clouds */
+.flag-cloud-topic {
   position: absolute;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, #aa8c2c, #7a5c1c, #aa8c2c);
-  right: 0;
-  transform: rotateY(90deg) translateZ(1.8px);
-}
-
-.pole-ball-topic {
-  position: absolute;
-  top: -7px;
-  left: 50%;
-  transform: translateX(-50%) translateZ(1.2px);
-  width: 8px;
-  height: 8px;
-  background: radial-gradient(circle at 30% 30%, #fff5cc, #f5d982 30%, #d4af37 60%, #aa8c2c 100%);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5), inset -1px -1px 2px rgba(0,0,0,0.3), inset 1px 1px 2px rgba(255,255,255,0.3);
+  filter: blur(1px);
 }
 
-/* Seamless 3D Flag - Topics */
-.flag-topic {
+.flag-cloud-topic:nth-child(1) { width: 20px; height: 6px; top: 5%; left: -5%; animation: flagCloudMove 15s linear infinite; }
+.flag-cloud-topic:nth-child(2) { width: 15px; height: 5px; top: 12%; left: 60%; animation: flagCloudMove 18s linear infinite 5s; }
+
+@keyframes flagCloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(70px); }
+}
+
+/* Flag row */
+.flag-row-topic {
   position: absolute;
-  left: 10px;
-  top: 6px;
-  width: 41px;
-  height: 26px;
-  transform-style: preserve-3d;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  overflow: visible;
+  gap: 3px;
+  z-index: 2;
 }
 
-.flag-segment-topic {
-  width: 7px;
-  margin-right: -0.3px;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform-origin: left center;
+/* Individual pole */
+.flag-pole-topic {
+  width: 2px;
+  height: 38px;
+  background: linear-gradient(90deg, #A0A0A0 0%, #E0E0E0 50%, #A0A0A0 100%);
+  border-radius: 1px;
   position: relative;
-  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-.flag-segment-topic:last-child {
-  margin-right: 0;
-  border-radius: 0 2px 2px 0;
-  overflow: hidden;
-}
-
-.segment-front-topic, .segment-back-topic {
+/* Gold ball */
+.flag-pole-topic::before {
+  content: '';
   position: absolute;
-  width: calc(100% + 1px);
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle at 35% 35%, #FFD700 0%, #B8860B 100%);
+  border-radius: 50%;
+}
+
+/* Base */
+.flag-pole-topic::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 2px;
+  background: #666;
+  border-radius: 1px;
+}
+
+/* Flags */
+.flag-mini-topic {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 11px;
+  height: 7px;
+  border-radius: 0 1px 1px 0;
+  box-shadow: 1px 0 2px rgba(0,0,0,0.3);
+  transform-origin: left center;
+}
+
+.flag-mini-topic.f1 { animation: flagWaveTopic1 2.5s ease-in-out infinite; }
+.flag-mini-topic.f2 { animation: flagWaveTopic2 2.8s ease-in-out infinite 0.2s; }
+.flag-mini-topic.f3 { animation: flagWaveTopic1 2.6s ease-in-out infinite 0.4s; }
+.flag-mini-topic.f4 { animation: flagWaveTopic2 2.7s ease-in-out infinite 0.6s; }
+.flag-mini-topic.f5 { animation: flagWaveTopic1 2.9s ease-in-out infinite 0.3s; }
+
+@keyframes flagWaveTopic1 {
+  0%, 100% { transform: perspective(30px) rotateY(0deg); }
+  50% { transform: perspective(30px) rotateY(6deg); }
+}
+@keyframes flagWaveTopic2 {
+  0%, 100% { transform: perspective(30px) rotateY(0deg); }
+  50% { transform: perspective(30px) rotateY(-5deg); }
+}
+
+/* Flag designs - France */
+.flag-france-topic { background: linear-gradient(90deg, #002395 33%, #fff 33%, #fff 66%, #ED2939 66%); }
+/* Germany */
+.flag-germany-topic { background: linear-gradient(180deg, #000 33%, #DD0000 33%, #DD0000 66%, #FFCC00 66%); }
+/* USA */
+.flag-usa-topic { 
+  background: linear-gradient(180deg, #BF0A30 0%, #BF0A30 15%, #fff 15%, #fff 30%, #BF0A30 30%, #BF0A30 45%, #fff 45%, #fff 60%, #BF0A30 60%, #BF0A30 75%, #fff 75%, #fff 90%, #BF0A30 90%);
+}
+.flag-usa-topic::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%; height: 50%;
+  background: #3C3B6E;
+}
+/* UK */
+.flag-uk-topic { background: #012169; }
+.flag-uk-topic::before {
+  content: '';
+  position: absolute;
+  top: 45%; left: 0;
+  width: 100%; height: 10%;
+  background: #fff;
+}
+/* Japan */
+.flag-japan-topic { background: #fff; }
+.flag-japan-topic::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px; height: 4px;
+  background: #BC002D;
+  border-radius: 50%;
+}
+
+/* Ground/Plaza */
+.flag-ground-topic {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 18px;
+  background: linear-gradient(180deg, #E8E4DE 0%, #C8C2B8 50%, #A8A298 100%);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Gold trim */
+.flag-ground-topic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #8B7355 0%, #FFD700 50%, #8B7355 100%);
+}
+
+/* Gold inlay */
+.flag-ground-topic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background: repeating-linear-gradient(90deg, transparent 0px, transparent 11px, rgba(212,175,55,0.3) 11px, rgba(212,175,55,0.3) 12px);
+}
+
+/* PLACEHOLDER - keeping old selector for compatibility */
+.pole-topic, .pole-front-topic, .pole-side-topic, .pole-ball-topic,
+.flag-topic, .flag-segment-topic, .segment-front-topic, .segment-back-topic {
+  display: none;
   backface-visibility: hidden;
 }
 
@@ -4537,4 +4821,628 @@ footer button:hover {
 @keyframes shadowShrinkTopic {
   0% { width: 18px; opacity: 0.5; }
   100% { width: 7px; opacity: 0.2; }
+}
+
+
+/* ========================================
+   🧪 BREAKING BAD ICON - TOPIC CARD
+   (Scaled version of breaking-bad-v3.html)
+   ======================================== */
+
+.breaking-bad-container-topic {
+  position: relative;
+  width: 55px;
+  height: 62px;
+}
+
+/* Flask */
+.bb-flask-topic {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 48px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
+}
+
+/* Flask neck */
+.bb-flask-neck-topic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 12px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.02) 0%,
+    rgba(255,255,255,0.15) 35%,
+    rgba(255,255,255,0.08) 65%,
+    rgba(255,255,255,0.02) 100%);
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-right: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Flask rim */
+.bb-flask-rim-topic {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 3px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.2) 100%);
+  border-radius: 2px;
+}
+
+/* Flask body */
+.bb-flask-body-topic {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 34px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.02) 0%,
+    rgba(255,255,255,0.1) 25%,
+    rgba(255,255,255,0.06) 60%,
+    rgba(255,255,255,0.02) 100%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 3px 3px;
+}
+
+.bb-flask-body-topic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.25);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+}
+
+/* Blue liquid */
+.bb-liquid-topic {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 25px;
+  background: linear-gradient(180deg,
+    rgba(96, 165, 250, 0.88) 0%,
+    rgba(59, 130, 246, 0.92) 40%,
+    rgba(37, 99, 235, 0.96) 70%,
+    rgba(29, 78, 216, 1) 100%);
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  border-radius: 0 0 3px 3px;
+  animation: bbLiquidGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes bbLiquidGlow {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 4px rgba(59, 130, 246, 0.5)); }
+  50% { filter: brightness(1.2) drop-shadow(0 0 8px rgba(59, 130, 246, 0.8)); }
+}
+
+/* Bubbles */
+.bb-bubble-topic {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(191, 219, 254, 0.6) 40%,
+    rgba(96, 165, 250, 0.3) 70%,
+    transparent 100%);
+}
+
+.bb-bubble-topic:nth-child(1) { width: 5px; height: 5px; left: 25%; animation: bbBubble1 2s ease-out infinite; }
+.bb-bubble-topic:nth-child(2) { width: 3px; height: 3px; left: 55%; animation: bbBubble2 1.7s ease-out infinite 0.3s; }
+.bb-bubble-topic:nth-child(3) { width: 4px; height: 4px; left: 40%; animation: bbBubble1 2.2s ease-out infinite 0.6s; }
+
+@keyframes bbBubble1 {
+  0% { transform: translateY(0) scale(0.4); opacity: 0; }
+  15% { opacity: 1; transform: scale(1); }
+  100% { transform: translateY(-20px) translateX(2px) scale(0.6); opacity: 0; }
+}
+@keyframes bbBubble2 {
+  0% { transform: translateY(0) scale(0.4); opacity: 0; }
+  15% { opacity: 1; transform: scale(1); }
+  100% { transform: translateY(-22px) translateX(-2px) scale(0.5); opacity: 0; }
+}
+
+/* Crystals */
+.bb-crystal-topic {
+  position: absolute;
+  bottom: 2px;
+}
+
+.bb-crystal-body-topic {
+  background: linear-gradient(160deg,
+    rgba(224, 242, 254, 0.98) 0%,
+    rgba(125, 211, 252, 0.9) 40%,
+    rgba(14, 165, 233, 0.95) 100%);
+  clip-path: polygon(50% 0%, 90% 25%, 100% 75%, 50% 100%, 0% 75%, 10% 25%);
+  box-shadow: 0 0 5px rgba(56, 189, 248, 0.6);
+  animation: bbCrystalPulse 2.8s ease-in-out infinite;
+}
+
+.bb-crystal-topic:nth-child(4) { left: 8px; }
+.bb-crystal-topic:nth-child(4) .bb-crystal-body-topic { width: 7px; height: 11px; }
+.bb-crystal-topic:nth-child(5) { left: 17px; }
+.bb-crystal-topic:nth-child(5) .bb-crystal-body-topic { width: 9px; height: 14px; animation-delay: 0.4s; }
+.bb-crystal-topic:nth-child(6) { left: 27px; }
+.bb-crystal-topic:nth-child(6) .bb-crystal-body-topic { width: 6px; height: 9px; animation-delay: 0.8s; }
+
+@keyframes bbCrystalPulse {
+  0%, 100% { filter: brightness(1); box-shadow: 0 0 5px rgba(56, 189, 248, 0.6); }
+  50% { filter: brightness(1.3); box-shadow: 0 0 10px rgba(56, 189, 248, 0.9); }
+}
+
+/* Vapor */
+.bb-vapor-topic {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 18px;
+}
+
+.bb-vapor-particle-topic {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(34, 197, 94, 0.35) 0%,
+    rgba(34, 197, 94, 0.1) 50%,
+    transparent 70%);
+  filter: blur(1px);
+}
+
+.bb-vapor-particle-topic:nth-child(1) { width: 6px; height: 6px; left: 2px; animation: bbVapor1 2.8s ease-out infinite; }
+.bb-vapor-particle-topic:nth-child(2) { width: 5px; height: 5px; left: 6px; animation: bbVapor2 3s ease-out infinite 0.5s; }
+.bb-vapor-particle-topic:nth-child(3) { width: 7px; height: 7px; left: 4px; animation: bbVapor1 2.5s ease-out infinite 1s; }
+
+@keyframes bbVapor1 {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.6; }
+  100% { transform: translateY(-15px) translateX(-5px) scale(1.5); opacity: 0; }
+}
+@keyframes bbVapor2 {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.5; }
+  100% { transform: translateY(-18px) translateX(5px) scale(1.8); opacity: 0; }
+}
+
+
+/* ========================================
+   🔦 STRANGER THINGS ICON - TOPIC CARD
+   (Scaled version of stranger-things-v1.html)
+   ======================================== */
+
+.stranger-things-container-topic {
+  position: relative;
+  width: 60px;
+  height: 58px;
+}
+
+/* Wire segments */
+.st-wire-topic {
+  position: absolute;
+  background: #1f1f1f;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.st-wire-topic:nth-child(1) { top: 8px; left: 2px; width: 56px; }
+.st-wire-topic:nth-child(2) { top: 24px; left: 5px; width: 50px; }
+.st-wire-topic:nth-child(3) { top: 40px; left: 8px; width: 44px; }
+
+/* Christmas lights */
+.st-light-topic {
+  position: absolute;
+  width: 8px;
+  height: 11px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform-origin: top center;
+}
+
+.st-light-topic::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-radius: 1px 1px 0 0;
+}
+
+/* Row 1 */
+.st-light-topic:nth-child(4) { top: 10px; left: 5px; }
+.st-light-topic:nth-child(5) { top: 10px; left: 18px; }
+.st-light-topic:nth-child(6) { top: 10px; left: 31px; }
+.st-light-topic:nth-child(7) { top: 10px; left: 44px; }
+
+/* Row 2 */
+.st-light-topic:nth-child(8) { top: 26px; left: 10px; }
+.st-light-topic:nth-child(9) { top: 26px; left: 26px; }
+.st-light-topic:nth-child(10) { top: 26px; left: 42px; }
+
+/* Row 3 */
+.st-light-topic:nth-child(11) { top: 42px; left: 15px; }
+.st-light-topic:nth-child(12) { top: 42px; left: 35px; }
+
+/* RED lights */
+.st-light-topic:nth-child(4), .st-light-topic:nth-child(9) {
+  background: radial-gradient(ellipse at 30% 20%, #ff6b6b 0%, #ef4444 50%, #b91c1c 100%);
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 8px rgba(239, 68, 68, 0.8);
+  animation: stGlowRed 0.8s ease-in-out infinite;
+}
+/* YELLOW lights */
+.st-light-topic:nth-child(5), .st-light-topic:nth-child(8), .st-light-topic:nth-child(12) {
+  background: radial-gradient(ellipse at 30% 20%, #fef08a 0%, #fbbf24 50%, #d97706 100%);
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.5), 0 0 8px rgba(251, 191, 36, 0.8);
+  animation: stGlowYellow 0.9s ease-in-out infinite 0.2s;
+}
+/* GREEN lights */
+.st-light-topic:nth-child(6), .st-light-topic:nth-child(10) {
+  background: radial-gradient(ellipse at 30% 20%, #86efac 0%, #22c55e 50%, #15803d 100%);
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 8px rgba(34, 197, 94, 0.8);
+  animation: stGlowGreen 1s ease-in-out infinite 0.4s;
+}
+/* BLUE lights */
+.st-light-topic:nth-child(7), .st-light-topic:nth-child(11) {
+  background: radial-gradient(ellipse at 30% 20%, #93c5fd 0%, #3b82f6 50%, #1d4ed8 100%);
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 8px rgba(59, 130, 246, 0.8);
+  animation: stGlowBlue 1.1s ease-in-out infinite 0.6s;
+}
+
+@keyframes stGlowRed {
+  0%, 100% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 6px rgba(239, 68, 68, 0.6); filter: brightness(0.9); }
+  50% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 1px 3px rgba(255,255,255,0.5), 0 0 15px rgba(239, 68, 68, 1), 0 0 25px rgba(239, 68, 68, 0.5); filter: brightness(1.2); }
+}
+@keyframes stGlowYellow {
+  0%, 100% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.5), 0 0 6px rgba(251, 191, 36, 0.6); filter: brightness(0.9); }
+  50% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 1px 3px rgba(255,255,255,0.6), 0 0 15px rgba(251, 191, 36, 1), 0 0 25px rgba(251, 191, 36, 0.5); filter: brightness(1.2); }
+}
+@keyframes stGlowGreen {
+  0%, 100% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 6px rgba(34, 197, 94, 0.6); filter: brightness(0.9); }
+  50% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 1px 3px rgba(255,255,255,0.5), 0 0 15px rgba(34, 197, 94, 1), 0 0 25px rgba(34, 197, 94, 0.5); filter: brightness(1.2); }
+}
+@keyframes stGlowBlue {
+  0%, 100% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.4), 0 0 6px rgba(59, 130, 246, 0.6); filter: brightness(0.9); }
+  50% { box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2), inset 0 1px 3px rgba(255,255,255,0.5), 0 0 15px rgba(59, 130, 246, 1), 0 0 25px rgba(59, 130, 246, 0.5); filter: brightness(1.2); }
+}
+
+
+/* ========================================
+   🎭 MONEY HEIST ICON - TOPIC CARD
+   (Scaled version of money-heist-v1.html)
+   ======================================== */
+
+.money-heist-container-topic {
+  position: relative;
+  width: 52px;
+  height: 60px;
+}
+
+/* Dalí Mask */
+.mh-mask-topic {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 50px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+
+/* Face */
+.mh-face-topic {
+  position: absolute;
+  width: 38px;
+  height: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg,
+    #fef3c7 0%, #fde68a 20%, #fcd34d 50%, #fbbf24 70%, #f59e0b 90%, #d97706 100%);
+  border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+  box-shadow:
+    inset -5px -3px 12px rgba(0,0,0,0.12),
+    inset 3px 3px 10px rgba(255,255,255,0.3),
+    0 3px 12px rgba(0,0,0,0.35);
+}
+
+.mh-face-topic::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  width: 12px;
+  height: 18px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.35) 0%, transparent 60%);
+  border-radius: 50%;
+}
+
+/* Eyes */
+.mh-eye-topic {
+  position: absolute;
+  top: 16px;
+  width: 9px;
+  height: 6px;
+  background: #1a1a1a;
+  border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.mh-eye-topic.left { left: 6px; }
+.mh-eye-topic.right { right: 6px; }
+
+/* Eyebrows */
+.mh-brow-topic {
+  position: absolute;
+  top: 11px;
+  width: 10px;
+  height: 2px;
+  background: linear-gradient(90deg, #78350f, #92400e, #78350f);
+  border-radius: 2px;
+}
+
+.mh-brow-topic.left { left: 5px; transform: rotate(-8deg); }
+.mh-brow-topic.right { right: 5px; transform: rotate(8deg); }
+
+/* Nose */
+.mh-nose-topic {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 10px;
+}
+
+.mh-nose-bridge-topic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.05) 100%);
+  border-radius: 2px;
+}
+
+.mh-nose-tip-topic {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+}
+
+/* Mustache */
+.mh-mustache-topic {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+}
+
+.mh-mustache-half-topic {
+  width: 13px;
+  height: 7px;
+  background: linear-gradient(180deg, #1c1917, #292524);
+  position: relative;
+}
+
+.mh-mustache-half-topic:first-child {
+  border-radius: 0 0 0 80%;
+  transform: rotate(-5deg) skewX(10deg);
+  clip-path: polygon(100% 0, 100% 60%, 0% 100%, 0% 30%);
+}
+
+.mh-mustache-half-topic:last-child {
+  border-radius: 0 0 80% 0;
+  transform: rotate(5deg) skewX(-10deg);
+  clip-path: polygon(0% 0, 0% 60%, 100% 100%, 100% 30%);
+}
+
+.mh-mustache-half-topic::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  width: 5px;
+  height: 5px;
+  background: #1c1917;
+  border-radius: 50%;
+}
+
+.mh-mustache-half-topic:first-child::after { left: -2px; }
+.mh-mustache-half-topic:last-child::after { right: -2px; }
+
+/* Lips */
+.mh-lips-topic {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 4px;
+}
+
+.mh-upper-lip-topic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 2px;
+  background: linear-gradient(180deg, #b45309, #92400e);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.mh-lower-lip-topic {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 2px;
+  background: #a16207;
+  border-radius: 0 0 50% 50%;
+}
+
+/* Red glow */
+.mh-glow-topic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(220, 38, 38, 0.15) 0%, transparent 60%);
+  animation: mhGlowPulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mhGlowPulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* Gold bars */
+.mh-gold-topic {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+}
+
+.mh-bar-topic {
+  width: 10px;
+  height: 5px;
+  background: linear-gradient(180deg, #fef08a 0%, #fbbf24 40%, #f59e0b 70%, #d97706 100%);
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.3);
+  animation: mhGoldShine 2s ease-in-out infinite;
+}
+
+.mh-bar-topic:nth-child(2) { animation-delay: 0.3s; }
+.mh-bar-topic:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes mhGoldShine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+
+/* ========================================
+   📎 THE OFFICE ICON - TOPIC CARD
+   ======================================== */
+
+.the-office-container-topic {
+  position: relative;
+  width: 50px;
+  height: 58px;
+}
+
+/* Coffee mug */
+.office-mug-topic {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 26px;
+  background: linear-gradient(180deg, #fafafa 0%, #e5e5e5 50%, #d4d4d4 100%);
+  border-radius: 3px 3px 10px 10px;
+  box-shadow: 
+    inset 3px 3px 6px rgba(255,255,255,0.7),
+    inset -2px -2px 5px rgba(0,0,0,0.08),
+    3px 3px 8px rgba(0,0,0,0.25);
+}
+
+/* Mug handle */
+.office-mug-topic::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 5px;
+  width: 8px;
+  height: 14px;
+  border: 3px solid #d4d4d4;
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 1px 3px rgba(0,0,0,0.15);
+}
+
+/* World's Best Boss text area */
+.office-text-topic {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 10px;
+  background: linear-gradient(180deg, #991b1b 0%, #7f1d1d 100%);
+  border-radius: 1px;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.1);
+}
+
+/* Steam */
+.office-steam-topic {
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  background: linear-gradient(180deg, rgba(160,160,160,0.6) 0%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(0.5px);
+}
+
+.office-steam-topic:nth-child(1) { top: -10px; left: 30%; animation: officeSteamRise 2.5s ease-out infinite; }
+.office-steam-topic:nth-child(2) { top: -12px; left: 50%; animation: officeSteamRise 2.2s ease-out infinite 0.4s; }
+.office-steam-topic:nth-child(3) { top: -10px; left: 70%; animation: officeSteamRise 2.8s ease-out infinite 0.8s; }
+
+@keyframes officeSteamRise {
+  0% { opacity: 0; transform: translateY(0) scaleX(1); }
+  30% { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-12px) scaleX(1.5); }
+}
+
+/* Paperclip */
+.office-clip-topic {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  width: 10px;
+  height: 20px;
+  border: 2px solid #a1a1aa;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+}
+
+.office-clip-topic::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  width: 5px;
+  height: 13px;
+  border: 2px solid #a1a1aa;
+  border-radius: 4px 4px 0 0;
+  border-bottom: none;
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quizzena</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -280,43 +280,24 @@
           <button class="quick-start-btn" onclick="document.getElementById('flags-topic-btn').click()">
   <div class="icon-floor-qs">
   <div class="flag-container-qs">
-    <!-- 3D Pole -->
-    <div class="pole-qs">
-      <div class="pole-front-qs"></div>
-      <div class="pole-side-qs"></div>
-      <div class="pole-ball-qs"></div>
+    <!-- Sky -->
+    <div class="flag-sky-qs">
+      <div class="flag-cloud-qs"></div>
+      <div class="flag-cloud-qs"></div>
+      <div class="flag-cloud-qs"></div>
     </div>
-
-    <!-- Seamless 3D Flag -->
-    <div class="flag-qs">
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
-      <div class="flag-segment-qs">
-        <div class="segment-front-qs"></div>
-        <div class="segment-back-qs"></div>
-      </div>
+    <!-- Flag poles row -->
+    <div class="flag-row-qs">
+      <div class="flag-pole-qs"><div class="flag-mini-qs f1 flag-france-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f2 flag-germany-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f3 flag-usa-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f4 flag-uk-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f5 flag-japan-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f6 flag-brazil-qs"></div></div>
+      <div class="flag-pole-qs"><div class="flag-mini-qs f7 flag-canada-qs"></div></div>
     </div>
-
-    <!-- 3D Shadow -->
-    <div class="flag-shadow-qs"></div>
+    <!-- Ground -->
+    <div class="flag-ground-qs"></div>
   </div>
   </div>
   <div class="quick-name">Flags Quiz</div>
@@ -454,43 +435,21 @@
           <div class="topic-card-small status-active">
             <button id="flags-topic-btn" class="topic-card-btn">
               <div class="icon-floor-topic"><div class="flag-container-topic">
-                <!-- 3D Pole -->
-                <div class="pole-topic">
-                  <div class="pole-front-topic"></div>
-                  <div class="pole-side-topic"></div>
-                  <div class="pole-ball-topic"></div>
+                <!-- Sky -->
+                <div class="flag-sky-topic">
+                  <div class="flag-cloud-topic"></div>
+                  <div class="flag-cloud-topic"></div>
                 </div>
-
-                <!-- Seamless 3D Flag -->
-                <div class="flag-topic">
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
-                  <div class="flag-segment-topic">
-                    <div class="segment-front-topic"></div>
-                    <div class="segment-back-topic"></div>
-                  </div>
+                <!-- Flag poles row -->
+                <div class="flag-row-topic">
+                  <div class="flag-pole-topic"><div class="flag-mini-topic f1 flag-france-topic"></div></div>
+                  <div class="flag-pole-topic"><div class="flag-mini-topic f2 flag-germany-topic"></div></div>
+                  <div class="flag-pole-topic"><div class="flag-mini-topic f3 flag-usa-topic"></div></div>
+                  <div class="flag-pole-topic"><div class="flag-mini-topic f4 flag-uk-topic"></div></div>
+                  <div class="flag-pole-topic"><div class="flag-mini-topic f5 flag-japan-topic"></div></div>
                 </div>
-
-                <!-- 3D Shadow -->
-                <div class="flag-shadow-topic"></div>
+                <!-- Ground -->
+                <div class="flag-ground-topic"></div>
               </div></div>
               <div class="topic-name-small">Flags</div>
             </button>
@@ -1267,7 +1226,29 @@
           <!-- Card 4: Breaking Bad -->
           <div class="topic-card-small status-active">
             <button id="breaking-bad-topic-btn" class="topic-card-btn">
-              <div class="topic-icon-small">🧪</div>
+              <div class="icon-floor-topic"><div class="breaking-bad-container-topic">
+                <!-- Vapor -->
+                <div class="bb-vapor-topic">
+                  <div class="bb-vapor-particle-topic"></div>
+                  <div class="bb-vapor-particle-topic"></div>
+                  <div class="bb-vapor-particle-topic"></div>
+                </div>
+                <!-- Flask -->
+                <div class="bb-flask-topic">
+                  <div class="bb-flask-rim-topic"></div>
+                  <div class="bb-flask-neck-topic"></div>
+                  <div class="bb-flask-body-topic"></div>
+                  <!-- Liquid with bubbles and crystals -->
+                  <div class="bb-liquid-topic">
+                    <div class="bb-bubble-topic"></div>
+                    <div class="bb-bubble-topic"></div>
+                    <div class="bb-bubble-topic"></div>
+                    <div class="bb-crystal-topic"><div class="bb-crystal-body-topic"></div></div>
+                    <div class="bb-crystal-topic"><div class="bb-crystal-body-topic"></div></div>
+                    <div class="bb-crystal-topic"><div class="bb-crystal-body-topic"></div></div>
+                  </div>
+                </div>
+              </div></div>
               <div class="topic-name-small">Breaking Bad</div>
             </button>
           </div>
@@ -1275,7 +1256,24 @@
           <!-- Card 5: Stranger Things -->
           <div class="topic-card-small status-active">
             <button id="stranger-things-topic-btn" class="topic-card-btn">
-              <div class="topic-icon-small">🔦</div>
+              <div class="icon-floor-topic"><div class="stranger-things-container-topic">
+                <!-- Wires -->
+                <div class="st-wire-topic"></div>
+                <div class="st-wire-topic"></div>
+                <div class="st-wire-topic"></div>
+                <!-- Lights Row 1 -->
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+                <!-- Lights Row 2 -->
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+                <!-- Lights Row 3 -->
+                <div class="st-light-topic"></div>
+                <div class="st-light-topic"></div>
+              </div></div>
               <div class="topic-name-small">Stranger Things</div>
             </button>
           </div>
@@ -1283,7 +1281,41 @@
           <!-- Card 6: Money Heist -->
           <div class="topic-card-small status-active">
             <button id="money-heist-topic-btn" class="topic-card-btn">
-              <div class="topic-icon-small">🎭</div>
+              <div class="icon-floor-topic"><div class="money-heist-container-topic">
+                <!-- Red glow -->
+                <div class="mh-glow-topic"></div>
+                <!-- Dalí Mask -->
+                <div class="mh-mask-topic">
+                  <div class="mh-face-topic"></div>
+                  <!-- Eyebrows -->
+                  <div class="mh-brow-topic left"></div>
+                  <div class="mh-brow-topic right"></div>
+                  <!-- Eyes -->
+                  <div class="mh-eye-topic left"></div>
+                  <div class="mh-eye-topic right"></div>
+                  <!-- Nose -->
+                  <div class="mh-nose-topic">
+                    <div class="mh-nose-bridge-topic"></div>
+                    <div class="mh-nose-tip-topic"></div>
+                  </div>
+                  <!-- Mustache -->
+                  <div class="mh-mustache-topic">
+                    <div class="mh-mustache-half-topic"></div>
+                    <div class="mh-mustache-half-topic"></div>
+                  </div>
+                  <!-- Lips -->
+                  <div class="mh-lips-topic">
+                    <div class="mh-upper-lip-topic"></div>
+                    <div class="mh-lower-lip-topic"></div>
+                  </div>
+                </div>
+                <!-- Gold bars -->
+                <div class="mh-gold-topic">
+                  <div class="mh-bar-topic"></div>
+                  <div class="mh-bar-topic"></div>
+                  <div class="mh-bar-topic"></div>
+                </div>
+              </div></div>
               <div class="topic-name-small">Money Heist</div>
             </button>
           </div>
@@ -1291,7 +1323,17 @@
           <!-- Card 7: The Office -->
           <div class="topic-card-small status-active">
             <button id="the-office-topic-btn" class="topic-card-btn">
-              <div class="topic-icon-small">📎</div>
+              <div class="icon-floor-topic"><div class="the-office-container-topic">
+                <!-- Paperclip -->
+                <div class="office-clip-topic"></div>
+                <!-- Coffee mug -->
+                <div class="office-mug-topic">
+                  <div class="office-steam-topic"></div>
+                  <div class="office-steam-topic"></div>
+                  <div class="office-steam-topic"></div>
+                  <div class="office-text-topic"></div>
+                </div>
+              </div></div>
               <div class="topic-name-small">The Office</div>
             </button>
           </div>
