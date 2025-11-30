@@ -1,2202 +1,1682 @@
 [
   {
+    "id": 1,
     "question": "Who directed The Dark Knight trilogy?",
-    "options": [
-      "Matt Reeves",
-      "Christopher Nolan",
-      "Tim Burton",
-      "Zack Snyder"
-    ],
+    "options": ["Matt Reeves","Christopher Nolan","Tim Burton","Zack Snyder"],
     "answer": "Christopher Nolan",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 2,
     "question": "Who plays Batman in The Dark Knight?",
-    "options": [
-      "Robert Pattinson",
-      "Michael Keaton",
-      "Christian Bale",
-      "Ben Affleck"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Christian_Bale_in_2022.jpg/250px-Christian_Bale_in_2022.jpg",
+    "options": ["Robert Pattinson","Michael Keaton","Christian Bale","Ben Affleck"],
     "answer": "Christian Bale",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 3,
     "question": "Which actor played the Joker in The Dark Knight?",
-    "options": [
-      "Jared Leto",
-      "Joaquin Phoenix",
-      "Jack Nicholson",
-      "Heath Ledger"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Heath_Ledger_%282%29.jpg/250px-Heath_Ledger_%282%29.jpg",
+    "options": ["Jared Leto","Joaquin Phoenix","Jack Nicholson","Heath Ledger"],
     "answer": "Heath Ledger",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 4,
     "question": "What year was The Dark Knight released?",
-    "options": [
-      "2008",
-      "2005",
-      "2010",
-      "2012"
-    ],
+    "options": ["2008","2005","2010","2012"],
     "answer": "2008",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 5,
     "question": "Who plays Superman in Man of Steel?",
-    "options": [
-      "Henry Cavill",
-      "Brandon Routh",
-      "Tom Welling",
-      "Christopher Reeve"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cavill_%2848417913146%29_%28cropped%29.jpg/250px-Henry_Cavill_%2848417913146%29_%28cropped%29.jpg",
+    "options": ["Henry Cavill","Brandon Routh","Tom Welling","Christopher Reeve"],
     "answer": "Henry Cavill",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 6,
     "question": "Who plays Wonder Woman in the DCEU?",
-    "options": [
-      "Adrianne Palicki",
-      "Gal Gadot",
-      "Morena Baccarin",
-      "Lynda Carter"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Gal_Gadot_for_Revlon.png/250px-Gal_Gadot_for_Revlon.png",
+    "options": ["Adrianne Palicki","Gal Gadot","Morena Baccarin","Lynda Carter"],
     "answer": "Gal Gadot",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 7,
     "question": "What is Batman's real name?",
-    "options": [
-      "Barry Allen",
-      "Clark Kent",
-      "Bruce Wayne",
-      "Arthur Curry"
-    ],
+    "options": ["Barry Allen","Clark Kent","Bruce Wayne","Arthur Curry"],
     "answer": "Bruce Wayne",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 8,
     "question": "What is Superman's birth name?",
-    "options": [
-      "Zod",
-      "Jor-El",
-      "Lor-Zod",
-      "Kal-El"
-    ],
+    "options": ["Zod","Jor-El","Lor-Zod","Kal-El"],
     "answer": "Kal-El",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 9,
     "question": "Which city does Batman protect?",
-    "options": [
-      "Star City",
-      "Central City",
-      "Gotham City",
-      "Metropolis"
-    ],
+    "options": ["Star City","Central City","Gotham City","Metropolis"],
     "answer": "Gotham City",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 10,
     "question": "Which city does Superman protect?",
-    "options": [
-      "Metropolis",
-      "Coast City",
-      "Central City",
-      "Gotham City"
-    ],
+    "options": ["Metropolis","Coast City","Central City","Gotham City"],
     "answer": "Metropolis",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 11,
     "question": "Who directed Man of Steel?",
-    "options": [
-      "Christopher Nolan",
-      "Patty Jenkins",
-      "James Wan",
-      "Zack Snyder"
-    ],
+    "options": ["Christopher Nolan","Patty Jenkins","James Wan","Zack Snyder"],
     "answer": "Zack Snyder",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 12,
     "question": "What is the Joker's real name in The Dark Knight?",
-    "options": [
-      "Jerome Valeska",
-      "Jack Napier",
-      "Never revealed",
-      "Arthur Fleck"
-    ],
+    "options": ["Jerome Valeska","Jack Napier","Never revealed","Arthur Fleck"],
     "answer": "Never revealed",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 13,
     "question": "Who plays Aquaman in the DCEU?",
-    "options": [
-      "Yahya Abdul-Mateen II",
-      "Jason Momoa",
-      "Patrick Wilson",
-      "Willem Dafoe"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Jason_Momoa_%2843055621224%29_%28cropped%29.jpg/250px-Jason_Momoa_%2843055621224%29_%28cropped%29.jpg",
+    "options": ["Yahya Abdul-Mateen II","Jason Momoa","Patrick Wilson","Willem Dafoe"],
     "answer": "Jason Momoa",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 14,
     "question": "What is Aquaman's real name?",
-    "options": [
-      "Tom Curry",
-      "Arthur Curry",
-      "Nuidis Vulko",
-      "Orm Marius"
-    ],
+    "options": ["Tom Curry","Arthur Curry","Nuidis Vulko","Orm Marius"],
     "answer": "Arthur Curry",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 15,
     "question": "Who plays The Flash in the DCEU?",
-    "options": [
-      "Ezra Miller",
-      "Jay Garrick",
-      "Wally West",
-      "Grant Gustin"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Ezra_Miller_by_Gage_Skidmore_2.jpg/250px-Ezra_Miller_by_Gage_Skidmore_2.jpg",
+    "options": ["Ezra Miller","Jay Garrick","Wally West","Grant Gustin"],
     "answer": "Ezra Miller",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 16,
     "question": "What is The Flash's real name (DCEU)?",
-    "options": [
-      "Barry Allen",
-      "Jay Garrick",
-      "Bart Allen",
-      "Wally West"
-    ],
+    "options": ["Barry Allen","Jay Garrick","Bart Allen","Wally West"],
     "answer": "Barry Allen",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 17,
     "question": "Who directed Wonder Woman (2017)?",
-    "options": [
-      "James Wan",
-      "Joss Whedon",
-      "Patty Jenkins",
-      "Zack Snyder"
-    ],
+    "options": ["James Wan","Joss Whedon","Patty Jenkins","Zack Snyder"],
     "answer": "Patty Jenkins",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 18,
     "question": "In which war is Wonder Woman (2017) set?",
-    "options": [
-      "World War I",
-      "World War II",
-      "Cold War",
-      "Vietnam War"
-    ],
+    "options": ["World War I","World War II","Cold War","Vietnam War"],
     "answer": "World War I",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 19,
     "question": "Who plays Alfred in The Dark Knight trilogy?",
-    "options": [
-      "Jeremy Irons",
-      "Michael Caine",
-      "Michael Gough",
-      "Alan Napier"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg/250px-Michael_Caine_-_Viennale_2012_g_%28cropped%29.jpg",
+    "options": ["Jeremy Irons","Michael Caine","Michael Gough","Alan Napier"],
     "answer": "Michael Caine",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 20,
     "question": "What is the first film in The Dark Knight trilogy?",
-    "options": [
-      "The Dark Knight",
-      "Batman Forever",
-      "The Dark Knight Rises",
-      "Batman Begins"
-    ],
+    "options": ["The Dark Knight","Batman Forever","The Dark Knight Rises","Batman Begins"],
     "answer": "Batman Begins",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 21,
     "question": "Who plays Catwoman in The Dark Knight Rises?",
-    "options": [
-      "Zoë Kravitz",
-      "Halle Berry",
-      "Anne Hathaway",
-      "Michelle Pfeiffer"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Anne_Hathaway_at_The_Apprentice_in_NYC_03_%28cropped2%29.jpg/250px-Anne_Hathaway_at_The_Apprentice_in_NYC_03_%28cropped2%29.jpg",
+    "options": ["Zoë Kravitz","Halle Berry","Anne Hathaway","Michelle Pfeiffer"],
     "answer": "Anne Hathaway",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 22,
     "question": "Who is the main villain in The Dark Knight Rises?",
-    "options": [
-      "Bane",
-      "Scarecrow",
-      "Ra's al Ghul",
-      "Joker"
-    ],
+    "options": ["Bane","Scarecrow","Ra's al Ghul","Joker"],
     "answer": "Bane",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 23,
     "question": "Who plays Bane in The Dark Knight Rises?",
-    "options": [
-      "Tom Hardy",
-      "Michael Shannon",
-      "Javier Bardem",
-      "Dave Bautista"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Tom_Hardy_by_Gage_Skidmore_in_2018.jpg/250px-Tom_Hardy_by_Gage_Skidmore_in_2018.jpg",
+    "options": ["Tom Hardy","Michael Shannon","Javier Bardem","Dave Bautista"],
     "answer": "Tom Hardy",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 24,
     "question": "What is Wonder Woman's real name?",
-    "options": [
-      "Donna Troy",
-      "Diana Prince",
-      "Diana Troy",
-      "Hippolyta"
-    ],
+    "options": ["Donna Troy","Diana Prince","Diana Troy","Hippolyta"],
     "answer": "Diana Prince",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 25,
     "question": "Who plays Lex Luthor in Batman v Superman?",
-    "options": [
-      "Michael Rosenbaum",
-      "Jesse Eisenberg",
-      "Kevin Spacey",
-      "Gene Hackman"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Jesse_Eisenberg_by_Philip_Romano_%283x4_cropped%29.jpg/250px-Jesse_Eisenberg_by_Philip_Romano_%283x4_cropped%29.jpg",
+    "options": ["Michael Rosenbaum","Jesse Eisenberg","Kevin Spacey","Gene Hackman"],
     "answer": "Jesse Eisenberg",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 26,
     "question": "What year was Batman Begins released?",
-    "options": [
-      "2003",
-      "2005",
-      "2012",
-      "2008"
-    ],
+    "options": ["2003","2005","2012","2008"],
     "answer": "2005",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 27,
     "question": "Who plays General Zod in Man of Steel?",
-    "options": [
-      "Michael Shannon",
-      "Antje Traue",
-      "Callum Blue",
-      "Terence Stamp"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/MichaelShannon-byPhilipRomano.jpg/250px-MichaelShannon-byPhilipRomano.jpg",
+    "options": ["Michael Shannon","Antje Traue","Callum Blue","Terence Stamp"],
     "answer": "Michael Shannon",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 28,
     "question": "What is Superman's weakness?",
-    "options": [
-      "Fire",
-      "Magic",
-      "Silver",
-      "Kryptonite"
-    ],
+    "options": ["Fire","Magic","Silver","Kryptonite"],
     "answer": "Kryptonite",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 29,
     "question": "Who plays Lois Lane in Man of Steel?",
-    "options": [
-      "Kate Bosworth",
-      "Erica Durance",
-      "Margot Kidder",
-      "Amy Adams"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg/250px-Amy_Adams_at_the_2024_Toronto_International_Film_Festival._03_%28cropped%29.jpg",
+    "options": ["Kate Bosworth","Erica Durance","Margot Kidder","Amy Adams"],
     "answer": "Amy Adams",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 30,
     "question": "What is the name of Batman's butler?",
-    "options": [
-      "Jarvis",
-      "Geoffrey",
-      "Edwin",
-      "Alfred Pennyworth"
-    ],
+    "options": ["Jarvis","Geoffrey","Edwin","Alfred Pennyworth"],
     "answer": "Alfred Pennyworth",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 31,
     "question": "Who directed Aquaman (2018)?",
-    "options": [
-      "David F. Sandberg",
-      "Patty Jenkins",
-      "Zack Snyder",
-      "James Wan"
-    ],
+    "options": ["David F. Sandberg","Patty Jenkins","Zack Snyder","James Wan"],
     "answer": "James Wan",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 32,
     "question": "What is the name of Aquaman's half-brother?",
-    "options": [
-      "Orm/Ocean Master",
-      "Black Manta",
-      "Vulko",
-      "Atlan"
-    ],
+    "options": ["Orm/Ocean Master","Black Manta","Vulko","Atlan"],
     "answer": "Orm/Ocean Master",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 33,
     "question": "Who plays Mera in Aquaman?",
-    "options": [
-      "Dolph Lundgren",
-      "Patrick Wilson",
-      "Amber Heard",
-      "Nicole Kidman"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Amber_Heard_by_Gage_Skidmore.jpg/250px-Amber_Heard_by_Gage_Skidmore.jpg",
+    "options": ["Dolph Lundgren","Patrick Wilson","Amber Heard","Nicole Kidman"],
     "answer": "Amber Heard",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 34,
     "question": "What is Cyborg's real name?",
-    "options": [
-      "Vic Sage",
-      "Victor Stone",
-      "Victor Fries",
-      "Vincent Stone"
-    ],
+    "options": ["Vic Sage","Victor Stone","Victor Fries","Vincent Stone"],
     "answer": "Victor Stone",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 35,
     "question": "Who plays Cyborg in Justice League?",
-    "options": [
-      "Lee Thompson Young",
-      "Ray Fisher",
-      "Shemar Moore",
-      "Joivan Wade"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Ray_Fisher_at_the_2024_Toronto_International_Film_Festival_4.jpg/250px-Ray_Fisher_at_the_2024_Toronto_International_Film_Festival_4.jpg",
+    "options": ["Lee Thompson Young","Ray Fisher","Shemar Moore","Joivan Wade"],
     "answer": "Ray Fisher",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 36,
     "question": "Who is the main villain in Justice League (2017)?",
-    "options": [
-      "Darkseid",
-      "Steppenwolf",
-      "Ares",
-      "Doomsday"
-    ],
+    "options": ["Darkseid","Steppenwolf","Ares","Doomsday"],
     "answer": "Steppenwolf",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 37,
     "question": "What are the three Mother Boxes guarded by?",
-    "options": [
-      "Kryptonians, Amazons, Atlanteans",
-      "New Gods, Old Gods, Humans",
-      "Gods, Titans, Humans",
-      "Amazons, Atlanteans, Humans"
-    ],
+    "options": ["Kryptonians, Amazons, Atlanteans","New Gods, Old Gods, Humans","Gods, Titans, Humans","Amazons, Atlanteans, Humans"],
     "answer": "Amazons, Atlanteans, Humans",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 38,
     "question": "Who plays Commissioner Gordon in The Dark Knight?",
-    "options": [
-      "Jeffrey Wright",
-      "Gary Oldman",
-      "J.K. Simmons",
-      "Pat Hingle"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/250px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg",
+    "options": ["Jeffrey Wright","Gary Oldman","J.K. Simmons","Pat Hingle"],
     "answer": "Gary Oldman",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 39,
     "question": "What is Harvey Dent's villain name?",
-    "options": [
-      "Hush",
-      "Black Mask",
-      "Two-Face",
-      "Clayface"
-    ],
+    "options": ["Hush","Black Mask","Two-Face","Clayface"],
     "answer": "Two-Face",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 40,
     "question": "Who plays Harvey Dent in The Dark Knight?",
-    "options": [
-      "Josh Hartnett",
-      "Billy Dee Williams",
-      "Tommy Lee Jones",
-      "Aaron Eckhart"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Aaron_Eckhart_%2829830286295%29_%28cropped%29.jpg/250px-Aaron_Eckhart_%2829830286295%29_%28cropped%29.jpg",
+    "options": ["Josh Hartnett","Billy Dee Williams","Tommy Lee Jones","Aaron Eckhart"],
     "answer": "Aaron Eckhart",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 41,
     "question": "What does the Joker say about chaos in The Dark Knight?",
-    "options": [
-      "I'm an agent of chaos",
-      "Chaos is freedom",
-      "Embrace the chaos",
-      "Chaos is fair"
-    ],
+    "options": ["I'm an agent of chaos","Chaos is freedom","Embrace the chaos","Chaos is fair"],
     "answer": "I'm an agent of chaos",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 42,
     "question": "Who directed the 2019 Joker film?",
-    "options": [
-      "Zack Snyder",
-      "Matt Reeves",
-      "Todd Phillips",
-      "Christopher Nolan"
-    ],
+    "options": ["Zack Snyder","Matt Reeves","Todd Phillips","Christopher Nolan"],
     "answer": "Todd Phillips",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 43,
     "question": "Who plays Joker in the 2019 Joker film?",
-    "options": [
-      "Joaquin Phoenix",
-      "Jack Nicholson",
-      "Heath Ledger",
-      "Jared Leto"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Joaquin_Phoenix-64908_%28cropped%29.jpg/250px-Joaquin_Phoenix-64908_%28cropped%29.jpg",
+    "options": ["Joaquin Phoenix","Jack Nicholson","Heath Ledger","Jared Leto"],
     "answer": "Joaquin Phoenix",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 44,
     "question": "What is the Joker's name in Joker (2019)?",
-    "options": [
-      "Jerome Valeska",
-      "John Doe",
-      "Jack Napier",
-      "Arthur Fleck"
-    ],
+    "options": ["Jerome Valeska","John Doe","Jack Napier","Arthur Fleck"],
     "answer": "Arthur Fleck",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 45,
     "question": "Who plays Batman in The Batman (2022)?",
-    "options": [
-      "Ben Affleck",
-      "Christian Bale",
-      "Robert Pattinson",
-      "George Clooney"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Robert_Pattinson_at_Berlinale_2025.jpg/250px-Robert_Pattinson_at_Berlinale_2025.jpg",
+    "options": ["Ben Affleck","Christian Bale","Robert Pattinson","George Clooney"],
     "answer": "Robert Pattinson",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 46,
     "question": "Who directed The Batman (2022)?",
-    "options": [
-      "Christopher Nolan",
-      "Zack Snyder",
-      "Matt Reeves",
-      "Todd Phillips"
-    ],
+    "options": ["Christopher Nolan","Zack Snyder","Matt Reeves","Todd Phillips"],
     "answer": "Matt Reeves",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 47,
     "question": "Who plays the Riddler in The Batman (2022)?",
-    "options": [
-      "Paul Dano",
-      "Frank Gorshin",
-      "Jim Carrey",
-      "Cory Michael Smith"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Paul_Dano_at_Berlinale_2024_Ausschnitt.jpg/250px-Paul_Dano_at_Berlinale_2024_Ausschnitt.jpg",
+    "options": ["Paul Dano","Frank Gorshin","Jim Carrey","Cory Michael Smith"],
     "answer": "Paul Dano",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 48,
     "question": "Who plays Catwoman in The Batman (2022)?",
-    "options": [
-      "Anne Hathaway",
-      "Zoë Kravitz",
-      "Michelle Pfeiffer",
-      "Halle Berry"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Zoe_Kravitz_2020_dvna_studio.jpg/250px-Zoe_Kravitz_2020_dvna_studio.jpg",
+    "options": ["Anne Hathaway","Zoë Kravitz","Michelle Pfeiffer","Halle Berry"],
     "answer": "Zoë Kravitz",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 49,
     "question": "What is the Penguin's real name?",
-    "options": [
-      "Oswald Cobblepot",
-      "Victor Fries",
-      "Edward Nygma",
-      "Harvey Dent"
-    ],
+    "options": ["Oswald Cobblepot","Victor Fries","Edward Nygma","Harvey Dent"],
     "answer": "Oswald Cobblepot",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 50,
     "question": "Who plays the Penguin in The Batman (2022)?",
-    "options": [
-      "Burgess Meredith",
-      "Robin Lord Taylor",
-      "Danny DeVito",
-      "Colin Farrell"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/2025_Colin_Farrell_-_2_%28cropped%29.jpg/250px-2025_Colin_Farrell_-_2_%28cropped%29.jpg",
+    "options": ["Burgess Meredith","Robin Lord Taylor","Danny DeVito","Colin Farrell"],
     "answer": "Colin Farrell",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 51,
     "question": "What is the Riddler's real name?",
-    "options": [
-      "Oswald Cobblepot",
-      "Edward Nygma",
-      "Jonathan Crane",
-      "Victor Fries"
-    ],
+    "options": ["Oswald Cobblepot","Edward Nygma","Jonathan Crane","Victor Fries"],
     "answer": "Edward Nygma",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 52,
     "question": "Who plays Ra's al Ghul in Batman Begins?",
-    "options": [
-      "Tom Wilkinson",
-      "Liam Neeson",
-      "Ken Watanabe",
-      "Cillian Murphy"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Liam_Neeson_Deauville_2012_2.jpg/250px-Liam_Neeson_Deauville_2012_2.jpg",
+    "options": ["Tom Wilkinson","Liam Neeson","Ken Watanabe","Cillian Murphy"],
     "answer": "Liam Neeson",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 53,
     "question": "What is the Scarecrow's real name?",
-    "options": [
-      "Hugo Strange",
-      "Jonathan Crane",
-      "Jervis Tetch",
-      "Edward Nygma"
-    ],
+    "options": ["Hugo Strange","Jonathan Crane","Jervis Tetch","Edward Nygma"],
     "answer": "Jonathan Crane",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 54,
     "question": "Who plays Scarecrow in The Dark Knight trilogy?",
-    "options": [
-      "Tom Hardy",
-      "Aaron Eckhart",
-      "Liam Neeson",
-      "Cillian Murphy"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg/250px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg",
+    "options": ["Tom Hardy","Aaron Eckhart","Liam Neeson","Cillian Murphy"],
     "answer": "Cillian Murphy",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 55,
     "question": "What organization trains Bruce Wayne in Batman Begins?",
-    "options": [
-      "ARGUS",
-      "Court of Owls",
-      "League of Shadows",
-      "League of Assassins"
-    ],
+    "options": ["ARGUS","Court of Owls","League of Shadows","League of Assassins"],
     "answer": "League of Shadows",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 56,
     "question": "Who is Wonder Woman's mother?",
-    "options": [
-      "Antiope",
-      "Hera",
-      "Hippolyta",
-      "Athena"
-    ],
+    "options": ["Antiope","Hera","Hippolyta","Athena"],
     "answer": "Hippolyta",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 57,
     "question": "Who plays Hippolyta in Wonder Woman?",
-    "options": [
-      "Lucy Davis",
-      "Connie Nielsen",
-      "Robin Wright",
-      "Elena Anaya"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Connie_Nielsen_by_Gage_Skidmore.jpg/250px-Connie_Nielsen_by_Gage_Skidmore.jpg",
+    "options": ["Lucy Davis","Connie Nielsen","Robin Wright","Elena Anaya"],
     "answer": "Connie Nielsen",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 58,
     "question": "Who plays Antiope in Wonder Woman?",
-    "options": [
-      "Gal Gadot",
-      "Robin Wright",
-      "Connie Nielsen",
-      "Elena Anaya"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Robin_Wright_Cannes_2017.jpg/250px-Robin_Wright_Cannes_2017.jpg",
+    "options": ["Gal Gadot","Robin Wright","Connie Nielsen","Elena Anaya"],
     "answer": "Robin Wright",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 59,
     "question": "What is the island of the Amazons called?",
-    "options": [
-      "Krypton",
-      "Themyscira",
-      "Paradise Island",
-      "Atlantis"
-    ],
+    "options": ["Krypton","Themyscira","Paradise Island","Atlantis"],
     "answer": "Themyscira",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 60,
     "question": "Who is the main villain in Wonder Woman (2017)?",
-    "options": [
-      "Doctor Poison",
-      "Cheetah",
-      "Circe",
-      "Ares"
-    ],
+    "options": ["Doctor Poison","Cheetah","Circe","Ares"],
     "answer": "Ares",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 61,
     "question": "Who plays Steve Trevor in Wonder Woman?",
-    "options": [
-      "Chris Pine",
-      "Chris Hemsworth",
-      "Chris Pratt",
-      "Chris Evans"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Chris_Pine_%2843043463084%29_%28cropped%29.jpg/250px-Chris_Pine_%2843043463084%29_%28cropped%29.jpg",
+    "options": ["Chris Pine","Chris Hemsworth","Chris Pratt","Chris Evans"],
     "answer": "Chris Pine",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 62,
     "question": "What is Superman's father's name?",
-    "options": [
-      "Kal-El",
-      "Zor-El",
-      "Jor-El",
-      "Jonathan Kent"
-    ],
+    "options": ["Kal-El","Zor-El","Jor-El","Jonathan Kent"],
     "answer": "Jor-El",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 63,
     "question": "Who plays Jor-El in Man of Steel?",
-    "options": [
-      "Russell Crowe",
-      "Marlon Brando",
-      "Kevin Costner",
-      "Julian Sands"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Russell_Crowe_on_the_Green_Carpet_at_the_2025_Zurich_Film_Festival_06_%28cropped%29.jpg/250px-Russell_Crowe_on_the_Green_Carpet_at_the_2025_Zurich_Film_Festival_06_%28cropped%29.jpg",
+    "options": ["Russell Crowe","Marlon Brando","Kevin Costner","Julian Sands"],
     "answer": "Russell Crowe",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 64,
     "question": "Who plays Jonathan Kent in Man of Steel?",
-    "options": [
-      "Kevin Costner",
-      "Glenn Ford",
-      "John Schneider",
-      "Russell Crowe"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg/250px-Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg",
+    "options": ["Kevin Costner","Glenn Ford","John Schneider","Russell Crowe"],
     "answer": "Kevin Costner",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 65,
     "question": "What is the name of Superman's adoptive mother?",
-    "options": [
-      "Mary Kent",
-      "Margaret Kent",
-      "Martha Wayne",
-      "Martha Kent"
-    ],
+    "options": ["Mary Kent","Margaret Kent","Martha Wayne","Martha Kent"],
     "answer": "Martha Kent",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 66,
     "question": "Who plays Martha Kent in Man of Steel?",
-    "options": [
-      "Eva Marie Saint",
-      "Annette O'Toole",
-      "Diane Lane",
-      "Phyllis Thaxter"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Diane_Lane_%28Berlin_Film_Festival_2011%29_2.jpg/250px-Diane_Lane_%28Berlin_Film_Festival_2011%29_2.jpg",
+    "options": ["Eva Marie Saint","Annette O'Toole","Diane Lane","Phyllis Thaxter"],
     "answer": "Diane Lane",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 67,
     "question": "What newspaper does Clark Kent work for?",
-    "options": [
-      "Central City Citizen",
-      "Gotham Gazette",
-      "Daily Bugle",
-      "Daily Planet"
-    ],
+    "options": ["Central City Citizen","Gotham Gazette","Daily Bugle","Daily Planet"],
     "answer": "Daily Planet",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 68,
     "question": "Who plays Perry White in Man of Steel?",
-    "options": [
-      "Laurence Fishburne",
-      "Michael McKean",
-      "Frank Langella",
-      "Jackie Cooper"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/National_Memorial_Day_Concert_2017_%2834117818524%29_%28cropped%29.jpg/250px-National_Memorial_Day_Concert_2017_%2834117818524%29_%28cropped%29.jpg",
+    "options": ["Laurence Fishburne","Michael McKean","Frank Langella","Jackie Cooper"],
     "answer": "Laurence Fishburne",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 69,
     "question": "What kills Superman in Batman v Superman?",
-    "options": [
-      "Doomsday",
-      "Batman",
-      "Lex Luthor",
-      "Kryptonite"
-    ],
+    "options": ["Doomsday","Batman","Lex Luthor","Kryptonite"],
     "answer": "Doomsday",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 70,
     "question": "What is the subtitle of the Batman v Superman film?",
-    "options": [
-      "Age of Heroes",
-      "Dawn of Justice",
-      "Battle for Tomorrow",
-      "Rise of Justice"
-    ],
+    "options": ["Age of Heroes","Dawn of Justice","Battle for Tomorrow","Rise of Justice"],
     "answer": "Dawn of Justice",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 71,
     "question": "Who plays Alfred in Batman v Superman?",
-    "options": [
-      "Jeremy Irons",
-      "Michael Caine",
-      "Sean Pertwee",
-      "Michael Gough"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Jeremy_Irons.jpg/250px-Jeremy_Irons.jpg",
+    "options": ["Jeremy Irons","Michael Caine","Sean Pertwee","Michael Gough"],
     "answer": "Jeremy Irons",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 72,
     "question": "What year was Suicide Squad released?",
-    "options": [
-      "2015",
-      "2017",
-      "2018",
-      "2016"
-    ],
+    "options": ["2015","2017","2018","2016"],
     "answer": "2016",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 73,
     "question": "Who plays Harley Quinn in Suicide Squad?",
-    "options": [
-      "Tara Strong",
-      "Margot Robbie",
-      "Melissa Rauch",
-      "Kaley Cuoco"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/SYDNEY%2C_AUSTRALIA_-_JANUARY_23_Margot_Robbie_arrives_at_the_Australian_Premiere_of_%27I%2C_Tonya%27_on_January_23%2C_2018_in_Sydney%2C_Australia_%2828074883999%29_%28cropped_2%29.jpg/250px-thumbnail.jpg",
+    "options": ["Tara Strong","Margot Robbie","Melissa Rauch","Kaley Cuoco"],
     "answer": "Margot Robbie",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 74,
     "question": "Who plays Deadshot in Suicide Squad?",
-    "options": [
-      "Michael B. Jordan",
-      "Idris Elba",
-      "Will Smith",
-      "Denzel Washington"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg/250px-TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg",
+    "options": ["Michael B. Jordan","Idris Elba","Will Smith","Denzel Washington"],
     "answer": "Will Smith",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 75,
     "question": "What is Harley Quinn's real name?",
-    "options": [
-      "Holly Robinson",
-      "Harleen Quinzel",
-      "Helena Bertinelli",
-      "Harley Quinn"
-    ],
+    "options": ["Holly Robinson","Harleen Quinzel","Helena Bertinelli","Harley Quinn"],
     "answer": "Harleen Quinzel",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 76,
     "question": "Who directed Suicide Squad (2016)?",
-    "options": [
-      "David Ayer",
-      "Patty Jenkins",
-      "James Gunn",
-      "Zack Snyder"
-    ],
+    "options": ["David Ayer","Patty Jenkins","James Gunn","Zack Snyder"],
     "answer": "David Ayer",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 77,
     "question": "Who plays Amanda Waller in Suicide Squad?",
-    "options": [
-      "Viola Davis",
-      "CCH Pounder",
-      "Pam Grier",
-      "Angela Bassett"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg/250px-Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg",
+    "options": ["Viola Davis","CCH Pounder","Pam Grier","Angela Bassett"],
     "answer": "Viola Davis",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 78,
     "question": "What is the villain's name in Suicide Squad (2016)?",
-    "options": [
-      "Steppenwolf",
-      "Black Adam",
-      "Enchantress",
-      "Joker"
-    ],
+    "options": ["Steppenwolf","Black Adam","Enchantress","Joker"],
     "answer": "Enchantress",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 79,
     "question": "Who plays Joker in Suicide Squad (2016)?",
-    "options": [
-      "Joaquin Phoenix",
-      "Heath Ledger",
-      "Jared Leto",
-      "Cameron Monaghan"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Jared_Leto_by_Gage_Skidmore_2.jpg/250px-Jared_Leto_by_Gage_Skidmore_2.jpg",
+    "options": ["Joaquin Phoenix","Heath Ledger","Jared Leto","Cameron Monaghan"],
     "answer": "Jared Leto",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 80,
     "question": "What year was The Suicide Squad (reboot) released?",
-    "options": [
-      "2021",
-      "2020",
-      "2022",
-      "2019"
-    ],
+    "options": ["2021","2020","2022","2019"],
     "answer": "2021",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 81,
     "question": "Who directed The Suicide Squad (2021)?",
-    "options": [
-      "David Ayer",
-      "James Gunn",
-      "Zack Snyder",
-      "Matt Reeves"
-    ],
+    "options": ["David Ayer","James Gunn","Zack Snyder","Matt Reeves"],
     "answer": "James Gunn",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 82,
     "question": "Who plays Bloodsport in The Suicide Squad?",
-    "options": [
-      "Will Smith",
-      "Michael B. Jordan",
-      "John Cena",
-      "Idris Elba"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Idris_Elba_A_House_of_Dynamite-21_%28cropped%29.jpg/250px-Idris_Elba_A_House_of_Dynamite-21_%28cropped%29.jpg",
+    "options": ["Will Smith","Michael B. Jordan","John Cena","Idris Elba"],
     "answer": "Idris Elba",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 83,
     "question": "Who plays Peacemaker in The Suicide Squad?",
-    "options": [
-      "Joel Kinnaman",
-      "Dave Bautista",
-      "John Cena",
-      "Idris Elba"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/John_Cena_by_Gage_Skidmore.jpg/250px-John_Cena_by_Gage_Skidmore.jpg",
+    "options": ["Joel Kinnaman","Dave Bautista","John Cena","Idris Elba"],
     "answer": "John Cena",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 84,
     "question": "What is the giant starfish villain called?",
-    "options": [
-      "Eclipso",
-      "Brainiac",
-      "Parallax",
-      "Starro"
-    ],
+    "options": ["Eclipso","Brainiac","Parallax","Starro"],
     "answer": "Starro",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 85,
     "question": "Who plays King Shark's voice in The Suicide Squad?",
-    "options": [
-      "Dave Bautista",
-      "Vin Diesel",
-      "Bradley Cooper",
-      "Sylvester Stallone"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Sylvester_Stallone_Cannes_2019.jpg/250px-Sylvester_Stallone_Cannes_2019.jpg",
+    "options": ["Dave Bautista","Vin Diesel","Bradley Cooper","Sylvester Stallone"],
     "answer": "Sylvester Stallone",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 86,
     "question": "What year was Wonder Woman 1984 released?",
-    "options": [
-      "2022",
-      "2019",
-      "2020",
-      "2021"
-    ],
+    "options": ["2022","2019","2020","2021"],
     "answer": "2020",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 87,
     "question": "Who is the main villain in Wonder Woman 1984?",
-    "options": [
-      "Doctor Psycho",
-      "Circe",
-      "Ares",
-      "Maxwell Lord and Cheetah"
-    ],
+    "options": ["Doctor Psycho","Circe","Ares","Maxwell Lord and Cheetah"],
     "answer": "Maxwell Lord and Cheetah",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 88,
     "question": "Who plays Cheetah in Wonder Woman 1984?",
-    "options": [
-      "Elena Anaya",
-      "Gal Gadot",
-      "Charlize Theron",
-      "Kristen Wiig"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kristin_Wiig_2013.jpg/250px-Kristin_Wiig_2013.jpg",
+    "options": ["Elena Anaya","Gal Gadot","Charlize Theron","Kristen Wiig"],
     "answer": "Kristen Wiig",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 89,
     "question": "Who plays Maxwell Lord in Wonder Woman 1984?",
-    "options": [
-      "Javier Bardem",
-      "Oscar Isaac",
-      "Pedro Pascal",
-      "Diego Luna"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pedro_Pascal_at_the_2025_Cannes_Film_Festival_05.jpg/250px-Pedro_Pascal_at_the_2025_Cannes_Film_Festival_05.jpg",
+    "options": ["Javier Bardem","Oscar Isaac","Pedro Pascal","Diego Luna"],
     "answer": "Pedro Pascal",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 90,
     "question": "What brings Steve Trevor back in WW84?",
-    "options": [
-      "Time travel",
-      "Magic",
-      "Resurrection",
-      "The Dreamstone"
-    ],
+    "options": ["Time travel","Magic","Resurrection","The Dreamstone"],
     "answer": "The Dreamstone",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 91,
     "question": "Who plays Billy Batson in Shazam!?",
-    "options": [
-      "Asher Angel",
-      "Zachary Levi",
-      "Jack Dylan Grazer",
-      "Mark Strong"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Asher_Angel_by_Gage_Skidmore_3.jpg/250px-Asher_Angel_by_Gage_Skidmore_3.jpg",
+    "options": ["Asher Angel","Zachary Levi","Jack Dylan Grazer","Mark Strong"],
     "answer": "Asher Angel",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 92,
     "question": "Who plays Shazam (adult form)?",
-    "options": [
-      "Zachary Levi",
-      "Mark Strong",
-      "Asher Angel",
-      "Dwayne Johnson"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Zachary_Levi_%2854238375564%29.jpg/250px-Zachary_Levi_%2854238375564%29.jpg",
+    "options": ["Zachary Levi","Mark Strong","Asher Angel","Dwayne Johnson"],
     "answer": "Zachary Levi",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 93,
     "question": "What word does Billy say to transform?",
-    "options": [
-      "Captain Marvel",
-      "Power",
-      "Transform",
-      "Shazam"
-    ],
+    "options": ["Captain Marvel","Power","Transform","Shazam"],
     "answer": "Shazam",
+    "difficulty": "medium",
     "category": "shazam"
   },
   {
+    "id": 94,
     "question": "Who is the villain in Shazam!?",
-    "options": [
-      "Black Adam",
-      "Mr. Mind",
-      "Dr. Sivana",
-      "Mister Mind"
-    ],
+    "options": ["Black Adam","Mr. Mind","Dr. Sivana","Mister Mind"],
     "answer": "Dr. Sivana",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 95,
     "question": "Who plays Dr. Sivana in Shazam!?",
-    "options": [
-      "Michael Shannon",
-      "Javier Bardem",
-      "Ben Kingsley",
-      "Mark Strong"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Mark_Strong_by_Gage_Skidmore.jpg/250px-Mark_Strong_by_Gage_Skidmore.jpg",
+    "options": ["Michael Shannon","Javier Bardem","Ben Kingsley","Mark Strong"],
     "answer": "Mark Strong",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 96,
     "question": "Who directed Shazam!?",
-    "options": [
-      "James Wan",
-      "Patty Jenkins",
-      "David F. Sandberg",
-      "Zack Snyder"
-    ],
+    "options": ["James Wan","Patty Jenkins","David F. Sandberg","Zack Snyder"],
     "answer": "David F. Sandberg",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 97,
     "question": "Who plays Black Adam?",
-    "options": [
-      "Zachary Levi",
-      "Jason Momoa",
-      "Henry Cavill",
-      "Dwayne Johnson"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dwayne_Johnson-1809_%28cropped%29.jpg/250px-Dwayne_Johnson-1809_%28cropped%29.jpg",
+    "options": ["Zachary Levi","Jason Momoa","Henry Cavill","Dwayne Johnson"],
     "answer": "Dwayne Johnson",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 98,
     "question": "What year was Black Adam released?",
-    "options": [
-      "2021",
-      "2022",
-      "2023",
-      "2020"
-    ],
+    "options": ["2021","2022","2023","2020"],
     "answer": "2022",
+    "difficulty": "medium",
     "category": "shazam"
   },
   {
+    "id": 99,
     "question": "Who directed Black Adam?",
-    "options": [
-      "Zack Snyder",
-      "David F. Sandberg",
-      "Jaume Collet-Serra",
-      "James Wan"
-    ],
+    "options": ["Zack Snyder","David F. Sandberg","Jaume Collet-Serra","James Wan"],
     "answer": "Jaume Collet-Serra",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 100,
     "question": "What team appears in Black Adam?",
-    "options": [
-      "Justice League",
-      "Suicide Squad",
-      "Teen Titans",
-      "Justice Society of America"
-    ],
+    "options": ["Justice League","Suicide Squad","Teen Titans","Justice Society of America"],
     "answer": "Justice Society of America",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 101,
     "question": "Who plays Hawkman in Black Adam?",
-    "options": [
-      "Dwayne Johnson",
-      "Aldis Hodge",
-      "Pierce Brosnan",
-      "Noah Centineo"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Aldis_Hodge_at_Washington_Convention_Center_for_Congressional_Black_Caucus_ALC54_2025_2.jpg/250px-Aldis_Hodge_at_Washington_Convention_Center_for_Congressional_Black_Caucus_ALC54_2025_2.jpg",
+    "options": ["Dwayne Johnson","Aldis Hodge","Pierce Brosnan","Noah Centineo"],
     "answer": "Aldis Hodge",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 102,
     "question": "Who plays Doctor Fate in Black Adam?",
-    "options": [
-      "Dwayne Johnson",
-      "Pierce Brosnan",
-      "Aldis Hodge",
-      "Noah Centineo"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/PierceBrosnan-byPhilipRomano.jpg/250px-PierceBrosnan-byPhilipRomano.jpg",
+    "options": ["Dwayne Johnson","Pierce Brosnan","Aldis Hodge","Noah Centineo"],
     "answer": "Pierce Brosnan",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 103,
     "question": "What is Doctor Fate's helmet called?",
-    "options": [
-      "Helmet of Magic",
-      "Helmet of Order",
-      "Helmet of Fate",
-      "Helmet of Nabu"
-    ],
+    "options": ["Helmet of Magic","Helmet of Order","Helmet of Fate","Helmet of Nabu"],
     "answer": "Helmet of Nabu",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 104,
     "question": "Who plays Atom Smasher in Black Adam?",
-    "options": [
-      "Noah Centineo",
-      "Aldis Hodge",
-      "Quintessa Swindell",
-      "Pierce Brosnan"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Actor_Noah_Centineo_Visits_Naval_Station_Norfolk_%285%29_%28cropped%29.jpg/250px-Actor_Noah_Centineo_Visits_Naval_Station_Norfolk_%285%29_%28cropped%29.jpg",
+    "options": ["Noah Centineo","Aldis Hodge","Quintessa Swindell","Pierce Brosnan"],
     "answer": "Noah Centineo",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 105,
     "question": "Who plays Cyclone in Black Adam?",
-    "options": [
-      "Marwan Kenzari",
-      "Noah Centineo",
-      "Quintessa Swindell",
-      "Sarah Shahi"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Quintessa_Swindell_Venice_2022.jpg/250px-Quintessa_Swindell_Venice_2022.jpg",
+    "options": ["Marwan Kenzari","Noah Centineo","Quintessa Swindell","Sarah Shahi"],
     "answer": "Quintessa Swindell",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 106,
     "question": "What is Batman's famous quote about being the night?",
-    "options": [
-      "Fear the night",
-      "The night is my ally",
-      "I am vengeance, I am the night, I am Batman",
-      "I am the Dark Knight"
-    ],
+    "options": ["Fear the night","The night is my ally","I am vengeance, I am the night, I am Batman","I am the Dark Knight"],
     "answer": "I am vengeance, I am the night, I am Batman",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 107,
     "question": "Who says 'Why so serious?'",
-    "options": [
-      "Batman",
-      "Two-Face",
-      "Joker (Joaquin Phoenix)",
-      "Joker (Heath Ledger)"
-    ],
+    "options": ["Batman","Two-Face","Joker (Joaquin Phoenix)","Joker (Heath Ledger)"],
     "answer": "Joker (Heath Ledger)",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 108,
     "question": "What does Joker ask in his pencil trick scene?",
-    "options": [
-      "Watch this trick",
-      "Want to see a trick?",
-      "How about a magic trick?",
-      "Magic time"
-    ],
+    "options": ["Watch this trick","Want to see a trick?","How about a magic trick?","Magic time"],
     "answer": "How about a magic trick?",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 109,
     "question": "Complete the quote: 'You either die a hero or...'",
-    "options": [
-      "Lose everything",
-      "Become what you hate",
-      "Watch the world burn",
-      "Live long enough to see yourself become the villain"
-    ],
+    "options": ["Lose everything","Become what you hate","Watch the world burn","Live long enough to see yourself become the villain"],
     "answer": "Live long enough to see yourself become the villain",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 110,
     "question": "Who says the 'die a hero' quote?",
-    "options": [
-      "Harvey Dent",
-      "Gordon",
-      "Batman",
-      "Joker"
-    ],
+    "options": ["Harvey Dent","Gordon","Batman","Joker"],
     "answer": "Harvey Dent",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 111,
     "question": "What does Superman's 'S' symbol mean on Krypton?",
-    "options": [
-      "House of El",
-      "Strength",
-      "Superman",
-      "Hope"
-    ],
+    "options": ["House of El","Strength","Superman","Hope"],
     "answer": "Hope",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 112,
     "question": "Who plays Tim Drake in any DC film?",
-    "options": [
-      "Chris O'Donnell",
-      "Brenton Thwaites",
-      "No film appearance yet",
-      "Joseph Gordon-Levitt"
-    ],
+    "options": ["Chris O'Donnell","Brenton Thwaites","No film appearance yet","Joseph Gordon-Levitt"],
     "answer": "No film appearance yet",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 113,
     "question": "Who plays Robin in Batman Forever?",
-    "options": [
-      "Joseph Gordon-Levitt",
-      "Burt Ward",
-      "Brenton Thwaites",
-      "Chris O'Donnell"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Chris_ODonnell_Max_Payne_2008.jpg/250px-Chris_ODonnell_Max_Payne_2008.jpg",
+    "options": ["Joseph Gordon-Levitt","Burt Ward","Brenton Thwaites","Chris O'Donnell"],
     "answer": "Chris O'Donnell",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 114,
     "question": "Who plays Batman in Batman Forever?",
-    "options": [
-      "Michael Keaton",
-      "Val Kilmer",
-      "Adam West",
-      "George Clooney"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Val_Kilmer_Cannes.jpg/250px-Val_Kilmer_Cannes.jpg",
+    "options": ["Michael Keaton","Val Kilmer","Adam West","George Clooney"],
     "answer": "Val Kilmer",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 115,
     "question": "Who plays Batman in Batman & Robin?",
-    "options": [
-      "Michael Keaton",
-      "Ben Affleck",
-      "George Clooney",
-      "Val Kilmer"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/George_Clooney_Jay_Kelly-19_%28cropped%29.jpg/250px-George_Clooney_Jay_Kelly-19_%28cropped%29.jpg",
+    "options": ["Michael Keaton","Ben Affleck","George Clooney","Val Kilmer"],
     "answer": "George Clooney",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 116,
     "question": "Who plays Mr. Freeze in Batman & Robin?",
-    "options": [
-      "Arnold Schwarzenegger",
-      "Nathan Darrow",
-      "Victor Garber",
-      "Patrick Stewart"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Arnold_Schwarzenegger_2019_%28cropped%29.jpg/250px-Arnold_Schwarzenegger_2019_%28cropped%29.jpg",
+    "options": ["Arnold Schwarzenegger","Nathan Darrow","Victor Garber","Patrick Stewart"],
     "answer": "Arnold Schwarzenegger",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 117,
     "question": "Who plays Poison Ivy in Batman & Robin?",
-    "options": [
-      "Uma Thurman",
-      "Nicole Kidman",
-      "Clare Foley",
-      "Drew Barrymore"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/UmaThurman-byPhilipRomano.jpg/250px-UmaThurman-byPhilipRomano.jpg",
+    "options": ["Uma Thurman","Nicole Kidman","Clare Foley","Drew Barrymore"],
     "answer": "Uma Thurman",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 118,
     "question": "Who directed Batman (1989)?",
-    "options": [
-      "Joel Schumacher",
-      "Christopher Nolan",
-      "Tim Burton",
-      "Richard Donner"
-    ],
+    "options": ["Joel Schumacher","Christopher Nolan","Tim Burton","Richard Donner"],
     "answer": "Tim Burton",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 119,
     "question": "Who plays Batman in Batman (1989)?",
-    "options": [
-      "Michael Keaton",
-      "Adam West",
-      "Val Kilmer",
-      "Christian Bale"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Michael_Keaton-63916_%28cropped%29.jpg/250px-Michael_Keaton-63916_%28cropped%29.jpg",
+    "options": ["Michael Keaton","Adam West","Val Kilmer","Christian Bale"],
     "answer": "Michael Keaton",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 120,
     "question": "Who plays Joker in Batman (1989)?",
-    "options": [
-      "Cesar Romero",
-      "Jack Nicholson",
-      "Heath Ledger",
-      "Mark Hamill"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Jack_Nicholson_2001.jpg/250px-Jack_Nicholson_2001.jpg",
+    "options": ["Cesar Romero","Jack Nicholson","Heath Ledger","Mark Hamill"],
     "answer": "Jack Nicholson",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 121,
     "question": "Who plays Vicki Vale in Batman (1989)?",
-    "options": [
-      "Kim Basinger",
-      "Michelle Pfeiffer",
-      "Nicole Kidman",
-      "Drew Barrymore"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Kim_Basinger_%281990%29.jpg/250px-Kim_Basinger_%281990%29.jpg",
+    "options": ["Kim Basinger","Michelle Pfeiffer","Nicole Kidman","Drew Barrymore"],
     "answer": "Kim Basinger",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 122,
     "question": "What year was Batman Returns released?",
-    "options": [
-      "1997",
-      "1992",
-      "1989",
-      "1995"
-    ],
+    "options": ["1997","1992","1989","1995"],
     "answer": "1992",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 123,
     "question": "Who plays Catwoman in Batman Returns?",
-    "options": [
-      "Halle Berry",
-      "Eartha Kitt",
-      "Michelle Pfeiffer",
-      "Anne Hathaway"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Michelle_Pfeiffer_Ant-Man_%26_The_Wasp_premiere.jpg/250px-Michelle_Pfeiffer_Ant-Man_%26_The_Wasp_premiere.jpg",
+    "options": ["Halle Berry","Eartha Kitt","Michelle Pfeiffer","Anne Hathaway"],
     "answer": "Michelle Pfeiffer",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 124,
     "question": "Who plays Penguin in Batman Returns?",
-    "options": [
-      "Danny DeVito",
-      "Burgess Meredith",
-      "Robin Lord Taylor",
-      "Colin Farrell"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Danny_DeVito_cropped_and_edited_for_brightness.jpg/250px-Danny_DeVito_cropped_and_edited_for_brightness.jpg",
+    "options": ["Danny DeVito","Burgess Meredith","Robin Lord Taylor","Colin Farrell"],
     "answer": "Danny DeVito",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 125,
     "question": "Who composed The Dark Knight score?",
-    "options": [
-      "Danny Elfman",
-      "Howard Shore",
-      "Hans Zimmer and James Newton Howard",
-      "John Williams"
-    ],
+    "options": ["Danny Elfman","Howard Shore","Hans Zimmer and James Newton Howard","John Williams"],
     "answer": "Hans Zimmer and James Newton Howard",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 126,
     "question": "What vehicle does Batman use to escape in The Dark Knight?",
-    "options": [
-      "Batpod",
-      "Bat-Tank",
-      "Batmobile",
-      "Batwing"
-    ],
+    "options": ["Batpod","Bat-Tank","Batmobile","Batwing"],
     "answer": "Batpod",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 127,
     "question": "What is the nickname for Batman's plane in The Dark Knight Rises?",
-    "options": [
-      "Batwing",
-      "Batplane",
-      "Batjet",
-      "The Bat"
-    ],
+    "options": ["Batwing","Batplane","Batjet","The Bat"],
     "answer": "The Bat",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 128,
     "question": "What is Bane's famous quote?",
-    "options": [
-      "Break the Bat",
-      "I am your reckoning",
-      "You merely adopted the dark. I was born in it",
-      "The fire rises"
-    ],
+    "options": ["Break the Bat","I am your reckoning","You merely adopted the dark. I was born in it","The fire rises"],
     "answer": "You merely adopted the dark. I was born in it",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 129,
     "question": "Where is Bane from in The Dark Knight Rises?",
-    "options": [
-      "Santa Prisca",
-      "League of Shadows",
-      "Gotham",
-      "The Pit"
-    ],
+    "options": ["Santa Prisca","League of Shadows","Gotham","The Pit"],
     "answer": "The Pit",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 130,
     "question": "Who is revealed to be Talia al Ghul?",
-    "options": [
-      "Holly Robinson",
-      "Selina Kyle",
-      "Miranda Tate",
-      "Jen"
-    ],
+    "options": ["Holly Robinson","Selina Kyle","Miranda Tate","Jen"],
     "answer": "Miranda Tate",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 131,
     "question": "Who plays Miranda Tate/Talia?",
-    "options": [
-      "Anne Hathaway",
-      "Maggie Gyllenhaal",
-      "Marion Cotillard",
-      "Katie Holmes"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Marion_Cotillard_at_2019_Cannes.jpg/250px-Marion_Cotillard_at_2019_Cannes.jpg",
+    "options": ["Anne Hathaway","Maggie Gyllenhaal","Marion Cotillard","Katie Holmes"],
     "answer": "Marion Cotillard",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 132,
     "question": "Who plays Rachel Dawes in Batman Begins?",
-    "options": [
-      "Anne Hathaway",
-      "Maggie Gyllenhaal",
-      "Katie Holmes",
-      "Marion Cotillard"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Katie_Holmes%2C_2009.jpg/250px-Katie_Holmes%2C_2009.jpg",
+    "options": ["Anne Hathaway","Maggie Gyllenhaal","Katie Holmes","Marion Cotillard"],
     "answer": "Katie Holmes",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 133,
     "question": "Who plays Rachel Dawes in The Dark Knight?",
-    "options": [
-      "Maggie Gyllenhaal",
-      "Anne Hathaway",
-      "Marion Cotillard",
-      "Katie Holmes"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Maggie_Gyllenhaal_2021.jpg/250px-Maggie_Gyllenhaal_2021.jpg",
+    "options": ["Maggie Gyllenhaal","Anne Hathaway","Marion Cotillard","Katie Holmes"],
     "answer": "Maggie Gyllenhaal",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 134,
     "question": "What happens to Rachel in The Dark Knight?",
-    "options": [
-      "She dies in an explosion",
-      "She leaves Gotham",
-      "She survives",
-      "She becomes a villain"
-    ],
+    "options": ["She dies in an explosion","She leaves Gotham","She survives","She becomes a villain"],
     "answer": "She dies in an explosion",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 135,
     "question": "Who plays John Blake in The Dark Knight Rises?",
-    "options": [
-      "Tom Hardy",
-      "Matthew Modine",
-      "Joseph Gordon-Levitt",
-      "Ben Mendelsohn"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Joseph_Gordon-Levitt_2025_%28cropped%29.jpg/250px-Joseph_Gordon-Levitt_2025_%28cropped%29.jpg",
+    "options": ["Tom Hardy","Matthew Modine","Joseph Gordon-Levitt","Ben Mendelsohn"],
     "answer": "Joseph Gordon-Levitt",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 136,
     "question": "What is John Blake's first name revealed to be?",
-    "options": [
-      "Jason",
-      "Robin",
-      "Dick",
-      "Tim"
-    ],
+    "options": ["Jason","Robin","Dick","Tim"],
     "answer": "Robin",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 137,
     "question": "What is the name of Superman's cousin?",
-    "options": [
-      "Lara",
-      "Kara Zor-El/Supergirl",
-      "Superwoman",
-      "Power Girl"
-    ],
+    "options": ["Lara","Kara Zor-El/Supergirl","Superwoman","Power Girl"],
     "answer": "Kara Zor-El/Supergirl",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 138,
     "question": "What is Darkseid's home planet?",
-    "options": [
-      "New Genesis",
-      "Oa",
-      "Apokolips",
-      "Krypton"
-    ],
+    "options": ["New Genesis","Oa","Apokolips","Krypton"],
     "answer": "Apokolips",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 139,
     "question": "What does Darkseid seek in the Snyder Cut?",
-    "options": [
-      "Infinity Stones",
-      "Kryptonite",
-      "Mother Boxes",
-      "Anti-Life Equation"
-    ],
+    "options": ["Infinity Stones","Kryptonite","Mother Boxes","Anti-Life Equation"],
     "answer": "Anti-Life Equation",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 140,
     "question": "What year was Zack Snyder's Justice League released?",
-    "options": [
-      "2017",
-      "2020",
-      "2022",
-      "2021"
-    ],
+    "options": ["2017","2020","2022","2021"],
     "answer": "2021",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 141,
     "question": "How long is Zack Snyder's Justice League?",
-    "options": [
-      "5 hours",
-      "2.5 hours",
-      "3 hours",
-      "4 hours"
-    ],
+    "options": ["5 hours","2.5 hours","3 hours","4 hours"],
     "answer": "4 hours",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 142,
     "question": "Who plays Martha Wayne in Batman v Superman?",
-    "options": [
-      "Diane Lane",
-      "Gal Gadot",
-      "Amy Adams",
-      "Lauren Cohan"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Lauren_Cohan_by_Gage_Skidmore_5.jpg/250px-Lauren_Cohan_by_Gage_Skidmore_5.jpg",
+    "options": ["Diane Lane","Gal Gadot","Amy Adams","Lauren Cohan"],
     "answer": "Lauren Cohan",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 143,
     "question": "What is the famous 'Martha' moment about?",
-    "options": [
-      "Martha Wayne's death",
-      "Both mothers named Martha",
-      "Martha Kent's rescue",
-      "A secret code"
-    ],
+    "options": ["Martha Wayne's death","Both mothers named Martha","Martha Kent's rescue","A secret code"],
     "answer": "Both mothers named Martha",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 144,
     "question": "What armor does Batman wear to fight Superman?",
-    "options": [
-      "Mech Suit/Power Armor",
-      "Kryptonite Suit",
-      "Tank Armor",
-      "Standard Batsuit"
-    ],
+    "options": ["Mech Suit/Power Armor","Kryptonite Suit","Tank Armor","Standard Batsuit"],
     "answer": "Mech Suit/Power Armor",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 145,
     "question": "What does Batman use to weaken Superman?",
-    "options": [
-      "Kryptonite sword",
-      "Kryptonite gas",
-      "Red sun lamp",
-      "Kryptonite bullets"
-    ],
+    "options": ["Kryptonite sword","Kryptonite gas","Red sun lamp","Kryptonite bullets"],
     "answer": "Kryptonite gas",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 146,
     "question": "Who is the main villain in Birds of Prey?",
-    "options": [
-      "Black Mask",
-      "Two-Face",
-      "Penguin",
-      "Joker"
-    ],
+    "options": ["Black Mask","Two-Face","Penguin","Joker"],
     "answer": "Black Mask",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 147,
     "question": "Who plays Black Mask in Birds of Prey?",
-    "options": [
-      "Colin Farrell",
-      "Jared Leto",
-      "Ewan McGregor",
-      "Jim Carrey"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg/250px-Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg",
+    "options": ["Colin Farrell","Jared Leto","Ewan McGregor","Jim Carrey"],
     "answer": "Ewan McGregor",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 148,
     "question": "What is the full title of Birds of Prey?",
-    "options": [
-      "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
-      "Birds of Prey: Gotham Sirens",
-      "Harley Quinn: Birds of Prey",
-      "Birds of Prey: Harley's Revenge"
-    ],
+    "options": ["Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)","Birds of Prey: Gotham Sirens","Harley Quinn: Birds of Prey","Birds of Prey: Harley's Revenge"],
     "answer": "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn)",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 149,
     "question": "Who plays Huntress in Birds of Prey?",
-    "options": [
-      "Rosie Perez",
-      "Jurnee Smollett",
-      "Ella Jay Basco",
-      "Mary Elizabeth Winstead"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mary_Elizabeth_Winstead_by_Gage_Skidmore.jpg/250px-Mary_Elizabeth_Winstead_by_Gage_Skidmore.jpg",
+    "options": ["Rosie Perez","Jurnee Smollett","Ella Jay Basco","Mary Elizabeth Winstead"],
     "answer": "Mary Elizabeth Winstead",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 150,
     "question": "Who plays Black Canary in Birds of Prey?",
-    "options": [
-      "Margot Robbie",
-      "Mary Elizabeth Winstead",
-      "Jurnee Smollett",
-      "Rosie Perez"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Jurnee_Smollett-67817_%28cropped%29.jpg/250px-Jurnee_Smollett-67817_%28cropped%29.jpg",
+    "options": ["Margot Robbie","Mary Elizabeth Winstead","Jurnee Smollett","Rosie Perez"],
     "answer": "Jurnee Smollett",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 151,
     "question": "What is Black Canary's power?",
-    "options": [
-      "Flight",
-      "Canary Cry (sonic scream)",
-      "Super strength",
-      "Telepathy"
-    ],
+    "options": ["Flight","Canary Cry (sonic scream)","Super strength","Telepathy"],
     "answer": "Canary Cry (sonic scream)",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 152,
     "question": "Who plays Renee Montoya in Birds of Prey?",
-    "options": [
-      "Mary Elizabeth Winstead",
-      "Rosie Perez",
-      "Jurnee Smollett",
-      "Ella Jay Basco"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Rosie_Perez_2012.jpg/250px-Rosie_Perez_2012.jpg",
+    "options": ["Mary Elizabeth Winstead","Rosie Perez","Jurnee Smollett","Ella Jay Basco"],
     "answer": "Rosie Perez",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 153,
     "question": "What is Aquaman's weapon called?",
-    "options": [
-      "Trident of Atlan",
-      "Trident of Poseidon",
-      "King's Trident",
-      "Neptune's Trident"
-    ],
+    "options": ["Trident of Atlan","Trident of Poseidon","King's Trident","Neptune's Trident"],
     "answer": "Trident of Atlan",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 154,
     "question": "Who plays Aquaman's mother?",
-    "options": [
-      "Dolph Lundgren",
-      "Temuera Morrison",
-      "Nicole Kidman",
-      "Amber Heard"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Nicole_Kidman-66059_%28cropped%29.jpg/250px-Nicole_Kidman-66059_%28cropped%29.jpg",
+    "options": ["Dolph Lundgren","Temuera Morrison","Nicole Kidman","Amber Heard"],
     "answer": "Nicole Kidman",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 155,
     "question": "What is the name of Aquaman's father?",
-    "options": [
-      "William Curry",
-      "Tom Curry",
-      "Arthur Curry Sr.",
-      "Thomas Curry"
-    ],
+    "options": ["William Curry","Tom Curry","Arthur Curry Sr.","Thomas Curry"],
     "answer": "Tom Curry",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 156,
     "question": "Who plays Black Manta in Aquaman?",
-    "options": [
-      "Willem Dafoe",
-      "Patrick Wilson",
-      "Yahya Abdul-Mateen II",
-      "Dolph Lundgren"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Yahya_Abdul-Mateen_II_by_Gage_Skidmore.jpg/250px-Yahya_Abdul-Mateen_II_by_Gage_Skidmore.jpg",
+    "options": ["Willem Dafoe","Patrick Wilson","Yahya Abdul-Mateen II","Dolph Lundgren"],
     "answer": "Yahya Abdul-Mateen II",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 157,
     "question": "What does Black Manta want from Aquaman?",
-    "options": [
-      "The throne",
-      "Atlantis",
-      "Revenge for his father's death",
-      "The trident"
-    ],
+    "options": ["The throne","Atlantis","Revenge for his father's death","The trident"],
     "answer": "Revenge for his father's death",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 158,
     "question": "What year was Aquaman released?",
-    "options": [
-      "2017",
-      "2020",
-      "2018",
-      "2019"
-    ],
+    "options": ["2017","2020","2018","2019"],
     "answer": "2018",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 159,
     "question": "What is the hidden kingdom in Aquaman?",
-    "options": [
-      "Xebel",
-      "The Hidden Sea/Trench Kingdom",
-      "Atlantis",
-      "Fisherman Kingdom"
-    ],
+    "options": ["Xebel","The Hidden Sea/Trench Kingdom","Atlantis","Fisherman Kingdom"],
     "answer": "The Hidden Sea/Trench Kingdom",
+    "difficulty": "medium",
     "category": "aquaman"
   },
   {
+    "id": 160,
     "question": "Who plays Vulko in Aquaman?",
-    "options": [
-      "Dolph Lundgren",
-      "Temuera Morrison",
-      "Willem Dafoe",
-      "Patrick Wilson"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Willem_Dafoe-63668_%28cropped%29.jpg/250px-Willem_Dafoe-63668_%28cropped%29.jpg",
+    "options": ["Dolph Lundgren","Temuera Morrison","Willem Dafoe","Patrick Wilson"],
     "answer": "Willem Dafoe",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 161,
     "question": "Who is Robin in the DCEU?",
-    "options": [
-      "Tim Drake",
-      "Dead (killed by Joker)",
-      "Dick Grayson",
-      "Jason Todd"
-    ],
+    "options": ["Tim Drake","Dead (killed by Joker)","Dick Grayson","Jason Todd"],
     "answer": "Dead (killed by Joker)",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 162,
     "question": "What is written on Robin's suit in BvS?",
-    "options": [
-      "Why so serious",
-      "Ha Ha Ha Joke's on you Batman",
-      "Dead bird",
-      "RIP Robin"
-    ],
+    "options": ["Why so serious","Ha Ha Ha Joke's on you Batman","Dead bird","RIP Robin"],
     "answer": "Ha Ha Ha Joke's on you Batman",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 163,
     "question": "Who is the Flash's father?",
-    "options": [
-      "Jay Allen",
-      "Henry Allen",
-      "Nora Allen",
-      "Barry Allen Sr."
-    ],
+    "options": ["Jay Allen","Henry Allen","Nora Allen","Barry Allen Sr."],
     "answer": "Henry Allen",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 164,
     "question": "What is Flash's power source?",
-    "options": [
-      "Cosmic Energy",
-      "Speed Force",
-      "Lightning",
-      "Kinetic Energy"
-    ],
+    "options": ["Cosmic Energy","Speed Force","Lightning","Kinetic Energy"],
     "answer": "Speed Force",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 165,
     "question": "What year was The Flash released?",
-    "options": [
-      "2022",
-      "2021",
-      "2023",
-      "2024"
-    ],
+    "options": ["2022","2021","2023","2024"],
     "answer": "2023",
+    "difficulty": "medium",
     "category": "justice-league"
   },
   {
+    "id": 166,
     "question": "Who directed The Flash (2023)?",
-    "options": [
-      "Zack Snyder",
-      "James Wan",
-      "Andy Muschietti",
-      "David F. Sandberg"
-    ],
+    "options": ["Zack Snyder","James Wan","Andy Muschietti","David F. Sandberg"],
     "answer": "Andy Muschietti",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 167,
     "question": "Who returns as Batman in The Flash?",
-    "options": [
-      "Robert Pattinson",
-      "Christian Bale",
-      "George Clooney",
-      "Michael Keaton and Ben Affleck"
-    ],
+    "options": ["Robert Pattinson","Christian Bale","George Clooney","Michael Keaton and Ben Affleck"],
     "answer": "Michael Keaton and Ben Affleck",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 168,
     "question": "Who plays Supergirl in The Flash?",
-    "options": [
-      "Laura Vandervoort",
-      "Sasha Calle",
-      "Melissa Benoist",
-      "Helen Slater"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sasha_Calle_at_the_2024_Toronto_International_Film_Festival_%28cropped%29_2.jpg/250px-Sasha_Calle_at_the_2024_Toronto_International_Film_Festival_%28cropped%29_2.jpg",
+    "options": ["Laura Vandervoort","Sasha Calle","Melissa Benoist","Helen Slater"],
     "answer": "Sasha Calle",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 169,
     "question": "What Batman gadget does Bruce use to glide?",
-    "options": [
-      "Jetpack",
-      "Wings",
-      "Glider",
-      "Cape (Memory cloth)"
-    ],
+    "options": ["Jetpack","Wings","Glider","Cape (Memory cloth)"],
     "answer": "Cape (Memory cloth)",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 170,
     "question": "What is the Batcave's entrance in The Dark Knight trilogy?",
-    "options": [
-      "Bookshelf",
-      "Elevator",
-      "Grandfather clock",
-      "Waterfall"
-    ],
+    "options": ["Bookshelf","Elevator","Grandfather clock","Waterfall"],
     "answer": "Waterfall",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 171,
     "question": "Who provides Batman's tech in The Dark Knight trilogy?",
-    "options": [
-      "Oracle",
-      "Lucius Fox",
-      "Wayne Enterprises R&D",
-      "Alfred"
-    ],
+    "options": ["Oracle","Lucius Fox","Wayne Enterprises R&D","Alfred"],
     "answer": "Lucius Fox",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 172,
     "question": "Who plays Lucius Fox?",
-    "options": [
-      "Laurence Fishburne",
-      "Denzel Washington",
-      "Morgan Freeman",
-      "Samuel L. Jackson"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg/250px-Morgan_Freeman_at_The_Pentagon_on_2_August_2023_-_230802-D-PM193-3363_%28cropped%29.jpg",
+    "options": ["Laurence Fishburne","Denzel Washington","Morgan Freeman","Samuel L. Jackson"],
     "answer": "Morgan Freeman",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 173,
     "question": "What is Wonder Woman's signature weapon?",
-    "options": [
-      "Bracelets",
-      "Lasso of Truth",
-      "Shield",
-      "Sword"
-    ],
+    "options": ["Bracelets","Lasso of Truth","Shield","Sword"],
     "answer": "Lasso of Truth",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 174,
     "question": "What are Wonder Woman's bracelets called?",
-    "options": [
-      "Bracelets of Power",
-      "Bracelets of Submission",
-      "Bracelets of Hephaestus",
-      "Amazonian Gauntlets"
-    ],
+    "options": ["Bracelets of Power","Bracelets of Submission","Bracelets of Hephaestus","Amazonian Gauntlets"],
     "answer": "Bracelets of Submission",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 175,
     "question": "Who forged Wonder Woman's weapons?",
-    "options": [
-      "Hephaestus",
-      "Ares",
-      "Athena",
-      "Zeus"
-    ],
+    "options": ["Hephaestus","Ares","Athena","Zeus"],
     "answer": "Hephaestus",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 176,
     "question": "Who is Wonder Woman's father in the DCEU?",
-    "options": [
-      "Hippolytus",
-      "Zeus",
-      "Hades",
-      "Ares"
-    ],
+    "options": ["Hippolytus","Zeus","Hades","Ares"],
     "answer": "Zeus",
+    "difficulty": "medium",
     "category": "wonder-woman"
   },
   {
+    "id": 177,
     "question": "What is Joker's occupation before becoming Joker (2019)?",
-    "options": [
-      "Criminal",
-      "Accountant",
-      "Comedian",
-      "Party clown"
-    ],
+    "options": ["Criminal","Accountant","Comedian","Party clown"],
     "answer": "Party clown",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 178,
     "question": "What mental condition does Arthur Fleck have?",
-    "options": [
-      "Depression",
-      "Bipolar",
-      "Pseudobulbar affect (uncontrollable laughter)",
-      "Schizophrenia"
-    ],
+    "options": ["Depression","Bipolar","Pseudobulbar affect (uncontrollable laughter)","Schizophrenia"],
     "answer": "Pseudobulbar affect (uncontrollable laughter)",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 179,
     "question": "Who plays Arthur's mother in Joker?",
-    "options": [
-      "Kathy Bates",
-      "Jessica Lange",
-      "Frances Conroy",
-      "Glenn Close"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Frances_Conroy_at_PaleyFest_2014_-_13491478183.jpg/250px-Frances_Conroy_at_PaleyFest_2014_-_13491478183.jpg",
+    "options": ["Kathy Bates","Jessica Lange","Frances Conroy","Glenn Close"],
     "answer": "Frances Conroy",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 180,
     "question": "What talk show host does Arthur appear on?",
-    "options": [
-      "Johnny Carson",
-      "Jay Leno",
-      "David Letterman",
-      "Murray Franklin"
-    ],
+    "options": ["Johnny Carson","Jay Leno","David Letterman","Murray Franklin"],
     "answer": "Murray Franklin",
+    "difficulty": "medium",
     "category": "villains"
   },
   {
+    "id": 181,
     "question": "Who plays Murray Franklin in Joker?",
-    "options": [
-      "Joe Pesci",
-      "Robert De Niro",
-      "Harvey Keitel",
-      "Al Pacino"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Robert_de_Niro_Cannes_Film_Festival_%283x4_cropped%29.jpg/250px-Robert_de_Niro_Cannes_Film_Festival_%283x4_cropped%29.jpg",
+    "options": ["Joe Pesci","Robert De Niro","Harvey Keitel","Al Pacino"],
     "answer": "Robert De Niro",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 182,
     "question": "What award did Joaquin Phoenix win for Joker?",
-    "options": [
-      "Golden Globe only",
-      "BAFTA only",
-      "No major awards",
-      "Academy Award for Best Actor"
-    ],
+    "options": ["Golden Globe only","BAFTA only","No major awards","Academy Award for Best Actor"],
     "answer": "Academy Award for Best Actor",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 183,
     "question": "What year is The Batman (2022) set in?",
-    "options": [
-      "Year Two of Batman",
-      "Year Five",
-      "Year Ten",
-      "Year One"
-    ],
+    "options": ["Year Two of Batman","Year Five","Year Ten","Year One"],
     "answer": "Year Two of Batman",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 184,
     "question": "What is the Riddler's signature in The Batman?",
-    "options": [
-      "Riddles",
-      "Question mark",
-      "Green",
-      "E. Nygma"
-    ],
+    "options": ["Riddles","Question mark","Green","E. Nygma"],
     "answer": "Question mark",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 185,
     "question": "Who plays Carmine Falcone in The Batman?",
-    "options": [
-      "John Turturro",
-      "David Zayas",
-      "Eric Roberts",
-      "Tom Wilkinson"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/JohnTurturro-byPhilipRomano3.jpg/250px-JohnTurturro-byPhilipRomano3.jpg",
+    "options": ["John Turturro","David Zayas","Eric Roberts","Tom Wilkinson"],
     "answer": "John Turturro",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 186,
     "question": "What is Selina Kyle looking for in The Batman?",
-    "options": [
-      "Her missing friend Annika",
-      "Revenge on Batman",
-      "Money",
-      "The Riddler"
-    ],
+    "options": ["Her missing friend Annika","Revenge on Batman","Money","The Riddler"],
     "answer": "Her missing friend Annika",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 187,
     "question": "Who plays the Riddler in Batman Forever?",
-    "options": [
-      "Cory Michael Smith",
-      "Frank Gorshin",
-      "Jim Carrey",
-      "Paul Dano"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Jim_Carrey_2008.jpg/250px-Jim_Carrey_2008.jpg",
+    "options": ["Cory Michael Smith","Frank Gorshin","Jim Carrey","Paul Dano"],
     "answer": "Jim Carrey",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 188,
     "question": "Who plays Two-Face in Batman Forever?",
-    "options": [
-      "Aaron Eckhart",
-      "Tommy Lee Jones",
-      "Billy Dee Williams",
-      "Richard Moll"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Tommy_Lee_Jones_the_Jury_President_at_Opening_Ceremony_of_the_Tokyo_International_Film_Festival_2017_%2825332220247%29.jpg/250px-Tommy_Lee_Jones_the_Jury_President_at_Opening_Ceremony_of_the_Tokyo_International_Film_Festival_2017_%2825332220247%29.jpg",
+    "options": ["Aaron Eckhart","Tommy Lee Jones","Billy Dee Williams","Richard Moll"],
     "answer": "Tommy Lee Jones",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 189,
     "question": "Who plays Commissioner Gordon in The Batman?",
-    "options": [
-      "Pat Hingle",
-      "J.K. Simmons",
-      "Gary Oldman",
-      "Jeffrey Wright"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Jeffrey_Wright-7706.jpg/250px-Jeffrey_Wright-7706.jpg",
+    "options": ["Pat Hingle","J.K. Simmons","Gary Oldman","Jeffrey Wright"],
     "answer": "Jeffrey Wright",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 190,
     "question": "What is the name of the club in The Batman?",
-    "options": [
-      "44 Below",
-      "Gotham Club",
-      "Iceberg Lounge",
-      "The Penguin's Nest"
-    ],
+    "options": ["44 Below","Gotham Club","Iceberg Lounge","The Penguin's Nest"],
     "answer": "Iceberg Lounge",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 191,
     "question": "What drug is being distributed in The Batman?",
-    "options": [
-      "Drops",
-      "Venom",
-      "Joker Gas",
-      "Fear Toxin"
-    ],
+    "options": ["Drops","Venom","Joker Gas","Fear Toxin"],
     "answer": "Drops",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 192,
     "question": "How long is The Batman (2022)?",
-    "options": [
-      "2.5 hours",
-      "2 hours",
-      "3.5 hours",
-      "Nearly 3 hours"
-    ],
+    "options": ["2.5 hours","2 hours","3.5 hours","Nearly 3 hours"],
     "answer": "Nearly 3 hours",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 193,
     "question": "What Nirvana song is featured in The Batman?",
-    "options": [
-      "Come As You Are",
-      "Smells Like Teen Spirit",
-      "Something in the Way",
-      "Heart-Shaped Box"
-    ],
+    "options": ["Come As You Are","Smells Like Teen Spirit","Something in the Way","Heart-Shaped Box"],
     "answer": "Something in the Way",
+    "difficulty": "medium",
     "category": "batman"
   },
   {
+    "id": 194,
     "question": "Who is the Joker teased at the end of The Batman?",
-    "options": [
-      "Joaquin Phoenix",
-      "Barry Keoghan",
-      "Jared Leto",
-      "Cameron Monaghan"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Barry_Keoghan_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg/250px-Barry_Keoghan_at_the_2024_Toronto_International_Film_Festival_%28cropped%29.jpg",
+    "options": ["Joaquin Phoenix","Barry Keoghan","Jared Leto","Cameron Monaghan"],
     "answer": "Barry Keoghan",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 195,
     "question": "What is the rating of most DC films?",
-    "options": [
-      "R",
-      "PG-13",
-      "G",
-      "PG"
-    ],
+    "options": ["R","PG-13","G","PG"],
     "answer": "PG-13",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 196,
     "question": "Which DC film is rated R?",
-    "options": [
-      "Wonder Woman",
-      "Man of Steel",
-      "Aquaman",
-      "Joker, The Suicide Squad, The Batman"
-    ],
+    "options": ["Wonder Woman","Man of Steel","Aquaman","Joker, The Suicide Squad, The Batman"],
     "answer": "Joker, The Suicide Squad, The Batman",
+    "difficulty": "medium",
     "category": "directors"
   },
   {
+    "id": 197,
     "question": "Who composed Man of Steel's score?",
-    "options": [
-      "James Newton Howard",
-      "Danny Elfman",
-      "John Williams",
-      "Hans Zimmer"
-    ],
+    "options": ["James Newton Howard","Danny Elfman","John Williams","Hans Zimmer"],
     "answer": "Hans Zimmer",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 198,
     "question": "What is the famous Superman theme by?",
-    "options": [
-      "Hans Zimmer",
-      "John Williams",
-      "James Horner",
-      "Danny Elfman"
-    ],
+    "options": ["Hans Zimmer","John Williams","James Horner","Danny Elfman"],
     "answer": "John Williams",
+    "difficulty": "medium",
     "category": "superman"
   },
   {
+    "id": 199,
     "question": "Who plays General Swanwick in Man of Steel?",
-    "options": [
-      "Laurence Fishburne",
-      "Harry Lennix",
-      "Christopher Meloni",
-      "Michael Shannon"
-    ],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Harry_Lennix_by_Gage_Skidmore.jpg/250px-Harry_Lennix_by_Gage_Skidmore.jpg",
+    "options": ["Laurence Fishburne","Harry Lennix","Christopher Meloni","Michael Shannon"],
     "answer": "Harry Lennix",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 200,
     "question": "What is the new DC film universe called (2023+)?",
-    "options": [
-      "DCU (DC Universe)",
-      "DC Films",
-      "DCEU",
-      "DC Cinematic Universe"
-    ],
+    "options": ["DCU (DC Universe)","DC Films","DCEU","DC Cinematic Universe"],
     "answer": "DCU (DC Universe)",
+    "difficulty": "medium",
     "category": "directors"
   }
 ]

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "question": "Who is Luke Skywalker's father?",
     "options": [
       "Obi-Wan Kenobi",
@@ -8,9 +9,11 @@
       "Emperor Palpatine"
     ],
     "answer": "Darth Vader",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 2,
     "question": "What is the name of Han Solo's ship?",
     "options": [
       "Star Destroyer",
@@ -19,10 +22,13 @@
       "Millennium Falcon"
     ],
     "answer": "Millennium Falcon",
+    "difficulty": "easy",
     "category": "ships"
   },
   {
+    "id": 3,
     "question": "Who plays Luke Skywalker in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mark_Hamill_by_Gage_Skidmore_4.jpg/250px-Mark_Hamill_by_Gage_Skidmore_4.jpg",
     "options": [
       "Mark Hamill",
       "Harrison Ford",
@@ -30,10 +36,13 @@
       "Carrie Fisher"
     ],
     "answer": "Mark Hamill",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 4,
     "question": "Who plays Han Solo in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Harrison_Ford_-_Televerse_2025_%28cropped%29.jpg/250px-Harrison_Ford_-_Televerse_2025_%28cropped%29.jpg",
     "options": [
       "Billy Dee Williams",
       "Peter Mayhew",
@@ -41,10 +50,13 @@
       "Mark Hamill"
     ],
     "answer": "Harrison Ford",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 5,
     "question": "Who plays Princess Leia?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Carrie_Fisher_2013-a_straightened.jpg/250px-Carrie_Fisher_2013-a_straightened.jpg",
     "options": [
       "Natalie Portman",
       "Felicity Jones",
@@ -52,9 +64,11 @@
       "Daisy Ridley"
     ],
     "answer": "Carrie Fisher",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 6,
     "question": "What color is Luke's first lightsaber?",
     "options": [
       "Red",
@@ -63,9 +77,11 @@
       "Blue"
     ],
     "answer": "Blue",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 7,
     "question": "What is Darth Vader's real name?",
     "options": [
       "Anakin Skywalker",
@@ -74,9 +90,11 @@
       "Sheev Palpatine"
     ],
     "answer": "Anakin Skywalker",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 8,
     "question": "Who is Chewbacca?",
     "options": [
       "A bounty hunter",
@@ -85,9 +103,11 @@
       "Han Solo's Wookiee co-pilot"
     ],
     "answer": "Han Solo's Wookiee co-pilot",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 9,
     "question": "What planet is Luke Skywalker from?",
     "options": [
       "Tatooine",
@@ -96,9 +116,11 @@
       "Coruscant"
     ],
     "answer": "Tatooine",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 10,
     "question": "What is the name of the evil Empire's ultimate weapon?",
     "options": [
       "Death Star II",
@@ -107,9 +129,11 @@
       "Star Destroyer"
     ],
     "answer": "Death Star",
+    "difficulty": "easy",
     "category": "ships"
   },
   {
+    "id": 11,
     "question": "Who trained Luke Skywalker?",
     "options": [
       "Darth Vader",
@@ -118,9 +142,11 @@
       "Obi-Wan Kenobi and Yoda"
     ],
     "answer": "Obi-Wan Kenobi and Yoda",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 12,
     "question": "What species is Yoda?",
     "options": [
       "Unknown",
@@ -129,10 +155,13 @@
       "Green alien"
     ],
     "answer": "Unknown",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 13,
     "question": "Who plays Obi-Wan Kenobi in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sir_Alec_Guinness_Allan_Warren.jpg/250px-Sir_Alec_Guinness_Allan_Warren.jpg",
     "options": [
       "Ewan McGregor",
       "Ian McDiarmid",
@@ -140,9 +169,11 @@
       "Liam Neeson"
     ],
     "answer": "Alec Guinness",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 14,
     "question": "What year was the original Star Wars released?",
     "options": [
       "1980",
@@ -151,9 +182,11 @@
       "1983"
     ],
     "answer": "1977",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 15,
     "question": "Who directed the original Star Wars?",
     "options": [
       "Irvin Kershner",
@@ -162,9 +195,11 @@
       "Richard Marquand"
     ],
     "answer": "George Lucas",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 16,
     "question": "What is the Jedi's weapon?",
     "options": [
       "Thermal detonator",
@@ -173,9 +208,11 @@
       "Blaster"
     ],
     "answer": "Lightsaber",
+    "difficulty": "easy",
     "category": "weapons"
   },
   {
+    "id": 17,
     "question": "What is 'The Force'?",
     "options": [
       "A spaceship",
@@ -184,9 +221,11 @@
       "Energy field that gives Jedi powers"
     ],
     "answer": "Energy field that gives Jedi powers",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 18,
     "question": "Who says 'May the Force be with you'?",
     "options": [
       "Multiple characters",
@@ -195,9 +234,11 @@
       "Only Obi-Wan"
     ],
     "answer": "Multiple characters",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 19,
     "question": "What is the second film in the original trilogy?",
     "options": [
       "The Empire Strikes Back",
@@ -206,9 +247,11 @@
       "Return of the Jedi"
     ],
     "answer": "The Empire Strikes Back",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 20,
     "question": "Who is Princess Leia's twin brother?",
     "options": [
       "Luke Skywalker",
@@ -217,9 +260,11 @@
       "Chewbacca"
     ],
     "answer": "Luke Skywalker",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 21,
     "question": "What bounty hunter captures Han Solo?",
     "options": [
       "Greedo",
@@ -228,9 +273,11 @@
       "Bossk"
     ],
     "answer": "Boba Fett",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 22,
     "question": "What is Han Solo frozen in?",
     "options": [
       "Carbonite",
@@ -239,9 +286,11 @@
       "Ice"
     ],
     "answer": "Carbonite",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 23,
     "question": "Who owns Jabba's Palace?",
     "options": [
       "Lando",
@@ -250,9 +299,11 @@
       "Boba Fett"
     ],
     "answer": "Jabba the Hutt",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 24,
     "question": "What planet is the Rebel base on in A New Hope?",
     "options": [
       "Alderaan",
@@ -261,9 +312,11 @@
       "Hoth"
     ],
     "answer": "Yavin 4",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 25,
     "question": "What planet is destroyed by the Death Star?",
     "options": [
       "Tatooine",
@@ -272,10 +325,13 @@
       "Alderaan"
     ],
     "answer": "Alderaan",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 26,
     "question": "Who plays Lando Calrissian in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Billy_Dee_Williams_Photo_Op_GalaxyCon_Raleigh_2023_%28cropped%29.jpg/250px-Billy_Dee_Williams_Photo_Op_GalaxyCon_Raleigh_2023_%28cropped%29.jpg",
     "options": [
       "Billy Dee Williams",
       "Forest Whitaker",
@@ -283,9 +339,11 @@
       "Samuel L. Jackson"
     ],
     "answer": "Billy Dee Williams",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 27,
     "question": "What is Cloud City located on?",
     "options": [
       "Mustafar",
@@ -294,9 +352,11 @@
       "Naboo"
     ],
     "answer": "Bespin",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 28,
     "question": "Who reveals 'I am your father'?",
     "options": [
       "Yoda",
@@ -305,9 +365,11 @@
       "Obi-Wan"
     ],
     "answer": "Darth Vader",
+    "difficulty": "easy",
     "category": "quotes"
   },
   {
+    "id": 29,
     "question": "What does Luke lose in his fight with Vader?",
     "options": [
       "His hand",
@@ -316,9 +378,11 @@
       "His ship"
     ],
     "answer": "His hand",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 30,
     "question": "What forest moon do the Ewoks live on?",
     "options": [
       "Dagobah",
@@ -327,9 +391,11 @@
       "Kashyyyk"
     ],
     "answer": "Endor",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 31,
     "question": "What are the small furry creatures in Return of the Jedi?",
     "options": [
       "Wookiees",
@@ -338,9 +404,11 @@
       "Tusken Raiders"
     ],
     "answer": "Ewoks",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 32,
     "question": "Who kills Emperor Palpatine in Return of the Jedi?",
     "options": [
       "Luke Skywalker",
@@ -349,9 +417,11 @@
       "Han Solo"
     ],
     "answer": "Darth Vader",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 33,
     "question": "What color is Darth Vader's lightsaber?",
     "options": [
       "Red",
@@ -360,10 +430,13 @@
       "Green"
     ],
     "answer": "Red",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 34,
     "question": "Who plays Emperor Palpatine?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ian_McDiarmid_Brussels_Comic_Con_2020.jpg/250px-Ian_McDiarmid_Brussels_Comic_Con_2020.jpg",
     "options": [
       "Christopher Lee",
       "Peter Cushing",
@@ -371,9 +444,11 @@
       "Ian McDiarmid"
     ],
     "answer": "Ian McDiarmid",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 35,
     "question": "What is the Emperor's Sith name?",
     "options": [
       "Darth Plagueis",
@@ -382,10 +457,13 @@
       "Darth Sidious"
     ],
     "answer": "Darth Sidious",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 36,
     "question": "Who plays young Anakin in The Phantom Menace?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/10.2.10JakeLloydByLuigiNovi.jpg/250px-10.2.10JakeLloydByLuigiNovi.jpg",
     "options": [
       "Hayden Christensen",
       "Matt Lanter",
@@ -393,10 +471,13 @@
       "Sebastian Shaw"
     ],
     "answer": "Jake Lloyd",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 37,
     "question": "Who plays Anakin in Attack of the Clones and Revenge of the Sith?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hayden_Christensen_-_GalaxyCon_Columbus_2024_%28A20929%29.jpg/250px-Hayden_Christensen_-_GalaxyCon_Columbus_2024_%28A20929%29.jpg",
     "options": [
       "Ewan McGregor",
       "Liam Neeson",
@@ -404,10 +485,13 @@
       "Hayden Christensen"
     ],
     "answer": "Hayden Christensen",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 38,
     "question": "Who plays Obi-Wan in the prequel trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg/250px-Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg",
     "options": [
       "Samuel L. Jackson",
       "Ewan McGregor",
@@ -415,10 +499,13 @@
       "Alec Guinness"
     ],
     "answer": "Ewan McGregor",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 39,
     "question": "Who plays Qui-Gon Jinn?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Liam_Neeson_Deauville_2012_2.jpg/250px-Liam_Neeson_Deauville_2012_2.jpg",
     "options": [
       "Christopher Lee",
       "Liam Neeson",
@@ -426,9 +513,11 @@
       "Samuel L. Jackson"
     ],
     "answer": "Liam Neeson",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 40,
     "question": "Who is the villain in The Phantom Menace?",
     "options": [
       "Darth Maul",
@@ -437,9 +526,11 @@
       "General Grievous"
     ],
     "answer": "Darth Maul",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 41,
     "question": "What color is Mace Windu's lightsaber?",
     "options": [
       "Red",
@@ -448,10 +539,13 @@
       "Blue"
     ],
     "answer": "Purple",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 42,
     "question": "Who plays Mace Windu?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SamuelLJackson.jpg/250px-SamuelLJackson.jpg",
     "options": [
       "Laurence Fishburne",
       "Morgan Freeman",
@@ -459,9 +553,11 @@
       "Samuel L. Jackson"
     ],
     "answer": "Samuel L. Jackson",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 43,
     "question": "What planet is Padmé Amidala from?",
     "options": [
       "Tatooine",
@@ -470,10 +566,13 @@
       "Coruscant"
     ],
     "answer": "Naboo",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 44,
     "question": "Who plays Padmé Amidala?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Natalie_Portman_2023.jpg/250px-Natalie_Portman_2023.jpg",
     "options": [
       "Carrie Fisher",
       "Natalie Portman",
@@ -481,9 +580,11 @@
       "Daisy Ridley"
     ],
     "answer": "Natalie Portman",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 45,
     "question": "What is the capital planet of the Republic?",
     "options": [
       "Coruscant",
@@ -492,9 +593,11 @@
       "Alderaan"
     ],
     "answer": "Coruscant",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 46,
     "question": "Who is Count Dooku?",
     "options": [
       "Darth Tyranus/Sith Lord",
@@ -503,10 +606,13 @@
       "Senator"
     ],
     "answer": "Darth Tyranus/Sith Lord",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 47,
     "question": "Who plays Count Dooku?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Christopher_Lee_2009.jpg/250px-Christopher_Lee_2009.jpg",
     "options": [
       "Ian McKellen",
       "Peter Cushing",
@@ -514,9 +620,11 @@
       "Max von Sydow"
     ],
     "answer": "Christopher Lee",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 48,
     "question": "What planet are the clones created on?",
     "options": [
       "Coruscant",
@@ -525,9 +633,11 @@
       "Naboo"
     ],
     "answer": "Kamino",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 49,
     "question": "Who is the template for the clone army?",
     "options": [
       "Commander Cody",
@@ -536,9 +646,11 @@
       "Jango Fett"
     ],
     "answer": "Jango Fett",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 50,
     "question": "What are Anakin and Padmé's children?",
     "options": [
       "Ben and Rey",
@@ -547,9 +659,11 @@
       "Luke and Leia"
     ],
     "answer": "Luke and Leia",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 51,
     "question": "What is Order 66?",
     "options": [
       "Peace treaty",
@@ -558,9 +672,11 @@
       "Clone designation"
     ],
     "answer": "Command to kill all Jedi",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 52,
     "question": "What planet does Anakin become Darth Vader on?",
     "options": [
       "Naboo",
@@ -569,9 +685,11 @@
       "Coruscant"
     ],
     "answer": "Mustafar",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 53,
     "question": "Who defeats Anakin on Mustafar?",
     "options": [
       "Mace Windu",
@@ -580,9 +698,11 @@
       "Palpatine"
     ],
     "answer": "Obi-Wan Kenobi",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 54,
     "question": "What cyborg villain appears in Revenge of the Sith?",
     "options": [
       "IG-88",
@@ -591,9 +711,11 @@
       "General Grievous"
     ],
     "answer": "General Grievous",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 55,
     "question": "How many lightsabers can General Grievous wield?",
     "options": [
       "2",
@@ -602,9 +724,11 @@
       "6"
     ],
     "answer": "4",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 56,
     "question": "Who is Rey in the sequel trilogy?",
     "options": [
       "Palpatine's granddaughter",
@@ -613,10 +737,13 @@
       "Luke's daughter"
     ],
     "answer": "Palpatine's granddaughter",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 57,
     "question": "Who plays Rey?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Daisy_Ridley_Our_Movie_Guide_2024.png/250px-Daisy_Ridley_Our_Movie_Guide_2024.png",
     "options": [
       "Emilia Clarke",
       "Felicity Jones",
@@ -624,10 +751,13 @@
       "Daisy Ridley"
     ],
     "answer": "Daisy Ridley",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 58,
     "question": "Who plays Finn?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/John_Boyega_by_Gage_Skidmore.jpg/250px-John_Boyega_by_Gage_Skidmore.jpg",
     "options": [
       "John Boyega",
       "Domhnall Gleeson",
@@ -635,10 +765,13 @@
       "Oscar Isaac"
     ],
     "answer": "John Boyega",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 59,
     "question": "Who plays Poe Dameron?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/250px-Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg",
     "options": [
       "Domhnall Gleeson",
       "John Boyega",
@@ -646,10 +779,13 @@
       "Oscar Isaac"
     ],
     "answer": "Oscar Isaac",
+    "difficulty": "medium",
     "category": "actors"
   },
   {
+    "id": 60,
     "question": "Who plays Kylo Ren?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Adam_Driver.jpg/250px-Adam_Driver.jpg",
     "options": [
       "Domhnall Gleeson",
       "Adam Driver",
@@ -657,9 +793,11 @@
       "Oscar Isaac"
     ],
     "answer": "Adam Driver",
+    "difficulty": "easy",
     "category": "actors"
   },
   {
+    "id": 61,
     "question": "What is Kylo Ren's real name?",
     "options": [
       "Luke Solo",
@@ -668,9 +806,11 @@
       "Anakin Solo"
     ],
     "answer": "Ben Solo",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 62,
     "question": "Who are Kylo Ren's parents?",
     "options": [
       "Luke and Mara",
@@ -679,9 +819,11 @@
       "Anakin and Padmé"
     ],
     "answer": "Han Solo and Leia",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 63,
     "question": "What is the First Order's superweapon?",
     "options": [
       "Death Star III",
@@ -690,9 +832,11 @@
       "Starkiller Base"
     ],
     "answer": "Starkiller Base",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 64,
     "question": "Who directed The Force Awakens?",
     "options": [
       "Rian Johnson",
@@ -701,9 +845,11 @@
       "J.J. Abrams"
     ],
     "answer": "J.J. Abrams",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 65,
     "question": "Who directed The Last Jedi?",
     "options": [
       "J.J. Abrams",
@@ -712,9 +858,11 @@
       "Gareth Edwards"
     ],
     "answer": "Rian Johnson",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 66,
     "question": "Who directed The Rise of Skywalker?",
     "options": [
       "George Lucas",
@@ -723,9 +871,11 @@
       "Rian Johnson"
     ],
     "answer": "J.J. Abrams",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 67,
     "question": "What is BB-8?",
     "options": [
       "A planet",
@@ -734,9 +884,11 @@
       "A ship"
     ],
     "answer": "A droid",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 68,
     "question": "What droid is C-3PO?",
     "options": [
       "Protocol droid",
@@ -745,9 +897,11 @@
       "Medical droid"
     ],
     "answer": "Protocol droid",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 69,
     "question": "What droid is R2-D2?",
     "options": [
       "Astromech droid",
@@ -756,10 +910,13 @@
       "Battle droid"
     ],
     "answer": "Astromech droid",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 70,
     "question": "Who plays C-3PO?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Anthony_Daniels_2011.jpg/250px-Anthony_Daniels_2011.jpg",
     "options": [
       "Peter Mayhew",
       "Anthony Daniels",
@@ -767,10 +924,13 @@
       "Warwick Davis"
     ],
     "answer": "Anthony Daniels",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 71,
     "question": "Who was inside R2-D2 in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Kenny_Baker_at_Star_Wars_Celebration_VI_%287868145702%29.jpg/250px-Kenny_Baker_at_Star_Wars_Celebration_VI_%287868145702%29.jpg",
     "options": [
       "Kenny Baker",
       "Peter Mayhew",
@@ -778,9 +938,11 @@
       "Warwick Davis"
     ],
     "answer": "Kenny Baker",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 72,
     "question": "Who is Supreme Leader Snoke?",
     "options": [
       "Luke in disguise",
@@ -789,10 +951,13 @@
       "A powerful dark side user"
     ],
     "answer": "Both A and B",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 73,
     "question": "Who plays Supreme Leader Snoke?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Andy_Serkis_at_MEGACON_Orlando_2025.png/250px-Andy_Serkis_at_MEGACON_Orlando_2025.png",
     "options": [
       "Adam Driver",
       "Ian McDiarmid",
@@ -800,9 +965,11 @@
       "Andy Serkis"
     ],
     "answer": "Andy Serkis",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 74,
     "question": "What is the Resistance?",
     "options": [
       "Rebels fighting the First Order",
@@ -811,9 +978,11 @@
       "The New Republic"
     ],
     "answer": "Rebels fighting the First Order",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 75,
     "question": "Who leads the Resistance?",
     "options": [
       "Luke Skywalker",
@@ -822,9 +991,11 @@
       "General Leia Organa"
     ],
     "answer": "General Leia Organa",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 76,
     "question": "What is Finn's stormtrooper designation?",
     "options": [
       "FN-2199",
@@ -833,9 +1004,11 @@
       "CT-7567"
     ],
     "answer": "FN-2187",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 77,
     "question": "What happens to Han Solo in The Force Awakens?",
     "options": [
       "Joins First Order",
@@ -844,9 +1017,11 @@
       "Survives"
     ],
     "answer": "Killed by Kylo Ren",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 78,
     "question": "Where does Luke exile himself?",
     "options": [
       "Jakku",
@@ -855,9 +1030,11 @@
       "Ahch-To"
     ],
     "answer": "Ahch-To",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 79,
     "question": "What are the caretakers on Luke's island?",
     "options": [
       "Ewoks",
@@ -866,9 +1043,11 @@
       "Jawas"
     ],
     "answer": "Lanai",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 80,
     "question": "What cute creatures live on Ahch-To?",
     "options": [
       "Ewoks",
@@ -877,9 +1056,11 @@
       "Lothcats"
     ],
     "answer": "Porgs",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 81,
     "question": "What is the name of Poe's droid?",
     "options": [
       "C-3PO",
@@ -888,9 +1069,11 @@
       "R2-D2"
     ],
     "answer": "BB-8",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 82,
     "question": "Who is Captain Phasma?",
     "options": [
       "First Order stormtrooper captain",
@@ -899,10 +1082,13 @@
       "Jedi"
     ],
     "answer": "First Order stormtrooper captain",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 83,
     "question": "Who plays Captain Phasma?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Gwendoline_christie_by_sachyn_mital_%28cropped2%29.jpg/220px-Gwendoline_christie_by_sachyn_mital_%28cropped2%29.jpg",
     "options": [
       "Gwendoline Christie",
       "Lupita Nyong'o",
@@ -910,9 +1096,11 @@
       "Kelly Marie Tran"
     ],
     "answer": "Gwendoline Christie",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 84,
     "question": "Who plays Maz Kanata?",
     "options": [
       "Gwendoline Christie",
@@ -921,9 +1109,11 @@
       "Carrie Fisher"
     ],
     "answer": "Lupita Nyong'o",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 85,
     "question": "What does Maz give Rey?",
     "options": [
       "A ship",
@@ -932,10 +1122,13 @@
       "Luke's lightsaber"
     ],
     "answer": "Luke's lightsaber",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 86,
     "question": "Who plays Vice Admiral Holdo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Laura_Dern_Is_This_Thing_On-21_%28cropped%29.jpg/250px-Laura_Dern_Is_This_Thing_On-21_%28cropped%29.jpg",
     "options": [
       "Laura Dern",
       "Carrie Fisher",
@@ -943,9 +1136,11 @@
       "Gwendoline Christie"
     ],
     "answer": "Laura Dern",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 87,
     "question": "What maneuver does Holdo perform?",
     "options": [
       "Kessel Run",
@@ -954,10 +1149,13 @@
       "Trench run"
     ],
     "answer": "Hyperspace ram",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 88,
     "question": "Who plays Rose Tico?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Kelly_Marie_Tran_Oscars_2020.jpg/250px-Kelly_Marie_Tran_Oscars_2020.jpg",
     "options": [
       "Kelly Marie Tran",
       "Gwendoline Christie",
@@ -965,9 +1163,11 @@
       "Lupita Nyong'o"
     ],
     "answer": "Kelly Marie Tran",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 89,
     "question": "What is the name of the casino planet?",
     "options": [
       "Cantonica",
@@ -976,9 +1176,11 @@
       "Coruscant"
     ],
     "answer": "Canto Bight",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 90,
     "question": "What planet is Rey from?",
     "options": [
       "Tatooine",
@@ -987,9 +1189,11 @@
       "Coruscant"
     ],
     "answer": "Jakku",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 91,
     "question": "What is Rogue One about?",
     "options": [
       "Stealing Death Star plans",
@@ -998,10 +1202,13 @@
       "Boba Fett"
     ],
     "answer": "Stealing Death Star plans",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 92,
     "question": "Who plays Jyn Erso?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Felicity_Jones_at_TIFF_2025_01_%28cropped%29.jpg/250px-Felicity_Jones_at_TIFF_2025_01_%28cropped%29.jpg",
     "options": [
       "Natalie Portman",
       "Felicity Jones",
@@ -1009,9 +1216,11 @@
       "Daisy Ridley"
     ],
     "answer": "Felicity Jones",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 93,
     "question": "Who is Jyn Erso's father?",
     "options": [
       "Cassian Andor",
@@ -1020,10 +1229,13 @@
       "Galen Erso"
     ],
     "answer": "Galen Erso",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 94,
     "question": "Who plays Cassian Andor?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Diego_Luna_-_Andor.jpg/250px-Diego_Luna_-_Andor.jpg",
     "options": [
       "Diego Luna",
       "Benicio del Toro",
@@ -1031,9 +1243,11 @@
       "Pedro Pascal"
     ],
     "answer": "Diego Luna",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 95,
     "question": "What is K-2SO?",
     "options": [
       "Bounty hunter",
@@ -1042,10 +1256,13 @@
       "Rebel pilot"
     ],
     "answer": "Reprogrammed Imperial droid",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 96,
     "question": "Who voices K-2SO?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/AlanTudyk-byPhilipRomano.jpg/250px-AlanTudyk-byPhilipRomano.jpg",
     "options": [
       "Anthony Daniels",
       "James Earl Jones",
@@ -1053,10 +1270,13 @@
       "Alan Tudyk"
     ],
     "answer": "Alan Tudyk",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 97,
     "question": "Who plays Director Krennic?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Ben_Mendelsohn_by_Gage_Skidmore.jpg/250px-Ben_Mendelsohn_by_Gage_Skidmore.jpg",
     "options": [
       "Forest Whitaker",
       "Ben Mendelsohn",
@@ -1064,10 +1284,13 @@
       "Mads Mikkelsen"
     ],
     "answer": "Ben Mendelsohn",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 98,
     "question": "Who plays the blind warrior Chirrut Îmwe?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Donnie_Yen_20250323.jpg/250px-Donnie_Yen_20250323.jpg",
     "options": [
       "Donnie Yen",
       "Jiang Wen",
@@ -1075,9 +1298,11 @@
       "Mads Mikkelsen"
     ],
     "answer": "Donnie Yen",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 99,
     "question": "What does Chirrut repeat?",
     "options": [
       "I am one with the Force",
@@ -1086,10 +1311,13 @@
       "May the Force be with you"
     ],
     "answer": "I am one with the Force",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 100,
     "question": "Who plays Saw Gerrera?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Forest_Whitaker_by_Gage_Skidmore.jpg/250px-Forest_Whitaker_by_Gage_Skidmore.jpg",
     "options": [
       "Ben Mendelsohn",
       "Riz Ahmed",
@@ -1097,9 +1325,11 @@
       "Mads Mikkelsen"
     ],
     "answer": "Forest Whitaker",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 101,
     "question": "What happens to the Rogue One team?",
     "options": [
       "They're captured",
@@ -1108,10 +1338,13 @@
       "They all die"
     ],
     "answer": "They all die",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 102,
     "question": "Who plays young Han Solo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Solo_A_Star_Wars_Story_Japan_Premiere_Red_Carpet_Alden_Ehrenreich_%2841008143870%29.jpg/250px-Solo_A_Star_Wars_Story_Japan_Premiere_Red_Carpet_Alden_Ehrenreich_%2841008143870%29.jpg",
     "options": [
       "Donald Glover",
       "Harrison Ford",
@@ -1119,10 +1352,13 @@
       "Woody Harrelson"
     ],
     "answer": "Alden Ehrenreich",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 103,
     "question": "Who plays young Lando in Solo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Donald_Glover_TIFF_2015.jpg/250px-Donald_Glover_TIFF_2015.jpg",
     "options": [
       "John Boyega",
       "Billy Dee Williams",
@@ -1130,9 +1366,11 @@
       "Donald Glover"
     ],
     "answer": "Donald Glover",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 104,
     "question": "What is the Kessel Run?",
     "options": [
       "A race",
@@ -1141,9 +1379,11 @@
       "A smuggling route"
     ],
     "answer": "A smuggling route",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 105,
     "question": "How fast did the Falcon do the Kessel Run?",
     "options": [
       "10 parsecs",
@@ -1152,10 +1392,13 @@
       "14 parsecs"
     ],
     "answer": "12 parsecs",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 106,
     "question": "Who plays Qi'ra in Solo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg/250px-Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg",
     "options": [
       "Emilia Clarke",
       "Daisy Ridley",
@@ -1163,10 +1406,13 @@
       "Thandiwe Newton"
     ],
     "answer": "Emilia Clarke",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 107,
     "question": "Who plays Tobias Beckett?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Woody_Harrelson_191020-N-NU281-1028_%28cropped%29.jpg/250px-Woody_Harrelson_191020-N-NU281-1028_%28cropped%29.jpg",
     "options": [
       "Paul Bettany",
       "Jon Favreau",
@@ -1174,9 +1420,11 @@
       "Woody Harrelson"
     ],
     "answer": "Woody Harrelson",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 108,
     "question": "What crime syndicate is featured in Solo?",
     "options": [
       "Hutt Cartel",
@@ -1185,10 +1433,13 @@
       "Black Sun"
     ],
     "answer": "Crimson Dawn",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 109,
     "question": "Who voices Darth Vader?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/James_Earl_Jones_Baltimore.jpg/250px-James_Earl_Jones_Baltimore.jpg",
     "options": [
       "Hayden Christensen",
       "David Prowse",
@@ -1196,10 +1447,13 @@
       "James Earl Jones"
     ],
     "answer": "James Earl Jones",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 110,
     "question": "Who was in the Darth Vader suit originally?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/David_Prowse_2013.jpg/250px-David_Prowse_2013.jpg",
     "options": [
       "David Prowse",
       "Peter Mayhew",
@@ -1207,9 +1461,11 @@
       "Anthony Daniels"
     ],
     "answer": "David Prowse",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 111,
     "question": "What is a Sith?",
     "options": [
       "Planet",
@@ -1218,9 +1474,11 @@
       "Light side warrior"
     ],
     "answer": "Dark side Force user",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 112,
     "question": "What is the Rule of Two?",
     "options": [
       "Two apprentices",
@@ -1229,9 +1487,11 @@
       "Only two Sith at a time"
     ],
     "answer": "Only two Sith at a time",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 113,
     "question": "Who created the Rule of Two?",
     "options": [
       "Darth Plagueis",
@@ -1240,9 +1500,11 @@
       "Darth Bane"
     ],
     "answer": "Darth Bane",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 114,
     "question": "What does a Jedi's lightsaber color typically mean?",
     "options": [
       "Random",
@@ -1251,9 +1513,11 @@
       "Blue/Green for Jedi, Red for Sith"
     ],
     "answer": "Blue/Green for Jedi, Red for Sith",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 115,
     "question": "What crystal powers a lightsaber?",
     "options": [
       "Kaiburr crystal",
@@ -1262,9 +1526,11 @@
       "Kyber crystal"
     ],
     "answer": "Kyber crystal",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 116,
     "question": "What makes a Sith lightsaber red?",
     "options": [
       "Red kyber crystals",
@@ -1273,9 +1539,11 @@
       "Bleeding the crystal"
     ],
     "answer": "Bleeding the crystal",
+    "difficulty": "medium",
     "category": "weapons"
   },
   {
+    "id": 117,
     "question": "What is Yoda's famous quote about trying?",
     "options": [
       "Always try",
@@ -1284,9 +1552,11 @@
       "Try you must"
     ],
     "answer": "Do or do not, there is no try",
+    "difficulty": "easy",
     "category": "quotes"
   },
   {
+    "id": 118,
     "question": "What is 'I have a bad feeling about this'?",
     "options": [
       "Sith code",
@@ -1295,9 +1565,11 @@
       "Jedi saying"
     ],
     "answer": "Running gag in all films",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 119,
     "question": "Who says 'It's a trap!'?",
     "options": [
       "Han Solo",
@@ -1306,9 +1578,11 @@
       "Admiral Ackbar"
     ],
     "answer": "Admiral Ackbar",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 120,
     "question": "What species is Admiral Ackbar?",
     "options": [
       "Mon Calamari",
@@ -1317,9 +1591,11 @@
       "Rodian"
     ],
     "answer": "Mon Calamari",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 121,
     "question": "What species is Jar Jar Binks?",
     "options": [
       "Gungan",
@@ -1328,9 +1604,11 @@
       "Naboo"
     ],
     "answer": "Gungan",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 122,
     "question": "What planet are Gungans from?",
     "options": [
       "Naboo",
@@ -1339,10 +1617,13 @@
       "Mon Cala"
     ],
     "answer": "Naboo",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 123,
     "question": "Who plays Jango Fett?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Temuera_Morrison_2016.jpg/250px-Temuera_Morrison_2016.jpg",
     "options": [
       "Temuera Morrison",
       "Daniel Logan",
@@ -1350,10 +1631,13 @@
       "Jeremy Bulloch"
     ],
     "answer": "Temuera Morrison",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 124,
     "question": "Who played Boba Fett in the original trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/4.17.16JeremyBullochByLuigiNovi1b.jpg/250px-4.17.16JeremyBullochByLuigiNovi1b.jpg",
     "options": [
       "Daniel Logan",
       "Joe Johnston",
@@ -1361,9 +1645,11 @@
       "Temuera Morrison"
     ],
     "answer": "Jeremy Bulloch",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 125,
     "question": "What is the Mandalorian homeworld?",
     "options": [
       "Mandalore",
@@ -1372,9 +1658,11 @@
       "Kamino"
     ],
     "answer": "Mandalore",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 126,
     "question": "What is beskar?",
     "options": [
       "Mandalorian armor metal",
@@ -1383,9 +1671,11 @@
       "Lightsaber crystal"
     ],
     "answer": "Mandalorian armor metal",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 127,
     "question": "What ship do bounty hunters use?",
     "options": [
       "X-Wing",
@@ -1394,9 +1684,11 @@
       "TIE Fighter"
     ],
     "answer": "Slave I/Firespray",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 128,
     "question": "What is an AT-AT?",
     "options": [
       "Imperial walker",
@@ -1405,9 +1697,11 @@
       "Droid"
     ],
     "answer": "Imperial walker",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 129,
     "question": "What is an X-Wing?",
     "options": [
       "Imperial fighter",
@@ -1416,9 +1710,11 @@
       "Transport"
     ],
     "answer": "Rebel starfighter",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 130,
     "question": "What is a TIE Fighter?",
     "options": [
       "Imperial starfighter",
@@ -1427,9 +1723,11 @@
       "Transport"
     ],
     "answer": "Imperial starfighter",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 131,
     "question": "What does TIE stand for?",
     "options": [
       "Twin Imperial Engine",
@@ -1438,9 +1736,11 @@
       "Twin Ion Engine"
     ],
     "answer": "Twin Ion Engine",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 132,
     "question": "What is the flagship Star Destroyer in the original trilogy?",
     "options": [
       "Devastator",
@@ -1449,9 +1749,11 @@
       "Avenger"
     ],
     "answer": "Executor",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 133,
     "question": "What planet is the Wookiee homeworld?",
     "options": [
       "Kashyyyk",
@@ -1460,9 +1762,11 @@
       "Endor"
     ],
     "answer": "Kashyyyk",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 134,
     "question": "What is the ice planet in Empire Strikes Back?",
     "options": [
       "Crait",
@@ -1471,9 +1775,11 @@
       "Hoth"
     ],
     "answer": "Hoth",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 135,
     "question": "What creature attacks Luke on Hoth?",
     "options": [
       "Wampa",
@@ -1482,9 +1788,11 @@
       "Rancor"
     ],
     "answer": "Wampa",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 136,
     "question": "What creature does Han cut open to save Luke?",
     "options": [
       "Wampa",
@@ -1493,9 +1801,11 @@
       "Bantha"
     ],
     "answer": "Tauntaun",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 137,
     "question": "What creature is in Jabba's pit?",
     "options": [
       "Wampa",
@@ -1504,9 +1814,11 @@
       "Sarlacc"
     ],
     "answer": "Rancor",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 138,
     "question": "What creature lives in the Sarlacc pit?",
     "options": [
       "Rancor",
@@ -1515,9 +1827,11 @@
       "Sarlacc"
     ],
     "answer": "Sarlacc",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 139,
     "question": "What lives in the asteroid in Empire?",
     "options": [
       "Space slug/Exogorth",
@@ -1526,9 +1840,11 @@
       "Sarlacc"
     ],
     "answer": "Space slug/Exogorth",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 140,
     "question": "What trash compactor creature grabs Luke?",
     "options": [
       "Sarlacc",
@@ -1537,9 +1853,11 @@
       "Rancor"
     ],
     "answer": "Dianoga",
+    "difficulty": "medium",
     "category": "creatures"
   },
   {
+    "id": 141,
     "question": "What is the Jedi Temple located on?",
     "options": [
       "Naboo",
@@ -1548,9 +1866,11 @@
       "Yavin 4"
     ],
     "answer": "Coruscant",
+    "difficulty": "medium",
     "category": "locations"
   },
   {
+    "id": 142,
     "question": "Where does Yoda live in exile?",
     "options": [
       "Ahch-To",
@@ -1559,9 +1879,11 @@
       "Kashyyyk"
     ],
     "answer": "Dagobah",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 143,
     "question": "Where did Anakin grow up?",
     "options": [
       "Mustafar",
@@ -1570,9 +1892,11 @@
       "Tatooine"
     ],
     "answer": "Tatooine",
+    "difficulty": "easy",
     "category": "planets"
   },
   {
+    "id": 144,
     "question": "What is podracing?",
     "options": [
       "Starship racing",
@@ -1581,9 +1905,11 @@
       "High-speed racing on Tatooine"
     ],
     "answer": "High-speed racing on Tatooine",
+    "difficulty": "easy",
     "category": "lore"
   },
   {
+    "id": 145,
     "question": "Who says 'Now THIS is podracing!'?",
     "options": [
       "Obi-Wan",
@@ -1592,9 +1918,11 @@
       "Young Anakin"
     ],
     "answer": "Young Anakin",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 146,
     "question": "Who is Watto?",
     "options": [
       "Senator",
@@ -1603,9 +1931,11 @@
       "Jedi Master"
     ],
     "answer": "Anakin's slave owner",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 147,
     "question": "Who is Anakin's mother?",
     "options": [
       "Leia",
@@ -1614,9 +1944,11 @@
       "Padmé"
     ],
     "answer": "Shmi Skywalker",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 148,
     "question": "Who raised Luke on Tatooine?",
     "options": [
       "Obi-Wan",
@@ -1625,9 +1957,11 @@
       "Yoda"
     ],
     "answer": "Owen and Beru Lars",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 149,
     "question": "Who adopted Leia?",
     "options": [
       "Yoda",
@@ -1636,9 +1970,11 @@
       "Owen Lars"
     ],
     "answer": "Bail Organa",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 150,
     "question": "What planet is Leia's adoptive home?",
     "options": [
       "Chandrila",
@@ -1647,9 +1983,11 @@
       "Coruscant"
     ],
     "answer": "Alderaan",
+    "difficulty": "medium",
     "category": "planets"
   },
   {
+    "id": 151,
     "question": "Who composed the Star Wars music?",
     "options": [
       "Danny Elfman",
@@ -1658,9 +1996,11 @@
       "Howard Shore"
     ],
     "answer": "John Williams",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 152,
     "question": "What is the Imperial March associated with?",
     "options": [
       "Jedi",
@@ -1669,9 +2009,11 @@
       "Darth Vader/Empire"
     ],
     "answer": "Darth Vader/Empire",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 153,
     "question": "What is the opening text called?",
     "options": [
       "Opening crawl",
@@ -1680,9 +2022,11 @@
       "Prologue"
     ],
     "answer": "Opening crawl",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 154,
     "question": "How does every opening crawl start?",
     "options": [
       "Once upon a time",
@@ -1691,9 +2035,11 @@
       "In a distant galaxy"
     ],
     "answer": "A long time ago in a galaxy far, far away...",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 155,
     "question": "What is Episode IV's subtitle?",
     "options": [
       "Return of the Jedi",
@@ -1702,9 +2048,11 @@
       "A New Hope"
     ],
     "answer": "A New Hope",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 156,
     "question": "What is Episode V's subtitle?",
     "options": [
       "A New Hope",
@@ -1713,9 +2061,11 @@
       "Return of the Jedi"
     ],
     "answer": "The Empire Strikes Back",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 157,
     "question": "What is Episode VI's subtitle?",
     "options": [
       "The Empire Strikes Back",
@@ -1724,9 +2074,11 @@
       "A New Hope"
     ],
     "answer": "Return of the Jedi",
+    "difficulty": "easy",
     "category": "films"
   },
   {
+    "id": 158,
     "question": "What is Episode I's subtitle?",
     "options": [
       "Attack of the Clones",
@@ -1735,9 +2087,11 @@
       "The Phantom Menace"
     ],
     "answer": "The Phantom Menace",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 159,
     "question": "What is Episode II's subtitle?",
     "options": [
       "The Phantom Menace",
@@ -1746,9 +2100,11 @@
       "The Clone Wars"
     ],
     "answer": "Attack of the Clones",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 160,
     "question": "What is Episode III's subtitle?",
     "options": [
       "Return of the Sith",
@@ -1757,9 +2113,11 @@
       "The Phantom Menace"
     ],
     "answer": "Revenge of the Sith",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 161,
     "question": "What is Episode VII's subtitle?",
     "options": [
       "The Rise of Skywalker",
@@ -1768,9 +2126,11 @@
       "The Last Jedi"
     ],
     "answer": "The Force Awakens",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 162,
     "question": "What is Episode VIII's subtitle?",
     "options": [
       "The Force Awakens",
@@ -1779,9 +2139,11 @@
       "The Last Jedi"
     ],
     "answer": "The Last Jedi",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 163,
     "question": "What is Episode IX's subtitle?",
     "options": [
       "The Rise of Skywalker",
@@ -1790,9 +2152,11 @@
       "The Force Awakens"
     ],
     "answer": "The Rise of Skywalker",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 164,
     "question": "What year was The Force Awakens released?",
     "options": [
       "2014",
@@ -1801,9 +2165,11 @@
       "2015"
     ],
     "answer": "2015",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 165,
     "question": "What year was Rogue One released?",
     "options": [
       "2017",
@@ -1812,9 +2178,11 @@
       "2016"
     ],
     "answer": "2016",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 166,
     "question": "What is midi-chlorians?",
     "options": [
       "A weapon",
@@ -1823,9 +2191,11 @@
       "Microscopic life forms connected to the Force"
     ],
     "answer": "Microscopic life forms connected to the Force",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 167,
     "question": "Who has the highest midi-chlorian count?",
     "options": [
       "Yoda",
@@ -1834,9 +2204,11 @@
       "Anakin Skywalker"
     ],
     "answer": "Anakin Skywalker",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 168,
     "question": "What is the Chosen One prophecy?",
     "options": [
       "One who lives forever",
@@ -1845,9 +2217,11 @@
       "One who rules galaxy"
     ],
     "answer": "One who will bring balance to the Force",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 169,
     "question": "Who is the Chosen One?",
     "options": [
       "Yoda",
@@ -1856,9 +2230,11 @@
       "Luke Skywalker"
     ],
     "answer": "Anakin Skywalker",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 170,
     "question": "What is a Force ghost?",
     "options": [
       "Ship",
@@ -1867,9 +2243,11 @@
       "Sith power"
     ],
     "answer": "Spirit of dead Jedi",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 171,
     "question": "Who taught Qui-Gon about Force ghosts?",
     "options": [
       "Obi-Wan",
@@ -1878,9 +2256,11 @@
       "Mace Windu"
     ],
     "answer": "Qui-Gon discovered it from the Whills",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 172,
     "question": "What is a mind trick?",
     "options": [
       "Illusion",
@@ -1889,9 +2269,11 @@
       "Memory wipe"
     ],
     "answer": "Jedi power to influence weak minds",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 173,
     "question": "What does Obi-Wan say about Mos Eisley?",
     "options": [
       "Dangerous",
@@ -1900,9 +2282,11 @@
       "Nice place"
     ],
     "answer": "Wretched hive of scum and villainy",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 174,
     "question": "What is the cantina scene famous for?",
     "options": [
       "Space battle",
@@ -1911,9 +2295,11 @@
       "Lightsaber duel"
     ],
     "answer": "Alien bar with music",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 175,
     "question": "Who shot first - Han or Greedo?",
     "options": [
       "Always Greedo",
@@ -1922,9 +2308,11 @@
       "Always Han"
     ],
     "answer": "Controversial - varies by version",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 176,
     "question": "What is carbonite freezing for?",
     "options": [
       "Killing",
@@ -1933,9 +2321,11 @@
       "Preserving/transporting"
     ],
     "answer": "Preserving/transporting",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 177,
     "question": "What does Leia call Chewbacca?",
     "options": [
       "Walking carpet",
@@ -1944,9 +2334,11 @@
       "Big guy"
     ],
     "answer": "Walking carpet",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 178,
     "question": "What is Leia's response to 'I love you'?",
     "options": [
       "Same",
@@ -1955,9 +2347,11 @@
       "Me too"
     ],
     "answer": "I know",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 179,
     "question": "What medal ceremony ends A New Hope?",
     "options": [
       "Naboo festival",
@@ -1966,9 +2360,11 @@
       "Yavin ceremony"
     ],
     "answer": "Yavin ceremony",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 180,
     "question": "What celebration ends Return of the Jedi?",
     "options": [
       "Endor only",
@@ -1977,9 +2373,11 @@
       "Galaxy-wide celebration"
     ],
     "answer": "Galaxy-wide celebration",
+    "difficulty": "medium",
     "category": "films"
   },
   {
+    "id": 181,
     "question": "Who is Grand Moff Tarkin?",
     "options": [
       "Death Star commander",
@@ -1988,10 +2386,13 @@
       "Bounty hunter"
     ],
     "answer": "Death Star commander",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 182,
     "question": "Who plays Grand Moff Tarkin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png/250px-Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png",
     "options": [
       "Terence Stamp",
       "Christopher Lee",
@@ -1999,9 +2400,11 @@
       "Peter Cushing"
     ],
     "answer": "Peter Cushing",
+    "difficulty": "hard",
     "category": "actors"
   },
   {
+    "id": 183,
     "question": "What is the Rebel Alliance symbol?",
     "options": [
       "Starbird/Phoenix",
@@ -2010,9 +2413,11 @@
       "Empire cog"
     ],
     "answer": "Starbird/Phoenix",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 184,
     "question": "What is the Empire's symbol?",
     "options": [
       "Imperial cog",
@@ -2021,9 +2426,11 @@
       "Star Destroyer"
     ],
     "answer": "Imperial cog",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 185,
     "question": "What superweapon can destroy planets?",
     "options": [
       "X-Wing",
@@ -2032,9 +2439,11 @@
       "TIE Fighter"
     ],
     "answer": "Death Star",
+    "difficulty": "easy",
     "category": "ships"
   },
   {
+    "id": 186,
     "question": "How do you destroy the Death Star?",
     "options": [
       "Use the Force",
@@ -2043,9 +2452,11 @@
       "Hack it"
     ],
     "answer": "Shoot exhaust port",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 187,
     "question": "Who designed the Death Star's flaw?",
     "options": [
       "Krennic",
@@ -2054,9 +2465,11 @@
       "Tarkin"
     ],
     "answer": "Galen Erso",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 188,
     "question": "What was Darth Vader's fighter?",
     "options": [
       "TIE Bomber",
@@ -2065,9 +2478,11 @@
       "TIE Advanced x1"
     ],
     "answer": "TIE Advanced x1",
+    "difficulty": "medium",
     "category": "ships"
   },
   {
+    "id": 189,
     "question": "What is Luke's call sign in the Death Star attack?",
     "options": [
       "Blue Leader",
@@ -2076,9 +2491,11 @@
       "Red Leader"
     ],
     "answer": "Red Five",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 190,
     "question": "Who says 'Use the Force, Luke'?",
     "options": [
       "Obi-Wan's spirit",
@@ -2087,9 +2504,11 @@
       "Han"
     ],
     "answer": "Obi-Wan's spirit",
+    "difficulty": "medium",
     "category": "quotes"
   },
   {
+    "id": 191,
     "question": "What is Darth Vader's breathing caused by?",
     "options": [
       "Intimidation",
@@ -2098,9 +2517,11 @@
       "Sith power"
     ],
     "answer": "Life support suit",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 192,
     "question": "Why does Vader need the suit?",
     "options": [
       "Burned on Mustafar",
@@ -2109,9 +2530,11 @@
       "Fashion"
     ],
     "answer": "Burned on Mustafar",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 193,
     "question": "Who is Vader's master?",
     "options": [
       "Darth Sidious/Palpatine",
@@ -2120,9 +2543,11 @@
       "Dooku"
     ],
     "answer": "Darth Sidious/Palpatine",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 194,
     "question": "What redeems Darth Vader?",
     "options": [
       "Capturing rebels",
@@ -2131,9 +2556,11 @@
       "Destroying Death Star"
     ],
     "answer": "Saving Luke from Emperor",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 195,
     "question": "Who appears as Force ghosts at the end of ROTJ?",
     "options": [
       "Only Yoda",
@@ -2142,9 +2569,11 @@
       "Anakin, Obi-Wan, Yoda"
     ],
     "answer": "Anakin, Obi-Wan, Yoda",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 196,
     "question": "What is the significance of balance in the Force?",
     "options": [
       "Equal light and dark",
@@ -2153,9 +2582,11 @@
       "Sith dominance"
     ],
     "answer": "Destroying the Sith",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 197,
     "question": "What ancient Jedi texts does Luke have?",
     "options": [
       "Force manuals",
@@ -2164,9 +2595,11 @@
       "Sith holocrons"
     ],
     "answer": "Sacred Jedi texts",
+    "difficulty": "medium",
     "category": "lore"
   },
   {
+    "id": 198,
     "question": "Who burns the Jedi tree?",
     "options": [
       "Lightning",
@@ -2175,9 +2608,11 @@
       "Yoda's Force ghost"
     ],
     "answer": "Yoda's Force ghost",
+    "difficulty": "easy",
     "category": "characters"
   },
   {
+    "id": 199,
     "question": "How does Luke die?",
     "options": [
       "Old age",
@@ -2186,9 +2621,11 @@
       "Killed by Kylo"
     ],
     "answer": "Force projection exhaustion",
+    "difficulty": "medium",
     "category": "characters"
   },
   {
+    "id": 200,
     "question": "What does Rey take as her surname?",
     "options": [
       "Skywalker",
@@ -2197,6 +2634,7 @@
       "Palpatine"
     ],
     "answer": "Skywalker",
+    "difficulty": "medium",
     "category": "characters"
   }
 ]
