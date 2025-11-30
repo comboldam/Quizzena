@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things Card - Christmas Lights</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(139, 0, 0, 0.15) 0%, 
+        rgba(10, 5, 5, 0.95) 50%,
+        rgba(0, 0, 0, 0.98) 100%
+      );
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.8),
+        0 0 30px rgba(220, 38, 38, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Upside Down particles */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 70px 100px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 110px 20px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1px 1px at 30px 130px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1.5px 1.5px at 60px 150px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 100px 80px, rgba(255,255,255,0.2), transparent);
+      animation: floatParticles 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatParticles {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow:
+        0 20px 60px rgba(220, 38, 38, 0.4),
+        0 0 60px rgba(220, 38, 38, 0.25),
+        0 0 100px rgba(251, 191, 36, 0.1);
+      border-color: rgba(220, 38, 38, 0.6);
+    }
+
+    /* ===== TITLE ===== */
+    .card-title {
+      color: #dc2626;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 6px;
+      text-shadow: 
+        0 0 10px rgba(220, 38, 38, 0.8),
+        0 0 20px rgba(220, 38, 38, 0.4),
+        0 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      animation: titleFlicker 4s ease-in-out infinite;
+    }
+
+    @keyframes titleFlicker {
+      0%, 100% { opacity: 1; }
+      92% { opacity: 1; }
+      93% { opacity: 0.4; }
+      94% { opacity: 1; }
+      96% { opacity: 0.6; }
+      97% { opacity: 1; }
+    }
+
+    /* ===== LIGHTS CONTAINER ===== */
+    .lights-container {
+      position: relative;
+      width: 100px;
+      height: 95px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== WIRE ===== */
+    .wire {
+      position: absolute;
+      top: 8px;
+      left: 5px;
+      right: 5px;
+      height: 80px;
+    }
+
+    .wire-path {
+      position: absolute;
+      background: #1f1f1f;
+      height: 2px;
+      border-radius: 1px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* Wire segments connecting lights */
+    .wire-path:nth-child(1) { top: 5px; left: 0; width: 18px; transform: rotate(15deg); }
+    .wire-path:nth-child(2) { top: 8px; left: 15px; width: 22px; transform: rotate(-10deg); }
+    .wire-path:nth-child(3) { top: 5px; left: 35px; width: 20px; transform: rotate(12deg); }
+    .wire-path:nth-child(4) { top: 10px; left: 52px; width: 22px; transform: rotate(-15deg); }
+    .wire-path:nth-child(5) { top: 6px; left: 70px; width: 20px; transform: rotate(8deg); }
+
+    .wire-path:nth-child(6) { top: 35px; left: 3px; width: 20px; transform: rotate(-12deg); }
+    .wire-path:nth-child(7) { top: 32px; left: 20px; width: 24px; transform: rotate(10deg); }
+    .wire-path:nth-child(8) { top: 38px; left: 42px; width: 22px; transform: rotate(-8deg); }
+    .wire-path:nth-child(9) { top: 34px; left: 62px; width: 22px; transform: rotate(14deg); }
+
+    .wire-path:nth-child(10) { top: 62px; left: 8px; width: 22px; transform: rotate(8deg); }
+    .wire-path:nth-child(11) { top: 58px; left: 28px; width: 20px; transform: rotate(-12deg); }
+    .wire-path:nth-child(12) { top: 63px; left: 46px; width: 24px; transform: rotate(6deg); }
+    .wire-path:nth-child(13) { top: 60px; left: 68px; width: 18px; transform: rotate(-10deg); }
+
+    /* ===== CHRISTMAS LIGHTS ===== */
+    .lights {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 85px;
+    }
+
+    .light {
+      position: absolute;
+      width: 10px;
+      height: 14px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transform-origin: top center;
+    }
+
+    /* Light bulb base */
+    .light::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Light glow */
+    .light::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.1s;
+    }
+
+    /* Row 1 - 5 lights */
+    .light:nth-child(1) { top: 8px; left: 5px; }
+    .light:nth-child(2) { top: 5px; left: 25px; }
+    .light:nth-child(3) { top: 9px; left: 45px; }
+    .light:nth-child(4) { top: 6px; left: 65px; }
+    .light:nth-child(5) { top: 10px; left: 82px; }
+
+    /* Row 2 - 4 lights */
+    .light:nth-child(6) { top: 35px; left: 12px; }
+    .light:nth-child(7) { top: 32px; left: 35px; }
+    .light:nth-child(8) { top: 37px; left: 55px; }
+    .light:nth-child(9) { top: 33px; left: 78px; }
+
+    /* Row 3 - 4 lights */
+    .light:nth-child(10) { top: 60px; left: 8px; }
+    .light:nth-child(11) { top: 57px; left: 32px; }
+    .light:nth-child(12) { top: 62px; left: 55px; }
+    .light:nth-child(13) { top: 58px; left: 78px; }
+
+    /* Light colors and animations */
+    /* RED */
+    .light:nth-child(1), .light:nth-child(5), .light:nth-child(7), .light:nth-child(12) {
+      background: radial-gradient(ellipse at 30% 20%,
+        #ff6b6b 0%,
+        #ef4444 40%,
+        #dc2626 70%,
+        #b91c1c 100%
+      );
+      box-shadow: 
+        inset 0 -3px 6px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.4),
+        0 0 10px rgba(239, 68, 68, 0.8);
+      animation: glowRed 0.8s ease-in-out infinite;
+    }
+    .light:nth-child(1)::after, .light:nth-child(5)::after, .light:nth-child(7)::after, .light:nth-child(12)::after {
+      background: rgba(239, 68, 68, 0.6);
+    }
+
+    /* YELLOW */
+    .light:nth-child(2), .light:nth-child(6), .light:nth-child(9), .light:nth-child(11) {
+      background: radial-gradient(ellipse at 30% 20%,
+        #fef08a 0%,
+        #fbbf24 40%,
+        #f59e0b 70%,
+        #d97706 100%
+      );
+      box-shadow: 
+        inset 0 -3px 6px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.5),
+        0 0 10px rgba(251, 191, 36, 0.8);
+      animation: glowYellow 0.9s ease-in-out infinite 0.2s;
+    }
+    .light:nth-child(2)::after, .light:nth-child(6)::after, .light:nth-child(9)::after, .light:nth-child(11)::after {
+      background: rgba(251, 191, 36, 0.6);
+    }
+
+    /* GREEN */
+    .light:nth-child(3), .light:nth-child(8), .light:nth-child(10) {
+      background: radial-gradient(ellipse at 30% 20%,
+        #86efac 0%,
+        #22c55e 40%,
+        #16a34a 70%,
+        #15803d 100%
+      );
+      box-shadow: 
+        inset 0 -3px 6px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.4),
+        0 0 10px rgba(34, 197, 94, 0.8);
+      animation: glowGreen 1s ease-in-out infinite 0.4s;
+    }
+    .light:nth-child(3)::after, .light:nth-child(8)::after, .light:nth-child(10)::after {
+      background: rgba(34, 197, 94, 0.6);
+    }
+
+    /* BLUE */
+    .light:nth-child(4), .light:nth-child(13) {
+      background: radial-gradient(ellipse at 30% 20%,
+        #93c5fd 0%,
+        #3b82f6 40%,
+        #2563eb 70%,
+        #1d4ed8 100%
+      );
+      box-shadow: 
+        inset 0 -3px 6px rgba(0,0,0,0.3),
+        inset 0 2px 4px rgba(255,255,255,0.4),
+        0 0 10px rgba(59, 130, 246, 0.8);
+      animation: glowBlue 1.1s ease-in-out infinite 0.6s;
+    }
+    .light:nth-child(4)::after, .light:nth-child(13)::after {
+      background: rgba(59, 130, 246, 0.6);
+    }
+
+    /* Glow animations */
+    @keyframes glowRed {
+      0%, 100% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.3),
+          inset 0 2px 4px rgba(255,255,255,0.4),
+          0 0 8px rgba(239, 68, 68, 0.6);
+        filter: brightness(0.9);
+      }
+      50% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.5),
+          0 0 20px rgba(239, 68, 68, 1),
+          0 0 40px rgba(239, 68, 68, 0.5);
+        filter: brightness(1.2);
+      }
+    }
+
+    @keyframes glowYellow {
+      0%, 100% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.3),
+          inset 0 2px 4px rgba(255,255,255,0.5),
+          0 0 8px rgba(251, 191, 36, 0.6);
+        filter: brightness(0.9);
+      }
+      50% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.6),
+          0 0 20px rgba(251, 191, 36, 1),
+          0 0 40px rgba(251, 191, 36, 0.5);
+        filter: brightness(1.2);
+      }
+    }
+
+    @keyframes glowGreen {
+      0%, 100% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.3),
+          inset 0 2px 4px rgba(255,255,255,0.4),
+          0 0 8px rgba(34, 197, 94, 0.6);
+        filter: brightness(0.9);
+      }
+      50% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.5),
+          0 0 20px rgba(34, 197, 94, 1),
+          0 0 40px rgba(34, 197, 94, 0.5);
+        filter: brightness(1.2);
+      }
+    }
+
+    @keyframes glowBlue {
+      0%, 100% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.3),
+          inset 0 2px 4px rgba(255,255,255,0.4),
+          0 0 8px rgba(59, 130, 246, 0.6);
+        filter: brightness(0.9);
+      }
+      50% { 
+        box-shadow: 
+          inset 0 -3px 6px rgba(0,0,0,0.2),
+          inset 0 2px 4px rgba(255,255,255,0.5),
+          0 0 20px rgba(59, 130, 246, 1),
+          0 0 40px rgba(59, 130, 246, 0.5);
+        filter: brightness(1.2);
+      }
+    }
+
+    /* Random flicker on specific lights */
+    .light:nth-child(3) {
+      animation: glowGreen 1s ease-in-out infinite, flicker 5s ease-in-out infinite;
+    }
+    .light:nth-child(9) {
+      animation: glowYellow 0.9s ease-in-out infinite, flicker 7s ease-in-out infinite 2s;
+    }
+    .light:nth-child(12) {
+      animation: glowRed 0.8s ease-in-out infinite, flicker 6s ease-in-out infinite 1s;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      90% { opacity: 1; }
+      91% { opacity: 0.3; }
+      92% { opacity: 0.8; }
+      93% { opacity: 0.2; }
+      94% { opacity: 1; }
+      95% { opacity: 0.5; }
+      96% { opacity: 1; }
+    }
+
+    /* ===== UPSIDE DOWN EFFECT ===== */
+    .upside-down {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Courier New', monospace;
+      font-size: 7px;
+      color: rgba(220, 38, 38, 0.4);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: upsideDownPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes upsideDownPulse {
+      0%, 100% { opacity: 0.3; text-shadow: none; }
+      50% { opacity: 0.7; text-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+    }
+
+    /* ===== DECORATIVE 11 ===== */
+    .eleven {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 10px;
+      font-weight: 900;
+      color: rgba(220, 38, 38, 0.6);
+      text-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
+    }
+
+    /* ===== HOVER EFFECTS ===== */
+    .card:hover .light {
+      animation-duration: 0.4s !important;
+    }
+
+    .card:hover .light::after {
+      opacity: 1;
+    }
+
+    .card:hover .card-title {
+      text-shadow: 
+        0 0 15px rgba(220, 38, 38, 1),
+        0 0 30px rgba(220, 38, 38, 0.6),
+        0 0 45px rgba(251, 191, 36, 0.3);
+    }
+
+    /* ===== BOTTOM VINES ===== */
+    .vines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 15px;
+      overflow: hidden;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .vine {
+      position: absolute;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(34, 40, 34, 0.8));
+      border-radius: 2px;
+    }
+
+    .vine:nth-child(1) { left: 15%; height: 12px; }
+    .vine:nth-child(2) { left: 30%; height: 8px; }
+    .vine:nth-child(3) { left: 45%; height: 15px; }
+    .vine:nth-child(4) { left: 60%; height: 10px; }
+    .vine:nth-child(5) { left: 75%; height: 13px; }
+    .vine:nth-child(6) { left: 85%; height: 7px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Eleven badge -->
+    <div class="eleven">011</div>
+
+    <div class="lights-container">
+      <!-- Wire -->
+      <div class="wire">
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+      </div>
+
+      <!-- Christmas Lights -->
+      <div class="lights">
+        <!-- Row 1 -->
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <!-- Row 2 -->
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <!-- Row 3 -->
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </div>
+
+    <!-- Upside Down text -->
+    <div class="upside-down">the upside down</div>
+
+    <!-- Bottom vines -->
+    <div class="vines">
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+    </div>
+
+    <div class="card-title">Stranger Things</div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Heist - FOUNDER (Maximum Alive)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a0505 0%, #2d0a0a 50%, #0a0505 100%);
+    }
+
+    /* ===== PULSING GOLD FRAME ===== */
+    .premium-wrapper {
+      position: relative;
+      border: 4px solid #fbbf24;
+      border-radius: 24px;
+      background: transparent;
+      animation: framePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes framePulse {
+      0%, 100% { box-shadow: 0 0 5px rgba(251, 191, 36, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.7); }
+    }
+
+    .founder-text {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #fcd34d, #f59e0b);
+      color: #1a1a1a;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      z-index: 10;
+      animation: textGlow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
+      0%, 100% { box-shadow: 0 0 5px rgba(251, 191, 36, 0.5); }
+      50% { box-shadow: 0 0 15px rgba(251, 191, 36, 1); }
+    }
+
+    /* ===== THE CARD ===== */
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(220, 38, 38, 0.2) 0%, 
+        rgba(15, 5, 5, 0.95) 50%,
+        rgba(5, 0, 0, 0.98) 100%
+      );
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(220, 38, 38, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(220, 38, 38, 0.25),
+        inset 0 0 30px rgba(220, 38, 38, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow:
+        0 20px 60px rgba(220, 38, 38, 0.5),
+        0 0 80px rgba(220, 38, 38, 0.4),
+        0 0 120px rgba(251, 191, 36, 0.2);
+    }
+
+    /* ===== ALARM FLASH ===== */
+    .alarm {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(220, 38, 38, 0.15), transparent 70%);
+      opacity: 0;
+      animation: alarmFlash 2s ease-in-out infinite;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    @keyframes alarmFlash {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== FALLING MONEY ===== */
+    .money-rain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .money {
+      position: absolute;
+      font-size: 12px;
+      opacity: 0;
+      animation: moneyFall linear infinite;
+    }
+
+    .money:nth-child(1) { left: 5%; animation-duration: 4s; animation-delay: 0s; }
+    .money:nth-child(2) { left: 15%; animation-duration: 5s; animation-delay: 0.5s; }
+    .money:nth-child(3) { left: 25%; animation-duration: 4.5s; animation-delay: 1s; }
+    .money:nth-child(4) { left: 35%; animation-duration: 5.5s; animation-delay: 0.3s; }
+    .money:nth-child(5) { left: 45%; animation-duration: 4s; animation-delay: 0.8s; }
+    .money:nth-child(6) { left: 55%; animation-duration: 5s; animation-delay: 1.2s; }
+    .money:nth-child(7) { left: 65%; animation-duration: 4.2s; animation-delay: 0.6s; }
+    .money:nth-child(8) { left: 75%; animation-duration: 5.2s; animation-delay: 1.5s; }
+    .money:nth-child(9) { left: 85%; animation-duration: 4.8s; animation-delay: 0.2s; }
+    .money:nth-child(10) { left: 95%; animation-duration: 5.5s; animation-delay: 0.9s; }
+
+    @keyframes moneyFall {
+      0% { top: -15%; opacity: 0; transform: rotate(0deg) translateX(0); }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.6; }
+      100% { top: 105%; opacity: 0; transform: rotate(360deg) translateX(20px); }
+    }
+
+    /* ===== FLOATING GOLD PARTICLES ===== */
+    .gold-particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .gold-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #fbbf24, transparent);
+      border-radius: 50%;
+      opacity: 0;
+    }
+
+    .gold-particle:nth-child(1) { left: 10%; animation: goldFloat 5s ease-in-out infinite; }
+    .gold-particle:nth-child(2) { left: 25%; animation: goldFloat 6s ease-in-out infinite 0.5s; }
+    .gold-particle:nth-child(3) { left: 40%; animation: goldFloat 4.5s ease-in-out infinite 1s; }
+    .gold-particle:nth-child(4) { left: 55%; animation: goldFloat 5.5s ease-in-out infinite 0.3s; }
+    .gold-particle:nth-child(5) { left: 70%; animation: goldFloat 5s ease-in-out infinite 0.8s; }
+    .gold-particle:nth-child(6) { left: 85%; animation: goldFloat 6s ease-in-out infinite 1.2s; }
+
+    @keyframes goldFloat {
+      0% { bottom: -5%; opacity: 0; transform: scale(0.5); }
+      20% { opacity: 0.9; transform: scale(1); }
+      80% { opacity: 0.7; }
+      100% { bottom: 105%; opacity: 0; transform: scale(0.3); }
+    }
+
+    /* ===== HEIST PLAN LINES ===== */
+    .plan-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.1;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .plan-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.5), transparent);
+      height: 1px;
+      animation: planScan 4s linear infinite;
+    }
+
+    .plan-line:nth-child(1) { top: 20%; width: 60%; left: 20%; animation-delay: 0s; }
+    .plan-line:nth-child(2) { top: 40%; width: 40%; left: 30%; animation-delay: 1s; }
+    .plan-line:nth-child(3) { top: 60%; width: 50%; left: 25%; animation-delay: 2s; }
+    .plan-line:nth-child(4) { top: 80%; width: 45%; left: 28%; animation-delay: 3s; }
+
+    @keyframes planScan {
+      0%, 100% { opacity: 0; transform: scaleX(0); }
+      50% { opacity: 1; transform: scaleX(1); }
+    }
+
+    /* ===== TITLE ===== */
+    .card-title {
+      color: #dc2626;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 15px rgba(220, 38, 38, 1),
+        0 0 30px rgba(220, 38, 38, 0.6),
+        0 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      animation: titlePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes titlePulse {
+      0%, 100% { text-shadow: 0 0 15px rgba(220, 38, 38, 1), 0 0 30px rgba(220, 38, 38, 0.6); }
+      50% { text-shadow: 0 0 25px rgba(220, 38, 38, 1), 0 0 50px rgba(220, 38, 38, 0.8), 0 0 70px rgba(251, 191, 36, 0.3); }
+    }
+
+    /* ===== MASK CONTAINER ===== */
+    .mask-container {
+      position: relative;
+      width: 90px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    /* ===== BREATHING MASK ===== */
+    .mask {
+      position: relative;
+      width: 68px;
+      height: 85px;
+      filter: drop-shadow(0 8px 20px rgba(0,0,0,0.7));
+      animation: maskBreathe 3s ease-in-out infinite;
+    }
+
+    @keyframes maskBreathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+
+    /* Face */
+    .face {
+      position: absolute;
+      width: 64px;
+      height: 76px;
+      background: linear-gradient(180deg,
+        #fef3c7 0%, #fde68a 15%, #fcd34d 40%,
+        #fbbf24 60%, #f59e0b 80%, #d97706 100%
+      );
+      border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow:
+        inset -10px -6px 25px rgba(0,0,0,0.18),
+        inset 6px 6px 18px rgba(255,255,255,0.35),
+        0 5px 25px rgba(0,0,0,0.5),
+        0 0 30px rgba(220, 38, 38, 0.2);
+      animation: faceGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes faceGlow {
+      0%, 100% { box-shadow: inset -10px -6px 25px rgba(0,0,0,0.18), inset 6px 6px 18px rgba(255,255,255,0.35), 0 5px 25px rgba(0,0,0,0.5), 0 0 20px rgba(220, 38, 38, 0.15); }
+      50% { box-shadow: inset -10px -6px 25px rgba(0,0,0,0.18), inset 6px 6px 18px rgba(255,255,255,0.35), 0 5px 25px rgba(0,0,0,0.5), 0 0 40px rgba(220, 38, 38, 0.35); }
+    }
+
+    .face::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      width: 22px;
+      height: 32px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1) 50%, transparent);
+      border-radius: 50%;
+      animation: highlightShimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes highlightShimmer {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    .forehead {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 58px;
+      height: 32px;
+      background: linear-gradient(180deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 50% 50% 30% 30% / 100% 100% 30% 30%;
+    }
+
+    /* ===== GLOWING EYES ===== */
+    .eyes {
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .eye {
+      width: 15px;
+      height: 11px;
+      background: #0a0a0a;
+      border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+      position: relative;
+      box-shadow: inset 0 2px 5px rgba(255,255,255,0.15), 0 2px 5px rgba(0,0,0,0.4);
+      animation: eyeGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes eyeGlow {
+      0%, 100% { box-shadow: inset 0 2px 5px rgba(255,255,255,0.15), 0 2px 5px rgba(0,0,0,0.4), 0 0 5px rgba(220, 38, 38, 0.3); }
+      50% { box-shadow: inset 0 2px 5px rgba(255,255,255,0.15), 0 2px 5px rgba(0,0,0,0.4), 0 0 15px rgba(220, 38, 38, 0.7), 0 0 25px rgba(220, 38, 38, 0.3); }
+    }
+
+    .eye::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -2px;
+      right: -2px;
+      bottom: -1px;
+      border-radius: inherit;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 4px;
+      height: 3px;
+      background: rgba(220, 38, 38, 0.4);
+      border-radius: 50%;
+      animation: eyeShine 2s ease-in-out infinite;
+    }
+
+    @keyframes eyeShine {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.9; }
+    }
+
+    /* Eyebrows */
+    .eyebrows {
+      position: absolute;
+      top: 19px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 54px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      width: 17px;
+      height: 5px;
+      background: linear-gradient(90deg, #78350f, #92400e, #78350f);
+      border-radius: 3px;
+      transform: rotate(-8deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+      animation: eyebrowRaise 4s ease-in-out infinite;
+    }
+
+    .eyebrow:last-child {
+      transform: rotate(8deg);
+      animation-delay: 0.2s;
+    }
+
+    @keyframes eyebrowRaise {
+      0%, 100% { transform: rotate(-8deg) translateY(0); }
+      50% { transform: rotate(-10deg) translateY(-1px); }
+    }
+
+    /* Nose */
+    .nose {
+      position: absolute;
+      top: 37px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 19px;
+    }
+
+    .nose-bridge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 7px;
+      height: 15px;
+      background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.06));
+      border-radius: 3px;
+    }
+
+    .nose-tip {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 7px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.25));
+      border-radius: 50%;
+    }
+
+    /* ===== ANIMATED MUSTACHE ===== */
+    .mustache {
+      position: absolute;
+      top: 54px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44px;
+      height: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .mustache-half {
+      width: 20px;
+      height: 12px;
+      background: linear-gradient(180deg, #1c1917, #292524);
+      position: relative;
+    }
+
+    .mustache-half:first-child {
+      border-radius: 0 0 0 80%;
+      transform: rotate(-5deg) skewX(10deg);
+      clip-path: polygon(100% 0, 100% 60%, 0% 100%, 0% 30%);
+      animation: mustacheTwitch 3s ease-in-out infinite;
+    }
+
+    .mustache-half:last-child {
+      border-radius: 0 0 80% 0;
+      transform: rotate(5deg) skewX(-10deg);
+      clip-path: polygon(0% 0, 0% 60%, 100% 100%, 100% 30%);
+      animation: mustacheTwitch 3s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes mustacheTwitch {
+      0%, 100% { transform: rotate(-5deg) skewX(10deg); }
+      25% { transform: rotate(-7deg) skewX(12deg); }
+      75% { transform: rotate(-4deg) skewX(9deg); }
+    }
+
+    .mustache-half::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      width: 9px;
+      height: 9px;
+      background: #1c1917;
+      border-radius: 50%;
+    }
+
+    .mustache-half:first-child::after { left: -5px; }
+    .mustache-half:last-child::after { right: -5px; }
+
+    /* Lips */
+    .lips {
+      position: absolute;
+      top: 64px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 17px;
+      height: 7px;
+    }
+
+    .upper-lip {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 4px;
+      background: linear-gradient(180deg, #b45309, #92400e);
+      border-radius: 2px 2px 0 0;
+      clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    }
+
+    .lower-lip {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 13px;
+      height: 5px;
+      background: linear-gradient(180deg, #a16207, #854d0e);
+      border-radius: 0 0 50% 50%;
+    }
+
+    /* ===== RED GLOW ===== */
+    .red-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 110px;
+      background: radial-gradient(ellipse, rgba(220, 38, 38, 0.2) 0%, transparent 60%);
+      animation: glowPulse 2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    /* ===== PROFESSOR BADGE ===== */
+    .professor {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 7px;
+      color: rgba(251, 191, 36, 0.9);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      z-index: 3;
+      animation: professorPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes professorPulse {
+      0%, 100% { text-shadow: 0 0 5px rgba(251, 191, 36, 0.5); }
+      50% { text-shadow: 0 0 15px rgba(251, 191, 36, 1), 0 0 25px rgba(251, 191, 36, 0.5); }
+    }
+
+    /* ===== BELLA CIAO ===== */
+    .bella-ciao {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Georgia', serif;
+      font-size: 7px;
+      font-style: italic;
+      color: rgba(220, 38, 38, 0.6);
+      letter-spacing: 1px;
+      animation: bellaCiao 2s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes bellaCiao {
+      0%, 100% { opacity: 0.4; letter-spacing: 1px; }
+      50% { opacity: 1; letter-spacing: 2px; text-shadow: 0 0 10px rgba(220, 38, 38, 0.5); }
+    }
+
+    /* ===== GOLD BARS V2 - REALISTIC BULLION ===== */
+    .gold-bars {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%) perspective(100px) rotateX(15deg);
+      display: flex;
+      gap: 4px;
+      z-index: 2;
+    }
+
+    .gold-bar {
+      width: 22px;
+      height: 10px;
+      position: relative;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.7));
+    }
+
+    /* MAIN BAR BODY - trapezoid beveled shape */
+    .gold-bar .front {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 22px;
+      height: 8px;
+      background: linear-gradient(180deg, 
+        #FFE55C 0%, 
+        #FFD700 20%, 
+        #E6B800 50%, 
+        #CC9900 80%,
+        #997700 100%);
+      clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
+      border-radius: 0 0 1px 1px;
+    }
+
+    /* TOP SURFACE - bright flat gold */
+    .gold-bar .top {
+      position: absolute;
+      top: 0;
+      left: 2px;
+      width: 18px;
+      height: 4px;
+      background: linear-gradient(180deg, 
+        #FFF5CC 0%,
+        #FFEA80 30%,
+        #FFD700 70%,
+        #E6C200 100%);
+      border-radius: 1px;
+    }
+
+    /* LEFT BEVEL */
+    .gold-bar .side {
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 3px;
+      height: 6px;
+      background: linear-gradient(90deg, #AA7700 0%, #CC9900 100%);
+      clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* RIGHT BEVEL */
+    .gold-bar::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 0;
+      width: 3px;
+      height: 6px;
+      background: linear-gradient(90deg, #CC9900 0%, #886600 100%);
+      clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    }
+
+    /* Shine line on top */
+    .gold-bar::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      width: 14px;
+      height: 1px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 1px;
+    }
+
+    /* ===== HOVER EFFECTS ===== */
+    .card:hover .mask { animation-duration: 1.5s; }
+    .card:hover .money { animation-duration: 2s; }
+    .card:hover .gold-particle { animation-duration: 3s; }
+    .card:hover .gold-bar { animation-duration: 0.8s; }
+    .card:hover .alarm { animation-duration: 1s; }
+    .card:hover .eye { animation-duration: 1s; }
+    .card:hover .red-glow { animation-duration: 1s; }
+  </style>
+</head>
+<body>
+  <div class="premium-wrapper">
+    <div class="founder-text">FOUNDER</div>
+
+    <div class="card">
+      <!-- Alarm flash -->
+      <div class="alarm"></div>
+
+      <!-- Plan lines -->
+      <div class="plan-lines">
+        <div class="plan-line"></div>
+        <div class="plan-line"></div>
+        <div class="plan-line"></div>
+        <div class="plan-line"></div>
+      </div>
+
+      <!-- Falling money -->
+      <div class="money-rain">
+        <div class="money">💵</div>
+        <div class="money">💰</div>
+        <div class="money">💵</div>
+        <div class="money">💶</div>
+        <div class="money">💵</div>
+        <div class="money">💰</div>
+        <div class="money">💵</div>
+        <div class="money">💶</div>
+        <div class="money">💵</div>
+        <div class="money">💰</div>
+      </div>
+
+      <!-- Gold particles -->
+      <div class="gold-particles">
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+        <div class="gold-particle"></div>
+      </div>
+
+      <!-- Professor badge -->
+      <div class="professor">El Profesor</div>
+
+      <!-- Red glow -->
+      <div class="red-glow"></div>
+
+      <div class="mask-container">
+        <div class="mask">
+          <div class="face"></div>
+          <div class="forehead"></div>
+
+          <div class="eyebrows">
+            <div class="eyebrow"></div>
+            <div class="eyebrow"></div>
+          </div>
+
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+
+          <div class="nose">
+            <div class="nose-bridge"></div>
+            <div class="nose-tip"></div>
+          </div>
+
+          <div class="mustache">
+            <div class="mustache-half"></div>
+            <div class="mustache-half"></div>
+          </div>
+
+          <div class="lips">
+            <div class="upper-lip"></div>
+            <div class="lower-lip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bella-ciao">bella ciao</div>
+
+      <!-- Gold bars - 3D with side -->
+      <div class="gold-bars">
+        <div class="gold-bar"><div class="side"></div><div class="front"></div><div class="top"></div></div>
+        <div class="gold-bar"><div class="side"></div><div class="front"></div><div class="top"></div></div>
+        <div class="gold-bar"><div class="side"></div><div class="front"></div><div class="top"></div></div>
+        <div class="gold-bar"><div class="side"></div><div class="front"></div><div class="top"></div></div>
+        <div class="gold-bar"><div class="side"></div><div class="front"></div><div class="top"></div></div>
+      </div>
+
+      <div class="card-title">Money Heist</div>
+    </div>
+  </div>
+</body>
+</html>
+

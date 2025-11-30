@@ -1,0 +1,2619 @@
+[
+  {
+    "id": 1,
+    "question": "What is the original Spanish title of Money Heist?",
+    "options": [
+      "Casa de Dinero",
+      "La Casa de Papel",
+      "El Robo Grande",
+      "Papel Moneda"
+    ],
+    "answer": "La Casa de Papel",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 2,
+    "question": "Who plays The Professor?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg/250px-%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg",
+    "options": [
+      "Pedro Alonso",
+      "Álvaro Morte",
+      "Jaime Lorente",
+      "Enrique Arce"
+    ],
+    "answer": "Álvaro Morte",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "What is The Professor's real name?",
+    "options": [
+      "Sergio Marquina",
+      "Andrés de Fonollosa",
+      "Martín Berrote",
+      "Aníbal Cortés"
+    ],
+    "answer": "Sergio Marquina",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Tokyo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/%C3%9Arsula_Corber%C3%B3-65339.jpg/250px-%C3%9Arsula_Corber%C3%B3-65339.jpg",
+    "options": [
+      "Alba Flores",
+      "Úrsula Corberó",
+      "Itziar Ituño",
+      "Esther Acebo"
+    ],
+    "answer": "Úrsula Corberó",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What city names are the robbers' codenames based on?",
+    "options": [
+      "Spanish cities",
+      "World cities",
+      "European capitals",
+      "Italian cities"
+    ],
+    "answer": "World cities",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 6,
+    "question": "Who plays Inspector Raquel Murillo / Lisbon?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Itziar_Itu%C3%B1o_2019_2_%28cropped%29.jpg/250px-Itziar_Itu%C3%B1o_2019_2_%28cropped%29.jpg",
+    "options": [
+      "Najwa Nimri",
+      "Alba Flores",
+      "Itziar Ituño",
+      "Belén Cuesta"
+    ],
+    "answer": "Itziar Ituño",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 7,
+    "question": "What building is robbed in the first heist?",
+    "options": [
+      "Bank of Spain",
+      "Royal Mint of Spain",
+      "Madrid Central Bank",
+      "European Central Bank"
+    ],
+    "answer": "Royal Mint of Spain",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 8,
+    "question": "Who plays Berlin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/HospitalReal01_%28cropped%29.jpg/250px-HospitalReal01_%28cropped%29.jpg",
+    "options": [
+      "Álvaro Morte",
+      "Pedro Alonso",
+      "Rodrigo de la Serna",
+      "Jaime Lorente"
+    ],
+    "answer": "Pedro Alonso",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 9,
+    "question": "What is Berlin's relationship to The Professor?",
+    "options": [
+      "Best friend",
+      "Brother",
+      "Cousin",
+      "Father"
+    ],
+    "answer": "Brother",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 10,
+    "question": "Who plays Nairobi?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Goyas_2024_-_Alba_Flores.jpg/250px-Goyas_2024_-_Alba_Flores.jpg",
+    "options": [
+      "Úrsula Corberó",
+      "Alba Flores",
+      "Itziar Ituño",
+      "Esther Acebo"
+    ],
+    "answer": "Alba Flores",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 11,
+    "question": "What song is the show's anthem that the gang sings?",
+    "options": [
+      "Despacito",
+      "Bella Ciao",
+      "La Bamba",
+      "Macarena"
+    ],
+    "answer": "Bella Ciao",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Rio?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Miguel_Herr%C3%A1n_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/250px-Miguel_Herr%C3%A1n_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg",
+    "options": [
+      "Jaime Lorente",
+      "Miguel Herrán",
+      "Darko Perić",
+      "Luka Peroš"
+    ],
+    "answer": "Miguel Herrán",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "Who is Rio's love interest?",
+    "options": [
+      "Nairobi",
+      "Tokyo",
+      "Stockholm",
+      "Lisbon"
+    ],
+    "answer": "Tokyo",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 14,
+    "question": "Who plays Denver?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente.jpg/250px-Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente.jpg",
+    "options": [
+      "Miguel Herrán",
+      "Jaime Lorente",
+      "Darko Perić",
+      "Hovik Keuchkerian"
+    ],
+    "answer": "Jaime Lorente",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 15,
+    "question": "What is Denver's distinctive laugh?",
+    "options": [
+      "Silent chuckle",
+      "High-pitched hyena laugh",
+      "Deep belly laugh",
+      "Snort laugh"
+    ],
+    "answer": "High-pitched hyena laugh",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 16,
+    "question": "Who plays Stockholm (formerly Mónica)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Esther_Acebo.jpg/250px-Esther_Acebo.jpg",
+    "options": [
+      "Alba Flores",
+      "Esther Acebo",
+      "Belén Cuesta",
+      "Itziar Ituño"
+    ],
+    "answer": "Esther Acebo",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 17,
+    "question": "Who was Mónica/Stockholm before joining the gang?",
+    "options": [
+      "A police officer",
+      "A secretary/hostage",
+      "A bank employee",
+      "A nurse"
+    ],
+    "answer": "A secretary/hostage",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 18,
+    "question": "Who plays Arturo Román?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Enriquearce.jpg",
+    "options": [
+      "Fernando Cayo",
+      "Enrique Arce",
+      "Rodrigo de la Serna",
+      "Darko Perić"
+    ],
+    "answer": "Enrique Arce",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 19,
+    "question": "What streaming platform made Money Heist internationally famous?",
+    "options": [
+      "Amazon Prime",
+      "HBO Max",
+      "Netflix",
+      "Disney+"
+    ],
+    "answer": "Netflix",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 20,
+    "question": "What country is Money Heist originally from?",
+    "options": [
+      "Mexico",
+      "Spain",
+      "Argentina",
+      "Colombia"
+    ],
+    "answer": "Spain",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 21,
+    "question": "Who plays Helsinki?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Darko-Peric.jpg/250px-Darko-Peric.jpg",
+    "options": [
+      "Hovik Keuchkerian",
+      "Darko Perić",
+      "Luka Peroš",
+      "Roberto García"
+    ],
+    "answer": "Darko Perić",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 22,
+    "question": "What is the relationship between Helsinki and Oslo?",
+    "options": [
+      "Brothers",
+      "Cousins",
+      "Best friends",
+      "Father and son"
+    ],
+    "answer": "Cousins",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 23,
+    "question": "Who plays Bogotá?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Goyas_2024_-_Hovik_Keuchkerian.jpg/250px-Goyas_2024_-_Hovik_Keuchkerian.jpg",
+    "options": [
+      "Darko Perić",
+      "Hovik Keuchkerian",
+      "Luka Peroš",
+      "Rodrigo de la Serna"
+    ],
+    "answer": "Hovik Keuchkerian",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 24,
+    "question": "Who plays Marseille?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Luka_peros_2021_2.jpg/250px-Luka_peros_2021_2.jpg",
+    "options": [
+      "Darko Perić",
+      "Hovik Keuchkerian",
+      "Luka Peroš",
+      "Fernando Cayo"
+    ],
+    "answer": "Luka Peroš",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 25,
+    "question": "Who plays Manila?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Malaga_Film_Festival_2025_-_Bel%C3%A9n_Cuesta_01.jpg/250px-Malaga_Film_Festival_2025_-_Bel%C3%A9n_Cuesta_01.jpg",
+    "options": [
+      "Alba Flores",
+      "Belén Cuesta",
+      "Esther Acebo",
+      "Úrsula Corberó"
+    ],
+    "answer": "Belén Cuesta",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 26,
+    "question": "Who is Manila's connection to the original gang?",
+    "options": [
+      "The Professor's cousin",
+      "Denver's childhood friend",
+      "Moscow's goddaughter",
+      "Berlin's ex-wife"
+    ],
+    "answer": "Moscow's goddaughter",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 27,
+    "question": "Who plays Palermo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rodrigo_de_la_Serna-F%C3%A9nix_2017_%28cropped%29.jpg/250px-Rodrigo_de_la_Serna-F%C3%A9nix_2017_%28cropped%29.jpg",
+    "options": [
+      "Pedro Alonso",
+      "Rodrigo de la Serna",
+      "Álvaro Morte",
+      "Hovik Keuchkerian"
+    ],
+    "answer": "Rodrigo de la Serna",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 28,
+    "question": "What is Palermo's relationship with Berlin?",
+    "options": [
+      "Brothers",
+      "Best friends/In love with him",
+      "Cousins",
+      "Former partners"
+    ],
+    "answer": "Best friends/In love with him",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 29,
+    "question": "Who plays Inspector Alicia Sierra?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Najwa_Nimri_%28200x290%29.jpg/250px-Najwa_Nimri_%28200x290%29.jpg",
+    "options": [
+      "Itziar Ituño",
+      "Najwa Nimri",
+      "Alba Flores",
+      "Belén Cuesta"
+    ],
+    "answer": "Najwa Nimri",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 30,
+    "question": "Who plays Colonel Tamayo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Goyas_2024_-_Fernando_Cayo_and_Carmela_Martins_%28cropped%29.jpg/250px-Goyas_2024_-_Fernando_Cayo_and_Carmela_Martins_%28cropped%29.jpg",
+    "options": [
+      "Enrique Arce",
+      "Fernando Cayo",
+      "Rodrigo de la Serna",
+      "Pedro Alonso"
+    ],
+    "answer": "Fernando Cayo",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 31,
+    "question": "What building is targeted in the second heist?",
+    "options": [
+      "Royal Mint of Spain",
+      "Bank of Spain",
+      "European Central Bank",
+      "Madrid Stock Exchange"
+    ],
+    "answer": "Bank of Spain",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 32,
+    "question": "What is stored in the Bank of Spain that they're after?",
+    "options": [
+      "Cash",
+      "Gold reserves",
+      "Diamonds",
+      "Art"
+    ],
+    "answer": "Gold reserves",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 33,
+    "question": "How many parts/seasons does Money Heist have?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 34,
+    "question": "What do the robbers wear as their signature disguise?",
+    "options": [
+      "Clown masks",
+      "Salvador Dalí masks and red jumpsuits",
+      "Skeleton masks",
+      "Anonymous masks"
+    ],
+    "answer": "Salvador Dalí masks and red jumpsuits",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 35,
+    "question": "Why did they choose Salvador Dalí masks?",
+    "options": [
+      "Random choice",
+      "Symbol of Spanish resistance and surrealism",
+      "The Professor liked art",
+      "It was cheap"
+    ],
+    "answer": "Symbol of Spanish resistance and surrealism",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 36,
+    "question": "What year did Money Heist originally air in Spain?",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answer": "2017",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 37,
+    "question": "Which Spanish TV channel originally broadcast Money Heist?",
+    "options": [
+      "TVE",
+      "Antena 3",
+      "Telecinco",
+      "La Sexta"
+    ],
+    "answer": "Antena 3",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 38,
+    "question": "Who is the creator of Money Heist?",
+    "options": [
+      "Alejandro Amenábar",
+      "Álex Pina",
+      "Pedro Almodóvar",
+      "Guillermo del Toro"
+    ],
+    "answer": "Álex Pina",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 39,
+    "question": "What was Denver's father's codename?",
+    "options": [
+      "Madrid",
+      "Moscow",
+      "Oslo",
+      "Berlin"
+    ],
+    "answer": "Moscow",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 40,
+    "question": "How does Moscow die?",
+    "options": [
+      "Shot by police",
+      "Explosion",
+      "Illness",
+      "Betrayal"
+    ],
+    "answer": "Shot by police",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 41,
+    "question": "What was Moscow's profession before the heist?",
+    "options": [
+      "Burglar",
+      "Miner",
+      "Mechanic",
+      "Construction worker"
+    ],
+    "answer": "Miner",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 42,
+    "question": "How does Oslo die?",
+    "options": [
+      "Shot by police",
+      "Mercy killing by Helsinki",
+      "Explosion",
+      "Natural causes"
+    ],
+    "answer": "Mercy killing by Helsinki",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 43,
+    "question": "How does Berlin die in Part 2?",
+    "options": [
+      "Shot by police",
+      "Sacrifices himself holding off police",
+      "Explosion",
+      "He doesn't die"
+    ],
+    "answer": "Sacrifices himself holding off police",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 44,
+    "question": "What terminal illness does Berlin have?",
+    "options": [
+      "Cancer",
+      "Helmer's myopathy",
+      "AIDS",
+      "Heart disease"
+    ],
+    "answer": "Helmer's myopathy",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 45,
+    "question": "How many times has Berlin been married?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "Never"
+    ],
+    "answer": "5",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 46,
+    "question": "What is Tokyo's real name?",
+    "options": [
+      "Silene Oliveira",
+      "María García",
+      "Ágata Jiménez",
+      "Never revealed"
+    ],
+    "answer": "Silene Oliveira",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 47,
+    "question": "What happened to Tokyo's boyfriend before the series?",
+    "options": [
+      "Left her",
+      "Killed in a robbery",
+      "In prison",
+      "Died of illness"
+    ],
+    "answer": "Killed in a robbery",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 48,
+    "question": "Who narrates most of the series?",
+    "options": [
+      "The Professor",
+      "Berlin",
+      "Tokyo",
+      "Raquel/Lisbon"
+    ],
+    "answer": "Tokyo",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 49,
+    "question": "How does Tokyo die?",
+    "options": [
+      "Shot by Gandia",
+      "Sacrifices herself with grenades",
+      "Explosion",
+      "She survives"
+    ],
+    "answer": "Sacrifices herself with grenades",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 50,
+    "question": "What does Rio specialize in?",
+    "options": [
+      "Weapons",
+      "Hacking/Technology",
+      "Digging tunnels",
+      "Negotiation"
+    ],
+    "answer": "Hacking/Technology",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 51,
+    "question": "Where was Rio captured and tortured?",
+    "options": [
+      "Spain",
+      "Algeria",
+      "Morocco",
+      "Portugal"
+    ],
+    "answer": "Algeria",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 52,
+    "question": "What triggers the second heist?",
+    "options": [
+      "Need for money",
+      "Rio's capture",
+      "Revenge for Berlin",
+      "Government corruption"
+    ],
+    "answer": "Rio's capture",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 53,
+    "question": "What is Nairobi's specialty?",
+    "options": [
+      "Weapons",
+      "Counterfeiting/Managing money printing",
+      "Technology",
+      "Negotiation"
+    ],
+    "answer": "Counterfeiting/Managing money printing",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 54,
+    "question": "What does Nairobi desperately want?",
+    "options": [
+      "Money",
+      "Freedom",
+      "Her son back",
+      "Revenge"
+    ],
+    "answer": "Her son back",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 55,
+    "question": "How does Nairobi die?",
+    "options": [
+      "Shot by police",
+      "Shot in the head by Gandia",
+      "Explosion",
+      "Illness"
+    ],
+    "answer": "Shot in the head by Gandia",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 56,
+    "question": "Who is Gandia?",
+    "options": [
+      "A hostage",
+      "Bank of Spain's head of security",
+      "A police negotiator",
+      "The Professor's enemy"
+    ],
+    "answer": "Bank of Spain's head of security",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 57,
+    "question": "What was Denver ordered to do to Mónica?",
+    "options": [
+      "Guard her",
+      "Kill her",
+      "Release her",
+      "Interrogate her"
+    ],
+    "answer": "Kill her",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 58,
+    "question": "Why didn't Denver kill Mónica?",
+    "options": [
+      "He was ordered not to",
+      "He fell in love with her",
+      "She escaped",
+      "Someone stopped him"
+    ],
+    "answer": "He fell in love with her",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 59,
+    "question": "What do Denver and Stockholm name their son?",
+    "options": [
+      "Sergio",
+      "Cincinnati",
+      "Andrés",
+      "Rafael"
+    ],
+    "answer": "Cincinnati",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 60,
+    "question": "Who was Arturo having an affair with?",
+    "options": [
+      "A hostage",
+      "Mónica/Stockholm",
+      "A police officer",
+      "His boss"
+    ],
+    "answer": "Mónica/Stockholm",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 61,
+    "question": "What does Arturo become known as among fans?",
+    "options": [
+      "The hero",
+      "The most hated character",
+      "The survivor",
+      "The leader"
+    ],
+    "answer": "The most hated character",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 62,
+    "question": "What crime does Arturo commit in the Bank of Spain heist?",
+    "options": [
+      "Murder",
+      "Sexual assault",
+      "Theft",
+      "Arson"
+    ],
+    "answer": "Sexual assault",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 63,
+    "question": "How does The Professor initially meet Raquel?",
+    "options": [
+      "At a coffee shop",
+      "At a bar (Hanoi)",
+      "Through work",
+      "Online"
+    ],
+    "answer": "At a bar (Hanoi)",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 64,
+    "question": "What fake identity does The Professor use with Raquel?",
+    "options": [
+      "Salvador Martín",
+      "Salva",
+      "Sergio",
+      "Salvador Dalí"
+    ],
+    "answer": "Salva",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 65,
+    "question": "Who is Paula?",
+    "options": [
+      "Raquel's mother",
+      "Raquel's daughter",
+      "A hostage",
+      "The Professor's sister"
+    ],
+    "answer": "Raquel's daughter",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 66,
+    "question": "What is the condition of Raquel's mother?",
+    "options": [
+      "Diabetes",
+      "Alzheimer's",
+      "Heart disease",
+      "Cancer"
+    ],
+    "answer": "Alzheimer's",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 67,
+    "question": "Why does Raquel eventually join the gang?",
+    "options": [
+      "For money",
+      "She falls in love with The Professor and discovers the truth",
+      "She was forced",
+      "For revenge"
+    ],
+    "answer": "She falls in love with The Professor and discovers the truth",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 68,
+    "question": "What codename does Raquel take?",
+    "options": [
+      "Madrid",
+      "Barcelona",
+      "Lisbon",
+      "Bilbao"
+    ],
+    "answer": "Lisbon",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 69,
+    "question": "Where do The Professor and Raquel live after the first heist?",
+    "options": [
+      "Spain",
+      "Philippines (Palawan)",
+      "Brazil",
+      "Argentina"
+    ],
+    "answer": "Philippines (Palawan)",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 70,
+    "question": "What is Alicia Sierra known for?",
+    "options": [
+      "Being kind",
+      "Ruthless interrogation tactics",
+      "Being corrupt",
+      "Helping the gang"
+    ],
+    "answer": "Ruthless interrogation tactics",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 71,
+    "question": "What is Alicia's situation during the Bank of Spain heist?",
+    "options": [
+      "Retired",
+      "Pregnant",
+      "Injured",
+      "On vacation"
+    ],
+    "answer": "Pregnant",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 72,
+    "question": "What happens to Alicia Sierra after she's made a scapegoat?",
+    "options": [
+      "She goes to jail",
+      "She finds The Professor",
+      "She joins police again",
+      "She flees the country"
+    ],
+    "answer": "She finds The Professor",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 73,
+    "question": "Where does Alicia give birth?",
+    "options": [
+      "Hospital",
+      "Police station",
+      "The Professor's hideout",
+      "Bank of Spain"
+    ],
+    "answer": "The Professor's hideout",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 74,
+    "question": "What does Alicia name her daughter?",
+    "options": [
+      "Raquel",
+      "Victoria",
+      "Sofía",
+      "Alba"
+    ],
+    "answer": "Victoria",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 75,
+    "question": "What does Colonel Tamayo care about most?",
+    "options": [
+      "Justice",
+      "His career/reputation",
+      "The hostages",
+      "The money"
+    ],
+    "answer": "His career/reputation",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 76,
+    "question": "How does The Professor communicate with the gang inside?",
+    "options": [
+      "Cell phones",
+      "Earpieces/radio",
+      "Notes",
+      "Sign language"
+    ],
+    "answer": "Earpieces/radio",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 77,
+    "question": "What is The Professor's father's role in his motivation?",
+    "options": [
+      "He inspired the heist",
+      "He was killed during a bank robbery",
+      "He was a banker",
+      "He was a police officer"
+    ],
+    "answer": "He was killed during a bank robbery",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 78,
+    "question": "What plan did The Professor and Berlin's father originally create?",
+    "options": [
+      "The Mint heist",
+      "The Bank of Spain heist",
+      "Both heists",
+      "Neither"
+    ],
+    "answer": "The Bank of Spain heist",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 79,
+    "question": "How long did the first heist take?",
+    "options": [
+      "5 days",
+      "7 days",
+      "11 days",
+      "2 weeks"
+    ],
+    "answer": "11 days",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 80,
+    "question": "What do the robbers do with the money at the Royal Mint?",
+    "options": [
+      "Steal existing money",
+      "Print their own money",
+      "Both",
+      "Neither"
+    ],
+    "answer": "Print their own money",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 81,
+    "question": "How much money do they print at the Royal Mint?",
+    "options": [
+      "500 million euros",
+      "984 million euros",
+      "1 billion euros",
+      "2.4 billion euros"
+    ],
+    "answer": "984 million euros",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 82,
+    "question": "What is the main defense The Professor uses against police?",
+    "options": [
+      "Weapons",
+      "Hostages as leverage",
+      "Bribes",
+      "Violence"
+    ],
+    "answer": "Hostages as leverage",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 83,
+    "question": "What rule does The Professor have about killing?",
+    "options": [
+      "Kill anyone who threatens them",
+      "No killing unless absolutely necessary",
+      "Kill police on sight",
+      "No rules"
+    ],
+    "answer": "No killing unless absolutely necessary",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 84,
+    "question": "What plan do they use to escape the Royal Mint?",
+    "options": [
+      "Underground tunnel",
+      "Helicopter",
+      "Ambulances disguised as police",
+      "Hostage exchange"
+    ],
+    "answer": "Underground tunnel",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 85,
+    "question": "Where did they dig the escape tunnel from?",
+    "options": [
+      "A nearby building",
+      "Toledo hangar",
+      "An abandoned warehouse",
+      "A parking garage"
+    ],
+    "answer": "Toledo hangar",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 86,
+    "question": "What does 'Bella Ciao' originally represent?",
+    "options": [
+      "A love song",
+      "Italian partisan resistance song",
+      "Spanish folk song",
+      "Pop song"
+    ],
+    "answer": "Italian partisan resistance song",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 87,
+    "question": "Who sings 'Bella Ciao' first in the series?",
+    "options": [
+      "Tokyo",
+      "Berlin",
+      "The Professor",
+      "Denver"
+    ],
+    "answer": "Berlin",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 88,
+    "question": "What theme does Money Heist explore besides crime?",
+    "options": [
+      "Only money",
+      "Resistance against the system/capitalism",
+      "Pure action",
+      "Romance only"
+    ],
+    "answer": "Resistance against the system/capitalism",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 89,
+    "question": "What does The Professor call their actions?",
+    "options": [
+      "Robbery",
+      "Resistance",
+      "Justice",
+      "Survival"
+    ],
+    "answer": "Resistance",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 90,
+    "question": "What is Palermo's real name?",
+    "options": [
+      "Martín Berrote",
+      "Andrés de Fonollosa",
+      "Rafael",
+      "Luis"
+    ],
+    "answer": "Martín Berrote",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 91,
+    "question": "What does Palermo do that nearly ruins the Bank of Spain heist?",
+    "options": [
+      "Kills a hostage",
+      "Releases Gandia",
+      "Calls the police",
+      "Runs away"
+    ],
+    "answer": "Releases Gandia",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 92,
+    "question": "Who originally planned the Bank of Spain heist with Berlin?",
+    "options": [
+      "The Professor",
+      "Palermo",
+      "Their father",
+      "Nairobi"
+    ],
+    "answer": "Palermo",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 93,
+    "question": "What does Bogotá do for the heist?",
+    "options": [
+      "Security",
+      "Welding/Melting gold",
+      "Technology",
+      "Negotiations"
+    ],
+    "answer": "Welding/Melting gold",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 94,
+    "question": "Who does Bogotá develop feelings for?",
+    "options": [
+      "Tokyo",
+      "Nairobi",
+      "Stockholm",
+      "Manila"
+    ],
+    "answer": "Nairobi",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 95,
+    "question": "What is Marseille's role in the gang?",
+    "options": [
+      "Inside the bank",
+      "Outside support/logistics",
+      "Technology",
+      "Negotiator"
+    ],
+    "answer": "Outside support/logistics",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 96,
+    "question": "What animal does Marseille have a connection with?",
+    "options": [
+      "A dog",
+      "A cat",
+      "A bird",
+      "None"
+    ],
+    "answer": "A dog",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 97,
+    "question": "What is Helsinki's background?",
+    "options": [
+      "Serbian soldier",
+      "Spanish criminal",
+      "Russian spy",
+      "American mercenary"
+    ],
+    "answer": "Serbian soldier",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 98,
+    "question": "Who does Helsinki develop a romantic relationship with?",
+    "options": [
+      "Nairobi",
+      "Palermo",
+      "A hostage",
+      "No one"
+    ],
+    "answer": "Palermo",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 99,
+    "question": "What is Manila's real name?",
+    "options": [
+      "Julia",
+      "Matías",
+      "Carlos",
+      "María"
+    ],
+    "answer": "Julia",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 100,
+    "question": "What is significant about Manila's identity?",
+    "options": [
+      "She's undercover police",
+      "She's transgender",
+      "She's related to The Professor",
+      "She's an actress"
+    ],
+    "answer": "She's transgender",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 101,
+    "question": "Who was Berlin's last wife shown in flashbacks?",
+    "options": [
+      "Ariadna",
+      "Tatiana",
+      "Patricia",
+      "Sofia"
+    ],
+    "answer": "Tatiana",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 102,
+    "question": "What instrument does Tatiana play?",
+    "options": [
+      "Guitar",
+      "Piano",
+      "Violin",
+      "Flute"
+    ],
+    "answer": "Piano",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 103,
+    "question": "What song does Berlin and Tatiana's wedding feature?",
+    "options": [
+      "Bella Ciao",
+      "Ti Amo",
+      "La Vie en Rose",
+      "My Way"
+    ],
+    "answer": "Ti Amo",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 104,
+    "question": "Who is Rafael?",
+    "options": [
+      "Berlin's brother",
+      "Berlin's son",
+      "The Professor's assistant",
+      "A hostage"
+    ],
+    "answer": "Berlin's son",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 105,
+    "question": "What does Rafael specialize in?",
+    "options": [
+      "Weapons",
+      "Engineering/Technology",
+      "Medicine",
+      "Law"
+    ],
+    "answer": "Engineering/Technology",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 106,
+    "question": "What happens between Rafael and Tatiana?",
+    "options": [
+      "Nothing",
+      "They fall in love and betray Berlin",
+      "They hate each other",
+      "They work together"
+    ],
+    "answer": "They fall in love and betray Berlin",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 107,
+    "question": "How do the gang get the gold out of the Bank of Spain?",
+    "options": [
+      "Trucks",
+      "Melted and pumped through pipes",
+      "Helicopters",
+      "They don't"
+    ],
+    "answer": "Melted and pumped through pipes",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 108,
+    "question": "What is the 'Dali Plan'?",
+    "options": [
+      "Wearing masks",
+      "The overall heist strategy",
+      "The escape plan",
+      "A backup plan"
+    ],
+    "answer": "The overall heist strategy",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 109,
+    "question": "What does The Professor always have backup plans for?",
+    "options": [
+      "Nothing",
+      "Everything possible",
+      "Only escapes",
+      "Only negotiations"
+    ],
+    "answer": "Everything possible",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 110,
+    "question": "What phrase does The Professor use about plans?",
+    "options": [
+      "Plan A is enough",
+      "We need plans A through Z",
+      "Plans are useless",
+      "There's always a plan B"
+    ],
+    "answer": "There's always a plan B",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 111,
+    "question": "What is The Professor's weakness?",
+    "options": [
+      "His health",
+      "His emotions/love for Raquel",
+      "Money",
+      "Nothing"
+    ],
+    "answer": "His emotions/love for Raquel",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 112,
+    "question": "How does Inspector Murillo almost catch The Professor in Part 1?",
+    "options": [
+      "Fingerprints",
+      "She finds his hideout through a tracking device",
+      "A witness identifies him",
+      "Security cameras"
+    ],
+    "answer": "She finds his hideout through a tracking device",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 113,
+    "question": "What drink does The Professor order at Hanoi?",
+    "options": [
+      "Beer",
+      "Wine",
+      "Cider",
+      "Water"
+    ],
+    "answer": "Cider",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 114,
+    "question": "What origami figure does The Professor make?",
+    "options": [
+      "Bird",
+      "Boat",
+      "Flower",
+      "Star"
+    ],
+    "answer": "Boat",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 115,
+    "question": "Who shoots Nairobi through the window?",
+    "options": [
+      "Gandia",
+      "A police sniper",
+      "Alicia Sierra",
+      "Tamayo"
+    ],
+    "answer": "A police sniper",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 116,
+    "question": "What saves Nairobi's life after she's shot?",
+    "options": [
+      "The Professor's plan",
+      "Improvised surgery by the gang",
+      "She dies immediately",
+      "Hospital transfer"
+    ],
+    "answer": "Improvised surgery by the gang",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 117,
+    "question": "What celebrity did Nairobi want to have a baby with?",
+    "options": [
+      "Pedro Alonso",
+      "Justin Bieber",
+      "Álvaro Morte",
+      "David Beckham"
+    ],
+    "answer": "Álvaro Morte",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 118,
+    "question": "What is Nairobi's catchphrase?",
+    "options": [
+      "Let's do this!",
+      "Let's go girls!",
+      "Money, money, money!",
+      "Vamos!"
+    ],
+    "answer": "Let's go girls!",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 119,
+    "question": "What do fans call The Professor and Raquel's relationship?",
+    "options": [
+      "Serquel",
+      "Prolisbon",
+      "Professorquel",
+      "Lisborgio"
+    ],
+    "answer": "Serquel",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 120,
+    "question": "What show did Money Heist inspire in Korea?",
+    "options": [
+      "Squid Game",
+      "Money Heist: Korea",
+      "K-Heist",
+      "Seoul Heist"
+    ],
+    "answer": "Money Heist: Korea",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 121,
+    "question": "How many Emmy nominations did Money Heist receive?",
+    "options": [
+      "None",
+      "1",
+      "3",
+      "5"
+    ],
+    "answer": "1",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 122,
+    "question": "What record did Money Heist break on Netflix?",
+    "options": [
+      "Most episodes",
+      "Most-watched non-English series",
+      "Longest runtime",
+      "Most seasons"
+    ],
+    "answer": "Most-watched non-English series",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 123,
+    "question": "What is the spinoff series called?",
+    "options": [
+      "The Professor",
+      "Berlin",
+      "Tokyo",
+      "Money Heist: Continues"
+    ],
+    "answer": "Berlin",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 124,
+    "question": "What year does the Berlin spinoff take place?",
+    "options": [
+      "After the Bank of Spain heist",
+      "Before the Royal Mint heist",
+      "During the heists",
+      "In the future"
+    ],
+    "answer": "Before the Royal Mint heist",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 125,
+    "question": "How do hostages communicate with police?",
+    "options": [
+      "Cell phones",
+      "Hidden cameras",
+      "Notes thrown outside",
+      "Police hotline inside"
+    ],
+    "answer": "Police hotline inside",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 126,
+    "question": "What is 'Plan Chernobyl'?",
+    "options": [
+      "Escape plan",
+      "Last resort explosion threat",
+      "Negotiation tactic",
+      "Rescue operation"
+    ],
+    "answer": "Last resort explosion threat",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 127,
+    "question": "Who volunteers to stay behind in dangerous situations?",
+    "options": [
+      "The Professor",
+      "Berlin often volunteers",
+      "Tokyo",
+      "Rio"
+    ],
+    "answer": "Berlin often volunteers",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 128,
+    "question": "What genre best describes Money Heist?",
+    "options": [
+      "Comedy",
+      "Heist thriller",
+      "Horror",
+      "Documentary"
+    ],
+    "answer": "Heist thriller",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 129,
+    "question": "How does the gang treat most hostages?",
+    "options": [
+      "Violently",
+      "Relatively humanely",
+      "They kill them",
+      "They ignore them"
+    ],
+    "answer": "Relatively humanely",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 130,
+    "question": "What do the robbers give hostages to wear?",
+    "options": [
+      "Nothing different",
+      "Red jumpsuits like theirs",
+      "White clothes",
+      "Masks"
+    ],
+    "answer": "Red jumpsuits like theirs",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 131,
+    "question": "Why do hostages wear red jumpsuits?",
+    "options": [
+      "Fashion",
+      "To confuse police during escape/raids",
+      "Humiliation",
+      "Identification"
+    ],
+    "answer": "To confuse police during escape/raids",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 132,
+    "question": "What character becomes sympathetic to the gang as a hostage?",
+    "options": [
+      "Arturo",
+      "Alison Parker",
+      "Mónica Gaztambide",
+      "All hostages"
+    ],
+    "answer": "Mónica Gaztambide",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 133,
+    "question": "Who is Alison Parker?",
+    "options": [
+      "A bank employee",
+      "British Ambassador's daughter/hostage",
+      "Police officer",
+      "Reporter"
+    ],
+    "answer": "British Ambassador's daughter/hostage",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 134,
+    "question": "What pressure tactic does the government use in the first heist?",
+    "options": [
+      "Media blackout",
+      "Using Alison Parker for political pressure",
+      "Cutting power",
+      "All of the above"
+    ],
+    "answer": "Using Alison Parker for political pressure",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 135,
+    "question": "Who is Ángel Rubio?",
+    "options": [
+      "A robber",
+      "Raquel's partner/officer in love with her",
+      "A hostage",
+      "The Professor's assistant"
+    ],
+    "answer": "Raquel's partner/officer in love with her",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 136,
+    "question": "What happens to Ángel?",
+    "options": [
+      "He dies",
+      "He falls into a coma and later recovers",
+      "He joins the gang",
+      "He retires"
+    ],
+    "answer": "He falls into a coma and later recovers",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 137,
+    "question": "Who is Raquel's ex-husband?",
+    "options": [
+      "The Professor",
+      "Alberto Vicuña",
+      "Ángel Rubio",
+      "Tamayo"
+    ],
+    "answer": "Alberto Vicuña",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 138,
+    "question": "What did Alberto do to Raquel?",
+    "options": [
+      "Nothing",
+      "Domestic abuse",
+      "Cheated on her",
+      "Left her"
+    ],
+    "answer": "Domestic abuse",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 139,
+    "question": "How does The Professor outsmart tracking on his car?",
+    "options": [
+      "Destroys the device",
+      "Switches cars frequently",
+      "Uses GPS jammers",
+      "Uses multiple identical cars"
+    ],
+    "answer": "Uses multiple identical cars",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 140,
+    "question": "What kind of vehicle does The Professor typically drive?",
+    "options": [
+      "Sports car",
+      "Motorcycle",
+      "SEAT (Spanish car brand)",
+      "Truck"
+    ],
+    "answer": "SEAT (Spanish car brand)",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 141,
+    "question": "What does Berlin believe about love?",
+    "options": [
+      "It's not real",
+      "It's the most important thing",
+      "It makes you weak but it's worth it",
+      "He avoids it"
+    ],
+    "answer": "It's the most important thing",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 142,
+    "question": "What is Berlin's personality type?",
+    "options": [
+      "Cowardly",
+      "Narcissistic but romantic",
+      "Quiet and reserved",
+      "Strictly professional"
+    ],
+    "answer": "Narcissistic but romantic",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 143,
+    "question": "Why is Berlin controversial among fans?",
+    "options": [
+      "He's boring",
+      "His treatment of women/assault",
+      "He's too nice",
+      "He betrays the gang"
+    ],
+    "answer": "His treatment of women/assault",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 144,
+    "question": "Who does Berlin assault during the first heist?",
+    "options": [
+      "Tokyo",
+      "Ariadna (hostage)",
+      "A police officer",
+      "No one"
+    ],
+    "answer": "Ariadna (hostage)",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 145,
+    "question": "What time period do Berlin's flashback scenes take place?",
+    "options": [
+      "After his death",
+      "5 years before the Royal Mint heist",
+      "During the heists",
+      "His childhood"
+    ],
+    "answer": "5 years before the Royal Mint heist",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 146,
+    "question": "What is the significance of the monastery in the flashbacks?",
+    "options": [
+      "Religious meaning",
+      "Where they planned the Bank of Spain heist",
+      "Berlin's home",
+      "Nothing"
+    ],
+    "answer": "Where they planned the Bank of Spain heist",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 147,
+    "question": "Who else besides the main gang knows about the heists beforehand?",
+    "options": [
+      "The government",
+      "No one",
+      "Other criminals",
+      "Journalists"
+    ],
+    "answer": "No one",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 148,
+    "question": "How long do they train before the Royal Mint heist?",
+    "options": [
+      "1 month",
+      "3 months",
+      "5 months",
+      "1 year"
+    ],
+    "answer": "5 months",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 149,
+    "question": "Where do they train for the Royal Mint heist?",
+    "options": [
+      "An abandoned warehouse",
+      "A farmhouse outside Madrid",
+      "A secret bunker",
+      "A yacht"
+    ],
+    "answer": "A farmhouse outside Madrid",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 150,
+    "question": "What rule does The Professor have about relationships between gang members?",
+    "options": [
+      "Encouraged",
+      "No personal relationships",
+      "Must be approved",
+      "No rules"
+    ],
+    "answer": "No personal relationships",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 151,
+    "question": "Who breaks the no-relationship rule first?",
+    "options": [
+      "Denver and Stockholm",
+      "Tokyo and Rio",
+      "Berlin and Ariadna",
+      "Helsinki and Palermo"
+    ],
+    "answer": "Tokyo and Rio",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 152,
+    "question": "What happens when Tokyo leaves the heist to see Rio's arrest?",
+    "options": [
+      "Nothing",
+      "She's captured and reveals information",
+      "She escapes",
+      "She helps Rio"
+    ],
+    "answer": "She's captured and reveals information",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 153,
+    "question": "How does Tokyo return to the Royal Mint?",
+    "options": [
+      "Through the tunnel",
+      "Crashing through with a motorcycle",
+      "Police escort",
+      "She doesn't return"
+    ],
+    "answer": "Crashing through with a motorcycle",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 154,
+    "question": "What song plays during Tokyo's motorcycle crash entrance?",
+    "options": [
+      "Bella Ciao",
+      "My Life Is Going On",
+      "Highway to Hell",
+      "Born to Be Wild"
+    ],
+    "answer": "My Life Is Going On",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 155,
+    "question": "Who sings 'My Life Is Going On' (Money Heist theme)?",
+    "options": [
+      "Shakira",
+      "Cecilia Krull",
+      "Rosalía",
+      "Enrique Iglesias"
+    ],
+    "answer": "Cecilia Krull",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 156,
+    "question": "What is the series' opening song about?",
+    "options": [
+      "Crime",
+      "Survival and living in the moment",
+      "Money",
+      "Love"
+    ],
+    "answer": "Survival and living in the moment",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 157,
+    "question": "What country are Helsinki and Oslo originally from?",
+    "options": [
+      "Finland",
+      "Serbia",
+      "Norway",
+      "Russia"
+    ],
+    "answer": "Serbia",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 158,
+    "question": "What war did Helsinki fight in?",
+    "options": [
+      "World War II",
+      "Yugoslav Wars",
+      "Gulf War",
+      "Vietnam War"
+    ],
+    "answer": "Yugoslav Wars",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 159,
+    "question": "What trauma does Helsinki carry from war?",
+    "options": [
+      "Physical injury",
+      "Survivor's guilt and witnessing atrocities",
+      "Amnesia",
+      "None"
+    ],
+    "answer": "Survivor's guilt and witnessing atrocities",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 160,
+    "question": "How does The Professor feel about violence?",
+    "options": [
+      "Enjoys it",
+      "Prefers to avoid it using intelligence",
+      "Uses it freely",
+      "Has no opinion"
+    ],
+    "answer": "Prefers to avoid it using intelligence",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 161,
+    "question": "What weapon is most commonly seen in the heist?",
+    "options": [
+      "Pistols",
+      "Assault rifles",
+      "Knives",
+      "Explosives"
+    ],
+    "answer": "Assault rifles",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 162,
+    "question": "What technology does Rio set up for communications?",
+    "options": [
+      "Satellite phones",
+      "Encrypted radio system",
+      "Cell phones",
+      "Morse code"
+    ],
+    "answer": "Encrypted radio system",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 163,
+    "question": "How does The Professor monitor the situation inside?",
+    "options": [
+      "He goes inside",
+      "Hacked security cameras",
+      "Reports from the gang",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 164,
+    "question": "What does The Professor do with police communications?",
+    "options": [
+      "Ignores them",
+      "Intercepts and listens to them",
+      "Jams them",
+      "Reports them"
+    ],
+    "answer": "Intercepts and listens to them",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 165,
+    "question": "Who becomes the face of negotiations with police?",
+    "options": [
+      "Tokyo",
+      "Berlin",
+      "The Professor (through calls)",
+      "Nairobi"
+    ],
+    "answer": "The Professor (through calls)",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 166,
+    "question": "What psychological tactics does The Professor use?",
+    "options": [
+      "Threats only",
+      "Manipulation and public sympathy",
+      "Bribery",
+      "None"
+    ],
+    "answer": "Manipulation and public sympathy",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 167,
+    "question": "How does public opinion shift during the heist?",
+    "options": [
+      "Against the robbers",
+      "In favor of the robbers as 'resistance'",
+      "Neutral",
+      "It doesn't"
+    ],
+    "answer": "In favor of the robbers as 'resistance'",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 168,
+    "question": "What does The Professor leak to the media?",
+    "options": [
+      "His identity",
+      "Government corruption/illegal activities",
+      "The gold location",
+      "Nothing"
+    ],
+    "answer": "Government corruption/illegal activities",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 169,
+    "question": "What medal does Alicia Sierra wear?",
+    "options": [
+      "Bravery medal",
+      "Medal of the Virgin",
+      "Police honor medal",
+      "No medal"
+    ],
+    "answer": "Medal of the Virgin",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 170,
+    "question": "What color is Alicia Sierra's hair?",
+    "options": [
+      "Blonde",
+      "Black",
+      "Red",
+      "Brown"
+    ],
+    "answer": "Red",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 171,
+    "question": "Who dies trying to be a hero among the hostages?",
+    "options": [
+      "No one",
+      "Arturo (he survives)",
+      "Pablo Ruiz (student)",
+      "Alison Parker"
+    ],
+    "answer": "Pablo Ruiz (student)",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 172,
+    "question": "What is Pablo Ruiz's death used for politically?",
+    "options": [
+      "Nothing",
+      "To justify police action",
+      "To blame the gang",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 173,
+    "question": "What does Denver almost do when ordered to kill Mónica?",
+    "options": [
+      "Kills her",
+      "Shoots the floor and fakes her death",
+      "Lets her escape",
+      "Refuses immediately"
+    ],
+    "answer": "Shoots the floor and fakes her death",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 174,
+    "question": "How does Moscow feel about Denver's actions with Mónica?",
+    "options": [
+      "Angry",
+      "Proud of his compassion",
+      "Indifferent",
+      "Disappointed"
+    ],
+    "answer": "Proud of his compassion",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 175,
+    "question": "What does Moscow teach Denver about being a criminal?",
+    "options": [
+      "Kill first",
+      "Never become a killer - stay a thief",
+      "Trust no one",
+      "Money is everything"
+    ],
+    "answer": "Never become a killer - stay a thief",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 176,
+    "question": "What does Tokyo's narration represent?",
+    "options": [
+      "Real-time commentary",
+      "Memory/retrospective telling",
+      "Documentary style",
+      "Fiction within fiction"
+    ],
+    "answer": "Memory/retrospective telling",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 177,
+    "question": "Where is Tokyo at the end of the series?",
+    "options": [
+      "Alive and free",
+      "In prison",
+      "Dead",
+      "Unknown"
+    ],
+    "answer": "Dead",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 178,
+    "question": "Who survives until the end of the series?",
+    "options": [
+      "Everyone",
+      "The Professor, Lisbon, Denver, Stockholm, and others",
+      "Only The Professor",
+      "No one"
+    ],
+    "answer": "The Professor, Lisbon, Denver, Stockholm, and others",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 179,
+    "question": "How does the final negotiation end?",
+    "options": [
+      "The gang loses",
+      "A deal where the gang escapes with gold",
+      "Everyone is captured",
+      "Explosion"
+    ],
+    "answer": "A deal where the gang escapes with gold",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 180,
+    "question": "What leverage does The Professor use in the final negotiation?",
+    "options": [
+      "Hostages only",
+      "Exposing government secrets",
+      "Threatening destruction",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 181,
+    "question": "What does Tamayo ultimately care about?",
+    "options": [
+      "Justice",
+      "Saving his career/being a hero",
+      "The hostages",
+      "Stopping crime"
+    ],
+    "answer": "Saving his career/being a hero",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 182,
+    "question": "How do the surviving gang members escape?",
+    "options": [
+      "Through tunnels",
+      "Disguised as soldiers in a military extraction",
+      "Helicopters",
+      "Underground escape"
+    ],
+    "answer": "Disguised as soldiers in a military extraction",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 183,
+    "question": "Where does the gang reunite at the end?",
+    "options": [
+      "The Philippines",
+      "A secure location in Portugal",
+      "Spain",
+      "Italy"
+    ],
+    "answer": "A secure location in Portugal",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 184,
+    "question": "What happens to Alicia Sierra at the end?",
+    "options": [
+      "She goes to prison",
+      "She helps the gang and disappears",
+      "She becomes police chief",
+      "She dies"
+    ],
+    "answer": "She helps the gang and disappears",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 185,
+    "question": "How much gold do they take from the Bank of Spain?",
+    "options": [
+      "50 tons",
+      "90 tons",
+      "100 tons",
+      "150 tons"
+    ],
+    "answer": "90 tons",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 186,
+    "question": "What fake gold bars are made to cover the theft?",
+    "options": [
+      "Plastic",
+      "Painted iron",
+      "Brass",
+      "Bronze with gold plating"
+    ],
+    "answer": "Brass",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 187,
+    "question": "How is the real gold transported out?",
+    "options": [
+      "Trucks",
+      "Melted and pumped through storm drains",
+      "Helicopters",
+      "In hostages' bags"
+    ],
+    "answer": "Melted and pumped through storm drains",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 188,
+    "question": "What unexpected element threatens the final escape?",
+    "options": [
+      "Weather",
+      "Rafael and Tatiana's betrayal/theft",
+      "Police ambush",
+      "Tunnel collapse"
+    ],
+    "answer": "Rafael and Tatiana's betrayal/theft",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 189,
+    "question": "How is the Rafael/Tatiana situation resolved?",
+    "options": [
+      "They keep the gold",
+      "The Professor lets them go",
+      "They return the gold",
+      "Both A and B"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 190,
+    "question": "What does The Professor believe about the system?",
+    "options": [
+      "It's fair",
+      "The system is the real thief",
+      "It should be obeyed",
+      "It's improving"
+    ],
+    "answer": "The system is the real thief",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 191,
+    "question": "What social commentary does Money Heist make?",
+    "options": [
+      "None",
+      "Class inequality and financial system criticism",
+      "Pro-establishment",
+      "Pure entertainment"
+    ],
+    "answer": "Class inequality and financial system criticism",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 192,
+    "question": "Why did the show become popular during COVID-19?",
+    "options": [
+      "Timing and themes of resistance resonated",
+      "Just coincidence",
+      "Marketing",
+      "Celebrities promoted it"
+    ],
+    "answer": "Timing and themes of resistance resonated",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 193,
+    "question": "What real-world protests adopted Money Heist imagery?",
+    "options": [
+      "None",
+      "Various global protests used Dalí masks",
+      "Only in Spain",
+      "Only in Latin America"
+    ],
+    "answer": "Various global protests used Dalí masks",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 194,
+    "question": "What is the final image of the series?",
+    "options": [
+      "The gang in prison",
+      "The gang together, free with their gold",
+      "An explosion",
+      "The Professor alone"
+    ],
+    "answer": "The gang together, free with their gold",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 195,
+    "question": "How many total episodes are in Money Heist?",
+    "options": [
+      "31",
+      "41",
+      "51",
+      "61"
+    ],
+    "answer": "41",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 196,
+    "question": "What language was the original series filmed in?",
+    "options": [
+      "English",
+      "Spanish",
+      "Portuguese",
+      "Italian"
+    ],
+    "answer": "Spanish",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 197,
+    "question": "What award did Money Heist win at the International Emmy?",
+    "options": [
+      "Best Actor",
+      "Best Drama Series",
+      "Best Direction",
+      "Best Writing"
+    ],
+    "answer": "Best Drama Series",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 198,
+    "question": "What year did Money Heist end?",
+    "options": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
+    "answer": "2021",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 199,
+    "question": "How many parts was Part 5 split into?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 200,
+    "question": "What makes Money Heist unique among heist shows?",
+    "options": [
+      "Nothing special",
+      "Deep character development and emotional storytelling",
+      "Just action",
+      "Historical accuracy"
+    ],
+    "answer": "Deep character development and emotional storytelling",
+    "difficulty": "easy",
+    "category": "production"
+  }
+]
+
