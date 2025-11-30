@@ -2,7 +2,12 @@
   {
     "id": 1,
     "question": "What is the name of the Stark family's ancestral home?",
-    "options": ["King's Landing", "Winterfell", "The Eyrie", "Casterly Rock"],
+    "options": [
+      "King's Landing",
+      "Winterfell",
+      "The Eyrie",
+      "Casterly Rock"
+    ],
     "answer": "Winterfell",
     "difficulty": "easy",
     "category": "locations"
@@ -10,8 +15,13 @@
   {
     "id": 2,
     "question": "Who plays Jon Snow in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Kit_Harington_by_Gage_Skidmore.jpg/220px-Kit_Harington_by_Gage_Skidmore.jpg",
-    "options": ["Richard Madden", "Kit Harington", "Nikolaj Coster-Waldau", "Alfie Allen"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Kit_Harington_June_2014.jpg/250px-Kit_Harington_June_2014.jpg",
+    "options": [
+      "Richard Madden",
+      "Kit Harington",
+      "Nikolaj Coster-Waldau",
+      "Alfie Allen"
+    ],
     "answer": "Kit Harington",
     "difficulty": "easy",
     "category": "actors"
@@ -19,7 +29,12 @@
   {
     "id": 3,
     "question": "What are the words (motto) of House Stark?",
-    "options": ["Winter Is Coming", "Hear Me Roar", "Fire and Blood", "Ours Is the Fury"],
+    "options": [
+      "Winter Is Coming",
+      "Hear Me Roar",
+      "Fire and Blood",
+      "Ours Is the Fury"
+    ],
     "answer": "Winter Is Coming",
     "difficulty": "easy",
     "category": "houses"
@@ -27,8 +42,13 @@
   {
     "id": 4,
     "question": "Who plays Daenerys Targaryen?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Emilia_Clarke_by_Gage_Skidmore_2_%28cropped%29.jpg/220px-Emilia_Clarke_by_Gage_Skidmore_2_%28cropped%29.jpg",
-    "options": ["Emilia Clarke", "Lena Headey", "Sophie Turner", "Natalie Dormer"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Emilia_Clarke_Cannes_2018.jpg/250px-Emilia_Clarke_Cannes_2018.jpg",
+    "options": [
+      "Emilia Clarke",
+      "Lena Headey",
+      "Sophie Turner",
+      "Natalie Dormer"
+    ],
     "answer": "Emilia Clarke",
     "difficulty": "easy",
     "category": "actors"
@@ -36,7 +56,12 @@
   {
     "id": 5,
     "question": "What is the name of Daenerys's largest dragon?",
-    "options": ["Viserion", "Rhaegal", "Drogon", "Balerion"],
+    "options": [
+      "Viserion",
+      "Rhaegal",
+      "Drogon",
+      "Balerion"
+    ],
     "answer": "Drogon",
     "difficulty": "easy",
     "category": "characters"
@@ -44,7 +69,12 @@
   {
     "id": 6,
     "question": "Who is known as 'The Imp'?",
-    "options": ["Tyrion Lannister", "Joffrey Baratheon", "Petyr Baelish", "Varys"],
+    "options": [
+      "Tyrion Lannister",
+      "Joffrey Baratheon",
+      "Petyr Baelish",
+      "Varys"
+    ],
     "answer": "Tyrion Lannister",
     "difficulty": "easy",
     "category": "characters"
@@ -52,8 +82,13 @@
   {
     "id": 7,
     "question": "Who plays Tyrion Lannister?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Peter_Dinklage_by_Gage_Skidmore.jpg/220px-Peter_Dinklage_by_Gage_Skidmore.jpg",
-    "options": ["Peter Dinklage", "Charles Dance", "Iwan Rheon", "Aidan Gillen"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Peter_Dinklage%2C_2023.jpg/250px-Peter_Dinklage%2C_2023.jpg",
+    "options": [
+      "Peter Dinklage",
+      "Charles Dance",
+      "Iwan Rheon",
+      "Aidan Gillen"
+    ],
     "answer": "Peter Dinklage",
     "difficulty": "easy",
     "category": "actors"
@@ -61,7 +96,12 @@
   {
     "id": 8,
     "question": "What is the name of the massive wall in the North?",
-    "options": ["The Great Barrier", "The Wall", "The Northern Shield", "The Ice Fortress"],
+    "options": [
+      "The Great Barrier",
+      "The Wall",
+      "The Northern Shield",
+      "The Ice Fortress"
+    ],
     "answer": "The Wall",
     "difficulty": "easy",
     "category": "locations"
@@ -69,7 +109,12 @@
   {
     "id": 9,
     "question": "Who is the main antagonist beyond the Wall?",
-    "options": ["Cersei Lannister", "Ramsay Bolton", "The Night King", "Euron Greyjoy"],
+    "options": [
+      "Cersei Lannister",
+      "Ramsay Bolton",
+      "The Night King",
+      "Euron Greyjoy"
+    ],
     "answer": "The Night King",
     "difficulty": "easy",
     "category": "characters"
@@ -77,7 +122,12 @@
   {
     "id": 10,
     "question": "What is the capital of the Seven Kingdoms?",
-    "options": ["Winterfell", "Dragonstone", "King's Landing", "Highgarden"],
+    "options": [
+      "Winterfell",
+      "Dragonstone",
+      "King's Landing",
+      "Highgarden"
+    ],
     "answer": "King's Landing",
     "difficulty": "easy",
     "category": "locations"
@@ -85,8 +135,13 @@
   {
     "id": 11,
     "question": "Who plays Cersei Lannister?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Lena_Headey_by_Gage_Skidmore_2.jpg/220px-Lena_Headey_by_Gage_Skidmore_2.jpg",
-    "options": ["Emilia Clarke", "Natalie Dormer", "Lena Headey", "Michelle Fairley"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Headey%2C_Lena_(2007)_(headshot).jpg/250px-Headey%2C_Lena_(2007)_(headshot).jpg",
+    "options": [
+      "Emilia Clarke",
+      "Natalie Dormer",
+      "Lena Headey",
+      "Michelle Fairley"
+    ],
     "answer": "Lena Headey",
     "difficulty": "easy",
     "category": "actors"
@@ -94,7 +149,12 @@
   {
     "id": 12,
     "question": "What is the name of Jon Snow's direwolf?",
-    "options": ["Grey Wind", "Lady", "Ghost", "Nymeria"],
+    "options": [
+      "Grey Wind",
+      "Lady",
+      "Ghost",
+      "Nymeria"
+    ],
     "answer": "Ghost",
     "difficulty": "easy",
     "category": "characters"
@@ -102,7 +162,12 @@
   {
     "id": 13,
     "question": "What are the words of House Lannister?",
-    "options": ["Winter Is Coming", "Hear Me Roar", "Fire and Blood", "Growing Strong"],
+    "options": [
+      "Winter Is Coming",
+      "Hear Me Roar",
+      "Fire and Blood",
+      "Growing Strong"
+    ],
     "answer": "Hear Me Roar",
     "difficulty": "easy",
     "category": "houses"
@@ -110,8 +175,13 @@
   {
     "id": 14,
     "question": "Who plays Arya Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Maisie_Williams_by_Gage_Skidmore.jpg/220px-Maisie_Williams_by_Gage_Skidmore.jpg",
-    "options": ["Sophie Turner", "Maisie Williams", "Natalie Dormer", "Rose Leslie"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Maisie_Williams_Photo_Op_GalaxyCon_Richmond_2020.jpg/250px-Maisie_Williams_Photo_Op_GalaxyCon_Richmond_2020.jpg",
+    "options": [
+      "Sophie Turner",
+      "Maisie Williams",
+      "Natalie Dormer",
+      "Rose Leslie"
+    ],
     "answer": "Maisie Williams",
     "difficulty": "easy",
     "category": "actors"
@@ -119,7 +189,12 @@
   {
     "id": 15,
     "question": "Who is Ned Stark's best friend who becomes king?",
-    "options": ["Stannis Baratheon", "Robert Baratheon", "Tywin Lannister", "Jon Arryn"],
+    "options": [
+      "Stannis Baratheon",
+      "Robert Baratheon",
+      "Tywin Lannister",
+      "Jon Arryn"
+    ],
     "answer": "Robert Baratheon",
     "difficulty": "easy",
     "category": "characters"
@@ -127,7 +202,12 @@
   {
     "id": 16,
     "question": "What is the name of Arya's sword?",
-    "options": ["Ice", "Longclaw", "Needle", "Oathkeeper"],
+    "options": [
+      "Ice",
+      "Longclaw",
+      "Needle",
+      "Oathkeeper"
+    ],
     "answer": "Needle",
     "difficulty": "easy",
     "category": "items"
@@ -135,8 +215,13 @@
   {
     "id": 17,
     "question": "Who plays Sansa Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Sophie_Turner_by_Gage_Skidmore.jpg/220px-Sophie_Turner_by_Gage_Skidmore.jpg",
-    "options": ["Maisie Williams", "Sophie Turner", "Natalie Dormer", "Rose Leslie"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Sophie_Turner_(actress)_2011_cropped.jpg/250px-Sophie_Turner_(actress)_2011_cropped.jpg",
+    "options": [
+      "Maisie Williams",
+      "Sophie Turner",
+      "Natalie Dormer",
+      "Rose Leslie"
+    ],
     "answer": "Sophie Turner",
     "difficulty": "easy",
     "category": "actors"
@@ -144,7 +229,12 @@
   {
     "id": 18,
     "question": "What is the Iron Throne made of?",
-    "options": ["Gold", "Iron", "Swords", "Dragon bones"],
+    "options": [
+      "Gold",
+      "Iron",
+      "Swords",
+      "Dragon bones"
+    ],
     "answer": "Swords",
     "difficulty": "easy",
     "category": "items"
@@ -152,7 +242,12 @@
   {
     "id": 19,
     "question": "What organization does Jon Snow join?",
-    "options": ["The Kingsguard", "The Night's Watch", "The City Watch", "The Brotherhood"],
+    "options": [
+      "The Kingsguard",
+      "The Night's Watch",
+      "The City Watch",
+      "The Brotherhood"
+    ],
     "answer": "The Night's Watch",
     "difficulty": "easy",
     "category": "organizations"
@@ -160,8 +255,13 @@
   {
     "id": 20,
     "question": "Who plays Jaime Lannister?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Nikolaj_Coster-Waldau_by_Gage_Skidmore.jpg/220px-Nikolaj_Coster-Waldau_by_Gage_Skidmore.jpg",
-    "options": ["Kit Harington", "Richard Madden", "Nikolaj Coster-Waldau", "Iain Glen"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Nikolaj_Coster-Waldau-68349.jpg/250px-Nikolaj_Coster-Waldau-68349.jpg",
+    "options": [
+      "Kit Harington",
+      "Richard Madden",
+      "Nikolaj Coster-Waldau",
+      "Iain Glen"
+    ],
     "answer": "Nikolaj Coster-Waldau",
     "difficulty": "easy",
     "category": "actors"
@@ -169,7 +269,12 @@
   {
     "id": 21,
     "question": "What is Jaime Lannister's nickname?",
-    "options": ["The Mountain", "The Hound", "Kingslayer", "The Imp"],
+    "options": [
+      "The Mountain",
+      "The Hound",
+      "Kingslayer",
+      "The Imp"
+    ],
     "answer": "Kingslayer",
     "difficulty": "easy",
     "category": "characters"
@@ -177,7 +282,12 @@
   {
     "id": 22,
     "question": "How many seasons of Game of Thrones were produced?",
-    "options": ["6", "7", "8", "9"],
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
     "answer": "8",
     "difficulty": "easy",
     "category": "show-facts"
@@ -185,7 +295,12 @@
   {
     "id": 23,
     "question": "What are the words of House Targaryen?",
-    "options": ["Winter Is Coming", "Hear Me Roar", "Fire and Blood", "Unbowed, Unbent, Unbroken"],
+    "options": [
+      "Winter Is Coming",
+      "Hear Me Roar",
+      "Fire and Blood",
+      "Unbowed, Unbent, Unbroken"
+    ],
     "answer": "Fire and Blood",
     "difficulty": "easy",
     "category": "houses"
@@ -193,8 +308,13 @@
   {
     "id": 24,
     "question": "Who plays Ned Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sean_Bean_by_Gage_Skidmore.jpg/220px-Sean_Bean_by_Gage_Skidmore.jpg",
-    "options": ["Mark Addy", "Sean Bean", "Charles Dance", "Stephen Dillane"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Sean_Bean_TIFF_2015.jpg/250px-Sean_Bean_TIFF_2015.jpg",
+    "options": [
+      "Mark Addy",
+      "Sean Bean",
+      "Charles Dance",
+      "Stephen Dillane"
+    ],
     "answer": "Sean Bean",
     "difficulty": "easy",
     "category": "actors"
@@ -202,7 +322,12 @@
   {
     "id": 25,
     "question": "What is the name of the order of assassins Arya trains with?",
-    "options": ["The Sparrows", "The Faceless Men", "The Second Sons", "The Unsullied"],
+    "options": [
+      "The Sparrows",
+      "The Faceless Men",
+      "The Second Sons",
+      "The Unsullied"
+    ],
     "answer": "The Faceless Men",
     "difficulty": "easy",
     "category": "organizations"
@@ -210,7 +335,12 @@
   {
     "id": 26,
     "question": "Who is known as 'The Mother of Dragons'?",
-    "options": ["Cersei Lannister", "Sansa Stark", "Daenerys Targaryen", "Margaery Tyrell"],
+    "options": [
+      "Cersei Lannister",
+      "Sansa Stark",
+      "Daenerys Targaryen",
+      "Margaery Tyrell"
+    ],
     "answer": "Daenerys Targaryen",
     "difficulty": "easy",
     "category": "characters"
@@ -218,7 +348,12 @@
   {
     "id": 27,
     "question": "What is the name of the continent where most of the story takes place?",
-    "options": ["Essos", "Westeros", "Sothoryos", "Ulthos"],
+    "options": [
+      "Essos",
+      "Westeros",
+      "Sothoryos",
+      "Ulthos"
+    ],
     "answer": "Westeros",
     "difficulty": "easy",
     "category": "locations"
@@ -226,8 +361,13 @@
   {
     "id": 28,
     "question": "Who plays Joffrey Baratheon?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Jack_Gleeson_San_Diego_Comic-Con_2012.jpg/220px-Jack_Gleeson_San_Diego_Comic-Con_2012.jpg",
-    "options": ["Dean-Charles Chapman", "Jack Gleeson", "Alfie Allen", "Isaac Hempstead Wright"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Jack_Gleeson_San_Diego_Comic-Con_2012.jpg/250px-Jack_Gleeson_San_Diego_Comic-Con_2012.jpg",
+    "options": [
+      "Dean-Charles Chapman",
+      "Jack Gleeson",
+      "Alfie Allen",
+      "Isaac Hempstead Wright"
+    ],
     "answer": "Jack Gleeson",
     "difficulty": "easy",
     "category": "actors"
@@ -235,7 +375,12 @@
   {
     "id": 29,
     "question": "What is the Stark family's sigil?",
-    "options": ["A lion", "A dragon", "A direwolf", "A stag"],
+    "options": [
+      "A lion",
+      "A dragon",
+      "A direwolf",
+      "A stag"
+    ],
     "answer": "A direwolf",
     "difficulty": "easy",
     "category": "houses"
@@ -243,7 +388,12 @@
   {
     "id": 30,
     "question": "Who is the author of the book series?",
-    "options": ["J.R.R. Tolkien", "George R.R. Martin", "Brandon Sanderson", "Patrick Rothfuss"],
+    "options": [
+      "J.R.R. Tolkien",
+      "George R.R. Martin",
+      "Brandon Sanderson",
+      "Patrick Rothfuss"
+    ],
     "answer": "George R.R. Martin",
     "difficulty": "easy",
     "category": "show-facts"
@@ -251,7 +401,12 @@
   {
     "id": 31,
     "question": "What is the name of the book series the show is based on?",
-    "options": ["The Lord of the Rings", "A Song of Ice and Fire", "The Wheel of Time", "The Chronicles of Narnia"],
+    "options": [
+      "The Lord of the Rings",
+      "A Song of Ice and Fire",
+      "The Wheel of Time",
+      "The Chronicles of Narnia"
+    ],
     "answer": "A Song of Ice and Fire",
     "difficulty": "easy",
     "category": "show-facts"
@@ -259,8 +414,13 @@
   {
     "id": 32,
     "question": "Who plays Robb Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Richard_Madden_by_Gage_Skidmore.jpg/220px-Richard_Madden_by_Gage_Skidmore.jpg",
-    "options": ["Kit Harington", "Richard Madden", "Alfie Allen", "Iwan Rheon"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Richard_Madden_2014.jpg/250px-Richard_Madden_2014.jpg",
+    "options": [
+      "Kit Harington",
+      "Richard Madden",
+      "Alfie Allen",
+      "Iwan Rheon"
+    ],
     "answer": "Richard Madden",
     "difficulty": "easy",
     "category": "actors"
@@ -268,7 +428,12 @@
   {
     "id": 33,
     "question": "What color is typical Lannister gold?",
-    "options": ["Silver", "Gold", "Red", "Blue"],
+    "options": [
+      "Silver",
+      "Gold",
+      "Red",
+      "Blue"
+    ],
     "answer": "Gold",
     "difficulty": "easy",
     "category": "houses"
@@ -276,7 +441,12 @@
   {
     "id": 34,
     "question": "Who is the Three-Eyed Raven at the end of the series?",
-    "options": ["Jon Snow", "Bran Stark", "The Night King", "Bloodraven"],
+    "options": [
+      "Jon Snow",
+      "Bran Stark",
+      "The Night King",
+      "Bloodraven"
+    ],
     "answer": "Bran Stark",
     "difficulty": "easy",
     "category": "characters"
@@ -284,7 +454,12 @@
   {
     "id": 35,
     "question": "What creature are the White Walkers able to create from the dead?",
-    "options": ["Dragons", "Wights", "Direwolves", "Giants"],
+    "options": [
+      "Dragons",
+      "Wights",
+      "Direwolves",
+      "Giants"
+    ],
     "answer": "Wights",
     "difficulty": "easy",
     "category": "characters"
@@ -292,8 +467,13 @@
   {
     "id": 36,
     "question": "Who plays Bran Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Isaac_Hempstead-Wright_by_Gage_Skidmore.jpg/220px-Isaac_Hempstead-Wright_by_Gage_Skidmore.jpg",
-    "options": ["Jack Gleeson", "Dean-Charles Chapman", "Isaac Hempstead Wright", "Alfie Allen"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Isaac_Hempstead_Wright_by_Gage_Skidmore.jpg/250px-Isaac_Hempstead_Wright_by_Gage_Skidmore.jpg",
+    "options": [
+      "Jack Gleeson",
+      "Dean-Charles Chapman",
+      "Isaac Hempstead Wright",
+      "Alfie Allen"
+    ],
     "answer": "Isaac Hempstead Wright",
     "difficulty": "easy",
     "category": "actors"
@@ -301,7 +481,12 @@
   {
     "id": 37,
     "question": "What is Jon Snow's real name?",
-    "options": ["Jon Targaryen", "Aegon Targaryen", "Rhaegar Targaryen", "Viserys Targaryen"],
+    "options": [
+      "Jon Targaryen",
+      "Aegon Targaryen",
+      "Rhaegar Targaryen",
+      "Viserys Targaryen"
+    ],
     "answer": "Aegon Targaryen",
     "difficulty": "easy",
     "category": "characters"
@@ -309,7 +494,12 @@
   {
     "id": 38,
     "question": "Who sits on the Iron Throne at the end of the series?",
-    "options": ["Jon Snow", "Daenerys Targaryen", "Sansa Stark", "Bran Stark"],
+    "options": [
+      "Jon Snow",
+      "Daenerys Targaryen",
+      "Sansa Stark",
+      "Bran Stark"
+    ],
     "answer": "Bran Stark",
     "difficulty": "easy",
     "category": "plot"
@@ -317,7 +507,12 @@
   {
     "id": 39,
     "question": "What is the name of Jon Snow's Valyrian steel sword?",
-    "options": ["Ice", "Longclaw", "Needle", "Oathkeeper"],
+    "options": [
+      "Ice",
+      "Longclaw",
+      "Needle",
+      "Oathkeeper"
+    ],
     "answer": "Longclaw",
     "difficulty": "easy",
     "category": "items"
@@ -325,8 +520,13 @@
   {
     "id": 40,
     "question": "Who plays Theon Greyjoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Alfie_Allen_by_Gage_Skidmore.jpg/220px-Alfie_Allen_by_Gage_Skidmore.jpg",
-    "options": ["Iwan Rheon", "Alfie Allen", "Richard Madden", "Dean-Charles Chapman"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Alfie_Allen_by_Gage_Skidmore.jpg/250px-Alfie_Allen_by_Gage_Skidmore.jpg",
+    "options": [
+      "Iwan Rheon",
+      "Alfie Allen",
+      "Richard Madden",
+      "Dean-Charles Chapman"
+    ],
     "answer": "Alfie Allen",
     "difficulty": "easy",
     "category": "actors"
@@ -334,7 +534,12 @@
   {
     "id": 41,
     "question": "What is the seat of House Lannister?",
-    "options": ["Winterfell", "King's Landing", "Casterly Rock", "Highgarden"],
+    "options": [
+      "Winterfell",
+      "King's Landing",
+      "Casterly Rock",
+      "Highgarden"
+    ],
     "answer": "Casterly Rock",
     "difficulty": "easy",
     "category": "locations"
@@ -342,7 +547,12 @@
   {
     "id": 42,
     "question": "Who kills the Night King?",
-    "options": ["Jon Snow", "Daenerys Targaryen", "Arya Stark", "Bran Stark"],
+    "options": [
+      "Jon Snow",
+      "Daenerys Targaryen",
+      "Arya Stark",
+      "Bran Stark"
+    ],
     "answer": "Arya Stark",
     "difficulty": "easy",
     "category": "plot"
@@ -350,7 +560,12 @@
   {
     "id": 43,
     "question": "What is the nickname for the large knight Gregor Clegane?",
-    "options": ["The Hound", "The Mountain", "The Viper", "The Bull"],
+    "options": [
+      "The Hound",
+      "The Mountain",
+      "The Viper",
+      "The Bull"
+    ],
     "answer": "The Mountain",
     "difficulty": "easy",
     "category": "characters"
@@ -358,8 +573,13 @@
   {
     "id": 44,
     "question": "Who plays Jorah Mormont?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Iain_Glen_by_Gage_Skidmore.jpg/220px-Iain_Glen_by_Gage_Skidmore.jpg",
-    "options": ["Nikolaj Coster-Waldau", "Iain Glen", "Aidan Gillen", "Jerome Flynn"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Iain_Glen_by_Gage_Skidmore.jpg/250px-Iain_Glen_by_Gage_Skidmore.jpg",
+    "options": [
+      "Nikolaj Coster-Waldau",
+      "Iain Glen",
+      "Aidan Gillen",
+      "Jerome Flynn"
+    ],
     "answer": "Iain Glen",
     "difficulty": "easy",
     "category": "actors"
@@ -367,7 +587,12 @@
   {
     "id": 45,
     "question": "What disease did Jorah Mormont contract?",
-    "options": ["Moon plague", "Greyscale", "Pale mare", "Bloody flux"],
+    "options": [
+      "Moon plague",
+      "Greyscale",
+      "Pale mare",
+      "Bloody flux"
+    ],
     "answer": "Greyscale",
     "difficulty": "easy",
     "category": "plot"
@@ -375,7 +600,12 @@
   {
     "id": 46,
     "question": "What is the name of the mercenary group led by Daario Naharis?",
-    "options": ["The Unsullied", "The Second Sons", "The Golden Company", "The Brotherhood"],
+    "options": [
+      "The Unsullied",
+      "The Second Sons",
+      "The Golden Company",
+      "The Brotherhood"
+    ],
     "answer": "The Second Sons",
     "difficulty": "medium",
     "category": "organizations"
@@ -383,8 +613,13 @@
   {
     "id": 47,
     "question": "Who plays Margaery Tyrell?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Natalie_Dormer_by_Gage_Skidmore.jpg/220px-Natalie_Dormer_by_Gage_Skidmore.jpg",
-    "options": ["Emilia Clarke", "Natalie Dormer", "Lena Headey", "Sophie Turner"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Natalie_Dormer_by_Gage_Skidmore.jpg/250px-Natalie_Dormer_by_Gage_Skidmore.jpg",
+    "options": [
+      "Emilia Clarke",
+      "Natalie Dormer",
+      "Lena Headey",
+      "Sophie Turner"
+    ],
     "answer": "Natalie Dormer",
     "difficulty": "easy",
     "category": "actors"
@@ -392,7 +627,12 @@
   {
     "id": 48,
     "question": "What is the name of Sandor Clegane's nickname?",
-    "options": ["The Mountain", "The Hound", "The Viper", "The Knight"],
+    "options": [
+      "The Mountain",
+      "The Hound",
+      "The Viper",
+      "The Knight"
+    ],
     "answer": "The Hound",
     "difficulty": "easy",
     "category": "characters"
@@ -400,7 +640,12 @@
   {
     "id": 49,
     "question": "In what year did Game of Thrones premiere?",
-    "options": ["2009", "2010", "2011", "2012"],
+    "options": [
+      "2009",
+      "2010",
+      "2011",
+      "2012"
+    ],
     "answer": "2011",
     "difficulty": "easy",
     "category": "show-facts"
@@ -408,8 +653,13 @@
   {
     "id": 50,
     "question": "Who plays Petyr Baelish (Littlefinger)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Aidan_Gillen_2014_%28cropped%29.jpg/220px-Aidan_Gillen_2014_%28cropped%29.jpg",
-    "options": ["Conleth Hill", "Aidan Gillen", "Jerome Flynn", "Julian Glover"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Aidan_Gillen_2014_(cropped).jpg/250px-Aidan_Gillen_2014_(cropped).jpg",
+    "options": [
+      "Conleth Hill",
+      "Aidan Gillen",
+      "Jerome Flynn",
+      "Julian Glover"
+    ],
     "answer": "Aidan Gillen",
     "difficulty": "easy",
     "category": "actors"
@@ -417,7 +667,12 @@
   {
     "id": 51,
     "question": "What is the religion of the Lord of Light?",
-    "options": ["The Faith of the Seven", "R'hllor worship", "The Old Gods", "The Drowned God"],
+    "options": [
+      "The Faith of the Seven",
+      "R'hllor worship",
+      "The Old Gods",
+      "The Drowned God"
+    ],
     "answer": "R'hllor worship",
     "difficulty": "medium",
     "category": "religion"
@@ -425,8 +680,13 @@
   {
     "id": 52,
     "question": "Who plays Varys the Spider?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Conleth_Hill_by_Gage_Skidmore.jpg/220px-Conleth_Hill_by_Gage_Skidmore.jpg",
-    "options": ["Aidan Gillen", "Conleth Hill", "Julian Glover", "Ian McElhinney"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Conleth_Hill_by_Gage_Skidmore.jpg/250px-Conleth_Hill_by_Gage_Skidmore.jpg",
+    "options": [
+      "Aidan Gillen",
+      "Conleth Hill",
+      "Julian Glover",
+      "Ian McElhinney"
+    ],
     "answer": "Conleth Hill",
     "difficulty": "medium",
     "category": "actors"
@@ -434,7 +694,12 @@
   {
     "id": 53,
     "question": "What is the name of the wildling woman Jon Snow falls in love with?",
-    "options": ["Osha", "Ygritte", "Gilly", "Val"],
+    "options": [
+      "Osha",
+      "Ygritte",
+      "Gilly",
+      "Val"
+    ],
     "answer": "Ygritte",
     "difficulty": "easy",
     "category": "characters"
@@ -442,8 +707,13 @@
   {
     "id": 54,
     "question": "Who plays Ygritte?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Rose_Leslie_by_Gage_Skidmore.jpg/220px-Rose_Leslie_by_Gage_Skidmore.jpg",
-    "options": ["Natalie Dormer", "Rose Leslie", "Hannah Murray", "Gwendoline Christie"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Rose_Leslie_by_Gage_Skidmore.jpg/250px-Rose_Leslie_by_Gage_Skidmore.jpg",
+    "options": [
+      "Natalie Dormer",
+      "Rose Leslie",
+      "Hannah Murray",
+      "Gwendoline Christie"
+    ],
     "answer": "Rose Leslie",
     "difficulty": "medium",
     "category": "actors"
@@ -451,7 +721,12 @@
   {
     "id": 55,
     "question": "What phrase does Ygritte often say to Jon Snow?",
-    "options": ["Winter is coming", "You know nothing, Jon Snow", "A Lannister always pays his debts", "Valar Morghulis"],
+    "options": [
+      "Winter is coming",
+      "You know nothing, Jon Snow",
+      "A Lannister always pays his debts",
+      "Valar Morghulis"
+    ],
     "answer": "You know nothing, Jon Snow",
     "difficulty": "easy",
     "category": "quotes"
@@ -459,7 +734,12 @@
   {
     "id": 56,
     "question": "What is the name of Daenerys's army of eunuch soldiers?",
-    "options": ["The Second Sons", "The Dothraki", "The Unsullied", "The Golden Company"],
+    "options": [
+      "The Second Sons",
+      "The Dothraki",
+      "The Unsullied",
+      "The Golden Company"
+    ],
     "answer": "The Unsullied",
     "difficulty": "easy",
     "category": "organizations"
@@ -467,8 +747,13 @@
   {
     "id": 57,
     "question": "Who plays Brienne of Tarth?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gwendoline_Christie_by_Gage_Skidmore.jpg/220px-Gwendoline_Christie_by_Gage_Skidmore.jpg",
-    "options": ["Natalie Dormer", "Rose Leslie", "Gwendoline Christie", "Carice van Houten"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gwendoline_Christie_by_Gage_Skidmore.jpg/250px-Gwendoline_Christie_by_Gage_Skidmore.jpg",
+    "options": [
+      "Natalie Dormer",
+      "Rose Leslie",
+      "Gwendoline Christie",
+      "Carice van Houten"
+    ],
     "answer": "Gwendoline Christie",
     "difficulty": "medium",
     "category": "actors"
@@ -476,7 +761,12 @@
   {
     "id": 58,
     "question": "What is the phrase meaning 'All men must die' in High Valyrian?",
-    "options": ["Dracarys", "Valar Morghulis", "Valar Dohaeris", "Dovaogēdys"],
+    "options": [
+      "Dracarys",
+      "Valar Morghulis",
+      "Valar Dohaeris",
+      "Dovaogēdys"
+    ],
     "answer": "Valar Morghulis",
     "difficulty": "easy",
     "category": "quotes"
@@ -484,7 +774,12 @@
   {
     "id": 59,
     "question": "What is the Valyrian word Daenerys uses to command her dragons to breathe fire?",
-    "options": ["Dracarys", "Valar Morghulis", "Dovaogēdys", "Sōvēs"],
+    "options": [
+      "Dracarys",
+      "Valar Morghulis",
+      "Dovaogēdys",
+      "Sōvēs"
+    ],
     "answer": "Dracarys",
     "difficulty": "easy",
     "category": "quotes"
@@ -492,8 +787,13 @@
   {
     "id": 60,
     "question": "Who plays Samwell Tarly?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Bradley_by_Gage_Skidmore_2.jpg/220px-John_Bradley_by_Gage_Skidmore_2.jpg",
-    "options": ["Kit Harington", "John Bradley", "Alfie Allen", "Kristian Nairn"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/John_Bradley_by_Gage_Skidmore_2.jpg/250px-John_Bradley_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Kit Harington",
+      "John Bradley",
+      "Alfie Allen",
+      "Kristian Nairn"
+    ],
     "answer": "John Bradley",
     "difficulty": "medium",
     "category": "actors"
@@ -501,7 +801,12 @@
   {
     "id": 61,
     "question": "What is the name of the event where Robb Stark and his mother are killed?",
-    "options": ["The Purple Wedding", "The Red Wedding", "The Battle of the Bastards", "Blackwater"],
+    "options": [
+      "The Purple Wedding",
+      "The Red Wedding",
+      "The Battle of the Bastards",
+      "Blackwater"
+    ],
     "answer": "The Red Wedding",
     "difficulty": "easy",
     "category": "plot"
@@ -509,7 +814,12 @@
   {
     "id": 62,
     "question": "Which house hosted the Red Wedding?",
-    "options": ["House Lannister", "House Frey", "House Bolton", "House Tyrell"],
+    "options": [
+      "House Lannister",
+      "House Frey",
+      "House Bolton",
+      "House Tyrell"
+    ],
     "answer": "House Frey",
     "difficulty": "medium",
     "category": "houses"
@@ -517,8 +827,13 @@
   {
     "id": 63,
     "question": "Who plays Melisandre the Red Woman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Carice_van_Houten_by_Gage_Skidmore.jpg/220px-Carice_van_Houten_by_Gage_Skidmore.jpg",
-    "options": ["Natalie Dormer", "Rose Leslie", "Carice van Houten", "Emilia Clarke"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Carice_van_Houten_by_Gage_Skidmore.jpg/250px-Carice_van_Houten_by_Gage_Skidmore.jpg",
+    "options": [
+      "Natalie Dormer",
+      "Rose Leslie",
+      "Carice van Houten",
+      "Emilia Clarke"
+    ],
     "answer": "Carice van Houten",
     "difficulty": "medium",
     "category": "actors"
@@ -526,7 +841,12 @@
   {
     "id": 64,
     "question": "Who betrayed Ned Stark in King's Landing?",
-    "options": ["Varys", "Petyr Baelish", "Janos Slynt", "Sandor Clegane"],
+    "options": [
+      "Varys",
+      "Petyr Baelish",
+      "Janos Slynt",
+      "Sandor Clegane"
+    ],
     "answer": "Petyr Baelish",
     "difficulty": "medium",
     "category": "plot"
@@ -534,7 +854,12 @@
   {
     "id": 65,
     "question": "What is the name of Robb Stark's direwolf?",
-    "options": ["Ghost", "Grey Wind", "Summer", "Lady"],
+    "options": [
+      "Ghost",
+      "Grey Wind",
+      "Summer",
+      "Lady"
+    ],
     "answer": "Grey Wind",
     "difficulty": "easy",
     "category": "characters"
@@ -542,8 +867,13 @@
   {
     "id": 66,
     "question": "Who plays Tywin Lannister?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Charles_Dance_2012_%28cropped%29.jpg/220px-Charles_Dance_2012_%28cropped%29.jpg",
-    "options": ["Sean Bean", "Charles Dance", "Stephen Dillane", "Ian McElhinney"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Charles_Dance_2012_(cropped).jpg/250px-Charles_Dance_2012_(cropped).jpg",
+    "options": [
+      "Sean Bean",
+      "Charles Dance",
+      "Stephen Dillane",
+      "Ian McElhinney"
+    ],
     "answer": "Charles Dance",
     "difficulty": "medium",
     "category": "actors"
@@ -551,7 +881,12 @@
   {
     "id": 67,
     "question": "What Lannister phrase is often quoted about debts?",
-    "options": ["A Lannister always pays his debts", "Hear Me Roar", "Lions never sleep", "Gold buys all"],
+    "options": [
+      "A Lannister always pays his debts",
+      "Hear Me Roar",
+      "Lions never sleep",
+      "Gold buys all"
+    ],
     "answer": "A Lannister always pays his debts",
     "difficulty": "easy",
     "category": "quotes"
@@ -559,7 +894,12 @@
   {
     "id": 68,
     "question": "Who killed Tywin Lannister?",
-    "options": ["Jaime Lannister", "Cersei Lannister", "Tyrion Lannister", "Arya Stark"],
+    "options": [
+      "Jaime Lannister",
+      "Cersei Lannister",
+      "Tyrion Lannister",
+      "Arya Stark"
+    ],
     "answer": "Tyrion Lannister",
     "difficulty": "medium",
     "category": "plot"
@@ -567,7 +907,12 @@
   {
     "id": 69,
     "question": "What is the seat of House Tyrell?",
-    "options": ["Sunspear", "Highgarden", "Storm's End", "The Eyrie"],
+    "options": [
+      "Sunspear",
+      "Highgarden",
+      "Storm's End",
+      "The Eyrie"
+    ],
     "answer": "Highgarden",
     "difficulty": "medium",
     "category": "locations"
@@ -575,8 +920,13 @@
   {
     "id": 70,
     "question": "Who plays Oberyn Martell (The Red Viper)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pedro_Pascal_by_Gage_Skidmore_2.jpg/220px-Pedro_Pascal_by_Gage_Skidmore_2.jpg",
-    "options": ["Indira Varma", "Pedro Pascal", "Alexander Siddig", "Toby Sebastian"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Pedro_Pascal_by_Gage_Skidmore_2.jpg/250px-Pedro_Pascal_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Indira Varma",
+      "Pedro Pascal",
+      "Alexander Siddig",
+      "Toby Sebastian"
+    ],
     "answer": "Pedro Pascal",
     "difficulty": "medium",
     "category": "actors"
@@ -584,7 +934,12 @@
   {
     "id": 71,
     "question": "Who killed Oberyn Martell?",
-    "options": ["Tywin Lannister", "The Mountain", "The Hound", "Jaime Lannister"],
+    "options": [
+      "Tywin Lannister",
+      "The Mountain",
+      "The Hound",
+      "Jaime Lannister"
+    ],
     "answer": "The Mountain",
     "difficulty": "medium",
     "category": "plot"
@@ -592,7 +947,12 @@
   {
     "id": 72,
     "question": "What is the name of the island fortress where Stannis Baratheon resides?",
-    "options": ["Casterly Rock", "Dragonstone", "Pyke", "Storm's End"],
+    "options": [
+      "Casterly Rock",
+      "Dragonstone",
+      "Pyke",
+      "Storm's End"
+    ],
     "answer": "Dragonstone",
     "difficulty": "medium",
     "category": "locations"
@@ -600,8 +960,13 @@
   {
     "id": 73,
     "question": "Who plays Stannis Baratheon?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Stephen_Dillane_2012.jpg/220px-Stephen_Dillane_2012.jpg",
-    "options": ["Sean Bean", "Mark Addy", "Stephen Dillane", "Charles Dance"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Stephen_Dillane_2012.jpg/250px-Stephen_Dillane_2012.jpg",
+    "options": [
+      "Sean Bean",
+      "Mark Addy",
+      "Stephen Dillane",
+      "Charles Dance"
+    ],
     "answer": "Stephen Dillane",
     "difficulty": "medium",
     "category": "actors"
@@ -609,7 +974,12 @@
   {
     "id": 74,
     "question": "What is the name of the master blacksmith who forges Valyrian steel?",
-    "options": ["Gendry", "Tobho Mott", "Mikken", "Donald Noye"],
+    "options": [
+      "Gendry",
+      "Tobho Mott",
+      "Mikken",
+      "Donald Noye"
+    ],
     "answer": "Tobho Mott",
     "difficulty": "hard",
     "category": "characters"
@@ -617,8 +987,13 @@
   {
     "id": 75,
     "question": "Who plays Davos Seaworth?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Liam_Cunningham_by_Gage_Skidmore.jpg/220px-Liam_Cunningham_by_Gage_Skidmore.jpg",
-    "options": ["Stephen Dillane", "Liam Cunningham", "Ian McElhinney", "Conleth Hill"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Liam_Cunningham_by_Gage_Skidmore.jpg/250px-Liam_Cunningham_by_Gage_Skidmore.jpg",
+    "options": [
+      "Stephen Dillane",
+      "Liam Cunningham",
+      "Ian McElhinney",
+      "Conleth Hill"
+    ],
     "answer": "Liam Cunningham",
     "difficulty": "medium",
     "category": "actors"
@@ -626,7 +1001,12 @@
   {
     "id": 76,
     "question": "What is Davos Seaworth's nickname?",
-    "options": ["The Spider", "The Onion Knight", "The Kingslayer", "The Imp"],
+    "options": [
+      "The Spider",
+      "The Onion Knight",
+      "The Kingslayer",
+      "The Imp"
+    ],
     "answer": "The Onion Knight",
     "difficulty": "easy",
     "category": "characters"
@@ -634,7 +1014,12 @@
   {
     "id": 77,
     "question": "Which battle features the 'Battle of the Bastards'?",
-    "options": ["Season 4", "Season 5", "Season 6", "Season 7"],
+    "options": [
+      "Season 4",
+      "Season 5",
+      "Season 6",
+      "Season 7"
+    ],
     "answer": "Season 6",
     "difficulty": "medium",
     "category": "show-facts"
@@ -642,8 +1027,13 @@
   {
     "id": 78,
     "question": "Who plays Ramsay Bolton?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Iwan_Rheon_by_Gage_Skidmore.jpg/220px-Iwan_Rheon_by_Gage_Skidmore.jpg",
-    "options": ["Alfie Allen", "Iwan Rheon", "Jack Gleeson", "Dean-Charles Chapman"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Iwan_Rheon_by_Gage_Skidmore.jpg/250px-Iwan_Rheon_by_Gage_Skidmore.jpg",
+    "options": [
+      "Alfie Allen",
+      "Iwan Rheon",
+      "Jack Gleeson",
+      "Dean-Charles Chapman"
+    ],
     "answer": "Iwan Rheon",
     "difficulty": "medium",
     "category": "actors"
@@ -651,7 +1041,12 @@
   {
     "id": 79,
     "question": "What was Ramsay Bolton's original surname?",
-    "options": ["Stark", "Snow", "Stone", "Rivers"],
+    "options": [
+      "Stark",
+      "Snow",
+      "Stone",
+      "Rivers"
+    ],
     "answer": "Snow",
     "difficulty": "medium",
     "category": "characters"
@@ -659,7 +1054,12 @@
   {
     "id": 80,
     "question": "What is the name of Bran's direwolf?",
-    "options": ["Ghost", "Nymeria", "Summer", "Shaggydog"],
+    "options": [
+      "Ghost",
+      "Nymeria",
+      "Summer",
+      "Shaggydog"
+    ],
     "answer": "Summer",
     "difficulty": "easy",
     "category": "characters"
@@ -667,8 +1067,13 @@
   {
     "id": 81,
     "question": "Who plays Hodor?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kristian_Nairn_by_Gage_Skidmore.jpg/220px-Kristian_Nairn_by_Gage_Skidmore.jpg",
-    "options": ["Kristian Nairn", "Rory McCann", "Neil Fingleton", "Ian Whyte"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Kristian_Nairn_by_Gage_Skidmore.jpg/250px-Kristian_Nairn_by_Gage_Skidmore.jpg",
+    "options": [
+      "Kristian Nairn",
+      "Rory McCann",
+      "Neil Fingleton",
+      "Ian Whyte"
+    ],
     "answer": "Kristian Nairn",
     "difficulty": "medium",
     "category": "actors"
@@ -676,7 +1081,12 @@
   {
     "id": 82,
     "question": "What does 'Hodor' actually mean?",
-    "options": ["A greeting", "Hold the door", "Strong one", "Servant"],
+    "options": [
+      "A greeting",
+      "Hold the door",
+      "Strong one",
+      "Servant"
+    ],
     "answer": "Hold the door",
     "difficulty": "easy",
     "category": "plot"
@@ -684,7 +1094,12 @@
   {
     "id": 83,
     "question": "Who is the leader of the wildlings?",
-    "options": ["Tormund Giantsbane", "Mance Rayder", "The Lord of Bones", "Styr"],
+    "options": [
+      "Tormund Giantsbane",
+      "Mance Rayder",
+      "The Lord of Bones",
+      "Styr"
+    ],
     "answer": "Mance Rayder",
     "difficulty": "medium",
     "category": "characters"
@@ -692,8 +1107,13 @@
   {
     "id": 84,
     "question": "Who plays Tormund Giantsbane?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Kristofer_Hivju_by_Gage_Skidmore.jpg/220px-Kristofer_Hivju_by_Gage_Skidmore.jpg",
-    "options": ["Ciarán Hinds", "Kristofer Hivju", "Richard Dormer", "Ben Crompton"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kristofer_Hivju_by_Gage_Skidmore.jpg/250px-Kristofer_Hivju_by_Gage_Skidmore.jpg",
+    "options": [
+      "Ciarán Hinds",
+      "Kristofer Hivju",
+      "Richard Dormer",
+      "Ben Crompton"
+    ],
     "answer": "Kristofer Hivju",
     "difficulty": "medium",
     "category": "actors"
@@ -701,7 +1121,12 @@
   {
     "id": 85,
     "question": "What is the name of Sansa's direwolf?",
-    "options": ["Ghost", "Nymeria", "Lady", "Summer"],
+    "options": [
+      "Ghost",
+      "Nymeria",
+      "Lady",
+      "Summer"
+    ],
     "answer": "Lady",
     "difficulty": "easy",
     "category": "characters"
@@ -709,8 +1134,13 @@
   {
     "id": 86,
     "question": "Who plays the Hound (Sandor Clegane)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Rory_McCann_by_Gage_Skidmore.jpg/220px-Rory_McCann_by_Gage_Skidmore.jpg",
-    "options": ["Hafþór Júlíus Björnsson", "Rory McCann", "Ian Whyte", "Neil Fingleton"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Rory_McCann_by_Gage_Skidmore.jpg/250px-Rory_McCann_by_Gage_Skidmore.jpg",
+    "options": [
+      "Hafþór Júlíus Björnsson",
+      "Rory McCann",
+      "Ian Whyte",
+      "Neil Fingleton"
+    ],
     "answer": "Rory McCann",
     "difficulty": "medium",
     "category": "actors"
@@ -718,7 +1148,12 @@
   {
     "id": 87,
     "question": "What is the sigil of House Baratheon?",
-    "options": ["A lion", "A stag", "A dragon", "A rose"],
+    "options": [
+      "A lion",
+      "A stag",
+      "A dragon",
+      "A rose"
+    ],
     "answer": "A stag",
     "difficulty": "easy",
     "category": "houses"
@@ -726,8 +1161,13 @@
   {
     "id": 88,
     "question": "Who plays Robert Baratheon?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mark_Addy_by_Gage_Skidmore_2.jpg/220px-Mark_Addy_by_Gage_Skidmore_2.jpg",
-    "options": ["Sean Bean", "Mark Addy", "Stephen Dillane", "Charles Dance"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mark_Addy_by_Gage_Skidmore_2.jpg/250px-Mark_Addy_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Sean Bean",
+      "Mark Addy",
+      "Stephen Dillane",
+      "Charles Dance"
+    ],
     "answer": "Mark Addy",
     "difficulty": "medium",
     "category": "actors"
@@ -735,7 +1175,12 @@
   {
     "id": 89,
     "question": "How did Robert Baratheon die?",
-    "options": ["Poisoned", "Killed in battle", "Gored by a boar", "Executed"],
+    "options": [
+      "Poisoned",
+      "Killed in battle",
+      "Gored by a boar",
+      "Executed"
+    ],
     "answer": "Gored by a boar",
     "difficulty": "medium",
     "category": "plot"
@@ -743,7 +1188,12 @@
   {
     "id": 90,
     "question": "What is Rickon Stark's direwolf called?",
-    "options": ["Ghost", "Shaggydog", "Summer", "Grey Wind"],
+    "options": [
+      "Ghost",
+      "Shaggydog",
+      "Summer",
+      "Grey Wind"
+    ],
     "answer": "Shaggydog",
     "difficulty": "medium",
     "category": "characters"
@@ -751,8 +1201,13 @@
   {
     "id": 91,
     "question": "Who plays Grey Worm?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jacob_Anderson_by_Gage_Skidmore.jpg/220px-Jacob_Anderson_by_Gage_Skidmore.jpg",
-    "options": ["Iain Glen", "Jacob Anderson", "Michiel Huisman", "Ed Skrein"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Jacob_Anderson_by_Gage_Skidmore.jpg/250px-Jacob_Anderson_by_Gage_Skidmore.jpg",
+    "options": [
+      "Iain Glen",
+      "Jacob Anderson",
+      "Michiel Huisman",
+      "Ed Skrein"
+    ],
     "answer": "Jacob Anderson",
     "difficulty": "medium",
     "category": "actors"
@@ -760,7 +1215,12 @@
   {
     "id": 92,
     "question": "What is the name of Arya's direwolf?",
-    "options": ["Lady", "Nymeria", "Ghost", "Summer"],
+    "options": [
+      "Lady",
+      "Nymeria",
+      "Ghost",
+      "Summer"
+    ],
     "answer": "Nymeria",
     "difficulty": "easy",
     "category": "characters"
@@ -768,8 +1228,13 @@
   {
     "id": 93,
     "question": "Who plays Missandei?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Nathalie_Emmanuel_%2843055178235%29_%28cropped%29.jpg/220px-Nathalie_Emmanuel_%2843055178235%29_%28cropped%29.jpg",
-    "options": ["Emilia Clarke", "Nathalie Emmanuel", "Hannah Murray", "Oona Chaplin"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Nathalie_Emmanuel_(43055178235)_(cropped).jpg/250px-Nathalie_Emmanuel_(43055178235)_(cropped).jpg",
+    "options": [
+      "Emilia Clarke",
+      "Nathalie Emmanuel",
+      "Hannah Murray",
+      "Oona Chaplin"
+    ],
     "answer": "Nathalie Emmanuel",
     "difficulty": "medium",
     "category": "actors"
@@ -777,7 +1242,12 @@
   {
     "id": 94,
     "question": "What is the name of the citadel where maesters are trained?",
-    "options": ["The Wall", "The Citadel", "The Red Keep", "Dragonstone"],
+    "options": [
+      "The Wall",
+      "The Citadel",
+      "The Red Keep",
+      "Dragonstone"
+    ],
     "answer": "The Citadel",
     "difficulty": "medium",
     "category": "locations"
@@ -785,7 +1255,12 @@
   {
     "id": 95,
     "question": "Where is The Citadel located?",
-    "options": ["King's Landing", "Oldtown", "Winterfell", "Braavos"],
+    "options": [
+      "King's Landing",
+      "Oldtown",
+      "Winterfell",
+      "Braavos"
+    ],
     "answer": "Oldtown",
     "difficulty": "medium",
     "category": "locations"
@@ -793,8 +1268,13 @@
   {
     "id": 96,
     "question": "Who plays Olenna Tyrell?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Diana_Rigg_Allan_Warren.jpg/220px-Diana_Rigg_Allan_Warren.jpg",
-    "options": ["Diana Rigg", "Faye Marsay", "Michelle Fairley", "Essie Davis"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Diana_Rigg_Allan_Warren.jpg/250px-Diana_Rigg_Allan_Warren.jpg",
+    "options": [
+      "Diana Rigg",
+      "Faye Marsay",
+      "Michelle Fairley",
+      "Essie Davis"
+    ],
     "answer": "Diana Rigg",
     "difficulty": "medium",
     "category": "actors"
@@ -802,7 +1282,12 @@
   {
     "id": 97,
     "question": "What is Olenna Tyrell's nickname?",
-    "options": ["The Queen of Thorns", "The Rose Queen", "Lady Paramount", "The Flower Lady"],
+    "options": [
+      "The Queen of Thorns",
+      "The Rose Queen",
+      "Lady Paramount",
+      "The Flower Lady"
+    ],
     "answer": "The Queen of Thorns",
     "difficulty": "medium",
     "category": "characters"
@@ -810,7 +1295,12 @@
   {
     "id": 98,
     "question": "Who poisoned Joffrey at his wedding?",
-    "options": ["Tyrion Lannister", "Cersei Lannister", "Olenna Tyrell", "Sansa Stark"],
+    "options": [
+      "Tyrion Lannister",
+      "Cersei Lannister",
+      "Olenna Tyrell",
+      "Sansa Stark"
+    ],
     "answer": "Olenna Tyrell",
     "difficulty": "medium",
     "category": "plot"
@@ -818,7 +1308,12 @@
   {
     "id": 99,
     "question": "What is the event called when Joffrey is poisoned?",
-    "options": ["The Red Wedding", "The Purple Wedding", "The Black Wedding", "The Royal Wedding"],
+    "options": [
+      "The Red Wedding",
+      "The Purple Wedding",
+      "The Black Wedding",
+      "The Royal Wedding"
+    ],
     "answer": "The Purple Wedding",
     "difficulty": "easy",
     "category": "plot"
@@ -826,8 +1321,13 @@
   {
     "id": 100,
     "question": "Who plays Catelyn Stark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Michelle_Fairley_by_Gage_Skidmore.jpg/220px-Michelle_Fairley_by_Gage_Skidmore.jpg",
-    "options": ["Lena Headey", "Michelle Fairley", "Diana Rigg", "Essie Davis"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Michelle_Fairley_by_Gage_Skidmore.jpg/250px-Michelle_Fairley_by_Gage_Skidmore.jpg",
+    "options": [
+      "Lena Headey",
+      "Michelle Fairley",
+      "Diana Rigg",
+      "Essie Davis"
+    ],
     "answer": "Michelle Fairley",
     "difficulty": "medium",
     "category": "actors"
@@ -835,7 +1335,12 @@
   {
     "id": 101,
     "question": "What is the name of the mercenary company hired by Cersei in Season 8?",
-    "options": ["The Second Sons", "The Unsullied", "The Golden Company", "The Brave Companions"],
+    "options": [
+      "The Second Sons",
+      "The Unsullied",
+      "The Golden Company",
+      "The Brave Companions"
+    ],
     "answer": "The Golden Company",
     "difficulty": "medium",
     "category": "organizations"
@@ -843,8 +1348,13 @@
   {
     "id": 102,
     "question": "Who plays Bronn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jerome_Flynn_by_Gage_Skidmore.jpg/220px-Jerome_Flynn_by_Gage_Skidmore.jpg",
-    "options": ["Aidan Gillen", "Jerome Flynn", "Liam Cunningham", "Conleth Hill"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Jerome_Flynn_by_Gage_Skidmore.jpg/250px-Jerome_Flynn_by_Gage_Skidmore.jpg",
+    "options": [
+      "Aidan Gillen",
+      "Jerome Flynn",
+      "Liam Cunningham",
+      "Conleth Hill"
+    ],
     "answer": "Jerome Flynn",
     "difficulty": "medium",
     "category": "actors"
@@ -852,7 +1362,12 @@
   {
     "id": 103,
     "question": "What weapon did Arya use to kill the Night King?",
-    "options": ["Needle", "Longclaw", "A Valyrian steel dagger", "Oathkeeper"],
+    "options": [
+      "Needle",
+      "Longclaw",
+      "A Valyrian steel dagger",
+      "Oathkeeper"
+    ],
     "answer": "A Valyrian steel dagger",
     "difficulty": "medium",
     "category": "plot"
@@ -860,7 +1375,12 @@
   {
     "id": 104,
     "question": "Who originally owned the Valyrian steel dagger that killed the Night King?",
-    "options": ["Ned Stark", "Petyr Baelish", "Tyrion Lannister", "King Robert"],
+    "options": [
+      "Ned Stark",
+      "Petyr Baelish",
+      "Tyrion Lannister",
+      "King Robert"
+    ],
     "answer": "Petyr Baelish",
     "difficulty": "hard",
     "category": "items"
@@ -868,7 +1388,12 @@
   {
     "id": 105,
     "question": "What is the seat of House Arryn?",
-    "options": ["Winterfell", "The Eyrie", "Riverrun", "Storm's End"],
+    "options": [
+      "Winterfell",
+      "The Eyrie",
+      "Riverrun",
+      "Storm's End"
+    ],
     "answer": "The Eyrie",
     "difficulty": "medium",
     "category": "locations"
@@ -876,7 +1401,12 @@
   {
     "id": 106,
     "question": "Who is Jon Arryn's widow?",
-    "options": ["Catelyn Tully", "Lysa Arryn", "Cersei Lannister", "Selyse Baratheon"],
+    "options": [
+      "Catelyn Tully",
+      "Lysa Arryn",
+      "Cersei Lannister",
+      "Selyse Baratheon"
+    ],
     "answer": "Lysa Arryn",
     "difficulty": "medium",
     "category": "characters"
@@ -884,8 +1414,13 @@
   {
     "id": 107,
     "question": "Who plays the High Sparrow?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jonathan_Pryce%2C_bafta_cymru_%28cropped%29.jpg/220px-Jonathan_Pryce%2C_bafta_cymru_%28cropped%29.jpg",
-    "options": ["Ian McShane", "Jonathan Pryce", "Julian Glover", "Ron Donachie"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Jonathan_Pryce%2C_bafta_cymru_(cropped).jpg/250px-Jonathan_Pryce%2C_bafta_cymru_(cropped).jpg",
+    "options": [
+      "Ian McShane",
+      "Jonathan Pryce",
+      "Julian Glover",
+      "Ron Donachie"
+    ],
     "answer": "Jonathan Pryce",
     "difficulty": "hard",
     "category": "actors"
@@ -893,7 +1428,12 @@
   {
     "id": 108,
     "question": "What religious group does the High Sparrow lead?",
-    "options": ["The Red Priests", "The Sparrows", "The Maesters", "The Many-Faced God followers"],
+    "options": [
+      "The Red Priests",
+      "The Sparrows",
+      "The Maesters",
+      "The Many-Faced God followers"
+    ],
     "answer": "The Sparrows",
     "difficulty": "medium",
     "category": "organizations"
@@ -901,7 +1441,12 @@
   {
     "id": 109,
     "question": "What explosive substance destroys the Sept of Baelor?",
-    "options": ["Dragon fire", "Wildfire", "Greek fire", "Pitch"],
+    "options": [
+      "Dragon fire",
+      "Wildfire",
+      "Greek fire",
+      "Pitch"
+    ],
     "answer": "Wildfire",
     "difficulty": "easy",
     "category": "plot"
@@ -909,8 +1454,13 @@
   {
     "id": 110,
     "question": "Who plays Gendry?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Joe_Dempsie_by_Gage_Skidmore.jpg/220px-Joe_Dempsie_by_Gage_Skidmore.jpg",
-    "options": ["Alfie Allen", "Joe Dempsie", "Iwan Rheon", "Daniel Portman"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Joe_Dempsie_by_Gage_Skidmore.jpg/250px-Joe_Dempsie_by_Gage_Skidmore.jpg",
+    "options": [
+      "Alfie Allen",
+      "Joe Dempsie",
+      "Iwan Rheon",
+      "Daniel Portman"
+    ],
     "answer": "Joe Dempsie",
     "difficulty": "medium",
     "category": "actors"
@@ -918,7 +1468,12 @@
   {
     "id": 111,
     "question": "Whose bastard son is Gendry?",
-    "options": ["Ned Stark", "Robert Baratheon", "Tywin Lannister", "Jon Arryn"],
+    "options": [
+      "Ned Stark",
+      "Robert Baratheon",
+      "Tywin Lannister",
+      "Jon Arryn"
+    ],
     "answer": "Robert Baratheon",
     "difficulty": "easy",
     "category": "characters"
@@ -926,7 +1481,12 @@
   {
     "id": 112,
     "question": "What title is given to Gendry by Daenerys?",
-    "options": ["Lord of Storm's End", "Warden of the South", "Master of Ships", "Hand of the Queen"],
+    "options": [
+      "Lord of Storm's End",
+      "Warden of the South",
+      "Master of Ships",
+      "Hand of the Queen"
+    ],
     "answer": "Lord of Storm's End",
     "difficulty": "medium",
     "category": "plot"
@@ -934,8 +1494,13 @@
   {
     "id": 113,
     "question": "Who plays Euron Greyjoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Pilou_Asb%C3%A6k_by_Gage_Skidmore.jpg/220px-Pilou_Asb%C3%A6k_by_Gage_Skidmore.jpg",
-    "options": ["Alfie Allen", "Pilou Asbæk", "Patrick Malahide", "Gemma Whelan"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Pilou_Asb%C3%A6k_by_Gage_Skidmore.jpg/250px-Pilou_Asb%C3%A6k_by_Gage_Skidmore.jpg",
+    "options": [
+      "Alfie Allen",
+      "Pilou Asbæk",
+      "Patrick Malahide",
+      "Gemma Whelan"
+    ],
     "answer": "Pilou Asbæk",
     "difficulty": "hard",
     "category": "actors"
@@ -943,7 +1508,12 @@
   {
     "id": 114,
     "question": "What is the seat of House Greyjoy?",
-    "options": ["Saltpans", "Pyke", "Lordsport", "Harlaw"],
+    "options": [
+      "Saltpans",
+      "Pyke",
+      "Lordsport",
+      "Harlaw"
+    ],
     "answer": "Pyke",
     "difficulty": "medium",
     "category": "locations"
@@ -951,7 +1521,12 @@
   {
     "id": 115,
     "question": "What are the words of House Greyjoy?",
-    "options": ["We Do Not Sow", "Fire and Blood", "Ours is the Fury", "As High as Honor"],
+    "options": [
+      "We Do Not Sow",
+      "Fire and Blood",
+      "Ours is the Fury",
+      "As High as Honor"
+    ],
     "answer": "We Do Not Sow",
     "difficulty": "medium",
     "category": "houses"
@@ -959,8 +1534,13 @@
   {
     "id": 116,
     "question": "Who plays Yara Greyjoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Gemma_Whelan_by_Gage_Skidmore.jpg/220px-Gemma_Whelan_by_Gage_Skidmore.jpg",
-    "options": ["Rose Leslie", "Gemma Whelan", "Hannah Murray", "Kerry Ingram"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Gemma_Whelan_by_Gage_Skidmore.jpg/250px-Gemma_Whelan_by_Gage_Skidmore.jpg",
+    "options": [
+      "Rose Leslie",
+      "Gemma Whelan",
+      "Hannah Murray",
+      "Kerry Ingram"
+    ],
     "answer": "Gemma Whelan",
     "difficulty": "hard",
     "category": "actors"
@@ -968,7 +1548,12 @@
   {
     "id": 117,
     "question": "What is the religion worshipped by the Ironborn?",
-    "options": ["The Seven", "The Old Gods", "The Drowned God", "R'hllor"],
+    "options": [
+      "The Seven",
+      "The Old Gods",
+      "The Drowned God",
+      "R'hllor"
+    ],
     "answer": "The Drowned God",
     "difficulty": "medium",
     "category": "religion"
@@ -976,7 +1561,12 @@
   {
     "id": 118,
     "question": "Who is Jon Snow's mother?",
-    "options": ["Ashara Dayne", "Lyanna Stark", "Catelyn Stark", "Cersei Lannister"],
+    "options": [
+      "Ashara Dayne",
+      "Lyanna Stark",
+      "Catelyn Stark",
+      "Cersei Lannister"
+    ],
     "answer": "Lyanna Stark",
     "difficulty": "medium",
     "category": "characters"
@@ -984,7 +1574,12 @@
   {
     "id": 119,
     "question": "Who is Jon Snow's biological father?",
-    "options": ["Ned Stark", "Robert Baratheon", "Rhaegar Targaryen", "Arthur Dayne"],
+    "options": [
+      "Ned Stark",
+      "Robert Baratheon",
+      "Rhaegar Targaryen",
+      "Arthur Dayne"
+    ],
     "answer": "Rhaegar Targaryen",
     "difficulty": "medium",
     "category": "characters"
@@ -992,7 +1587,12 @@
   {
     "id": 120,
     "question": "Who plays the Night King?",
-    "options": ["Richard Brake", "Vladimir Furdik", "Both actors played the role", "Neil Fingleton"],
+    "options": [
+      "Richard Brake",
+      "Vladimir Furdik",
+      "Both actors played the role",
+      "Neil Fingleton"
+    ],
     "answer": "Both actors played the role",
     "difficulty": "hard",
     "category": "actors"
@@ -1000,7 +1600,12 @@
   {
     "id": 121,
     "question": "What material can kill White Walkers?",
-    "options": ["Regular steel", "Valyrian steel and dragonglass", "Gold", "Iron"],
+    "options": [
+      "Regular steel",
+      "Valyrian steel and dragonglass",
+      "Gold",
+      "Iron"
+    ],
     "answer": "Valyrian steel and dragonglass",
     "difficulty": "easy",
     "category": "plot"
@@ -1008,7 +1613,12 @@
   {
     "id": 122,
     "question": "What is another name for dragonglass?",
-    "options": ["Valyrian steel", "Obsidian", "Dragonbone", "Moonstone"],
+    "options": [
+      "Valyrian steel",
+      "Obsidian",
+      "Dragonbone",
+      "Moonstone"
+    ],
     "answer": "Obsidian",
     "difficulty": "medium",
     "category": "items"
@@ -1016,7 +1626,12 @@
   {
     "id": 123,
     "question": "Who created the Night King?",
-    "options": ["The First Men", "The Children of the Forest", "The Andals", "The Valyrians"],
+    "options": [
+      "The First Men",
+      "The Children of the Forest",
+      "The Andals",
+      "The Valyrians"
+    ],
     "answer": "The Children of the Forest",
     "difficulty": "medium",
     "category": "plot"
@@ -1024,7 +1639,12 @@
   {
     "id": 124,
     "question": "What is the name of the battle in the final season against the dead?",
-    "options": ["Battle of the Bastards", "Battle of Winterfell", "Battle of the Blackwater", "Battle of the Dawn"],
+    "options": [
+      "Battle of the Bastards",
+      "Battle of Winterfell",
+      "Battle of the Blackwater",
+      "Battle of the Dawn"
+    ],
     "answer": "Battle of Winterfell",
     "difficulty": "easy",
     "category": "plot"
@@ -1032,8 +1652,13 @@
   {
     "id": 125,
     "question": "Who plays Daario Naharis in later seasons?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Michiel_Huisman_by_Gage_Skidmore_2.jpg/220px-Michiel_Huisman_by_Gage_Skidmore_2.jpg",
-    "options": ["Ed Skrein", "Michiel Huisman", "Iain Glen", "Jacob Anderson"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Michiel_Huisman_by_Gage_Skidmore_2.jpg/250px-Michiel_Huisman_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Ed Skrein",
+      "Michiel Huisman",
+      "Iain Glen",
+      "Jacob Anderson"
+    ],
     "answer": "Michiel Huisman",
     "difficulty": "hard",
     "category": "actors"
@@ -1041,7 +1666,12 @@
   {
     "id": 126,
     "question": "What is the name of the ancient enemy from beyond the Wall?",
-    "options": ["The Others", "White Walkers", "The Wights", "The Night's Watch"],
+    "options": [
+      "The Others",
+      "White Walkers",
+      "The Wights",
+      "The Night's Watch"
+    ],
     "answer": "White Walkers",
     "difficulty": "easy",
     "category": "characters"
@@ -1049,7 +1679,12 @@
   {
     "id": 127,
     "question": "What are the words of House Martell?",
-    "options": ["Unbowed, Unbent, Unbroken", "Fire and Blood", "Growing Strong", "We Do Not Sow"],
+    "options": [
+      "Unbowed, Unbent, Unbroken",
+      "Fire and Blood",
+      "Growing Strong",
+      "We Do Not Sow"
+    ],
     "answer": "Unbowed, Unbent, Unbroken",
     "difficulty": "medium",
     "category": "houses"
@@ -1057,7 +1692,12 @@
   {
     "id": 128,
     "question": "What is the seat of House Martell?",
-    "options": ["Sunspear", "Water Gardens", "Hellholt", "Starfall"],
+    "options": [
+      "Sunspear",
+      "Water Gardens",
+      "Hellholt",
+      "Starfall"
+    ],
     "answer": "Sunspear",
     "difficulty": "medium",
     "category": "locations"
@@ -1065,8 +1705,13 @@
   {
     "id": 129,
     "question": "Who plays Ellaria Sand?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Indira_Varma_2014.jpg/220px-Indira_Varma_2014.jpg",
-    "options": ["Indira Varma", "Keisha Castle-Hughes", "Rosabell Laurenti Sellers", "Jessica Henwick"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Indira_Varma_2014.jpg/250px-Indira_Varma_2014.jpg",
+    "options": [
+      "Indira Varma",
+      "Keisha Castle-Hughes",
+      "Rosabell Laurenti Sellers",
+      "Jessica Henwick"
+    ],
     "answer": "Indira Varma",
     "difficulty": "hard",
     "category": "actors"
@@ -1074,7 +1719,12 @@
   {
     "id": 130,
     "question": "What is the name given to the bastards of Dorne?",
-    "options": ["Snow", "Sand", "Stone", "Rivers"],
+    "options": [
+      "Snow",
+      "Sand",
+      "Stone",
+      "Rivers"
+    ],
     "answer": "Sand",
     "difficulty": "medium",
     "category": "characters"
@@ -1082,7 +1732,12 @@
   {
     "id": 131,
     "question": "What is the name given to bastards in the North?",
-    "options": ["Sand", "Stone", "Snow", "Rivers"],
+    "options": [
+      "Sand",
+      "Stone",
+      "Snow",
+      "Rivers"
+    ],
     "answer": "Snow",
     "difficulty": "easy",
     "category": "characters"
@@ -1090,7 +1745,12 @@
   {
     "id": 132,
     "question": "What is the name given to bastards in the Riverlands?",
-    "options": ["Sand", "Stone", "Snow", "Rivers"],
+    "options": [
+      "Sand",
+      "Stone",
+      "Snow",
+      "Rivers"
+    ],
     "answer": "Rivers",
     "difficulty": "medium",
     "category": "characters"
@@ -1098,7 +1758,12 @@
   {
     "id": 133,
     "question": "Who is the father of Cersei's children?",
-    "options": ["Robert Baratheon", "Jaime Lannister", "Lancel Lannister", "Euron Greyjoy"],
+    "options": [
+      "Robert Baratheon",
+      "Jaime Lannister",
+      "Lancel Lannister",
+      "Euron Greyjoy"
+    ],
     "answer": "Jaime Lannister",
     "difficulty": "easy",
     "category": "characters"
@@ -1106,7 +1771,12 @@
   {
     "id": 134,
     "question": "What is the name of Daenerys's first husband?",
-    "options": ["Drogo", "Hizdahr zo Loraq", "Daario Naharis", "Xaro Xhoan Daxos"],
+    "options": [
+      "Drogo",
+      "Hizdahr zo Loraq",
+      "Daario Naharis",
+      "Xaro Xhoan Daxos"
+    ],
     "answer": "Drogo",
     "difficulty": "easy",
     "category": "characters"
@@ -1114,8 +1784,13 @@
   {
     "id": 135,
     "question": "Who plays Khal Drogo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Jason_Momoa_by_Gage_Skidmore.jpg/220px-Jason_Momoa_by_Gage_Skidmore.jpg",
-    "options": ["Jason Momoa", "Joe Naufahu", "Staz Nair", "Djimon Hounsou"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jason_Momoa_by_Gage_Skidmore.jpg/250px-Jason_Momoa_by_Gage_Skidmore.jpg",
+    "options": [
+      "Jason Momoa",
+      "Joe Naufahu",
+      "Staz Nair",
+      "Djimon Hounsou"
+    ],
     "answer": "Jason Momoa",
     "difficulty": "easy",
     "category": "actors"
@@ -1123,7 +1798,12 @@
   {
     "id": 136,
     "question": "What nomadic group does Khal Drogo lead?",
-    "options": ["The Unsullied", "The Dothraki", "The Ironborn", "The Free Folk"],
+    "options": [
+      "The Unsullied",
+      "The Dothraki",
+      "The Ironborn",
+      "The Free Folk"
+    ],
     "answer": "The Dothraki",
     "difficulty": "easy",
     "category": "organizations"
@@ -1131,7 +1811,12 @@
   {
     "id": 137,
     "question": "What is the Dothraki word for 'king'?",
-    "options": ["Khaleesi", "Khal", "Ko", "Bloodrider"],
+    "options": [
+      "Khaleesi",
+      "Khal",
+      "Ko",
+      "Bloodrider"
+    ],
     "answer": "Khal",
     "difficulty": "easy",
     "category": "quotes"
@@ -1139,7 +1824,12 @@
   {
     "id": 138,
     "question": "What is Daenerys's title in Dothraki?",
-    "options": ["Khal", "Khaleesi", "Mother of Dragons", "Breaker of Chains"],
+    "options": [
+      "Khal",
+      "Khaleesi",
+      "Mother of Dragons",
+      "Breaker of Chains"
+    ],
     "answer": "Khaleesi",
     "difficulty": "easy",
     "category": "characters"
@@ -1147,7 +1837,12 @@
   {
     "id": 139,
     "question": "Who is the maester at Castle Black?",
-    "options": ["Maester Luwin", "Maester Aemon", "Maester Pycelle", "Archmaester Ebrose"],
+    "options": [
+      "Maester Luwin",
+      "Maester Aemon",
+      "Maester Pycelle",
+      "Archmaester Ebrose"
+    ],
     "answer": "Maester Aemon",
     "difficulty": "medium",
     "category": "characters"
@@ -1155,7 +1850,12 @@
   {
     "id": 140,
     "question": "What house was Maester Aemon born into?",
-    "options": ["Stark", "Lannister", "Targaryen", "Baratheon"],
+    "options": [
+      "Stark",
+      "Lannister",
+      "Targaryen",
+      "Baratheon"
+    ],
     "answer": "Targaryen",
     "difficulty": "medium",
     "category": "characters"
@@ -1163,7 +1863,12 @@
   {
     "id": 141,
     "question": "Who is the Lord Commander of the Night's Watch when Jon Snow arrives?",
-    "options": ["Jeor Mormont", "Jon Snow", "Alliser Thorne", "Eddard Stark"],
+    "options": [
+      "Jeor Mormont",
+      "Jon Snow",
+      "Alliser Thorne",
+      "Eddard Stark"
+    ],
     "answer": "Jeor Mormont",
     "difficulty": "medium",
     "category": "characters"
@@ -1171,8 +1876,13 @@
   {
     "id": 142,
     "question": "Who plays Jeor Mormont?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/James_Cosmo_by_Gage_Skidmore.jpg/220px-James_Cosmo_by_Gage_Skidmore.jpg",
-    "options": ["Iain Glen", "James Cosmo", "Liam Cunningham", "Charles Dance"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/James_Cosmo_by_Gage_Skidmore.jpg/250px-James_Cosmo_by_Gage_Skidmore.jpg",
+    "options": [
+      "Iain Glen",
+      "James Cosmo",
+      "Liam Cunningham",
+      "Charles Dance"
+    ],
     "answer": "James Cosmo",
     "difficulty": "hard",
     "category": "actors"
@@ -1180,7 +1890,12 @@
   {
     "id": 143,
     "question": "What is Jeor Mormont's nickname?",
-    "options": ["The Young Bear", "The Old Bear", "The Great Bear", "Lord of Bears"],
+    "options": [
+      "The Young Bear",
+      "The Old Bear",
+      "The Great Bear",
+      "Lord of Bears"
+    ],
     "answer": "The Old Bear",
     "difficulty": "medium",
     "category": "characters"
@@ -1188,7 +1903,12 @@
   {
     "id": 144,
     "question": "What relation is Jorah Mormont to Jeor Mormont?",
-    "options": ["Brother", "Son", "Nephew", "Cousin"],
+    "options": [
+      "Brother",
+      "Son",
+      "Nephew",
+      "Cousin"
+    ],
     "answer": "Son",
     "difficulty": "medium",
     "category": "characters"
@@ -1196,7 +1916,12 @@
   {
     "id": 145,
     "question": "Who kills Daenerys Targaryen?",
-    "options": ["The Night King", "Cersei Lannister", "Jon Snow", "Grey Worm"],
+    "options": [
+      "The Night King",
+      "Cersei Lannister",
+      "Jon Snow",
+      "Grey Worm"
+    ],
     "answer": "Jon Snow",
     "difficulty": "easy",
     "category": "plot"
@@ -1204,7 +1929,12 @@
   {
     "id": 146,
     "question": "What does Drogon do after Daenerys's death?",
-    "options": ["Kills Jon Snow", "Destroys King's Landing", "Melts the Iron Throne", "Dies of grief"],
+    "options": [
+      "Kills Jon Snow",
+      "Destroys King's Landing",
+      "Melts the Iron Throne",
+      "Dies of grief"
+    ],
     "answer": "Melts the Iron Throne",
     "difficulty": "medium",
     "category": "plot"
@@ -1212,7 +1942,12 @@
   {
     "id": 147,
     "question": "Where does Drogon fly with Daenerys's body?",
-    "options": ["Valyria", "Dragonstone", "East towards Essos", "The Wall"],
+    "options": [
+      "Valyria",
+      "Dragonstone",
+      "East towards Essos",
+      "The Wall"
+    ],
     "answer": "East towards Essos",
     "difficulty": "hard",
     "category": "plot"
@@ -1220,7 +1955,12 @@
   {
     "id": 148,
     "question": "Who becomes King of the Six Kingdoms at the end?",
-    "options": ["Jon Snow", "Sansa Stark", "Bran Stark", "Tyrion Lannister"],
+    "options": [
+      "Jon Snow",
+      "Sansa Stark",
+      "Bran Stark",
+      "Tyrion Lannister"
+    ],
     "answer": "Bran Stark",
     "difficulty": "easy",
     "category": "plot"
@@ -1228,7 +1968,12 @@
   {
     "id": 149,
     "question": "Who becomes Queen in the North at the end?",
-    "options": ["Arya Stark", "Sansa Stark", "Daenerys Targaryen", "Yara Greyjoy"],
+    "options": [
+      "Arya Stark",
+      "Sansa Stark",
+      "Daenerys Targaryen",
+      "Yara Greyjoy"
+    ],
     "answer": "Sansa Stark",
     "difficulty": "easy",
     "category": "plot"
@@ -1236,7 +1981,12 @@
   {
     "id": 150,
     "question": "What happens to Jon Snow at the end of the series?",
-    "options": ["Becomes King", "Is executed", "Rejoins the Night's Watch", "Dies in battle"],
+    "options": [
+      "Becomes King",
+      "Is executed",
+      "Rejoins the Night's Watch",
+      "Dies in battle"
+    ],
     "answer": "Rejoins the Night's Watch",
     "difficulty": "easy",
     "category": "plot"
@@ -1244,7 +1994,12 @@
   {
     "id": 151,
     "question": "Where does Arya sail to at the end of the series?",
-    "options": ["Braavos", "West of Westeros", "Essos", "The Summer Isles"],
+    "options": [
+      "Braavos",
+      "West of Westeros",
+      "Essos",
+      "The Summer Isles"
+    ],
     "answer": "West of Westeros",
     "difficulty": "medium",
     "category": "plot"
@@ -1252,7 +2007,12 @@
   {
     "id": 152,
     "question": "Who becomes Hand of the King at the end?",
-    "options": ["Davos Seaworth", "Tyrion Lannister", "Samwell Tarly", "Bronn"],
+    "options": [
+      "Davos Seaworth",
+      "Tyrion Lannister",
+      "Samwell Tarly",
+      "Bronn"
+    ],
     "answer": "Tyrion Lannister",
     "difficulty": "easy",
     "category": "plot"
@@ -1260,7 +2020,12 @@
   {
     "id": 153,
     "question": "What position does Bronn hold at the end?",
-    "options": ["Master of Ships", "Master of Coin", "Master of Whispers", "Lord Commander"],
+    "options": [
+      "Master of Ships",
+      "Master of Coin",
+      "Master of Whispers",
+      "Lord Commander"
+    ],
     "answer": "Master of Coin",
     "difficulty": "medium",
     "category": "plot"
@@ -1268,7 +2033,12 @@
   {
     "id": 154,
     "question": "Who becomes Grand Maester at the end?",
-    "options": ["Samwell Tarly", "Qyburn", "Archmaester Ebrose", "Maester Wolkan"],
+    "options": [
+      "Samwell Tarly",
+      "Qyburn",
+      "Archmaester Ebrose",
+      "Maester Wolkan"
+    ],
     "answer": "Samwell Tarly",
     "difficulty": "medium",
     "category": "plot"
@@ -1276,7 +2046,12 @@
   {
     "id": 155,
     "question": "Who is the voice of reason on Bran's small council at the end?",
-    "options": ["Tyrion", "Davos", "Sam", "Brienne"],
+    "options": [
+      "Tyrion",
+      "Davos",
+      "Sam",
+      "Brienne"
+    ],
     "answer": "Davos",
     "difficulty": "hard",
     "category": "plot"
@@ -1284,7 +2059,12 @@
   {
     "id": 156,
     "question": "What book does Sam present at the end, chronicling the events?",
-    "options": ["A Song of Ice and Fire", "A History of Westeros", "The Wars Following the Death of King Robert", "A Game of Thrones"],
+    "options": [
+      "A Song of Ice and Fire",
+      "A History of Westeros",
+      "The Wars Following the Death of King Robert",
+      "A Game of Thrones"
+    ],
     "answer": "A Song of Ice and Fire",
     "difficulty": "medium",
     "category": "plot"
@@ -1292,8 +2072,13 @@
   {
     "id": 157,
     "question": "Who plays Gilly?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hannah_Murray_2013_%28cropped%29.jpg/220px-Hannah_Murray_2013_%28cropped%29.jpg",
-    "options": ["Rose Leslie", "Hannah Murray", "Kerry Ingram", "Maisie Williams"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Hannah_Murray_2013_(cropped).jpg/250px-Hannah_Murray_2013_(cropped).jpg",
+    "options": [
+      "Rose Leslie",
+      "Hannah Murray",
+      "Kerry Ingram",
+      "Maisie Williams"
+    ],
     "answer": "Hannah Murray",
     "difficulty": "hard",
     "category": "actors"
@@ -1301,7 +2086,12 @@
   {
     "id": 158,
     "question": "Who is Gilly's father?",
-    "options": ["Mance Rayder", "Craster", "Tormund", "The Lord of Bones"],
+    "options": [
+      "Mance Rayder",
+      "Craster",
+      "Tormund",
+      "The Lord of Bones"
+    ],
     "answer": "Craster",
     "difficulty": "medium",
     "category": "characters"
@@ -1309,7 +2099,12 @@
   {
     "id": 159,
     "question": "What controversial practice does Craster engage in?",
-    "options": ["Cannibalism", "Marrying his daughters", "Human sacrifice", "Worshipping the Night King"],
+    "options": [
+      "Cannibalism",
+      "Marrying his daughters",
+      "Human sacrifice",
+      "Worshipping the Night King"
+    ],
     "answer": "Marrying his daughters",
     "difficulty": "medium",
     "category": "plot"
@@ -1317,7 +2112,12 @@
   {
     "id": 160,
     "question": "What does Craster do with his sons?",
-    "options": ["Raises them as warriors", "Gives them to the White Walkers", "Sells them as slaves", "Sends them to the Night's Watch"],
+    "options": [
+      "Raises them as warriors",
+      "Gives them to the White Walkers",
+      "Sells them as slaves",
+      "Sends them to the Night's Watch"
+    ],
     "answer": "Gives them to the White Walkers",
     "difficulty": "medium",
     "category": "plot"
@@ -1325,8 +2125,13 @@
   {
     "id": 161,
     "question": "Who plays Podrick Payne?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Daniel_Portman_by_Gage_Skidmore.jpg/220px-Daniel_Portman_by_Gage_Skidmore.jpg",
-    "options": ["Joe Dempsie", "Daniel Portman", "Dean-Charles Chapman", "Art Parkinson"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Daniel_Portman_by_Gage_Skidmore.jpg/250px-Daniel_Portman_by_Gage_Skidmore.jpg",
+    "options": [
+      "Joe Dempsie",
+      "Daniel Portman",
+      "Dean-Charles Chapman",
+      "Art Parkinson"
+    ],
     "answer": "Daniel Portman",
     "difficulty": "hard",
     "category": "actors"
@@ -1334,7 +2139,12 @@
   {
     "id": 162,
     "question": "Whose squire is Podrick Payne?",
-    "options": ["Jaime Lannister", "Tyrion Lannister", "Brienne of Tarth", "Both Tyrion and Brienne"],
+    "options": [
+      "Jaime Lannister",
+      "Tyrion Lannister",
+      "Brienne of Tarth",
+      "Both Tyrion and Brienne"
+    ],
     "answer": "Both Tyrion and Brienne",
     "difficulty": "medium",
     "category": "characters"
@@ -1342,7 +2152,12 @@
   {
     "id": 163,
     "question": "Who writes in the Book of Brothers?",
-    "options": ["Jaime Lannister", "Brienne of Tarth", "Both write entries", "The Lord Commander"],
+    "options": [
+      "Jaime Lannister",
+      "Brienne of Tarth",
+      "Both write entries",
+      "The Lord Commander"
+    ],
     "answer": "Brienne of Tarth",
     "difficulty": "hard",
     "category": "plot"
@@ -1350,7 +2165,12 @@
   {
     "id": 164,
     "question": "What is the Book of Brothers?",
-    "options": ["A history of the Night's Watch", "A record of Kingsguard members", "A Stark family chronicle", "A Maester's thesis"],
+    "options": [
+      "A history of the Night's Watch",
+      "A record of Kingsguard members",
+      "A Stark family chronicle",
+      "A Maester's thesis"
+    ],
     "answer": "A record of Kingsguard members",
     "difficulty": "medium",
     "category": "items"
@@ -1358,7 +2178,12 @@
   {
     "id": 165,
     "question": "Who is appointed Lord Commander of the Kingsguard at the end?",
-    "options": ["Jaime Lannister", "Brienne of Tarth", "The Hound", "Grey Worm"],
+    "options": [
+      "Jaime Lannister",
+      "Brienne of Tarth",
+      "The Hound",
+      "Grey Worm"
+    ],
     "answer": "Brienne of Tarth",
     "difficulty": "medium",
     "category": "plot"
@@ -1366,7 +2191,12 @@
   {
     "id": 166,
     "question": "What are the words of House Tyrell?",
-    "options": ["Winter Is Coming", "Growing Strong", "Fire and Blood", "Hear Me Roar"],
+    "options": [
+      "Winter Is Coming",
+      "Growing Strong",
+      "Fire and Blood",
+      "Hear Me Roar"
+    ],
     "answer": "Growing Strong",
     "difficulty": "medium",
     "category": "houses"
@@ -1374,7 +2204,12 @@
   {
     "id": 167,
     "question": "What is the sigil of House Tyrell?",
-    "options": ["A lion", "A rose", "A sun", "A falcon"],
+    "options": [
+      "A lion",
+      "A rose",
+      "A sun",
+      "A falcon"
+    ],
     "answer": "A rose",
     "difficulty": "medium",
     "category": "houses"
@@ -1382,8 +2217,13 @@
   {
     "id": 168,
     "question": "Who plays Loras Tyrell?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Finn_Jones_by_Gage_Skidmore.jpg/220px-Finn_Jones_by_Gage_Skidmore.jpg",
-    "options": ["Gethin Anthony", "Finn Jones", "Eugene Simon", "Dean-Charles Chapman"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Finn_Jones_by_Gage_Skidmore.jpg/250px-Finn_Jones_by_Gage_Skidmore.jpg",
+    "options": [
+      "Gethin Anthony",
+      "Finn Jones",
+      "Eugene Simon",
+      "Dean-Charles Chapman"
+    ],
     "answer": "Finn Jones",
     "difficulty": "hard",
     "category": "actors"
@@ -1391,7 +2231,12 @@
   {
     "id": 169,
     "question": "What is Loras Tyrell's nickname?",
-    "options": ["The Knight of Roses", "The Knight of Flowers", "The Young Rose", "The Thorn Knight"],
+    "options": [
+      "The Knight of Roses",
+      "The Knight of Flowers",
+      "The Young Rose",
+      "The Thorn Knight"
+    ],
     "answer": "The Knight of Flowers",
     "difficulty": "medium",
     "category": "characters"
@@ -1399,7 +2244,12 @@
   {
     "id": 170,
     "question": "How do Margaery and Loras Tyrell die?",
-    "options": ["Poison", "Battle", "Explosion at the Sept of Baelor", "Execution"],
+    "options": [
+      "Poison",
+      "Battle",
+      "Explosion at the Sept of Baelor",
+      "Execution"
+    ],
     "answer": "Explosion at the Sept of Baelor",
     "difficulty": "medium",
     "category": "plot"
@@ -1407,8 +2257,13 @@
   {
     "id": 171,
     "question": "Who plays Tommen Baratheon in later seasons?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Dean-Charles_Chapman_by_Gage_Skidmore.jpg/220px-Dean-Charles_Chapman_by_Gage_Skidmore.jpg",
-    "options": ["Jack Gleeson", "Dean-Charles Chapman", "Callum Wharry", "Art Parkinson"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Dean-Charles_Chapman_by_Gage_Skidmore.jpg/250px-Dean-Charles_Chapman_by_Gage_Skidmore.jpg",
+    "options": [
+      "Jack Gleeson",
+      "Dean-Charles Chapman",
+      "Callum Wharry",
+      "Art Parkinson"
+    ],
     "answer": "Dean-Charles Chapman",
     "difficulty": "hard",
     "category": "actors"
@@ -1416,7 +2271,12 @@
   {
     "id": 172,
     "question": "How does Tommen Baratheon die?",
-    "options": ["Poisoned", "Killed in battle", "Jumps from a window", "Executed"],
+    "options": [
+      "Poisoned",
+      "Killed in battle",
+      "Jumps from a window",
+      "Executed"
+    ],
     "answer": "Jumps from a window",
     "difficulty": "medium",
     "category": "plot"
@@ -1424,7 +2284,12 @@
   {
     "id": 173,
     "question": "Who was Myrcella Baratheon betrothed to?",
-    "options": ["Tommen Baratheon", "Trystane Martell", "Loras Tyrell", "Robin Arryn"],
+    "options": [
+      "Tommen Baratheon",
+      "Trystane Martell",
+      "Loras Tyrell",
+      "Robin Arryn"
+    ],
     "answer": "Trystane Martell",
     "difficulty": "medium",
     "category": "characters"
@@ -1432,7 +2297,12 @@
   {
     "id": 174,
     "question": "How does Myrcella Baratheon die?",
-    "options": ["Stabbed", "Poisoned by Ellaria Sand", "Drowned", "Killed by Cersei"],
+    "options": [
+      "Stabbed",
+      "Poisoned by Ellaria Sand",
+      "Drowned",
+      "Killed by Cersei"
+    ],
     "answer": "Poisoned by Ellaria Sand",
     "difficulty": "medium",
     "category": "plot"
@@ -1440,7 +2310,12 @@
   {
     "id": 175,
     "question": "What is the name of Cersei and Jaime's first child?",
-    "options": ["Tommen", "Joffrey", "Myrcella", "Tyrion"],
+    "options": [
+      "Tommen",
+      "Joffrey",
+      "Myrcella",
+      "Tyrion"
+    ],
     "answer": "Joffrey",
     "difficulty": "easy",
     "category": "characters"
@@ -1448,8 +2323,13 @@
   {
     "id": 176,
     "question": "Who plays Roose Bolton?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Michael_McElhatton_by_Gage_Skidmore.jpg/220px-Michael_McElhatton_by_Gage_Skidmore.jpg",
-    "options": ["Iwan Rheon", "Michael McElhatton", "Patrick Malahide", "David Bradley"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Michael_McElhatton_by_Gage_Skidmore.jpg/250px-Michael_McElhatton_by_Gage_Skidmore.jpg",
+    "options": [
+      "Iwan Rheon",
+      "Michael McElhatton",
+      "Patrick Malahide",
+      "David Bradley"
+    ],
     "answer": "Michael McElhatton",
     "difficulty": "hard",
     "category": "actors"
@@ -1457,7 +2337,12 @@
   {
     "id": 177,
     "question": "Who kills Roose Bolton?",
-    "options": ["Jon Snow", "Ramsay Bolton", "Sansa Stark", "Theon Greyjoy"],
+    "options": [
+      "Jon Snow",
+      "Ramsay Bolton",
+      "Sansa Stark",
+      "Theon Greyjoy"
+    ],
     "answer": "Ramsay Bolton",
     "difficulty": "medium",
     "category": "plot"
@@ -1465,7 +2350,12 @@
   {
     "id": 178,
     "question": "What is the sigil of House Bolton?",
-    "options": ["A wolf", "A flayed man", "A cross", "A chain"],
+    "options": [
+      "A wolf",
+      "A flayed man",
+      "A cross",
+      "A chain"
+    ],
     "answer": "A flayed man",
     "difficulty": "medium",
     "category": "houses"
@@ -1473,7 +2363,12 @@
   {
     "id": 179,
     "question": "What gruesome practice are the Boltons known for?",
-    "options": ["Beheading", "Burning", "Flaying", "Drowning"],
+    "options": [
+      "Beheading",
+      "Burning",
+      "Flaying",
+      "Drowning"
+    ],
     "answer": "Flaying",
     "difficulty": "easy",
     "category": "houses"
@@ -1481,8 +2376,13 @@
   {
     "id": 180,
     "question": "Who plays Walder Frey?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/David_Bradley_2013_%28cropped%29.jpg/220px-David_Bradley_2013_%28cropped%29.jpg",
-    "options": ["Michael McElhatton", "David Bradley", "Jonathan Pryce", "Julian Glover"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/David_Bradley_2013_(cropped).jpg/250px-David_Bradley_2013_(cropped).jpg",
+    "options": [
+      "Michael McElhatton",
+      "David Bradley",
+      "Jonathan Pryce",
+      "Julian Glover"
+    ],
     "answer": "David Bradley",
     "difficulty": "hard",
     "category": "actors"
@@ -1490,7 +2390,12 @@
   {
     "id": 181,
     "question": "Who kills Walder Frey?",
-    "options": ["Jon Snow", "Sansa Stark", "Arya Stark", "Brienne of Tarth"],
+    "options": [
+      "Jon Snow",
+      "Sansa Stark",
+      "Arya Stark",
+      "Brienne of Tarth"
+    ],
     "answer": "Arya Stark",
     "difficulty": "easy",
     "category": "plot"
@@ -1498,7 +2403,12 @@
   {
     "id": 182,
     "question": "What disguise does Arya use to kill Walder Frey?",
-    "options": ["A serving girl", "A Lannister soldier", "A Frey servant", "No disguise"],
+    "options": [
+      "A serving girl",
+      "A Lannister soldier",
+      "A Frey servant",
+      "No disguise"
+    ],
     "answer": "A serving girl",
     "difficulty": "medium",
     "category": "plot"
@@ -1506,7 +2416,12 @@
   {
     "id": 183,
     "question": "How does Arya kill the other Frey men?",
-    "options": ["Stabs them", "Poisons their wine", "Burns them", "Has them executed"],
+    "options": [
+      "Stabs them",
+      "Poisons their wine",
+      "Burns them",
+      "Has them executed"
+    ],
     "answer": "Poisons their wine",
     "difficulty": "medium",
     "category": "plot"
@@ -1514,7 +2429,12 @@
   {
     "id": 184,
     "question": "What is the seat of House Frey?",
-    "options": ["The Twins", "Riverrun", "Harrenhal", "Stone Hedge"],
+    "options": [
+      "The Twins",
+      "Riverrun",
+      "Harrenhal",
+      "Stone Hedge"
+    ],
     "answer": "The Twins",
     "difficulty": "medium",
     "category": "locations"
@@ -1522,8 +2442,13 @@
   {
     "id": 185,
     "question": "Who plays Barristan Selmy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ian_McElhinney_2008.jpg/220px-Ian_McElhinney_2008.jpg",
-    "options": ["James Cosmo", "Ian McElhinney", "Julian Glover", "Roger Ashton-Griffiths"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Ian_McElhinney_2008.jpg/250px-Ian_McElhinney_2008.jpg",
+    "options": [
+      "James Cosmo",
+      "Ian McElhinney",
+      "Julian Glover",
+      "Roger Ashton-Griffiths"
+    ],
     "answer": "Ian McElhinney",
     "difficulty": "hard",
     "category": "actors"
@@ -1531,7 +2456,12 @@
   {
     "id": 186,
     "question": "What title did Barristan Selmy hold?",
-    "options": ["Hand of the King", "Lord Commander of the Kingsguard", "Master at Arms", "Warden of the South"],
+    "options": [
+      "Hand of the King",
+      "Lord Commander of the Kingsguard",
+      "Master at Arms",
+      "Warden of the South"
+    ],
     "answer": "Lord Commander of the Kingsguard",
     "difficulty": "medium",
     "category": "characters"
@@ -1539,7 +2469,12 @@
   {
     "id": 187,
     "question": "What is the name of the ancient Valyrian civilization?",
-    "options": ["The Freehold of Valyria", "The Empire of Valyria", "The Kingdom of Valyria", "Valyrian Republic"],
+    "options": [
+      "The Freehold of Valyria",
+      "The Empire of Valyria",
+      "The Kingdom of Valyria",
+      "Valyrian Republic"
+    ],
     "answer": "The Freehold of Valyria",
     "difficulty": "hard",
     "category": "locations"
@@ -1547,7 +2482,12 @@
   {
     "id": 188,
     "question": "What catastrophe destroyed Old Valyria?",
-    "options": ["War", "The Doom", "Plague", "Dragon attack"],
+    "options": [
+      "War",
+      "The Doom",
+      "Plague",
+      "Dragon attack"
+    ],
     "answer": "The Doom",
     "difficulty": "medium",
     "category": "plot"
@@ -1555,7 +2495,12 @@
   {
     "id": 189,
     "question": "How many dragons did the Targaryens bring to Westeros?",
-    "options": ["One", "Three", "Five", "Seven"],
+    "options": [
+      "One",
+      "Three",
+      "Five",
+      "Seven"
+    ],
     "answer": "Three",
     "difficulty": "hard",
     "category": "plot"
@@ -1563,7 +2508,12 @@
   {
     "id": 190,
     "question": "Who was the first Targaryen king of Westeros?",
-    "options": ["Aegon I", "Rhaegar", "Aerys II", "Viserys"],
+    "options": [
+      "Aegon I",
+      "Rhaegar",
+      "Aerys II",
+      "Viserys"
+    ],
     "answer": "Aegon I",
     "difficulty": "medium",
     "category": "characters"
@@ -1571,7 +2521,12 @@
   {
     "id": 191,
     "question": "What is the name of Aegon the Conqueror's dragon?",
-    "options": ["Drogon", "Balerion", "Vhagar", "Meraxes"],
+    "options": [
+      "Drogon",
+      "Balerion",
+      "Vhagar",
+      "Meraxes"
+    ],
     "answer": "Balerion",
     "difficulty": "hard",
     "category": "characters"
@@ -1579,7 +2534,12 @@
   {
     "id": 192,
     "question": "What is Balerion's nickname?",
-    "options": ["The Black Dread", "The Storm", "The Red Death", "Shadow"],
+    "options": [
+      "The Black Dread",
+      "The Storm",
+      "The Red Death",
+      "Shadow"
+    ],
     "answer": "The Black Dread",
     "difficulty": "hard",
     "category": "characters"
@@ -1587,7 +2547,12 @@
   {
     "id": 193,
     "question": "Who was known as the Mad King?",
-    "options": ["Aegon I", "Rhaegar Targaryen", "Aerys II Targaryen", "Joffrey Baratheon"],
+    "options": [
+      "Aegon I",
+      "Rhaegar Targaryen",
+      "Aerys II Targaryen",
+      "Joffrey Baratheon"
+    ],
     "answer": "Aerys II Targaryen",
     "difficulty": "easy",
     "category": "characters"
@@ -1595,7 +2560,12 @@
   {
     "id": 194,
     "question": "Who killed the Mad King?",
-    "options": ["Robert Baratheon", "Ned Stark", "Jaime Lannister", "Tywin Lannister"],
+    "options": [
+      "Robert Baratheon",
+      "Ned Stark",
+      "Jaime Lannister",
+      "Tywin Lannister"
+    ],
     "answer": "Jaime Lannister",
     "difficulty": "easy",
     "category": "plot"
@@ -1603,7 +2573,12 @@
   {
     "id": 195,
     "question": "What war was fought to overthrow the Mad King?",
-    "options": ["War of the Five Kings", "Robert's Rebellion", "Dance of the Dragons", "Blackfyre Rebellion"],
+    "options": [
+      "War of the Five Kings",
+      "Robert's Rebellion",
+      "Dance of the Dragons",
+      "Blackfyre Rebellion"
+    ],
     "answer": "Robert's Rebellion",
     "difficulty": "medium",
     "category": "plot"
@@ -1611,7 +2586,12 @@
   {
     "id": 196,
     "question": "Who killed Rhaegar Targaryen?",
-    "options": ["Ned Stark", "Robert Baratheon", "Jaime Lannister", "Arthur Dayne"],
+    "options": [
+      "Ned Stark",
+      "Robert Baratheon",
+      "Jaime Lannister",
+      "Arthur Dayne"
+    ],
     "answer": "Robert Baratheon",
     "difficulty": "medium",
     "category": "plot"
@@ -1619,7 +2599,12 @@
   {
     "id": 197,
     "question": "Where did Robert kill Rhaegar?",
-    "options": ["King's Landing", "The Trident", "The Tower of Joy", "Dragonstone"],
+    "options": [
+      "King's Landing",
+      "The Trident",
+      "The Tower of Joy",
+      "Dragonstone"
+    ],
     "answer": "The Trident",
     "difficulty": "hard",
     "category": "plot"
@@ -1627,7 +2612,12 @@
   {
     "id": 198,
     "question": "What is the Tower of Joy?",
-    "options": ["A Lannister castle", "Where Lyanna Stark died giving birth", "A pleasure house in Braavos", "Rhaegar's childhood home"],
+    "options": [
+      "A Lannister castle",
+      "Where Lyanna Stark died giving birth",
+      "A pleasure house in Braavos",
+      "Rhaegar's childhood home"
+    ],
     "answer": "Where Lyanna Stark died giving birth",
     "difficulty": "medium",
     "category": "locations"
@@ -1635,7 +2625,12 @@
   {
     "id": 199,
     "question": "Who was guarding the Tower of Joy?",
-    "options": ["Jaime Lannister", "Barristan Selmy", "Arthur Dayne and others", "The Kingsguard"],
+    "options": [
+      "Jaime Lannister",
+      "Barristan Selmy",
+      "Arthur Dayne and others",
+      "The Kingsguard"
+    ],
     "answer": "Arthur Dayne and others",
     "difficulty": "hard",
     "category": "plot"
@@ -1643,7 +2638,12 @@
   {
     "id": 200,
     "question": "What sword did Arthur Dayne wield?",
-    "options": ["Longclaw", "Ice", "Dawn", "Brightroar"],
+    "options": [
+      "Longclaw",
+      "Ice",
+      "Dawn",
+      "Brightroar"
+    ],
     "answer": "Dawn",
     "difficulty": "hard",
     "category": "items"

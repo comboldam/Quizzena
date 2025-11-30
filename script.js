@@ -89,6 +89,7 @@ const TOPIC_CONFIG = {
   'tv-shows':         { path: 'topics/tv-shows/questions.json', icon: '📺', name: 'TV Shows', category: 'tv-shows' },
   'sitcoms':          { path: 'topics/sitcoms/questions.json', icon: '😂', name: 'Sitcoms', category: 'tv-shows' },
   'game-of-thrones':  { path: 'topics/game-of-thrones/questions.json', icon: '🐉', name: 'Game of Thrones', category: 'tv-shows' },
+  'breaking-bad':     { path: 'topics/breaking-bad/questions.json', icon: '🧪', name: 'Breaking Bad', category: 'tv-shows' },
 
   // Logos (JSON-based)
   'logos':            { path: 'topics/logos/questions.json', icon: '🏷️', name: 'Logos', category: 'logos' },
@@ -1334,9 +1335,9 @@ moviesTopics.forEach(topic => {
   }
 });
 
-// TV Shows topics placeholders (excluding tv-general, sitcoms which are implemented)
+// TV Shows topics placeholders (excluding tv-general, sitcoms, game-of-thrones, breaking-bad which are implemented)
 const tvShowsTopics = [
-  'breaking-bad', 'stranger-things', 'money-heist', 'the-office', 'animated-tv'
+  'stranger-things', 'money-heist', 'the-office', 'animated-tv'
 ];
 
 tvShowsTopics.forEach(topic => {

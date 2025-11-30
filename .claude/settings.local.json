@@ -59,7 +59,18 @@
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nAdd 3D Football icon to Topics section (v1.15)\n\n- Ball flying into goal with smooth trajectory\n- Goal posts, net with ripple effects\n- GOAL! text above goal\n- Motion trail, sparkles, grass field\n- Scaled to 60% for small topic cards\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" add index.htm script.js)",
       "Bash(git -C \"c:/Users/combo/Desktop/flag_quiz\" commit -m \"$(cat <<''EOF''\nUpdate TV Shows section with specific show topics\n\n- Replace genre topics (Drama, Thriller, Comedy, Fantasy, Crime)\n- Add Game of Thrones, Breaking Bad, Stranger Things, Money Heist, The Office\n- Update placeholder click handlers for new topics\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "Bash(node reformat_all.js:*)",
+      "Bash(for f in topics/*/questions.json)",
+      "Bash(do node -e \"JSON.parse(require(''fs'').readFileSync(''$f''))\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(for f in topics/marvel-movies/questions.json topics/harry-potter/questions.json topics/dc/questions.json topics/star-wars/questions.json topics/lotr/questions.json topics/disney/questions.json topics/movies-general/questions.json)",
+      "Bash(curl:*)",
+      "Bash(node:*)",
+      "Bash(jq:*)",
+      "Bash(while read url)",
+      "Bash(do echo -n \"Testing: \")"
     ],
     "deny": [],
     "ask": []

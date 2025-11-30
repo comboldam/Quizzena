@@ -1,0 +1,2623 @@
+[
+  {
+    "id": 1,
+    "question": "What is Walter White's alias in the drug trade?",
+    "options": [
+      "The Cook",
+      "Heisenberg",
+      "Mr. White",
+      "The Chemist"
+    ],
+    "answer": "Heisenberg",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Walter White in Breaking Bad?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bryan_Cranston_2022_%283x4_cropped%29.jpg/250px-Bryan_Cranston_2022_%283x4_cropped%29.jpg",
+    "options": [
+      "Bryan Cranston",
+      "Aaron Paul",
+      "Dean Norris",
+      "Bob Odenkirk"
+    ],
+    "answer": "Bryan Cranston",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "What subject does Walter White teach?",
+    "options": [
+      "Biology",
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "answer": "Chemistry",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Jesse Pinkman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Aaron_Paul_-_AMC_The_Grove_-_Ash.jpg/250px-Aaron_Paul_-_AMC_The_Grove_-_Ash.jpg",
+    "options": [
+      "RJ Mitte",
+      "Jesse Plemons",
+      "Aaron Paul",
+      "Matt Jones"
+    ],
+    "answer": "Aaron Paul",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What is Jesse Pinkman's catchphrase?",
+    "options": [
+      "Yo, science!",
+      "Yeah, bitch!",
+      "Yeah, science!",
+      "Yo, Mr. White!"
+    ],
+    "answer": "Yeah, science!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 6,
+    "question": "What disease does Walter White have?",
+    "options": [
+      "Lung cancer",
+      "Brain tumor",
+      "Leukemia",
+      "Heart disease"
+    ],
+    "answer": "Lung cancer",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 7,
+    "question": "Who is Hank Schrader?",
+    "options": [
+      "Walter's brother",
+      "Walter's lawyer",
+      "Walter's brother-in-law",
+      "Walter's partner"
+    ],
+    "answer": "Walter's brother-in-law",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 8,
+    "question": "Who plays Hank Schrader?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Dean_Norris_by_Gage_Skidmore_4.jpg/250px-Dean_Norris_by_Gage_Skidmore_4.jpg",
+    "options": [
+      "Dean Norris",
+      "Steven Michael Quezada",
+      "Giancarlo Esposito",
+      "Jonathan Banks"
+    ],
+    "answer": "Dean Norris",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of Walter's wife?",
+    "options": [
+      "Marie",
+      "Skyler",
+      "Lydia",
+      "Andrea"
+    ],
+    "answer": "Skyler",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 10,
+    "question": "Who plays Skyler White?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Anna_Gunn_by_Gage_Skidmore_3.jpg/250px-Anna_Gunn_by_Gage_Skidmore_3.jpg",
+    "options": [
+      "Anna Gunn",
+      "Betsy Brandt",
+      "Laura Fraser",
+      "Krysten Ritter"
+    ],
+    "answer": "Anna Gunn",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of Saul Goodman's real identity?",
+    "options": [
+      "James McGill",
+      "Jim Morgan",
+      "Jake McGinley",
+      "John Moran"
+    ],
+    "answer": "James McGill",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Saul Goodman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Bob_Odenkirk_by_Gage_Skidmore_2.jpg/250px-Bob_Odenkirk_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Bob Odenkirk",
+      "Bill Burr",
+      "Lavell Crawford",
+      "Michael McKean"
+    ],
+    "answer": "Bob Odenkirk",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "What city is Breaking Bad primarily set in?",
+    "options": [
+      "Phoenix",
+      "Albuquerque",
+      "Las Vegas",
+      "Santa Fe"
+    ],
+    "answer": "Albuquerque",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 14,
+    "question": "What type of car does Walter White drive in Season 1?",
+    "options": [
+      "Pontiac Aztek",
+      "Toyota Camry",
+      "Honda Civic",
+      "Ford Taurus"
+    ],
+    "answer": "Pontiac Aztek",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 15,
+    "question": "What is the name of Walter's son?",
+    "options": [
+      "Jesse Jr.",
+      "Flynn",
+      "Walter Jr.",
+      "Hank Jr."
+    ],
+    "answer": "Walter Jr.",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 16,
+    "question": "Who plays Walter Jr.?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/RJ_Mitte_by_Gage_Skidmore_3.jpg/250px-RJ_Mitte_by_Gage_Skidmore_3.jpg",
+    "options": [
+      "RJ Mitte",
+      "Aaron Paul",
+      "Jesse Plemons",
+      "Charles Baker"
+    ],
+    "answer": "RJ Mitte",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 17,
+    "question": "What color does Marie Schrader obsessively wear?",
+    "options": [
+      "Pink",
+      "Purple",
+      "Blue",
+      "Yellow"
+    ],
+    "answer": "Purple",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 18,
+    "question": "Who plays Marie Schrader?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Betsy_Brandt_by_Gage_Skidmore_3.jpg/250px-Betsy_Brandt_by_Gage_Skidmore_3.jpg",
+    "options": [
+      "Betsy Brandt",
+      "Anna Gunn",
+      "Laura Fraser",
+      "Jessica Hecht"
+    ],
+    "answer": "Betsy Brandt",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 19,
+    "question": "What business does Walt use to launder his money?",
+    "options": [
+      "Laser Tag",
+      "Car Wash",
+      "Restaurant",
+      "Gas Station"
+    ],
+    "answer": "Car Wash",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 20,
+    "question": "Who is Gus Fring's main enemy?",
+    "options": [
+      "The DEA",
+      "The Salamanca Family",
+      "Walter White",
+      "Mike Ehrmantraut"
+    ],
+    "answer": "The Salamanca Family",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 21,
+    "question": "Who plays Gus Fring?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Giancarlo_Esposito_Anemone-22_%28cropped%29.jpg/250px-Giancarlo_Esposito_Anemone-22_%28cropped%29.jpg",
+    "options": [
+      "Giancarlo Esposito",
+      "Mark Margolis",
+      "Raymond Cruz",
+      "Luis Moncada"
+    ],
+    "answer": "Giancarlo Esposito",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 22,
+    "question": "What is Gus Fring's legitimate business?",
+    "options": [
+      "Car Dealership",
+      "Laundromat",
+      "Los Pollos Hermanos",
+      "Restaurant Supply"
+    ],
+    "answer": "Los Pollos Hermanos",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 23,
+    "question": "What does Los Pollos Hermanos translate to?",
+    "options": [
+      "The Chicken Brothers",
+      "The Two Chickens",
+      "The Brother's Chicken",
+      "The Fried Chicken"
+    ],
+    "answer": "The Chicken Brothers",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 24,
+    "question": "Who is Mike Ehrmantraut?",
+    "options": [
+      "A lawyer",
+      "A fixer and former cop",
+      "A drug dealer",
+      "A DEA agent"
+    ],
+    "answer": "A fixer and former cop",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 25,
+    "question": "Who plays Mike Ehrmantraut?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Jonathan_Banks_2012_2.jpg/250px-Jonathan_Banks_2012_2.jpg",
+    "options": [
+      "Jonathan Banks",
+      "Michael McKean",
+      "Mark Margolis",
+      "Dean Norris"
+    ],
+    "answer": "Jonathan Banks",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 26,
+    "question": "What is the purity level of Walter's meth?",
+    "options": [
+      "99.1%",
+      "98.5%",
+      "95%",
+      "90%"
+    ],
+    "answer": "99.1%",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 27,
+    "question": "What color is Walter White's signature meth?",
+    "options": [
+      "White",
+      "Yellow",
+      "Blue",
+      "Green"
+    ],
+    "answer": "Blue",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 28,
+    "question": "What nickname does Jesse give to Walter's RV meth lab?",
+    "options": [
+      "The Lab",
+      "The Crystal Ship",
+      "The Cook Mobile",
+      "The Rolling Lab"
+    ],
+    "answer": "The Crystal Ship",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 29,
+    "question": "How many seasons does Breaking Bad have?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 30,
+    "question": "What does Walt famously say in the pilot episode?",
+    "options": [
+      "I am the one who knocks",
+      "Chemistry is the study of change",
+      "Say my name",
+      "I did it for me"
+    ],
+    "answer": "Chemistry is the study of change",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 31,
+    "question": "Who is Tuco Salamanca?",
+    "options": [
+      "A lawyer",
+      "A violent drug dealer",
+      "A DEA agent",
+      "A businessman"
+    ],
+    "answer": "A violent drug dealer",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 32,
+    "question": "Who plays Tuco Salamanca?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Raymond_Cruz_by_Gage_Skidmore.jpg/250px-Raymond_Cruz_by_Gage_Skidmore.jpg",
+    "options": [
+      "Raymond Cruz",
+      "Mark Margolis",
+      "Luis Moncada",
+      "Daniel Moncada"
+    ],
+    "answer": "Raymond Cruz",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 33,
+    "question": "What is the name of Jesse's girlfriend who dies from an overdose?",
+    "options": [
+      "Andrea",
+      "Jane",
+      "Wendy",
+      "Lydia"
+    ],
+    "answer": "Jane",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 34,
+    "question": "Who plays Jane Margolis?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Krysten_Ritter_Photo_Op_GalaxyCon_Austin_2023_%28cropped%29.jpg/250px-Krysten_Ritter_Photo_Op_GalaxyCon_Austin_2023_%28cropped%29.jpg",
+    "options": [
+      "Krysten Ritter",
+      "Emily Rios",
+      "Jessica Hecht",
+      "Laura Fraser"
+    ],
+    "answer": "Krysten Ritter",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 35,
+    "question": "What agency does Hank work for?",
+    "options": [
+      "FBI",
+      "CIA",
+      "DEA",
+      "ATF"
+    ],
+    "answer": "DEA",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 36,
+    "question": "What is Walter White's birthday?",
+    "options": [
+      "September 7",
+      "July 7",
+      "August 15",
+      "June 10"
+    ],
+    "answer": "September 7",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 37,
+    "question": "What does Walter Junior prefer to be called?",
+    "options": [
+      "Junior",
+      "Walt Jr.",
+      "Flynn",
+      "Walter"
+    ],
+    "answer": "Flynn",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 38,
+    "question": "What is Hector Salamanca's method of communication?",
+    "options": [
+      "Sign language",
+      "Writing pad",
+      "Bell",
+      "Computer"
+    ],
+    "answer": "Bell",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 39,
+    "question": "Who plays Hector Salamanca?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mark_Margolis.jpg/250px-Mark_Margolis.jpg",
+    "options": [
+      "Mark Margolis",
+      "Raymond Cruz",
+      "Giancarlo Esposito",
+      "Jonathan Banks"
+    ],
+    "answer": "Mark Margolis",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 40,
+    "question": "What breakfast food does Walter Jr. love?",
+    "options": [
+      "Pancakes",
+      "Bacon",
+      "Eggs",
+      "Waffles"
+    ],
+    "answer": "Bacon",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 41,
+    "question": "What is the name of Gus's business partner who was killed?",
+    "options": [
+      "Miguel",
+      "Max",
+      "Manuel",
+      "Marco"
+    ],
+    "answer": "Max",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 42,
+    "question": "What element does Walter use in the season finale 'Felina'?",
+    "options": [
+      "Phosphorus",
+      "Ricin",
+      "Arsenic",
+      "Cyanide"
+    ],
+    "answer": "Ricin",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 43,
+    "question": "Where does Walt hide the ricin cigarette?",
+    "options": [
+      "In a light socket",
+      "Behind a picture frame",
+      "In his wallet",
+      "In a book"
+    ],
+    "answer": "In a light socket",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 44,
+    "question": "What is the name of the superlab where Walt cooks meth?",
+    "options": [
+      "The Underground",
+      "The Lab",
+      "The Laundromat Lab",
+      "Fring's Lab"
+    ],
+    "answer": "The Laundromat Lab",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 45,
+    "question": "What does Saul's license plate say?",
+    "options": [
+      "LWYRUP",
+      "CALLME",
+      "SAULGD",
+      "LAWMAN"
+    ],
+    "answer": "LWYRUP",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 46,
+    "question": "What book does Hank find in Walt's bathroom that exposes him?",
+    "options": [
+      "Leaves of Grass",
+      "The Art of War",
+      "Chemistry Today",
+      "Crime and Punishment"
+    ],
+    "answer": "Leaves of Grass",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 47,
+    "question": "Who wrote the inscription in the book that exposes Walt?",
+    "options": [
+      "Jesse",
+      "Gale",
+      "Mike",
+      "Gus"
+    ],
+    "answer": "Gale",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 48,
+    "question": "What is Gale Boetticher's karaoke song?",
+    "options": [
+      "Major Tom",
+      "Piano Man",
+      "When I'm Sixty-Four",
+      "Take Me Home, Country Roads"
+    ],
+    "answer": "Major Tom",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 49,
+    "question": "Who plays Gale Boetticher?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/David_Costabile_%28cropped_v2%29.jpg/250px-David_Costabile_%28cropped_v2%29.jpg",
+    "options": [
+      "David Costabile",
+      "Matt Jones",
+      "Charles Baker",
+      "Lavell Crawford"
+    ],
+    "answer": "David Costabile",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 50,
+    "question": "What is the name of Jesse's friends who he cooks with early on?",
+    "options": [
+      "Combo and Badger",
+      "Skinny Pete and Badger",
+      "Combo and Skinny Pete",
+      "Badger and Wendy"
+    ],
+    "answer": "Skinny Pete and Badger",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 51,
+    "question": "What is Badger's real name?",
+    "options": [
+      "Brandon Mayhew",
+      "Brian Miller",
+      "Barry Mason",
+      "Ben Myers"
+    ],
+    "answer": "Brandon Mayhew",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 52,
+    "question": "Who plays Skinny Pete?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Charles_Baker_2011.jpg/250px-Charles_Baker_2011.jpg",
+    "options": [
+      "Charles Baker",
+      "Matt Jones",
+      "Jesse Plemons",
+      "Christopher Cousins"
+    ],
+    "answer": "Charles Baker",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 53,
+    "question": "What type of pizza does Walt throw on the roof?",
+    "options": [
+      "Pepperoni",
+      "Supreme",
+      "Cheese",
+      "Veggie"
+    ],
+    "answer": "Veggie",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 54,
+    "question": "What is the street name for methamphetamine in the show?",
+    "options": [
+      "Ice",
+      "Crystal",
+      "Blue Sky",
+      "Glass"
+    ],
+    "answer": "Blue Sky",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 55,
+    "question": "Who is Lydia Rodarte-Quayle?",
+    "options": [
+      "A lawyer",
+      "A methylamine supplier",
+      "A DEA agent",
+      "A restaurant owner"
+    ],
+    "answer": "A methylamine supplier",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 56,
+    "question": "Who plays Lydia Rodarte-Quayle?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Laura_Fraser_At_Premiere_of_The_Boys_Are_Back_%28cropped%29.jpg/250px-Laura_Fraser_At_Premiere_of_The_Boys_Are_Back_%28cropped%29.jpg",
+    "options": [
+      "Laura Fraser",
+      "Anna Gunn",
+      "Betsy Brandt",
+      "Jessica Hecht"
+    ],
+    "answer": "Laura Fraser",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 57,
+    "question": "What is Lydia's drink of choice?",
+    "options": [
+      "Black coffee",
+      "Green tea",
+      "Chamomile tea with Stevia",
+      "Earl Grey tea"
+    ],
+    "answer": "Chamomile tea with Stevia",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 58,
+    "question": "Who is Todd Alquist?",
+    "options": [
+      "A DEA agent",
+      "A pest control worker who joins Walt",
+      "A lawyer",
+      "A cartel member"
+    ],
+    "answer": "A pest control worker who joins Walt",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 59,
+    "question": "Who plays Todd Alquist?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jesse_Plemons.png/250px-Jesse_Plemons.png",
+    "options": [
+      "Jesse Plemons",
+      "Aaron Paul",
+      "RJ Mitte",
+      "Charles Baker"
+    ],
+    "answer": "Jesse Plemons",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 60,
+    "question": "What tragic event does Todd commit?",
+    "options": [
+      "Kills Mike",
+      "Kills a child witness on a dirt bike",
+      "Kills Andrea",
+      "Kills Hank"
+    ],
+    "answer": "Kills a child witness on a dirt bike",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 61,
+    "question": "What is the name of Walt's alter ego when he wears the pork pie hat?",
+    "options": [
+      "Walter White",
+      "Heisenberg",
+      "Mr. Lambert",
+      "Mr. Mayhew"
+    ],
+    "answer": "Heisenberg",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 62,
+    "question": "What false name does Walt use when he goes into hiding?",
+    "options": [
+      "Mr. White",
+      "Mr. Mayhew",
+      "Mr. Lambert",
+      "Mr. Jackson"
+    ],
+    "answer": "Mr. Lambert",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 63,
+    "question": "Who is 'The Disappearer' who helps Walt?",
+    "options": [
+      "Saul Goodman",
+      "Mike Ehrmantraut",
+      "Ed Galbraith",
+      "Huell Babineaux"
+    ],
+    "answer": "Ed Galbraith",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 64,
+    "question": "Where does Walt hide while in exile?",
+    "options": [
+      "Alaska",
+      "New Hampshire",
+      "Maine",
+      "Montana"
+    ],
+    "answer": "New Hampshire",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 65,
+    "question": "What is the name of the nursing home where Hector lives?",
+    "options": [
+      "Sunny Acres",
+      "Casa Tranquila",
+      "Desert View",
+      "Villa de Paz"
+    ],
+    "answer": "Casa Tranquila",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 66,
+    "question": "What does Walt famously say to Skyler in 'I am the one who knocks'?",
+    "options": [
+      "I am the danger",
+      "I am the boss",
+      "I am in control",
+      "I am the cook"
+    ],
+    "answer": "I am the danger",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 67,
+    "question": "What phrase does Gus use to describe his business philosophy?",
+    "options": [
+      "A man provides",
+      "Stay in your lane",
+      "Never make the same mistake twice",
+      "Careful planning prevents poor performance"
+    ],
+    "answer": "A man provides",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 68,
+    "question": "What does Walt tell Skyler in the finale about why he did it all?",
+    "options": [
+      "I did it for the family",
+      "I did it for me",
+      "I had no choice",
+      "I wanted to provide"
+    ],
+    "answer": "I did it for me",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 69,
+    "question": "What is the title of the final episode?",
+    "options": [
+      "Breaking Bad",
+      "Felina",
+      "Ozymandias",
+      "Granite State"
+    ],
+    "answer": "Felina",
+    "difficulty": "easy",
+    "category": "episodes"
+  },
+  {
+    "id": 70,
+    "question": "What does 'Felina' represent?",
+    "options": [
+      "A location",
+      "An anagram of 'Finale'",
+      "A person's name",
+      "A chemical compound"
+    ],
+    "answer": "An anagram of 'Finale'",
+    "difficulty": "hard",
+    "category": "episodes"
+  },
+  {
+    "id": 71,
+    "question": "Which episode is considered one of the best in TV history?",
+    "options": [
+      "Face Off",
+      "Ozymandias",
+      "Felina",
+      "Granite State"
+    ],
+    "answer": "Ozymandias",
+    "difficulty": "medium",
+    "category": "episodes"
+  },
+  {
+    "id": 72,
+    "question": "What happens in the episode 'Ozymandias'?",
+    "options": [
+      "Walt is arrested",
+      "Hank dies",
+      "Jesse escapes",
+      "Gus dies"
+    ],
+    "answer": "Hank dies",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 73,
+    "question": "Who kills Hank?",
+    "options": [
+      "Walt",
+      "Todd",
+      "Jack",
+      "Uncle Jack's gang"
+    ],
+    "answer": "Jack",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 74,
+    "question": "What are Hank's last words?",
+    "options": [
+      "Do what you gotta do",
+      "Tell Marie I love her",
+      "You're the smartest guy I know",
+      "I tried"
+    ],
+    "answer": "Do what you gotta do",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 75,
+    "question": "Who are The Cousins?",
+    "options": [
+      "Tuco's brothers",
+      "Gus's nephews",
+      "Hector's twin nephews",
+      "Cartel hitmen"
+    ],
+    "answer": "Hector's twin nephews",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 76,
+    "question": "What are The Cousins' real names?",
+    "options": [
+      "Marco and Leonel",
+      "Luis and Daniel",
+      "Miguel and Manuel",
+      "Carlos and Diego"
+    ],
+    "answer": "Marco and Leonel",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 77,
+    "question": "Who plays one of The Cousins?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Luis_Moncada_2010.jpg/250px-Luis_Moncada_2010.jpg",
+    "options": [
+      "Luis Moncada",
+      "Daniel Moncada",
+      "Raymond Cruz",
+      "Mark Margolis"
+    ],
+    "answer": "Luis Moncada",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 78,
+    "question": "What weapon do The Cousins prefer?",
+    "options": [
+      "Guns",
+      "Knives",
+      "An axe",
+      "Poison"
+    ],
+    "answer": "An axe",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 79,
+    "question": "Who shoots one of The Cousins?",
+    "options": [
+      "Walt",
+      "Hank",
+      "Mike",
+      "Jesse"
+    ],
+    "answer": "Hank",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 80,
+    "question": "What injury does Hank sustain from The Cousins?",
+    "options": [
+      "Broken arm",
+      "Head injury",
+      "Shot in legs",
+      "Stabbed"
+    ],
+    "answer": "Shot in legs",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 81,
+    "question": "How does Walt kill Gus Fring?",
+    "options": [
+      "Poison",
+      "Shooting",
+      "Pipe bomb",
+      "Car crash"
+    ],
+    "answer": "Pipe bomb",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 82,
+    "question": "Who helps Walt kill Gus?",
+    "options": [
+      "Jesse",
+      "Mike",
+      "Hector Salamanca",
+      "Saul"
+    ],
+    "answer": "Hector Salamanca",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 83,
+    "question": "What iconic scene happens after Gus is killed?",
+    "options": [
+      "He falls down",
+      "He adjusts his tie with half his face blown off",
+      "He says a final word",
+      "He shoots back"
+    ],
+    "answer": "He adjusts his tie with half his face blown off",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 84,
+    "question": "What is the name of the episode where Gus dies?",
+    "options": [
+      "Face Off",
+      "End Times",
+      "Crawl Space",
+      "Salud"
+    ],
+    "answer": "Face Off",
+    "difficulty": "medium",
+    "category": "episodes"
+  },
+  {
+    "id": 85,
+    "question": "What does Jesse call Walt?",
+    "options": [
+      "Mr. White",
+      "Walt",
+      "Boss",
+      "Teacher"
+    ],
+    "answer": "Mr. White",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 86,
+    "question": "What is Jesse's last name?",
+    "options": [
+      "Peterson",
+      "Parker",
+      "Pinkman",
+      "Palmer"
+    ],
+    "answer": "Pinkman",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 87,
+    "question": "What does Walter tell Jesse to do in the finale?",
+    "options": [
+      "Run",
+      "Stay",
+      "Kill him",
+      "Leave town"
+    ],
+    "answer": "Run",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 88,
+    "question": "What does Jesse do in the final scene?",
+    "options": [
+      "He shoots Walt",
+      "He drives away screaming",
+      "He cries",
+      "He turns himself in"
+    ],
+    "answer": "He drives away screaming",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 89,
+    "question": "Where does Walt die?",
+    "options": [
+      "In his house",
+      "In the desert",
+      "In the meth lab",
+      "In a hospital"
+    ],
+    "answer": "In the meth lab",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 90,
+    "question": "What song plays during the final scene?",
+    "options": [
+      "Crystal Blue Persuasion",
+      "Baby Blue by Badfinger",
+      "Negro y Azul",
+      "DLZ by TV on the Radio"
+    ],
+    "answer": "Baby Blue by Badfinger",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 91,
+    "question": "What is the name of the plane crash that happens?",
+    "options": [
+      "Wayfarer 515",
+      "Flight 420",
+      "Alpha 747",
+      "Phoenix 505"
+    ],
+    "answer": "Wayfarer 515",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 92,
+    "question": "Who is indirectly responsible for the plane crash?",
+    "options": [
+      "Jesse",
+      "Walt",
+      "Gus",
+      "Hank"
+    ],
+    "answer": "Walt",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 93,
+    "question": "How does Walt cause the plane crash indirectly?",
+    "options": [
+      "By calling the tower",
+      "By letting Jane die",
+      "By causing a distraction",
+      "By sabotaging equipment"
+    ],
+    "answer": "By letting Jane die",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 94,
+    "question": "Who is Jane's father?",
+    "options": [
+      "An air traffic controller",
+      "A pilot",
+      "A DEA agent",
+      "A doctor"
+    ],
+    "answer": "An air traffic controller",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 95,
+    "question": "What pink object from the crash does Walt keep?",
+    "options": [
+      "A shoe",
+      "A teddy bear eye",
+      "A toy plane",
+      "A backpack"
+    ],
+    "answer": "A teddy bear eye",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 96,
+    "question": "Who is Combo?",
+    "options": [
+      "Jesse's dealer friend",
+      "Walt's lawyer",
+      "A DEA agent",
+      "A cartel member"
+    ],
+    "answer": "Jesse's dealer friend",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 97,
+    "question": "How does Combo die?",
+    "options": [
+      "Car accident",
+      "Shot by a kid on a bike",
+      "Overdose",
+      "Beaten to death"
+    ],
+    "answer": "Shot by a kid on a bike",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 98,
+    "question": "What child drug dealer organization is responsible for Combo's death?",
+    "options": [
+      "Gus's crew",
+      "The cartel",
+      "Local gang using kids",
+      "Tuco's men"
+    ],
+    "answer": "Local gang using kids",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 99,
+    "question": "What is Andrea's son's name?",
+    "options": [
+      "Brock",
+      "Tommy",
+      "Jake",
+      "Miguel"
+    ],
+    "answer": "Brock",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 100,
+    "question": "How does Walt poison Brock?",
+    "options": [
+      "Ricin",
+      "Lily of the Valley",
+      "Arsenic",
+      "Cyanide"
+    ],
+    "answer": "Lily of the Valley",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 101,
+    "question": "Who does Jesse initially think poisoned Brock?",
+    "options": [
+      "Walt",
+      "Gus",
+      "Mike",
+      "Saul"
+    ],
+    "answer": "Walt",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 102,
+    "question": "Who kills Andrea?",
+    "options": [
+      "Todd",
+      "Jack",
+      "The cartel",
+      "Walt"
+    ],
+    "answer": "Todd",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 103,
+    "question": "Why is Andrea killed?",
+    "options": [
+      "To punish Jesse",
+      "She knew too much",
+      "Random violence",
+      "Mistaken identity"
+    ],
+    "answer": "To punish Jesse",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 104,
+    "question": "Who plays Andrea Cantillo?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Emily_Rios_2006_%283x4_cropped%29.jpg/250px-Emily_Rios_2006_%283x4_cropped%29.jpg",
+    "options": [
+      "Emily Rios",
+      "Krysten Ritter",
+      "Laura Fraser",
+      "Jessica Hecht"
+    ],
+    "answer": "Emily Rios",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 105,
+    "question": "What is Huell Babineaux's role?",
+    "options": [
+      "Lawyer",
+      "Saul's bodyguard",
+      "DEA agent",
+      "Drug dealer"
+    ],
+    "answer": "Saul's bodyguard",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 106,
+    "question": "Who plays Huell Babineaux?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/LavellCrawfordByPhilKonstantin_%283x4_cropped%29.JPG/250px-LavellCrawfordByPhilKonstantin_%283x4_cropped%29.JPG",
+    "options": [
+      "Lavell Crawford",
+      "Bill Burr",
+      "Bob Odenkirk",
+      "Steven Michael Quezada"
+    ],
+    "answer": "Lavell Crawford",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 107,
+    "question": "What does Huell famously do to Walt?",
+    "options": [
+      "Searches him",
+      "Pickpockets his ricin cigarette",
+      "Guards him",
+      "Threatens him"
+    ],
+    "answer": "Pickpockets his ricin cigarette",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 108,
+    "question": "What is Bill Burr's character name?",
+    "options": [
+      "Patrick Kuby",
+      "Steven Gomez",
+      "Kenny",
+      "Declan"
+    ],
+    "answer": "Patrick Kuby",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 109,
+    "question": "Who is Steven Gomez?",
+    "options": [
+      "Hank's DEA partner",
+      "A cartel member",
+      "Walt's colleague",
+      "Saul's associate"
+    ],
+    "answer": "Hank's DEA partner",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 110,
+    "question": "What happens to Gomez?",
+    "options": [
+      "He arrests Walt",
+      "He dies with Hank",
+      "He escapes",
+      "He betrays Hank"
+    ],
+    "answer": "He dies with Hank",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 111,
+    "question": "What is Jack Welker?",
+    "options": [
+      "A lawyer",
+      "A white supremacist gang leader",
+      "A cartel boss",
+      "A DEA agent"
+    ],
+    "answer": "A white supremacist gang leader",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 112,
+    "question": "How is Jack related to Todd?",
+    "options": [
+      "Father",
+      "Uncle",
+      "Brother",
+      "Cousin"
+    ],
+    "answer": "Uncle",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 113,
+    "question": "What does Jack's gang steal from Walt?",
+    "options": [
+      "His money",
+      "His recipe",
+      "His car",
+      "His family"
+    ],
+    "answer": "His money",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 114,
+    "question": "How much money does Jack's gang leave Walt with?",
+    "options": [
+      "Nothing",
+      "One barrel (about $11 million)",
+      "Half",
+      "A quarter"
+    ],
+    "answer": "One barrel (about $11 million)",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 115,
+    "question": "What does Walt do with his remaining money?",
+    "options": [
+      "Buries it",
+      "Gives it to family",
+      "Uses it to disappear",
+      "Sends it with Gretchen and Elliott"
+    ],
+    "answer": "Sends it with Gretchen and Elliott",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 116,
+    "question": "Who are Gretchen and Elliott?",
+    "options": [
+      "Walt's former business partners",
+      "DEA agents",
+      "Lawyers",
+      "Family friends"
+    ],
+    "answer": "Walt's former business partners",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 117,
+    "question": "What company did Walt help found?",
+    "options": [
+      "Gray Matter Technologies",
+      "White Labs",
+      "Blue Sky Inc",
+      "Albuquerque Chemical"
+    ],
+    "answer": "Gray Matter Technologies",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 118,
+    "question": "Why did Walt leave Gray Matter?",
+    "options": [
+      "He was fired",
+      "He sold his share for $5000",
+      "Health reasons",
+      "Creative differences"
+    ],
+    "answer": "He sold his share for $5000",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 119,
+    "question": "What is the significance of 'Gray Matter'?",
+    "options": [
+      "Random name",
+      "Combination of White and Schwartz (black)",
+      "Chemistry reference",
+      "Brain matter"
+    ],
+    "answer": "Combination of White and Schwartz (black)",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 120,
+    "question": "What machine gun does Walt buy?",
+    "options": [
+      "AK-47",
+      "M60",
+      "M16",
+      "AR-15"
+    ],
+    "answer": "M60",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 121,
+    "question": "What does Walt rig the M60 to do?",
+    "options": [
+      "Fire remotely",
+      "Fire automatically from his trunk",
+      "Explode",
+      "Fire on a timer"
+    ],
+    "answer": "Fire automatically from his trunk",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 122,
+    "question": "Who does Walt kill with the M60?",
+    "options": [
+      "The DEA",
+      "The cartel",
+      "Jack's gang",
+      "Gus's men"
+    ],
+    "answer": "Jack's gang",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 123,
+    "question": "How does Walt get shot?",
+    "options": [
+      "By Jack",
+      "By Todd",
+      "By his own M60",
+      "By Jesse"
+    ],
+    "answer": "By his own M60",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 124,
+    "question": "Who does Jesse kill in the finale?",
+    "options": [
+      "Walt",
+      "Jack",
+      "Todd",
+      "Lydia"
+    ],
+    "answer": "Todd",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 125,
+    "question": "How does Jesse kill Todd?",
+    "options": [
+      "Shoots him",
+      "Strangles him with chains",
+      "Stabs him",
+      "Beats him"
+    ],
+    "answer": "Strangles him with chains",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 126,
+    "question": "Who kills Jack?",
+    "options": [
+      "Jesse",
+      "Todd",
+      "Walt",
+      "Hank"
+    ],
+    "answer": "Walt",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 127,
+    "question": "What does Walt do right before killing Jack?",
+    "options": [
+      "Takes his money",
+      "Lets him finish his sentence",
+      "Shoots him mid-sentence",
+      "Makes him beg"
+    ],
+    "answer": "Shoots him mid-sentence",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 128,
+    "question": "What does Lydia die from?",
+    "options": [
+      "Gunshot",
+      "Ricin poisoning",
+      "Overdose",
+      "Car crash"
+    ],
+    "answer": "Ricin poisoning",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 129,
+    "question": "How does Walt deliver the ricin to Lydia?",
+    "options": [
+      "In her food",
+      "In her Stevia packet",
+      "In her tea",
+      "In her car"
+    ],
+    "answer": "In her Stevia packet",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 130,
+    "question": "Who created Breaking Bad?",
+    "options": [
+      "Vince Gilligan",
+      "Peter Gould",
+      "Bryan Cranston",
+      "David Shore"
+    ],
+    "answer": "Vince Gilligan",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 131,
+    "question": "What network aired Breaking Bad?",
+    "options": [
+      "HBO",
+      "Showtime",
+      "AMC",
+      "FX"
+    ],
+    "answer": "AMC",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 132,
+    "question": "How many Emmy Awards did Breaking Bad win?",
+    "options": [
+      "10",
+      "12",
+      "16",
+      "20"
+    ],
+    "answer": "16",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 133,
+    "question": "What year did Breaking Bad premiere?",
+    "options": [
+      "2006",
+      "2007",
+      "2008",
+      "2009"
+    ],
+    "answer": "2008",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 134,
+    "question": "What year did Breaking Bad end?",
+    "options": [
+      "2012",
+      "2013",
+      "2014",
+      "2015"
+    ],
+    "answer": "2013",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 135,
+    "question": "What is the spin-off series called?",
+    "options": [
+      "Better Call Saul",
+      "El Camino",
+      "Breaking Good",
+      "Saul's Law"
+    ],
+    "answer": "Better Call Saul",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 136,
+    "question": "What is the Breaking Bad movie called?",
+    "options": [
+      "Jesse's Escape",
+      "El Camino",
+      "The Pinkman Story",
+      "Breaking Bad: The Movie"
+    ],
+    "answer": "El Camino",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 137,
+    "question": "Who is El Camino focused on?",
+    "options": [
+      "Walt",
+      "Jesse",
+      "Saul",
+      "Mike"
+    ],
+    "answer": "Jesse",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 138,
+    "question": "What does 'El Camino' refer to?",
+    "options": [
+      "The road",
+      "The car Jesse escapes in",
+      "A location",
+      "A code name"
+    ],
+    "answer": "The car Jesse escapes in",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 139,
+    "question": "What state is Breaking Bad set in?",
+    "options": [
+      "Arizona",
+      "New Mexico",
+      "Nevada",
+      "Texas"
+    ],
+    "answer": "New Mexico",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 140,
+    "question": "What is the opening theme song style?",
+    "options": [
+      "Rock",
+      "Electronic",
+      "Short instrumental",
+      "No theme song"
+    ],
+    "answer": "Short instrumental",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 141,
+    "question": "What periodic table style is used in the opening?",
+    "options": [
+      "Elements spell Breaking Bad",
+      "Elements spell characters' names",
+      "No periodic table",
+      "Full periodic table"
+    ],
+    "answer": "Elements spell Breaking Bad",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 142,
+    "question": "What elements are used in the title 'Breaking Bad'?",
+    "options": [
+      "Br and Ba",
+      "B and Br",
+      "Be and Ba",
+      "Br and Bd"
+    ],
+    "answer": "Br and Ba",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 143,
+    "question": "What does 'Br' stand for?",
+    "options": [
+      "Bromine",
+      "Brass",
+      "Bronze",
+      "Beryllium"
+    ],
+    "answer": "Bromine",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 144,
+    "question": "What does 'Ba' stand for?",
+    "options": [
+      "Barium",
+      "Barium",
+      "Badium",
+      "Basium"
+    ],
+    "answer": "Barium",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 145,
+    "question": "What is the RV's license plate number?",
+    "options": [
+      "THE-KRYSTAL-SHIP",
+      "No specific number",
+      "D4-PNK",
+      "Unknown"
+    ],
+    "answer": "THE-KRYSTAL-SHIP",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 146,
+    "question": "What does Walt use to dissolve bodies?",
+    "options": [
+      "Sulfuric acid",
+      "Hydrofluoric acid",
+      "Nitric acid",
+      "Hydrochloric acid"
+    ],
+    "answer": "Hydrofluoric acid",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 147,
+    "question": "What mistake does Jesse make when dissolving a body?",
+    "options": [
+      "Uses wrong acid",
+      "Uses a bathtub instead of plastic",
+      "Uses too much acid",
+      "Forgets to ventilate"
+    ],
+    "answer": "Uses a bathtub instead of plastic",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 148,
+    "question": "What falls through Jesse's ceiling?",
+    "options": [
+      "The bathtub and dissolved body",
+      "Just the body",
+      "The acid",
+      "Nothing"
+    ],
+    "answer": "The bathtub and dissolved body",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 149,
+    "question": "Whose body is Jesse trying to dissolve?",
+    "options": [
+      "Tuco's",
+      "Emilio's",
+      "Krazy-8's",
+      "Gus's"
+    ],
+    "answer": "Emilio's",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 150,
+    "question": "Who is Krazy-8?",
+    "options": [
+      "A dealer Walt and Jesse capture",
+      "A cartel member",
+      "A DEA informant",
+      "Both A and C"
+    ],
+    "answer": "Both A and C",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 151,
+    "question": "How does Walt kill Krazy-8?",
+    "options": [
+      "Shoots him",
+      "Poisons him",
+      "Strangles him with bike lock",
+      "Beats him"
+    ],
+    "answer": "Strangles him with bike lock",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 152,
+    "question": "What item does Walt notice is missing that Krazy-8 has?",
+    "options": [
+      "A gun",
+      "A piece of broken plate",
+      "A key",
+      "A phone"
+    ],
+    "answer": "A piece of broken plate",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 153,
+    "question": "What does Walt make for Krazy-8?",
+    "options": [
+      "Sandwiches",
+      "Coffee",
+      "Breakfast",
+      "Tea"
+    ],
+    "answer": "Sandwiches",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 154,
+    "question": "What type of sandwiches?",
+    "options": [
+      "PB&J",
+      "Ham and cheese",
+      "Sandwiches with crusts cut off",
+      "Turkey"
+    ],
+    "answer": "Sandwiches with crusts cut off",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 155,
+    "question": "What is the first episode title?",
+    "options": [
+      "Breaking Bad",
+      "Pilot",
+      "The One Who Knocks",
+      "Chemistry"
+    ],
+    "answer": "Pilot",
+    "difficulty": "medium",
+    "category": "episodes"
+  },
+  {
+    "id": 156,
+    "question": "What is Walt wearing in the opening scene of the pilot?",
+    "options": [
+      "His regular clothes",
+      "Just underwear and gas mask",
+      "A suit",
+      "Lab coat"
+    ],
+    "answer": "Just underwear and gas mask",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 157,
+    "question": "What is Walt driving in the pilot opening?",
+    "options": [
+      "His car",
+      "Jesse's car",
+      "The RV",
+      "A stolen car"
+    ],
+    "answer": "The RV",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 158,
+    "question": "What does Walt record in the pilot?",
+    "options": [
+      "A confession",
+      "A goodbye message to his family",
+      "Evidence",
+      "Instructions"
+    ],
+    "answer": "A goodbye message to his family",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 159,
+    "question": "What do the cold opens of Season 2 foreshadow?",
+    "options": [
+      "Walt's death",
+      "The plane crash",
+      "Jesse's escape",
+      "Hank's injury"
+    ],
+    "answer": "The plane crash",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 160,
+    "question": "What do the Season 2 cold opens show?",
+    "options": [
+      "The future",
+      "The past",
+      "Black and white scenes of debris",
+      "Different characters"
+    ],
+    "answer": "Black and white scenes of debris",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 161,
+    "question": "What does 'ABQ' stand for?",
+    "options": [
+      "Always Be Quiet",
+      "Albuquerque",
+      "After Breaking Quickly",
+      "Association Bureau Quality"
+    ],
+    "answer": "Albuquerque",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 162,
+    "question": "What is the episode title of the Season 2 finale?",
+    "options": [
+      "ABQ",
+      "Phoenix",
+      "Over",
+      "737"
+    ],
+    "answer": "ABQ",
+    "difficulty": "hard",
+    "category": "episodes"
+  },
+  {
+    "id": 163,
+    "question": "What do the Season 5 cold opens show?",
+    "options": [
+      "Walt's childhood",
+      "Flash forwards of Walt with hair at Denny's",
+      "Jesse's future",
+      "Hank investigating"
+    ],
+    "answer": "Flash forwards of Walt with hair at Denny's",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 164,
+    "question": "What does Walt arrange his bacon to spell on his birthday?",
+    "options": [
+      "50",
+      "51",
+      "52",
+      "WW"
+    ],
+    "answer": "52",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 165,
+    "question": "What gun does Walt buy in the Denny's flash forward?",
+    "options": [
+      "M60",
+      "AK-47",
+      "AR-15",
+      "Shotgun"
+    ],
+    "answer": "M60",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 166,
+    "question": "What does Walt order at Denny's?",
+    "options": [
+      "Bacon",
+      "Grand Slam breakfast",
+      "Coffee",
+      "Pancakes"
+    ],
+    "answer": "Grand Slam breakfast",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 167,
+    "question": "What false name does Walt use at Denny's?",
+    "options": [
+      "Mr. White",
+      "Mr. Lambert",
+      "Mr. Heisenberg",
+      "Mr. Mayhew"
+    ],
+    "answer": "Mr. Lambert",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 168,
+    "question": "What does the waitress give Walt for his birthday?",
+    "options": [
+      "Free meal",
+      "Nothing",
+      "Free bacon",
+      "A song"
+    ],
+    "answer": "Free bacon",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 169,
+    "question": "What is Walter's middle name?",
+    "options": [
+      "Harold",
+      "Henry",
+      "Hartwell",
+      "Howard"
+    ],
+    "answer": "Hartwell",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 170,
+    "question": "What are Walter White's initials?",
+    "options": [
+      "WW",
+      "WHW",
+      "WWH",
+      "WH"
+    ],
+    "answer": "WHW",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 171,
+    "question": "What does Jesse call methamphetamine?",
+    "options": [
+      "Meth",
+      "Ice",
+      "Crystal",
+      "Chili P"
+    ],
+    "answer": "Crystal",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 172,
+    "question": "What is Jesse's secret ingredient?",
+    "options": [
+      "Chili powder",
+      "Special formula",
+      "Nothing",
+      "Capsaicin"
+    ],
+    "answer": "Chili powder",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 173,
+    "question": "What does Walt think of Jesse's chili powder?",
+    "options": [
+      "It's genius",
+      "It's ridiculous and contaminates the product",
+      "It's interesting",
+      "It works"
+    ],
+    "answer": "It's ridiculous and contaminates the product",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 174,
+    "question": "What does Tuco call the meth?",
+    "options": [
+      "Good stuff",
+      "Tight, tight, tight!",
+      "The best",
+      "Blue magic"
+    ],
+    "answer": "Tight, tight, tight!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 175,
+    "question": "What injury does Walt give himself to explain his absence?",
+    "options": [
+      "Car accident",
+      "Fugue state",
+      "Fall",
+      "Mugging"
+    ],
+    "answer": "Fugue state",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 176,
+    "question": "Where does Walt claim to wake up during his fugue state?",
+    "options": [
+      "A hospital",
+      "Naked in a supermarket",
+      "His car",
+      "The desert"
+    ],
+    "answer": "Naked in a supermarket",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 177,
+    "question": "What does Skyler do for work?",
+    "options": [
+      "Teacher",
+      "Writer for eBay listings",
+      "Accountant",
+      "Manager at car wash"
+    ],
+    "answer": "Writer for eBay listings",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 178,
+    "question": "Who does Skyler have an affair with?",
+    "options": [
+      "Hank",
+      "Ted Beneke",
+      "Saul",
+      "Her boss"
+    ],
+    "answer": "Ted Beneke",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 179,
+    "question": "Who plays Ted Beneke?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Christopher_Cousins_2010.jpg/250px-Christopher_Cousins_2010.jpg",
+    "options": [
+      "Christopher Cousins",
+      "Steven Michael Quezada",
+      "Bill Burr",
+      "Michael McKean"
+    ],
+    "answer": "Christopher Cousins",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 180,
+    "question": "What happens to Ted?",
+    "options": [
+      "He dies",
+      "He breaks his neck trying to escape",
+      "He goes to jail",
+      "He leaves town"
+    ],
+    "answer": "He breaks his neck trying to escape",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 181,
+    "question": "Why does Skyler give Ted money?",
+    "options": [
+      "She loves him",
+      "To pay his IRS debt",
+      "To help him escape",
+      "For their affair"
+    ],
+    "answer": "To pay his IRS debt",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 182,
+    "question": "What famous scene involves Skyler and a pool?",
+    "options": [
+      "She drowns",
+      "She walks into the pool fully clothed",
+      "She swims",
+      "She throws a party"
+    ],
+    "answer": "She walks into the pool fully clothed",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 183,
+    "question": "Why does Skyler walk into the pool?",
+    "options": [
+      "To commit suicide",
+      "To get the kids away from Walt",
+      "She's drunk",
+      "Accident"
+    ],
+    "answer": "To get the kids away from Walt",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 184,
+    "question": "What is the name of Walt and Skyler's daughter?",
+    "options": [
+      "Holly",
+      "Hope",
+      "Hannah",
+      "Haley"
+    ],
+    "answer": "Holly",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 185,
+    "question": "What famous scene involves baby Holly?",
+    "options": [
+      "Her first words",
+      "Walt kidnaps her",
+      "She gets sick",
+      "Her birth"
+    ],
+    "answer": "Walt kidnaps her",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 186,
+    "question": "What does Holly say in the truck that makes Walt return her?",
+    "options": [
+      "Dada",
+      "Mama",
+      "Home",
+      "No"
+    ],
+    "answer": "Mama",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 187,
+    "question": "Where does Walt leave Holly?",
+    "options": [
+      "Hospital",
+      "Police station",
+      "Fire station",
+      "Marie's house"
+    ],
+    "answer": "Fire station",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 188,
+    "question": "What phone call does Walt make to Skyler that exonerates her?",
+    "options": [
+      "He confesses",
+      "He threatens her while the police listen",
+      "He says goodbye",
+      "He apologizes"
+    ],
+    "answer": "He threatens her while the police listen",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 189,
+    "question": "What does Walt tell Skyler on the phone?",
+    "options": [
+      "I love you",
+      "You're a bitch",
+      "Goodbye",
+      "It's over"
+    ],
+    "answer": "You're a bitch",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 190,
+    "question": "What is Mike's granddaughter's name?",
+    "options": [
+      "Kaylee",
+      "Katie",
+      "Kelly",
+      "Kylie"
+    ],
+    "answer": "Kaylee",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 191,
+    "question": "How does Walt kill Mike?",
+    "options": [
+      "Shoots him",
+      "Poisons him",
+      "Strangles him",
+      "Runs him over"
+    ],
+    "answer": "Shoots him",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 192,
+    "question": "Where does Mike die?",
+    "options": [
+      "In the lab",
+      "By a river",
+      "In his car",
+      "At home"
+    ],
+    "answer": "By a river",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 193,
+    "question": "What are Mike's last words?",
+    "options": [
+      "You won",
+      "Shut up and let me die in peace",
+      "Tell Kaylee I love her",
+      "You're the devil"
+    ],
+    "answer": "Shut up and let me die in peace",
+    "difficulty": "hard",
+    "category": "quotes"
+  },
+  {
+    "id": 194,
+    "question": "What does Walt realize after killing Mike?",
+    "options": [
+      "He made a mistake",
+      "He could have gotten the names from Lydia",
+      "He's a monster",
+      "He needs to run"
+    ],
+    "answer": "He could have gotten the names from Lydia",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 195,
+    "question": "What does Walt dissolve Mike's body in?",
+    "options": [
+      "Acid in a barrel",
+      "The bathtub",
+      "Nothing, he buries him",
+      "He doesn't dispose of it"
+    ],
+    "answer": "Acid in a barrel",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 196,
+    "question": "How many people does Walt have killed in prison?",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "10"
+    ],
+    "answer": "10",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 197,
+    "question": "What is the montage of these killings set to?",
+    "options": [
+      "Crystal Blue Persuasion",
+      "Pick Yourself Up",
+      "Baby Blue",
+      "DLZ"
+    ],
+    "answer": "Pick Yourself Up",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 198,
+    "question": "How long does the prison killing montage take?",
+    "options": [
+      "1 minute",
+      "2 minutes",
+      "3 minutes",
+      "5 minutes"
+    ],
+    "answer": "2 minutes",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 199,
+    "question": "What is the time frame of the entire series?",
+    "options": [
+      "1 year",
+      "2 years",
+      "3 years",
+      "5 years"
+    ],
+    "answer": "2 years",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 200,
+    "question": "What is the significance of Walt's 52nd birthday?",
+    "options": [
+      "Nothing",
+      "It's when he dies",
+      "It's in the flash forward and finale",
+      "It's when he started cooking"
+    ],
+    "answer": "It's in the flash forward and finale",
+    "difficulty": "hard",
+    "category": "plot"
+  }
+]
+
