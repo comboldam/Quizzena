@@ -5612,3 +5612,282 @@ footer button:hover {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+/* ========================================
+   MARVEL CARD - TOPIC CARD
+   ======================================== */
+
+.marvel-card-topic {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(165deg, rgba(220, 38, 38, 0.15) 0%, rgba(10, 5, 8, 0.95) 40%, rgba(5, 2, 5, 0.98) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.marvel-card-topic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.marvel-hero-container {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marvel-shield {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  animation: marvelShieldFloat 3s ease-in-out infinite;
+}
+
+@keyframes marvelShieldFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-4px) rotate(5deg); }
+}
+
+.marvel-shield-ring-1 {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #dc2626, #b91c1c);
+  box-shadow: inset 0 3px 8px rgba(255,255,255,0.3), inset 0 -3px 8px rgba(0,0,0,0.3), 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.marvel-shield-ring-2 {
+  position: absolute;
+  top: 8px; left: 8px; right: 8px; bottom: 8px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.8), inset 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.marvel-shield-ring-3 {
+  position: absolute;
+  top: 14px; left: 14px; right: 14px; bottom: 14px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #dc2626, #b91c1c);
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.2), inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+.marvel-shield-center {
+  position: absolute;
+  top: 20px; left: 20px; right: 20px; bottom: 20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2563eb, #1d4ed8);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marvel-shield-star {
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+
+.marvel-shield-star::before {
+  content: '\2605';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #f5f5f5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.marvel-shield-shine {
+  position: absolute;
+  top: 5px; left: 10px;
+  width: 20px; height: 35px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.marvel-action-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.marvel-action-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(239, 68, 68, 0.4), transparent);
+  height: 2px;
+  animation: marvelActionPulse 2s ease-in-out infinite;
+}
+
+.marvel-action-line:nth-child(1) { top: 20px; left: -10px; width: 25px; transform: rotate(-15deg); animation-delay: 0s; }
+.marvel-action-line:nth-child(2) { top: 35px; left: -5px; width: 20px; transform: rotate(-10deg); animation-delay: 0.3s; }
+.marvel-action-line:nth-child(3) { top: 20px; right: -10px; width: 25px; transform: rotate(15deg); animation-delay: 0.6s; }
+.marvel-action-line:nth-child(4) { top: 35px; right: -5px; width: 20px; transform: rotate(10deg); animation-delay: 0.9s; }
+
+@keyframes marvelActionPulse {
+  0%, 100% { opacity: 0.3; transform: scaleX(1); }
+  50% { opacity: 0.8; transform: scaleX(1.2); }
+}
+
+.marvel-burst {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 28px; height: 28px;
+  animation: marvelBurstPulse 2s ease-in-out infinite;
+}
+
+.marvel-burst-shape {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #fbbf24, #f59e0b);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.4);
+}
+
+.marvel-burst-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Arial Black', sans-serif;
+  font-size: 6px;
+  font-weight: 900;
+  color: #1a1a1a;
+}
+
+@keyframes marvelBurstPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.marvel-sparks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.marvel-spark {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: #fbbf24;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #fbbf24, 0 0 8px #f59e0b;
+  animation: marvelSparkle 1.5s ease-in-out infinite;
+}
+
+.marvel-spark:nth-child(1) { top: 25px; left: 25px; animation-delay: 0s; }
+.marvel-spark:nth-child(2) { top: 40px; right: 20px; animation-delay: 0.3s; }
+.marvel-spark:nth-child(3) { bottom: 40px; left: 20px; animation-delay: 0.6s; }
+.marvel-spark:nth-child(4) { bottom: 50px; right: 25px; animation-delay: 0.9s; }
+.marvel-spark:nth-child(5) { top: 55px; left: 15px; animation-delay: 0.4s; }
+
+@keyframes marvelSparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.marvel-hero-text {
+  position: absolute;
+  top: 10px; left: 8px;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 5px;
+  color: rgba(239, 68, 68, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.marvel-stones {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.marvel-stone {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  animation: marvelStonePulse 2s ease-in-out infinite;
+}
+
+.marvel-stone:nth-child(1) { background: #a855f7; box-shadow: 0 0 4px #a855f7; animation-delay: 0s; }
+.marvel-stone:nth-child(2) { background: #3b82f6; box-shadow: 0 0 4px #3b82f6; animation-delay: 0.15s; }
+.marvel-stone:nth-child(3) { background: #ef4444; box-shadow: 0 0 4px #ef4444; animation-delay: 0.3s; }
+.marvel-stone:nth-child(4) { background: #f97316; box-shadow: 0 0 4px #f97316; animation-delay: 0.45s; }
+.marvel-stone:nth-child(5) { background: #22c55e; box-shadow: 0 0 4px #22c55e; animation-delay: 0.6s; }
+.marvel-stone:nth-child(6) { background: #eab308; box-shadow: 0 0 4px #eab308; animation-delay: 0.75s; }
+
+@keyframes marvelStonePulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.marvel-web {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 30px;
+  overflow: hidden;
+  opacity: 0.3;
+}
+
+.marvel-web::before {
+  content: '';
+  position: absolute;
+  bottom: -15px; left: -15px;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+}
+
+.marvel-web::after {
+  content: '';
+  position: absolute;
+  bottom: -25px; left: -25px;
+  width: 60px; height: 60px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+}
+
+.marvel-web-line {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 25px; height: 1px;
+  background: rgba(255,255,255,0.3);
+  transform-origin: left bottom;
+}
+
+.marvel-web-line:nth-child(1) { transform: rotate(-15deg); }
+.marvel-web-line:nth-child(2) { transform: rotate(-35deg); }
+.marvel-web-line:nth-child(3) { transform: rotate(-55deg); }
+.marvel-web-line:nth-child(4) { transform: rotate(-75deg); }
+
+.marvel-card-title {
+  color: #ef4444;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  margin-top: 8px;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.7), 0 0 20px rgba(239, 68, 68, 0.4), 2px 2px 0 rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
