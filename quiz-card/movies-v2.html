@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies Quiz Card V2</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0505 0%, #1a0a0a 50%, #050208 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, rgba(180, 28, 28, 0.12) 0%, rgba(10, 5, 15, 0.95) 40%, rgba(5, 2, 10, 0.98) 100%);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(180, 28, 28, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 30px;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 250, 220, 0.08), rgba(255, 250, 220, 0.15), rgba(255, 250, 220, 0.08), transparent);
+      transform: rotate(25deg);
+      animation: projectorSweep 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes projectorSweep {
+      0%, 100% { left: -50%; opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { left: 150%; opacity: 0; }
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    .card-title {
+      color: #d4af37;
+      font-family: 'Georgia', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.7), 0 0 20px rgba(212, 175, 55, 0.4), 0 2px 4px rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .cinema-container {
+      position: relative;
+      width: 90px;
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .film-reel {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .reel-outer {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border: 3px solid #3a3a3a;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.5);
+      animation: reelSpin 4s linear infinite;
+    }
+
+    @keyframes reelSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .reel-outer::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 45px;
+      height: 45px;
+      transform: translate(-50%, -50%);
+      background: repeating-conic-gradient(from 0deg, transparent 0deg 25deg, rgba(60, 60, 60, 0.8) 25deg 35deg, transparent 35deg 60deg);
+      border-radius: 50%;
+    }
+
+    .reel-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
+      background: linear-gradient(145deg, #4a4a4a, #2a2a2a);
+      border-radius: 50%;
+      border: 2px solid #555;
+      box-shadow: inset 0 1px 3px rgba(255,255,255,0.1), 0 2px 4px rgba(0,0,0,0.4);
+      z-index: 2;
+    }
+
+    .reel-center::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      border: 1px solid #333;
+    }
+
+    .reel-holes {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      animation: reelSpin 4s linear infinite;
+    }
+
+    .reel-hole {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #0a0a0a;
+      border-radius: 50%;
+      border: 1px solid #2a2a2a;
+    }
+
+    .reel-hole:nth-child(1) { top: 5px; left: 50%; transform: translateX(-50%); }
+    .reel-hole:nth-child(2) { top: 12px; right: 8px; }
+    .reel-hole:nth-child(3) { bottom: 12px; right: 8px; }
+    .reel-hole:nth-child(4) { bottom: 5px; left: 50%; transform: translateX(-50%); }
+    .reel-hole:nth-child(5) { bottom: 12px; left: 8px; }
+    .reel-hole:nth-child(6) { top: 12px; left: 8px; }
+
+    .popcorn-container {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 45px;
+    }
+
+    .bucket {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 38px;
+      height: 32px;
+      background: linear-gradient(180deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+      clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+      border-radius: 0 0 4px 4px;
+      box-shadow: inset -4px 0 8px rgba(0,0,0,0.2), inset 4px 0 8px rgba(255,255,255,0.1), 0 4px 8px rgba(0,0,0,0.4);
+    }
+
+    .bucket::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, transparent 0px, transparent 4px, rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 8px);
+      clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    }
+
+    .bucket-rim {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 5px;
+      background: linear-gradient(180deg, #fef08a 0%, #fbbf24 50%, #f59e0b 100%);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .popcorn {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 42px;
+      height: 22px;
+    }
+
+    .kernel {
+      position: absolute;
+      background: radial-gradient(ellipse at 30% 30%, #fef9c3 0%, #fef08a 30%, #fde047 60%, #eab308 100%);
+      border-radius: 50% 50% 45% 45%;
+      box-shadow: inset -1px -1px 3px rgba(0,0,0,0.15), inset 1px 1px 2px rgba(255,255,255,0.5), 0 1px 2px rgba(0,0,0,0.2);
+      animation: kernelBounce 1.5s ease-in-out infinite;
+    }
+
+    .kernel:nth-child(1) { width: 10px; height: 9px; left: 16px; bottom: 10px; animation-delay: 0s; }
+    .kernel:nth-child(2) { width: 8px; height: 8px; left: 8px; bottom: 8px; animation-delay: 0.1s; }
+    .kernel:nth-child(3) { width: 9px; height: 8px; left: 24px; bottom: 12px; animation-delay: 0.2s; }
+    .kernel:nth-child(4) { width: 7px; height: 7px; left: 4px; bottom: 14px; animation-delay: 0.05s; }
+    .kernel:nth-child(5) { width: 8px; height: 7px; left: 30px; bottom: 9px; animation-delay: 0.15s; }
+    .kernel:nth-child(6) { width: 9px; height: 9px; left: 12px; bottom: 16px; animation-delay: 0.25s; }
+    .kernel:nth-child(7) { width: 7px; height: 6px; left: 22px; bottom: 4px; animation-delay: 0.08s; }
+    .kernel:nth-child(8) { width: 8px; height: 8px; left: 28px; bottom: 16px; animation-delay: 0.18s; }
+
+    @keyframes kernelBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+
+    .film-strip {
+      position: absolute;
+      top: 8px;
+      right: 6px;
+      width: 12px;
+      height: 35px;
+      background: linear-gradient(180deg, #2a2a2a, #1a1a1a);
+      border-radius: 2px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    }
+
+    .film-strip::before, .film-strip::after {
+      content: '';
+      position: absolute;
+      left: 1px;
+      width: 3px;
+      height: 4px;
+      background: #0a0a0a;
+      border-radius: 1px;
+    }
+
+    .film-strip::before {
+      top: 3px;
+      box-shadow: 0 8px 0 #0a0a0a, 0 16px 0 #0a0a0a, 0 24px 0 #0a0a0a;
+    }
+
+    .film-strip::after {
+      top: 3px;
+      left: auto;
+      right: 1px;
+      box-shadow: 0 8px 0 #0a0a0a, 0 16px 0 #0a0a0a, 0 24px 0 #0a0a0a;
+    }
+
+    .film-frame {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 5px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(180, 28, 28, 0.2));
+      border-radius: 1px;
+    }
+
+    .film-frame:nth-child(1) { top: 4px; }
+    .film-frame:nth-child(2) { top: 12px; }
+    .film-frame:nth-child(3) { top: 20px; }
+    .film-frame:nth-child(4) { top: 28px; }
+
+    .clapper {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      width: 18px;
+      height: 14px;
+    }
+
+    .clapper-top {
+      position: absolute;
+      top: 0;
+      width: 18px;
+      height: 5px;
+      background: repeating-linear-gradient(135deg, #1a1a1a 0px, #1a1a1a 2px, #fef08a 2px, #fef08a 4px);
+      border-radius: 1px 1px 0 0;
+      transform-origin: left bottom;
+      animation: clapperSnap 2.5s ease-in-out infinite;
+    }
+
+    @keyframes clapperSnap {
+      0%, 85%, 100% { transform: rotate(0deg); }
+      90% { transform: rotate(-25deg); }
+      95% { transform: rotate(0deg); }
+    }
+
+    .clapper-bottom {
+      position: absolute;
+      bottom: 0;
+      width: 18px;
+      height: 10px;
+      background: linear-gradient(180deg, #1f1f1f, #0a0a0a);
+      border-radius: 0 0 2px 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      color: rgba(212, 175, 55, 0.5);
+      font-size: 6px;
+      animation: starTwinkle 1.5s ease-in-out infinite;
+    }
+
+    .star:nth-child(1) { top: 15px; left: 35px; animation-delay: 0s; }
+    .star:nth-child(2) { top: 25px; right: 30px; animation-delay: 0.2s; }
+    .star:nth-child(3) { bottom: 35px; left: 15px; animation-delay: 0.4s; }
+    .star:nth-child(4) { bottom: 45px; right: 15px; animation-delay: 0.6s; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.2); }
+    }
+
+    .ticket {
+      position: absolute;
+      bottom: 5px;
+      right: 8px;
+      width: 22px;
+      height: 10px;
+      background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .ticket::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      border-left: 1px dashed rgba(0,0,0,0.3);
+    }
+
+    .ticket::after {
+      content: '\2605';
+      position: absolute;
+      right: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 5px;
+      color: rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="stars">
+      <div class="star">★</div>
+      <div class="star">★</div>
+      <div class="star">★</div>
+      <div class="star">★</div>
+    </div>
+    <div class="clapper">
+      <div class="clapper-top"></div>
+      <div class="clapper-bottom"></div>
+    </div>
+    <div class="film-strip">
+      <div class="film-frame"></div>
+      <div class="film-frame"></div>
+      <div class="film-frame"></div>
+      <div class="film-frame"></div>
+    </div>
+    <div class="ticket"></div>
+    <div class="cinema-container">
+      <div class="film-reel">
+        <div class="reel-outer"></div>
+        <div class="reel-holes">
+          <div class="reel-hole"></div>
+          <div class="reel-hole"></div>
+          <div class="reel-hole"></div>
+          <div class="reel-hole"></div>
+          <div class="reel-hole"></div>
+          <div class="reel-hole"></div>
+        </div>
+        <div class="reel-center"></div>
+      </div>
+      <div class="popcorn-container">
+        <div class="popcorn">
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+          <div class="kernel"></div>
+        </div>
+        <div class="bucket-rim"></div>
+        <div class="bucket"></div>
+      </div>
+    </div>
+    <div class="card-title">Movies</div>
+  </div>
+</body>
+</html>
