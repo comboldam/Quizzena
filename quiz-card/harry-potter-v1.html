@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0510 0%, #1a0a1a 50%, #050308 100%);
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(116, 0, 1, 0.12) 0%, 
+        rgba(15, 8, 12, 0.95) 40%,
+        rgba(8, 5, 8, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(211, 166, 37, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Magical pattern */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(211, 166, 37, 0.03) 1px, transparent 1px);
+      background-size: 5px 5px;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    /* ===== TITLE ===== */
+    .card-title {
+      color: #d3a625;
+      font-family: 'Georgia', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 12px rgba(211, 166, 37, 0.7),
+        0 0 25px rgba(211, 166, 37, 0.4),
+        1px 1px 0 rgba(0,0,0,0.8);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ===== ICON CONTAINER ===== */
+    .icon-container {
+      position: relative;
+      width: 95px;
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== DEATHLY HALLOWS SYMBOL ===== */
+    .hallows {
+      position: relative;
+      width: 60px;
+      height: 65px;
+      animation: hallowsFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 12px rgba(211, 166, 37, 0.3));
+    }
+
+    @keyframes hallowsFloat {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-5px) rotate(2deg); }
+    }
+
+    /* Triangle (Cloak) */
+    .hallows-triangle {
+      position: absolute;
+      inset: 0;
+      border: 3px solid #d3a625;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background: transparent;
+    }
+
+    .hallows-triangle::before {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 2px solid rgba(211, 166, 37, 0.3);
+      clip-path: polygon(50% 5%, 5% 98%, 95% 98%);
+    }
+
+    /* Circle (Stone) */
+    .hallows-circle {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      border: 3px solid #d3a625;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: 
+        inset 0 0 8px rgba(211, 166, 37, 0.2),
+        0 0 8px rgba(211, 166, 37, 0.3);
+    }
+
+    /* Line (Elder Wand) */
+    .hallows-line {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, 
+        #d3a625 0%, 
+        #d3a625 45%,
+        rgba(211, 166, 37, 0.5) 100%
+      );
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(211, 166, 37, 0.4);
+    }
+
+    /* Shine effect */
+    .hallows-shine {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      width: 8px;
+      height: 20px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.3) 0%, transparent 60%);
+      transform: rotate(-30deg);
+      border-radius: 50%;
+    }
+
+    /* ===== GOLDEN SNITCH ===== */
+    .snitch {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 28px;
+      height: 20px;
+      animation: snitchFly 2.5s ease-in-out infinite;
+    }
+
+    .snitch-ball {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(145deg, #fbbf24, #d3a625, #b8860b);
+      border-radius: 50%;
+      box-shadow: 
+        inset 0 2px 4px rgba(255,255,255,0.5),
+        0 0 8px rgba(211, 166, 37, 0.6);
+    }
+
+    .snitch-wing {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 8px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(255,255,255,0.4));
+      border-radius: 50% 50% 0 0;
+    }
+
+    .snitch-wing.left {
+      left: 0;
+      transform: translateY(-50%) rotate(-20deg);
+      animation: wingFlap 0.2s ease-in-out infinite alternate;
+    }
+
+    .snitch-wing.right {
+      right: 0;
+      transform: translateY(-50%) rotate(20deg);
+      animation: wingFlap 0.2s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes snitchFly {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(2px, -3px) rotate(5deg); }
+      50% { transform: translate(-1px, 2px) rotate(-3deg); }
+      75% { transform: translate(3px, 1px) rotate(2deg); }
+    }
+
+    @keyframes wingFlap {
+      0% { transform: translateY(-50%) rotate(-30deg) scaleY(0.8); }
+      100% { transform: translateY(-50%) rotate(-10deg) scaleY(1); }
+    }
+
+    /* ===== MAGIC SPARKLES ===== */
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #d3a625;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #d3a625, 0 0 12px #fbbf24;
+      animation: magicSparkle 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 22px; left: 18px; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 38px; left: 12px; animation-delay: 0.3s; width: 4px; height: 4px; }
+    .sparkle:nth-child(3) { bottom: 45px; right: 15px; animation-delay: 0.6s; }
+    .sparkle:nth-child(4) { top: 55px; right: 12px; animation-delay: 0.9s; width: 2px; height: 2px; }
+    .sparkle:nth-child(5) { bottom: 50px; left: 15px; animation-delay: 0.4s; }
+
+    @keyframes magicSparkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.6); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ===== HOGWARTS CASTLE CORNER ===== */
+    .castle {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 42px;
+      opacity: 0.25;
+    }
+
+    .tower {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(to top, #740001, #8b0000);
+    }
+
+    .tower:nth-child(1) {
+      left: 0;
+      width: 5px;
+      height: 22px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .tower:nth-child(2) {
+      left: 7px;
+      width: 7px;
+      height: 32px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .tower:nth-child(3) {
+      left: 16px;
+      width: 6px;
+      height: 26px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .tower:nth-child(4) {
+      left: 24px;
+      width: 5px;
+      height: 18px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Tower tops */
+    .tower::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 7px solid #d3a625;
+    }
+
+    .tower:nth-child(2)::before {
+      top: -8px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 9px solid #d3a625;
+    }
+
+    /* Window lights */
+    .tower::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 2px;
+      background: #fbbf24;
+      box-shadow: 
+        0 6px 0 #fbbf24,
+        0 12px 0 rgba(251, 191, 36, 0.5);
+      border-radius: 50%;
+    }
+
+    /* ===== MAGIC TEXT ===== */
+    .magic-text {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 5px;
+      font-style: italic;
+      color: rgba(211, 166, 37, 0.6);
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== HOUSE COLORS ===== */
+    .house-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* House colors */
+    .dot:nth-child(1) { background: #740001; box-shadow: 0 0 4px #740001, inset 0 1px 2px rgba(255,255,255,0.3); animation-delay: 0s; }      /* Gryffindor - Red */
+    .dot:nth-child(2) { background: #1a472a; box-shadow: 0 0 4px #1a472a, inset 0 1px 2px rgba(255,255,255,0.3); animation-delay: 0.2s; }    /* Slytherin - Green */
+    .dot:nth-child(3) { background: #0e1a40; box-shadow: 0 0 4px #0e1a40, inset 0 1px 2px rgba(255,255,255,0.3); animation-delay: 0.4s; }    /* Ravenclaw - Blue */
+    .dot:nth-child(4) { background: #ecb939; box-shadow: 0 0 4px #ecb939, inset 0 1px 2px rgba(255,255,255,0.3); animation-delay: 0.6s; }    /* Hufflepuff - Yellow */
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* ===== LIGHTNING SCAR ===== */
+    .lightning {
+      position: absolute;
+      top: 25px;
+      right: 38px;
+      font-size: 14px;
+      color: #d3a625;
+      text-shadow: 0 0 8px #d3a625, 0 0 16px #fbbf24;
+      animation: lightningGlow 2s ease-in-out infinite;
+      transform: rotate(15deg);
+    }
+
+    @keyframes lightningGlow {
+      0%, 100% { opacity: 0.5; text-shadow: 0 0 4px #d3a625; }
+      50% { opacity: 1; text-shadow: 0 0 12px #d3a625, 0 0 20px #fbbf24; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Magic text -->
+    <div class="magic-text">Always</div>
+
+    <!-- Golden Snitch (like Marvel's POW burst) -->
+    <div class="snitch">
+      <div class="snitch-wing left"></div>
+      <div class="snitch-ball"></div>
+      <div class="snitch-wing right"></div>
+    </div>
+
+    <!-- Lightning scar -->
+    <div class="lightning">⚡</div>
+
+    <!-- Magic sparkles -->
+    <div class="sparkles">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- Hogwarts castle corner -->
+    <div class="castle">
+      <div class="tower"></div>
+      <div class="tower"></div>
+      <div class="tower"></div>
+      <div class="tower"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Deathly Hallows symbol -->
+      <div class="hallows">
+        <div class="hallows-triangle"></div>
+        <div class="hallows-circle"></div>
+        <div class="hallows-line"></div>
+        <div class="hallows-shine"></div>
+      </div>
+    </div>
+
+    <!-- House color dots -->
+    <div class="house-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="card-title">Harry Potter</div>
+  </div>
+</body>
+</html>
+
