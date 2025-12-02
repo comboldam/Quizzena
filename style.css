@@ -8816,18 +8816,24 @@ footer button:hover {
    Mini pitch with bouncing ball design
    ======================================== */
 
-.football-v2-card {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.football-v2-card-topic {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(165deg, rgba(22, 101, 52, 0.2) 0%, rgba(5, 46, 22, 0.95) 40%, rgba(2, 20, 10, 0.98) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(34, 197, 94, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), 0 0 40px rgba(34, 197, 94, 0.15), inset 0 0 30px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
 }
 
 /* Grass texture overlay */
-.football-v2-card::before {
+.football-v2-card-topic::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -8840,13 +8846,13 @@ footer button:hover {
       transparent 6px
     );
   pointer-events: none;
-  border-radius: 12px;
+  border-radius: 20px;
 }
 
 .football-v2-icon-container {
   position: relative;
-  width: 70px;
-  height: 60px;
+  width: 90px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8855,13 +8861,13 @@ footer button:hover {
 /* ===== MINI PITCH ===== */
 .football-v2-pitch {
   position: absolute;
-  inset: 2px;
+  inset: 5px;
   background: linear-gradient(180deg,
     #166534 0%, #15803d 25%, #166534 25%,
     #15803d 50%, #166534 50%, #15803d 75%,
     #166534 75%, #15803d 100%
   );
-  border-radius: 6px;
+  border-radius: 8px;
   border: 2px solid rgba(255, 255, 255, 0.6);
   overflow: hidden;
   box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
@@ -8885,8 +8891,8 @@ footer button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
 }
@@ -8897,8 +8903,8 @@ footer button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
 }
@@ -8908,8 +8914,8 @@ footer button:hover {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 36px;
-  height: 10px;
+  width: 50px;
+  height: 12px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -8930,8 +8936,8 @@ footer button:hover {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 18px;
-  height: 5px;
+  width: 26px;
+  height: 6px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -8948,8 +8954,8 @@ footer button:hover {
 /* Corner arcs */
 .football-v2-corner {
   position: absolute;
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -8991,8 +8997,8 @@ footer button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   background: radial-gradient(circle at 30% 25%, #ffffff 0%, #f5f5f5 40%, #e5e5e5 70%, #d4d4d4 100%);
   border-radius: 50%;
   box-shadow:
@@ -9016,52 +9022,52 @@ footer button:hover {
 }
 
 .football-v2-patch-1 {
-  top: 2px;
+  top: 3px;
   left: 50%;
   transform: translateX(-50%);
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
 }
 
 .football-v2-patch-2 {
-  top: 7px;
-  right: 1px;
-  width: 5px;
-  height: 5px;
+  top: 10px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
   transform: rotate(35deg);
 }
 
 .football-v2-patch-3 {
-  bottom: 3px;
-  right: 4px;
-  width: 5px;
-  height: 5px;
+  bottom: 4px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
   transform: rotate(70deg);
 }
 
 .football-v2-patch-4 {
-  bottom: 3px;
-  left: 4px;
-  width: 5px;
-  height: 5px;
+  bottom: 4px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
   transform: rotate(-70deg);
 }
 
 .football-v2-patch-5 {
-  top: 7px;
-  left: 1px;
-  width: 5px;
-  height: 5px;
+  top: 10px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
   transform: rotate(-35deg);
 }
 
 /* Ball shine */
 .football-v2-ball-shine {
   position: absolute;
-  top: 3px;
-  left: 4px;
-  width: 7px;
-  height: 10px;
+  top: 4px;
+  left: 6px;
+  width: 10px;
+  height: 14px;
   background: linear-gradient(160deg, rgba(255,255,255,0.7) 0%, transparent 60%);
   border-radius: 50%;
   transform: rotate(-20deg);
@@ -9070,10 +9076,10 @@ footer button:hover {
 /* ===== WHISTLE ===== */
 .football-v2-whistle-burst {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 20px;
-  height: 16px;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 20px;
   animation: footballV2WhistlePulse 2s ease-in-out infinite;
   z-index: 5;
 }
@@ -9086,20 +9092,20 @@ footer button:hover {
 }
 
 .football-v2-whistle-body {
-  width: 14px;
-  height: 8px;
+  width: 18px;
+  height: 10px;
   background: linear-gradient(180deg, #fbbf24, #d97706);
-  border-radius: 2px 6px 6px 2px;
+  border-radius: 3px 8px 8px 3px;
   position: relative;
 }
 
 .football-v2-whistle-body::before {
   content: '';
   position: absolute;
-  left: -2px;
-  top: 1px;
-  width: 5px;
-  height: 5px;
+  left: -3px;
+  top: 2px;
+  width: 6px;
+  height: 6px;
   background: linear-gradient(145deg, #fbbf24, #b45309);
   border-radius: 50%;
 }
@@ -9108,9 +9114,9 @@ footer button:hover {
   content: '';
   position: absolute;
   right: 0;
-  top: 2px;
-  width: 3px;
-  height: 3px;
+  top: 3px;
+  width: 4px;
+  height: 4px;
   background: #1a1a1a;
   border-radius: 50%;
 }
@@ -9123,12 +9129,12 @@ footer button:hover {
 /* ===== KICK OFF TEXT ===== */
 .football-v2-kickoff-text {
   position: absolute;
-  top: 6px;
-  left: 6px;
+  top: 10px;
+  left: 8px;
   font-family: 'Arial Black', sans-serif;
-  font-size: 4px;
+  font-size: 5px;
   color: rgba(74, 222, 128, 0.6);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   z-index: 5;
 }
@@ -9144,8 +9150,8 @@ footer button:hover {
 
 .football-v2-flag {
   position: absolute;
-  width: 2px;
-  height: 8px;
+  width: 3px;
+  height: 10px;
   background: linear-gradient(180deg, #fbbf24, #d97706);
 }
 
@@ -9153,25 +9159,25 @@ footer button:hover {
   content: '';
   position: absolute;
   top: 0;
-  left: 2px;
-  width: 5px;
-  height: 4px;
+  left: 3px;
+  width: 6px;
+  height: 5px;
   background: #ef4444;
   clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-.football-v2-flag:nth-child(1) { top: 8px; left: 8px; }
-.football-v2-flag:nth-child(2) { top: 8px; right: 8px; }
-.football-v2-flag:nth-child(3) { bottom: 8px; left: 8px; }
-.football-v2-flag:nth-child(4) { bottom: 8px; right: 8px; }
+.football-v2-flag:nth-child(1) { top: 28px; left: 18px; }
+.football-v2-flag:nth-child(2) { top: 28px; right: 18px; }
+.football-v2-flag:nth-child(3) { bottom: 28px; left: 18px; }
+.football-v2-flag:nth-child(4) { bottom: 28px; right: 18px; }
 
 /* ===== GOAL NET CORNER ===== */
 .football-v2-goal-net {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 18px;
-  height: 16px;
+  width: 25px;
+  height: 22px;
   opacity: 0.25;
   overflow: hidden;
   z-index: 2;
@@ -9184,23 +9190,23 @@ footer button:hover {
   background:
     linear-gradient(90deg, #fff 1px, transparent 1px),
     linear-gradient(0deg, #fff 1px, transparent 1px);
-  background-size: 3px 3px;
+  background-size: 4px 4px;
 }
 
 /* ===== CLUB DOTS ===== */
 .football-v2-club-dots {
   position: absolute;
-  bottom: 6px;
+  bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 3px;
+  gap: 4px;
   z-index: 5;
 }
 
 .football-v2-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   animation: footballV2DotPulse 2.5s ease-in-out infinite;
 }
