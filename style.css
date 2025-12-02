@@ -14331,3 +14331,347 @@ footer button:hover {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.25); }
 }
+
+/* ===== MESSI CARD ===== */
+.messi-card-topic {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(165deg,
+    rgba(117, 170, 219, 0.15) 0%,
+    rgba(10, 10, 20, 0.95) 35%,
+    rgba(5, 5, 12, 0.98) 100%
+  );
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(117, 170, 219, 0.1),
+    0 0 30px rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Argentina stripes effect */
+.messi-card-topic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(117, 170, 219, 0.03) 0px,
+      rgba(117, 170, 219, 0.03) 20px,
+      transparent 20px,
+      transparent 40px
+    );
+  pointer-events: none;
+}
+
+/* Shimmer */
+.messi-card-topic::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 215, 0, 0.03) 50%,
+    transparent 60%
+  );
+  animation: messiShimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes messiShimmer {
+  0%, 100% { transform: translateX(-30%) translateY(-30%); }
+  50% { transform: translateX(30%) translateY(30%); }
+}
+
+.messi-card-title {
+  color: #ffd700;
+  font-family: 'Georgia', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 6px;
+  text-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    2px 2px 0 rgba(0,0,0,0.9);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.messi-icon-container {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== NUMBER 10 ===== */
+.messi-number-10 {
+  position: relative;
+  display: flex;
+  gap: 3px;
+  animation: messiNumberFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes messiNumberFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.messi-digit {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  background: linear-gradient(180deg,
+    #ffd700 0%,
+    #ffb700 30%,
+    #daa520 60%,
+    #b8860b 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+/* ===== GOAT CROWN ===== */
+.messi-crown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 18px;
+  z-index: 10;
+}
+
+.messi-crown-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 6px;
+  background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+  border-radius: 2px;
+}
+
+.messi-crown-point {
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 12px solid #ffd700;
+}
+
+.messi-crown-point:nth-child(1) { left: 3px; }
+.messi-crown-point:nth-child(2) { left: 50%; transform: translateX(-50%); border-bottom-color: #ffea00; }
+.messi-crown-point:nth-child(3) { right: 3px; }
+
+.messi-crown-gem {
+  position: absolute;
+  bottom: 7px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+}
+
+.messi-crown-gem:nth-child(4) { left: 5px; background: #dc2626; }
+.messi-crown-gem:nth-child(5) { left: 50%; transform: translateX(-50%); background: #2563eb; }
+.messi-crown-gem:nth-child(6) { right: 5px; background: #dc2626; }
+
+/* ===== BALLON D'OR ===== */
+.messi-ballon {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 35% 35%,
+    #ffd700 0%,
+    #daa520 40%,
+    #b8860b 70%,
+    #8b6914 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px rgba(255, 215, 0, 0.6),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.4);
+  animation: messiBallonSpin 8s linear infinite;
+}
+
+@keyframes messiBallonSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.messi-ballon::before {
+  content: '8';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Georgia', serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(139, 105, 20, 0.6);
+}
+
+/* ===== ARGENTINA FLAG ===== */
+.messi-arg-flag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 20px;
+  height: 12px;
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0.6;
+  box-shadow: 0 0 8px rgba(117, 170, 219, 0.5);
+}
+
+.messi-arg-stripe {
+  height: 33.33%;
+}
+
+.messi-arg-stripe:nth-child(1) { background: #75aadb; }
+.messi-arg-stripe:nth-child(2) { background: #fff; position: relative; }
+.messi-arg-stripe:nth-child(3) { background: #75aadb; }
+
+.messi-arg-sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: #f6b40e;
+  border-radius: 50%;
+}
+
+/* ===== WORLD CUP MINI ===== */
+.messi-wc-mini {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  width: 14px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.messi-wc-cup {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 8px;
+  background: linear-gradient(180deg, #ffd700, #b8860b);
+  border-radius: 0 0 50% 50%;
+}
+
+.messi-wc-globe {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffd700, #b8860b);
+  border-radius: 50%;
+}
+
+.messi-wc-stem {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 5px;
+  background: #b8860b;
+}
+
+/* ===== MAGIC SPARKLES ===== */
+.messi-sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.messi-sparkle {
+  position: absolute;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: messiSparkleGlow 2s ease-in-out infinite;
+}
+
+.messi-sparkle:nth-child(1) { top: 25px; left: 35px; width: 4px; height: 4px; }
+.messi-sparkle:nth-child(2) { top: 30px; right: 32px; width: 3px; height: 3px; animation-delay: 0.4s; }
+.messi-sparkle:nth-child(3) { top: 50px; left: 25px; width: 3px; height: 3px; animation-delay: 0.8s; }
+.messi-sparkle:nth-child(4) { top: 55px; right: 38px; width: 2px; height: 2px; animation-delay: 1.2s; }
+.messi-sparkle:nth-child(5) { bottom: 45px; left: 45px; width: 2px; height: 2px; animation-delay: 1.6s; }
+
+@keyframes messiSparkleGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ===== GOAT TEXT ===== */
+.messi-goat-text {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  font-family: 'Georgia', serif;
+  font-size: 6px;
+  font-weight: bold;
+  color: rgba(255, 215, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+/* ===== CAREER DOTS ===== */
+.messi-career-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.messi-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: messiDotPulse 2.5s ease-in-out infinite;
+}
+
+/* Barcelona */ .messi-dot:nth-child(1) { background: linear-gradient(135deg, #a50044, #004d98); box-shadow: 0 0 5px #a50044; }
+/* Argentina */ .messi-dot:nth-child(2) { background: #75aadb; box-shadow: 0 0 5px #75aadb; animation-delay: 0.1s; }
+/* PSG */ .messi-dot:nth-child(3) { background: linear-gradient(135deg, #004170, #da291c); box-shadow: 0 0 5px #004170; animation-delay: 0.2s; }
+/* Inter Miami */ .messi-dot:nth-child(4) { background: linear-gradient(135deg, #f5b5c8, #231f20); box-shadow: 0 0 5px #f5b5c8; animation-delay: 0.3s; }
+/* World Cup */ .messi-dot:nth-child(5) { background: #ffd700; box-shadow: 0 0 5px #ffd700; animation-delay: 0.4s; }
+/* Ballon d'Or */ .messi-dot:nth-child(6) { background: #daa520; box-shadow: 0 0 5px #daa520; animation-delay: 0.5s; }
+
+@keyframes messiDotPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
