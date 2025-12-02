@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logos Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(218, 41, 28, 0.15) 0%, 
+        rgba(20, 10, 10, 0.95) 40%,
+        rgba(10, 5, 5, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 199, 44, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(255, 199, 44, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Golden glow effect */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 40%, rgba(255, 199, 44, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 80%, rgba(218, 41, 28, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .card-title {
+      color: #ffc72c;
+      font-family: 'Arial Black', 'Impact', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 900;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 15px rgba(255, 199, 44, 0.7),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== GOLDEN ARCHES (M) ===== */
+    .golden-arches {
+      position: relative;
+      width: 60px;
+      height: 55px;
+      animation: archesFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 5px 20px rgba(255, 199, 44, 0.5));
+    }
+
+    @keyframes archesFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* Left arch */
+    .arch {
+      position: absolute;
+      bottom: 0;
+      width: 22px;
+      height: 50px;
+      border-radius: 50px 50px 0 0;
+      background: linear-gradient(180deg, 
+        #ffc72c 0%, 
+        #ffb700 30%,
+        #f5a623 60%,
+        #e09422 100%
+      );
+      box-shadow: 
+        0 0 20px rgba(255, 199, 44, 0.6),
+        inset -3px 0 8px rgba(0, 0, 0, 0.2),
+        inset 3px 0 8px rgba(255, 255, 255, 0.3);
+    }
+
+    .arch.left {
+      left: 0;
+      transform: skewX(-8deg);
+    }
+
+    .arch.right {
+      right: 0;
+      transform: skewX(8deg);
+    }
+
+    /* Arch shine */
+    .arch-shine {
+      position: absolute;
+      top: 8px;
+      left: 4px;
+      width: 6px;
+      height: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, transparent 100%);
+      border-radius: 3px;
+      transform: rotate(-5deg);
+    }
+
+    /* Center connection */
+    .arch-connect {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 8px;
+      background: linear-gradient(90deg, #e09422, #ffc72c, #e09422);
+      border-radius: 0 0 10px 10px;
+    }
+
+    /* ===== FLOATING BRAND ICONS ===== */
+    .brand-icons {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Apple-like shape */
+    .apple-icon {
+      position: absolute;
+      top: 12px;
+      left: 10px;
+      width: 14px;
+      height: 16px;
+      background: linear-gradient(145deg, #a8a8a8, #666);
+      border-radius: 40% 40% 50% 50%;
+      opacity: 0.35;
+      animation: iconFloat 4s ease-in-out infinite;
+    }
+
+    .apple-icon::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      right: 2px;
+      width: 4px;
+      height: 5px;
+      background: #666;
+      border-radius: 0 50% 0 50%;
+      transform: rotate(30deg);
+    }
+
+    .apple-icon::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 3px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    /* Nike-like swoosh */
+    .swoosh {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      width: 18px;
+      height: 8px;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 0 0 0 80%;
+      transform: rotate(-10deg);
+      opacity: 0.4;
+      animation: iconFloat 4s ease-in-out infinite 0.5s;
+    }
+
+    /* Star (like Mercedes/brands) */
+    .brand-star {
+      position: absolute;
+      bottom: 35px;
+      left: 12px;
+      width: 12px;
+      height: 12px;
+      opacity: 0.3;
+      animation: iconFloat 4s ease-in-out infinite 1s;
+    }
+
+    .brand-star::before,
+    .brand-star::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 2px;
+      background: #c0c0c0;
+      transform: translate(-50%, -50%);
+    }
+
+    .brand-star::after {
+      transform: translate(-50%, -50%) rotate(60deg);
+    }
+
+    .brand-star span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 2px;
+      background: #c0c0c0;
+      transform: translate(-50%, -50%) rotate(-60deg);
+    }
+
+    /* Circle logo (like target/BMW) */
+    .circle-logo {
+      position: absolute;
+      bottom: 32px;
+      right: 12px;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(220, 20, 60, 0.5);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: iconFloat 4s ease-in-out infinite 1.5s;
+    }
+
+    .circle-logo::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: rgba(220, 20, 60, 0.5);
+      border-radius: 50%;
+    }
+
+    @keyframes iconFloat {
+      0%, 100% { opacity: 0.3; transform: translateY(0); }
+      50% { opacity: 0.5; transform: translateY(-3px); }
+    }
+
+    /* ===== SPARKLES ===== */
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ffc72c;
+      border-radius: 50%;
+      animation: sparkleGlow 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 28px; left: 38px; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 35px; right: 35px; animation-delay: 0.4s; }
+    .sparkle:nth-child(3) { top: 50px; left: 50px; animation-delay: 0.8s; width: 3px; height: 3px; }
+    .sparkle:nth-child(4) { top: 45px; right: 48px; animation-delay: 1.2s; width: 2px; height: 2px; }
+
+    @keyframes sparkleGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ===== TEXT ===== */
+    .tagline {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Arial', sans-serif;
+      font-size: 5px;
+      font-style: italic;
+      color: rgba(255, 199, 44, 0.6);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* ===== BRAND DOTS ===== */
+    .brand-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* McDonald's */ .dot:nth-child(1) { background: #ffc72c; box-shadow: 0 0 4px #ffc72c; }
+    /* Coca-Cola */ .dot:nth-child(2) { background: #f40009; box-shadow: 0 0 4px #f40009; animation-delay: 0.1s; }
+    /* Facebook */ .dot:nth-child(3) { background: #1877f2; box-shadow: 0 0 4px #1877f2; animation-delay: 0.2s; }
+    /* Starbucks */ .dot:nth-child(4) { background: #00704a; box-shadow: 0 0 4px #00704a; animation-delay: 0.3s; }
+    /* Apple */ .dot:nth-child(5) { background: #a2aaad; box-shadow: 0 0 4px #a2aaad; animation-delay: 0.4s; }
+    /* Nike */ .dot:nth-child(6) { background: #111111; box-shadow: 0 0 4px #333; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="tagline">I'm Lovin' It</div>
+
+    <!-- Floating brand icons -->
+    <div class="brand-icons">
+      <div class="apple-icon"></div>
+      <div class="swoosh"></div>
+      <div class="brand-star"><span></span></div>
+      <div class="circle-logo"></div>
+    </div>
+
+    <!-- Sparkles -->
+    <div class="sparkles">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- Brand dots -->
+    <div class="brand-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Golden Arches -->
+      <div class="golden-arches">
+        <div class="arch left">
+          <div class="arch-shine"></div>
+        </div>
+        <div class="arch right">
+          <div class="arch-shine"></div>
+        </div>
+        <div class="arch-connect"></div>
+      </div>
+    </div>
+
+    <div class="card-title">LOGOS</div>
+  </div>
+</body>
+</html>
+

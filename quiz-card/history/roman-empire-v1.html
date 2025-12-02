@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roman Empire Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(139, 28, 28, 0.15) 0%, 
+        rgba(20, 15, 15, 0.95) 40%,
+        rgba(10, 8, 8, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(212, 175, 55, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Marble dust effect */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .card-title {
+      color: #d4af37;
+      font-family: 'Times New Roman', serif;
+      font-size: 0.5rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 10px rgba(212, 175, 55, 0.6),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== SPQR EAGLE ===== */
+    .eagle {
+      position: relative;
+      width: 50px;
+      height: 55px;
+      animation: eagleFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
+    }
+
+    @keyframes eagleFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    /* Eagle head */
+    .eagle-head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(145deg, #d4af37, #b8960c);
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .eagle-beak {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 8px solid #c9a227;
+    }
+
+    .eagle-eye {
+      position: absolute;
+      top: 4px;
+      width: 2px;
+      height: 2px;
+      background: #1a1a1a;
+      border-radius: 50%;
+    }
+
+    .eagle-eye.left { left: 3px; }
+    .eagle-eye.right { right: 3px; }
+
+    /* Eagle body */
+    .eagle-body {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 25px;
+      background: linear-gradient(180deg, #d4af37, #b8960c, #8b6914);
+      border-radius: 8px 8px 30% 30%;
+      box-shadow: inset 0 5px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Eagle wings */
+    .eagle-wing {
+      position: absolute;
+      top: 15px;
+      width: 22px;
+      height: 30px;
+      background: linear-gradient(180deg, #d4af37, #c9a227, #a67c00);
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .eagle-wing.left {
+      left: 0;
+      border-radius: 80% 0 0 50%;
+      transform: rotate(-15deg);
+      clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+    }
+
+    .eagle-wing.right {
+      right: 0;
+      border-radius: 0 80% 50% 0;
+      transform: rotate(15deg);
+      clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    }
+
+    /* Wing feathers */
+    .feather {
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      background: #8b6914;
+    }
+
+    .eagle-wing.left .feather:nth-child(1) { left: 0; width: 20px; bottom: 5px; }
+    .eagle-wing.left .feather:nth-child(2) { left: 2px; width: 18px; bottom: 10px; }
+    .eagle-wing.left .feather:nth-child(3) { left: 4px; width: 15px; bottom: 15px; }
+
+    .eagle-wing.right .feather:nth-child(1) { right: 0; width: 20px; bottom: 5px; }
+    .eagle-wing.right .feather:nth-child(2) { right: 2px; width: 18px; bottom: 10px; }
+    .eagle-wing.right .feather:nth-child(3) { right: 4px; width: 15px; bottom: 15px; }
+
+    /* Eagle talons */
+    .eagle-talons {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 8px;
+    }
+
+    .talon {
+      position: absolute;
+      bottom: 0;
+      width: 3px;
+      height: 6px;
+      background: linear-gradient(180deg, #c9a227, #8b6914);
+      border-radius: 0 0 50% 50%;
+    }
+
+    .talon:nth-child(1) { left: 1px; }
+    .talon:nth-child(2) { left: 5px; height: 7px; }
+    .talon:nth-child(3) { right: 5px; height: 7px; }
+    .talon:nth-child(4) { right: 1px; }
+
+    /* ===== LAUREL WREATH ===== */
+    .laurel {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 35px;
+      opacity: 0.4;
+    }
+
+    .laurel-branch {
+      position: absolute;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #228b22;
+      border-bottom: none;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .laurel-branch.left {
+      left: 5px;
+      transform: rotate(-20deg);
+    }
+
+    .laurel-branch.right {
+      right: 5px;
+      transform: rotate(20deg);
+    }
+
+    /* ===== ROMAN COLUMNS ===== */
+    .columns {
+      position: absolute;
+      bottom: 2px;
+      left: 8px;
+      display: flex;
+      gap: 4px;
+      opacity: 0.3;
+    }
+
+    .column {
+      width: 8px;
+      height: 22px;
+    }
+
+    .column-top {
+      width: 10px;
+      height: 4px;
+      background: linear-gradient(180deg, #d4af37, #a67c00);
+      border-radius: 1px;
+      margin-left: -1px;
+    }
+
+    .column-shaft {
+      width: 8px;
+      height: 14px;
+      background: linear-gradient(90deg, #e8d9b5, #d4c5a0, #c9b896, #d4c5a0, #e8d9b5);
+    }
+
+    .column-base {
+      width: 10px;
+      height: 4px;
+      background: linear-gradient(180deg, #a67c00, #d4af37);
+      border-radius: 1px;
+      margin-left: -1px;
+    }
+
+    /* ===== GLADIUS (SWORD) ===== */
+    .gladius {
+      position: absolute;
+      bottom: 5px;
+      right: 10px;
+      width: 10px;
+      height: 35px;
+      transform: rotate(15deg);
+      opacity: 0.5;
+    }
+
+    .gladius-blade {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 22px;
+      background: linear-gradient(90deg, #a8a8a8, #e8e8e8, #a8a8a8);
+      clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+    }
+
+    .gladius-guard {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 3px;
+      background: #d4af37;
+      border-radius: 1px;
+    }
+
+    .gladius-handle {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 10px;
+      background: linear-gradient(90deg, #8b4513, #a0522d, #8b4513);
+      border-radius: 1px;
+    }
+
+    .gladius-pommel {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 4px;
+      background: #d4af37;
+      border-radius: 50%;
+    }
+
+    /* ===== SPQR TEXT ===== */
+    .spqr {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-family: 'Times New Roman', serif;
+      font-size: 8px;
+      font-weight: bold;
+      color: rgba(212, 175, 55, 0.7);
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    /* ===== DATE BANNER ===== */
+    .date-banner {
+      position: absolute;
+      top: 8px;
+      right: 6px;
+      font-family: 'Times New Roman', serif;
+      font-size: 5px;
+      color: rgba(212, 175, 55, 0.6);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    /* ===== FACTION DOTS ===== */
+    .faction-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Legions */ .dot:nth-child(1) { background: #8b0000; box-shadow: 0 0 4px #8b0000; }
+    /* Senate */ .dot:nth-child(2) { background: #d4af37; box-shadow: 0 0 4px #d4af37; animation-delay: 0.1s; }
+    /* Praetorian */ .dot:nth-child(3) { background: #4b0082; box-shadow: 0 0 4px #4b0082; animation-delay: 0.2s; }
+    /* Cavalry */ .dot:nth-child(4) { background: #8b4513; box-shadow: 0 0 4px #8b4513; animation-delay: 0.3s; }
+    /* Navy */ .dot:nth-child(5) { background: #1e3a5f; box-shadow: 0 0 4px #1e3a5f; animation-delay: 0.4s; }
+    /* Auxiliaries */ .dot:nth-child(6) { background: #228b22; box-shadow: 0 0 4px #228b22; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="spqr">SPQR</div>
+    <div class="date-banner">27 BC - 476 AD</div>
+
+    <!-- Laurel wreath -->
+    <div class="laurel">
+      <div class="laurel-branch left"></div>
+      <div class="laurel-branch right"></div>
+    </div>
+
+    <!-- Roman columns -->
+    <div class="columns">
+      <div class="column">
+        <div class="column-top"></div>
+        <div class="column-shaft"></div>
+        <div class="column-base"></div>
+      </div>
+      <div class="column">
+        <div class="column-top"></div>
+        <div class="column-shaft"></div>
+        <div class="column-base"></div>
+      </div>
+    </div>
+
+    <!-- Gladius -->
+    <div class="gladius">
+      <div class="gladius-blade"></div>
+      <div class="gladius-guard"></div>
+      <div class="gladius-handle"></div>
+      <div class="gladius-pommel"></div>
+    </div>
+
+    <!-- Faction dots -->
+    <div class="faction-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- SPQR Eagle -->
+      <div class="eagle">
+        <div class="eagle-wing left">
+          <div class="feather"></div>
+          <div class="feather"></div>
+          <div class="feather"></div>
+        </div>
+        <div class="eagle-wing right">
+          <div class="feather"></div>
+          <div class="feather"></div>
+          <div class="feather"></div>
+        </div>
+        <div class="eagle-body"></div>
+        <div class="eagle-head">
+          <div class="eagle-eye left"></div>
+          <div class="eagle-eye right"></div>
+          <div class="eagle-beak"></div>
+        </div>
+        <div class="eagle-talons">
+          <div class="talon"></div>
+          <div class="talon"></div>
+          <div class="talon"></div>
+          <div class="talon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title">Roman Empire</div>
+  </div>
+</body>
+</html>
+

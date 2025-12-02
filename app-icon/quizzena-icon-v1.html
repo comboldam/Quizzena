@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzena App Icon - Option 1</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+      padding: 40px;
+    }
+
+    h1 {
+      color: #ffd700;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 40px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .size-label {
+      color: #888;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== APP ICON ===== */
+    .app-icon {
+      border-radius: 22%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 215, 0, 0.15);
+    }
+
+    /* Size variations */
+    .icon-1024 { width: 200px; height: 200px; }
+    .icon-512 { width: 120px; height: 120px; }
+    .icon-256 { width: 80px; height: 80px; }
+    .icon-128 { width: 50px; height: 50px; }
+    .icon-64 { width: 32px; height: 32px; }
+
+    /* Background gradient */
+    .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, 
+        #1a1a2e 0%,
+        #0f0f23 40%,
+        #0a0a15 100%
+      );
+    }
+
+    /* Subtle pattern */
+    .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 30% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(147, 51, 234, 0.06) 0%, transparent 40%);
+    }
+
+    /* Shimmer effect */
+    .icon-bg::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 60%
+      );
+      animation: iconShimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes iconShimmer {
+      0%, 100% { transform: translateX(-30%) translateY(-30%); }
+      50% { transform: translateX(30%) translateY(30%); }
+    }
+
+    /* ===== THE "Q" QUESTION MARK ===== */
+    .q-mark {
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 4px 20px rgba(255, 215, 0, 0.5));
+    }
+
+    /* Scale for different sizes */
+    .icon-1024 .q-mark { transform: scale(1); }
+    .icon-512 .q-mark { transform: scale(0.6); }
+    .icon-256 .q-mark { transform: scale(0.4); }
+    .icon-128 .q-mark { transform: scale(0.25); }
+    .icon-64 .q-mark { transform: scale(0.16); }
+
+    /* Q Circle */
+    .q-circle {
+      width: 100px;
+      height: 100px;
+      border: 16px solid transparent;
+      border-radius: 50%;
+      position: relative;
+      background: linear-gradient(145deg, #1a1a2e, #0a0a15) padding-box,
+                  linear-gradient(145deg, #ffd700, #f59e0b, #d97706, #ffd700) border-box;
+      box-shadow: 
+        0 0 30px rgba(255, 215, 0, 0.4),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+
+    /* Inner glow */
+    .q-circle::before {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 16px solid transparent;
+      background: linear-gradient(145deg, rgba(255,215,0,0.3), transparent) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+    }
+
+    /* Q Tail that becomes question mark */
+    .q-tail {
+      position: absolute;
+      bottom: -5px;
+      right: -10px;
+      width: 45px;
+      height: 60px;
+    }
+
+    /* Diagonal part of tail */
+    .tail-diagonal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 50px;
+      background: linear-gradient(180deg, #ffd700, #f59e0b, #d97706);
+      border-radius: 8px;
+      transform: rotate(45deg);
+      transform-origin: top left;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Curve into question mark */
+    .tail-curve {
+      position: absolute;
+      bottom: 5px;
+      right: 0;
+      width: 20px;
+      height: 25px;
+      border: 12px solid transparent;
+      border-top: 12px solid #d97706;
+      border-right: 12px solid #d97706;
+      border-radius: 0 50% 0 0;
+      transform: rotate(15deg);
+    }
+
+    /* Question mark dot */
+    .q-dot {
+      position: absolute;
+      bottom: -25px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 35% 35%, #ffd700, #f59e0b, #d97706);
+      border-radius: 50%;
+      box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.6),
+        0 0 40px rgba(255, 215, 0, 0.3);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+      50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+    }
+
+    /* Sparkles */
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 25%; right: 15%; animation-delay: 0.5s; width: 4px; height: 4px; }
+    .sparkle:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 1s; width: 5px; height: 5px; }
+    .sparkle:nth-child(4) { top: 40%; right: 25%; animation-delay: 1.5s; width: 3px; height: 3px; }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* Hide sparkles on small sizes */
+    .icon-128 .sparkles,
+    .icon-64 .sparkles { display: none; }
+
+    /* ===== ALTERNATE DARK VERSION ===== */
+    .alt-section {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .alt-section h2 {
+      color: #888;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .icon-light .icon-bg {
+      background: linear-gradient(145deg, 
+        #f8fafc 0%,
+        #e2e8f0 40%,
+        #cbd5e1 100%
+      );
+    }
+
+    .icon-light .icon-bg::before {
+      background: 
+        radial-gradient(ellipse at 30% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 40%);
+    }
+
+    .icon-light .q-circle {
+      background: linear-gradient(145deg, #f1f5f9, #e2e8f0) padding-box,
+                  linear-gradient(145deg, #ffd700, #f59e0b, #d97706, #ffd700) border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Quizzena App Icon - "Q as Question Mark"</h1>
+
+  <div class="sizes">
+    <!-- 1024px representation -->
+    <div class="icon-wrapper">
+      <div class="app-icon icon-1024">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="q-mark">
+          <div class="q-circle"></div>
+          <div class="q-tail">
+            <div class="tail-diagonal"></div>
+            <div class="tail-curve"></div>
+          </div>
+          <div class="q-dot"></div>
+        </div>
+      </div>
+      <div class="size-label">Large (App Store)</div>
+    </div>
+
+    <!-- 512px -->
+    <div class="icon-wrapper">
+      <div class="app-icon icon-512">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="q-mark">
+          <div class="q-circle"></div>
+          <div class="q-tail">
+            <div class="tail-diagonal"></div>
+            <div class="tail-curve"></div>
+          </div>
+          <div class="q-dot"></div>
+        </div>
+      </div>
+      <div class="size-label">Medium</div>
+    </div>
+
+    <!-- 256px -->
+    <div class="icon-wrapper">
+      <div class="app-icon icon-256">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="q-mark">
+          <div class="q-circle"></div>
+          <div class="q-tail">
+            <div class="tail-diagonal"></div>
+            <div class="tail-curve"></div>
+          </div>
+          <div class="q-dot"></div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+
+    <!-- 128px -->
+    <div class="icon-wrapper">
+      <div class="app-icon icon-128">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="q-mark">
+          <div class="q-circle"></div>
+          <div class="q-tail">
+            <div class="tail-diagonal"></div>
+            <div class="tail-curve"></div>
+          </div>
+          <div class="q-dot"></div>
+        </div>
+      </div>
+      <div class="size-label">Tiny</div>
+    </div>
+
+    <!-- 64px -->
+    <div class="icon-wrapper">
+      <div class="app-icon icon-64">
+        <div class="icon-bg"></div>
+        <div class="q-mark">
+          <div class="q-circle"></div>
+          <div class="q-tail">
+            <div class="tail-diagonal"></div>
+            <div class="tail-curve"></div>
+          </div>
+          <div class="q-dot"></div>
+        </div>
+      </div>
+      <div class="size-label">Icon</div>
+    </div>
+  </div>
+
+  <!-- Light background version -->
+  <div class="alt-section">
+    <h2>Light Background Version</h2>
+    <div class="sizes">
+      <div class="icon-wrapper">
+        <div class="app-icon icon-512 icon-light">
+          <div class="icon-bg"></div>
+          <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+          </div>
+          <div class="q-mark">
+            <div class="q-circle"></div>
+            <div class="q-tail">
+              <div class="tail-diagonal"></div>
+              <div class="tail-curve"></div>
+            </div>
+            <div class="q-dot"></div>
+          </div>
+        </div>
+        <div class="size-label">Light Mode</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzena App Icon V3 - Creative Designs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0f0f23 100%);
+      padding: 40px;
+    }
+
+    h1 {
+      color: #ffd700;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .version-label {
+      color: #888;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      margin: 30px 0 15px;
+      border-top: 1px solid #333;
+      padding-top: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .sizes {
+      display: flex;
+      gap: 30px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .size-label {
+      color: #666;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 11px;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== BASE ICON ===== */
+    .app-icon {
+      width: 180px;
+      height: 180px;
+      border-radius: 22%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(255, 215, 0, 0.2);
+    }
+
+    .app-icon.small { width: 100px; height: 100px; }
+    .app-icon.tiny { width: 60px; height: 60px; }
+
+    /* ============================================
+       OPTION 1: Q WITH CROWN & LIGHTNING
+    ============================================ */
+    .icon-crown .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1a0a2e 0%, #0f0523 50%, #0a0015 100%);
+    }
+
+    .icon-crown .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 30%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 40%);
+    }
+
+    .crown-q {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon.small .crown-q { transform: scale(0.55); }
+    .app-icon.tiny .crown-q { transform: scale(0.33); }
+
+    /* The Q ring */
+    .q-ring {
+      width: 80px;
+      height: 80px;
+      border: 14px solid transparent;
+      border-radius: 50%;
+      position: relative;
+      background: linear-gradient(#0a0015, #0a0015) padding-box,
+                  linear-gradient(145deg, #ffd700, #f59e0b, #d97706) border-box;
+      box-shadow: 
+        0 0 25px rgba(255, 215, 0, 0.4),
+        inset 0 0 15px rgba(147, 51, 234, 0.3);
+    }
+
+    /* Crown on top */
+    .crown {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+    }
+
+    .crown-base {
+      width: 50px;
+      height: 18px;
+      background: linear-gradient(180deg, #ffd700, #d97706);
+      border-radius: 0 0 8px 8px;
+      position: relative;
+    }
+
+    .crown-point {
+      position: absolute;
+      bottom: 100%;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 14px solid #ffd700;
+    }
+
+    .crown-point:nth-child(1) { left: 2px; }
+    .crown-point:nth-child(2) { left: 50%; transform: translateX(-50%); border-bottom-color: #ffed4a; }
+    .crown-point:nth-child(3) { right: 2px; }
+
+    .crown-gem {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #e879f9, #a855f7);
+      border-radius: 50%;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px #a855f7;
+    }
+
+    /* Q tail with lightning */
+    .q-tail-lightning {
+      position: absolute;
+      bottom: -8px;
+      right: -15px;
+      width: 35px;
+      height: 55px;
+    }
+
+    .lightning-bolt {
+      position: absolute;
+      width: 20px;
+      height: 45px;
+      background: linear-gradient(180deg, #ffd700, #f59e0b);
+      clip-path: polygon(50% 0%, 100% 35%, 60% 35%, 80% 100%, 0% 50%, 40% 50%, 20% 0%);
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8));
+      animation: lightningFlash 2s ease-in-out infinite;
+    }
+
+    @keyframes lightningFlash {
+      0%, 90%, 100% { opacity: 1; }
+      95% { opacity: 0.5; }
+    }
+
+    /* Question dot */
+    .q-dot-crown {
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle at 35% 35%, #ffd700, #d97706);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Sparkles */
+    .sparkles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 15%; left: 12%; width: 5px; height: 5px; }
+    .sparkle:nth-child(2) { top: 22%; right: 15%; width: 4px; height: 4px; animation-delay: 0.4s; }
+    .sparkle:nth-child(3) { bottom: 20%; left: 15%; width: 4px; height: 4px; animation-delay: 0.8s; }
+    .sparkle:nth-child(4) { bottom: 28%; right: 12%; width: 3px; height: 3px; animation-delay: 1.2s; }
+    .sparkle:nth-child(5) { top: 45%; left: 8%; width: 3px; height: 3px; animation-delay: 1.6s; }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .app-icon.tiny .sparkles { display: none; }
+
+    /* ============================================
+       OPTION 2: Q WITH BRAIN INSIDE
+    ============================================ */
+    .icon-brain .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #0a1a2e 0%, #051525 50%, #020a10 100%);
+    }
+
+    .icon-brain .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 40%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 40%);
+    }
+
+    .brain-q {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon.small .brain-q { transform: scale(0.55); }
+    .app-icon.tiny .brain-q { transform: scale(0.33); }
+
+    /* Q ring for brain */
+    .q-ring-brain {
+      width: 90px;
+      height: 90px;
+      border: 12px solid transparent;
+      border-radius: 50%;
+      position: relative;
+      background: linear-gradient(#051525, #051525) padding-box,
+                  linear-gradient(145deg, #38bdf8, #0ea5e9, #0284c7) border-box;
+      box-shadow: 
+        0 0 25px rgba(56, 189, 248, 0.4),
+        inset 0 0 20px rgba(56, 189, 248, 0.1);
+    }
+
+    /* Brain inside */
+    .brain {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45px;
+      height: 40px;
+    }
+
+    .brain-half {
+      position: absolute;
+      width: 22px;
+      height: 35px;
+      border-radius: 50% 50% 45% 45%;
+      background: linear-gradient(145deg, #f472b6, #ec4899, #db2777);
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .brain-half.left {
+      left: 0;
+      border-right: 2px solid #9f1239;
+    }
+
+    .brain-half.right {
+      right: 0;
+      border-left: 2px solid #9f1239;
+    }
+
+    /* Brain folds */
+    .brain-fold {
+      position: absolute;
+      background: rgba(0,0,0,0.2);
+      border-radius: 50%;
+    }
+
+    .brain-fold:nth-child(1) { width: 12px; height: 4px; top: 8px; left: 5px; }
+    .brain-fold:nth-child(2) { width: 10px; height: 3px; top: 16px; left: 3px; }
+    .brain-fold:nth-child(3) { width: 8px; height: 3px; top: 24px; left: 6px; }
+
+    .brain-half.right .brain-fold:nth-child(1) { left: auto; right: 5px; }
+    .brain-half.right .brain-fold:nth-child(2) { left: auto; right: 3px; }
+    .brain-half.right .brain-fold:nth-child(3) { left: auto; right: 6px; }
+
+    /* Neural sparks */
+    .neural-spark {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fbbf24;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #fbbf24;
+      animation: neuralFire 1.5s ease-in-out infinite;
+    }
+
+    .neural-spark:nth-child(1) { top: 5px; left: 50%; animation-delay: 0s; }
+    .neural-spark:nth-child(2) { top: 50%; right: -5px; animation-delay: 0.3s; }
+    .neural-spark:nth-child(3) { bottom: 10px; left: 50%; animation-delay: 0.6s; }
+    .neural-spark:nth-child(4) { top: 50%; left: -5px; animation-delay: 0.9s; }
+
+    @keyframes neuralFire {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* Q tail */
+    .q-tail-brain {
+      position: absolute;
+      bottom: -5px;
+      right: -12px;
+      width: 14px;
+      height: 40px;
+      background: linear-gradient(180deg, #0ea5e9, #0284c7, #0369a1);
+      border-radius: 7px;
+      transform: rotate(45deg);
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));
+    }
+
+    .q-dot-brain {
+      position: absolute;
+      bottom: -28px;
+      right: 5px;
+      width: 14px;
+      height: 14px;
+      background: radial-gradient(circle at 35% 35%, #38bdf8, #0284c7);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+
+    /* ============================================
+       OPTION 3: Q WITH ORBITING ELEMENTS
+    ============================================ */
+    .icon-orbit .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1a1a2e 0%, #0f0f23 50%, #050510 100%);
+    }
+
+    .icon-orbit .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+    }
+
+    .orbit-q {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon.small .orbit-q { transform: scale(0.55); }
+    .app-icon.tiny .orbit-q { transform: scale(0.33); }
+
+    /* Central Q */
+    .central-q {
+      font-family: 'Georgia', serif;
+      font-size: 70px;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffd700 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+      position: relative;
+      line-height: 1;
+    }
+
+    /* Orbit ring */
+    .orbit-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotateX(70deg);
+      animation: orbitSpin 6s linear infinite;
+    }
+
+    @keyframes orbitSpin {
+      from { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+      to { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+    }
+
+    /* Orbiting icons */
+    .orbit-icon {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      animation: orbitFloat 6s linear infinite;
+    }
+
+    .orbit-icon.globe {
+      top: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(145deg, #22c55e, #16a34a);
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .orbit-icon.star {
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(145deg, #fbbf24, #f59e0b);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      box-shadow: 0 0 8px #fbbf24;
+    }
+
+    .orbit-icon.book {
+      top: 50%;
+      left: -9px;
+      transform: translateY(-50%);
+      background: linear-gradient(145deg, #a855f7, #7c3aed);
+      border-radius: 2px;
+      box-shadow: 0 0 8px #a855f7;
+    }
+
+    .orbit-icon.trophy {
+      top: 50%;
+      right: -9px;
+      transform: translateY(-50%);
+      background: linear-gradient(145deg, #ffd700, #d97706);
+      clip-path: polygon(20% 0%, 80% 0%, 100% 30%, 70% 100%, 30% 100%, 0% 30%);
+      box-shadow: 0 0 8px #ffd700;
+    }
+
+    @keyframes orbitFloat {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.3); }
+    }
+
+    /* ============================================
+       OPTION 4: GLOWING GEM Q
+    ============================================ */
+    .icon-gem .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #0f172a 0%, #020617 100%);
+    }
+
+    .icon-gem .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        conic-gradient(from 0deg at 50% 50%, 
+          rgba(168, 85, 247, 0.1) 0deg,
+          rgba(236, 72, 153, 0.1) 90deg,
+          rgba(251, 191, 36, 0.1) 180deg,
+          rgba(34, 197, 94, 0.1) 270deg,
+          rgba(168, 85, 247, 0.1) 360deg
+        );
+      animation: gemRotate 8s linear infinite;
+    }
+
+    @keyframes gemRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .gem-q {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon.small .gem-q { transform: scale(0.55); }
+    .app-icon.tiny .gem-q { transform: scale(0.33); }
+
+    /* Diamond Q */
+    .diamond-q {
+      width: 70px;
+      height: 85px;
+      position: relative;
+    }
+
+    /* Top of diamond */
+    .diamond-top {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 25px;
+      background: linear-gradient(180deg, #c084fc, #a855f7);
+      clip-path: polygon(15% 100%, 0% 0%, 100% 0%, 85% 100%);
+    }
+
+    /* Diamond body */
+    .diamond-body {
+      position: absolute;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 50px;
+      background: linear-gradient(180deg, #a855f7, #7c3aed, #6d28d9);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+    }
+
+    /* Diamond shine */
+    .diamond-shine {
+      position: absolute;
+      top: 28px;
+      left: 55%;
+      width: 15px;
+      height: 25px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), transparent);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+      animation: gemShine 3s ease-in-out infinite;
+    }
+
+    @keyframes gemShine {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* Q letter inside */
+    .gem-letter {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      font-family: 'Georgia', serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    /* Gem sparkles */
+    .gem-sparkle {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: gemSparkle 2s ease-in-out infinite;
+    }
+
+    .gem-sparkle:nth-child(1) { top: 5px; left: 20px; width: 4px; height: 4px; }
+    .gem-sparkle:nth-child(2) { top: 10px; right: 15px; width: 3px; height: 3px; animation-delay: 0.5s; }
+    .gem-sparkle:nth-child(3) { top: 35px; left: 10px; width: 3px; height: 3px; animation-delay: 1s; }
+
+    @keyframes gemSparkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ============================================
+       OPTION 5: FIRE Q
+    ============================================ */
+    .icon-fire .icon-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #1c1917 0%, #0c0a09 100%);
+    }
+
+    .icon-fire .icon-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 70%, rgba(251, 146, 60, 0.15) 0%, transparent 50%);
+    }
+
+    .fire-q {
+      position: relative;
+      z-index: 2;
+    }
+
+    .app-icon.small .fire-q { transform: scale(0.55); }
+    .app-icon.tiny .fire-q { transform: scale(0.33); }
+
+    /* Fire Q letter */
+    .fire-letter {
+      font-family: 'Georgia', serif;
+      font-size: 80px;
+      font-weight: 900;
+      background: linear-gradient(180deg, #fef3c7, #fcd34d, #f97316, #dc2626);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 20px rgba(251, 146, 60, 0.6));
+      position: relative;
+      line-height: 1;
+    }
+
+    /* Flames */
+    .flames {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 40px;
+    }
+
+    .flame {
+      position: absolute;
+      bottom: 0;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: flicker 0.5s ease-in-out infinite alternate;
+    }
+
+    .flame:nth-child(1) {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 35px;
+      background: linear-gradient(180deg, #fef3c7, #fcd34d, #f97316);
+    }
+
+    .flame:nth-child(2) {
+      left: 25%;
+      width: 14px;
+      height: 25px;
+      background: linear-gradient(180deg, #fcd34d, #f97316, #dc2626);
+      animation-delay: 0.1s;
+    }
+
+    .flame:nth-child(3) {
+      right: 25%;
+      width: 14px;
+      height: 25px;
+      background: linear-gradient(180deg, #fcd34d, #f97316, #dc2626);
+      animation-delay: 0.2s;
+    }
+
+    .flame:nth-child(4) {
+      left: 10%;
+      width: 10px;
+      height: 18px;
+      background: linear-gradient(180deg, #f97316, #dc2626);
+      animation-delay: 0.15s;
+    }
+
+    .flame:nth-child(5) {
+      right: 10%;
+      width: 10px;
+      height: 18px;
+      background: linear-gradient(180deg, #f97316, #dc2626);
+      animation-delay: 0.25s;
+    }
+
+    @keyframes flicker {
+      0% { transform: scaleY(1) translateX(-50%); opacity: 1; }
+      100% { transform: scaleY(1.15) translateX(-50%); opacity: 0.9; }
+    }
+
+    .flame:not(:first-child) {
+      animation-name: flickerSide;
+    }
+
+    @keyframes flickerSide {
+      0% { transform: scaleY(1); opacity: 0.9; }
+      100% { transform: scaleY(1.2); opacity: 1; }
+    }
+
+    /* Embers */
+    .ember {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fcd34d;
+      border-radius: 50%;
+      animation: emberRise 2s ease-out infinite;
+    }
+
+    .ember:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .ember:nth-child(2) { left: 40%; animation-delay: 0.4s; }
+    .ember:nth-child(3) { left: 60%; animation-delay: 0.8s; }
+    .ember:nth-child(4) { left: 80%; animation-delay: 1.2s; }
+
+    @keyframes emberRise {
+      0% { bottom: 0; opacity: 1; transform: scale(1); }
+      100% { bottom: 60px; opacity: 0; transform: scale(0.3); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Quizzena App Icon V3 - Creative Designs</h1>
+
+  <!-- OPTION 1: Crown & Lightning -->
+  <p class="version-label">⚡ Option 1: Royal Q with Crown & Lightning</p>
+  <div class="sizes">
+    <div class="icon-wrapper">
+      <div class="app-icon icon-crown">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="crown-q">
+          <div class="crown">
+            <div class="crown-base">
+              <div class="crown-point"></div>
+              <div class="crown-point"></div>
+              <div class="crown-point"></div>
+              <div class="crown-gem"></div>
+            </div>
+          </div>
+          <div class="q-ring"></div>
+          <div class="q-tail-lightning">
+            <div class="lightning-bolt"></div>
+          </div>
+          <div class="q-dot-crown"></div>
+        </div>
+      </div>
+      <div class="size-label">King of Quizzes</div>
+    </div>
+    <div class="icon-wrapper">
+      <div class="app-icon icon-crown small">
+        <div class="icon-bg"></div>
+        <div class="crown-q">
+          <div class="crown">
+            <div class="crown-base">
+              <div class="crown-point"></div>
+              <div class="crown-point"></div>
+              <div class="crown-point"></div>
+              <div class="crown-gem"></div>
+            </div>
+          </div>
+          <div class="q-ring"></div>
+          <div class="q-tail-lightning">
+            <div class="lightning-bolt"></div>
+          </div>
+          <div class="q-dot-crown"></div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+  </div>
+
+  <!-- OPTION 2: Brain Q -->
+  <p class="version-label">🧠 Option 2: Q with Brain (Knowledge)</p>
+  <div class="sizes">
+    <div class="icon-wrapper">
+      <div class="app-icon icon-brain">
+        <div class="icon-bg"></div>
+        <div class="sparkles">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+        </div>
+        <div class="brain-q">
+          <div class="q-ring-brain">
+            <div class="brain">
+              <div class="brain-half left">
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+              </div>
+              <div class="brain-half right">
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+              </div>
+            </div>
+            <div class="neural-spark"></div>
+            <div class="neural-spark"></div>
+            <div class="neural-spark"></div>
+            <div class="neural-spark"></div>
+          </div>
+          <div class="q-tail-brain"></div>
+          <div class="q-dot-brain"></div>
+        </div>
+      </div>
+      <div class="size-label">Brain Power</div>
+    </div>
+    <div class="icon-wrapper">
+      <div class="app-icon icon-brain small">
+        <div class="icon-bg"></div>
+        <div class="brain-q">
+          <div class="q-ring-brain">
+            <div class="brain">
+              <div class="brain-half left">
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+              </div>
+              <div class="brain-half right">
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+                <div class="brain-fold"></div>
+              </div>
+            </div>
+          </div>
+          <div class="q-tail-brain"></div>
+          <div class="q-dot-brain"></div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+  </div>
+
+  <!-- OPTION 3: Orbit Q -->
+  <p class="version-label">🌍 Option 3: Q with Orbiting Elements</p>
+  <div class="sizes">
+    <div class="icon-wrapper">
+      <div class="app-icon icon-orbit">
+        <div class="icon-bg"></div>
+        <div class="orbit-q">
+          <div class="orbit-ring">
+            <div class="orbit-icon globe"></div>
+            <div class="orbit-icon star"></div>
+            <div class="orbit-icon book"></div>
+            <div class="orbit-icon trophy"></div>
+          </div>
+          <div class="central-q">Q</div>
+        </div>
+      </div>
+      <div class="size-label">Knowledge Universe</div>
+    </div>
+    <div class="icon-wrapper">
+      <div class="app-icon icon-orbit small">
+        <div class="icon-bg"></div>
+        <div class="orbit-q">
+          <div class="orbit-ring">
+            <div class="orbit-icon globe"></div>
+            <div class="orbit-icon star"></div>
+            <div class="orbit-icon book"></div>
+            <div class="orbit-icon trophy"></div>
+          </div>
+          <div class="central-q">Q</div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+  </div>
+
+  <!-- OPTION 4: Gem Q -->
+  <p class="version-label">💎 Option 4: Diamond/Gem Q</p>
+  <div class="sizes">
+    <div class="icon-wrapper">
+      <div class="app-icon icon-gem">
+        <div class="icon-bg"></div>
+        <div class="gem-q">
+          <div class="diamond-q">
+            <div class="diamond-top"></div>
+            <div class="diamond-body"></div>
+            <div class="diamond-shine"></div>
+            <div class="gem-letter">Q</div>
+            <div class="gem-sparkle"></div>
+            <div class="gem-sparkle"></div>
+            <div class="gem-sparkle"></div>
+          </div>
+        </div>
+      </div>
+      <div class="size-label">Precious Knowledge</div>
+    </div>
+    <div class="icon-wrapper">
+      <div class="app-icon icon-gem small">
+        <div class="icon-bg"></div>
+        <div class="gem-q">
+          <div class="diamond-q">
+            <div class="diamond-top"></div>
+            <div class="diamond-body"></div>
+            <div class="diamond-shine"></div>
+            <div class="gem-letter">Q</div>
+          </div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+  </div>
+
+  <!-- OPTION 5: Fire Q -->
+  <p class="version-label">🔥 Option 5: Fire Q (Hot Knowledge)</p>
+  <div class="sizes">
+    <div class="icon-wrapper">
+      <div class="app-icon icon-fire">
+        <div class="icon-bg"></div>
+        <div class="fire-q">
+          <div class="flames">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+            <div class="ember"></div>
+          </div>
+          <div class="fire-letter">Q</div>
+        </div>
+      </div>
+      <div class="size-label">Burning Passion</div>
+    </div>
+    <div class="icon-wrapper">
+      <div class="app-icon icon-fire small">
+        <div class="icon-bg"></div>
+        <div class="fire-q">
+          <div class="flames">
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+          </div>
+          <div class="fire-letter">Q</div>
+        </div>
+      </div>
+      <div class="size-label">Small</div>
+    </div>
+  </div>
+</body>
+</html>
+

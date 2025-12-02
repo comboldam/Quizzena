@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ancient Civilizations Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(139, 90, 43, 0.12) 0%, 
+        rgba(25, 18, 12, 0.95) 40%,
+        rgba(12, 8, 5, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(194, 154, 108, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(194, 154, 108, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ancient dust effect */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 30% 70%, rgba(194, 154, 108, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(139, 90, 43, 0.05) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .card-title {
+      color: #c9a66b;
+      font-family: 'Georgia', serif;
+      font-size: 0.35rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 10px rgba(201, 166, 107, 0.5),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== HOURGLASS/TIME PORTAL ===== */
+    .portal {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      animation: portalFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 5px 15px rgba(194, 154, 108, 0.4));
+    }
+
+    @keyframes portalFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-3px) rotate(2deg); }
+    }
+
+    /* Stone ring */
+    .portal-ring {
+      position: absolute;
+      inset: 0;
+      border: 6px solid;
+      border-color: #8b7355;
+      border-radius: 50%;
+      background: linear-gradient(145deg, 
+        rgba(139, 90, 43, 0.3) 0%, 
+        rgba(60, 40, 20, 0.8) 50%,
+        rgba(30, 20, 10, 0.9) 100%
+      );
+      box-shadow: 
+        0 0 20px rgba(194, 154, 108, 0.3),
+        inset 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Inner glow */
+    .portal-glow {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border-radius: 50%;
+      background: radial-gradient(circle, 
+        rgba(212, 175, 55, 0.4) 0%, 
+        rgba(139, 90, 43, 0.2) 50%,
+        transparent 70%
+      );
+      animation: portalPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes portalPulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Stone carvings on ring */
+    .carving {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #a67c00;
+      border-radius: 50%;
+    }
+
+    .carving:nth-child(1) { top: -2px; left: 50%; transform: translateX(-50%); }
+    .carving:nth-child(2) { bottom: -2px; left: 50%; transform: translateX(-50%); }
+    .carving:nth-child(3) { left: -2px; top: 50%; transform: translateY(-50%); }
+    .carving:nth-child(4) { right: -2px; top: 50%; transform: translateY(-50%); }
+
+    /* ===== PYRAMID (Egypt) ===== */
+    .pyramid {
+      position: absolute;
+      bottom: 2px;
+      left: 5px;
+      opacity: 0.4;
+    }
+
+    .pyramid-shape {
+      width: 0;
+      height: 0;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 22px solid #c9a227;
+    }
+
+    /* ===== GREEK COLUMN ===== */
+    .column {
+      position: absolute;
+      bottom: 2px;
+      right: 8px;
+      width: 10px;
+      height: 28px;
+      opacity: 0.35;
+    }
+
+    .column-capital {
+      position: absolute;
+      top: 0;
+      left: -2px;
+      width: 14px;
+      height: 5px;
+      background: linear-gradient(180deg, #e8d9b5, #c9b896);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .column-shaft {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 10px;
+      height: 18px;
+      background: linear-gradient(90deg, #d4c5a0, #e8d9b5, #c9b896);
+    }
+
+    /* Flutes */
+    .flute {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .flute:nth-child(1) { left: 2px; }
+    .flute:nth-child(2) { left: 5px; }
+    .flute:nth-child(3) { left: 8px; }
+
+    .column-base {
+      position: absolute;
+      bottom: 0;
+      left: -2px;
+      width: 14px;
+      height: 4px;
+      background: linear-gradient(180deg, #c9b896, #a08060);
+      border-radius: 0 0 2px 2px;
+    }
+
+    /* ===== MAYAN STEP PYRAMID ===== */
+    .mayan {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 22px;
+      height: 18px;
+      opacity: 0.35;
+    }
+
+    .mayan-step {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, #6b8e23, #556b2f);
+    }
+
+    .mayan-step:nth-child(1) { bottom: 0; width: 22px; height: 4px; }
+    .mayan-step:nth-child(2) { bottom: 4px; width: 16px; height: 4px; }
+    .mayan-step:nth-child(3) { bottom: 8px; width: 10px; height: 4px; }
+    .mayan-step:nth-child(4) { bottom: 12px; width: 6px; height: 6px; }
+
+    /* ===== CHINESE SYMBOL ===== */
+    .chinese {
+      position: absolute;
+      top: 10px;
+      right: 8px;
+      font-size: 12px;
+      color: rgba(220, 20, 60, 0.4);
+      font-weight: bold;
+    }
+
+    /* ===== MESOPOTAMIAN CUNEIFORM ===== */
+    .cuneiform {
+      position: absolute;
+      left: 5px;
+      top: 35px;
+      width: 10px;
+      height: 25px;
+      opacity: 0.25;
+    }
+
+    .wedge {
+      width: 6px;
+      height: 3px;
+      background: #8b7355;
+      margin-bottom: 3px;
+      clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    }
+
+    /* ===== FLOATING DUST ===== */
+    .dust {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(194, 154, 108, 0.5);
+      border-radius: 50%;
+      animation: dustFloat 5s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { top: 30px; left: 40px; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 50px; right: 35px; animation-delay: 0.8s; }
+    .particle:nth-child(3) { bottom: 50px; left: 55px; animation-delay: 1.6s; }
+    .particle:nth-child(4) { top: 45px; left: 60px; animation-delay: 2.4s; width: 1px; height: 1px; }
+    .particle:nth-child(5) { bottom: 55px; right: 45px; animation-delay: 3.2s; }
+
+    @keyframes dustFloat {
+      0%, 100% { opacity: 0.2; transform: translate(0, 0); }
+      50% { opacity: 0.6; transform: translate(3px, -5px); }
+    }
+
+    /* ===== MYSTERY TEXT ===== */
+    .mystery-text {
+      position: absolute;
+      bottom: 28px;
+      left: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 5px;
+      font-style: italic;
+      color: rgba(194, 154, 108, 0.5);
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== FACTION DOTS ===== */
+    .faction-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Egypt */ .dot:nth-child(1) { background: #d4af37; box-shadow: 0 0 4px #d4af37; }
+    /* Greece */ .dot:nth-child(2) { background: #1e90ff; box-shadow: 0 0 4px #1e90ff; animation-delay: 0.1s; }
+    /* Rome */ .dot:nth-child(3) { background: #8b0000; box-shadow: 0 0 4px #8b0000; animation-delay: 0.2s; }
+    /* Maya */ .dot:nth-child(4) { background: #228b22; box-shadow: 0 0 4px #228b22; animation-delay: 0.3s; }
+    /* China */ .dot:nth-child(5) { background: #dc143c; box-shadow: 0 0 4px #dc143c; animation-delay: 0.4s; }
+    /* Mesopotamia */ .dot:nth-child(6) { background: #8b7355; box-shadow: 0 0 4px #8b7355; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Mayan step pyramid -->
+    <div class="mayan">
+      <div class="mayan-step"></div>
+      <div class="mayan-step"></div>
+      <div class="mayan-step"></div>
+      <div class="mayan-step"></div>
+    </div>
+
+    <!-- Chinese symbol -->
+    <div class="chinese">龍</div>
+
+    <!-- Cuneiform -->
+    <div class="cuneiform">
+      <div class="wedge"></div>
+      <div class="wedge"></div>
+      <div class="wedge"></div>
+      <div class="wedge"></div>
+    </div>
+
+    <!-- Pyramid -->
+    <div class="pyramid">
+      <div class="pyramid-shape"></div>
+    </div>
+
+    <!-- Greek column -->
+    <div class="column">
+      <div class="column-capital"></div>
+      <div class="column-shaft">
+        <div class="flute"></div>
+        <div class="flute"></div>
+        <div class="flute"></div>
+      </div>
+      <div class="column-base"></div>
+    </div>
+
+    <div class="mystery-text">Lost Worlds</div>
+
+    <!-- Floating dust -->
+    <div class="dust">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Faction dots -->
+    <div class="faction-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Time Portal -->
+      <div class="portal">
+        <div class="portal-ring">
+          <div class="carving"></div>
+          <div class="carving"></div>
+          <div class="carving"></div>
+          <div class="carving"></div>
+        </div>
+        <div class="portal-glow"></div>
+      </div>
+    </div>
+
+    <div class="card-title">Ancient Civilizations</div>
+  </div>
+</body>
+</html>
+

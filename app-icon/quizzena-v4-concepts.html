@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzena V4 - 5 Icon Concepts</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0f0f23 100%);
+      padding: 40px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    h1 {
+      color: #ffd700;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      color: #888;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .concepts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+    
+    .concept {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .concept-title {
+      color: #ffd700;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+    .concept-desc {
+      color: #666;
+      font-size: 11px;
+      max-width: 180px;
+      text-align: center;
+    }
+    
+    .icon {
+      width: 180px;
+      height: 180px;
+      border-radius: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 60px rgba(255,215,0,0.1);
+    }
+
+    /* ============================================
+       CONCEPT 1: ROYAL LETTER Q
+    ============================================ */
+    .concept1 {
+      background: linear-gradient(145deg, #1a0a2e, #0a0318);
+    }
+    
+    .royal-q {
+      font-family: 'Georgia', serif;
+      font-size: 100px;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffd700, #f59e0b, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      filter: drop-shadow(0 5px 20px rgba(255,215,0,0.5));
+    }
+    
+    .royal-crown {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 35px;
+      filter: drop-shadow(0 3px 10px rgba(255,215,0,0.8));
+    }
+    
+    .royal-sparkle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+    
+    .royal-sparkle:nth-child(1) { top: 20%; left: 15%; }
+    .royal-sparkle:nth-child(2) { top: 25%; right: 18%; animation-delay: 0.5s; }
+    .royal-sparkle:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 1s; }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ============================================
+       CONCEPT 2: SHIELD BADGE
+    ============================================ */
+    .concept2 {
+      background: linear-gradient(145deg, #0f172a, #020617);
+    }
+    
+    .shield {
+      width: 130px;
+      height: 150px;
+      position: relative;
+      filter: drop-shadow(0 5px 20px rgba(255,215,0,0.4));
+    }
+    
+    .shield-body {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #ffd700, #d97706, #b45309);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+      position: relative;
+    }
+    
+    .shield-inner {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 12px;
+      background: linear-gradient(180deg, #1a0a2e, #0a0318);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .shield-q {
+      font-family: 'Georgia', serif;
+      font-size: 70px;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffd700, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: -15px;
+    }
+    
+    .shield-crown {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 40px;
+      filter: drop-shadow(0 3px 10px rgba(255,215,0,0.8));
+    }
+    
+    .shield-stars {
+      position: absolute;
+      top: 20px;
+      display: flex;
+      gap: 8px;
+    }
+    
+    .shield-star {
+      color: #ffd700;
+      font-size: 12px;
+    }
+
+    /* ============================================
+       CONCEPT 3: MEDAL/COIN STYLE
+    ============================================ */
+    .concept3 {
+      background: linear-gradient(145deg, #1c1917, #0c0a09);
+    }
+    
+    .medal {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffd700, #b45309);
+      position: relative;
+      box-shadow: 
+        inset 0 5px 15px rgba(255,255,255,0.3),
+        inset 0 -5px 15px rgba(0,0,0,0.3),
+        0 0 30px rgba(255,215,0,0.5);
+    }
+    
+    .medal-inner {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #d97706, #92400e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: inset 0 3px 10px rgba(255,255,255,0.2);
+    }
+    
+    .medal-crown {
+      font-size: 28px;
+      margin-bottom: -5px;
+    }
+    
+    .medal-q {
+      font-family: 'Georgia', serif;
+      font-size: 55px;
+      font-weight: 900;
+      color: #fef3c7;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    
+    .medal-ribbon {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 35px;
+    }
+    
+    .ribbon-part {
+      position: absolute;
+      width: 20px;
+      height: 35px;
+      background: linear-gradient(180deg, #ef4444, #b91c1c);
+    }
+    
+    .ribbon-part.left {
+      left: 5px;
+      transform: skewX(-10deg);
+    }
+    
+    .ribbon-part.right {
+      right: 5px;
+      transform: skewX(10deg);
+    }
+
+    /* ============================================
+       CONCEPT 4: MODERN GEOMETRIC
+    ============================================ */
+    .concept4 {
+      background: linear-gradient(145deg, #0c0c1d, #000008);
+    }
+    
+    .geometric {
+      position: relative;
+      width: 130px;
+      height: 130px;
+    }
+    
+    .geo-ring {
+      width: 100%;
+      height: 100%;
+      border: 12px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(#0c0c1d, #0c0c1d) padding-box,
+                  linear-gradient(45deg, #ffd700, #f59e0b, #ec4899, #8b5cf6, #ffd700) border-box;
+      animation: rotateGradient 4s linear infinite;
+      box-shadow: 0 0 30px rgba(255,215,0,0.3);
+    }
+    
+    @keyframes rotateGradient {
+      from { filter: hue-rotate(0deg); }
+      to { filter: hue-rotate(360deg); }
+    }
+    
+    .geo-q {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Arial', sans-serif;
+      font-size: 65px;
+      font-weight: 900;
+      color: white;
+      text-shadow: 0 0 20px rgba(255,215,0,0.5);
+    }
+    
+    .geo-crown {
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 25px;
+    }
+    
+    .geo-crown-point {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 20px solid #ffd700;
+    }
+    
+    .geo-crown-point:nth-child(1) { left: 0; }
+    .geo-crown-point:nth-child(2) { left: 50%; transform: translateX(-50%); border-bottom-width: 25px; }
+    .geo-crown-point:nth-child(3) { right: 0; }
+    
+    .geo-dots {
+      position: absolute;
+      inset: 0;
+    }
+    
+    .geo-dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+    }
+    
+    .geo-dot:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+    .geo-dot:nth-child(2) { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .geo-dot:nth-child(3) { top: 50%; left: 0; transform: translateY(-50%); }
+    .geo-dot:nth-child(4) { top: 50%; right: 0; transform: translateY(-50%); }
+
+    /* ============================================
+       CONCEPT 5: BOOK OF KNOWLEDGE
+    ============================================ */
+    .concept5 {
+      background: linear-gradient(145deg, #14532d, #052e16);
+    }
+    
+    .book {
+      position: relative;
+      width: 120px;
+      height: 140px;
+      filter: drop-shadow(0 5px 20px rgba(0,0,0,0.5));
+    }
+    
+    .book-cover {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #7c2d12, #92400e, #a16207);
+      border-radius: 5px 15px 15px 5px;
+      position: relative;
+      box-shadow: 
+        inset -5px 0 10px rgba(0,0,0,0.3),
+        inset 5px 0 10px rgba(255,255,255,0.1);
+    }
+    
+    .book-spine {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 15px;
+      background: linear-gradient(90deg, #451a03, #78350f);
+      border-radius: 5px 0 0 5px;
+    }
+    
+    .book-pages {
+      position: absolute;
+      left: 15px;
+      top: 5px;
+      bottom: 5px;
+      right: 5px;
+      background: linear-gradient(90deg, #fef3c7, #fde68a);
+      border-radius: 0 10px 10px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .book-q {
+      font-family: 'Georgia', serif;
+      font-size: 60px;
+      font-weight: 900;
+      background: linear-gradient(145deg, #ffd700, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .book-crown {
+      position: absolute;
+      top: -20px;
+      left: 55%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      filter: drop-shadow(0 3px 8px rgba(255,215,0,0.8));
+    }
+    
+    .book-magic {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    
+    .magic-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: magicFloat 3s ease-in-out infinite;
+    }
+    
+    .magic-particle:nth-child(1) { top: -10px; left: 30%; animation-delay: 0s; }
+    .magic-particle:nth-child(2) { top: -15px; right: 20%; animation-delay: 0.5s; }
+    .magic-particle:nth-child(3) { top: 20%; right: -10px; animation-delay: 1s; }
+    .magic-particle:nth-child(4) { bottom: 30%; right: -5px; animation-delay: 1.5s; }
+    
+    @keyframes magicFloat {
+      0%, 100% { opacity: 0.3; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <h1>👑 QUIZZENA V4 - 5 Concepts</h1>
+  <h2>Choose your favorite design!</h2>
+  
+  <div class="concepts">
+    <!-- CONCEPT 1: Royal Letter Q -->
+    <div class="concept">
+      <div class="concept-title">1️⃣ Royal Letter Q</div>
+      <div class="icon concept1">
+        <div class="royal-sparkle"></div>
+        <div class="royal-sparkle"></div>
+        <div class="royal-sparkle"></div>
+        <div class="royal-crown">👑</div>
+        <div class="royal-q">Q</div>
+      </div>
+      <div class="concept-desc">Simple & elegant. Big golden Q with crown floating above.</div>
+    </div>
+    
+    <!-- CONCEPT 2: Shield Badge -->
+    <div class="concept">
+      <div class="concept-title">2️⃣ Royal Shield</div>
+      <div class="icon concept2">
+        <div class="shield">
+          <div class="shield-crown">👑</div>
+          <div class="shield-body">
+            <div class="shield-inner">
+              <div class="shield-stars">
+                <span class="shield-star">⭐</span>
+                <span class="shield-star">⭐</span>
+                <span class="shield-star">⭐</span>
+              </div>
+              <div class="shield-q">Q</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-desc">Royal shield badge with Q inside. Premium & trustworthy.</div>
+    </div>
+    
+    <!-- CONCEPT 3: Medal/Coin -->
+    <div class="concept">
+      <div class="concept-title">3️⃣ Gold Medal</div>
+      <div class="icon concept3">
+        <div class="medal">
+          <div class="medal-ribbon">
+            <div class="ribbon-part left"></div>
+            <div class="ribbon-part right"></div>
+          </div>
+          <div class="medal-inner">
+            <div class="medal-crown">👑</div>
+            <div class="medal-q">Q</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-desc">Championship medal style. Winning & achievement vibes.</div>
+    </div>
+    
+    <!-- CONCEPT 4: Modern Geometric -->
+    <div class="concept">
+      <div class="concept-title">4️⃣ Modern Neon</div>
+      <div class="icon concept4">
+        <div class="geometric">
+          <div class="geo-ring"></div>
+          <div class="geo-crown">
+            <div class="geo-crown-point"></div>
+            <div class="geo-crown-point"></div>
+            <div class="geo-crown-point"></div>
+          </div>
+          <div class="geo-q">Q</div>
+          <div class="geo-dots">
+            <div class="geo-dot"></div>
+            <div class="geo-dot"></div>
+            <div class="geo-dot"></div>
+            <div class="geo-dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-desc">Modern rainbow ring with animated gradient. Tech-forward.</div>
+    </div>
+    
+    <!-- CONCEPT 5: Book of Knowledge -->
+    <div class="concept">
+      <div class="concept-title">5️⃣ Book of Knowledge</div>
+      <div class="icon concept5">
+        <div class="book">
+          <div class="book-crown">👑</div>
+          <div class="book-cover">
+            <div class="book-spine"></div>
+            <div class="book-pages">
+              <div class="book-q">Q</div>
+            </div>
+          </div>
+          <div class="book-magic">
+            <div class="magic-particle"></div>
+            <div class="magic-particle"></div>
+            <div class="magic-particle"></div>
+            <div class="magic-particle"></div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-desc">Open book with magical Q. Knowledge & learning focused.</div>
+    </div>
+  </div>
+</body>
+</html>
+
