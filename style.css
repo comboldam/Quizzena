@@ -14675,3 +14675,394 @@ footer button:hover {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.25); }
 }
+
+/* ===== RONALDO CARD ===== */
+.ronaldo-card-topic {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(165deg,
+    rgba(0, 102, 51, 0.15) 0%,
+    rgba(10, 10, 20, 0.95) 35%,
+    rgba(5, 5, 12, 0.98) 100%
+  );
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(218, 41, 28, 0.1),
+    0 0 30px rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Portugal red accent */
+.ronaldo-card-topic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(218, 41, 28, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 102, 51, 0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Shimmer */
+.ronaldo-shimmer {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 215, 0, 0.03) 50%,
+    transparent 60%
+  );
+  animation: ronaldoShimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ronaldoShimmer {
+  0%, 100% { transform: translateX(-30%) translateY(-30%); }
+  50% { transform: translateX(30%) translateY(30%); }
+}
+
+.ronaldo-card-title {
+  color: #ffd700;
+  font-family: 'Georgia', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 6px;
+  text-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    2px 2px 0 rgba(0,0,0,0.9);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ronaldo-icon-container {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== CR7 TEXT ===== */
+.ronaldo-cr7 {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  animation: ronaldoCr7Float 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes ronaldoCr7Float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.ronaldo-cr-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(180deg,
+    #ffd700 0%,
+    #ffb700 30%,
+    #daa520 60%,
+    #b8860b 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ronaldo-seven {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  background: linear-gradient(180deg,
+    #ffd700 0%,
+    #ffb700 20%,
+    #daa520 50%,
+    #b8860b 80%,
+    #8b6914 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 2px;
+}
+
+/* ===== SIUUU EFFECT ===== */
+.ronaldo-siuu {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Impact', sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(255, 215, 0, 0.7);
+  letter-spacing: 2px;
+  animation: ronaldoSiuuPulse 2s ease-in-out infinite;
+}
+
+@keyframes ronaldoSiuuPulse {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+/* ===== PORTUGAL FLAG ===== */
+.ronaldo-por-flag {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0.6;
+  box-shadow: 0 0 8px rgba(0, 102, 51, 0.5);
+  display: flex;
+}
+
+.ronaldo-por-green {
+  width: 40%;
+  height: 100%;
+  background: #006633;
+}
+
+.ronaldo-por-red {
+  width: 60%;
+  height: 100%;
+  background: #da291c;
+}
+
+.ronaldo-por-emblem {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background: #ffd700;
+  border-radius: 50%;
+  border: 1px solid #da291c;
+}
+
+/* ===== CHAMPIONS LEAGUE TROPHIES ===== */
+.ronaldo-ucl-trophies {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  display: flex;
+  gap: 3px;
+  opacity: 0.5;
+}
+
+.ronaldo-ucl-trophy {
+  width: 8px;
+  height: 14px;
+}
+
+.ronaldo-ucl-cup {
+  width: 8px;
+  height: 6px;
+  background: linear-gradient(180deg, #c0c0c0, #808080);
+  border-radius: 0 0 50% 50%;
+}
+
+.ronaldo-ucl-handles {
+  position: relative;
+  top: -5px;
+  width: 12px;
+  height: 4px;
+  margin-left: -2px;
+}
+
+.ronaldo-ucl-handles::before,
+.ronaldo-ucl-handles::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 4px;
+  border: 1px solid #a0a0a0;
+  border-radius: 50%;
+}
+
+.ronaldo-ucl-handles::before { left: 0; }
+.ronaldo-ucl-handles::after { right: 0; }
+
+/* ===== BALLON D'OR ===== */
+.ronaldo-ballon {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 35% 35%,
+    #ffd700 0%,
+    #daa520 40%,
+    #b8860b 70%,
+    #8b6914 100%
+  );
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px rgba(255, 215, 0, 0.6),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.4);
+  animation: ronaldoBallonSpin 8s linear infinite;
+}
+
+@keyframes ronaldoBallonSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ronaldo-ballon-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Georgia', serif;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(139, 105, 20, 0.6);
+}
+
+/* ===== GOAL COUNTER ===== */
+.ronaldo-goals {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 7px;
+  font-weight: bold;
+  color: rgba(255, 215, 0, 0.6);
+  text-align: right;
+}
+
+.ronaldo-goals span {
+  display: block;
+  font-size: 5px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== POWER SPARKS ===== */
+.ronaldo-sparks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ronaldo-spark {
+  position: absolute;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: ronaldoSparkGlow 2s ease-in-out infinite;
+}
+
+.ronaldo-spark:nth-child(1) { top: 28px; left: 30px; width: 4px; height: 4px; }
+.ronaldo-spark:nth-child(2) { top: 35px; right: 35px; width: 3px; height: 3px; animation-delay: 0.4s; }
+.ronaldo-spark:nth-child(3) { top: 50px; left: 22px; width: 3px; height: 3px; animation-delay: 0.8s; }
+.ronaldo-spark:nth-child(4) { top: 55px; right: 40px; width: 2px; height: 2px; animation-delay: 1.2s; }
+.ronaldo-spark:nth-child(5) { bottom: 42px; left: 50px; width: 2px; height: 2px; animation-delay: 1.6s; }
+
+@keyframes ronaldoSparkGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ===== CELEBRATION POSE SILHOUETTE ===== */
+.ronaldo-celebration {
+  position: absolute;
+  bottom: 30px;
+  left: 12px;
+  width: 15px;
+  height: 25px;
+  opacity: 0.2;
+}
+
+.ronaldo-celeb-body {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 12px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.ronaldo-celeb-head {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.ronaldo-celeb-arms {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+.ronaldo-celeb-legs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 10px;
+  background: #fff;
+  clip-path: polygon(20% 0, 80% 0, 100% 100%, 60% 100%, 50% 40%, 40% 100%, 0 100%);
+}
+
+/* ===== CAREER DOTS ===== */
+.ronaldo-career-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.ronaldo-career-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: ronaldoDotPulse 2.5s ease-in-out infinite;
+}
+
+/* Sporting */ .ronaldo-career-dot.sporting { background: #00843d; box-shadow: 0 0 5px #00843d; }
+/* Man United */ .ronaldo-career-dot.manutd { background: #da291c; box-shadow: 0 0 5px #da291c; animation-delay: 0.1s; }
+/* Real Madrid */ .ronaldo-career-dot.realmadrid { background: #fff; box-shadow: 0 0 5px #fff; animation-delay: 0.2s; }
+/* Juventus */ .ronaldo-career-dot.juventus { background: linear-gradient(135deg, #000, #fff); box-shadow: 0 0 5px #000; animation-delay: 0.3s; }
+/* Al-Nassr */ .ronaldo-career-dot.alnassr { background: #ffe500; box-shadow: 0 0 5px #ffe500; animation-delay: 0.4s; }
+/* Portugal */ .ronaldo-career-dot.portugal { background: #006633; box-shadow: 0 0 5px #006633; animation-delay: 0.5s; }
+
+@keyframes ronaldoDotPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
