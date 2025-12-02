@@ -9724,3 +9724,474 @@ footer button:hover {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+/* ========================================
+   FLAGS ANIMATED CARD
+   Flag poles with waving flags design
+   ======================================== */
+
+.flags-card-topic {
+  width: 140px;
+  height: 170px;
+  background: linear-gradient(165deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(10, 10, 20, 0.95) 35%,
+    rgba(5, 5, 12, 0.98) 100%
+  );
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(59, 130, 246, 0.1),
+    0 0 30px rgba(255, 215, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Majestic gradient overlay */
+.flags-card-topic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(255, 215, 0, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 82, 165, 0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 80%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Shimmer effect */
+.flags-card-topic::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 60%
+  );
+  animation: flagsShimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes flagsShimmer {
+  0%, 100% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+  50% { transform: translateX(30%) translateY(30%) rotate(0deg); }
+}
+
+.flags-icon-container {
+  position: relative;
+  width: 110px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* ===== FLAG POLES ROW ===== */
+.flags-flag-row {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.flags-flag-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Poles */
+.flags-pole {
+  width: 2px;
+  background: linear-gradient(180deg, #ffd700, #daa520, #b8860b, #8b6914);
+  border-radius: 1px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+.flags-pole::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: radial-gradient(circle, #ffd700, #daa520);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+}
+
+/* Different pole heights */
+.flags-flag-unit:nth-child(1) .flags-pole { height: 50px; }
+.flags-flag-unit:nth-child(2) .flags-pole { height: 60px; }
+.flags-flag-unit:nth-child(3) .flags-pole { height: 70px; }
+.flags-flag-unit:nth-child(4) .flags-pole { height: 60px; }
+.flags-flag-unit:nth-child(5) .flags-pole { height: 50px; }
+
+/* Flags */
+.flags-flag {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 10px;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transform-origin: left center;
+  animation: flagsWave 2.5s ease-in-out infinite;
+}
+
+.flags-flag-unit:nth-child(1) .flags-flag { animation-delay: 0s; }
+.flags-flag-unit:nth-child(2) .flags-flag { animation-delay: 0.2s; }
+.flags-flag-unit:nth-child(3) .flags-flag { animation-delay: 0.4s; }
+.flags-flag-unit:nth-child(4) .flags-flag { animation-delay: 0.6s; }
+.flags-flag-unit:nth-child(5) .flags-flag { animation-delay: 0.8s; }
+
+@keyframes flagsWave {
+  0%, 100% { transform: perspective(100px) rotateY(0deg) skewY(0deg); }
+  25% { transform: perspective(100px) rotateY(-5deg) skewY(2deg); }
+  75% { transform: perspective(100px) rotateY(5deg) skewY(-2deg); }
+}
+
+/* France */
+.flags-france {
+  background: linear-gradient(90deg, #002395 33%, #fff 33%, #fff 66%, #ed2939 66%);
+}
+
+/* USA */
+.flags-usa {
+  background: linear-gradient(180deg,
+    #bf0a30 0%, #bf0a30 14%, #fff 14%, #fff 28%,
+    #bf0a30 28%, #bf0a30 42%, #fff 42%, #fff 56%,
+    #bf0a30 56%, #bf0a30 70%, #fff 70%, #fff 84%,
+    #bf0a30 84%, #bf0a30 100%
+  );
+  position: relative;
+}
+
+.flags-usa::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 55%;
+  background: #3c3b6e;
+}
+
+/* UK */
+.flags-uk {
+  background: #012169;
+  position: relative;
+  overflow: hidden;
+}
+
+.flags-uk::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #fff;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 0.5px #c8102e;
+}
+
+.flags-uk::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 0.5px #c8102e;
+}
+
+/* Japan */
+.flags-japan {
+  background: #fff;
+  position: relative;
+}
+
+.flags-japan::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  background: #bc002d;
+  border-radius: 50%;
+}
+
+/* Brazil */
+.flags-brazil {
+  background: #009c3b;
+  position: relative;
+}
+
+.flags-brazil::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 7px;
+  height: 5px;
+  background: #ffdf00;
+}
+
+.flags-brazil::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3px;
+  height: 3px;
+  background: #002776;
+  border-radius: 50%;
+}
+
+/* ===== GLOBE BEHIND ===== */
+.flags-globe {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: flagsGlobeRotate 20s linear infinite;
+}
+
+.flags-globe::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.flags-globe::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.flags-globe-curve {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes flagsGlobeRotate {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* ===== WIND LINES ===== */
+.flags-wind {
+  position: absolute;
+  top: 25px;
+  right: 8px;
+  width: 20px;
+  height: 15px;
+  opacity: 0.3;
+}
+
+.flags-wind-line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  animation: flagsWindBlow 2s ease-in-out infinite;
+}
+
+.flags-wind-line:nth-child(1) { top: 0; width: 15px; right: 0; }
+.flags-wind-line:nth-child(2) { top: 5px; width: 18px; right: 2px; animation-delay: 0.3s; }
+.flags-wind-line:nth-child(3) { top: 10px; width: 12px; right: 0; animation-delay: 0.6s; }
+
+@keyframes flagsWindBlow {
+  0%, 100% { opacity: 0.2; transform: translateX(0); }
+  50% { opacity: 0.5; transform: translateX(-5px); }
+}
+
+/* ===== STARS ===== */
+.flags-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flags-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffd700;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: flagsStarTwinkle 2s ease-in-out infinite;
+}
+
+.flags-star:nth-child(1) { top: 12px; left: 12px; }
+.flags-star:nth-child(2) { top: 18px; right: 15px; animation-delay: 0.5s; }
+.flags-star:nth-child(3) { top: 8px; left: 35px; animation-delay: 1s; width: 2px; height: 2px; }
+.flags-star:nth-child(4) { top: 15px; right: 35px; animation-delay: 1.5s; width: 2px; height: 2px; }
+
+@keyframes flagsStarTwinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+/* ===== GOLDEN SPARKLES ===== */
+.flags-sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flags-sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #ffd700, transparent);
+  border-radius: 50%;
+  animation: flagsSparkleFloat 3s ease-in-out infinite;
+}
+
+.flags-sparkle:nth-child(1) { top: 35px; left: 20px; animation-delay: 0s; }
+.flags-sparkle:nth-child(2) { top: 45px; right: 22px; animation-delay: 0.5s; }
+.flags-sparkle:nth-child(3) { bottom: 40px; left: 30px; animation-delay: 1s; width: 3px; height: 3px; }
+.flags-sparkle:nth-child(4) { bottom: 45px; right: 28px; animation-delay: 1.5s; width: 3px; height: 3px; }
+.flags-sparkle:nth-child(5) { top: 55px; left: 50px; animation-delay: 2s; width: 2px; height: 2px; }
+
+@keyframes flagsSparkleFloat {
+  0%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+  50% { opacity: 0.9; transform: translateY(-4px) scale(1.2); }
+}
+
+/* ===== LUXURIOUS GROUND ===== */
+.flags-ground {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 10px;
+  background: linear-gradient(180deg,
+    rgba(212, 175, 55, 0.5) 0%,
+    rgba(139, 90, 43, 0.6) 30%,
+    rgba(101, 67, 33, 0.7) 60%,
+    rgba(60, 40, 20, 0.9) 100%
+  );
+  border-radius: 3px;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 215, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.flags-ground::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+  border-radius: 1px;
+}
+
+.flags-ground::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255, 215, 0, 0.2) 20%,
+    rgba(255, 215, 0, 0.3) 50%,
+    rgba(255, 215, 0, 0.2) 80%,
+    transparent
+  );
+  border-radius: 3px 3px 0 0;
+}
+
+/* ===== COUNTRY DOTS ===== */
+.flags-country-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.flags-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: flagsDotPulse 2.5s ease-in-out infinite;
+}
+
+.flags-dot:nth-child(1) { background: #002395; box-shadow: 0 0 5px #002395; }
+.flags-dot:nth-child(2) { background: #bf0a30; box-shadow: 0 0 5px #bf0a30; animation-delay: 0.1s; }
+.flags-dot:nth-child(3) { background: #012169; box-shadow: 0 0 5px #012169; animation-delay: 0.2s; }
+.flags-dot:nth-child(4) { background: #bc002d; box-shadow: 0 0 5px #bc002d; animation-delay: 0.3s; }
+.flags-dot:nth-child(5) { background: #009c3b; box-shadow: 0 0 5px #009c3b; animation-delay: 0.4s; }
+.flags-dot:nth-child(6) { background: #ffcc00; box-shadow: 0 0 5px #ffcc00; animation-delay: 0.5s; }
+
+@keyframes flagsDotPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); }
+}
+
+.flags-card-title {
+  color: #ffd700;
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 6px;
+  text-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    2px 2px 0 rgba(0,0,0,0.9);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
