@@ -18132,3 +18132,174 @@ footer button:hover {
   background: radial-gradient(ellipse at 50% 30%, rgba(135, 206, 235, 0.08) 0%, transparent 60%);
   pointer-events: none;
 }
+
+/* ========================================
+   📱 MOBILE: Scale Animated Topic Cards
+   Shows 3 cards + 10% peek of 4th card
+   3 categories visible, top/bottom bars intact
+   ======================================== */
+@media (max-width: 480px) {
+  /* Scale animated cards to fit 3 + peek */
+  .movies-card-topic,
+  .marvel-card-topic,
+  .dc-card-topic,
+  .disney-card-topic,
+  .hp-card-topic,
+  .sw-card-topic,
+  .lotr-card-topic,
+  .tv-card-topic,
+  .ucl-card-topic,
+  .sitcoms-card-topic,
+  .got-card-topic,
+  .football-v2-card-topic,
+  .history-card-topic,
+  .flags-card-topic,
+  .wwii-card-topic,
+  .wwi-card-topic,
+  .roman-card-topic,
+  .ottoman-card-topic,
+  .british-card-topic,
+  .capitals-card-topic,
+  .area-card-topic,
+  .egyptian-card-topic,
+  .worldcup-card-topic,
+  .derbies-card-topic,
+  .messi-card-topic,
+  .ronaldo-card-topic,
+  .pl-card-topic,
+  .bb-card-topic,
+  .st-card-topic,
+  .mh-card-topic,
+  .office-card-topic {
+    transform: scale(0.68);
+    transform-origin: top left;
+    margin-right: -45px; /* Compensate for scale gap */
+  }
+
+  /* Tighten category section spacing */
+  .geography-section,
+  .football-section,
+  .movies-section,
+  .tvshows-section,
+  .history-section,
+  .logos-section {
+    margin-bottom: 5px !important;
+    padding-bottom: 5px !important;
+  }
+
+  /* Smaller category titles */
+  .geography-title,
+  .football-title,
+  .movies-title,
+  .tvshows-title,
+  .history-title,
+  .logos-title {
+    font-size: 1rem !important;
+    margin-bottom: 5px !important;
+    padding: 0 10px !important;
+  }
+
+  /* Compact scroll row */
+  .topics-scroll-row {
+    padding: 5px 10px !important;
+    gap: 8px !important;
+  }
+
+  /* Reduce topics view padding - align with top/bottom bars */
+  .topics-view {
+    padding: 5px 0 !important;
+  }
+  
+  /* Scroll row starts at left edge */
+  .topics-scroll-row {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+/* ========================================
+   📱 PHONE VIEW: Align content with top/bottom bars
+   Fit 3 cards + peek, 4 categories visible
+   ======================================== */
+@media (max-width: 600px) {
+  /* Topics view no side padding */
+  .topics-view {
+    padding: 0 !important;
+  }
+  
+  /* Home view no side padding */
+  .home-view {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Category titles - compact */
+  .geography-title,
+  .football-title,
+  .movies-title,
+  .tvshows-title,
+  .history-title,
+  .logos-title {
+    padding: 0 !important;
+    margin: 0 0 2px 0 !important;
+    text-align: left !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Category sections - very compact for 4 to fit */
+  .geography-section,
+  .football-section,
+  .movies-section,
+  .tvshows-section,
+  .history-section,
+  .logos-section {
+    padding: 0 !important;
+    margin: 0 0 3px 0 !important;
+  }
+  
+  /* Scroll row - compact */
+  .topics-scroll-row {
+    padding: 3px 0 !important;
+    margin: 0 !important;
+    gap: 5px !important;
+  }
+  
+  /* Scale cards smaller to fit 3 + peek of 4th */
+  .movies-card-topic,
+  .marvel-card-topic,
+  .dc-card-topic,
+  .disney-card-topic,
+  .hp-card-topic,
+  .sw-card-topic,
+  .lotr-card-topic,
+  .tv-card-topic,
+  .ucl-card-topic,
+  .sitcoms-card-topic,
+  .got-card-topic,
+  .football-v2-card-topic,
+  .history-card-topic,
+  .flags-card-topic,
+  .wwii-card-topic,
+  .wwi-card-topic,
+  .roman-card-topic,
+  .ottoman-card-topic,
+  .british-card-topic,
+  .capitals-card-topic,
+  .area-card-topic,
+  .egyptian-card-topic,
+  .worldcup-card-topic,
+  .derbies-card-topic,
+  .messi-card-topic,
+  .ronaldo-card-topic,
+  .pl-card-topic,
+  .bb-card-topic,
+  .st-card-topic,
+  .mh-card-topic,
+  .office-card-topic {
+    transform: scale(0.55) !important;
+    transform-origin: top left !important;
+    margin-right: -60px !important;
+    margin-bottom: -70px !important;
+  }
+}
