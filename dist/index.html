@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Quizzena</title>
+  
+  <!-- Mobile App Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1a0a2e">
+  
+  <link rel="stylesheet" crossorigin href="/assets/index-B0W3Cqza.css">
+</head>
+<body>
+
+  <!-- WELCOME SCREEN -->
+  <div id="welcome-screen" class="welcome-overlay hidden">
+    <div class="welcome-container">
+      <div class="welcome-logo">🎯</div>
+      <h1 class="welcome-title">Welcome to Quizzena!</h1>
+      <p class="welcome-subtitle">Learn the world, one quiz at a time.</p>
+      <button id="welcome-start-btn" class="welcome-btn">Get Started</button>
+    </div>
+  </div>
+
+  <!-- SETUP SCREEN -->
+  <div id="setup-screen" class="setup-overlay hidden">
+    <div class="setup-container">
+      <h2 class="setup-title">Create Your Profile</h2>
+
+      <div class="setup-section">
+        <label class="setup-label">Username</label>
+        <input type="text" id="setup-username" class="setup-input" placeholder="Enter username" maxlength="15">
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Avatar</label>
+        <div class="avatar-grid" id="avatar-grid">
+          <button class="avatar-btn selected" data-avatar="👤">👤</button>
+          <button class="avatar-btn" data-avatar="👨">👨</button>
+          <button class="avatar-btn" data-avatar="👩">👩</button>
+          <button class="avatar-btn" data-avatar="🧑">🧑</button>
+          <button class="avatar-btn" data-avatar="🎮">🎮</button>
+          <button class="avatar-btn" data-avatar="⚽">⚽</button>
+          <button class="avatar-btn" data-avatar="🦊">🦊</button>
+          <button class="avatar-btn" data-avatar="🐼">🐼</button>
+          <button class="avatar-btn" data-avatar="🤖">🤖</button>
+          <button class="avatar-btn" data-avatar="👽">👽</button>
+          <button class="avatar-btn" data-avatar="🦁">🦁</button>
+          <button class="avatar-btn" data-avatar="🐸">🐸</button>
+        </div>
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Country</label>
+        <select id="setup-country" class="setup-select">
+          <option value="">-- Select Country --</option>
+          <option value="AF">Afghanistan</option>
+          <option value="AL">Albania</option>
+          <option value="DZ">Algeria</option>
+          <option value="AD">Andorra</option>
+          <option value="AO">Angola</option>
+          <option value="AG">Antigua and Barbuda</option>
+          <option value="AR">Argentina</option>
+          <option value="AM">Armenia</option>
+          <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
+          <option value="AZ">Azerbaijan</option>
+          <option value="BS">Bahamas</option>
+          <option value="BH">Bahrain</option>
+          <option value="BD">Bangladesh</option>
+          <option value="BB">Barbados</option>
+          <option value="BY">Belarus</option>
+          <option value="BE">Belgium</option>
+          <option value="BZ">Belize</option>
+          <option value="BJ">Benin</option>
+          <option value="BT">Bhutan</option>
+          <option value="BO">Bolivia</option>
+          <option value="BA">Bosnia and Herzegovina</option>
+          <option value="BW">Botswana</option>
+          <option value="BR">Brazil</option>
+          <option value="BN">Brunei</option>
+          <option value="BG">Bulgaria</option>
+          <option value="BF">Burkina Faso</option>
+          <option value="BI">Burundi</option>
+          <option value="KH">Cambodia</option>
+          <option value="CM">Cameroon</option>
+          <option value="CA">Canada</option>
+          <option value="CV">Cape Verde</option>
+          <option value="CF">Central African Republic</option>
+          <option value="TD">Chad</option>
+          <option value="CL">Chile</option>
+          <option value="CN">China</option>
+          <option value="CO">Colombia</option>
+          <option value="KM">Comoros</option>
+          <option value="CG">Congo</option>
+          <option value="CR">Costa Rica</option>
+          <option value="HR">Croatia</option>
+          <option value="CU">Cuba</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="DK">Denmark</option>
+          <option value="DJ">Djibouti</option>
+          <option value="DM">Dominica</option>
+          <option value="DO">Dominican Republic</option>
+          <option value="EC">Ecuador</option>
+          <option value="EG">Egypt</option>
+          <option value="SV">El Salvador</option>
+          <option value="GQ">Equatorial Guinea</option>
+          <option value="ER">Eritrea</option>
+          <option value="EE">Estonia</option>
+          <option value="ET">Ethiopia</option>
+          <option value="FJ">Fiji</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="GA">Gabon</option>
+          <option value="GM">Gambia</option>
+          <option value="GE">Georgia</option>
+          <option value="DE">Germany</option>
+          <option value="GH">Ghana</option>
+          <option value="GR">Greece</option>
+          <option value="GD">Grenada</option>
+          <option value="GT">Guatemala</option>
+          <option value="GN">Guinea</option>
+          <option value="GW">Guinea-Bissau</option>
+          <option value="GY">Guyana</option>
+          <option value="HT">Haiti</option>
+          <option value="HN">Honduras</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="IN">India</option>
+          <option value="ID">Indonesia</option>
+          <option value="IR">Iran</option>
+          <option value="IQ">Iraq</option>
+          <option value="IE">Ireland</option>
+          <option value="IL">Israel</option>
+          <option value="IT">Italy</option>
+          <option value="CI">Ivory Coast</option>
+          <option value="JM">Jamaica</option>
+          <option value="JP">Japan</option>
+          <option value="JO">Jordan</option>
+          <option value="KZ">Kazakhstan</option>
+          <option value="KE">Kenya</option>
+          <option value="KI">Kiribati</option>
+          <option value="KW">Kuwait</option>
+          <option value="KG">Kyrgyzstan</option>
+          <option value="LA">Laos</option>
+          <option value="LV">Latvia</option>
+          <option value="LB">Lebanon</option>
+          <option value="LS">Lesotho</option>
+          <option value="LR">Liberia</option>
+          <option value="LY">Libya</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MK">North Macedonia</option>
+          <option value="MG">Madagascar</option>
+          <option value="MW">Malawi</option>
+          <option value="MY">Malaysia</option>
+          <option value="MV">Maldives</option>
+          <option value="ML">Mali</option>
+          <option value="MT">Malta</option>
+          <option value="MH">Marshall Islands</option>
+          <option value="MR">Mauritania</option>
+          <option value="MU">Mauritius</option>
+          <option value="MX">Mexico</option>
+          <option value="FM">Micronesia</option>
+          <option value="MD">Moldova</option>
+          <option value="MC">Monaco</option>
+          <option value="MN">Mongolia</option>
+          <option value="ME">Montenegro</option>
+          <option value="MA">Morocco</option>
+          <option value="MZ">Mozambique</option>
+          <option value="MM">Myanmar</option>
+          <option value="NA">Namibia</option>
+          <option value="NR">Nauru</option>
+          <option value="NP">Nepal</option>
+          <option value="NL">Netherlands</option>
+          <option value="NZ">New Zealand</option>
+          <option value="NI">Nicaragua</option>
+          <option value="NE">Niger</option>
+          <option value="NG">Nigeria</option>
+          <option value="KP">North Korea</option>
+          <option value="NO">Norway</option>
+          <option value="OM">Oman</option>
+          <option value="PK">Pakistan</option>
+          <option value="PW">Palau</option>
+          <option value="PS">Palestine</option>
+          <option value="PA">Panama</option>
+          <option value="PG">Papua New Guinea</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Peru</option>
+          <option value="PH">Philippines</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="QA">Qatar</option>
+          <option value="RO">Romania</option>
+          <option value="RU">Russia</option>
+          <option value="RW">Rwanda</option>
+          <option value="KN">Saint Kitts and Nevis</option>
+          <option value="LC">Saint Lucia</option>
+          <option value="VC">Saint Vincent</option>
+          <option value="WS">Samoa</option>
+          <option value="SM">San Marino</option>
+          <option value="ST">Sao Tome and Principe</option>
+          <option value="SA">Saudi Arabia</option>
+          <option value="SN">Senegal</option>
+          <option value="RS">Serbia</option>
+          <option value="SC">Seychelles</option>
+          <option value="SL">Sierra Leone</option>
+          <option value="SG">Singapore</option>
+          <option value="SK">Slovakia</option>
+          <option value="SI">Slovenia</option>
+          <option value="SB">Solomon Islands</option>
+          <option value="SO">Somalia</option>
+          <option value="ZA">South Africa</option>
+          <option value="KR">South Korea</option>
+          <option value="SS">South Sudan</option>
+          <option value="ES">Spain</option>
+          <option value="LK">Sri Lanka</option>
+          <option value="SD">Sudan</option>
+          <option value="SR">Suriname</option>
+          <option value="SZ">Eswatini</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="SY">Syria</option>
+          <option value="TW">Taiwan</option>
+          <option value="TJ">Tajikistan</option>
+          <option value="TZ">Tanzania</option>
+          <option value="TH">Thailand</option>
+          <option value="TL">Timor-Leste</option>
+          <option value="TG">Togo</option>
+          <option value="TO">Tonga</option>
+          <option value="TT">Trinidad and Tobago</option>
+          <option value="TN">Tunisia</option>
+          <option value="TR">Turkey</option>
+          <option value="TM">Turkmenistan</option>
+          <option value="TV">Tuvalu</option>
+          <option value="UG">Uganda</option>
+          <option value="UA">Ukraine</option>
+          <option value="AE">United Arab Emirates</option>
+          <option value="GB">United Kingdom</option>
+          <option value="US">United States</option>
+          <option value="UY">Uruguay</option>
+          <option value="UZ">Uzbekistan</option>
+          <option value="VU">Vanuatu</option>
+          <option value="VA">Vatican City</option>
+          <option value="VE">Venezuela</option>
+          <option value="VN">Vietnam</option>
+          <option value="YE">Yemen</option>
+          <option value="ZM">Zambia</option>
+          <option value="ZW">Zimbabwe</option>
+        </select>
+      </div>
+
+      <button id="setup-save-btn" class="setup-btn">Save & Start</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🏠 HOME SCREEN (TOPIC SELECTION) -->
+  <!-- ================================ -->
+  <div id="home-screen">
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="app-title">Quizzena</div>
+      <div class="user-profile">Guest 👤</div>
+    </div>
+
+    <!-- HOME SCREEN VIEW -->
+    <div class="home-view" id="home-view">
+
+      <!-- Featured Quiz of the Day -->
+      <div class="home-featured-section">
+        <div class="home-featured-label">🏆 QUIZ OF THE DAY</div>
+        <button class="home-featured-card" onclick="playClickSound(); document.getElementById('football-general-topic-btn').click()">
+          <div class="football-v2-card-topic home-featured-card-inner">
+            <div class="football-v2-kickoff-text">Kick Off!</div>
+            <div class="football-v2-whistle-burst">
+              <div class="football-v2-whistle">
+                <div class="football-v2-whistle-body"></div>
+              </div>
+            </div>
+            <div class="football-v2-flags">
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+            </div>
+            <div class="football-v2-goal-net"></div>
+            <div class="football-v2-club-dots">
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+            </div>
+            <div class="football-v2-icon-container">
+              <div class="football-v2-pitch">
+                <div class="football-v2-center-circle"></div>
+                <div class="football-v2-penalty-box top"></div>
+                <div class="football-v2-penalty-box bottom"></div>
+                <div class="football-v2-goal-box top"></div>
+                <div class="football-v2-goal-box bottom"></div>
+                <div class="football-v2-corner top-left"></div>
+                <div class="football-v2-corner top-right"></div>
+                <div class="football-v2-corner bottom-left"></div>
+                <div class="football-v2-corner bottom-right"></div>
+              </div>
+              <div class="football-v2-ball">
+                <div class="football-v2-patch football-v2-patch-1"></div>
+                <div class="football-v2-patch football-v2-patch-2"></div>
+                <div class="football-v2-patch football-v2-patch-3"></div>
+                <div class="football-v2-patch football-v2-patch-4"></div>
+                <div class="football-v2-patch football-v2-patch-5"></div>
+                <div class="football-v2-ball-shine"></div>
+              </div>
+            </div>
+            <div class="football-v2-card-title">Football</div>
+          </div>
+          <div class="home-featured-play">▶ PLAY NOW</div>
+        </button>
+      </div>
+
+      <!-- Explore Categories -->
+      <div class="home-categories-section">
+        <h2 class="home-categories-title">Explore Categories</h2>
+        <div class="home-categories-grid">
+          <button class="home-category-card" data-category="geography">
+            <div class="home-category-icon">🌍</div>
+            <div class="home-category-name">Geography</div>
+            <div class="home-category-count">3 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="football">
+            <div class="home-category-icon">⚽</div>
+            <div class="home-category-name">Football</div>
+            <div class="home-category-count">8 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="movies">
+            <div class="home-category-icon">🎬</div>
+            <div class="home-category-name">Movies</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="tvshows">
+            <div class="home-category-icon">📺</div>
+            <div class="home-category-name">TV Shows</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="history">
+            <div class="home-category-icon">📜</div>
+            <div class="home-category-name">History</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="logos">
+            <div class="home-category-icon">🎨</div>
+            <div class="home-category-name">Logos</div>
+            <div class="home-category-count">1 quiz</div>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Category Modal Overlay -->
+    <div class="category-modal hidden" id="category-modal">
+      <div class="category-modal-backdrop" id="category-modal-backdrop"></div>
+      <div class="category-modal-content">
+        <div class="category-modal-header">
+          <h2 class="category-modal-title" id="category-modal-title">Category</h2>
+          <button class="category-modal-close" id="category-modal-close">✕</button>
+        </div>
+        <div class="category-modal-quizzes" id="category-modal-quizzes">
+          <!-- Quizzes will be inserted here dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Modal Overlay -->
+    <div class="settings-modal hidden" id="settings-modal">
+      <div class="settings-modal-backdrop" id="settings-modal-backdrop"></div>
+      <div class="settings-modal-content">
+        <div class="settings-modal-header">
+          <h2 class="settings-modal-title" data-i18n="settings_title">Settings</h2>
+          <button class="settings-modal-close" id="settings-modal-close">✕</button>
+        </div>
+        <div class="settings-modal-body">
+          
+          <!-- Language Setting -->
+          <div class="settings-item">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🌍</span>
+              <span data-i18n="settings_language">Language</span>
+            </div>
+            <div class="settings-item-control">
+              <select class="settings-dropdown" id="language-select">
+                <option value="en">🇺🇸 English</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Theme Setting (Coming Soon) -->
+          <div class="settings-item settings-item-disabled">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🎨</span>
+              <span data-i18n="settings_theme">Theme</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Setting (Opens Sound Overlay) -->
+          <div class="settings-item settings-item-clickable" id="settings-sound-btn">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🔊</span>
+              <span data-i18n="settings_sound">Sound</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="settings-modal-footer">
+          <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sound Settings Overlay -->
+    <div class="sound-overlay hidden" id="sound-overlay">
+      <div class="sound-overlay-backdrop" id="sound-overlay-backdrop"></div>
+      <div class="sound-overlay-content">
+        <div class="sound-overlay-header">
+          <button class="sound-overlay-back" id="sound-overlay-back">←</button>
+          <h2 class="sound-overlay-title" data-i18n="settings_sound">Sound</h2>
+          <div class="sound-overlay-spacer"></div>
+        </div>
+        <div class="sound-overlay-body">
+          
+          <!-- Music Setting (Coming Soon) -->
+          <div class="sound-setting-section sound-setting-disabled">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🎵</span>
+              <span class="sound-setting-name" data-i18n="sound_music">Music</span>
+            </div>
+            <div class="sound-setting-content">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Effects Setting -->
+          <div class="sound-setting-section">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🔊</span>
+              <span class="sound-setting-name" data-i18n="sound_effects">Sound Effects</span>
+            </div>
+            <div class="sound-setting-content">
+              <div class="volume-control">
+                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="sfx-volume-slider" min="0" max="100" value="70">
+                  <span class="volume-value" id="sfx-volume-value">70%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="sfx-mute-btn">
+                <span class="mute-icon" id="sfx-mute-icon">🔊</span>
+                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPICS SCREEN VIEW -->
+    <div class="topics-view hidden" id="topics-view">
+
+      <!-- Geography Category -->
+      <div class="geography-section">
+        <h3 class="geography-title">Geography</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Flags Card (Waving Flags with Globe) -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="flags-topic-btn" class="flags-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="flags-stars">
+                <div class="flags-star"></div>
+                <div class="flags-star"></div>
+                <div class="flags-star"></div>
+                <div class="flags-star"></div>
+              </div>
+              <div class="flags-globe">
+                <div class="flags-globe-curve"></div>
+              </div>
+              <div class="flags-wind">
+                <div class="flags-wind-line"></div>
+                <div class="flags-wind-line"></div>
+                <div class="flags-wind-line"></div>
+              </div>
+              <div class="flags-sparkles">
+                <div class="flags-sparkle"></div>
+                <div class="flags-sparkle"></div>
+                <div class="flags-sparkle"></div>
+                <div class="flags-sparkle"></div>
+                <div class="flags-sparkle"></div>
+              </div>
+              <div class="flags-country-dots">
+                <div class="flags-dot"></div>
+                <div class="flags-dot"></div>
+                <div class="flags-dot"></div>
+                <div class="flags-dot"></div>
+                <div class="flags-dot"></div>
+                <div class="flags-dot"></div>
+              </div>
+              <div class="flags-icon-container">
+                <div class="flags-ground"></div>
+                <div class="flags-flag-row">
+                  <div class="flags-flag-unit">
+                    <div class="flags-pole">
+                      <div class="flags-flag flags-france"></div>
+                    </div>
+                  </div>
+                  <div class="flags-flag-unit">
+                    <div class="flags-pole">
+                      <div class="flags-flag flags-usa"></div>
+                    </div>
+                  </div>
+                  <div class="flags-flag-unit">
+                    <div class="flags-pole">
+                      <div class="flags-flag flags-uk"></div>
+                    </div>
+                  </div>
+                  <div class="flags-flag-unit">
+                    <div class="flags-pole">
+                      <div class="flags-flag flags-japan"></div>
+                    </div>
+                  </div>
+                  <div class="flags-flag-unit">
+                    <div class="flags-pole">
+                      <div class="flags-flag flags-brazil"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flags-card-title">Flags</div>
+            </button>
+          </div>
+
+          <!-- Capitals Card -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="capitals-topic-btn" class="capitals-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Stars -->
+              <div class="capitals-stars">
+                <div class="capitals-star"></div>
+                <div class="capitals-star"></div>
+                <div class="capitals-star"></div>
+                <div class="capitals-star"></div>
+              </div>
+
+              <!-- Location pin -->
+              <div class="capitals-pin">
+                <div class="capitals-pin-head">
+                  <div class="capitals-pin-dot"></div>
+                </div>
+              </div>
+
+              <!-- City lights -->
+              <div class="capitals-lights">
+                <div class="capitals-light"></div>
+                <div class="capitals-light"></div>
+                <div class="capitals-light"></div>
+                <div class="capitals-light"></div>
+                <div class="capitals-light"></div>
+                <div class="capitals-light"></div>
+              </div>
+
+              <!-- Capital dots -->
+              <div class="capitals-capital-dots">
+                <div class="capitals-dot"></div>
+                <div class="capitals-dot"></div>
+                <div class="capitals-dot"></div>
+                <div class="capitals-dot"></div>
+                <div class="capitals-dot"></div>
+                <div class="capitals-dot"></div>
+              </div>
+
+              <div class="capitals-icon-container">
+                <!-- Ground -->
+                <div class="capitals-ground"></div>
+
+                <!-- Skyline -->
+                <div class="capitals-skyline">
+                  <div class="capitals-kremlin">
+                    <div class="capitals-kremlin-star"></div>
+                    <div class="capitals-kremlin-spire"></div>
+                    <div class="capitals-kremlin-body"></div>
+                    <div class="capitals-kremlin-base"></div>
+                  </div>
+                  <div class="capitals-bigben">
+                    <div class="capitals-bigben-spire"></div>
+                    <div class="capitals-bigben-clock"></div>
+                    <div class="capitals-bigben-tower"></div>
+                    <div class="capitals-bigben-base"></div>
+                  </div>
+                  <div class="capitals-eiffel">
+                    <div class="capitals-eiffel-antenna"></div>
+                    <div class="capitals-eiffel-top"></div>
+                    <div class="capitals-eiffel-upper"></div>
+                    <div class="capitals-eiffel-middle"></div>
+                    <div class="capitals-eiffel-lower"></div>
+                    <div class="capitals-eiffel-base"></div>
+                  </div>
+                  <div class="capitals-capitol">
+                    <div class="capitals-capitol-statue"></div>
+                    <div class="capitals-capitol-dome"></div>
+                    <div class="capitals-capitol-drum"></div>
+                    <div class="capitals-capitol-body">
+                      <div class="capitals-capitol-columns">
+                        <div class="capitals-col"></div>
+                        <div class="capitals-col"></div>
+                        <div class="capitals-col"></div>
+                        <div class="capitals-col"></div>
+                      </div>
+                    </div>
+                    <div class="capitals-capitol-base"></div>
+                  </div>
+                  <div class="capitals-tower">
+                    <div class="capitals-tower-top"></div>
+                    <div class="capitals-tower-body"></div>
+                    <div class="capitals-tower-base"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="capitals-card-title">CAPITALS</div>
+            </button>
+          </div>
+
+          <!-- Area Card -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="area-topic-btn" class="area-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="area-scale-text">1:50,000,000</div>
+
+              <!-- Size comparison shapes -->
+              <div class="area-sizes">
+                <div class="area-size-shape"></div>
+                <div class="area-size-shape"></div>
+                <div class="area-size-shape"></div>
+                <div class="area-size-shape"></div>
+              </div>
+
+              <!-- Area indicators -->
+              <div class="area-indicators">
+                <div class="area-indicator"></div>
+                <div class="area-indicator"></div>
+                <div class="area-indicator"></div>
+              </div>
+
+              <!-- Sparkles -->
+              <div class="area-sparkles">
+                <div class="area-sparkle"></div>
+                <div class="area-sparkle"></div>
+                <div class="area-sparkle"></div>
+                <div class="area-sparkle"></div>
+              </div>
+
+              <!-- Area dots -->
+              <div class="area-area-dots">
+                <div class="area-dot"></div>
+                <div class="area-dot"></div>
+                <div class="area-dot"></div>
+                <div class="area-dot"></div>
+                <div class="area-dot"></div>
+                <div class="area-dot"></div>
+              </div>
+
+              <div class="area-icon-container">
+                <!-- Ruler/Ground -->
+                <div class="area-ruler">
+                  <div class="area-marks">
+                    <div class="area-mark tall"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark tall"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark tall"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark tall"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark short"></div>
+                    <div class="area-mark tall"></div>
+                  </div>
+                  <div class="area-unit">km²</div>
+                </div>
+
+                <!-- World Map -->
+                <div class="area-world-map">
+                  <div class="area-map-bg">
+                    <div class="area-grid">
+                      <div class="area-grid-line h"></div>
+                      <div class="area-grid-line h"></div>
+                      <div class="area-grid-line h"></div>
+                      <div class="area-grid-line v"></div>
+                      <div class="area-grid-line v"></div>
+                    </div>
+                  </div>
+                  <!-- Continents -->
+                  <div class="area-continent na"></div>
+                  <div class="area-continent sa"></div>
+                  <div class="area-continent eu"></div>
+                  <div class="area-continent af"></div>
+                  <div class="area-continent as"></div>
+                  <div class="area-continent au"></div>
+                </div>
+              </div>
+
+              <div class="area-card-title">Country Area</div>
+            </button>
+          </div>
+
+          <!-- Borders Card -->
+          <div class="topic-card-small">
+            <button id="borders-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🗺️</div>
+              <div class="topic-name-small">Borders</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Football Section -->
+      <div class="football-section">
+        <h3 class="section-title">⚽ Football</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Football General (V2 - Mini Pitch Design) -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="football-general-topic-btn" class="football-v2-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="football-v2-kickoff-text">Kick Off!</div>
+              <div class="football-v2-whistle-burst">
+                <div class="football-v2-whistle">
+                  <div class="football-v2-whistle-body"></div>
+                </div>
+              </div>
+              <div class="football-v2-flags">
+                <div class="football-v2-flag"></div>
+                <div class="football-v2-flag"></div>
+                <div class="football-v2-flag"></div>
+                <div class="football-v2-flag"></div>
+              </div>
+              <div class="football-v2-goal-net"></div>
+              <div class="football-v2-club-dots">
+                <div class="football-v2-dot"></div>
+                <div class="football-v2-dot"></div>
+                <div class="football-v2-dot"></div>
+                <div class="football-v2-dot"></div>
+                <div class="football-v2-dot"></div>
+                <div class="football-v2-dot"></div>
+              </div>
+              <div class="football-v2-icon-container">
+                <div class="football-v2-pitch">
+                  <div class="football-v2-center-circle"></div>
+                  <div class="football-v2-penalty-box top"></div>
+                  <div class="football-v2-penalty-box bottom"></div>
+                  <div class="football-v2-goal-box top"></div>
+                  <div class="football-v2-goal-box bottom"></div>
+                  <div class="football-v2-corner top-left"></div>
+                  <div class="football-v2-corner top-right"></div>
+                  <div class="football-v2-corner bottom-left"></div>
+                  <div class="football-v2-corner bottom-right"></div>
+                </div>
+                <div class="football-v2-ball">
+                  <div class="football-v2-patch football-v2-patch-1"></div>
+                  <div class="football-v2-patch football-v2-patch-2"></div>
+                  <div class="football-v2-patch football-v2-patch-3"></div>
+                  <div class="football-v2-patch football-v2-patch-4"></div>
+                  <div class="football-v2-patch football-v2-patch-5"></div>
+                  <div class="football-v2-ball-shine"></div>
+                </div>
+              </div>
+              <div class="football-v2-card-title">Football</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Premier League -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="premier-league-topic-btn" class="pl-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="pl-matchday-text">Matchday</div>
+
+              <div class="pl-goal-burst">
+                <div class="pl-goal-text">GOAL!</div>
+              </div>
+
+              <div class="pl-football"></div>
+
+              <div class="pl-confetti">
+                <div class="pl-confetti-piece"></div>
+                <div class="pl-confetti-piece"></div>
+                <div class="pl-confetti-piece"></div>
+                <div class="pl-confetti-piece"></div>
+              </div>
+
+              <div class="pl-goal-net"></div>
+
+              <div class="pl-club-dots">
+                <div class="pl-club-dot"></div>
+                <div class="pl-club-dot"></div>
+                <div class="pl-club-dot"></div>
+                <div class="pl-club-dot"></div>
+                <div class="pl-club-dot"></div>
+                <div class="pl-club-dot"></div>
+              </div>
+
+              <div class="pl-icon-container">
+                <div class="pl-lion">
+                  <!-- Crown -->
+                  <div class="pl-crown">
+                    <div class="pl-crown-point"></div>
+                    <div class="pl-crown-point"></div>
+                    <div class="pl-crown-point"></div>
+                    <div class="pl-crown-base"></div>
+                    <div class="pl-crown-gem"></div>
+                  </div>
+
+                  <!-- Mane Back Layer -->
+                  <div class="pl-mane-back">
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                    <div class="pl-mane-strand-back"></div>
+                  </div>
+
+                  <!-- Head -->
+                  <div class="pl-head">
+                    <div class="pl-forehead"></div>
+                    <div class="pl-brow"></div>
+                    <div class="pl-eye"></div>
+                    <div class="pl-ear"></div>
+                  </div>
+
+                  <!-- Snout -->
+                  <div class="pl-snout">
+                    <div class="pl-nose"></div>
+                    <div class="pl-mouth"></div>
+                  </div>
+
+                  <!-- Chin -->
+                  <div class="pl-chin"></div>
+
+                  <!-- Mane Front (Chest) -->
+                  <div class="pl-mane-front">
+                    <div class="pl-chest-strand"></div>
+                    <div class="pl-chest-strand"></div>
+                    <div class="pl-chest-strand"></div>
+                    <div class="pl-chest-strand"></div>
+                    <div class="pl-chest-strand"></div>
+                    <div class="pl-chest-strand"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pl-card-title">Premier League</div>
+            </button>
+          </div>
+
+          <!-- Card 3: Champions League -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="champions-league-topic-btn" class="ucl-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="ucl-anthem-text">The Champions</div>
+              <div class="ucl-trophy-burst">
+                <div class="ucl-trophy">
+                  <div class="ucl-trophy-cup"></div>
+                  <div class="ucl-trophy-stem"></div>
+                  <div class="ucl-trophy-base"></div>
+                </div>
+              </div>
+              <div class="ucl-floating-stars">
+                <div class="ucl-float-star">★</div>
+                <div class="ucl-float-star">★</div>
+                <div class="ucl-float-star">★</div>
+              </div>
+              <div class="ucl-goal-net"></div>
+              <div class="ucl-icon-container">
+                <div class="ucl-ball">
+                  <div class="ucl-outer-stars">
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                    <div class="ucl-outer-star">★</div>
+                  </div>
+                  <div class="ucl-ball-base">
+                    <div class="ucl-gold-pattern">
+                      <div class="ucl-gold-tri ucl-gold-tri-1"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-2"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-3"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-4"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-5"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-6"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-7"></div>
+                      <div class="ucl-gold-tri ucl-gold-tri-8"></div>
+                      <div class="ucl-gold-line ucl-gold-line-1"></div>
+                      <div class="ucl-gold-line ucl-gold-line-2"></div>
+                      <div class="ucl-gold-line ucl-gold-line-3"></div>
+                      <div class="ucl-gold-line ucl-gold-line-4"></div>
+                      <div class="ucl-gold-line ucl-gold-line-5"></div>
+                      <div class="ucl-gold-line ucl-gold-line-6"></div>
+                      <div class="ucl-gold-line ucl-gold-line-7"></div>
+                      <div class="ucl-gold-line ucl-gold-line-8"></div>
+                      <div class="ucl-black-tri ucl-black-tri-1"></div>
+                      <div class="ucl-black-tri ucl-black-tri-2"></div>
+                      <div class="ucl-black-tri ucl-black-tri-3"></div>
+                      <div class="ucl-black-tri ucl-black-tri-4"></div>
+                    </div>
+                    <div class="ucl-starball-center">
+                      <div class="ucl-starball-ring"></div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                      <div class="ucl-center-star">★</div>
+                    </div>
+                    <div class="ucl-ball-shine"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="ucl-club-dots">
+                <div class="ucl-dot"></div>
+                <div class="ucl-dot"></div>
+                <div class="ucl-dot"></div>
+                <div class="ucl-dot"></div>
+                <div class="ucl-dot"></div>
+                <div class="ucl-dot"></div>
+              </div>
+              <div class="ucl-card-title">Champions League</div>
+            </button>
+          </div>
+
+          <!-- Card 4: World Cup -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="world-cup-topic-btn" class="worldcup-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Stars -->
+              <div class="worldcup-stars">
+                <div class="worldcup-star"></div>
+                <div class="worldcup-star"></div>
+                <div class="worldcup-star"></div>
+              </div>
+
+              <!-- Sparkles -->
+              <div class="worldcup-sparkles">
+                <div class="worldcup-sparkle"></div>
+                <div class="worldcup-sparkle"></div>
+                <div class="worldcup-sparkle"></div>
+                <div class="worldcup-sparkle"></div>
+                <div class="worldcup-sparkle"></div>
+                <div class="worldcup-sparkle"></div>
+              </div>
+
+              <!-- Confetti -->
+              <div class="worldcup-confetti">
+                <div class="worldcup-confetti-piece"></div>
+                <div class="worldcup-confetti-piece"></div>
+                <div class="worldcup-confetti-piece"></div>
+                <div class="worldcup-confetti-piece"></div>
+              </div>
+
+              <!-- Nation dots -->
+              <div class="worldcup-nation-dots">
+                <div class="worldcup-dot"></div>
+                <div class="worldcup-dot"></div>
+                <div class="worldcup-dot"></div>
+                <div class="worldcup-dot"></div>
+                <div class="worldcup-dot"></div>
+                <div class="worldcup-dot"></div>
+              </div>
+
+              <div class="worldcup-icon-container">
+                <!-- FIFA World Cup Trophy -->
+                <div class="worldcup-trophy">
+                  <!-- Globe on top -->
+                  <div class="worldcup-globe">
+                    <div class="worldcup-globe-shine"></div>
+                  </div>
+
+                  <!-- Two figures holding globe -->
+                  <div class="worldcup-figure left">
+                    <div class="worldcup-figure-head"></div>
+                    <div class="worldcup-figure-arm"></div>
+                    <div class="worldcup-figure-body"></div>
+                    <div class="worldcup-figure-legs"></div>
+                  </div>
+                  <div class="worldcup-figure right">
+                    <div class="worldcup-figure-head"></div>
+                    <div class="worldcup-figure-arm"></div>
+                    <div class="worldcup-figure-body"></div>
+                    <div class="worldcup-figure-legs"></div>
+                  </div>
+
+                  <!-- Cup bowl -->
+                  <div class="worldcup-cup">
+                    <div class="worldcup-cup-lines"></div>
+                  </div>
+
+                  <!-- Stem -->
+                  <div class="worldcup-stem"></div>
+
+                  <!-- Base -->
+                  <div class="worldcup-base"></div>
+                  <div class="worldcup-base-plate"></div>
+                </div>
+              </div>
+
+              <div class="worldcup-card-title">World Cup</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Derbies -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="derbies-topic-btn" class="derbies-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="derbies-rivalry-text">Local Rivals</div>
+
+              <!-- Crowd noise waves -->
+              <div class="derbies-crowd-waves">
+                <div class="derbies-wave-group left">
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                </div>
+                <div class="derbies-wave-group right">
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                  <div class="derbies-wave-bar"></div>
+                </div>
+              </div>
+
+              <!-- Flames at bottom -->
+              <div class="derbies-flames">
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+                <div class="derbies-flame"></div>
+              </div>
+
+              <!-- Derby dots -->
+              <div class="derbies-derby-dots">
+                <div class="derbies-dot"></div>
+                <div class="derbies-dot"></div>
+                <div class="derbies-dot"></div>
+                <div class="derbies-dot"></div>
+                <div class="derbies-dot"></div>
+                <div class="derbies-dot"></div>
+              </div>
+
+              <div class="derbies-icon-container">
+                <!-- Clashing Shields -->
+                <div class="derbies-shields">
+                  <!-- Left Shield (Red) -->
+                  <div class="derbies-shield left">
+                    <div class="derbies-shield-emblem"></div>
+                    <div class="derbies-shield-stripe"></div>
+                    <div class="derbies-shield-stripe"></div>
+                  </div>
+
+                  <!-- Right Shield (Blue) -->
+                  <div class="derbies-shield right">
+                    <div class="derbies-shield-emblem"></div>
+                    <div class="derbies-shield-stripe"></div>
+                    <div class="derbies-shield-stripe"></div>
+                  </div>
+
+                  <!-- VS Clash Center -->
+                  <div class="derbies-vs-clash">
+                    <div class="derbies-vs-circle">
+                      <span class="derbies-vs-text">VS</span>
+                    </div>
+                  </div>
+
+                  <!-- Lightning Sparks -->
+                  <div class="derbies-sparks">
+                    <div class="derbies-spark"></div>
+                    <div class="derbies-spark"></div>
+                    <div class="derbies-spark"></div>
+                    <div class="derbies-spark"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="derbies-card-title">Derbies</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Lionel Messi -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="messi-topic-btn" class="messi-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Argentina stripes overlay -->
+              <div class="messi-arg-stripes"></div>
+
+              <!-- Shimmer effect -->
+              <div class="messi-shimmer"></div>
+
+              <!-- Golden #10 -->
+              <div class="messi-number-10">
+                <span class="messi-digit">1</span>
+                <span class="messi-digit">0</span>
+              </div>
+
+              <!-- Crown -->
+              <div class="messi-crown">
+                <div class="messi-crown-base"></div>
+                <div class="messi-crown-point left"></div>
+                <div class="messi-crown-point center"></div>
+                <div class="messi-crown-point right"></div>
+                <div class="messi-crown-gem"></div>
+              </div>
+
+              <!-- Ballon d'Or -->
+              <div class="messi-ballon">
+                <div class="messi-ballon-ball"></div>
+                <div class="messi-ballon-count">8</div>
+              </div>
+
+              <!-- Argentina flag -->
+              <div class="messi-arg-flag">
+                <div class="messi-flag-stripe top"></div>
+                <div class="messi-flag-stripe middle">
+                  <div class="messi-flag-sun"></div>
+                </div>
+                <div class="messi-flag-stripe bottom"></div>
+              </div>
+
+              <!-- Mini World Cup -->
+              <div class="messi-wc-mini">
+                <div class="messi-wc-cup"></div>
+                <div class="messi-wc-handles"></div>
+                <div class="messi-wc-base"></div>
+                <div class="messi-wc-star">★</div>
+              </div>
+
+              <!-- Magic sparkles -->
+              <div class="messi-sparkles">
+                <div class="messi-sparkle"></div>
+                <div class="messi-sparkle"></div>
+                <div class="messi-sparkle"></div>
+                <div class="messi-sparkle"></div>
+                <div class="messi-sparkle"></div>
+                <div class="messi-sparkle"></div>
+              </div>
+
+              <!-- G.O.A.T text -->
+              <div class="messi-goat-text">G.O.A.T</div>
+
+              <!-- Career dots -->
+              <div class="messi-career-dots">
+                <div class="messi-career-dot barcelona"></div>
+                <div class="messi-career-dot argentina"></div>
+                <div class="messi-career-dot psg"></div>
+                <div class="messi-career-dot miami"></div>
+                <div class="messi-career-dot worldcup"></div>
+                <div class="messi-career-dot ballon"></div>
+              </div>
+
+              <div class="messi-card-title">Messi</div>
+            </button>
+          </div>
+
+          <!-- Card 7: Cristiano Ronaldo -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ronaldo-topic-btn" class="ronaldo-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Shimmer effect -->
+              <div class="ronaldo-shimmer"></div>
+
+              <!-- SIUUU -->
+              <div class="ronaldo-siuu">SIUUU!</div>
+
+              <!-- Portugal flag -->
+              <div class="ronaldo-por-flag">
+                <div class="ronaldo-por-green"></div>
+                <div class="ronaldo-por-red"></div>
+                <div class="ronaldo-por-emblem"></div>
+              </div>
+
+              <!-- Goals counter -->
+              <div class="ronaldo-goals">
+                900+
+                <span>GOALS</span>
+              </div>
+
+              <!-- UCL Trophies -->
+              <div class="ronaldo-ucl-trophies">
+                <div class="ronaldo-ucl-trophy"><div class="ronaldo-ucl-handles"></div><div class="ronaldo-ucl-cup"></div></div>
+                <div class="ronaldo-ucl-trophy"><div class="ronaldo-ucl-handles"></div><div class="ronaldo-ucl-cup"></div></div>
+                <div class="ronaldo-ucl-trophy"><div class="ronaldo-ucl-handles"></div><div class="ronaldo-ucl-cup"></div></div>
+                <div class="ronaldo-ucl-trophy"><div class="ronaldo-ucl-handles"></div><div class="ronaldo-ucl-cup"></div></div>
+                <div class="ronaldo-ucl-trophy"><div class="ronaldo-ucl-handles"></div><div class="ronaldo-ucl-cup"></div></div>
+              </div>
+
+              <!-- Celebration silhouette -->
+              <div class="ronaldo-celebration">
+                <div class="ronaldo-celeb-head"></div>
+                <div class="ronaldo-celeb-arms"></div>
+                <div class="ronaldo-celeb-body"></div>
+                <div class="ronaldo-celeb-legs"></div>
+              </div>
+
+              <!-- Sparks -->
+              <div class="ronaldo-sparks">
+                <div class="ronaldo-spark"></div>
+                <div class="ronaldo-spark"></div>
+                <div class="ronaldo-spark"></div>
+                <div class="ronaldo-spark"></div>
+                <div class="ronaldo-spark"></div>
+              </div>
+
+              <!-- Ballon d'Or -->
+              <div class="ronaldo-ballon">
+                <div class="ronaldo-ballon-count">5</div>
+              </div>
+
+              <!-- Career dots -->
+              <div class="ronaldo-career-dots">
+                <div class="ronaldo-career-dot sporting"></div>
+                <div class="ronaldo-career-dot manutd"></div>
+                <div class="ronaldo-career-dot realmadrid"></div>
+                <div class="ronaldo-career-dot juventus"></div>
+                <div class="ronaldo-career-dot alnassr"></div>
+                <div class="ronaldo-career-dot portugal"></div>
+              </div>
+
+              <div class="ronaldo-icon-container">
+                <!-- CR7 -->
+                <div class="ronaldo-cr7">
+                  <span class="ronaldo-cr-text">CR</span>
+                  <span class="ronaldo-seven">7</span>
+                </div>
+              </div>
+
+              <div class="ronaldo-card-title">Ronaldo</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Movies Section -->
+      <div class="movies-section">
+        <h3 class="section-title">🎬 Movies</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Movies General -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="movies-general-topic-btn" class="movies-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="movies-stars-topic">
+                <div class="movies-star-topic">★</div>
+                <div class="movies-star-topic">★</div>
+                <div class="movies-star-topic">★</div>
+                <div class="movies-star-topic">★</div>
+              </div>
+              <div class="movies-clapper-topic">
+                <div class="movies-clapper-top-topic"></div>
+                <div class="movies-clapper-bottom-topic"></div>
+              </div>
+              <div class="movies-film-strip-topic">
+                <div class="movies-film-frame-topic"></div>
+                <div class="movies-film-frame-topic"></div>
+                <div class="movies-film-frame-topic"></div>
+                <div class="movies-film-frame-topic"></div>
+              </div>
+              <div class="movies-ticket-topic"></div>
+              <div class="movies-cinema-container-topic">
+                <div class="movies-film-reel-topic">
+                  <div class="movies-reel-outer-topic"></div>
+                  <div class="movies-reel-holes-topic">
+                    <div class="movies-reel-hole-topic"></div>
+                    <div class="movies-reel-hole-topic"></div>
+                    <div class="movies-reel-hole-topic"></div>
+                    <div class="movies-reel-hole-topic"></div>
+                    <div class="movies-reel-hole-topic"></div>
+                    <div class="movies-reel-hole-topic"></div>
+                  </div>
+                  <div class="movies-reel-center-topic"></div>
+                </div>
+                <div class="movies-popcorn-container-topic">
+                  <div class="movies-popcorn-topic">
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                    <div class="movies-kernel-topic"></div>
+                  </div>
+                  <div class="movies-bucket-rim-topic"></div>
+                  <div class="movies-bucket-topic"></div>
+                </div>
+              </div>
+              <div class="movies-card-title-topic">Movies</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Marvel Movies -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="marvel-movies-topic-btn" class="marvel-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="marvel-hero-text">Excelsior!</div>
+              <div class="marvel-burst">
+                <div class="marvel-burst-shape"></div>
+                <div class="marvel-burst-text">POW!</div>
+              </div>
+              <div class="marvel-sparks">
+                <div class="marvel-spark"></div>
+                <div class="marvel-spark"></div>
+                <div class="marvel-spark"></div>
+                <div class="marvel-spark"></div>
+                <div class="marvel-spark"></div>
+              </div>
+              <div class="marvel-web">
+                <div class="marvel-web-line"></div>
+                <div class="marvel-web-line"></div>
+                <div class="marvel-web-line"></div>
+                <div class="marvel-web-line"></div>
+              </div>
+              <div class="marvel-hero-container">
+                <div class="marvel-action-lines">
+                  <div class="marvel-action-line"></div>
+                  <div class="marvel-action-line"></div>
+                  <div class="marvel-action-line"></div>
+                  <div class="marvel-action-line"></div>
+                </div>
+                <div class="marvel-shield">
+                  <div class="marvel-shield-ring-1"></div>
+                  <div class="marvel-shield-ring-2"></div>
+                  <div class="marvel-shield-ring-3"></div>
+                  <div class="marvel-shield-center">
+                    <div class="marvel-shield-star"></div>
+                  </div>
+                  <div class="marvel-shield-shine"></div>
+                </div>
+              </div>
+              <div class="marvel-stones">
+                <div class="marvel-stone"></div>
+                <div class="marvel-stone"></div>
+                <div class="marvel-stone"></div>
+                <div class="marvel-stone"></div>
+                <div class="marvel-stone"></div>
+                <div class="marvel-stone"></div>
+              </div>
+              <div class="marvel-card-title">Marvel</div>
+            </button>
+          </div>
+
+          <!-- Card 3: DC Movies -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="dc-movies-topic-btn" class="dc-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="dc-hero-text">Justice</div>
+              <div class="dc-burst">
+                <div class="dc-burst-shape"></div>
+                <div class="dc-burst-text">BAM!</div>
+              </div>
+              <div class="dc-sparks">
+                <div class="dc-spark"></div>
+                <div class="dc-spark"></div>
+                <div class="dc-spark"></div>
+                <div class="dc-spark"></div>
+                <div class="dc-spark"></div>
+              </div>
+              <div class="dc-action-lines">
+                <div class="dc-action-line"></div>
+                <div class="dc-action-line"></div>
+                <div class="dc-action-line"></div>
+                <div class="dc-action-line"></div>
+              </div>
+              <div class="dc-gotham">
+                <div class="dc-building"></div>
+                <div class="dc-building"></div>
+                <div class="dc-building"></div>
+                <div class="dc-building"></div>
+              </div>
+              <div class="dc-hero-container">
+                <div class="dc-bat-logo">
+                  <div class="dc-bat-oval"></div>
+                  <div class="dc-bat-shape">
+                    <div class="dc-bat-head">
+                      <div class="dc-bat-ear dc-left"></div>
+                      <div class="dc-bat-ear dc-right"></div>
+                    </div>
+                    <div class="dc-bat-wing dc-left"></div>
+                    <div class="dc-bat-wing dc-right"></div>
+                    <div class="dc-bat-body"></div>
+                    <div class="dc-bat-tail"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="dc-jl-stones">
+                <div class="dc-stone"></div>
+                <div class="dc-stone"></div>
+                <div class="dc-stone"></div>
+                <div class="dc-stone"></div>
+                <div class="dc-stone"></div>
+                <div class="dc-stone"></div>
+              </div>
+              <div class="dc-card-title">DC</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Disney Movies -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="disney-movies-topic-btn" class="disney-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="disney-magic-text">Dreams Come True</div>
+              <div class="disney-wand-trail">
+                <div class="disney-wand-star">✦</div>
+                <div class="disney-wand-trail-line"></div>
+                <div class="disney-wand-trail-line"></div>
+                <div class="disney-wand-trail-line"></div>
+              </div>
+              <div class="disney-shooting-star"></div>
+              <div class="disney-sparkles">
+                <div class="disney-sparkle"></div>
+                <div class="disney-sparkle"></div>
+                <div class="disney-sparkle"></div>
+                <div class="disney-sparkle"></div>
+                <div class="disney-sparkle"></div>
+                <div class="disney-sparkle"></div>
+              </div>
+              <div class="disney-castle">
+                <div class="disney-castle-tower"></div>
+                <div class="disney-castle-tower"></div>
+                <div class="disney-castle-tower"></div>
+              </div>
+              <div class="disney-icon-container">
+                <div class="disney-mickey">
+                  <div class="disney-mickey-ear disney-left"></div>
+                  <div class="disney-mickey-ear disney-right"></div>
+                  <div class="disney-mickey-head"></div>
+                </div>
+              </div>
+              <div class="disney-magic-dots">
+                <div class="disney-dot"></div>
+                <div class="disney-dot"></div>
+                <div class="disney-dot"></div>
+                <div class="disney-dot"></div>
+                <div class="disney-dot"></div>
+                <div class="disney-dot"></div>
+              </div>
+              <div class="disney-card-title">Disney</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Harry Potter -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="harry-potter-topic-btn" class="hp-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="hp-magic-text">Always</div>
+              <div class="hp-snitch">
+                <div class="hp-snitch-wing hp-left"></div>
+                <div class="hp-snitch-ball"></div>
+                <div class="hp-snitch-wing hp-right"></div>
+              </div>
+              <div class="hp-lightning">⚡</div>
+              <div class="hp-sparkles">
+                <div class="hp-sparkle"></div>
+                <div class="hp-sparkle"></div>
+                <div class="hp-sparkle"></div>
+                <div class="hp-sparkle"></div>
+                <div class="hp-sparkle"></div>
+              </div>
+              <div class="hp-castle">
+                <div class="hp-tower"></div>
+                <div class="hp-tower"></div>
+                <div class="hp-tower"></div>
+                <div class="hp-tower"></div>
+              </div>
+              <div class="hp-icon-container">
+                <div class="hp-hallows">
+                  <div class="hp-hallows-triangle"></div>
+                  <div class="hp-hallows-circle"></div>
+                  <div class="hp-hallows-line"></div>
+                  <div class="hp-hallows-shine"></div>
+                </div>
+              </div>
+              <div class="hp-house-dots">
+                <div class="hp-dot"></div>
+                <div class="hp-dot"></div>
+                <div class="hp-dot"></div>
+                <div class="hp-dot"></div>
+              </div>
+              <div class="hp-card-title">Harry Potter</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Star Wars -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="star-wars-topic-btn" class="sw-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Force text -->
+              <div class="sw-force-text">The Force</div>
+
+              <!-- Death Star -->
+              <div class="sw-death-star">
+                <div class="sw-death-star-body"></div>
+                <div class="sw-death-star-dish"></div>
+                <div class="sw-death-star-trench"></div>
+              </div>
+
+              <!-- Hyperspace lines -->
+              <div class="sw-hyperspace">
+                <div class="sw-hyper-line"></div>
+                <div class="sw-hyper-line"></div>
+                <div class="sw-hyper-line"></div>
+              </div>
+
+              <!-- Stars -->
+              <div class="sw-stars">
+                <div class="sw-star"></div>
+                <div class="sw-star"></div>
+                <div class="sw-star"></div>
+                <div class="sw-star"></div>
+                <div class="sw-star"></div>
+                <div class="sw-star"></div>
+              </div>
+
+              <!-- Rebel logo corner -->
+              <div class="sw-rebel-logo"></div>
+
+              <div class="sw-icon-container">
+                <!-- Lightsaber -->
+                <div class="sw-lightsaber">
+                  <div class="sw-saber-blade"></div>
+                  <div class="sw-saber-handle"></div>
+                </div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="sw-faction-dots">
+                <div class="sw-dot"></div>
+                <div class="sw-dot"></div>
+                <div class="sw-dot"></div>
+                <div class="sw-dot"></div>
+                <div class="sw-dot"></div>
+              </div>
+
+              <div class="sw-card-title">Star Wars</div>
+            </button>
+          </div>
+
+          <!-- Card 7: Lord of the Rings -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="lotr-topic-btn" class="lotr-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="lotr-elvish-text">One Ring</div>
+              <div class="lotr-eye">
+                <div class="lotr-eye-glow"></div>
+                <div class="lotr-eye-shape"></div>
+                <div class="lotr-eye-slit"></div>
+              </div>
+              <div class="lotr-embers">
+                <div class="lotr-ember"></div>
+                <div class="lotr-ember"></div>
+                <div class="lotr-ember"></div>
+                <div class="lotr-ember"></div>
+                <div class="lotr-ember"></div>
+              </div>
+              <div class="lotr-mountains">
+                <div class="lotr-mountain"></div>
+                <div class="lotr-mountain"></div>
+                <div class="lotr-mountain"></div>
+              </div>
+              <div class="lotr-leaf"></div>
+              <div class="lotr-icon-container">
+                <div class="lotr-ring">
+                  <div class="lotr-ring-outer"></div>
+                  <div class="lotr-ring-inner"></div>
+                  <div class="lotr-ring-inscription"></div>
+                  <div class="lotr-ring-shine"></div>
+                </div>
+              </div>
+              <div class="lotr-fellowship-dots">
+                <div class="lotr-dot"></div>
+                <div class="lotr-dot"></div>
+                <div class="lotr-dot"></div>
+                <div class="lotr-dot"></div>
+                <div class="lotr-dot"></div>
+              </div>
+              <div class="lotr-card-title">LOTR</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TV Shows Section -->
+      <div class="tvshows-section">
+        <h3 class="section-title">📺 TV Shows</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: TV Shows General -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="tv-general-topic-btn" class="tv-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="tv-binge-text">Binge Watch</div>
+              <div class="tv-on-air">
+                <div class="tv-on-air-dot"></div>
+                <div class="tv-on-air-text">ON AIR</div>
+              </div>
+              <div class="tv-signals">
+                <div class="tv-signal"></div>
+                <div class="tv-signal"></div>
+                <div class="tv-signal"></div>
+              </div>
+              <div class="tv-static">
+                <div class="tv-static-dot"></div>
+                <div class="tv-static-dot"></div>
+                <div class="tv-static-dot"></div>
+                <div class="tv-static-dot"></div>
+                <div class="tv-static-dot"></div>
+              </div>
+              <div class="tv-antenna">
+                <div class="tv-antenna-rod"></div>
+                <div class="tv-antenna-rod"></div>
+                <div class="tv-antenna-base"></div>
+              </div>
+              <div class="tv-remote"></div>
+              <div class="tv-icon-container">
+                <div class="tv-retro">
+                  <div class="tv-body"></div>
+                  <div class="tv-screen">
+                    <div class="tv-play-icon"></div>
+                  </div>
+                  <div class="tv-buttons">
+                    <div class="tv-button"></div>
+                    <div class="tv-button"></div>
+                    <div class="tv-button"></div>
+                  </div>
+                  <div class="tv-legs">
+                    <div class="tv-leg"></div>
+                    <div class="tv-leg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tv-genre-dots">
+                <div class="tv-dot"></div>
+                <div class="tv-dot"></div>
+                <div class="tv-dot"></div>
+                <div class="tv-dot"></div>
+                <div class="tv-dot"></div>
+                <div class="tv-dot"></div>
+              </div>
+              <div class="tv-card-title">TV Shows</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Sitcoms -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="sitcoms-topic-btn" class="sitcoms-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="sitcoms-room-text">Laugh Track</div>
+              <div class="sitcoms-laugh-burst">
+                <div class="sitcoms-laugh-text">HAHA!</div>
+              </div>
+              <div class="sitcoms-coffee">
+                <div class="sitcoms-coffee-steam"></div>
+                <div class="sitcoms-coffee-cup"></div>
+              </div>
+              <div class="sitcoms-lights">
+                <div class="sitcoms-light"></div>
+                <div class="sitcoms-light"></div>
+                <div class="sitcoms-light"></div>
+                <div class="sitcoms-light"></div>
+              </div>
+              <div class="sitcoms-tv-corner">
+                <div class="sitcoms-tv-box"></div>
+              </div>
+              <div class="sitcoms-icon-container">
+                <div class="sitcoms-couch">
+                  <div class="sitcoms-couch-back"></div>
+                  <div class="sitcoms-couch-seat">
+                    <div class="sitcoms-cushion-line"></div>
+                    <div class="sitcoms-cushion-line"></div>
+                  </div>
+                  <div class="sitcoms-couch-arm sitcoms-left"></div>
+                  <div class="sitcoms-couch-arm sitcoms-right"></div>
+                  <div class="sitcoms-couch-leg"></div>
+                  <div class="sitcoms-couch-leg"></div>
+                </div>
+              </div>
+              <div class="sitcoms-show-dots">
+                <div class="sitcoms-dot"></div>
+                <div class="sitcoms-dot"></div>
+                <div class="sitcoms-dot"></div>
+                <div class="sitcoms-dot"></div>
+                <div class="sitcoms-dot"></div>
+                <div class="sitcoms-dot"></div>
+              </div>
+              <div class="sitcoms-card-title">Sitcoms</div>
+            </button>
+          </div>
+
+          <!-- Card 3: Game of Thrones -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="game-of-thrones-topic-btn" class="got-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="got-motto-text">Fire & Blood</div>
+              <div class="got-dragon">
+                <div class="got-dragon-tail"></div>
+                <div class="got-dragon-body"></div>
+                <div class="got-dragon-wing"></div>
+                <div class="got-dragon-head"></div>
+              </div>
+              <div class="got-crown">
+                <div class="got-crown-point"></div>
+                <div class="got-crown-point"></div>
+                <div class="got-crown-point"></div>
+                <div class="got-crown-base"></div>
+                <div class="got-crown-gem"></div>
+              </div>
+              <div class="got-smoke">
+                <div class="got-smoke-cloud"></div>
+                <div class="got-smoke-cloud"></div>
+                <div class="got-smoke-cloud"></div>
+                <div class="got-smoke-cloud"></div>
+              </div>
+              <div class="got-embers">
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+                <div class="got-ember"></div>
+              </div>
+              <div class="got-icon-container">
+                <div class="got-fire-left">
+                  <div class="got-flame got-flame-1"></div>
+                  <div class="got-flame got-flame-2"></div>
+                  <div class="got-flame got-flame-3"></div>
+                  <div class="got-flame got-flame-4"></div>
+                  <div class="got-flame got-flame-5"></div>
+                </div>
+                <div class="got-throne">
+                  <div class="got-throne-back">
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                    <div class="got-sword"></div>
+                  </div>
+                  <div class="got-throne-seat"></div>
+                  <div class="got-throne-base"></div>
+                </div>
+                <div class="got-fire-right">
+                  <div class="got-flame got-flame-1"></div>
+                  <div class="got-flame got-flame-2"></div>
+                  <div class="got-flame got-flame-3"></div>
+                  <div class="got-flame got-flame-4"></div>
+                  <div class="got-flame got-flame-5"></div>
+                </div>
+              </div>
+              <div class="got-house-dots">
+                <div class="got-dot"></div>
+                <div class="got-dot"></div>
+                <div class="got-dot"></div>
+                <div class="got-dot"></div>
+                <div class="got-dot"></div>
+                <div class="got-dot"></div>
+              </div>
+              <div class="got-card-title">Game of Thrones</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Breaking Bad -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="breaking-bad-topic-btn" class="bb-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="bb-formula">C₁₀H₁₅N</div>
+              <div class="bb-purity">99.1%</div>
+              <div class="bb-hazmat"></div>
+
+              <div class="bb-character-dots">
+                <div class="bb-dot"></div>
+                <div class="bb-dot"></div>
+                <div class="bb-dot"></div>
+                <div class="bb-dot"></div>
+                <div class="bb-dot"></div>
+                <div class="bb-dot"></div>
+              </div>
+
+              <div class="bb-icon-container">
+                <!-- Vapor -->
+                <div class="bb-vapor">
+                  <div class="bb-vapor-particle"></div>
+                  <div class="bb-vapor-particle"></div>
+                  <div class="bb-vapor-particle"></div>
+                </div>
+
+                <!-- Flask -->
+                <div class="bb-flask">
+                  <div class="bb-flask-rim"></div>
+                  <div class="bb-flask-neck"></div>
+                  <div class="bb-flask-body">
+                    <div class="bb-flask-shine"></div>
+                  </div>
+
+                  <!-- Liquid -->
+                  <div class="bb-liquid">
+                    <div class="bb-bubbles">
+                      <div class="bb-bubble"></div>
+                      <div class="bb-bubble"></div>
+                      <div class="bb-bubble"></div>
+                      <div class="bb-bubble"></div>
+                      <div class="bb-bubble"></div>
+                    </div>
+                    <div class="bb-crystals">
+                      <div class="bb-crystal"></div>
+                      <div class="bb-crystal"></div>
+                      <div class="bb-crystal"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bb-card-title">Breaking Bad</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Stranger Things -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="stranger-things-topic-btn" class="st-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="st-eleven">011</div>
+              <div class="st-upside-down">upside down</div>
+
+              <div class="st-vines">
+                <div class="st-vine"></div>
+                <div class="st-vine"></div>
+                <div class="st-vine"></div>
+                <div class="st-vine"></div>
+                <div class="st-vine"></div>
+                <div class="st-vine"></div>
+              </div>
+
+              <div class="st-character-dots">
+                <div class="st-dot"></div>
+                <div class="st-dot"></div>
+                <div class="st-dot"></div>
+                <div class="st-dot"></div>
+                <div class="st-dot"></div>
+                <div class="st-dot"></div>
+              </div>
+
+              <div class="st-icon-container">
+                <!-- Wire -->
+                <div class="st-wire">
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                  <div class="st-wire-path"></div>
+                </div>
+
+                <!-- Christmas Lights -->
+                <div class="st-lights">
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                  <div class="st-light"></div>
+                </div>
+              </div>
+
+              <div class="st-card-title">Stranger Things</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Money Heist -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="money-heist-topic-btn" class="mh-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="mh-shimmer"></div>
+              <div class="mh-professor">El Profesor</div>
+              <div class="mh-bella-ciao">♪ bella ciao ♪</div>
+
+              <div class="mh-red-glow"></div>
+
+              <div class="mh-gold-bars">
+                <div class="mh-gold-bar"></div>
+                <div class="mh-gold-bar"></div>
+                <div class="mh-gold-bar"></div>
+              </div>
+
+              <div class="mh-character-dots">
+                <div class="mh-dot"></div>
+                <div class="mh-dot"></div>
+                <div class="mh-dot"></div>
+                <div class="mh-dot"></div>
+                <div class="mh-dot"></div>
+                <div class="mh-dot"></div>
+              </div>
+
+              <div class="mh-icon-container">
+                <div class="mh-mask">
+                  <div class="mh-face"></div>
+                  <div class="mh-eyebrows">
+                    <div class="mh-eyebrow"></div>
+                    <div class="mh-eyebrow"></div>
+                  </div>
+                  <div class="mh-eyes">
+                    <div class="mh-eye"></div>
+                    <div class="mh-eye"></div>
+                  </div>
+                  <div class="mh-nose">
+                    <div class="mh-nose-bridge"></div>
+                    <div class="mh-nose-tip"></div>
+                  </div>
+                  <div class="mh-mustache">
+                    <div class="mh-mustache-half"></div>
+                    <div class="mh-mustache-half"></div>
+                  </div>
+                  <div class="mh-lips">
+                    <div class="mh-upper-lip"></div>
+                    <div class="mh-lower-lip"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mh-card-title">Money Heist</div>
+            </button>
+          </div>
+
+          <!-- Card 7: The Office -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="the-office-topic-btn" class="office-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Ambient glow -->
+              <div class="office-ambient-glow-topic"></div>
+
+              <!-- Window -->
+              <div class="office-window-topic">
+                <div class="office-blinds-topic">
+                  <div class="office-blind-topic"></div>
+                  <div class="office-blind-topic"></div>
+                  <div class="office-blind-topic"></div>
+                  <div class="office-blind-topic"></div>
+                  <div class="office-blind-topic"></div>
+                </div>
+                <div class="office-skyline-topic">
+                  <div class="office-building-topic"></div>
+                  <div class="office-building-topic"></div>
+                  <div class="office-building-topic"></div>
+                  <div class="office-building-topic"></div>
+                </div>
+              </div>
+
+              <!-- THE OFFICE Logo -->
+              <div class="office-logo-topic">THE OFFICE</div>
+
+              <!-- Flying Papers -->
+              <div class="office-papers-topic">
+                <div class="office-paper-topic"></div>
+                <div class="office-paper-topic"></div>
+                <div class="office-paper-topic"></div>
+              </div>
+
+              <!-- World's Best Boss Mug -->
+              <div class="office-mug-v2-topic">
+                <div class="office-mug-body-topic"></div>
+                <div class="office-mug-handle-topic"></div>
+                <div class="office-mug-text-topic">BOSS</div>
+                <div class="office-steam-v2-topic">
+                  <div class="office-steam-particle-topic"></div>
+                  <div class="office-steam-particle-topic"></div>
+                  <div class="office-steam-particle-topic"></div>
+                </div>
+              </div>
+
+              <!-- Dundie Award -->
+              <div class="office-dundie-topic">
+                <div class="office-dundie-top-topic"></div>
+                <div class="office-dundie-mid-topic"></div>
+                <div class="office-dundie-base-topic"></div>
+                <div class="office-dundie-shine-topic"></div>
+              </div>
+
+              <!-- Stapler in Jello -->
+              <div class="office-jello-topic">
+                <div class="office-jello-body-topic"></div>
+                <div class="office-stapler-topic"></div>
+              </div>
+
+              <!-- Office Plant -->
+              <div class="office-plant-topic">
+                <div class="office-pot-topic"></div>
+                <div class="office-leaves-topic">
+                  <div class="office-leaf-topic"></div>
+                  <div class="office-leaf-topic"></div>
+                  <div class="office-leaf-topic"></div>
+                </div>
+              </div>
+
+              <!-- Dunder Mifflin -->
+              <div class="office-dm-topic">Dunder Mifflin</div>
+
+              <!-- Character dots -->
+              <div class="office-character-dots-topic">
+                <div class="office-dot-topic"></div>
+                <div class="office-dot-topic"></div>
+                <div class="office-dot-topic"></div>
+                <div class="office-dot-topic"></div>
+                <div class="office-dot-topic"></div>
+                <div class="office-dot-topic"></div>
+              </div>
+
+              <div class="office-card-title-topic">The Office</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- History Section -->
+      <div class="history-section">
+        <h3 class="section-title">📜 History</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: World History (Holographic Hourglass) -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="world-history-topic-btn" class="history-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="history-ancient-text">Through The Ages</div>
+              <div class="history-timeline-burst">
+                <div class="history-timeline"></div>
+              </div>
+              <div class="history-dates">
+                <div class="history-date">1776</div>
+                <div class="history-date">44BC</div>
+                <div class="history-date">1945</div>
+                <div class="history-date">1066</div>
+              </div>
+              <div class="history-pyramid">
+                <div class="history-pyramid-shape"></div>
+                <div class="history-pyramid-shape"></div>
+              </div>
+              <div class="history-column">
+                <div class="history-column-top"></div>
+                <div class="history-column-shaft"></div>
+                <div class="history-column-base"></div>
+              </div>
+              <div class="history-era-dots">
+                <div class="history-dot"></div>
+                <div class="history-dot"></div>
+                <div class="history-dot"></div>
+                <div class="history-dot"></div>
+                <div class="history-dot"></div>
+                <div class="history-dot"></div>
+              </div>
+              <div class="history-icon-container">
+                <div class="history-holo-rings">
+                  <div class="history-holo-ring"></div>
+                  <div class="history-holo-ring"></div>
+                  <div class="history-holo-ring"></div>
+                </div>
+                <div class="history-hourglass">
+                  <div class="history-frame-top"></div>
+                  <div class="history-frame-bottom"></div>
+                  <div class="history-pillar left"></div>
+                  <div class="history-pillar right"></div>
+                  <div class="history-glass-top">
+                    <div class="history-sand-top"></div>
+                    <div class="history-glass-shine-top"></div>
+                  </div>
+                  <div class="history-glass-neck">
+                    <div class="history-sand-stream"></div>
+                  </div>
+                  <div class="history-glass-bottom">
+                    <div class="history-sand-bottom"></div>
+                    <div class="history-glass-shine-bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="history-card-title">World History</div>
+            </button>
+          </div>
+
+          <!-- Card 2: World War II (Military Helmet Design) -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ww2-topic-btn" class="wwii-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="wwii-remember-text">Never Forget</div>
+              <div class="wwii-date-banner">1939-1945</div>
+              <div class="wwii-explosions">
+                <div class="wwii-explosion"></div>
+                <div class="wwii-explosion"></div>
+                <div class="wwii-explosion"></div>
+              </div>
+              <div class="wwii-military-stars">
+                <div class="wwii-mil-star"></div>
+                <div class="wwii-mil-star"></div>
+              </div>
+              <div class="wwii-plane">
+                <div class="wwii-plane-body"></div>
+                <div class="wwii-plane-wing"></div>
+                <div class="wwii-plane-tail"></div>
+              </div>
+              <div class="wwii-barbed-wire">
+                <div class="wwii-wire-line"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+                <div class="wwii-barb"></div>
+              </div>
+              <div class="wwii-faction-dots">
+                <div class="wwii-dot"></div>
+                <div class="wwii-dot"></div>
+                <div class="wwii-dot"></div>
+                <div class="wwii-dot"></div>
+                <div class="wwii-dot"></div>
+                <div class="wwii-dot"></div>
+              </div>
+              <div class="wwii-icon-container">
+                <div class="wwii-helmet">
+                  <div class="wwii-helmet-dome">
+                    <div class="wwii-helmet-shine"></div>
+                    <div class="wwii-helmet-star"></div>
+                  </div>
+                  <div class="wwii-helmet-band"></div>
+                  <div class="wwii-helmet-rim"></div>
+                </div>
+                <div class="wwii-dog-tags">
+                  <div class="wwii-tag-chain"></div>
+                  <div class="wwii-tag">
+                    <div class="wwii-tag-hole"></div>
+                    <div class="wwii-tag-lines"></div>
+                  </div>
+                  <div class="wwii-tag">
+                    <div class="wwii-tag-hole"></div>
+                    <div class="wwii-tag-lines"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="wwii-card-title">WWII</div>
+            </button>
+          </div>
+
+          <!-- Card 3: World War I -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ww1-topic-btn" class="wwi-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="wwi-remember-text">The Great War</div>
+              <div class="wwi-date-banner">1914-1918</div>
+
+              <!-- Barbed wire -->
+              <div class="wwi-barbed-wire">
+                <div class="wwi-wire"></div>
+                <div class="wwi-wire"></div>
+                <div class="wwi-wire"></div>
+                <div class="wwi-barb"></div>
+                <div class="wwi-barb"></div>
+                <div class="wwi-barb"></div>
+                <div class="wwi-barb"></div>
+              </div>
+
+              <!-- Poppies -->
+              <div class="wwi-poppies">
+                <div class="wwi-poppy"></div>
+                <div class="wwi-poppy"></div>
+                <div class="wwi-poppy"></div>
+              </div>
+
+              <!-- Artillery shell -->
+              <div class="wwi-shell">
+                <div class="wwi-shell-tip"></div>
+                <div class="wwi-shell-body"></div>
+              </div>
+
+              <!-- Trench corner -->
+              <div class="wwi-trench">
+                <div class="wwi-trench-wall"></div>
+                <div class="wwi-sandbag"></div>
+                <div class="wwi-sandbag"></div>
+                <div class="wwi-sandbag"></div>
+                <div class="wwi-sandbag"></div>
+                <div class="wwi-sandbag"></div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="wwi-faction-dots">
+                <div class="wwi-dot"></div>
+                <div class="wwi-dot"></div>
+                <div class="wwi-dot"></div>
+                <div class="wwi-dot"></div>
+                <div class="wwi-dot"></div>
+                <div class="wwi-dot"></div>
+              </div>
+
+              <div class="wwi-icon-container">
+                <!-- Trench Helmet -->
+                <div class="wwi-helmet">
+                  <div class="wwi-helmet-dome">
+                    <div class="wwi-helmet-shine"></div>
+                  </div>
+                  <div class="wwi-helmet-brim"></div>
+                </div>
+
+                <!-- Gas Mask -->
+                <div class="wwi-gas-mask">
+                  <div class="wwi-mask-face">
+                    <div class="wwi-mask-eye left"></div>
+                    <div class="wwi-mask-eye right"></div>
+                  </div>
+                  <div class="wwi-mask-filter"></div>
+                </div>
+              </div>
+
+              <div class="wwi-card-title">WWI</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Roman Empire -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="roman-empire-topic-btn" class="roman-card-topic" style="cursor: pointer; font-family: inherit;">
+              <div class="roman-spqr">SPQR</div>
+              <div class="roman-date-banner">27 BC - 476 AD</div>
+
+              <!-- Laurel wreath -->
+              <div class="roman-laurel">
+                <div class="roman-laurel-branch left"></div>
+                <div class="roman-laurel-branch right"></div>
+              </div>
+
+              <!-- Roman columns -->
+              <div class="roman-columns">
+                <div class="roman-column">
+                  <div class="roman-column-top"></div>
+                  <div class="roman-column-shaft"></div>
+                  <div class="roman-column-base"></div>
+                </div>
+                <div class="roman-column">
+                  <div class="roman-column-top"></div>
+                  <div class="roman-column-shaft"></div>
+                  <div class="roman-column-base"></div>
+                </div>
+              </div>
+
+              <!-- Gladius -->
+              <div class="roman-gladius">
+                <div class="roman-gladius-blade"></div>
+                <div class="roman-gladius-guard"></div>
+                <div class="roman-gladius-handle"></div>
+                <div class="roman-gladius-pommel"></div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="roman-faction-dots">
+                <div class="roman-dot"></div>
+                <div class="roman-dot"></div>
+                <div class="roman-dot"></div>
+                <div class="roman-dot"></div>
+                <div class="roman-dot"></div>
+                <div class="roman-dot"></div>
+              </div>
+
+              <div class="roman-icon-container">
+                <!-- SPQR Eagle -->
+                <div class="roman-eagle">
+                  <div class="roman-eagle-wing left">
+                    <div class="roman-feather"></div>
+                    <div class="roman-feather"></div>
+                    <div class="roman-feather"></div>
+                  </div>
+                  <div class="roman-eagle-wing right">
+                    <div class="roman-feather"></div>
+                    <div class="roman-feather"></div>
+                    <div class="roman-feather"></div>
+                  </div>
+                  <div class="roman-eagle-body"></div>
+                  <div class="roman-eagle-head">
+                    <div class="roman-eagle-eye left"></div>
+                    <div class="roman-eagle-eye right"></div>
+                    <div class="roman-eagle-beak"></div>
+                  </div>
+                  <div class="roman-eagle-talons">
+                    <div class="roman-talon"></div>
+                    <div class="roman-talon"></div>
+                    <div class="roman-talon"></div>
+                    <div class="roman-talon"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="roman-card-title">Roman Empire</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Ottoman Empire -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ottoman-empire-topic-btn" class="ottoman-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Tughra -->
+              <div class="ottoman-tughra">
+                <div class="ottoman-tughra-loop"></div>
+                <div class="ottoman-tughra-stem"></div>
+                <div class="ottoman-tughra-stem"></div>
+                <div class="ottoman-tughra-stem"></div>
+              </div>
+
+              <!-- Tulip -->
+              <div class="ottoman-tulip">
+                <div class="ottoman-tulip-petal"></div>
+                <div class="ottoman-tulip-petal"></div>
+                <div class="ottoman-tulip-petal"></div>
+                <div class="ottoman-tulip-stem"></div>
+              </div>
+
+              <div class="ottoman-date-banner">1299-1922</div>
+
+              <!-- Floating embers -->
+              <div class="ottoman-embers">
+                <div class="ottoman-ember"></div>
+                <div class="ottoman-ember"></div>
+                <div class="ottoman-ember"></div>
+                <div class="ottoman-ember"></div>
+              </div>
+
+              <!-- Mosque silhouette -->
+              <div class="ottoman-mosque">
+                <div class="ottoman-minaret left"><div class="ottoman-minaret-top"></div></div>
+                <div class="ottoman-mosque-dome"></div>
+                <div class="ottoman-mosque-base"></div>
+                <div class="ottoman-minaret right"><div class="ottoman-minaret-top"></div></div>
+              </div>
+
+              <!-- Scimitar -->
+              <div class="ottoman-scimitar">
+                <div class="ottoman-scimitar-blade"></div>
+                <div class="ottoman-scimitar-handle"></div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="ottoman-faction-dots">
+                <div class="ottoman-dot"></div>
+                <div class="ottoman-dot"></div>
+                <div class="ottoman-dot"></div>
+                <div class="ottoman-dot"></div>
+                <div class="ottoman-dot"></div>
+                <div class="ottoman-dot"></div>
+              </div>
+
+              <div class="ottoman-icon-container">
+                <!-- Crescent and Star -->
+                <div class="ottoman-crescent-star">
+                  <div class="ottoman-crescent"></div>
+                  <div class="ottoman-star"></div>
+                </div>
+              </div>
+
+              <div class="ottoman-card-title">Ottoman Empire</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Egyptian History -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="egyptian-topic-btn" class="egyptian-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Sun disc -->
+              <div class="egyptian-sun-disc">
+                <div class="egyptian-sun"></div>
+              </div>
+
+              <!-- Scarab -->
+              <div class="egyptian-scarab">
+                <div class="egyptian-scarab-head"></div>
+                <div class="egyptian-scarab-wing left"></div>
+                <div class="egyptian-scarab-wing right"></div>
+                <div class="egyptian-scarab-body"></div>
+              </div>
+
+              <!-- Eye of Horus -->
+              <div class="egyptian-eye-of-horus">
+                <div class="egyptian-eye-brow"></div>
+                <div class="egyptian-eye-outer"></div>
+                <div class="egyptian-eye-pupil"></div>
+                <div class="egyptian-eye-tear"></div>
+              </div>
+
+              <!-- Hieroglyphics -->
+              <div class="egyptian-hieroglyphics">
+                <div class="egyptian-glyph"></div>
+                <div class="egyptian-glyph"></div>
+                <div class="egyptian-glyph"></div>
+                <div class="egyptian-glyph"></div>
+                <div class="egyptian-glyph"></div>
+              </div>
+
+              <!-- Pyramids -->
+              <div class="egyptian-pyramids">
+                <div class="egyptian-pyramid"></div>
+                <div class="egyptian-pyramid"></div>
+              </div>
+
+              <div class="egyptian-date-banner">3100 BC - 30 BC</div>
+
+              <!-- Floating sand -->
+              <div class="egyptian-sand-particles">
+                <div class="egyptian-sand"></div>
+                <div class="egyptian-sand"></div>
+                <div class="egyptian-sand"></div>
+                <div class="egyptian-sand"></div>
+                <div class="egyptian-sand"></div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="egyptian-faction-dots">
+                <div class="egyptian-dot"></div>
+                <div class="egyptian-dot"></div>
+                <div class="egyptian-dot"></div>
+                <div class="egyptian-dot"></div>
+                <div class="egyptian-dot"></div>
+                <div class="egyptian-dot"></div>
+              </div>
+
+              <div class="egyptian-icon-container">
+                <!-- Ankh -->
+                <div class="egyptian-ankh">
+                  <div class="egyptian-ankh-loop"></div>
+                  <div class="egyptian-ankh-bar"></div>
+                  <div class="egyptian-ankh-stem"></div>
+                </div>
+              </div>
+
+              <div class="egyptian-card-title">Egyptian</div>
+            </button>
+          </div>
+
+          <!-- Card 7: British Monarchy -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="british-monarchy-topic-btn" class="british-card-topic" style="cursor: pointer; font-family: inherit;">
+              <!-- Union Jack corner -->
+              <div class="british-union-jack">
+                <div class="british-uj-cross v"></div>
+                <div class="british-uj-cross h"></div>
+              </div>
+
+              <div class="british-royal-text">God Save</div>
+
+              <!-- Sparkles -->
+              <div class="british-sparkles">
+                <div class="british-sparkle"></div>
+                <div class="british-sparkle"></div>
+                <div class="british-sparkle"></div>
+                <div class="british-sparkle"></div>
+              </div>
+
+              <!-- Scepter -->
+              <div class="british-scepter">
+                <div class="british-scepter-top"></div>
+                <div class="british-scepter-shaft"></div>
+              </div>
+
+              <!-- Orb -->
+              <div class="british-orb">
+                <div class="british-orb-cross"></div>
+                <div class="british-orb-ball"></div>
+              </div>
+
+              <!-- Faction dots -->
+              <div class="british-faction-dots">
+                <div class="british-dot"></div>
+                <div class="british-dot"></div>
+                <div class="british-dot"></div>
+                <div class="british-dot"></div>
+                <div class="british-dot"></div>
+                <div class="british-dot"></div>
+              </div>
+
+              <div class="british-icon-container">
+                <!-- Royal Crown -->
+                <div class="british-crown">
+                  <div class="british-crown-cross">
+                    <div class="british-cross-vertical"></div>
+                    <div class="british-cross-horizontal"></div>
+                  </div>
+                  <div class="british-crown-orb"></div>
+                  <div class="british-crown-arch left"></div>
+                  <div class="british-crown-arch right"></div>
+                  <div class="british-velvet-cap"></div>
+                  <div class="british-ermine">
+                    <div class="british-ermine-dot"></div>
+                    <div class="british-ermine-dot"></div>
+                    <div class="british-ermine-dot"></div>
+                    <div class="british-ermine-dot"></div>
+                    <div class="british-ermine-dot"></div>
+                  </div>
+                  <div class="british-crown-band">
+                    <div class="british-band-jewel"></div>
+                    <div class="british-band-jewel"></div>
+                    <div class="british-band-jewel"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="british-card-title">British Monarchy</div>
+            </button>
+          </div>
+
+          <!-- Card 8: Ancient Civilizations -->
+          <div class="topic-card-small status-active">
+            <button id="ancient-civs-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏛️</div>
+              <div class="topic-name-small">Ancient Civs</div>
+            </button>
+          </div>
+
+          <!-- Card 9: Cold War -->
+          <div class="topic-card-small status-active">
+            <button id="cold-war-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🧊</div>
+              <div class="topic-name-small">Cold War</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Logos Section -->
+      <div class="logos-section">
+        <h3 class="section-title">✨ Logos</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Logos General -->
+          <div class="topic-card-small status-active">
+            <button id="logos-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🏷️</div>
+              <div class="topic-name-small">Logos</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PROFILE SCREEN VIEW -->
+    <div class="profile-view hidden" id="profile-view">
+
+      <!-- Profile Top Bar -->
+      <div class="profile-top-bar">
+        <div class="profile-settings">⚙️</div>
+        <div class="profile-username-top">Guest</div>
+        <div class="profile-spacer"></div>
+      </div>
+
+      <!-- Profile Header Section -->
+      <div class="profile-header">
+
+        <!-- Background Banner -->
+        <div class="profile-banner"></div>
+
+        <!-- Avatar -->
+        <div class="profile-avatar">👤</div>
+
+        <!-- User Info -->
+        <div class="profile-info">
+          <div class="profile-name">Guest</div>
+          <div class="profile-bio">Add a bio</div>
+          <div class="profile-location">🌍 Location not set</div>
+          <div class="profile-active">Last Active: Just now</div>
+        </div>
+
+        <!-- Achievement Ribbon -->
+        <div class="profile-achievement">
+          <div class="achievement-text">Best in Flags</div>
+          <div class="achievement-location">in Azerbaijan</div>
+          <div class="achievement-progress">x/x</div>
+        </div>
+
+      </div>
+
+      <!-- Stats Row (Games/Accuracy/Followers/Following) -->
+      <div class="profile-stats-row">
+        <div class="stat-item">
+          <div class="stat-label">GAMES</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-label">ACCURACY</div>
+          <div class="stat-value">0%</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-value">0</div>
+        </div>
+      </div>
+
+      <!-- Statistics Bar (Win/Draw/Loss) -->
+      <div class="profile-statistics">
+        <h3>Statistics</h3>
+        <div class="stats-labels">
+          <span>WINS</span>
+          <span>DRAWS</span>
+          <span>LOSSES</span>
+        </div>
+        <div class="stats-bar">
+          <div class="stat-wins" style="width: 64%"></div>
+          <div class="stat-draws" style="width: 14%"></div>
+          <div class="stat-losses" style="width: 22%"></div>
+        </div>
+        <div class="stats-percentages">
+          <span class="win-percent">64%</span>
+          <span class="draw-percent">14%</span>
+          <span class="loss-percent">22%</span>
+        </div>
+      </div>
+
+      <!-- Topic Progress Section -->
+      <div class="profile-topics">
+        <h3>Topic Progress</h3>
+
+        <!-- Flags Topic -->
+        <div class="topic-progress-item">
+          <div class="topic-progress-header">
+            <span class="topic-progress-icon">🏳️</span>
+            <span class="topic-progress-name">Flags</span>
+          </div>
+          <div class="topic-progress-level">Level x → Level x</div>
+          <div class="topic-progress-bar-container">
+            <div class="topic-progress-bar" style="width: 75%"></div>
+          </div>
+          <div class="topic-progress-xp">750 / 1,000 XP</div>
+        </div>
+
+        <!-- Capitals Topic -->
+        <div class="topic-progress-item">
+          <div class="topic-progress-header">
+            <span class="topic-progress-icon">🏛️</span>
+            <span class="topic-progress-name">Capitals</span>
+          </div>
+          <div class="topic-progress-level">Level x → Level x</div>
+          <div class="topic-progress-bar-container">
+            <div class="topic-progress-bar" style="width: 38%"></div>
+          </div>
+          <div class="topic-progress-xp">300 / 800 XP</div>
+        </div>
+
+        <!-- Area Topic -->
+        <div class="topic-progress-item">
+          <div class="topic-progress-header">
+            <span class="topic-progress-icon">📏</span>
+            <span class="topic-progress-name">Area</span>
+          </div>
+          <div class="topic-progress-level">Level x → Level x</div>
+          <div class="topic-progress-bar-container">
+            <div class="topic-progress-bar" style="width: 38%"></div>
+          </div>
+          <div class="topic-progress-xp">450 / 1,200 XP</div>
+        </div>
+
+      </div>
+
+      <!-- Reset Data Button (Testing) -->
+      <div style="padding: 20px; text-align: center;">
+        <button class="reset-data-btn" onclick="playClickSound(); if(confirm('Reset ALL data?')) resetUserData();">
+          🗑️ Reset Data (Testing)
+        </button>
+        <button class="reset-data-btn" style="background: #ff9800; margin-top: 10px;" onclick="playClickSound(); GAME_CONFIG.TIME_ATTACK_DURATION = 5; alert('Time Attack now 5 seconds!');">
+          ⏱️ Set Time Attack to 5s (Test)
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STATS SCREEN VIEW -->
+    <div class="stats-view hidden" id="stats-view">
+
+      <!-- Stats Title -->
+      <div class="stats-header">
+        <h1 data-i18n="stats_title">Stats</h1>
+      </div>
+
+      <!-- Stats Content Area -->
+      <div class="stats-content">
+
+        <!-- Overall Performance Box -->
+        <div class="stats-box" id="overall-performance-box">
+
+          <!-- Box Header (clickable) -->
+          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('overall-performance')">
+            <span class="stats-box-icon">📊</span>
+            <span class="stats-box-title" data-i18n="stats_overall_performance">Overall Performance</span>
+            <span class="stats-box-arrow" id="overall-performance-arrow">▼</span>
+          </div>
+
+          <!-- Box Content (expandable) -->
+          <div class="stats-box-content hidden" id="overall-performance-content">
+            <table class="stats-table">
+              <tr>
+                <td class="stat-name" data-i18n="stats_total_games_played">Total Games Played</td>
+                <td class="stat-value" id="stat-total-games">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_total_questions_answered">Total Questions Answered</td>
+                <td class="stat-value" id="stat-total-questions">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_correct_answers">Correct Answers</td>
+                <td class="stat-value" id="stat-correct">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_wrong_answers">Wrong Answers</td>
+                <td class="stat-value" id="stat-wrong">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_overall_accuracy">Overall Accuracy</td>
+                <td class="stat-value" id="stat-accuracy">0%</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_avg_time_per_question">Avg Time per Question</td>
+                <td class="stat-value" id="stat-avg-time">0.0s</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_best_streak_label">Best Streak</td>
+                <td class="stat-value" id="stat-best-streak">0</td>
+              </tr>
+              <tr>
+                <td class="stat-name" data-i18n="stats_total_time_played">Total Time Played</td>
+                <td class="stat-value" id="stat-total-time">0m 0s</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- Most Played Topics Box -->
+        <div class="stats-box" id="most-played-box">
+
+          <!-- Box Header (clickable) -->
+          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('most-played')">
+            <span class="stats-box-icon">🔥</span>
+            <span class="stats-box-title" data-i18n="stats_most_played">Most Played</span>
+            <span class="stats-box-arrow" id="most-played-arrow">▼</span>
+          </div>
+
+          <!-- Box Content (expandable) -->
+          <div class="stats-box-content hidden" id="most-played-content">
+
+            <div class="most-played-grid">
+
+              <!-- Card 1: Flags (Top 1) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">1</div>
+                <div class="most-played-icon">🏳️</div>
+                <div class="most-played-name">Flags</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Capitals (Top 2) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">2</div>
+                <div class="most-played-icon">🏛️</div>
+                <div class="most-played-name">Capitals</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: Football (Top 3) -->
+              <div class="most-played-card">
+                <div class="most-played-rank">3</div>
+                <div class="most-played-icon">⚽</div>
+                <div class="most-played-name">Football</div>
+                <div class="most-played-stats">
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
+                    <span class="mini-stat-value">0%</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
+                    <span class="mini-stat-value">0</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Search Box -->
+              <div class="most-played-card search-card">
+                <div class="most-played-icon">🔍</div>
+                <div class="most-played-name" data-i18n="stats_search_topic">Search Topic</div>
+                <div class="search-input-wrapper">
+                  <input
+                    type="text"
+                    id="topic-search-input"
+                    class="topic-search-input"
+                    data-i18n-placeholder="stats_search_placeholder"
+                    placeholder="Type topic name..."
+                    oninput="searchTopic(this.value)"
+                  />
+                </div>
+                <div id="search-result" class="search-result hidden">
+                  <!-- Search results appear here -->
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- LEADERBOARD SCREEN VIEW -->
+    <div class="leaderboard-view hidden" id="leaderboard-view">
+
+      <!-- Leaderboard Title -->
+      <div class="leaderboard-header">
+        <h1>🏆 <span data-i18n="leaderboard_title">Leaderboard</span></h1>
+        <p data-i18n="leaderboard_global">Global Rankings</p>
+      </div>
+
+      <!-- Leaderboard Content Area -->
+      <div class="leaderboard-content">
+
+        <!-- Coming Soon Message (temporary) -->
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">🚀</div>
+          <div class="coming-soon-title">Coming Soon!</div>
+          <div class="coming-soon-text">
+            Global leaderboards are being developed. Soon you'll be able to compete with players worldwide!
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+      <div class="nav-item active" id="nav-home">
+        🏠<br><span data-i18n="nav_home">Home</span>
+      </div>
+      <div class="nav-item" id="nav-topics">
+        🌍<br><span data-i18n="nav_topics">Topics</span>
+      </div>
+      <div class="nav-item" id="nav-stats">
+        📊<br><span data-i18n="nav_stats">Stats</span>
+      </div>
+      <div class="nav-item" id="nav-leaderboard">
+        🏆<br><span data-i18n="nav_leaderboard">Leaderboard</span>
+      </div>
+      <div class="nav-item" id="nav-profile">
+        👤<br><span data-i18n="nav_profile">Profile</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================ -->
+  <!-- 👥 PLAYER SELECTION SCREEN -->
+  <!-- ================================ -->
+  <div id="player-select" class="hidden">
+    <h2>Choose Game Mode</h2>
+    <div class="mode-buttons">
+      <button id="single-player-btn">🎮 Single Player</button>
+      <button id="two-player-btn">👥 2 Players</button>
+      <button id="back-to-home-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎯 MODE SELECT SCREEN -->
+  <!-- ================================ -->
+  <div id="mode-select" class="hidden">
+    <h2>Choose Game Mode</h2>
+    <div class="mode-buttons">
+      <button id="time-attack-btn">⚡ Time Attack (60s)</button>
+      <button id="quick-game-btn">🎯 Quick Game (10 questions)</button>
+      <button id="three-strikes-btn">❤️ Three Strikes</button>
+      <button id="back-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎯 DIFFICULTY SELECTION SCREEN -->
+  <!-- ================================ -->
+  <div id="area-difficulty-screen" class="hidden">
+    <h2>Select Difficulty Level</h2>
+    <div class="difficulty-buttons">
+      <button id="area-easy-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🟢</span>
+        <span class="difficulty-name">Easy</span>
+        <span class="difficulty-desc">10 Largest Countries</span>
+      </button>
+      <button id="area-medium-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🟡</span>
+        <span class="difficulty-name">Medium</span>
+        <span class="difficulty-desc">155 Mid-size Countries</span>
+      </button>
+      <button id="area-hard-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🔴</span>
+        <span class="difficulty-name">Hard</span>
+        <span class="difficulty-desc">25 Smallest Countries</span>
+      </button>
+    </div>
+    <button id="back-from-difficulty" class="back-btn">← Back</button>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎮 GAME SCREEN -->
+  <!-- ================================ -->
+  <div id="game-screen" class="hidden">
+    <!-- Exit Button (Top Left) -->
+    <button id="back-to-menu" class="exit-btn">←</button>
+    
+    <!-- Question Counter (Top Right) -->
+    <div id="question-counter" class="question-counter" style="display:none;"></div>
+    
+    <header>
+      <h2 id="question">Which country's flag is this?</h2>
+      <div id="score">Score: 0</div>
+      <div id="timer">⏳ 60s</div>
+    </header>
+
+    <main>
+      <img id="flag" src="" alt="Flag">
+      <div id="answers"></div>
+      <div id="result"></div>
+    </main>
+
+    <footer>
+      <button id="play-again" style="display:none;">🔁 Play Again</button>
+      <button id="main-menu" style="display:none;">🏠 Main Menu</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

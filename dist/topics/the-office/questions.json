@@ -1,0 +1,2621 @@
+[
+  {
+    "id": 1,
+    "question": "What is the name of the paper company in The Office?",
+    "options": [
+      "Staples",
+      "Dunder Mifflin",
+      "Paper Plus",
+      "Office Depot"
+    ],
+    "answer": "Dunder Mifflin",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Michael Scott?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Steve_Carell_-_The_40-Year-Old-Virgin.jpg/250px-Steve_Carell_-_The_40-Year-Old-Virgin.jpg",
+    "options": [
+      "Rainn Wilson",
+      "John Krasinski",
+      "Steve Carell",
+      "Ed Helms"
+    ],
+    "answer": "Steve Carell",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "What city is the Scranton branch located in?",
+    "options": [
+      "Philadelphia",
+      "Scranton",
+      "Pittsburgh",
+      "New York"
+    ],
+    "answer": "Scranton",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Dwight Schrute?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg/250px-Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg",
+    "options": [
+      "Steve Carell",
+      "Rainn Wilson",
+      "Ed Helms",
+      "B.J. Novak"
+    ],
+    "answer": "Rainn Wilson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What type of farm does Dwight own?",
+    "options": [
+      "Corn farm",
+      "Beet farm",
+      "Potato farm",
+      "Apple orchard"
+    ],
+    "answer": "Beet farm",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 6,
+    "question": "Who plays Jim Halpert?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Krasinski_2022.jpg/250px-John_Krasinski_2022.jpg",
+    "options": [
+      "Steve Carell",
+      "John Krasinski",
+      "B.J. Novak",
+      "Ed Helms"
+    ],
+    "answer": "John Krasinski",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 7,
+    "question": "Who plays Pam Beesly?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Jenna_Fischer_May08_cropped.jpg/250px-Jenna_Fischer_May08_cropped.jpg",
+    "options": [
+      "Jenna Fischer",
+      "Mindy Kaling",
+      "Angela Kinsey",
+      "Ellie Kemper"
+    ],
+    "answer": "Jenna Fischer",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 8,
+    "question": "What is Pam's job at the beginning of the series?",
+    "options": [
+      "Sales representative",
+      "Receptionist",
+      "Accountant",
+      "HR representative"
+    ],
+    "answer": "Receptionist",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 9,
+    "question": "Who plays Ryan Howard?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/BJNovak-byPhilipRomano.jpg/250px-BJNovak-byPhilipRomano.jpg",
+    "options": [
+      "John Krasinski",
+      "B.J. Novak",
+      "Ed Helms",
+      "Craig Robinson"
+    ],
+    "answer": "B.J. Novak",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 10,
+    "question": "What nickname does Michael give Ryan?",
+    "options": [
+      "The Fire Guy",
+      "The Temp",
+      "Wonder Boy",
+      "Both A and B"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 11,
+    "question": "Who plays Andy Bernard?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ed_Helms_-_SNAFU.jpg/250px-Ed_Helms_-_SNAFU.jpg",
+    "options": [
+      "Rainn Wilson",
+      "Ed Helms",
+      "B.J. Novak",
+      "Craig Robinson"
+    ],
+    "answer": "Ed Helms",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 12,
+    "question": "What college did Andy Bernard attend?",
+    "options": [
+      "Harvard",
+      "Yale",
+      "Cornell",
+      "Princeton"
+    ],
+    "answer": "Cornell",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 13,
+    "question": "Who plays Kelly Kapoor?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mindy_Kaling_Jan_2023.jpg/250px-Mindy_Kaling_Jan_2023.jpg",
+    "options": [
+      "Jenna Fischer",
+      "Mindy Kaling",
+      "Angela Kinsey",
+      "Ellie Kemper"
+    ],
+    "answer": "Mindy Kaling",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 14,
+    "question": "Who plays Darryl Philbin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Craig_Robinson_by_Gage_Skidmore.jpg/250px-Craig_Robinson_by_Gage_Skidmore.jpg",
+    "options": [
+      "Craig Robinson",
+      "Leslie David Baker",
+      "Oscar Nunez",
+      "Brian Baumgartner"
+    ],
+    "answer": "Craig Robinson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 15,
+    "question": "Where does Darryl work initially?",
+    "options": [
+      "Sales",
+      "The warehouse",
+      "Accounting",
+      "Reception"
+    ],
+    "answer": "The warehouse",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 16,
+    "question": "Who plays Robert California?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/James_Spader_by_Gage_Skidmore.jpg/250px-James_Spader_by_Gage_Skidmore.jpg",
+    "options": [
+      "James Spader",
+      "Will Ferrell",
+      "Idris Elba",
+      "Kathy Bates"
+    ],
+    "answer": "James Spader",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 17,
+    "question": "Who plays Erin Hannon?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Ellie_Kemper_%2827810608597%29_%28cropped%29_%28cropped%29.jpg/250px-Ellie_Kemper_%2827810608597%29_%28cropped%29_%28cropped%29.jpg",
+    "options": [
+      "Mindy Kaling",
+      "Ellie Kemper",
+      "Angela Kinsey",
+      "Kate Flannery"
+    ],
+    "answer": "Ellie Kemper",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 18,
+    "question": "Who plays Angela Martin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Angela_Kinsey_%282009%29.jpg/250px-Angela_Kinsey_%282009%29.jpg",
+    "options": [
+      "Jenna Fischer",
+      "Angela Kinsey",
+      "Phyllis Smith",
+      "Kate Flannery"
+    ],
+    "answer": "Angela Kinsey",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 19,
+    "question": "What is Angela's favorite type of pet?",
+    "options": [
+      "Dogs",
+      "Cats",
+      "Fish",
+      "Birds"
+    ],
+    "answer": "Cats",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 20,
+    "question": "Who plays Oscar Martinez?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/2009_CUN_Award_Party_Oscar_Nu%C3%B1ez_058.JPG/250px-2009_CUN_Award_Party_Oscar_Nu%C3%B1ez_058.JPG",
+    "options": [
+      "Oscar Nunez",
+      "Brian Baumgartner",
+      "Leslie David Baker",
+      "Craig Robinson"
+    ],
+    "answer": "Oscar Nunez",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 21,
+    "question": "Who plays Kevin Malone?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Brian_Baumgartner_visits_Camp_Pendleton_%282%29_%28cropped%29.jpg/250px-Brian_Baumgartner_visits_Camp_Pendleton_%282%29_%28cropped%29.jpg",
+    "options": [
+      "Oscar Nunez",
+      "Brian Baumgartner",
+      "Craig Robinson",
+      "Paul Lieberstein"
+    ],
+    "answer": "Brian Baumgartner",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 22,
+    "question": "What food is Kevin famous for bringing?",
+    "options": [
+      "Cookies",
+      "Chili",
+      "Cake",
+      "Brownies"
+    ],
+    "answer": "Chili",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 23,
+    "question": "Who plays Meredith Palmer?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Kate_Flannery_%2830044752398%29.jpg/250px-Kate_Flannery_%2830044752398%29.jpg",
+    "options": [
+      "Phyllis Smith",
+      "Kate Flannery",
+      "Angela Kinsey",
+      "Mindy Kaling"
+    ],
+    "answer": "Kate Flannery",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 24,
+    "question": "Who plays Stanley Hudson?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Leslie_David_Baker_Photo_Op_GalaxyCon_Raleigh_2019.jpg/250px-Leslie_David_Baker_Photo_Op_GalaxyCon_Raleigh_2019.jpg",
+    "options": [
+      "Craig Robinson",
+      "Leslie David Baker",
+      "Oscar Nunez",
+      "Brian Baumgartner"
+    ],
+    "answer": "Leslie David Baker",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 25,
+    "question": "What is Stanley's favorite day activity?",
+    "options": [
+      "Reading",
+      "Crossword puzzles",
+      "Sleeping",
+      "Eating"
+    ],
+    "answer": "Crossword puzzles",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 26,
+    "question": "Who plays Phyllis Vance?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Phyllis_Smith_FOX_2_St._Louis_%28cropped%29.JPG/250px-Phyllis_Smith_FOX_2_St._Louis_%28cropped%29.JPG",
+    "options": [
+      "Kate Flannery",
+      "Phyllis Smith",
+      "Angela Kinsey",
+      "Jenna Fischer"
+    ],
+    "answer": "Phyllis Smith",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 27,
+    "question": "Who plays Creed Bratton?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Creed_Bratton_2019_%2848474439927%29_CROPPED.jpg/250px-Creed_Bratton_2019_%2848474439927%29_CROPPED.jpg",
+    "options": [
+      "Paul Lieberstein",
+      "Brian Baumgartner",
+      "Creed Bratton",
+      "Craig Robinson"
+    ],
+    "answer": "Creed Bratton",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 28,
+    "question": "Who plays Toby Flenderson?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Paul_Lieberstein_at_Los_Angeles_Comic_Con_2023.jpg/250px-Paul_Lieberstein_at_Los_Angeles_Comic_Con_2023.jpg",
+    "options": [
+      "B.J. Novak",
+      "Paul Lieberstein",
+      "Craig Robinson",
+      "Brian Baumgartner"
+    ],
+    "answer": "Paul Lieberstein",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 29,
+    "question": "What department does Toby work in?",
+    "options": [
+      "Sales",
+      "Accounting",
+      "Human Resources",
+      "Management"
+    ],
+    "answer": "Human Resources",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 30,
+    "question": "How does Michael feel about Toby?",
+    "options": [
+      "He loves him",
+      "He hates him",
+      "He's indifferent",
+      "They're best friends"
+    ],
+    "answer": "He hates him",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 31,
+    "question": "What is Michael's famous catchphrase?",
+    "options": [
+      "That's great!",
+      "That's what she said",
+      "I declare bankruptcy",
+      "Both B and C"
+    ],
+    "answer": "That's what she said",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 32,
+    "question": "What TV show does Michael watch religiously?",
+    "options": [
+      "Friends",
+      "Seinfeld",
+      "The Apprentice",
+      "ER"
+    ],
+    "answer": "The Apprentice",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 33,
+    "question": "What state is The Office set in?",
+    "options": [
+      "New York",
+      "New Jersey",
+      "Pennsylvania",
+      "Connecticut"
+    ],
+    "answer": "Pennsylvania",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 34,
+    "question": "How many seasons does The Office (US) have?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": "9",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 35,
+    "question": "What year did The Office premiere?",
+    "options": [
+      "2003",
+      "2004",
+      "2005",
+      "2006"
+    ],
+    "answer": "2005",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 36,
+    "question": "What network originally aired The Office?",
+    "options": [
+      "CBS",
+      "NBC",
+      "ABC",
+      "FOX"
+    ],
+    "answer": "NBC",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 37,
+    "question": "Who is Dwight's best friend?",
+    "options": [
+      "Jim",
+      "Andy",
+      "Michael",
+      "No one"
+    ],
+    "answer": "Michael",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 38,
+    "question": "What title does Dwight desperately want?",
+    "options": [
+      "Branch Manager",
+      "Assistant Regional Manager",
+      "Regional Manager",
+      "CEO"
+    ],
+    "answer": "Regional Manager",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 39,
+    "question": "What is Dwight's actual title that he misrepresents?",
+    "options": [
+      "Assistant Regional Manager",
+      "Assistant to the Regional Manager",
+      "Associate Manager",
+      "Deputy Manager"
+    ],
+    "answer": "Assistant to the Regional Manager",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 40,
+    "question": "Who does Jim have a crush on from the start?",
+    "options": [
+      "Karen",
+      "Pam",
+      "Angela",
+      "Kelly"
+    ],
+    "answer": "Pam",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 41,
+    "question": "Who is Pam engaged to at the start of the series?",
+    "options": [
+      "Jim",
+      "Roy",
+      "Ryan",
+      "Andy"
+    ],
+    "answer": "Roy",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 42,
+    "question": "Where does Roy work?",
+    "options": [
+      "Sales",
+      "Accounting",
+      "The warehouse",
+      "Reception"
+    ],
+    "answer": "The warehouse",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 43,
+    "question": "What sport does Jim like to watch?",
+    "options": [
+      "Football",
+      "Basketball",
+      "Baseball",
+      "Hockey"
+    ],
+    "answer": "Basketball",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 44,
+    "question": "Where does Jim work when he transfers from Scranton?",
+    "options": [
+      "New York Corporate",
+      "Stamford branch",
+      "Nashua branch",
+      "Utica branch"
+    ],
+    "answer": "Stamford branch",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 45,
+    "question": "Who does Jim date at the Stamford branch?",
+    "options": [
+      "Pam",
+      "Karen Filippelli",
+      "Holly",
+      "Jan"
+    ],
+    "answer": "Karen Filippelli",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 46,
+    "question": "What episode does Jim finally confess his feelings to Pam?",
+    "options": [
+      "Casino Night",
+      "The Dundies",
+      "Christmas Party",
+      "Beach Games"
+    ],
+    "answer": "Casino Night",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 47,
+    "question": "Where do Jim and Pam get married?",
+    "options": [
+      "Church in Scranton",
+      "On a boat (Niagara Falls)",
+      "The office",
+      "Dwight's farm"
+    ],
+    "answer": "On a boat (Niagara Falls)",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 48,
+    "question": "What are Jim and Pam's children named?",
+    "options": [
+      "Emma and Michael",
+      "Cece and Philip",
+      "Sarah and James",
+      "Rachel and Tom"
+    ],
+    "answer": "Cece and Philip",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 49,
+    "question": "Who does Michael date from corporate?",
+    "options": [
+      "Holly",
+      "Jan Levinson",
+      "Karen",
+      "Donna"
+    ],
+    "answer": "Jan Levinson",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 50,
+    "question": "Who is Michael's soulmate?",
+    "options": [
+      "Jan",
+      "Carol",
+      "Holly Flax",
+      "Helene"
+    ],
+    "answer": "Holly Flax",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 51,
+    "question": "What does Holly do for work?",
+    "options": [
+      "Sales",
+      "HR",
+      "Accounting",
+      "Management"
+    ],
+    "answer": "HR",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 52,
+    "question": "In what season does Michael leave the show?",
+    "options": [
+      "Season 5",
+      "Season 6",
+      "Season 7",
+      "Season 8"
+    ],
+    "answer": "Season 7",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 53,
+    "question": "Where does Michael move to be with Holly?",
+    "options": [
+      "New York",
+      "Colorado",
+      "California",
+      "Texas"
+    ],
+    "answer": "Colorado",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 54,
+    "question": "Who becomes Regional Manager after Michael leaves?",
+    "options": [
+      "Dwight",
+      "Andy Bernard",
+      "Jim",
+      "Deangelo Vickers"
+    ],
+    "answer": "Deangelo Vickers",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 55,
+    "question": "Who plays Deangelo Vickers?",
+    "options": [
+      "James Spader",
+      "Will Ferrell",
+      "Idris Elba",
+      "Kathy Bates"
+    ],
+    "answer": "Will Ferrell",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 56,
+    "question": "Who eventually becomes the permanent Regional Manager?",
+    "options": [
+      "Jim",
+      "Dwight",
+      "Andy Bernard",
+      "Robert California"
+    ],
+    "answer": "Andy Bernard",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 57,
+    "question": "Who is Regional Manager in the series finale?",
+    "options": [
+      "Andy",
+      "Jim",
+      "Dwight",
+      "Robert California"
+    ],
+    "answer": "Dwight",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 58,
+    "question": "What is the name of the awards ceremony Michael hosts?",
+    "options": [
+      "The Oscars",
+      "The Emmys",
+      "The Dundies",
+      "The Scranties"
+    ],
+    "answer": "The Dundies",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 59,
+    "question": "What restaurant hosts The Dundies?",
+    "options": [
+      "Applebee's",
+      "Chili's",
+      "TGI Friday's",
+      "Olive Garden"
+    ],
+    "answer": "Chili's",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 60,
+    "question": "What award does Pam win at The Dundies that makes her emotional?",
+    "options": [
+      "Best Receptionist",
+      "Whitest Sneakers",
+      "Cutest Smile",
+      "Longest Engagement"
+    ],
+    "answer": "Whitest Sneakers",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 61,
+    "question": "What is Dwight's middle name?",
+    "options": [
+      "Kurt",
+      "Kevin",
+      "Keith",
+      "Karl"
+    ],
+    "answer": "Kurt",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 62,
+    "question": "What German heritage does Dwight celebrate?",
+    "options": [
+      "Bavarian",
+      "Prussian",
+      "Pennsylvania Dutch",
+      "Austrian"
+    ],
+    "answer": "Pennsylvania Dutch",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 63,
+    "question": "What is the name of Dwight's farm?",
+    "options": [
+      "Schrute Estate",
+      "Schrute Farms",
+      "Beet Farm",
+      "Dwight's Farm"
+    ],
+    "answer": "Schrute Farms",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 64,
+    "question": "What does Schrute Farms double as?",
+    "options": [
+      "Restaurant",
+      "Bed and Breakfast",
+      "Wedding Venue",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 65,
+    "question": "Who is Dwight's cousin who works on the farm?",
+    "options": [
+      "Zeke",
+      "Mose",
+      "Franz",
+      "Heinrich"
+    ],
+    "answer": "Mose",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 66,
+    "question": "What martial art is Dwight obsessed with?",
+    "options": [
+      "Kung Fu",
+      "Karate",
+      "Judo",
+      "Taekwondo"
+    ],
+    "answer": "Karate",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 67,
+    "question": "What weapon does Dwight keep in the office?",
+    "options": [
+      "A gun",
+      "Nunchucks",
+      "Various weapons hidden around",
+      "A sword"
+    ],
+    "answer": "Various weapons hidden around",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 68,
+    "question": "Who does Dwight have a secret relationship with?",
+    "options": [
+      "Pam",
+      "Kelly",
+      "Angela",
+      "Phyllis"
+    ],
+    "answer": "Angela",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 69,
+    "question": "Who does Angela get engaged to while secretly seeing Dwight?",
+    "options": [
+      "Andy Bernard",
+      "Jim",
+      "Ryan",
+      "Kevin"
+    ],
+    "answer": "Andy Bernard",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 70,
+    "question": "Who does Dwight marry in the series finale?",
+    "options": [
+      "Isabel",
+      "Angela",
+      "Esther",
+      "He stays single"
+    ],
+    "answer": "Angela",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 71,
+    "question": "What is the name of Dwight and Angela's son?",
+    "options": [
+      "Dwight Jr.",
+      "Philip",
+      "Michael",
+      "Mose Jr."
+    ],
+    "answer": "Philip",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 72,
+    "question": "Who is Jim's best man at his wedding?",
+    "options": [
+      "Dwight",
+      "Andy",
+      "Michael",
+      "Ryan"
+    ],
+    "answer": "Michael",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 73,
+    "question": "What is Andy's a cappella group called?",
+    "options": [
+      "The Tones",
+      "Here Comes Treble",
+      "The Harmonics",
+      "Cornell Singers"
+    ],
+    "answer": "Here Comes Treble",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 74,
+    "question": "What does Andy call his anger management issue?",
+    "options": [
+      "Rage mode",
+      "The Nard Dog",
+      "Punching things",
+      "Having anger issues"
+    ],
+    "answer": "Having anger issues",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 75,
+    "question": "What does Andy punch in anger?",
+    "options": [
+      "Dwight",
+      "A wall",
+      "His desk",
+      "Jim"
+    ],
+    "answer": "A wall",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 76,
+    "question": "What nickname does Andy give himself?",
+    "options": [
+      "Big Tuna",
+      "The Nard Dog",
+      "The Bernard",
+      "A-Train"
+    ],
+    "answer": "The Nard Dog",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 77,
+    "question": "What nickname does Andy give Jim?",
+    "options": [
+      "Jimbo",
+      "Big Tuna",
+      "J-Man",
+      "Halpert"
+    ],
+    "answer": "Big Tuna",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 78,
+    "question": "Who is Ryan's on-again, off-again girlfriend?",
+    "options": [
+      "Pam",
+      "Kelly Kapoor",
+      "Angela",
+      "Erin"
+    ],
+    "answer": "Kelly Kapoor",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 79,
+    "question": "What happens to Ryan at Dunder Mifflin corporate?",
+    "options": [
+      "He becomes CEO",
+      "He gets arrested for fraud",
+      "He quits",
+      "He gets promoted"
+    ],
+    "answer": "He gets arrested for fraud",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 80,
+    "question": "What website does Ryan create that fails?",
+    "options": [
+      "Dunderpedia",
+      "WUPHF.com",
+      "Paper.com",
+      "Dunder Digital"
+    ],
+    "answer": "WUPHF.com",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 81,
+    "question": "What does WUPHF stand for?",
+    "options": [
+      "Nothing specific",
+      "Washington Universal Paper Handling Foundation",
+      "Washington University Public Health Fund",
+      "Who Uses Phone For..."
+    ],
+    "answer": "Nothing specific",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 82,
+    "question": "What show format is The Office filmed in?",
+    "options": [
+      "Traditional sitcom",
+      "Mockumentary",
+      "Reality TV",
+      "Anthology"
+    ],
+    "answer": "Mockumentary",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 83,
+    "question": "What British show is The Office based on?",
+    "options": [
+      "Fawlty Towers",
+      "The Office (UK)",
+      "Extras",
+      "Peep Show"
+    ],
+    "answer": "The Office (UK)",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 84,
+    "question": "Who created the original UK Office?",
+    "options": [
+      "Greg Daniels",
+      "Ricky Gervais and Stephen Merchant",
+      "B.J. Novak",
+      "Paul Lieberstein"
+    ],
+    "answer": "Ricky Gervais and Stephen Merchant",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 85,
+    "question": "Who adapted The Office for American audiences?",
+    "options": [
+      "Ricky Gervais",
+      "Greg Daniels",
+      "Michael Schur",
+      "Mindy Kaling"
+    ],
+    "answer": "Greg Daniels",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 86,
+    "question": "What company eventually buys Dunder Mifflin?",
+    "options": [
+      "Staples",
+      "Sabre",
+      "Office Depot",
+      "Prestige Direct"
+    ],
+    "answer": "Sabre",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 87,
+    "question": "Who is the CEO of Sabre?",
+    "options": [
+      "Robert California",
+      "Jo Bennett",
+      "Jan Levinson",
+      "David Wallace"
+    ],
+    "answer": "Jo Bennett",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 88,
+    "question": "Who plays Jo Bennett?",
+    "options": [
+      "Kathy Bates",
+      "Meryl Streep",
+      "Amy Adams",
+      "Rashida Jones"
+    ],
+    "answer": "Kathy Bates",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 89,
+    "question": "What product does Sabre sell that causes problems?",
+    "options": [
+      "Paper",
+      "Printers that catch fire",
+      "Computers",
+      "Office furniture"
+    ],
+    "answer": "Printers that catch fire",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 90,
+    "question": "Who is Dunder Mifflin's CFO who helps Michael?",
+    "options": [
+      "Robert California",
+      "David Wallace",
+      "Charles Miner",
+      "Jo Bennett"
+    ],
+    "answer": "David Wallace",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 91,
+    "question": "What does David Wallace invent after being fired?",
+    "options": [
+      "A new paper",
+      "Suck It",
+      "A printer",
+      "An app"
+    ],
+    "answer": "Suck It",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 92,
+    "question": "Who plays Charles Miner?",
+    "options": [
+      "Idris Elba",
+      "James Spader",
+      "Will Ferrell",
+      "Craig Robinson"
+    ],
+    "answer": "Idris Elba",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 93,
+    "question": "What company does Michael start when he leaves Dunder Mifflin?",
+    "options": [
+      "Scott Paper",
+      "Michael Scott Paper Company",
+      "New Dunder Mifflin",
+      "Scranton Paper"
+    ],
+    "answer": "Michael Scott Paper Company",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 94,
+    "question": "Who joins Michael at the Michael Scott Paper Company?",
+    "options": [
+      "Jim and Dwight",
+      "Pam and Ryan",
+      "Andy and Kevin",
+      "Stanley and Phyllis"
+    ],
+    "answer": "Pam and Ryan",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 95,
+    "question": "What is the name of Creed's band?",
+    "options": [
+      "Creed",
+      "The Grass Roots",
+      "Creed Bratton Band",
+      "He was in The Grass Roots in real life"
+    ],
+    "answer": "He was in The Grass Roots in real life",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 96,
+    "question": "What job does Creed actually do?",
+    "options": [
+      "Sales",
+      "Quality Assurance",
+      "No one knows",
+      "Accounting"
+    ],
+    "answer": "Quality Assurance",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 97,
+    "question": "What illegal activity is Creed suspected of?",
+    "options": [
+      "Fraud",
+      "Multiple crimes (implied)",
+      "Theft only",
+      "Nothing"
+    ],
+    "answer": "Multiple crimes (implied)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 98,
+    "question": "Who does Erin end up with at the end of the series?",
+    "options": [
+      "Andy",
+      "Gabe",
+      "Pete Miller",
+      "She stays single"
+    ],
+    "answer": "Pete Miller",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 99,
+    "question": "What is Erin's real first name?",
+    "options": [
+      "Erin",
+      "Kelly",
+      "Shannon",
+      "Catherine"
+    ],
+    "answer": "Kelly",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 100,
+    "question": "Why does Erin go by Erin instead of Kelly?",
+    "options": [
+      "She prefers it",
+      "There's already a Kelly (Kapoor)",
+      "It's a nickname",
+      "Her parents called her that"
+    ],
+    "answer": "There's already a Kelly (Kapoor)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 101,
+    "question": "What is Kevin's band called?",
+    "options": [
+      "Kevin and the Zits",
+      "Scrantonicity",
+      "The Accountants",
+      "Dunder Rock"
+    ],
+    "answer": "Scrantonicity",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 102,
+    "question": "What band does Scrantonicity cover?",
+    "options": [
+      "U2",
+      "The Police",
+      "Queen",
+      "The Beatles"
+    ],
+    "answer": "The Police",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 103,
+    "question": "What happens to Kevin in the finale?",
+    "options": [
+      "Still at Dunder Mifflin",
+      "He was fired, owns a bar",
+      "Becomes CEO",
+      "Moves away"
+    ],
+    "answer": "He was fired, owns a bar",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 104,
+    "question": "Who fires Kevin?",
+    "options": [
+      "Michael",
+      "Andy",
+      "Dwight",
+      "Jim"
+    ],
+    "answer": "Dwight",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 105,
+    "question": "What Christmas episode features a fight over gifts?",
+    "options": [
+      "Secret Santa",
+      "Moroccan Christmas",
+      "Yankee Swap",
+      "Both A and C"
+    ],
+    "answer": "Both A and C",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 106,
+    "question": "What does Angela throw at the nativity scene?",
+    "options": [
+      "A stapler",
+      "A cat",
+      "A mug",
+      "A keyboard"
+    ],
+    "answer": "A cat",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 107,
+    "question": "What is the famous fire drill episode called?",
+    "options": [
+      "The Fire",
+      "Stress Relief",
+      "Safety Training",
+      "Fire Drill"
+    ],
+    "answer": "Stress Relief",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 108,
+    "question": "Who starts the fake fire in 'Stress Relief'?",
+    "options": [
+      "Michael",
+      "Dwight",
+      "Ryan",
+      "Creed"
+    ],
+    "answer": "Dwight",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 109,
+    "question": "What happens to Stanley during the fire drill?",
+    "options": [
+      "He escapes easily",
+      "He has a heart attack",
+      "He helps others",
+      "He sleeps through it"
+    ],
+    "answer": "He has a heart attack",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 110,
+    "question": "What does Angela throw out the window during the fire?",
+    "options": [
+      "Papers",
+      "Her cat Bandit",
+      "A computer",
+      "Nothing"
+    ],
+    "answer": "Her cat Bandit",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 111,
+    "question": "Who catches Angela's cat?",
+    "options": [
+      "Dwight",
+      "Oscar",
+      "No one - it bounces off the wall",
+      "Kevin"
+    ],
+    "answer": "No one - it bounces off the wall",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 112,
+    "question": "What movie do they watch after the fire drill?",
+    "options": [
+      "Die Hard",
+      "Threat Level Midnight",
+      "Mrs. Doubtfire",
+      "Jack Ryan"
+    ],
+    "answer": "Mrs. Doubtfire",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 113,
+    "question": "What is Michael's movie called?",
+    "options": [
+      "Michael Scott: Agent",
+      "Threat Level Midnight",
+      "The Scarn",
+      "Cleanup on Aisle Five"
+    ],
+    "answer": "Threat Level Midnight",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 114,
+    "question": "What is Michael's character named in his movie?",
+    "options": [
+      "Michael Scott",
+      "Agent Michael Scarn",
+      "Michael Danger",
+      "Johnny Action"
+    ],
+    "answer": "Agent Michael Scarn",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 115,
+    "question": "Who plays the villain in Threat Level Midnight?",
+    "options": [
+      "Jim",
+      "Dwight",
+      "Toby (Goldenface)",
+      "Ryan"
+    ],
+    "answer": "Toby (Goldenface)",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 116,
+    "question": "What dance is featured in Threat Level Midnight?",
+    "options": [
+      "The Robot",
+      "The Scarn",
+      "The Shuffle",
+      "The Moonwalk"
+    ],
+    "answer": "The Scarn",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 117,
+    "question": "What game does Jim and Pam invent?",
+    "options": [
+      "Office Olympics",
+      "Flonkerton",
+      "Desk Pong",
+      "Both A and B"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 118,
+    "question": "What are the medals made of in Office Olympics?",
+    "options": [
+      "Gold",
+      "Yogurt lids",
+      "Paper clips",
+      "Coins"
+    ],
+    "answer": "Yogurt lids",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 119,
+    "question": "What prank involves Jim putting Dwight's items in Jell-O?",
+    "options": [
+      "The Pilot episode",
+      "Season 2 premiere",
+      "Both",
+      "Never happened"
+    ],
+    "answer": "The Pilot episode",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 120,
+    "question": "What does Jim put in Jell-O in the pilot?",
+    "options": [
+      "Dwight's phone",
+      "Dwight's stapler",
+      "Dwight's calculator",
+      "Dwight's mug"
+    ],
+    "answer": "Dwight's stapler",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 121,
+    "question": "What prank involves Jim pretending to be someone else?",
+    "options": [
+      "Jim as Jim",
+      "Jim as Dwight",
+      "Jim as Michael",
+      "Jim as Asian Jim"
+    ],
+    "answer": "Jim as Asian Jim",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 122,
+    "question": "Who helps Jim with the Asian Jim prank?",
+    "options": [
+      "Pam",
+      "Randall Park",
+      "Both",
+      "Kevin"
+    ],
+    "answer": "Both",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 123,
+    "question": "What prank involves Dwight's desk being moved?",
+    "options": [
+      "Moved to the bathroom",
+      "Moved outside",
+      "Put in the elevator",
+      "All of the above at different times"
+    ],
+    "answer": "Moved to the bathroom",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 124,
+    "question": "What does Michael declare in the famous bankruptcy scene?",
+    "options": [
+      "He declares debt",
+      "I DECLARE BANKRUPTCY!",
+      "He files papers",
+      "He asks Oscar for help"
+    ],
+    "answer": "I DECLARE BANKRUPTCY!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 125,
+    "question": "What does Oscar explain about declaring bankruptcy?",
+    "options": [
+      "It's easy",
+      "You can't just say the word",
+      "Michael did it right",
+      "He should do it again"
+    ],
+    "answer": "You can't just say the word",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 126,
+    "question": "What is Michael's improv character?",
+    "options": [
+      "Michael Scarn",
+      "Prison Mike",
+      "Date Mike",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 127,
+    "question": "What does Prison Mike warn about?",
+    "options": [
+      "Bad food",
+      "The Dementors",
+      "No TV",
+      "Boring work"
+    ],
+    "answer": "The Dementors",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 128,
+    "question": "Who does Date Mike try to impress?",
+    "options": [
+      "Jan",
+      "Holly",
+      "A woman at a bar",
+      "Pam's mom"
+    ],
+    "answer": "A woman at a bar",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 129,
+    "question": "What is Michael's relationship with Pam's mom?",
+    "options": [
+      "Friends",
+      "They briefly date",
+      "Enemies",
+      "No relationship"
+    ],
+    "answer": "They briefly date",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 130,
+    "question": "Why does Michael break up with Pam's mom?",
+    "options": [
+      "She's boring",
+      "He learns her age",
+      "She breaks up with him",
+      "Pam asks him to"
+    ],
+    "answer": "He learns her age",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 131,
+    "question": "What tragic event happens in the episode 'The Injury'?",
+    "options": [
+      "Michael is hit by a car",
+      "Michael burns his foot on a George Foreman grill",
+      "Dwight crashes his car",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 132,
+    "question": "What does Michael want for breakfast in 'The Injury'?",
+    "options": [
+      "Eggs",
+      "Bacon cooked on his foot",
+      "Pancakes",
+      "Nothing"
+    ],
+    "answer": "Bacon cooked on his foot",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 133,
+    "question": "What branch does Karen Filippelli eventually manage?",
+    "options": [
+      "Scranton",
+      "Utica",
+      "Nashua",
+      "Stamford"
+    ],
+    "answer": "Utica",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 134,
+    "question": "Who does Michael meet at a job fair that he later dates?",
+    "options": [
+      "Holly",
+      "Donna",
+      "Both",
+      "Neither"
+    ],
+    "answer": "Neither",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 135,
+    "question": "What is the conflict with Donna?",
+    "options": [
+      "She's married",
+      "She moves away",
+      "She doesn't like Michael",
+      "She's his boss"
+    ],
+    "answer": "She's married",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 136,
+    "question": "Who gets Michael through his break-up with Jan?",
+    "options": [
+      "Holly",
+      "Dwight",
+      "Jim",
+      "Ryan"
+    ],
+    "answer": "Dwight",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 137,
+    "question": "What does Jan obsess over in the 'Dinner Party' episode?",
+    "options": [
+      "Her candles",
+      "Her career",
+      "Her appearance",
+      "Her music"
+    ],
+    "answer": "Her candles",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 138,
+    "question": "What is Jan's candle company called?",
+    "options": [
+      "Jan's Candles",
+      "Serenity by Jan",
+      "Levinson Candles",
+      "Light by Jan"
+    ],
+    "answer": "Serenity by Jan",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 139,
+    "question": "What does Michael throw at the TV in 'Dinner Party'?",
+    "options": [
+      "A book",
+      "A Dundie",
+      "A plate",
+      "His phone"
+    ],
+    "answer": "A Dundie",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 140,
+    "question": "Where does Michael sleep in his condo with Jan?",
+    "options": [
+      "The bed",
+      "The couch",
+      "A bench at the foot of the bed",
+      "The floor"
+    ],
+    "answer": "A bench at the foot of the bed",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 141,
+    "question": "What is Stanley's favorite day?",
+    "options": [
+      "Monday",
+      "Friday",
+      "Pretzel Day",
+      "His birthday"
+    ],
+    "answer": "Pretzel Day",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 142,
+    "question": "What phrase does Stanley commonly say?",
+    "options": [
+      "That's what she said",
+      "Did I stutter?",
+      "Absolutely not",
+      "Boy, have you lost your mind?"
+    ],
+    "answer": "Did I stutter?",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 143,
+    "question": "How many affairs does Stanley have?",
+    "options": [
+      "None",
+      "One",
+      "Two",
+      "Multiple"
+    ],
+    "answer": "Multiple",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 144,
+    "question": "What is Phyllis's husband's name?",
+    "options": [
+      "Bob",
+      "Bill",
+      "Ben",
+      "Brad"
+    ],
+    "answer": "Bob",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 145,
+    "question": "What does Bob Vance do?",
+    "options": [
+      "Sells paper",
+      "Owns Vance Refrigeration",
+      "Works at corporate",
+      "He's retired"
+    ],
+    "answer": "Owns Vance Refrigeration",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 146,
+    "question": "What secret does Phyllis know about Angela?",
+    "options": [
+      "Her salary",
+      "Her affair with Dwight",
+      "Her past",
+      "Her cats"
+    ],
+    "answer": "Her affair with Dwight",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 147,
+    "question": "Who gets flashed by Phyllis?",
+    "options": [
+      "Jim",
+      "Everyone at her wedding",
+      "Michael",
+      "No one"
+    ],
+    "answer": "Everyone at her wedding",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 148,
+    "question": "How does Michael ruin Phyllis's wedding?",
+    "options": [
+      "Bad toast",
+      "Tries to give her away and make it about himself",
+      "Forgets the rings",
+      "Gets drunk"
+    ],
+    "answer": "Tries to give her away and make it about himself",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 149,
+    "question": "What is Oscar's defining characteristic?",
+    "options": [
+      "He's a chef",
+      "He's the smartest/most rational",
+      "He's the funniest",
+      "He's the tallest"
+    ],
+    "answer": "He's the smartest/most rational",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 150,
+    "question": "What does Michael do when he finds out Oscar is gay?",
+    "options": [
+      "Gets angry",
+      "Kisses him to prove he's okay with it",
+      "Ignores it",
+      "Tells HR"
+    ],
+    "answer": "Kisses him to prove he's okay with it",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 151,
+    "question": "What senator does Angela marry?",
+    "options": [
+      "Senator Johnson",
+      "Senator Lipton",
+      "Senator Smith",
+      "Senator Brown"
+    ],
+    "answer": "Senator Lipton",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 152,
+    "question": "What secret does the Senator have?",
+    "options": [
+      "He's corrupt",
+      "He's gay and having an affair with Oscar",
+      "He's broke",
+      "He's married before"
+    ],
+    "answer": "He's gay and having an affair with Oscar",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 153,
+    "question": "What does Meredith do for free steak coupons?",
+    "options": [
+      "Nothing",
+      "Trades favors with a supplier",
+      "Steals them",
+      "Buys in bulk"
+    ],
+    "answer": "Trades favors with a supplier",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 154,
+    "question": "What happens to Meredith in the parking lot?",
+    "options": [
+      "Nothing",
+      "Michael hits her with his car",
+      "She falls",
+      "Dwight pranks her"
+    ],
+    "answer": "Michael hits her with his car",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 155,
+    "question": "What disease does Meredith get from Michael's accident?",
+    "options": [
+      "Nothing",
+      "She finds out she has rabies",
+      "Flu",
+      "COVID"
+    ],
+    "answer": "She finds out she has rabies",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 156,
+    "question": "What is Meredith's degree in?",
+    "options": [
+      "Business",
+      "She doesn't have one",
+      "She's getting a PhD in School Administration",
+      "Marketing"
+    ],
+    "answer": "She's getting a PhD in School Administration",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 157,
+    "question": "What character leaves to pursue art school?",
+    "options": [
+      "Kelly",
+      "Pam",
+      "Angela",
+      "Erin"
+    ],
+    "answer": "Pam",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 158,
+    "question": "Where is the art school Pam attends?",
+    "options": [
+      "Philadelphia",
+      "New York",
+      "Boston",
+      "Scranton"
+    ],
+    "answer": "New York",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 159,
+    "question": "Does Pam pass art school?",
+    "options": [
+      "Yes",
+      "No, she fails",
+      "She drops out",
+      "She transfers"
+    ],
+    "answer": "No, she fails",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 160,
+    "question": "What job does Jim get in Philadelphia?",
+    "options": [
+      "Paper sales",
+      "Sports marketing startup (Athlead/Athleap)",
+      "Real estate",
+      "Advertising"
+    ],
+    "answer": "Sports marketing startup (Athlead/Athleap)",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 161,
+    "question": "Who are the founders of Athlead with Jim?",
+    "options": [
+      "Michael and Dwight",
+      "His college friends",
+      "Ryan and Kelly",
+      "Darryl"
+    ],
+    "answer": "His college friends",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 162,
+    "question": "What causes tension between Jim and Pam?",
+    "options": [
+      "Money",
+      "Jim's new job in Philadelphia",
+      "Kids",
+      "Her art"
+    ],
+    "answer": "Jim's new job in Philadelphia",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 163,
+    "question": "Who becomes the sound guy that Pam confides in?",
+    "options": [
+      "Brian",
+      "Mike",
+      "Kevin",
+      "Steve"
+    ],
+    "answer": "Brian",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 164,
+    "question": "What does Jim do to save his marriage?",
+    "options": [
+      "Nothing",
+      "Sells his Athlead shares and stays in Scranton",
+      "Moves family to Philly",
+      "Divorces Pam"
+    ],
+    "answer": "Sells his Athlead shares and stays in Scranton",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 165,
+    "question": "What surprise does Pam give Jim in the finale?",
+    "options": [
+      "A baby announcement",
+      "Permission to take the Austin job",
+      "A new car",
+      "A painting"
+    ],
+    "answer": "Permission to take the Austin job",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 166,
+    "question": "How does Dwight propose to Angela?",
+    "options": [
+      "At dinner",
+      "Fireworks display at Schrute Farms",
+      "In the office",
+      "On TV"
+    ],
+    "answer": "Fireworks display at Schrute Farms",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 167,
+    "question": "Who is Dwight's best man?",
+    "options": [
+      "Mose",
+      "Michael",
+      "Jim",
+      "Kevin"
+    ],
+    "answer": "Michael",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 168,
+    "question": "What German tradition does Dwight's wedding include?",
+    "options": [
+      "Traditional music",
+      "Guests kidnapping the bride",
+      "Breaking plates",
+      "Beer stein ceremony"
+    ],
+    "answer": "Guests kidnapping the bride",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 169,
+    "question": "Does Michael return for the finale?",
+    "options": [
+      "No",
+      "Yes, as a surprise",
+      "Only in photos",
+      "In a video call"
+    ],
+    "answer": "Yes, as a surprise",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 170,
+    "question": "What does Michael say about kids in the finale?",
+    "options": [
+      "He doesn't want them",
+      "He has multiple children now",
+      "He's expecting",
+      "He adopted"
+    ],
+    "answer": "He has multiple children now",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 171,
+    "question": "What documentary is revealed in the final season?",
+    "options": [
+      "The show was a movie",
+      "The documentary crew was filming them all along",
+      "It was all a dream",
+      "Reality TV show"
+    ],
+    "answer": "The documentary crew was filming them all along",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 172,
+    "question": "What panel do the characters appear on?",
+    "options": [
+      "A news show",
+      "A reunion panel for the documentary",
+      "A talk show",
+      "A game show"
+    ],
+    "answer": "A reunion panel for the documentary",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 173,
+    "question": "What does Andy do after the documentary airs?",
+    "options": [
+      "Returns to Dunder Mifflin",
+      "Becomes briefly famous for a viral video",
+      "Moves away",
+      "Opens a business"
+    ],
+    "answer": "Becomes briefly famous for a viral video",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 174,
+    "question": "What song does Andy sing at the end?",
+    "options": [
+      "Closing Time",
+      "I Will Remember You",
+      "Good Riddance",
+      "Don't You Forget About Me"
+    ],
+    "answer": "I Will Remember You",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 175,
+    "question": "What happens to Kelly and Ryan in the finale?",
+    "options": [
+      "They get married",
+      "They run off together abandoning Ryan's baby",
+      "They break up forever",
+      "Kelly moves away alone"
+    ],
+    "answer": "They run off together abandoning Ryan's baby",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 176,
+    "question": "Who adopts Ryan's baby?",
+    "options": [
+      "Dwight",
+      "Nellie",
+      "Angela",
+      "No one"
+    ],
+    "answer": "Nellie",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 177,
+    "question": "What famous line does Pam say in the finale?",
+    "options": [
+      "I love you Jim",
+      "There's a lot of beauty in ordinary things",
+      "It was the best of times",
+      "Goodbye Dunder Mifflin"
+    ],
+    "answer": "There's a lot of beauty in ordinary things",
+    "difficulty": "hard",
+    "category": "quotes"
+  },
+  {
+    "id": 178,
+    "question": "What does Creed do at the finale panel?",
+    "options": [
+      "Normal comments",
+      "Gets arrested",
+      "Sings a song",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 179,
+    "question": "What does the office look like in the final scene?",
+    "options": [
+      "Same as always",
+      "Renovated",
+      "Empty - everyone has moved on",
+      "Destroyed"
+    ],
+    "answer": "Empty - everyone has moved on",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 180,
+    "question": "What podcast do Jenna Fischer and Angela Kinsey host?",
+    "options": [
+      "The Office Hours",
+      "Office Ladies",
+      "Scranton Talks",
+      "Paper Talk"
+    ],
+    "answer": "Office Ladies",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 181,
+    "question": "How many episodes total does The Office have?",
+    "options": [
+      "150",
+      "188",
+      "201",
+      "220"
+    ],
+    "answer": "201",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 182,
+    "question": "What year did The Office end?",
+    "options": [
+      "2011",
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "answer": "2013",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 183,
+    "question": "Who directs 'Stress Relief' Part 1?",
+    "options": [
+      "Greg Daniels",
+      "Jeffrey Blitz",
+      "B.J. Novak",
+      "Paul Lieberstein"
+    ],
+    "answer": "Jeffrey Blitz",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 184,
+    "question": "What award did Steve Carell win for The Office?",
+    "options": [
+      "Emmy",
+      "Golden Globe",
+      "SAG Award",
+      "Oscar"
+    ],
+    "answer": "Golden Globe",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 185,
+    "question": "What iconic scene involves a CPR dummy?",
+    "options": [
+      "Stress Relief - Dwight cuts off its face",
+      "First Aid Training",
+      "The Injury",
+      "Safety Training"
+    ],
+    "answer": "Stress Relief - Dwight cuts off its face",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 186,
+    "question": "What song plays during the CPR training?",
+    "options": [
+      "Stayin' Alive",
+      "Another One Bites the Dust",
+      "Both",
+      "Neither"
+    ],
+    "answer": "Both",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 187,
+    "question": "Who teaches the CPR class?",
+    "options": [
+      "Michael",
+      "An instructor they ignore",
+      "Dwight",
+      "Toby"
+    ],
+    "answer": "An instructor they ignore",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 188,
+    "question": "What does Dwight wear on his face?",
+    "options": [
+      "A mask",
+      "The CPR dummy's face",
+      "Makeup",
+      "Nothing"
+    ],
+    "answer": "The CPR dummy's face",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 189,
+    "question": "What does 'Bears. Beets. Battlestar Galactica' reference?",
+    "options": [
+      "Michael's quote",
+      "Jim impersonating Dwight",
+      "A commercial",
+      "Dwight's interests"
+    ],
+    "answer": "Jim impersonating Dwight",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 190,
+    "question": "What is Dwight's response to Jim's impersonation?",
+    "options": [
+      "He laughs",
+      "Identity theft is not a joke, Jim!",
+      "He ignores it",
+      "He reports to HR"
+    ],
+    "answer": "Identity theft is not a joke, Jim!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 191,
+    "question": "What show-within-a-show do Dwight and Jim appear on?",
+    "options": [
+      "The news",
+      "A talk show",
+      "Recyclops",
+      "The Hay Place"
+    ],
+    "answer": "Recyclops",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 192,
+    "question": "What is Recyclops?",
+    "options": [
+      "A superhero",
+      "Dwight's environmental character",
+      "A company mascot",
+      "An episode title"
+    ],
+    "answer": "Dwight's environmental character",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 193,
+    "question": "What happens to Recyclops over the years?",
+    "options": [
+      "Stays the same",
+      "Becomes increasingly aggressive/villainous",
+      "Gets retired",
+      "Becomes popular"
+    ],
+    "answer": "Becomes increasingly aggressive/villainous",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 194,
+    "question": "What is Gabe Lewis's role?",
+    "options": [
+      "Sales",
+      "Corporate liaison from Sabre",
+      "Accountant",
+      "Warehouse"
+    ],
+    "answer": "Corporate liaison from Sabre",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 195,
+    "question": "Who does Gabe date?",
+    "options": [
+      "Angela",
+      "Erin",
+      "Kelly",
+      "Phyllis"
+    ],
+    "answer": "Erin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 196,
+    "question": "What is Gabe's defining trait?",
+    "options": [
+      "Very confident",
+      "Very awkward/weird",
+      "Very athletic",
+      "Very smart"
+    ],
+    "answer": "Very awkward/weird",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 197,
+    "question": "What does Nellie Bertram first try to do?",
+    "options": [
+      "Join sales",
+      "Steal Andy's job as manager",
+      "Work in HR",
+      "Start a new branch"
+    ],
+    "answer": "Steal Andy's job as manager",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 198,
+    "question": "Who plays Nellie Bertram?",
+    "options": [
+      "Kathy Bates",
+      "Catherine Tate",
+      "Amy Adams",
+      "Rashida Jones"
+    ],
+    "answer": "Catherine Tate",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 199,
+    "question": "What's the final shot of the series?",
+    "options": [
+      "The office building exterior",
+      "Michael and Holly",
+      "Jim and Pam",
+      "The documentary title card"
+    ],
+    "answer": "The office building exterior",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 200,
+    "question": "What streaming service is The Office most associated with after NBC?",
+    "options": [
+      "Netflix (formerly)",
+      "Peacock (currently)",
+      "Both",
+      "Hulu"
+    ],
+    "answer": "Both",
+    "difficulty": "medium",
+    "category": "production"
+  }
+]
+

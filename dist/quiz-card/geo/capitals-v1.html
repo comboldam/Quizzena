@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitals Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0a0a15 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(147, 51, 234, 0.1) 0%, 
+        rgba(10, 10, 20, 0.95) 35%,
+        rgba(5, 5, 12, 0.98) 100%
+      );
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(147, 51, 234, 0.1),
+        0 0 30px rgba(255, 215, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* City lights gradient overlay */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 70%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 30%, rgba(147, 51, 234, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Shimmer effect */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 60%
+      );
+      animation: shimmer 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+      50% { transform: translateX(30%) translateY(30%) rotate(0deg); }
+    }
+
+    .card-title {
+      color: #ffd700;
+      font-family: 'Georgia', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 6px;
+      text-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 0 40px rgba(255, 215, 0, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 115px;
+      height: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    /* ===== SKYLINE ===== */
+    .skyline {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    /* ===== EIFFEL TOWER ===== */
+    .eiffel {
+      width: 18px;
+      height: 55px;
+      position: relative;
+      animation: buildingFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 3px 8px rgba(255, 215, 0, 0.3));
+    }
+
+    @keyframes buildingFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+
+    .eiffel-top {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 8px;
+      background: linear-gradient(180deg, #ffd700, #b8860b);
+    }
+
+    .eiffel-antenna {
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 4px;
+      background: #ffd700;
+    }
+
+    .eiffel-upper {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 15px solid #c9a227;
+    }
+
+    .eiffel-middle {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 4px;
+      background: linear-gradient(90deg, #8b6914, #d4af37, #8b6914);
+      border-radius: 1px;
+    }
+
+    .eiffel-lower {
+      position: absolute;
+      top: 23px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 20px solid #b8860b;
+    }
+
+    .eiffel-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 12px;
+      background: linear-gradient(180deg, #a67c00, #8b6914);
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+    }
+
+    /* ===== BIG BEN ===== */
+    .bigben {
+      width: 14px;
+      height: 50px;
+      position: relative;
+      animation: buildingFloat 3s ease-in-out infinite 0.3s;
+      filter: drop-shadow(0 3px 8px rgba(194, 154, 108, 0.3));
+    }
+
+    .bigben-spire {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-bottom: 10px solid #c9a227;
+    }
+
+    .bigben-clock {
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #fffef0, #f5f5dc);
+      border: 2px solid #b8860b;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 255, 240, 0.5);
+    }
+
+    .bigben-clock::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 3px;
+      background: #333;
+      transform-origin: bottom center;
+      transform: translate(-50%, -100%) rotate(-30deg);
+    }
+
+    .bigben-clock::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 2px;
+      background: #333;
+      transform-origin: bottom center;
+      transform: translate(-50%, -100%) rotate(60deg);
+    }
+
+    .bigben-tower {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 30px;
+      background: linear-gradient(90deg, #8b7355, #c2a06c, #8b7355);
+      border-radius: 1px;
+    }
+
+    .bigben-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 5px;
+      background: linear-gradient(180deg, #6b5344, #4a3728);
+      border-radius: 0 0 2px 2px;
+    }
+
+    /* ===== CAPITOL DOME ===== */
+    .capitol {
+      width: 22px;
+      height: 45px;
+      position: relative;
+      animation: buildingFloat 3s ease-in-out infinite 0.5s;
+      filter: drop-shadow(0 3px 8px rgba(255, 255, 255, 0.2));
+    }
+
+    .capitol-statue {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 5px;
+      background: #d4af37;
+    }
+
+    .capitol-dome {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 12px;
+      background: linear-gradient(180deg, #e8e8e8, #c0c0c0, #a8a8a8);
+      border-radius: 50% 50% 0 0;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .capitol-drum {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 8px;
+      background: linear-gradient(90deg, #a8a8a8, #d8d8d8, #a8a8a8);
+      border-radius: 2px;
+    }
+
+    .capitol-body {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(90deg, #c0c0c0, #e8e8e8, #c0c0c0);
+    }
+
+    .capitol-columns {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .col {
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(90deg, #b8b8b8, #e0e0e0, #b8b8b8);
+    }
+
+    .capitol-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 5px;
+      background: linear-gradient(180deg, #a0a0a0, #808080);
+    }
+
+    /* ===== TOWER (GENERIC) ===== */
+    .tower {
+      width: 10px;
+      height: 40px;
+      position: relative;
+      animation: buildingFloat 3s ease-in-out infinite 0.7s;
+      filter: drop-shadow(0 3px 8px rgba(59, 130, 246, 0.3));
+    }
+
+    .tower-top {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid #3b82f6;
+    }
+
+    .tower-body {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 30px;
+      background: linear-gradient(90deg, #2563eb, #60a5fa, #2563eb);
+      border-radius: 1px;
+    }
+
+    .tower-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 4px;
+      background: #1e40af;
+    }
+
+    /* ===== KREMLIN-STYLE ===== */
+    .kremlin {
+      width: 12px;
+      height: 42px;
+      position: relative;
+      animation: buildingFloat 3s ease-in-out infinite 0.2s;
+      filter: drop-shadow(0 3px 8px rgba(220, 38, 38, 0.3));
+    }
+
+    .kremlin-star {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #dc2626;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      box-shadow: 0 0 5px rgba(220, 38, 38, 0.6);
+    }
+
+    .kremlin-spire {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 12px solid #7f1d1d;
+    }
+
+    .kremlin-body {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 24px;
+      background: linear-gradient(90deg, #991b1b, #dc2626, #991b1b);
+    }
+
+    .kremlin-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 4px;
+      background: #7f1d1d;
+    }
+
+    /* ===== GROUND ===== */
+    .ground {
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 105px;
+      height: 12px;
+      background: linear-gradient(180deg, 
+        rgba(212, 175, 55, 0.5) 0%,
+        rgba(139, 90, 43, 0.6) 30%,
+        rgba(101, 67, 33, 0.7) 60%,
+        rgba(60, 40, 20, 0.9) 100%
+      );
+      border-radius: 4px;
+      box-shadow: 
+        inset 0 2px 4px rgba(255, 215, 0, 0.3),
+        0 2px 10px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .ground::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+      border-radius: 1px;
+    }
+
+    .ground::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.2) 20%, 
+        rgba(255, 215, 0, 0.3) 50%, 
+        rgba(255, 215, 0, 0.2) 80%, 
+        transparent
+      );
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* ===== CITY LIGHTS ===== */
+    .lights {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .light {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: radial-gradient(circle, #ffd700, transparent);
+      border-radius: 50%;
+      animation: lightTwinkle 2s ease-in-out infinite;
+    }
+
+    .light:nth-child(1) { top: 30px; left: 15px; }
+    .light:nth-child(2) { top: 40px; right: 18px; animation-delay: 0.3s; }
+    .light:nth-child(3) { top: 25px; left: 40px; animation-delay: 0.6s; width: 2px; height: 2px; }
+    .light:nth-child(4) { top: 35px; right: 40px; animation-delay: 0.9s; width: 2px; height: 2px; }
+    .light:nth-child(5) { top: 50px; left: 25px; animation-delay: 1.2s; }
+    .light:nth-child(6) { top: 45px; right: 30px; animation-delay: 1.5s; width: 2px; height: 2px; }
+
+    @keyframes lightTwinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.4); }
+    }
+
+    /* ===== STARS ===== */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #fff;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      animation: starTwinkle 3s ease-in-out infinite;
+    }
+
+    .star:nth-child(1) { top: 10px; left: 12px; }
+    .star:nth-child(2) { top: 8px; right: 15px; animation-delay: 0.5s; }
+    .star:nth-child(3) { top: 15px; left: 50px; animation-delay: 1s; width: 2px; height: 2px; }
+    .star:nth-child(4) { top: 12px; right: 45px; animation-delay: 1.5s; width: 2px; height: 2px; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== LOCATION PIN ===== */
+    .pin {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 18px;
+      opacity: 0.6;
+      animation: pinBounce 2s ease-in-out infinite;
+    }
+
+    .pin-head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(145deg, #ef4444, #b91c1c);
+      border-radius: 50% 50% 50% 0;
+      transform: translateX(-50%) rotate(-45deg);
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    }
+
+    .pin-dot {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    @keyframes pinBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-4px); }
+    }
+
+    /* ===== CAPITAL DOTS ===== */
+    .capital-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Paris */ .dot:nth-child(1) { background: #002395; box-shadow: 0 0 5px #002395; }
+    /* London */ .dot:nth-child(2) { background: #c8102e; box-shadow: 0 0 5px #c8102e; animation-delay: 0.1s; }
+    /* Washington */ .dot:nth-child(3) { background: #3c3b6e; box-shadow: 0 0 5px #3c3b6e; animation-delay: 0.2s; }
+    /* Tokyo */ .dot:nth-child(4) { background: #bc002d; box-shadow: 0 0 5px #bc002d; animation-delay: 0.3s; }
+    /* Moscow */ .dot:nth-child(5) { background: #d52b1e; box-shadow: 0 0 5px #d52b1e; animation-delay: 0.4s; }
+    /* Berlin */ .dot:nth-child(6) { background: #ffcc00; box-shadow: 0 0 5px #ffcc00; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Stars -->
+    <div class="stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+
+    <!-- Location pin -->
+    <div class="pin">
+      <div class="pin-head">
+        <div class="pin-dot"></div>
+      </div>
+    </div>
+
+    <!-- City lights -->
+    <div class="lights">
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+      <div class="light"></div>
+    </div>
+
+    <!-- Capital dots -->
+    <div class="capital-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Ground -->
+      <div class="ground"></div>
+
+      <!-- Skyline -->
+      <div class="skyline">
+        <div class="kremlin">
+          <div class="kremlin-star"></div>
+          <div class="kremlin-spire"></div>
+          <div class="kremlin-body"></div>
+          <div class="kremlin-base"></div>
+        </div>
+        <div class="bigben">
+          <div class="bigben-spire"></div>
+          <div class="bigben-clock"></div>
+          <div class="bigben-tower"></div>
+          <div class="bigben-base"></div>
+        </div>
+        <div class="eiffel">
+          <div class="eiffel-antenna"></div>
+          <div class="eiffel-top"></div>
+          <div class="eiffel-upper"></div>
+          <div class="eiffel-middle"></div>
+          <div class="eiffel-lower"></div>
+          <div class="eiffel-base"></div>
+        </div>
+        <div class="capitol">
+          <div class="capitol-statue"></div>
+          <div class="capitol-dome"></div>
+          <div class="capitol-drum"></div>
+          <div class="capitol-body">
+            <div class="capitol-columns">
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+          </div>
+          <div class="capitol-base"></div>
+        </div>
+        <div class="tower">
+          <div class="tower-top"></div>
+          <div class="tower-body"></div>
+          <div class="tower-base"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title">CAPITALS</div>
+  </div>
+</body>
+</html>
+

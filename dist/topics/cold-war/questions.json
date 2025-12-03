@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "question": "What was the Cold War?",
+    "options": [
+      "Trade dispute",
+      "Actual war with fighting",
+      "Ideological conflict between USA and USSR",
+      "War in Antarctica"
+    ],
+    "answer": "Ideological conflict between USA and USSR",
+    "difficulty": "easy",
+    "category": "overview"
+  },
+  {
+    "id": 2,
+    "question": "When did the Cold War approximately begin?",
+    "options": [
+      "1950",
+      "1947",
+      "1960",
+      "1939"
+    ],
+    "answer": "1947",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 3,
+    "question": "When did the Cold War end?",
+    "options": [
+      "1991",
+      "1985",
+      "2000",
+      "1989"
+    ],
+    "answer": "1991",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 4,
+    "question": "What event symbolized the end of the Cold War?",
+    "options": [
+      "Nixon visits China",
+      "Cuban Missile Crisis",
+      "Dissolution of the Soviet Union",
+      "Fall of Berlin Wall"
+    ],
+    "answer": "Dissolution of the Soviet Union",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 5,
+    "question": "Who coined the term 'Iron Curtain'?",
+    "options": [
+      "Joseph Stalin",
+      "Franklin Roosevelt",
+      "Harry Truman",
+      "Winston Churchill"
+    ],
+    "answer": "Winston Churchill",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 6,
+    "question": "What did the 'Iron Curtain' refer to?",
+    "options": [
+      "Nuclear defense system",
+      "Division between Western and Eastern Europe",
+      "Trade embargo",
+      "Actual metal barrier"
+    ],
+    "answer": "Division between Western and Eastern Europe",
+    "difficulty": "easy",
+    "category": "overview"
+  },
+  {
+    "id": 7,
+    "question": "Where did Churchill give the Iron Curtain speech?",
+    "options": [
+      "Washington D.C.",
+      "Fulton, Missouri",
+      "London",
+      "New York"
+    ],
+    "answer": "Fulton, Missouri",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 8,
+    "question": "What year was the Iron Curtain speech?",
+    "options": [
+      "1950",
+      "1947",
+      "1945",
+      "1946"
+    ],
+    "answer": "1946",
+    "difficulty": "hard",
+    "category": "timeline"
+  },
+  {
+    "id": 9,
+    "question": "What was the Truman Doctrine?",
+    "options": [
+      "Trade agreement",
+      "Nuclear policy",
+      "US policy to contain communism",
+      "Peace treaty"
+    ],
+    "answer": "US policy to contain communism",
+    "difficulty": "easy",
+    "category": "policies"
+  },
+  {
+    "id": 10,
+    "question": "What policy aimed to stop the spread of communism?",
+    "options": [
+      "Containment",
+      "Glasnost",
+      "Perestroika",
+      "Détente"
+    ],
+    "answer": "Containment",
+    "difficulty": "easy",
+    "category": "policies"
+  },
+  {
+    "id": 11,
+    "question": "Who developed the containment policy?",
+    "options": [
+      "Dean Acheson",
+      "George Kennan",
+      "George Marshall",
+      "Harry Truman"
+    ],
+    "answer": "George Kennan",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 12,
+    "question": "What was the Marshall Plan?",
+    "options": [
+      "Spy network",
+      "Military alliance",
+      "US economic aid to rebuild Europe",
+      "Space program"
+    ],
+    "answer": "US economic aid to rebuild Europe",
+    "difficulty": "easy",
+    "category": "policies"
+  },
+  {
+    "id": 13,
+    "question": "How much did the Marshall Plan provide?",
+    "options": [
+      "About $13 billion",
+      "$100 billion",
+      "$1 billion",
+      "$500 million"
+    ],
+    "answer": "About $13 billion",
+    "difficulty": "hard",
+    "category": "policies"
+  },
+  {
+    "id": 14,
+    "question": "Did the Soviet Union accept Marshall Plan aid?",
+    "options": [
+      "No, and blocked Eastern Bloc from accepting",
+      "Negotiated different terms",
+      "Yes",
+      "Partially"
+    ],
+    "answer": "No, and blocked Eastern Bloc from accepting",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 15,
+    "question": "What military alliance did the West form in 1949?",
+    "options": [
+      "SEATO",
+      "CENTO",
+      "NATO",
+      "Warsaw Pact"
+    ],
+    "answer": "NATO",
+    "difficulty": "easy",
+    "category": "alliances"
+  },
+  {
+    "id": 16,
+    "question": "What does NATO stand for?",
+    "options": [
+      "Nuclear Arms Treaty Organization",
+      "North American Treaty Organization",
+      "North Atlantic Treaty Organization",
+      "National Army Treaty Organization"
+    ],
+    "answer": "North Atlantic Treaty Organization",
+    "difficulty": "easy",
+    "category": "alliances"
+  },
+  {
+    "id": 17,
+    "question": "What was the Soviet response to NATO?",
+    "options": [
+      "COMINTERN",
+      "Molotov Plan",
+      "Berlin Blockade",
+      "Warsaw Pact"
+    ],
+    "answer": "Warsaw Pact",
+    "difficulty": "easy",
+    "category": "alliances"
+  },
+  {
+    "id": 18,
+    "question": "What year was the Warsaw Pact formed?",
+    "options": [
+      "1955",
+      "1950",
+      "1961",
+      "1949"
+    ],
+    "answer": "1955",
+    "difficulty": "medium",
+    "category": "alliances"
+  },
+  {
+    "id": 19,
+    "question": "What was the Berlin Blockade?",
+    "options": [
+      "Trade embargo",
+      "Wall construction",
+      "Soviet block of Western access to West Berlin",
+      "Military siege"
+    ],
+    "answer": "Soviet block of Western access to West Berlin",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 20,
+    "question": "What year was the Berlin Blockade?",
+    "options": [
+      "1948-1949",
+      "1961",
+      "1950",
+      "1953"
+    ],
+    "answer": "1948-1949",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 21,
+    "question": "How did the West respond to the Berlin Blockade?",
+    "options": [
+      "Berlin Airlift",
+      "Negotiation only",
+      "Military invasion",
+      "Surrender of West Berlin"
+    ],
+    "answer": "Berlin Airlift",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 22,
+    "question": "How long did the Berlin Airlift last?",
+    "options": [
+      "3 years",
+      "About 11 months",
+      "1 month",
+      "1 week"
+    ],
+    "answer": "About 11 months",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 23,
+    "question": "What were 'candy bombers'?",
+    "options": [
+      "Pilots who dropped candy for Berlin children",
+      "Chocolate factories",
+      "Bomber planes",
+      "Propaganda films"
+    ],
+    "answer": "Pilots who dropped candy for Berlin children",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 24,
+    "question": "When was the Berlin Wall built?",
+    "options": [
+      "1953",
+      "1949",
+      "1961",
+      "1989"
+    ],
+    "answer": "1961",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 25,
+    "question": "Why was the Berlin Wall built?",
+    "options": [
+      "To stop East Germans fleeing to West",
+      "Defense against invasion",
+      "Tourism control",
+      "Trade regulation"
+    ],
+    "answer": "To stop East Germans fleeing to West",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 26,
+    "question": "When did the Berlin Wall fall?",
+    "options": [
+      "1985",
+      "November 9, 1989",
+      "1987",
+      "1991"
+    ],
+    "answer": "November 9, 1989",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 27,
+    "question": "What was Checkpoint Charlie?",
+    "options": [
+      "Soviet general",
+      "Spy codename",
+      "Nuclear facility",
+      "Famous Berlin Wall crossing point"
+    ],
+    "answer": "Famous Berlin Wall crossing point",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 28,
+    "question": "How many people died trying to cross the Berlin Wall?",
+    "options": [
+      "About 10",
+      "Over 100",
+      "None",
+      "Over 1000"
+    ],
+    "answer": "Over 100",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 29,
+    "question": "What year did the Soviet Union test its first atomic bomb?",
+    "options": [
+      "1961",
+      "1945",
+      "1953",
+      "1949"
+    ],
+    "answer": "1949",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 30,
+    "question": "What was the Soviet bomb project called?",
+    "options": [
+      "First Lightning (RDS-1)",
+      "Tsar Bomba",
+      "Manhattan Project",
+      "Trinity"
+    ],
+    "answer": "First Lightning (RDS-1)",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 31,
+    "question": "What was the hydrogen bomb?",
+    "options": [
+      "Chemical weapon",
+      "Much more powerful fusion bomb",
+      "Conventional explosive",
+      "Same as atomic bomb"
+    ],
+    "answer": "Much more powerful fusion bomb",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 32,
+    "question": "What was the largest nuclear bomb ever detonated?",
+    "options": [
+      "Castle Bravo",
+      "Fat Man",
+      "Little Boy",
+      "Tsar Bomba"
+    ],
+    "answer": "Tsar Bomba",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 33,
+    "question": "How powerful was Tsar Bomba?",
+    "options": [
+      "10 megatons",
+      "50 megatons",
+      "1 megaton",
+      "100 megatons"
+    ],
+    "answer": "50 megatons",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 34,
+    "question": "What country detonated Tsar Bomba?",
+    "options": [
+      "China",
+      "United States",
+      "Soviet Union",
+      "France"
+    ],
+    "answer": "Soviet Union",
+    "difficulty": "easy",
+    "category": "nuclear"
+  },
+  {
+    "id": 35,
+    "question": "What does MAD stand for?",
+    "options": [
+      "Mutually Assured Destruction",
+      "Massive Atomic Deterrent",
+      "Military Armed Defense",
+      "Multiple Attack Defense"
+    ],
+    "answer": "Mutually Assured Destruction",
+    "difficulty": "easy",
+    "category": "nuclear"
+  },
+  {
+    "id": 36,
+    "question": "What was MAD's purpose?",
+    "options": [
+      "Defense system",
+      "Peace treaty",
+      "Deterrence - neither side would start nuclear war",
+      "First strike capability"
+    ],
+    "answer": "Deterrence - neither side would start nuclear war",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 37,
+    "question": "What was the Cuban Missile Crisis?",
+    "options": [
+      "Bay of Pigs invasion",
+      "Cuban revolution",
+      "Trade embargo",
+      "1962 nuclear standoff over Soviet missiles in Cuba"
+    ],
+    "answer": "1962 nuclear standoff over Soviet missiles in Cuba",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 38,
+    "question": "Who was US President during the Cuban Missile Crisis?",
+    "options": [
+      "Dwight Eisenhower",
+      "Richard Nixon",
+      "Lyndon Johnson",
+      "John F. Kennedy"
+    ],
+    "answer": "John F. Kennedy",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 39,
+    "question": "Who was Soviet leader during Cuban Missile Crisis?",
+    "options": [
+      "Nikita Khrushchev",
+      "Mikhail Gorbachev",
+      "Leonid Brezhnev",
+      "Joseph Stalin"
+    ],
+    "answer": "Nikita Khrushchev",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 40,
+    "question": "How long did the Cuban Missile Crisis last?",
+    "options": [
+      "13 days",
+      "6 months",
+      "1 month",
+      "1 week"
+    ],
+    "answer": "13 days",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 41,
+    "question": "How was the Cuban Missile Crisis resolved?",
+    "options": [
+      "Nuclear war",
+      "UN intervention",
+      "USSR removed missiles, US pledged not to invade Cuba",
+      "US invasion"
+    ],
+    "answer": "USSR removed missiles, US pledged not to invade Cuba",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 42,
+    "question": "What secret deal was part of the resolution?",
+    "options": [
+      "US would remove missiles from Turkey",
+      "Trade agreement",
+      "Military alliance",
+      "USSR got Cuba"
+    ],
+    "answer": "US would remove missiles from Turkey",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 43,
+    "question": "What was the Bay of Pigs invasion?",
+    "options": [
+      "Cuban attack on US",
+      "Naval battle",
+      "Failed CIA-backed invasion of Cuba",
+      "Successful US invasion"
+    ],
+    "answer": "Failed CIA-backed invasion of Cuba",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 44,
+    "question": "What year was the Bay of Pigs?",
+    "options": [
+      "1962",
+      "1961",
+      "1963",
+      "1959"
+    ],
+    "answer": "1961",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 45,
+    "question": "Who was Cuba's communist leader?",
+    "options": [
+      "Fidel Castro",
+      "Batista",
+      "Raul Castro",
+      "Che Guevara"
+    ],
+    "answer": "Fidel Castro",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 46,
+    "question": "What year did Castro take power in Cuba?",
+    "options": [
+      "1955",
+      "1962",
+      "1959",
+      "1961"
+    ],
+    "answer": "1959",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 47,
+    "question": "Who was Che Guevara?",
+    "options": [
+      "CIA agent",
+      "Cuban president",
+      "Soviet advisor",
+      "Revolutionary who helped Castro"
+    ],
+    "answer": "Revolutionary who helped Castro",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 48,
+    "question": "What war began in 1950 on the Korean Peninsula?",
+    "options": [
+      "Cold War",
+      "World War III",
+      "Vietnam War",
+      "Korean War"
+    ],
+    "answer": "Korean War",
+    "difficulty": "easy",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 49,
+    "question": "What parallel divided Korea?",
+    "options": [
+      "37th parallel",
+      "38th parallel",
+      "40th parallel",
+      "39th parallel"
+    ],
+    "answer": "38th parallel",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 50,
+    "question": "Who invaded South Korea in 1950?",
+    "options": [
+      "North Korea",
+      "Soviet Union",
+      "Japan",
+      "China"
+    ],
+    "answer": "North Korea",
+    "difficulty": "easy",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 51,
+    "question": "Who led UN forces in Korea initially?",
+    "options": [
+      "Omar Bradley",
+      "Douglas MacArthur",
+      "Dwight Eisenhower",
+      "George Patton"
+    ],
+    "answer": "Douglas MacArthur",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 52,
+    "question": "Why was MacArthur fired?",
+    "options": [
+      "Wanted to use nuclear weapons on China",
+      "Health reasons",
+      "Lost too many battles",
+      "Retired"
+    ],
+    "answer": "Wanted to use nuclear weapons on China",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 53,
+    "question": "What country entered the Korean War to help North Korea?",
+    "options": [
+      "Vietnam",
+      "China",
+      "Soviet Union directly",
+      "Cuba"
+    ],
+    "answer": "China",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 54,
+    "question": "How did the Korean War end?",
+    "options": [
+      "North Korean victory",
+      "US victory",
+      "Armistice (ceasefire), no peace treaty",
+      "UN intervention"
+    ],
+    "answer": "Armistice (ceasefire), no peace treaty",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 55,
+    "question": "Is the Korean War technically still ongoing?",
+    "options": [
+      "No, ended in 1950",
+      "Yes, only armistice signed",
+      "Ended in 1991",
+      "No, peace treaty in 1953"
+    ],
+    "answer": "Yes, only armistice signed",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 56,
+    "question": "What was the domino theory?",
+    "options": [
+      "Nuclear defense",
+      "Economic policy",
+      "If one country falls to communism, neighbors will follow",
+      "Chess strategy"
+    ],
+    "answer": "If one country falls to communism, neighbors will follow",
+    "difficulty": "easy",
+    "category": "policies"
+  },
+  {
+    "id": 57,
+    "question": "What war was heavily influenced by domino theory?",
+    "options": [
+      "Vietnam War",
+      "Korean War",
+      "World War II",
+      "Gulf War"
+    ],
+    "answer": "Vietnam War",
+    "difficulty": "easy",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 58,
+    "question": "What incident escalated US involvement in Vietnam?",
+    "options": [
+      "Fall of Saigon",
+      "Tet Offensive",
+      "My Lai",
+      "Gulf of Tonkin incident"
+    ],
+    "answer": "Gulf of Tonkin incident",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 59,
+    "question": "What year was the Gulf of Tonkin Resolution?",
+    "options": [
+      "1968",
+      "1964",
+      "1975",
+      "1965"
+    ],
+    "answer": "1964",
+    "difficulty": "hard",
+    "category": "timeline"
+  },
+  {
+    "id": 60,
+    "question": "What was the Tet Offensive?",
+    "options": [
+      "Bombing campaign",
+      "US offensive",
+      "1968 surprise attack by North Vietnam",
+      "Peace negotiation"
+    ],
+    "answer": "1968 surprise attack by North Vietnam",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 61,
+    "question": "What effect did Tet Offensive have on US public opinion?",
+    "options": [
+      "Ended the war",
+      "Turned many Americans against the war",
+      "Increased support",
+      "No effect"
+    ],
+    "answer": "Turned many Americans against the war",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 62,
+    "question": "When did Saigon fall ending the Vietnam War?",
+    "options": [
+      "1968",
+      "1979",
+      "1973",
+      "1975"
+    ],
+    "answer": "1975",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 63,
+    "question": "What was the Ho Chi Minh Trail?",
+    "options": [
+      "US bombing target only",
+      "River in Vietnam",
+      "Supply route for North Vietnam through Laos/Cambodia",
+      "Peace negotiation"
+    ],
+    "answer": "Supply route for North Vietnam through Laos/Cambodia",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 64,
+    "question": "What chemical was controversially used in Vietnam?",
+    "options": [
+      "Napalm only",
+      "Agent Orange",
+      "Mustard gas",
+      "Sarin"
+    ],
+    "answer": "Agent Orange",
+    "difficulty": "easy",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 65,
+    "question": "What was Sputnik?",
+    "options": [
+      "Nuclear missile",
+      "Moon lander",
+      "Space station",
+      "First artificial satellite"
+    ],
+    "answer": "First artificial satellite",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 66,
+    "question": "What country launched Sputnik?",
+    "options": [
+      "Germany",
+      "China",
+      "United States",
+      "Soviet Union"
+    ],
+    "answer": "Soviet Union",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 67,
+    "question": "What year was Sputnik launched?",
+    "options": [
+      "1957",
+      "1961",
+      "1969",
+      "1955"
+    ],
+    "answer": "1957",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 68,
+    "question": "What was the 'Sputnik moment'?",
+    "options": [
+      "American shock and fear of Soviet space lead",
+      "Peace offer",
+      "Trade deal",
+      "Celebration"
+    ],
+    "answer": "American shock and fear of Soviet space lead",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 69,
+    "question": "Who was the first human in space?",
+    "options": [
+      "John Glenn",
+      "Yuri Gagarin",
+      "Alan Shepard",
+      "Neil Armstrong"
+    ],
+    "answer": "Yuri Gagarin",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 70,
+    "question": "What country was Gagarin from?",
+    "options": [
+      "Soviet Union",
+      "Germany",
+      "China",
+      "United States"
+    ],
+    "answer": "Soviet Union",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 71,
+    "question": "What year did Gagarin go to space?",
+    "options": [
+      "1961",
+      "1957",
+      "1969",
+      "1963"
+    ],
+    "answer": "1961",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 72,
+    "question": "Who was the first American in space?",
+    "options": [
+      "John Glenn",
+      "Buzz Aldrin",
+      "Alan Shepard",
+      "Neil Armstrong"
+    ],
+    "answer": "Alan Shepard",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 73,
+    "question": "Who was the first American to orbit Earth?",
+    "options": [
+      "Neil Armstrong",
+      "Alan Shepard",
+      "John Glenn",
+      "Buzz Aldrin"
+    ],
+    "answer": "John Glenn",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 74,
+    "question": "What did Kennedy promise about the Moon?",
+    "options": [
+      "Land a man on Moon before end of 1960s",
+      "Build space station",
+      "Beat Soviets to Mars",
+      "Unlimited space funding"
+    ],
+    "answer": "Land a man on Moon before end of 1960s",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 75,
+    "question": "Who was the first person to walk on the Moon?",
+    "options": [
+      "Michael Collins",
+      "Neil Armstrong",
+      "John Glenn",
+      "Buzz Aldrin"
+    ],
+    "answer": "Neil Armstrong",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 76,
+    "question": "What year was the Moon landing?",
+    "options": [
+      "1971",
+      "1965",
+      "1969",
+      "1967"
+    ],
+    "answer": "1969",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 77,
+    "question": "What did Armstrong say on the Moon?",
+    "options": [
+      "America wins",
+      "We made it",
+      "That's one small step for man, one giant leap for mankind",
+      "Hello Moon"
+    ],
+    "answer": "That's one small step for man, one giant leap for mankind",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 78,
+    "question": "Did the Soviet Union ever land humans on the Moon?",
+    "options": [
+      "Yes, after US",
+      "Yes, before US",
+      "No",
+      "Attempted but failed"
+    ],
+    "answer": "No",
+    "difficulty": "easy",
+    "category": "space-race"
+  },
+  {
+    "id": 79,
+    "question": "What was NASA created in response to?",
+    "options": [
+      "Sputnik and Soviet space lead",
+      "International cooperation",
+      "Moon landing plans",
+      "Military needs"
+    ],
+    "answer": "Sputnik and Soviet space lead",
+    "difficulty": "medium",
+    "category": "space-race"
+  },
+  {
+    "id": 80,
+    "question": "What was the KGB?",
+    "options": [
+      "Soviet intelligence agency",
+      "Military unit",
+      "US intelligence",
+      "Political party"
+    ],
+    "answer": "Soviet intelligence agency",
+    "difficulty": "easy",
+    "category": "espionage"
+  },
+  {
+    "id": 81,
+    "question": "What was the CIA?",
+    "options": [
+      "Police force",
+      "Soviet spy network",
+      "US intelligence agency",
+      "Military branch"
+    ],
+    "answer": "US intelligence agency",
+    "difficulty": "easy",
+    "category": "espionage"
+  },
+  {
+    "id": 82,
+    "question": "Who were the Rosenbergs?",
+    "options": [
+      "CIA directors",
+      "Soviet spies",
+      "Americans executed for passing nuclear secrets to USSR",
+      "Double agents"
+    ],
+    "answer": "Americans executed for passing nuclear secrets to USSR",
+    "difficulty": "medium",
+    "category": "espionage"
+  },
+  {
+    "id": 83,
+    "question": "What year were the Rosenbergs executed?",
+    "options": [
+      "1960",
+      "1953",
+      "1947",
+      "1950"
+    ],
+    "answer": "1953",
+    "difficulty": "hard",
+    "category": "espionage"
+  },
+  {
+    "id": 84,
+    "question": "What was McCarthyism?",
+    "options": [
+      "Peace movement",
+      "Trade policy",
+      "Soviet propaganda",
+      "Anti-communist witch hunts in 1950s America"
+    ],
+    "answer": "Anti-communist witch hunts in 1950s America",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 85,
+    "question": "Who was Senator Joseph McCarthy?",
+    "options": [
+      "Soviet spy",
+      "Led communist investigations in US",
+      "CIA director",
+      "President"
+    ],
+    "answer": "Led communist investigations in US",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 86,
+    "question": "What were people accused of during McCarthyism?",
+    "options": [
+      "Espionage only",
+      "Tax evasion",
+      "Crimes",
+      "Being communists or communist sympathizers"
+    ],
+    "answer": "Being communists or communist sympathizers",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 87,
+    "question": "What question became famous: 'Are you now or have you ever been...'?",
+    "options": [
+      "A member of the Communist Party",
+      "In the military",
+      "A government employee",
+      "A spy"
+    ],
+    "answer": "A member of the Communist Party",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 88,
+    "question": "What industry was heavily targeted by communist investigations?",
+    "options": [
+      "Banking",
+      "Technology",
+      "Hollywood",
+      "Agriculture"
+    ],
+    "answer": "Hollywood",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 89,
+    "question": "What was the Hollywood Blacklist?",
+    "options": [
+      "Film ratings",
+      "Studio executives",
+      "List of people banned for alleged communist ties",
+      "Award nominees"
+    ],
+    "answer": "List of people banned for alleged communist ties",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 90,
+    "question": "What was the U-2 incident?",
+    "options": [
+      "Nuclear test",
+      "Submarine attack",
+      "Space mission failure",
+      "US spy plane shot down over USSR"
+    ],
+    "answer": "US spy plane shot down over USSR",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 91,
+    "question": "What year was the U-2 incident?",
+    "options": [
+      "1960",
+      "1955",
+      "1957",
+      "1962"
+    ],
+    "answer": "1960",
+    "difficulty": "hard",
+    "category": "timeline"
+  },
+  {
+    "id": 92,
+    "question": "Who was the U-2 pilot captured?",
+    "options": [
+      "Gary Powers",
+      "Chuck Yeager",
+      "James Bond",
+      "John Glenn"
+    ],
+    "answer": "Gary Powers",
+    "difficulty": "hard",
+    "category": "espionage"
+  },
+  {
+    "id": 93,
+    "question": "What was détente?",
+    "options": [
+      "Space cooperation",
+      "Period of reduced Cold War tensions",
+      "Military alliance",
+      "Nuclear treaty"
+    ],
+    "answer": "Period of reduced Cold War tensions",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 94,
+    "question": "What president pursued détente with USSR and China?",
+    "options": [
+      "Richard Nixon",
+      "John F. Kennedy",
+      "Jimmy Carter",
+      "Ronald Reagan"
+    ],
+    "answer": "Richard Nixon",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 95,
+    "question": "What historic visit did Nixon make in 1972?",
+    "options": [
+      "Visit to Cuba",
+      "Visit to China",
+      "Visit to Vietnam",
+      "Visit to USSR only"
+    ],
+    "answer": "Visit to China",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 96,
+    "question": "What was SALT?",
+    "options": [
+      "Space program",
+      "Strategic Arms Limitation Talks/Treaty",
+      "Alliance treaty",
+      "Economic agreement"
+    ],
+    "answer": "Strategic Arms Limitation Talks/Treaty",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 97,
+    "question": "What was the purpose of SALT treaties?",
+    "options": [
+      "Form alliance",
+      "Trade agreement",
+      "Limit nuclear weapons",
+      "End Cold War"
+    ],
+    "answer": "Limit nuclear weapons",
+    "difficulty": "easy",
+    "category": "nuclear"
+  },
+  {
+    "id": 98,
+    "question": "What Soviet leader did Nixon negotiate with?",
+    "options": [
+      "Joseph Stalin",
+      "Nikita Khrushchev",
+      "Leonid Brezhnev",
+      "Mikhail Gorbachev"
+    ],
+    "answer": "Leonid Brezhnev",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 99,
+    "question": "What joint space mission symbolized détente?",
+    "options": [
+      "Apollo 11",
+      "Space Shuttle",
+      "Apollo-Soyuz (1975)",
+      "Sputnik"
+    ],
+    "answer": "Apollo-Soyuz (1975)",
+    "difficulty": "hard",
+    "category": "space-race"
+  },
+  {
+    "id": 100,
+    "question": "What invasion ended détente in 1979?",
+    "options": [
+      "US invasion of Grenada",
+      "Soviet invasion of Afghanistan",
+      "Vietnam War",
+      "Korean War"
+    ],
+    "answer": "Soviet invasion of Afghanistan",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 101,
+    "question": "How long did the Soviet-Afghan War last?",
+    "options": [
+      "About 10 years (1979-1989)",
+      "2 years",
+      "15 years",
+      "5 years"
+    ],
+    "answer": "About 10 years (1979-1989)",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 102,
+    "question": "Who did the US support in Afghanistan against Soviets?",
+    "options": [
+      "No one",
+      "Taliban",
+      "Government",
+      "Mujahideen"
+    ],
+    "answer": "Mujahideen",
+    "difficulty": "medium",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 103,
+    "question": "What was the Soviet-Afghan War called by Soviets?",
+    "options": [
+      "USSR's Vietnam",
+      "Great Victory",
+      "Afghan Campaign",
+      "Liberation War"
+    ],
+    "answer": "USSR's Vietnam",
+    "difficulty": "hard",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 104,
+    "question": "What president called USSR the 'Evil Empire'?",
+    "options": [
+      "George H.W. Bush",
+      "Richard Nixon",
+      "Ronald Reagan",
+      "Jimmy Carter"
+    ],
+    "answer": "Ronald Reagan",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 105,
+    "question": "What defense program did Reagan propose?",
+    "options": [
+      "NATO expansion",
+      "Strategic Defense Initiative (Star Wars)",
+      "Apollo Program",
+      "Manhattan Project"
+    ],
+    "answer": "Strategic Defense Initiative (Star Wars)",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 106,
+    "question": "What was SDI supposed to do?",
+    "options": [
+      "Build space station",
+      "Shoot down incoming nuclear missiles",
+      "Launch satellites",
+      "Spy on USSR"
+    ],
+    "answer": "Shoot down incoming nuclear missiles",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 107,
+    "question": "Why was SDI called 'Star Wars'?",
+    "options": [
+      "Space-based laser defense system",
+      "Reagan's choice",
+      "Soviet nickname",
+      "Named after movie"
+    ],
+    "answer": "Space-based laser defense system",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 108,
+    "question": "Who was the last leader of the Soviet Union?",
+    "options": [
+      "Boris Yeltsin",
+      "Leonid Brezhnev",
+      "Mikhail Gorbachev",
+      "Nikita Khrushchev"
+    ],
+    "answer": "Mikhail Gorbachev",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 109,
+    "question": "What reform policy meant 'openness'?",
+    "options": [
+      "Détente",
+      "Containment",
+      "Glasnost",
+      "Perestroika"
+    ],
+    "answer": "Glasnost",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 110,
+    "question": "What reform policy meant 'restructuring'?",
+    "options": [
+      "Détente",
+      "Containment",
+      "Glasnost",
+      "Perestroika"
+    ],
+    "answer": "Perestroika",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 111,
+    "question": "What did glasnost allow?",
+    "options": [
+      "Economic reform",
+      "More freedom of speech and press",
+      "Military buildup",
+      "Expansion"
+    ],
+    "answer": "More freedom of speech and press",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 112,
+    "question": "What did perestroika attempt?",
+    "options": [
+      "Space program",
+      "Political openness",
+      "Military reform",
+      "Economic restructuring"
+    ],
+    "answer": "Economic restructuring",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 113,
+    "question": "What famous phrase did Reagan say at Berlin Wall?",
+    "options": [
+      "Mr. Gorbachev, tear down this wall!",
+      "Peace in our time",
+      "Evil Empire",
+      "Ich bin ein Berliner"
+    ],
+    "answer": "Mr. Gorbachev, tear down this wall!",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 114,
+    "question": "What year did Reagan give the 'tear down this wall' speech?",
+    "options": [
+      "1987",
+      "1985",
+      "1991",
+      "1989"
+    ],
+    "answer": "1987",
+    "difficulty": "hard",
+    "category": "timeline"
+  },
+  {
+    "id": 115,
+    "question": "What was the Solidarity movement?",
+    "options": [
+      "Polish trade union that challenged communism",
+      "East German protest",
+      "Soviet reform",
+      "Czech uprising"
+    ],
+    "answer": "Polish trade union that challenged communism",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 116,
+    "question": "Who led Solidarity?",
+    "options": [
+      "Pope John Paul II",
+      "Mikhail Gorbachev",
+      "Lech Walesa",
+      "Vaclav Havel"
+    ],
+    "answer": "Lech Walesa",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 117,
+    "question": "What role did Pope John Paul II play in Cold War?",
+    "options": [
+      "No role",
+      "Neutral",
+      "Supported USSR",
+      "Supported anti-communist movements, especially in Poland"
+    ],
+    "answer": "Supported anti-communist movements, especially in Poland",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 118,
+    "question": "What was the Velvet Revolution?",
+    "options": [
+      "Peaceful end of communism in Czechoslovakia",
+      "Polish uprising",
+      "Soviet reform",
+      "German reunification"
+    ],
+    "answer": "Peaceful end of communism in Czechoslovakia",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 119,
+    "question": "Who became president after Velvet Revolution?",
+    "options": [
+      "Vaclav Havel",
+      "Alexander Dubcek",
+      "Mikhail Gorbachev",
+      "Lech Walesa"
+    ],
+    "answer": "Vaclav Havel",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 120,
+    "question": "What was the Prague Spring?",
+    "options": [
+      "Velvet Revolution",
+      "1989 revolution",
+      "1968 Czech reform movement crushed by Soviets",
+      "Polish uprising"
+    ],
+    "answer": "1968 Czech reform movement crushed by Soviets",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 121,
+    "question": "What doctrine justified Soviet intervention in Prague?",
+    "options": [
+      "Monroe Doctrine",
+      "Reagan Doctrine",
+      "Brezhnev Doctrine",
+      "Truman Doctrine"
+    ],
+    "answer": "Brezhnev Doctrine",
+    "difficulty": "hard",
+    "category": "policies"
+  },
+  {
+    "id": 122,
+    "question": "What did the Brezhnev Doctrine state?",
+    "options": [
+      "Nuclear policy",
+      "USSR could intervene in socialist countries",
+      "Trade regulation",
+      "US containment"
+    ],
+    "answer": "USSR could intervene in socialist countries",
+    "difficulty": "hard",
+    "category": "policies"
+  },
+  {
+    "id": 123,
+    "question": "What 1956 uprising did Soviets crush?",
+    "options": [
+      "Solidarity",
+      "Velvet Revolution",
+      "Prague Spring",
+      "Hungarian Revolution"
+    ],
+    "answer": "Hungarian Revolution",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 124,
+    "question": "What happened to Hungarian leader Imre Nagy?",
+    "options": [
+      "Remained in power",
+      "Died naturally",
+      "Escaped to West",
+      "Executed by Soviets"
+    ],
+    "answer": "Executed by Soviets",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 125,
+    "question": "When did Germany reunify?",
+    "options": [
+      "1990",
+      "1989",
+      "1991",
+      "1988"
+    ],
+    "answer": "1990",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 126,
+    "question": "Who was West German leader during reunification?",
+    "options": [
+      "Angela Merkel",
+      "Willy Brandt",
+      "Konrad Adenauer",
+      "Helmut Kohl"
+    ],
+    "answer": "Helmut Kohl",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 127,
+    "question": "What was Ostpolitik?",
+    "options": [
+      "US policy",
+      "Soviet policy",
+      "West German policy of engagement with East",
+      "East German policy"
+    ],
+    "answer": "West German policy of engagement with East",
+    "difficulty": "hard",
+    "category": "policies"
+  },
+  {
+    "id": 128,
+    "question": "What year did the Soviet Union officially dissolve?",
+    "options": [
+      "1989",
+      "1991",
+      "1992",
+      "1990"
+    ],
+    "answer": "1991",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 129,
+    "question": "What date did USSR officially end?",
+    "options": [
+      "August 19, 1991",
+      "December 26, 1991",
+      "November 9, 1989",
+      "January 1, 1992"
+    ],
+    "answer": "December 26, 1991",
+    "difficulty": "hard",
+    "category": "timeline"
+  },
+  {
+    "id": 130,
+    "question": "What coup attempt failed in 1991?",
+    "options": [
+      "Military coup",
+      "Hardliner coup against Gorbachev",
+      "Communist coup",
+      "KGB coup"
+    ],
+    "answer": "Hardliner coup against Gorbachev",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 131,
+    "question": "Who stood on a tank to oppose the 1991 coup?",
+    "options": [
+      "Lech Walesa",
+      "Vladimir Putin",
+      "Boris Yeltsin",
+      "Mikhail Gorbachev"
+    ],
+    "answer": "Boris Yeltsin",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 132,
+    "question": "Who became first President of Russian Federation?",
+    "options": [
+      "Mikhail Gorbachev",
+      "Boris Yeltsin",
+      "Vladimir Putin",
+      "Dmitry Medvedev"
+    ],
+    "answer": "Boris Yeltsin",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 133,
+    "question": "How many countries emerged from USSR?",
+    "options": [
+      "10",
+      "20",
+      "12",
+      "15"
+    ],
+    "answer": "15",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 134,
+    "question": "What hot line was established after Cuban Missile Crisis?",
+    "options": [
+      "UN hotline",
+      "Moscow-Washington hotline",
+      "Nuclear hotline",
+      "NATO hotline"
+    ],
+    "answer": "Moscow-Washington hotline",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 135,
+    "question": "What was the purpose of the hotline?",
+    "options": [
+      "Direct communication to prevent nuclear war",
+      "Military coordination",
+      "Trade negotiations",
+      "Spy exchanges"
+    ],
+    "answer": "Direct communication to prevent nuclear war",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 136,
+    "question": "What treaty banned atmospheric nuclear tests?",
+    "options": [
+      "NPT",
+      "Partial Test Ban Treaty (1963)",
+      "START",
+      "SALT"
+    ],
+    "answer": "Partial Test Ban Treaty (1963)",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 137,
+    "question": "What is the NPT?",
+    "options": [
+      "Nuclear Power Treaty",
+      "NATO Partnership Treaty",
+      "Non-Proliferation Treaty - prevent spread of nuclear weapons",
+      "New Peace Treaty"
+    ],
+    "answer": "Non-Proliferation Treaty - prevent spread of nuclear weapons",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 138,
+    "question": "What was the 'nuclear football'?",
+    "options": [
+      "Bomb design",
+      "Training exercise",
+      "Soviet weapon",
+      "Briefcase with US nuclear launch codes"
+    ],
+    "answer": "Briefcase with US nuclear launch codes",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 139,
+    "question": "What was DEFCON?",
+    "options": [
+      "Nuclear countdown",
+      "Soviet alert system",
+      "NATO code",
+      "US military defense readiness condition"
+    ],
+    "answer": "US military defense readiness condition",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 140,
+    "question": "What DEFCON level means nuclear war imminent?",
+    "options": [
+      "DEFCON 1",
+      "DEFCON 5",
+      "DEFCON 3",
+      "DEFCON 0"
+    ],
+    "answer": "DEFCON 1",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 141,
+    "question": "What was the closest the US came to DEFCON 1?",
+    "options": [
+      "Cuban Missile Crisis (DEFCON 2)",
+      "Vietnam War",
+      "Berlin Crisis",
+      "Korean War"
+    ],
+    "answer": "Cuban Missile Crisis (DEFCON 2)",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 142,
+    "question": "What was a 'nuclear winter'?",
+    "options": [
+      "Winter military exercise",
+      "Cold War nickname",
+      "Soviet project",
+      "Predicted climate catastrophe after nuclear war"
+    ],
+    "answer": "Predicted climate catastrophe after nuclear war",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 143,
+    "question": "What civil defense did Americans practice?",
+    "options": [
+      "Duck and cover drills",
+      "Evacuation only",
+      "Nothing",
+      "Military training"
+    ],
+    "answer": "Duck and cover drills",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 144,
+    "question": "What were fallout shelters?",
+    "options": [
+      "Underground bunkers for nuclear protection",
+      "Factories",
+      "Hospitals",
+      "Schools"
+    ],
+    "answer": "Underground bunkers for nuclear protection",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 145,
+    "question": "What clock symbolizes nuclear danger?",
+    "options": [
+      "Doomsday Clock",
+      "Atomic Clock",
+      "War Clock",
+      "Nuclear Clock"
+    ],
+    "answer": "Doomsday Clock",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 146,
+    "question": "What does 'midnight' mean on Doomsday Clock?",
+    "options": [
+      "Nothing",
+      "Nuclear catastrophe",
+      "Noon",
+      "Peace"
+    ],
+    "answer": "Nuclear catastrophe",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 147,
+    "question": "What organization maintains the Doomsday Clock?",
+    "options": [
+      "US Government",
+      "Bulletin of the Atomic Scientists",
+      "United Nations",
+      "NATO"
+    ],
+    "answer": "Bulletin of the Atomic Scientists",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 148,
+    "question": "What was Radio Free Europe?",
+    "options": [
+      "BBC service",
+      "US-funded broadcasts to communist countries",
+      "Soviet propaganda",
+      "Music station"
+    ],
+    "answer": "US-funded broadcasts to communist countries",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 149,
+    "question": "What was Voice of America?",
+    "options": [
+      "US government international broadcaster",
+      "British service",
+      "Private station",
+      "Soviet radio"
+    ],
+    "answer": "US government international broadcaster",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 150,
+    "question": "What novel depicted Cold War dystopia by George Orwell?",
+    "options": [
+      "Animal Farm",
+      "Fahrenheit 451",
+      "Brave New World",
+      "1984"
+    ],
+    "answer": "1984",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 151,
+    "question": "What spy novelist wrote during the Cold War?",
+    "options": [
+      "Ian Fleming",
+      "All of them",
+      "John le Carré",
+      "Tom Clancy"
+    ],
+    "answer": "All of them",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 152,
+    "question": "What fictional spy is associated with Cold War?",
+    "options": [
+      "Jason Bourne",
+      "All of them",
+      "Jack Ryan",
+      "James Bond"
+    ],
+    "answer": "All of them",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 153,
+    "question": "What movie satirized nuclear war?",
+    "options": [
+      "Red Dawn",
+      "WarGames",
+      "Dr. Strangelove",
+      "The Day After"
+    ],
+    "answer": "Dr. Strangelove",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 154,
+    "question": "What 1983 TV movie showed nuclear war aftermath?",
+    "options": [
+      "WarGames",
+      "The Day After",
+      "Dr. Strangelove",
+      "Threads"
+    ],
+    "answer": "The Day After",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 155,
+    "question": "What was the 'Red Scare'?",
+    "options": [
+      "Color of Soviet flag",
+      "Fear of communism in America",
+      "Military exercise",
+      "Soviet propaganda"
+    ],
+    "answer": "Fear of communism in America",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 156,
+    "question": "How many Red Scares were there in US history?",
+    "options": [
+      "Four",
+      "One",
+      "Two (after WWI and after WWII)",
+      "Three"
+    ],
+    "answer": "Two (after WWI and after WWII)",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 157,
+    "question": "What African country was a Cold War battleground?",
+    "options": [
+      "Egypt",
+      "Angola",
+      "South Africa",
+      "Nigeria"
+    ],
+    "answer": "Angola",
+    "difficulty": "hard",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 158,
+    "question": "What Latin American country had a US-backed coup in 1973?",
+    "options": [
+      "Cuba",
+      "Chile",
+      "Nicaragua",
+      "Argentina"
+    ],
+    "answer": "Chile",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 159,
+    "question": "Who was overthrown in Chile?",
+    "options": [
+      "Augusto Pinochet",
+      "Fidel Castro",
+      "Salvador Allende",
+      "Che Guevara"
+    ],
+    "answer": "Salvador Allende",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 160,
+    "question": "What was the Contras in Nicaragua?",
+    "options": [
+      "Peace movement",
+      "Trade union",
+      "US-backed anti-communist rebels",
+      "Communist government"
+    ],
+    "answer": "US-backed anti-communist rebels",
+    "difficulty": "hard",
+    "category": "proxy-wars"
+  },
+  {
+    "id": 161,
+    "question": "What scandal involved secretly funding Contras?",
+    "options": [
+      "Bay of Pigs",
+      "Pentagon Papers",
+      "Watergate",
+      "Iran-Contra affair"
+    ],
+    "answer": "Iran-Contra affair",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 162,
+    "question": "What Caribbean island did US invade in 1983?",
+    "options": [
+      "Haiti",
+      "Grenada",
+      "Cuba",
+      "Jamaica"
+    ],
+    "answer": "Grenada",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 163,
+    "question": "What was the Non-Aligned Movement?",
+    "options": [
+      "Soviet allies",
+      "Trade bloc",
+      "NATO members",
+      "Countries not allied with US or USSR"
+    ],
+    "answer": "Countries not allied with US or USSR",
+    "difficulty": "medium",
+    "category": "alliances"
+  },
+  {
+    "id": 164,
+    "question": "Who was a leader of the Non-Aligned Movement?",
+    "options": [
+      "Nikita Khrushchev",
+      "Winston Churchill",
+      "John F. Kennedy",
+      "Jawaharlal Nehru (India)"
+    ],
+    "answer": "Jawaharlal Nehru (India)",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 165,
+    "question": "What was Yugoslavia's position in Cold War?",
+    "options": [
+      "Communist but non-aligned with USSR",
+      "NATO member",
+      "Warsaw Pact member",
+      "US ally"
+    ],
+    "answer": "Communist but non-aligned with USSR",
+    "difficulty": "hard",
+    "category": "alliances"
+  },
+  {
+    "id": 166,
+    "question": "Who led Yugoslavia during Cold War?",
+    "options": [
+      "Josip Broz Tito",
+      "Slobodan Milosevic",
+      "Alexander I",
+      "Stalin"
+    ],
+    "answer": "Josip Broz Tito",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 167,
+    "question": "What was the Sino-Soviet split?",
+    "options": [
+      "Break between China and USSR",
+      "China-Taiwan conflict",
+      "Soviet civil war",
+      "Korea division"
+    ],
+    "answer": "Break between China and USSR",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 168,
+    "question": "What Chinese leader clashed with USSR?",
+    "options": [
+      "Chiang Kai-shek",
+      "Deng Xiaoping",
+      "Mao Zedong",
+      "Xi Jinping"
+    ],
+    "answer": "Mao Zedong",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 169,
+    "question": "What was the Cultural Revolution in China?",
+    "options": [
+      "Military campaign",
+      "Peace movement",
+      "Mao's radical political campaign",
+      "Economic reform"
+    ],
+    "answer": "Mao's radical political campaign",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 170,
+    "question": "What happened at Tiananmen Square in 1989?",
+    "options": [
+      "Pro-democracy protests crushed by Chinese military",
+      "Communist victory celebration",
+      "Economic conference",
+      "Peace rally"
+    ],
+    "answer": "Pro-democracy protests crushed by Chinese military",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 171,
+    "question": "What iconic image came from Tiananmen?",
+    "options": [
+      "Tank Man standing before tanks",
+      "Handshake",
+      "Wall falling",
+      "Flag raising"
+    ],
+    "answer": "Tank Man standing before tanks",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 172,
+    "question": "What Olympic boycott happened in 1980?",
+    "options": [
+      "Both",
+      "US boycott of Moscow Olympics",
+      "Neither",
+      "USSR boycott of LA Olympics"
+    ],
+    "answer": "US boycott of Moscow Olympics",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 173,
+    "question": "Why did US boycott 1980 Olympics?",
+    "options": [
+      "Berlin Wall",
+      "Cuban Missile Crisis",
+      "Soviet invasion of Afghanistan",
+      "Vietnam War"
+    ],
+    "answer": "Soviet invasion of Afghanistan",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 174,
+    "question": "What Olympics did USSR boycott in response?",
+    "options": [
+      "1992 Barcelona Olympics",
+      "1976 Montreal Olympics",
+      "1984 Los Angeles Olympics",
+      "1988 Seoul Olympics"
+    ],
+    "answer": "1984 Los Angeles Olympics",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 175,
+    "question": "What was the 'Miracle on Ice'?",
+    "options": [
+      "US hockey team beating USSR at 1980 Olympics",
+      "Bobsled victory",
+      "Figure skating win",
+      "Speed skating record"
+    ],
+    "answer": "US hockey team beating USSR at 1980 Olympics",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 176,
+    "question": "What US president before Kennedy dealt with Cold War?",
+    "options": [
+      "Both Truman and Eisenhower",
+      "Franklin Roosevelt",
+      "Dwight Eisenhower",
+      "Harry Truman"
+    ],
+    "answer": "Both Truman and Eisenhower",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 177,
+    "question": "What was Eisenhower's military-industrial complex warning?",
+    "options": [
+      "Called for more weapons",
+      "Supported military spending",
+      "Warned of too much military influence on policy",
+      "Economic plan"
+    ],
+    "answer": "Warned of too much military influence on policy",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 178,
+    "question": "What was JFK's famous Berlin speech phrase?",
+    "options": [
+      "Evil Empire",
+      "Iron Curtain",
+      "Tear down this wall",
+      "Ich bin ein Berliner"
+    ],
+    "answer": "Ich bin ein Berliner",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 179,
+    "question": "What does 'Ich bin ein Berliner' mean?",
+    "options": [
+      "I am a Berliner (showing solidarity)",
+      "I want a donut",
+      "Freedom for Berlin",
+      "Hello Berlin"
+    ],
+    "answer": "I am a Berliner (showing solidarity)",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 180,
+    "question": "What year was Kennedy assassinated?",
+    "options": [
+      "1963",
+      "1964",
+      "1962",
+      "1968"
+    ],
+    "answer": "1963",
+    "difficulty": "easy",
+    "category": "timeline"
+  },
+  {
+    "id": 181,
+    "question": "What was Operation Paperclip?",
+    "options": [
+      "Nuclear test",
+      "Soviet spy operation",
+      "US recruitment of Nazi scientists",
+      "Space mission"
+    ],
+    "answer": "US recruitment of Nazi scientists",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 182,
+    "question": "What German scientist led US rocket program?",
+    "options": [
+      "Klaus Fuchs",
+      "Wernher von Braun",
+      "Albert Einstein",
+      "Robert Oppenheimer"
+    ],
+    "answer": "Wernher von Braun",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 183,
+    "question": "What was the House Un-American Activities Committee?",
+    "options": [
+      "Congressional body investigating communism",
+      "CIA division",
+      "FBI unit",
+      "Senate committee"
+    ],
+    "answer": "Congressional body investigating communism",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 184,
+    "question": "What were ICBMs?",
+    "options": [
+      "Intelligence Community Briefing Materials",
+      "None of these",
+      "International Combat Battle Machines",
+      "Intercontinental Ballistic Missiles"
+    ],
+    "answer": "Intercontinental Ballistic Missiles",
+    "difficulty": "easy",
+    "category": "nuclear"
+  },
+  {
+    "id": 185,
+    "question": "What were SLBMs?",
+    "options": [
+      "Strategic Land-Based Missiles",
+      "Soviet Light Battle Machines",
+      "Submarine-Launched Ballistic Missiles",
+      "None"
+    ],
+    "answer": "Submarine-Launched Ballistic Missiles",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 186,
+    "question": "What was the B-52?",
+    "options": [
+      "Submarine",
+      "US strategic bomber",
+      "Soviet missile",
+      "Spy plane"
+    ],
+    "answer": "US strategic bomber",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 187,
+    "question": "What was the nuclear triad?",
+    "options": [
+      "Three treaties",
+      "Three superpowers",
+      "Land, sea, and air-based nuclear weapons",
+      "Three allies"
+    ],
+    "answer": "Land, sea, and air-based nuclear weapons",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 188,
+    "question": "What was the START treaty?",
+    "options": [
+      "Strategic Arms Reduction Treaty",
+      "Space program",
+      "Trade agreement",
+      "Alliance"
+    ],
+    "answer": "Strategic Arms Reduction Treaty",
+    "difficulty": "medium",
+    "category": "nuclear"
+  },
+  {
+    "id": 189,
+    "question": "What was different about START vs SALT?",
+    "options": [
+      "No difference",
+      "Same thing",
+      "SALT reduced more",
+      "START actually reduced weapons, SALT only limited"
+    ],
+    "answer": "START actually reduced weapons, SALT only limited",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 190,
+    "question": "What was the INF Treaty?",
+    "options": [
+      "Limited missiles",
+      "Trade agreement",
+      "Space treaty",
+      "Eliminated intermediate-range nuclear missiles"
+    ],
+    "answer": "Eliminated intermediate-range nuclear missiles",
+    "difficulty": "hard",
+    "category": "nuclear"
+  },
+  {
+    "id": 191,
+    "question": "Who signed the INF Treaty?",
+    "options": [
+      "Reagan and Gorbachev",
+      "Nixon and Brezhnev",
+      "Bush and Yeltsin",
+      "Kennedy and Khrushchev"
+    ],
+    "answer": "Reagan and Gorbachev",
+    "difficulty": "hard",
+    "category": "leaders"
+  },
+  {
+    "id": 192,
+    "question": "What accident happened at Chernobyl in 1986?",
+    "options": [
+      "Chemical spill",
+      "Factory fire",
+      "Nuclear reactor explosion",
+      "Military accident"
+    ],
+    "answer": "Nuclear reactor explosion",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 193,
+    "question": "In what Soviet republic was Chernobyl?",
+    "options": [
+      "Lithuania",
+      "Belarus",
+      "Ukraine",
+      "Russia"
+    ],
+    "answer": "Ukraine",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 194,
+    "question": "How did Chernobyl affect Soviet Union?",
+    "options": [
+      "Strengthened government",
+      "No effect",
+      "Exposed government failures, boosted glasnost",
+      "Ended Cold War immediately"
+    ],
+    "answer": "Exposed government failures, boosted glasnost",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 195,
+    "question": "What was the 'Reagan Doctrine'?",
+    "options": [
+      "Containment",
+      "Détente",
+      "Nuclear buildup only",
+      "Support anti-communist movements worldwide"
+    ],
+    "answer": "Support anti-communist movements worldwide",
+    "difficulty": "hard",
+    "category": "policies"
+  },
+  {
+    "id": 196,
+    "question": "What economic policy did Reagan pursue?",
+    "options": [
+      "Military buildup to bankrupt USSR",
+      "Trade with USSR",
+      "Sanctions only",
+      "Economic aid to USSR"
+    ],
+    "answer": "Military buildup to bankrupt USSR",
+    "difficulty": "medium",
+    "category": "policies"
+  },
+  {
+    "id": 197,
+    "question": "Did the arms race contribute to Soviet collapse?",
+    "options": [
+      "Yes, strained Soviet economy",
+      "No effect",
+      "Strengthened USSR",
+      "Unclear"
+    ],
+    "answer": "Yes, strained Soviet economy",
+    "difficulty": "medium",
+    "category": "overview"
+  },
+  {
+    "id": 198,
+    "question": "What happened to Eastern European communist governments in 1989?",
+    "options": [
+      "Joined USSR",
+      "Military coups",
+      "Most fell in peaceful revolutions",
+      "Stayed in power"
+    ],
+    "answer": "Most fell in peaceful revolutions",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 199,
+    "question": "What was the 'end of history' thesis?",
+    "options": [
+      "Historical study",
+      "Actual end of time",
+      "Idea that liberal democracy had won",
+      "Soviet propaganda"
+    ],
+    "answer": "Idea that liberal democracy had won",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 200,
+    "question": "What international order emerged after Cold War?",
+    "options": [
+      "US as sole superpower (unipolar)",
+      "Bipolar continued",
+      "Multipolar immediately",
+      "No clear order"
+    ],
+    "answer": "US as sole superpower (unipolar)",
+    "difficulty": "medium",
+    "category": "overview"
+  }
+]

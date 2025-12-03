@@ -1,0 +1,1634 @@
+[
+  {
+    "id": 1,
+    "question": "What is the first film in the Marvel Cinematic Universe?",
+    "options": ["The Incredible Hulk", "Iron Man", "Captain America: The First Avenger", "Thor"],
+    "answer": "Iron Man",
+    "difficulty": "easy",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Iron Man in the MCU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg/220px-Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg",
+    "options": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+    "answer": "Robert Downey Jr.",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "What is Captain America's shield made of?",
+    "options": ["Adamantium", "Vibranium", "Titanium", "Uru"],
+    "answer": "Vibranium",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 4,
+    "question": "Which Infinity Stone is hidden in the Tesseract?",
+    "options": ["Mind Stone", "Space Stone", "Power Stone", "Time Stone"],
+    "answer": "Space Stone",
+    "difficulty": "easy",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 5,
+    "question": "Who is Thor's adoptive brother?",
+    "options": ["Heimdall", "Loki", "Balder", "Tyr"],
+    "answer": "Loki",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 6,
+    "question": "What is the name of Thor's hammer?",
+    "options": ["Stormbreaker", "Mjolnir", "Gungnir", "Hofund"],
+    "answer": "Mjolnir",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 7,
+    "question": "Who plays Captain America in the MCU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg/220px-Mark_Kassen%2C_Tony_C%C3%A1rdenas_and_Chris_Evans_%28cropped%29.jpg",
+    "options": ["Chris Hemsworth", "Chris Pratt", "Chris Evans", "Chris Pine"],
+    "answer": "Chris Evans",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 8,
+    "question": "What does S.H.I.E.L.D. stand for?",
+    "options": ["Strategic Homeland Intervention, Enforcement and Logistics Division", "Supreme Headquarters, International Espionage, Law-Enforcement Division", "Strategic Hazard Intervention Espionage Logistics Directorate", "Secret Heterogeneous Intelligence Engineering Logistics Division"],
+    "answer": "Strategic Homeland Intervention, Enforcement and Logistics Division",
+    "difficulty": "easy",
+    "category": "organizations"
+  },
+  {
+    "id": 9,
+    "question": "Which movie introduced Spider-Man to the MCU?",
+    "options": ["Spider-Man: Homecoming", "Captain America: Civil War", "Avengers: Infinity War", "The Amazing Spider-Man"],
+    "answer": "Captain America: Civil War",
+    "difficulty": "easy",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 10,
+    "question": "What is Black Widow's real name?",
+    "options": ["Wanda Maximoff", "Natasha Romanoff", "Peggy Carter", "Maria Hill"],
+    "answer": "Natasha Romanoff",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 11,
+    "question": "Who is the main villain in the first Avengers movie?",
+    "options": ["Thanos", "Ultron", "Loki", "Red Skull"],
+    "answer": "Loki",
+    "difficulty": "easy",
+    "category": "villains"
+  },
+  {
+    "id": 12,
+    "question": "What color is the Power Stone?",
+    "options": ["Blue", "Red", "Purple", "Yellow"],
+    "answer": "Purple",
+    "difficulty": "easy",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 13,
+    "question": "Who plays Thor in the MCU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Chris_Hemsworth_by_Gage_Skidmore_2_%28cropped%29.jpg/220px-Chris_Hemsworth_by_Gage_Skidmore_2_%28cropped%29.jpg",
+    "options": ["Chris Evans", "Chris Pratt", "Chris Hemsworth", "Tom Hiddleston"],
+    "answer": "Chris Hemsworth",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 14,
+    "question": "What is the name of Tony Stark's AI assistant before FRIDAY?",
+    "options": ["JARVIS", "ULTRON", "VISION", "EDITH"],
+    "answer": "JARVIS",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 15,
+    "question": "Which planet is Thanos from?",
+    "options": ["Xandar", "Titan", "Knowhere", "Vormir"],
+    "answer": "Titan",
+    "difficulty": "easy",
+    "category": "villains"
+  },
+  {
+    "id": 16,
+    "question": "What year was the first Iron Man movie released?",
+    "options": ["2006", "2007", "2008", "2009"],
+    "answer": "2008",
+    "difficulty": "easy",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 17,
+    "question": "Who plays Black Panther in the MCU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Chadwick_Boseman_by_Gage_Skidmore_July_2017_%28cropped%29.jpg/220px-Chadwick_Boseman_by_Gage_Skidmore_July_2017_%28cropped%29.jpg",
+    "options": ["Michael B. Jordan", "Chadwick Boseman", "Daniel Kaluuya", "John Boyega"],
+    "answer": "Chadwick Boseman",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of the fictional African nation ruled by Black Panther?",
+    "options": ["Zamunda", "Wakanda", "Latveria", "Genosha"],
+    "answer": "Wakanda",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 19,
+    "question": "Who says 'I am Groot'?",
+    "options": ["Rocket", "Groot", "Drax", "Star-Lord"],
+    "answer": "Groot",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 20,
+    "question": "What is Hawkeye's real name?",
+    "options": ["Clint Barton", "Bucky Barnes", "Sam Wilson", "Scott Lang"],
+    "answer": "Clint Barton",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 21,
+    "question": "Which movie features the line 'I can do this all day'?",
+    "options": ["Iron Man", "Thor", "Captain America: The First Avenger", "The Avengers"],
+    "answer": "Captain America: The First Avenger",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 22,
+    "question": "Who plays Doctor Strange?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/BCumberbatch_Comic-Con_2019.jpg/220px-BCumberbatch_Comic-Con_2019.jpg",
+    "options": ["Benedict Cumberbatch", "Tom Hiddleston", "Chiwetel Ejiofor", "Mads Mikkelsen"],
+    "answer": "Benedict Cumberbatch",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 23,
+    "question": "What does Hulk say before smashing?",
+    "options": ["Hulk Smash!", "Hulk Angry!", "Hulk Strong!", "Hulk Destroy!"],
+    "answer": "Hulk Smash!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 24,
+    "question": "Who is Peter Quill's father in Guardians of the Galaxy Vol. 2?",
+    "options": ["Thanos", "Ego", "Yondu", "Ronan"],
+    "answer": "Ego",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 25,
+    "question": "What is the name of Ant-Man's daughter?",
+    "options": ["Cassie", "Morgan", "Lila", "Kate"],
+    "answer": "Cassie",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 26,
+    "question": "Who plays Spider-Man in the MCU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Tom_Holland_by_Gage_Skidmore.jpg/220px-Tom_Holland_by_Gage_Skidmore.jpg",
+    "options": ["Andrew Garfield", "Tobey Maguire", "Tom Holland", "Miles Morales"],
+    "answer": "Tom Holland",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 27,
+    "question": "Which Avengers movie features the 'Snap'?",
+    "options": ["Avengers: Age of Ultron", "Avengers: Infinity War", "Avengers: Endgame", "The Avengers"],
+    "answer": "Avengers: Infinity War",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 28,
+    "question": "What is Tony Stark's nickname for Thor?",
+    "options": ["Point Break", "Sparkles", "Blondie", "Hammer Time"],
+    "answer": "Point Break",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 29,
+    "question": "Who plays Loki?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg/220px-Tom_Hiddleston_%2836109110291%29_%28cropped%29.jpg",
+    "options": ["Tom Holland", "Tom Hiddleston", "Tom Hardy", "Tom Cruise"],
+    "answer": "Tom Hiddleston",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 30,
+    "question": "What is the name of Iron Man's suit in the first movie?",
+    "options": ["Mark I", "Mark II", "Mark III", "War Machine"],
+    "answer": "Mark I",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 31,
+    "question": "Who directed most of the MCU Spider-Man films?",
+    "options": ["Sam Raimi", "Jon Watts", "James Gunn", "Taika Waititi"],
+    "answer": "Jon Watts",
+    "difficulty": "easy",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 32,
+    "question": "What is Rocket Raccoon's favorite thing to steal?",
+    "options": ["Gems", "Weapons", "Prosthetic body parts", "Money"],
+    "answer": "Prosthetic body parts",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 33,
+    "question": "Who plays Gamora?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Zoe_Saldana_by_Gage_Skidmore.jpg/220px-Zoe_Saldana_by_Gage_Skidmore.jpg",
+    "options": ["Karen Gillan", "Zoe Saldana", "Pom Klementieff", "Elizabeth Olsen"],
+    "answer": "Zoe Saldana",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 34,
+    "question": "What is the Hulk's human name?",
+    "options": ["Bruce Wayne", "Bruce Banner", "Bruce Willis", "Bruce Lee"],
+    "answer": "Bruce Banner",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 35,
+    "question": "Which Stone does Vision have in his forehead?",
+    "options": ["Soul Stone", "Mind Stone", "Time Stone", "Reality Stone"],
+    "answer": "Mind Stone",
+    "difficulty": "easy",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 36,
+    "question": "Who plays War Machine?",
+    "options": ["Anthony Mackie", "Don Cheadle", "Terrence Howard", "Idris Elba"],
+    "answer": "Don Cheadle",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 37,
+    "question": "What is the name of Thanos's homeworld?",
+    "options": ["Titan", "Xandar", "Knowhere", "Sakaar"],
+    "answer": "Titan",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 38,
+    "question": "Who says 'I am inevitable' in Endgame?",
+    "options": ["Iron Man", "Thanos", "Captain America", "Thor"],
+    "answer": "Thanos",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 39,
+    "question": "What is Star-Lord's real name?",
+    "options": ["Peter Parker", "Peter Quill", "Peter Pan", "Peter Griffin"],
+    "answer": "Peter Quill",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 40,
+    "question": "Who plays Nick Fury?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Samuel_L._Jackson_2019_by_Glenn_Francis.jpg/220px-Samuel_L._Jackson_2019_by_Glenn_Francis.jpg",
+    "options": ["Morgan Freeman", "Samuel L. Jackson", "Laurence Fishburne", "Denzel Washington"],
+    "answer": "Samuel L. Jackson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 41,
+    "question": "How many Infinity Stones are there?",
+    "options": ["4", "5", "6", "7"],
+    "answer": "6",
+    "difficulty": "easy",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 42,
+    "question": "What is the name of Tony Stark's daughter?",
+    "options": ["Cassie", "Morgan", "Lila", "Rebecca"],
+    "answer": "Morgan",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 43,
+    "question": "Who plays Scarlet Witch?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Elizabeth_Olsen_SDCC_2014_%28cropped%29.jpg/220px-Elizabeth_Olsen_SDCC_2014_%28cropped%29.jpg",
+    "options": ["Elizabeth Olsen", "Brie Larson", "Scarlett Johansson", "Karen Gillan"],
+    "answer": "Elizabeth Olsen",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 44,
+    "question": "What is the Tesseract's original location in Captain America: The First Avenger?",
+    "options": ["Norway", "Germany", "Austria", "Italy"],
+    "answer": "Norway",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 45,
+    "question": "Who kills Thanos in Avengers: Endgame?",
+    "options": ["Thor", "Iron Man", "Captain America", "Hulk"],
+    "answer": "Iron Man",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 46,
+    "question": "What does Tony Stark say before snapping in Endgame?",
+    "options": ["I am inevitable", "I am Iron Man", "Avengers Assemble", "Whatever it takes"],
+    "answer": "I am Iron Man",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 47,
+    "question": "Who plays Ant-Man?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Paul_Rudd_2019.jpg/220px-Paul_Rudd_2019.jpg",
+    "options": ["Chris Pratt", "Paul Rudd", "Paul Bettany", "Chris Pine"],
+    "answer": "Paul Rudd",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 48,
+    "question": "What is the name of Thor's axe in Infinity War?",
+    "options": ["Mjolnir", "Stormbreaker", "Gungnir", "Jarnbjorn"],
+    "answer": "Stormbreaker",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 49,
+    "question": "Who is the Winter Soldier?",
+    "options": ["Sam Wilson", "Bucky Barnes", "Steve Rogers", "Clint Barton"],
+    "answer": "Bucky Barnes",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 50,
+    "question": "What is the name of the realm where Asgard exists?",
+    "options": ["Midgard", "Asgard", "Nine Realms", "Valhalla"],
+    "answer": "Asgard",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 51,
+    "question": "Who plays Thanos?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Josh_Brolin_by_Gage_Skidmore_2.jpg/220px-Josh_Brolin_by_Gage_Skidmore_2.jpg",
+    "options": ["James Brolin", "Josh Brolin", "Michael Rooker", "Dave Bautista"],
+    "answer": "Josh Brolin",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 52,
+    "question": "In which movie does Thor become 'Fat Thor'?",
+    "options": ["Thor: Ragnarok", "Avengers: Infinity War", "Avengers: Endgame", "Thor: Love and Thunder"],
+    "answer": "Avengers: Endgame",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 53,
+    "question": "What is the real name of the Ancient One's successor as Sorcerer Supreme?",
+    "options": ["Stephen Strange", "Wong", "Karl Mordo", "Kaecilius"],
+    "answer": "Stephen Strange",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 54,
+    "question": "Which Infinity Stone does Doctor Strange protect?",
+    "options": ["Mind Stone", "Space Stone", "Time Stone", "Soul Stone"],
+    "answer": "Time Stone",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 55,
+    "question": "Who directed Thor: Ragnarok?",
+    "options": ["James Gunn", "Taika Waititi", "Kenneth Branagh", "Alan Taylor"],
+    "answer": "Taika Waititi",
+    "difficulty": "medium",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 56,
+    "question": "What is the name of the artifact that contains the Time Stone?",
+    "options": ["Mirror Dimension", "Eye of Agamotto", "Kamar-Taj", "Dark Dimension"],
+    "answer": "Eye of Agamotto",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 57,
+    "question": "Who plays Nebula?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Karen_Gillan_by_Gage_Skidmore.jpg/220px-Karen_Gillan_by_Gage_Skidmore.jpg",
+    "options": ["Zoe Saldana", "Karen Gillan", "Pom Klementieff", "Elizabeth Debicki"],
+    "answer": "Karen Gillan",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 58,
+    "question": "Which character says 'I have famously huge turds'?",
+    "options": ["Drax", "Thor", "Rocket", "Korg"],
+    "answer": "Drax",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 59,
+    "question": "What is the name of the planet where the Soul Stone is located?",
+    "options": ["Knowhere", "Vormir", "Morag", "Xandar"],
+    "answer": "Vormir",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 60,
+    "question": "Who sacrifices themselves to obtain the Soul Stone in Endgame?",
+    "options": ["Gamora", "Black Widow", "Hawkeye", "Iron Man"],
+    "answer": "Black Widow",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 61,
+    "question": "What is the name of Killmonger in Black Panther?",
+    "options": ["N'Jadaka", "M'Baku", "W'Kabi", "T'Chaka"],
+    "answer": "N'Jadaka",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 62,
+    "question": "Who plays Killmonger?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Michael_B._Jordan_2018.jpg/220px-Michael_B._Jordan_2018.jpg",
+    "options": ["Chadwick Boseman", "Michael B. Jordan", "Daniel Kaluuya", "Winston Duke"],
+    "answer": "Michael B. Jordan",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 63,
+    "question": "Which MCU movie grossed the most at the worldwide box office?",
+    "options": ["Avengers: Infinity War", "Avengers: Endgame", "Spider-Man: No Way Home", "Black Panther"],
+    "answer": "Avengers: Endgame",
+    "difficulty": "medium",
+    "category": "box-office"
+  },
+  {
+    "id": 64,
+    "question": "What is the name of the dimension Dormammu rules?",
+    "options": ["Mirror Dimension", "Dark Dimension", "Quantum Realm", "Negative Zone"],
+    "answer": "Dark Dimension",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 65,
+    "question": "Who says 'I've come to bargain' repeatedly?",
+    "options": ["Iron Man", "Doctor Strange", "Thor", "Loki"],
+    "answer": "Doctor Strange",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 66,
+    "question": "What is the name of the realm that connects all Nine Realms?",
+    "options": ["Bifrost", "Yggdrasil", "Asgard", "Valhalla"],
+    "answer": "Yggdrasil",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 67,
+    "question": "Who plays Vision?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Paul_Bettany_by_Gage_Skidmore.jpg/220px-Paul_Bettany_by_Gage_Skidmore.jpg",
+    "options": ["Paul Rudd", "Paul Bettany", "Paul Giamatti", "Paul Dano"],
+    "answer": "Paul Bettany",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 68,
+    "question": "What song does Star-Lord listen to at the beginning of Guardians of the Galaxy?",
+    "options": ["Hooked on a Feeling", "Come and Get Your Love", "Spirit in the Sky", "Escape"],
+    "answer": "Come and Get Your Love",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 69,
+    "question": "Who is the Collector?",
+    "options": ["Taneleer Tivan", "En Dwi Gast", "Eson the Searcher", "Ronan"],
+    "answer": "Taneleer Tivan",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 70,
+    "question": "What is Scarlet Witch's real name?",
+    "options": ["Natasha Romanoff", "Wanda Maximoff", "Hope Van Dyne", "Carol Danvers"],
+    "answer": "Wanda Maximoff",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 71,
+    "question": "Who plays Captain Marvel?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Brie_Larson_by_Gage_Skidmore_3_%28cropped%29.jpg/220px-Brie_Larson_by_Gage_Skidmore_3_%28cropped%29.jpg",
+    "options": ["Brie Larson", "Elizabeth Olsen", "Scarlett Johansson", "Gal Gadot"],
+    "answer": "Brie Larson",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 72,
+    "question": "What year is Captain America frozen until?",
+    "options": ["2008", "2011", "2012", "2014"],
+    "answer": "2011",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 73,
+    "question": "Who kills Quicksilver in Age of Ultron?",
+    "options": ["Ultron", "Ultron's drones", "A crashing jet", "Thanos"],
+    "answer": "Ultron",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 74,
+    "question": "What is the name of Thor's home planet?",
+    "options": ["Asgard", "Jotunheim", "Midgard", "Svartalfheim"],
+    "answer": "Asgard",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 75,
+    "question": "Who directed the first two Avengers movies?",
+    "options": ["Jon Favreau", "Joss Whedon", "Anthony Russo", "James Gunn"],
+    "answer": "Joss Whedon",
+    "difficulty": "medium",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 76,
+    "question": "What is the name of the artifact that contains the Space Stone?",
+    "options": ["Aether", "Tesseract", "Orb", "Scepter"],
+    "answer": "Tesseract",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 77,
+    "question": "Who plays Drax the Destroyer?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Dave_Bautista_Photo_Op_GalaxyCon_Richmond_2020.jpg/220px-Dave_Bautista_Photo_Op_GalaxyCon_Richmond_2020.jpg",
+    "options": ["Vin Diesel", "Dave Bautista", "Dwayne Johnson", "Jason Momoa"],
+    "answer": "Dave Bautista",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 78,
+    "question": "What is the name of the realm where Dark Elves are from?",
+    "options": ["Jotunheim", "Svartalfheim", "Nidavellir", "Muspelheim"],
+    "answer": "Svartalfheim",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 79,
+    "question": "Who is the leader of the Nova Corps?",
+    "options": ["Nova Prime", "Ronan", "Yondu", "Stakar"],
+    "answer": "Nova Prime",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 80,
+    "question": "What is the name of Falcon's partner bird?",
+    "options": ["Redwing", "Hawkeye", "Falcon", "Red Robin"],
+    "answer": "Redwing",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 81,
+    "question": "Who plays Heimdall?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Idris_Elba-4580_%28cropped%29.jpg/220px-Idris_Elba-4580_%28cropped%29.jpg",
+    "options": ["Idris Elba", "Djimon Hounsou", "Chiwetel Ejiofor", "Chadwick Boseman"],
+    "answer": "Idris Elba",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 82,
+    "question": "What is the name of the arena on Sakaar?",
+    "options": ["The Kyln", "The Raft", "The Arena", "The Contest of Champions"],
+    "answer": "The Contest of Champions",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 83,
+    "question": "Who is the Grandmaster?",
+    "options": ["En Dwi Gast", "Taneleer Tivan", "Eson the Searcher", "Celestial"],
+    "answer": "En Dwi Gast",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 84,
+    "question": "What is Iron Man's suit called in Avengers: Endgame?",
+    "options": ["Mark 50", "Mark 85", "Mark 42", "Mark 45"],
+    "answer": "Mark 85",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 85,
+    "question": "Who plays Korg?",
+    "options": ["Taika Waititi", "Chris Hemsworth", "Jeff Goldblum", "Karl Urban"],
+    "answer": "Taika Waititi",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 86,
+    "question": "What is the name of the prison where the Guardians are first imprisoned?",
+    "options": ["The Raft", "The Kyln", "The Arena", "Sanctuary"],
+    "answer": "The Kyln",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 87,
+    "question": "Who is Peter Parker's best friend?",
+    "options": ["Flash Thompson", "Ned Leeds", "Harry Osborn", "Miles Morales"],
+    "answer": "Ned Leeds",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 88,
+    "question": "What is the name of the substance that powers the Arc Reactor?",
+    "options": ["Vibranium", "Palladium", "Adamantium", "Uru"],
+    "answer": "Palladium",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 89,
+    "question": "Who plays the Ancient One?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tilda_Swinton_by_Gage_Skidmore.jpg/220px-Tilda_Swinton_by_Gage_Skidmore.jpg",
+    "options": ["Michelle Yeoh", "Tilda Swinton", "Glenn Close", "Cate Blanchett"],
+    "answer": "Tilda Swinton",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 90,
+    "question": "What is the name of Tony Stark's company?",
+    "options": ["Wayne Enterprises", "Stark Industries", "Oscorp", "LexCorp"],
+    "answer": "Stark Industries",
+    "difficulty": "medium",
+    "category": "organizations"
+  },
+  {
+    "id": 91,
+    "question": "Who is the main villain in Spider-Man: Homecoming?",
+    "options": ["Green Goblin", "Vulture", "Mysterio", "Electro"],
+    "answer": "Vulture",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 92,
+    "question": "What is Pepper Potts' first name?",
+    "options": ["Patricia", "Virginia", "Penelope", "Pamela"],
+    "answer": "Virginia",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 93,
+    "question": "Who plays Vulture?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Michael_Keaton_2014.jpg/220px-Michael_Keaton_2014.jpg",
+    "options": ["Michael Keaton", "Jake Gyllenhaal", "Alfred Molina", "Willem Dafoe"],
+    "answer": "Michael Keaton",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 94,
+    "question": "What was the code name for The Avengers in development?",
+    "options": ["Project Insight", "The Avengers Initiative", "Project Pegasus", "Project Goliath"],
+    "answer": "The Avengers Initiative",
+    "difficulty": "medium",
+    "category": "organizations"
+  },
+  {
+    "id": 95,
+    "question": "Which villain does Loki work for in the first Avengers?",
+    "options": ["Ultron", "Thanos", "Red Skull", "Dormammu"],
+    "answer": "Thanos",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 96,
+    "question": "Who plays Mantis?",
+    "options": ["Karen Gillan", "Pom Klementieff", "Zoe Saldana", "Elizabeth Debicki"],
+    "answer": "Pom Klementieff",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 97,
+    "question": "What is the name of the group of criminals led by Vulture?",
+    "options": ["Sinister Six", "Bestman Salvage", "AIM", "HYDRA"],
+    "answer": "Bestman Salvage",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 98,
+    "question": "Which Avenger does not appear in Age of Ultron?",
+    "options": ["Ant-Man", "Vision", "Scarlet Witch", "Hawkeye"],
+    "answer": "Ant-Man",
+    "difficulty": "medium",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 99,
+    "question": "What region is Sokovia supposed to be located in?",
+    "options": ["Eastern Europe", "South America", "Asia", "Africa"],
+    "answer": "Eastern Europe",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 100,
+    "question": "Who plays Odin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/AnthonyHopkins10TIFF.jpg/220px-AnthonyHopkins10TIFF.jpg",
+    "options": ["Anthony Hopkins", "Ian McKellen", "Michael Caine", "Patrick Stewart"],
+    "answer": "Anthony Hopkins",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 101,
+    "question": "What is the name of the goddess of death in Thor: Ragnarok?",
+    "options": ["Sif", "Hela", "Valkyrie", "Enchantress"],
+    "answer": "Hela",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 102,
+    "question": "Who plays Hela?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Cate_Blanchett_2011.jpg/220px-Cate_Blanchett_2011.jpg",
+    "options": ["Tilda Swinton", "Cate Blanchett", "Tessa Thompson", "Natalie Portman"],
+    "answer": "Cate Blanchett",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 103,
+    "question": "What color is the Reality Stone?",
+    "options": ["Blue", "Red", "Purple", "Orange"],
+    "answer": "Red",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 104,
+    "question": "Who was director of S.H.I.E.L.D. before Nick Fury?",
+    "options": ["Alexander Pierce", "Peggy Carter", "Howard Stark", "Phil Coulson"],
+    "answer": "Peggy Carter",
+    "difficulty": "medium",
+    "category": "organizations"
+  },
+  {
+    "id": 105,
+    "question": "What is the name of Valkyrie's group in Asgard?",
+    "options": ["Warriors Three", "Valkyrior", "Einherjar", "Norns"],
+    "answer": "Valkyrior",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 106,
+    "question": "Who plays Shuri?",
+    "options": ["Lupita Nyong'o", "Letitia Wright", "Danai Gurira", "Angela Bassett"],
+    "answer": "Letitia Wright",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 107,
+    "question": "What is the Heart-Shaped Herb used for?",
+    "options": ["Healing", "Creating Black Panthers", "Poison", "Cooking"],
+    "answer": "Creating Black Panthers",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 108,
+    "question": "Who says 'That's my secret, Captain. I'm always angry'?",
+    "options": ["Thor", "Iron Man", "Hulk/Bruce Banner", "Hawkeye"],
+    "answer": "Hulk/Bruce Banner",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 109,
+    "question": "What is the name of Hawkeye's wife?",
+    "options": ["Laura", "Maria", "Sharon", "Peggy"],
+    "answer": "Laura",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 110,
+    "question": "Who plays Mysterio?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Jake_Gyllenhaal_2019_by_Glenn_Francis.jpg/220px-Jake_Gyllenhaal_2019_by_Glenn_Francis.jpg",
+    "options": ["Michael Keaton", "Jake Gyllenhaal", "Michael Shannon", "Javier Bardem"],
+    "answer": "Jake Gyllenhaal",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 111,
+    "question": "What does E.D.I.T.H. stand for?",
+    "options": ["Even Dead I'm The Hero", "Electronic Defense Intelligence Tracking Hub", "Emergency Defense Information Technology Hub", "Electronic Device for Integrated Threat Handling"],
+    "answer": "Even Dead I'm The Hero",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 112,
+    "question": "Who is the first Avenger chronologically?",
+    "options": ["Iron Man", "Captain America", "Thor", "Captain Marvel"],
+    "answer": "Captain Marvel",
+    "difficulty": "hard",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 113,
+    "question": "What is the name of the metal used to build Ultron?",
+    "options": ["Adamantium", "Vibranium", "Uru", "Carbonadium"],
+    "answer": "Vibranium",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 114,
+    "question": "Who created the Super Soldier Serum?",
+    "options": ["Howard Stark", "Abraham Erskine", "Arnim Zola", "Johann Schmidt"],
+    "answer": "Abraham Erskine",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 115,
+    "question": "What is the registration number of the helicarrier in The Avengers?",
+    "options": ["Alpha-1", "S.H.I.E.L.D.-1", "64", "74"],
+    "answer": "64",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 116,
+    "question": "Who founded S.H.I.E.L.D.?",
+    "options": ["Nick Fury", "Howard Stark and Peggy Carter", "Alexander Pierce", "Phil Coulson"],
+    "answer": "Howard Stark and Peggy Carter",
+    "difficulty": "hard",
+    "category": "organizations"
+  },
+  {
+    "id": 117,
+    "question": "What is the name of Thanos's ship?",
+    "options": ["The Milano", "Sanctuary II", "The Dark Aster", "The Benatar"],
+    "answer": "Sanctuary II",
+    "difficulty": "hard",
+    "category": "villains"
+  },
+  {
+    "id": 118,
+    "question": "How many futures does Doctor Strange view in Infinity War?",
+    "options": ["1,000,605", "14,000,605", "14,000,065", "1,400,605"],
+    "answer": "14,000,605",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 119,
+    "question": "What is the Aether actually?",
+    "options": ["Soul Stone", "Reality Stone", "Power Stone", "Mind Stone"],
+    "answer": "Reality Stone",
+    "difficulty": "hard",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 120,
+    "question": "Who voiced Groot?",
+    "options": ["Bradley Cooper", "Vin Diesel", "Dave Bautista", "Chris Pratt"],
+    "answer": "Vin Diesel",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 121,
+    "question": "What year does the majority of Captain Marvel take place?",
+    "options": ["1985", "1989", "1995", "2000"],
+    "answer": "1995",
+    "difficulty": "hard",
+    "category": "mcu-timeline"
+  },
+  {
+    "id": 122,
+    "question": "What is the name of the dwarf who forges Stormbreaker?",
+    "options": ["Eitri", "Brok", "Sindri", "Otr"],
+    "answer": "Eitri",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 123,
+    "question": "Who plays Eitri the dwarf?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Peter_Dinklage_by_Gage_Skidmore.jpg/220px-Peter_Dinklage_by_Gage_Skidmore.jpg",
+    "options": ["Peter Dinklage", "Warwick Davis", "Danny DeVito", "Kevin Hart"],
+    "answer": "Peter Dinklage",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 124,
+    "question": "What is Project Insight?",
+    "options": ["Super soldier program", "Helicarrier targeting system", "Time travel experiment", "Arc reactor project"],
+    "answer": "Helicarrier targeting system",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 125,
+    "question": "Who is revealed to be the head of HYDRA within S.H.I.E.L.D.?",
+    "options": ["Nick Fury", "Alexander Pierce", "Maria Hill", "Jasper Sitwell"],
+    "answer": "Alexander Pierce",
+    "difficulty": "hard",
+    "category": "villains"
+  },
+  {
+    "id": 126,
+    "question": "What is the name of the realm of the Fire Demons?",
+    "options": ["Jotunheim", "Muspelheim", "Nidavellir", "Niflheim"],
+    "answer": "Muspelheim",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 127,
+    "question": "Who provides the voice for JARVIS/Vision?",
+    "options": ["Robert Downey Jr.", "Paul Bettany", "James Spader", "Mark Ruffalo"],
+    "answer": "Paul Bettany",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 128,
+    "question": "What is the real name of Ghost in Ant-Man and the Wasp?",
+    "options": ["Hope Van Dyne", "Ava Starr", "Janet Van Dyne", "Cassie Lang"],
+    "answer": "Ava Starr",
+    "difficulty": "hard",
+    "category": "villains"
+  },
+  {
+    "id": 129,
+    "question": "What S.H.I.E.L.D. level clearance does Black Widow have?",
+    "options": ["Level 7", "Level 8", "Level 9", "Level 10"],
+    "answer": "Level 10",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 130,
+    "question": "Who directed both Guardians of the Galaxy films?",
+    "options": ["Taika Waititi", "James Gunn", "Joss Whedon", "The Russo Brothers"],
+    "answer": "James Gunn",
+    "difficulty": "hard",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 131,
+    "question": "What is the name of the realm where the Frost Giants live?",
+    "options": ["Jotunheim", "Muspelheim", "Svartalfheim", "Niflheim"],
+    "answer": "Jotunheim",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 132,
+    "question": "Who is Loki's biological father?",
+    "options": ["Odin", "Laufey", "Bor", "Cul"],
+    "answer": "Laufey",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 133,
+    "question": "What is the Sokovia Accords?",
+    "options": ["Peace treaty", "Superhero registration act", "Arms deal", "Space exploration agreement"],
+    "answer": "Superhero registration act",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 134,
+    "question": "Who plays Baron Zemo?",
+    "options": ["Mads Mikkelsen", "Daniel Bruhl", "Martin Freeman", "Andy Serkis"],
+    "answer": "Daniel Bruhl",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 135,
+    "question": "Where did the Winter Soldier's trigger words originate?",
+    "options": ["Russian dictionary", "HYDRA manual", "Soviet era book", "Nazi handbook"],
+    "answer": "Soviet era book",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 136,
+    "question": "What is the name of Thor's maternal grandmother?",
+    "options": ["Frigga", "Bestla", "Gaea", "Jord"],
+    "answer": "Bestla",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 137,
+    "question": "Who plays Yondu?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Michael_Rooker_by_Gage_Skidmore_2.jpg/220px-Michael_Rooker_by_Gage_Skidmore_2.jpg",
+    "options": ["Kurt Russell", "Michael Rooker", "Sylvester Stallone", "Jeff Goldblum"],
+    "answer": "Michael Rooker",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 138,
+    "question": "What is the name of Yondu's arrow weapon?",
+    "options": ["Yaka Arrow", "Whistling Death", "Centaurian Arrow", "Ravager Dart"],
+    "answer": "Yaka Arrow",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 139,
+    "question": "How long was Scott Lang trapped in the Quantum Realm?",
+    "options": ["5 hours (5 years real time)", "1 day (5 years real time)", "30 days (5 years real time)", "5 minutes (5 years real time)"],
+    "answer": "5 hours (5 years real time)",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 140,
+    "question": "What is the name of the organization that trained Black Widow?",
+    "options": ["HYDRA", "Red Room", "The Hand", "Leviathan"],
+    "answer": "Red Room",
+    "difficulty": "hard",
+    "category": "organizations"
+  },
+  {
+    "id": 141,
+    "question": "Who plays Ronan the Accuser?",
+    "options": ["Josh Brolin", "Lee Pace", "Benicio del Toro", "Djimon Hounsou"],
+    "answer": "Lee Pace",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 142,
+    "question": "What is the primary export of Wakanda to hide its advanced technology?",
+    "options": ["Diamonds", "Gold", "Textiles", "Agricultural products"],
+    "answer": "Textiles",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 143,
+    "question": "Who is the leader of the Jabari tribe?",
+    "options": ["M'Baku", "W'Kabi", "Zuri", "N'Jobu"],
+    "answer": "M'Baku",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 144,
+    "question": "What is the name of the AI that replaces JARVIS?",
+    "options": ["KAREN", "FRIDAY", "EDITH", "TADASHI"],
+    "answer": "FRIDAY",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 145,
+    "question": "Who plays the Grandmaster?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Jeff_Goldblum_by_Gage_Skidmore_3.jpg/220px-Jeff_Goldblum_by_Gage_Skidmore_3.jpg",
+    "options": ["Jeff Bridges", "Jeff Goldblum", "Jeff Daniels", "Geoffrey Rush"],
+    "answer": "Jeff Goldblum",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 146,
+    "question": "What is the code that reactivates the Winter Soldier?",
+    "options": ["Longing, Rusted, Seventeen...", "Hail HYDRA", "Ready to comply", "Winter Soldier protocol"],
+    "answer": "Longing, Rusted, Seventeen...",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 147,
+    "question": "Who plays Maria Hill?",
+    "options": ["Cobie Smulders", "Emily VanCamp", "Hayley Atwell", "Robin Wright"],
+    "answer": "Cobie Smulders",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 148,
+    "question": "What is the name of the bridge where Thor and Loki fight in the first Thor movie?",
+    "options": ["Puente Antiguo", "Bifrost Bridge", "Asgardian Observatory", "Rainbow Bridge"],
+    "answer": "Bifrost Bridge",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 149,
+    "question": "Who kills Howard and Maria Stark?",
+    "options": ["Red Skull", "HYDRA agents", "Winter Soldier", "Iron Monger"],
+    "answer": "Winter Soldier",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 150,
+    "question": "What is Agent Coulson's first name?",
+    "options": ["Peter", "Paul", "Phil", "Patrick"],
+    "answer": "Phil",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 151,
+    "question": "Who plays Agent Coulson?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Clark_Gregg_by_Gage_Skidmore.jpg/220px-Clark_Gregg_by_Gage_Skidmore.jpg",
+    "options": ["Clark Gregg", "Brendan Fraser", "Aaron Paul", "Clark Duke"],
+    "answer": "Clark Gregg",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 152,
+    "question": "What type of radiation transformed Bruce Banner into the Hulk?",
+    "options": ["Cosmic radiation", "Gamma radiation", "X-rays", "Nuclear radiation"],
+    "answer": "Gamma radiation",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 153,
+    "question": "Who plays Happy Hogan?",
+    "options": ["Jon Favreau", "Gwyneth Paltrow", "Jeff Bridges", "Shaun Toub"],
+    "answer": "Jon Favreau",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 154,
+    "question": "What year did Tony Stark's parents die?",
+    "options": ["1989", "1991", "1995", "1987"],
+    "answer": "1991",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 155,
+    "question": "Who is the voice of Rocket Raccoon?",
+    "options": ["Vin Diesel", "Bradley Cooper", "Sean Gunn", "Chris Pratt"],
+    "answer": "Bradley Cooper",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 156,
+    "question": "What is the specific name of the dimension accessed through the Quantum Realm?",
+    "options": ["Microverse", "Quantum Zone", "Sub-Atomica", "There is no specific name"],
+    "answer": "There is no specific name",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 157,
+    "question": "Who wrote and directed Iron Man 3?",
+    "options": ["Jon Favreau", "Shane Black", "Joss Whedon", "Kenneth Branagh"],
+    "answer": "Shane Black",
+    "difficulty": "hard",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 158,
+    "question": "What metal poisons Tony in Iron Man 2?",
+    "options": ["Vibranium", "Palladium", "Adamantium", "Uru"],
+    "answer": "Palladium",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 159,
+    "question": "Who plays the Collector?",
+    "options": ["Jeff Goldblum", "Benicio del Toro", "Michael Rooker", "Sylvester Stallone"],
+    "answer": "Benicio del Toro",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 160,
+    "question": "What is the name of Peter Parker's AI suit assistant?",
+    "options": ["FRIDAY", "JARVIS", "KAREN", "EDITH"],
+    "answer": "KAREN",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 161,
+    "question": "Who plays Valkyrie?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tessa_Thompson_by_Gage_Skidmore.jpg/220px-Tessa_Thompson_by_Gage_Skidmore.jpg",
+    "options": ["Tessa Thompson", "Zendaya", "Lupita Nyong'o", "Danai Gurira"],
+    "answer": "Tessa Thompson",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 162,
+    "question": "What is Ultron made of initially?",
+    "options": ["Iron Man's armor", "JARVIS's code", "Chitauri technology", "The Mind Stone"],
+    "answer": "JARVIS's code",
+    "difficulty": "hard",
+    "category": "villains"
+  },
+  {
+    "id": 163,
+    "question": "Who plays Surtur?",
+    "options": ["Andy Serkis", "Clancy Brown", "Mark Hamill", "Tim Curry"],
+    "answer": "Clancy Brown",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 164,
+    "question": "What is the name of the battle at the end of Avengers: Endgame?",
+    "options": ["Battle of Earth", "Battle of the Avengers Compound", "Final Battle", "Battle of New York II"],
+    "answer": "Battle of Earth",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 165,
+    "question": "What comic event inspired Captain America: Civil War?",
+    "options": ["Secret Wars", "Civil War", "Infinity Gauntlet", "Age of Ultron"],
+    "answer": "Civil War",
+    "difficulty": "hard",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 166,
+    "question": "Who plays Kaecilius?",
+    "options": ["Mads Mikkelsen", "Chiwetel Ejiofor", "Benedict Wong", "Michael Stuhlbarg"],
+    "answer": "Mads Mikkelsen",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 167,
+    "question": "What created the Infinity Stones?",
+    "options": ["The Celestials", "Cosmic Entities", "The Big Bang", "Arishem"],
+    "answer": "The Big Bang",
+    "difficulty": "hard",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 168,
+    "question": "Who plays Iron Monger/Obadiah Stane?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jeff_Bridges_by_Gage_Skidmore_3.jpg/220px-Jeff_Bridges_by_Gage_Skidmore_3.jpg",
+    "options": ["Jeff Bridges", "Jeff Goldblum", "Sam Rockwell", "Mickey Rourke"],
+    "answer": "Jeff Bridges",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 169,
+    "question": "What is the official designation of the Hulkbuster armor?",
+    "options": ["Mark 44", "Veronica", "Both Mark 44 and Veronica", "Mark 45"],
+    "answer": "Both Mark 44 and Veronica",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 170,
+    "question": "Are Sentinels in the MCU?",
+    "options": ["Yes, in X-Men films", "Yes, in Avengers", "No, Sentinels aren't in MCU", "Yes, in Spider-Man"],
+    "answer": "No, Sentinels aren't in MCU",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 171,
+    "question": "What is the Order of the Masters of the Mystic Arts also called?",
+    "options": ["Sorcerer Supreme Council", "Kamar-Taj", "The Order", "Ancient Ones"],
+    "answer": "Kamar-Taj",
+    "difficulty": "hard",
+    "category": "organizations"
+  },
+  {
+    "id": 172,
+    "question": "Who plays Everett Ross?",
+    "options": ["Andy Serkis", "Martin Freeman", "Sebastian Stan", "Anthony Mackie"],
+    "answer": "Martin Freeman",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 173,
+    "question": "What is the proper name for Captain America's shield material?",
+    "options": ["Vibranium Disc", "Proto-Adamantium Shield", "Wakandan Shield", "Captain America's Shield"],
+    "answer": "Proto-Adamantium Shield",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 174,
+    "question": "Who plays Quicksilver in the MCU?",
+    "options": ["Evan Peters", "Aaron Taylor-Johnson", "Taylor Kitsch", "Jeremy Renner"],
+    "answer": "Aaron Taylor-Johnson",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 175,
+    "question": "What material is the prototype Cap shield made of in The First Avenger?",
+    "options": ["Vibranium", "Steel", "Adamantium", "Proto-Adamantium"],
+    "answer": "Vibranium",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 176,
+    "question": "Who plays Wong?",
+    "options": ["Benedict Wong", "Randall Park", "Ken Jeong", "Simu Liu"],
+    "answer": "Benedict Wong",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 177,
+    "question": "What fictional element powers Tony Stark's new arc reactor in Iron Man 2?",
+    "options": ["Vibranium", "Palladium", "Badassium", "Starkium"],
+    "answer": "Badassium",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 178,
+    "question": "Who plays Ulysses Klaue?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Andy_Serkis_%2836201774756%29_%28cropped%29.jpg/220px-Andy_Serkis_%2836201774756%29_%28cropped%29.jpg",
+    "options": ["Martin Freeman", "Andy Serkis", "Daniel Kaluuya", "Michael B. Jordan"],
+    "answer": "Andy Serkis",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 179,
+    "question": "What does B.A.R.F. stand for in Civil War?",
+    "options": ["Binarily Augmented Retro-Framing", "Brain Activity Replay Function", "Biological Augmented Reality Framework", "Binary Assisted Reality Framework"],
+    "answer": "Binarily Augmented Retro-Framing",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 180,
+    "question": "Who plays older Howard Stark in the MCU?",
+    "options": ["Dominic Cooper", "John Slattery", "Gerard Sanders", "Both Dominic Cooper and John Slattery"],
+    "answer": "John Slattery",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 181,
+    "question": "What is Frigga's power?",
+    "options": ["Weather control", "Magic/Sorcery", "Super strength", "Telepathy"],
+    "answer": "Magic/Sorcery",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 182,
+    "question": "Who plays Peggy Carter?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Hayley_Atwell_Gemini_Awards_2012_%28cropped%29.jpg/220px-Hayley_Atwell_Gemini_Awards_2012_%28cropped%29.jpg",
+    "options": ["Emily VanCamp", "Hayley Atwell", "Rachel McAdams", "Natalie Portman"],
+    "answer": "Hayley Atwell",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 183,
+    "question": "What is the name of Thor's mother?",
+    "options": ["Hela", "Frigga", "Sif", "Valkyrie"],
+    "answer": "Frigga",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 184,
+    "question": "Which villain returns in Spider-Man: No Way Home?",
+    "options": ["All of these", "Green Goblin", "Doc Ock", "Electro"],
+    "answer": "All of these",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 185,
+    "question": "Who plays M'Baku?",
+    "options": ["Daniel Kaluuya", "Winston Duke", "John Boyega", "David Oyelowo"],
+    "answer": "Winston Duke",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 186,
+    "question": "What is the name of the small town in New Mexico where Thor's hammer lands?",
+    "options": ["Santa Fe", "Puente Antiguo", "Roswell", "Las Vegas"],
+    "answer": "Puente Antiguo",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 187,
+    "question": "Who plays Pepper Potts?",
+    "options": ["Scarlett Johansson", "Gwyneth Paltrow", "Rebecca Hall", "Maya Hansen"],
+    "answer": "Gwyneth Paltrow",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 188,
+    "question": "What is the name of the realm where the dwarves live?",
+    "options": ["Jotunheim", "Nidavellir", "Svartalfheim", "Muspelheim"],
+    "answer": "Nidavellir",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 189,
+    "question": "Who sacrifices themselves in Infinity War to obtain the Soul Stone?",
+    "options": ["Black Widow", "Gamora", "Nebula", "Star-Lord"],
+    "answer": "Gamora",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 190,
+    "question": "What is the Avengers Tower called before the Avengers use it?",
+    "options": ["Stark Tower", "Oscorp Tower", "Baxter Building", "Empire State Building"],
+    "answer": "Stark Tower",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 191,
+    "question": "Who directed Avengers: Infinity War and Endgame?",
+    "options": ["Joss Whedon", "Jon Favreau", "The Russo Brothers", "James Gunn"],
+    "answer": "The Russo Brothers",
+    "difficulty": "medium",
+    "category": "behind-scenes"
+  },
+  {
+    "id": 192,
+    "question": "What color is the Mind Stone?",
+    "options": ["Blue", "Red", "Yellow", "Orange"],
+    "answer": "Yellow",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 193,
+    "question": "Who says 'We have a Hulk' in The Avengers?",
+    "options": ["Thor", "Captain America", "Tony Stark", "Nick Fury"],
+    "answer": "Tony Stark",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 194,
+    "question": "What is the name of Ego's species?",
+    "options": ["Eternal", "Celestial", "Titan", "Kree"],
+    "answer": "Celestial",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 195,
+    "question": "Who plays Ego?",
+    "options": ["Jeff Bridges", "Kurt Russell", "Michael Douglas", "Sylvester Stallone"],
+    "answer": "Kurt Russell",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 196,
+    "question": "What is the name of Peter Quill's ship in Guardians Vol. 2 and 3?",
+    "options": ["The Milano", "The Benatar", "The Dark Aster", "The Eclector"],
+    "answer": "The Benatar",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 197,
+    "question": "Which Infinity Stone is in Loki's scepter?",
+    "options": ["Space Stone", "Mind Stone", "Power Stone", "Soul Stone"],
+    "answer": "Mind Stone",
+    "difficulty": "medium",
+    "category": "infinity-stones"
+  },
+  {
+    "id": 198,
+    "question": "Who plays Jane Foster?",
+    "options": ["Natalie Portman", "Kat Dennings", "Rachel McAdams", "Emily VanCamp"],
+    "answer": "Natalie Portman",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 199,
+    "question": "What is the time travel method called in Endgame?",
+    "options": ["Pym Particles", "Time Vortex", "Quantum Leap", "Temporal Navigation"],
+    "answer": "Pym Particles",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 200,
+    "question": "Who says 'Avengers, assemble!' in Endgame?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Ben_Kingsley_Comic-Con_2012.jpg/220px-Ben_Kingsley_Comic-Con_2012.jpg",
+    "options": ["Thor", "Iron Man", "Captain America", "Black Widow"],
+    "answer": "Captain America",
+    "difficulty": "easy",
+    "category": "quotes"
+  }
+]

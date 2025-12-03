@@ -1,0 +1,2629 @@
+[
+  {
+    "id": 1,
+    "question": "Who plays Frodo Baggins?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Elijah_Wood_at_the_2025_Sundance_Film_Festival_%28cropped%292.jpg/250px-Elijah_Wood_at_the_2025_Sundance_Film_Festival_%28cropped%292.jpg",
+    "options": [
+      "Tobey Maguire",
+      "Orlando Bloom",
+      "Elijah Wood",
+      "Daniel Radcliffe"
+    ],
+    "answer": "Elijah Wood",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Gandalf?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/SDCC13_-_Ian_McKellen.jpg/250px-SDCC13_-_Ian_McKellen.jpg",
+    "options": [
+      "Ian McKellen",
+      "John Rhys-Davies",
+      "Ian Holm",
+      "Christopher Lee"
+    ],
+    "answer": "Ian McKellen",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "Who plays Aragorn?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Viggo_Mortensen_B_%282020%29.jpg/250px-Viggo_Mortensen_B_%282020%29.jpg",
+    "options": [
+      "Sean Bean",
+      "Karl Urban",
+      "Orlando Bloom",
+      "Viggo Mortensen"
+    ],
+    "answer": "Viggo Mortensen",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Legolas?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg/250px-Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg",
+    "options": [
+      "Viggo Mortensen",
+      "Billy Boyd",
+      "Orlando Bloom",
+      "Dominic Monaghan"
+    ],
+    "answer": "Orlando Bloom",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "Who plays Samwise Gamgee?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sean_Astin_%2827506939735%29_%28cropped%29.jpg/250px-Sean_Astin_%2827506939735%29_%28cropped%29.jpg",
+    "options": [
+      "Dominic Monaghan",
+      "Billy Boyd",
+      "Sean Astin",
+      "Elijah Wood"
+    ],
+    "answer": "Sean Astin",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 6,
+    "question": "What is the One Ring's inscription?",
+    "options": [
+      "The Ring of Power",
+      "One Ring to bring them...",
+      "One Ring to rule them all...",
+      "One Ring to find them..."
+    ],
+    "answer": "One Ring to rule them all...",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 7,
+    "question": "Who created the One Ring?",
+    "options": [
+      "Sauron",
+      "Celebrimbor",
+      "Gandalf",
+      "Morgoth"
+    ],
+    "answer": "Sauron",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 8,
+    "question": "What is the name of Frodo's home?",
+    "options": [
+      "Rivendell",
+      "Hobbiton",
+      "Bag End",
+      "The Shire"
+    ],
+    "answer": "Bag End",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 9,
+    "question": "Who directed the Lord of the Rings trilogy?",
+    "options": [
+      "Ridley Scott",
+      "Christopher Nolan",
+      "James Cameron",
+      "Peter Jackson"
+    ],
+    "answer": "Peter Jackson",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 10,
+    "question": "What race is Legolas?",
+    "options": [
+      "Dwarf",
+      "Hobbit",
+      "Elf",
+      "Human"
+    ],
+    "answer": "Elf",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 11,
+    "question": "What race is Gimli?",
+    "options": [
+      "Human",
+      "Hobbit",
+      "Elf",
+      "Dwarf"
+    ],
+    "answer": "Dwarf",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Gimli?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/John_Rhys-Davies_NASA_2025.jpg/250px-John_Rhys-Davies_NASA_2025.jpg",
+    "options": [
+      "John Rhys-Davies",
+      "Bernard Hill",
+      "Sean Bean",
+      "Karl Urban"
+    ],
+    "answer": "John Rhys-Davies",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "What is Aragorn's royal name?",
+    "options": [
+      "Elessar",
+      "Estel",
+      "Strider",
+      "Thorongil"
+    ],
+    "answer": "Elessar",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 14,
+    "question": "Who is Aragorn's love interest?",
+    "options": [
+      "Arwen",
+      "Galadriel",
+      "Rosie",
+      "Éowyn"
+    ],
+    "answer": "Arwen",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 15,
+    "question": "Who plays Arwen?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Liv_Tyler_%282016%29.jpg/250px-Liv_Tyler_%282016%29.jpg",
+    "options": [
+      "Liv Tyler",
+      "Kate Winslet",
+      "Miranda Otto",
+      "Cate Blanchett"
+    ],
+    "answer": "Liv Tyler",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 16,
+    "question": "Who plays Galadriel?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg/250px-Cate_Blanchett-63298_%28cropped_2%29.jpg",
+    "options": [
+      "Miranda Otto",
+      "Cate Blanchett",
+      "Nicole Kidman",
+      "Liv Tyler"
+    ],
+    "answer": "Cate Blanchett",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 17,
+    "question": "What is the name of Gandalf's sword?",
+    "options": [
+      "Glamdring",
+      "Andúril",
+      "Orcrist",
+      "Sting"
+    ],
+    "answer": "Glamdring",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of Frodo's sword?",
+    "options": [
+      "Glamdring",
+      "Sting",
+      "Narsil",
+      "Andúril"
+    ],
+    "answer": "Sting",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 19,
+    "question": "What does Sting do when orcs are near?",
+    "options": [
+      "Glows blue",
+      "Glows red",
+      "Vibrates",
+      "Makes sound"
+    ],
+    "answer": "Glows blue",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 20,
+    "question": "Who originally owned Sting?",
+    "options": [
+      "Thorin",
+      "Bilbo Baggins",
+      "Frodo",
+      "Gandalf"
+    ],
+    "answer": "Bilbo Baggins",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 21,
+    "question": "Who plays Bilbo Baggins in LOTR?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ian_Holm.jpg/250px-Ian_Holm.jpg",
+    "options": [
+      "Ian Holm",
+      "Ian McKellen",
+      "Martin Freeman",
+      "Christopher Lee"
+    ],
+    "answer": "Ian Holm",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 22,
+    "question": "What is the Elvish realm ruled by Elrond?",
+    "options": [
+      "Grey Havens",
+      "Rivendell",
+      "Mirkwood",
+      "Lothlórien"
+    ],
+    "answer": "Rivendell",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 23,
+    "question": "Who plays Elrond?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/MJK_08925_Hugo_Weaving_%28Berlinale_2018%29_bw43.jpg/250px-MJK_08925_Hugo_Weaving_%28Berlinale_2018%29_bw43.jpg",
+    "options": [
+      "Ian McKellen",
+      "Christopher Lee",
+      "Cate Blanchett",
+      "Hugo Weaving"
+    ],
+    "answer": "Hugo Weaving",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 24,
+    "question": "What is the Elvish realm ruled by Galadriel?",
+    "options": [
+      "Lothlórien",
+      "Valinor",
+      "Rivendell",
+      "Mirkwood"
+    ],
+    "answer": "Lothlórien",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 25,
+    "question": "How many members are in the Fellowship?",
+    "options": [
+      "7",
+      "10",
+      "8",
+      "9"
+    ],
+    "answer": "9",
+    "difficulty": "medium",
+    "category": "fellowship"
+  },
+  {
+    "id": 26,
+    "question": "Who are the four hobbits in the Fellowship?",
+    "options": [
+      "Frodo, Sam, Merry, Fatty",
+      "Frodo, Sam, Merry, Pippin",
+      "Frodo, Bilbo, Merry, Pippin",
+      "Frodo, Sam, Bilbo, Pippin"
+    ],
+    "answer": "Frodo, Sam, Merry, Pippin",
+    "difficulty": "easy",
+    "category": "fellowship"
+  },
+  {
+    "id": 27,
+    "question": "Who plays Merry?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dominic_Monaghan_by_Gage_Skidmore.jpg/250px-Dominic_Monaghan_by_Gage_Skidmore.jpg",
+    "options": [
+      "Dominic Monaghan",
+      "Billy Boyd",
+      "Elijah Wood",
+      "Sean Astin"
+    ],
+    "answer": "Dominic Monaghan",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 28,
+    "question": "Who plays Pippin?",
+    "options": [
+      "Billy Boyd",
+      "Dominic Monaghan",
+      "Sean Astin",
+      "Elijah Wood"
+    ],
+    "answer": "Billy Boyd",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 29,
+    "question": "What is the name of Gandalf's horse?",
+    "options": [
+      "Asfaloth",
+      "Brego",
+      "Shadowfax",
+      "Bill"
+    ],
+    "answer": "Shadowfax",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 30,
+    "question": "What creature does the Fellowship fight in Moria?",
+    "options": [
+      "Watcher",
+      "Balrog",
+      "Dragon",
+      "Troll"
+    ],
+    "answer": "Balrog",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 31,
+    "question": "What does Gandalf say to the Balrog?",
+    "options": [
+      "None shall pass!",
+      "You shall not pass!",
+      "You cannot pass!",
+      "Stop right there!"
+    ],
+    "answer": "You shall not pass!",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 32,
+    "question": "What happens to Gandalf in Moria?",
+    "options": [
+      "Is captured",
+      "Escapes safely",
+      "Dies permanently",
+      "Falls with the Balrog"
+    ],
+    "answer": "Falls with the Balrog",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 33,
+    "question": "What color is Gandalf when he returns?",
+    "options": [
+      "Grey",
+      "Brown",
+      "Blue",
+      "White"
+    ],
+    "answer": "White",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 34,
+    "question": "Who plays Boromir?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Sean_Bean_Anemone-25_%28cropped%29.jpg/250px-Sean_Bean_Anemone-25_%28cropped%29.jpg",
+    "options": [
+      "Karl Urban",
+      "Viggo Mortensen",
+      "David Wenham",
+      "Sean Bean"
+    ],
+    "answer": "Sean Bean",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 35,
+    "question": "What happens to Boromir?",
+    "options": [
+      "Killed by Uruk-hai",
+      "Survives the trilogy",
+      "Joins Sauron",
+      "Becomes king"
+    ],
+    "answer": "Killed by Uruk-hai",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 36,
+    "question": "Who is Boromir's father?",
+    "options": [
+      "Denethor",
+      "Faramir",
+      "Elrond",
+      "Théoden"
+    ],
+    "answer": "Denethor",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 37,
+    "question": "Who plays Denethor?",
+    "options": [
+      "Karl Urban",
+      "Bernard Hill",
+      "David Wenham",
+      "John Noble"
+    ],
+    "answer": "John Noble",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 38,
+    "question": "Who is Boromir's brother?",
+    "options": [
+      "Éomer",
+      "Théodred",
+      "Faramir",
+      "Aragorn"
+    ],
+    "answer": "Faramir",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 39,
+    "question": "Who plays Faramir?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/David_Wenham_April_2016.jpg/250px-David_Wenham_April_2016.jpg",
+    "options": [
+      "David Wenham",
+      "Orlando Bloom",
+      "Karl Urban",
+      "Sean Bean"
+    ],
+    "answer": "David Wenham",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 40,
+    "question": "What is Sauron's physical form in the films?",
+    "options": [
+      "A dark lord",
+      "A shadow",
+      "A great eye",
+      "A ring"
+    ],
+    "answer": "A great eye",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 41,
+    "question": "Where is Sauron's fortress?",
+    "options": [
+      "Isengard",
+      "Barad-dûr",
+      "Minas Tirith",
+      "Minas Morgul"
+    ],
+    "answer": "Barad-dûr",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 42,
+    "question": "What land is Sauron's domain?",
+    "options": [
+      "Rohan",
+      "Gondor",
+      "Mordor",
+      "Isengard"
+    ],
+    "answer": "Mordor",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 43,
+    "question": "What mountain must the Ring be destroyed in?",
+    "options": [
+      "Misty Mountains",
+      "Mount Caradhras",
+      "Lonely Mountain",
+      "Mount Doom"
+    ],
+    "answer": "Mount Doom",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 44,
+    "question": "Who is Saruman?",
+    "options": [
+      "A Nazgûl",
+      "Sauron's master",
+      "A corrupt wizard",
+      "An elf lord"
+    ],
+    "answer": "A corrupt wizard",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 45,
+    "question": "Who plays Saruman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Christopher_Lee_2009.jpg/250px-Christopher_Lee_2009.jpg",
+    "options": [
+      "Christopher Lee",
+      "Hugo Weaving",
+      "Ian McKellen",
+      "John Rhys-Davies"
+    ],
+    "answer": "Christopher Lee",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 46,
+    "question": "What is Saruman's tower called?",
+    "options": [
+      "Minas Tirith",
+      "Orthanc",
+      "Minas Morgul",
+      "Barad-dûr"
+    ],
+    "answer": "Orthanc",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 47,
+    "question": "Where is Saruman's fortress?",
+    "options": [
+      "Mordor",
+      "Rivendell",
+      "Rohan",
+      "Isengard"
+    ],
+    "answer": "Isengard",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 48,
+    "question": "What creatures does Saruman create?",
+    "options": [
+      "Uruk-hai",
+      "Trolls",
+      "Orcs",
+      "Goblins"
+    ],
+    "answer": "Uruk-hai",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 49,
+    "question": "What is the creature Gollum's real name?",
+    "options": [
+      "Sméagol",
+      "Stinker",
+      "Déagol",
+      "Gollum"
+    ],
+    "answer": "Sméagol",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 50,
+    "question": "Who plays Gollum?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Andy_Serkis_at_MEGACON_Orlando_2025.png/250px-Andy_Serkis_at_MEGACON_Orlando_2025.png",
+    "options": [
+      "Doug Jones",
+      "Warwick Davis",
+      "Peter Jackson",
+      "Andy Serkis"
+    ],
+    "answer": "Andy Serkis",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 51,
+    "question": "What does Gollum call the Ring?",
+    "options": [
+      "The Ring",
+      "My precious",
+      "My love",
+      "My treasure"
+    ],
+    "answer": "My precious",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 52,
+    "question": "Who was Gollum's friend that he killed?",
+    "options": [
+      "Déagol",
+      "Bilbo",
+      "Sméagol",
+      "Frodo"
+    ],
+    "answer": "Déagol",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 53,
+    "question": "What riddle game does Bilbo play with Gollum?",
+    "options": [
+      "The Ring Game",
+      "Gollum's Game",
+      "Cave Riddles",
+      "Riddles in the Dark"
+    ],
+    "answer": "Riddles in the Dark",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 54,
+    "question": "What is the capital of Gondor?",
+    "options": [
+      "Osgiliath",
+      "Dol Amroth",
+      "Minas Morgul",
+      "Minas Tirith"
+    ],
+    "answer": "Minas Tirith",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 55,
+    "question": "What is Minas Tirith also called?",
+    "options": [
+      "The Tower Guard",
+      "City of Kings",
+      "The White City",
+      "Gondor City"
+    ],
+    "answer": "The White City",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 56,
+    "question": "What is the capital of Rohan?",
+    "options": [
+      "Isengard",
+      "Edoras",
+      "Meduseld",
+      "Helm's Deep"
+    ],
+    "answer": "Edoras",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 57,
+    "question": "What is the golden hall of Rohan called?",
+    "options": [
+      "The Golden Hall",
+      "Edoras",
+      "Helm's Deep",
+      "Meduseld"
+    ],
+    "answer": "Meduseld",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 58,
+    "question": "Who is the King of Rohan?",
+    "options": [
+      "Éomer",
+      "Théoden",
+      "Aragorn",
+      "Denethor"
+    ],
+    "answer": "Théoden",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 59,
+    "question": "Who plays King Théoden?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bernard_Hill_cropped.jpg/250px-Bernard_Hill_cropped.jpg",
+    "options": [
+      "John Noble",
+      "Karl Urban",
+      "David Wenham",
+      "Bernard Hill"
+    ],
+    "answer": "Bernard Hill",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 60,
+    "question": "Who possesses Théoden at the start?",
+    "options": [
+      "Wormtongue",
+      "Sauron",
+      "Morgoth",
+      "Saruman"
+    ],
+    "answer": "Saruman",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 61,
+    "question": "Who is Gríma Wormtongue?",
+    "options": [
+      "Sauron's servant",
+      "Saruman's spy",
+      "A Nazgûl",
+      "An orc leader"
+    ],
+    "answer": "Saruman's spy",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 62,
+    "question": "Who plays Wormtongue?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Brad_Dourif_2002.jpg/250px-Brad_Dourif_2002.jpg",
+    "options": [
+      "Andy Serkis",
+      "Brad Dourif",
+      "Christopher Lee",
+      "Hugo Weaving"
+    ],
+    "answer": "Brad Dourif",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 63,
+    "question": "Who is Éowyn?",
+    "options": [
+      "Aragorn's sister",
+      "Théoden's daughter",
+      "Arwen's sister",
+      "Théoden's niece"
+    ],
+    "answer": "Théoden's niece",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 64,
+    "question": "Who plays Éowyn?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Miranda_Otto_by_Gage_Skidmore.jpg/250px-Miranda_Otto_by_Gage_Skidmore.jpg",
+    "options": [
+      "Liv Tyler",
+      "Miranda Otto",
+      "Kate Winslet",
+      "Cate Blanchett"
+    ],
+    "answer": "Miranda Otto",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 65,
+    "question": "Who is Éomer?",
+    "options": [
+      "An elf",
+      "Théoden's nephew",
+      "Aragorn's friend",
+      "Théoden's son"
+    ],
+    "answer": "Théoden's nephew",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 66,
+    "question": "Who plays Éomer?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Karl_Urban_SXSW_2022_%28cropped%29.jpg/250px-Karl_Urban_SXSW_2022_%28cropped%29.jpg",
+    "options": [
+      "Viggo Mortensen",
+      "Sean Bean",
+      "David Wenham",
+      "Karl Urban"
+    ],
+    "answer": "Karl Urban",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 67,
+    "question": "What fortress do Rohan's people flee to?",
+    "options": [
+      "Edoras",
+      "Isengard",
+      "Helm's Deep",
+      "Minas Tirith"
+    ],
+    "answer": "Helm's Deep",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 68,
+    "question": "What is the Battle of Helm's Deep?",
+    "options": [
+      "Uruk-hai siege of the fortress",
+      "Final battle",
+      "Moria battle",
+      "Battle for Gondor"
+    ],
+    "answer": "Uruk-hai siege of the fortress",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 69,
+    "question": "Who arrives to save Helm's Deep?",
+    "options": [
+      "Gondor's army",
+      "The elves only",
+      "Aragorn alone",
+      "Gandalf and the Rohirrim"
+    ],
+    "answer": "Gandalf and the Rohirrim",
+    "difficulty": "easy",
+    "category": "battles"
+  },
+  {
+    "id": 70,
+    "question": "What destroys Isengard?",
+    "options": [
+      "The Ents",
+      "Gandalf",
+      "Rohan's army",
+      "Sauron"
+    ],
+    "answer": "The Ents",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 71,
+    "question": "What are Ents?",
+    "options": [
+      "Rock giants",
+      "Tree creatures",
+      "Wizards",
+      "Elves"
+    ],
+    "answer": "Tree creatures",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 72,
+    "question": "Who is the leader of the Ents?",
+    "options": [
+      "Treebeard",
+      "Skinbark",
+      "Leaflock",
+      "Quickbeam"
+    ],
+    "answer": "Treebeard",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 73,
+    "question": "What are the Nazgûl?",
+    "options": [
+      "Ringwraiths",
+      "Orcs",
+      "Dark elves",
+      "Balrogs"
+    ],
+    "answer": "Ringwraiths",
+    "difficulty": "easy",
+    "category": "creatures"
+  },
+  {
+    "id": 74,
+    "question": "How many Nazgûl are there?",
+    "options": [
+      "9",
+      "8",
+      "10",
+      "7"
+    ],
+    "answer": "9",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 75,
+    "question": "Who is the leader of the Nazgûl?",
+    "options": [
+      "Sauron",
+      "Saruman",
+      "Witch-king of Angmar",
+      "Khamûl"
+    ],
+    "answer": "Witch-king of Angmar",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 76,
+    "question": "Who kills the Witch-king?",
+    "options": [
+      "Legolas",
+      "Gandalf",
+      "Éowyn (with Merry's help)",
+      "Aragorn"
+    ],
+    "answer": "Éowyn (with Merry's help)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 77,
+    "question": "What does Éowyn say before killing the Witch-king?",
+    "options": [
+      "Death!",
+      "No man can kill me",
+      "For Rohan",
+      "I am no man"
+    ],
+    "answer": "I am no man",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 78,
+    "question": "What flying creatures do Nazgûl ride?",
+    "options": [
+      "Dragons",
+      "Bats",
+      "Eagles",
+      "Fell beasts"
+    ],
+    "answer": "Fell beasts",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 79,
+    "question": "What is the giant spider's name?",
+    "options": [
+      "Ungoliant",
+      "Shadow",
+      "Arachne",
+      "Shelob"
+    ],
+    "answer": "Shelob",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 80,
+    "question": "Where does Shelob live?",
+    "options": [
+      "Cirith Ungol",
+      "Moria",
+      "Mordor plains",
+      "Mirkwood"
+    ],
+    "answer": "Cirith Ungol",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 81,
+    "question": "Who leads Frodo and Sam to Shelob?",
+    "options": [
+      "Gandalf",
+      "Faramir",
+      "Aragorn",
+      "Gollum"
+    ],
+    "answer": "Gollum",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 82,
+    "question": "What saves Frodo from Shelob's darkness?",
+    "options": [
+      "The Ring",
+      "The Light of Eärendil",
+      "Sting",
+      "Sam"
+    ],
+    "answer": "The Light of Eärendil",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 83,
+    "question": "Who gave Frodo the Light of Eärendil?",
+    "options": [
+      "Galadriel",
+      "Elrond",
+      "Arwen",
+      "Gandalf"
+    ],
+    "answer": "Galadriel",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 84,
+    "question": "What does Galadriel also give the Fellowship?",
+    "options": [
+      "Weapons only",
+      "Elven cloaks and gifts",
+      "Nothing",
+      "Food only"
+    ],
+    "answer": "Elven cloaks and gifts",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 85,
+    "question": "What is Lembas?",
+    "options": [
+      "Elven rope",
+      "Elven sword",
+      "Elven wine",
+      "Elven waybread"
+    ],
+    "answer": "Elven waybread",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 86,
+    "question": "What special rope does Sam receive?",
+    "options": [
+      "Mithril rope",
+      "Elven rope",
+      "Hobbit rope",
+      "Magic rope"
+    ],
+    "answer": "Elven rope",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 87,
+    "question": "What is mithril?",
+    "options": [
+      "Wizard silver",
+      "Precious elven/dwarf metal",
+      "A type of gold",
+      "A gemstone"
+    ],
+    "answer": "Precious elven/dwarf metal",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 88,
+    "question": "What mithril item does Frodo wear?",
+    "options": [
+      "Mithril coat/shirt",
+      "Mithril ring",
+      "Mithril helmet",
+      "Mithril sword"
+    ],
+    "answer": "Mithril coat/shirt",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 89,
+    "question": "Who gave Frodo the mithril coat?",
+    "options": [
+      "Galadriel",
+      "Bilbo",
+      "Gandalf",
+      "Elrond"
+    ],
+    "answer": "Bilbo",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 90,
+    "question": "What is Aragorn's reforged sword called?",
+    "options": [
+      "Glamdring",
+      "Sting",
+      "Andúril",
+      "Narsil"
+    ],
+    "answer": "Andúril",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 91,
+    "question": "What was Andúril called before it was broken?",
+    "options": [
+      "Glamdring",
+      "Narsil",
+      "Andúril",
+      "Orcrist"
+    ],
+    "answer": "Narsil",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 92,
+    "question": "Who broke Narsil originally?",
+    "options": [
+      "Isildur",
+      "Morgoth",
+      "The Witch-king",
+      "Sauron"
+    ],
+    "answer": "Sauron",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 93,
+    "question": "Who is Isildur?",
+    "options": [
+      "First King of Gondor",
+      "A wizard",
+      "Aragorn's ancestor who cut the Ring",
+      "An elf lord"
+    ],
+    "answer": "Aragorn's ancestor who cut the Ring",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 94,
+    "question": "What did Isildur do wrong?",
+    "options": [
+      "Lost the Ring",
+      "Kept the Ring instead of destroying it",
+      "Broke his sword",
+      "Gave Ring to Sauron"
+    ],
+    "answer": "Kept the Ring instead of destroying it",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 95,
+    "question": "What is the Palantír?",
+    "options": [
+      "A seeing stone",
+      "A weapon",
+      "A crown",
+      "A ring"
+    ],
+    "answer": "A seeing stone",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 96,
+    "question": "Who looks into the Palantír and contacts Sauron?",
+    "options": [
+      "Frodo",
+      "Merry",
+      "Sam",
+      "Pippin"
+    ],
+    "answer": "Pippin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 97,
+    "question": "What song does Pippin sing for Denethor?",
+    "options": [
+      "Edge of Night",
+      "The Road Goes Ever On",
+      "May It Be",
+      "Into the West"
+    ],
+    "answer": "Edge of Night",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 98,
+    "question": "What is the Battle of the Pelennor Fields?",
+    "options": [
+      "Final battle at Mordor",
+      "Battle of Helm's Deep",
+      "Battle of Isengard",
+      "Battle for Minas Tirith"
+    ],
+    "answer": "Battle for Minas Tirith",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 99,
+    "question": "Who leads the Rohirrim charge at Pelennor?",
+    "options": [
+      "Éomer",
+      "Gandalf",
+      "Aragorn",
+      "Théoden"
+    ],
+    "answer": "Théoden",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 100,
+    "question": "What does Théoden shout before the charge?",
+    "options": [
+      "Charge!",
+      "Death!",
+      "Victory!",
+      "For Rohan!"
+    ],
+    "answer": "Death!",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 101,
+    "question": "Who dies at the Battle of the Pelennor Fields?",
+    "options": [
+      "Théoden",
+      "Éomer",
+      "Gandalf",
+      "Aragorn"
+    ],
+    "answer": "Théoden",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 102,
+    "question": "What army does Aragorn bring to Pelennor?",
+    "options": [
+      "Elves",
+      "Gondor reserves",
+      "Army of the Dead",
+      "Dwarves"
+    ],
+    "answer": "Army of the Dead",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 103,
+    "question": "What are the Paths of the Dead?",
+    "options": [
+      "Mines of Moria",
+      "Road to Mordor",
+      "River path",
+      "Haunted mountain passage"
+    ],
+    "answer": "Haunted mountain passage",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 104,
+    "question": "Why are the Dead bound to Aragorn?",
+    "options": [
+      "They serve Sauron",
+      "They're his ancestors",
+      "Gandalf's spell",
+      "They broke oath to Isildur"
+    ],
+    "answer": "They broke oath to Isildur",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 105,
+    "question": "What is the Black Gate?",
+    "options": [
+      "Isengard's gate",
+      "Helm's Deep gate",
+      "Main entrance to Mordor",
+      "Gate of Minas Tirith"
+    ],
+    "answer": "Main entrance to Mordor",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 106,
+    "question": "Why do Aragorn's forces march to the Black Gate?",
+    "options": [
+      "To defeat Sauron",
+      "To negotiate",
+      "To surrender",
+      "To distract Sauron for Frodo"
+    ],
+    "answer": "To distract Sauron for Frodo",
+    "difficulty": "easy",
+    "category": "battles"
+  },
+  {
+    "id": 107,
+    "question": "What creature bites off Frodo's finger?",
+    "options": [
+      "Shelob",
+      "An orc",
+      "Gollum",
+      "Sam"
+    ],
+    "answer": "Gollum",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 108,
+    "question": "How is the Ring finally destroyed?",
+    "options": [
+      "It melts on its own",
+      "Gollum falls into Mount Doom with it",
+      "Sam destroys it",
+      "Frodo throws it in"
+    ],
+    "answer": "Gollum falls into Mount Doom with it",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 109,
+    "question": "Who rescues Frodo and Sam from Mount Doom?",
+    "options": [
+      "Aragorn",
+      "Gandalf",
+      "Eagles",
+      "Legolas"
+    ],
+    "answer": "Eagles",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 110,
+    "question": "Who becomes King of Gondor?",
+    "options": [
+      "Boromir",
+      "Denethor",
+      "Aragorn",
+      "Faramir"
+    ],
+    "answer": "Aragorn",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 111,
+    "question": "Who does Aragorn marry?",
+    "options": [
+      "Galadriel",
+      "Éowyn",
+      "No one",
+      "Arwen"
+    ],
+    "answer": "Arwen",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 112,
+    "question": "Who does Faramir marry?",
+    "options": [
+      "Arwen",
+      "Éowyn",
+      "Rosie",
+      "Galadriel"
+    ],
+    "answer": "Éowyn",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 113,
+    "question": "Who does Sam marry?",
+    "options": [
+      "No one",
+      "Lobelia",
+      "Éowyn",
+      "Rosie Cotton"
+    ],
+    "answer": "Rosie Cotton",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 114,
+    "question": "What happens to the elves after the war?",
+    "options": [
+      "They become mortal",
+      "They stay forever",
+      "They die",
+      "They leave Middle-earth"
+    ],
+    "answer": "They leave Middle-earth",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 115,
+    "question": "Where do the elves sail to?",
+    "options": [
+      "The West",
+      "The Undying Lands/Valinor",
+      "Heaven",
+      "Another world"
+    ],
+    "answer": "The Undying Lands/Valinor",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 116,
+    "question": "Who sails West at the end of ROTK?",
+    "options": [
+      "Only Gandalf",
+      "Gandalf, Frodo, Bilbo, Galadriel, Elrond",
+      "Only Frodo",
+      "Just the elves"
+    ],
+    "answer": "Gandalf, Frodo, Bilbo, Galadriel, Elrond",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 117,
+    "question": "What are the Grey Havens?",
+    "options": [
+      "Elven port to the West",
+      "A fortress",
+      "A city",
+      "Mountains"
+    ],
+    "answer": "Elven port to the West",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 118,
+    "question": "What does Sam say at the very end?",
+    "options": [
+      "Well, I'm back",
+      "Home at last",
+      "It's over",
+      "We did it"
+    ],
+    "answer": "Well, I'm back",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 119,
+    "question": "How many Oscars did Return of the King win?",
+    "options": [
+      "12",
+      "11",
+      "9",
+      "10"
+    ],
+    "answer": "11",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 120,
+    "question": "What year was Fellowship of the Ring released?",
+    "options": [
+      "2001",
+      "2000",
+      "2003",
+      "2002"
+    ],
+    "answer": "2001",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 121,
+    "question": "What year was The Two Towers released?",
+    "options": [
+      "2002",
+      "2003",
+      "2001",
+      "2004"
+    ],
+    "answer": "2002",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 122,
+    "question": "What year was Return of the King released?",
+    "options": [
+      "2003",
+      "2002",
+      "2004",
+      "2005"
+    ],
+    "answer": "2003",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 123,
+    "question": "Who wrote The Lord of the Rings books?",
+    "options": [
+      "Terry Pratchett",
+      "George R.R. Martin",
+      "J.R.R. Tolkien",
+      "C.S. Lewis"
+    ],
+    "answer": "J.R.R. Tolkien",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 124,
+    "question": "Where were the LOTR films primarily shot?",
+    "options": [
+      "New Zealand",
+      "England",
+      "Scotland",
+      "Ireland"
+    ],
+    "answer": "New Zealand",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 125,
+    "question": "What is the name of Gandalf's staff?",
+    "options": [
+      "Glamdring",
+      "Grey Staff",
+      "Wizard's Staff",
+      "It doesn't have a specific name"
+    ],
+    "answer": "It doesn't have a specific name",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 126,
+    "question": "What color is Gandalf the Grey's hat?",
+    "options": [
+      "Brown",
+      "Grey",
+      "Blue/Grey",
+      "Black"
+    ],
+    "answer": "Blue/Grey",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 127,
+    "question": "What is Gandalf's Elvish name?",
+    "options": [
+      "Olórin",
+      "Mithrandir",
+      "Tharkûn",
+      "Incánus"
+    ],
+    "answer": "Mithrandir",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 128,
+    "question": "How many wizards are there in Middle-earth?",
+    "options": [
+      "9",
+      "7",
+      "5",
+      "3"
+    ],
+    "answer": "5",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 129,
+    "question": "What are the wizards called?",
+    "options": [
+      "Wizards",
+      "Istari",
+      "Maiar",
+      "Sorcerers"
+    ],
+    "answer": "Istari",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 130,
+    "question": "What is Legolas's father's name?",
+    "options": [
+      "Elrond",
+      "Celeborn",
+      "Thranduil",
+      "Gil-galad"
+    ],
+    "answer": "Thranduil",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 131,
+    "question": "What kingdom is Legolas from?",
+    "options": [
+      "Lindon",
+      "Rivendell",
+      "Lothlórien",
+      "Mirkwood/Woodland Realm"
+    ],
+    "answer": "Mirkwood/Woodland Realm",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 132,
+    "question": "What is Gimli's father's name?",
+    "options": [
+      "Dwalin",
+      "Thorin",
+      "Balin",
+      "Glóin"
+    ],
+    "answer": "Glóin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 133,
+    "question": "What does Gimli request from Galadriel?",
+    "options": [
+      "Gold",
+      "A strand of her hair",
+      "A weapon",
+      "Nothing"
+    ],
+    "answer": "A strand of her hair",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 134,
+    "question": "How many strands does Galadriel give Gimli?",
+    "options": [
+      "Two",
+      "One",
+      "Three",
+      "None"
+    ],
+    "answer": "Three",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 135,
+    "question": "What is the drinking game between Legolas and Gimli?",
+    "options": [
+      "Wrestling",
+      "Who can shoot best",
+      "Who can drink the most",
+      "Riddles"
+    ],
+    "answer": "Who can drink the most",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 136,
+    "question": "What orc kills Boromir?",
+    "options": [
+      "Uglúk",
+      "Grishnákh",
+      "Lurtz",
+      "Gothmog"
+    ],
+    "answer": "Lurtz",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 137,
+    "question": "What does Boromir try to take from Frodo?",
+    "options": [
+      "The Ring",
+      "The mithril coat",
+      "Sting",
+      "Food"
+    ],
+    "answer": "The Ring",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 138,
+    "question": "What does Boromir say as he dies?",
+    "options": [
+      "For Gondor",
+      "The Ring corrupted me",
+      "My brother, my captain, my king",
+      "I'm sorry"
+    ],
+    "answer": "My brother, my captain, my king",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 139,
+    "question": "What does Aragorn promise Boromir?",
+    "options": [
+      "To destroy the Ring",
+      "To protect Gondor and its people",
+      "To avenge him",
+      "To kill Sauron"
+    ],
+    "answer": "To protect Gondor and its people",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 140,
+    "question": "What is the Argonath?",
+    "options": [
+      "A waterfall",
+      "A fortress",
+      "A mountain pass",
+      "Giant statues of kings"
+    ],
+    "answer": "Giant statues of kings",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 141,
+    "question": "Who are the statues at the Argonath?",
+    "options": [
+      "Isildur and Anárion",
+      "Aragorn's fathers",
+      "Dwarf lords",
+      "Elven kings"
+    ],
+    "answer": "Isildur and Anárion",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 142,
+    "question": "What river does the Fellowship travel on?",
+    "options": [
+      "Brandywine",
+      "Silverlode",
+      "Bruinen",
+      "Anduin"
+    ],
+    "answer": "Anduin",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 143,
+    "question": "What is the name of the inn at Bree?",
+    "options": [
+      "The Ivy Bush",
+      "The Green Dragon",
+      "The Golden Perch",
+      "The Prancing Pony"
+    ],
+    "answer": "The Prancing Pony",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 144,
+    "question": "What is Aragorn called at Bree?",
+    "options": [
+      "Strider",
+      "Wingfoot",
+      "Ranger",
+      "Longshanks"
+    ],
+    "answer": "Strider",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 145,
+    "question": "What mountain does the Fellowship try to cross?",
+    "options": [
+      "Mount Doom",
+      "Lonely Mountain",
+      "Misty Mountains",
+      "Caradhras"
+    ],
+    "answer": "Caradhras",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 146,
+    "question": "Why does the Fellowship go through Moria?",
+    "options": [
+      "Caradhras blocked by snow",
+      "Gimli's idea",
+      "Fastest route",
+      "To find treasure"
+    ],
+    "answer": "Caradhras blocked by snow",
+    "difficulty": "medium",
+    "category": "fellowship"
+  },
+  {
+    "id": 147,
+    "question": "What guards the entrance to Moria?",
+    "options": [
+      "A Balrog",
+      "The Watcher in the Water",
+      "Nothing",
+      "Orcs"
+    ],
+    "answer": "The Watcher in the Water",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 148,
+    "question": "What word opens the Doors of Durin?",
+    "options": [
+      "Durin",
+      "Open",
+      "Moria",
+      "Mellon (friend)"
+    ],
+    "answer": "Mellon (friend)",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 149,
+    "question": "Who solves the riddle of the doors?",
+    "options": [
+      "Merry",
+      "Frodo",
+      "Gandalf",
+      "Aragorn"
+    ],
+    "answer": "Gandalf",
+    "difficulty": "easy",
+    "category": "fellowship"
+  },
+  {
+    "id": 150,
+    "question": "What does Pippin knock into the well in Moria?",
+    "options": [
+      "A rock",
+      "A torch",
+      "A skeleton and bucket",
+      "His pipe"
+    ],
+    "answer": "A skeleton and bucket",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 151,
+    "question": "What does Gandalf call Pippin?",
+    "options": [
+      "Young fool",
+      "Fool of a Took",
+      "Pippin the fool",
+      "Foolish hobbit"
+    ],
+    "answer": "Fool of a Took",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 152,
+    "question": "Who is Balin?",
+    "options": [
+      "Gimli's brother",
+      "King of dwarves",
+      "An elf",
+      "Dwarf lord whose tomb is in Moria"
+    ],
+    "answer": "Dwarf lord whose tomb is in Moria",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 153,
+    "question": "What do they find in Balin's tomb?",
+    "options": [
+      "A journal/book of records",
+      "Gold",
+      "The Ring",
+      "Weapons"
+    ],
+    "answer": "A journal/book of records",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 154,
+    "question": "What does the journal say about Moria?",
+    "options": [
+      "They are coming... drums in the deep",
+      "We found mithril",
+      "Balin is king",
+      "Victory is ours"
+    ],
+    "answer": "They are coming... drums in the deep",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 155,
+    "question": "What saves Frodo from the cave troll?",
+    "options": [
+      "His mithril coat",
+      "Aragorn",
+      "Gandalf",
+      "Sam"
+    ],
+    "answer": "His mithril coat",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 156,
+    "question": "What is the Bridge of Khazad-dûm?",
+    "options": [
+      "Bridge of Isengard",
+      "Narrow bridge over chasm in Moria",
+      "Bridge in Rivendell",
+      "Bridge to Mordor"
+    ],
+    "answer": "Narrow bridge over chasm in Moria",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 157,
+    "question": "What is Gandalf's famous line about being a servant of?",
+    "options": [
+      "The Light",
+      "The Valar",
+      "Good",
+      "The Secret Fire"
+    ],
+    "answer": "The Secret Fire",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 158,
+    "question": "Who composed the LOTR film score?",
+    "options": [
+      "Hans Zimmer",
+      "Howard Shore",
+      "James Horner",
+      "John Williams"
+    ],
+    "answer": "Howard Shore",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 159,
+    "question": "What song plays at the end of ROTK?",
+    "options": [
+      "The Breaking of the Fellowship",
+      "May It Be",
+      "Gollum's Song",
+      "Into the West"
+    ],
+    "answer": "Into the West",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 160,
+    "question": "Who sings 'Into the West'?",
+    "options": [
+      "Celine Dion",
+      "Enya",
+      "Annie Lennox",
+      "Sarah McLachlan"
+    ],
+    "answer": "Annie Lennox",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 161,
+    "question": "Who sings 'May It Be'?",
+    "options": [
+      "Annie Lennox",
+      "Sarah McLachlan",
+      "Björk",
+      "Enya"
+    ],
+    "answer": "Enya",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 162,
+    "question": "What does Bilbo write?",
+    "options": [
+      "A hobbit's tale",
+      "The Red Book",
+      "There and Back Again",
+      "My Adventure"
+    ],
+    "answer": "There and Back Again",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 163,
+    "question": "What book does Frodo complete?",
+    "options": [
+      "Lord of the Rings",
+      "The Ring Quest",
+      "There and Back Again",
+      "The Red Book of Westmarch"
+    ],
+    "answer": "The Red Book of Westmarch",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 164,
+    "question": "Who plays Bilbo in The Hobbit trilogy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Martin_Freeman-5341.jpg/250px-Martin_Freeman-5341.jpg",
+    "options": [
+      "Martin Freeman",
+      "Ian Holm",
+      "Andy Serkis",
+      "Elijah Wood"
+    ],
+    "answer": "Martin Freeman",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 165,
+    "question": "How many Hobbit films are there?",
+    "options": [
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "answer": "3",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 166,
+    "question": "What is the first Hobbit film called?",
+    "options": [
+      "There and Back Again",
+      "An Unexpected Journey",
+      "The Desolation of Smaug",
+      "The Battle of Five Armies"
+    ],
+    "answer": "An Unexpected Journey",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 167,
+    "question": "What is the second Hobbit film called?",
+    "options": [
+      "An Unexpected Journey",
+      "The Battle of Five Armies",
+      "Riddles in the Dark",
+      "The Desolation of Smaug"
+    ],
+    "answer": "The Desolation of Smaug",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 168,
+    "question": "What is the third Hobbit film called?",
+    "options": [
+      "The Battle of Five Armies",
+      "The Desolation of Smaug",
+      "An Unexpected Journey",
+      "There and Back Again"
+    ],
+    "answer": "The Battle of Five Armies",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 169,
+    "question": "Who is Smaug?",
+    "options": [
+      "A dwarf king",
+      "An orc",
+      "A dragon",
+      "A wizard"
+    ],
+    "answer": "A dragon",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 170,
+    "question": "Who voices Smaug?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
+    "options": [
+      "Ian McKellen",
+      "Benedict Cumberbatch",
+      "Andy Serkis",
+      "Martin Freeman"
+    ],
+    "answer": "Benedict Cumberbatch",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 171,
+    "question": "What mountain is Smaug's lair?",
+    "options": [
+      "Erebor/Lonely Mountain",
+      "Iron Hills",
+      "Mount Doom",
+      "Misty Mountains"
+    ],
+    "answer": "Erebor/Lonely Mountain",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 172,
+    "question": "Who is Thorin Oakenshield?",
+    "options": [
+      "Dwarf king seeking to reclaim Erebor",
+      "A hobbit",
+      "An elf",
+      "A wizard"
+    ],
+    "answer": "Dwarf king seeking to reclaim Erebor",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 173,
+    "question": "Who plays Thorin Oakenshield?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Richard_Armitage_2014_%28cropped%29.jpg/250px-Richard_Armitage_2014_%28cropped%29.jpg",
+    "options": [
+      "Luke Evans",
+      "Martin Freeman",
+      "Richard Armitage",
+      "Ian McKellen"
+    ],
+    "answer": "Richard Armitage",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 174,
+    "question": "How many dwarves go with Bilbo?",
+    "options": [
+      "14",
+      "10",
+      "12",
+      "13"
+    ],
+    "answer": "13",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 175,
+    "question": "Who is Thranduil in The Hobbit?",
+    "options": [
+      "Wizard",
+      "Elven king of Mirkwood",
+      "Human king",
+      "Dwarf king"
+    ],
+    "answer": "Elven king of Mirkwood",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 176,
+    "question": "Who plays Thranduil?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Lee_Pace_at_Foundations_Season_3_press_day.jpg/250px-Lee_Pace_at_Foundations_Season_3_press_day.jpg",
+    "options": [
+      "Lee Pace",
+      "Cate Blanchett",
+      "Orlando Bloom",
+      "Hugo Weaving"
+    ],
+    "answer": "Lee Pace",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 177,
+    "question": "Who is Tauriel?",
+    "options": [
+      "Human",
+      "Book character",
+      "Dwarf",
+      "Elf warrior (film-only character)"
+    ],
+    "answer": "Elf warrior (film-only character)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 178,
+    "question": "Who plays Tauriel?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Evangeline_Lilly_%2853390939662%29.jpg/250px-Evangeline_Lilly_%2853390939662%29.jpg",
+    "options": [
+      "Cate Blanchett",
+      "Evangeline Lilly",
+      "Kate Blanchett",
+      "Liv Tyler"
+    ],
+    "answer": "Evangeline Lilly",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 179,
+    "question": "Who plays Bard the Bowman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Luke_Evans_in_2018_%28cropped_4%29.jpg/250px-Luke_Evans_in_2018_%28cropped_4%29.jpg",
+    "options": [
+      "Richard Armitage",
+      "Lee Pace",
+      "Orlando Bloom",
+      "Luke Evans"
+    ],
+    "answer": "Luke Evans",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 180,
+    "question": "Who kills Smaug?",
+    "options": [
+      "Gandalf",
+      "Bilbo",
+      "Thorin",
+      "Bard"
+    ],
+    "answer": "Bard",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 181,
+    "question": "What arrow kills Smaug?",
+    "options": [
+      "Fire Arrow",
+      "Magic Arrow",
+      "Black Arrow",
+      "Silver Arrow"
+    ],
+    "answer": "Black Arrow",
+    "difficulty": "medium",
+    "category": "weapons"
+  },
+  {
+    "id": 182,
+    "question": "What is the Arkenstone?",
+    "options": [
+      "A ring",
+      "A weapon",
+      "Heart of the Mountain/King's jewel",
+      "A crown"
+    ],
+    "answer": "Heart of the Mountain/King's jewel",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 183,
+    "question": "What sickness affects Thorin?",
+    "options": [
+      "Actual illness",
+      "Dragon sickness/Gold lust",
+      "Curse",
+      "Ring corruption"
+    ],
+    "answer": "Dragon sickness/Gold lust",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 184,
+    "question": "Who is Azog?",
+    "options": [
+      "A wizard",
+      "A dwarf",
+      "Orc leader hunting Thorin",
+      "A dragon"
+    ],
+    "answer": "Orc leader hunting Thorin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 185,
+    "question": "What is the Battle of Five Armies?",
+    "options": [
+      "Six armies",
+      "Three armies",
+      "Only two armies",
+      "Dwarves, Elves, Men vs Orcs, Wargs"
+    ],
+    "answer": "Dwarves, Elves, Men vs Orcs, Wargs",
+    "difficulty": "medium",
+    "category": "battles"
+  },
+  {
+    "id": 186,
+    "question": "Who dies at the Battle of Five Armies?",
+    "options": [
+      "Thorin, Fíli, Kíli",
+      "No one important",
+      "Only Thorin",
+      "All dwarves"
+    ],
+    "answer": "Thorin, Fíli, Kíli",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 187,
+    "question": "What does Bilbo take from Gollum?",
+    "options": [
+      "The Ring",
+      "Nothing",
+      "Sting",
+      "Food"
+    ],
+    "answer": "The Ring",
+    "difficulty": "easy",
+    "category": "lore"
+  },
+  {
+    "id": 188,
+    "question": "What is Gollum's riddle about time?",
+    "options": [
+      "What has roots...",
+      "This thing all things devours...",
+      "Alive without breath...",
+      "A box without hinges..."
+    ],
+    "answer": "This thing all things devours...",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 189,
+    "question": "What is Bilbo's final riddle?",
+    "options": [
+      "Where is the ring?",
+      "What have I got in my pocket?",
+      "Who am I?",
+      "What is precious?"
+    ],
+    "answer": "What have I got in my pocket?",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 190,
+    "question": "Who plays Radagast the Brown?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Sylvester_McCoy_in_2018.jpg/250px-Sylvester_McCoy_in_2018.jpg",
+    "options": [
+      "Benedict Cumberbatch",
+      "Sylvester McCoy",
+      "Ian McKellen",
+      "Christopher Lee"
+    ],
+    "answer": "Sylvester McCoy",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 191,
+    "question": "What animals pull Radagast's sled?",
+    "options": [
+      "Dogs",
+      "Birds",
+      "Rabbits",
+      "Horses"
+    ],
+    "answer": "Rabbits",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 192,
+    "question": "What is Dol Guldur?",
+    "options": [
+      "A dwarf mine",
+      "Sauron's fortress in Mirkwood",
+      "An elven city",
+      "A human town"
+    ],
+    "answer": "Sauron's fortress in Mirkwood",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 193,
+    "question": "Who voices the Necromancer/Sauron in The Hobbit?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
+    "options": [
+      "Christopher Lee",
+      "Benedict Cumberbatch",
+      "Hugo Weaving",
+      "Andy Serkis"
+    ],
+    "answer": "Benedict Cumberbatch",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 194,
+    "question": "What council meets to discuss Sauron's return?",
+    "options": [
+      "Council of Elrond",
+      "The White Council",
+      "Wizard Council",
+      "Dwarf Council"
+    ],
+    "answer": "The White Council",
+    "difficulty": "medium",
+    "category": "lore"
+  },
+  {
+    "id": 195,
+    "question": "What is Lake-town?",
+    "options": [
+      "Elven city",
+      "Dwarf city",
+      "Hobbit village",
+      "Human settlement near Erebor"
+    ],
+    "answer": "Human settlement near Erebor",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 196,
+    "question": "What does Gandalf say about Hobbits?",
+    "options": [
+      "They're small but brave",
+      "Hobbits love food",
+      "Hobbits really are amazing creatures",
+      "Never trust a hobbit"
+    ],
+    "answer": "Hobbits really are amazing creatures",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 197,
+    "question": "What does Frodo say about wishing the Ring hadn't come to him?",
+    "options": [
+      "The Ring is evil",
+      "I hate this burden",
+      "So do all who live to see such times",
+      "I wish I'd never found it"
+    ],
+    "answer": "So do all who live to see such times",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 198,
+    "question": "What does Gandalf reply about the Ring coming to Frodo?",
+    "options": [
+      "Accept your fate",
+      "All we have to decide is what to do with the time given us",
+      "It was meant to be",
+      "The Ring chose you"
+    ],
+    "answer": "All we have to decide is what to do with the time given us",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 199,
+    "question": "What does Sam say about stories that really mattered?",
+    "options": [
+      "They were all heroes",
+      "They all had the Ring",
+      "They all had happy endings",
+      "Folk in those stories had lots of chances of turning back, only they didn't"
+    ],
+    "answer": "Folk in those stories had lots of chances of turning back, only they didn't",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 200,
+    "question": "How does the Fellowship end its quest?",
+    "options": [
+      "The Ring is destroyed and Sauron defeated",
+      "The Ring is lost",
+      "Nothing changes",
+      "Sauron wins"
+    ],
+    "answer": "The Ring is destroyed and Sauron defeated",
+    "difficulty": "easy",
+    "category": "lore"
+  }
+]

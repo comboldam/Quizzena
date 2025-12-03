@@ -1,0 +1,2622 @@
+[
+  {
+    "id": 1,
+    "question": "What is the name of the lion cub in The Lion King?",
+    "options": [
+      "Mufasa",
+      "Simba",
+      "Nala",
+      "Scar"
+    ],
+    "answer": "Simba",
+    "difficulty": "easy",
+    "category": "lion-king"
+  },
+  {
+    "id": 2,
+    "question": "Who is Simba's father?",
+    "options": [
+      "Scar",
+      "Zazu",
+      "Mufasa",
+      "Rafiki"
+    ],
+    "answer": "Mufasa",
+    "difficulty": "easy",
+    "category": "lion-king"
+  },
+  {
+    "id": 3,
+    "question": "What does 'Hakuna Matata' mean?",
+    "options": [
+      "Be prepared",
+      "Hello friend",
+      "No worries",
+      "Circle of life"
+    ],
+    "answer": "No worries",
+    "difficulty": "easy",
+    "category": "lion-king"
+  },
+  {
+    "id": 4,
+    "question": "Who voices Mufasa in the original Lion King?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/James_Earl_Jones_Baltimore.jpg/250px-James_Earl_Jones_Baltimore.jpg",
+    "options": [
+      "Jeremy Irons",
+      "James Earl Jones",
+      "Nathan Lane",
+      "Matthew Broderick"
+    ],
+    "answer": "James Earl Jones",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What year was Snow White and the Seven Dwarfs released?",
+    "options": [
+      "1940",
+      "1942",
+      "1937",
+      "1950"
+    ],
+    "answer": "1937",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 6,
+    "question": "What is the first Disney animated feature film?",
+    "options": [
+      "Pinocchio",
+      "Snow White and the Seven Dwarfs",
+      "Fantasia",
+      "Dumbo"
+    ],
+    "answer": "Snow White and the Seven Dwarfs",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 7,
+    "question": "How many dwarfs are there in Snow White?",
+    "options": [
+      "8",
+      "5",
+      "7",
+      "6"
+    ],
+    "answer": "7",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 8,
+    "question": "What princess has the longest hair?",
+    "options": [
+      "Aurora",
+      "Rapunzel",
+      "Jasmine",
+      "Ariel"
+    ],
+    "answer": "Rapunzel",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of the mermaid princess?",
+    "options": [
+      "Aurora",
+      "Cinderella",
+      "Belle",
+      "Ariel"
+    ],
+    "answer": "Ariel",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 10,
+    "question": "What does Ariel trade for human legs?",
+    "options": [
+      "Her voice",
+      "Her memories",
+      "Her fins",
+      "Her hair"
+    ],
+    "answer": "Her voice",
+    "difficulty": "medium",
+    "category": "little-mermaid"
+  },
+  {
+    "id": 11,
+    "question": "Who is the sea witch in The Little Mermaid?",
+    "options": [
+      "Ursula",
+      "Cruella",
+      "Evil Queen",
+      "Maleficent"
+    ],
+    "answer": "Ursula",
+    "difficulty": "easy",
+    "category": "little-mermaid"
+  },
+  {
+    "id": 12,
+    "question": "What is the name of Ariel's fish friend?",
+    "options": [
+      "Flounder",
+      "Sebastian",
+      "Scuttle",
+      "Max"
+    ],
+    "answer": "Flounder",
+    "difficulty": "easy",
+    "category": "little-mermaid"
+  },
+  {
+    "id": 13,
+    "question": "What is the crab's name in The Little Mermaid?",
+    "options": [
+      "Flounder",
+      "Jacques",
+      "Scuttle",
+      "Sebastian"
+    ],
+    "answer": "Sebastian",
+    "difficulty": "easy",
+    "category": "little-mermaid"
+  },
+  {
+    "id": 14,
+    "question": "What song does Sebastian sing about living under the sea?",
+    "options": [
+      "Kiss the Girl",
+      "Poor Unfortunate Souls",
+      "Under the Sea",
+      "Part of Your World"
+    ],
+    "answer": "Under the Sea",
+    "difficulty": "easy",
+    "category": "songs"
+  },
+  {
+    "id": 15,
+    "question": "Who is the princess in Beauty and the Beast?",
+    "options": [
+      "Ariel",
+      "Belle",
+      "Aurora",
+      "Cinderella"
+    ],
+    "answer": "Belle",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 16,
+    "question": "What is Belle's father's name?",
+    "options": [
+      "Maurice",
+      "Lumiere",
+      "LeFou",
+      "Gaston"
+    ],
+    "answer": "Maurice",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 17,
+    "question": "What object is the Beast cursed to protect?",
+    "options": [
+      "Clock",
+      "Enchanted Rose",
+      "Magic Mirror",
+      "Candelabra"
+    ],
+    "answer": "Enchanted Rose",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 18,
+    "question": "Who is the candelabra in Beauty and the Beast?",
+    "options": [
+      "Cogsworth",
+      "Lumiere",
+      "Chip",
+      "Mrs. Potts"
+    ],
+    "answer": "Lumiere",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 19,
+    "question": "Who is the clock in Beauty and the Beast?",
+    "options": [
+      "Maurice",
+      "Lumiere",
+      "Chip",
+      "Cogsworth"
+    ],
+    "answer": "Cogsworth",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 20,
+    "question": "What is the teacup's name?",
+    "options": [
+      "Cup",
+      "Chip",
+      "Tea",
+      "Potts"
+    ],
+    "answer": "Chip",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 21,
+    "question": "Who is the villain who wants to marry Belle?",
+    "options": [
+      "Maurice",
+      "Gaston",
+      "Beast",
+      "LeFou"
+    ],
+    "answer": "Gaston",
+    "difficulty": "medium",
+    "category": "beauty-beast"
+  },
+  {
+    "id": 22,
+    "question": "What princess has a glass slipper?",
+    "options": [
+      "Cinderella",
+      "Belle",
+      "Snow White",
+      "Aurora"
+    ],
+    "answer": "Cinderella",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 23,
+    "question": "What time must Cinderella leave the ball?",
+    "options": [
+      "11 PM",
+      "Midnight",
+      "10 PM",
+      "1 AM"
+    ],
+    "answer": "Midnight",
+    "difficulty": "easy",
+    "category": "cinderella"
+  },
+  {
+    "id": 24,
+    "question": "What is Cinderella's fairy godmother's famous phrase?",
+    "options": [
+      "Hocus Pocus",
+      "Magic words",
+      "Abracadabra",
+      "Bibbidi-Bobbidi-Boo"
+    ],
+    "answer": "Bibbidi-Bobbidi-Boo",
+    "difficulty": "medium",
+    "category": "cinderella"
+  },
+  {
+    "id": 25,
+    "question": "What animal does the fairy godmother turn into a coachman?",
+    "options": [
+      "Mouse",
+      "Horse",
+      "Dog",
+      "Pumpkin"
+    ],
+    "answer": "Horse",
+    "difficulty": "medium",
+    "category": "cinderella"
+  },
+  {
+    "id": 26,
+    "question": "What becomes Cinderella's carriage?",
+    "options": [
+      "Pumpkin",
+      "Apple",
+      "Squash",
+      "Watermelon"
+    ],
+    "answer": "Pumpkin",
+    "difficulty": "medium",
+    "category": "cinderella"
+  },
+  {
+    "id": 27,
+    "question": "What princess pricks her finger on a spindle?",
+    "options": [
+      "Aurora",
+      "Ariel",
+      "Snow White",
+      "Cinderella"
+    ],
+    "answer": "Aurora",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 28,
+    "question": "What is Sleeping Beauty's real name?",
+    "options": [
+      "Rose",
+      "Dawn",
+      "Aurora",
+      "Briar"
+    ],
+    "answer": "Aurora",
+    "difficulty": "easy",
+    "category": "sleeping-beauty"
+  },
+  {
+    "id": 29,
+    "question": "Who is the villain in Sleeping Beauty?",
+    "options": [
+      "Cruella",
+      "Evil Queen",
+      "Ursula",
+      "Maleficent"
+    ],
+    "answer": "Maleficent",
+    "difficulty": "easy",
+    "category": "sleeping-beauty"
+  },
+  {
+    "id": 30,
+    "question": "What does Maleficent turn into at the end?",
+    "options": [
+      "Wolf",
+      "Raven",
+      "Snake",
+      "Dragon"
+    ],
+    "answer": "Dragon",
+    "difficulty": "easy",
+    "category": "sleeping-beauty"
+  },
+  {
+    "id": 31,
+    "question": "What princess has a magic carpet?",
+    "options": [
+      "Jasmine",
+      "Pocahontas",
+      "Mulan",
+      "Ariel"
+    ],
+    "answer": "Jasmine",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 32,
+    "question": "What is the genie's home in Aladdin?",
+    "options": [
+      "Bottle",
+      "Palace",
+      "Cave",
+      "Magic lamp"
+    ],
+    "answer": "Magic lamp",
+    "difficulty": "medium",
+    "category": "aladdin"
+  },
+  {
+    "id": 33,
+    "question": "Who voices the Genie in the original Aladdin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Robin_Williams_2011a_%282%29.jpg/250px-Robin_Williams_2011a_%282%29.jpg",
+    "options": [
+      "Will Smith",
+      "Eddie Murphy",
+      "Dan Castellaneta",
+      "Robin Williams"
+    ],
+    "answer": "Robin Williams",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 34,
+    "question": "What is Aladdin's monkey's name?",
+    "options": [
+      "Carpet",
+      "Abu",
+      "Rajah",
+      "Iago"
+    ],
+    "answer": "Abu",
+    "difficulty": "medium",
+    "category": "aladdin"
+  },
+  {
+    "id": 35,
+    "question": "What is the tiger's name in Aladdin?",
+    "options": [
+      "Rajah",
+      "Iago",
+      "Sultan",
+      "Abu"
+    ],
+    "answer": "Rajah",
+    "difficulty": "medium",
+    "category": "aladdin"
+  },
+  {
+    "id": 36,
+    "question": "Who is the villain in Aladdin?",
+    "options": [
+      "Hades",
+      "Gaston",
+      "Scar",
+      "Jafar"
+    ],
+    "answer": "Jafar",
+    "difficulty": "medium",
+    "category": "aladdin"
+  },
+  {
+    "id": 37,
+    "question": "What song does Aladdin sing to Jasmine on the carpet?",
+    "options": [
+      "Friend Like Me",
+      "Arabian Nights",
+      "Prince Ali",
+      "A Whole New World"
+    ],
+    "answer": "A Whole New World",
+    "difficulty": "easy",
+    "category": "songs"
+  },
+  {
+    "id": 38,
+    "question": "What Disney princess is Chinese?",
+    "options": [
+      "Mulan",
+      "Pocahontas",
+      "Jasmine",
+      "Moana"
+    ],
+    "answer": "Mulan",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 39,
+    "question": "What is Mulan's dragon's name?",
+    "options": [
+      "Mushu",
+      "Cri-Kee",
+      "Shang",
+      "Khan"
+    ],
+    "answer": "Mushu",
+    "difficulty": "medium",
+    "category": "mulan"
+  },
+  {
+    "id": 40,
+    "question": "Who voices Mushu?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Eddie_Murphy_by_David_Shankbone.jpg/250px-Eddie_Murphy_by_David_Shankbone.jpg",
+    "options": [
+      "Eddie Murphy",
+      "Chris Rock",
+      "Robin Williams",
+      "Mike Myers"
+    ],
+    "answer": "Eddie Murphy",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 41,
+    "question": "What does Mulan pretend to be?",
+    "options": [
+      "A male soldier",
+      "A merchant",
+      "A princess",
+      "A peasant"
+    ],
+    "answer": "A male soldier",
+    "difficulty": "medium",
+    "category": "mulan"
+  },
+  {
+    "id": 42,
+    "question": "What is Mulan's horse's name?",
+    "options": [
+      "Maximus",
+      "Khan",
+      "Angus",
+      "Philippe"
+    ],
+    "answer": "Khan",
+    "difficulty": "medium",
+    "category": "mulan"
+  },
+  {
+    "id": 43,
+    "question": "What song does Mulan sing about reflection?",
+    "options": [
+      "A Girl Worth Fighting For",
+      "Honor to Us All",
+      "I'll Make a Man Out of You",
+      "Reflection"
+    ],
+    "answer": "Reflection",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 44,
+    "question": "What Disney princess is Polynesian?",
+    "options": [
+      "Pocahontas",
+      "Moana",
+      "Mulan",
+      "Jasmine"
+    ],
+    "answer": "Moana",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 45,
+    "question": "What demigod helps Moana?",
+    "options": [
+      "Hercules",
+      "Zeus",
+      "Poseidon",
+      "Maui"
+    ],
+    "answer": "Maui",
+    "difficulty": "medium",
+    "category": "moana"
+  },
+  {
+    "id": 46,
+    "question": "Who voices Maui?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dwayne_Johnson-1809_%28cropped%29.jpg/250px-Dwayne_Johnson-1809_%28cropped%29.jpg",
+    "options": [
+      "Jason Momoa",
+      "Terry Crews",
+      "Dwayne Johnson",
+      "Chris Hemsworth"
+    ],
+    "answer": "Dwayne Johnson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 47,
+    "question": "What is Moana trying to restore?",
+    "options": [
+      "The heart of Te Fiti",
+      "Maui's hook",
+      "The ocean",
+      "Her island"
+    ],
+    "answer": "The heart of Te Fiti",
+    "difficulty": "medium",
+    "category": "moana"
+  },
+  {
+    "id": 48,
+    "question": "What song does Moana sing about the ocean?",
+    "options": [
+      "You're Welcome",
+      "Shiny",
+      "How Far I'll Go",
+      "We Know the Way"
+    ],
+    "answer": "How Far I'll Go",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 49,
+    "question": "What is Maui's weapon?",
+    "options": [
+      "Trident",
+      "Magical fish hook",
+      "Spear",
+      "Sword"
+    ],
+    "answer": "Magical fish hook",
+    "difficulty": "medium",
+    "category": "moana"
+  },
+  {
+    "id": 50,
+    "question": "What princess has ice powers?",
+    "options": [
+      "Merida",
+      "Elsa",
+      "Anna",
+      "Rapunzel"
+    ],
+    "answer": "Elsa",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 51,
+    "question": "What is Elsa's sister's name?",
+    "options": [
+      "Anna",
+      "Rapunzel",
+      "Elsa",
+      "Ariel"
+    ],
+    "answer": "Anna",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 52,
+    "question": "What is the snowman's name in Frozen?",
+    "options": [
+      "Olaf",
+      "Frosty",
+      "Sven",
+      "Marshmallow"
+    ],
+    "answer": "Olaf",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 53,
+    "question": "What is the reindeer's name in Frozen?",
+    "options": [
+      "Kristoff",
+      "Olaf",
+      "Hans",
+      "Sven"
+    ],
+    "answer": "Sven",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 54,
+    "question": "What song does Elsa sing in Frozen?",
+    "options": [
+      "Let It Go",
+      "Do You Want to Build a Snowman",
+      "Love Is an Open Door",
+      "For the First Time in Forever"
+    ],
+    "answer": "Let It Go",
+    "difficulty": "easy",
+    "category": "songs"
+  },
+  {
+    "id": 55,
+    "question": "Who is the villain in Frozen?",
+    "options": [
+      "Duke of Weselton",
+      "Elsa",
+      "Hans",
+      "Kristoff"
+    ],
+    "answer": "Hans",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 56,
+    "question": "Who voices Elsa in Frozen?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/IdinaMenzel-byPhilipRomano.jpg/250px-IdinaMenzel-byPhilipRomano.jpg",
+    "options": [
+      "Mandy Moore",
+      "Idina Menzel",
+      "Kristen Bell",
+      "Auli'i Cravalho"
+    ],
+    "answer": "Idina Menzel",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 57,
+    "question": "Who voices Anna in Frozen?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Kristen_Bell_at_Televerse_2025.jpg/250px-Kristen_Bell_at_Televerse_2025.jpg",
+    "options": [
+      "Amy Adams",
+      "Kristen Bell",
+      "Mandy Moore",
+      "Idina Menzel"
+    ],
+    "answer": "Kristen Bell",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 58,
+    "question": "What kingdom is Frozen set in?",
+    "options": [
+      "Arendelle",
+      "Agrabah",
+      "Atlantica",
+      "Corona"
+    ],
+    "answer": "Arendelle",
+    "difficulty": "easy",
+    "category": "frozen"
+  },
+  {
+    "id": 59,
+    "question": "What Disney princess has the power of healing hair?",
+    "options": [
+      "Rapunzel",
+      "Moana",
+      "Elsa",
+      "Ariel"
+    ],
+    "answer": "Rapunzel",
+    "difficulty": "easy",
+    "category": "tangled"
+  },
+  {
+    "id": 60,
+    "question": "What is the thief's name in Tangled?",
+    "options": [
+      "Eric",
+      "Flynn Rider/Eugene",
+      "Kristoff",
+      "Aladdin"
+    ],
+    "answer": "Flynn Rider/Eugene",
+    "difficulty": "medium",
+    "category": "tangled"
+  },
+  {
+    "id": 61,
+    "question": "Who voices Rapunzel?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Mandy_Moore_at_SXSW_2018_%2825904503147%29_%28cropped%29.jpg/250px-Mandy_Moore_at_SXSW_2018_%2825904503147%29_%28cropped%29.jpg",
+    "options": [
+      "Idina Menzel",
+      "Kristen Bell",
+      "Amy Adams",
+      "Mandy Moore"
+    ],
+    "answer": "Mandy Moore",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 62,
+    "question": "What is Rapunzel's chameleon's name?",
+    "options": [
+      "Pascal",
+      "Eugene",
+      "Flynn",
+      "Maximus"
+    ],
+    "answer": "Pascal",
+    "difficulty": "medium",
+    "category": "tangled"
+  },
+  {
+    "id": 63,
+    "question": "What is the horse's name in Tangled?",
+    "options": [
+      "Maximus",
+      "Pascal",
+      "Philippe",
+      "Khan"
+    ],
+    "answer": "Maximus",
+    "difficulty": "medium",
+    "category": "tangled"
+  },
+  {
+    "id": 64,
+    "question": "Who is the villain in Tangled?",
+    "options": [
+      "Ursula",
+      "Mother Gothel",
+      "Evil Queen",
+      "Maleficent"
+    ],
+    "answer": "Mother Gothel",
+    "difficulty": "medium",
+    "category": "tangled"
+  },
+  {
+    "id": 65,
+    "question": "What song does Rapunzel sing about her dream?",
+    "options": [
+      "When Will My Life Begin",
+      "Mother Knows Best",
+      "I've Got a Dream",
+      "I See the Light"
+    ],
+    "answer": "When Will My Life Begin",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 66,
+    "question": "What Scottish princess has wild red hair?",
+    "options": [
+      "Rapunzel",
+      "Merida",
+      "Anna",
+      "Ariel"
+    ],
+    "answer": "Merida",
+    "difficulty": "medium",
+    "category": "brave"
+  },
+  {
+    "id": 67,
+    "question": "What weapon does Merida use?",
+    "options": [
+      "Bow and arrow",
+      "Magic",
+      "Axe",
+      "Sword"
+    ],
+    "answer": "Bow and arrow",
+    "difficulty": "medium",
+    "category": "brave"
+  },
+  {
+    "id": 68,
+    "question": "What does Merida accidentally turn her mother into?",
+    "options": [
+      "Bird",
+      "Bear",
+      "Deer",
+      "Wolf"
+    ],
+    "answer": "Bear",
+    "difficulty": "medium",
+    "category": "brave"
+  },
+  {
+    "id": 69,
+    "question": "What Disney princess kisses a frog?",
+    "options": [
+      "Charlotte",
+      "Tiana",
+      "Mama Odie",
+      "Naveen"
+    ],
+    "answer": "Tiana",
+    "difficulty": "medium",
+    "category": "princess-frog"
+  },
+  {
+    "id": 70,
+    "question": "What city is The Princess and the Frog set in?",
+    "options": [
+      "Los Angeles",
+      "New York",
+      "Chicago",
+      "New Orleans"
+    ],
+    "answer": "New Orleans",
+    "difficulty": "medium",
+    "category": "princess-frog"
+  },
+  {
+    "id": 71,
+    "question": "What is Tiana's dream?",
+    "options": [
+      "To be rich",
+      "To travel",
+      "To be a princess",
+      "To own a restaurant"
+    ],
+    "answer": "To own a restaurant",
+    "difficulty": "medium",
+    "category": "princess-frog"
+  },
+  {
+    "id": 72,
+    "question": "What Disney film features the song 'When You Wish Upon a Star'?",
+    "options": [
+      "Cinderella",
+      "Snow White",
+      "Dumbo",
+      "Pinocchio"
+    ],
+    "answer": "Pinocchio",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 73,
+    "question": "What is Pinocchio's conscience's name?",
+    "options": [
+      "Jiminy Cricket",
+      "Sebastian",
+      "Archimedes",
+      "Timothy"
+    ],
+    "answer": "Jiminy Cricket",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 74,
+    "question": "What happens when Pinocchio lies?",
+    "options": [
+      "He disappears",
+      "He shrinks",
+      "His nose grows",
+      "He turns blue"
+    ],
+    "answer": "His nose grows",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 75,
+    "question": "What does Pinocchio want to become?",
+    "options": [
+      "A real boy",
+      "A star",
+      "A puppet master",
+      "A cricket"
+    ],
+    "answer": "A real boy",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 76,
+    "question": "What flying elephant is a Disney character?",
+    "options": [
+      "Dumbo",
+      "Elmer",
+      "Horton",
+      "Babar"
+    ],
+    "answer": "Dumbo",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 77,
+    "question": "What helps Dumbo fly?",
+    "options": [
+      "His big ears",
+      "Magic feather",
+      "Wings",
+      "Fairy dust"
+    ],
+    "answer": "His big ears",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 78,
+    "question": "What jungle boy was raised by wolves?",
+    "options": [
+      "Tarzan",
+      "Mowgli",
+      "Bambi",
+      "Simba"
+    ],
+    "answer": "Mowgli",
+    "difficulty": "medium",
+    "category": "jungle-book"
+  },
+  {
+    "id": 79,
+    "question": "What is the bear's name in The Jungle Book?",
+    "options": [
+      "King Louie",
+      "Bagheera",
+      "Baloo",
+      "Shere Khan"
+    ],
+    "answer": "Baloo",
+    "difficulty": "medium",
+    "category": "jungle-book"
+  },
+  {
+    "id": 80,
+    "question": "What is the panther's name in The Jungle Book?",
+    "options": [
+      "Kaa",
+      "Bagheera",
+      "Shere Khan",
+      "Baloo"
+    ],
+    "answer": "Bagheera",
+    "difficulty": "medium",
+    "category": "jungle-book"
+  },
+  {
+    "id": 81,
+    "question": "Who is the tiger villain in The Jungle Book?",
+    "options": [
+      "Bagheera",
+      "Kaa",
+      "King Louie",
+      "Shere Khan"
+    ],
+    "answer": "Shere Khan",
+    "difficulty": "medium",
+    "category": "jungle-book"
+  },
+  {
+    "id": 82,
+    "question": "What song does Baloo sing?",
+    "options": [
+      "Trust in Me",
+      "I Wan'na Be Like You",
+      "My Own Home",
+      "The Bare Necessities"
+    ],
+    "answer": "The Bare Necessities",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 83,
+    "question": "What boy was raised by apes?",
+    "options": [
+      "Tarzan",
+      "Simba",
+      "Peter Pan",
+      "Mowgli"
+    ],
+    "answer": "Tarzan",
+    "difficulty": "medium",
+    "category": "tarzan"
+  },
+  {
+    "id": 84,
+    "question": "Who is the female lead in Tarzan?",
+    "options": [
+      "Alice",
+      "Wendy",
+      "Jane",
+      "Megara"
+    ],
+    "answer": "Jane",
+    "difficulty": "medium",
+    "category": "tarzan"
+  },
+  {
+    "id": 85,
+    "question": "Who sang the songs in Tarzan?",
+    "options": [
+      "Elton John",
+      "Phil Collins",
+      "Alan Menken",
+      "Randy Newman"
+    ],
+    "answer": "Phil Collins",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 86,
+    "question": "What young deer is a Disney character?",
+    "options": [
+      "Thumper",
+      "Faline",
+      "Bambi",
+      "Rudolph"
+    ],
+    "answer": "Bambi",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 87,
+    "question": "What is Bambi's rabbit friend's name?",
+    "options": [
+      "Thumper",
+      "Friend Owl",
+      "Flower",
+      "Faline"
+    ],
+    "answer": "Thumper",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 88,
+    "question": "What is the skunk's name in Bambi?",
+    "options": [
+      "Bambi",
+      "Flower",
+      "Thumper",
+      "Faline"
+    ],
+    "answer": "Flower",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 89,
+    "question": "What Disney film features Peter Pan?",
+    "options": [
+      "Tinker Bell",
+      "Neverland",
+      "The Lost Boys",
+      "Peter Pan"
+    ],
+    "answer": "Peter Pan",
+    "difficulty": "easy",
+    "category": "peter-pan"
+  },
+  {
+    "id": 90,
+    "question": "What is the fairy's name in Peter Pan?",
+    "options": [
+      "Silvermist",
+      "Tinker Bell",
+      "Rosetta",
+      "Fawn"
+    ],
+    "answer": "Tinker Bell",
+    "difficulty": "easy",
+    "category": "peter-pan"
+  },
+  {
+    "id": 91,
+    "question": "Who is the villain in Peter Pan?",
+    "options": [
+      "Tick-Tock",
+      "Blackbeard",
+      "Smee",
+      "Captain Hook"
+    ],
+    "answer": "Captain Hook",
+    "difficulty": "easy",
+    "category": "peter-pan"
+  },
+  {
+    "id": 92,
+    "question": "What follows Captain Hook?",
+    "options": [
+      "A crocodile",
+      "An octopus",
+      "A shark",
+      "A whale"
+    ],
+    "answer": "A crocodile",
+    "difficulty": "medium",
+    "category": "peter-pan"
+  },
+  {
+    "id": 93,
+    "question": "What does Tinker Bell's dust do?",
+    "options": [
+      "Makes you invisible",
+      "Makes you fly",
+      "Grants wishes",
+      "Heals wounds"
+    ],
+    "answer": "Makes you fly",
+    "difficulty": "medium",
+    "category": "peter-pan"
+  },
+  {
+    "id": 94,
+    "question": "What is the land where you never grow up?",
+    "options": [
+      "Neverland",
+      "Wonderland",
+      "Dreamland",
+      "Fantasyland"
+    ],
+    "answer": "Neverland",
+    "difficulty": "easy",
+    "category": "peter-pan"
+  },
+  {
+    "id": 95,
+    "question": "What girl follows a white rabbit?",
+    "options": [
+      "Wendy",
+      "Belle",
+      "Alice",
+      "Dorothy"
+    ],
+    "answer": "Alice",
+    "difficulty": "easy",
+    "category": "alice"
+  },
+  {
+    "id": 96,
+    "question": "What world does Alice fall into?",
+    "options": [
+      "Narnia",
+      "Wonderland",
+      "Neverland",
+      "Oz"
+    ],
+    "answer": "Wonderland",
+    "difficulty": "easy",
+    "category": "alice"
+  },
+  {
+    "id": 97,
+    "question": "What cat can disappear in Alice in Wonderland?",
+    "options": [
+      "Dinah",
+      "Cheshire Cat",
+      "Figaro",
+      "Lucifer"
+    ],
+    "answer": "Cheshire Cat",
+    "difficulty": "medium",
+    "category": "alice"
+  },
+  {
+    "id": 98,
+    "question": "Who is always late in Wonderland?",
+    "options": [
+      "Queen of Hearts",
+      "Mad Hatter",
+      "Cheshire Cat",
+      "White Rabbit"
+    ],
+    "answer": "White Rabbit",
+    "difficulty": "medium",
+    "category": "alice"
+  },
+  {
+    "id": 99,
+    "question": "Who hosts a tea party in Wonderland?",
+    "options": [
+      "Caterpillar",
+      "White Rabbit",
+      "Queen of Hearts",
+      "Mad Hatter"
+    ],
+    "answer": "Mad Hatter",
+    "difficulty": "medium",
+    "category": "alice"
+  },
+  {
+    "id": 100,
+    "question": "What is the villain queen's catchphrase?",
+    "options": [
+      "Long live the queen",
+      "Off with their heads!",
+      "Bow to me",
+      "Mirror mirror"
+    ],
+    "answer": "Off with their heads!",
+    "difficulty": "medium",
+    "category": "alice"
+  },
+  {
+    "id": 101,
+    "question": "What Pixar film features toys that come to life?",
+    "options": [
+      "Toy Story",
+      "Finding Nemo",
+      "Cars",
+      "Monsters, Inc."
+    ],
+    "answer": "Toy Story",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 102,
+    "question": "What is the cowboy's name in Toy Story?",
+    "options": [
+      "Slinky",
+      "Woody",
+      "Rex",
+      "Buzz"
+    ],
+    "answer": "Woody",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 103,
+    "question": "What is the space ranger's name in Toy Story?",
+    "options": [
+      "Buzz Lightyear",
+      "Rex",
+      "Zurg",
+      "Woody"
+    ],
+    "answer": "Buzz Lightyear",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 104,
+    "question": "Who voices Woody?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg/250px-TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg",
+    "options": [
+      "Tom Hanks",
+      "Tim Allen",
+      "Don Rickles",
+      "John Ratzenberger"
+    ],
+    "answer": "Tom Hanks",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 105,
+    "question": "Who voices Buzz Lightyear?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Allen_2012.jpg/250px-Tim_Allen_2012.jpg",
+    "options": [
+      "John Goodman",
+      "Tim Allen",
+      "Tom Hanks",
+      "Billy Crystal"
+    ],
+    "answer": "Tim Allen",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 106,
+    "question": "What is Buzz's famous catchphrase?",
+    "options": [
+      "I'm a space ranger",
+      "You're my favorite deputy",
+      "Reach for the sky",
+      "To infinity and beyond!"
+    ],
+    "answer": "To infinity and beyond!",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 107,
+    "question": "What Pixar film is about a lost clownfish?",
+    "options": [
+      "The Little Mermaid",
+      "Shark Tale",
+      "Finding Dory",
+      "Finding Nemo"
+    ],
+    "answer": "Finding Nemo",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 108,
+    "question": "What is the forgetful fish's name?",
+    "options": [
+      "Gill",
+      "Nemo",
+      "Dory",
+      "Marlin"
+    ],
+    "answer": "Dory",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 109,
+    "question": "Who voices Dory?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Ellen_DeGeneres_2011.jpg/250px-Ellen_DeGeneres_2011.jpg",
+    "options": [
+      "Ellen Pompeo",
+      "Tina Fey",
+      "Ellen DeGeneres",
+      "Amy Poehler"
+    ],
+    "answer": "Ellen DeGeneres",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 110,
+    "question": "What Pixar film features monsters that scare children?",
+    "options": [
+      "Monsters University",
+      "Hotel Transylvania",
+      "Nightmare Before Christmas",
+      "Monsters, Inc."
+    ],
+    "answer": "Monsters, Inc.",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 111,
+    "question": "What is the big blue monster's name?",
+    "options": [
+      "Sulley",
+      "Boo",
+      "Randall",
+      "Mike"
+    ],
+    "answer": "Sulley",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 112,
+    "question": "What is the one-eyed green monster's name?",
+    "options": [
+      "Sulley",
+      "Mike Wazowski",
+      "Roz",
+      "Randall"
+    ],
+    "answer": "Mike Wazowski",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 113,
+    "question": "Who voices Mike Wazowski?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Billy_Crystal_by_Gage_Skidmore.jpg/250px-Billy_Crystal_by_Gage_Skidmore.jpg",
+    "options": [
+      "Billy Crystal",
+      "John Goodman",
+      "James Coburn",
+      "Steve Buscemi"
+    ],
+    "answer": "Billy Crystal",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 114,
+    "question": "Who voices Sulley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/John_Goodman_%2830383991304%29_%28cropped%29.jpg/250px-John_Goodman_%2830383991304%29_%28cropped%29.jpg",
+    "options": [
+      "John Goodman",
+      "Frank Oz",
+      "Billy Crystal",
+      "Steve Buscemi"
+    ],
+    "answer": "John Goodman",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 115,
+    "question": "What is the little girl's name in Monsters, Inc.?",
+    "options": [
+      "Mary",
+      "Kitty",
+      "Boo",
+      "Daisy"
+    ],
+    "answer": "Boo",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 116,
+    "question": "What Pixar film features a superhero family?",
+    "options": [
+      "The Incredibles",
+      "Megamind",
+      "Big Hero 6",
+      "Sky High"
+    ],
+    "answer": "The Incredibles",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 117,
+    "question": "What is Mr. Incredible's real name?",
+    "options": [
+      "Jack Parr",
+      "Bob Parr",
+      "Robert Incredible",
+      "Buddy Pine"
+    ],
+    "answer": "Bob Parr",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 118,
+    "question": "What is Elastigirl's power?",
+    "options": [
+      "Super strength",
+      "Speed",
+      "Stretching",
+      "Invisibility"
+    ],
+    "answer": "Stretching",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 119,
+    "question": "What is the villain's name in The Incredibles?",
+    "options": [
+      "Syndrome",
+      "Screenslaver",
+      "Mirage",
+      "Underminer"
+    ],
+    "answer": "Syndrome",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 120,
+    "question": "What is the baby's power in The Incredibles?",
+    "options": [
+      "Flying",
+      "None",
+      "Fire",
+      "Multiple powers"
+    ],
+    "answer": "Multiple powers",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 121,
+    "question": "What Pixar film features a rat who wants to cook?",
+    "options": [
+      "The Rescuers",
+      "Flushed Away",
+      "An American Tail",
+      "Ratatouille"
+    ],
+    "answer": "Ratatouille",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 122,
+    "question": "What is the rat's name in Ratatouille?",
+    "options": [
+      "Gusteau",
+      "Emile",
+      "Remy",
+      "Alfredo"
+    ],
+    "answer": "Remy",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 123,
+    "question": "What city is Ratatouille set in?",
+    "options": [
+      "London",
+      "New York",
+      "Paris",
+      "Rome"
+    ],
+    "answer": "Paris",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 124,
+    "question": "What Pixar film is about emotions inside a girl's head?",
+    "options": [
+      "Soul",
+      "Coco",
+      "Inside Out",
+      "Up"
+    ],
+    "answer": "Inside Out",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 125,
+    "question": "What are the five main emotions in Inside Out?",
+    "options": [
+      "Joy, Tears, Rage, Fear, Yuck",
+      "Happiness, Sorrow, Anger, Fright, Revulsion",
+      "Happy, Sad, Mad, Scared, Gross",
+      "Joy, Sadness, Anger, Fear, Disgust"
+    ],
+    "answer": "Joy, Sadness, Anger, Fear, Disgust",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 126,
+    "question": "Who voices Joy in Inside Out?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amy_Poehler_%2853671989427%29_cropped.jpg/250px-Amy_Poehler_%2853671989427%29_cropped.jpg",
+    "options": [
+      "Maya Rudolph",
+      "Tina Fey",
+      "Kristen Wiig",
+      "Amy Poehler"
+    ],
+    "answer": "Amy Poehler",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 127,
+    "question": "What Pixar film features a robot named WALL-E?",
+    "options": [
+      "Big Hero 6",
+      "Robots",
+      "WALL-E",
+      "The Iron Giant"
+    ],
+    "answer": "WALL-E",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 128,
+    "question": "What is the female robot's name in WALL-E?",
+    "options": [
+      "ANNA",
+      "ELLA",
+      "EVA",
+      "EVE"
+    ],
+    "answer": "EVE",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 129,
+    "question": "What Pixar film features cars that talk?",
+    "options": [
+      "Turbo",
+      "Hot Wheels",
+      "Speed Racer",
+      "Cars"
+    ],
+    "answer": "Cars",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 130,
+    "question": "What is the race car's name in Cars?",
+    "options": [
+      "Lightning McQueen",
+      "Strip Weathers",
+      "Doc Hudson",
+      "Mater"
+    ],
+    "answer": "Lightning McQueen",
+    "difficulty": "easy",
+    "category": "pixar"
+  },
+  {
+    "id": 131,
+    "question": "What is the tow truck's name in Cars?",
+    "options": [
+      "Mater",
+      "Luigi",
+      "Fillmore",
+      "Doc"
+    ],
+    "answer": "Mater",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 132,
+    "question": "What Pixar film is about the Day of the Dead?",
+    "options": [
+      "Corpse Bride",
+      "Coco",
+      "Soul",
+      "Book of Life"
+    ],
+    "answer": "Coco",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 133,
+    "question": "What does Miguel want to be in Coco?",
+    "options": [
+      "A musician",
+      "A painter",
+      "A chef",
+      "A dancer"
+    ],
+    "answer": "A musician",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 134,
+    "question": "What song is featured prominently in Coco?",
+    "options": [
+      "The World Es Mi Familia",
+      "Un Poco Loco",
+      "Remember Me",
+      "Proud Corazón"
+    ],
+    "answer": "Remember Me",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 135,
+    "question": "What Pixar film features an old man and a boy scout?",
+    "options": [
+      "Up",
+      "Soul",
+      "Coco",
+      "Onward"
+    ],
+    "answer": "Up",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 136,
+    "question": "How does the house fly in Up?",
+    "options": [
+      "Birds",
+      "Rockets",
+      "Magic",
+      "Balloons"
+    ],
+    "answer": "Balloons",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 137,
+    "question": "What is the old man's name in Up?",
+    "options": [
+      "Dug",
+      "Russell",
+      "Charles Muntz",
+      "Carl Fredricksen"
+    ],
+    "answer": "Carl Fredricksen",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 138,
+    "question": "What is the talking dog's name in Up?",
+    "options": [
+      "Dug",
+      "Beta",
+      "Alpha",
+      "Max"
+    ],
+    "answer": "Dug",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 139,
+    "question": "What Pixar film is about souls before birth?",
+    "options": [
+      "Up",
+      "Coco",
+      "Inside Out",
+      "Soul"
+    ],
+    "answer": "Soul",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 140,
+    "question": "What is the jazz musician's name in Soul?",
+    "options": [
+      "Terry",
+      "Moonwind",
+      "Joe Gardner",
+      "22"
+    ],
+    "answer": "Joe Gardner",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 141,
+    "question": "What 2021 Pixar film features two elf brothers?",
+    "options": [
+      "Luca",
+      "Soul",
+      "Onward",
+      "Coco"
+    ],
+    "answer": "Onward",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 142,
+    "question": "What 2021 Pixar film is set in Italy?",
+    "options": [
+      "Ratatouille",
+      "Luca",
+      "Onward",
+      "Coco"
+    ],
+    "answer": "Luca",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 143,
+    "question": "What are Luca and Alberto revealed to be?",
+    "options": [
+      "Robots",
+      "Sea monsters",
+      "Ghosts",
+      "Elves"
+    ],
+    "answer": "Sea monsters",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 144,
+    "question": "What Pixar film features a red panda transformation?",
+    "options": [
+      "Luca",
+      "Onward",
+      "Turning Red",
+      "Brave"
+    ],
+    "answer": "Turning Red",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 145,
+    "question": "What year is Turning Red set in?",
+    "options": [
+      "2022",
+      "2002",
+      "1992",
+      "2012"
+    ],
+    "answer": "2002",
+    "difficulty": "medium",
+    "category": "pixar"
+  },
+  {
+    "id": 146,
+    "question": "What Disney film features a Hawaiian girl and an alien?",
+    "options": [
+      "Lilo & Stitch",
+      "Finding Nemo",
+      "Moana",
+      "The Little Mermaid"
+    ],
+    "answer": "Lilo & Stitch",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 147,
+    "question": "What is the alien's experiment number?",
+    "options": [
+      "727",
+      "824",
+      "626",
+      "525"
+    ],
+    "answer": "626",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 148,
+    "question": "What does 'Ohana' mean?",
+    "options": [
+      "Forever",
+      "Hello",
+      "Love",
+      "Family"
+    ],
+    "answer": "Family",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 149,
+    "question": "What villain steals puppies?",
+    "options": [
+      "Gaston",
+      "Ursula",
+      "Maleficent",
+      "Cruella de Vil"
+    ],
+    "answer": "Cruella de Vil",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 150,
+    "question": "How many dalmatians are there in the title?",
+    "options": [
+      "101",
+      "99",
+      "100",
+      "102"
+    ],
+    "answer": "101",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 151,
+    "question": "What are the parent dalmatians' names?",
+    "options": [
+      "Patch and Penny",
+      "Roger and Anita",
+      "Lucky and Rolly",
+      "Pongo and Perdita"
+    ],
+    "answer": "Pongo and Perdita",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 152,
+    "question": "What Disney film features a fox and a hound?",
+    "options": [
+      "Fantastic Mr. Fox",
+      "Robin Hood",
+      "The Fox and the Hound",
+      "Zootopia"
+    ],
+    "answer": "The Fox and the Hound",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 153,
+    "question": "What are the fox and hound's names?",
+    "options": [
+      "Fox and Hound",
+      "Tod and Copper",
+      "Rusty and Scout",
+      "Red and Blue"
+    ],
+    "answer": "Tod and Copper",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 154,
+    "question": "What Disney film features Robin Hood as a fox?",
+    "options": [
+      "The Fox and the Hound",
+      "Robin Hood",
+      "Sherwood",
+      "Zootopia"
+    ],
+    "answer": "Robin Hood",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 155,
+    "question": "What Disney film features anthropomorphic animals in a city?",
+    "options": [
+      "Robin Hood",
+      "Zootopia",
+      "The Wild",
+      "Chicken Little"
+    ],
+    "answer": "Zootopia",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 156,
+    "question": "What is the rabbit cop's name in Zootopia?",
+    "options": [
+      "Clawhauser",
+      "Nick Wilde",
+      "Judy Hopps",
+      "Chief Bogo"
+    ],
+    "answer": "Judy Hopps",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 157,
+    "question": "What is the fox's name in Zootopia?",
+    "options": [
+      "Flash",
+      "Judy Hopps",
+      "Finnick",
+      "Nick Wilde"
+    ],
+    "answer": "Nick Wilde",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 158,
+    "question": "What is the sloth's name at the DMV in Zootopia?",
+    "options": [
+      "Speedy",
+      "Flash",
+      "Slow",
+      "Lazy"
+    ],
+    "answer": "Flash",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 159,
+    "question": "What Disney film is about a video game villain?",
+    "options": [
+      "Wreck-It Ralph",
+      "Ready Player One",
+      "Pixels",
+      "Tron"
+    ],
+    "answer": "Wreck-It Ralph",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 160,
+    "question": "Who voices Wreck-It Ralph?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/John_C._Reilly_%2843646997525%29_%28cropped_2%29.jpg/250px-John_C._Reilly_%2843646997525%29_%28cropped_2%29.jpg",
+    "options": [
+      "Sarah Silverman",
+      "Jane Lynch",
+      "Jack McBrayer",
+      "John C. Reilly"
+    ],
+    "answer": "John C. Reilly",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 161,
+    "question": "What is the glitchy racer's name in Wreck-It Ralph?",
+    "options": [
+      "Felix",
+      "Vanellope",
+      "Calhoun",
+      "Turbo"
+    ],
+    "answer": "Vanellope",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 162,
+    "question": "What Disney film features a superhero robot named Baymax?",
+    "options": [
+      "The Iron Giant",
+      "Robots",
+      "WALL-E",
+      "Big Hero 6"
+    ],
+    "answer": "Big Hero 6",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 163,
+    "question": "What is Baymax's purpose?",
+    "options": [
+      "Healthcare companion",
+      "Chef",
+      "Teacher",
+      "Fighting robot"
+    ],
+    "answer": "Healthcare companion",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 164,
+    "question": "What city is Big Hero 6 set in?",
+    "options": [
+      "New York",
+      "Tokyo",
+      "San Francisco",
+      "San Fransokyo"
+    ],
+    "answer": "San Fransokyo",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 165,
+    "question": "What Disney villain is half-octopus?",
+    "options": [
+      "Evil Queen",
+      "Cruella",
+      "Ursula",
+      "Maleficent"
+    ],
+    "answer": "Ursula",
+    "difficulty": "easy",
+    "category": "villains"
+  },
+  {
+    "id": 166,
+    "question": "What Disney villain turns into a snake?",
+    "options": [
+      "Scar",
+      "Dr. Facilier",
+      "Jafar",
+      "Hades"
+    ],
+    "answer": "Jafar",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 167,
+    "question": "Who is the god of the underworld in Hercules?",
+    "options": [
+      "Poseidon",
+      "Hades",
+      "Zeus",
+      "Ares"
+    ],
+    "answer": "Hades",
+    "difficulty": "medium",
+    "category": "hercules"
+  },
+  {
+    "id": 168,
+    "question": "Who voices Hades in Hercules?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/James_Woods_2015.jpg/250px-James_Woods_2015.jpg",
+    "options": [
+      "Danny DeVito",
+      "James Woods",
+      "Tate Donovan",
+      "Rip Torn"
+    ],
+    "answer": "James Woods",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 169,
+    "question": "Who is Hercules' love interest?",
+    "options": [
+      "Hera",
+      "Athena",
+      "Aphrodite",
+      "Megara"
+    ],
+    "answer": "Megara",
+    "difficulty": "medium",
+    "category": "hercules"
+  },
+  {
+    "id": 170,
+    "question": "Who trains Hercules?",
+    "options": [
+      "Zeus",
+      "Hades",
+      "Pegasus",
+      "Phil/Philoctetes"
+    ],
+    "answer": "Phil/Philoctetes",
+    "difficulty": "medium",
+    "category": "hercules"
+  },
+  {
+    "id": 171,
+    "question": "Who voices Phil in Hercules?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Danny_DeVito_cropped_and_edited_for_brightness.jpg/250px-Danny_DeVito_cropped_and_edited_for_brightness.jpg",
+    "options": [
+      "Tate Donovan",
+      "James Woods",
+      "Danny DeVito",
+      "Josh Keaton"
+    ],
+    "answer": "Danny DeVito",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 172,
+    "question": "What is Hercules' flying horse's name?",
+    "options": [
+      "Khan",
+      "Philippe",
+      "Maximus",
+      "Pegasus"
+    ],
+    "answer": "Pegasus",
+    "difficulty": "medium",
+    "category": "hercules"
+  },
+  {
+    "id": 173,
+    "question": "What villain controls shadows in Princess and the Frog?",
+    "options": [
+      "Jafar",
+      "Hades",
+      "Maleficent",
+      "Dr. Facilier"
+    ],
+    "answer": "Dr. Facilier",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 174,
+    "question": "What is the hunchback's name in The Hunchback of Notre Dame?",
+    "options": [
+      "Frollo",
+      "Phoebus",
+      "Clopin",
+      "Quasimodo"
+    ],
+    "answer": "Quasimodo",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 175,
+    "question": "Who is the villain in The Hunchback of Notre Dame?",
+    "options": [
+      "Gaston",
+      "Hades",
+      "Jafar",
+      "Judge Claude Frollo"
+    ],
+    "answer": "Judge Claude Frollo",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 176,
+    "question": "What is the gypsy's name in Hunchback?",
+    "options": [
+      "Esmeralda",
+      "Pocahontas",
+      "Jasmine",
+      "Meg"
+    ],
+    "answer": "Esmeralda",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 177,
+    "question": "What Native American princess is a Disney character?",
+    "options": [
+      "Pocahontas",
+      "Moana",
+      "Jasmine",
+      "Mulan"
+    ],
+    "answer": "Pocahontas",
+    "difficulty": "easy",
+    "category": "princesses"
+  },
+  {
+    "id": 178,
+    "question": "What is the song about colors of the wind from?",
+    "options": [
+      "Frozen",
+      "Tangled",
+      "Moana",
+      "Pocahontas"
+    ],
+    "answer": "Pocahontas",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 179,
+    "question": "What is Pocahontas's raccoon friend's name?",
+    "options": [
+      "Percy",
+      "Flit",
+      "Meeko",
+      "John"
+    ],
+    "answer": "Meeko",
+    "difficulty": "medium",
+    "category": "pocahontas"
+  },
+  {
+    "id": 180,
+    "question": "What is the hummingbird's name in Pocahontas?",
+    "options": [
+      "Flit",
+      "Iago",
+      "Percy",
+      "Meeko"
+    ],
+    "answer": "Flit",
+    "difficulty": "medium",
+    "category": "pocahontas"
+  },
+  {
+    "id": 181,
+    "question": "Who does Pocahontas fall in love with?",
+    "options": [
+      "Kocoum",
+      "Thomas",
+      "John Smith",
+      "John Rolfe"
+    ],
+    "answer": "John Smith",
+    "difficulty": "medium",
+    "category": "pocahontas"
+  },
+  {
+    "id": 182,
+    "question": "What is the name of the emperor in The Emperor's New Groove?",
+    "options": [
+      "Kuzco",
+      "Pacha",
+      "Kronk",
+      "Yzma"
+    ],
+    "answer": "Kuzco",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 183,
+    "question": "What animal is Kuzco turned into?",
+    "options": [
+      "Horse",
+      "Llama",
+      "Alpaca",
+      "Donkey"
+    ],
+    "answer": "Llama",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 184,
+    "question": "Who is the villain in The Emperor's New Groove?",
+    "options": [
+      "Malina",
+      "Kronk",
+      "Pacha",
+      "Yzma"
+    ],
+    "answer": "Yzma",
+    "difficulty": "medium",
+    "category": "villains"
+  },
+  {
+    "id": 185,
+    "question": "What is Kronk's famous phrase?",
+    "options": [
+      "Oh yeah, it's all coming together",
+      "Wrong lever",
+      "Squeak squeaker",
+      "Pull the lever"
+    ],
+    "answer": "Oh yeah, it's all coming together",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 186,
+    "question": "What is Disney's first animated film with an African-American princess?",
+    "options": [
+      "Soul",
+      "The Princess and the Frog",
+      "Encanto",
+      "Moana"
+    ],
+    "answer": "The Princess and the Frog",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 187,
+    "question": "What Colombian family has magical powers in Encanto?",
+    "options": [
+      "The Madrigals",
+      "The Riveras",
+      "The Garcias",
+      "The Lopezes"
+    ],
+    "answer": "The Madrigals",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 188,
+    "question": "What is Mirabel's special power in Encanto?",
+    "options": [
+      "She doesn't have one (initially)",
+      "Super strength",
+      "Shapeshifting",
+      "Healing"
+    ],
+    "answer": "She doesn't have one (initially)",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 189,
+    "question": "What song from Encanto went viral?",
+    "options": [
+      "We Don't Talk About Bruno",
+      "Surface Pressure",
+      "The Family Madrigal",
+      "What Else Can I Do"
+    ],
+    "answer": "We Don't Talk About Bruno",
+    "difficulty": "medium",
+    "category": "songs"
+  },
+  {
+    "id": 190,
+    "question": "Who is Bruno in Encanto?",
+    "options": [
+      "Mirabel's brother",
+      "A villain",
+      "A talking animal",
+      "Mirabel's uncle with prophecy powers"
+    ],
+    "answer": "Mirabel's uncle with prophecy powers",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 191,
+    "question": "What is Luisa's power in Encanto?",
+    "options": [
+      "Weather control",
+      "Super strength",
+      "Healing",
+      "Shapeshifting"
+    ],
+    "answer": "Super strength",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 192,
+    "question": "What is Isabela's power in Encanto?",
+    "options": [
+      "Growing plants/flowers",
+      "Super strength",
+      "Seeing the future",
+      "Shapeshifting"
+    ],
+    "answer": "Growing plants/flowers",
+    "difficulty": "medium",
+    "category": "modern"
+  },
+  {
+    "id": 193,
+    "question": "What Disney live-action film stars Emma Watson as Belle?",
+    "options": [
+      "The Little Mermaid",
+      "Beauty and the Beast (2017)",
+      "Cinderella",
+      "Maleficent"
+    ],
+    "answer": "Beauty and the Beast (2017)",
+    "difficulty": "medium",
+    "category": "live-action"
+  },
+  {
+    "id": 194,
+    "question": "Who plays Maleficent in the live-action films?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Angelina_Jolie-643531_%28cropped%29.jpg/250px-Angelina_Jolie-643531_%28cropped%29.jpg",
+    "options": [
+      "Helena Bonham Carter",
+      "Charlize Theron",
+      "Cate Blanchett",
+      "Angelina Jolie"
+    ],
+    "answer": "Angelina Jolie",
+    "difficulty": "medium",
+    "category": "live-action"
+  },
+  {
+    "id": 195,
+    "question": "Who plays Aladdin in the 2019 live-action film?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Run_This_Town_cast_-_Mena_Massoud_%2833463322988%29.jpg/250px-Run_This_Town_cast_-_Mena_Massoud_%2833463322988%29.jpg",
+    "options": [
+      "Marwan Kenzari",
+      "Naomi Scott",
+      "Will Smith",
+      "Mena Massoud"
+    ],
+    "answer": "Mena Massoud",
+    "difficulty": "medium",
+    "category": "live-action"
+  },
+  {
+    "id": 196,
+    "question": "Who plays the Genie in the 2019 Aladdin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg/250px-TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg",
+    "options": [
+      "Dwayne Johnson",
+      "Kevin Hart",
+      "Eddie Murphy",
+      "Will Smith"
+    ],
+    "answer": "Will Smith",
+    "difficulty": "medium",
+    "category": "live-action"
+  },
+  {
+    "id": 197,
+    "question": "Who plays Ariel in the 2023 Little Mermaid?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Halle_Bailey_in_2023.jpg/250px-Halle_Bailey_in_2023.jpg",
+    "options": [
+      "Zendaya",
+      "Halle Berry",
+      "Chloe Bailey",
+      "Halle Bailey"
+    ],
+    "answer": "Halle Bailey",
+    "difficulty": "medium",
+    "category": "live-action"
+  },
+  {
+    "id": 198,
+    "question": "What is Disney's theme park called?",
+    "options": [
+      "Fairy Tale Land",
+      "Disney Park",
+      "Magic World",
+      "Disneyland/Walt Disney World"
+    ],
+    "answer": "Disneyland/Walt Disney World",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 199,
+    "question": "What is Mickey Mouse's girlfriend's name?",
+    "options": [
+      "Daisy Duck",
+      "Ortensia",
+      "Clarabelle",
+      "Minnie Mouse"
+    ],
+    "answer": "Minnie Mouse",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 200,
+    "question": "What is the name of Mickey's dog?",
+    "options": [
+      "Max",
+      "Pluto",
+      "Goofy",
+      "Chip"
+    ],
+    "answer": "Pluto",
+    "difficulty": "easy",
+    "category": "general"
+  }
+]

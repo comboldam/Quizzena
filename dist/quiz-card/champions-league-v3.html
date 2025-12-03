@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Champions League Quiz Card V3</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(30, 58, 138, 0.15) 0%, 
+        rgba(8, 12, 28, 0.95) 40%,
+        rgba(2, 6, 18, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 30px 30px, 20px 20px;
+      background-position: 0 0, 10px 10px;
+      pointer-events: none;
+      border-radius: 20px;
+      opacity: 0.1;
+    }
+
+    .card-title {
+      color: #60a5fa;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 900;
+      margin-top: 8px;
+      text-shadow: 0 0 12px rgba(96, 165, 250, 0.7), 0 0 25px rgba(59, 130, 246, 0.4), 2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== UCL BALL ===== */
+    .ucl-ball {
+      position: relative;
+      width: 65px;
+      height: 65px;
+      animation: ballFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+    }
+
+    @keyframes ballFloat {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-4px) rotate(2deg); }
+    }
+
+    /* Ball base - white */
+    .ball-base {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 25%, #ffffff 0%, #f5f5f5 40%, #e8e8e8 70%, #d4d4d4 100%);
+      border-radius: 50%;
+      box-shadow: 
+        inset 3px 3px 10px rgba(255,255,255,0.9),
+        inset -3px -3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    /* Gold geometric triangles */
+    .gold-pattern {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .gold-tri {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    /* Top triangles */
+    .gold-tri-1 {
+      top: 2px;
+      left: 18px;
+      border-width: 0 8px 14px 8px;
+      border-color: transparent transparent #b8860b transparent;
+    }
+
+    .gold-tri-2 {
+      top: 2px;
+      right: 18px;
+      border-width: 0 8px 14px 8px;
+      border-color: transparent transparent #d4a84b transparent;
+    }
+
+    /* Right triangles */
+    .gold-tri-3 {
+      top: 18px;
+      right: 2px;
+      border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #b8860b;
+    }
+
+    .gold-tri-4 {
+      bottom: 18px;
+      right: 2px;
+      border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #d4a84b;
+    }
+
+    /* Bottom triangles */
+    .gold-tri-5 {
+      bottom: 2px;
+      right: 18px;
+      border-width: 14px 8px 0 8px;
+      border-color: #b8860b transparent transparent transparent;
+    }
+
+    .gold-tri-6 {
+      bottom: 2px;
+      left: 18px;
+      border-width: 14px 8px 0 8px;
+      border-color: #d4a84b transparent transparent transparent;
+    }
+
+    /* Left triangles */
+    .gold-tri-7 {
+      bottom: 18px;
+      left: 2px;
+      border-width: 8px 14px 8px 0;
+      border-color: transparent #b8860b transparent transparent;
+    }
+
+    .gold-tri-8 {
+      top: 18px;
+      left: 2px;
+      border-width: 8px 14px 8px 0;
+      border-color: transparent #d4a84b transparent transparent;
+    }
+
+    /* Gold lines connecting */
+    .gold-line {
+      position: absolute;
+      background: linear-gradient(90deg, #b8860b, #d4a84b, #b8860b);
+      transform-origin: center;
+    }
+
+    .gold-line-1 {
+      top: 14px;
+      left: 10px;
+      width: 18px;
+      height: 2px;
+      transform: rotate(30deg);
+    }
+
+    .gold-line-2 {
+      top: 14px;
+      right: 10px;
+      width: 18px;
+      height: 2px;
+      transform: rotate(-30deg);
+    }
+
+    .gold-line-3 {
+      top: 28px;
+      right: 4px;
+      width: 16px;
+      height: 2px;
+      transform: rotate(60deg);
+    }
+
+    .gold-line-4 {
+      bottom: 28px;
+      right: 4px;
+      width: 16px;
+      height: 2px;
+      transform: rotate(-60deg);
+    }
+
+    .gold-line-5 {
+      bottom: 14px;
+      right: 10px;
+      width: 18px;
+      height: 2px;
+      transform: rotate(30deg);
+    }
+
+    .gold-line-6 {
+      bottom: 14px;
+      left: 10px;
+      width: 18px;
+      height: 2px;
+      transform: rotate(-30deg);
+    }
+
+    .gold-line-7 {
+      bottom: 28px;
+      left: 4px;
+      width: 16px;
+      height: 2px;
+      transform: rotate(60deg);
+    }
+
+    .gold-line-8 {
+      top: 28px;
+      left: 4px;
+      width: 16px;
+      height: 2px;
+      transform: rotate(-60deg);
+    }
+
+    /* Black triangular sections */
+    .black-tri {
+      position: absolute;
+      background: #1a1a1a;
+    }
+
+    .black-tri-1 {
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 8px;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .black-tri-2 {
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 10px;
+      clip-path: polygon(100% 50%, 0% 0%, 0% 100%);
+    }
+
+    .black-tri-3 {
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 8px;
+      clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    }
+
+    .black-tri-4 {
+      top: 50%;
+      left: 8px;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 10px;
+      clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
+    }
+
+    /* Center starball logo */
+    .starball-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 26px;
+      height: 26px;
+    }
+
+    .starball-ring {
+      position: absolute;
+      inset: 0;
+      border: 2px solid #1a1a1a;
+      border-radius: 50%;
+    }
+
+    .center-star {
+      position: absolute;
+      font-size: 6px;
+      color: #1a1a1a;
+    }
+
+    /* 8 stars around center */
+    .center-star:nth-child(1) { top: -1px; left: 50%; transform: translateX(-50%); }
+    .center-star:nth-child(2) { top: 2px; right: 2px; }
+    .center-star:nth-child(3) { top: 50%; right: -1px; transform: translateY(-50%); }
+    .center-star:nth-child(4) { bottom: 2px; right: 2px; }
+    .center-star:nth-child(5) { bottom: -1px; left: 50%; transform: translateX(-50%); }
+    .center-star:nth-child(6) { bottom: 2px; left: 2px; }
+    .center-star:nth-child(7) { top: 50%; left: -1px; transform: translateY(-50%); }
+    .center-star:nth-child(8) { top: 2px; left: 2px; }
+
+    /* Ball shine */
+    .ball-shine {
+      position: absolute;
+      top: 6px;
+      left: 10px;
+      width: 14px;
+      height: 20px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 40%, transparent 70%);
+      border-radius: 50%;
+      transform: rotate(-20deg);
+      pointer-events: none;
+    }
+
+    /* ===== 8 OUTER STARS ===== */
+    .outer-stars {
+      position: absolute;
+      inset: -8px;
+      animation: starsRotate 25s linear infinite;
+    }
+
+    @keyframes starsRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .outer-star {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      color: #fff;
+      text-shadow: 0 0 6px #60a5fa, 0 0 12px #3b82f6;
+      animation: starPulse 2s ease-in-out infinite;
+    }
+
+    .outer-star:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+    .outer-star:nth-child(2) { top: 12px; right: 12px; animation-delay: 0.25s; }
+    .outer-star:nth-child(3) { top: 50%; right: 0; transform: translateY(-50%); animation-delay: 0.5s; }
+    .outer-star:nth-child(4) { bottom: 12px; right: 12px; animation-delay: 0.75s; }
+    .outer-star:nth-child(5) { bottom: 0; left: 50%; transform: translateX(-50%); animation-delay: 1s; }
+    .outer-star:nth-child(6) { bottom: 12px; left: 12px; animation-delay: 1.25s; }
+    .outer-star:nth-child(7) { top: 50%; left: 0; transform: translateY(-50%); animation-delay: 1.5s; }
+    .outer-star:nth-child(8) { top: 12px; left: 12px; animation-delay: 1.75s; }
+
+    @keyframes starPulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== TROPHY ===== */
+    .trophy-burst {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 28px;
+      height: 28px;
+      animation: trophyPulse 2s ease-in-out infinite;
+    }
+
+    .trophy {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 22px;
+    }
+
+    .trophy-cup {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 11px;
+      background: linear-gradient(180deg, #fef08a, #fbbf24, #d97706);
+      border-radius: 0 0 50% 50%;
+    }
+
+    .trophy-cup::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: -4px;
+      width: 5px;
+      height: 6px;
+      border: 2px solid #fbbf24;
+      border-right: none;
+      border-radius: 50% 0 0 50%;
+    }
+
+    .trophy-cup::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: -4px;
+      width: 5px;
+      height: 6px;
+      border: 2px solid #fbbf24;
+      border-left: none;
+      border-radius: 0 50% 50% 0;
+    }
+
+    .trophy-stem {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 6px;
+      background: linear-gradient(180deg, #fbbf24, #d97706);
+    }
+
+    .trophy-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 4px;
+      background: linear-gradient(180deg, #fbbf24, #b45309);
+      border-radius: 1px;
+    }
+
+    .trophy-cup::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: -4px;
+      width: 5px;
+      height: 6px;
+      border: 2px solid #fbbf24;
+      border-left: none;
+      border-radius: 0 50% 50% 0;
+    }
+
+    @keyframes trophyPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.4)); }
+      50% { transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7)); }
+    }
+
+    /* ===== OTHER ELEMENTS ===== */
+    .floating-stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .float-star {
+      position: absolute;
+      color: #fff;
+      font-size: 7px;
+      text-shadow: 0 0 4px #60a5fa;
+      animation: floatStar 3s ease-in-out infinite;
+    }
+
+    .float-star:nth-child(1) { top: 20px; left: 12px; }
+    .float-star:nth-child(2) { top: 40px; left: 8px; animation-delay: 0.5s; }
+    .float-star:nth-child(3) { bottom: 48px; left: 10px; animation-delay: 1s; }
+
+    @keyframes floatStar {
+      0%, 100% { opacity: 0.3; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-3px); }
+    }
+
+    .anthem-text {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 5px;
+      font-style: italic;
+      color: rgba(96, 165, 250, 0.6);
+    }
+
+    .goal-net {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 25px;
+      height: 22px;
+      opacity: 0.2;
+      overflow: hidden;
+    }
+
+    .goal-net::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(90deg, #fff 1px, transparent 1px),
+        linear-gradient(0deg, #fff 1px, transparent 1px);
+      background-size: 5px 5px;
+    }
+
+    .club-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    .dot:nth-child(1) { background: #fff; box-shadow: 0 0 4px #fff; }
+    .dot:nth-child(2) { background: #dc2626; box-shadow: 0 0 4px #dc2626; animation-delay: 0.12s; }
+    .dot:nth-child(3) { background: #1e40af; box-shadow: 0 0 4px #1e40af; animation-delay: 0.24s; }
+    .dot:nth-child(4) { background: #fbbf24; box-shadow: 0 0 4px #fbbf24; animation-delay: 0.36s; }
+    .dot:nth-child(5) { background: #a21caf; box-shadow: 0 0 4px #a21caf; animation-delay: 0.48s; }
+    .dot:nth-child(6) { background: #000; box-shadow: 0 0 4px #4b5563; animation-delay: 0.6s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="anthem-text">The Champions</div>
+
+    <div class="trophy-burst">
+      <div class="trophy">
+        <div class="trophy-cup"></div>
+        <div class="trophy-stem"></div>
+        <div class="trophy-base"></div>
+      </div>
+    </div>
+
+    <div class="floating-stars">
+      <div class="float-star">★</div>
+      <div class="float-star">★</div>
+      <div class="float-star">★</div>
+    </div>
+
+    <div class="goal-net"></div>
+
+    <div class="club-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <div class="ucl-ball">
+        <!-- 8 outer glowing stars -->
+        <div class="outer-stars">
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+          <div class="outer-star">★</div>
+        </div>
+
+        <!-- Ball base -->
+        <div class="ball-base">
+          <!-- Gold geometric pattern -->
+          <div class="gold-pattern">
+            <div class="gold-tri gold-tri-1"></div>
+            <div class="gold-tri gold-tri-2"></div>
+            <div class="gold-tri gold-tri-3"></div>
+            <div class="gold-tri gold-tri-4"></div>
+            <div class="gold-tri gold-tri-5"></div>
+            <div class="gold-tri gold-tri-6"></div>
+            <div class="gold-tri gold-tri-7"></div>
+            <div class="gold-tri gold-tri-8"></div>
+
+            <div class="gold-line gold-line-1"></div>
+            <div class="gold-line gold-line-2"></div>
+            <div class="gold-line gold-line-3"></div>
+            <div class="gold-line gold-line-4"></div>
+            <div class="gold-line gold-line-5"></div>
+            <div class="gold-line gold-line-6"></div>
+            <div class="gold-line gold-line-7"></div>
+            <div class="gold-line gold-line-8"></div>
+
+            <div class="black-tri black-tri-1"></div>
+            <div class="black-tri black-tri-2"></div>
+            <div class="black-tri black-tri-3"></div>
+            <div class="black-tri black-tri-4"></div>
+          </div>
+
+          <!-- Center starball logo -->
+          <div class="starball-center">
+            <div class="starball-ring"></div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+            <div class="center-star">★</div>
+          </div>
+
+          <div class="ball-shine"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title">Champions League</div>
+  </div>
+</body>
+</html>
+

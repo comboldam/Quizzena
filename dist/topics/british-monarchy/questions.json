@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "question": "Who is the current British monarch?",
+    "options": [
+      "Queen Elizabeth II",
+      "King Charles III",
+      "Queen Camilla",
+      "King William V"
+    ],
+    "answer": "King Charles III",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 2,
+    "question": "How long did Queen Elizabeth II reign?",
+    "options": [
+      "60 years",
+      "70 years",
+      "50 years",
+      "65 years"
+    ],
+    "answer": "70 years",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 3,
+    "question": "What year did Queen Elizabeth II die?",
+    "options": [
+      "2020",
+      "2022",
+      "2023",
+      "2021"
+    ],
+    "answer": "2022",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 4,
+    "question": "Who was Elizabeth II's husband?",
+    "options": [
+      "Prince Andrew",
+      "Prince Philip",
+      "Prince Charles",
+      "Prince Edward"
+    ],
+    "answer": "Prince Philip",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 5,
+    "question": "What was Prince Philip's title?",
+    "options": [
+      "Duke of Edinburgh",
+      "Duke of Cambridge",
+      "Duke of York",
+      "Duke of Sussex"
+    ],
+    "answer": "Duke of Edinburgh",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 6,
+    "question": "What is the British royal family's house name?",
+    "options": [
+      "Hanover",
+      "Stuart",
+      "Windsor",
+      "Tudor"
+    ],
+    "answer": "Windsor",
+    "difficulty": "easy",
+    "category": "dynasties"
+  },
+  {
+    "id": 7,
+    "question": "What was the Windsor name before 1917?",
+    "options": [
+      "Hanover",
+      "Saxe-Coburg and Gotha",
+      "Tudor",
+      "Stuart"
+    ],
+    "answer": "Saxe-Coburg and Gotha",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 8,
+    "question": "Why did they change the name to Windsor?",
+    "options": [
+      "Anti-German sentiment in WWI",
+      "Parliament ordered it",
+      "Random choice",
+      "They liked it better"
+    ],
+    "answer": "Anti-German sentiment in WWI",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 9,
+    "question": "Who changed the royal family name to Windsor?",
+    "options": [
+      "Queen Victoria",
+      "King George V",
+      "King Edward VII",
+      "King George VI"
+    ],
+    "answer": "King George V",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 10,
+    "question": "What is Buckingham Palace?",
+    "options": [
+      "Museum",
+      "Official London residence of the monarch",
+      "Church",
+      "Parliament building"
+    ],
+    "answer": "Official London residence of the monarch",
+    "difficulty": "easy",
+    "category": "palaces"
+  },
+  {
+    "id": 11,
+    "question": "What castle is the monarch's weekend residence?",
+    "options": [
+      "Tower of London",
+      "Windsor Castle",
+      "Balmoral",
+      "Edinburgh Castle"
+    ],
+    "answer": "Windsor Castle",
+    "difficulty": "easy",
+    "category": "palaces"
+  },
+  {
+    "id": 12,
+    "question": "What Scottish castle does the royal family vacation at?",
+    "options": [
+      "Stirling Castle",
+      "Holyrood",
+      "Balmoral",
+      "Edinburgh Castle"
+    ],
+    "answer": "Balmoral",
+    "difficulty": "easy",
+    "category": "palaces"
+  },
+  {
+    "id": 13,
+    "question": "Where is the monarch officially crowned?",
+    "options": [
+      "Windsor Castle",
+      "Buckingham Palace",
+      "Westminster Abbey",
+      "St. Paul's Cathedral"
+    ],
+    "answer": "Westminster Abbey",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 14,
+    "question": "What is the Crown Jewels?",
+    "options": [
+      "Queen's personal collection",
+      "Museum artifacts",
+      "Parliament symbols",
+      "Royal ceremonial regalia and jewelry"
+    ],
+    "answer": "Royal ceremonial regalia and jewelry",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 15,
+    "question": "Where are the Crown Jewels kept?",
+    "options": [
+      "Windsor Castle",
+      "Westminster Abbey",
+      "Buckingham Palace",
+      "Tower of London"
+    ],
+    "answer": "Tower of London",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 16,
+    "question": "Who guards the Tower of London?",
+    "options": [
+      "Royal Guards",
+      "Army",
+      "Police",
+      "Beefeaters (Yeoman Warders)"
+    ],
+    "answer": "Beefeaters (Yeoman Warders)",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 17,
+    "question": "What birds must be kept at the Tower of London?",
+    "options": [
+      "Pigeons",
+      "Ravens",
+      "Crows",
+      "Eagles"
+    ],
+    "answer": "Ravens",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 18,
+    "question": "What legend surrounds the Tower ravens?",
+    "options": [
+      "They guard treasure",
+      "They bring good luck",
+      "They predict the future",
+      "Kingdom will fall if ravens leave"
+    ],
+    "answer": "Kingdom will fall if ravens leave",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 19,
+    "question": "What was Henry VIII famous for?",
+    "options": [
+      "Having six wives",
+      "Never marrying",
+      "Living to 100",
+      "Being very tall"
+    ],
+    "answer": "Having six wives",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 20,
+    "question": "How many of Henry VIII's wives were executed?",
+    "options": [
+      "4",
+      "3",
+      "1",
+      "2"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 21,
+    "question": "Which wives did Henry VIII execute?",
+    "options": [
+      "Anne Boleyn and Catherine Howard",
+      "Catherine of Aragon and Jane Seymour",
+      "Anne of Cleves and Catherine Parr",
+      "All of them"
+    ],
+    "answer": "Anne Boleyn and Catherine Howard",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 22,
+    "question": "What rhyme helps remember Henry's wives' fates?",
+    "options": [
+      "None died",
+      "All were beheaded",
+      "Divorced, beheaded, died, divorced, beheaded, survived",
+      "All survived"
+    ],
+    "answer": "Divorced, beheaded, died, divorced, beheaded, survived",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 23,
+    "question": "Why did Henry VIII break from the Catholic Church?",
+    "options": [
+      "To divorce Catherine of Aragon",
+      "Parliament demanded it",
+      "He was Protestant",
+      "The Pope asked him to"
+    ],
+    "answer": "To divorce Catherine of Aragon",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 24,
+    "question": "What church did Henry VIII create?",
+    "options": [
+      "Presbyterian Church",
+      "Methodist Church",
+      "Catholic Church",
+      "Church of England"
+    ],
+    "answer": "Church of England",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 25,
+    "question": "Who is 'Supreme Governor' of the Church of England?",
+    "options": [
+      "The Prime Minister",
+      "The monarch",
+      "The Archbishop of Canterbury",
+      "The Pope"
+    ],
+    "answer": "The monarch",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 26,
+    "question": "Which of Henry's children became 'Bloody Mary'?",
+    "options": [
+      "Elizabeth I",
+      "Edward VI",
+      "None",
+      "Mary I"
+    ],
+    "answer": "Mary I",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 27,
+    "question": "Why was Mary I called 'Bloody Mary'?",
+    "options": [
+      "Executed Protestants",
+      "Red hair",
+      "Battle wounds",
+      "Loved tomato juice"
+    ],
+    "answer": "Executed Protestants",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 28,
+    "question": "Who was the 'Virgin Queen'?",
+    "options": [
+      "Victoria",
+      "Elizabeth I",
+      "Mary I",
+      "Anne"
+    ],
+    "answer": "Elizabeth I",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 29,
+    "question": "Why was Elizabeth I called the Virgin Queen?",
+    "options": [
+      "Her mother's name",
+      "Never married",
+      "Born on holy day",
+      "Very religious"
+    ],
+    "answer": "Never married",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 30,
+    "question": "What era is named after Elizabeth I?",
+    "options": [
+      "Elizabethan Era",
+      "Georgian Era",
+      "Tudor Era",
+      "Victorian Era"
+    ],
+    "answer": "Elizabethan Era",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 31,
+    "question": "Who defeated the Spanish Armada?",
+    "options": [
+      "Elizabeth I's navy",
+      "James I",
+      "Mary I",
+      "Henry VIII"
+    ],
+    "answer": "Elizabeth I's navy",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 32,
+    "question": "What year was the Spanish Armada defeated?",
+    "options": [
+      "1603",
+      "1558",
+      "1588",
+      "1492"
+    ],
+    "answer": "1588",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 33,
+    "question": "Who was Elizabeth I's mother?",
+    "options": [
+      "Jane Seymour",
+      "Catherine of Aragon",
+      "Catherine Howard",
+      "Anne Boleyn"
+    ],
+    "answer": "Anne Boleyn",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 34,
+    "question": "What happened to Anne Boleyn?",
+    "options": [
+      "Divorced",
+      "Beheaded at Tower of London",
+      "Outlived Henry",
+      "Died of illness"
+    ],
+    "answer": "Beheaded at Tower of London",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 35,
+    "question": "What dynasty did Henry VIII belong to?",
+    "options": [
+      "Tudor",
+      "Stuart",
+      "Windsor",
+      "Plantagenet"
+    ],
+    "answer": "Tudor",
+    "difficulty": "easy",
+    "category": "dynasties"
+  },
+  {
+    "id": 36,
+    "question": "Who was the first Tudor monarch?",
+    "options": [
+      "Elizabeth I",
+      "Richard III",
+      "Henry VII",
+      "Henry VIII"
+    ],
+    "answer": "Henry VII",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 37,
+    "question": "What battle made Henry VII king?",
+    "options": [
+      "Battle of Hastings",
+      "Battle of Agincourt",
+      "Battle of Waterloo",
+      "Battle of Bosworth Field"
+    ],
+    "answer": "Battle of Bosworth Field",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 38,
+    "question": "Who did Henry VII defeat at Bosworth?",
+    "options": [
+      "Edward IV",
+      "Richard III",
+      "Henry VI",
+      "Richard II"
+    ],
+    "answer": "Richard III",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 39,
+    "question": "What Shakespeare play features Richard III?",
+    "options": [
+      "Macbeth",
+      "King Lear",
+      "Hamlet",
+      "Richard III"
+    ],
+    "answer": "Richard III",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 40,
+    "question": "What famous line is from Richard III?",
+    "options": [
+      "Et tu, Brute?",
+      "All the world's a stage",
+      "A horse! A horse! My kingdom for a horse!",
+      "To be or not to be"
+    ],
+    "answer": "A horse! A horse! My kingdom for a horse!",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 41,
+    "question": "Where was Richard III's body found in 2012?",
+    "options": [
+      "Westminster Abbey",
+      "Battlefield",
+      "Tower of London",
+      "Under a parking lot in Leicester"
+    ],
+    "answer": "Under a parking lot in Leicester",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 42,
+    "question": "What condition did Richard III's skeleton reveal?",
+    "options": [
+      "Perfect health",
+      "Missing arm",
+      "Scoliosis (curved spine)",
+      "Broken leg"
+    ],
+    "answer": "Scoliosis (curved spine)",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 43,
+    "question": "Who succeeded Elizabeth I?",
+    "options": [
+      "Charles I",
+      "James I (James VI of Scotland)",
+      "Mary II",
+      "Henry IX"
+    ],
+    "answer": "James I (James VI of Scotland)",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 44,
+    "question": "What dynasty began with James I?",
+    "options": [
+      "Tudor",
+      "Hanover",
+      "Windsor",
+      "Stuart"
+    ],
+    "answer": "Stuart",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 45,
+    "question": "What plot tried to blow up Parliament in 1605?",
+    "options": [
+      "Gunpowder Plot",
+      "Rye House Plot",
+      "Peasants' Revolt",
+      "Popish Plot"
+    ],
+    "answer": "Gunpowder Plot",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 46,
+    "question": "Who is associated with the Gunpowder Plot?",
+    "options": [
+      "Oliver Cromwell",
+      "William Wallace",
+      "Robin Hood",
+      "Guy Fawkes"
+    ],
+    "answer": "Guy Fawkes",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 47,
+    "question": "What holiday commemorates the Gunpowder Plot?",
+    "options": [
+      "Bonfire Night/Guy Fawkes Night",
+      "Easter",
+      "Halloween",
+      "Christmas"
+    ],
+    "answer": "Bonfire Night/Guy Fawkes Night",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 48,
+    "question": "What date is Bonfire Night?",
+    "options": [
+      "October 31",
+      "January 1",
+      "December 25",
+      "November 5"
+    ],
+    "answer": "November 5",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 49,
+    "question": "What king was executed in 1649?",
+    "options": [
+      "James I",
+      "Charles II",
+      "James II",
+      "Charles I"
+    ],
+    "answer": "Charles I",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 50,
+    "question": "Why was Charles I executed?",
+    "options": [
+      "Accident",
+      "Assassination",
+      "Natural causes",
+      "Lost English Civil War, tried for treason"
+    ],
+    "answer": "Lost English Civil War, tried for treason",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 51,
+    "question": "Who ruled England after Charles I's execution?",
+    "options": [
+      "Charles II",
+      "Oliver Cromwell",
+      "James II",
+      "Parliament only"
+    ],
+    "answer": "Oliver Cromwell",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 52,
+    "question": "What was Cromwell's title?",
+    "options": [
+      "Prime Minister",
+      "King",
+      "Lord Protector",
+      "President"
+    ],
+    "answer": "Lord Protector",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 53,
+    "question": "What was the Restoration?",
+    "options": [
+      "Military reorganization",
+      "Religious revival",
+      "Return of monarchy under Charles II",
+      "Building renovation"
+    ],
+    "answer": "Return of monarchy under Charles II",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 54,
+    "question": "What year was the monarchy restored?",
+    "options": [
+      "1688",
+      "1660",
+      "1700",
+      "1649"
+    ],
+    "answer": "1660",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 55,
+    "question": "What disaster struck London in 1666?",
+    "options": [
+      "Great Fire of London",
+      "Flood",
+      "Earthquake",
+      "Plague only"
+    ],
+    "answer": "Great Fire of London",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 56,
+    "question": "What was the Glorious Revolution?",
+    "options": [
+      "1649 execution of Charles I",
+      "1066 Norman Conquest",
+      "1660 Restoration",
+      "1688 overthrow of James II"
+    ],
+    "answer": "1688 overthrow of James II",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 57,
+    "question": "Who replaced James II in 1688?",
+    "options": [
+      "George I",
+      "William III and Mary II",
+      "Charles II",
+      "Anne"
+    ],
+    "answer": "William III and Mary II",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 58,
+    "question": "What document limited royal power in 1689?",
+    "options": [
+      "Magna Carta",
+      "Bill of Rights",
+      "Declaration of Rights",
+      "Constitution"
+    ],
+    "answer": "Bill of Rights",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 59,
+    "question": "Who was the last Stuart monarch?",
+    "options": [
+      "Mary II",
+      "William III",
+      "James II",
+      "Queen Anne"
+    ],
+    "answer": "Queen Anne",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 60,
+    "question": "What dynasty followed the Stuarts?",
+    "options": [
+      "Tudor",
+      "Windsor",
+      "Plantagenet",
+      "Hanover"
+    ],
+    "answer": "Hanover",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 61,
+    "question": "Who was the first Hanoverian monarch?",
+    "options": [
+      "George I",
+      "William IV",
+      "George II",
+      "George III"
+    ],
+    "answer": "George I",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 62,
+    "question": "Why did George I become king?",
+    "options": [
+      "Closest Protestant relative to Anne",
+      "Elected",
+      "Born to it",
+      "Conquered England"
+    ],
+    "answer": "Closest Protestant relative to Anne",
+    "difficulty": "hard",
+    "category": "monarchs"
+  },
+  {
+    "id": 63,
+    "question": "What language did George I primarily speak?",
+    "options": [
+      "Dutch",
+      "English",
+      "German",
+      "French"
+    ],
+    "answer": "German",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 64,
+    "question": "Which George was 'mad'?",
+    "options": [
+      "George III",
+      "George II",
+      "George I",
+      "George IV"
+    ],
+    "answer": "George III",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 65,
+    "question": "What disease likely caused George III's 'madness'?",
+    "options": [
+      "Dementia",
+      "Porphyria (now debated)",
+      "Unknown",
+      "Stroke"
+    ],
+    "answer": "Porphyria (now debated)",
+    "difficulty": "hard",
+    "category": "monarchs"
+  },
+  {
+    "id": 66,
+    "question": "What colonies did Britain lose under George III?",
+    "options": [
+      "American colonies",
+      "Indian colonies",
+      "Australian colonies",
+      "African colonies"
+    ],
+    "answer": "American colonies",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 67,
+    "question": "Who was the Prince Regent?",
+    "options": [
+      "Future George IV",
+      "Future Edward VII",
+      "Future Victoria",
+      "Future William IV"
+    ],
+    "answer": "Future George IV",
+    "difficulty": "hard",
+    "category": "monarchs"
+  },
+  {
+    "id": 68,
+    "question": "What era is named after the Prince Regent?",
+    "options": [
+      "Regency Era",
+      "Victorian Era",
+      "Georgian Era",
+      "Edwardian Era"
+    ],
+    "answer": "Regency Era",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 69,
+    "question": "How old was Victoria when she became queen?",
+    "options": [
+      "25",
+      "16",
+      "21",
+      "18"
+    ],
+    "answer": "18",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 70,
+    "question": "How long did Queen Victoria reign?",
+    "options": [
+      "50 years",
+      "45 years",
+      "63 years",
+      "70 years"
+    ],
+    "answer": "63 years",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 71,
+    "question": "Who was Victoria's husband?",
+    "options": [
+      "Prince Edward",
+      "Prince Albert",
+      "Prince Philip",
+      "Prince Charles"
+    ],
+    "answer": "Prince Albert",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 72,
+    "question": "What did Albert help organize?",
+    "options": [
+      "Coronation",
+      "Army",
+      "Great Exhibition of 1851",
+      "Parliament"
+    ],
+    "answer": "Great Exhibition of 1851",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 73,
+    "question": "How many children did Victoria and Albert have?",
+    "options": [
+      "9",
+      "6",
+      "12",
+      "4"
+    ],
+    "answer": "9",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 74,
+    "question": "Why was Victoria called 'Grandmother of Europe'?",
+    "options": [
+      "She was very old",
+      "She ruled Europe",
+      "She traveled a lot",
+      "Descendants married into many royal families"
+    ],
+    "answer": "Descendants married into many royal families",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 75,
+    "question": "What genetic disease did Victoria spread to European royalty?",
+    "options": [
+      "Hemophilia",
+      "Diabetes",
+      "Sickle cell",
+      "Cystic fibrosis"
+    ],
+    "answer": "Hemophilia",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 76,
+    "question": "What era is named after Victoria?",
+    "options": [
+      "Victorian Era",
+      "Edwardian Era",
+      "Elizabethan Era",
+      "Georgian Era"
+    ],
+    "answer": "Victorian Era",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 77,
+    "question": "What did Victoria wear after Albert died?",
+    "options": [
+      "Red",
+      "Black mourning clothes for 40 years",
+      "White",
+      "Normal clothes"
+    ],
+    "answer": "Black mourning clothes for 40 years",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 78,
+    "question": "Who succeeded Queen Victoria?",
+    "options": [
+      "William IV",
+      "Edward VII",
+      "George V",
+      "George VI"
+    ],
+    "answer": "Edward VII",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 79,
+    "question": "What era is named after Edward VII?",
+    "options": [
+      "Victorian Era",
+      "Georgian Era",
+      "Edwardian Era",
+      "Elizabethan Era"
+    ],
+    "answer": "Edwardian Era",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 80,
+    "question": "What king abdicated in 1936?",
+    "options": [
+      "George VI",
+      "George V",
+      "Edward VII",
+      "Edward VIII"
+    ],
+    "answer": "Edward VIII",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 81,
+    "question": "Why did Edward VIII abdicate?",
+    "options": [
+      "Religious reasons",
+      "Health reasons",
+      "To marry Wallis Simpson (American divorcée)",
+      "Political pressure"
+    ],
+    "answer": "To marry Wallis Simpson (American divorcée)",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 82,
+    "question": "What title did Edward VIII take after abdication?",
+    "options": [
+      "Earl of Wessex",
+      "Duke of York",
+      "Prince Edward",
+      "Duke of Windsor"
+    ],
+    "answer": "Duke of Windsor",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 83,
+    "question": "Who became king after Edward VIII abdicated?",
+    "options": [
+      "George V",
+      "George VI",
+      "Edward VII",
+      "Charles III"
+    ],
+    "answer": "George VI",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 84,
+    "question": "What was George VI's first name?",
+    "options": [
+      "Henry",
+      "George",
+      "Albert (Bertie)",
+      "Edward"
+    ],
+    "answer": "Albert (Bertie)",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 85,
+    "question": "What difficulty did George VI have?",
+    "options": [
+      "Stammer/speech impediment",
+      "Deafness",
+      "Blindness",
+      "Limp"
+    ],
+    "answer": "Stammer/speech impediment",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 86,
+    "question": "What film depicts George VI's speech therapy?",
+    "options": [
+      "Victoria",
+      "The Crown",
+      "The King's Speech",
+      "Elizabeth"
+    ],
+    "answer": "The King's Speech",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 87,
+    "question": "What war did George VI reign through?",
+    "options": [
+      "World War I",
+      "Korean War",
+      "World War II",
+      "Falklands War"
+    ],
+    "answer": "World War II",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 88,
+    "question": "Did George VI stay in London during the Blitz?",
+    "options": [
+      "Yes, boosting morale",
+      "No, he fled",
+      "Sometimes",
+      "Only at the end"
+    ],
+    "answer": "Yes, boosting morale",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 89,
+    "question": "What was George VI's wife's name?",
+    "options": [
+      "Alexandra",
+      "Mary",
+      "Elizabeth (Queen Mother)",
+      "Victoria"
+    ],
+    "answer": "Elizabeth (Queen Mother)",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 90,
+    "question": "How old did the Queen Mother live to be?",
+    "options": [
+      "101",
+      "95",
+      "85",
+      "90"
+    ],
+    "answer": "101",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 91,
+    "question": "What year was Elizabeth II coronated?",
+    "options": [
+      "1953",
+      "1950",
+      "1952",
+      "1954"
+    ],
+    "answer": "1953",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 92,
+    "question": "What was special about Elizabeth II's coronation?",
+    "options": [
+      "First radio broadcast",
+      "First televised coronation",
+      "First for a queen",
+      "First in Westminster"
+    ],
+    "answer": "First televised coronation",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 93,
+    "question": "What was Elizabeth II's coronation dress decorated with?",
+    "options": [
+      "Plain white",
+      "Gold only",
+      "Diamonds only",
+      "Embroidered flowers of Commonwealth nations"
+    ],
+    "answer": "Embroidered flowers of Commonwealth nations",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 94,
+    "question": "What is the Stone of Scone?",
+    "options": [
+      "Famous diamond",
+      "Palace cornerstone",
+      "Ancient coronation stone",
+      "Scottish monument"
+    ],
+    "answer": "Ancient coronation stone",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 95,
+    "question": "Where was the Stone of Scone kept until 1996?",
+    "options": [
+      "Edinburgh",
+      "Tower of London",
+      "Westminster Abbey (under coronation chair)",
+      "Buckingham Palace"
+    ],
+    "answer": "Westminster Abbey (under coronation chair)",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 96,
+    "question": "How many children did Elizabeth II have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 97,
+    "question": "Who is Prince William's mother?",
+    "options": [
+      "Sophie",
+      "Camilla",
+      "Sarah Ferguson",
+      "Princess Diana"
+    ],
+    "answer": "Princess Diana",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 98,
+    "question": "What year did Princess Diana die?",
+    "options": [
+      "1998",
+      "2000",
+      "1995",
+      "1997"
+    ],
+    "answer": "1997",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 99,
+    "question": "How did Princess Diana die?",
+    "options": [
+      "Car crash in Paris",
+      "Old age",
+      "Accident at home",
+      "Illness"
+    ],
+    "answer": "Car crash in Paris",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 100,
+    "question": "What was Diana's title after divorce?",
+    "options": [
+      "Duchess of Wales",
+      "Diana, Princess of Wales",
+      "Lady Diana",
+      "Princess Diana"
+    ],
+    "answer": "Diana, Princess of Wales",
+    "difficulty": "hard",
+    "category": "modern-royals"
+  },
+  {
+    "id": 101,
+    "question": "Who is the heir to the throne after Charles III?",
+    "options": [
+      "Prince William",
+      "Prince George",
+      "Prince Harry",
+      "Prince Andrew"
+    ],
+    "answer": "Prince William",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 102,
+    "question": "What is Prince William's title?",
+    "options": [
+      "Duke of Sussex",
+      "Prince of Wales",
+      "Duke of Cambridge",
+      "Duke of York"
+    ],
+    "answer": "Prince of Wales",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 103,
+    "question": "Who is Prince William married to?",
+    "options": [
+      "Meghan",
+      "Camilla",
+      "Catherine (Kate)",
+      "Sophie"
+    ],
+    "answer": "Catherine (Kate)",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 104,
+    "question": "What was Kate Middleton's title before Princess of Wales?",
+    "options": [
+      "Princess Kate",
+      "Lady Cambridge",
+      "Countess of Cambridge",
+      "Duchess of Cambridge"
+    ],
+    "answer": "Duchess of Cambridge",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 105,
+    "question": "How many children do William and Kate have?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
+    "answer": "3",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 106,
+    "question": "What are William and Kate's children's names?",
+    "options": [
+      "James, Rose, Edward",
+      "George, Charlotte, Louis",
+      "George, Harry, Charlotte",
+      "William Jr., Diana, Charles"
+    ],
+    "answer": "George, Charlotte, Louis",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 107,
+    "question": "What is Prince Harry's title?",
+    "options": [
+      "Prince of Wales",
+      "Duke of Cambridge",
+      "Duke of York",
+      "Duke of Sussex"
+    ],
+    "answer": "Duke of Sussex",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 108,
+    "question": "Who is Prince Harry married to?",
+    "options": [
+      "Cressida Bonas",
+      "Chelsy Davy",
+      "Meghan Markle",
+      "Kate Middleton"
+    ],
+    "answer": "Meghan Markle",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 109,
+    "question": "What was Meghan Markle's profession before royalty?",
+    "options": [
+      "Teacher",
+      "Actress",
+      "Doctor",
+      "Lawyer"
+    ],
+    "answer": "Actress",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 110,
+    "question": "What TV show was Meghan Markle on?",
+    "options": [
+      "Grey's Anatomy",
+      "Suits",
+      "The Good Wife",
+      "Law & Order"
+    ],
+    "answer": "Suits",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 111,
+    "question": "What did Harry and Meghan do in 2020?",
+    "options": [
+      "Stepped back from royal duties",
+      "Took on more duties",
+      "Moved to Scotland",
+      "Had a baby"
+    ],
+    "answer": "Stepped back from royal duties",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 112,
+    "question": "Where do Harry and Meghan live now?",
+    "options": [
+      "California, USA",
+      "London",
+      "Australia",
+      "Canada"
+    ],
+    "answer": "California, USA",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 113,
+    "question": "What interview did Harry and Meghan give in 2021?",
+    "options": [
+      "60 Minutes",
+      "Oprah Winfrey interview",
+      "CNN interview",
+      "BBC interview"
+    ],
+    "answer": "Oprah Winfrey interview",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 114,
+    "question": "What are Harry and Meghan's children's names?",
+    "options": [
+      "Archie and Lilibet",
+      "George and Charlotte",
+      "Charles and Diana",
+      "James and Rose"
+    ],
+    "answer": "Archie and Lilibet",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 115,
+    "question": "Who is Lilibet named after?",
+    "options": [
+      "Queen Victoria",
+      "Meghan's mother",
+      "Princess Diana",
+      "Queen Elizabeth II (her nickname)"
+    ],
+    "answer": "Queen Elizabeth II (her nickname)",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 116,
+    "question": "What is King Charles III's wife's title?",
+    "options": [
+      "Duchess of Cornwall",
+      "Queen Camilla",
+      "Queen Consort",
+      "Princess Camilla"
+    ],
+    "answer": "Queen Camilla",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 117,
+    "question": "What was Camilla's title before queen?",
+    "options": [
+      "Lady Camilla",
+      "Princess of Wales",
+      "Duchess of Cornwall",
+      "Countess Camilla"
+    ],
+    "answer": "Duchess of Cornwall",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 118,
+    "question": "Was Camilla previously married?",
+    "options": [
+      "Yes, to Andrew Parker Bowles",
+      "No",
+      "Yes, to a duke",
+      "Yes, to a prince"
+    ],
+    "answer": "Yes, to Andrew Parker Bowles",
+    "difficulty": "hard",
+    "category": "modern-royals"
+  },
+  {
+    "id": 119,
+    "question": "What is Charles III passionate about?",
+    "options": [
+      "Aviation",
+      "Environment and organic farming",
+      "Technology",
+      "Racing"
+    ],
+    "answer": "Environment and organic farming",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 120,
+    "question": "What food brand did Prince Charles create?",
+    "options": [
+      "Duchy Originals",
+      "Royal Foods",
+      "Windsor Farms",
+      "Crown Organics"
+    ],
+    "answer": "Duchy Originals",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 121,
+    "question": "What is the royal residence in Scotland?",
+    "options": [
+      "Balmoral only",
+      "Stirling Castle",
+      "Palace of Holyroodhouse",
+      "Edinburgh Castle"
+    ],
+    "answer": "Palace of Holyroodhouse",
+    "difficulty": "medium",
+    "category": "palaces"
+  },
+  {
+    "id": 122,
+    "question": "What is Sandringham?",
+    "options": [
+      "Scottish castle",
+      "Welsh residence",
+      "Royal estate in Norfolk",
+      "London palace"
+    ],
+    "answer": "Royal estate in Norfolk",
+    "difficulty": "medium",
+    "category": "palaces"
+  },
+  {
+    "id": 123,
+    "question": "Where does the royal family spend Christmas?",
+    "options": [
+      "Buckingham Palace",
+      "Windsor Castle",
+      "Sandringham",
+      "Balmoral"
+    ],
+    "answer": "Sandringham",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 124,
+    "question": "What is Trooping the Colour?",
+    "options": [
+      "Horse race",
+      "Football match",
+      "Music festival",
+      "Queen's/King's official birthday parade"
+    ],
+    "answer": "Queen's/King's official birthday parade",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 125,
+    "question": "When is Trooping the Colour held?",
+    "options": [
+      "December",
+      "January",
+      "On the monarch's actual birthday",
+      "June (regardless of actual birthday)"
+    ],
+    "answer": "June (regardless of actual birthday)",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 126,
+    "question": "Why June for the birthday parade?",
+    "options": [
+      "Royal tradition",
+      "Better weather",
+      "Historical event",
+      "Parliament schedule"
+    ],
+    "answer": "Better weather",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 127,
+    "question": "What is the Changing of the Guard?",
+    "options": [
+      "Military parade",
+      "Guard retirement",
+      "Ceremony at Buckingham Palace",
+      "Castle opening"
+    ],
+    "answer": "Ceremony at Buckingham Palace",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 128,
+    "question": "What hats do the Queen's Guard wear?",
+    "options": [
+      "Bearskin hats",
+      "Caps",
+      "Top hats",
+      "Helmets"
+    ],
+    "answer": "Bearskin hats",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 129,
+    "question": "Can Queen's Guards move or smile?",
+    "options": [
+      "No, they must stand still",
+      "Only for photos",
+      "Yes, always",
+      "Only on weekends"
+    ],
+    "answer": "No, they must stand still",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 130,
+    "question": "What is Royal Ascot?",
+    "options": [
+      "Horse racing event",
+      "Award ceremony",
+      "Garden party",
+      "Palace"
+    ],
+    "answer": "Horse racing event",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 131,
+    "question": "What is required in the Royal Enclosure at Ascot?",
+    "options": [
+      "Uniforms",
+      "Formal dress code including hats",
+      "Nothing special",
+      "Casual dress"
+    ],
+    "answer": "Formal dress code including hats",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 132,
+    "question": "What is the Order of the Garter?",
+    "options": [
+      "Military rank",
+      "Royal club",
+      "Oldest order of chivalry",
+      "Fashion award"
+    ],
+    "answer": "Oldest order of chivalry",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 133,
+    "question": "Who founded the Order of the Garter?",
+    "options": [
+      "William I",
+      "Edward III",
+      "Elizabeth I",
+      "Henry VIII"
+    ],
+    "answer": "Edward III",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 134,
+    "question": "What year was the Order of the Garter founded?",
+    "options": [
+      "1485",
+      "1348",
+      "1600",
+      "1066"
+    ],
+    "answer": "1348",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 135,
+    "question": "What happened in 1066?",
+    "options": [
+      "Magna Carta",
+      "Gunpowder Plot",
+      "Norman Conquest / Battle of Hastings",
+      "English Civil War"
+    ],
+    "answer": "Norman Conquest / Battle of Hastings",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 136,
+    "question": "Who won the Battle of Hastings?",
+    "options": [
+      "King Harold",
+      "William the Conqueror",
+      "Richard I",
+      "King Alfred"
+    ],
+    "answer": "William the Conqueror",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 137,
+    "question": "What is the Bayeux Tapestry?",
+    "options": [
+      "Flag",
+      "Embroidery depicting Norman Conquest",
+      "Royal carpet",
+      "Church decoration"
+    ],
+    "answer": "Embroidery depicting Norman Conquest",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 138,
+    "question": "Who was the last Anglo-Saxon king?",
+    "options": [
+      "Harold II",
+      "Canute",
+      "Alfred the Great",
+      "Edward the Confessor"
+    ],
+    "answer": "Harold II",
+    "difficulty": "hard",
+    "category": "monarchs"
+  },
+  {
+    "id": 139,
+    "question": "How did Harold II die at Hastings?",
+    "options": [
+      "Sword wound",
+      "Survived",
+      "Trampled",
+      "Arrow in the eye (traditionally)"
+    ],
+    "answer": "Arrow in the eye (traditionally)",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 140,
+    "question": "What document did King John sign in 1215?",
+    "options": [
+      "Bill of Rights",
+      "Magna Carta",
+      "Constitution",
+      "Declaration"
+    ],
+    "answer": "Magna Carta",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 141,
+    "question": "What did Magna Carta establish?",
+    "options": [
+      "Democracy",
+      "Republic",
+      "King is subject to law",
+      "King has absolute power"
+    ],
+    "answer": "King is subject to law",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 142,
+    "question": "Who was the 'Lionheart' king?",
+    "options": [
+      "Henry II",
+      "Richard I",
+      "Edward I",
+      "John"
+    ],
+    "answer": "Richard I",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 143,
+    "question": "What was Richard I famous for?",
+    "options": [
+      "Crusades",
+      "Signing Magna Carta",
+      "Building castles",
+      "Defeating French"
+    ],
+    "answer": "Crusades",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 144,
+    "question": "Who is the legendary outlaw associated with King John?",
+    "options": [
+      "Rob Roy",
+      "King Arthur",
+      "Robin Hood",
+      "William Wallace"
+    ],
+    "answer": "Robin Hood",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 145,
+    "question": "What is King Arthur associated with?",
+    "options": [
+      "Camelot and the Round Table",
+      "Norman Conquest",
+      "Crusades",
+      "Robin Hood"
+    ],
+    "answer": "Camelot and the Round Table",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 146,
+    "question": "What sword is associated with King Arthur?",
+    "options": [
+      "Excalibur",
+      "Sting",
+      "Glamdring",
+      "Narsil"
+    ],
+    "answer": "Excalibur",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 147,
+    "question": "Who was the longest-reigning British monarch?",
+    "options": [
+      "Henry VIII",
+      "Queen Victoria",
+      "George III",
+      "Queen Elizabeth II"
+    ],
+    "answer": "Queen Elizabeth II",
+    "difficulty": "easy",
+    "category": "monarchs"
+  },
+  {
+    "id": 148,
+    "question": "Who was the shortest-reigning monarch?",
+    "options": [
+      "Lady Jane Grey (9 days)",
+      "Edward VIII",
+      "Richard III",
+      "Edward V"
+    ],
+    "answer": "Lady Jane Grey (9 days)",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 149,
+    "question": "What happened to Lady Jane Grey?",
+    "options": [
+      "Executed",
+      "Ruled for years",
+      "Escaped",
+      "Abdicated"
+    ],
+    "answer": "Executed",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 150,
+    "question": "What are the Princes in the Tower?",
+    "options": [
+      "Architects",
+      "Guards",
+      "Edward V and brother, disappeared/murdered",
+      "Saints"
+    ],
+    "answer": "Edward V and brother, disappeared/murdered",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 151,
+    "question": "Who likely killed the Princes in the Tower?",
+    "options": [
+      "No one",
+      "Edward IV",
+      "Henry VII",
+      "Richard III (debated)"
+    ],
+    "answer": "Richard III (debated)",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 152,
+    "question": "What is the Royal Mint?",
+    "options": [
+      "Producer of British coins",
+      "Bank",
+      "Sweet factory",
+      "Royal garden"
+    ],
+    "answer": "Producer of British coins",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 153,
+    "question": "Whose face appears on British coins and stamps?",
+    "options": [
+      "The reigning monarch",
+      "Prime Minister",
+      "No one",
+      "Random people"
+    ],
+    "answer": "The reigning monarch",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 154,
+    "question": "Which direction does the monarch face on coins?",
+    "options": [
+      "Always right",
+      "Always left",
+      "Alternates with each monarch",
+      "Forward"
+    ],
+    "answer": "Alternates with each monarch",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 155,
+    "question": "What is the Royal Household?",
+    "options": [
+      "Parliament",
+      "Staff supporting the monarch",
+      "Palace building",
+      "Royal family only"
+    ],
+    "answer": "Staff supporting the monarch",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 156,
+    "question": "What is the Privy Council?",
+    "options": [
+      "Body of advisors to the monarch",
+      "Secret society",
+      "Military council",
+      "Religious order"
+    ],
+    "answer": "Body of advisors to the monarch",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 157,
+    "question": "What does the monarch do at State Opening of Parliament?",
+    "options": [
+      "Reads the government's plans (King's/Queen's Speech)",
+      "Debates",
+      "Nothing",
+      "Votes"
+    ],
+    "answer": "Reads the government's plans (King's/Queen's Speech)",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 158,
+    "question": "Can the monarch refuse Royal Assent to laws?",
+    "options": [
+      "Only for certain laws",
+      "Yes, often",
+      "Technically yes, but hasn't happened since 1708",
+      "No"
+    ],
+    "answer": "Technically yes, but hasn't happened since 1708",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 159,
+    "question": "What is a constitutional monarchy?",
+    "options": [
+      "Absolute monarchy",
+      "No monarchy",
+      "Elected monarchy",
+      "Monarch with limited powers, Parliament governs"
+    ],
+    "answer": "Monarch with limited powers, Parliament governs",
+    "difficulty": "easy",
+    "category": "government"
+  },
+  {
+    "id": 160,
+    "question": "Who appoints the Prime Minister?",
+    "options": [
+      "The monarch (by convention, leader of majority)",
+      "House of Lords",
+      "Parliament votes",
+      "Public vote"
+    ],
+    "answer": "The monarch (by convention, leader of majority)",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 161,
+    "question": "What is a royal warrant?",
+    "options": [
+      "Arrest order",
+      "Permission to supply goods to royalty",
+      "Marriage license",
+      "Land grant"
+    ],
+    "answer": "Permission to supply goods to royalty",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 162,
+    "question": "What corgis were associated with Elizabeth II?",
+    "options": [
+      "Both",
+      "Pembroke Welsh Corgis",
+      "Neither",
+      "Cardigan Welsh Corgis"
+    ],
+    "answer": "Pembroke Welsh Corgis",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 163,
+    "question": "How many corgis did Elizabeth II own over her lifetime?",
+    "options": [
+      "5",
+      "Over 30",
+      "50",
+      "About 10"
+    ],
+    "answer": "Over 30",
+    "difficulty": "hard",
+    "category": "modern-royals"
+  },
+  {
+    "id": 164,
+    "question": "What Netflix series depicts the royal family?",
+    "options": [
+      "Downton Abbey",
+      "Victoria",
+      "The Crown",
+      "Reign"
+    ],
+    "answer": "The Crown",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 165,
+    "question": "What was Princess Margaret known for?",
+    "options": [
+      "Political involvement",
+      "Charity work only",
+      "Military service",
+      "Glamorous lifestyle and forbidden romance"
+    ],
+    "answer": "Glamorous lifestyle and forbidden romance",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 166,
+    "question": "Who couldn't Margaret marry due to his divorce?",
+    "options": [
+      "Tony Blair",
+      "Peter Townsend",
+      "Roddy Llewellyn",
+      "Antony Armstrong-Jones"
+    ],
+    "answer": "Peter Townsend",
+    "difficulty": "hard",
+    "category": "modern-royals"
+  },
+  {
+    "id": 167,
+    "question": "What is Prince Andrew's title?",
+    "options": [
+      "Duke of Cambridge",
+      "Duke of York",
+      "Earl of Wessex",
+      "Duke of Sussex"
+    ],
+    "answer": "Duke of York",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 168,
+    "question": "What is Prince Edward's title?",
+    "options": [
+      "Duke of Kent",
+      "Duke of York",
+      "Duke of Edinburgh (formerly Earl of Wessex)",
+      "Prince of Wales"
+    ],
+    "answer": "Duke of Edinburgh (formerly Earl of Wessex)",
+    "difficulty": "hard",
+    "category": "modern-royals"
+  },
+  {
+    "id": 169,
+    "question": "Who is Princess Anne?",
+    "options": [
+      "Charles's sister (same)",
+      "Elizabeth II's daughter, The Princess Royal",
+      "All correct",
+      "William's aunt"
+    ],
+    "answer": "All correct",
+    "difficulty": "easy",
+    "category": "modern-royals"
+  },
+  {
+    "id": 170,
+    "question": "What is Princess Anne known for?",
+    "options": [
+      "Hard work and no-nonsense attitude",
+      "Fashion",
+      "Parties",
+      "Politics"
+    ],
+    "answer": "Hard work and no-nonsense attitude",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 171,
+    "question": "Was Princess Anne an Olympic athlete?",
+    "options": [
+      "Yes, equestrian at 1976 Olympics",
+      "Almost qualified",
+      "No",
+      "Won gold"
+    ],
+    "answer": "Yes, equestrian at 1976 Olympics",
+    "difficulty": "medium",
+    "category": "modern-royals"
+  },
+  {
+    "id": 172,
+    "question": "What is the line of succession?",
+    "options": [
+      "Family tree only",
+      "Order of who inherits the throne",
+      "Royal parade",
+      "Voting order"
+    ],
+    "answer": "Order of who inherits the throne",
+    "difficulty": "easy",
+    "category": "government"
+  },
+  {
+    "id": 173,
+    "question": "Can Catholics inherit the British throne?",
+    "options": [
+      "Always yes",
+      "Only if converted",
+      "Now yes (since 2013), previously no",
+      "Still no"
+    ],
+    "answer": "Now yes (since 2013), previously no",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 174,
+    "question": "What changed succession rules in 2013?",
+    "options": [
+      "Residency requirement",
+      "Age requirement",
+      "Catholics allowed",
+      "Daughters no longer passed over for younger brothers"
+    ],
+    "answer": "Daughters no longer passed over for younger brothers",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 175,
+    "question": "Who was the first British monarch of the House of Windsor?",
+    "options": [
+      "George VI",
+      "Elizabeth II",
+      "Edward VII",
+      "George V"
+    ],
+    "answer": "George V",
+    "difficulty": "medium",
+    "category": "dynasties"
+  },
+  {
+    "id": 176,
+    "question": "What is a regency?",
+    "options": [
+      "Palace wing",
+      "Royal holiday",
+      "When someone rules on behalf of a monarch",
+      "A type of crown"
+    ],
+    "answer": "When someone rules on behalf of a monarch",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 177,
+    "question": "What is the Queen's/King's Champion?",
+    "options": [
+      "Favorite horse",
+      "Best athlete",
+      "Historical defender at coronations",
+      "Military leader"
+    ],
+    "answer": "Historical defender at coronations",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 178,
+    "question": "What ampulla is used at coronations?",
+    "options": [
+      "Scepter",
+      "Gold eagle flask holding anointing oil",
+      "Orb",
+      "Type of crown"
+    ],
+    "answer": "Gold eagle flask holding anointing oil",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 179,
+    "question": "What is St. Edward's Crown?",
+    "options": [
+      "Scottish crown",
+      "Coronation crown",
+      "Welsh crown",
+      "Everyday crown"
+    ],
+    "answer": "Coronation crown",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 180,
+    "question": "How heavy is St. Edward's Crown?",
+    "options": [
+      "10 pounds",
+      "1 pound",
+      "About 5 pounds (2.2 kg)",
+      "15 pounds"
+    ],
+    "answer": "About 5 pounds (2.2 kg)",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 181,
+    "question": "What is the Imperial State Crown worn for?",
+    "options": [
+      "Coronation only",
+      "Everyday",
+      "State Opening of Parliament",
+      "Funerals"
+    ],
+    "answer": "State Opening of Parliament",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 182,
+    "question": "What famous diamond is in the Imperial State Crown?",
+    "options": [
+      "Hope Diamond",
+      "Regent",
+      "Cullinan II (Second Star of Africa)",
+      "Koh-i-Noor"
+    ],
+    "answer": "Cullinan II (Second Star of Africa)",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 183,
+    "question": "Where is the Koh-i-Noor diamond?",
+    "options": [
+      "Tower vault",
+      "Lost",
+      "Imperial State Crown",
+      "Crown of the Queen Consort"
+    ],
+    "answer": "Crown of the Queen Consort",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 184,
+    "question": "What controversy surrounds the Koh-i-Noor?",
+    "options": [
+      "It's cursed",
+      "It's fake",
+      "India, Pakistan, others claim it was stolen",
+      "It's missing"
+    ],
+    "answer": "India, Pakistan, others claim it was stolen",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 185,
+    "question": "What is the Sovereign's Orb?",
+    "options": [
+      "Scepter",
+      "Golden globe representing Christian sovereignty",
+      "Ring",
+      "Crown"
+    ],
+    "answer": "Golden globe representing Christian sovereignty",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 186,
+    "question": "What parade marks the monarch's death?",
+    "options": [
+      "Changing of Guard",
+      "Trooping the Colour",
+      "Royal Ascot",
+      "Lying in State and funeral procession"
+    ],
+    "answer": "Lying in State and funeral procession",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 187,
+    "question": "Where do most monarchs get buried?",
+    "options": [
+      "Westminster Abbey or Windsor Castle",
+      "Tower of London",
+      "Buckingham Palace",
+      "Canterbury"
+    ],
+    "answer": "Westminster Abbey or Windsor Castle",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 188,
+    "question": "Where was Elizabeth II buried?",
+    "options": [
+      "Windsor Castle (St. George's Chapel)",
+      "Sandringham",
+      "Westminster Abbey",
+      "Balmoral"
+    ],
+    "answer": "Windsor Castle (St. George's Chapel)",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 189,
+    "question": "What phrase announces a monarch's death?",
+    "options": [
+      "Royal silence",
+      "The reign ends",
+      "The Crown has fallen",
+      "London Bridge is down (for Elizabeth II)"
+    ],
+    "answer": "London Bridge is down (for Elizabeth II)",
+    "difficulty": "medium",
+    "category": "traditions"
+  },
+  {
+    "id": 190,
+    "question": "What happens immediately when a monarch dies?",
+    "options": [
+      "Waiting period",
+      "Parliament decides",
+      "Election",
+      "New monarch succeeds instantly"
+    ],
+    "answer": "New monarch succeeds instantly",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 191,
+    "question": "What phrase marks this instant succession?",
+    "options": [
+      "The King/Queen is dead, long live the King/Queen",
+      "New reign begins",
+      "God save the King",
+      "Crown transfers"
+    ],
+    "answer": "The King/Queen is dead, long live the King/Queen",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 192,
+    "question": "What is Defender of the Faith?",
+    "options": [
+      "Royal title given by Pope to Henry VIII",
+      "Religious leader",
+      "Military rank",
+      "Parliament title"
+    ],
+    "answer": "Royal title given by Pope to Henry VIII",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 193,
+    "question": "Why is it ironic Henry VIII kept 'Defender of the Faith'?",
+    "options": [
+      "He wasn't religious",
+      "He later broke from the Catholic Church",
+      "He lost a war",
+      "He changed it"
+    ],
+    "answer": "He later broke from the Catholic Church",
+    "difficulty": "medium",
+    "category": "monarchs"
+  },
+  {
+    "id": 194,
+    "question": "What is the Royal Collection?",
+    "options": [
+      "Art and treasures held in trust by monarch",
+      "Crown Jewels",
+      "Library",
+      "Personal belongings"
+    ],
+    "answer": "Art and treasures held in trust by monarch",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 195,
+    "question": "How much is the Royal Collection worth?",
+    "options": [
+      "Unknown",
+      "£1 million",
+      "Priceless, estimated over £10 billion",
+      "£100 million"
+    ],
+    "answer": "Priceless, estimated over £10 billion",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 196,
+    "question": "What is the Civil List (now Sovereign Grant)?",
+    "options": [
+      "Tax payment",
+      "Charity fund",
+      "Personal salary",
+      "Government funding for royal duties"
+    ],
+    "answer": "Government funding for royal duties",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 197,
+    "question": "Do the royals pay taxes?",
+    "options": [
+      "Always have",
+      "No, never",
+      "Yes, voluntarily since 1992",
+      "Only some"
+    ],
+    "answer": "Yes, voluntarily since 1992",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 198,
+    "question": "What is a royal 'walkabout'?",
+    "options": [
+      "Informal public meet-and-greet",
+      "Official ceremony",
+      "Palace tour",
+      "Garden walk"
+    ],
+    "answer": "Informal public meet-and-greet",
+    "difficulty": "easy",
+    "category": "traditions"
+  },
+  {
+    "id": 199,
+    "question": "Who introduced the royal walkabout?",
+    "options": [
+      "King George VI",
+      "Queen Elizabeth II and Prince Philip in 1970",
+      "Prince Charles",
+      "Queen Victoria"
+    ],
+    "answer": "Queen Elizabeth II and Prince Philip in 1970",
+    "difficulty": "hard",
+    "category": "traditions"
+  },
+  {
+    "id": 200,
+    "question": "What is the Commonwealth?",
+    "options": [
+      "British Empire",
+      "Parliament",
+      "United Kingdom",
+      "Association of nations, many former British colonies"
+    ],
+    "answer": "Association of nations, many former British colonies",
+    "difficulty": "easy",
+    "category": "government"
+  }
+]
