@@ -1494,12 +1494,18 @@ footer button:hover {
     width: 100% !important;
   }
 
-  /* Content sections - centered with max-width for readability */
-  .home-view,
+  /* Home view - full width like profile */
+  .home-view {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Topics view - full width like profile */
   .topics-view {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 50px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
   /* Profile view - full width container */
@@ -1733,10 +1739,18 @@ footer button:hover {
 
 /* Large Desktop - even wider and more spacious */
 @media (min-width: 1200px) {
-  .home-view,
+  /* Home view - keep fullscreen */
+  .home-view {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Topics view - keep fullscreen */
   .topics-view {
-    max-width: 1400px;
-    padding: 40px 80px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
   }
 
   /* Profile view - keep fullscreen */
