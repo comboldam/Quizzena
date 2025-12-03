@@ -266,161 +266,110 @@
     <!-- HOME SCREEN VIEW -->
     <div class="home-view" id="home-view">
 
-      <!-- Hero Section -->
-      <div class="hero-section">
-        <h1>Learn the world, one quiz at a time.</h1>
-        <p>Choose a topic to begin.</p>
-      </div>
-
-      <!-- Featured/Quick Start Section -->
-      <div class="featured-section">
-        <h2>Quick Start</h2>
-        <p>Jump right into our most popular quizzes</p>
-        <div class="quick-start-cards">
-          <button class="quick-start-btn" onclick="document.getElementById('flags-topic-btn').click()">
-  <div class="icon-floor-qs">
-  <div class="flag-container-qs">
-    <!-- Sky -->
-    <div class="flag-sky-qs">
-      <div class="flag-cloud-qs"></div>
-      <div class="flag-cloud-qs"></div>
-      <div class="flag-cloud-qs"></div>
-    </div>
-    <!-- Flag poles row -->
-    <div class="flag-row-qs">
-      <div class="flag-pole-qs"><div class="flag-mini-qs f1 flag-france-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f2 flag-germany-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f3 flag-usa-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f4 flag-uk-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f5 flag-japan-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f6 flag-brazil-qs"></div></div>
-      <div class="flag-pole-qs"><div class="flag-mini-qs f7 flag-canada-qs"></div></div>
-    </div>
-    <!-- Ground -->
-    <div class="flag-ground-qs"></div>
-  </div>
-  </div>
-  <div class="quick-name">Flags Quiz</div>
-</button>
-          <button class="quick-start-btn" onclick="document.getElementById('capitals-topic-btn').click()">
-  <div class="icon-floor-qs">
-  <div class="capitol-container-qs">
-    <div class="capitol-3d-qs">
-      <div class="spire-qs"></div>
-      <div class="dome-qs"></div>
-      <div class="pediment-qs"></div>
-      <div class="wing-qs wing-left-qs"></div>
-      <div class="wing-qs wing-right-qs"></div>
-      <div class="building-body-qs"></div>
-      <div class="columns-row-qs">
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-        <div class="column-qs"></div>
-      </div>
-      <div class="steps-qs">
-        <div class="step-qs"></div>
-        <div class="step-qs"></div>
-        <div class="step-qs"></div>
-      </div>
-      <div class="capitol-shadow-qs"></div>
-    </div>
-  </div>
-  </div>
-  <div class="quick-name">Capitals Quiz</div>
-</button>
-          <button class="quick-start-btn" onclick="document.getElementById('area-topic-btn').click()">
-  <div class="icon-floor-qs">
-  <div class="area-container-qs">
-    <div class="area-3d-qs">
-      <div class="grid-bg-qs"></div>
-      <div class="bracket-qs bracket-tl-qs"></div>
-      <div class="bracket-qs bracket-tr-qs"></div>
-      <div class="bracket-qs bracket-bl-qs"></div>
-      <div class="bracket-qs bracket-br-qs"></div>
-      <div class="country-shape-qs">
-        <div class="terrain-base-qs"></div>
-        <div class="mountains-qs">
-          <div class="mountain-qs"></div>
-          <div class="mountain-qs"></div>
-          <div class="mountain-qs"></div>
-        </div>
-        <div class="forests-qs">
-          <div class="tree-qs"></div>
-          <div class="tree-qs"></div>
-          <div class="tree-qs"></div>
-          <div class="tree-qs"></div>
-          <div class="tree-qs"></div>
-        </div>
-        <div class="river-qs"></div>
-        <div class="lake-qs"></div>
-        <div class="cities-qs">
-          <div class="city-qs capital-qs"></div>
-          <div class="city-qs"></div>
-        </div>
-        <div class="coastline-qs"></div>
-      </div>
-      <div class="scan-line-qs"></div>
-      <div class="arrow-h-qs"></div>
-      <div class="arrow-v-qs"></div>
-      <div class="ruler-h-qs"></div>
-      <div class="ruler-v-qs"></div>
-      <div class="km-label-qs">km²</div>
-      <div class="area-shadow-qs"></div>
-    </div>
-  </div>
-  </div>
-  <div class="quick-name">Area Quiz</div>
-</button>
-          <button class="quick-start-btn" onclick="document.getElementById('world-history-topic-btn').click()">
-            <div class="quick-icon">📜</div>
-            <div class="quick-name">History Quiz</div>
-          </button>
-        </div>
-        <button class="browse-all-btn" id="browse-all-topics">
-          Browse All Topics →
+      <!-- Featured Quiz of the Day -->
+      <div class="home-featured-section">
+        <div class="home-featured-label">🏆 QUIZ OF THE DAY</div>
+        <button class="home-featured-card" onclick="document.getElementById('football-general-topic-btn').click()">
+          <div class="football-v2-card-topic home-featured-card-inner">
+            <div class="football-v2-kickoff-text">Kick Off!</div>
+            <div class="football-v2-whistle-burst">
+              <div class="football-v2-whistle">
+                <div class="football-v2-whistle-body"></div>
+              </div>
+            </div>
+            <div class="football-v2-flags">
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+              <div class="football-v2-flag"></div>
+            </div>
+            <div class="football-v2-goal-net"></div>
+            <div class="football-v2-club-dots">
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+              <div class="football-v2-dot"></div>
+            </div>
+            <div class="football-v2-icon-container">
+              <div class="football-v2-pitch">
+                <div class="football-v2-center-circle"></div>
+                <div class="football-v2-penalty-box top"></div>
+                <div class="football-v2-penalty-box bottom"></div>
+                <div class="football-v2-goal-box top"></div>
+                <div class="football-v2-goal-box bottom"></div>
+                <div class="football-v2-corner top-left"></div>
+                <div class="football-v2-corner top-right"></div>
+                <div class="football-v2-corner bottom-left"></div>
+                <div class="football-v2-corner bottom-right"></div>
+              </div>
+              <div class="football-v2-ball">
+                <div class="football-v2-patch football-v2-patch-1"></div>
+                <div class="football-v2-patch football-v2-patch-2"></div>
+                <div class="football-v2-patch football-v2-patch-3"></div>
+                <div class="football-v2-patch football-v2-patch-4"></div>
+                <div class="football-v2-patch football-v2-patch-5"></div>
+                <div class="football-v2-ball-shine"></div>
+              </div>
+            </div>
+            <div class="football-v2-card-title">Football</div>
+          </div>
+          <div class="home-featured-play">▶ PLAY NOW</div>
         </button>
       </div>
 
-      <!-- Trending This Week Section -->
-      <div class="trending-section">
-        <h2>🔥 Featured Quizzes</h2>
-        <p>Popular geography challenges</p>
-        <div class="trending-list">
-          <div class="trending-item" onclick="document.getElementById('capitals-topic-btn').click()">
-            <div class="trending-rank">1</div>
-            <div class="trending-icon">🏛️</div>
-            <div class="trending-info">
-              <div class="trending-name">Capitals Quiz</div>
-              <div class="trending-desc">Name the capital cities</div>
-            </div>
-            <div class="trending-arrow">→</div>
-          </div>
-          <div class="trending-item" onclick="document.getElementById('flags-topic-btn').click()">
-            <div class="trending-rank">2</div>
-            <div class="trending-icon">🏳️</div>
-            <div class="trending-info">
-              <div class="trending-name">Flags Quiz</div>
-              <div class="trending-desc">Identify country flags</div>
-            </div>
-            <div class="trending-arrow">→</div>
-          </div>
-          <div class="trending-item" onclick="document.getElementById('area-topic-btn').click()">
-            <div class="trending-rank">3</div>
-            <div class="trending-icon">📏</div>
-            <div class="trending-info">
-              <div class="trending-name">Area Quiz</div>
-              <div class="trending-desc">Guess country sizes</div>
-            </div>
-            <div class="trending-arrow">→</div>
-          </div>
+      <!-- Explore Categories -->
+      <div class="home-categories-section">
+        <h2 class="home-categories-title">Explore Categories</h2>
+        <div class="home-categories-grid">
+          <button class="home-category-card" data-category="geography">
+            <div class="home-category-icon">🌍</div>
+            <div class="home-category-name">Geography</div>
+            <div class="home-category-count">3 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="football">
+            <div class="home-category-icon">⚽</div>
+            <div class="home-category-name">Football</div>
+            <div class="home-category-count">8 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="movies">
+            <div class="home-category-icon">🎬</div>
+            <div class="home-category-name">Movies</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="tvshows">
+            <div class="home-category-icon">📺</div>
+            <div class="home-category-name">TV Shows</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="history">
+            <div class="home-category-icon">📜</div>
+            <div class="home-category-name">History</div>
+            <div class="home-category-count">7 quizzes</div>
+          </button>
+          <button class="home-category-card" data-category="logos">
+            <div class="home-category-icon">🎨</div>
+            <div class="home-category-name">Logos</div>
+            <div class="home-category-count">1 quiz</div>
+          </button>
         </div>
       </div>
 
+    </div>
+
+    <!-- Category Modal Overlay -->
+    <div class="category-modal hidden" id="category-modal">
+      <div class="category-modal-backdrop" id="category-modal-backdrop"></div>
+      <div class="category-modal-content">
+        <div class="category-modal-header">
+          <h2 class="category-modal-title" id="category-modal-title">Category</h2>
+          <button class="category-modal-close" id="category-modal-close">✕</button>
+        </div>
+        <div class="category-modal-quizzes" id="category-modal-quizzes">
+          <!-- Quizzes will be inserted here dynamically -->
+        </div>
+      </div>
     </div>
 
     <!-- TOPICS SCREEN VIEW -->

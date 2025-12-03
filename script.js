@@ -1495,12 +1495,121 @@ navTopics.addEventListener('click', () => {
   showTopics();
 });
 
-// Browse All Topics button (on home screen)
+// Browse All Topics button (on home screen) - DEPRECATED, kept for compatibility
 if (browseAllBtn) {
   browseAllBtn.addEventListener('click', () => {
     showTopics();
   });
 }
+
+// ========================================
+// 🏠 HOME PAGE - CATEGORY MODAL
+// ========================================
+const categoryModal = document.getElementById('category-modal');
+const categoryModalBackdrop = document.getElementById('category-modal-backdrop');
+const categoryModalClose = document.getElementById('category-modal-close');
+const categoryModalTitle = document.getElementById('category-modal-title');
+const categoryModalQuizzes = document.getElementById('category-modal-quizzes');
+
+// Category quiz mappings - maps category to section class in topics-view
+const categoryMappings = {
+  geography: {
+    title: '🌍 Geography',
+    sectionClass: 'geography-section'
+  },
+  football: {
+    title: '⚽ Football',
+    sectionClass: 'football-section'
+  },
+  movies: {
+    title: '🎬 Movies',
+    sectionClass: 'movies-section'
+  },
+  tvshows: {
+    title: '📺 TV Shows',
+    sectionClass: 'tvshows-section'
+  },
+  history: {
+    title: '📜 History',
+    sectionClass: 'history-section'
+  },
+  logos: {
+    title: '🎨 Logos',
+    sectionClass: 'logos-section'
+  }
+};
+
+// Open category modal
+function openCategoryModal(category) {
+  const mapping = categoryMappings[category];
+  if (!mapping) return;
+
+  // Set title
+  categoryModalTitle.textContent = mapping.title;
+
+  // Get quiz cards from the topics-view section
+  const section = document.querySelector(`.${mapping.sectionClass}`);
+  if (!section) return;
+
+  // Clone the quiz cards (only status-active ones with fancy cards)
+  const quizCards = section.querySelectorAll('.status-active');
+  categoryModalQuizzes.innerHTML = '';
+
+  quizCards.forEach(card => {
+    const clone = card.cloneNode(true);
+    // Add click handler to close modal when quiz is selected
+    const button = clone.querySelector('button');
+    if (button) {
+      const originalId = button.id;
+      button.removeAttribute('id'); // Remove ID from clone to avoid duplicates
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeCategoryModal();
+        // Trigger the original button click
+        const originalBtn = document.getElementById(originalId);
+        if (originalBtn) {
+          setTimeout(() => originalBtn.click(), 100);
+        }
+      });
+    }
+    categoryModalQuizzes.appendChild(clone);
+  });
+
+  // Show modal
+  categoryModal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden'; // Prevent background scroll
+}
+
+// Close category modal
+function closeCategoryModal() {
+  categoryModal.classList.add('hidden');
+  document.body.style.overflow = ''; // Restore scroll
+}
+
+// Event listeners for category cards
+document.querySelectorAll('.home-category-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const category = card.dataset.category;
+    openCategoryModal(category);
+  });
+});
+
+// Close modal on backdrop click
+if (categoryModalBackdrop) {
+  categoryModalBackdrop.addEventListener('click', closeCategoryModal);
+}
+
+// Close modal on X button click
+if (categoryModalClose) {
+  categoryModalClose.addEventListener('click', closeCategoryModal);
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && categoryModal && !categoryModal.classList.contains('hidden')) {
+    closeCategoryModal();
+  }
+});
 
 // Leaderboard button - using addEventListener for iOS compatibility
 navLeaderboard.addEventListener('click', () => {
