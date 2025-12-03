@@ -1615,14 +1615,18 @@ const allViews = {
   profile: profileView
 };
 
-// Apply directional animation to a view
+// Apply directional animation to a view (desktop only - disabled on mobile via CSS)
 function applyNavAnimation(view, direction) {
   if (!view) return;
+  
+  // Skip animation logic on mobile for better Safari performance
+  const isMobile = window.innerWidth <= 768;
+  if (isMobile) return;
   
   // Remove any existing animation classes
   view.classList.remove('slide-from-left', 'slide-from-right', 'slide-from-bottom');
   
-  // Force reflow to restart animation
+  // Force reflow to restart animation (desktop only)
   void view.offsetWidth;
   
   // Apply new animation class
