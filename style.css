@@ -56,12 +56,12 @@ body {
   background-attachment: fixed;
   color: white;
   text-align: center;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   overflow: hidden;
   position: fixed;
@@ -542,25 +542,23 @@ footer button:hover {
    🏠 NEW HOME SCREEN - QUIZUP STYLE
    ======================================== */
 
-/* App Container - Full screen on mobile */
+/* App Container - Full screen on ALL devices */
 #home-screen {
-  width: 100%;
-  max-width: 480px;
-  height: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  background: transparent;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow:
-    0 8px 32px 0 rgba(31, 38, 135, 0.37),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* On mobile devices, fill entire screen */
