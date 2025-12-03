@@ -535,21 +535,25 @@ function formatArea(area) {
 // 🏠 NAVIGATION - HOME SCREEN (TOPIC SELECTION)
 // ========================================
 flagsTopicBtn.onclick = () => {
+  playClickSound();
   currentTopic = 'flags';
   showUnifiedModeSelection('Flags', '🏳️');
 };
 
 capitalsTopicBtn.onclick = () => {
+  playClickSound();
   currentTopic = 'capitals';
   showUnifiedModeSelection('Capitals', '🏛️');
 };
 
 bordersTopicBtn.onclick = () => {
+  playClickSound();
   currentTopic = 'borders';
   showUnifiedModeSelection('Borders', '🗺️');
 };
 
 areaTopicBtn.onclick = () => {
+  playClickSound();
   currentTopic = 'area';
   showUnifiedModeSelection('Area', '📏');
 };
@@ -558,16 +562,19 @@ areaTopicBtn.onclick = () => {
 // 👥 NAVIGATION - PLAYER SELECTION
 // ========================================
 backToHomeBtn.onclick = () => {
+  playClickSound();
   playerSelect.classList.add("hidden");
   home.classList.remove("hidden");
 };
 
 singlePlayerBtn.onclick = () => {
+  playClickSound();
   playerSelect.classList.add("hidden");
   modeSelect.classList.remove("hidden");
 };
 
 twoPlayerBtn.onclick = () => {
+  playClickSound();
   resetGame();
   gameMode = 'two';
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
@@ -580,11 +587,13 @@ twoPlayerBtn.onclick = () => {
 // 🏠 NAVIGATION - MODE SELECT BUTTONS
 // ========================================
 backBtn.onclick = () => {
+  playClickSound();
   modeSelect.classList.add("hidden");
   playerSelect.classList.remove("hidden");
 };
 
 timeAttackBtn.onclick = () => {
+  playClickSound();
   resetGame();
   gameMode = 'time-attack';
   modeSelect.classList.add("hidden");
@@ -593,6 +602,7 @@ timeAttackBtn.onclick = () => {
 };
 
 quickGameBtn.onclick = () => {
+  playClickSound();
   resetGame();
   gameMode = 'quick-game';
   maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
@@ -602,6 +612,7 @@ quickGameBtn.onclick = () => {
 };
 
 threeStrikesBtn.onclick = () => {
+  playClickSound();
   resetGame();
   gameMode = 'three-strikes';
   livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
@@ -614,11 +625,13 @@ threeStrikesBtn.onclick = () => {
 // 🎯 NAVIGATION - DIFFICULTY SELECTION
 // ========================================
 backFromDifficultyBtn.onclick = () => {
+  playClickSound();
   areaDifficultyScreen.classList.add("hidden");
   modeSelect.classList.remove("hidden");
 };
 
 areaEasyBtn.onclick = () => {
+  playClickSound();
   selectedDifficulty = 'easy';
   areaDifficultyScreen.classList.add("hidden");
   game.classList.remove("hidden");
@@ -626,6 +639,7 @@ areaEasyBtn.onclick = () => {
 };
 
 areaMediumBtn.onclick = () => {
+  playClickSound();
   selectedDifficulty = 'medium';
   areaDifficultyScreen.classList.add("hidden");
   game.classList.remove("hidden");
@@ -633,6 +647,7 @@ areaMediumBtn.onclick = () => {
 };
 
 areaHardBtn.onclick = () => {
+  playClickSound();
   selectedDifficulty = 'hard';
   areaDifficultyScreen.classList.add("hidden");
   game.classList.remove("hidden");
@@ -643,6 +658,7 @@ areaHardBtn.onclick = () => {
 // 🏠 NAVIGATION - IN-GAME MENU BUTTON
 // ========================================
 backToMenuBtn.onclick = () => {
+  playClickSound();
   // Save stats before exiting (completed = false because user quit early)
   // This applies to all tracked topics - stats won't be saved for early exits
   const trackedTopics = ALL_TOPICS;
@@ -1357,6 +1373,7 @@ function endGame() {
 // 🔄 END GAME BUTTONS - PLAY AGAIN
 // ========================================
 playAgainBtn.onclick = () => {
+  playClickSound();
   resetGame();
   playAgainBtn.style.display = "none";
   mainMenuBtn.style.display = "none";
@@ -1380,6 +1397,7 @@ playAgainBtn.onclick = () => {
 // 🔄 END GAME BUTTONS - MAIN MENU
 // ========================================
 mainMenuBtn.onclick = () => {
+  playClickSound();
   resetGame();
   questionCounter.style.display = "none";
   game.classList.add("hidden");
@@ -1404,6 +1422,7 @@ comingSoonTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 🚀");
     };
   }
@@ -1434,6 +1453,7 @@ JSON_TOPICS.forEach(topicId => {
   const btn = document.getElementById(btnId);
   if (btn) {
     btn.addEventListener('click', () => {
+      playClickSound();
       const config = getTopicConfig(topicId);
       currentTopic = topicId;
       showUnifiedModeSelection(config.name, config.icon);
@@ -1453,6 +1473,7 @@ footballTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! ⚽");
     };
   }
@@ -1469,6 +1490,7 @@ moviesTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 🎬");
     };
   }
@@ -1483,6 +1505,7 @@ tvShowsTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 📺");
     };
   }
@@ -1499,6 +1522,7 @@ logosTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! ✨");
     };
   }
@@ -1517,6 +1541,7 @@ historyTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 📜");
     };
   }
@@ -1534,6 +1559,7 @@ animalsTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 🦁");
     };
   }
@@ -1550,6 +1576,7 @@ foodTopics.forEach(topic => {
   const btn = document.getElementById(`${topic}-topic-btn`);
   if (btn) {
     btn.onclick = () => {
+      playClickSound();
       alert("Coming soon! 🍕");
     };
   }
@@ -1624,16 +1651,19 @@ function showProfile() {
 
 // Nav button click handlers - using addEventListener for iOS compatibility
 navHome.addEventListener('click', () => {
+  playClickSound();
   showHome();
 });
 
 navTopics.addEventListener('click', () => {
+  playClickSound();
   showTopics();
 });
 
 // Browse All Topics button (on home screen) - DEPRECATED, kept for compatibility
 if (browseAllBtn) {
   browseAllBtn.addEventListener('click', () => {
+    playClickSound();
     showTopics();
   });
 }
@@ -1725,6 +1755,7 @@ function closeCategoryModal() {
 // Event listeners for category cards
 document.querySelectorAll('.home-category-card').forEach(card => {
   card.addEventListener('click', () => {
+    playClickSound();
     const category = card.dataset.category;
     openCategoryModal(category);
   });
@@ -1732,12 +1763,18 @@ document.querySelectorAll('.home-category-card').forEach(card => {
 
 // Close modal on backdrop click
 if (categoryModalBackdrop) {
-  categoryModalBackdrop.addEventListener('click', closeCategoryModal);
+  categoryModalBackdrop.addEventListener('click', () => {
+    playClickSound();
+    closeCategoryModal();
+  });
 }
 
 // Close modal on X button click
 if (categoryModalClose) {
-  categoryModalClose.addEventListener('click', closeCategoryModal);
+  categoryModalClose.addEventListener('click', () => {
+    playClickSound();
+    closeCategoryModal();
+  });
 }
 
 // Close modal on Escape key
@@ -1783,17 +1820,26 @@ function closeSettingsModal() {
 
 // Settings button in Profile page
 if (profileSettingsBtn) {
-  profileSettingsBtn.addEventListener('click', openSettingsModal);
+  profileSettingsBtn.addEventListener('click', () => {
+    playClickSound();
+    openSettingsModal();
+  });
 }
 
 // Close on backdrop click
 if (settingsModalBackdrop) {
-  settingsModalBackdrop.addEventListener('click', closeSettingsModal);
+  settingsModalBackdrop.addEventListener('click', () => {
+    playClickSound();
+    closeSettingsModal();
+  });
 }
 
 // Close on X button
 if (settingsModalClose) {
-  settingsModalClose.addEventListener('click', closeSettingsModal);
+  settingsModalClose.addEventListener('click', () => {
+    playClickSound();
+    closeSettingsModal();
+  });
 }
 
 // Language change handler
@@ -1804,16 +1850,154 @@ if (languageSelect) {
   });
 }
 
+// ========================================
+// 🔊 SOUND SYSTEM
+// ========================================
+
+// Sound settings from localStorage
+const defaultSoundSettings = {
+  sfxVolume: 70,
+  sfxMuted: false,
+  musicVolume: 70,
+  musicMuted: false
+};
+
+let soundSettings = JSON.parse(localStorage.getItem('quizzena_sound_settings')) || { ...defaultSoundSettings };
+
+// Sound effect audio element
+const clickSound = new Audio('sounds/click.mp3');
+
+// Save sound settings
+function saveSoundSettings() {
+  localStorage.setItem('quizzena_sound_settings', JSON.stringify(soundSettings));
+}
+
+// Play click sound effect
+function playClickSound() {
+  if (soundSettings.sfxMuted) return;
+  
+  clickSound.volume = soundSettings.sfxVolume / 100;
+  clickSound.currentTime = 0;
+  clickSound.play().catch(err => {
+    // Ignore autoplay errors (user hasn't interacted yet)
+    console.log('Sound play blocked:', err.message);
+  });
+}
+
+// Sound Overlay Elements
+const soundOverlay = document.getElementById('sound-overlay');
+const soundOverlayBackdrop = document.getElementById('sound-overlay-backdrop');
+const soundOverlayBack = document.getElementById('sound-overlay-back');
+const settingsSoundBtn = document.getElementById('settings-sound-btn');
+const sfxVolumeSlider = document.getElementById('sfx-volume-slider');
+const sfxVolumeValue = document.getElementById('sfx-volume-value');
+const sfxMuteBtn = document.getElementById('sfx-mute-btn');
+const sfxMuteIcon = document.getElementById('sfx-mute-icon');
+
+// Open Sound Overlay (from Settings)
+function openSoundOverlay() {
+  if (soundOverlay) {
+    // Update UI with current settings
+    if (sfxVolumeSlider) sfxVolumeSlider.value = soundSettings.sfxVolume;
+    if (sfxVolumeValue) sfxVolumeValue.textContent = soundSettings.sfxVolume + '%';
+    updateMuteButtonUI();
+    
+    soundOverlay.classList.remove('hidden');
+  }
+}
+
+// Close Sound Overlay (back to Settings)
+function closeSoundOverlay() {
+  if (soundOverlay) {
+    soundOverlay.classList.add('hidden');
+  }
+}
+
+// Update mute button UI
+function updateMuteButtonUI() {
+  if (!sfxMuteBtn || !sfxMuteIcon) return;
+  
+  if (soundSettings.sfxMuted) {
+    sfxMuteBtn.classList.add('muted');
+    sfxMuteIcon.textContent = '🔇';
+  } else {
+    sfxMuteBtn.classList.remove('muted');
+    sfxMuteIcon.textContent = '🔊';
+  }
+}
+
+// Settings Sound button click -> open Sound Overlay
+if (settingsSoundBtn) {
+  settingsSoundBtn.addEventListener('click', () => {
+    playClickSound();
+    openSoundOverlay();
+  });
+}
+
+// Back button in Sound Overlay -> close and return to Settings
+if (soundOverlayBack) {
+  soundOverlayBack.addEventListener('click', () => {
+    playClickSound();
+    closeSoundOverlay();
+  });
+}
+
+// Close on backdrop click
+if (soundOverlayBackdrop) {
+  soundOverlayBackdrop.addEventListener('click', () => {
+    playClickSound();
+    closeSoundOverlay();
+  });
+}
+
+// Volume slider change
+if (sfxVolumeSlider) {
+  sfxVolumeSlider.addEventListener('input', (e) => {
+    const volume = parseInt(e.target.value);
+    soundSettings.sfxVolume = volume;
+    if (sfxVolumeValue) sfxVolumeValue.textContent = volume + '%';
+    saveSoundSettings();
+    
+    // Play test sound
+    playClickSound();
+  });
+}
+
+// Mute button click
+if (sfxMuteBtn) {
+  sfxMuteBtn.addEventListener('click', () => {
+    soundSettings.sfxMuted = !soundSettings.sfxMuted;
+    updateMuteButtonUI();
+    saveSoundSettings();
+    
+    // Play sound if unmuting
+    if (!soundSettings.sfxMuted) {
+      playClickSound();
+    }
+  });
+}
+
+// Close Sound Overlay on Escape (but keep Settings open)
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && soundOverlay && !soundOverlay.classList.contains('hidden')) {
+    closeSoundOverlay();
+    e.stopPropagation();
+  }
+});
+
 // Leaderboard button - using addEventListener for iOS compatibility
 navLeaderboard.addEventListener('click', () => {
+  playClickSound();
   showLeaderboard();
 });
 
 navStats.addEventListener('click', () => {
+  playClickSound();
   showStats();
 });
 
 navProfile.addEventListener('click', () => {
+  playClickSound();
   showProfile();
 });
 
@@ -1838,17 +2022,17 @@ function showUnifiedModeSelection(quizName, icon) {
 
   // Show mode selection for all quizzes (Area uses medium difficulty by default)
   modeScreen.innerHTML = `
-      <button onclick="exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
+      <button onclick="playClickSound(); exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
       <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
       <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Choose Game Mode</h3>
 
-      <button onclick="startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+      <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-      <button onclick="startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+      <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
 
-      <button onclick="startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+      <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
-      <button onclick="startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+      <button onclick="playClickSound(); startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
     `;
 
   modeScreen.classList.remove('hidden');
@@ -1856,22 +2040,23 @@ function showUnifiedModeSelection(quizName, icon) {
 
 // Area difficulty selection handler
 function selectAreaDifficulty(difficulty) {
+  playClickSound();
   selectedDifficulty = difficulty;
 
   // Update mode screen to show game modes
   const modeScreen = document.getElementById('unified-mode-screen');
   modeScreen.innerHTML = `
-    <button onclick="showUnifiedModeSelection('Area', '📏')" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
+    <button onclick="playClickSound(); showUnifiedModeSelection('Area', '📏')" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
     <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">📏 Area Quiz</h2>
     <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>
 
-    <button onclick="startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+    <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-    <button onclick="startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+    <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
 
-    <button onclick="startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+    <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
-    <button onclick="startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+    <button onclick="playClickSound(); startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
   `;
 }
 
@@ -2090,7 +2275,7 @@ function displayUnifiedQuestion() {
   // Render the screen
   quizScreen.innerHTML = `
     <div style="position:absolute;top:15px;left:15px;">
-      <button onclick="exitUnifiedQuiz()" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;">←</button>
+      <button onclick="playClickSound(); exitUnifiedQuiz()" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;">←</button>
     </div>
     <div style="width:100%;max-width:500px;text-align:center;">
       ${headerInfo}
@@ -2239,8 +2424,8 @@ function showUnifiedResults() {
       </div>
       ${gameMode !== 'two' ? `<p style="color:#a78bfa;font-size:18px;margin:20px 0;">${message}</p>` : ''}
 
-      <button onclick="restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Play Again</button>
-      <button onclick="exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#666,#555);color:#fff;cursor:pointer;">Back to Topics</button>
+      <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Play Again</button>
+      <button onclick="playClickSound(); exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#666,#555);color:#fff;cursor:pointer;">Back to Topics</button>
     </div>
   `;
 }
@@ -2523,6 +2708,7 @@ function checkFirstTimeUser() {
 const welcomeStartBtn = document.getElementById('welcome-start-btn');
 if (welcomeStartBtn) {
   welcomeStartBtn.onclick = () => {
+    playClickSound();
     document.getElementById('welcome-screen').classList.add('hidden');
     document.getElementById('setup-screen').classList.remove('hidden');
   };
@@ -2533,6 +2719,7 @@ const avatarGrid = document.getElementById('avatar-grid');
 if (avatarGrid) {
   avatarGrid.onclick = (e) => {
     if (e.target.classList.contains('avatar-btn')) {
+      playClickSound();
       document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
       e.target.classList.add('selected');
       selectedAvatar = e.target.dataset.avatar;
@@ -2544,6 +2731,7 @@ if (avatarGrid) {
 const setupSaveBtn = document.getElementById('setup-save-btn');
 if (setupSaveBtn) {
   setupSaveBtn.onclick = () => {
+    playClickSound();
     userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
     userData.profile.avatar = selectedAvatar;
     const countrySelect = document.getElementById('setup-country');

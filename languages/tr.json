@@ -79,6 +79,12 @@
   "settings_coming_soon": "Yakında",
   "settings_close": "Kapat",
 
+  "sound_music": "Müzik",
+  "sound_effects": "Ses Efektleri",
+  "sound_volume": "Ses Seviyesi",
+  "sound_mute": "Sessiz",
+  "sound_unmute": "Sesi Aç",
+
   "mode_single_player": "Tek Oyuncu",
   "mode_two_player": "İki Oyuncu",
   "mode_time_attack": "Zamana Karşı",

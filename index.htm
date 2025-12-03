@@ -269,7 +269,7 @@
       <!-- Featured Quiz of the Day -->
       <div class="home-featured-section">
         <div class="home-featured-label">🏆 QUIZ OF THE DAY</div>
-        <button class="home-featured-card" onclick="document.getElementById('football-general-topic-btn').click()">
+        <button class="home-featured-card" onclick="playClickSound(); document.getElementById('football-general-topic-btn').click()">
           <div class="football-v2-card-topic home-featured-card-inner">
             <div class="football-v2-kickoff-text">Kick Off!</div>
             <div class="football-v2-whistle-burst">
@@ -409,20 +409,67 @@
             </div>
           </div>
 
-          <!-- Sound Setting (Coming Soon) -->
-          <div class="settings-item settings-item-disabled">
+          <!-- Sound Setting (Opens Sound Overlay) -->
+          <div class="settings-item settings-item-clickable" id="settings-sound-btn">
             <div class="settings-item-label">
               <span class="settings-item-icon">🔊</span>
               <span data-i18n="settings_sound">Sound</span>
             </div>
             <div class="settings-item-control">
-              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+              <span class="settings-arrow">→</span>
             </div>
           </div>
 
         </div>
         <div class="settings-modal-footer">
           <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sound Settings Overlay -->
+    <div class="sound-overlay hidden" id="sound-overlay">
+      <div class="sound-overlay-backdrop" id="sound-overlay-backdrop"></div>
+      <div class="sound-overlay-content">
+        <div class="sound-overlay-header">
+          <button class="sound-overlay-back" id="sound-overlay-back">←</button>
+          <h2 class="sound-overlay-title" data-i18n="settings_sound">Sound</h2>
+          <div class="sound-overlay-spacer"></div>
+        </div>
+        <div class="sound-overlay-body">
+          
+          <!-- Music Setting (Coming Soon) -->
+          <div class="sound-setting-section sound-setting-disabled">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🎵</span>
+              <span class="sound-setting-name" data-i18n="sound_music">Music</span>
+            </div>
+            <div class="sound-setting-content">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Effects Setting -->
+          <div class="sound-setting-section">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🔊</span>
+              <span class="sound-setting-name" data-i18n="sound_effects">Sound Effects</span>
+            </div>
+            <div class="sound-setting-content">
+              <div class="volume-control">
+                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="sfx-volume-slider" min="0" max="100" value="70">
+                  <span class="volume-value" id="sfx-volume-value">70%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="sfx-mute-btn">
+                <span class="mute-icon" id="sfx-mute-icon">🔊</span>
+                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -3628,10 +3675,10 @@
 
       <!-- Reset Data Button (Testing) -->
       <div style="padding: 20px; text-align: center;">
-        <button class="reset-data-btn" onclick="if(confirm('Reset ALL data?')) resetUserData();">
+        <button class="reset-data-btn" onclick="playClickSound(); if(confirm('Reset ALL data?')) resetUserData();">
           🗑️ Reset Data (Testing)
         </button>
-        <button class="reset-data-btn" style="background: #ff9800; margin-top: 10px;" onclick="GAME_CONFIG.TIME_ATTACK_DURATION = 5; alert('Time Attack now 5 seconds!');">
+        <button class="reset-data-btn" style="background: #ff9800; margin-top: 10px;" onclick="playClickSound(); GAME_CONFIG.TIME_ATTACK_DURATION = 5; alert('Time Attack now 5 seconds!');">
           ⏱️ Set Time Attack to 5s (Test)
         </button>
       </div>
@@ -3653,7 +3700,7 @@
         <div class="stats-box" id="overall-performance-box">
 
           <!-- Box Header (clickable) -->
-          <div class="stats-box-header" onclick="toggleStatsBox('overall-performance')">
+          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('overall-performance')">
             <span class="stats-box-icon">📊</span>
             <span class="stats-box-title" data-i18n="stats_overall_performance">Overall Performance</span>
             <span class="stats-box-arrow" id="overall-performance-arrow">▼</span>
@@ -3703,7 +3750,7 @@
         <div class="stats-box" id="most-played-box">
 
           <!-- Box Header (clickable) -->
-          <div class="stats-box-header" onclick="toggleStatsBox('most-played')">
+          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('most-played')">
             <span class="stats-box-icon">🔥</span>
             <span class="stats-box-title" data-i18n="stats_most_played">Most Played</span>
             <span class="stats-box-arrow" id="most-played-arrow">▼</span>

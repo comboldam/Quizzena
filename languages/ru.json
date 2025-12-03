@@ -79,6 +79,12 @@
   "settings_coming_soon": "Скоро",
   "settings_close": "Закрыть",
 
+  "sound_music": "Музыка",
+  "sound_effects": "Звуковые эффекты",
+  "sound_volume": "Громкость",
+  "sound_mute": "Выключить звук",
+  "sound_unmute": "Включить звук",
+
   "mode_single_player": "Один игрок",
   "mode_two_player": "Два игрока",
   "mode_time_attack": "На время",

@@ -79,6 +79,12 @@
   "settings_coming_soon": "Coming Soon",
   "settings_close": "Close",
 
+  "sound_music": "Music",
+  "sound_effects": "Sound Effects",
+  "sound_volume": "Volume",
+  "sound_mute": "Mute",
+  "sound_unmute": "Unmute",
+
   "mode_single_player": "Single Player",
   "mode_two_player": "Two Player",
   "mode_time_attack": "Time Attack",

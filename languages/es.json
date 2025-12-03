@@ -79,6 +79,12 @@
   "settings_coming_soon": "Próximamente",
   "settings_close": "Cerrar",
 
+  "sound_music": "Música",
+  "sound_effects": "Efectos de Sonido",
+  "sound_volume": "Volumen",
+  "sound_mute": "Silenciar",
+  "sound_unmute": "Activar Sonido",
+
   "mode_single_player": "Un Jugador",
   "mode_two_player": "Dos Jugadores",
   "mode_time_attack": "Contrarreloj",
