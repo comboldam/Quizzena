@@ -563,12 +563,42 @@ footer button:hover {
   z-index: 1;
 }
 
-/* On mobile devices, remove max-width to fill screen */
-@media (max-width: 480px) {
+/* On mobile devices, fill entire screen */
+@media (max-width: 600px) {
+  html, body {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  
   #home-screen {
-    max-width: 100%;
-    border: none;
-    border-radius: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  
+  /* Top bar full width */
+  .top-bar {
+    width: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Bottom nav full width */
+  .bottom-nav {
+    width: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
   }
 }
 
