@@ -1598,17 +1598,58 @@ const profileView = document.getElementById('profile-view');
 
 const browseAllBtn = document.getElementById('browse-all-topics');
 
+// ========================================
+// 🎬 PREMIUM SCREEN TRANSITIONS
+// ========================================
+
+// Navigation order for directional slides (left to right)
+const NAV_ORDER = ['home', 'topics', 'stats', 'leaderboard', 'profile'];
+let currentNavIndex = 0;
+
+// Get all main views
+const allViews = {
+  home: homeView,
+  topics: topicsView,
+  stats: document.getElementById('stats-view'),
+  leaderboard: document.getElementById('leaderboard-view'),
+  profile: profileView
+};
+
+// Apply directional animation to a view
+function applyNavAnimation(view, direction) {
+  if (!view) return;
+  
+  // Remove any existing animation classes
+  view.classList.remove('slide-from-left', 'slide-from-right', 'slide-from-bottom');
+  
+  // Force reflow to restart animation
+  void view.offsetWidth;
+  
+  // Apply new animation class
+  view.classList.add(`slide-from-${direction}`);
+}
+
+// Hide all views except the target
+function hideAllViewsExcept(targetKey) {
+  Object.keys(allViews).forEach(key => {
+    if (allViews[key]) {
+      if (key === targetKey) {
+        allViews[key].classList.remove('hidden');
+      } else {
+        allViews[key].classList.add('hidden');
+      }
+    }
+  });
+}
+
 // Show Home screen
 function showHome() {
-  homeView.classList.remove('hidden');
-  topicsView.classList.add('hidden');
-  profileView.classList.add('hidden');
-
-  const statsView = document.getElementById('stats-view');
-  if (statsView) statsView.classList.add('hidden');
-
-  const leaderboardView = document.getElementById('leaderboard-view');
-  if (leaderboardView) leaderboardView.classList.add('hidden');
+  const newIndex = NAV_ORDER.indexOf('home');
+  const direction = newIndex < currentNavIndex ? 'left' : 'right';
+  currentNavIndex = newIndex;
+  
+  hideAllViewsExcept('home');
+  applyNavAnimation(homeView, direction);
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -1617,32 +1658,24 @@ function showHome() {
 
 // Show Topics screen
 function showTopics() {
-  homeView.classList.add('hidden');
-  topicsView.classList.remove('hidden');
-  profileView.classList.add('hidden');
-
-  const statsView = document.getElementById('stats-view');
-  if (statsView) statsView.classList.add('hidden');
-
-  const leaderboardView = document.getElementById('leaderboard-view');
-  if (leaderboardView) leaderboardView.classList.add('hidden');
+  const newIndex = NAV_ORDER.indexOf('topics');
+  const direction = newIndex < currentNavIndex ? 'left' : 'right';
+  currentNavIndex = newIndex;
+  
+  hideAllViewsExcept('topics');
+  applyNavAnimation(topicsView, direction);
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navTopics.classList.add('active');
 }
 
-// Show Profile screen
+// Show Profile screen (slides from bottom - it's special)
 function showProfile() {
-  homeView.classList.add('hidden');
-  topicsView.classList.add('hidden');
-  profileView.classList.remove('hidden');
-
-  const statsView = document.getElementById('stats-view');
-  if (statsView) statsView.classList.add('hidden');
-
-  const leaderboardView = document.getElementById('leaderboard-view');
-  if (leaderboardView) leaderboardView.classList.add('hidden');
+  currentNavIndex = NAV_ORDER.indexOf('profile');
+  
+  hideAllViewsExcept('profile');
+  applyNavAnimation(profileView, 'bottom');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -2490,6 +2523,10 @@ function toggleStatsBox(boxId) {
 
 // Show Stats screen
 function showStats() {
+  const newIndex = NAV_ORDER.indexOf('stats');
+  const direction = newIndex < currentNavIndex ? 'left' : 'right';
+  currentNavIndex = newIndex;
+  
   // Hide all views
   const homeView = document.getElementById('home-view');
   const topicsView = document.getElementById('topics-view');
@@ -2500,7 +2537,10 @@ function showStats() {
   if (homeView) homeView.classList.add('hidden');
   if (topicsView) topicsView.classList.add('hidden');
   if (profileView) profileView.classList.add('hidden');
-  if (statsView) statsView.classList.remove('hidden');
+  if (statsView) {
+    statsView.classList.remove('hidden');
+    applyNavAnimation(statsView, direction);
+  }
   if (leaderboardView) leaderboardView.classList.add('hidden');
 
   // Update nav active state
@@ -2673,6 +2713,10 @@ function searchTopic(query) {
 
 // Show Leaderboard screen
 function showLeaderboard() {
+  const newIndex = NAV_ORDER.indexOf('leaderboard');
+  const direction = newIndex < currentNavIndex ? 'left' : 'right';
+  currentNavIndex = newIndex;
+  
   // Hide all views
   const homeView = document.getElementById('home-view');
   const topicsView = document.getElementById('topics-view');
@@ -2684,7 +2728,10 @@ function showLeaderboard() {
   if (topicsView) topicsView.classList.add('hidden');
   if (profileView) profileView.classList.add('hidden');
   if (statsView) statsView.classList.add('hidden');
-  if (leaderboardView) leaderboardView.classList.remove('hidden');
+  if (leaderboardView) {
+    leaderboardView.classList.remove('hidden');
+    applyNavAnimation(leaderboardView, direction);
+  }
 
   // Update nav active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));

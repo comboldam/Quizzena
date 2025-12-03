@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+/* Prevent double scrollbar - make html/body fixed to viewport */
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /* ========================================
    🏷️ LOGO QUIZ STYLES
    ======================================== */
@@ -48,13 +58,15 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: stretch;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 /* Animated background gradient */
@@ -77,6 +89,134 @@ body::before {
 
 .hidden {
   display: none !important;
+}
+
+/* ========================================
+   🎬 SCREEN TRANSITIONS - PREMIUM SYSTEM
+   ======================================== */
+
+/* 
+   OPTION 1: Directional Slides for Main Navigation
+   - Left/Right based on nav position
+   - Creates intuitive "spatial" navigation
+*/
+
+/* Slide from RIGHT (going forward: Home → Topics → Stats) */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide from LEFT (going back: Stats → Topics → Home) */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide from BOTTOM (for Profile - conceptually "above") */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default slide (fallback) */
+@keyframes viewSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 
+   OPTION 2: Staggered Reveal for Cards
+   - Each card animates with increasing delay
+   - Creates premium "cascade" effect
+*/
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Stagger delays for cards (applied via nth-child) */
+.stagger-reveal > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-reveal > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-reveal > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-reveal > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-reveal > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-reveal > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-reveal > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-reveal > *:nth-child(8) { animation-delay: 350ms; }
+.stagger-reveal > *:nth-child(9) { animation-delay: 400ms; }
+.stagger-reveal > *:nth-child(10) { animation-delay: 450ms; }
+.stagger-reveal > *:nth-child(n+11) { animation-delay: 500ms; }
+
+/* Apply reveal animation to staggered children */
+.stagger-reveal > * {
+  opacity: 0;
+  animation: cardReveal 0.4s ease-out forwards;
+}
+
+/* 
+   OPTION 3: Scale + Fade for Modals
+   - Starts at 95% scale, grows to 100%
+   - Creates depth/focus effect
+*/
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes modalScaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Backdrop fade */
+@keyframes backdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ========================================
@@ -402,11 +542,13 @@ footer button:hover {
    🏠 NEW HOME SCREEN - QUIZUP STYLE
    ======================================== */
 
-/* App Container */
+/* App Container - Full screen on mobile */
 #home-screen {
   width: 100%;
   max-width: 480px;
-  height: 100vh;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -419,6 +561,15 @@ footer button:hover {
     inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1;
+}
+
+/* On mobile devices, remove max-width to fill screen */
+@media (max-width: 480px) {
+  #home-screen {
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+  }
 }
 
 /* Top Bar */
@@ -513,19 +664,27 @@ footer button:hover {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 25px;
-  animation: fadeIn 0.5s ease;
   -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ========================================
+   🎬 DIRECTIONAL SLIDE CLASSES
+   Applied dynamically via JavaScript
+   ======================================== */
+
+/* Slide from RIGHT (going forward in nav) */
+.slide-from-right {
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+/* Slide from LEFT (going back in nav) */
+.slide-from-left {
+  animation: slideInFromLeft 0.3s ease-out forwards;
+}
+
+/* Slide from BOTTOM (for Profile) */
+.slide-from-bottom {
+  animation: slideInFromBottom 0.3s ease-out forwards;
 }
 
 .home-view::-webkit-scrollbar,
@@ -765,6 +924,19 @@ footer button:hover {
   gap: 15px;
 }
 
+/* Staggered reveal for category cards */
+.home-categories-grid .home-category-card {
+  opacity: 0;
+  animation: cardReveal 0.4s ease-out forwards;
+}
+
+.home-categories-grid .home-category-card:nth-child(1) { animation-delay: 0.05s; }
+.home-categories-grid .home-category-card:nth-child(2) { animation-delay: 0.1s; }
+.home-categories-grid .home-category-card:nth-child(3) { animation-delay: 0.15s; }
+.home-categories-grid .home-category-card:nth-child(4) { animation-delay: 0.2s; }
+.home-categories-grid .home-category-card:nth-child(5) { animation-delay: 0.25s; }
+.home-categories-grid .home-category-card:nth-child(6) { animation-delay: 0.3s; }
+
 .home-category-card {
   background: linear-gradient(145deg,
     rgba(255, 255, 255, 0.08) 0%,
@@ -862,6 +1034,7 @@ footer button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
+  animation: backdropFadeIn 0.2s ease-out;
 }
 
 .category-modal-content {
@@ -874,7 +1047,8 @@ footer button:hover {
     rgba(15, 12, 41, 0.99) 100%);
   border-radius: 24px 24px 0 0;
   overflow: hidden;
-  animation: modalSlideUp 0.3s ease-out;
+  /* Premium scale + fade animation */
+  animation: modalScaleIn 0.25s ease-out;
 }
 
 @keyframes modalSlideUp {
@@ -965,6 +1139,7 @@ footer button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(8px);
+  animation: backdropFadeIn 0.2s ease-out;
 }
 
 .settings-modal-content {
@@ -977,7 +1152,8 @@ footer button:hover {
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  animation: settingsModalFadeIn 0.3s ease-out;
+  /* Premium scale + fade animation */
+  animation: modalScaleIn 0.25s ease-out;
   box-shadow: 
     0 25px 80px rgba(0, 0, 0, 0.5),
     0 0 40px rgba(124, 58, 237, 0.2);
@@ -1176,6 +1352,7 @@ footer button:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
+  animation: backdropFadeIn 0.2s ease-out;
 }
 
 .sound-overlay-content {
@@ -1188,7 +1365,8 @@ footer button:hover {
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  animation: soundOverlayFadeIn 0.3s ease-out;
+  /* Premium scale + fade animation */
+  animation: modalScaleIn 0.25s ease-out;
   box-shadow: 
     0 25px 80px rgba(0, 0, 0, 0.5),
     0 0 40px rgba(124, 58, 237, 0.2);
