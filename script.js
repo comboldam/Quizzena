@@ -44,6 +44,142 @@ let userData = loadUserData();
 console.log('User Data System loaded:', userData);
 
 // ============================================
+// 🌍 TRANSLATION SYSTEM
+// ============================================
+
+let currentLanguage = localStorage.getItem('quizzena_language') || 'en';
+let translations = {};
+
+// Load language file
+async function loadLanguage(lang) {
+  try {
+    const response = await fetch(`languages/${lang}.json`);
+    if (!response.ok) throw new Error('Language file not found');
+    translations = await response.json();
+    currentLanguage = lang;
+    localStorage.setItem('quizzena_language', lang);
+    applyTranslations();
+    console.log(`Language loaded: ${lang}`);
+  } catch (error) {
+    console.error('Error loading language:', error);
+    // Fallback to English if language fails to load
+    if (lang !== 'en') {
+      loadLanguage('en');
+    }
+  }
+}
+
+// Get translation by key
+function t(key) {
+  return translations[key] || key;
+}
+
+// Apply translations to all elements with data-i18n attribute
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+    const key = element.getAttribute('data-i18n-placeholder');
+    if (translations[key]) {
+      element.setAttribute('placeholder', translations[key]);
+    }
+  });
+
+  // Update specific dynamic elements
+  updateDynamicTranslations();
+}
+
+// Update elements that need special handling
+function updateDynamicTranslations() {
+  // Update version text
+  const versionEl = document.getElementById('settings-version');
+  if (versionEl && translations.version) {
+    versionEl.textContent = translations.version;
+  }
+
+  // Update navigation items
+  const navItems = {
+    'nav-home': 'nav_home',
+    'nav-topics': 'nav_topics', 
+    'nav-stats': 'nav_stats',
+    'nav-leaderboard': 'nav_leaderboard',
+    'nav-profile': 'nav_profile'
+  };
+
+  for (const [id, key] of Object.entries(navItems)) {
+    const el = document.getElementById(id);
+    if (el) {
+      const span = el.querySelector('span');
+      if (span && translations[key]) {
+        span.textContent = translations[key];
+      }
+    }
+  }
+
+  // Update home page elements
+  const homeFeaturedLabel = document.querySelector('.home-featured-label');
+  if (homeFeaturedLabel && translations.home_quiz_of_day) {
+    homeFeaturedLabel.textContent = translations.home_quiz_of_day;
+  }
+
+  const homeFeaturedPlay = document.querySelector('.home-featured-play');
+  if (homeFeaturedPlay && translations.home_play_now) {
+    homeFeaturedPlay.textContent = translations.home_play_now;
+  }
+
+  const homeCategoriesTitle = document.querySelector('.home-categories-title');
+  if (homeCategoriesTitle && translations.home_explore_categories) {
+    homeCategoriesTitle.textContent = translations.home_explore_categories;
+  }
+
+  // Update category names
+  const categoryNames = {
+    'geography': 'category_geography',
+    'football': 'category_football',
+    'movies': 'category_movies',
+    'tvshows': 'category_tvshows',
+    'history': 'category_history',
+    'logos': 'category_logos'
+  };
+
+  document.querySelectorAll('.home-category-card').forEach(card => {
+    const category = card.dataset.category;
+    const nameEl = card.querySelector('.home-category-name');
+    if (nameEl && categoryNames[category] && translations[categoryNames[category]]) {
+      nameEl.textContent = translations[categoryNames[category]];
+    }
+  });
+
+  // Update stats page title
+  const statsHeader = document.querySelector('.stats-header h1');
+  if (statsHeader && translations.stats_title) {
+    statsHeader.textContent = translations.stats_title;
+  }
+
+  // Update leaderboard title
+  const leaderboardHeader = document.querySelector('.leaderboard-header h1 [data-i18n="leaderboard_title"]');
+  if (leaderboardHeader && translations.leaderboard_title) {
+    leaderboardHeader.textContent = translations.leaderboard_title;
+  }
+
+  const leaderboardSubtitle = document.querySelector('.leaderboard-header p');
+  if (leaderboardSubtitle && translations.leaderboard_global) {
+    leaderboardSubtitle.textContent = translations.leaderboard_global;
+  }
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+  loadLanguage(currentLanguage);
+});
+
+// ============================================
 // 🎯 TOPIC CONFIGURATION - SINGLE SOURCE OF TRUTH
 // ============================================
 // To add a new topic: just add ONE line here!
@@ -1606,10 +1742,67 @@ if (categoryModalClose) {
 
 // Close modal on Escape key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && categoryModal && !categoryModal.classList.contains('hidden')) {
-    closeCategoryModal();
+  if (e.key === 'Escape') {
+    if (categoryModal && !categoryModal.classList.contains('hidden')) {
+      closeCategoryModal();
+    }
+    if (settingsModal && !settingsModal.classList.contains('hidden')) {
+      closeSettingsModal();
+    }
   }
 });
+
+// ========================================
+// ⚙️ SETTINGS MODAL
+// ========================================
+const settingsModal = document.getElementById('settings-modal');
+const settingsModalBackdrop = document.getElementById('settings-modal-backdrop');
+const settingsModalClose = document.getElementById('settings-modal-close');
+const languageSelect = document.getElementById('language-select');
+const profileSettingsBtn = document.querySelector('.profile-settings');
+
+// Open settings modal
+function openSettingsModal() {
+  if (settingsModal) {
+    // Set current language in dropdown
+    if (languageSelect) {
+      languageSelect.value = currentLanguage;
+    }
+    settingsModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Close settings modal
+function closeSettingsModal() {
+  if (settingsModal) {
+    settingsModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+}
+
+// Settings button in Profile page
+if (profileSettingsBtn) {
+  profileSettingsBtn.addEventListener('click', openSettingsModal);
+}
+
+// Close on backdrop click
+if (settingsModalBackdrop) {
+  settingsModalBackdrop.addEventListener('click', closeSettingsModal);
+}
+
+// Close on X button
+if (settingsModalClose) {
+  settingsModalClose.addEventListener('click', closeSettingsModal);
+}
+
+// Language change handler
+if (languageSelect) {
+  languageSelect.addEventListener('change', (e) => {
+    const newLang = e.target.value;
+    loadLanguage(newLang);
+  });
+}
 
 // Leaderboard button - using addEventListener for iOS compatibility
 navLeaderboard.addEventListener('click', () => {
@@ -1624,13 +1817,7 @@ navProfile.addEventListener('click', () => {
   showProfile();
 });
 
-// Settings button placeholder
-const profileSettings = document.querySelector('.profile-settings');
-if (profileSettings) {
-  profileSettings.onclick = () => {
-    alert('Settings coming soon! ⚙️');
-  };
-}
+// Settings button - now handled by openSettingsModal() above
 
 // ============================================
 // 🎮 UNIFIED QUIZ SYSTEM - ALL QUIZZES USE THIS
@@ -2267,19 +2454,19 @@ function searchTopic(query) {
 
     // Show found topic with real stats
     searchResult.innerHTML = `
-      <div class="search-result-found">Found:</div>
+      <div class="search-result-found">${t('stats_search_found')}</div>
       <div class="search-result-topic">${foundTopic.icon} ${foundTopic.name}</div>
       <div class="search-result-stats">
         <div class="mini-stat">
-          <span class="mini-stat-label">Games</span>
+          <span class="mini-stat-label">${t('stats_games')}</span>
           <span class="mini-stat-value">${games}</span>
         </div>
         <div class="mini-stat">
-          <span class="mini-stat-label">Accuracy</span>
+          <span class="mini-stat-label">${t('stats_accuracy')}</span>
           <span class="mini-stat-value">${accuracy}%</span>
         </div>
         <div class="mini-stat">
-          <span class="mini-stat-label">Best</span>
+          <span class="mini-stat-label">${t('stats_best_label')}</span>
           <span class="mini-stat-value">${bestStreak}</span>
         </div>
       </div>
@@ -2288,7 +2475,7 @@ function searchTopic(query) {
   } else {
     // Show "not found" message
     searchResult.innerHTML = `
-      <div class="search-result-empty">Topic not found</div>
+      <div class="search-result-empty">${t('stats_search_not_found')}</div>
     `;
     searchResult.classList.remove('hidden');
   }

@@ -372,6 +372,61 @@
       </div>
     </div>
 
+    <!-- Settings Modal Overlay -->
+    <div class="settings-modal hidden" id="settings-modal">
+      <div class="settings-modal-backdrop" id="settings-modal-backdrop"></div>
+      <div class="settings-modal-content">
+        <div class="settings-modal-header">
+          <h2 class="settings-modal-title" data-i18n="settings_title">Settings</h2>
+          <button class="settings-modal-close" id="settings-modal-close">✕</button>
+        </div>
+        <div class="settings-modal-body">
+          
+          <!-- Language Setting -->
+          <div class="settings-item">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🌍</span>
+              <span data-i18n="settings_language">Language</span>
+            </div>
+            <div class="settings-item-control">
+              <select class="settings-dropdown" id="language-select">
+                <option value="en">🇺🇸 English</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Theme Setting (Coming Soon) -->
+          <div class="settings-item settings-item-disabled">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🎨</span>
+              <span data-i18n="settings_theme">Theme</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Setting (Coming Soon) -->
+          <div class="settings-item settings-item-disabled">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🔊</span>
+              <span data-i18n="settings_sound">Sound</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="settings-modal-footer">
+          <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
+        </div>
+      </div>
+    </div>
+
     <!-- TOPICS SCREEN VIEW -->
     <div class="topics-view hidden" id="topics-view">
 
@@ -3588,7 +3643,7 @@
 
       <!-- Stats Title -->
       <div class="stats-header">
-        <h1>Stats</h1>
+        <h1 data-i18n="stats_title">Stats</h1>
       </div>
 
       <!-- Stats Content Area -->
@@ -3600,7 +3655,7 @@
           <!-- Box Header (clickable) -->
           <div class="stats-box-header" onclick="toggleStatsBox('overall-performance')">
             <span class="stats-box-icon">📊</span>
-            <span class="stats-box-title">Overall Performance</span>
+            <span class="stats-box-title" data-i18n="stats_overall_performance">Overall Performance</span>
             <span class="stats-box-arrow" id="overall-performance-arrow">▼</span>
           </div>
 
@@ -3608,35 +3663,35 @@
           <div class="stats-box-content hidden" id="overall-performance-content">
             <table class="stats-table">
               <tr>
-                <td class="stat-name">Total Games Played</td>
+                <td class="stat-name" data-i18n="stats_total_games_played">Total Games Played</td>
                 <td class="stat-value" id="stat-total-games">0</td>
               </tr>
               <tr>
-                <td class="stat-name">Total Questions Answered</td>
+                <td class="stat-name" data-i18n="stats_total_questions_answered">Total Questions Answered</td>
                 <td class="stat-value" id="stat-total-questions">0</td>
               </tr>
               <tr>
-                <td class="stat-name">Correct Answers</td>
+                <td class="stat-name" data-i18n="stats_correct_answers">Correct Answers</td>
                 <td class="stat-value" id="stat-correct">0</td>
               </tr>
               <tr>
-                <td class="stat-name">Wrong Answers</td>
+                <td class="stat-name" data-i18n="stats_wrong_answers">Wrong Answers</td>
                 <td class="stat-value" id="stat-wrong">0</td>
               </tr>
               <tr>
-                <td class="stat-name">Overall Accuracy</td>
+                <td class="stat-name" data-i18n="stats_overall_accuracy">Overall Accuracy</td>
                 <td class="stat-value" id="stat-accuracy">0%</td>
               </tr>
               <tr>
-                <td class="stat-name">Avg Time per Question</td>
+                <td class="stat-name" data-i18n="stats_avg_time_per_question">Avg Time per Question</td>
                 <td class="stat-value" id="stat-avg-time">0.0s</td>
               </tr>
               <tr>
-                <td class="stat-name">Best Streak</td>
+                <td class="stat-name" data-i18n="stats_best_streak_label">Best Streak</td>
                 <td class="stat-value" id="stat-best-streak">0</td>
               </tr>
               <tr>
-                <td class="stat-name">Total Time Played</td>
+                <td class="stat-name" data-i18n="stats_total_time_played">Total Time Played</td>
                 <td class="stat-value" id="stat-total-time">0m 0s</td>
               </tr>
             </table>
@@ -3650,7 +3705,7 @@
           <!-- Box Header (clickable) -->
           <div class="stats-box-header" onclick="toggleStatsBox('most-played')">
             <span class="stats-box-icon">🔥</span>
-            <span class="stats-box-title">Most Played</span>
+            <span class="stats-box-title" data-i18n="stats_most_played">Most Played</span>
             <span class="stats-box-arrow" id="most-played-arrow">▼</span>
           </div>
 
@@ -3666,15 +3721,15 @@
                 <div class="most-played-name">Flags</div>
                 <div class="most-played-stats">
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
                     <span class="mini-stat-value">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                 </div>
@@ -3687,15 +3742,15 @@
                 <div class="most-played-name">Capitals</div>
                 <div class="most-played-stats">
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
                     <span class="mini-stat-value">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                 </div>
@@ -3708,15 +3763,15 @@
                 <div class="most-played-name">Football</div>
                 <div class="most-played-stats">
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Games</span>
+                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Accuracy</span>
+                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
                     <span class="mini-stat-value">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label">Best</span>
+                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
                     <span class="mini-stat-value">0</span>
                   </div>
                 </div>
@@ -3725,12 +3780,13 @@
               <!-- Card 4: Search Box -->
               <div class="most-played-card search-card">
                 <div class="most-played-icon">🔍</div>
-                <div class="most-played-name">Search Topic</div>
+                <div class="most-played-name" data-i18n="stats_search_topic">Search Topic</div>
                 <div class="search-input-wrapper">
                   <input
                     type="text"
                     id="topic-search-input"
                     class="topic-search-input"
+                    data-i18n-placeholder="stats_search_placeholder"
                     placeholder="Type topic name..."
                     oninput="searchTopic(this.value)"
                   />
@@ -3755,8 +3811,8 @@
 
       <!-- Leaderboard Title -->
       <div class="leaderboard-header">
-        <h1>🏆 Leaderboard</h1>
-        <p>Global Rankings</p>
+        <h1>🏆 <span data-i18n="leaderboard_title">Leaderboard</span></h1>
+        <p data-i18n="leaderboard_global">Global Rankings</p>
       </div>
 
       <!-- Leaderboard Content Area -->
@@ -3778,19 +3834,19 @@
     <!-- Bottom Navigation Bar -->
     <div class="bottom-nav">
       <div class="nav-item active" id="nav-home">
-        🏠<br><span>Home</span>
+        🏠<br><span data-i18n="nav_home">Home</span>
       </div>
       <div class="nav-item" id="nav-topics">
-        🌍<br><span>Topics</span>
+        🌍<br><span data-i18n="nav_topics">Topics</span>
       </div>
       <div class="nav-item" id="nav-stats">
-        📊<br><span>Stats</span>
+        📊<br><span data-i18n="nav_stats">Stats</span>
       </div>
       <div class="nav-item" id="nav-leaderboard">
-        🏆<br><span>Leaderboard</span>
+        🏆<br><span data-i18n="nav_leaderboard">Leaderboard</span>
       </div>
       <div class="nav-item" id="nav-profile">
-        👤<br><span>Profile</span>
+        👤<br><span data-i18n="nav_profile">Profile</span>
       </div>
     </div>
 
