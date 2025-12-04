@@ -1888,6 +1888,60 @@ if (languageSelect) {
   });
 }
 
+
+// ========================================
+// PERFORMANCE MODE SYSTEM
+// ========================================
+
+const performanceToggle = document.getElementById('performance-toggle');
+
+// Check if device is mobile/touch
+function isMobileDevice() {
+  return (window.innerWidth <= 900) || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+}
+
+// Load performance mode from localStorage (default: auto-detect based on device)
+function loadPerformanceMode() {
+  const savedMode = localStorage.getItem('quizzena_performance_mode');
+  
+  if (savedMode !== null) {
+    return savedMode === 'low';
+  } else {
+    return isMobileDevice();
+  }
+}
+
+// Apply performance mode to body
+function applyPerformanceMode(isLowMode) {
+  if (isLowMode) {
+    document.body.classList.add('performance-mode-low');
+  } else {
+    document.body.classList.remove('performance-mode-low');
+  }
+  
+  if (performanceToggle) {
+    performanceToggle.checked = isLowMode;
+  }
+}
+
+// Save performance mode preference
+function savePerformanceMode(isLowMode) {
+  localStorage.setItem('quizzena_performance_mode', isLowMode ? 'low' : 'high');
+  applyPerformanceMode(isLowMode);
+}
+
+// Initialize performance mode on page load
+const isLowPerformance = loadPerformanceMode();
+applyPerformanceMode(isLowPerformance);
+
+// Toggle event listener
+if (performanceToggle) {
+  performanceToggle.addEventListener('change', (e) => {
+    playClickSound();
+    savePerformanceMode(e.target.checked);
+  });
+}
+
 // ========================================
 // 🔊 SOUND SYSTEM
 // ========================================

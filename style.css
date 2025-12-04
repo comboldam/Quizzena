@@ -18359,7 +18359,7 @@ footer button:hover {
 }
 
 /* ========================================
-   📱 SAFARI MOBILE PERFORMANCE FIX
+   📱 TOUCH / SAFARI MOBILE PERFORMANCE FIX
    ======================================== */
 
 /* Disable heavy blur effects on mobile for better performance */
@@ -18432,4 +18432,112 @@ footer button:hover {
     transform: none !important;
     box-shadow: none !important;
   }
+}
+
+/* Flatten topic cards on touch devices to avoid GPU thrash */
+@media (max-width: 900px), (pointer: coarse) {
+  .topic-card-small {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(30, 18, 52, 0.92) !important;
+    box-shadow:
+      0 10px 24px rgba(5, 0, 20, 0.45),
+      0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    transform-style: flat !important;
+    perspective: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  }
+
+  .topic-card-small::before {
+    display: none !important;
+  }
+
+  .topic-icon-small {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  }
+}
+
+/* ========================================
+    PERFORMANCE MODE - User Toggle
+   Applied via body.performance-mode-low class
+   ======================================== */
+body.performance-mode-low * {
+  transition: none !important;
+  animation: none !important;
+}
+
+body.performance-mode-low .topic-card-small {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(30, 18, 52, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transform-style: flat !important;
+  perspective: none !important;
+}
+
+body.performance-mode-low .topic-card-small::before,
+body.performance-mode-low .topic-card-small::after {
+  display: none !important;
+}
+
+body.performance-mode-low .topic-icon-small,
+body.performance-mode-low .category-icon,
+body.performance-mode-low .quick-icon {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+body.performance-mode-low .home-category-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  opacity: 1 !important;
+  background: rgba(30, 18, 52, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+body.performance-mode-low .home-category-card::before,
+body.performance-mode-low .home-category-card::after {
+  display: none !important;
+}
+
+body.performance-mode-low .featured-quiz-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.performance-mode-low .featured-quiz-card::before,
+body.performance-mode-low .featured-quiz-card::after {
+  display: none !important;
+}
+
+body.performance-mode-low .quick-start-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.performance-mode-low .quick-start-card::before,
+body.performance-mode-low .quick-start-card::after {
+  display: none !important;
+}
+
+body.performance-mode-low .topics-scroll-row {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto !important;
+}
+
+body.performance-mode-low .stagger-reveal > * {
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+body.performance-mode-low .slide-from-left,
+body.performance-mode-low .slide-from-right,
+body.performance-mode-low .slide-from-bottom {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
