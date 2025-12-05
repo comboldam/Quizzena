@@ -1636,10 +1636,18 @@ function applyNavAnimation(view, direction) {
 
 // Hide all views except the target
 function hideAllViewsExcept(targetKey) {
+  const isPerformanceMode = document.body.classList.contains('performance-mode-low');
+  
   Object.keys(allViews).forEach(key => {
     if (allViews[key]) {
       if (key === targetKey) {
         allViews[key].classList.remove('hidden');
+        // In performance mode, restore visibility for topics
+        if (isPerformanceMode && key === 'topics') {
+          allViews[key].style.visibility = 'visible';
+          allViews[key].style.position = '';
+          allViews[key].style.pointerEvents = '';
+        }
       } else {
         allViews[key].classList.add('hidden');
       }

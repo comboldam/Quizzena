@@ -87,6 +87,7 @@ body::before {
   display: none !important;
 }
 
+
 /* ========================================
    🎬 SCREEN TRANSITIONS - PREMIUM SYSTEM
    ======================================== */
@@ -18540,4 +18541,37 @@ body.performance-mode-low .slide-from-bottom {
   animation: none !important;
   opacity: 1 !important;
   transform: none !important;
+}
+
+/* ========================================
+   PERFORMANCE MODE - Topics View Extra Optimizations
+   Makes topics page navigation instant
+   ======================================== */
+body.performance-mode-low .topics-view * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body.performance-mode-low .topics-view [class*="card"] {
+  background: rgba(30, 18, 52, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+body.performance-mode-low .topics-view [class*="card"]::before,
+body.performance-mode-low .topics-view [class*="card"]::after {
+  display: none !important;
+}
+
+/* Pre-render topics for instant switching in performance mode */
+body.performance-mode-low .topics-view.hidden {
+  display: block !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  left: 0;
+  right: 0;
 }
