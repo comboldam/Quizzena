@@ -1,4 +1,93 @@
 // ============================================
+// 🔥 FIREBASE INITIALIZATION
+// ============================================
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI",
+  authDomain: "quizzena-app.firebaseapp.com",
+  projectId: "quizzena-app",
+  storageBucket: "quizzena-app.firebasestorage.app",
+  messagingSenderId: "839227999302",
+  appId: "1:839227999302:android:b63322d2425eb123067647"
+};
+
+// Initialize Firebase
+let firebaseApp = null;
+let firebaseAuth = null;
+let firebaseDb = null;
+let firebaseUser = null;
+
+if (typeof firebase !== 'undefined') {
+  firebaseApp = firebase.initializeApp(firebaseConfig);
+  firebaseAuth = firebase.auth();
+  firebaseDb = firebase.firestore();
+  console.log('🔥 Firebase initialized successfully');
+} else {
+  console.warn('Firebase SDK not loaded');
+}
+
+// Anonymous Authentication & Firestore User Document
+async function initFirebaseAuth() {
+  if (!firebaseAuth) return null;
+  
+  try {
+    // Check if already signed in
+    let user = firebaseAuth.currentUser;
+    
+    if (!user) {
+      // Sign in anonymously
+      const result = await firebaseAuth.signInAnonymously();
+      user = result.user;
+      console.log('🔥 Anonymous user created:', user.uid);
+    } else {
+      console.log('🔥 Existing user found:', user.uid);
+    }
+    
+    firebaseUser = user;
+    
+    // Create/update Firestore user document
+    await updateFirestoreUser(user.uid);
+    
+    return user;
+  } catch (error) {
+    console.error('🔥 Firebase auth error:', error);
+    return null;
+  }
+}
+
+// Create or update user document in Firestore
+async function updateFirestoreUser(uid) {
+  if (!firebaseDb || !uid) return;
+  
+  try {
+    const userRef = firebaseDb.collection('users').doc(uid);
+    const doc = await userRef.get();
+    
+    if (doc.exists) {
+      // Update lastLogin only
+      await userRef.update({
+        lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      console.log('🔥 User lastLogin updated');
+    } else {
+      // Create new user document
+      await userRef.set({
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      console.log('🔥 New user document created');
+    }
+  } catch (error) {
+    console.error('🔥 Firestore error:', error);
+  }
+}
+
+// Initialize Firebase auth when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  initFirebaseAuth();
+});
+
+// ============================================
 // USER DATA SYSTEM
 // ============================================
 
