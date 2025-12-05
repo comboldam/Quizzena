@@ -78,6 +78,8 @@
   "settings_sound": "Звук",
   "settings_coming_soon": "Скоро",
   "settings_close": "Закрыть",
+  "settings_performance": "Режим производительности",
+  "settings_performance_hint": "Включите для плавной прокрутки (отключает анимации)",
 
   "sound_music": "Музыка",
   "sound_effects": "Звуковые эффекты",
