@@ -48,6 +48,9 @@ async function initFirebaseAuth() {
     // Create/update Firestore user document
     await updateFirestoreUser(user.uid);
     
+    // Load and merge cloud data (if not in dev mode)
+    await loadFromFirebase();
+    
     return user;
   } catch (error) {
     console.error('🔥 Firebase auth error:', error);
@@ -88,6 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// 🔧 DEV MODE TOGGLE
+// ============================================
+// Set to FALSE when launching to production!
+// When true: Data only saves to localStorage (no cloud sync)
+// When false: Data syncs to Firebase for cross-device play
+const DEV_MODE = true;
+
+// ============================================
 // USER DATA SYSTEM
 // ============================================
 
@@ -119,12 +130,126 @@ function loadUserData() {
   return JSON.parse(JSON.stringify(defaultUserData));
 }
 
-function saveUserData() {
-  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+// Load and merge data from Firebase (called after auth is ready)
+async function loadFromFirebase() {
+  if (DEV_MODE || !firebaseDb || !firebaseUser) return;
+  
+  try {
+    const userRef = firebaseDb.collection('users').doc(firebaseUser.uid);
+    const doc = await userRef.get();
+    
+    if (doc.exists) {
+      const cloudData = doc.data();
+      
+      // Compare timestamps to decide which data wins
+      const localTime = userData.profile?.createdAt || 0;
+      const cloudTime = cloudData.lastUpdated?.toMillis() || 0;
+      
+      if (cloudData.stats && cloudTime > localTime) {
+        // Cloud is newer - merge cloud data into local
+        console.log('🔥 Loading newer data from Firebase');
+        
+        // Merge profile
+        if (cloudData.profile) {
+          userData.profile = { ...userData.profile, ...cloudData.profile };
+        }
+        
+        // Merge stats (take higher values for XP/levels)
+        if (cloudData.stats) {
+          userData.isSetupComplete = cloudData.isSetupComplete || userData.isSetupComplete;
+          userData.stats.totalGames = Math.max(userData.stats.totalGames || 0, cloudData.stats.totalGames || 0);
+          userData.stats.correctAnswers = Math.max(userData.stats.correctAnswers || 0, cloudData.stats.correctAnswers || 0);
+          userData.stats.wrongAnswers = Math.max(userData.stats.wrongAnswers || 0, cloudData.stats.wrongAnswers || 0);
+          userData.stats.bestStreak = Math.max(userData.stats.bestStreak || 0, cloudData.stats.bestStreak || 0);
+          
+          // Merge topic stats (take higher XP/level per topic)
+          if (cloudData.stats.topics) {
+            for (const topicId in cloudData.stats.topics) {
+              const cloudTopic = cloudData.stats.topics[topicId];
+              const localTopic = userData.stats.topics[topicId] || {};
+              
+              userData.stats.topics[topicId] = {
+                games: Math.max(localTopic.games || 0, cloudTopic.games || 0),
+                correct: Math.max(localTopic.correct || 0, cloudTopic.correct || 0),
+                wrong: Math.max(localTopic.wrong || 0, cloudTopic.wrong || 0),
+                accuracy: Math.max(localTopic.accuracy || 0, cloudTopic.accuracy || 0),
+                bestStreak: Math.max(localTopic.bestStreak || 0, cloudTopic.bestStreak || 0),
+                level: Math.max(localTopic.level || 1, cloudTopic.level || 1),
+                xp: Math.max(localTopic.xp || 0, cloudTopic.xp || 0),
+                modesUnlocked: {
+                  casual: true,
+                  timeAttack: (localTopic.modesUnlocked?.timeAttack || cloudTopic.modesUnlocked?.timeAttack) || false,
+                  threeHearts: (localTopic.modesUnlocked?.threeHearts || cloudTopic.modesUnlocked?.threeHearts) || false
+                }
+              };
+            }
+          }
+        }
+        
+        // Save merged data locally
+        localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+        console.log('🔥 Merged cloud data with local');
+      } else {
+        console.log('🔥 Local data is newer, keeping local');
+      }
+    } else {
+      console.log('🔥 No cloud data found, using local');
+    }
+  } catch (error) {
+    console.error('🔥 Firebase load error:', error);
+    // Silent fail - continue with localStorage data
+  }
 }
 
-function resetUserData() {
+function saveUserData() {
+  // Always save to localStorage (fast, works offline)
+  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+  
+  // Sync to Firebase if not in dev mode
+  if (!DEV_MODE && firebaseDb && firebaseUser) {
+    syncToFirebase();
+  }
+}
+
+// Async Firebase sync (non-blocking)
+async function syncToFirebase() {
+  if (!firebaseDb || !firebaseUser) return;
+  
+  try {
+    const userRef = firebaseDb.collection('users').doc(firebaseUser.uid);
+    await userRef.set({
+      // Profile & Setup
+      isSetupComplete: userData.isSetupComplete,
+      profile: userData.profile,
+      
+      // All Stats (includes XP, levels, modesUnlocked per topic)
+      stats: userData.stats,
+      
+      // Timestamps
+      lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true });
+    
+    console.log('🔥 Data synced to Firebase');
+  } catch (error) {
+    console.error('🔥 Firebase sync error:', error);
+    // Silent fail - localStorage still has the data
+  }
+}
+
+async function resetUserData() {
+  // Clear localStorage
   localStorage.removeItem('quizzena_user_data');
+  
+  // Also clear Firebase data if not in dev mode
+  if (!DEV_MODE && firebaseDb && firebaseUser) {
+    try {
+      await firebaseDb.collection('users').doc(firebaseUser.uid).delete();
+      console.log('🔥 Firebase user data deleted');
+    } catch (error) {
+      console.error('🔥 Firebase delete error:', error);
+    }
+  }
+  
   location.reload();
 }
 
