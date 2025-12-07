@@ -404,7 +404,7 @@ const backToHomeBtn = document.getElementById("back-to-home-btn");
 // 🎯 DOM ELEMENTS - BUTTONS (MODE SELECT)
 // ========================================
 const timeAttackBtn = document.getElementById("time-attack-btn");
-const quickGameBtn = document.getElementById("quick-game-btn");
+const casualBtn = document.getElementById("casual-btn");
 const threeStrikesBtn = document.getElementById("three-strikes-btn");
 const backBtn = document.getElementById("back-btn");
 
@@ -443,8 +443,8 @@ const backFromDifficultyBtn = document.getElementById("back-from-difficulty");
 // ========================================
 const GAME_CONFIG = {
   TIME_ATTACK_DURATION: 60,
-  QUICK_GAME_QUESTIONS: 10,
-  QUICK_GAME_TIME_PER_Q: 10,
+  CASUAL_QUESTIONS: 5,
+  CASUAL_TIME_PER_Q: 10,
   THREE_STRIKES_LIVES: 3,
   TWO_PLAYER_QUESTIONS: 5,
   TWO_PLAYER_TIME_PER_Q: 20,
@@ -691,11 +691,11 @@ timeAttackBtn.onclick = () => {
   loadFlags();
 };
 
-quickGameBtn.onclick = () => {
+casualBtn.onclick = () => {
   playClickSound();
   resetGame();
-  gameMode = 'quick-game';
-  maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+  gameMode = 'casual';
+  maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
   modeSelect.classList.add("hidden");
   game.classList.remove("hidden");
   loadFlags();
@@ -937,8 +937,8 @@ function startTimer(correctAnswer) {
       }
     }, 1000);
 
-  } else if (gameMode === 'quick-game') {
-    timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
+  } else if (gameMode === 'casual') {
+    timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
     answered = false;
 
     // Update initial display
@@ -1063,7 +1063,7 @@ function handleTimeout(correctAnswer) {
     currentStreak = 0;
   }
 
-  if (gameMode === 'quick-game') {
+  if (gameMode === 'casual') {
     resultBox.textContent = `⏰ Time's up! It was ${correctAnswer}`;
     disableAnswers();
     setTimeout(() => {
@@ -1090,7 +1090,7 @@ function startRound() {
   if (gameEnded) return;
 
   if (gameMode === 'two' && questionCount >= maxQuestions) return endGame();
-  if (gameMode === 'quick-game' && questionCount >= maxQuestions) return endGame();
+  if (gameMode === 'casual' && questionCount >= maxQuestions) return endGame();
 
   resultBox.textContent = "";
   answersDiv.innerHTML = "";
@@ -1106,9 +1106,9 @@ function startRound() {
   questionCount++;
   
   // SET QUESTION COUNTER
-  if (gameMode === 'quick-game') {
+  if (gameMode === 'casual') {
     questionCounter.style.display = "block";
-    questionCounter.textContent = `${questionCount}/10`;
+    questionCounter.textContent = `${questionCount}/${maxQuestions}`;
   } else {
     questionCounter.style.display = "none";
   }
@@ -1309,7 +1309,7 @@ function checkAnswer(selected, correct) {
       startRound();
     }, GAME_CONFIG.FEEDBACK_DELAY_FAST);
     
-  } else if (gameMode === 'quick-game') {
+  } else if (gameMode === 'casual') {
     answered = true;
     clearInterval(timer);
     disableAnswers();
@@ -1444,8 +1444,8 @@ function endGame() {
   if (gameMode === 'time-attack') {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
     score.textContent = "";
-  } else if (gameMode === 'quick-game') {
-    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/10`;
+  } else if (gameMode === 'casual') {
+    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/${maxQuestions}`;
     score.textContent = "";
   } else if (gameMode === 'three-strikes') {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
@@ -1470,11 +1470,11 @@ playAgainBtn.onclick = () => {
   
   if (gameMode === 'two') {
     maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
-  } else if (gameMode === 'quick-game') {
-    maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+  } else if (gameMode === 'casual') {
+    maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
   }
   
-  if (gameMode === 'time-attack' || gameMode === 'quick-game' || gameMode === 'three-strikes') {
+  if (gameMode === 'time-attack' || gameMode === 'casual' || gameMode === 'three-strikes') {
     score.textContent = "Score: 0";
   } else {
     score.textContent = "P1: 0 | P2: 0";
@@ -2217,7 +2217,7 @@ function showUnifiedModeSelection(quizName, icon) {
 
       <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-      <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+      <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
       <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
@@ -2241,7 +2241,7 @@ function selectAreaDifficulty(difficulty) {
 
     <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-    <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+    <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
     <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
@@ -2264,9 +2264,9 @@ function startUnifiedGame(mode) {
   if (mode === 'time-attack') {
     timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
     maxQuestions = 9999; // Unlimited questions
-  } else if (mode === 'quick-game') {
-    maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
-    timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
+  } else if (mode === 'casual') {
+    maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
+    timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
   } else if (mode === 'three-strikes') {
     livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
     maxQuestions = 9999; // Unlimited until 3 strikes
@@ -2415,7 +2415,7 @@ function displayUnifiedQuestion() {
   let headerInfo = '';
   if (gameMode === 'time-attack') {
     headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:24px;font-weight:bold;">⏳ ${timeLeft}s</span>`;
-  } else if (gameMode === 'quick-game') {
+  } else if (gameMode === 'casual') {
     headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:20px;font-weight:bold;">⏳ ${timeLeft}s | Q ${questionCount}/${maxQuestions}</span>`;
   } else if (gameMode === 'three-strikes') {
     headerInfo = `<span style="color:#FF6B6B;font-size:20px;">${'❤️'.repeat(livesRemaining)}${'🖤'.repeat(3-livesRemaining)}</span>`;
@@ -2549,7 +2549,7 @@ function checkUnifiedAnswer(selected, correct) {
     clearInterval(timer);
     setTimeout(() => showUnifiedResults(), 800);
     return;
-  } else if (gameMode === 'quick-game' && questionCount >= maxQuestions) {
+  } else if (gameMode === 'casual' && questionCount >= maxQuestions) {
     clearInterval(timer);
     setTimeout(() => showUnifiedResults(), 800);
     return;
@@ -2586,7 +2586,7 @@ function showUnifiedResults() {
   if (gameMode === 'time-attack') {
     resultText = 'Time Attack Complete!';
     scoreDisplay = `${singlePlayerScore}`;
-  } else if (gameMode === 'quick-game') {
+  } else if (gameMode === 'casual') {
     resultText = 'Quick Game Complete!';
     scoreDisplay = `${singlePlayerScore} / ${maxQuestions}`;
   } else if (gameMode === 'three-strikes') {

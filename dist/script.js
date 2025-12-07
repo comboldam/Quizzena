@@ -443,7 +443,7 @@ const backFromDifficultyBtn = document.getElementById("back-from-difficulty");
 // ========================================
 const GAME_CONFIG = {
   TIME_ATTACK_DURATION: 60,
-  QUICK_GAME_QUESTIONS: 10,
+  QUICK_GAME_QUESTIONS: 5,
   QUICK_GAME_TIME_PER_Q: 10,
   THREE_STRIKES_LIVES: 3,
   TWO_PLAYER_QUESTIONS: 5,
@@ -1108,7 +1108,7 @@ function startRound() {
   // SET QUESTION COUNTER
   if (gameMode === 'quick-game') {
     questionCounter.style.display = "block";
-    questionCounter.textContent = `${questionCount}/10`;
+    questionCounter.textContent = `${questionCount}/${maxQuestions}`;
   } else {
     questionCounter.style.display = "none";
   }
@@ -1445,7 +1445,7 @@ function endGame() {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
     score.textContent = "";
   } else if (gameMode === 'quick-game') {
-    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/10`;
+    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/${maxQuestions}`;
     score.textContent = "";
   } else if (gameMode === 'three-strikes') {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
@@ -2217,7 +2217,7 @@ function showUnifiedModeSelection(quizName, icon) {
 
       <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-      <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+      <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
       <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
@@ -2241,7 +2241,7 @@ function selectAreaDifficulty(difficulty) {
 
     <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
 
-    <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+    <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
     <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
 
