@@ -1,0 +1,2637 @@
+[
+  {
+    "id": 1,
+    "question": "Who plays Harry Potter in the film series?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DanielRadcliffe.jpg/250px-DanielRadcliffe.jpg",
+    "options": [
+      "Rupert Grint",
+      "Tom Felton",
+      "Matthew Lewis",
+      "Daniel Radcliffe"
+    ],
+    "answer": "Daniel Radcliffe",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Hermione Granger?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/250px-Emma_Watson_2013.jpg",
+    "options": [
+      "Evanna Lynch",
+      "Emma Watson",
+      "Katie Leung",
+      "Bonnie Wright"
+    ],
+    "answer": "Emma Watson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "Who plays Ron Weasley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/RupertGrint2018.jpg/250px-RupertGrint2018.jpg",
+    "options": [
+      "Tom Felton",
+      "James Phelps",
+      "Rupert Grint",
+      "Daniel Radcliffe"
+    ],
+    "answer": "Rupert Grint",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 4,
+    "question": "What are the four Hogwarts houses?",
+    "options": [
+      "Lions, Snakes, Eagles, Badgers",
+      "Red, Green, Blue, Yellow",
+      "Gryffindor, Slytherin, Ravenclaw, Dumbledore",
+      "Gryffindor, Slytherin, Ravenclaw, Hufflepuff"
+    ],
+    "answer": "Gryffindor, Slytherin, Ravenclaw, Hufflepuff",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 5,
+    "question": "Which house is Harry Potter sorted into?",
+    "options": [
+      "Hufflepuff",
+      "Slytherin",
+      "Ravenclaw",
+      "Gryffindor"
+    ],
+    "answer": "Gryffindor",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 6,
+    "question": "Who is the headmaster of Hogwarts when Harry arrives?",
+    "options": [
+      "Albus Dumbledore",
+      "Dolores Umbridge",
+      "Severus Snape",
+      "Minerva McGonagall"
+    ],
+    "answer": "Albus Dumbledore",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 7,
+    "question": "Who plays Albus Dumbledore in the first two films?",
+    "options": [
+      "Richard Harris",
+      "Jude Law",
+      "Ian McKellen",
+      "Michael Gambon"
+    ],
+    "answer": "Richard Harris",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 8,
+    "question": "Who plays Albus Dumbledore from the third film onward?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Michael_Gambon_cropped.jpg/250px-Michael_Gambon_cropped.jpg",
+    "options": [
+      "Richard Harris",
+      "Ian McKellen",
+      "Michael Gambon",
+      "Jude Law"
+    ],
+    "answer": "Michael Gambon",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 9,
+    "question": "What is the name of Harry's owl?",
+    "options": [
+      "Scabbers",
+      "Pigwidgeon",
+      "Errol",
+      "Hedwig"
+    ],
+    "answer": "Hedwig",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 10,
+    "question": "What position does Harry play in Quidditch?",
+    "options": [
+      "Chaser",
+      "Beater",
+      "Keeper",
+      "Seeker"
+    ],
+    "answer": "Seeker",
+    "difficulty": "medium",
+    "category": "quidditch"
+  },
+  {
+    "id": 11,
+    "question": "What is the golden flying ball in Quidditch called?",
+    "options": [
+      "Golden Bludger",
+      "Golden Snitch",
+      "Quaffle",
+      "Golden Seeker"
+    ],
+    "answer": "Golden Snitch",
+    "difficulty": "medium",
+    "category": "quidditch"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Severus Snape?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Alan_Rickman_after_Seminar_%283%29.jpg/250px-Alan_Rickman_after_Seminar_%283%29.jpg",
+    "options": [
+      "Alan Rickman",
+      "Gary Oldman",
+      "Ralph Fiennes",
+      "Jason Isaacs"
+    ],
+    "answer": "Alan Rickman",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "Who plays Lord Voldemort?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ralph_Fiennes_2024.jpg/250px-Ralph_Fiennes_2024.jpg",
+    "options": [
+      "Tom Felton",
+      "Jason Isaacs",
+      "Ralph Fiennes",
+      "Alan Rickman"
+    ],
+    "answer": "Ralph Fiennes",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 14,
+    "question": "What is Voldemort's real name?",
+    "options": [
+      "Salazar Slytherin",
+      "Marvolo Gaunt",
+      "Tom Marvolo Riddle",
+      "Tom Riddle Jr."
+    ],
+    "answer": "Tom Marvolo Riddle",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 15,
+    "question": "Who plays Draco Malfoy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tom_Felton_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg/250px-Tom_Felton_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg",
+    "options": [
+      "Matthew Lewis",
+      "Rupert Grint",
+      "Jamie Campbell Bower",
+      "Tom Felton"
+    ],
+    "answer": "Tom Felton",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 16,
+    "question": "What is the name of the Weasley family home?",
+    "options": [
+      "The Burrow",
+      "Godric's Hollow",
+      "Shell Cottage",
+      "Grimmauld Place"
+    ],
+    "answer": "The Burrow",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 17,
+    "question": "What street do the Dursleys live on?",
+    "options": [
+      "Grimmauld Place",
+      "Privet Drive",
+      "Diagon Alley",
+      "Spinner's End"
+    ],
+    "answer": "Privet Drive",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of the wizarding bank?",
+    "options": [
+      "Gringotts",
+      "Wizard Bank",
+      "Galleons",
+      "Diagon Bank"
+    ],
+    "answer": "Gringotts",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 19,
+    "question": "What creatures run Gringotts bank?",
+    "options": [
+      "Dwarves",
+      "Wizards",
+      "Goblins",
+      "Elves"
+    ],
+    "answer": "Goblins",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 20,
+    "question": "What spell disarms an opponent?",
+    "options": [
+      "Expelliarmus",
+      "Petrificus Totalus",
+      "Impedimenta",
+      "Stupefy"
+    ],
+    "answer": "Expelliarmus",
+    "difficulty": "easy",
+    "category": "spells"
+  },
+  {
+    "id": 21,
+    "question": "What spell produces light from a wand?",
+    "options": [
+      "Nox",
+      "Lumos",
+      "Lumos Maxima",
+      "Incendio"
+    ],
+    "answer": "Lumos",
+    "difficulty": "easy",
+    "category": "spells"
+  },
+  {
+    "id": 22,
+    "question": "What is the killing curse?",
+    "options": [
+      "Sectumsempra",
+      "Crucio",
+      "Avada Kedavra",
+      "Imperio"
+    ],
+    "answer": "Avada Kedavra",
+    "difficulty": "easy",
+    "category": "spells"
+  },
+  {
+    "id": 23,
+    "question": "What are the three Unforgivable Curses?",
+    "options": [
+      "Avada Kedavra, Crucio, Imperio",
+      "Crucio, Sectumsempra, Imperio",
+      "Avada Kedavra, Crucio, Sectumsempra",
+      "Avada Kedavra, Stupefy, Expelliarmus"
+    ],
+    "answer": "Avada Kedavra, Crucio, Imperio",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 24,
+    "question": "What platform does the Hogwarts Express leave from?",
+    "options": [
+      "Platform 9",
+      "Platform 9¾",
+      "Platform 10",
+      "Platform 7½"
+    ],
+    "answer": "Platform 9¾",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 25,
+    "question": "What is the name of the train station?",
+    "options": [
+      "Victoria",
+      "Paddington",
+      "King's Cross",
+      "Euston"
+    ],
+    "answer": "King's Cross",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 26,
+    "question": "Who plays Hagrid?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Robbiecoltrane_%28cropped%29.jpg/250px-Robbiecoltrane_%28cropped%29.jpg",
+    "options": [
+      "John Cleese",
+      "Warwick Davis",
+      "Robbie Coltrane",
+      "Jim Broadbent"
+    ],
+    "answer": "Robbie Coltrane",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 27,
+    "question": "What is Hagrid's first name?",
+    "options": [
+      "Rodolphus",
+      "Rubeus",
+      "Remus",
+      "Regulus"
+    ],
+    "answer": "Rubeus",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 28,
+    "question": "What is the name of Hagrid's three-headed dog?",
+    "options": [
+      "Norbert",
+      "Buckbeak",
+      "Fang",
+      "Fluffy"
+    ],
+    "answer": "Fluffy",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 29,
+    "question": "What creature does Hagrid hatch in the first film?",
+    "options": [
+      "Basilisk",
+      "Hippogriff",
+      "Dragon (Norbert)",
+      "Phoenix"
+    ],
+    "answer": "Dragon (Norbert)",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 30,
+    "question": "Who plays Professor McGonagall?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Maggie_Smith_-_Vintage_%28trim%29.jpg/250px-Maggie_Smith_-_Vintage_%28trim%29.jpg",
+    "options": [
+      "Maggie Smith",
+      "Emma Thompson",
+      "Helena Bonham Carter",
+      "Julie Walters"
+    ],
+    "answer": "Maggie Smith",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 31,
+    "question": "What animal can Professor McGonagall transform into?",
+    "options": [
+      "Owl",
+      "Rat",
+      "Dog",
+      "Cat"
+    ],
+    "answer": "Cat",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 32,
+    "question": "What subject does Professor McGonagall teach?",
+    "options": [
+      "Transfiguration",
+      "Charms",
+      "Defense Against the Dark Arts",
+      "Potions"
+    ],
+    "answer": "Transfiguration",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 33,
+    "question": "What subject does Snape teach initially?",
+    "options": [
+      "Potions",
+      "Charms",
+      "Transfiguration",
+      "Defense Against the Dark Arts"
+    ],
+    "answer": "Potions",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 34,
+    "question": "What is the name of Ron's rat?",
+    "options": [
+      "Trevor",
+      "Scabbers",
+      "Errol",
+      "Crookshanks"
+    ],
+    "answer": "Scabbers",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 35,
+    "question": "What is Scabbers revealed to be?",
+    "options": [
+      "Peter Pettigrew",
+      "Sirius Black",
+      "Remus Lupin",
+      "A regular rat"
+    ],
+    "answer": "Peter Pettigrew",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 36,
+    "question": "Who plays Sirius Black?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/250px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg",
+    "options": [
+      "Gary Oldman",
+      "Alan Rickman",
+      "Timothy Spall",
+      "David Thewlis"
+    ],
+    "answer": "Gary Oldman",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 37,
+    "question": "What is Sirius Black's relationship to Harry?",
+    "options": [
+      "Father's friend",
+      "Uncle",
+      "Godfather",
+      "Cousin"
+    ],
+    "answer": "Godfather",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 38,
+    "question": "What animal is Sirius Black's Animagus form?",
+    "options": [
+      "Wolf",
+      "Rat",
+      "Stag",
+      "Dog"
+    ],
+    "answer": "Dog",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 39,
+    "question": "Who plays Remus Lupin?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/David_Thewlis_2008.jpg/250px-David_Thewlis_2008.jpg",
+    "options": [
+      "David Thewlis",
+      "Brendan Gleeson",
+      "Gary Oldman",
+      "Timothy Spall"
+    ],
+    "answer": "David Thewlis",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 40,
+    "question": "What is Remus Lupin's condition?",
+    "options": [
+      "Werewolf",
+      "Metamorphmagus",
+      "Animagus",
+      "Vampire"
+    ],
+    "answer": "Werewolf",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 41,
+    "question": "What spell summons the Patronus?",
+    "options": [
+      "Protego",
+      "Patronus Charm",
+      "Expecto Patronum",
+      "Expelliarmus"
+    ],
+    "answer": "Expecto Patronum",
+    "difficulty": "easy",
+    "category": "spells"
+  },
+  {
+    "id": 42,
+    "question": "What form does Harry's Patronus take?",
+    "options": [
+      "Phoenix",
+      "Dog",
+      "Otter",
+      "Stag"
+    ],
+    "answer": "Stag",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 43,
+    "question": "What form does Hermione's Patronus take?",
+    "options": [
+      "Horse",
+      "Cat",
+      "Otter",
+      "Phoenix"
+    ],
+    "answer": "Otter",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 44,
+    "question": "What creatures feed on happiness?",
+    "options": [
+      "Inferi",
+      "Boggarts",
+      "Dementors",
+      "Death Eaters"
+    ],
+    "answer": "Dementors",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 45,
+    "question": "Who plays Bellatrix Lestrange?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg/250px-MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg",
+    "options": [
+      "Helena Bonham Carter",
+      "Julie Walters",
+      "Imelda Staunton",
+      "Emma Thompson"
+    ],
+    "answer": "Helena Bonham Carter",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 46,
+    "question": "Who plays Dolores Umbridge?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Imelda_Staunton%2C_October_2019.jpg/250px-Imelda_Staunton%2C_October_2019.jpg",
+    "options": [
+      "Imelda Staunton",
+      "Helena Bonham Carter",
+      "Maggie Smith",
+      "Emma Thompson"
+    ],
+    "answer": "Imelda Staunton",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 47,
+    "question": "What is the name of the secret society fighting Voldemort?",
+    "options": [
+      "The Ministry",
+      "Order of the Phoenix",
+      "Dumbledore's Army",
+      "The Resistance"
+    ],
+    "answer": "Order of the Phoenix",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 48,
+    "question": "What is the student defense group called?",
+    "options": [
+      "S.P.E.W.",
+      "Order of the Phoenix",
+      "The D.A.",
+      "Dumbledore's Army"
+    ],
+    "answer": "Dumbledore's Army",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 49,
+    "question": "What is a Horcrux?",
+    "options": [
+      "Dark magic spell",
+      "Magical creature",
+      "Type of wand",
+      "Object containing part of a soul"
+    ],
+    "answer": "Object containing part of a soul",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 50,
+    "question": "How many Horcruxes did Voldemort create intentionally?",
+    "options": [
+      "5",
+      "8",
+      "6",
+      "7"
+    ],
+    "answer": "6",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 51,
+    "question": "What was the first Horcrux Harry destroyed?",
+    "options": [
+      "Marvolo's Ring",
+      "Slytherin's Locket",
+      "Hufflepuff's Cup",
+      "Tom Riddle's Diary"
+    ],
+    "answer": "Tom Riddle's Diary",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 52,
+    "question": "What destroys Horcruxes?",
+    "options": [
+      "Fire only",
+      "Basilisk venom, Fiendfyre, Sword of Gryffindor",
+      "Only the Killing Curse",
+      "Any spell"
+    ],
+    "answer": "Basilisk venom, Fiendfyre, Sword of Gryffindor",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 53,
+    "question": "What is hidden in the Chamber of Secrets?",
+    "options": [
+      "Basilisk",
+      "Voldemort",
+      "Dragon",
+      "Dementors"
+    ],
+    "answer": "Basilisk",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 54,
+    "question": "Who opens the Chamber of Secrets?",
+    "options": [
+      "Ginny Weasley (possessed)",
+      "Draco Malfoy",
+      "Harry Potter",
+      "Tom Riddle"
+    ],
+    "answer": "Ginny Weasley (possessed)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 55,
+    "question": "Who plays Ginny Weasley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bonnie_Wright_by_Gage_Skidmore.jpg/250px-Bonnie_Wright_by_Gage_Skidmore.jpg",
+    "options": [
+      "Evanna Lynch",
+      "Bonnie Wright",
+      "Katie Leung",
+      "Emma Watson"
+    ],
+    "answer": "Bonnie Wright",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 56,
+    "question": "Who plays Luna Lovegood?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2021-10-30_13-16-35_ILCE-7C_DSC07547_DxO_%2851691991968%29.jpg/250px-2021-10-30_13-16-35_ILCE-7C_DSC07547_DxO_%2851691991968%29.jpg",
+    "options": [
+      "Jessie Cave",
+      "Katie Leung",
+      "Evanna Lynch",
+      "Bonnie Wright"
+    ],
+    "answer": "Evanna Lynch",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 57,
+    "question": "What house is Luna Lovegood in?",
+    "options": [
+      "Ravenclaw",
+      "Slytherin",
+      "Gryffindor",
+      "Hufflepuff"
+    ],
+    "answer": "Ravenclaw",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 58,
+    "question": "What is the Ravenclaw house symbol?",
+    "options": [
+      "Hawk",
+      "Owl",
+      "Eagle",
+      "Raven"
+    ],
+    "answer": "Eagle",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 59,
+    "question": "What is the Hufflepuff house symbol?",
+    "options": [
+      "Badger",
+      "Boar",
+      "Beaver",
+      "Bear"
+    ],
+    "answer": "Badger",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 60,
+    "question": "What is the Slytherin house symbol?",
+    "options": [
+      "Scorpion",
+      "Snake",
+      "Spider",
+      "Serpent"
+    ],
+    "answer": "Serpent",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 61,
+    "question": "What is the Gryffindor house symbol?",
+    "options": [
+      "Eagle",
+      "Griffin",
+      "Lion",
+      "Phoenix"
+    ],
+    "answer": "Lion",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 62,
+    "question": "Who founded Hogwarts?",
+    "options": [
+      "Dumbledore and the founders",
+      "Merlin and the founders",
+      "The Ministry of Magic",
+      "Godric Gryffindor, Salazar Slytherin, Rowena Ravenclaw, Helga Hufflepuff"
+    ],
+    "answer": "Godric Gryffindor, Salazar Slytherin, Rowena Ravenclaw, Helga Hufflepuff",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 63,
+    "question": "Who plays Neville Longbottom?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Matthew_Lewis_Photo_Op_GalaxyCon_Richmond_2020.jpg/250px-Matthew_Lewis_Photo_Op_GalaxyCon_Richmond_2020.jpg",
+    "options": [
+      "Rupert Grint",
+      "Devon Murray",
+      "Tom Felton",
+      "Matthew Lewis"
+    ],
+    "answer": "Matthew Lewis",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 64,
+    "question": "What does Neville destroy in the final battle?",
+    "options": [
+      "A Horcrux",
+      "The Elder Wand",
+      "Nagini",
+      "Voldemort"
+    ],
+    "answer": "Nagini",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 65,
+    "question": "What is the name of Voldemort's snake?",
+    "options": [
+      "Nagini",
+      "Slytherin",
+      "Serpent",
+      "Basilisk"
+    ],
+    "answer": "Nagini",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 66,
+    "question": "What are the three Deathly Hallows?",
+    "options": [
+      "Elder Wand, Horcrux, Cloak",
+      "Wand, Stone, Ring",
+      "Elder Wand, Resurrection Stone, Invisibility Cloak",
+      "Elder Wand, Philosopher's Stone, Invisibility Cloak"
+    ],
+    "answer": "Elder Wand, Resurrection Stone, Invisibility Cloak",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 67,
+    "question": "Who originally owned the Invisibility Cloak?",
+    "options": [
+      "Death",
+      "Harry's father",
+      "Ignotus Peverell",
+      "Dumbledore"
+    ],
+    "answer": "Ignotus Peverell",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 68,
+    "question": "Who gives Harry the Invisibility Cloak?",
+    "options": [
+      "Dumbledore",
+      "Ron",
+      "Sirius Black",
+      "Hagrid"
+    ],
+    "answer": "Dumbledore",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 69,
+    "question": "What does the Mirror of Erised show?",
+    "options": [
+      "Your deepest desire",
+      "Your worst fear",
+      "The future",
+      "The past"
+    ],
+    "answer": "Your deepest desire",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 70,
+    "question": "What does Harry see in the Mirror of Erised?",
+    "options": [
+      "The Philosopher's Stone",
+      "Himself as Minister",
+      "His family",
+      "Voldemort defeated"
+    ],
+    "answer": "His family",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 71,
+    "question": "What is the Philosopher's Stone called in the US?",
+    "options": [
+      "Sorcerer's Stone",
+      "Magic Stone",
+      "Wizard's Stone",
+      "Alchemist's Stone"
+    ],
+    "answer": "Sorcerer's Stone",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 72,
+    "question": "Who created the Philosopher's Stone?",
+    "options": [
+      "Dumbledore",
+      "Merlin",
+      "Voldemort",
+      "Nicolas Flamel"
+    ],
+    "answer": "Nicolas Flamel",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 73,
+    "question": "What does the Philosopher's Stone produce?",
+    "options": [
+      "Immortality potion",
+      "Gold only",
+      "Liquid luck",
+      "Elixir of Life"
+    ],
+    "answer": "Elixir of Life",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 74,
+    "question": "Who plays Mad-Eye Moody?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/BansheesBFI131022_%2811_of_22%29_%2852448245670%29_%28Brendan_Gleeson%29.jpg/250px-BansheesBFI131022_%2811_of_22%29_%2852448245670%29_%28Brendan_Gleeson%29.jpg",
+    "options": [
+      "Michael Gambon",
+      "Brendan Gleeson",
+      "Gary Oldman",
+      "David Thewlis"
+    ],
+    "answer": "Brendan Gleeson",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 75,
+    "question": "What tournament takes place in the fourth film?",
+    "options": [
+      "Triwizard Tournament",
+      "House Cup",
+      "Dueling Tournament",
+      "Quidditch World Cup"
+    ],
+    "answer": "Triwizard Tournament",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 76,
+    "question": "What school does Viktor Krum attend?",
+    "options": [
+      "Hogwarts",
+      "Ilvermorny",
+      "Beauxbatons",
+      "Durmstrang"
+    ],
+    "answer": "Durmstrang",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 77,
+    "question": "What school does Fleur Delacour attend?",
+    "options": [
+      "Beauxbatons",
+      "Hogwarts",
+      "Ilvermorny",
+      "Durmstrang"
+    ],
+    "answer": "Beauxbatons",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 78,
+    "question": "Who plays Cedric Diggory?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Robert_Pattinson_at_Berlinale_2025.jpg/250px-Robert_Pattinson_at_Berlinale_2025.jpg",
+    "options": [
+      "Robert Pattinson",
+      "Rupert Grint",
+      "Daniel Radcliffe",
+      "Tom Felton"
+    ],
+    "answer": "Robert Pattinson",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 79,
+    "question": "What house is Cedric Diggory in?",
+    "options": [
+      "Gryffindor",
+      "Slytherin",
+      "Hufflepuff",
+      "Ravenclaw"
+    ],
+    "answer": "Hufflepuff",
+    "difficulty": "easy",
+    "category": "houses"
+  },
+  {
+    "id": 80,
+    "question": "Who plays Cho Chang?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Katie_Leung_2020.jpg/250px-Katie_Leung_2020.jpg",
+    "options": [
+      "Evanna Lynch",
+      "Katie Leung",
+      "Bonnie Wright",
+      "Afshan Azad"
+    ],
+    "answer": "Katie Leung",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 81,
+    "question": "What is Harry's first broomstick?",
+    "options": [
+      "Cleansweep",
+      "Nimbus 2001",
+      "Firebolt",
+      "Nimbus 2000"
+    ],
+    "answer": "Nimbus 2000",
+    "difficulty": "medium",
+    "category": "quidditch"
+  },
+  {
+    "id": 82,
+    "question": "Who gives Harry the Firebolt?",
+    "options": [
+      "McGonagall",
+      "Sirius Black",
+      "The Weasleys",
+      "Dumbledore"
+    ],
+    "answer": "Sirius Black",
+    "difficulty": "medium",
+    "category": "quidditch"
+  },
+  {
+    "id": 83,
+    "question": "What is the name of the magical map?",
+    "options": [
+      "Hogwarts Map",
+      "Marauder's Map",
+      "Wizard's Map",
+      "Secret Map"
+    ],
+    "answer": "Marauder's Map",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 84,
+    "question": "Who created the Marauder's Map?",
+    "options": [
+      "Dumbledore",
+      "Fred and George",
+      "The founders",
+      "Moony, Wormtail, Padfoot, Prongs"
+    ],
+    "answer": "Moony, Wormtail, Padfoot, Prongs",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 85,
+    "question": "What is Moony's real identity?",
+    "options": [
+      "Sirius Black",
+      "James Potter",
+      "Remus Lupin",
+      "Peter Pettigrew"
+    ],
+    "answer": "Remus Lupin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 86,
+    "question": "What is Padfoot's real identity?",
+    "options": [
+      "Sirius Black",
+      "James Potter",
+      "Remus Lupin",
+      "Peter Pettigrew"
+    ],
+    "answer": "Sirius Black",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 87,
+    "question": "What is Prongs' real identity?",
+    "options": [
+      "Sirius Black",
+      "Remus Lupin",
+      "James Potter",
+      "Peter Pettigrew"
+    ],
+    "answer": "James Potter",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 88,
+    "question": "What is Wormtail's real identity?",
+    "options": [
+      "Peter Pettigrew",
+      "Remus Lupin",
+      "James Potter",
+      "Sirius Black"
+    ],
+    "answer": "Peter Pettigrew",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 89,
+    "question": "Who plays Peter Pettigrew?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg/250px-Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg",
+    "options": [
+      "David Thewlis",
+      "Timothy Spall",
+      "Gary Oldman",
+      "Brendan Gleeson"
+    ],
+    "answer": "Timothy Spall",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 90,
+    "question": "Who plays Lucius Malfoy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Jason_Isaacs-45_%28cropped%29.jpg/250px-Jason_Isaacs-45_%28cropped%29.jpg",
+    "options": [
+      "Tom Felton",
+      "Alan Rickman",
+      "Jason Isaacs",
+      "Ralph Fiennes"
+    ],
+    "answer": "Jason Isaacs",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 91,
+    "question": "Who plays Narcissa Malfoy?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Helen_McCrory_2017_%28Extract%29.jpg/250px-Helen_McCrory_2017_%28Extract%29.jpg",
+    "options": [
+      "Helen McCrory",
+      "Helena Bonham Carter",
+      "Natalia Tena",
+      "Emma Thompson"
+    ],
+    "answer": "Helen McCrory",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 92,
+    "question": "What is the name of the Malfoy house-elf?",
+    "options": [
+      "Winky",
+      "Kreacher",
+      "Dobby",
+      "Hokey"
+    ],
+    "answer": "Dobby",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 93,
+    "question": "How is Dobby freed?",
+    "options": [
+      "He escapes",
+      "Harry gives him a sock",
+      "Dumbledore frees him",
+      "Malfoy releases him"
+    ],
+    "answer": "Harry gives him a sock",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 94,
+    "question": "Who plays the Weasley twins?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/James_and_Oliver_Phelps_-_Lucca_Comics_and_Games_2011_-_2.jpg/250px-James_and_Oliver_Phelps_-_Lucca_Comics_and_Games_2011_-_2.jpg",
+    "options": [
+      "James and Fred Phelps",
+      "Fred and George Phelps",
+      "James and Oliver Phelps",
+      "Oliver and Fred Phelps"
+    ],
+    "answer": "James and Oliver Phelps",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 95,
+    "question": "What joke shop do the twins open?",
+    "options": [
+      "Zonko's",
+      "Weasleys' Wizard Wheezes",
+      "The Joke Shop",
+      "Weasley's Wonders"
+    ],
+    "answer": "Weasleys' Wizard Wheezes",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 96,
+    "question": "Where is Weasleys' Wizard Wheezes located?",
+    "options": [
+      "The Burrow",
+      "Knockturn Alley",
+      "Hogsmeade",
+      "Diagon Alley"
+    ],
+    "answer": "Diagon Alley",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 97,
+    "question": "What is the wizarding village near Hogwarts?",
+    "options": [
+      "Hogsmeade",
+      "Godric's Hollow",
+      "Ottery St. Catchpole",
+      "Diagon Alley"
+    ],
+    "answer": "Hogsmeade",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 98,
+    "question": "What pub is in Hogsmeade?",
+    "options": [
+      "The Three Broomsticks",
+      "The Leaky Cauldron",
+      "The Hog's Head",
+      "The Hogshead"
+    ],
+    "answer": "The Three Broomsticks",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 99,
+    "question": "What pub leads to Diagon Alley?",
+    "options": [
+      "The Hog's Head",
+      "Florean's",
+      "The Leaky Cauldron",
+      "The Three Broomsticks"
+    ],
+    "answer": "The Leaky Cauldron",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 100,
+    "question": "Who plays Tom the innkeeper in the first film?",
+    "options": [
+      "Derek Deadman",
+      "Jim Broadbent",
+      "Warwick Davis",
+      "John Cleese"
+    ],
+    "answer": "Derek Deadman",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 101,
+    "question": "What is the core of Harry's wand?",
+    "options": [
+      "Dragon heartstring",
+      "Unicorn hair",
+      "Phoenix feather",
+      "Thestral tail"
+    ],
+    "answer": "Phoenix feather",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 102,
+    "question": "Whose phoenix provided the feather for Harry's wand?",
+    "options": [
+      "Nicolas Flamel's phoenix",
+      "Voldemort's phoenix",
+      "Fawkes (Dumbledore's)",
+      "A wild phoenix"
+    ],
+    "answer": "Fawkes (Dumbledore's)",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 103,
+    "question": "What is special about Harry and Voldemort's wands?",
+    "options": [
+      "Same wood",
+      "They share the same core",
+      "Same maker",
+      "Same length"
+    ],
+    "answer": "They share the same core",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 104,
+    "question": "Who is the wandmaker?",
+    "options": [
+      "Nicolas Flamel",
+      "Ollivander",
+      "Gregorovitch",
+      "Dumbledore"
+    ],
+    "answer": "Ollivander",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 105,
+    "question": "Who plays Ollivander?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/John_Hurt_at_the_2009_Tribeca_Film_Festival.jpg/250px-John_Hurt_at_the_2009_Tribeca_Film_Festival.jpg",
+    "options": [
+      "Michael Caine",
+      "John Hurt",
+      "Ian McKellen",
+      "John Cleese"
+    ],
+    "answer": "John Hurt",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 106,
+    "question": "What potion allows you to take another's form?",
+    "options": [
+      "Metamorph Potion",
+      "Transfiguration Potion",
+      "Polyjuice Potion",
+      "Disguise Draught"
+    ],
+    "answer": "Polyjuice Potion",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 107,
+    "question": "What ingredient does Polyjuice Potion require from the person?",
+    "options": [
+      "Touch",
+      "Hair or body part",
+      "Saliva",
+      "Blood"
+    ],
+    "answer": "Hair or body part",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 108,
+    "question": "What happens when Hermione uses cat hair in Polyjuice?",
+    "options": [
+      "She turns part cat",
+      "Nothing",
+      "It doesn't work",
+      "She becomes a cat"
+    ],
+    "answer": "She turns part cat",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 109,
+    "question": "What is Felix Felicis?",
+    "options": [
+      "Truth Serum",
+      "Love Potion",
+      "Liquid Luck",
+      "Healing Potion"
+    ],
+    "answer": "Liquid Luck",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 110,
+    "question": "What is Veritaserum?",
+    "options": [
+      "Poison",
+      "Truth Serum",
+      "Love Potion",
+      "Luck Potion"
+    ],
+    "answer": "Truth Serum",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 111,
+    "question": "What potion does Slughorn give Harry?",
+    "options": [
+      "Amortentia",
+      "Felix Felicis",
+      "Polyjuice",
+      "Veritaserum"
+    ],
+    "answer": "Felix Felicis",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 112,
+    "question": "Who plays Horace Slughorn?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Jim_Broadbent_2012.jpg/250px-Jim_Broadbent_2012.jpg",
+    "options": [
+      "Michael Gambon",
+      "Jim Broadbent",
+      "John Cleese",
+      "Brendan Gleeson"
+    ],
+    "answer": "Jim Broadbent",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 113,
+    "question": "What is Professor Slughorn's exclusive club called?",
+    "options": [
+      "Potions Club",
+      "Professor's Club",
+      "Slug Club",
+      "Elite Club"
+    ],
+    "answer": "Slug Club",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 114,
+    "question": "Who are Harry's parents?",
+    "options": [
+      "John and Lily Potter",
+      "James and Mary Potter",
+      "James and Lisa Potter",
+      "James and Lily Potter"
+    ],
+    "answer": "James and Lily Potter",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 115,
+    "question": "How did Harry's parents die?",
+    "options": [
+      "Accident",
+      "Disease",
+      "Killed by Voldemort",
+      "Car crash (Dursley's lie)"
+    ],
+    "answer": "Killed by Voldemort",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 116,
+    "question": "Why did Harry survive Voldemort's curse?",
+    "options": [
+      "Dumbledore protected him",
+      "His mother's love/sacrifice",
+      "The wand backfired",
+      "He was special"
+    ],
+    "answer": "His mother's love/sacrifice",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 117,
+    "question": "What is the lightning bolt on Harry's forehead?",
+    "options": [
+      "Tattoo",
+      "Scar from the curse",
+      "Birthmark",
+      "Symbol of the chosen one"
+    ],
+    "answer": "Scar from the curse",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 118,
+    "question": "Who are Harry's aunt and uncle?",
+    "options": [
+      "Victor and Patricia Dursley",
+      "Vincent and Petunia Dursley",
+      "Vernon and Petunia Dursley",
+      "Vernon and Penelope Dursley"
+    ],
+    "answer": "Vernon and Petunia Dursley",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 119,
+    "question": "What is Harry's cousin's name?",
+    "options": [
+      "Derek",
+      "Dennis",
+      "Donald",
+      "Dudley"
+    ],
+    "answer": "Dudley",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 120,
+    "question": "Who plays Vernon Dursley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Richard_Griffiths_at_BAFTA_2007_%28387023768%29.jpg/250px-Richard_Griffiths_at_BAFTA_2007_%28387023768%29.jpg",
+    "options": [
+      "John Cleese",
+      "Jim Broadbent",
+      "Robbie Coltrane",
+      "Richard Griffiths"
+    ],
+    "answer": "Richard Griffiths",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 121,
+    "question": "Who plays Petunia Dursley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ThatXmasBFILFF19.10.2024_%2855_of_119%29_%2854100308426%29_%28Fiona_Shaw%29.jpg/250px-ThatXmasBFILFF19.10.2024_%2855_of_119%29_%2854100308426%29_%28Fiona_Shaw%29.jpg",
+    "options": [
+      "Fiona Shaw",
+      "Imelda Staunton",
+      "Julie Walters",
+      "Maggie Smith"
+    ],
+    "answer": "Fiona Shaw",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 122,
+    "question": "Who plays Molly Weasley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Julie_Walters_2014_%28cropped%29.jpg/250px-Julie_Walters_2014_%28cropped%29.jpg",
+    "options": [
+      "Julie Walters",
+      "Emma Thompson",
+      "Maggie Smith",
+      "Fiona Shaw"
+    ],
+    "answer": "Julie Walters",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 123,
+    "question": "Who plays Arthur Weasley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Stuttgart_2021_-Comic_Con_Germany-_by-RaBoe_168_%28cropped%29.jpg/250px-Stuttgart_2021_-Comic_Con_Germany-_by-RaBoe_168_%28cropped%29.jpg",
+    "options": [
+      "David Thewlis",
+      "Bill Nighy",
+      "Mark Williams",
+      "Michael Gambon"
+    ],
+    "answer": "Mark Williams",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 124,
+    "question": "How many Weasley children are there?",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "7"
+    ],
+    "answer": "7",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 125,
+    "question": "Who is the oldest Weasley child?",
+    "options": [
+      "Percy",
+      "Fred",
+      "Bill",
+      "Charlie"
+    ],
+    "answer": "Bill",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 126,
+    "question": "Who does Bill Weasley marry?",
+    "options": [
+      "Hermione",
+      "Tonks",
+      "Cho Chang",
+      "Fleur Delacour"
+    ],
+    "answer": "Fleur Delacour",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 127,
+    "question": "Who plays Bill Weasley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Domhnall_Gleeson_by_Gage_Skidmore.jpg/250px-Domhnall_Gleeson_by_Gage_Skidmore.jpg",
+    "options": [
+      "Brendan Gleeson",
+      "James Phelps",
+      "Rupert Grint",
+      "Domhnall Gleeson"
+    ],
+    "answer": "Domhnall Gleeson",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 128,
+    "question": "Who plays Fleur Delacour?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Clemence_Poesy_Paris_Fashion_Week_Autumn_Winter_2019.jpg/250px-Clemence_Poesy_Paris_Fashion_Week_Autumn_Winter_2019.jpg",
+    "options": [
+      "Emma Watson",
+      "Bonnie Wright",
+      "Evanna Lynch",
+      "Clémence Poésy"
+    ],
+    "answer": "Clémence Poésy",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 129,
+    "question": "Who is Tonks?",
+    "options": [
+      "Nymphadora Tonks",
+      "Bellatrix Tonks",
+      "Andromeda Tonks",
+      "Narcissa Tonks"
+    ],
+    "answer": "Nymphadora Tonks",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 130,
+    "question": "What special ability does Tonks have?",
+    "options": [
+      "Metamorphmagus",
+      "Animagus",
+      "Parselmouth",
+      "Seer"
+    ],
+    "answer": "Metamorphmagus",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 131,
+    "question": "Who plays Tonks?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Natalia_Tena_%2829613976213%29.jpg/250px-Natalia_Tena_%2829613976213%29.jpg",
+    "options": [
+      "Evanna Lynch",
+      "Emma Watson",
+      "Helena Bonham Carter",
+      "Natalia Tena"
+    ],
+    "answer": "Natalia Tena",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 132,
+    "question": "Who does Tonks marry?",
+    "options": [
+      "Sirius Black",
+      "Charlie Weasley",
+      "Remus Lupin",
+      "Bill Weasley"
+    ],
+    "answer": "Remus Lupin",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 133,
+    "question": "What is the name of Lupin and Tonks' son?",
+    "options": [
+      "Edward",
+      "Remus Jr.",
+      "Harry",
+      "Teddy"
+    ],
+    "answer": "Teddy",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 134,
+    "question": "What spell causes pain (torture curse)?",
+    "options": [
+      "Imperio",
+      "Crucio",
+      "Sectumsempra",
+      "Avada Kedavra"
+    ],
+    "answer": "Crucio",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 135,
+    "question": "What spell controls the mind?",
+    "options": [
+      "Obliviate",
+      "Imperio",
+      "Crucio",
+      "Legilimens"
+    ],
+    "answer": "Imperio",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 136,
+    "question": "What spell erases memories?",
+    "options": [
+      "Legilimens",
+      "Obliviate",
+      "Stupefy",
+      "Imperio"
+    ],
+    "answer": "Obliviate",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 137,
+    "question": "Who modifies her parents' memories?",
+    "options": [
+      "Ginny",
+      "Hermione",
+      "Luna",
+      "Cho"
+    ],
+    "answer": "Hermione",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 138,
+    "question": "What is Dumbledore's phoenix named?",
+    "options": [
+      "Flame",
+      "Phoenix",
+      "Ember",
+      "Fawkes"
+    ],
+    "answer": "Fawkes",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 139,
+    "question": "What can phoenix tears do?",
+    "options": [
+      "Produce gold",
+      "Create fire",
+      "Heal wounds",
+      "Grant immortality"
+    ],
+    "answer": "Heal wounds",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 140,
+    "question": "What creature is Buckbeak?",
+    "options": [
+      "Hippogriff",
+      "Thestral",
+      "Griffin",
+      "Pegasus"
+    ],
+    "answer": "Hippogriff",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 141,
+    "question": "What must you do to approach a hippogriff?",
+    "options": [
+      "Call its name",
+      "Feed it",
+      "Run at it",
+      "Bow and wait"
+    ],
+    "answer": "Bow and wait",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 142,
+    "question": "What can only people who have seen death see?",
+    "options": [
+      "Dementors",
+      "Inferi",
+      "Boggarts",
+      "Thestrals"
+    ],
+    "answer": "Thestrals",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 143,
+    "question": "What creature takes the form of your worst fear?",
+    "options": [
+      "Thestral",
+      "Boggart",
+      "Dementor",
+      "Grindylow"
+    ],
+    "answer": "Boggart",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 144,
+    "question": "What spell defeats a Boggart?",
+    "options": [
+      "Stupefy",
+      "Expelliarmus",
+      "Expecto Patronum",
+      "Riddikulus"
+    ],
+    "answer": "Riddikulus",
+    "difficulty": "medium",
+    "category": "spells"
+  },
+  {
+    "id": 145,
+    "question": "What form does Neville's Boggart take?",
+    "options": [
+      "Professor Snape",
+      "Voldemort",
+      "Bellatrix",
+      "His grandmother"
+    ],
+    "answer": "Professor Snape",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 146,
+    "question": "What does Neville turn Snape-Boggart into?",
+    "options": [
+      "Snape in his grandmother's clothes",
+      "A puppet",
+      "A clown",
+      "A balloon"
+    ],
+    "answer": "Snape in his grandmother's clothes",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 147,
+    "question": "Who directed the first two Harry Potter films?",
+    "options": [
+      "David Yates",
+      "Mike Newell",
+      "Chris Columbus",
+      "Alfonso Cuarón"
+    ],
+    "answer": "Chris Columbus",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 148,
+    "question": "Who directed Prisoner of Azkaban?",
+    "options": [
+      "David Yates",
+      "Chris Columbus",
+      "Mike Newell",
+      "Alfonso Cuarón"
+    ],
+    "answer": "Alfonso Cuarón",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 149,
+    "question": "Who directed Goblet of Fire?",
+    "options": [
+      "Chris Columbus",
+      "Mike Newell",
+      "David Yates",
+      "Alfonso Cuarón"
+    ],
+    "answer": "Mike Newell",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 150,
+    "question": "Who directed films 5-8?",
+    "options": [
+      "Chris Columbus",
+      "David Yates",
+      "Alfonso Cuarón",
+      "Mike Newell"
+    ],
+    "answer": "David Yates",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 151,
+    "question": "What year was the first film released?",
+    "options": [
+      "2000",
+      "1999",
+      "2002",
+      "2001"
+    ],
+    "answer": "2001",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 152,
+    "question": "What year was the last film released?",
+    "options": [
+      "2011",
+      "2010",
+      "2012",
+      "2009"
+    ],
+    "answer": "2011",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 153,
+    "question": "How many Harry Potter films are there?",
+    "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": "8",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 154,
+    "question": "Which book was split into two films?",
+    "options": [
+      "Order of the Phoenix",
+      "Goblet of Fire",
+      "Deathly Hallows",
+      "Half-Blood Prince"
+    ],
+    "answer": "Deathly Hallows",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 155,
+    "question": "Who composed the main Harry Potter theme?",
+    "options": [
+      "Hans Zimmer",
+      "Danny Elfman",
+      "Howard Shore",
+      "John Williams"
+    ],
+    "answer": "John Williams",
+    "difficulty": "easy",
+    "category": "films"
+  },
+  {
+    "id": 156,
+    "question": "What is the name of the main theme music?",
+    "options": [
+      "Hogwarts Theme",
+      "Wizard's Theme",
+      "Hedwig's Theme",
+      "Harry's Theme"
+    ],
+    "answer": "Hedwig's Theme",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 157,
+    "question": "Where were most interior Hogwarts scenes filmed?",
+    "options": [
+      "Pinewood Studios",
+      "Elstree Studios",
+      "Leavesden Studios",
+      "Shepperton Studios"
+    ],
+    "answer": "Leavesden Studios",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 158,
+    "question": "What real location was used for Hogwarts exterior?",
+    "options": [
+      "Alnwick Castle",
+      "Edinburgh Castle",
+      "Warwick Castle",
+      "Windsor Castle"
+    ],
+    "answer": "Alnwick Castle",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 159,
+    "question": "Who plays Nearly Headless Nick?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/John_Cleese_in_2024_-_54020963437.jpg/250px-John_Cleese_in_2024_-_54020963437.jpg",
+    "options": [
+      "Jim Broadbent",
+      "John Cleese",
+      "Richard Harris",
+      "Warwick Davis"
+    ],
+    "answer": "John Cleese",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 160,
+    "question": "Who is the ghost of Gryffindor?",
+    "options": [
+      "The Grey Lady",
+      "Nearly Headless Nick",
+      "The Bloody Baron",
+      "The Fat Friar"
+    ],
+    "answer": "Nearly Headless Nick",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 161,
+    "question": "Who is the ghost of Slytherin?",
+    "options": [
+      "The Bloody Baron",
+      "The Fat Friar",
+      "Nearly Headless Nick",
+      "The Grey Lady"
+    ],
+    "answer": "The Bloody Baron",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 162,
+    "question": "Who is the ghost of Ravenclaw?",
+    "options": [
+      "The Bloody Baron",
+      "Nearly Headless Nick",
+      "The Fat Friar",
+      "The Grey Lady"
+    ],
+    "answer": "The Grey Lady",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 163,
+    "question": "Who is the Grey Lady's real identity?",
+    "options": [
+      "Rowena Ravenclaw",
+      "A former student",
+      "Helga Hufflepuff",
+      "Helena Ravenclaw"
+    ],
+    "answer": "Helena Ravenclaw",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 164,
+    "question": "Who plays the Grey Lady?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kelly_Macdonald_at_Brave_premiere_%28cropped%29.jpg/250px-Kelly_Macdonald_at_Brave_premiere_%28cropped%29.jpg",
+    "options": [
+      "Nina Young",
+      "Kelly Macdonald",
+      "Emma Thompson",
+      "Gemma Jones"
+    ],
+    "answer": "Kelly Macdonald",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 165,
+    "question": "What Horcrux is hidden at Hogwarts?",
+    "options": [
+      "Ravenclaw's Diadem",
+      "Hufflepuff's Cup",
+      "Slytherin's Locket",
+      "The Diary"
+    ],
+    "answer": "Ravenclaw's Diadem",
+    "difficulty": "medium",
+    "category": "items"
+  },
+  {
+    "id": 166,
+    "question": "Where is Ravenclaw's Diadem hidden?",
+    "options": [
+      "Room of Requirement",
+      "Great Hall",
+      "Chamber of Secrets",
+      "Dumbledore's Office"
+    ],
+    "answer": "Room of Requirement",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 167,
+    "question": "What does the Room of Requirement do?",
+    "options": [
+      "Grants wishes",
+      "Shows the future",
+      "Hides treasure",
+      "Becomes whatever you need"
+    ],
+    "answer": "Becomes whatever you need",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 168,
+    "question": "Who discovers the Room of Requirement for D.A.?",
+    "options": [
+      "Neville Longbottom",
+      "Harry Potter",
+      "Dobby",
+      "Hermione Granger"
+    ],
+    "answer": "Neville Longbottom",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 169,
+    "question": "What is S.P.E.W.?",
+    "options": [
+      "A spell",
+      "Both A and B",
+      "Hermione's club for house-elves",
+      "Society for the Promotion of Elfish Welfare"
+    ],
+    "answer": "Society for the Promotion of Elfish Welfare",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 170,
+    "question": "What house-elf serves the Black family?",
+    "options": [
+      "Kreacher",
+      "Hokey",
+      "Winky",
+      "Dobby"
+    ],
+    "answer": "Kreacher",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 171,
+    "question": "Where is the Order of the Phoenix headquarters?",
+    "options": [
+      "Hogwarts",
+      "Ministry of Magic",
+      "12 Grimmauld Place",
+      "The Burrow"
+    ],
+    "answer": "12 Grimmauld Place",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 172,
+    "question": "Who owned 12 Grimmauld Place?",
+    "options": [
+      "Potter family",
+      "Dumbledore",
+      "Ministry",
+      "Black family"
+    ],
+    "answer": "Black family",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 173,
+    "question": "Who inherits 12 Grimmauld Place from Sirius?",
+    "options": [
+      "Remus Lupin",
+      "Harry Potter",
+      "Dumbledore",
+      "The Order"
+    ],
+    "answer": "Harry Potter",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 174,
+    "question": "What is the prophecy about Harry and Voldemort?",
+    "options": [
+      "Neither can live while the other survives",
+      "Harry will defeat Voldemort",
+      "They are connected",
+      "One must kill the other"
+    ],
+    "answer": "Neither can live while the other survives",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 175,
+    "question": "Who made the prophecy?",
+    "options": [
+      "Sybill Trelawney",
+      "Firenze",
+      "Cassandra",
+      "Dumbledore"
+    ],
+    "answer": "Sybill Trelawney",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 176,
+    "question": "Who plays Professor Trelawney?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg/250px-Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg",
+    "options": [
+      "Maggie Smith",
+      "Emma Thompson",
+      "Imelda Staunton",
+      "Helena Bonham Carter"
+    ],
+    "answer": "Emma Thompson",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 177,
+    "question": "What subject does Trelawney teach?",
+    "options": [
+      "Defense Against Dark Arts",
+      "Astronomy",
+      "Divination",
+      "History of Magic"
+    ],
+    "answer": "Divination",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 178,
+    "question": "Who replaces Trelawney briefly?",
+    "options": [
+      "Firenze",
+      "Snape",
+      "Umbridge",
+      "Dumbledore"
+    ],
+    "answer": "Firenze",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 179,
+    "question": "What creature is Firenze?",
+    "options": [
+      "Giant",
+      "Werewolf",
+      "Half-giant",
+      "Centaur"
+    ],
+    "answer": "Centaur",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 180,
+    "question": "What is the centaurs' home in the forest called?",
+    "options": [
+      "Forbidden Forest",
+      "Dark Forest",
+      "Enchanted Forest",
+      "Centaur Camp"
+    ],
+    "answer": "Forbidden Forest",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 181,
+    "question": "What giant spider lives in the forest?",
+    "options": [
+      "Aragog",
+      "Giant",
+      "Acromantula",
+      "Shelob"
+    ],
+    "answer": "Aragog",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 182,
+    "question": "Who raised Aragog?",
+    "options": [
+      "Dumbledore",
+      "Newt Scamander",
+      "Tom Riddle",
+      "Hagrid"
+    ],
+    "answer": "Hagrid",
+    "difficulty": "medium",
+    "category": "creatures"
+  },
+  {
+    "id": 183,
+    "question": "What is Hagrid's giant half-brother's name?",
+    "options": [
+      "Grog",
+      "Grawp",
+      "Griphook",
+      "Grunt"
+    ],
+    "answer": "Grawp",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 184,
+    "question": "What does O.W.L. stand for?",
+    "options": [
+      "Outstanding Wizard Learner",
+      "Official Wizard License",
+      "Ordinary Wizarding Level",
+      "Order of Wizarding Lessons"
+    ],
+    "answer": "Ordinary Wizarding Level",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 185,
+    "question": "What does N.E.W.T. stand for?",
+    "options": [
+      "National Examination for Wizarding Talent",
+      "Nastily Exhausting Wizarding Test",
+      "New Era Wizard Training",
+      "Notable Excellence in Wizarding Tests"
+    ],
+    "answer": "Nastily Exhausting Wizarding Test",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 186,
+    "question": "What is the Ministry of Magic's address?",
+    "options": [
+      "10 Downing Street",
+      "Westminster",
+      "Whitehall, London (underground)",
+      "Big Ben"
+    ],
+    "answer": "Whitehall, London (underground)",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 187,
+    "question": "How do visitors enter the Ministry?",
+    "options": [
+      "Underground train",
+      "Secret door",
+      "Portkey only",
+      "Phone booth/Floo/Apparition"
+    ],
+    "answer": "Phone booth/Floo/Apparition",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 188,
+    "question": "Who is the Minister for Magic in the first films?",
+    "options": [
+      "Rufus Scrimgeour",
+      "Cornelius Fudge",
+      "Kingsley Shacklebolt",
+      "Pius Thicknesse"
+    ],
+    "answer": "Cornelius Fudge",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 189,
+    "question": "Who plays Cornelius Fudge?",
+    "options": [
+      "David Tennant",
+      "Bill Nighy",
+      "Jim Broadbent",
+      "Robert Hardy"
+    ],
+    "answer": "Robert Hardy",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 190,
+    "question": "Who becomes Minister after the war?",
+    "options": [
+      "Hermione",
+      "Arthur Weasley",
+      "Harry Potter",
+      "Kingsley Shacklebolt"
+    ],
+    "answer": "Kingsley Shacklebolt",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 191,
+    "question": "What does Harry become after Hogwarts?",
+    "options": [
+      "Professor",
+      "Quidditch player",
+      "Minister",
+      "Auror"
+    ],
+    "answer": "Auror",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 192,
+    "question": "Who does Harry marry?",
+    "options": [
+      "Ginny Weasley",
+      "Cho Chang",
+      "Hermione Granger",
+      "Luna Lovegood"
+    ],
+    "answer": "Ginny Weasley",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 193,
+    "question": "Who does Ron marry?",
+    "options": [
+      "Lavender Brown",
+      "Hermione Granger",
+      "Padma Patil",
+      "Luna Lovegood"
+    ],
+    "answer": "Hermione Granger",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 194,
+    "question": "What are Harry's children's names?",
+    "options": [
+      "Albus, Severus, James",
+      "James, Remus, Lily",
+      "Harry Jr., James, Sirius",
+      "James, Albus, Lily"
+    ],
+    "answer": "James, Albus, Lily",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 195,
+    "question": "What is Harry's middle child's full name?",
+    "options": [
+      "Albus Severus",
+      "Albus Dumbledore",
+      "James Sirius",
+      "Severus Albus"
+    ],
+    "answer": "Albus Severus",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 196,
+    "question": "What are Ron and Hermione's children's names?",
+    "options": [
+      "Arthur and Molly",
+      "Ron Jr. and Hermione Jr.",
+      "Lily and James",
+      "Rose and Hugo"
+    ],
+    "answer": "Rose and Hugo",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 197,
+    "question": "What year does the epilogue take place?",
+    "options": [
+      "2017 (19 years later)",
+      "2020",
+      "2015",
+      "2016"
+    ],
+    "answer": "2017 (19 years later)",
+    "difficulty": "medium",
+    "category": "films"
+  },
+  {
+    "id": 198,
+    "question": "Who kills Dumbledore?",
+    "options": [
+      "Snape",
+      "Draco",
+      "Voldemort",
+      "Bellatrix"
+    ],
+    "answer": "Snape",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 199,
+    "question": "Why does Snape kill Dumbledore?",
+    "options": [
+      "Dumbledore asked him to",
+      "He's evil",
+      "For power",
+      "Voldemort ordered it"
+    ],
+    "answer": "Dumbledore asked him to",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 200,
+    "question": "What is Snape's Patronus?",
+    "options": [
+      "Doe (like Lily's)",
+      "Stag",
+      "Wolf",
+      "Snake"
+    ],
+    "answer": "Doe (like Lily's)",
+    "difficulty": "medium",
+    "category": "characters"
+  }
+]

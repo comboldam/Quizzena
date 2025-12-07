@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flags Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0a0a15 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(59, 130, 246, 0.1) 0%, 
+        rgba(10, 10, 20, 0.95) 35%,
+        rgba(5, 5, 12, 0.98) 100%
+      );
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(59, 130, 246, 0.1),
+        0 0 30px rgba(255, 215, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Majestic gradient overlay */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 30%, rgba(255, 215, 0, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 82, 165, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(200, 16, 46, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Shimmer effect */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 60%
+      );
+      animation: shimmer 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+      50% { transform: translateX(30%) translateY(30%) rotate(0deg); }
+    }
+
+    .card-title {
+      color: #ffd700;
+      font-family: 'Georgia', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 6px;
+      text-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 0 40px rgba(255, 215, 0, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 110px;
+      height: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    /* ===== FLAG POLES ROW ===== */
+    .flag-row {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .flag-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Poles */
+    .pole {
+      width: 2px;
+      background: linear-gradient(180deg, #ffd700, #daa520, #b8860b, #8b6914);
+      border-radius: 1px;
+      position: relative;
+      box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+
+    .pole::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, #ffd700, #daa520);
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+
+    /* Different pole heights */
+    .flag-unit:nth-child(1) .pole { height: 50px; }
+    .flag-unit:nth-child(2) .pole { height: 60px; }
+    .flag-unit:nth-child(3) .pole { height: 70px; }
+    .flag-unit:nth-child(4) .pole { height: 60px; }
+    .flag-unit:nth-child(5) .pole { height: 50px; }
+
+    /* Flags */
+    .flag {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 10px;
+      border-radius: 1px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      transform-origin: left center;
+      animation: wave 2.5s ease-in-out infinite;
+    }
+
+    .flag-unit:nth-child(1) .flag { animation-delay: 0s; }
+    .flag-unit:nth-child(2) .flag { animation-delay: 0.2s; }
+    .flag-unit:nth-child(3) .flag { animation-delay: 0.4s; }
+    .flag-unit:nth-child(4) .flag { animation-delay: 0.6s; }
+    .flag-unit:nth-child(5) .flag { animation-delay: 0.8s; }
+
+    @keyframes wave {
+      0%, 100% { transform: perspective(100px) rotateY(0deg) skewY(0deg); }
+      25% { transform: perspective(100px) rotateY(-5deg) skewY(2deg); }
+      75% { transform: perspective(100px) rotateY(5deg) skewY(-2deg); }
+    }
+
+    /* France */
+    .france {
+      background: linear-gradient(90deg, #002395 33%, #fff 33%, #fff 66%, #ed2939 66%);
+    }
+
+    /* USA */
+    .usa {
+      background: linear-gradient(180deg, 
+        #bf0a30 0%, #bf0a30 14%, #fff 14%, #fff 28%,
+        #bf0a30 28%, #bf0a30 42%, #fff 42%, #fff 56%,
+        #bf0a30 56%, #bf0a30 70%, #fff 70%, #fff 84%,
+        #bf0a30 84%, #bf0a30 100%
+      );
+      position: relative;
+    }
+
+    .usa::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%;
+      height: 55%;
+      background: #3c3b6e;
+    }
+
+    /* UK */
+    .uk {
+      background: #012169;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .uk::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #fff;
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 0.5px #c8102e;
+    }
+
+    .uk::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #fff;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 0.5px #c8102e;
+    }
+
+    /* Japan */
+    .japan {
+      background: #fff;
+      position: relative;
+    }
+
+    .japan::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background: #bc002d;
+      border-radius: 50%;
+    }
+
+    /* Brazil */
+    .brazil {
+      background: #009c3b;
+      position: relative;
+    }
+
+    .brazil::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 7px;
+      height: 5px;
+      background: #ffdf00;
+    }
+
+    .brazil::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3px;
+      height: 3px;
+      background: #002776;
+      border-radius: 50%;
+    }
+
+    /* ===== GLOBE BEHIND ===== */
+    .globe {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: globeRotate 20s linear infinite;
+    }
+
+    .globe::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(59, 130, 246, 0.3);
+    }
+
+    .globe::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(59, 130, 246, 0.3);
+    }
+
+    .globe-curve {
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 50%;
+    }
+
+    @keyframes globeRotate {
+      from { transform: translateX(-50%) rotate(0deg); }
+      to { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    /* ===== WIND LINES ===== */
+    .wind {
+      position: absolute;
+      top: 25px;
+      right: 8px;
+      width: 20px;
+      height: 15px;
+      opacity: 0.3;
+    }
+
+    .wind-line {
+      position: absolute;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+      animation: windBlow 2s ease-in-out infinite;
+    }
+
+    .wind-line:nth-child(1) { top: 0; width: 15px; right: 0; }
+    .wind-line:nth-child(2) { top: 5px; width: 18px; right: 2px; animation-delay: 0.3s; }
+    .wind-line:nth-child(3) { top: 10px; width: 12px; right: 0; animation-delay: 0.6s; }
+
+    @keyframes windBlow {
+      0%, 100% { opacity: 0.2; transform: translateX(0); }
+      50% { opacity: 0.5; transform: translateX(-5px); }
+    }
+
+    /* ===== STARS ===== */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #ffd700;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      animation: starTwinkle 2s ease-in-out infinite;
+    }
+
+    .star:nth-child(1) { top: 12px; left: 12px; }
+    .star:nth-child(2) { top: 18px; right: 15px; animation-delay: 0.5s; }
+    .star:nth-child(3) { top: 8px; left: 35px; animation-delay: 1s; width: 2px; height: 2px; }
+    .star:nth-child(4) { top: 15px; right: 35px; animation-delay: 1.5s; width: 2px; height: 2px; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    /* ===== GOLDEN SPARKLES ===== */
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: radial-gradient(circle, #ffd700, transparent);
+      border-radius: 50%;
+      animation: sparkleFloat 3s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 35px; left: 20px; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 45px; right: 22px; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { bottom: 40px; left: 30px; animation-delay: 1s; width: 3px; height: 3px; }
+    .sparkle:nth-child(4) { bottom: 45px; right: 28px; animation-delay: 1.5s; width: 3px; height: 3px; }
+    .sparkle:nth-child(5) { top: 55px; left: 50px; animation-delay: 2s; width: 2px; height: 2px; }
+
+    @keyframes sparkleFloat {
+      0%, 100% { opacity: 0.3; transform: translateY(0) scale(1); }
+      50% { opacity: 0.9; transform: translateY(-4px) scale(1.2); }
+    }
+
+    /* ===== LUXURIOUS GROUND ===== */
+    .ground {
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 10px;
+      background: linear-gradient(180deg, 
+        rgba(212, 175, 55, 0.5) 0%,
+        rgba(139, 90, 43, 0.6) 30%,
+        rgba(101, 67, 33, 0.7) 60%,
+        rgba(60, 40, 20, 0.9) 100%
+      );
+      border-radius: 3px;
+      box-shadow: 
+        inset 0 2px 4px rgba(255, 215, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .ground::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+      border-radius: 1px;
+    }
+
+    .ground::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 215, 0, 0.2) 20%, 
+        rgba(255, 215, 0, 0.3) 50%, 
+        rgba(255, 215, 0, 0.2) 80%, 
+        transparent
+      );
+      border-radius: 3px 3px 0 0;
+    }
+
+    /* ===== COUNTRY DOTS ===== */
+    .country-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* France */ .dot:nth-child(1) { background: #002395; box-shadow: 0 0 5px #002395; }
+    /* USA */ .dot:nth-child(2) { background: #bf0a30; box-shadow: 0 0 5px #bf0a30; animation-delay: 0.1s; }
+    /* UK */ .dot:nth-child(3) { background: #012169; box-shadow: 0 0 5px #012169; animation-delay: 0.2s; }
+    /* Japan */ .dot:nth-child(4) { background: #bc002d; box-shadow: 0 0 5px #bc002d; animation-delay: 0.3s; }
+    /* Brazil */ .dot:nth-child(5) { background: #009c3b; box-shadow: 0 0 5px #009c3b; animation-delay: 0.4s; }
+    /* Germany */ .dot:nth-child(6) { background: #ffcc00; box-shadow: 0 0 5px #ffcc00; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Stars -->
+    <div class="stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+
+    <!-- Globe behind flags -->
+    <div class="globe">
+      <div class="globe-curve"></div>
+    </div>
+
+    <!-- Wind lines -->
+    <div class="wind">
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+      <div class="wind-line"></div>
+    </div>
+
+    <!-- Golden sparkles -->
+    <div class="sparkles">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- Country dots -->
+    <div class="country-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Luxurious ground - inside icon container -->
+      <div class="ground"></div>
+
+      <!-- Flag Row -->
+      <div class="flag-row">
+        <div class="flag-unit">
+          <div class="pole">
+            <div class="flag france"></div>
+          </div>
+        </div>
+        <div class="flag-unit">
+          <div class="pole">
+            <div class="flag usa"></div>
+          </div>
+        </div>
+        <div class="flag-unit">
+          <div class="pole">
+            <div class="flag uk"></div>
+          </div>
+        </div>
+        <div class="flag-unit">
+          <div class="pole">
+            <div class="flag japan"></div>
+          </div>
+        </div>
+        <div class="flag-unit">
+          <div class="pole">
+            <div class="flag brazil"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title">FLAGS</div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,2645 @@
+[
+  {
+    "id": 1,
+    "question": "Which TV show features a chemistry teacher who turns to cooking meth?",
+    "options": [
+      "Breaking Bad",
+      "Ozark",
+      "Weeds",
+      "Better Call Saul"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 2,
+    "question": "What is the name of the coffee shop in Friends?",
+    "options": [
+      "The Coffee House",
+      "Cup O' Joe",
+      "Central Perk",
+      "Java Joe's"
+    ],
+    "answer": "Central Perk",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 3,
+    "question": "Which show features the Iron Throne?",
+    "options": [
+      "The Witcher",
+      "Vikings",
+      "House of the Dragon",
+      "Game of Thrones"
+    ],
+    "answer": "Game of Thrones",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Walter White in Breaking Bad?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bryan_Cranston_2022_%283x4_cropped%29.jpg/250px-Bryan_Cranston_2022_%283x4_cropped%29.jpg",
+    "options": [
+      "Bryan Cranston",
+      "Dean Norris",
+      "Aaron Paul",
+      "Bob Odenkirk"
+    ],
+    "answer": "Bryan Cranston",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What town is the setting for Stranger Things?",
+    "options": [
+      "Castle Rock",
+      "Riverdale",
+      "Hawkins, Indiana",
+      "Derry, Maine"
+    ],
+    "answer": "Hawkins, Indiana",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 6,
+    "question": "Which animated show features the Simpson family?",
+    "options": [
+      "The Simpsons",
+      "American Dad",
+      "Bob's Burgers",
+      "Family Guy"
+    ],
+    "answer": "The Simpsons",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 7,
+    "question": "What hospital is the setting for Grey's Anatomy?",
+    "options": [
+      "Princeton-Plainsboro",
+      "Seattle Grace",
+      "Sacred Heart",
+      "Grey Sloan Memorial"
+    ],
+    "answer": "Grey Sloan Memorial",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 8,
+    "question": "Who is the main character in The Office (US)?",
+    "options": [
+      "Michael Scott",
+      "Dwight Schrute",
+      "Andy Bernard",
+      "Jim Halpert"
+    ],
+    "answer": "Michael Scott",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 9,
+    "question": "Which show's tagline is 'Winter is Coming'?",
+    "options": [
+      "Vikings",
+      "The Last Kingdom",
+      "Outlander",
+      "Game of Thrones"
+    ],
+    "answer": "Game of Thrones",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 10,
+    "question": "What is the fictional paper company in The Office?",
+    "options": [
+      "Initech",
+      "Dunder Mifflin",
+      "Wernham Hogg",
+      "Prestige Worldwide"
+    ],
+    "answer": "Dunder Mifflin",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 11,
+    "question": "Which show features Eleven with psychic powers?",
+    "options": [
+      "Fringe",
+      "The OA",
+      "Heroes",
+      "Stranger Things"
+    ],
+    "answer": "Stranger Things",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Tyrion Lannister in Game of Thrones?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Peter_Dinklage_by_Gage_Skidmore_2.jpg/250px-Peter_Dinklage_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Kit Harington",
+      "Lena Headey",
+      "Peter Dinklage",
+      "Nikolaj Coster-Waldau"
+    ],
+    "answer": "Peter Dinklage",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "What is Homer Simpson's favorite beer?",
+    "options": [
+      "Alamo",
+      "Pawtucket Patriot",
+      "Budweiser",
+      "Duff"
+    ],
+    "answer": "Duff",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 14,
+    "question": "Which show follows the Pearson family across timelines?",
+    "options": [
+      "This Is Us",
+      "The Fosters",
+      "Parenthood",
+      "Brothers & Sisters"
+    ],
+    "answer": "This Is Us",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 15,
+    "question": "What is Sheldon Cooper's catchphrase?",
+    "options": [
+      "That's what she said",
+      "Bazinga!",
+      "How you doin'?",
+      "Suit up!"
+    ],
+    "answer": "Bazinga!",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 16,
+    "question": "Which show is set in the fictional town of Pawnee, Indiana?",
+    "options": [
+      "Community",
+      "Scrubs",
+      "Parks and Recreation",
+      "The Office"
+    ],
+    "answer": "Parks and Recreation",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 17,
+    "question": "Who plays Daenerys Targaryen in Game of Thrones?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg/250px-Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg",
+    "options": [
+      "Maisie Williams",
+      "Sophie Turner",
+      "Emilia Clarke",
+      "Lena Headey"
+    ],
+    "answer": "Emilia Clarke",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 18,
+    "question": "What is the name of the bar in How I Met Your Mother?",
+    "options": [
+      "Paddy's Pub",
+      "Moe's Tavern",
+      "MacLaren's",
+      "Cheers"
+    ],
+    "answer": "MacLaren's",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 19,
+    "question": "Which show features a serial killer who works for Miami PD?",
+    "options": [
+      "True Detective",
+      "Mindhunter",
+      "Hannibal",
+      "Dexter"
+    ],
+    "answer": "Dexter",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 20,
+    "question": "What year did Friends premiere?",
+    "options": [
+      "1996",
+      "1994",
+      "1992",
+      "1998"
+    ],
+    "answer": "1994",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 21,
+    "question": "Which show takes place on Wisteria Lane?",
+    "options": [
+      "Big Little Lies",
+      "Revenge",
+      "Devious Maids",
+      "Desperate Housewives"
+    ],
+    "answer": "Desperate Housewives",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 22,
+    "question": "Who created The Simpsons?",
+    "options": [
+      "Matt Groening",
+      "Mike Judge",
+      "Seth MacFarlane",
+      "Trey Parker"
+    ],
+    "answer": "Matt Groening",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 23,
+    "question": "What is the name of the dragon that Daenerys rides most often?",
+    "options": [
+      "Viserion",
+      "Balerion",
+      "Drogon",
+      "Rhaegal"
+    ],
+    "answer": "Drogon",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 24,
+    "question": "Which show features the fictional Greendale Community College?",
+    "options": [
+      "Community",
+      "Greek",
+      "Saved by the Bell",
+      "Undeclared"
+    ],
+    "answer": "Community",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 25,
+    "question": "Who plays the Doctor in the 2005 revival of Doctor Who (first)?",
+    "options": [
+      "Matt Smith",
+      "Christopher Eccleston",
+      "Peter Capaldi",
+      "David Tennant"
+    ],
+    "answer": "Christopher Eccleston",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 26,
+    "question": "What is the name of the AI in Westworld?",
+    "options": [
+      "Teddy",
+      "Maeve",
+      "Dolores",
+      "Bernard"
+    ],
+    "answer": "Dolores",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 27,
+    "question": "Which show features Don Draper as the main character?",
+    "options": [
+      "Mad Men",
+      "Suits",
+      "The Good Wife",
+      "Billions"
+    ],
+    "answer": "Mad Men",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 28,
+    "question": "What is Barney Stinson's catchphrase in HIMYM?",
+    "options": [
+      "How you doin'?",
+      "Cool cool cool",
+      "Bazinga!",
+      "Suit up!"
+    ],
+    "answer": "Suit up!",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 29,
+    "question": "Which show is about plane crash survivors on a mysterious island?",
+    "options": [
+      "The I-Land",
+      "The Wilds",
+      "Yellowjackets",
+      "Lost"
+    ],
+    "answer": "Lost",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 30,
+    "question": "Who plays Eleven in Stranger Things?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg/250px-Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg",
+    "options": [
+      "Winona Ryder",
+      "Natalia Dyer",
+      "Sadie Sink",
+      "Millie Bobby Brown"
+    ],
+    "answer": "Millie Bobby Brown",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 31,
+    "question": "What network originally aired The Sopranos?",
+    "options": [
+      "Showtime",
+      "FX",
+      "AMC",
+      "HBO"
+    ],
+    "answer": "HBO",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 32,
+    "question": "Which animated show features Hank Hill?",
+    "options": [
+      "American Dad",
+      "Beavis and Butt-Head",
+      "The Cleveland Show",
+      "King of the Hill"
+    ],
+    "answer": "King of the Hill",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 33,
+    "question": "What is the name of the motorcycle club in Sons of Anarchy?",
+    "options": [
+      "SAMCRO",
+      "Mayans MC",
+      "Grim Bastards",
+      "Devil's Tribe"
+    ],
+    "answer": "SAMCRO",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 34,
+    "question": "Who plays Tony Soprano?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Gandolfini_%40_Toronto_International_Film_Festival_2011.jpg/250px-James_Gandolfini_%40_Toronto_International_Film_Festival_2011.jpg",
+    "options": [
+      "James Gandolfini",
+      "Edie Falco",
+      "Steve Buscemi",
+      "Michael Imperioli"
+    ],
+    "answer": "James Gandolfini",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 35,
+    "question": "Which show features a family of funeral home directors?",
+    "options": [
+      "Dead Like Me",
+      "Pushing Daisies",
+      "iZombie",
+      "Six Feet Under"
+    ],
+    "answer": "Six Feet Under",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 36,
+    "question": "What is the name of the space ship in Firefly?",
+    "options": [
+      "Galactica",
+      "Enterprise",
+      "Rocinante",
+      "Serenity"
+    ],
+    "answer": "Serenity",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 37,
+    "question": "Which show stars Steve Carell as a regional manager?",
+    "options": [
+      "The Morning Show",
+      "The Office",
+      "Foxcatcher",
+      "Space Force"
+    ],
+    "answer": "The Office",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 38,
+    "question": "What city is Frasier set in?",
+    "options": [
+      "San Francisco",
+      "Boston",
+      "Chicago",
+      "Seattle"
+    ],
+    "answer": "Seattle",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 39,
+    "question": "Which show features FBI agents Mulder and Scully?",
+    "options": [
+      "The X-Files",
+      "Criminal Minds",
+      "Fringe",
+      "Mindhunter"
+    ],
+    "answer": "The X-Files",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 40,
+    "question": "Who plays Cersei Lannister in Game of Thrones?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lena_Headey_%2847086135862%29_%28cropped%29.jpg/250px-Lena_Headey_%2847086135862%29_%28cropped%29.jpg",
+    "options": [
+      "Natalie Dormer",
+      "Lena Headey",
+      "Emilia Clarke",
+      "Sophie Turner"
+    ],
+    "answer": "Lena Headey",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 41,
+    "question": "What is the name of SpongeBob's pet snail?",
+    "options": [
+      "Jerry",
+      "Barry",
+      "Gary",
+      "Larry"
+    ],
+    "answer": "Gary",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 42,
+    "question": "Which show is about a high school glee club?",
+    "options": [
+      "Smash",
+      "Zoey's Playlist",
+      "Glee",
+      "Rise"
+    ],
+    "answer": "Glee",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 43,
+    "question": "What is the alternate dimension called in Stranger Things?",
+    "options": [
+      "The Upside Down",
+      "The Dark Place",
+      "The Other Side",
+      "The Shadow Realm"
+    ],
+    "answer": "The Upside Down",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 44,
+    "question": "Who plays House in House M.D.?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Hugh_Laurie%2C_from_a_bit_of_Fry_%26_Laurie%2C_http---en.wikipedia.org-wiki-Hugh_laurie_%289450843901%29_%28cropped%29.jpg/250px-Hugh_Laurie%2C_from_a_bit_of_Fry_%26_Laurie%2C_http---en.wikipedia.org-wiki-Hugh_laurie_%289450843901%29_%28cropped%29.jpg",
+    "options": [
+      "Omar Epps",
+      "Robert Sean Leonard",
+      "Jesse Spencer",
+      "Hugh Laurie"
+    ],
+    "answer": "Hugh Laurie",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 45,
+    "question": "Which sitcom is set in a Brooklyn precinct?",
+    "options": [
+      "The Good Cop",
+      "Barney Miller",
+      "Brooklyn Nine-Nine",
+      "Blue Bloods"
+    ],
+    "answer": "Brooklyn Nine-Nine",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 46,
+    "question": "What is the name of the fictional fast food restaurant in Breaking Bad?",
+    "options": [
+      "Chicken Brothers",
+      "El Pollo Loco",
+      "Gustavo's",
+      "Los Pollos Hermanos"
+    ],
+    "answer": "Los Pollos Hermanos",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 47,
+    "question": "Which show features time-traveling phone booth?",
+    "options": [
+      "12 Monkeys",
+      "Doctor Who",
+      "Timeless",
+      "Quantum Leap"
+    ],
+    "answer": "Doctor Who",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 48,
+    "question": "Who plays Rachel Green in Friends?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/JenniferAnistonHWoFFeb2012.jpg/250px-JenniferAnistonHWoFFeb2012.jpg",
+    "options": [
+      "Lisa Kudrow",
+      "Courteney Cox",
+      "Jennifer Aniston",
+      "Helen Baxendale"
+    ],
+    "answer": "Jennifer Aniston",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 49,
+    "question": "What animated show is created by Trey Parker and Matt Stone?",
+    "options": [
+      "Rick and Morty",
+      "Futurama",
+      "South Park",
+      "Beavis and Butt-Head"
+    ],
+    "answer": "South Park",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 50,
+    "question": "Which show features advertising executives in the 1960s?",
+    "options": [
+      "Pan Am",
+      "Masters of Sex",
+      "Mad Men",
+      "The Playboy Club"
+    ],
+    "answer": "Mad Men",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 51,
+    "question": "What is the name of the prison in Orange Is the New Black?",
+    "options": [
+      "Oswald",
+      "Litchfield",
+      "Fox River",
+      "Shawshank"
+    ],
+    "answer": "Litchfield",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 52,
+    "question": "Who plays Sherlock in the BBC's Sherlock?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
+    "options": [
+      "Martin Freeman",
+      "Robert Downey Jr.",
+      "Jonny Lee Miller",
+      "Benedict Cumberbatch"
+    ],
+    "answer": "Benedict Cumberbatch",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 53,
+    "question": "Which show is about a paper company in Scranton, PA?",
+    "options": [
+      "The Office",
+      "Better Off Ted",
+      "Corporate",
+      "Workaholics"
+    ],
+    "answer": "The Office",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 54,
+    "question": "What is the name of the theme park in Westworld?",
+    "options": [
+      "Sweetwater",
+      "The Mesa",
+      "Delos",
+      "Westworld"
+    ],
+    "answer": "Westworld",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 55,
+    "question": "Which show features Walter White's partner Jesse?",
+    "options": [
+      "Better Call Saul",
+      "El Camino",
+      "Ozark",
+      "Breaking Bad"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 56,
+    "question": "Who voices Bart Simpson?",
+    "options": [
+      "Julie Kavner",
+      "Nancy Cartwright",
+      "Dan Castellaneta",
+      "Yeardley Smith"
+    ],
+    "answer": "Nancy Cartwright",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 57,
+    "question": "What is the name of Ted Mosby's future wife in HIMYM?",
+    "options": [
+      "Victoria",
+      "Robin Scherbatsky",
+      "Tracy McConnell",
+      "Stella"
+    ],
+    "answer": "Tracy McConnell",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 58,
+    "question": "Which show follows a chemistry teacher diagnosed with cancer?",
+    "options": [
+      "Rectify",
+      "Breaking Bad",
+      "The Big C",
+      "Halt and Catch Fire"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 59,
+    "question": "What network airs The Walking Dead?",
+    "options": [
+      "AMC",
+      "FX",
+      "HBO",
+      "Showtime"
+    ],
+    "answer": "AMC",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 60,
+    "question": "Who plays Leslie Knope in Parks and Recreation?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amy_Poehler_%2853671989427%29_cropped.jpg/250px-Amy_Poehler_%2853671989427%29_cropped.jpg",
+    "options": [
+      "Rashida Jones",
+      "Aubrey Plaza",
+      "Retta",
+      "Amy Poehler"
+    ],
+    "answer": "Amy Poehler",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 61,
+    "question": "Which show is set in the fictional Sunnydale?",
+    "options": [
+      "Charmed",
+      "Buffy the Vampire Slayer",
+      "Supernatural",
+      "The Vampire Diaries"
+    ],
+    "answer": "Buffy the Vampire Slayer",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 62,
+    "question": "What is the name of Peter Griffin's bar in Family Guy?",
+    "options": [
+      "The Drunken Clam",
+      "Moe's Tavern",
+      "MacLaren's",
+      "Paddy's Pub"
+    ],
+    "answer": "The Drunken Clam",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 63,
+    "question": "Which show features a consultant who notices everything?",
+    "options": [
+      "The Mentalist",
+      "Monk",
+      "Perception",
+      "Psych"
+    ],
+    "answer": "The Mentalist",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 64,
+    "question": "Who plays Jon Snow in Game of Thrones?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/32/Kit_harrington_by_sachyn_mital_%28cropped_2%29.jpg",
+    "options": [
+      "Richard Madden",
+      "Alfie Allen",
+      "Iwan Rheon",
+      "Kit Harington"
+    ],
+    "answer": "Kit Harington",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 65,
+    "question": "What is the main setting of Downton Abbey?",
+    "options": [
+      "Welsh manor",
+      "London townhouse",
+      "Scottish castle",
+      "English country estate"
+    ],
+    "answer": "English country estate",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 66,
+    "question": "Which show features the Bluth family?",
+    "options": [
+      "Schitt's Creek",
+      "Succession",
+      "Arrested Development",
+      "The Righteous Gemstones"
+    ],
+    "answer": "Arrested Development",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 67,
+    "question": "What is Rick's catchphrase in Rick and Morty?",
+    "options": [
+      "That's what she said",
+      "Wubba lubba dub dub",
+      "Bazinga",
+      "Cool cool cool"
+    ],
+    "answer": "Wubba lubba dub dub",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 68,
+    "question": "Which show is about brothers hunting supernatural creatures?",
+    "options": [
+      "Constantine",
+      "Grimm",
+      "Sleepy Hollow",
+      "Supernatural"
+    ],
+    "answer": "Supernatural",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 69,
+    "question": "Who plays Olivia Pope in Scandal?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kerry_Washington_in_%282024%29_%28cropped%29.jpg/250px-Kerry_Washington_in_%282024%29_%28cropped%29.jpg",
+    "options": [
+      "Kerry Washington",
+      "Regina King",
+      "Viola Davis",
+      "Taraji P. Henson"
+    ],
+    "answer": "Kerry Washington",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 70,
+    "question": "What is the fictional city in Gotham?",
+    "options": [
+      "Central City",
+      "Gotham City",
+      "Star City",
+      "Metropolis"
+    ],
+    "answer": "Gotham City",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 71,
+    "question": "Which show features Carrie Bradshaw as a writer?",
+    "options": [
+      "Younger",
+      "Sex and the City",
+      "Emily in Paris",
+      "The Bold Type"
+    ],
+    "answer": "Sex and the City",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 72,
+    "question": "What animated show is set in Quahog, Rhode Island?",
+    "options": [
+      "Bob's Burgers",
+      "American Dad",
+      "Family Guy",
+      "The Cleveland Show"
+    ],
+    "answer": "Family Guy",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 73,
+    "question": "Who plays Dexter Morgan?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dexter_panel_%2854305394548%29_%28cropped%29.jpg/250px-Dexter_panel_%2854305394548%29_%28cropped%29.jpg",
+    "options": [
+      "David Duchovny",
+      "James Spader",
+      "Kevin Bacon",
+      "Michael C. Hall"
+    ],
+    "answer": "Michael C. Hall",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 74,
+    "question": "Which show features the Targaryen family prequel?",
+    "options": [
+      "Vikings",
+      "House of the Dragon",
+      "The Witcher",
+      "Game of Thrones"
+    ],
+    "answer": "House of the Dragon",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 75,
+    "question": "What is the name of the robot in Futurama?",
+    "options": [
+      "Calculon",
+      "Bender",
+      "Roberto",
+      "Flexo"
+    ],
+    "answer": "Bender",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 76,
+    "question": "Which show is set on a battlestar fleeing Cylons?",
+    "options": [
+      "Battlestar Galactica",
+      "The Expanse",
+      "Firefly",
+      "Star Trek"
+    ],
+    "answer": "Battlestar Galactica",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 77,
+    "question": "Who plays Jack Bauer in 24?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Kiefer_Sutherland_Photo_Op_GalaxyCon_Columbus_2024.jpg/250px-Kiefer_Sutherland_Photo_Op_GalaxyCon_Columbus_2024.jpg",
+    "options": [
+      "James Badge Dale",
+      "Kiefer Sutherland",
+      "Carlos Bernard",
+      "Dennis Haysbert"
+    ],
+    "answer": "Kiefer Sutherland",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 78,
+    "question": "What is the name of the island in Lost?",
+    "options": [
+      "Jacob's Island",
+      "Dharma Island",
+      "The Island (unnamed)",
+      "Oceanic Island"
+    ],
+    "answer": "The Island (unnamed)",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 79,
+    "question": "Which show follows the Roy family media empire?",
+    "options": [
+      "Succession",
+      "The Morning Show",
+      "Industry",
+      "Billions"
+    ],
+    "answer": "Succession",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 80,
+    "question": "What is Abed's favorite show in Community?",
+    "options": [
+      "Inspector Spacetime",
+      "Cougar Town",
+      "Doctor Who",
+      "Star Trek"
+    ],
+    "answer": "Inspector Spacetime",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 81,
+    "question": "Who plays Jeff Winger in Community?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Joel_McHale_%2853199285501%29.jpg/250px-Joel_McHale_%2853199285501%29.jpg",
+    "options": [
+      "Chevy Chase",
+      "Danny Pudi",
+      "Donald Glover",
+      "Joel McHale"
+    ],
+    "answer": "Joel McHale",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 82,
+    "question": "Which show features a meth kingpin named Heisenberg?",
+    "options": [
+      "Breaking Bad",
+      "Queen of the South",
+      "Narcos",
+      "Ozark"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 83,
+    "question": "What is the name of the high school in Saved by the Bell?",
+    "options": [
+      "West Beverly High",
+      "Bayside High",
+      "Shermer High",
+      "Sunnydale High"
+    ],
+    "answer": "Bayside High",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 84,
+    "question": "Which animated show features Bob Belcher?",
+    "options": [
+      "F is for Family",
+      "King of the Hill",
+      "American Dad",
+      "Bob's Burgers"
+    ],
+    "answer": "Bob's Burgers",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 85,
+    "question": "Who plays Piper Chapman in Orange Is the New Black?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Taylor_Schilling_at_Paley_Fest_Orange_Is_The_New_Black.jpg/250px-Taylor_Schilling_at_Paley_Fest_Orange_Is_The_New_Black.jpg",
+    "options": [
+      "Uzo Aduba",
+      "Taylor Schilling",
+      "Natasha Lyonne",
+      "Laura Prepon"
+    ],
+    "answer": "Taylor Schilling",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 86,
+    "question": "What network premiered The Wire?",
+    "options": [
+      "HBO",
+      "FX",
+      "AMC",
+      "Showtime"
+    ],
+    "answer": "HBO",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 87,
+    "question": "Which show features detectives in Baltimore?",
+    "options": [
+      "The Killing",
+      "True Detective",
+      "The Wire",
+      "Homicide: Life on the Street"
+    ],
+    "answer": "The Wire",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 88,
+    "question": "What is the name of the dog in Family Guy?",
+    "options": [
+      "Jasper",
+      "Vinny",
+      "New Brian",
+      "Brian"
+    ],
+    "answer": "Brian",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 89,
+    "question": "Who plays Annalise Keating in How to Get Away with Murder?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg/250px-Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg",
+    "options": [
+      "Taraji P. Henson",
+      "Viola Davis",
+      "Alfre Woodard",
+      "Kerry Washington"
+    ],
+    "answer": "Viola Davis",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 90,
+    "question": "Which show is about a lawyer who becomes a high school teacher?",
+    "options": [
+      "Community",
+      "Abbott Elementary",
+      "A.P. Bio",
+      "Mr. Mayor"
+    ],
+    "answer": "Abbott Elementary",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 91,
+    "question": "What is the name of the spaceship in The Expanse?",
+    "options": [
+      "Galactica",
+      "Serenity",
+      "Rocinante",
+      "Enterprise"
+    ],
+    "answer": "Rocinante",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 92,
+    "question": "Which show features the character Phoebe Buffay?",
+    "options": [
+      "Friends",
+      "Frasier",
+      "Seinfeld",
+      "Will & Grace"
+    ],
+    "answer": "Friends",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 93,
+    "question": "Who plays Claire Underwood in House of Cards?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Robin_Wright_Cannes_2017.jpg/250px-Robin_Wright_Cannes_2017.jpg",
+    "options": [
+      "Sakina Jaffrey",
+      "Neve Campbell",
+      "Kate Mara",
+      "Robin Wright"
+    ],
+    "answer": "Robin Wright",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 94,
+    "question": "What is the profession of the main characters in Scrubs?",
+    "options": [
+      "Police",
+      "Lawyers",
+      "Doctors",
+      "Firefighters"
+    ],
+    "answer": "Doctors",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 95,
+    "question": "Which animated show features Sterling Archer?",
+    "options": [
+      "Frisky Dingo",
+      "Venture Bros",
+      "Archer",
+      "Rick and Morty"
+    ],
+    "answer": "Archer",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 96,
+    "question": "What is the name of the main character in Fleabag?",
+    "options": [
+      "Fleabag (unnamed)",
+      "Boo",
+      "Godmother",
+      "Claire"
+    ],
+    "answer": "Fleabag (unnamed)",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 97,
+    "question": "Who plays Frank Underwood in House of Cards?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Kevin_Spacey-9243.jpg/250px-Kevin_Spacey-9243.jpg",
+    "options": [
+      "Robin Wright",
+      "Kevin Spacey",
+      "Corey Stoll",
+      "Michael Kelly"
+    ],
+    "answer": "Kevin Spacey",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 98,
+    "question": "Which show is set in a post-apocalyptic world with zombies?",
+    "options": [
+      "The Walking Dead",
+      "Fear the Walking Dead",
+      "The Last of Us",
+      "Z Nation"
+    ],
+    "answer": "The Walking Dead",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 99,
+    "question": "What is the name of the vampire in What We Do in the Shadows?",
+    "options": [
+      "Sean",
+      "Guillermo",
+      "Colin Robinson",
+      "Nandor"
+    ],
+    "answer": "Nandor",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 100,
+    "question": "Which show features time loops?",
+    "options": [
+      "Russian Doll",
+      "Dark",
+      "Timeless",
+      "12 Monkeys"
+    ],
+    "answer": "Russian Doll",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 101,
+    "question": "Who plays Arya Stark in Game of Thrones?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Maisie_Williams_by_Gage_Skidmore_3.jpg/250px-Maisie_Williams_by_Gage_Skidmore_3.jpg",
+    "options": [
+      "Natalie Dormer",
+      "Sophie Turner",
+      "Maisie Williams",
+      "Emilia Clarke"
+    ],
+    "answer": "Maisie Williams",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 102,
+    "question": "What is the name of the diner in Seinfeld?",
+    "options": [
+      "Pop's",
+      "Monk's Café",
+      "Central Perk",
+      "Luke's Diner"
+    ],
+    "answer": "Monk's Café",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 103,
+    "question": "Which show follows Ted Lasso as a football coach?",
+    "options": [
+      "Ted Lasso",
+      "Welcome to Wrexham",
+      "The English Game",
+      "Breeders"
+    ],
+    "answer": "Ted Lasso",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 104,
+    "question": "What is the fictional country in The Crown?",
+    "options": [
+      "Aldovia",
+      "United Kingdom (real)",
+      "Genovia",
+      "Wakanda"
+    ],
+    "answer": "United Kingdom (real)",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 105,
+    "question": "Who plays Ted Lasso?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jason_Sudeikis_on_March_20%2C_2023_in_the_Oval_Office_of_the_White_House_-_P20230320AS-2571_%28cropped%29.jpg/250px-Jason_Sudeikis_on_March_20%2C_2023_in_the_Oval_Office_of_the_White_House_-_P20230320AS-2571_%28cropped%29.jpg",
+    "options": [
+      "Will Arnett",
+      "Jason Sudeikis",
+      "Will Forte",
+      "Jason Bateman"
+    ],
+    "answer": "Jason Sudeikis",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 106,
+    "question": "Which animated show is created by Justin Roiland and Dan Harmon?",
+    "options": [
+      "Rick and Morty",
+      "Futurama",
+      "Solar Opposites",
+      "Final Space"
+    ],
+    "answer": "Rick and Morty",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 107,
+    "question": "What is the name of the coffee shop in Gilmore Girls?",
+    "options": [
+      "Luke's Diner",
+      "The Dragonfly Inn",
+      "Central Perk",
+      "Monk's Café"
+    ],
+    "answer": "Luke's Diner",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 108,
+    "question": "Which show is about a family moving to Schitt's Creek?",
+    "options": [
+      "Schitt's Creek",
+      "Succession",
+      "The Great",
+      "Arrested Development"
+    ],
+    "answer": "Schitt's Creek",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 109,
+    "question": "Who plays Villanelle in Killing Eve?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jodie_Comer%2C_The_Bikeriders_premiere.jpg/250px-Jodie_Comer%2C_The_Bikeriders_premiere.jpg",
+    "options": [
+      "Jodie Comer",
+      "Fiona Shaw",
+      "Sandra Oh",
+      "Kim Bodnia"
+    ],
+    "answer": "Jodie Comer",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 110,
+    "question": "What is the setting for Peaky Blinders?",
+    "options": [
+      "Manchester",
+      "Liverpool",
+      "London",
+      "Birmingham, England"
+    ],
+    "answer": "Birmingham, England",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 111,
+    "question": "Which show features a group of friends at a bar called Paddy's Pub?",
+    "options": [
+      "It's Always Sunny in Philadelphia",
+      "How I Met Your Mother",
+      "Happy Endings",
+      "Cheers"
+    ],
+    "answer": "It's Always Sunny in Philadelphia",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 112,
+    "question": "What animated show features a horse actor in Hollywood?",
+    "options": [
+      "Tuca & Bertie",
+      "BoJack Horseman",
+      "Big Mouth",
+      "F is for Family"
+    ],
+    "answer": "BoJack Horseman",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 113,
+    "question": "Who plays Elizabeth Jennings in The Americans?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Keri_Russell_%2813948636905%29_%28cropped%29.jpg/250px-Keri_Russell_%2813948636905%29_%28cropped%29.jpg",
+    "options": [
+      "Keri Russell",
+      "Alison Wright",
+      "Holly Taylor",
+      "Matthew Rhys"
+    ],
+    "answer": "Keri Russell",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 114,
+    "question": "Which show is about Soviet spies living in America during the Cold War?",
+    "options": [
+      "Homeland",
+      "The Bureau",
+      "The Americans",
+      "Deutschland 83"
+    ],
+    "answer": "The Americans",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 115,
+    "question": "What is the name of the fictional law firm in Suits?",
+    "options": [
+      "McKenzie Brackman",
+      "Pearson Hardman",
+      "Crane, Poole & Schmidt",
+      "Lockhart/Gardner"
+    ],
+    "answer": "Pearson Hardman",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 116,
+    "question": "Which animated show is set in the year 3000?",
+    "options": [
+      "Rick and Morty",
+      "The Jetsons",
+      "Futurama",
+      "Final Space"
+    ],
+    "answer": "Futurama",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 117,
+    "question": "Who plays Ragnar Lothbrok in Vikings?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Travis_Fimmel_by_Gage_Skidmore.jpg/250px-Travis_Fimmel_by_Gage_Skidmore.jpg",
+    "options": [
+      "Gustaf Skarsgård",
+      "Travis Fimmel",
+      "Clive Standen",
+      "Alexander Ludwig"
+    ],
+    "answer": "Travis Fimmel",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 118,
+    "question": "What is the name of the high school in Friday Night Lights?",
+    "options": [
+      "Tree Hill",
+      "East Dillon",
+      "West Beverly",
+      "Dillon High"
+    ],
+    "answer": "Dillon High",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 119,
+    "question": "Which show follows a con artist pretending to be a doctor?",
+    "options": [
+      "The Good Doctor",
+      "Scrubs",
+      "Royal Pains",
+      "House"
+    ],
+    "answer": "Royal Pains",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 120,
+    "question": "What is the catchphrase from The Good Place?",
+    "options": [
+      "Cool cool cool",
+      "That's what she said",
+      "Bazinga",
+      "Holy forking shirtballs"
+    ],
+    "answer": "Holy forking shirtballs",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 121,
+    "question": "Who plays Eleanor Shellstrop in The Good Place?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Kristen_Bell_at_Televerse_2025.jpg/250px-Kristen_Bell_at_Televerse_2025.jpg",
+    "options": [
+      "D'Arcy Carden",
+      "Manny Jacinto",
+      "Jameela Jamil",
+      "Kristen Bell"
+    ],
+    "answer": "Kristen Bell",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 122,
+    "question": "Which show is about four friends in Miami?",
+    "options": [
+      "Ballers",
+      "Miami Vice",
+      "The Golden Girls",
+      "Burn Notice"
+    ],
+    "answer": "The Golden Girls",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 123,
+    "question": "What animated show features Timmy Turner?",
+    "options": [
+      "Dexter's Laboratory",
+      "The Fairly OddParents",
+      "Danny Phantom",
+      "Jimmy Neutron"
+    ],
+    "answer": "The Fairly OddParents",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 124,
+    "question": "Which show features the character Saul Goodman before Breaking Bad?",
+    "options": [
+      "Better Call Saul",
+      "El Camino",
+      "Breaking Bad",
+      "Slippin' Jimmy"
+    ],
+    "answer": "Better Call Saul",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 125,
+    "question": "Who plays Marty Byrde in Ozark?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jason_Batement_at_the_Air_Premiere_%28cropped%29.jpg/250px-Jason_Batement_at_the_Air_Premiere_%28cropped%29.jpg",
+    "options": [
+      "Michael Cera",
+      "Jason Bateman",
+      "Will Arnett",
+      "David Cross"
+    ],
+    "answer": "Jason Bateman",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 126,
+    "question": "What is the setting for True Detective Season 1?",
+    "options": [
+      "California",
+      "Texas",
+      "Louisiana",
+      "Alaska"
+    ],
+    "answer": "Louisiana",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 127,
+    "question": "Which show features a forensic scientist in Miami who is secretly a killer?",
+    "options": [
+      "Dexter",
+      "NCIS",
+      "Criminal Minds",
+      "CSI: Miami"
+    ],
+    "answer": "Dexter",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 128,
+    "question": "What animated show is set in Langley Falls?",
+    "options": [
+      "The Cleveland Show",
+      "American Dad",
+      "King of the Hill",
+      "Family Guy"
+    ],
+    "answer": "American Dad",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 129,
+    "question": "Who plays Rue Bennett in Euphoria?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg/250px-Zendaya_-_2019_by_Glenn_Francis.jpg",
+    "options": [
+      "Alexa Demie",
+      "Zendaya",
+      "Sydney Sweeney",
+      "Hunter Schafer"
+    ],
+    "answer": "Zendaya",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 130,
+    "question": "Which show is about high school students dealing with drugs and identity?",
+    "options": [
+      "13 Reasons Why",
+      "Degrassi",
+      "Skins",
+      "Euphoria"
+    ],
+    "answer": "Euphoria",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 131,
+    "question": "What is the name of the town in Gilmore Girls?",
+    "options": [
+      "Mystic Falls",
+      "Stars Hollow",
+      "Tree Hill",
+      "Storybrooke"
+    ],
+    "answer": "Stars Hollow",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 132,
+    "question": "Which sitcom features a family running a motel after losing their fortune?",
+    "options": [
+      "Arrested Development",
+      "Schitt's Creek",
+      "Malcolm in the Middle",
+      "The Middle"
+    ],
+    "answer": "Schitt's Creek",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 133,
+    "question": "What animated show features Agent Perry the Platypus?",
+    "options": [
+      "Phineas and Ferb",
+      "The Replacements",
+      "American Dragon",
+      "Kim Possible"
+    ],
+    "answer": "Phineas and Ferb",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 134,
+    "question": "Which show is a prequel to Game of Thrones?",
+    "options": [
+      "Wheel of Time",
+      "House of the Dragon",
+      "The Witcher",
+      "Shadow and Bone"
+    ],
+    "answer": "House of the Dragon",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 135,
+    "question": "What is the name of the newspaper in The Wire?",
+    "options": [
+      "The Baltimore Sun",
+      "The Baltimore Times",
+      "The Baltimore Tribune",
+      "The Baltimore Post"
+    ],
+    "answer": "The Baltimore Sun",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 136,
+    "question": "Who plays Hannah Horvath in Girls?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Lena_Dunham_at_Berlinale_2024.jpg/250px-Lena_Dunham_at_Berlinale_2024.jpg",
+    "options": [
+      "Zosia Mamet",
+      "Lena Dunham",
+      "Allison Williams",
+      "Jemima Kirke"
+    ],
+    "answer": "Lena Dunham",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 137,
+    "question": "Which show features Malcolm and his genius family?",
+    "options": [
+      "Young Sheldon",
+      "The Goldbergs",
+      "Malcolm in the Middle",
+      "The Middle"
+    ],
+    "answer": "Malcolm in the Middle",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 138,
+    "question": "What animated show features an undercover spy family?",
+    "options": [
+      "Totally Spies",
+      "American Dad",
+      "Archer",
+      "Spy x Family"
+    ],
+    "answer": "Spy x Family",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 139,
+    "question": "Which show is set in the Yellowstone Dutton Ranch?",
+    "options": [
+      "Longmire",
+      "Yellowstone",
+      "Deadwood",
+      "Justified"
+    ],
+    "answer": "Yellowstone",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 140,
+    "question": "Who plays John Dutton in Yellowstone?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg/250px-Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg",
+    "options": [
+      "Sam Elliott",
+      "Kevin Costner",
+      "Kurt Russell",
+      "Josh Brolin"
+    ],
+    "answer": "Kevin Costner",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 141,
+    "question": "What is the name of the ship in Star Trek: The Next Generation?",
+    "options": [
+      "USS Voyager",
+      "Deep Space Nine",
+      "USS Defiant",
+      "USS Enterprise-D"
+    ],
+    "answer": "USS Enterprise-D",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 142,
+    "question": "Which show features the Crain family in a haunted house?",
+    "options": [
+      "Penny Dreadful",
+      "The Haunting of Bly Manor",
+      "American Horror Story",
+      "The Haunting of Hill House"
+    ],
+    "answer": "The Haunting of Hill House",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 143,
+    "question": "What animated show features Peter Griffin?",
+    "options": [
+      "Family Guy",
+      "The Cleveland Show",
+      "American Dad",
+      "King of the Hill"
+    ],
+    "answer": "Family Guy",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 144,
+    "question": "Who plays Olivia Benson in Law & Order: SVU?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Mariska_Hargitay_Woodstock_Film_Festival.jpg/250px-Mariska_Hargitay_Woodstock_Film_Festival.jpg",
+    "options": [
+      "Ice-T",
+      "Dann Florek",
+      "Mariska Hargitay",
+      "Christopher Meloni"
+    ],
+    "answer": "Mariska Hargitay",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 145,
+    "question": "Which show features the fictional Sterling Cooper ad agency?",
+    "options": [
+      "thirtysomething",
+      "Bewitched",
+      "Halt and Catch Fire",
+      "Mad Men"
+    ],
+    "answer": "Mad Men",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 146,
+    "question": "What is the setting of True Blood?",
+    "options": [
+      "Sunnydale, California",
+      "Forks, Washington",
+      "Mystic Falls, Virginia",
+      "Bon Temps, Louisiana"
+    ],
+    "answer": "Bon Temps, Louisiana",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 147,
+    "question": "Which sitcom is set in a Philadelphia bar owned by terrible people?",
+    "options": [
+      "How I Met Your Mother",
+      "Cheers",
+      "Happy Endings",
+      "It's Always Sunny in Philadelphia"
+    ],
+    "answer": "It's Always Sunny in Philadelphia",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 148,
+    "question": "Who voices Homer Simpson?",
+    "options": [
+      "Dan Castellaneta",
+      "Hank Azaria",
+      "Harry Shearer",
+      "Kelsey Grammer"
+    ],
+    "answer": "Dan Castellaneta",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 149,
+    "question": "Which show features a chemistry teacher and student making drugs?",
+    "options": [
+      "Weeds",
+      "Breaking Bad",
+      "Ozark",
+      "Narcos"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 150,
+    "question": "What is the name of the detective in True Detective Season 1?",
+    "options": [
+      "Rust Cohle",
+      "Ray Velcoro",
+      "Wayne Hays",
+      "Marty Hart"
+    ],
+    "answer": "Rust Cohle",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 151,
+    "question": "Who plays Rust Cohle in True Detective?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg/250px-Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg",
+    "options": [
+      "Matthew McConaughey",
+      "Colin Farrell",
+      "Woody Harrelson",
+      "Mahershala Ali"
+    ],
+    "answer": "Matthew McConaughey",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 152,
+    "question": "Which animated show is about a scientist and his grandson?",
+    "options": [
+      "Back to the Future",
+      "Rick and Morty",
+      "Futurama",
+      "Final Space"
+    ],
+    "answer": "Rick and Morty",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 153,
+    "question": "What is Joey's catchphrase in Friends?",
+    "options": [
+      "Pivot!",
+      "Oh my God!",
+      "We were on a break!",
+      "How you doin'?"
+    ],
+    "answer": "How you doin'?",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 154,
+    "question": "Which show features vampires in Louisiana?",
+    "options": [
+      "The Vampire Diaries",
+      "Interview with the Vampire",
+      "True Blood",
+      "The Originals"
+    ],
+    "answer": "True Blood",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 155,
+    "question": "Who plays Carrie Mathison in Homeland?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Claire_Danes_in_2015.jpg/250px-Claire_Danes_in_2015.jpg",
+    "options": [
+      "Damian Lewis",
+      "Claire Danes",
+      "Mandy Patinkin",
+      "Morena Baccarin"
+    ],
+    "answer": "Claire Danes",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 156,
+    "question": "What animated show features the Smith family and an alien?",
+    "options": [
+      "Family Guy",
+      "Rick and Morty",
+      "Solar Opposites",
+      "American Dad"
+    ],
+    "answer": "American Dad",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 157,
+    "question": "Which show is set in Mystic Falls?",
+    "options": [
+      "The Vampire Diaries",
+      "Buffy the Vampire Slayer",
+      "The Originals",
+      "True Blood"
+    ],
+    "answer": "The Vampire Diaries",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 158,
+    "question": "What is the name of the restaurant in Bob's Burgers?",
+    "options": [
+      "The Belcher Bistro",
+      "Bob's Diner",
+      "Burger Bob's",
+      "Bob's Burgers"
+    ],
+    "answer": "Bob's Burgers",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 159,
+    "question": "Who plays Tommy Shelby in Peaky Blinders?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg/250px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg",
+    "options": [
+      "Sam Neill",
+      "Paul Anderson",
+      "Tom Hardy",
+      "Cillian Murphy"
+    ],
+    "answer": "Cillian Murphy",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 160,
+    "question": "Which show features Queen Elizabeth II's reign?",
+    "options": [
+      "The Crown",
+      "Victoria",
+      "Downton Abbey",
+      "Bridgerton"
+    ],
+    "answer": "The Crown",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 161,
+    "question": "What is the name of the coffee shop owner in Gilmore Girls?",
+    "options": [
+      "Logan Huntzberger",
+      "Luke Danes",
+      "Jess Mariano",
+      "Dean Forester"
+    ],
+    "answer": "Luke Danes",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 162,
+    "question": "Which sitcom features four nerdy friends and their neighbor Penny?",
+    "options": [
+      "The Big Bang Theory",
+      "Silicon Valley",
+      "Community",
+      "The IT Crowd"
+    ],
+    "answer": "The Big Bang Theory",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 163,
+    "question": "Who plays Penny in The Big Bang Theory?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Kaley_Cuoco_by_Gage_Skidmore.jpg/250px-Kaley_Cuoco_by_Gage_Skidmore.jpg",
+    "options": [
+      "Kaley Cuoco",
+      "Sara Gilbert",
+      "Mayim Bialik",
+      "Melissa Rauch"
+    ],
+    "answer": "Kaley Cuoco",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 164,
+    "question": "What animated show features Archer as a spy?",
+    "options": [
+      "Archer",
+      "Frisky Dingo",
+      "American Dad",
+      "Venture Bros"
+    ],
+    "answer": "Archer",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 165,
+    "question": "Which show is about a high school chemistry teacher?",
+    "options": [
+      "Dexter",
+      "House",
+      "Mr. Robot",
+      "Breaking Bad"
+    ],
+    "answer": "Breaking Bad",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 166,
+    "question": "What is the name of Dwight's farm in The Office?",
+    "options": [
+      "Schrute Farms",
+      "Dunder Farm",
+      "Beet Farm",
+      "The Schrute Estate"
+    ],
+    "answer": "Schrute Farms",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 167,
+    "question": "Who plays Michonne in The Walking Dead?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Danai_Gurira_by_Gage_Skidmore_3.jpg/250px-Danai_Gurira_by_Gage_Skidmore_3.jpg",
+    "options": [
+      "Lauren Cohan",
+      "Danai Gurira",
+      "Melissa McBride",
+      "Sonequa Martin-Green"
+    ],
+    "answer": "Danai Gurira",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 168,
+    "question": "Which animated show is set in Springfield?",
+    "options": [
+      "American Dad",
+      "Family Guy",
+      "The Simpsons",
+      "King of the Hill"
+    ],
+    "answer": "The Simpsons",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 169,
+    "question": "What is the fictional hospital in Scrubs?",
+    "options": [
+      "County General",
+      "Grey Sloan",
+      "Princeton-Plainsboro",
+      "Sacred Heart"
+    ],
+    "answer": "Sacred Heart",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 170,
+    "question": "Which show features Sookie Stackhouse?",
+    "options": [
+      "Being Human",
+      "True Blood",
+      "Buffy",
+      "The Vampire Diaries"
+    ],
+    "answer": "True Blood",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 171,
+    "question": "Who plays Rick Grimes in The Walking Dead?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Andrew_Lincoln_%2842749683025%29_%28cropped%29.jpg/250px-Andrew_Lincoln_%2842749683025%29_%28cropped%29.jpg",
+    "options": [
+      "Andrew Lincoln",
+      "Jon Bernthal",
+      "Norman Reedus",
+      "Steven Yeun"
+    ],
+    "answer": "Andrew Lincoln",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 172,
+    "question": "What animated show features the Belcher family?",
+    "options": [
+      "The Simpsons",
+      "Family Guy",
+      "King of the Hill",
+      "Bob's Burgers"
+    ],
+    "answer": "Bob's Burgers",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 173,
+    "question": "Which show is about the Byrde family laundering money?",
+    "options": [
+      "Claws",
+      "Narcos",
+      "Ozark",
+      "Breaking Bad"
+    ],
+    "answer": "Ozark",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 174,
+    "question": "What is the name of the prison in Prison Break?",
+    "options": [
+      "Shawshank",
+      "Fox River",
+      "Litchfield",
+      "Oswald"
+    ],
+    "answer": "Fox River",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 175,
+    "question": "Who plays Nadia in Russian Doll?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Natasha_Lyonne_by_Gage_Skidmore.jpg/250px-Natasha_Lyonne_by_Gage_Skidmore.jpg",
+    "options": [
+      "Elizabeth Ashley",
+      "Natasha Lyonne",
+      "Greta Lee",
+      "Chloë Sevigny"
+    ],
+    "answer": "Natasha Lyonne",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 176,
+    "question": "Which sitcom features a workplace mockumentary style?",
+    "options": [
+      "The Office",
+      "Modern Family",
+      "Parks and Recreation",
+      "Brooklyn Nine-Nine"
+    ],
+    "answer": "The Office",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 177,
+    "question": "What animated show features Kenny who dies frequently?",
+    "options": [
+      "South Park",
+      "Family Guy",
+      "Beavis and Butt-Head",
+      "Drawn Together"
+    ],
+    "answer": "South Park",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 178,
+    "question": "Which show features FBI profilers catching serial killers?",
+    "options": [
+      "Hannibal",
+      "Prodigal Son",
+      "Criminal Minds",
+      "Mindhunter"
+    ],
+    "answer": "Mindhunter",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 179,
+    "question": "Who plays BoJack in BoJack Horseman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Will_Arnett_Is_This_Thing_On-11_%28cropped%29.jpg/250px-Will_Arnett_Is_This_Thing_On-11_%28cropped%29.jpg",
+    "options": [
+      "Paul F. Tompkins",
+      "Aaron Paul",
+      "Will Arnett",
+      "Alison Brie"
+    ],
+    "answer": "Will Arnett",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 180,
+    "question": "What is the name of the spaceship in Firefly?",
+    "options": [
+      "Millennium Falcon",
+      "Serenity",
+      "Enterprise",
+      "Rocinante"
+    ],
+    "answer": "Serenity",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 181,
+    "question": "Which show is set at Sacred Heart Hospital?",
+    "options": [
+      "Scrubs",
+      "ER",
+      "House",
+      "Grey's Anatomy"
+    ],
+    "answer": "Scrubs",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 182,
+    "question": "What animated show features Bender the robot?",
+    "options": [
+      "Futurama",
+      "The Jetsons",
+      "Final Space",
+      "Rick and Morty"
+    ],
+    "answer": "Futurama",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 183,
+    "question": "Who plays Geralt of Rivia in The Witcher?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cavill_%2848417913146%29_%28cropped%29.jpg/250px-Henry_Cavill_%2848417913146%29_%28cropped%29.jpg",
+    "options": [
+      "Liam Hemsworth",
+      "Jason Momoa",
+      "Chris Hemsworth",
+      "Henry Cavill"
+    ],
+    "answer": "Henry Cavill",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 184,
+    "question": "Which show features the continent of Westeros?",
+    "options": [
+      "The Witcher",
+      "Shadow and Bone",
+      "Game of Thrones",
+      "Wheel of Time"
+    ],
+    "answer": "Game of Thrones",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 185,
+    "question": "What is the name of the high school in Riverdale?",
+    "options": [
+      "West Beverly",
+      "Tree Hill High",
+      "Bayside High",
+      "Riverdale High"
+    ],
+    "answer": "Riverdale High",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 186,
+    "question": "Which sitcom features a family in the 1980s Philadelphia?",
+    "options": [
+      "The Wonder Years",
+      "Fresh Off the Boat",
+      "That '70s Show",
+      "The Goldbergs"
+    ],
+    "answer": "The Goldbergs",
+    "difficulty": "easy",
+    "category": "sitcom"
+  },
+  {
+    "id": 187,
+    "question": "Who plays Homelander in The Boys?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Antony_Starr_Photo_Op_GalaxyCon_Oklahoma_City_2024.jpg/250px-Antony_Starr_Photo_Op_GalaxyCon_Oklahoma_City_2024.jpg",
+    "options": [
+      "Karl Urban",
+      "Jack Quaid",
+      "Antony Starr",
+      "Erin Moriarty"
+    ],
+    "answer": "Antony Starr",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 188,
+    "question": "What animated show features Dale, Bill, and Boomhauer?",
+    "options": [
+      "American Dad",
+      "F is for Family",
+      "Beavis and Butt-Head",
+      "King of the Hill"
+    ],
+    "answer": "King of the Hill",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 189,
+    "question": "Which show is about corrupt superheroes?",
+    "options": [
+      "The Boys",
+      "Jupiter's Legacy",
+      "Doom Patrol",
+      "Watchmen"
+    ],
+    "answer": "The Boys",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 190,
+    "question": "What is the fictional city in Arrow?",
+    "options": [
+      "National City",
+      "Gotham City",
+      "Star City",
+      "Central City"
+    ],
+    "answer": "Star City",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 191,
+    "question": "Who plays Oliver Queen in Arrow?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Stephen_Amell_%2852773145678%29.jpg/250px-Stephen_Amell_%2852773145678%29.jpg",
+    "options": [
+      "Tyler Hoechlin",
+      "Stephen Amell",
+      "Grant Gustin",
+      "Brandon Routh"
+    ],
+    "answer": "Stephen Amell",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 192,
+    "question": "Which animated show features Eric Cartman?",
+    "options": [
+      "King of the Hill",
+      "Beavis and Butt-Head",
+      "Family Guy",
+      "South Park"
+    ],
+    "answer": "South Park",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 193,
+    "question": "What is the name of the prison in Oz?",
+    "options": [
+      "Litchfield",
+      "Oswald State Correctional Facility",
+      "Shawshank",
+      "Fox River"
+    ],
+    "answer": "Oswald State Correctional Facility",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 194,
+    "question": "Which show features time travel and multiple timelines in Germany?",
+    "options": [
+      "Dark",
+      "Travelers",
+      "12 Monkeys",
+      "Timeless"
+    ],
+    "answer": "Dark",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 195,
+    "question": "Who plays June/Offred in The Handmaid's Tale?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Square_01_%2837062396652%29_%28cropped%29.jpg/250px-Square_01_%2837062396652%29_%28cropped%29.jpg",
+    "options": [
+      "Alexis Bledel",
+      "Yvonne Strahovski",
+      "Elisabeth Moss",
+      "Samira Wiley"
+    ],
+    "answer": "Elisabeth Moss",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 196,
+    "question": "What animated show features Randy Marsh prominently?",
+    "options": [
+      "American Dad",
+      "Family Guy",
+      "South Park",
+      "King of the Hill"
+    ],
+    "answer": "South Park",
+    "difficulty": "easy",
+    "category": "animated"
+  },
+  {
+    "id": 197,
+    "question": "Which show is based on Margaret Atwood's dystopian novel?",
+    "options": [
+      "The Handmaid's Tale",
+      "1984",
+      "The Man in the High Castle",
+      "Brave New World"
+    ],
+    "answer": "The Handmaid's Tale",
+    "difficulty": "medium",
+    "category": "drama"
+  },
+  {
+    "id": 198,
+    "question": "What is the name of the android in Westworld played by Evan Rachel Wood?",
+    "options": [
+      "Clementine",
+      "Angela",
+      "Maeve",
+      "Dolores"
+    ],
+    "answer": "Dolores",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  },
+  {
+    "id": 199,
+    "question": "Who plays Geralt in The Witcher starting Season 4?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Liam_Hemsworth_June_2016.jpg/250px-Liam_Hemsworth_June_2016.jpg",
+    "options": [
+      "Liam Hemsworth",
+      "Jason Momoa",
+      "Henry Cavill",
+      "Chris Hemsworth"
+    ],
+    "answer": "Liam Hemsworth",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 200,
+    "question": "Which show features a group of strangers waking up on a train with no memory?",
+    "options": [
+      "Snowpiercer",
+      "Dark",
+      "Lost",
+      "Westworld"
+    ],
+    "answer": "Snowpiercer",
+    "difficulty": "hard",
+    "category": "sci-fi"
+  }
+]

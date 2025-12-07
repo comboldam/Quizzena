@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "question": "Which player won the 2023 Ballon d'Or?",
+    "options": ["Erling Haaland", "Lionel Messi", "Kylian Mbappé", "Vinicius Jr"],
+    "answer": "Lionel Messi",
+    "difficulty": "easy",
+    "category": "awards"
+  },
+  {
+    "id": 2,
+    "question": "Which club is known as 'The Red Devils'?",
+    "options": ["Liverpool", "Arsenal", "Manchester United", "AC Milan"],
+    "answer": "Manchester United",
+    "difficulty": "easy",
+    "category": "clubs"
+  },
+  {
+    "id": 3,
+    "question": "Which nation has won the most World Cups?",
+    "options": ["Germany", "Argentina", "Brazil", "Italy"],
+    "answer": "Brazil",
+    "difficulty": "easy",
+    "category": "world_cup"
+  },
+  {
+    "id": 4,
+    "question": "What is the name of Barcelona's stadium?",
+    "options": ["Camp Nou", "Santiago Bernabéu", "Wanda Metropolitano", "Spotify Camp Nou"],
+    "answer": "Camp Nou",
+    "difficulty": "easy",
+    "category": "stadiums"
+  },
+  {
+    "id": 5,
+    "question": "Which player is known as 'CR7'?",
+    "options": ["Cristiano Ronaldo", "Carlos Riquelme", "Christian Ronaldo", "Cristian Rodriguez"],
+    "answer": "Cristiano Ronaldo",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 6,
+    "question": "El Clásico is a match between which two teams?",
+    "options": ["Real Madrid vs Barcelona", "Boca vs River", "Man United vs Liverpool", "AC Milan vs Inter"],
+    "answer": "Real Madrid vs Barcelona",
+    "difficulty": "easy",
+    "category": "derbies"
+  },
+  {
+    "id": 7,
+    "question": "Which English club has won the most Premier League titles?",
+    "options": ["Liverpool", "Chelsea", "Manchester United", "Arsenal"],
+    "answer": "Manchester United",
+    "difficulty": "medium",
+    "category": "premier_league"
+  },
+  {
+    "id": 8,
+    "question": "Who scored the 'Hand of God' goal?",
+    "options": ["Pelé", "Diego Maradona", "Ronaldinho", "Zinedine Zidane"],
+    "answer": "Diego Maradona",
+    "difficulty": "medium",
+    "category": "legends"
+  },
+  {
+    "id": 9,
+    "question": "Which club did Erling Haaland join in 2022?",
+    "options": ["Real Madrid", "Manchester City", "PSG", "Bayern Munich"],
+    "answer": "Manchester City",
+    "difficulty": "easy",
+    "category": "transfers"
+  },
+  {
+    "id": 10,
+    "question": "What is Jude Bellingham's shirt number at Real Madrid?",
+    "options": ["5", "8", "10", "22"],
+    "answer": "5",
+    "difficulty": "medium",
+    "category": "players"
+  },
+  {
+    "id": 11,
+    "question": "Which country hosted the 2022 World Cup?",
+    "options": ["UAE", "Qatar", "Saudi Arabia", "Kuwait"],
+    "answer": "Qatar",
+    "difficulty": "easy",
+    "category": "world_cup"
+  },
+  {
+    "id": 12,
+    "question": "Who is the all-time top scorer in Champions League history?",
+    "options": ["Lionel Messi", "Robert Lewandowski", "Cristiano Ronaldo", "Karim Benzema"],
+    "answer": "Cristiano Ronaldo",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 13,
+    "question": "Which team is nicknamed 'The Gunners'?",
+    "options": ["Arsenal", "Manchester United", "Chelsea", "Tottenham"],
+    "answer": "Arsenal",
+    "difficulty": "easy",
+    "category": "clubs"
+  },
+  {
+    "id": 14,
+    "question": "What color is the Brazil national team jersey?",
+    "options": ["Blue and White", "Yellow and Green", "Red and White", "Green and White"],
+    "answer": "Yellow and Green",
+    "difficulty": "easy",
+    "category": "nations"
+  },
+  {
+    "id": 15,
+    "question": "Which manager has won the most Champions League titles?",
+    "options": ["Pep Guardiola", "Carlo Ancelotti", "Alex Ferguson", "José Mourinho"],
+    "answer": "Carlo Ancelotti",
+    "difficulty": "hard",
+    "category": "managers"
+  },
+  {
+    "id": 16,
+    "question": "Which player transferred from Barcelona to PSG for free in 2021?",
+    "options": ["Neymar", "Lionel Messi", "Luis Suárez", "Antoine Griezmann"],
+    "answer": "Lionel Messi",
+    "difficulty": "easy",
+    "category": "transfers"
+  },
+  {
+    "id": 17,
+    "question": "What is the nickname of Borussia Dortmund's famous stand?",
+    "options": ["The Kop", "Yellow Wall", "The Stretford End", "Curva Sud"],
+    "answer": "Yellow Wall",
+    "difficulty": "medium",
+    "category": "stadiums"
+  },
+  {
+    "id": 18,
+    "question": "Which nation won Euro 2020 (played in 2021)?",
+    "options": ["England", "Italy", "Spain", "France"],
+    "answer": "Italy",
+    "difficulty": "medium",
+    "category": "euros"
+  },
+  {
+    "id": 19,
+    "question": "Who is the youngest player to score in a World Cup final?",
+    "options": ["Pelé", "Kylian Mbappé", "Ronaldo Nazário", "Lionel Messi"],
+    "answer": "Pelé",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 20,
+    "question": "Which club plays at Old Trafford?",
+    "options": ["Manchester City", "Liverpool", "Manchester United", "Everton"],
+    "answer": "Manchester United",
+    "difficulty": "easy",
+    "category": "stadiums"
+  },
+  {
+    "id": 21,
+    "question": "What is Mbappé's first name?",
+    "options": ["Kevin", "Kyle", "Kylian", "Karl"],
+    "answer": "Kylian",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 22,
+    "question": "Which Spanish club is based in Madrid and wears red and white stripes?",
+    "options": ["Real Madrid", "Atlético Madrid", "Getafe", "Rayo Vallecano"],
+    "answer": "Atlético Madrid",
+    "difficulty": "medium",
+    "category": "clubs"
+  },
+  {
+    "id": 23,
+    "question": "Who won the 2018 World Cup?",
+    "options": ["Croatia", "France", "Belgium", "England"],
+    "answer": "France",
+    "difficulty": "easy",
+    "category": "world_cup"
+  },
+  {
+    "id": 24,
+    "question": "Which player is known as 'The Egyptian King'?",
+    "options": ["Mohamed Salah", "Mohamed Elneny", "Ahmed Hegazi", "Mahmoud Hassan"],
+    "answer": "Mohamed Salah",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 25,
+    "question": "What is the maximum number of substitutions allowed in a match (as of 2023)?",
+    "options": ["3", "5", "7", "Unlimited"],
+    "answer": "5",
+    "difficulty": "medium",
+    "category": "rules"
+  },
+  {
+    "id": 26,
+    "question": "Which club did Neymar leave Barcelona to join in 2017?",
+    "options": ["Real Madrid", "PSG", "Manchester City", "Bayern Munich"],
+    "answer": "PSG",
+    "difficulty": "easy",
+    "category": "transfers"
+  },
+  {
+    "id": 27,
+    "question": "What is the name of Liverpool's stadium?",
+    "options": ["Anfield", "Goodison Park", "Etihad", "Old Trafford"],
+    "answer": "Anfield",
+    "difficulty": "easy",
+    "category": "stadiums"
+  },
+  {
+    "id": 28,
+    "question": "Which Italian club is known as 'The Old Lady'?",
+    "options": ["AC Milan", "Inter Milan", "Juventus", "AS Roma"],
+    "answer": "Juventus",
+    "difficulty": "medium",
+    "category": "clubs"
+  },
+  {
+    "id": 29,
+    "question": "Who is Arsenal's all-time top scorer?",
+    "options": ["Thierry Henry", "Ian Wright", "Robin van Persie", "Dennis Bergkamp"],
+    "answer": "Thierry Henry",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 30,
+    "question": "Which country will host the 2026 World Cup?",
+    "options": ["USA only", "Mexico only", "USA, Canada, Mexico", "Canada and USA"],
+    "answer": "USA, Canada, Mexico",
+    "difficulty": "medium",
+    "category": "world_cup"
+  },
+  {
+    "id": 31,
+    "question": "Which player won the Golden Boot at the 2022 World Cup?",
+    "options": ["Lionel Messi", "Kylian Mbappé", "Julián Álvarez", "Olivier Giroud"],
+    "answer": "Kylian Mbappé",
+    "difficulty": "medium",
+    "category": "world_cup"
+  },
+  {
+    "id": 32,
+    "question": "What is the name of the trophy awarded to the Premier League winner?",
+    "options": ["The Cup", "Premier League Trophy", "The Crown", "The Shield"],
+    "answer": "Premier League Trophy",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 33,
+    "question": "Which team won the first ever Premier League title in 1992-93?",
+    "options": ["Manchester United", "Blackburn Rovers", "Arsenal", "Liverpool"],
+    "answer": "Manchester United",
+    "difficulty": "hard",
+    "category": "premier_league"
+  },
+  {
+    "id": 34,
+    "question": "Who is known as 'The Special One'?",
+    "options": ["Pep Guardiola", "José Mourinho", "Carlo Ancelotti", "Jürgen Klopp"],
+    "answer": "José Mourinho",
+    "difficulty": "easy",
+    "category": "managers"
+  },
+  {
+    "id": 35,
+    "question": "Which club has won the most UEFA Champions League titles?",
+    "options": ["Barcelona", "Bayern Munich", "AC Milan", "Real Madrid"],
+    "answer": "Real Madrid",
+    "difficulty": "easy",
+    "category": "champions_league"
+  },
+  {
+    "id": 36,
+    "question": "What nationality is Kevin De Bruyne?",
+    "options": ["Dutch", "Belgian", "German", "Danish"],
+    "answer": "Belgian",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 37,
+    "question": "Which English club is nicknamed 'The Toffees'?",
+    "options": ["West Ham", "Everton", "Leicester", "Aston Villa"],
+    "answer": "Everton",
+    "difficulty": "medium",
+    "category": "clubs"
+  },
+  {
+    "id": 38,
+    "question": "Who scored the winning goal in the 2014 World Cup final?",
+    "options": ["Thomas Müller", "Mario Götze", "Miroslav Klose", "Mesut Özil"],
+    "answer": "Mario Götze",
+    "difficulty": "hard",
+    "category": "world_cup"
+  },
+  {
+    "id": 39,
+    "question": "Which derby is known as 'Der Klassiker'?",
+    "options": ["Bayern vs Dortmund", "Schalke vs Dortmund", "Bayern vs Hamburg", "RB Leipzig vs Bayern"],
+    "answer": "Bayern vs Dortmund",
+    "difficulty": "hard",
+    "category": "derbies"
+  },
+  {
+    "id": 40,
+    "question": "What is Cristiano Ronaldo's nationality?",
+    "options": ["Spanish", "Brazilian", "Portuguese", "Italian"],
+    "answer": "Portuguese",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 41,
+    "question": "Which club did Harry Kane join in 2023?",
+    "options": ["Real Madrid", "Bayern Munich", "PSG", "Manchester United"],
+    "answer": "Bayern Munich",
+    "difficulty": "medium",
+    "category": "transfers"
+  },
+  {
+    "id": 42,
+    "question": "Who is the manager of Manchester City (as of 2024)?",
+    "options": ["Pep Guardiola", "Jürgen Klopp", "Mikel Arteta", "Carlo Ancelotti"],
+    "answer": "Pep Guardiola",
+    "difficulty": "easy",
+    "category": "managers"
+  },
+  {
+    "id": 43,
+    "question": "Which nation has Luka Modrić represented throughout his career?",
+    "options": ["Serbia", "Croatia", "Bosnia", "Slovenia"],
+    "answer": "Croatia",
+    "difficulty": "easy",
+    "category": "players"
+  },
+  {
+    "id": 44,
+    "question": "What is the name of PSG's stadium?",
+    "options": ["Stade de France", "Parc des Princes", "Stade Vélodrome", "Allianz Riviera"],
+    "answer": "Parc des Princes",
+    "difficulty": "medium",
+    "category": "stadiums"
+  },
+  {
+    "id": 45,
+    "question": "Which player has won the most Ballon d'Or awards?",
+    "options": ["Cristiano Ronaldo", "Lionel Messi", "Michel Platini", "Johan Cruyff"],
+    "answer": "Lionel Messi",
+    "difficulty": "medium",
+    "category": "awards"
+  },
+  {
+    "id": 46,
+    "question": "What is the nickname of the Argentina national team?",
+    "options": ["La Roja", "La Albiceleste", "Los Cafeteros", "La Verde"],
+    "answer": "La Albiceleste",
+    "difficulty": "hard",
+    "category": "nations"
+  },
+  {
+    "id": 47,
+    "question": "Which club plays at the Santiago Bernabéu?",
+    "options": ["Atlético Madrid", "Barcelona", "Real Madrid", "Valencia"],
+    "answer": "Real Madrid",
+    "difficulty": "easy",
+    "category": "stadiums"
+  },
+  {
+    "id": 48,
+    "question": "Who is the all-time top scorer for the Brazilian national team?",
+    "options": ["Pelé", "Ronaldo", "Neymar", "Romário"],
+    "answer": "Neymar",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 49,
+    "question": "Which English team is known as 'The Citizens'?",
+    "options": ["Manchester United", "Manchester City", "Liverpool", "Chelsea"],
+    "answer": "Manchester City",
+    "difficulty": "easy",
+    "category": "clubs"
+  },
+  {
+    "id": 50,
+    "question": "Who won the 2023 Champions League final?",
+    "options": ["Inter Milan", "Manchester City", "Real Madrid", "Bayern Munich"],
+    "answer": "Manchester City",
+    "difficulty": "easy",
+    "category": "champions_league"
+  }
+]
