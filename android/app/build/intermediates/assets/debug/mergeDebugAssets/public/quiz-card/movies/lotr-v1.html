@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lord of the Rings Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0805 0%, #1a1208 50%, #050403 100%);
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(180, 130, 50, 0.1) 0%, 
+        rgba(12, 10, 6, 0.95) 40%,
+        rgba(5, 4, 3, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(180, 130, 50, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ancient texture pattern */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(180, 130, 50, 0.03) 1px, transparent 1px);
+      background-size: 6px 6px;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    /* ===== TITLE ===== */
+    .card-title {
+      color: #d4a84b;
+      font-family: 'Georgia', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 12px rgba(212, 168, 75, 0.7),
+        0 0 25px rgba(180, 130, 50, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ===== ICON CONTAINER ===== */
+    .icon-container {
+      position: relative;
+      width: 95px;
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== THE ONE RING ===== */
+    .ring {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      animation: ringFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 4px 15px rgba(212, 168, 75, 0.4));
+    }
+
+    @keyframes ringFloat {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-6px) rotate(5deg); }
+    }
+
+    /* Outer ring */
+    .ring-outer {
+      position: absolute;
+      inset: 0;
+      border: 6px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #d4a84b, #b8860b, #8b6914, #d4a84b) border-box;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      box-shadow: 
+        0 0 15px rgba(212, 168, 75, 0.5),
+        0 0 30px rgba(180, 130, 50, 0.3);
+    }
+
+    /* Inner ring detail */
+    .ring-inner {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      right: 6px;
+      bottom: 6px;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #c9a227, #a67c00) border-box;
+      -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    /* Elvish inscription glow */
+    .ring-inscription {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 100, 0, 0.6);
+      animation: inscriptionGlow 2s ease-in-out infinite;
+    }
+
+    .ring-inscription::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 150, 50, 0.4);
+    }
+
+    @keyframes inscriptionGlow {
+      0%, 100% { 
+        border-color: rgba(255, 100, 0, 0.3);
+        box-shadow: 0 0 5px rgba(255, 100, 0, 0.2);
+      }
+      50% { 
+        border-color: rgba(255, 100, 0, 0.8);
+        box-shadow: 0 0 15px rgba(255, 100, 0, 0.5), inset 0 0 10px rgba(255, 100, 0, 0.2);
+      }
+    }
+
+    /* Ring shine */
+    .ring-shine {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      width: 12px;
+      height: 20px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.4) 0%, transparent 60%);
+      border-radius: 50%;
+      transform: rotate(-30deg);
+    }
+
+    /* ===== EYE OF SAURON ===== */
+    .eye {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 28px;
+      height: 20px;
+      animation: eyePulse 2s ease-in-out infinite;
+    }
+
+    .eye-shape {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, 
+        transparent 0%,
+        rgba(255, 80, 0, 0.8) 30%,
+        #ff4500 50%,
+        rgba(255, 80, 0, 0.8) 70%,
+        transparent 100%
+      );
+      clip-path: ellipse(50% 45% at 50% 50%);
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.6);
+    }
+
+    .eye-slit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 3px;
+      height: 12px;
+      background: linear-gradient(180deg, transparent, #000, #000, transparent);
+      border-radius: 50%;
+    }
+
+    .eye-glow {
+      position: absolute;
+      inset: -4px;
+      background: radial-gradient(ellipse at center, rgba(255, 69, 0, 0.3) 0%, transparent 70%);
+      animation: eyeGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes eyePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes eyeGlow {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== MAGIC EMBERS ===== */
+    .embers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .ember {
+      position: absolute;
+      background: #d4a84b;
+      border-radius: 50%;
+      box-shadow: 0 0 4px #d4a84b, 0 0 8px #b8860b;
+      animation: emberFloat 3s ease-in-out infinite;
+    }
+
+    .ember:nth-child(1) { top: 20px; left: 15px; width: 3px; height: 3px; animation-delay: 0s; }
+    .ember:nth-child(2) { top: 40px; left: 10px; width: 2px; height: 2px; animation-delay: 0.4s; }
+    .ember:nth-child(3) { bottom: 40px; right: 12px; width: 3px; height: 3px; animation-delay: 0.2s; }
+    .ember:nth-child(4) { top: 55px; right: 10px; width: 2px; height: 2px; animation-delay: 0.6s; }
+    .ember:nth-child(5) { bottom: 50px; left: 12px; width: 2px; height: 2px; animation-delay: 0.8s; }
+
+    @keyframes emberFloat {
+      0%, 100% { 
+        opacity: 0.3; 
+        transform: translateY(0) scale(0.8); 
+      }
+      50% { 
+        opacity: 1; 
+        transform: translateY(-4px) scale(1.2); 
+      }
+    }
+
+    /* ===== MOUNTAINS CORNER ===== */
+    .mountains {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35px;
+      height: 30px;
+      opacity: 0.25;
+    }
+
+    .mountain {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    .mountain:nth-child(1) {
+      left: 0;
+      border-width: 0 8px 18px 8px;
+      border-color: transparent transparent #4a4a4a transparent;
+    }
+
+    .mountain:nth-child(2) {
+      left: 10px;
+      border-width: 0 10px 24px 10px;
+      border-color: transparent transparent #5a5a5a transparent;
+    }
+
+    .mountain:nth-child(3) {
+      left: 20px;
+      border-width: 0 7px 16px 7px;
+      border-color: transparent transparent #3a3a3a transparent;
+    }
+
+    /* Mount Doom glow */
+    .mountain:nth-child(2)::before {
+      content: '';
+      position: absolute;
+      top: -24px;
+      left: -3px;
+      width: 6px;
+      height: 6px;
+      background: #ff4500;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ff4500, 0 0 15px #ff6600;
+      animation: volcanoGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes volcanoGlow {
+      0%, 100% { opacity: 0.5; box-shadow: 0 0 4px #ff4500; }
+      50% { opacity: 1; box-shadow: 0 0 12px #ff4500, 0 0 20px #ff6600; }
+    }
+
+    /* ===== ELVISH TEXT ===== */
+    .elvish-text {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-family: 'Georgia', serif;
+      font-size: 5px;
+      font-style: italic;
+      color: rgba(212, 168, 75, 0.6);
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== LEAF DECORATION ===== */
+    .leaf {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 18px;
+      height: 12px;
+      opacity: 0.4;
+    }
+
+    .leaf::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #228b22, #2e8b57);
+      clip-path: ellipse(50% 40% at 50% 50%);
+      transform: rotate(-30deg);
+    }
+
+    .leaf::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      transform: rotate(-30deg);
+    }
+
+    /* ===== FELLOWSHIP DOTS ===== */
+    .fellowship-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Fellowship race colors */
+    .dot:nth-child(1) { background: #22c55e; box-shadow: 0 0 4px #22c55e; animation-delay: 0s; }      /* Hobbits - Green */
+    .dot:nth-child(2) { background: #60a5fa; box-shadow: 0 0 4px #60a5fa; animation-delay: 0.15s; }   /* Elves - Blue */
+    .dot:nth-child(3) { background: #a16207; box-shadow: 0 0 4px #a16207; animation-delay: 0.3s; }    /* Dwarves - Brown */
+    .dot:nth-child(4) { background: #dc2626; box-shadow: 0 0 4px #dc2626; animation-delay: 0.45s; }   /* Men - Red */
+    .dot:nth-child(5) { background: #e5e7eb; box-shadow: 0 0 4px #e5e7eb; animation-delay: 0.6s; }    /* Wizards - White */
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Elvish text -->
+    <div class="elvish-text">One Ring</div>
+
+    <!-- Eye of Sauron -->
+    <div class="eye">
+      <div class="eye-glow"></div>
+      <div class="eye-shape"></div>
+      <div class="eye-slit"></div>
+    </div>
+
+    <!-- Magic embers -->
+    <div class="embers">
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+      <div class="ember"></div>
+    </div>
+
+    <!-- Mountains corner (Mordor) -->
+    <div class="mountains">
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+      <div class="mountain"></div>
+    </div>
+
+    <!-- Elvish leaf -->
+    <div class="leaf"></div>
+
+    <!-- Fellowship dots -->
+    <div class="fellowship-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- The One Ring -->
+      <div class="ring">
+        <div class="ring-outer"></div>
+        <div class="ring-inner"></div>
+        <div class="ring-inscription"></div>
+        <div class="ring-shine"></div>
+      </div>
+    </div>
+
+    <div class="card-title">LOTR</div>
+  </div>
+</body>
+</html>
+

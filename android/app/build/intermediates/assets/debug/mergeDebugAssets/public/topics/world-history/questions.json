@@ -1,0 +1,1706 @@
+[
+  {
+    "id": 1,
+    "question": "In what year did World War II end?",
+    "options": ["1943", "1944", "1945", "1946"],
+    "answer": "1945",
+    "difficulty": "easy",
+    "category": "world-wars"
+  },
+  {
+    "id": 2,
+    "question": "Who discovered America in 1492?",
+    "options": ["Amerigo Vespucci", "Christopher Columbus", "Leif Erikson", "Ferdinand Magellan"],
+    "answer": "Christopher Columbus",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 3,
+    "question": "In what year did the Titanic sink?",
+    "options": ["1910", "1911", "1912", "1913"],
+    "answer": "1912",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 4,
+    "question": "When did humans first land on the Moon?",
+    "options": ["1965", "1967", "1969", "1971"],
+    "answer": "1969",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 5,
+    "question": "Who is this historical figure?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Sir_Winston_Churchill_-_19086236948.jpg/300px-Sir_Winston_Churchill_-_19086236948.jpg",
+    "options": ["Franklin Roosevelt", "Winston Churchill", "Joseph Stalin", "Charles de Gaulle"],
+    "answer": "Winston Churchill",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 6,
+    "question": "Who painted the Mona Lisa?",
+    "options": ["Michelangelo", "Leonardo da Vinci", "Raphael", "Donatello"],
+    "answer": "Leonardo da Vinci",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 7,
+    "question": "What year did World War I begin?",
+    "options": ["1912", "1913", "1914", "1915"],
+    "answer": "1914",
+    "difficulty": "easy",
+    "category": "world-wars"
+  },
+  {
+    "id": 8,
+    "question": "Who was the first President of the United States?",
+    "options": ["Thomas Jefferson", "John Adams", "George Washington", "Benjamin Franklin"],
+    "answer": "George Washington",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 9,
+    "question": "In what year did the Berlin Wall fall?",
+    "options": ["1987", "1988", "1989", "1990"],
+    "answer": "1989",
+    "difficulty": "easy",
+    "category": "cold-war"
+  },
+  {
+    "id": 10,
+    "question": "Who was the leader of Nazi Germany during World War II?",
+    "options": ["Joseph Stalin", "Benito Mussolini", "Adolf Hitler", "Winston Churchill"],
+    "answer": "Adolf Hitler",
+    "difficulty": "easy",
+    "category": "world-wars"
+  },
+  {
+    "id": 11,
+    "question": "What ancient wonder is located in Egypt?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Kheops-Pyramid.jpg/320px-Kheops-Pyramid.jpg",
+    "options": ["Hanging Gardens", "Great Pyramid of Giza", "Colossus of Rhodes", "Lighthouse of Alexandria"],
+    "answer": "Great Pyramid of Giza",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 12,
+    "question": "What year did the French Revolution begin?",
+    "options": ["1776", "1789", "1799", "1804"],
+    "answer": "1789",
+    "difficulty": "easy",
+    "category": "revolutions"
+  },
+  {
+    "id": 13,
+    "question": "Who invented the telephone?",
+    "options": ["Thomas Edison", "Nikola Tesla", "Alexander Graham Bell", "Samuel Morse"],
+    "answer": "Alexander Graham Bell",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 14,
+    "question": "What year did the American Civil War end?",
+    "options": ["1863", "1864", "1865", "1866"],
+    "answer": "1865",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 15,
+    "question": "Who wrote the Declaration of Independence?",
+    "options": ["George Washington", "Benjamin Franklin", "Thomas Jefferson", "John Adams"],
+    "answer": "Thomas Jefferson",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 16,
+    "question": "In what year did the Soviet Union collapse?",
+    "options": ["1989", "1990", "1991", "1992"],
+    "answer": "1991",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 17,
+    "question": "Who was the first emperor of Rome?",
+    "options": ["Julius Caesar", "Augustus", "Nero", "Constantine"],
+    "answer": "Augustus",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 18,
+    "question": "What pandemic killed millions in Europe during the 14th century?",
+    "options": ["Spanish Flu", "Black Death", "Cholera", "Smallpox"],
+    "answer": "Black Death",
+    "difficulty": "easy",
+    "category": "medieval"
+  },
+  {
+    "id": 19,
+    "question": "Who led India to independence through non-violent resistance?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Mahatma-Gandhi%2C_studio%2C_1931.jpg/300px-Mahatma-Gandhi%2C_studio%2C_1931.jpg",
+    "options": ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Bhagat Singh"],
+    "answer": "Mahatma Gandhi",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 20,
+    "question": "What year did the United States declare independence?",
+    "options": ["1774", "1775", "1776", "1777"],
+    "answer": "1776",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 21,
+    "question": "Who invented the printing press around 1440?",
+    "options": ["Leonardo da Vinci", "Johannes Gutenberg", "Martin Luther", "William Caxton"],
+    "answer": "Johannes Gutenberg",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 22,
+    "question": "What ancient Roman structure is this?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/320px-Colosseo_2020.jpg",
+    "options": ["Pantheon", "Colosseum", "Forum", "Circus Maximus"],
+    "answer": "Colosseum",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 23,
+    "question": "Who was assassinated on the Ides of March?",
+    "options": ["Marcus Aurelius", "Julius Caesar", "Augustus", "Nero"],
+    "answer": "Julius Caesar",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 24,
+    "question": "What year did D-Day occur?",
+    "options": ["1942", "1943", "1944", "1945"],
+    "answer": "1944",
+    "difficulty": "easy",
+    "category": "world-wars"
+  },
+  {
+    "id": 25,
+    "question": "Who was the longest-reigning British monarch before Elizabeth II?",
+    "options": ["Queen Elizabeth I", "Queen Victoria", "Queen Anne", "Queen Mary"],
+    "answer": "Queen Victoria",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 26,
+    "question": "What famous leader is depicted in this statue?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Abraham_Lincoln_statue%2C_Lincoln_Memorial.jpg/280px-Abraham_Lincoln_statue%2C_Lincoln_Memorial.jpg",
+    "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "Theodore Roosevelt"],
+    "answer": "Abraham Lincoln",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 27,
+    "question": "In what year did the Renaissance begin?",
+    "options": ["12th century", "13th century", "14th century", "15th century"],
+    "answer": "14th century",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 28,
+    "question": "Who was the famous queen of ancient Egypt?",
+    "options": ["Nefertiti", "Cleopatra", "Hatshepsut", "Nefertari"],
+    "answer": "Cleopatra",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 29,
+    "question": "What year did the first modern Olympic Games take place?",
+    "options": ["1892", "1894", "1896", "1898"],
+    "answer": "1896",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 30,
+    "question": "Who led the Mongol Empire?",
+    "options": ["Kublai Khan", "Genghis Khan", "Tamerlane", "Attila the Hun"],
+    "answer": "Genghis Khan",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 31,
+    "question": "What year did the Korean War begin?",
+    "options": ["1948", "1949", "1950", "1951"],
+    "answer": "1950",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 32,
+    "question": "Who invented the light bulb?",
+    "options": ["Nikola Tesla", "Thomas Edison", "Alexander Graham Bell", "Benjamin Franklin"],
+    "answer": "Thomas Edison",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 33,
+    "question": "What famous wall was built to protect ancient China?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/320px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg",
+    "options": ["Hadrian's Wall", "Great Wall of China", "Berlin Wall", "Western Wall"],
+    "answer": "Great Wall of China",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 34,
+    "question": "Who discovered penicillin?",
+    "options": ["Louis Pasteur", "Alexander Fleming", "Jonas Salk", "Marie Curie"],
+    "answer": "Alexander Fleming",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 35,
+    "question": "What year did the Spanish Armada attempt to invade England?",
+    "options": ["1568", "1578", "1588", "1598"],
+    "answer": "1588",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 36,
+    "question": "Who was the first person to circumnavigate the globe?",
+    "options": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Francis Drake"],
+    "answer": "Ferdinand Magellan",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 37,
+    "question": "What year did the Vietnam War end?",
+    "options": ["1973", "1974", "1975", "1976"],
+    "answer": "1975",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 38,
+    "question": "Who painted the Sistine Chapel ceiling?",
+    "options": ["Leonardo da Vinci", "Michelangelo", "Raphael", "Botticelli"],
+    "answer": "Michelangelo",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 39,
+    "question": "This monument is located in which city?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/All_Gizah_Pyramids.jpg/320px-All_Gizah_Pyramids.jpg",
+    "options": ["Cairo", "Giza", "Luxor", "Alexandria"],
+    "answer": "Giza",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 40,
+    "question": "Who was the leader of the Soviet Union during most of the Cold War?",
+    "options": ["Vladimir Lenin", "Joseph Stalin", "Nikita Khrushchev", "Leonid Brezhnev"],
+    "answer": "Joseph Stalin",
+    "difficulty": "easy",
+    "category": "cold-war"
+  },
+  {
+    "id": 41,
+    "question": "What year did Martin Luther King Jr. deliver his 'I Have a Dream' speech?",
+    "options": ["1961", "1962", "1963", "1964"],
+    "answer": "1963",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 42,
+    "question": "Who was the first woman to win a Nobel Prize?",
+    "options": ["Marie Curie", "Mother Teresa", "Jane Addams", "Rosalind Franklin"],
+    "answer": "Marie Curie",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 43,
+    "question": "What year did Nelson Mandela become President of South Africa?",
+    "options": ["1990", "1992", "1994", "1996"],
+    "answer": "1994",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 44,
+    "question": "Who built the Taj Mahal?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Taj_Mahal%2C_Agra%2C_India_edit3.jpg/300px-Taj_Mahal%2C_Agra%2C_India_edit3.jpg",
+    "options": ["Akbar", "Shah Jahan", "Aurangzeb", "Babur"],
+    "answer": "Shah Jahan",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 45,
+    "question": "What year did the Wright Brothers make their first flight?",
+    "options": ["1900", "1901", "1903", "1905"],
+    "answer": "1903",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 46,
+    "question": "Who was the founder of Buddhism?",
+    "options": ["Confucius", "Siddhartha Gautama", "Laozi", "Mahavira"],
+    "answer": "Siddhartha Gautama",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 47,
+    "question": "What year did the Cuban Missile Crisis occur?",
+    "options": ["1960", "1961", "1962", "1963"],
+    "answer": "1962",
+    "difficulty": "medium",
+    "category": "cold-war"
+  },
+  {
+    "id": 48,
+    "question": "Who was the first Holy Roman Emperor?",
+    "options": ["Otto I", "Charlemagne", "Frederick Barbarossa", "Charles V"],
+    "answer": "Charlemagne",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 49,
+    "question": "What year did the Black Death begin in Europe?",
+    "options": ["1337", "1347", "1357", "1367"],
+    "answer": "1347",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 50,
+    "question": "Who was this famous French military leader?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/250px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
+    "options": ["Louis XIV", "Napoleon Bonaparte", "Charles de Gaulle", "Joan of Arc"],
+    "answer": "Napoleon Bonaparte",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 51,
+    "question": "What year did Christopher Columbus reach the Americas?",
+    "options": ["1490", "1491", "1492", "1493"],
+    "answer": "1492",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 52,
+    "question": "Who invented the steam engine?",
+    "options": ["George Stephenson", "James Watt", "Thomas Newcomen", "Richard Trevithick"],
+    "answer": "James Watt",
+    "difficulty": "medium",
+    "category": "industrial"
+  },
+  {
+    "id": 53,
+    "question": "What year did the Hundred Years' War end?",
+    "options": ["1429", "1439", "1453", "1463"],
+    "answer": "1453",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 54,
+    "question": "Who was the pharaoh during the construction of the Great Pyramid?",
+    "options": ["Tutankhamun", "Ramesses II", "Khufu", "Cleopatra"],
+    "answer": "Khufu",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 55,
+    "question": "What year did the Magna Carta get signed?",
+    "options": ["1205", "1215", "1225", "1235"],
+    "answer": "1215",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 56,
+    "question": "Who led the Bolshevik Revolution in Russia?",
+    "options": ["Leon Trotsky", "Vladimir Lenin", "Joseph Stalin", "Mikhail Gorbachev"],
+    "answer": "Vladimir Lenin",
+    "difficulty": "easy",
+    "category": "revolutions"
+  },
+  {
+    "id": 57,
+    "question": "What ancient structure is this?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Great_Sphinx_of_Giza_-_20080716a.jpg/320px-Great_Sphinx_of_Giza_-_20080716a.jpg",
+    "options": ["Great Sphinx of Giza", "Statue of Liberty", "Christ the Redeemer", "Angel of the North"],
+    "answer": "Great Sphinx of Giza",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 58,
+    "question": "What year did the Battle of Hastings take place?",
+    "options": ["1056", "1066", "1076", "1086"],
+    "answer": "1066",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 59,
+    "question": "Who was the leader of the Confederate States during the American Civil War?",
+    "options": ["Robert E. Lee", "Jefferson Davis", "Stonewall Jackson", "Ulysses S. Grant"],
+    "answer": "Jefferson Davis",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 60,
+    "question": "What year did the Apollo 11 mission land on the Moon?",
+    "options": ["1967", "1968", "1969", "1970"],
+    "answer": "1969",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 61,
+    "question": "Who discovered the New World for Spain?",
+    "options": ["Amerigo Vespucci", "Christopher Columbus", "Hernán Cortés", "Francisco Pizarro"],
+    "answer": "Christopher Columbus",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 62,
+    "question": "What structure is shown in this image?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Eiffel_Tower%2C_Paris%2C_France_-_panoramio_%284%29.jpg/220px-Eiffel_Tower%2C_Paris%2C_France_-_panoramio_%284%29.jpg",
+    "options": ["Big Ben", "Eiffel Tower", "Statue of Liberty", "Space Needle"],
+    "answer": "Eiffel Tower",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 63,
+    "question": "What year did Constantine legalize Christianity in the Roman Empire?",
+    "options": ["303 AD", "313 AD", "323 AD", "333 AD"],
+    "answer": "313 AD",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 64,
+    "question": "Who was the founder of the Mongol Empire?",
+    "options": ["Kublai Khan", "Genghis Khan", "Ogedei Khan", "Tamerlane"],
+    "answer": "Genghis Khan",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 65,
+    "question": "What year did the War of 1812 end?",
+    "options": ["1813", "1814", "1815", "1816"],
+    "answer": "1815",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 66,
+    "question": "Who invented the first successful airplane?",
+    "options": ["Charles Lindbergh", "Wright Brothers", "Amelia Earhart", "Howard Hughes"],
+    "answer": "Wright Brothers",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 67,
+    "question": "What year did the Persian Empire fall to Alexander the Great?",
+    "options": ["340 BC", "335 BC", "330 BC", "325 BC"],
+    "answer": "330 BC",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 68,
+    "question": "This famous wall divided which city?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Thefalloftheberlinwall1989.JPG/320px-Thefalloftheberlinwall1989.JPG",
+    "options": ["Vienna", "Berlin", "Warsaw", "Prague"],
+    "answer": "Berlin",
+    "difficulty": "easy",
+    "category": "cold-war"
+  },
+  {
+    "id": 69,
+    "question": "Who was the first person in space?",
+    "options": ["Neil Armstrong", "Yuri Gagarin", "Alan Shepard", "John Glenn"],
+    "answer": "Yuri Gagarin",
+    "difficulty": "medium",
+    "category": "cold-war"
+  },
+  {
+    "id": 70,
+    "question": "What year did the Spanish Inquisition begin?",
+    "options": ["1458", "1468", "1478", "1488"],
+    "answer": "1478",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 71,
+    "question": "Who was the first female pharaoh of Egypt?",
+    "options": ["Nefertiti", "Cleopatra", "Hatshepsut", "Nefertari"],
+    "answer": "Hatshepsut",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 72,
+    "question": "What year did the Ottoman Empire fall?",
+    "options": ["1918", "1920", "1922", "1924"],
+    "answer": "1922",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 73,
+    "question": "Who wrote 'The Communist Manifesto'?",
+    "options": ["Vladimir Lenin", "Karl Marx", "Friedrich Engels", "Joseph Stalin"],
+    "answer": "Karl Marx",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 74,
+    "question": "What year did the Louisiana Purchase occur?",
+    "options": ["1800", "1801", "1803", "1805"],
+    "answer": "1803",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 75,
+    "question": "Who was this US President?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/250px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
+    "options": ["Thomas Jefferson", "George Washington", "John Adams", "James Madison"],
+    "answer": "George Washington",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 76,
+    "question": "What year did Alexander the Great die?",
+    "options": ["333 BC", "328 BC", "323 BC", "318 BC"],
+    "answer": "323 BC",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 77,
+    "question": "Who was the Sun King of France?",
+    "options": ["Louis XIII", "Louis XIV", "Louis XV", "Louis XVI"],
+    "answer": "Louis XIV",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 78,
+    "question": "What year did the Treaty of Versailles end World War I?",
+    "options": ["1918", "1919", "1920", "1921"],
+    "answer": "1919",
+    "difficulty": "medium",
+    "category": "world-wars"
+  },
+  {
+    "id": 79,
+    "question": "Who led the Protestant Reformation?",
+    "options": ["John Calvin", "Martin Luther", "Henry VIII", "John Knox"],
+    "answer": "Martin Luther",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 80,
+    "question": "What year did the Chernobyl disaster occur?",
+    "options": ["1984", "1985", "1986", "1987"],
+    "answer": "1986",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 81,
+    "question": "Who discovered the structure of DNA?",
+    "options": ["Gregor Mendel", "Watson and Crick", "Charles Darwin", "Louis Pasteur"],
+    "answer": "Watson and Crick",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 82,
+    "question": "What ancient Greek temple is this?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/320px-The_Parthenon_in_Athens.jpg",
+    "options": ["Temple of Zeus", "Parthenon", "Acropolis", "Temple of Apollo"],
+    "answer": "Parthenon",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 83,
+    "question": "What year did the Russian Revolution occur?",
+    "options": ["1915", "1916", "1917", "1918"],
+    "answer": "1917",
+    "difficulty": "easy",
+    "category": "revolutions"
+  },
+  {
+    "id": 84,
+    "question": "Who was the first emperor of China?",
+    "options": ["Confucius", "Sun Tzu", "Qin Shi Huang", "Kublai Khan"],
+    "answer": "Qin Shi Huang",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 85,
+    "question": "What year did the American Revolution begin?",
+    "options": ["1773", "1774", "1775", "1776"],
+    "answer": "1775",
+    "difficulty": "medium",
+    "category": "revolutions"
+  },
+  {
+    "id": 86,
+    "question": "Who was the first woman Prime Minister of the UK?",
+    "options": ["Margaret Thatcher", "Theresa May", "Indira Gandhi", "Golda Meir"],
+    "answer": "Margaret Thatcher",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 87,
+    "question": "What year did the Suez Crisis occur?",
+    "options": ["1954", "1955", "1956", "1957"],
+    "answer": "1956",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 88,
+    "question": "Who was the Roman emperor when Jesus was crucified?",
+    "options": ["Augustus", "Tiberius", "Caligula", "Nero"],
+    "answer": "Tiberius",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 89,
+    "question": "What year did the Battle of Waterloo take place?",
+    "options": ["1812", "1813", "1815", "1817"],
+    "answer": "1815",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 90,
+    "question": "Who invented the radio?",
+    "options": ["Thomas Edison", "Nikola Tesla", "Guglielmo Marconi", "Alexander Graham Bell"],
+    "answer": "Guglielmo Marconi",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 91,
+    "question": "What year did the Spanish Civil War begin?",
+    "options": ["1934", "1935", "1936", "1937"],
+    "answer": "1936",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 92,
+    "question": "Who was this famous physicist?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/250px-Albert_Einstein_Head.jpg",
+    "options": ["Isaac Newton", "Albert Einstein", "Niels Bohr", "Stephen Hawking"],
+    "answer": "Albert Einstein",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 93,
+    "question": "What year did the Battle of Stalingrad end?",
+    "options": ["1942", "1943", "1944", "1945"],
+    "answer": "1943",
+    "difficulty": "medium",
+    "category": "world-wars"
+  },
+  {
+    "id": 94,
+    "question": "Who was the first African American President of the United States?",
+    "options": ["Colin Powell", "Barack Obama", "Jesse Jackson", "Martin Luther King Jr."],
+    "answer": "Barack Obama",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 95,
+    "question": "What year did the Russo-Japanese War end?",
+    "options": ["1903", "1904", "1905", "1906"],
+    "answer": "1905",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 96,
+    "question": "Who discovered the Americas for the Vikings?",
+    "options": ["Erik the Red", "Leif Erikson", "Ragnar Lothbrok", "Harald Hardrada"],
+    "answer": "Leif Erikson",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 97,
+    "question": "What year did the Hiroshima bombing occur?",
+    "options": ["1943", "1944", "1945", "1946"],
+    "answer": "1945",
+    "difficulty": "easy",
+    "category": "world-wars"
+  },
+  {
+    "id": 98,
+    "question": "Who was the founder of the Ottoman Empire?",
+    "options": ["Mehmed II", "Suleiman", "Osman I", "Selim I"],
+    "answer": "Osman I",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 99,
+    "question": "What year did the Napoleonic Wars end?",
+    "options": ["1812", "1813", "1815", "1817"],
+    "answer": "1815",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 100,
+    "question": "Who was the first woman in space?",
+    "options": ["Sally Ride", "Valentina Tereshkova", "Mae Jemison", "Eileen Collins"],
+    "answer": "Valentina Tereshkova",
+    "difficulty": "medium",
+    "category": "cold-war"
+  },
+  {
+    "id": 101,
+    "question": "This famous building is in which country?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Neuschwanstein_Castle_LOC_print.jpg/280px-Neuschwanstein_Castle_LOC_print.jpg",
+    "options": ["Austria", "Germany", "Switzerland", "France"],
+    "answer": "Germany",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 102,
+    "question": "What year did the Irish Potato Famine begin?",
+    "options": ["1840", "1843", "1845", "1847"],
+    "answer": "1845",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 103,
+    "question": "Who was the famous nurse during the Crimean War?",
+    "options": ["Clara Barton", "Florence Nightingale", "Mary Seacole", "Edith Cavell"],
+    "answer": "Florence Nightingale",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 104,
+    "question": "What year did the Meiji Restoration occur in Japan?",
+    "options": ["1858", "1863", "1868", "1873"],
+    "answer": "1868",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 105,
+    "question": "Who invented the World Wide Web?",
+    "options": ["Bill Gates", "Steve Jobs", "Tim Berners-Lee", "Mark Zuckerberg"],
+    "answer": "Tim Berners-Lee",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 106,
+    "question": "What year did the Falklands War occur?",
+    "options": ["1980", "1981", "1982", "1983"],
+    "answer": "1982",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 107,
+    "question": "Who was the first person to walk on the Moon?",
+    "options": ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "Alan Shepard"],
+    "answer": "Neil Armstrong",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 108,
+    "question": "What year did the Mexican Revolution begin?",
+    "options": ["1905", "1908", "1910", "1912"],
+    "answer": "1910",
+    "difficulty": "hard",
+    "category": "revolutions"
+  },
+  {
+    "id": 109,
+    "question": "Who was the architect of the Indian independence movement?",
+    "options": ["Jawaharlal Nehru", "Mahatma Gandhi", "Sardar Patel", "Subhas Chandra Bose"],
+    "answer": "Mahatma Gandhi",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 110,
+    "question": "What ancient wonder is shown?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Petra_Jordan_BW_21.JPG/280px-Petra_Jordan_BW_21.JPG",
+    "options": ["Machu Picchu", "Petra", "Angkor Wat", "Great Wall"],
+    "answer": "Petra",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 111,
+    "question": "What year did the Battle of Tours stop Muslim expansion into Europe?",
+    "options": ["722 AD", "732 AD", "742 AD", "752 AD"],
+    "answer": "732 AD",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 112,
+    "question": "Who was the longest-serving US President?",
+    "options": ["George Washington", "Thomas Jefferson", "Franklin D. Roosevelt", "Abraham Lincoln"],
+    "answer": "Franklin D. Roosevelt",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 113,
+    "question": "What year did the First Crusade begin?",
+    "options": ["1086", "1091", "1096", "1101"],
+    "answer": "1096",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 114,
+    "question": "Who assassinated Archduke Franz Ferdinand?",
+    "options": ["Gavrilo Princip", "Lee Harvey Oswald", "John Wilkes Booth", "Leon Czolgosz"],
+    "answer": "Gavrilo Princip",
+    "difficulty": "hard",
+    "category": "world-wars"
+  },
+  {
+    "id": 115,
+    "question": "What year did the Panama Canal open?",
+    "options": ["1910", "1912", "1914", "1916"],
+    "answer": "1914",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 116,
+    "question": "Who was the founder of Pakistan?",
+    "options": ["Muhammad Iqbal", "Muhammad Ali Jinnah", "Liaquat Ali Khan", "Ayub Khan"],
+    "answer": "Muhammad Ali Jinnah",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 117,
+    "question": "What year did the Great Fire of London occur?",
+    "options": ["1656", "1661", "1666", "1671"],
+    "answer": "1666",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 118,
+    "question": "This structure was built by which civilization?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Chichen_Itza_3.jpg/320px-Chichen_Itza_3.jpg",
+    "options": ["Aztec", "Maya", "Inca", "Olmec"],
+    "answer": "Maya",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 119,
+    "question": "Who invented the assembly line production method?",
+    "options": ["Thomas Edison", "Henry Ford", "Andrew Carnegie", "John D. Rockefeller"],
+    "answer": "Henry Ford",
+    "difficulty": "easy",
+    "category": "industrial"
+  },
+  {
+    "id": 120,
+    "question": "What year did the Battle of Britain occur?",
+    "options": ["1938", "1939", "1940", "1941"],
+    "answer": "1940",
+    "difficulty": "medium",
+    "category": "world-wars"
+  },
+  {
+    "id": 121,
+    "question": "Who was the Iron Lady?",
+    "options": ["Golda Meir", "Margaret Thatcher", "Indira Gandhi", "Angela Merkel"],
+    "answer": "Margaret Thatcher",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 122,
+    "question": "What year did the Opium Wars begin in China?",
+    "options": ["1829", "1834", "1839", "1844"],
+    "answer": "1839",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 123,
+    "question": "Who was the last Tsar of Russia?",
+    "options": ["Alexander III", "Nicholas II", "Peter the Great", "Ivan the Terrible"],
+    "answer": "Nicholas II",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 124,
+    "question": "What year did the Great Depression begin?",
+    "options": ["1927", "1928", "1929", "1930"],
+    "answer": "1929",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 125,
+    "question": "Who led the Haitian Revolution?",
+    "options": ["Jean-Jacques Dessalines", "Toussaint Louverture", "Henri Christophe", "Alexandre Pétion"],
+    "answer": "Toussaint Louverture",
+    "difficulty": "hard",
+    "category": "revolutions"
+  },
+  {
+    "id": 126,
+    "question": "What year did the Boxer Rebellion occur in China?",
+    "options": ["1895", "1898", "1900", "1902"],
+    "answer": "1900",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 127,
+    "question": "Who invented the telegraph?",
+    "options": ["Alexander Graham Bell", "Thomas Edison", "Samuel Morse", "Nikola Tesla"],
+    "answer": "Samuel Morse",
+    "difficulty": "medium",
+    "category": "industrial"
+  },
+  {
+    "id": 128,
+    "question": "This famous leader led which country?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Mao_Zedong_portrait.jpg/250px-Mao_Zedong_portrait.jpg",
+    "options": ["Japan", "China", "Vietnam", "North Korea"],
+    "answer": "China",
+    "difficulty": "easy",
+    "category": "leaders"
+  },
+  {
+    "id": 129,
+    "question": "What year did the Scramble for Africa begin?",
+    "options": ["1874", "1879", "1884", "1889"],
+    "answer": "1884",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 130,
+    "question": "Who was the first person to fly solo across the Atlantic?",
+    "options": ["Amelia Earhart", "Charles Lindbergh", "Wright Brothers", "Howard Hughes"],
+    "answer": "Charles Lindbergh",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 131,
+    "question": "What year did India gain independence?",
+    "options": ["1945", "1946", "1947", "1948"],
+    "answer": "1947",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 132,
+    "question": "Who was the founder of modern Turkey?",
+    "options": ["Sultan Mehmed VI", "Mustafa Kemal Atatürk", "Ismet Inönü", "Enver Pasha"],
+    "answer": "Mustafa Kemal Atatürk",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 133,
+    "question": "What year did the Spanish Flu pandemic begin?",
+    "options": ["1916", "1917", "1918", "1919"],
+    "answer": "1918",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 134,
+    "question": "Who was the first female ruler of England?",
+    "options": ["Elizabeth I", "Mary I", "Queen Anne", "Queen Victoria"],
+    "answer": "Mary I",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 135,
+    "question": "What year did the Battle of Trafalgar occur?",
+    "options": ["1800", "1803", "1805", "1807"],
+    "answer": "1805",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 136,
+    "question": "This ancient structure is located where?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Machu_Picchu%2C_Peru.jpg/320px-Machu_Picchu%2C_Peru.jpg",
+    "options": ["Mexico", "Peru", "Chile", "Bolivia"],
+    "answer": "Peru",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 137,
+    "question": "Who invented the cotton gin?",
+    "options": ["Samuel Slater", "Eli Whitney", "Robert Fulton", "Cyrus McCormick"],
+    "answer": "Eli Whitney",
+    "difficulty": "medium",
+    "category": "industrial"
+  },
+  {
+    "id": 138,
+    "question": "What year did the Thirty Years' War end?",
+    "options": ["1638", "1643", "1648", "1653"],
+    "answer": "1648",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 139,
+    "question": "Who was the first emperor of the Holy Roman Empire?",
+    "options": ["Otto I", "Charlemagne", "Frederick Barbarossa", "Charles V"],
+    "answer": "Charlemagne",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 140,
+    "question": "What year did the Reconquista end in Spain?",
+    "options": ["1482", "1487", "1492", "1497"],
+    "answer": "1492",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 141,
+    "question": "Who discovered the Pacific Ocean?",
+    "options": ["Ferdinand Magellan", "Vasco Núñez de Balboa", "James Cook", "Francis Drake"],
+    "answer": "Vasco Núñez de Balboa",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 142,
+    "question": "What year did the Six Day War occur?",
+    "options": ["1965", "1966", "1967", "1968"],
+    "answer": "1967",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 143,
+    "question": "Who was the famous queen of the United Kingdom during the Victorian era?",
+    "options": ["Queen Elizabeth I", "Queen Victoria", "Queen Anne", "Queen Mary"],
+    "answer": "Queen Victoria",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 144,
+    "question": "What year did the Boer War end?",
+    "options": ["1899", "1900", "1902", "1904"],
+    "answer": "1902",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 145,
+    "question": "Who was this famous civil rights leader?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Martin_Luther_King%2C_Jr..jpg/250px-Martin_Luther_King%2C_Jr..jpg",
+    "options": ["Malcolm X", "Martin Luther King Jr.", "Rosa Parks", "Jesse Jackson"],
+    "answer": "Martin Luther King Jr.",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 146,
+    "question": "What year did the Glorious Revolution occur in England?",
+    "options": ["1678", "1683", "1688", "1693"],
+    "answer": "1688",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 147,
+    "question": "Who was the father of modern physics?",
+    "options": ["Galileo Galilei", "Isaac Newton", "Albert Einstein", "Niels Bohr"],
+    "answer": "Isaac Newton",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 148,
+    "question": "What year did the Warsaw Pact form?",
+    "options": ["1950", "1953", "1955", "1957"],
+    "answer": "1955",
+    "difficulty": "hard",
+    "category": "cold-war"
+  },
+  {
+    "id": 149,
+    "question": "Who led the Long March in China?",
+    "options": ["Chiang Kai-shek", "Mao Zedong", "Zhou Enlai", "Deng Xiaoping"],
+    "answer": "Mao Zedong",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 150,
+    "question": "What year did the Partition of India occur?",
+    "options": ["1945", "1946", "1947", "1948"],
+    "answer": "1947",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 151,
+    "question": "Who invented dynamite?",
+    "options": ["Thomas Edison", "Alfred Nobel", "Marie Curie", "Wilhelm Röntgen"],
+    "answer": "Alfred Nobel",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 152,
+    "question": "What year did the Salem Witch Trials occur?",
+    "options": ["1682", "1687", "1692", "1697"],
+    "answer": "1692",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 153,
+    "question": "This ancient temple complex is in which country?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Angkor_Wat.jpg/320px-Angkor_Wat.jpg",
+    "options": ["Thailand", "Cambodia", "Vietnam", "Myanmar"],
+    "answer": "Cambodia",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 154,
+    "question": "Who was the first person to summit Mount Everest?",
+    "options": ["George Mallory", "Edmund Hillary", "Reinhold Messner", "Tenzing Norgay"],
+    "answer": "Edmund Hillary",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 155,
+    "question": "What year did the Gulf War begin?",
+    "options": ["1988", "1989", "1990", "1991"],
+    "answer": "1990",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 156,
+    "question": "Who was the founder of fascism in Italy?",
+    "options": ["Benito Mussolini", "Victor Emmanuel III", "Gabriele D'Annunzio", "Adolf Hitler"],
+    "answer": "Benito Mussolini",
+    "difficulty": "medium",
+    "category": "world-wars"
+  },
+  {
+    "id": 157,
+    "question": "What year did the Emancipation Proclamation free slaves?",
+    "options": ["1861", "1862", "1863", "1865"],
+    "answer": "1863",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 158,
+    "question": "Who was the famous female pilot who disappeared in 1937?",
+    "options": ["Bessie Coleman", "Amelia Earhart", "Harriet Quimby", "Jacqueline Cochran"],
+    "answer": "Amelia Earhart",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 159,
+    "question": "What year did the Tet Offensive occur in Vietnam?",
+    "options": ["1966", "1967", "1968", "1969"],
+    "answer": "1968",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 160,
+    "question": "Who was the first Prime Minister of India?",
+    "options": ["Mahatma Gandhi", "Jawaharlal Nehru", "Sardar Patel", "Indira Gandhi"],
+    "answer": "Jawaharlal Nehru",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 161,
+    "question": "What year did NATO form?",
+    "options": ["1945", "1947", "1949", "1951"],
+    "answer": "1949",
+    "difficulty": "medium",
+    "category": "cold-war"
+  },
+  {
+    "id": 162,
+    "question": "Who discovered the tomb of Tutankhamun?",
+    "options": ["Howard Carter", "Flinders Petrie", "Jean-François Champollion", "Auguste Mariette"],
+    "answer": "Howard Carter",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 163,
+    "question": "What year did the Siege of Constantinople end the Byzantine Empire?",
+    "options": ["1443", "1448", "1453", "1458"],
+    "answer": "1453",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 164,
+    "question": "This famous statue is of which US president?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Thomas_Jefferson_Statue.JPG/220px-Thomas_Jefferson_Statue.JPG",
+    "options": ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "Theodore Roosevelt"],
+    "answer": "Thomas Jefferson",
+    "difficulty": "medium",
+    "category": "leaders"
+  },
+  {
+    "id": 165,
+    "question": "Who invented the vaccine for polio?",
+    "options": ["Louis Pasteur", "Jonas Salk", "Alexander Fleming", "Edward Jenner"],
+    "answer": "Jonas Salk",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 166,
+    "question": "What year did the Battle of Gettysburg occur?",
+    "options": ["1861", "1862", "1863", "1864"],
+    "answer": "1863",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 167,
+    "question": "Who was the famous philosopher of ancient Greece?",
+    "options": ["Plato", "Socrates", "Aristotle", "Pythagoras"],
+    "answer": "Socrates",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 168,
+    "question": "What year did the United Nations form?",
+    "options": ["1943", "1944", "1945", "1946"],
+    "answer": "1945",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 169,
+    "question": "Who was the famous conqueror who created one of the largest empires?",
+    "options": ["Julius Caesar", "Alexander the Great", "Genghis Khan", "Napoleon"],
+    "answer": "Alexander the Great",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 170,
+    "question": "What year did the Boston Tea Party occur?",
+    "options": ["1770", "1771", "1773", "1775"],
+    "answer": "1773",
+    "difficulty": "medium",
+    "category": "revolutions"
+  },
+  {
+    "id": 171,
+    "question": "Who was the leader of Cuba during the Cold War?",
+    "options": ["Che Guevara", "Fidel Castro", "Raúl Castro", "Fulgencio Batista"],
+    "answer": "Fidel Castro",
+    "difficulty": "easy",
+    "category": "cold-war"
+  },
+  {
+    "id": 172,
+    "question": "What year did the Marshall Plan begin?",
+    "options": ["1945", "1947", "1948", "1950"],
+    "answer": "1948",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 173,
+    "question": "Who was the famous reformer who nailed 95 theses to a church door?",
+    "options": ["John Calvin", "Martin Luther", "Henry VIII", "John Wycliffe"],
+    "answer": "Martin Luther",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 174,
+    "question": "What year did the Iranian Revolution occur?",
+    "options": ["1977", "1978", "1979", "1980"],
+    "answer": "1979",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 175,
+    "question": "This famous building was the seat of which empire?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Forbidden_City_Beijing_Shenwumen_Gate.JPG/320px-Forbidden_City_Beijing_Shenwumen_Gate.JPG",
+    "options": ["Mongol Empire", "Chinese Empire", "Japanese Empire", "Korean Empire"],
+    "answer": "Chinese Empire",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 176,
+    "question": "Who was the first democratically elected president of South Africa?",
+    "options": ["Desmond Tutu", "Nelson Mandela", "F.W. de Klerk", "Thabo Mbeki"],
+    "answer": "Nelson Mandela",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 177,
+    "question": "What year did the Korean War end?",
+    "options": ["1951", "1952", "1953", "1954"],
+    "answer": "1953",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 178,
+    "question": "Who was the famous Roman general who crossed the Rubicon?",
+    "options": ["Pompey", "Julius Caesar", "Mark Antony", "Augustus"],
+    "answer": "Julius Caesar",
+    "difficulty": "easy",
+    "category": "ancient"
+  },
+  {
+    "id": 179,
+    "question": "What year did the League of Nations form?",
+    "options": ["1918", "1919", "1920", "1921"],
+    "answer": "1920",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 180,
+    "question": "Who was the founder of the Mongol Empire?",
+    "options": ["Kublai Khan", "Genghis Khan", "Tamerlane", "Ogedei Khan"],
+    "answer": "Genghis Khan",
+    "difficulty": "easy",
+    "category": "general"
+  },
+  {
+    "id": 181,
+    "question": "What year did the Enlightenment period begin?",
+    "options": ["1650", "1685", "1715", "1740"],
+    "answer": "1715",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 182,
+    "question": "Who wrote 'The Prince' about political power?",
+    "options": ["Plato", "Niccolo Machiavelli", "Thomas Hobbes", "John Locke"],
+    "answer": "Niccolo Machiavelli",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 183,
+    "question": "What year did the Treaty of Tordesillas divide the New World?",
+    "options": ["1492", "1494", "1498", "1502"],
+    "answer": "1494",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 184,
+    "question": "Who was the first European to reach India by sea?",
+    "options": ["Christopher Columbus", "Vasco da Gama", "Ferdinand Magellan", "Amerigo Vespucci"],
+    "answer": "Vasco da Gama",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 185,
+    "question": "What year did the American Gold Rush begin?",
+    "options": ["1846", "1848", "1850", "1852"],
+    "answer": "1848",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 186,
+    "question": "Who was the Viking king who invaded England in 1066?",
+    "options": ["Harald Hardrada", "William the Conqueror", "Erik the Red", "Leif Erikson"],
+    "answer": "William the Conqueror",
+    "difficulty": "medium",
+    "category": "medieval"
+  },
+  {
+    "id": 187,
+    "question": "What year did the bubonic plague first arrive in Europe?",
+    "options": ["1347", "1357", "1367", "1377"],
+    "answer": "1347",
+    "difficulty": "hard",
+    "category": "medieval"
+  },
+  {
+    "id": 188,
+    "question": "Who was the pharaoh who built Abu Simbel?",
+    "options": ["Tutankhamun", "Ramesses II", "Khufu", "Akhenaten"],
+    "answer": "Ramesses II",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 189,
+    "question": "What year did the Yalta Conference occur?",
+    "options": ["1943", "1944", "1945", "1946"],
+    "answer": "1945",
+    "difficulty": "hard",
+    "category": "world-wars"
+  },
+  {
+    "id": 190,
+    "question": "Who was the first Roman Catholic US President?",
+    "options": ["Franklin D. Roosevelt", "Harry Truman", "John F. Kennedy", "Lyndon B. Johnson"],
+    "answer": "John F. Kennedy",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 191,
+    "question": "What year did the Taiping Rebellion begin in China?",
+    "options": ["1840", "1845", "1850", "1855"],
+    "answer": "1850",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 192,
+    "question": "Who invented the phonograph?",
+    "options": ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Guglielmo Marconi"],
+    "answer": "Thomas Edison",
+    "difficulty": "medium",
+    "category": "industrial"
+  },
+  {
+    "id": 193,
+    "question": "What year did the Inca Empire fall?",
+    "options": ["1521", "1531", "1533", "1541"],
+    "answer": "1533",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 194,
+    "question": "Who was the first female aviator to fly solo across the Atlantic?",
+    "options": ["Bessie Coleman", "Amelia Earhart", "Harriet Quimby", "Jacqueline Cochran"],
+    "answer": "Amelia Earhart",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 195,
+    "question": "What year did the Aztec Empire fall?",
+    "options": ["1519", "1521", "1523", "1525"],
+    "answer": "1521",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 196,
+    "question": "Who was the emperor of Japan during World War II?",
+    "options": ["Emperor Meiji", "Emperor Taisho", "Emperor Hirohito", "Emperor Akihito"],
+    "answer": "Emperor Hirohito",
+    "difficulty": "medium",
+    "category": "world-wars"
+  },
+  {
+    "id": 197,
+    "question": "What year did the Bay of Pigs invasion occur?",
+    "options": ["1959", "1960", "1961", "1962"],
+    "answer": "1961",
+    "difficulty": "hard",
+    "category": "cold-war"
+  },
+  {
+    "id": 198,
+    "question": "Who was the queen of Castile who funded Columbus's voyage?",
+    "options": ["Isabella I", "Catherine of Aragon", "Joanna of Castile", "Maria of Aragon"],
+    "answer": "Isabella I",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 199,
+    "question": "What year did the Battle of Thermopylae occur?",
+    "options": ["490 BC", "480 BC", "470 BC", "460 BC"],
+    "answer": "480 BC",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 200,
+    "question": "Who was the British Prime Minister during most of World War I?",
+    "options": ["Winston Churchill", "Neville Chamberlain", "David Lloyd George", "Herbert Asquith"],
+    "answer": "David Lloyd George",
+    "difficulty": "hard",
+    "category": "world-wars"
+  },
+  {
+    "id": 201,
+    "question": "What year did the Mayan civilization collapse?",
+    "options": ["800 AD", "900 AD", "1000 AD", "1100 AD"],
+    "answer": "900 AD",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 202,
+    "question": "Who invented the mechanical reaper?",
+    "options": ["Eli Whitney", "Cyrus McCormick", "John Deere", "Samuel Slater"],
+    "answer": "Cyrus McCormick",
+    "difficulty": "hard",
+    "category": "industrial"
+  },
+  {
+    "id": 203,
+    "question": "What year did the Sino-Japanese War begin?",
+    "options": ["1934", "1935", "1937", "1939"],
+    "answer": "1937",
+    "difficulty": "hard",
+    "category": "general"
+  },
+  {
+    "id": 204,
+    "question": "Who was the Roman emperor during the Great Fire of Rome?",
+    "options": ["Caligula", "Nero", "Tiberius", "Claudius"],
+    "answer": "Nero",
+    "difficulty": "medium",
+    "category": "ancient"
+  },
+  {
+    "id": 205,
+    "question": "What year did the Hungarian Revolution occur?",
+    "options": ["1954", "1955", "1956", "1957"],
+    "answer": "1956",
+    "difficulty": "hard",
+    "category": "cold-war"
+  },
+  {
+    "id": 206,
+    "question": "Who discovered X-rays?",
+    "options": ["Marie Curie", "Wilhelm Röntgen", "Antoine Becquerel", "Ernest Rutherford"],
+    "answer": "Wilhelm Röntgen",
+    "difficulty": "medium",
+    "category": "general"
+  },
+  {
+    "id": 207,
+    "question": "What year did the Prague Spring occur?",
+    "options": ["1966", "1967", "1968", "1969"],
+    "answer": "1968",
+    "difficulty": "hard",
+    "category": "cold-war"
+  },
+  {
+    "id": 208,
+    "question": "Who was the founder of the Achaemenid Persian Empire?",
+    "options": ["Darius I", "Xerxes I", "Cyrus the Great", "Artaxerxes I"],
+    "answer": "Cyrus the Great",
+    "difficulty": "hard",
+    "category": "ancient"
+  },
+  {
+    "id": 209,
+    "question": "What year did the Sputnik satellite launch?",
+    "options": ["1955", "1956", "1957", "1958"],
+    "answer": "1957",
+    "difficulty": "medium",
+    "category": "cold-war"
+  },
+  {
+    "id": 210,
+    "question": "Who was the last emperor of China?",
+    "options": ["Empress Dowager Cixi", "Pu Yi", "Emperor Guangxu", "Emperor Kangxi"],
+    "answer": "Pu Yi",
+    "difficulty": "hard",
+    "category": "general"
+  }
+]

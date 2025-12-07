@@ -133,29 +133,474 @@ let userData = loadUserData();
 console.log('User Data System loaded:', userData);
 
 // ============================================
-// 🌍 TRANSLATION SYSTEM
+// ⭐ XP & LEVELING SYSTEM (Per Topic)
 // ============================================
 
-let currentLanguage = localStorage.getItem('quizzena_language') || 'en';
-let translations = {};
-
-// Load language file
-async function loadLanguage(lang) {
-  try {
-    const response = await fetch(`languages/${lang}.json`);
-    if (!response.ok) throw new Error('Language file not found');
-    translations = await response.json();
-    currentLanguage = lang;
-    localStorage.setItem('quizzena_language', lang);
-    applyTranslations();
-    console.log(`Language loaded: ${lang}`);
-  } catch (error) {
-    console.error('Error loading language:', error);
-    // Fallback to English if language fails to load
-    if (lang !== 'en') {
-      loadLanguage('en');
-    }
+// Default XP data for a new topic
+const defaultTopicXPData = {
+  level: 1,
+  xp: 0,
+  modesUnlocked: {
+    casual: true,
+    timeAttack: false,
+    threeHearts: false
   }
+};
+
+// Get or initialize XP data for a topic
+function getTopicXPData(topicId) {
+  // Ensure topic exists in stats
+  if (!userData.stats.topics[topicId]) {
+    userData.stats.topics[topicId] = {
+      games: 0,
+      correct: 0,
+      wrong: 0,
+      accuracy: 0,
+      bestStreak: 0
+    };
+  }
+  
+  const topic = userData.stats.topics[topicId];
+  
+  // Migrate old topics that don't have XP fields (backward compatibility)
+  if (topic.level === undefined) {
+    topic.level = 1;
+  }
+  if (topic.xp === undefined) {
+    topic.xp = 0;
+  }
+  if (topic.modesUnlocked === undefined) {
+    topic.modesUnlocked = {
+      casual: true,
+      timeAttack: false,
+      threeHearts: false
+    };
+  }
+  
+  return topic;
+}
+
+// Save topic data (calls existing saveUserData)
+function saveTopicXPData() {
+  saveUserData();
+}
+
+// ============================================
+// ⭐ LEVELING SYSTEM
+// ============================================
+
+// Calculate XP needed to reach a specific level
+// Formula: 40 × level²
+function xpNeededForLevel(level) {
+  return 40 * level * level;
+}
+
+// Update player level based on current XP (cumulative)
+// XP is NOT subtracted - it accumulates
+function updateLevel(topicData) {
+  // Keep leveling up while XP is enough for next level
+  while (topicData.xp >= xpNeededForLevel(topicData.level)) {
+    topicData.level++;
+    console.log(`🎉 Level up! Now level ${topicData.level}`);
+  }
+}
+
+// Get XP progress for current level (for progress bars)
+function getLevelProgress(topicData) {
+  const currentLevelXP = topicData.level > 1 ? xpNeededForLevel(topicData.level - 1) : 0;
+  const nextLevelXP = xpNeededForLevel(topicData.level);
+  const xpInCurrentLevel = topicData.xp - currentLevelXP;
+  const xpNeededForNextLevel = nextLevelXP - currentLevelXP;
+  return {
+    current: xpInCurrentLevel,
+    needed: xpNeededForNextLevel,
+    percentage: Math.floor((xpInCurrentLevel / xpNeededForNextLevel) * 100)
+  };
+}
+
+// ============================================
+// ⭐ MODE UNLOCK SYSTEM
+// ============================================
+// Casual: Always unlocked (default)
+// Time Attack: Unlocks at Level 5
+// 3 Hearts: Unlocks at Level 10
+
+const MODE_UNLOCK_LEVELS = {
+  casual: 1,        // Always unlocked
+  timeAttack: 5,    // Unlocks at level 5
+  threeHearts: 10   // Unlocks at level 10
+};
+
+// Check and update mode unlocks based on current level
+function checkModeUnlocks(topicData) {
+  let newUnlocks = [];
+  
+  // Time Attack unlocks at level 5
+  if (topicData.level >= MODE_UNLOCK_LEVELS.timeAttack && !topicData.modesUnlocked.timeAttack) {
+    topicData.modesUnlocked.timeAttack = true;
+    newUnlocks.push('timeAttack');
+    console.log('🔓 Time Attack mode unlocked!');
+  }
+  
+  // 3 Hearts unlocks at level 10
+  if (topicData.level >= MODE_UNLOCK_LEVELS.threeHearts && !topicData.modesUnlocked.threeHearts) {
+    topicData.modesUnlocked.threeHearts = true;
+    newUnlocks.push('threeHearts');
+    console.log('🔓 3 Hearts mode unlocked!');
+  }
+  
+  return newUnlocks; // Returns array of newly unlocked modes (for popups)
+}
+
+// Check if a specific mode is unlocked for a topic
+function isModeUnlocked(topicData, mode) {
+  if (mode === 'casual') return true; // Always unlocked
+  if (mode === 'time-attack') return topicData.modesUnlocked.timeAttack;
+  if (mode === 'three-hearts') return topicData.modesUnlocked.threeHearts;
+  return true;
+}
+
+// Get required level for a mode
+function getRequiredLevelForMode(mode) {
+  if (mode === 'casual') return MODE_UNLOCK_LEVELS.casual;
+  if (mode === 'time-attack') return MODE_UNLOCK_LEVELS.timeAttack;
+  if (mode === 'three-hearts') return MODE_UNLOCK_LEVELS.threeHearts;
+  return 1;
+}
+
+// ============================================
+// ⭐ XP CALCULATION FUNCTIONS
+// ============================================
+
+// Learning Curve Bonus Multiplier table (for Casual mode)
+// Helps beginners who get fewer correct answers
+const LCB_MULTIPLIERS = {
+  0: 10,  // 0 correct → ×10 = 100 XP bonus
+  1: 6,   // 1 correct → ×6 = 60 XP bonus
+  2: 4,   // 2 correct → ×4 = 40 XP bonus
+  3: 2,   // 3 correct → ×2 = 20 XP bonus
+  4: 1,   // 4 correct → ×1 = 10 XP bonus
+  5: 0    // 5 correct → ×0 = 0 XP bonus (perfect = no bonus needed)
+};
+
+/**
+ * CASUAL MODE XP FORMULA
+ * ----------------------
+ * XP = (CorrectAnswers × 10) + CompletionXP + LCB
+ * 
+ * Where:
+ * - CorrectAnswers × 10 = Performance XP
+ * - CompletionXP = 10 (always)
+ * - LCB = Learning Curve Bonus (helps beginners, fades after level 20)
+ * 
+ * LCB = 10 × LCBM(correct) × FadeFactor(level)
+ * - Level 1-20: 100% LCB
+ * - Level 21+: 0% LCB
+ */
+function getXPCasual(correctAnswers, topicData) {
+  // Performance XP: 10 XP per correct answer
+  const performanceXP = correctAnswers * 10;
+  
+  // Completion XP: Always 10
+  const completionXP = 10;
+  
+  // Learning Curve Bonus (LCB)
+  const lcbMultiplier = LCB_MULTIPLIERS[correctAnswers] || 0;
+  const lcbBase = 10 * lcbMultiplier; // Base LCB value
+  
+  // LCB Fade: 100% for levels 1-20, 0% for level 21+
+  const lcbFadeFactor = topicData.level <= 20 ? 1.0 : 0.0;
+  const lcb = Math.floor(lcbBase * lcbFadeFactor);
+  
+  const totalXP = performanceXP + completionXP + lcb;
+  
+  console.log(`📊 Casual XP: ${correctAnswers}×10 + 10 + ${lcb} LCB = ${totalXP}`);
+  return totalXP;
+}
+
+/**
+ * TIME ATTACK MODE XP FORMULA
+ * ---------------------------
+ * XP = (CorrectCount × 5) + (QuestionsAnswered × 1) + AccuracyBonus + CompletionXP
+ * 
+ * Where:
+ * - CorrectCount × 5 = Performance XP
+ * - QuestionsAnswered × 1 = Speed XP (reward for fast play)
+ * - AccuracyBonus = CorrectCount × (CorrectCount / QuestionsAnswered)
+ * - CompletionXP = 20 (always, no fade)
+ */
+function getXPTimeAttack(correctCount, questionsAnswered, topicData) {
+  // Performance XP: 5 XP per correct
+  const performanceXP = correctCount * 5;
+  
+  // Speed XP: 1 XP per question answered
+  const speedXP = questionsAnswered * 1;
+  
+  // Accuracy Bonus: rewards high accuracy
+  const accuracy = questionsAnswered > 0 ? correctCount / questionsAnswered : 0;
+  const accuracyBonus = Math.floor(correctCount * accuracy);
+  
+  // Completion XP: Always 20 (no fade)
+  const completionXP = 20;
+  
+  const totalXP = performanceXP + speedXP + accuracyBonus + completionXP;
+  
+  console.log(`📊 Time Attack XP: ${correctCount}×5 + ${questionsAnswered}×1 + ${accuracyBonus} accuracy + 20 = ${totalXP}`);
+  return totalXP;
+}
+
+/**
+ * 3 HEARTS MODE XP FORMULA
+ * ------------------------
+ * XP = (CorrectAnswers × 12.5) + (SurvivedQuestions × 1.5) + (LongestStreak × 2)
+ * 
+ * Where:
+ * - CorrectAnswers × 12.5 = Performance XP (highest in game - mastery mode)
+ * - SurvivedQuestions × 1.5 = Survival XP (how long you lasted)
+ * - LongestStreak × 2 = Streak Bonus
+ * - No Completion XP (game ends by death)
+ * - No Accuracy Bonus (accuracy naturally high)
+ */
+function getXPThreeHearts(correctAnswers, survivedQuestions, longestStreak, topicData) {
+  // Performance XP: 12.5 XP per correct (highest reward)
+  const performanceXP = correctAnswers * 12.5;
+  
+  // Survival XP: 1.5 XP per question survived
+  const survivalXP = survivedQuestions * 1.5;
+  
+  // Streak Bonus: 2 XP per streak count
+  const streakBonus = longestStreak * 2;
+  
+  const totalXP = Math.floor(performanceXP + survivalXP + streakBonus);
+  
+  console.log(`📊 3 Hearts XP: ${correctAnswers}×12.5 + ${survivedQuestions}×1.5 + ${longestStreak}×2 = ${totalXP}`);
+  return totalXP;
+}
+
+/**
+ * ADD XP TO TOPIC
+ * ---------------
+ * Central function to add XP, update level, and check unlocks
+ */
+function addXP(topicId, amount) {
+  const topicData = getTopicXPData(topicId);
+  
+  topicData.xp += amount;
+  console.log(`✨ +${amount} XP for ${topicId}! Total: ${topicData.xp}`);
+  
+  // Check for level up
+  const oldLevel = topicData.level;
+  updateLevel(topicData);
+  
+  // Check for mode unlocks
+  const newUnlocks = checkModeUnlocks(topicData);
+  
+  // Save data
+  saveTopicXPData();
+  
+  return {
+    xpGained: amount,
+    totalXP: topicData.xp,
+    leveledUp: topicData.level > oldLevel,
+    oldLevel: oldLevel,
+    newLevel: topicData.level,
+    newUnlocks: newUnlocks
+  };
+}
+
+console.log('XP System initialized');
+
+// ============================================
+// 🛠️ DEV PANEL (For Testing)
+// ============================================
+
+let devModeActive = false;
+let originalTimeAttackDuration = 60;
+
+function showDevPanel() {
+  devModeActive = true;
+  
+  // Create dev panel overlay
+  let devPanel = document.getElementById('dev-panel');
+  if (!devPanel) {
+    devPanel = document.createElement('div');
+    devPanel.id = 'dev-panel';
+    document.body.appendChild(devPanel);
+  }
+  
+  const flagsData = getTopicXPData('flags');
+  const flagsProgress = getLevelProgress(flagsData);
+  
+  devPanel.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:20px;box-sizing:border-box;overflow-y:auto;';
+  
+  devPanel.innerHTML = `
+    <div style="width:100%;max-width:400px;">
+      <h2 style="color:#FF5722;font-size:24px;text-align:center;margin-bottom:20px;">🛠️ DEV PANEL</h2>
+      
+      <!-- Flags XP Info -->
+      <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:15px;margin-bottom:20px;">
+        <div style="color:#FFD700;font-size:18px;font-weight:bold;text-align:center;">🏳️ Flags Topic</div>
+        <div style="color:#fff;text-align:center;margin-top:10px;">
+          <div>Level: <span style="color:#FFD700;font-weight:bold;">${flagsData.level}</span></div>
+          <div>XP: <span style="color:#FFD700;font-weight:bold;">${flagsData.xp}</span></div>
+          <div>Progress: ${flagsProgress.current}/${flagsProgress.needed} (${flagsProgress.percentage}%)</div>
+          <div style="margin-top:5px;">
+            Modes: Casual ✅ | Time Attack ${flagsData.modesUnlocked.timeAttack ? '✅' : '🔒'} | 3 Hearts ${flagsData.modesUnlocked.threeHearts ? '✅' : '🔒'}
+          </div>
+        </div>
+      </div>
+      
+      <!-- XP Controls -->
+      <div style="background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#4CAF50;font-size:16px;font-weight:bold;margin-bottom:10px;">Add XP to Flags</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <button onclick="devAddXP(100)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+100 XP</button>
+          <button onclick="devAddXP(1000)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+1000 XP</button>
+          <button onclick="devAddXP(10000)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+10000 XP</button>
+          <button onclick="devResetXP()" style="padding:12px 20px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Reset XP</button>
+        </div>
+      </div>
+      
+      <!-- Level Skip -->
+      <div style="background:rgba(156,39,176,0.1);border:1px solid rgba(156,39,176,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#9C27B0;font-size:16px;font-weight:bold;margin-bottom:10px;">Skip to Level</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <button onclick="devSkipToLevel(5)" style="padding:12px 20px;background:#9C27B0;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Level 5 (Time Attack)</button>
+          <button onclick="devSkipToLevel(10)" style="padding:12px 20px;background:#9C27B0;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Level 10 (3 Hearts)</button>
+        </div>
+      </div>
+      
+      <!-- Game Settings -->
+      <div style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#FF6B6B;font-size:16px;font-weight:bold;margin-bottom:10px;">Game Settings</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <button onclick="devSetTimeAttack5Sec()" style="padding:12px 20px;background:#FF6B6B;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Time Attack = 5 sec</button>
+          <button onclick="devResetTimeAttack()" style="padding:12px 20px;background:#666;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Time Attack = 60 sec</button>
+        </div>
+      </div>
+      
+      <!-- Data Reset -->
+      <div style="background:rgba(244,67,54,0.1);border:1px solid rgba(244,67,54,0.3);border-radius:10px;padding:15px;margin-bottom:20px;">
+        <div style="color:#f44336;font-size:16px;font-weight:bold;margin-bottom:10px;">⚠️ Danger Zone</div>
+        <div style="display:flex;justify-content:center;">
+          <button onclick="devResetAllData()" style="padding:12px 30px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">🗑️ Reset ALL Data</button>
+        </div>
+      </div>
+      
+      <!-- Exit Button -->
+      <button onclick="hideDevPanel()" style="width:100%;padding:16px;background:linear-gradient(135deg,#333,#222);color:#fff;border:none;border-radius:12px;font-size:18px;cursor:pointer;">✖ Exit Dev Panel</button>
+    </div>
+  `;
+  
+  // Hide the dev panel button
+  const devBtn = document.getElementById('dev-panel-btn');
+  if (devBtn) devBtn.style.display = 'none';
+}
+
+function hideDevPanel() {
+  devModeActive = false;
+  const devPanel = document.getElementById('dev-panel');
+  if (devPanel) devPanel.remove();
+  
+  // Show the dev panel button again
+  const devBtn = document.getElementById('dev-panel-btn');
+  if (devBtn) devBtn.style.display = 'block';
+}
+
+function devAddXP(amount) {
+  const result = addXP('flags', amount);
+  console.log(`DEV: Added ${amount} XP to flags`, result);
+  showDevPanel(); // Refresh panel
+}
+
+function devResetXP() {
+  const topicData = getTopicXPData('flags');
+  topicData.xp = 0;
+  topicData.level = 1;
+  topicData.modesUnlocked = {
+    casual: true,
+    timeAttack: false,
+    threeHearts: false
+  };
+  saveTopicXPData();
+  console.log('DEV: Reset flags XP');
+  showDevPanel(); // Refresh panel
+}
+
+function devSkipToLevel(targetLevel) {
+  const topicData = getTopicXPData('flags');
+  // Calculate XP needed for target level
+  const xpNeeded = xpNeededForLevel(targetLevel - 1);
+  topicData.xp = xpNeeded;
+  topicData.level = targetLevel;
+  checkModeUnlocks(topicData);
+  saveTopicXPData();
+  console.log(`DEV: Skipped to level ${targetLevel}`);
+  showDevPanel(); // Refresh panel
+}
+
+function devSetTimeAttack5Sec() {
+  GAME_CONFIG.TIME_ATTACK_DURATION = 5;
+  console.log('DEV: Time Attack set to 5 seconds');
+  alert('Time Attack now 5 seconds!');
+}
+
+function devResetTimeAttack() {
+  GAME_CONFIG.TIME_ATTACK_DURATION = 60;
+  console.log('DEV: Time Attack reset to 60 seconds');
+  alert('Time Attack now 60 seconds!');
+}
+
+function devResetAllData() {
+  if (confirm('⚠️ This will delete ALL game data. Are you sure?')) {
+    localStorage.removeItem('quizzena_user_data');
+    GAME_CONFIG.TIME_ATTACK_DURATION = 60;
+    console.log('DEV: All data reset');
+    alert('All data reset! Reloading...');
+    location.reload();
+  }
+}
+
+// Create Dev Panel button on page load
+function createDevPanelButton() {
+  const devBtn = document.createElement('button');
+  devBtn.id = 'dev-panel-btn';
+  devBtn.innerHTML = '🛠️';
+  devBtn.style.cssText = 'position:fixed;bottom:80px;right:15px;width:50px;height:50px;background:#FF5722;color:#fff;border:none;border-radius:50%;font-size:24px;cursor:pointer;z-index:9998;box-shadow:0 4px 15px rgba(255,87,34,0.4);';
+  devBtn.onclick = showDevPanel;
+  document.body.appendChild(devBtn);
+}
+
+// Initialize dev button when DOM is ready
+document.addEventListener('DOMContentLoaded', createDevPanelButton);
+
+console.log('Dev Panel initialized');
+
+// ============================================
+// 🌍 TRANSLATION SYSTEM (BUNDLED FOR NATIVE APPS)
+// ============================================
+// Translations are embedded directly (not fetched via HTTP)
+// so they work inside Capacitor/Cordova native shells.
+
+const LANGUAGE_DATA = {
+  en: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Home","nav_topics":"Topics","nav_stats":"Stats","nav_leaderboard":"Leaderboard","nav_profile":"Profile","home_quiz_of_day":"🏆 QUIZ OF THE DAY","home_play_now":"▶ PLAY NOW","home_explore_categories":"Explore Categories","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geography","category_football":"Football","category_movies":"Movies","category_tvshows":"TV Shows","category_history":"History","category_logos":"Logos","profile_settings":"Settings","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Wins","profile_stats_accuracy":"Accuracy","profile_achievements":"Achievements","profile_progress":"Progress","stats_title":"Stats","stats_total_played":"Total Played","stats_total_correct":"Total Correct","stats_accuracy":"Accuracy","stats_best_streak":"Best Streak","stats_most_played":"Most Played","stats_overall_performance":"Overall Performance","stats_total_games_played":"Total Games Played","stats_total_questions_answered":"Total Questions Answered","stats_correct_answers":"Correct Answers","stats_wrong_answers":"Wrong Answers","stats_overall_accuracy":"Overall Accuracy","stats_avg_time_per_question":"Avg Time per Question","stats_best_streak_label":"Best Streak","stats_total_time_played":"Total Time Played","stats_games":"Games","stats_best_label":"Best","stats_search_topic":"Search Topic","stats_search_placeholder":"Type topic name...","stats_search_found":"Found:","stats_search_not_found":"Topic not found","leaderboard_title":"Leaderboard","leaderboard_global":"Global Rankings","leaderboard_coming_soon":"Coming Soon","game_score":"Score","game_timer":"Time","game_question":"Question","game_next":"Next","game_correct":"Correct!","game_wrong":"Wrong!","game_lives":"Lives","game_streak":"Streak","result_game_over":"Game Over","result_final_score":"Final Score","result_play_again":"Play Again","result_main_menu":"Main Menu","result_perfect":"Perfect Score!","result_great":"Great Job!","result_good":"Good Effort!","result_try_again":"Keep Practicing!","settings_title":"Settings","settings_language":"Language","settings_theme":"Theme","settings_sound":"Sound","settings_coming_soon":"Coming Soon","settings_close":"Close","settings_performance":"Performance Mode","settings_performance_hint":"Enable for smoother scrolling (disables animations)","sound_music":"Music","sound_effects":"Sound Effects","sound_volume":"Volume","sound_mute":"Mute","sound_unmute":"Unmute","mode_single_player":"Single Player","mode_two_player":"Two Player","mode_time_attack":"Time Attack","mode_quick_game":"Quick Game","mode_three_strikes":"Three Strikes","mode_select_mode":"Select Mode","mode_back":"Back","difficulty_easy":"Easy","difficulty_medium":"Medium","difficulty_hard":"Hard","difficulty_select":"Select Difficulty","common_loading":"Loading...","common_error":"Error","common_retry":"Retry","common_cancel":"Cancel","common_confirm":"Confirm","common_save":"Save","common_reset":"Reset","common_yes":"Yes","common_no":"No"},
+  es: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Inicio","nav_topics":"Temas","nav_stats":"Estadísticas","nav_leaderboard":"Clasificación","nav_profile":"Perfil","home_quiz_of_day":"🏆 QUIZ DEL DÍA","home_play_now":"▶ JUGAR","home_explore_categories":"Explorar Categorías","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geografía","category_football":"Fútbol","category_movies":"Películas","category_tvshows":"Series","category_history":"Historia","category_logos":"Logos","profile_settings":"Ajustes","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Victorias","profile_stats_accuracy":"Precisión","profile_achievements":"Logros","profile_progress":"Progreso","stats_title":"Estadísticas","stats_total_played":"Total Jugados","stats_total_correct":"Total Correctas","stats_accuracy":"Precisión","stats_best_streak":"Mejor Racha","stats_most_played":"Más Jugados","stats_overall_performance":"Rendimiento General","stats_total_games_played":"Total de Partidas Jugadas","stats_total_questions_answered":"Total de Preguntas Respondidas","stats_correct_answers":"Respuestas Correctas","stats_wrong_answers":"Respuestas Incorrectas","stats_overall_accuracy":"Precisión General","stats_avg_time_per_question":"Tiempo Promedio por Pregunta","stats_best_streak_label":"Mejor Racha","stats_total_time_played":"Tiempo Total Jugado","stats_games":"Partidas","stats_best_label":"Mejor","stats_search_topic":"Buscar Tema","stats_search_placeholder":"Escribe el nombre del tema...","stats_search_found":"Encontrado:","stats_search_not_found":"Tema no encontrado","leaderboard_title":"Clasificación","leaderboard_global":"Ranking Global","leaderboard_coming_soon":"Próximamente","game_score":"Puntuación","game_timer":"Tiempo","game_question":"Pregunta","game_next":"Siguiente","game_correct":"¡Correcto!","game_wrong":"¡Incorrecto!","game_lives":"Vidas","game_streak":"Racha","result_game_over":"Fin del Juego","result_final_score":"Puntuación Final","result_play_again":"Jugar de Nuevo","result_main_menu":"Menú Principal","result_perfect":"¡Puntuación Perfecta!","result_great":"¡Excelente!","result_good":"¡Buen Trabajo!","result_try_again":"¡Sigue Practicando!","settings_title":"Ajustes","settings_language":"Idioma","settings_theme":"Tema","settings_sound":"Sonido","settings_coming_soon":"Próximamente","settings_close":"Cerrar","settings_performance":"Modo Rendimiento","settings_performance_hint":"Activa para un desplazamiento más fluido (desactiva animaciones)","sound_music":"Música","sound_effects":"Efectos de Sonido","sound_volume":"Volumen","sound_mute":"Silenciar","sound_unmute":"Activar Sonido","mode_single_player":"Un Jugador","mode_two_player":"Dos Jugadores","mode_time_attack":"Contrarreloj","mode_quick_game":"Partida Rápida","mode_three_strikes":"Tres Strikes","mode_select_mode":"Seleccionar Modo","mode_back":"Atrás","difficulty_easy":"Fácil","difficulty_medium":"Medio","difficulty_hard":"Difícil","difficulty_select":"Seleccionar Dificultad","common_loading":"Cargando...","common_error":"Error","common_retry":"Reintentar","common_cancel":"Cancelar","common_confirm":"Confirmar","common_save":"Guardar","common_reset":"Restablecer","common_yes":"Sí","common_no":"No"},
+  ru: {"app_name":"Quizzena","version":"Quizzena v1 Бета","nav_home":"Главная","nav_topics":"Темы","nav_stats":"Статистика","nav_leaderboard":"Рейтинг","nav_profile":"Профиль","home_quiz_of_day":"🏆 ВИКТОРИНА ДНЯ","home_play_now":"▶ ИГРАТЬ","home_explore_categories":"Категории","home_quizzes":"викторин","home_quiz":"викторина","category_geography":"География","category_football":"Футбол","category_movies":"Фильмы","category_tvshows":"Сериалы","category_history":"История","category_logos":"Логотипы","profile_settings":"Настройки","profile_stats_quizzes":"Викторины","profile_stats_wins":"Победы","profile_stats_accuracy":"Точность","profile_achievements":"Достижения","profile_progress":"Прогресс","stats_title":"Статистика","stats_total_played":"Всего сыграно","stats_total_correct":"Правильных ответов","stats_accuracy":"Точность","stats_best_streak":"Лучшая серия","stats_most_played":"Часто играемые","stats_overall_performance":"Общая статистика","stats_total_games_played":"Всего игр","stats_total_questions_answered":"Всего вопросов","stats_correct_answers":"Правильные ответы","stats_wrong_answers":"Неправильные ответы","stats_overall_accuracy":"Общая точность","stats_avg_time_per_question":"Среднее время на вопрос","stats_best_streak_label":"Лучшая серия","stats_total_time_played":"Общее время игры","stats_games":"Игры","stats_best_label":"Лучший","stats_search_topic":"Поиск темы","stats_search_placeholder":"Введите название темы...","stats_search_found":"Найдено:","stats_search_not_found":"Тема не найдена","leaderboard_title":"Рейтинг","leaderboard_global":"Мировой рейтинг","leaderboard_coming_soon":"Скоро","game_score":"Счёт","game_timer":"Время","game_question":"Вопрос","game_next":"Далее","game_correct":"Правильно!","game_wrong":"Неправильно!","game_lives":"Жизни","game_streak":"Серия","result_game_over":"Игра окончена","result_final_score":"Итоговый счёт","result_play_again":"Играть снова","result_main_menu":"Главное меню","result_perfect":"Идеальный результат!","result_great":"Отлично!","result_good":"Хорошо!","result_try_again":"Продолжай практиковаться!","settings_title":"Настройки","settings_language":"Язык","settings_theme":"Тема","settings_sound":"Звук","settings_coming_soon":"Скоро","settings_close":"Закрыть","settings_performance":"Режим производительности","settings_performance_hint":"Включите для плавной прокрутки (отключает анимации)","sound_music":"Музыка","sound_effects":"Звуковые эффекты","sound_volume":"Громкость","sound_mute":"Выключить звук","sound_unmute":"Включить звук","mode_single_player":"Один игрок","mode_two_player":"Два игрока","mode_time_attack":"На время","mode_quick_game":"Быстрая игра","mode_three_strikes":"Три ошибки","mode_select_mode":"Выберите режим","mode_back":"Назад","difficulty_easy":"Легко","difficulty_medium":"Средне","difficulty_hard":"Сложно","difficulty_select":"Выберите сложность","common_loading":"Загрузка...","common_error":"Ошибка","common_retry":"Повторить","common_cancel":"Отмена","common_confirm":"Подтвердить","common_save":"Сохранить","common_reset":"Сбросить","common_yes":"Да","common_no":"Нет"},
+  tr: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Ana Sayfa","nav_topics":"Konular","nav_stats":"İstatistikler","nav_leaderboard":"Sıralama","nav_profile":"Profil","home_quiz_of_day":"🏆 GÜNÜN BİLMECESİ","home_play_now":"▶ OYNA","home_explore_categories":"Kategorileri Keşfet","home_quizzes":"bilmece","home_quiz":"bilmece","category_geography":"Coğrafya","category_football":"Futbol","category_movies":"Filmler","category_tvshows":"Diziler","category_history":"Tarih","category_logos":"Logolar","profile_settings":"Ayarlar","profile_stats_quizzes":"Bilmeceler","profile_stats_wins":"Kazanımlar","profile_stats_accuracy":"Doğruluk","profile_achievements":"Başarılar","profile_progress":"İlerleme","stats_title":"İstatistikler","stats_total_played":"Toplam Oynanan","stats_total_correct":"Toplam Doğru","stats_accuracy":"Doğruluk","stats_best_streak":"En İyi Seri","stats_most_played":"En Çok Oynanan","stats_overall_performance":"Genel Performans","stats_total_games_played":"Toplam Oynanan Oyun","stats_total_questions_answered":"Toplam Yanıtlanan Soru","stats_correct_answers":"Doğru Cevaplar","stats_wrong_answers":"Yanlış Cevaplar","stats_overall_accuracy":"Genel Doğruluk","stats_avg_time_per_question":"Soru Başına Ortalama Süre","stats_best_streak_label":"En İyi Seri","stats_total_time_played":"Toplam Oynama Süresi","stats_games":"Oyunlar","stats_best_label":"En İyi","stats_search_topic":"Konu Ara","stats_search_placeholder":"Konu adını yaz...","stats_search_found":"Bulundu:","stats_search_not_found":"Konu bulunamadı","leaderboard_title":"Sıralama","leaderboard_global":"Dünya Sıralaması","leaderboard_coming_soon":"Yakında","game_score":"Puan","game_timer":"Süre","game_question":"Soru","game_next":"Sonraki","game_correct":"Doğru!","game_wrong":"Yanlış!","game_lives":"Can","game_streak":"Seri","result_game_over":"Oyun Bitti","result_final_score":"Final Puanı","result_play_again":"Tekrar Oyna","result_main_menu":"Ana Menü","result_perfect":"Mükemmel Skor!","result_great":"Harika!","result_good":"İyi İş!","result_try_again":"Pratik Yapmaya Devam Et!","settings_title":"Ayarlar","settings_language":"Dil","settings_theme":"Tema","settings_sound":"Ses","settings_coming_soon":"Yakında","settings_close":"Kapat","settings_performance":"Performans Modu","settings_performance_hint":"Daha akıcı kaydırma için etkinleştir (animasyonları kapatır)","sound_music":"Müzik","sound_effects":"Ses Efektleri","sound_volume":"Ses Seviyesi","sound_mute":"Sessiz","sound_unmute":"Sesi Aç","mode_single_player":"Tek Oyuncu","mode_two_player":"İki Oyuncu","mode_time_attack":"Zamana Karşı","mode_quick_game":"Hızlı Oyun","mode_three_strikes":"Üç Hak","mode_select_mode":"Mod Seç","mode_back":"Geri","difficulty_easy":"Kolay","difficulty_medium":"Orta","difficulty_hard":"Zor","difficulty_select":"Zorluk Seç","common_loading":"Yükleniyor...","common_error":"Hata","common_retry":"Tekrar Dene","common_cancel":"İptal","common_confirm":"Onayla","common_save":"Kaydet","common_reset":"Sıfırla","common_yes":"Evet","common_no":"Hayır"}
+};
+
+let currentLanguage = localStorage.getItem('quizzena_language') || 'en';
+let translations = LANGUAGE_DATA[currentLanguage] || LANGUAGE_DATA.en;
+
+// Load language (sync - no HTTP needed, works in native apps)
+function loadLanguage(lang) {
+  if (!LANGUAGE_DATA[lang]) {
+    lang = 'en'; // Fallback to English
+  }
+  translations = LANGUAGE_DATA[lang];
+  currentLanguage = lang;
+  localStorage.setItem('quizzena_language', lang);
+  applyTranslations();
 }
 
 // Get translation by key
@@ -403,8 +848,8 @@ const backToHomeBtn = document.getElementById("back-to-home-btn");
 // 🎯 DOM ELEMENTS - BUTTONS (MODE SELECT)
 // ========================================
 const timeAttackBtn = document.getElementById("time-attack-btn");
-const quickGameBtn = document.getElementById("quick-game-btn");
-const threeStrikesBtn = document.getElementById("three-strikes-btn");
+const casualBtn = document.getElementById("casual-btn");
+const threeHeartsBtn = document.getElementById("three-hearts-btn");
 const backBtn = document.getElementById("back-btn");
 
 // ========================================
@@ -442,9 +887,9 @@ const backFromDifficultyBtn = document.getElementById("back-from-difficulty");
 // ========================================
 const GAME_CONFIG = {
   TIME_ATTACK_DURATION: 60,
-  QUICK_GAME_QUESTIONS: 10,
-  QUICK_GAME_TIME_PER_Q: 10,
-  THREE_STRIKES_LIVES: 3,
+  CASUAL_QUESTIONS: 5,
+  CASUAL_TIME_PER_Q: 10,
+  THREE_HEARTS_LIVES: 3,
   TWO_PLAYER_QUESTIONS: 5,
   TWO_PLAYER_TIME_PER_Q: 20,
   FEEDBACK_DELAY_FAST: 500,
@@ -471,7 +916,7 @@ function resetGame() {
   player1Score = 0;
   player2Score = 0;
   singlePlayerScore = 0;
-  livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
+  livesRemaining = GAME_CONFIG.THREE_HEARTS_LIVES;
   currentPlayer = 1;
   answered = false;
   maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
@@ -690,21 +1135,21 @@ timeAttackBtn.onclick = () => {
   loadFlags();
 };
 
-quickGameBtn.onclick = () => {
+casualBtn.onclick = () => {
   playClickSound();
   resetGame();
-  gameMode = 'quick-game';
-  maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+  gameMode = 'casual';
+  maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
   modeSelect.classList.add("hidden");
   game.classList.remove("hidden");
   loadFlags();
 };
 
-threeStrikesBtn.onclick = () => {
+threeHeartsBtn.onclick = () => {
   playClickSound();
   resetGame();
-  gameMode = 'three-strikes';
-  livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
+  gameMode = 'three-hearts';
+  livesRemaining = GAME_CONFIG.THREE_HEARTS_LIVES;
   modeSelect.classList.add("hidden");
   game.classList.remove("hidden");
   loadFlags();
@@ -936,8 +1381,8 @@ function startTimer(correctAnswer) {
       }
     }, 1000);
 
-  } else if (gameMode === 'quick-game') {
-    timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
+  } else if (gameMode === 'casual') {
+    timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
     answered = false;
 
     // Update initial display
@@ -987,7 +1432,7 @@ function startTimer(correctAnswer) {
       }
     }, 1000);
 
-  } else if (gameMode === 'three-strikes') {
+  } else if (gameMode === 'three-hearts') {
     if (!isUnified) {
       timerDisplay.textContent = `❤️ Lives: ${livesRemaining}`;
     }
@@ -1062,7 +1507,7 @@ function handleTimeout(correctAnswer) {
     currentStreak = 0;
   }
 
-  if (gameMode === 'quick-game') {
+  if (gameMode === 'casual') {
     resultBox.textContent = `⏰ Time's up! It was ${correctAnswer}`;
     disableAnswers();
     setTimeout(() => {
@@ -1089,7 +1534,7 @@ function startRound() {
   if (gameEnded) return;
 
   if (gameMode === 'two' && questionCount >= maxQuestions) return endGame();
-  if (gameMode === 'quick-game' && questionCount >= maxQuestions) return endGame();
+  if (gameMode === 'casual' && questionCount >= maxQuestions) return endGame();
 
   resultBox.textContent = "";
   answersDiv.innerHTML = "";
@@ -1105,9 +1550,9 @@ function startRound() {
   questionCount++;
   
   // SET QUESTION COUNTER
-  if (gameMode === 'quick-game') {
+  if (gameMode === 'casual') {
     questionCounter.style.display = "block";
-    questionCounter.textContent = `${questionCount}/10`;
+    questionCounter.textContent = `${questionCount}/${maxQuestions}`;
   } else {
     questionCounter.style.display = "none";
   }
@@ -1308,7 +1753,7 @@ function checkAnswer(selected, correct) {
       startRound();
     }, GAME_CONFIG.FEEDBACK_DELAY_FAST);
     
-  } else if (gameMode === 'quick-game') {
+  } else if (gameMode === 'casual') {
     answered = true;
     clearInterval(timer);
     disableAnswers();
@@ -1342,7 +1787,7 @@ function checkAnswer(selected, correct) {
       }
     }, GAME_CONFIG.FEEDBACK_DELAY_NORMAL);
     
-  } else if (gameMode === 'three-strikes') {
+  } else if (gameMode === 'three-hearts') {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
@@ -1443,10 +1888,10 @@ function endGame() {
   if (gameMode === 'time-attack') {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
     score.textContent = "";
-  } else if (gameMode === 'quick-game') {
-    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/10`;
+  } else if (gameMode === 'casual') {
+    resultBox.textContent = `GAME OVER - Score: ${singlePlayerScore}/${maxQuestions}`;
     score.textContent = "";
-  } else if (gameMode === 'three-strikes') {
+  } else if (gameMode === 'three-hearts') {
     resultBox.textContent = `GAME OVER - Final Score: ${singlePlayerScore}`;
     score.textContent = "";
   } else {
@@ -1469,11 +1914,11 @@ playAgainBtn.onclick = () => {
   
   if (gameMode === 'two') {
     maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
-  } else if (gameMode === 'quick-game') {
-    maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
+  } else if (gameMode === 'casual') {
+    maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
   }
   
-  if (gameMode === 'time-attack' || gameMode === 'quick-game' || gameMode === 'three-strikes') {
+  if (gameMode === 'time-attack' || gameMode === 'casual' || gameMode === 'three-hearts') {
     score.textContent = "Score: 0";
   } else {
     score.textContent = "P1: 0 | P2: 0";
@@ -1976,6 +2421,8 @@ if (languageSelect) {
   });
 }
 
+
+
 // ========================================
 // 🔊 SOUND SYSTEM
 // ========================================
@@ -2137,6 +2584,12 @@ function showUnifiedModeSelection(quizName, icon) {
   // Hide home screen
   home.classList.add('hidden');
 
+  // Get topic XP data for mode unlock checks
+  const topicData = getTopicXPData(currentTopic);
+  const timeAttackUnlocked = isModeUnlocked(topicData, 'time-attack');
+  const threeHeartsUnlocked = isModeUnlocked(topicData, 'three-hearts');
+  const progress = getLevelProgress(topicData);
+
   // Create or get mode selection screen
   let modeScreen = document.getElementById('unified-mode-screen');
   if (!modeScreen) {
@@ -2146,19 +2599,43 @@ function showUnifiedModeSelection(quizName, icon) {
     document.body.appendChild(modeScreen);
   }
 
-  // Show mode selection for all quizzes (Area uses medium difficulty by default)
+  // Build mode buttons with lock states
+  const timeAttackBtn = timeAttackUnlocked 
+    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>`
+    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 Time Attack<br><span style="font-size:12px;color:#666;">Reach Level 5 to unlock</span></button>`;
+
+  const threeHeartsBtn = threeHeartsUnlocked
+    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💜 3 Hearts</button>`
+    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 3 Hearts<br><span style="font-size:12px;color:#666;">Reach Level 10 to unlock</span></button>`;
+
+  // Show mode selection with level display
   modeScreen.innerHTML = `
       <button onclick="playClickSound(); exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-      <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">${icon} ${quizName} Quiz</h2>
-      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Choose Game Mode</h3>
+      
+      <h2 style="color:#fff;font-size:28px;margin-bottom:5px;">${icon} ${quizName} Quiz</h2>
+      
+      <!-- Level Display -->
+      <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:10px 20px;margin-bottom:20px;">
+        <div style="color:#FFD700;font-size:16px;font-weight:bold;">Level ${topicData.level}</div>
+        <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:6px;width:150px;margin-top:5px;overflow:hidden;">
+          <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
+        </div>
+        <div style="color:#a78bfa;font-size:11px;margin-top:3px;">${progress.current}/${progress.needed} XP</div>
+      </div>
+      
+      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:20px;">Choose Game Mode</h3>
 
-      <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+      <!-- Casual - Always unlocked -->
+      <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
-      <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+      <!-- Time Attack - Unlocks at Level 5 -->
+      ${timeAttackBtn}
 
-      <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+      <!-- 3 Hearts - Unlocks at Level 10 -->
+      ${threeHeartsBtn}
 
-      <button onclick="playClickSound(); startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+      <!-- 2 Players - Always unlocked -->
+      <button onclick="playClickSound(); startUnifiedGame('two')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
     `;
 
   modeScreen.classList.remove('hidden');
@@ -2169,20 +2646,49 @@ function selectAreaDifficulty(difficulty) {
   playClickSound();
   selectedDifficulty = difficulty;
 
+  // Get topic XP data for mode unlock checks
+  const topicData = getTopicXPData(currentTopic);
+  const timeAttackUnlocked = isModeUnlocked(topicData, 'time-attack');
+  const threeHeartsUnlocked = isModeUnlocked(topicData, 'three-hearts');
+  const progress = getLevelProgress(topicData);
+
+  // Build mode buttons with lock states
+  const timeAttackBtn = timeAttackUnlocked 
+    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>`
+    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 Time Attack<br><span style="font-size:12px;color:#666;">Reach Level 5 to unlock</span></button>`;
+
+  const threeHeartsBtn = threeHeartsUnlocked
+    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💜 3 Hearts</button>`
+    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 3 Hearts<br><span style="font-size:12px;color:#666;">Reach Level 10 to unlock</span></button>`;
+
   // Update mode screen to show game modes
   const modeScreen = document.getElementById('unified-mode-screen');
   modeScreen.innerHTML = `
     <button onclick="playClickSound(); showUnifiedModeSelection('Area', '📏')" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-    <h2 style="color:#fff;font-size:28px;margin-bottom:10px;">📏 Area Quiz</h2>
-    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:30px;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>
+    <h2 style="color:#fff;font-size:28px;margin-bottom:5px;">📏 Area Quiz</h2>
+    
+    <!-- Level Display -->
+    <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:10px 20px;margin-bottom:10px;">
+      <div style="color:#FFD700;font-size:16px;font-weight:bold;">Level ${topicData.level}</div>
+      <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:6px;width:150px;margin-top:5px;overflow:hidden;">
+        <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
+      </div>
+      <div style="color:#a78bfa;font-size:11px;margin-top:3px;">${progress.current}/${progress.needed} XP</div>
+    </div>
+    
+    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:20px;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>
 
-    <button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>
+    <!-- Casual - Always unlocked -->
+    <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
 
-    <button onclick="playClickSound(); startUnifiedGame('quick-game')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Quick Game (10 questions)</button>
+    <!-- Time Attack - Unlocks at Level 5 -->
+    ${timeAttackBtn}
 
-    <button onclick="playClickSound(); startUnifiedGame('three-strikes')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💥 Three Strikes</button>
+    <!-- 3 Hearts - Unlocks at Level 10 -->
+    ${threeHeartsBtn}
 
-    <button onclick="playClickSound(); startUnifiedGame('two-player')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+    <!-- 2 Players - Always unlocked -->
+    <button onclick="playClickSound(); startUnifiedGame('two')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
   `;
 }
 
@@ -2201,11 +2707,11 @@ function startUnifiedGame(mode) {
   if (mode === 'time-attack') {
     timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
     maxQuestions = 9999; // Unlimited questions
-  } else if (mode === 'quick-game') {
-    maxQuestions = GAME_CONFIG.QUICK_GAME_QUESTIONS;
-    timeLeft = GAME_CONFIG.QUICK_GAME_TIME_PER_Q;
-  } else if (mode === 'three-strikes') {
-    livesRemaining = GAME_CONFIG.THREE_STRIKES_LIVES;
+  } else if (mode === 'casual') {
+    maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
+    timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
+  } else if (mode === 'three-hearts') {
+    livesRemaining = GAME_CONFIG.THREE_HEARTS_LIVES;
     maxQuestions = 9999; // Unlimited until 3 strikes
   } else if (mode === 'two') {
     maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
@@ -2352,9 +2858,9 @@ function displayUnifiedQuestion() {
   let headerInfo = '';
   if (gameMode === 'time-attack') {
     headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:24px;font-weight:bold;">⏳ ${timeLeft}s</span>`;
-  } else if (gameMode === 'quick-game') {
+  } else if (gameMode === 'casual') {
     headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:20px;font-weight:bold;">⏳ ${timeLeft}s | Q ${questionCount}/${maxQuestions}</span>`;
-  } else if (gameMode === 'three-strikes') {
+  } else if (gameMode === 'three-hearts') {
     headerInfo = `<span style="color:#FF6B6B;font-size:20px;">${'❤️'.repeat(livesRemaining)}${'🖤'.repeat(3-livesRemaining)}</span>`;
   } else if (gameMode === 'two') {
     headerInfo = `<span id="unified-timer" style="color:#a78bfa;font-size:18px;">⏳ ${timeLeft}s | Q ${questionCount}/${maxQuestions}</span>`;
@@ -2466,7 +2972,7 @@ function checkUnifiedAnswer(selected, correct) {
       }
     }
   } else {
-    if (gameMode === 'three-strikes') {
+    if (gameMode === 'three-hearts') {
       livesRemaining--;
       if (livesRemaining <= 0) {
         clearInterval(timer);
@@ -2486,7 +2992,7 @@ function checkUnifiedAnswer(selected, correct) {
     clearInterval(timer);
     setTimeout(() => showUnifiedResults(), 800);
     return;
-  } else if (gameMode === 'quick-game' && questionCount >= maxQuestions) {
+  } else if (gameMode === 'casual' && questionCount >= maxQuestions) {
     clearInterval(timer);
     setTimeout(() => showUnifiedResults(), 800);
     return;
@@ -2514,6 +3020,25 @@ function showUnifiedResults() {
 
   clearInterval(timer);
 
+  // ⭐ XP CALCULATION
+  let xpResult = null;
+  if (trackedTopics.includes(currentTopic) && gameMode !== 'two') {
+    const topicData = getTopicXPData(currentTopic);
+    let xpEarned = 0;
+    
+    if (gameMode === 'casual') {
+      xpEarned = getXPCasual(currentSessionCorrect, topicData);
+    } else if (gameMode === 'time-attack') {
+      xpEarned = getXPTimeAttack(currentSessionCorrect, questionCount, topicData);
+    } else if (gameMode === 'three-hearts') {
+      xpEarned = getXPThreeHearts(currentSessionCorrect, questionCount, bestSessionStreak, topicData);
+    }
+    
+    if (xpEarned > 0) {
+      xpResult = addXP(currentTopic, xpEarned);
+    }
+  }
+
   const quizScreen = document.getElementById('unified-quiz-screen');
   if (!quizScreen) return;
 
@@ -2523,11 +3048,11 @@ function showUnifiedResults() {
   if (gameMode === 'time-attack') {
     resultText = 'Time Attack Complete!';
     scoreDisplay = `${singlePlayerScore}`;
-  } else if (gameMode === 'quick-game') {
-    resultText = 'Quick Game Complete!';
+  } else if (gameMode === 'casual') {
+    resultText = 'Casual Complete!';
     scoreDisplay = `${singlePlayerScore} / ${maxQuestions}`;
-  } else if (gameMode === 'three-strikes') {
-    resultText = 'Three Strikes Complete!';
+  } else if (gameMode === 'three-hearts') {
+    resultText = '3 Hearts Complete!';
     scoreDisplay = `${singlePlayerScore}`;
   } else {
     resultText = 'Game Over!';
@@ -2541,12 +3066,34 @@ function showUnifiedResults() {
   const percentage = gameMode === 'two' ? 0 : (totalAnswered > 0 ? Math.round((currentSessionCorrect / totalAnswered) * 100) : 0);
   const message = percentage >= 80 ? '🏆 Excellent!' : percentage >= 60 ? '⭐ Great Job!' : percentage >= 40 ? '👍 Good Effort!' : '💪 Keep Practicing!';
 
+  // Build XP display HTML
+  let xpDisplayHTML = '';
+  if (xpResult && gameMode !== 'two') {
+    const topicData = getTopicXPData(currentTopic);
+    const progress = getLevelProgress(topicData);
+    
+    xpDisplayHTML = `
+      <div style="background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.1));border-radius:12px;padding:15px;margin:15px 0;border:1px solid rgba(255,215,0,0.3);">
+        <div style="color:#FFD700;font-size:24px;font-weight:bold;">+${xpResult.xpGained} XP</div>
+        ${xpResult.leveledUp ? `<div style="color:#00FF00;font-size:18px;margin-top:5px;">🎉 Level Up! Level ${xpResult.newLevel}</div>` : ''}
+        ${xpResult.newUnlocks.length > 0 ? `<div style="color:#00BFFF;font-size:16px;margin-top:5px;">🔓 ${xpResult.newUnlocks.includes('timeAttack') ? 'Time Attack' : '3 Hearts'} Unlocked!</div>` : ''}
+        <div style="margin-top:10px;">
+          <div style="color:#a78bfa;font-size:14px;">Level ${topicData.level} • ${progress.current}/${progress.needed} XP</div>
+          <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:8px;margin-top:5px;overflow:hidden;">
+            <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   quizScreen.innerHTML = `
     <div style="text-align:center;max-width:400px;">
       <h2 style="color:#FFD700;font-size:32px;margin-bottom:10px;">${resultText}</h2>
       <div style="background:rgba(255,255,255,0.1);border-radius:20px;padding:30px;margin:20px 0;box-shadow:0 8px 30px rgba(124, 58, 237, 0.3);">
         <div style="color:#a78bfa;font-size:48px;font-weight:bold;">${scoreDisplay}</div>
         ${gameMode !== 'two' ? `<div style="color:#fff;font-size:20px;margin-top:10px;">${percentage}% Correct</div>` : ''}
+        ${xpDisplayHTML}
       </div>
       ${gameMode !== 'two' ? `<p style="color:#a78bfa;font-size:18px;margin:20px 0;">${message}</p>` : ''}
 
@@ -2942,15 +3489,26 @@ function saveQuizStats(topicId, completed) {
   const supportedTopics = ALL_TOPICS;
   if (!supportedTopics.includes(topicId)) return;
 
-  // Initialize topic stats if not exists
+  // Initialize topic stats if not exists (includes XP fields)
   if (!userData.stats.topics[topicId]) {
     userData.stats.topics[topicId] = {
       games: 0,
       correct: 0,
       wrong: 0,
       accuracy: 0,
-      bestStreak: 0
+      bestStreak: 0,
+      // XP System fields
+      level: 1,
+      xp: 0,
+      modesUnlocked: {
+        casual: true,
+        timeAttack: false,
+        threeHearts: false
+      }
     };
+  } else {
+    // Migrate old topics that don't have XP fields
+    getTopicXPData(topicId);
   }
 
   const topic = userData.stats.topics[topicId];

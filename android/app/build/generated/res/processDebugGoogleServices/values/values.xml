@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">839227999302</string>
+    <string name="google_api_key" translatable="false">AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI</string>
+    <string name="google_app_id" translatable="false">1:839227999302:android:b63322d2425eb123067647</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI</string>
+    <string name="google_storage_bucket" translatable="false">quizzena-app.firebasestorage.app</string>
+    <string name="project_id" translatable="false">quizzena-app</string>
+</resources>

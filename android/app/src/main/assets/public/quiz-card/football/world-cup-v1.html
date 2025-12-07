@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Cup Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0a0a15 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(212, 175, 55, 0.12) 0%, 
+        rgba(10, 10, 18, 0.95) 35%,
+        rgba(5, 5, 10, 0.98) 100%
+      );
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(212, 175, 55, 0.15),
+        0 0 30px rgba(255, 215, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Golden glow effect */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(184, 134, 11, 0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Shimmer */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 60%
+      );
+      animation: shimmer 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-30%) translateY(-30%); }
+      50% { transform: translateX(30%) translateY(30%); }
+    }
+
+    .card-title {
+      color: #ffd700;
+      font-family: 'Georgia', serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-top: 4px;
+      text-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 0 40px rgba(255, 215, 0, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== FIFA WORLD CUP TROPHY ===== */
+    .trophy {
+      position: relative;
+      width: 70px;
+      height: 85px;
+      animation: trophyFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 25px rgba(255, 215, 0, 0.5));
+    }
+
+    @keyframes trophyFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    /* Globe on top */
+    .globe {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      background: radial-gradient(circle at 35% 35%, 
+        #ffd700 0%, 
+        #daa520 30%,
+        #b8860b 60%,
+        #8b6914 100%
+      );
+      border-radius: 50%;
+      box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.6),
+        inset -3px -3px 8px rgba(0, 0, 0, 0.3),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Globe lines */
+    .globe::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      right: 2px;
+      height: 1px;
+      background: rgba(139, 105, 20, 0.5);
+      transform: translateY(-50%);
+    }
+
+    .globe::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      bottom: 2px;
+      left: 50%;
+      width: 1px;
+      background: rgba(139, 105, 20, 0.5);
+      transform: translateX(-50%);
+    }
+
+    /* Globe shine */
+    .globe-shine {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* Two figures holding globe */
+    .figure {
+      position: absolute;
+      top: 12px;
+      width: 12px;
+      height: 28px;
+    }
+
+    .figure.left {
+      left: 12px;
+      transform: rotate(15deg);
+    }
+
+    .figure.right {
+      right: 12px;
+      transform: rotate(-15deg) scaleX(-1);
+    }
+
+    .figure-head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle at 40% 40%, #daa520, #8b6914);
+      border-radius: 50%;
+    }
+
+    .figure-body {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 12px;
+      background: linear-gradient(180deg, #daa520, #b8860b, #8b6914);
+      border-radius: 4px 4px 2px 2px;
+    }
+
+    .figure-arm {
+      position: absolute;
+      top: 6px;
+      width: 10px;
+      height: 3px;
+      background: linear-gradient(90deg, #b8860b, #daa520);
+      border-radius: 2px;
+      transform: rotate(-45deg);
+    }
+
+    .figure.left .figure-arm {
+      right: -2px;
+      transform: rotate(-60deg);
+    }
+
+    .figure.right .figure-arm {
+      left: -2px;
+      transform: rotate(-60deg) scaleX(-1);
+    }
+
+    .figure-legs {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 10px;
+      background: linear-gradient(180deg, #8b6914, #6b5310);
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 70% 100%, 50% 50%, 30% 100%, 0 100%);
+    }
+
+    /* Trophy cup/bowl */
+    .cup {
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 25px;
+      background: linear-gradient(180deg, 
+        #ffd700 0%,
+        #daa520 30%,
+        #b8860b 70%,
+        #8b6914 100%
+      );
+      border-radius: 0 0 50% 50%;
+      box-shadow: 
+        inset 0 5px 15px rgba(255, 255, 255, 0.3),
+        inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Cup rim */
+    .cup::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -2px;
+      right: -2px;
+      height: 6px;
+      background: linear-gradient(180deg, #ffd700, #daa520);
+      border-radius: 3px;
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Cup decoration lines */
+    .cup-lines {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(139, 105, 20, 0.4), transparent);
+      box-shadow: 0 5px 0 rgba(139, 105, 20, 0.3);
+    }
+
+    /* Trophy stem */
+    .stem {
+      position: absolute;
+      top: 58px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 12px;
+      background: linear-gradient(90deg, #8b6914, #b8860b, #daa520, #b8860b, #8b6914);
+      border-radius: 2px;
+    }
+
+    /* Trophy base */
+    .base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 38px;
+      height: 15px;
+      background: linear-gradient(180deg, 
+        #daa520 0%,
+        #b8860b 40%,
+        #8b6914 70%,
+        #6b5310 100%
+      );
+      border-radius: 3px;
+      box-shadow: 
+        0 3px 10px rgba(0, 0, 0, 0.4),
+        inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Base top rim */
+    .base::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2px;
+      right: -2px;
+      height: 4px;
+      background: linear-gradient(180deg, #ffd700, #b8860b);
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Base bottom rim */
+    .base::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -3px;
+      right: -3px;
+      height: 5px;
+      background: linear-gradient(180deg, #8b6914, #5a4310);
+      border-radius: 0 0 3px 3px;
+    }
+
+    /* Base plate */
+    .base-plate {
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48px;
+      height: 6px;
+      background: linear-gradient(180deg, #6b5310, #4a3a0d);
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ===== SPARKLES ===== */
+    .sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkleGlow 2s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 15px; left: 18px; width: 4px; height: 4px; }
+    .sparkle:nth-child(2) { top: 20px; right: 20px; width: 3px; height: 3px; animation-delay: 0.3s; }
+    .sparkle:nth-child(3) { top: 40px; left: 12px; width: 3px; height: 3px; animation-delay: 0.6s; }
+    .sparkle:nth-child(4) { top: 45px; right: 15px; width: 4px; height: 4px; animation-delay: 0.9s; }
+    .sparkle:nth-child(5) { top: 30px; left: 25px; width: 2px; height: 2px; animation-delay: 1.2s; }
+    .sparkle:nth-child(6) { top: 35px; right: 28px; width: 2px; height: 2px; animation-delay: 1.5s; }
+
+    @keyframes sparkleGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ===== STARS ===== */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffd700;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      animation: starTwinkle 2.5s ease-in-out infinite;
+    }
+
+    .star:nth-child(1) { top: 8px; left: 10px; width: 8px; height: 8px; }
+    .star:nth-child(2) { top: 10px; right: 12px; width: 7px; height: 7px; animation-delay: 0.5s; }
+    .star:nth-child(3) { top: 5px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; animation-delay: 1s; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== CONFETTI ===== */
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 3px;
+      height: 6px;
+      border-radius: 1px;
+      animation: confettiFall 4s ease-in-out infinite;
+    }
+
+    .confetti-piece:nth-child(1) { left: 15px; top: 25px; background: #ffd700; animation-delay: 0s; }
+    .confetti-piece:nth-child(2) { right: 18px; top: 30px; background: #ff6b6b; animation-delay: 0.5s; }
+    .confetti-piece:nth-child(3) { left: 25px; top: 55px; background: #4ecdc4; animation-delay: 1s; }
+    .confetti-piece:nth-child(4) { right: 22px; top: 50px; background: #ffe66d; animation-delay: 1.5s; }
+
+    @keyframes confettiFall {
+      0%, 100% { opacity: 0.4; transform: translateY(0) rotate(0deg); }
+      50% { opacity: 0.8; transform: translateY(5px) rotate(180deg); }
+    }
+
+    /* ===== NATION DOTS ===== */
+    .nation-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Brazil */ .dot:nth-child(1) { background: #009c3b; box-shadow: 0 0 5px #009c3b; }
+    /* Germany */ .dot:nth-child(2) { background: #000000; box-shadow: 0 0 5px #333; animation-delay: 0.1s; }
+    /* Argentina */ .dot:nth-child(3) { background: #75aadb; box-shadow: 0 0 5px #75aadb; animation-delay: 0.2s; }
+    /* France */ .dot:nth-child(4) { background: #002395; box-shadow: 0 0 5px #002395; animation-delay: 0.3s; }
+    /* Italy */ .dot:nth-child(5) { background: #009246; box-shadow: 0 0 5px #009246; animation-delay: 0.4s; }
+    /* Spain */ .dot:nth-child(6) { background: #c60b1e; box-shadow: 0 0 5px #c60b1e; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Stars -->
+    <div class="stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+
+    <!-- Sparkles -->
+    <div class="sparkles">
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+      <div class="sparkle"></div>
+    </div>
+
+    <!-- Confetti -->
+    <div class="confetti">
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+      <div class="confetti-piece"></div>
+    </div>
+
+    <!-- Nation dots -->
+    <div class="nation-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- FIFA World Cup Trophy -->
+      <div class="trophy">
+        <!-- Globe on top -->
+        <div class="globe">
+          <div class="globe-shine"></div>
+        </div>
+
+        <!-- Two figures holding globe -->
+        <div class="figure left">
+          <div class="figure-head"></div>
+          <div class="figure-arm"></div>
+          <div class="figure-body"></div>
+          <div class="figure-legs"></div>
+        </div>
+        <div class="figure right">
+          <div class="figure-head"></div>
+          <div class="figure-arm"></div>
+          <div class="figure-body"></div>
+          <div class="figure-legs"></div>
+        </div>
+
+        <!-- Cup bowl -->
+        <div class="cup">
+          <div class="cup-lines"></div>
+        </div>
+
+        <!-- Stem -->
+        <div class="stem"></div>
+
+        <!-- Base -->
+        <div class="base"></div>
+        <div class="base-plate"></div>
+      </div>
+    </div>
+
+    <div class="card-title">World Cup</div>
+  </div>
+</body>
+</html>
+

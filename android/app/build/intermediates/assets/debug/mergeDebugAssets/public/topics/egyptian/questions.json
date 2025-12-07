@@ -1,0 +1,2202 @@
+[
+  {
+    "question": "What river was essential to ancient Egyptian civilization?",
+    "options": [
+      "Nile",
+      "Euphrates",
+      "Tigris",
+      "Amazon"
+    ],
+    "answer": "Nile",
+    "category": "geography"
+  },
+  {
+    "question": "Who was the boy king discovered in 1922?",
+    "options": [
+      "Thutmose III",
+      "Ramses II",
+      "Tutankhamun",
+      "Akhenaten"
+    ],
+    "answer": "Tutankhamun",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What is the Great Pyramid of Giza also known as?",
+    "options": [
+      "Red Pyramid",
+      "Pyramid of Osiris",
+      "Pyramid of Khufu/Cheops",
+      "Pyramid of Ra"
+    ],
+    "answer": "Pyramid of Khufu/Cheops",
+    "category": "pyramids"
+  },
+  {
+    "question": "What creature has the body of a lion and head of a human?",
+    "options": [
+      "Sphinx",
+      "Horus",
+      "Anubis",
+      "Griffin"
+    ],
+    "answer": "Sphinx",
+    "category": "pyramids"
+  },
+  {
+    "question": "What is the ancient Egyptian writing system called?",
+    "options": [
+      "Cuneiform",
+      "Sanskrit",
+      "Hieroglyphics",
+      "Runes"
+    ],
+    "answer": "Hieroglyphics",
+    "category": "writing"
+  },
+  {
+    "question": "What god had the head of a jackal?",
+    "options": [
+      "Seth",
+      "Horus",
+      "Anubis",
+      "Thoth"
+    ],
+    "answer": "Anubis",
+    "category": "gods"
+  },
+  {
+    "question": "What process preserved bodies for the afterlife?",
+    "options": [
+      "Burial",
+      "Mummification",
+      "Cremation",
+      "Embalming only"
+    ],
+    "answer": "Mummification",
+    "category": "religion"
+  },
+  {
+    "question": "Who was the sun god and king of Egyptian gods?",
+    "options": [
+      "Ra",
+      "Amun",
+      "Osiris",
+      "Horus"
+    ],
+    "answer": "Ra",
+    "category": "gods"
+  },
+  {
+    "question": "What female pharaoh wore a false beard?",
+    "options": [
+      "Cleopatra",
+      "Nefertiti",
+      "Hatshepsut",
+      "Nefertari"
+    ],
+    "answer": "Hatshepsut",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What stone helped decode hieroglyphics?",
+    "options": [
+      "Rosetta Stone",
+      "Memphis Stone",
+      "Sphinx Stone",
+      "Philosophers Stone"
+    ],
+    "answer": "Rosetta Stone",
+    "category": "discoveries"
+  },
+  {
+    "question": "What was the last pharaoh of ancient Egypt?",
+    "options": [
+      "Cleopatra VII",
+      "Nefertiti",
+      "Hatshepsut",
+      "Nefertari"
+    ],
+    "answer": "Cleopatra VII",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What organ was left inside during mummification?",
+    "options": [
+      "Liver",
+      "Lungs",
+      "Brain",
+      "Heart"
+    ],
+    "answer": "Heart",
+    "category": "religion"
+  },
+  {
+    "question": "What jars held organs removed during mummification?",
+    "options": [
+      "Death jars",
+      "Sacred vessels",
+      "Burial urns",
+      "Canopic jars"
+    ],
+    "answer": "Canopic jars",
+    "category": "religion"
+  },
+  {
+    "question": "Who discovered Tutankhamun's tomb?",
+    "options": [
+      "Howard Carter",
+      "Jean-François Champollion",
+      "Giovanni Belzoni",
+      "Flinders Petrie"
+    ],
+    "answer": "Howard Carter",
+    "category": "discoveries"
+  },
+  {
+    "question": "What pharaoh built Abu Simbel?",
+    "options": [
+      "Ramses II",
+      "Khufu",
+      "Tutankhamun",
+      "Akhenaten"
+    ],
+    "answer": "Ramses II",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What god ruled the underworld?",
+    "options": [
+      "Ra",
+      "Osiris",
+      "Horus",
+      "Anubis"
+    ],
+    "answer": "Osiris",
+    "category": "gods"
+  },
+  {
+    "question": "What goddess was Osiris's wife and sister?",
+    "options": [
+      "Isis",
+      "Bastet",
+      "Nephthys",
+      "Hathor"
+    ],
+    "answer": "Isis",
+    "category": "gods"
+  },
+  {
+    "question": "What god had a falcon head?",
+    "options": [
+      "Thoth",
+      "Seth",
+      "Anubis",
+      "Horus"
+    ],
+    "answer": "Horus",
+    "category": "gods"
+  },
+  {
+    "question": "What crown represented Upper Egypt?",
+    "options": [
+      "Red crown",
+      "White crown",
+      "Blue crown",
+      "Double crown"
+    ],
+    "answer": "White crown",
+    "category": "geography"
+  },
+  {
+    "question": "What crown represented Lower Egypt?",
+    "options": [
+      "Red crown",
+      "Blue crown",
+      "White crown",
+      "Gold crown"
+    ],
+    "answer": "Red crown",
+    "category": "geography"
+  },
+  {
+    "question": "What was papyrus used for?",
+    "options": [
+      "Medicine only",
+      "Writing material",
+      "Food",
+      "Clothing"
+    ],
+    "answer": "Writing material",
+    "category": "writing"
+  },
+  {
+    "question": "What insect was sacred in ancient Egypt?",
+    "options": [
+      "Scorpion",
+      "Fly",
+      "Scarab beetle",
+      "Locust"
+    ],
+    "answer": "Scarab beetle",
+    "category": "religion"
+  },
+  {
+    "question": "What pharaoh tried to change Egypt to worship one god?",
+    "options": [
+      "Akhenaten",
+      "Ramses II",
+      "Khufu",
+      "Tutankhamun"
+    ],
+    "answer": "Akhenaten",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What god did Akhenaten worship?",
+    "options": [
+      "Amun",
+      "Osiris",
+      "Aten",
+      "Ra"
+    ],
+    "answer": "Aten",
+    "category": "gods"
+  },
+  {
+    "question": "Who was Tutankhamun's father?",
+    "options": [
+      "Ramses II",
+      "Thutmose III",
+      "Akhenaten",
+      "Khufu"
+    ],
+    "answer": "Akhenaten",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What queen was famous for her beauty and bust sculpture?",
+    "options": [
+      "Cleopatra",
+      "Nefertari",
+      "Hatshepsut",
+      "Nefertiti"
+    ],
+    "answer": "Nefertiti",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What valley contains many royal tombs?",
+    "options": [
+      "Valley of the Queens",
+      "Valley of the Kings",
+      "Valley of the Nile",
+      "Valley of Giza"
+    ],
+    "answer": "Valley of the Kings",
+    "category": "pyramids"
+  },
+  {
+    "question": "What animal was associated with the goddess Bastet?",
+    "options": [
+      "Cat",
+      "Dog",
+      "Cow",
+      "Crocodile"
+    ],
+    "answer": "Cat",
+    "category": "gods"
+  },
+  {
+    "question": "What happened to Egyptians who killed a cat?",
+    "options": [
+      "Nothing",
+      "Imprisonment",
+      "Death penalty",
+      "Fine"
+    ],
+    "answer": "Death penalty",
+    "category": "daily-life"
+  },
+  {
+    "question": "What god had the head of an ibis bird?",
+    "options": [
+      "Horus",
+      "Ra",
+      "Khnum",
+      "Thoth"
+    ],
+    "answer": "Thoth",
+    "category": "gods"
+  },
+  {
+    "question": "What was Thoth the god of?",
+    "options": [
+      "Sun",
+      "War",
+      "Wisdom and writing",
+      "Death"
+    ],
+    "answer": "Wisdom and writing",
+    "category": "gods"
+  },
+  {
+    "question": "What did ancient Egyptians use for makeup?",
+    "options": [
+      "Kohl (black eyeliner)",
+      "Rouge only",
+      "Lipstick only",
+      "None"
+    ],
+    "answer": "Kohl (black eyeliner)",
+    "category": "daily-life"
+  },
+  {
+    "question": "Why did Egyptians wear eye makeup?",
+    "options": [
+      "Religious reasons only",
+      "To look scary",
+      "Fashion only",
+      "Protection from sun and infections"
+    ],
+    "answer": "Protection from sun and infections",
+    "category": "daily-life"
+  },
+  {
+    "question": "What did the annual Nile flood bring?",
+    "options": [
+      "Fish only",
+      "Gold",
+      "Fertile soil (silt)",
+      "Destruction only"
+    ],
+    "answer": "Fertile soil (silt)",
+    "category": "geography"
+  },
+  {
+    "question": "What season was 'Akhet' in ancient Egypt?",
+    "options": [
+      "Planting season",
+      "Harvest season",
+      "Dry season",
+      "Flooding season"
+    ],
+    "answer": "Flooding season",
+    "category": "geography"
+  },
+  {
+    "question": "How many pyramids are at Giza?",
+    "options": [
+      "1",
+      "5",
+      "3 main pyramids",
+      "7"
+    ],
+    "answer": "3 main pyramids",
+    "category": "pyramids"
+  },
+  {
+    "question": "Which pharaoh built the second pyramid at Giza?",
+    "options": [
+      "Khafre",
+      "Sneferu",
+      "Menkaure",
+      "Khufu"
+    ],
+    "answer": "Khafre",
+    "category": "pyramids"
+  },
+  {
+    "question": "What is the oldest pyramid in Egypt?",
+    "options": [
+      "Red Pyramid",
+      "Great Pyramid",
+      "Step Pyramid of Djoser",
+      "Bent Pyramid"
+    ],
+    "answer": "Step Pyramid of Djoser",
+    "category": "pyramids"
+  },
+  {
+    "question": "Where is the Step Pyramid located?",
+    "options": [
+      "Luxor",
+      "Saqqara",
+      "Karnak",
+      "Giza"
+    ],
+    "answer": "Saqqara",
+    "category": "pyramids"
+  },
+  {
+    "question": "Who designed the first pyramid?",
+    "options": [
+      "Ramses",
+      "Imhotep",
+      "Djoser",
+      "Khufu"
+    ],
+    "answer": "Imhotep",
+    "category": "achievements"
+  },
+  {
+    "question": "What profession was highly respected in ancient Egypt?",
+    "options": [
+      "Farmer",
+      "Merchant",
+      "Scribe",
+      "Soldier"
+    ],
+    "answer": "Scribe",
+    "category": "writing"
+  },
+  {
+    "question": "What percentage of ancient Egyptians could read?",
+    "options": [
+      "About 25%",
+      "About 50%",
+      "Less than 5%",
+      "Over 75%"
+    ],
+    "answer": "Less than 5%",
+    "category": "writing"
+  },
+  {
+    "question": "What text guided souls through the afterlife?",
+    "options": [
+      "Book of the Dead",
+      "Pyramid Texts",
+      "Book of Ra",
+      "Book of Osiris"
+    ],
+    "answer": "Book of the Dead",
+    "category": "religion"
+  },
+  {
+    "question": "What was weighed against a feather in the afterlife?",
+    "options": [
+      "Gold",
+      "The brain",
+      "The soul",
+      "The heart"
+    ],
+    "answer": "The heart",
+    "category": "religion"
+  },
+  {
+    "question": "What feather was used in the weighing ceremony?",
+    "options": [
+      "Feather of Ma'at",
+      "Feather of Ra",
+      "Feather of Horus",
+      "Feather of Isis"
+    ],
+    "answer": "Feather of Ma'at",
+    "category": "religion"
+  },
+  {
+    "question": "Who was Ma'at?",
+    "options": [
+      "God of war",
+      "God of death",
+      "Goddess of love",
+      "Goddess of truth and justice"
+    ],
+    "answer": "Goddess of truth and justice",
+    "category": "gods"
+  },
+  {
+    "question": "What happened if your heart was heavier than the feather?",
+    "options": [
+      "Eaten by Ammit",
+      "Sent back to earth",
+      "Reborn",
+      "Became a god"
+    ],
+    "answer": "Eaten by Ammit",
+    "category": "religion"
+  },
+  {
+    "question": "What creature was Ammit?",
+    "options": [
+      "Full crocodile",
+      "Part crocodile, lion, and hippo",
+      "Dragon",
+      "Serpent"
+    ],
+    "answer": "Part crocodile, lion, and hippo",
+    "category": "gods"
+  },
+  {
+    "question": "What did ancient Egyptians call their country?",
+    "options": [
+      "Kemet (Black Land)",
+      "Ra's Land",
+      "Nile Land",
+      "Egypt"
+    ],
+    "answer": "Kemet (Black Land)",
+    "category": "geography"
+  },
+  {
+    "question": "Why was it called 'Black Land'?",
+    "options": [
+      "Dark fertile soil from Nile",
+      "Black rocks",
+      "Dark nights",
+      "Black sand"
+    ],
+    "answer": "Dark fertile soil from Nile",
+    "category": "geography"
+  },
+  {
+    "question": "What was the 'Red Land'?",
+    "options": [
+      "Desert surrounding Egypt",
+      "The Nile",
+      "Lower Egypt",
+      "Upper Egypt"
+    ],
+    "answer": "Desert surrounding Egypt",
+    "category": "geography"
+  },
+  {
+    "question": "What title meant 'great house' and became the word for king?",
+    "options": [
+      "Sultan",
+      "Emperor",
+      "King",
+      "Pharaoh"
+    ],
+    "answer": "Pharaoh",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was Ramses II also known as?",
+    "options": [
+      "Ramses the Great",
+      "Ramses the Builder",
+      "Ramses the Warrior",
+      "Ramses the First"
+    ],
+    "answer": "Ramses the Great",
+    "category": "pharaohs"
+  },
+  {
+    "question": "How many years did Ramses II rule?",
+    "options": [
+      "About 10 years",
+      "About 90 years",
+      "About 30 years",
+      "About 66 years"
+    ],
+    "answer": "About 66 years",
+    "category": "pharaohs"
+  },
+  {
+    "question": "How many children did Ramses II reportedly have?",
+    "options": [
+      "Over 100",
+      "About 5",
+      "About 50",
+      "About 20"
+    ],
+    "answer": "Over 100",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What battle did Ramses II fight against the Hittites?",
+    "options": [
+      "Battle of Thebes",
+      "Battle of Memphis",
+      "Battle of Kadesh",
+      "Battle of Megiddo"
+    ],
+    "answer": "Battle of Kadesh",
+    "category": "warfare"
+  },
+  {
+    "question": "What was the result of the Battle of Kadesh?",
+    "options": [
+      "Egyptian victory",
+      "Total destruction",
+      "Hittite victory",
+      "First known peace treaty"
+    ],
+    "answer": "First known peace treaty",
+    "category": "warfare"
+  },
+  {
+    "question": "What weapon gave Egypt military advantage?",
+    "options": [
+      "Elephant",
+      "Catapult",
+      "Crossbow",
+      "War chariot"
+    ],
+    "answer": "War chariot",
+    "category": "warfare"
+  },
+  {
+    "question": "What material were Egyptian weapons often made of?",
+    "options": [
+      "Steel",
+      "Copper only",
+      "Bronze",
+      "Iron"
+    ],
+    "answer": "Bronze",
+    "category": "warfare"
+  },
+  {
+    "question": "What was a khopesh?",
+    "options": [
+      "Spear",
+      "Shield",
+      "Curved sword",
+      "Helmet"
+    ],
+    "answer": "Curved sword",
+    "category": "warfare"
+  },
+  {
+    "question": "Who unified Upper and Lower Egypt?",
+    "options": [
+      "Narmer/Menes",
+      "Ramses",
+      "Khufu",
+      "Tutankhamun"
+    ],
+    "answer": "Narmer/Menes",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was the double crown called?",
+    "options": [
+      "Hedjet",
+      "Deshret",
+      "Pschent",
+      "Khepresh"
+    ],
+    "answer": "Pschent",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What city was the capital during the New Kingdom?",
+    "options": [
+      "Thebes",
+      "Cairo",
+      "Memphis",
+      "Alexandria"
+    ],
+    "answer": "Thebes",
+    "category": "geography"
+  },
+  {
+    "question": "What city did Alexander the Great found in Egypt?",
+    "options": [
+      "Giza",
+      "Memphis",
+      "Thebes",
+      "Alexandria"
+    ],
+    "answer": "Alexandria",
+    "category": "geography"
+  },
+  {
+    "question": "What wonder of the ancient world was in Alexandria?",
+    "options": [
+      "Library",
+      "Lighthouse (Pharos)",
+      "Temple",
+      "Pyramids"
+    ],
+    "answer": "Lighthouse (Pharos)",
+    "category": "achievements"
+  },
+  {
+    "question": "What famous library was in Alexandria?",
+    "options": [
+      "Royal Library",
+      "Temple Library",
+      "Pharaoh's Library",
+      "Library of Alexandria"
+    ],
+    "answer": "Library of Alexandria",
+    "category": "achievements"
+  },
+  {
+    "question": "Who conquered Egypt in 332 BC?",
+    "options": [
+      "Persians",
+      "Napoleon",
+      "Alexander the Great",
+      "Julius Caesar"
+    ],
+    "answer": "Alexander the Great",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What dynasty did Cleopatra belong to?",
+    "options": [
+      "Old Kingdom",
+      "New Kingdom",
+      "18th dynasty",
+      "Ptolemaic dynasty"
+    ],
+    "answer": "Ptolemaic dynasty",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was Cleopatra's native language?",
+    "options": [
+      "Egyptian",
+      "Greek",
+      "Latin",
+      "Persian"
+    ],
+    "answer": "Greek",
+    "category": "pharaohs"
+  },
+  {
+    "question": "Who were Cleopatra's famous Roman lovers?",
+    "options": [
+      "Julius Caesar and Mark Antony",
+      "Brutus and Cassius",
+      "Pompey and Crassus",
+      "Augustus and Nero"
+    ],
+    "answer": "Julius Caesar and Mark Antony",
+    "category": "pharaohs"
+  },
+  {
+    "question": "How did Cleopatra reportedly die?",
+    "options": [
+      "Poison drink",
+      "Stabbing",
+      "Snake bite (asp)",
+      "Old age"
+    ],
+    "answer": "Snake bite (asp)",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What happened to Egypt after Cleopatra's death?",
+    "options": [
+      "Became Roman province",
+      "Conquered by Persia",
+      "Split into kingdoms",
+      "Remained independent"
+    ],
+    "answer": "Became Roman province",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What temple complex is in modern Luxor?",
+    "options": [
+      "Philae",
+      "Edfu",
+      "Karnak",
+      "Abu Simbel"
+    ],
+    "answer": "Karnak",
+    "category": "pyramids"
+  },
+  {
+    "question": "What god was Karnak temple dedicated to?",
+    "options": [
+      "Horus",
+      "Osiris",
+      "Amun-Ra",
+      "Anubis"
+    ],
+    "answer": "Amun-Ra",
+    "category": "gods"
+  },
+  {
+    "question": "What unique feature does Abu Simbel have?",
+    "options": [
+      "Gold walls",
+      "Moving statues",
+      "Sun illuminates inner sanctuary twice yearly",
+      "Underwater chambers"
+    ],
+    "answer": "Sun illuminates inner sanctuary twice yearly",
+    "category": "pyramids"
+  },
+  {
+    "question": "Why was Abu Simbel relocated in the 1960s?",
+    "options": [
+      "Aswan Dam would flood it",
+      "Tourism",
+      "War",
+      "Earthquake damage"
+    ],
+    "answer": "Aswan Dam would flood it",
+    "category": "discoveries"
+  },
+  {
+    "question": "What did Egyptians believe happened to the sun each night?",
+    "options": [
+      "Slept",
+      "Disappeared",
+      "Traveled through the underworld",
+      "Died"
+    ],
+    "answer": "Traveled through the underworld",
+    "category": "religion"
+  },
+  {
+    "question": "What boat carried the sun god?",
+    "options": [
+      "Death ship",
+      "Nile ferry",
+      "Sky boat",
+      "Solar barque"
+    ],
+    "answer": "Solar barque",
+    "category": "religion"
+  },
+  {
+    "question": "What serpent tried to stop the sun's journey?",
+    "options": [
+      "Uraeus",
+      "Renenutet",
+      "Apophis",
+      "Wadjet"
+    ],
+    "answer": "Apophis",
+    "category": "gods"
+  },
+  {
+    "question": "What cobra goddess protected pharaohs?",
+    "options": [
+      "Isis",
+      "Wadjet",
+      "Hathor",
+      "Bastet"
+    ],
+    "answer": "Wadjet",
+    "category": "gods"
+  },
+  {
+    "question": "What symbol of protection was on pharaohs' crowns?",
+    "options": [
+      "Scarab",
+      "Uraeus (cobra)",
+      "Ankh",
+      "Eye of Horus"
+    ],
+    "answer": "Uraeus (cobra)",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What does the ankh symbol represent?",
+    "options": [
+      "Life",
+      "Death",
+      "Power",
+      "Sun"
+    ],
+    "answer": "Life",
+    "category": "religion"
+  },
+  {
+    "question": "What does the Eye of Horus represent?",
+    "options": [
+      "Protection and healing",
+      "War",
+      "Death",
+      "Wisdom"
+    ],
+    "answer": "Protection and healing",
+    "category": "gods"
+  },
+  {
+    "question": "How did Horus lose his eye?",
+    "options": [
+      "Accident",
+      "Birth defect",
+      "Battle with Seth",
+      "Sacrifice"
+    ],
+    "answer": "Battle with Seth",
+    "category": "gods"
+  },
+  {
+    "question": "Who was Seth in Egyptian mythology?",
+    "options": [
+      "God of chaos and storms",
+      "God of love",
+      "God of harvest",
+      "God of music"
+    ],
+    "answer": "God of chaos and storms",
+    "category": "gods"
+  },
+  {
+    "question": "What did Seth do to his brother Osiris?",
+    "options": [
+      "Nothing",
+      "Stole his throne",
+      "Banished him",
+      "Killed and dismembered him"
+    ],
+    "answer": "Killed and dismembered him",
+    "category": "gods"
+  },
+  {
+    "question": "Who reassembled Osiris's body?",
+    "options": [
+      "Horus",
+      "Isis",
+      "Anubis",
+      "Nephthys"
+    ],
+    "answer": "Isis",
+    "category": "gods"
+  },
+  {
+    "question": "What was Osiris's skin color often depicted as?",
+    "options": [
+      "Blue",
+      "Gold",
+      "Green",
+      "Red"
+    ],
+    "answer": "Green",
+    "category": "gods"
+  },
+  {
+    "question": "Why was Osiris green?",
+    "options": [
+      "Symbolized rebirth and vegetation",
+      "He was ill",
+      "Type of god",
+      "Artistic choice"
+    ],
+    "answer": "Symbolized rebirth and vegetation",
+    "category": "gods"
+  },
+  {
+    "question": "What goddess had cow horns and a sun disk?",
+    "options": [
+      "Isis",
+      "Nephthys",
+      "Bastet",
+      "Hathor"
+    ],
+    "answer": "Hathor",
+    "category": "gods"
+  },
+  {
+    "question": "What was Hathor the goddess of?",
+    "options": [
+      "Death",
+      "Wisdom",
+      "Love, music, and joy",
+      "War"
+    ],
+    "answer": "Love, music, and joy",
+    "category": "gods"
+  },
+  {
+    "question": "What did ancient Egyptians eat as a staple food?",
+    "options": [
+      "Corn",
+      "Potatoes",
+      "Rice",
+      "Bread and beer"
+    ],
+    "answer": "Bread and beer",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was beer's role in ancient Egypt?",
+    "options": [
+      "Religious use only",
+      "Only for pharaohs",
+      "Daily drink for all classes",
+      "Medicine only"
+    ],
+    "answer": "Daily drink for all classes",
+    "category": "daily-life"
+  },
+  {
+    "question": "Were workers who built pyramids slaves?",
+    "options": [
+      "Yes, all slaves",
+      "No, they were paid workers",
+      "Prisoners of war",
+      "Foreigners only"
+    ],
+    "answer": "No, they were paid workers",
+    "category": "daily-life"
+  },
+  {
+    "question": "What did pyramid workers receive as payment?",
+    "options": [
+      "Nothing",
+      "Land",
+      "Gold coins",
+      "Food, beer, and lodging"
+    ],
+    "answer": "Food, beer, and lodging",
+    "category": "daily-life"
+  },
+  {
+    "question": "What fabric did Egyptians primarily wear?",
+    "options": [
+      "Silk",
+      "Wool",
+      "Cotton",
+      "Linen"
+    ],
+    "answer": "Linen",
+    "category": "daily-life"
+  },
+  {
+    "question": "Why did Egyptians shave their heads?",
+    "options": [
+      "Punishment",
+      "Fashion",
+      "Hygiene and heat",
+      "Religious requirement"
+    ],
+    "answer": "Hygiene and heat",
+    "category": "daily-life"
+  },
+  {
+    "question": "What did wealthy Egyptians wear on shaved heads?",
+    "options": [
+      "Wigs",
+      "Hats",
+      "Nothing",
+      "Crowns"
+    ],
+    "answer": "Wigs",
+    "category": "daily-life"
+  },
+  {
+    "question": "What board game did ancient Egyptians play?",
+    "options": [
+      "Chess",
+      "Senet",
+      "Checkers",
+      "Mancala"
+    ],
+    "answer": "Senet",
+    "category": "daily-life"
+  },
+  {
+    "question": "What pets did ancient Egyptians keep?",
+    "options": [
+      "No pets",
+      "Only dogs",
+      "Cats, dogs, monkeys, birds",
+      "Only cats"
+    ],
+    "answer": "Cats, dogs, monkeys, birds",
+    "category": "daily-life"
+  },
+  {
+    "question": "What year was Tutankhamun's tomb discovered?",
+    "options": [
+      "1945",
+      "1899",
+      "1922",
+      "1912"
+    ],
+    "answer": "1922",
+    "category": "discoveries"
+  },
+  {
+    "question": "Who funded Howard Carter's excavation?",
+    "options": [
+      "British Museum",
+      "Egyptian government",
+      "Howard Carter himself",
+      "Lord Carnarvon"
+    ],
+    "answer": "Lord Carnarvon",
+    "category": "discoveries"
+  },
+  {
+    "question": "What was the 'curse of the pharaohs'?",
+    "options": [
+      "Supposed curse on tomb disturbers",
+      "Disease",
+      "Actual magic spell",
+      "Egyptian law"
+    ],
+    "answer": "Supposed curse on tomb disturbers",
+    "category": "discoveries"
+  },
+  {
+    "question": "What happened to Lord Carnarvon after the discovery?",
+    "options": [
+      "Returned to England safely",
+      "Died months later from infection",
+      "Became pharaoh",
+      "Lived long life"
+    ],
+    "answer": "Died months later from infection",
+    "category": "discoveries"
+  },
+  {
+    "question": "What made Tutankhamun's tomb special?",
+    "options": [
+      "Largest tomb",
+      "Most decorated",
+      "Nearly intact and filled with treasures",
+      "Oldest tomb"
+    ],
+    "answer": "Nearly intact and filled with treasures",
+    "category": "discoveries"
+  },
+  {
+    "question": "What famous artifact was on Tutankhamun's mummy?",
+    "options": [
+      "Gold death mask",
+      "Book of the Dead",
+      "Crown",
+      "Sword"
+    ],
+    "answer": "Gold death mask",
+    "category": "discoveries"
+  },
+  {
+    "question": "How much gold was in Tutankhamun's death mask?",
+    "options": [
+      "5 pounds",
+      "About 24 pounds (11 kg)",
+      "100 pounds",
+      "50 pounds"
+    ],
+    "answer": "About 24 pounds (11 kg)",
+    "category": "discoveries"
+  },
+  {
+    "question": "How old was Tutankhamun when he died?",
+    "options": [
+      "About 10",
+      "About 50",
+      "About 30",
+      "About 19"
+    ],
+    "answer": "About 19",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What likely killed Tutankhamun?",
+    "options": [
+      "Murder",
+      "Combination of malaria and bone disease",
+      "Old age",
+      "Battle wound"
+    ],
+    "answer": "Combination of malaria and bone disease",
+    "category": "pharaohs"
+  },
+  {
+    "question": "Who decoded hieroglyphics using the Rosetta Stone?",
+    "options": [
+      "Napoleon",
+      "Howard Carter",
+      "Jean-François Champollion",
+      "Giovanni Belzoni"
+    ],
+    "answer": "Jean-François Champollion",
+    "category": "discoveries"
+  },
+  {
+    "question": "What three scripts were on the Rosetta Stone?",
+    "options": [
+      "Egyptian, Arabic, Greek",
+      "Hieroglyphic, Demotic, Greek",
+      "Hieroglyphic, Latin, Greek",
+      "Hieratic, Demotic, Latin"
+    ],
+    "answer": "Hieroglyphic, Demotic, Greek",
+    "category": "discoveries"
+  },
+  {
+    "question": "When was the Rosetta Stone found?",
+    "options": [
+      "1850",
+      "1799",
+      "1700",
+      "1822"
+    ],
+    "answer": "1799",
+    "category": "discoveries"
+  },
+  {
+    "question": "Who found the Rosetta Stone?",
+    "options": [
+      "Egyptian farmers",
+      "Italian explorers",
+      "British archaeologists",
+      "French soldiers during Napoleon's campaign"
+    ],
+    "answer": "French soldiers during Napoleon's campaign",
+    "category": "discoveries"
+  },
+  {
+    "question": "Where is the Rosetta Stone today?",
+    "options": [
+      "Egyptian Museum",
+      "British Museum",
+      "Louvre",
+      "Smithsonian"
+    ],
+    "answer": "British Museum",
+    "category": "discoveries"
+  },
+  {
+    "question": "What was removed from the body first during mummification?",
+    "options": [
+      "Eyes",
+      "Brain (through the nose)",
+      "Heart",
+      "Liver"
+    ],
+    "answer": "Brain (through the nose)",
+    "category": "religion"
+  },
+  {
+    "question": "What salt was used to dry bodies for mummification?",
+    "options": [
+      "Natron",
+      "Table salt",
+      "Rock salt",
+      "Sea salt"
+    ],
+    "answer": "Natron",
+    "category": "religion"
+  },
+  {
+    "question": "How long did the mummification process take?",
+    "options": [
+      "1 week",
+      "1 year",
+      "About 70 days",
+      "1 day"
+    ],
+    "answer": "About 70 days",
+    "category": "religion"
+  },
+  {
+    "question": "What were shabtis?",
+    "options": [
+      "Jewelry",
+      "Weapons",
+      "Small figurines to serve the dead in afterlife",
+      "Food offerings"
+    ],
+    "answer": "Small figurines to serve the dead in afterlife",
+    "category": "religion"
+  },
+  {
+    "question": "What animals were also mummified?",
+    "options": [
+      "Only cats",
+      "Cats, crocodiles, birds, and more",
+      "Only sacred animals",
+      "None"
+    ],
+    "answer": "Cats, crocodiles, birds, and more",
+    "category": "religion"
+  },
+  {
+    "question": "Where was the entrance to the Great Pyramid originally hidden?",
+    "options": [
+      "Smooth limestone casing covered it",
+      "Underground",
+      "Never hidden",
+      "Behind sphinx"
+    ],
+    "answer": "Smooth limestone casing covered it",
+    "category": "pyramids"
+  },
+  {
+    "question": "What covered the Great Pyramid originally?",
+    "options": [
+      "White limestone casing stones",
+      "Gold",
+      "Nothing",
+      "Paint"
+    ],
+    "answer": "White limestone casing stones",
+    "category": "pyramids"
+  },
+  {
+    "question": "What topped the Great Pyramid originally?",
+    "options": [
+      "Nothing",
+      "Gold or electrum capstone (pyramidion)",
+      "Flag",
+      "Statue"
+    ],
+    "answer": "Gold or electrum capstone (pyramidion)",
+    "category": "pyramids"
+  },
+  {
+    "question": "How tall is the Great Pyramid?",
+    "options": [
+      "About 1000 feet",
+      "About 100 feet",
+      "About 481 feet (147m) originally",
+      "About 200 feet"
+    ],
+    "answer": "About 481 feet (147m) originally",
+    "category": "pyramids"
+  },
+  {
+    "question": "How many blocks are in the Great Pyramid approximately?",
+    "options": [
+      "5 million",
+      "2.3 million",
+      "500,000",
+      "100,000"
+    ],
+    "answer": "2.3 million",
+    "category": "pyramids"
+  },
+  {
+    "question": "What was the Bent Pyramid's problem?",
+    "options": [
+      "Angle changed during construction",
+      "Never finished",
+      "Collapsed",
+      "Wrong location"
+    ],
+    "answer": "Angle changed during construction",
+    "category": "pyramids"
+  },
+  {
+    "question": "Who built the Bent Pyramid?",
+    "options": [
+      "Khufu",
+      "Khafre",
+      "Sneferu",
+      "Djoser"
+    ],
+    "answer": "Sneferu",
+    "category": "pyramids"
+  },
+  {
+    "question": "What achievement is Imhotep credited with besides pyramids?",
+    "options": [
+      "Building ships",
+      "Father of medicine",
+      "Inventing writing",
+      "Creating gods"
+    ],
+    "answer": "Father of medicine",
+    "category": "achievements"
+  },
+  {
+    "question": "What medical text describes Egyptian treatments?",
+    "options": [
+      "Rosetta Stone",
+      "Pyramid Texts",
+      "Edwin Smith Papyrus",
+      "Book of the Dead"
+    ],
+    "answer": "Edwin Smith Papyrus",
+    "category": "achievements"
+  },
+  {
+    "question": "What surgical tools did Egyptians use?",
+    "options": [
+      "Only knives",
+      "Magic only",
+      "Scalpels, forceps, saws",
+      "No surgery"
+    ],
+    "answer": "Scalpels, forceps, saws",
+    "category": "achievements"
+  },
+  {
+    "question": "What was Egyptian medicine mixed with?",
+    "options": [
+      "Nothing",
+      "Magic and religion",
+      "Pure science",
+      "Greek medicine"
+    ],
+    "answer": "Magic and religion",
+    "category": "achievements"
+  },
+  {
+    "question": "What calendar did ancient Egyptians develop?",
+    "options": [
+      "No calendar",
+      "12-day week",
+      "Lunar calendar",
+      "365-day solar calendar"
+    ],
+    "answer": "365-day solar calendar",
+    "category": "achievements"
+  },
+  {
+    "question": "How many months in the Egyptian calendar?",
+    "options": [
+      "13 months",
+      "12 months of 30 days plus 5 extra",
+      "10 months",
+      "8 months"
+    ],
+    "answer": "12 months of 30 days plus 5 extra",
+    "category": "achievements"
+  },
+  {
+    "question": "What mathematical concept did Egyptians understand?",
+    "options": [
+      "Calculus",
+      "Zero",
+      "Negative numbers",
+      "Pi (approximately)"
+    ],
+    "answer": "Pi (approximately)",
+    "category": "achievements"
+  },
+  {
+    "question": "What number system did Egyptians use?",
+    "options": [
+      "Base 2",
+      "Base 12",
+      "Base 60",
+      "Base 10 (decimal)"
+    ],
+    "answer": "Base 10 (decimal)",
+    "category": "writing"
+  },
+  {
+    "question": "What was hieratic script?",
+    "options": [
+      "Secret code",
+      "Simplified hieroglyphics for daily use",
+      "Royal writing only",
+      "Foreign language"
+    ],
+    "answer": "Simplified hieroglyphics for daily use",
+    "category": "writing"
+  },
+  {
+    "question": "What replaced hieratic in later periods?",
+    "options": [
+      "Arabic",
+      "Greek",
+      "Latin",
+      "Demotic script"
+    ],
+    "answer": "Demotic script",
+    "category": "writing"
+  },
+  {
+    "question": "What direction could hieroglyphics be read?",
+    "options": [
+      "Left to right or right to left",
+      "Only top to bottom",
+      "Only right to left",
+      "Only left to right"
+    ],
+    "answer": "Left to right or right to left",
+    "category": "writing"
+  },
+  {
+    "question": "How do you know which way to read hieroglyphics?",
+    "options": [
+      "Figures face the start of the text",
+      "Random",
+      "Always left",
+      "Always right"
+    ],
+    "answer": "Figures face the start of the text",
+    "category": "writing"
+  },
+  {
+    "question": "What was a cartouche?",
+    "options": [
+      "Tomb",
+      "Throne",
+      "Oval enclosing royal names",
+      "Crown"
+    ],
+    "answer": "Oval enclosing royal names",
+    "category": "writing"
+  },
+  {
+    "question": "What did peasant farmers do during flood season?",
+    "options": [
+      "Rested",
+      "Fished",
+      "Moved away",
+      "Worked on royal projects like pyramids"
+    ],
+    "answer": "Worked on royal projects like pyramids",
+    "category": "daily-life"
+  },
+  {
+    "question": "What crops did ancient Egyptians grow?",
+    "options": [
+      "Rice, corn, potatoes",
+      "Only wheat",
+      "Wheat, barley, flax, papyrus",
+      "Only barley"
+    ],
+    "answer": "Wheat, barley, flax, papyrus",
+    "category": "daily-life"
+  },
+  {
+    "question": "What tool helped lift water for irrigation?",
+    "options": [
+      "Shaduf",
+      "Plow",
+      "Bucket only",
+      "Wheel"
+    ],
+    "answer": "Shaduf",
+    "category": "achievements"
+  },
+  {
+    "question": "At what age could Egyptian children marry?",
+    "options": [
+      "25",
+      "18",
+      "Around 12-14",
+      "30"
+    ],
+    "answer": "Around 12-14",
+    "category": "daily-life"
+  },
+  {
+    "question": "Did Egyptian women have legal rights?",
+    "options": [
+      "No rights",
+      "Only royalty",
+      "Only wealthy",
+      "Yes, unusual for ancient world"
+    ],
+    "answer": "Yes, unusual for ancient world",
+    "category": "daily-life"
+  },
+  {
+    "question": "Could Egyptian women own property?",
+    "options": [
+      "Only widows",
+      "Only royalty",
+      "Yes",
+      "No"
+    ],
+    "answer": "Yes",
+    "category": "daily-life"
+  },
+  {
+    "question": "Could Egyptian women divorce?",
+    "options": [
+      "Only if husband agreed",
+      "No",
+      "Only with pharaoh's permission",
+      "Yes"
+    ],
+    "answer": "Yes",
+    "category": "daily-life"
+  },
+  {
+    "question": "What was the afterlife paradise called?",
+    "options": [
+      "Elysium",
+      "Heaven",
+      "Field of Reeds",
+      "Valhalla"
+    ],
+    "answer": "Field of Reeds",
+    "category": "religion"
+  },
+  {
+    "question": "What was the Field of Reeds like?",
+    "options": [
+      "Perfect version of Egypt",
+      "Underground palace",
+      "Golden city",
+      "Cloud kingdom"
+    ],
+    "answer": "Perfect version of Egypt",
+    "category": "religion"
+  },
+  {
+    "question": "What did Egyptians believe about the ba?",
+    "options": [
+      "Brain",
+      "Heart",
+      "Soul that could leave the tomb",
+      "Body"
+    ],
+    "answer": "Soul that could leave the tomb",
+    "category": "religion"
+  },
+  {
+    "question": "What was the ka?",
+    "options": [
+      "Shadow",
+      "Life force/spirit double",
+      "Physical body",
+      "Heart"
+    ],
+    "answer": "Life force/spirit double",
+    "category": "religion"
+  },
+  {
+    "question": "Why did Egyptians preserve bodies?",
+    "options": [
+      "To prevent disease",
+      "Ka needed to return to body",
+      "For identification",
+      "Law required it"
+    ],
+    "answer": "Ka needed to return to body",
+    "category": "religion"
+  },
+  {
+    "question": "What was an obelisk?",
+    "options": [
+      "Temple",
+      "Tall four-sided pillar with pyramid top",
+      "Statue",
+      "Tomb"
+    ],
+    "answer": "Tall four-sided pillar with pyramid top",
+    "category": "pyramids"
+  },
+  {
+    "question": "What were obelisks made of?",
+    "options": [
+      "Wood",
+      "Single piece of granite",
+      "Limestone blocks",
+      "Mud bricks"
+    ],
+    "answer": "Single piece of granite",
+    "category": "pyramids"
+  },
+  {
+    "question": "Where are Egyptian obelisks now?",
+    "options": [
+      "Many cities worldwide (Rome, Paris, NYC)",
+      "Only Egypt",
+      "Lost",
+      "Only Britain"
+    ],
+    "answer": "Many cities worldwide (Rome, Paris, NYC)",
+    "category": "discoveries"
+  },
+  {
+    "question": "What queen led a trade expedition to Punt?",
+    "options": [
+      "Nefertari",
+      "Hatshepsut",
+      "Nefertiti",
+      "Cleopatra"
+    ],
+    "answer": "Hatshepsut",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was the land of Punt?",
+    "options": [
+      "Colony",
+      "Enemy nation",
+      "Mythical place",
+      "Trading partner, possibly East Africa"
+    ],
+    "answer": "Trading partner, possibly East Africa",
+    "category": "geography"
+  },
+  {
+    "question": "What goods came from Punt?",
+    "options": [
+      "Grain",
+      "Incense, gold, exotic animals",
+      "Weapons",
+      "Nothing"
+    ],
+    "answer": "Incense, gold, exotic animals",
+    "category": "daily-life"
+  },
+  {
+    "question": "How long did Hatshepsut rule?",
+    "options": [
+      "50 years",
+      "About 20 years",
+      "5 years",
+      "2 years"
+    ],
+    "answer": "About 20 years",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What happened to Hatshepsut's monuments after death?",
+    "options": [
+      "Preserved perfectly",
+      "Destroyed by enemies",
+      "Many defaced by successor",
+      "Moved to Alexandria"
+    ],
+    "answer": "Many defaced by successor",
+    "category": "pharaohs"
+  },
+  {
+    "question": "Who defaced Hatshepsut's monuments?",
+    "options": [
+      "Tutankhamun",
+      "Ramses II",
+      "Thutmose III",
+      "Akhenaten"
+    ],
+    "answer": "Thutmose III",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was Thutmose III known as?",
+    "options": [
+      "Builder King",
+      "Ramses the Great",
+      "Napoleon of Egypt",
+      "Peaceful Pharaoh"
+    ],
+    "answer": "Napoleon of Egypt",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What battle made Thutmose III famous?",
+    "options": [
+      "Battle of Memphis",
+      "Battle of Megiddo",
+      "Battle of Kadesh",
+      "Battle of the Nile"
+    ],
+    "answer": "Battle of Megiddo",
+    "category": "warfare"
+  },
+  {
+    "question": "What was unique about Akhenaten's art style?",
+    "options": [
+      "More realistic, showed physical features",
+      "More abstract",
+      "Smaller",
+      "Same as before"
+    ],
+    "answer": "More realistic, showed physical features",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What city did Akhenaten build for Aten worship?",
+    "options": [
+      "Amarna/Akhetaten",
+      "Alexandria",
+      "Thebes",
+      "Memphis"
+    ],
+    "answer": "Amarna/Akhetaten",
+    "category": "geography"
+  },
+  {
+    "question": "What happened to Amarna after Akhenaten died?",
+    "options": [
+      "Became capital",
+      "Abandoned and destroyed",
+      "Expanded",
+      "Thrived"
+    ],
+    "answer": "Abandoned and destroyed",
+    "category": "geography"
+  },
+  {
+    "question": "What was Tutankhamun's original name?",
+    "options": [
+      "Amenhotep",
+      "Tutankhaten",
+      "Ramses",
+      "Tutankhamun"
+    ],
+    "answer": "Tutankhaten",
+    "category": "pharaohs"
+  },
+  {
+    "question": "Why did Tutankhamun change his name?",
+    "options": [
+      "Marriage",
+      "Coming of age",
+      "Military victory",
+      "Restored worship of Amun from Aten"
+    ],
+    "answer": "Restored worship of Amun from Aten",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What was the Hyksos invasion?",
+    "options": [
+      "Egyptian civil war",
+      "Religious uprising",
+      "Foreign rulers who controlled Egypt",
+      "Natural disaster"
+    ],
+    "answer": "Foreign rulers who controlled Egypt",
+    "category": "warfare"
+  },
+  {
+    "question": "What technology did the Hyksos introduce to Egypt?",
+    "options": [
+      "Writing",
+      "Ships",
+      "Horse-drawn chariots and bronze weapons",
+      "Agriculture"
+    ],
+    "answer": "Horse-drawn chariots and bronze weapons",
+    "category": "warfare"
+  },
+  {
+    "question": "What period followed Hyksos expulsion?",
+    "options": [
+      "Middle Kingdom",
+      "Old Kingdom",
+      "New Kingdom (Egypt's golden age)",
+      "Late Period"
+    ],
+    "answer": "New Kingdom (Egypt's golden age)",
+    "category": "pharaohs"
+  },
+  {
+    "question": "What were the Sea Peoples?",
+    "options": [
+      "Mysterious invaders who attacked Egypt",
+      "Trading partners",
+      "Mythical beings",
+      "Egyptian navy"
+    ],
+    "answer": "Mysterious invaders who attacked Egypt",
+    "category": "warfare"
+  },
+  {
+    "question": "Who defeated the Sea Peoples?",
+    "options": [
+      "Tutankhamun",
+      "Ramses III",
+      "Cleopatra",
+      "Ramses II"
+    ],
+    "answer": "Ramses III",
+    "category": "warfare"
+  },
+  {
+    "question": "What god represented the Nile flood?",
+    "options": [
+      "Sobek",
+      "Osiris",
+      "Khnum",
+      "Hapi"
+    ],
+    "answer": "Hapi",
+    "category": "gods"
+  },
+  {
+    "question": "What god had a crocodile head?",
+    "options": [
+      "Horus",
+      "Anubis",
+      "Sobek",
+      "Thoth"
+    ],
+    "answer": "Sobek",
+    "category": "gods"
+  },
+  {
+    "question": "What animal represented the god Khnum?",
+    "options": [
+      "Crocodile",
+      "Lion",
+      "Hawk",
+      "Ram"
+    ],
+    "answer": "Ram",
+    "category": "gods"
+  },
+  {
+    "question": "What did Khnum supposedly do?",
+    "options": [
+      "Controlled the sun",
+      "Judged the dead",
+      "Created humans on a potter's wheel",
+      "Caused floods"
+    ],
+    "answer": "Created humans on a potter's wheel",
+    "category": "gods"
+  },
+  {
+    "question": "What goddess had a lioness head?",
+    "options": [
+      "Isis",
+      "Bastet",
+      "Hathor",
+      "Sekhmet"
+    ],
+    "answer": "Sekhmet",
+    "category": "gods"
+  },
+  {
+    "question": "What was Sekhmet goddess of?",
+    "options": [
+      "Fertility",
+      "Death",
+      "Love",
+      "War and destruction"
+    ],
+    "answer": "War and destruction",
+    "category": "gods"
+  },
+  {
+    "question": "What was the relationship between Sekhmet and Bastet?",
+    "options": [
+      "Sisters",
+      "Two aspects of same goddess (war/peaceful)",
+      "No relation",
+      "Enemies"
+    ],
+    "answer": "Two aspects of same goddess (war/peaceful)",
+    "category": "gods"
+  },
+  {
+    "question": "What was opening of the mouth ceremony?",
+    "options": [
+      "Naming ceremony",
+      "Ritual to restore senses to mummy",
+      "Burial procession",
+      "Feeding the dead"
+    ],
+    "answer": "Ritual to restore senses to mummy",
+    "category": "religion"
+  },
+  {
+    "question": "What tools were used in opening of the mouth?",
+    "options": [
+      "Only incense",
+      "Bare hands",
+      "Only water",
+      "Adze and other ritual implements"
+    ],
+    "answer": "Adze and other ritual implements",
+    "category": "religion"
+  },
+  {
+    "question": "What was a false door in tombs for?",
+    "options": [
+      "Decoration",
+      "Storage",
+      "Ka's passage between worlds",
+      "Actual entrance"
+    ],
+    "answer": "Ka's passage between worlds",
+    "category": "religion"
+  },
+  {
+    "question": "What were Pyramid Texts?",
+    "options": [
+      "Trade records",
+      "Construction manuals",
+      "Royal decrees",
+      "Oldest religious texts in pyramids"
+    ],
+    "answer": "Oldest religious texts in pyramids",
+    "category": "writing"
+  },
+  {
+    "question": "What became of Pyramid Texts later?",
+    "options": [
+      "Unchanged",
+      "Destroyed",
+      "Forgotten",
+      "Evolved into Coffin Texts then Book of Dead"
+    ],
+    "answer": "Evolved into Coffin Texts then Book of Dead",
+    "category": "writing"
+  },
+  {
+    "question": "What recent discovery was made at Saqqara?",
+    "options": [
+      "New tombs and mummies (2020s)",
+      "Treasure room",
+      "Lost city",
+      "New pyramid"
+    ],
+    "answer": "New tombs and mummies (2020s)",
+    "category": "discoveries"
+  },
+  {
+    "question": "What scanning technology revealed hidden chambers?",
+    "options": [
+      "Radar only",
+      "X-ray only",
+      "Cosmic ray muon scanning",
+      "Ultrasound"
+    ],
+    "answer": "Cosmic ray muon scanning",
+    "category": "discoveries"
+  },
+  {
+    "question": "Has Nefertiti's tomb been found?",
+    "options": [
+      "Yes, in 2000",
+      "Destroyed",
+      "Yes, in 1922",
+      "No, still undiscovered"
+    ],
+    "answer": "No, still undiscovered",
+    "category": "discoveries"
+  },
+  {
+    "question": "Where might Nefertiti be buried?",
+    "options": [
+      "Possibly hidden chamber in Tutankhamun's tomb",
+      "Pyramids",
+      "Unknown location",
+      "Alexandria"
+    ],
+    "answer": "Possibly hidden chamber in Tutankhamun's tomb",
+    "category": "discoveries"
+  },
+  {
+    "question": "What is Egyptology?",
+    "options": [
+      "Modern Egypt",
+      "Study of ancient Egypt",
+      "Egyptian language",
+      "Egyptian cooking"
+    ],
+    "answer": "Study of ancient Egypt",
+    "category": "discoveries"
+  },
+  {
+    "question": "Who is considered the father of Egyptology?",
+    "options": [
+      "Napoleon",
+      "Flinders Petrie",
+      "Howard Carter",
+      "Jean-François Champollion"
+    ],
+    "answer": "Jean-François Champollion",
+    "category": "discoveries"
+  },
+  {
+    "question": "What museum has the largest Egyptian collection?",
+    "options": [
+      "Metropolitan",
+      "Louvre",
+      "British Museum",
+      "Egyptian Museum in Cairo"
+    ],
+    "answer": "Egyptian Museum in Cairo",
+    "category": "discoveries"
+  },
+  {
+    "question": "What new museum opened for Egyptian artifacts?",
+    "options": [
+      "Grand Egyptian Museum (GEM)",
+      "Luxor National",
+      "Giza Museum",
+      "New Cairo Museum"
+    ],
+    "answer": "Grand Egyptian Museum (GEM)",
+    "category": "discoveries"
+  },
+  {
+    "question": "What happened during the Arab Spring to Egyptian Museum?",
+    "options": [
+      "Some artifacts stolen/damaged",
+      "Nothing",
+      "Completely destroyed",
+      "Relocated"
+    ],
+    "answer": "Some artifacts stolen/damaged",
+    "category": "discoveries"
+  },
+  {
+    "question": "What color did Egyptians associate with rebirth?",
+    "options": [
+      "Red",
+      "White",
+      "Green",
+      "Blue"
+    ],
+    "answer": "Green",
+    "category": "religion"
+  },
+  {
+    "question": "What color represented the desert and chaos?",
+    "options": [
+      "White",
+      "Green",
+      "Red",
+      "Blue"
+    ],
+    "answer": "Red",
+    "category": "religion"
+  },
+  {
+    "question": "What did blue represent in Egyptian art?",
+    "options": [
+      "Royalty only",
+      "The heavens and primeval flood",
+      "War",
+      "Death"
+    ],
+    "answer": "The heavens and primeval flood",
+    "category": "religion"
+  },
+  {
+    "question": "What was electrum?",
+    "options": [
+      "Gold and silver alloy",
+      "Copper",
+      "Pure gold",
+      "Bronze"
+    ],
+    "answer": "Gold and silver alloy",
+    "category": "achievements"
+  },
+  {
+    "question": "What role did cats play beyond pets?",
+    "options": [
+      "No role",
+      "Only pets",
+      "Only religious",
+      "Killed mice and snakes, protected grain"
+    ],
+    "answer": "Killed mice and snakes, protected grain",
+    "category": "daily-life"
+  },
+  {
+    "question": "What happened when a pet cat died?",
+    "options": [
+      "Nothing special",
+      "Family shaved eyebrows in mourning",
+      "Buried with owner",
+      "Celebration"
+    ],
+    "answer": "Family shaved eyebrows in mourning",
+    "category": "daily-life"
+  },
+  {
+    "question": "How long did ancient Egyptian civilization last?",
+    "options": [
+      "500 years",
+      "About 3,000 years",
+      "100 years",
+      "1,000 years"
+    ],
+    "answer": "About 3,000 years",
+    "category": "general"
+  }
+]
