@@ -409,6 +409,123 @@ function addXP(topicId, amount) {
   };
 }
 
+// ⭐ XP Circle Animation Function
+function animateXPCircle(data) {
+  const progressCircle = document.getElementById('xp-circle-progress');
+  const xpGainedText = document.getElementById('xp-gained-text');
+  const levelUpOverlay = document.getElementById('level-up-overlay');
+  const levelUpNumber = document.getElementById('level-up-number');
+  
+  if (!progressCircle) return;
+  
+  // Show "+XP" text
+  setTimeout(() => {
+    if (xpGainedText) {
+      xpGainedText.style.opacity = '1';
+      xpGainedText.style.transform = 'translateY(0)';
+    }
+  }, 200);
+  
+  // Animate circle progress
+  const startDegrees = (data.startProgress / 100) * 360;
+  const endDegrees = (data.endProgress / 100) * 360;
+  const duration = 1200;
+  const startTime = performance.now();
+  
+  function animateProgress(currentTime) {
+    const elapsed = currentTime - startTime;
+    const t = Math.min(elapsed / duration, 1);
+    // Ease out cubic
+    const easeOut = 1 - Math.pow(1 - t, 3);
+    const currentDegrees = startDegrees + (endDegrees - startDegrees) * easeOut;
+    
+    progressCircle.style.background = `conic-gradient(#00d4aa 0deg, #00ff88 ${currentDegrees}deg, transparent ${currentDegrees}deg)`;
+    
+    if (t < 1) {
+      requestAnimationFrame(animateProgress);
+    } else {
+      // Animation complete - check for level up
+      if (data.leveledUp) {
+        setTimeout(() => showLevelUpCelebration(data.newLevel), 300);
+      }
+    }
+  }
+  
+  requestAnimationFrame(animateProgress);
+}
+
+// ⭐ Level Up Celebration
+function showLevelUpCelebration(newLevel) {
+  const overlay = document.getElementById('level-up-overlay');
+  const levelNumber = document.getElementById('level-up-number');
+  const levelDisplay = document.getElementById('xp-level-number');
+  
+  if (!overlay) return;
+  
+  levelNumber.textContent = newLevel;
+  overlay.style.opacity = '1';
+  overlay.style.pointerEvents = 'auto';
+  
+  // Animate level number in circle
+  if (levelDisplay) {
+    levelDisplay.style.transform = 'scale(1.3)';
+    setTimeout(() => {
+      levelDisplay.style.transform = 'scale(1)';
+    }, 300);
+  }
+  
+  // Create confetti
+  createConfetti();
+  
+  // Hide overlay after 2 seconds
+  setTimeout(() => {
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+  }, 2000);
+}
+
+// ⭐ Confetti Effect
+function createConfetti() {
+  const colors = ['#ffd700', '#ff8c00', '#00d4aa', '#00ff88', '#ff6b6b', '#4ecdc4'];
+  
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div');
+    const size = 5 + Math.random() * 10;
+    const left = Math.random() * 100;
+    const animDuration = 2 + Math.random() * 2;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const isCircle = Math.random() > 0.5;
+    
+    confetti.style.cssText = `
+      position: fixed;
+      width: ${size}px;
+      height: ${size}px;
+      background: ${color};
+      left: ${left}vw;
+      top: -20px;
+      border-radius: ${isCircle ? '50%' : '0'};
+      z-index: 1001;
+      pointer-events: none;
+      animation: confettiFall ${animDuration}s ease-out forwards;
+    `;
+    
+    document.body.appendChild(confetti);
+    setTimeout(() => confetti.remove(), animDuration * 1000);
+  }
+}
+
+// Add confetti animation style
+(function() {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+})();
+
 console.log('XP System initialized');
 
 // ============================================
@@ -3127,41 +3244,76 @@ function showUnifiedResults() {
   const percentage = gameMode === 'two' ? 0 : (totalAnswered > 0 ? Math.round((currentSessionCorrect / totalAnswered) * 100) : 0);
   const message = percentage >= 80 ? '🏆 Excellent!' : percentage >= 60 ? '⭐ Great Job!' : percentage >= 40 ? '👍 Good Effort!' : '💪 Keep Practicing!';
 
-  // Build XP display HTML
+  // Build XP display HTML (Circular Progress)
   let xpDisplayHTML = '';
+  let xpAnimationData = null;
   if (xpResult && gameMode !== 'two') {
     const topicData = getTopicXPData(currentTopic);
     const progress = getLevelProgress(topicData);
     
+    // Calculate previous progress (before XP was added)
+    const prevXP = topicData.xp - xpResult.xpGained;
+    const prevLevel = xpResult.leveledUp ? xpResult.newLevel - 1 : topicData.level;
+    const xpForPrevLevel = prevLevel === 1 ? 0 : xpNeededForLevel(prevLevel - 1);
+    const xpForPrevNextLevel = xpNeededForLevel(prevLevel);
+    const prevProgress = ((prevXP - xpForPrevLevel) / (xpForPrevNextLevel - xpForPrevLevel)) * 100;
+    
+    // Store animation data
+    xpAnimationData = {
+      startProgress: Math.max(0, Math.min(prevProgress, 100)),
+      endProgress: progress.percentage,
+      xpGained: xpResult.xpGained,
+      leveledUp: xpResult.leveledUp,
+      newLevel: xpResult.newLevel,
+      newUnlocks: xpResult.newUnlocks
+    };
+    
     xpDisplayHTML = `
-      <div style="background:linear-gradient(135deg,rgba(255,215,0,0.2),rgba(255,165,0,0.1));border-radius:12px;padding:15px;margin:15px 0;border:1px solid rgba(255,215,0,0.3);">
-        <div style="color:#FFD700;font-size:24px;font-weight:bold;">+${xpResult.xpGained} XP</div>
-        ${xpResult.leveledUp ? `<div style="color:#00FF00;font-size:18px;margin-top:5px;">🎉 Level Up! Level ${xpResult.newLevel}</div>` : ''}
-        ${xpResult.newUnlocks.length > 0 ? `<div style="color:#00BFFF;font-size:16px;margin-top:5px;">🔓 ${xpResult.newUnlocks.includes('timeAttack') ? 'Time Attack' : '3 Hearts'} Unlocked!</div>` : ''}
-        <div style="margin-top:10px;">
-          <div style="color:#a78bfa;font-size:14px;">Level ${topicData.level} • ${progress.current}/${progress.needed} XP</div>
-          <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:8px;margin-top:5px;overflow:hidden;">
-            <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
+      <div class="xp-circle-container" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin:20px 0;">
+        <div class="xp-circle-wrapper" style="position:relative;width:160px;height:160px;">
+          <div style="position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(255,255,255,0.1);box-shadow:inset 0 0 20px rgba(0,0,0,0.3);"></div>
+          <div id="xp-circle-progress" style="position:absolute;width:100%;height:100%;border-radius:50%;background:conic-gradient(#00d4aa 0deg,#00ff88 0deg,transparent 0deg);filter:drop-shadow(0 0 10px rgba(0,212,170,0.5));"></div>
+          <div style="position:absolute;inset:6px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
+          <div style="position:absolute;inset:12px;border-radius:50%;background:linear-gradient(145deg,#1e2740,#151c2e);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 2px 10px rgba(0,0,0,0.5),0 0 15px rgba(0,212,170,0.2);">
+            <span style="font-size:0.65rem;text-transform:uppercase;letter-spacing:2px;color:#00d4aa;opacity:0.9;">Level</span>
+            <span id="xp-level-number" style="font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#fff,#00d4aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">${topicData.level}</span>
+            <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);"><span id="xp-current">${progress.current}</span> / ${progress.needed}</span>
           </div>
         </div>
+        <div id="xp-gained-text" style="font-size:1.3rem;font-weight:700;color:#00ff88;opacity:0;transform:translateY(10px);transition:all 0.5s ease;">+${xpResult.xpGained} XP</div>
+        ${xpResult.newUnlocks.length > 0 ? `<div style="color:#00BFFF;font-size:14px;margin-top:5px;">🔓 ${xpResult.newUnlocks.includes('timeAttack') ? 'Time Attack' : '3 Hearts'} Unlocked!</div>` : ''}
+      </div>
+      <!-- Level Up Overlay -->
+      <div id="level-up-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000;">
+        <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#ffd700,#ff8c00,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★ LEVEL UP! ★</div>
+        <div id="level-up-number" style="font-size:4rem;font-weight:800;color:#ffd700;"></div>
       </div>
     `;
   }
 
+  // Apply dark blue background to quiz screen
+  quizScreen.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)';
+  
   quizScreen.innerHTML = `
-    <div style="text-align:center;max-width:400px;">
-      <h2 style="color:#FFD700;font-size:32px;margin-bottom:10px;">${resultText}</h2>
-      <div style="background:rgba(255,255,255,0.1);border-radius:20px;padding:30px;margin:20px 0;box-shadow:0 8px 30px rgba(124, 58, 237, 0.3);">
-        <div style="color:#a78bfa;font-size:48px;font-weight:bold;">${scoreDisplay}</div>
-        ${gameMode !== 'two' ? `<div style="color:#fff;font-size:20px;margin-top:10px;">${percentage}% Correct</div>` : ''}
-        ${xpDisplayHTML}
-      </div>
-      ${gameMode !== 'two' ? `<p style="color:#a78bfa;font-size:18px;margin:20px 0;">${message}</p>` : ''}
+    <div style="text-align:center;max-width:400px;padding:20px;">
+      <h2 style="color:#00d4aa;font-size:32px;margin-bottom:20px;text-shadow:0 0 20px rgba(0,212,170,0.3);">${resultText}</h2>
+      
+      <div style="color:#fff;font-size:52px;font-weight:bold;margin-bottom:5px;">${scoreDisplay}</div>
+      ${gameMode !== 'two' ? `<div style="color:rgba(255,255,255,0.7);font-size:18px;margin-bottom:25px;">${percentage}% Correct</div>` : ''}
+      
+      ${xpDisplayHTML}
+      
+      ${gameMode !== 'two' ? `<p style="color:#00d4aa;font-size:18px;margin:25px 0;">${message}</p>` : ''}
 
-      <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">Play Again</button>
-      <button onclick="playClickSound(); exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#666,#555);color:#fff;cursor:pointer;">Back to Topics</button>
+      <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#00ff88);color:#1a1a2e;font-weight:600;cursor:pointer;box-shadow:0 8px 25px rgba(0,212,170,0.4);">Play Again</button>
+      <button onclick="playClickSound(); exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;border:1px solid rgba(255,255,255,0.2);">Back to Topics</button>
     </div>
   `;
+  
+  // ⭐ Animate XP Circle if we have XP data
+  if (xpAnimationData) {
+    setTimeout(() => animateXPCircle(xpAnimationData), 300);
+  }
 }
 
 // Restart unified quiz
@@ -3630,3 +3782,4 @@ function saveQuizStats(topicId, completed) {
 checkFirstTimeUser();
 updateProfileDisplay();
 updateAllStatsDisplays();
+
