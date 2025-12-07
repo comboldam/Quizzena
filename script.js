@@ -365,15 +365,16 @@ function getXPThreeHearts(correctAnswers, survivedQuestions, longestStreak, topi
   // Performance XP: 12.5 XP per correct (highest reward)
   const performanceXP = correctAnswers * 12.5;
   
-  // Survival XP: 1.5 XP per question survived
-  const survivalXP = survivedQuestions * 1.5;
+  // Survival XP: 1.5 XP per question survived (CAPPED at 50 questions = 75 XP)
+  const SURVIVAL_CAP = 75; // Max survival XP (50 questions × 1.5)
+  const survivalXP = Math.min(survivedQuestions * 1.5, SURVIVAL_CAP);
   
-  // Streak Bonus: 2 XP per streak count
+  // Streak Bonus: 2 XP per streak count (uncapped - rewards mastery!)
   const streakBonus = longestStreak * 2;
   
   const totalXP = Math.floor(performanceXP + survivalXP + streakBonus);
   
-  console.log(`📊 3 Hearts XP: ${correctAnswers}×12.5 + ${survivedQuestions}×1.5 + ${longestStreak}×2 = ${totalXP}`);
+  console.log(`📊 3 Hearts XP: ${correctAnswers}×12.5 + ${survivedQuestions}×1.5 (cap:${SURVIVAL_CAP}) + ${longestStreak}×2 = ${totalXP}`);
   return totalXP;
 }
 
