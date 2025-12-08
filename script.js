@@ -4068,7 +4068,141 @@ function saveQuizStats(topicId, completed) {
   });
 }
 
+// ========================================
+// ⚔️ RANKED MODE SYSTEM
+// ========================================
+
+const RANKED_QUIZZES_REQUIRED = 30;
+const RANKED_RELEASED = false; // Set to true when Ranked Mode launches
+
+// Get current quiz count (totalGames)
+function getRankedQuizCount() {
+  return userData.stats.totalGames || 0;
+}
+
+// Check if user is qualified for ranked
+function isRankedQualified() {
+  return getRankedQuizCount() >= RANKED_QUIZZES_REQUIRED;
+}
+
+// Update Ranked button state based on user progress
+function updateRankedButtonState() {
+  const rankedButton = document.getElementById('ranked-button');
+  const lockIcon = document.getElementById('ranked-lock-icon');
+  const qualifiedIcon = document.getElementById('ranked-qualified-icon');
+  
+  if (!rankedButton) return;
+  
+  const qualified = isRankedQualified();
+  
+  if (qualified) {
+    // State B: Qualified but not released yet
+    rankedButton.classList.add('qualified');
+    if (lockIcon) lockIcon.classList.add('hidden');
+    if (qualifiedIcon) qualifiedIcon.classList.remove('hidden');
+  } else {
+    // State A: Locked
+    rankedButton.classList.remove('qualified');
+    if (lockIcon) lockIcon.classList.remove('hidden');
+    if (qualifiedIcon) qualifiedIcon.classList.add('hidden');
+  }
+}
+
+// Open appropriate Ranked modal based on state
+function openRankedModal() {
+  const qualified = isRankedQualified();
+  const lockedModal = document.getElementById('ranked-modal-locked');
+  const qualifiedModal = document.getElementById('ranked-modal-qualified');
+  
+  if (RANKED_RELEASED) {
+    // State C: Ranked is live - open Ranked Mode (future implementation)
+    console.log('Opening Ranked Mode...');
+    // TODO: Navigate to Ranked screen when implemented
+    return;
+  }
+  
+  if (qualified) {
+    // State B: Show qualified modal
+    if (qualifiedModal) qualifiedModal.classList.remove('hidden');
+  } else {
+    // State A: Show locked modal with progress
+    updateRankedLockedModal();
+    if (lockedModal) lockedModal.classList.remove('hidden');
+  }
+}
+
+// Update locked modal with current progress
+function updateRankedLockedModal() {
+  const currentQuizzes = getRankedQuizCount();
+  const remaining = Math.max(0, RANKED_QUIZZES_REQUIRED - currentQuizzes);
+  const progress = Math.min(100, (currentQuizzes / RANKED_QUIZZES_REQUIRED) * 100);
+  
+  const remainingEl = document.getElementById('ranked-remaining-quizzes');
+  const progressFill = document.getElementById('ranked-progress-fill');
+  const progressText = document.getElementById('ranked-progress-text');
+  
+  if (remainingEl) remainingEl.textContent = remaining;
+  if (progressFill) progressFill.style.width = `${progress}%`;
+  if (progressText) progressText.textContent = `${currentQuizzes} / ${RANKED_QUIZZES_REQUIRED}`;
+}
+
+// Close all Ranked modals
+function closeRankedModal() {
+  const lockedModal = document.getElementById('ranked-modal-locked');
+  const qualifiedModal = document.getElementById('ranked-modal-qualified');
+  
+  if (lockedModal) lockedModal.classList.add('hidden');
+  if (qualifiedModal) qualifiedModal.classList.add('hidden');
+}
+
+// Placeholder for notify button
+function notifyRankedRelease() {
+  alert('You will be notified when Ranked Mode launches!');
+  closeRankedModal();
+}
+
+// Developer Debug: Set user to 30 quizzes (for testing qualified state)
+function devSetQualified() {
+  userData.stats.totalGames = RANKED_QUIZZES_REQUIRED;
+  saveUserData();
+  updateRankedButtonState();
+  updateAllStatsDisplays();
+  console.log('🛠️ DEV: User set to qualified (30 quizzes)');
+  alert('Developer Mode: Quiz count set to 30. You are now qualified for Ranked!');
+}
+
+// Developer Debug: Reset quiz count to 0 (for testing locked state)
+function devResetQuizCount() {
+  userData.stats.totalGames = 0;
+  saveUserData();
+  updateRankedButtonState();
+  updateAllStatsDisplays();
+  console.log('🛠️ DEV: Quiz count reset to 0');
+}
+
+// Add developer debug button (only if DEV_MODE is true)
+function addDevDebugButton() {
+  if (!DEV_MODE) return;
+  
+  // Check if button already exists
+  if (document.getElementById('dev-ranked-btn')) return;
+  
+  const devBtn = document.createElement('button');
+  devBtn.id = 'dev-ranked-btn';
+  devBtn.className = 'dev-debug-btn';
+  devBtn.textContent = '🛠️ Make Me Lvl 30';
+  devBtn.onclick = devSetQualified;
+  document.body.appendChild(devBtn);
+}
+
+// Initialize Ranked system
+function initRankedSystem() {
+  updateRankedButtonState();
+  addDevDebugButton();
+}
+
 // Run on page load
 checkFirstTimeUser();
 updateProfileDisplay();
 updateAllStatsDisplays();
+initRankedSystem();

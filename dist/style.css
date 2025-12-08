@@ -929,6 +929,447 @@ footer button:hover {
   text-align: center;
 }
 
+/* ========================================
+   ⚔️ RANKED MODE BUTTON & MODALS
+   ======================================== */
+
+/* Ranked Section Container */
+.ranked-section {
+  padding: 20px 20px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Ranked Button */
+.ranked-button {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 18px 30px;
+  background: linear-gradient(135deg, 
+    rgba(139, 92, 246, 0.15) 0%,
+    rgba(124, 58, 237, 0.25) 50%,
+    rgba(91, 33, 182, 0.2) 100%);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  border-radius: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ranked-button:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.7);
+  box-shadow: 
+    0 10px 40px rgba(124, 58, 237, 0.3),
+    0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+.ranked-button:active {
+  transform: translateY(-1px);
+}
+
+/* Glow effect behind button */
+.ranked-button-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+    transparent 30%,
+    rgba(139, 92, 246, 0.4) 50%,
+    transparent 70%);
+  background-size: 200% 200%;
+  animation: rankedGlowPulse 3s ease-in-out infinite;
+  border-radius: 18px;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+@keyframes rankedGlowPulse {
+  0%, 100% { 
+    background-position: 0% 50%;
+    opacity: 0.5;
+  }
+  50% { 
+    background-position: 100% 50%;
+    opacity: 0.9;
+  }
+}
+
+.ranked-button-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Lock Icon */
+.ranked-lock-icon {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  animation: lockBounce 2s ease-in-out infinite;
+}
+
+.ranked-lock-icon svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes lockBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+/* Qualified Star Icon */
+.ranked-qualified-icon {
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  animation: starGlow 1.5s ease-in-out infinite;
+}
+
+.ranked-qualified-icon svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+}
+
+@keyframes starGlow {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));
+  }
+  50% { 
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.9));
+  }
+}
+
+/* Button Text */
+.ranked-button-text {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+/* Qualified State Button Styles */
+.ranked-button.qualified {
+  background: linear-gradient(135deg, 
+    rgba(251, 191, 36, 0.15) 0%,
+    rgba(245, 158, 11, 0.25) 50%,
+    rgba(217, 119, 6, 0.2) 100%);
+  border-color: rgba(251, 191, 36, 0.5);
+}
+
+.ranked-button.qualified:hover {
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow: 
+    0 10px 40px rgba(251, 191, 36, 0.3),
+    0 0 30px rgba(245, 158, 11, 0.2);
+}
+
+.ranked-button.qualified .ranked-button-glow {
+  background: linear-gradient(45deg, 
+    transparent 30%,
+    rgba(251, 191, 36, 0.4) 50%,
+    transparent 70%);
+  background-size: 200% 200%;
+}
+
+.ranked-button.qualified .ranked-button-text {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ========================================
+   RANKED MODALS
+   ======================================== */
+
+.ranked-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.ranked-modal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ranked-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.ranked-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 380px;
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: modalAppear 0.4s ease-out forwards;
+}
+
+@keyframes modalAppear {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Locked Modal Styles */
+.ranked-modal-content.ranked-modal-locked {
+  background: linear-gradient(145deg, 
+    rgba(30, 30, 50, 0.98) 0%,
+    rgba(20, 20, 35, 0.98) 100%);
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(124, 58, 237, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Qualified Modal Styles */
+.ranked-modal-content.ranked-modal-qualified {
+  background: linear-gradient(145deg, 
+    rgba(45, 35, 20, 0.98) 0%,
+    rgba(30, 25, 15, 0.98) 100%);
+  border: 2px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(251, 191, 36, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.ranked-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ranked-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Modal Icon */
+.ranked-modal-icon {
+  margin-bottom: 20px;
+}
+
+.ranked-modal-icon.locked {
+  color: rgba(139, 92, 246, 0.8);
+  animation: lockPulse 2s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.4)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.6)); }
+}
+
+.ranked-modal-icon.qualified {
+  color: #fbbf24;
+  animation: qualifiedStar 1.5s ease-in-out infinite;
+}
+
+@keyframes qualifiedStar {
+  0%, 100% { 
+    transform: scale(1) rotate(-5deg);
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.5));
+  }
+  50% { 
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.8));
+  }
+}
+
+/* Modal Title */
+.ranked-modal-title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.ranked-modal-title.qualified {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modal Subtitle */
+.ranked-modal-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Modal Body */
+.ranked-modal-body {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Progress Bar */
+.ranked-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ranked-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  border-radius: 12px;
+  width: 0%;
+  transition: width 0.8s ease-out;
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.ranked-progress-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Buttons */
+.ranked-modal-btn {
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.ranked-modal-btn.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+.ranked-modal-btn.notify {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1a1a2e;
+  font-weight: 700;
+  box-shadow: 0 5px 20px rgba(251, 191, 36, 0.3);
+}
+
+.ranked-modal-btn.notify:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.4);
+}
+
+/* Confetti Effect for Qualified Modal */
+.ranked-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.ranked-confetti::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    radial-gradient(circle, #fbbf24 2px, transparent 2px),
+    radial-gradient(circle, #f59e0b 2px, transparent 2px),
+    radial-gradient(circle, #fef3c7 1.5px, transparent 1.5px);
+  background-size: 50px 50px, 70px 70px, 40px 40px;
+  background-position: 0 0, 25px 25px, 15px 35px;
+  animation: confettiFloat 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes confettiFloat {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(-25px, 25px) rotate(360deg); }
+}
+
+/* Developer Debug Button */
+.dev-debug-btn {
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 9998;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.dev-debug-btn:hover {
+  opacity: 1;
+}
+
 /* Categories Section */
 .home-categories-section {
   padding: 25px 20px;

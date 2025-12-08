@@ -48,6 +48,9 @@ async function initFirebaseAuth() {
     // Create/update Firestore user document
     await updateFirestoreUser(user.uid);
     
+    // Load and merge cloud data (if not in dev mode)
+    await loadFromFirebase();
+    
     return user;
   } catch (error) {
     console.error('🔥 Firebase auth error:', error);
@@ -88,6 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ============================================
+// 🔧 DEV MODE TOGGLE
+// ============================================
+// Set to FALSE when launching to production!
+// When true: Data only saves to localStorage (no cloud sync)
+// When false: Data syncs to Firebase for cross-device play
+const DEV_MODE = true;
+
+// ============================================
 // USER DATA SYSTEM
 // ============================================
 
@@ -119,12 +130,126 @@ function loadUserData() {
   return JSON.parse(JSON.stringify(defaultUserData));
 }
 
-function saveUserData() {
-  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+// Load and merge data from Firebase (called after auth is ready)
+async function loadFromFirebase() {
+  if (DEV_MODE || !firebaseDb || !firebaseUser) return;
+  
+  try {
+    const userRef = firebaseDb.collection('users').doc(firebaseUser.uid);
+    const doc = await userRef.get();
+    
+    if (doc.exists) {
+      const cloudData = doc.data();
+      
+      // Compare timestamps to decide which data wins
+      const localTime = userData.profile?.createdAt || 0;
+      const cloudTime = cloudData.lastUpdated?.toMillis() || 0;
+      
+      if (cloudData.stats && cloudTime > localTime) {
+        // Cloud is newer - merge cloud data into local
+        console.log('🔥 Loading newer data from Firebase');
+        
+        // Merge profile
+        if (cloudData.profile) {
+          userData.profile = { ...userData.profile, ...cloudData.profile };
+        }
+        
+        // Merge stats (take higher values for XP/levels)
+        if (cloudData.stats) {
+          userData.isSetupComplete = cloudData.isSetupComplete || userData.isSetupComplete;
+          userData.stats.totalGames = Math.max(userData.stats.totalGames || 0, cloudData.stats.totalGames || 0);
+          userData.stats.correctAnswers = Math.max(userData.stats.correctAnswers || 0, cloudData.stats.correctAnswers || 0);
+          userData.stats.wrongAnswers = Math.max(userData.stats.wrongAnswers || 0, cloudData.stats.wrongAnswers || 0);
+          userData.stats.bestStreak = Math.max(userData.stats.bestStreak || 0, cloudData.stats.bestStreak || 0);
+          
+          // Merge topic stats (take higher XP/level per topic)
+          if (cloudData.stats.topics) {
+            for (const topicId in cloudData.stats.topics) {
+              const cloudTopic = cloudData.stats.topics[topicId];
+              const localTopic = userData.stats.topics[topicId] || {};
+              
+              userData.stats.topics[topicId] = {
+                games: Math.max(localTopic.games || 0, cloudTopic.games || 0),
+                correct: Math.max(localTopic.correct || 0, cloudTopic.correct || 0),
+                wrong: Math.max(localTopic.wrong || 0, cloudTopic.wrong || 0),
+                accuracy: Math.max(localTopic.accuracy || 0, cloudTopic.accuracy || 0),
+                bestStreak: Math.max(localTopic.bestStreak || 0, cloudTopic.bestStreak || 0),
+                level: Math.max(localTopic.level || 1, cloudTopic.level || 1),
+                xp: Math.max(localTopic.xp || 0, cloudTopic.xp || 0),
+                modesUnlocked: {
+                  casual: true,
+                  timeAttack: (localTopic.modesUnlocked?.timeAttack || cloudTopic.modesUnlocked?.timeAttack) || false,
+                  threeHearts: (localTopic.modesUnlocked?.threeHearts || cloudTopic.modesUnlocked?.threeHearts) || false
+                }
+              };
+            }
+          }
+        }
+        
+        // Save merged data locally
+        localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+        console.log('🔥 Merged cloud data with local');
+      } else {
+        console.log('🔥 Local data is newer, keeping local');
+      }
+    } else {
+      console.log('🔥 No cloud data found, using local');
+    }
+  } catch (error) {
+    console.error('🔥 Firebase load error:', error);
+    // Silent fail - continue with localStorage data
+  }
 }
 
-function resetUserData() {
+function saveUserData() {
+  // Always save to localStorage (fast, works offline)
+  localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
+  
+  // Sync to Firebase if not in dev mode
+  if (!DEV_MODE && firebaseDb && firebaseUser) {
+    syncToFirebase();
+  }
+}
+
+// Async Firebase sync (non-blocking)
+async function syncToFirebase() {
+  if (!firebaseDb || !firebaseUser) return;
+  
+  try {
+    const userRef = firebaseDb.collection('users').doc(firebaseUser.uid);
+    await userRef.set({
+      // Profile & Setup
+      isSetupComplete: userData.isSetupComplete,
+      profile: userData.profile,
+      
+      // All Stats (includes XP, levels, modesUnlocked per topic)
+      stats: userData.stats,
+      
+      // Timestamps
+      lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true });
+    
+    console.log('🔥 Data synced to Firebase');
+  } catch (error) {
+    console.error('🔥 Firebase sync error:', error);
+    // Silent fail - localStorage still has the data
+  }
+}
+
+async function resetUserData() {
+  // Clear localStorage
   localStorage.removeItem('quizzena_user_data');
+  
+  // Also clear Firebase data if not in dev mode
+  if (!DEV_MODE && firebaseDb && firebaseUser) {
+    try {
+      await firebaseDb.collection('users').doc(firebaseUser.uid).delete();
+      console.log('🔥 Firebase user data deleted');
+    } catch (error) {
+      console.error('🔥 Firebase delete error:', error);
+    }
+  }
+  
   location.reload();
 }
 
@@ -211,9 +336,11 @@ function getLevelProgress(topicData) {
   const nextLevelXP = xpNeededForLevel(topicData.level);
   const xpInCurrentLevel = topicData.xp - currentLevelXP;
   const xpNeededForNextLevel = nextLevelXP - currentLevelXP;
+  const xpRemaining = xpNeededForNextLevel - xpInCurrentLevel;
   return {
     current: xpInCurrentLevel,
     needed: xpNeededForNextLevel,
+    remaining: xpRemaining,
     percentage: Math.floor((xpInCurrentLevel / xpNeededForNextLevel) * 100)
   };
 }
@@ -408,123 +535,6 @@ function addXP(topicId, amount) {
     newUnlocks: newUnlocks
   };
 }
-
-// ⭐ XP Circle Animation Function
-function animateXPCircle(data) {
-  const progressCircle = document.getElementById('xp-circle-progress');
-  const xpGainedText = document.getElementById('xp-gained-text');
-  const levelUpOverlay = document.getElementById('level-up-overlay');
-  const levelUpNumber = document.getElementById('level-up-number');
-  
-  if (!progressCircle) return;
-  
-  // Show "+XP" text
-  setTimeout(() => {
-    if (xpGainedText) {
-      xpGainedText.style.opacity = '1';
-      xpGainedText.style.transform = 'translateY(0)';
-    }
-  }, 200);
-  
-  // Animate circle progress
-  const startDegrees = (data.startProgress / 100) * 360;
-  const endDegrees = (data.endProgress / 100) * 360;
-  const duration = 1200;
-  const startTime = performance.now();
-  
-  function animateProgress(currentTime) {
-    const elapsed = currentTime - startTime;
-    const t = Math.min(elapsed / duration, 1);
-    // Ease out cubic
-    const easeOut = 1 - Math.pow(1 - t, 3);
-    const currentDegrees = startDegrees + (endDegrees - startDegrees) * easeOut;
-    
-    progressCircle.style.background = `conic-gradient(#00d4aa 0deg, #00ff88 ${currentDegrees}deg, transparent ${currentDegrees}deg)`;
-    
-    if (t < 1) {
-      requestAnimationFrame(animateProgress);
-    } else {
-      // Animation complete - check for level up
-      if (data.leveledUp) {
-        setTimeout(() => showLevelUpCelebration(data.newLevel), 300);
-      }
-    }
-  }
-  
-  requestAnimationFrame(animateProgress);
-}
-
-// ⭐ Level Up Celebration
-function showLevelUpCelebration(newLevel) {
-  const overlay = document.getElementById('level-up-overlay');
-  const levelNumber = document.getElementById('level-up-number');
-  const levelDisplay = document.getElementById('xp-level-number');
-  
-  if (!overlay) return;
-  
-  levelNumber.textContent = newLevel;
-  overlay.style.opacity = '1';
-  overlay.style.pointerEvents = 'auto';
-  
-  // Animate level number in circle
-  if (levelDisplay) {
-    levelDisplay.style.transform = 'scale(1.3)';
-    setTimeout(() => {
-      levelDisplay.style.transform = 'scale(1)';
-    }, 300);
-  }
-  
-  // Create confetti
-  createConfetti();
-  
-  // Hide overlay after 2 seconds
-  setTimeout(() => {
-    overlay.style.opacity = '0';
-    overlay.style.pointerEvents = 'none';
-  }, 2000);
-}
-
-// ⭐ Confetti Effect
-function createConfetti() {
-  const colors = ['#ffd700', '#ff8c00', '#00d4aa', '#00ff88', '#ff6b6b', '#4ecdc4'];
-  
-  for (let i = 0; i < 50; i++) {
-    const confetti = document.createElement('div');
-    const size = 5 + Math.random() * 10;
-    const left = Math.random() * 100;
-    const animDuration = 2 + Math.random() * 2;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const isCircle = Math.random() > 0.5;
-    
-    confetti.style.cssText = `
-      position: fixed;
-      width: ${size}px;
-      height: ${size}px;
-      background: ${color};
-      left: ${left}vw;
-      top: -20px;
-      border-radius: ${isCircle ? '50%' : '0'};
-      z-index: 1001;
-      pointer-events: none;
-      animation: confettiFall ${animDuration}s ease-out forwards;
-    `;
-    
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), animDuration * 1000);
-  }
-}
-
-// Add confetti animation style
-(function() {
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes confettiFall {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
-  `;
-  document.head.appendChild(style);
-})();
 
 console.log('XP System initialized');
 
@@ -3188,6 +3198,145 @@ function checkUnifiedAnswer(selected, correct) {
   }, 800);
 }
 
+// ⭐ XP CIRCLE ANIMATION HELPERS
+const XP_ANIMATION_DURATION = 500; // 0.5 seconds
+
+function animateXPNumber(element, startValue, endValue, duration, prefix = '') {
+  const startTime = performance.now();
+  const change = endValue - startValue;
+  
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const currentValue = Math.floor(startValue + (change * progress));
+    element.textContent = prefix + currentValue;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+function animateXPCircleFill(circleEl, existingDeg, endNewDeg, duration, positionCallback) {
+  const startTime = performance.now();
+  
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const currentNewDeg = endNewDeg * progress;
+    const cappedTotalDeg = Math.min(existingDeg + currentNewDeg, 360);
+    
+    circleEl.style.background = `conic-gradient(
+      #ff3333 0deg,
+      #ff3333 ${existingDeg}deg,
+      #ff6b6b ${existingDeg}deg,
+      #ff6b6b ${cappedTotalDeg}deg,
+      transparent ${cappedTotalDeg}deg
+    )`;
+    
+    if (positionCallback) positionCallback(existingDeg, cappedTotalDeg);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+function positionXPArrows(existingDeg, totalDeg, wrapperEl) {
+  const radius = 90;
+  const centerX = radius;
+  const centerY = radius;
+  
+  const arrowGained = wrapperEl.querySelector('.xp-arrow-gained');
+  const arrowNeeded = wrapperEl.querySelector('.xp-arrow-needed');
+  const arrowCompleted = wrapperEl.querySelector('.xp-arrow-completed');
+  const labelGained = wrapperEl.querySelector('.xp-label-gained');
+  const labelCompleted = wrapperEl.querySelector('.xp-label-completed');
+  const labelNeeded = wrapperEl.querySelector('.xp-label-needed');
+  
+  const dotGained = wrapperEl.querySelector('.xp-dot-gained');
+  const dotNeeded = wrapperEl.querySelector('.xp-dot-needed');
+  const dotCompleted = wrapperEl.querySelector('.xp-dot-completed');
+  
+  const wrapperRect = wrapperEl.getBoundingClientRect();
+  
+  // Calculate new XP degrees
+  const newDeg = totalDeg - existingDeg;
+  
+  // Hide XP GAINED if no new XP
+  if (newDeg <= 0 && labelGained) {
+    labelGained.style.display = 'none';
+    if (arrowGained) arrowGained.style.display = 'none';
+  } else if (labelGained) {
+    labelGained.style.display = 'block';
+    if (arrowGained) arrowGained.style.display = 'block';
+  }
+  
+  // Hide OVERALL XP if no existing XP
+  if (existingDeg <= 0 && labelCompleted) {
+    labelCompleted.style.display = 'none';
+    if (arrowCompleted) arrowCompleted.style.display = 'none';
+  } else if (labelCompleted) {
+    labelCompleted.style.display = 'block';
+    if (arrowCompleted) arrowCompleted.style.display = 'block';
+  }
+  
+  // Position XP GAINED arrow
+  if (dotGained && arrowGained && newDeg > 0) {
+    const dotRect = dotGained.getBoundingClientRect();
+    const gainedAngle = (totalDeg - 90) * (Math.PI / 180);
+    const circleX = centerX + Math.cos(gainedAngle) * radius;
+    const circleY = centerY + Math.sin(gainedAngle) * radius;
+    const dotX = (dotRect.left + dotRect.width / 2) - wrapperRect.left;
+    const dotY = (dotRect.top + dotRect.height / 2) - wrapperRect.top;
+    
+    arrowGained.innerHTML = `<svg width="300" height="200" style="position:absolute;left:-50px;top:-10px;overflow:visible;">
+      <line x1="${dotX + 50}" y1="${dotY + 10}" x2="${circleX + 50}" y2="${circleY + 10}" stroke="#ff3333" stroke-width="2"/>
+    </svg>`;
+  }
+  
+  // Position XP TO LEVEL arrow
+  if (dotNeeded && arrowNeeded && labelNeeded) {
+    const emptyMidDeg = totalDeg + ((360 - totalDeg) / 2);
+    const emptyAngle = (emptyMidDeg - 90) * (Math.PI / 180);
+    const emptyY = centerY + Math.sin(emptyAngle) * radius;
+    const labelYPercent = (emptyY / (radius * 2)) * 100;
+    const clampedY = Math.max(15, Math.min(50, labelYPercent));
+    labelNeeded.style.top = `${clampedY}%`;
+    
+    setTimeout(() => {
+      const dotRect = dotNeeded.getBoundingClientRect();
+      const newWrapperRect = wrapperEl.getBoundingClientRect();
+      const dotX = (dotRect.left + dotRect.width / 2) - newWrapperRect.left;
+      const dotY = (dotRect.top + dotRect.height / 2) - newWrapperRect.top;
+      
+      if (totalDeg > 320) {
+        const targetX = centerX + Math.cos(emptyAngle) * radius;
+        const targetY = centerY + Math.sin(emptyAngle) * radius;
+        arrowNeeded.innerHTML = `<svg width="300" height="200" style="position:absolute;left:-100px;top:-10px;overflow:visible;">
+          <line x1="${dotX + 100}" y1="${dotY + 10}" x2="${targetX + 100}" y2="${targetY + 10}" stroke="#888" stroke-width="2"/>
+        </svg>`;
+      } else {
+        const dy = dotY - centerY;
+        const touchX = centerX - Math.sqrt(Math.max(0, radius * radius - dy * dy));
+        arrowNeeded.innerHTML = `<svg width="300" height="200" style="position:absolute;left:-100px;top:-10px;overflow:visible;">
+          <line x1="${dotX + 100}" y1="${dotY + 10}" x2="${touchX + 100}" y2="${dotY + 10}" stroke="#888" stroke-width="2"/>
+        </svg>`;
+      }
+    }, 10);
+  }
+  
+  // Position OVERALL XP arrow
+  if (dotCompleted && arrowCompleted && existingDeg > 0) {
+    const dotRect = dotCompleted.getBoundingClientRect();
+    const completedAngle = (existingDeg - 90) * (Math.PI / 180);
+    const circleX = centerX + Math.cos(completedAngle) * radius;
+    const circleY = centerY + Math.sin(completedAngle) * radius;
+    const dotX = (dotRect.left + dotRect.width / 2) - wrapperRect.left;
+    const dotY = (dotRect.top + dotRect.height / 2) - wrapperRect.top;
+    
+    arrowCompleted.innerHTML = `<svg width="300" height="200" style="position:absolute;left:-50px;top:-10px;overflow:visible;">
+      <line x1="${dotX + 50}" y1="${dotY + 10}" x2="${circleX + 50}" y2="${circleY + 10}" stroke="#ff3333" stroke-width="2"/>
+    </svg>`;
+  }
+}
+
 // Show unified results screen
 function showUnifiedResults() {
   // SAVE STATS FIRST (completed = true because quiz finished naturally)
@@ -3244,75 +3393,216 @@ function showUnifiedResults() {
   const percentage = gameMode === 'two' ? 0 : (totalAnswered > 0 ? Math.round((currentSessionCorrect / totalAnswered) * 100) : 0);
   const message = percentage >= 80 ? '🏆 Excellent!' : percentage >= 60 ? '⭐ Great Job!' : percentage >= 40 ? '👍 Good Effort!' : '💪 Keep Practicing!';
 
-  // Build XP display HTML (Circular Progress)
+  // Build XP display HTML with circular progress
   let xpDisplayHTML = '';
   let xpAnimationData = null;
+  
   if (xpResult && gameMode !== 'two') {
     const topicData = getTopicXPData(currentTopic);
     const progress = getLevelProgress(topicData);
     
-    // Calculate previous progress (before XP was added)
-    const prevXP = topicData.xp - xpResult.xpGained;
-    const prevLevel = xpResult.leveledUp ? xpResult.newLevel - 1 : topicData.level;
-    const xpForPrevLevel = prevLevel === 1 ? 0 : xpNeededForLevel(prevLevel - 1);
-    const xpForPrevNextLevel = xpNeededForLevel(prevLevel);
-    const prevProgress = ((prevXP - xpForPrevLevel) / (xpForPrevNextLevel - xpForPrevLevel)) * 100;
+    // Calculate existing XP percent (bright red) and new XP percent (dim red)
+    const existingXPInLevel = progress.current - xpResult.xpGained;
+    const existingPercent = xpResult.leveledUp ? 0 : Math.max(0, (existingXPInLevel / progress.needed) * 100);
+    const newPercent = (xpResult.xpGained / progress.needed) * 100;
     
-    // Store animation data
+    // Store data for animation
     xpAnimationData = {
-      startProgress: Math.max(0, Math.min(prevProgress, 100)),
-      endProgress: progress.percentage,
       xpGained: xpResult.xpGained,
-      leveledUp: xpResult.leveledUp,
-      newLevel: xpResult.newLevel,
-      newUnlocks: xpResult.newUnlocks
+      existingPercent,
+      newPercent,
+      totalXP: topicData.xp,
+      xpToLevel: progress.remaining,
+      level: topicData.level
     };
     
     xpDisplayHTML = `
-      <div class="xp-circle-container" style="display:flex;flex-direction:column;align-items:center;gap:15px;margin:20px 0;">
-        <div class="xp-circle-wrapper" style="position:relative;width:160px;height:160px;">
-          <div style="position:absolute;width:100%;height:100%;border-radius:50%;background:rgba(255,255,255,0.1);box-shadow:inset 0 0 20px rgba(0,0,0,0.3);"></div>
-          <div id="xp-circle-progress" style="position:absolute;width:100%;height:100%;border-radius:50%;background:conic-gradient(#00d4aa 0deg,#00ff88 0deg,transparent 0deg);filter:drop-shadow(0 0 10px rgba(0,212,170,0.5));"></div>
-          <div style="position:absolute;inset:6px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#16213e);"></div>
-          <div style="position:absolute;inset:12px;border-radius:50%;background:linear-gradient(145deg,#1e2740,#151c2e);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 2px 10px rgba(0,0,0,0.5),0 0 15px rgba(0,212,170,0.2);">
-            <span style="font-size:0.65rem;text-transform:uppercase;letter-spacing:2px;color:#00d4aa;opacity:0.9;">Level</span>
-            <span id="xp-level-number" style="font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#fff,#00d4aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;">${topicData.level}</span>
-            <span style="font-size:0.75rem;color:rgba(255,255,255,0.7);"><span id="xp-current">${progress.current}</span> / ${progress.needed}</span>
-          </div>
+      <div id="xpCircleWrapper" style="position:relative;width:180px;height:180px;margin:20px auto;">
+        <div style="position:absolute;width:100%;height:100%;border-radius:50%;background:#1a1a2e;border:8px solid #2a2a3e;"></div>
+        <div id="xpCircleProgress" style="position:absolute;width:100%;height:100%;border-radius:50%;background:transparent;"></div>
+        <div style="position:absolute;inset:12px;border-radius:50%;background:linear-gradient(145deg,#1e2740,#151c2e);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 2px 15px rgba(0,0,0,0.5);">
+          <span style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#ff6b6b;opacity:0.9;">Level</span>
+          <span style="font-size:52px;font-weight:800;color:#fff;line-height:1;">${topicData.level}</span>
         </div>
-        <div id="xp-gained-text" style="font-size:1.3rem;font-weight:700;color:#00ff88;opacity:0;transform:translateY(10px);transition:all 0.5s ease;">+${xpResult.xpGained} XP</div>
-        ${xpResult.newUnlocks.length > 0 ? `<div style="color:#00BFFF;font-size:14px;margin-top:5px;">🔓 ${xpResult.newUnlocks.includes('timeAttack') ? 'Time Attack' : '3 Hearts'} Unlocked!</div>` : ''}
+        
+        <!-- XP GAINED (right side) -->
+        <div class="xp-arrow-gained" style="position:absolute;pointer-events:none;overflow:visible;"></div>
+        <div class="xp-label-gained" style="position:absolute;right:-100px;top:50%;transform:translateY(-50%);font-size:11px;white-space:nowrap;text-align:center;color:#ff3333;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="xp-dot-gained" style="width:6px;height:6px;border-radius:50%;background:#ff3333;margin-top:14px;"></span>
+            <span>XP GAINED</span>
+          </div>
+          <div id="xpGainedValue" style="font-size:11px;font-weight:700;margin-top:2px;">+0</div>
+        </div>
+        
+        <!-- XP TO LEVEL (left side) -->
+        <div class="xp-arrow-needed" style="position:absolute;pointer-events:none;overflow:visible;"></div>
+        <div class="xp-label-needed" style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);font-size:11px;white-space:nowrap;text-align:center;color:#888;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span>XP TO LEVEL ${topicData.level + 1}</span>
+            <span class="xp-dot-needed" style="width:6px;height:6px;border-radius:50%;background:#888;margin-top:14px;"></span>
+          </div>
+          <div id="xpNeededValue" style="font-size:11px;font-weight:700;margin-top:2px;">${progress.remaining + xpResult.xpGained}</div>
+        </div>
+        
+        <!-- OVERALL XP (bottom right) -->
+        <div class="xp-arrow-completed" style="position:absolute;pointer-events:none;overflow:visible;"></div>
+        <div class="xp-label-completed" style="position:absolute;right:-100px;bottom:-10px;font-size:11px;white-space:nowrap;text-align:center;color:#ff3333;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="xp-dot-completed" style="width:6px;height:6px;border-radius:50%;background:#ff3333;margin-top:14px;"></span>
+            <span>OVERALL XP</span>
+          </div>
+          <div id="xpOverallValue" style="font-size:11px;font-weight:700;margin-top:2px;">${topicData.xp}</div>
+        </div>
       </div>
-      <!-- Level Up Overlay -->
-      <div id="level-up-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000;">
-        <div style="font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#ffd700,#ff8c00,#ffd700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">★ LEVEL UP! ★</div>
-        <div id="level-up-number" style="font-size:4rem;font-weight:800;color:#ffd700;"></div>
-      </div>
+      ${xpResult.leveledUp ? `<div style="color:#00FF00;font-size:18px;margin-top:10px;">🎉 Level Up! Level ${xpResult.newLevel}</div>` : ''}
+      ${xpResult.newUnlocks.length > 0 ? `<div style="color:#00BFFF;font-size:16px;margin-top:5px;">🔓 ${xpResult.newUnlocks.includes('timeAttack') ? 'Time Attack' : '3 Hearts'} Unlocked!</div>` : ''}
     `;
   }
 
-  // Apply dark blue background to quiz screen
-  quizScreen.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)';
+  // Get topic icon and name
+  const topicIcon = currentTopic === 'flags' ? '🏳️' :
+                    currentTopic === 'capitals' ? '🏛️' :
+                    currentTopic === 'borders' ? '🗺️' :
+                    currentTopic === 'football' ? '⚽' :
+                    currentTopic === 'world-history' ? '🌍' : '📏';
+  const topicName = currentTopic.charAt(0).toUpperCase() + currentTopic.slice(1).replace('-', ' ');
+  
+  // Get player level and title
+  const topicDataForDisplay = xpResult ? getTopicXPData(currentTopic) : { level: 1 };
+  const playerLevel = topicDataForDisplay.level || 1;
+  const playerTitle = playerLevel >= 20 ? 'Master' : playerLevel >= 10 ? 'Expert' : playerLevel >= 5 ? 'Intermediate' : 'Beginner';
+  
+  // Calculate XP breakdown for display
+  let perfXP = 0, compXP = 0, bonusXP = 0, survivalXP = 0, streakXP = 0, speedXP = 0, accuracyXP = 0, totalXPEarned = 0;
+  let is3Hearts = gameMode === 'three-hearts';
+  let isTimeAttack = gameMode === 'time-attack';
+  
+  if (xpResult) {
+    if (gameMode === 'casual') {
+      perfXP = currentSessionCorrect * 10;
+      compXP = 10;
+      // LCB calculation
+      const lcbMultipliers = [100, 60, 40, 20, 10, 0];
+      const lcbBase = lcbMultipliers[Math.min(currentSessionCorrect, 5)] || 0;
+      bonusXP = playerLevel <= 20 ? lcbBase : 0;
+    } else if (gameMode === 'time-attack') {
+      perfXP = currentSessionCorrect * 5;
+      speedXP = questionCount;
+      accuracyXP = questionCount > 0 ? Math.floor((currentSessionCorrect / questionCount) * 20) : 0;
+      compXP = 20;
+    } else if (gameMode === 'three-hearts') {
+      perfXP = Math.floor(currentSessionCorrect * 12.5);
+      survivalXP = Math.floor(Math.min(questionCount * 1.5, 75));
+      streakXP = bestSessionStreak * 2;
+    }
+    totalXPEarned = xpResult.xpGained;
+  }
+
+  // Apply dark theme background
+  quizScreen.style.background = 'linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%)';
   
   quizScreen.innerHTML = `
-    <div style="text-align:center;max-width:400px;padding:20px;">
-      <h2 style="color:#00d4aa;font-size:32px;margin-bottom:20px;text-shadow:0 0 20px rgba(0,212,170,0.3);">${resultText}</h2>
+    <div style="text-align:center;max-width:450px;padding:20px;position:relative;">
+      <!-- Header -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="width:36px;"></div>
+        <div style="text-align:center;flex:1;">
+          <div style="color:#888;font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:2px;">Results</div>
+          <div style="color:#fff;font-size:18px;font-weight:600;margin-top:2px;">${topicName}</div>
+        </div>
+        <button onclick="playClickSound(); exitUnifiedQuiz()" style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:#888;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+      </div>
       
-      <div style="color:#fff;font-size:52px;font-weight:bold;margin-bottom:5px;">${scoreDisplay}</div>
-      ${gameMode !== 'two' ? `<div style="color:rgba(255,255,255,0.7);font-size:18px;margin-bottom:25px;">${percentage}% Correct</div>` : ''}
+      <!-- Player Section -->
+      <div style="display:flex;flex-direction:column;align-items:center;margin:25px 0;">
+        <div style="position:relative;margin-bottom:15px;">
+          <div style="width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:50px;border:4px solid #00d4aa;box-shadow:0 0 20px rgba(0,212,170,0.4);">👤</div>
+          <div style="position:absolute;top:-5px;right:-15px;background:linear-gradient(135deg,#00d4aa,#00ff88);color:#000;font-size:18px;font-weight:800;padding:5px 12px;border-radius:20px;box-shadow:0 4px 15px rgba(0,212,170,0.5);">${singlePlayerScore}</div>
+        </div>
+        <div style="font-size:22px;font-weight:700;color:#00d4aa;margin-bottom:3px;">Player123</div>
+        <div style="font-size:14px;color:#888;margin-bottom:3px;">${playerTitle}</div>
+        <div style="font-size:13px;color:#666;">Level ${playerLevel}</div>
+      </div>
+      
+      <!-- XP Breakdown Boxes -->
+      ${xpResult ? `
+      <div style="display:flex;justify-content:center;gap:8px;margin:20px 0;flex-wrap:wrap;">
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #22c55e;color:#22c55e;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Performance</div>
+          <div style="font-size:20px;font-weight:700;">${perfXP}</div>
+        </div>
+        ${is3Hearts ? `
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #f59e0b;color:#f59e0b;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Survival</div>
+          <div style="font-size:20px;font-weight:700;">${survivalXP}</div>
+        </div>
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #06b6d4;color:#06b6d4;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Streak</div>
+          <div style="font-size:20px;font-weight:700;">${streakXP}</div>
+        </div>
+        ` : isTimeAttack ? `
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #a855f7;color:#a855f7;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Speed</div>
+          <div style="font-size:20px;font-weight:700;">${speedXP}</div>
+        </div>
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #06b6d4;color:#06b6d4;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Accuracy</div>
+          <div style="font-size:20px;font-weight:700;">${accuracyXP}</div>
+        </div>
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #f59e0b;color:#f59e0b;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Completion</div>
+          <div style="font-size:20px;font-weight:700;">${compXP}</div>
+        </div>
+        ` : `
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #f59e0b;color:#f59e0b;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Completion</div>
+          <div style="font-size:20px;font-weight:700;">${compXP}</div>
+        </div>
+        ${bonusXP > 0 ? `
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #06b6d4;color:#06b6d4;min-width:70px;">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">LCB Bonus</div>
+          <div style="font-size:20px;font-weight:700;">${Math.floor(bonusXP)}</div>
+        </div>
+        ` : ''}
+        `}
+        <div style="text-align:center;padding:10px 12px;border-radius:8px;border:2px solid #ef4444;color:#ef4444;min-width:70px;background:rgba(239,68,68,0.1);">
+          <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.5px;opacity:0.9;margin-bottom:4px;">Total XP</div>
+          <div style="font-size:20px;font-weight:700;">${totalXPEarned}</div>
+        </div>
+      </div>
+      ` : ''}
       
       ${xpDisplayHTML}
       
-      ${gameMode !== 'two' ? `<p style="color:#00d4aa;font-size:18px;margin:25px 0;">${message}</p>` : ''}
+      ${gameMode !== 'two' ? `<p style="color:#00d4aa;font-size:16px;margin:20px 0;">${message}</p>` : ''}
 
-      <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#00ff88);color:#1a1a2e;font-weight:600;cursor:pointer;box-shadow:0 8px 25px rgba(0,212,170,0.4);">Play Again</button>
-      <button onclick="playClickSound(); exitUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;border:1px solid rgba(255,255,255,0.2);">Back to Topics</button>
+      <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#00ff88);color:#1a1a2e;font-weight:600;cursor:pointer;box-shadow:0 8px 25px rgba(0,212,170,0.4);">▶ Play Again</button>
     </div>
   `;
   
-  // ⭐ Animate XP Circle if we have XP data
+  // Animate XP circle if we have data
   if (xpAnimationData) {
-    setTimeout(() => animateXPCircle(xpAnimationData), 300);
+    setTimeout(() => {
+      const wrapper = document.getElementById('xpCircleWrapper');
+      const circle = document.getElementById('xpCircleProgress');
+      const xpGainedEl = document.getElementById('xpGainedValue');
+      const xpNeededEl = document.getElementById('xpNeededValue');
+      
+      if (wrapper && circle) {
+        const existingDeg = (xpAnimationData.existingPercent / 100) * 360;
+        const newDeg = (xpAnimationData.newPercent / 100) * 360;
+        
+        // Animate numbers
+        if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
+        if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
+        
+        // Animate circle fill
+        animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
+          positionXPArrows(existDeg, totalDeg, wrapper);
+        });
+      }
+    }, 300);
   }
 }
 
@@ -3778,8 +4068,141 @@ function saveQuizStats(topicId, completed) {
   });
 }
 
+// ========================================
+// ⚔️ RANKED MODE SYSTEM
+// ========================================
+
+const RANKED_QUIZZES_REQUIRED = 30;
+const RANKED_RELEASED = false; // Set to true when Ranked Mode launches
+
+// Get current quiz count (totalGames)
+function getRankedQuizCount() {
+  return userData.stats.totalGames || 0;
+}
+
+// Check if user is qualified for ranked
+function isRankedQualified() {
+  return getRankedQuizCount() >= RANKED_QUIZZES_REQUIRED;
+}
+
+// Update Ranked button state based on user progress
+function updateRankedButtonState() {
+  const rankedButton = document.getElementById('ranked-button');
+  const lockIcon = document.getElementById('ranked-lock-icon');
+  const qualifiedIcon = document.getElementById('ranked-qualified-icon');
+  
+  if (!rankedButton) return;
+  
+  const qualified = isRankedQualified();
+  
+  if (qualified) {
+    // State B: Qualified but not released yet
+    rankedButton.classList.add('qualified');
+    if (lockIcon) lockIcon.classList.add('hidden');
+    if (qualifiedIcon) qualifiedIcon.classList.remove('hidden');
+  } else {
+    // State A: Locked
+    rankedButton.classList.remove('qualified');
+    if (lockIcon) lockIcon.classList.remove('hidden');
+    if (qualifiedIcon) qualifiedIcon.classList.add('hidden');
+  }
+}
+
+// Open appropriate Ranked modal based on state
+function openRankedModal() {
+  const qualified = isRankedQualified();
+  const lockedModal = document.getElementById('ranked-modal-locked');
+  const qualifiedModal = document.getElementById('ranked-modal-qualified');
+  
+  if (RANKED_RELEASED) {
+    // State C: Ranked is live - open Ranked Mode (future implementation)
+    console.log('Opening Ranked Mode...');
+    // TODO: Navigate to Ranked screen when implemented
+    return;
+  }
+  
+  if (qualified) {
+    // State B: Show qualified modal
+    if (qualifiedModal) qualifiedModal.classList.remove('hidden');
+  } else {
+    // State A: Show locked modal with progress
+    updateRankedLockedModal();
+    if (lockedModal) lockedModal.classList.remove('hidden');
+  }
+}
+
+// Update locked modal with current progress
+function updateRankedLockedModal() {
+  const currentQuizzes = getRankedQuizCount();
+  const remaining = Math.max(0, RANKED_QUIZZES_REQUIRED - currentQuizzes);
+  const progress = Math.min(100, (currentQuizzes / RANKED_QUIZZES_REQUIRED) * 100);
+  
+  const remainingEl = document.getElementById('ranked-remaining-quizzes');
+  const progressFill = document.getElementById('ranked-progress-fill');
+  const progressText = document.getElementById('ranked-progress-text');
+  
+  if (remainingEl) remainingEl.textContent = remaining;
+  if (progressFill) progressFill.style.width = `${progress}%`;
+  if (progressText) progressText.textContent = `${currentQuizzes} / ${RANKED_QUIZZES_REQUIRED}`;
+}
+
+// Close all Ranked modals
+function closeRankedModal() {
+  const lockedModal = document.getElementById('ranked-modal-locked');
+  const qualifiedModal = document.getElementById('ranked-modal-qualified');
+  
+  if (lockedModal) lockedModal.classList.add('hidden');
+  if (qualifiedModal) qualifiedModal.classList.add('hidden');
+}
+
+// Placeholder for notify button
+function notifyRankedRelease() {
+  alert('You will be notified when Ranked Mode launches!');
+  closeRankedModal();
+}
+
+// Developer Debug: Set user to 30 quizzes (for testing qualified state)
+function devSetQualified() {
+  userData.stats.totalGames = RANKED_QUIZZES_REQUIRED;
+  saveUserData();
+  updateRankedButtonState();
+  updateAllStatsDisplays();
+  console.log('🛠️ DEV: User set to qualified (30 quizzes)');
+  alert('Developer Mode: Quiz count set to 30. You are now qualified for Ranked!');
+}
+
+// Developer Debug: Reset quiz count to 0 (for testing locked state)
+function devResetQuizCount() {
+  userData.stats.totalGames = 0;
+  saveUserData();
+  updateRankedButtonState();
+  updateAllStatsDisplays();
+  console.log('🛠️ DEV: Quiz count reset to 0');
+}
+
+// Add developer debug button (only if DEV_MODE is true)
+function addDevDebugButton() {
+  if (!DEV_MODE) return;
+  
+  // Check if button already exists
+  if (document.getElementById('dev-ranked-btn')) return;
+  
+  const devBtn = document.createElement('button');
+  devBtn.id = 'dev-ranked-btn';
+  devBtn.className = 'dev-debug-btn';
+  devBtn.textContent = '🛠️ Make Me Lvl 30';
+  devBtn.onclick = devSetQualified;
+  document.body.appendChild(devBtn);
+}
+
+// Initialize Ranked system
+function initRankedSystem() {
+  updateRankedButtonState();
+  addDevDebugButton();
+}
+
 // Run on page load
 checkFirstTimeUser();
 updateProfileDisplay();
 updateAllStatsDisplays();
-
+initRankedSystem();

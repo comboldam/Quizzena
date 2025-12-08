@@ -10,13 +10,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#1a0a2e">
-  
+  
+  <link rel="stylesheet" href="style.css?v=8">
   
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DmAxywxW.css">
 </head>
 <body>
 
@@ -331,6 +331,26 @@
         </button>
       </div>
 
+      <!-- Ranked Mode Button -->
+      <div class="ranked-section">
+        <button class="ranked-button" id="ranked-button" onclick="playClickSound(); openRankedModal();">
+          <div class="ranked-button-glow"></div>
+          <div class="ranked-button-content">
+            <div class="ranked-lock-icon" id="ranked-lock-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+              </svg>
+            </div>
+            <div class="ranked-qualified-icon hidden" id="ranked-qualified-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <span class="ranked-button-text">RANKED</span>
+          </div>
+        </button>
+      </div>
+
       <!-- Explore Categories -->
       <div class="home-categories-section">
         <h2 class="home-categories-title">Explore Categories</h2>
@@ -381,6 +401,45 @@
         <div class="category-modal-quizzes" id="category-modal-quizzes">
           <!-- Quizzes will be inserted here dynamically -->
         </div>
+      </div>
+    </div>
+
+    <!-- Ranked Modal - Locked State -->
+    <div class="ranked-modal hidden" id="ranked-modal-locked">
+      <div class="ranked-modal-backdrop" onclick="closeRankedModal()"></div>
+      <div class="ranked-modal-content ranked-modal-locked">
+        <button class="ranked-modal-close" onclick="closeRankedModal()">✕</button>
+        <div class="ranked-modal-icon locked">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64">
+            <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+          </svg>
+        </div>
+        <h2 class="ranked-modal-title">Ranked Mode — Locked</h2>
+        <p class="ranked-modal-subtitle">Prove your knowledge to qualify for Ranked.</p>
+        <p class="ranked-modal-body">Complete <span id="ranked-remaining-quizzes">30</span> quizzes to unlock Ranked Mode.<br>Get ready for divisions, competition, and IQ.</p>
+        <div class="ranked-progress-bar">
+          <div class="ranked-progress-fill" id="ranked-progress-fill"></div>
+          <span class="ranked-progress-text" id="ranked-progress-text">0 / 30</span>
+        </div>
+        <button class="ranked-modal-btn disabled" disabled>Not Yet Available</button>
+      </div>
+    </div>
+
+    <!-- Ranked Modal - Qualified State -->
+    <div class="ranked-modal hidden" id="ranked-modal-qualified">
+      <div class="ranked-modal-backdrop" onclick="closeRankedModal()"></div>
+      <div class="ranked-modal-content ranked-modal-qualified">
+        <button class="ranked-modal-close" onclick="closeRankedModal()">✕</button>
+        <div class="ranked-modal-icon qualified">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="ranked-confetti"></div>
+        <h2 class="ranked-modal-title qualified">You Are Qualified!</h2>
+        <p class="ranked-modal-subtitle">Ranked Mode is launching soon.</p>
+        <p class="ranked-modal-body">You've completed 30 quizzes and earned eligibility for Ranked Mode. You will be among the first to enter when it releases.</p>
+        <button class="ranked-modal-btn notify" onclick="notifyRankedRelease()">Notify Me When Ranked Opens</button>
       </div>
     </div>
 
