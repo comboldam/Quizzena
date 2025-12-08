@@ -269,10 +269,101 @@
   <!-- ================================ -->
   <div id="home-screen">
 
-    <!-- Top Bar -->
+    <!-- SVG Definitions for Level & Quanta -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="levelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fbbf24"/>
+          <stop offset="50%" style="stop-color:#a78bfa"/>
+          <stop offset="100%" style="stop-color:#6366f1"/>
+        </linearGradient>
+        <linearGradient id="quantaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#c4b5fd"/>
+          <stop offset="30%" style="stop-color:#a78bfa"/>
+          <stop offset="60%" style="stop-color:#8b5cf6"/>
+          <stop offset="100%" style="stop-color:#6366f1"/>
+        </linearGradient>
+        <radialGradient id="quantaInnerGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8"/>
+          <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/>
+        </radialGradient>
+        <filter id="quantaGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Top Bar - Status Strip -->
     <div class="top-bar">
-      <div class="app-title">Quizzena</div>
-      <div class="user-profile">Guest 👤</div>
+      <!-- Left: Brand -->
+      <div class="top-bar-left">
+        <div class="app-title">Quizzena</div>
+      </div>
+
+      <!-- Center: Level Badge -->
+      <div class="top-bar-center">
+        <div class="level-badge" id="level-badge" onclick="playClickSound(); openJourneyModal();">
+          <div class="level-badge-ring">
+            <svg viewBox="0 0 48 48">
+              <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+              <circle class="level-ring-progress" id="level-ring" cx="24" cy="24" r="22"/>
+            </svg>
+          </div>
+          <div class="level-badge-inner">
+            <span class="level-badge-text">LV</span>
+            <span class="level-badge-number" id="global-level-number">1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quanta + Profile -->
+      <div class="top-bar-right">
+        <div class="quanta-display" onclick="playClickSound(); openQuantaModal();">
+          <div class="quanta-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" filter="url(#quantaGlow)">
+              <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="url(#quantaGradient)"/>
+              <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
+            </svg>
+          </div>
+          <span class="quanta-amount" id="quanta-amount">0</span>
+        </div>
+        <div class="user-profile" onclick="playClickSound(); showProfile();">👤</div>
+      </div>
+    </div>
+
+    <!-- Quanta Modal -->
+    <div class="quanta-modal hidden" id="quanta-modal">
+      <div class="quanta-modal-backdrop" onclick="closeQuantaModal()"></div>
+      <div class="quanta-modal-content">
+        <button class="quanta-modal-close" onclick="closeQuantaModal()">✕</button>
+        <div class="quanta-modal-icon">
+          <svg viewBox="0 0 24 24" width="64" height="64">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="url(#quantaGradient)"/>
+            <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
+          </svg>
+        </div>
+        <h2 class="quanta-modal-title">✦ Quanta — Coming Soon</h2>
+        <p class="quanta-modal-text">Quanta is the knowledge currency of Quizzena.<br><br>Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.</p>
+        <button class="quanta-modal-btn" onclick="closeQuantaModal()">OK</button>
+      </div>
+    </div>
+
+    <!-- Journey Modal -->
+    <div class="journey-modal hidden" id="journey-modal">
+      <div class="journey-modal-backdrop" onclick="closeJourneyModal()"></div>
+      <div class="journey-modal-content">
+        <button class="journey-modal-close" onclick="closeJourneyModal()">✕</button>
+        <div class="journey-modal-icon">
+          <svg viewBox="0 0 64 64" width="64" height="64">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="url(#levelGradient)" stroke-width="4"/>
+            <text x="32" y="38" text-anchor="middle" fill="url(#levelGradient)" font-family="Orbitron" font-size="18" font-weight="800">LV</text>
+          </svg>
+        </div>
+        <h2 class="journey-modal-title">Your Journey — Coming Soon</h2>
+        <p class="journey-modal-text">Track your overall progress across all quizzes.<br><br>Level up by playing any quiz, earn milestones, and unlock rewards as you grow!</p>
+        <button class="journey-modal-btn" onclick="closeJourneyModal()">OK</button>
+      </div>
     </div>
 
     <!-- HOME SCREEN VIEW -->

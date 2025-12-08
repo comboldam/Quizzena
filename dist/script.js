@@ -4178,6 +4178,66 @@ function initRankedSystem() {
 }
 
 // ========================================
+// ✦ QUANTA & LEVEL BADGE SYSTEM
+// ========================================
+
+// Open Quanta modal
+function openQuantaModal() {
+  const modal = document.getElementById('quanta-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+// Close Quanta modal
+function closeQuantaModal() {
+  const modal = document.getElementById('quanta-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+// Open Journey modal
+function openJourneyModal() {
+  const modal = document.getElementById('journey-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+// Close Journey modal
+function closeJourneyModal() {
+  const modal = document.getElementById('journey-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+// Update global level badge display
+function updateGlobalLevelBadge() {
+  const levelNumber = document.getElementById('global-level-number');
+  const levelRing = document.getElementById('level-ring');
+  
+  if (levelNumber) {
+    levelNumber.textContent = userData.level || 1;
+  }
+  
+  if (levelRing) {
+    // Calculate XP progress for the ring
+    const levelProgress = getLevelProgress(userData.xp || 0);
+    const progress = levelProgress.progress / 100;
+    const circumference = 2 * Math.PI * 22;
+    const offset = circumference * (1 - progress);
+    levelRing.style.strokeDashoffset = offset;
+  }
+}
+
+// Update Quanta display
+function updateQuantaDisplay() {
+  const quantaAmount = document.getElementById('quanta-amount');
+  if (quantaAmount) {
+    quantaAmount.textContent = userData.quanta || 0;
+  }
+}
+
+// Initialize Quanta in userData if not exists
+if (!userData.quanta) {
+  userData.quanta = 0;
+}
+
+// ========================================
 // 📱 SOCIAL TAB SYSTEM
 // ========================================
 
@@ -4229,3 +4289,5 @@ checkFirstTimeUser();
 updateProfileDisplay();
 updateAllStatsDisplays();
 initRankedSystem();
+updateGlobalLevelBadge();
+updateQuantaDisplay();
