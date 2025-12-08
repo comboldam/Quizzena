@@ -372,6 +372,72 @@
     <!-- HOME SCREEN VIEW -->
     <div class="home-view" id="home-view">
 
+      <!-- Trail Ring Visual Placeholder -->
+      <div class="trail-ring-section">
+        <div class="trail-ring-container" onclick="playClickSound(); openTrailRingModal();">
+          <!-- Ambient Glow -->
+          <div class="trail-ring-visual">
+            <div class="trail-ring-glow"></div>
+            
+            <!-- Orbiting Sparkles -->
+            <div class="trail-ring-sparkles">
+              <div class="trail-sparkle"></div>
+              <div class="trail-sparkle"></div>
+              <div class="trail-sparkle"></div>
+              <div class="trail-sparkle"></div>
+              <div class="trail-sparkle"></div>
+              <div class="trail-sparkle"></div>
+            </div>
+            
+            <!-- The Ring SVG -->
+            <svg class="trail-ring-svg" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="trailGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#7c3aed"/>
+                  <stop offset="100%" style="stop-color:#6366f1"/>
+                </linearGradient>
+                <linearGradient id="trailGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#a78bfa"/>
+                  <stop offset="100%" style="stop-color:#8b5cf6"/>
+                </linearGradient>
+              </defs>
+              <!-- 8 Segments (each 40° with 5° gap) -->
+              <path class="trail-ring-segment" d="M50 8 A42 42 0 0 1 85.8 26.2"/>
+              <path class="trail-ring-segment" d="M88.5 31.5 A42 42 0 0 1 92 50"/>
+              <path class="trail-ring-segment" d="M92 54 A42 42 0 0 1 85.8 73.8"/>
+              <path class="trail-ring-segment" d="M82.5 78 A42 42 0 0 1 65 89"/>
+              <path class="trail-ring-segment" d="M60 91 A42 42 0 0 1 40 91"/>
+              <path class="trail-ring-segment" d="M35 89 A42 42 0 0 1 17.5 78"/>
+              <path class="trail-ring-segment" d="M14.2 73.8 A42 42 0 0 1 8 54"/>
+              <path class="trail-ring-segment" d="M8 50 A42 42 0 0 1 14.2 26.2"/>
+            </svg>
+            
+            <!-- Center Icon -->
+            <div class="trail-ring-center">🔮</div>
+          </div>
+          
+          <!-- Label -->
+          <div class="trail-ring-label">
+            <div class="trail-ring-title">Trail Ring</div>
+            <div class="trail-ring-subtitle">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trail Ring Modal -->
+      <div class="trail-ring-modal hidden" id="trail-ring-modal">
+        <div class="trail-ring-modal-backdrop" onclick="closeTrailRingModal()"></div>
+        <div class="trail-ring-modal-content">
+          <div class="trail-ring-modal-icon">🔮</div>
+          <h2 class="trail-ring-modal-title">Trail Rings</h2>
+          <p class="trail-ring-modal-text">
+            Trail Rings will unlock in a future update.<br><br>
+            Grow your knowledge to ignite your ring.
+          </p>
+          <button class="trail-ring-modal-btn" onclick="closeTrailRingModal()">OK</button>
+        </div>
+      </div>
+
       <!-- Featured Quiz of the Day -->
       <div class="home-featured-section">
         <div class="home-featured-label">🏆 QUIZ OF THE DAY</div>
