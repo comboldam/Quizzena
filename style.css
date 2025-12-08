@@ -4807,11 +4807,17 @@ footer button:hover {
   margin-bottom: 15px;
 }
 
-/* Mini stats (Games, Accuracy, Best) */
+/* Mini stats (Games, Accuracy, Streak, Time, Avg Time) */
 .most-played-stats {
   display: flex;
   justify-content: space-around;
   gap: 10px;
+}
+
+/* 5 column layout for new stats */
+.most-played-stats.five-columns {
+  gap: 4px;
+  justify-content: space-between;
 }
 
 .mini-stat {
@@ -4831,6 +4837,30 @@ footer button:hover {
   font-size: 1.1rem;
   font-weight: 700;
   color: #90EE90;
+}
+
+/* Smaller text for 5-column layout */
+.five-columns .mini-stat-label {
+  font-size: 0.6rem;
+}
+
+.five-columns .mini-stat-value {
+  font-size: 0.85rem;
+}
+
+/* Mobile: even smaller for 5 columns */
+@media (max-width: 480px) {
+  .five-columns .mini-stat-label {
+    font-size: 0.55rem;
+  }
+  
+  .five-columns .mini-stat-value {
+    font-size: 0.75rem;
+  }
+  
+  .most-played-stats.five-columns {
+    gap: 2px;
+  }
 }
 
 /* Search Card Specific Styles */
