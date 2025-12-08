@@ -769,7 +769,7 @@ function updateDynamicTranslations() {
   const navItems = {
     'nav-home': 'nav_home',
     'nav-topics': 'nav_topics', 
-    'nav-stats': 'nav_stats',
+    'nav-social': 'nav_social',
     'nav-leaderboard': 'nav_leaderboard',
     'nav-profile': 'nav_profile'
   };
@@ -2250,13 +2250,14 @@ foodTopics.forEach(topic => {
 
 const navHome = document.getElementById('nav-home');
 const navTopics = document.getElementById('nav-topics');
-const navStats = document.getElementById('nav-stats');
+const navSocial = document.getElementById('nav-social');
 const navLeaderboard = document.getElementById('nav-leaderboard');
 const navProfile = document.getElementById('nav-profile');
 
 const homeView = document.getElementById('home-view');
 const topicsView = document.getElementById('topics-view');
 const profileView = document.getElementById('profile-view');
+const socialView = document.getElementById('social-view');
 
 const browseAllBtn = document.getElementById('browse-all-topics');
 
@@ -2265,14 +2266,14 @@ const browseAllBtn = document.getElementById('browse-all-topics');
 // ========================================
 
 // Navigation order for directional slides (left to right)
-const NAV_ORDER = ['home', 'topics', 'stats', 'leaderboard', 'profile'];
+const NAV_ORDER = ['home', 'topics', 'social', 'leaderboard', 'profile'];
 let currentNavIndex = 0;
 
 // Get all main views
 const allViews = {
   home: homeView,
   topics: topicsView,
-  stats: document.getElementById('stats-view'),
+  social: socialView,
   leaderboard: document.getElementById('leaderboard-view'),
   profile: profileView
 };
@@ -2354,6 +2355,9 @@ function showProfile() {
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navProfile.classList.add('active');
+  
+  // Populate stats section in profile
+  populateStatsSection();
 }
 
 // Nav button click handlers - using addEventListener for iOS compatibility
@@ -2752,10 +2756,7 @@ navLeaderboard.addEventListener('click', () => {
   showLeaderboard();
 });
 
-navStats.addEventListener('click', () => {
-  playClickSound();
-  showStats();
-});
+// navSocial click is handled via onclick in HTML (openSocialTeaser)
 
 navProfile.addEventListener('click', () => {
   playClickSound();
@@ -3664,33 +3665,8 @@ function toggleStatsBox(boxId) {
   }
 }
 
-// Show Stats screen
-function showStats() {
-  const newIndex = NAV_ORDER.indexOf('stats');
-  const direction = newIndex < currentNavIndex ? 'left' : 'right';
-  currentNavIndex = newIndex;
-  
-  // Hide all views
-  const homeView = document.getElementById('home-view');
-  const topicsView = document.getElementById('topics-view');
-  const profileView = document.getElementById('profile-view');
-  const statsView = document.getElementById('stats-view');
-  const leaderboardView = document.getElementById('leaderboard-view');
-
-  if (homeView) homeView.classList.add('hidden');
-  if (topicsView) topicsView.classList.add('hidden');
-  if (profileView) profileView.classList.add('hidden');
-  if (statsView) {
-    statsView.classList.remove('hidden');
-    applyNavAnimation(statsView, direction);
-  }
-  if (leaderboardView) leaderboardView.classList.add('hidden');
-
-  // Update nav active state
-  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-  const navStats = document.getElementById('nav-stats');
-  if (navStats) navStats.classList.add('active');
-
+// Populate Stats section (now inside Profile page)
+function populateStatsSection() {
   // Populate Overall Performance stats from userData
   const totalGames = userData.stats.totalGames || 0;
   const correctAnswers = userData.stats.correctAnswers || 0;
@@ -3779,7 +3755,7 @@ function showStats() {
     if (miniStatValues[2]) miniStatValues[2].textContent = topic.bestStreak;
   }
 
-  console.log('Stats page populated:', { totalGames, totalQuestions, accuracy, bestStreak, topicsWithStats });
+  console.log('Stats section populated:', { totalGames, totalQuestions, accuracy, bestStreak, topicsWithStats });
 }
 
 // ========================================
@@ -4199,6 +4175,53 @@ function addDevDebugButton() {
 function initRankedSystem() {
   updateRankedButtonState();
   addDevDebugButton();
+}
+
+// ========================================
+// 📱 SOCIAL TAB SYSTEM
+// ========================================
+
+const SOCIAL_RELEASED = false; // Set to true when Social feature launches
+
+// Open Social teaser modal
+function openSocialTeaser() {
+  if (SOCIAL_RELEASED) {
+    // Future: Navigate to Social feed
+    showSocialFeed();
+    return;
+  }
+  
+  const socialModal = document.getElementById('social-modal');
+  if (socialModal) socialModal.classList.remove('hidden');
+}
+
+// Close Social teaser modal
+function closeSocialTeaser() {
+  const socialModal = document.getElementById('social-modal');
+  if (socialModal) socialModal.classList.add('hidden');
+}
+
+// Show Social feed (placeholder for future)
+function showSocialFeed() {
+  hideAllViewsExcept('social');
+  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+  const navSocial = document.getElementById('nav-social');
+  if (navSocial) navSocial.classList.add('active');
+  currentNavIndex = NAV_ORDER.indexOf('social');
+}
+
+// Developer: Simulate Social unlock
+function devUnlockSocial() {
+  // Remove lock badge
+  const lockBadge = document.querySelector('.social-lock-badge');
+  if (lockBadge) lockBadge.style.display = 'none';
+  
+  // Show social feed instead of modal
+  closeSocialTeaser();
+  showSocialFeed();
+  
+  console.log('🛠️ DEV: Social unlocked');
+  alert('Developer Mode: Social feature unlocked (placeholder view)');
 }
 
 // Run on page load

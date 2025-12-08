@@ -1348,6 +1348,278 @@ footer button:hover {
   to { transform: translate(-25px, 25px) rotate(360deg); }
 }
 
+/* ========================================
+   📱 SOCIAL TAB & MODAL STYLES
+   ======================================== */
+
+/* Social Nav Icon Container */
+.social-nav-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.social-nav-icon svg {
+  display: block;
+}
+
+.social-lock-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -6px;
+  font-size: 10px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+
+/* Social Nav Pulse Animation */
+#nav-social {
+  position: relative;
+}
+
+#nav-social::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, 
+    rgba(240, 148, 51, 0.3),
+    rgba(220, 39, 67, 0.3),
+    rgba(188, 24, 136, 0.3));
+  opacity: 0;
+  z-index: -1;
+  animation: socialPulse 8s ease-in-out infinite;
+}
+
+@keyframes socialPulse {
+  0%, 85%, 100% { opacity: 0; transform: scale(1); }
+  90%, 95% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* Social Modal */
+.social-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.social-modal:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.social-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 380px;
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  animation: modalAppear 0.4s ease-out forwards;
+  background: linear-gradient(145deg, 
+    rgba(30, 20, 35, 0.98) 0%,
+    rgba(25, 15, 30, 0.98) 100%);
+  border: 2px solid rgba(220, 39, 67, 0.3);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(220, 39, 67, 0.15);
+}
+
+.social-modal-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(240, 148, 51, 0.1) 0%,
+    rgba(230, 104, 60, 0.1) 25%,
+    rgba(220, 39, 67, 0.15) 50%,
+    rgba(204, 35, 102, 0.1) 75%,
+    rgba(188, 24, 136, 0.1) 100%);
+  z-index: 0;
+}
+
+.social-modal-sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.social-modal-sparkles::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(240, 148, 51, 0.6) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(220, 39, 67, 0.5) 1px, transparent 1px);
+  background-size: 60px 60px, 80px 80px, 50px 50px;
+  background-position: 0 0, 30px 30px, 20px 40px;
+  animation: sparkleFloat 25s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes sparkleFloat {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(-30px, 30px) rotate(360deg); }
+}
+
+.social-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.social-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.social-modal-icon {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: socialIconFloat 3s ease-in-out infinite;
+}
+
+@keyframes socialIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.social-sparkle {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  font-size: 20px;
+  animation: sparkleRotate 2s ease-in-out infinite;
+}
+
+@keyframes sparkleRotate {
+  0%, 100% { transform: rotate(-10deg) scale(1); }
+  50% { transform: rotate(10deg) scale(1.2); }
+}
+
+.social-modal-title {
+  position: relative;
+  z-index: 2;
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-modal-subtitle {
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.social-modal-features {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 25px;
+}
+
+.social-modal-features p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin: 5px 0;
+}
+
+.social-modal-btn {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.social-modal-btn.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+}
+
+/* Social View (Placeholder) */
+.social-view {
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.social-view:not(.hidden) {
+  display: flex;
+}
+
+.social-header {
+  text-align: center;
+}
+
+.social-header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #f09433, #dc2743, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.social-header p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+}
+
+/* Profile Stats Section (moved from stats tab) */
+.profile-stats-section {
+  padding: 15px 20px;
+}
+
 /* Developer Debug Button */
 .dev-debug-btn {
   position: fixed;
