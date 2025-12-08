@@ -2845,7 +2845,7 @@
 
         <!-- Three Feature Cards -->
         <div class="profile-feature-cards">
-          <div class="feature-card achievements-card" onclick="playClickSound();">
+          <div class="feature-card achievements-card" onclick="playClickSound(); openAchievementsRitual();">
             <span class="feature-card-icon">🏆</span>
             <div class="feature-card-title">Achievements</div>
             <div class="feature-card-value">0</div>
@@ -2965,18 +2965,26 @@
                 <div class="most-played-rank">1</div>
                 <div class="most-played-icon">🏳️</div>
                 <div class="most-played-name">Flags</div>
-                <div class="most-played-stats">
+                <div class="most-played-stats five-columns">
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">G</span>
+                    <span class="mini-stat-value" id="flags-games">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
-                    <span class="mini-stat-value">0%</span>
+                    <span class="mini-stat-label">Ac</span>
+                    <span class="mini-stat-value" id="flags-accuracy">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">Str</span>
+                    <span class="mini-stat-value" id="flags-streak">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">T</span>
+                    <span class="mini-stat-value" id="flags-time">0s</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">A.T</span>
+                    <span class="mini-stat-value" id="flags-avgtime">0s</span>
                   </div>
                 </div>
               </div>
@@ -2984,18 +2992,26 @@
                 <div class="most-played-rank">2</div>
                 <div class="most-played-icon">🏛️</div>
                 <div class="most-played-name">Capitals</div>
-                <div class="most-played-stats">
+                <div class="most-played-stats five-columns">
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">G</span>
+                    <span class="mini-stat-value" id="capitals-games">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
-                    <span class="mini-stat-value">0%</span>
+                    <span class="mini-stat-label">Ac</span>
+                    <span class="mini-stat-value" id="capitals-accuracy">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">Str</span>
+                    <span class="mini-stat-value" id="capitals-streak">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">T</span>
+                    <span class="mini-stat-value" id="capitals-time">0s</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">A.T</span>
+                    <span class="mini-stat-value" id="capitals-avgtime">0s</span>
                   </div>
                 </div>
               </div>
@@ -3003,18 +3019,26 @@
                 <div class="most-played-rank">3</div>
                 <div class="most-played-icon">⚽</div>
                 <div class="most-played-name">Football</div>
-                <div class="most-played-stats">
+                <div class="most-played-stats five-columns">
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_games">Games</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">G</span>
+                    <span class="mini-stat-value" id="football-games">0</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_accuracy">Accuracy</span>
-                    <span class="mini-stat-value">0%</span>
+                    <span class="mini-stat-label">Ac</span>
+                    <span class="mini-stat-value" id="football-accuracy">0%</span>
                   </div>
                   <div class="mini-stat">
-                    <span class="mini-stat-label" data-i18n="stats_best_label">Best</span>
-                    <span class="mini-stat-value">0</span>
+                    <span class="mini-stat-label">Str</span>
+                    <span class="mini-stat-value" id="football-streak">0</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">T</span>
+                    <span class="mini-stat-value" id="football-time">0s</span>
+                  </div>
+                  <div class="mini-stat">
+                    <span class="mini-stat-label">A.T</span>
+                    <span class="mini-stat-value" id="football-avgtime">0s</span>
                   </div>
                 </div>
               </div>
@@ -3151,6 +3175,142 @@
 
       </div>
 
+    </div>
+
+    <!-- ================================ -->
+    <!-- 🏛️ ACHIEVEMENTS RITUAL PAGE -->
+    <!-- ================================ -->
+    <div class="achievements-ritual-view hidden" id="achievements-ritual-view">
+      <!-- Ambient Background -->
+      <div class="ritual-ambient-bg">
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+      </div>
+
+      <!-- Floating Particles -->
+      <div class="ritual-particles" id="ritual-particles"></div>
+
+      <!-- Header with Back Button -->
+      <div class="ritual-header">
+        <button class="ritual-back-btn" onclick="closeAchievementsRitual()">←</button>
+        <div class="ritual-title-container">
+          <h1 class="ritual-title">Achievements Ritual</h1>
+          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+        </div>
+      </div>
+
+      <!-- 8 Houses Grid -->
+      <div class="ritual-houses-container">
+        <!-- House 1: Path of Progression -->
+        <div class="ritual-house-card house-progression" onclick="openHousePage('progression', '🔷', 'Path of Progression')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔷</span>
+          </div>
+          <span class="ritual-house-name">Progression</span>
+        </div>
+
+        <!-- House 2: Path of Precision -->
+        <div class="ritual-house-card house-precision" onclick="openHousePage('precision', '🎯', 'Path of Precision')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🎯</span>
+          </div>
+          <span class="ritual-house-name">Precision</span>
+        </div>
+
+        <!-- House 3: Path of Momentum -->
+        <div class="ritual-house-card house-momentum" onclick="openHousePage('momentum', '🔥', 'Path of Momentum')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔥</span>
+          </div>
+          <span class="ritual-house-name">Momentum</span>
+        </div>
+
+        <!-- House 4: Path of Casual Mastery -->
+        <div class="ritual-house-card house-casual" onclick="openHousePage('casual', '🌿', 'Path of Casual Mastery')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🌿</span>
+          </div>
+          <span class="ritual-house-name">Casual</span>
+        </div>
+
+        <!-- House 5: Path of Time Attack -->
+        <div class="ritual-house-card house-time" onclick="openHousePage('time', '⏱️', 'Path of Time Attack')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">⏱️</span>
+          </div>
+          <span class="ritual-house-name">Time Attack</span>
+        </div>
+
+        <!-- House 6: Path of Survival -->
+        <div class="ritual-house-card house-survival" onclick="openHousePage('survival', '❤️‍🔥', 'Path of Survival')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="survival-crack-line"></div>
+            <span class="ritual-house-icon">❤️‍🔥</span>
+          </div>
+          <span class="ritual-house-name">Survival</span>
+        </div>
+
+        <!-- House 7: Path of Exploration -->
+        <div class="ritual-house-card house-exploration" onclick="openHousePage('exploration', '🧭', 'Path of Exploration')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="compass-cardinal-n">N</span>
+            <span class="compass-cardinal-e">E</span>
+            <span class="compass-cardinal-s">S</span>
+            <span class="compass-cardinal-w">W</span>
+            <span class="ritual-house-icon">🧭</span>
+          </div>
+          <span class="ritual-house-name">Exploration</span>
+        </div>
+
+        <!-- House 8: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour" onclick="openHousePage('behaviour', '🔮', 'Path of Behaviour')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="crystal-ball-container">
+              <div class="crystal-ball">
+                <div class="crystal-inner-glow"></div>
+                <div class="crystal-shimmer"></div>
+                <div class="crystal-sparkle s1"></div>
+                <div class="crystal-sparkle s2"></div>
+                <div class="crystal-sparkle s3"></div>
+                <div class="crystal-mist"></div>
+              </div>
+              <div class="crystal-base"></div>
+            </div>
+          </div>
+          <span class="ritual-house-name">Behaviour</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 🏠 HOUSE SUB-PAGE (Coming Soon) -->
+    <!-- ================================ -->
+    <div class="house-subpage hidden" id="house-subpage" data-house="">
+      <div class="house-subpage-header">
+        <button class="house-back-btn" onclick="closeHousePage()">←</button>
+        <h2 class="house-subpage-title" id="house-subpage-title">Path Name</h2>
+      </div>
+      <div class="house-subpage-content">
+        <div class="house-coming-soon-icon" id="house-subpage-icon">🔷</div>
+        <h3 class="house-coming-soon-title">Coming Soon</h3>
+        <p class="house-coming-soon-text">
+          Achievements for this path are being forged in the cosmic fires. 
+          Return soon to claim your destiny.
+        </p>
+      </div>
     </div>
 
     <!-- Bottom Navigation Bar -->

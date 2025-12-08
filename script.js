@@ -180,10 +180,19 @@ async function loadFromFirebase() {
                   casual: true,
                   timeAttack: (localTopic.modesUnlocked?.timeAttack || cloudTopic.modesUnlocked?.timeAttack) || false,
                   threeHearts: (localTopic.modesUnlocked?.threeHearts || cloudTopic.modesUnlocked?.threeHearts) || false
-                }
+                },
+                // Time tracking fields - take higher values
+                timeSpentSeconds: Math.max(localTopic.timeSpentSeconds || 0, cloudTopic.timeSpentSeconds || 0),
+                totalQuestionsAnswered: Math.max(localTopic.totalQuestionsAnswered || 0, cloudTopic.totalQuestionsAnswered || 0)
               };
             }
           }
+          
+          // Merge overall total time
+          userData.stats.totalTimeSeconds = Math.max(
+            userData.stats.totalTimeSeconds || 0,
+            cloudData.stats?.totalTimeSeconds || 0
+          );
         }
         
         // Save merged data locally
@@ -1056,6 +1065,55 @@ function resetGame() {
   bestSessionStreak = 0;
   sessionStartTime = new Date();
   gameEnded = false;
+  
+  // Reset quiz timer for time tracking
+  quizStartTime = Date.now();
+}
+
+// ========================================
+// ⏱️ TIME TRACKING SYSTEM
+// ========================================
+let quizStartTime = 0;
+
+// Format seconds into human-readable time (45s, 5.3m, 2.5h, 3.2d, 2.1w, 1.3y)
+function formatTimeDisplay(totalSeconds) {
+  if (!totalSeconds || totalSeconds <= 0) return '0s';
+  
+  const seconds = Math.floor(totalSeconds);
+  const minutes = seconds / 60;
+  const hours = minutes / 60;
+  const days = hours / 24;
+  const weeks = days / 7;
+  const years = days / 365;
+  
+  if (seconds < 60) {
+    return `${seconds}s`;
+  } else if (minutes < 60) {
+    return `${minutes.toFixed(1)}m`;
+  } else if (hours < 24) {
+    return `${hours.toFixed(1)}h`;
+  } else if (days < 7) {
+    return `${days.toFixed(1)}d`;
+  } else if (weeks < 52) {
+    return `${weeks.toFixed(1)}w`;
+  } else {
+    return `${years.toFixed(1)}y`;
+  }
+}
+
+// Calculate average time per question for a topic
+function getAvgTimePerQuestion(topicId) {
+  const topic = userData.stats.topics[topicId];
+  if (!topic || !topic.totalQuestionsAnswered || topic.totalQuestionsAnswered === 0) {
+    return 0;
+  }
+  return topic.timeSpentSeconds / topic.totalQuestionsAnswered;
+}
+
+// Format average time (always in seconds with 1 decimal)
+function formatAvgTime(avgSeconds) {
+  if (!avgSeconds || avgSeconds <= 0) return '0s';
+  return `${avgSeconds.toFixed(1)}s`;
 }
 
 // ========================================
@@ -3695,16 +3753,14 @@ function populateStatsSection() {
   const statBestStreak = document.getElementById('stat-best-streak');
   if (statBestStreak) statBestStreak.textContent = bestStreak;
 
-  // Calculate avg time per question
+  // Calculate avg time per question (overall)
   const avgTime = totalQuestions > 0 ? (totalTimeSeconds / totalQuestions).toFixed(1) : '0.0';
   const statAvgTime = document.getElementById('stat-avg-time');
   if (statAvgTime) statAvgTime.textContent = avgTime + 's';
 
-  // Format total time played
-  const minutes = Math.floor(totalTimeSeconds / 60);
-  const seconds = totalTimeSeconds % 60;
+  // Format total time played using the new formatting function
   const statTotalTime = document.getElementById('stat-total-time');
-  if (statTotalTime) statTotalTime.textContent = `${minutes}m ${seconds}s`;
+  if (statTotalTime) statTotalTime.textContent = formatTimeDisplay(totalTimeSeconds);
 
   // Update Most Played section - dynamically sorted by games played
   const topicDefinitions = Object.entries(TOPIC_CONFIG).map(([id, cfg]) => ({
@@ -3715,12 +3771,23 @@ function populateStatsSection() {
 
   // Get stats for each topic and sort by games played (descending), then alphabetically
   const topicsWithStats = topicDefinitions.map(topic => {
-    const stats = userData.stats.topics[topic.id] || { games: 0, accuracy: 0, bestStreak: 0 };
+    const stats = userData.stats.topics[topic.id] || { 
+      games: 0, 
+      accuracy: 0, 
+      bestStreak: 0,
+      timeSpentSeconds: 0,
+      totalQuestionsAnswered: 0
+    };
+    const avgTimePerQ = stats.totalQuestionsAnswered > 0 
+      ? stats.timeSpentSeconds / stats.totalQuestionsAnswered 
+      : 0;
     return {
       ...topic,
       games: stats.games || 0,
       accuracy: stats.accuracy || 0,
-      bestStreak: stats.bestStreak || 0
+      bestStreak: stats.bestStreak || 0,
+      timeSpentSeconds: stats.timeSpentSeconds || 0,
+      avgTimePerQuestion: avgTimePerQ
     };
   });
 
@@ -3730,7 +3797,7 @@ function populateStatsSection() {
     return a.name.localeCompare(b.name);
   });
 
-  // Update the 3 Most Played cards
+  // Update the 3 Most Played cards with 5 columns
   const mostPlayedCards = document.querySelectorAll('#most-played-content .most-played-card:not(.search-card)');
   for (let i = 0; i < 3 && i < mostPlayedCards.length; i++) {
     const card = mostPlayedCards[i];
@@ -3748,11 +3815,13 @@ function populateStatsSection() {
     const nameEl = card.querySelector('.most-played-name');
     if (nameEl) nameEl.textContent = topic.name;
 
-    // Update stats
+    // Update stats (5 columns: Games, Accuracy, Streak, Time, Avg Time)
     const miniStatValues = card.querySelectorAll('.mini-stat-value');
     if (miniStatValues[0]) miniStatValues[0].textContent = topic.games;
     if (miniStatValues[1]) miniStatValues[1].textContent = topic.accuracy + '%';
     if (miniStatValues[2]) miniStatValues[2].textContent = topic.bestStreak;
+    if (miniStatValues[3]) miniStatValues[3].textContent = formatTimeDisplay(topic.timeSpentSeconds);
+    if (miniStatValues[4]) miniStatValues[4].textContent = formatAvgTime(topic.avgTimePerQuestion);
   }
 
   console.log('Stats section populated:', { totalGames, totalQuestions, accuracy, bestStreak, topicsWithStats });
@@ -3791,27 +3860,44 @@ function searchTopic(query) {
 
   if (foundTopic) {
     // Get real stats for this topic from userData
-    const topicStats = userData.stats.topics[foundKey] || { games: 0, accuracy: 0, bestStreak: 0 };
+    const topicStats = userData.stats.topics[foundKey] || { 
+      games: 0, 
+      accuracy: 0, 
+      bestStreak: 0,
+      timeSpentSeconds: 0,
+      totalQuestionsAnswered: 0
+    };
     const games = topicStats.games || 0;
     const accuracy = topicStats.accuracy || 0;
     const bestStreak = topicStats.bestStreak || 0;
+    const timeSpent = topicStats.timeSpentSeconds || 0;
+    const totalQ = topicStats.totalQuestionsAnswered || 0;
+    const avgTimePerQ = totalQ > 0 ? timeSpent / totalQ : 0;
 
-    // Show found topic with real stats
+    // Show found topic with real stats (5 columns)
     searchResult.innerHTML = `
       <div class="search-result-found">${t('stats_search_found')}</div>
       <div class="search-result-topic">${foundTopic.icon} ${foundTopic.name}</div>
-      <div class="search-result-stats">
+      <div class="search-result-stats five-columns">
         <div class="mini-stat">
-          <span class="mini-stat-label">${t('stats_games')}</span>
+          <span class="mini-stat-label">G</span>
           <span class="mini-stat-value">${games}</span>
         </div>
         <div class="mini-stat">
-          <span class="mini-stat-label">${t('stats_accuracy')}</span>
+          <span class="mini-stat-label">Ac</span>
           <span class="mini-stat-value">${accuracy}%</span>
         </div>
         <div class="mini-stat">
-          <span class="mini-stat-label">${t('stats_best_label')}</span>
+          <span class="mini-stat-label">Str</span>
           <span class="mini-stat-value">${bestStreak}</span>
+        </div>
+        <div class="mini-stat">
+          <span class="mini-stat-label">T</span>
+          <span class="mini-stat-value">${formatTimeDisplay(timeSpent)}</span>
+        </div>
+        <div class="mini-stat">
+          <span class="mini-stat-label">A.T</span>
+          <span class="mini-stat-value">${formatAvgTime(avgTimePerQ)}</span>
         </div>
       </div>
     `;
@@ -3983,11 +4069,21 @@ function saveQuizStats(topicId, completed) {
         casual: true,
         timeAttack: false,
         threeHearts: false
-      }
+      },
+      // Time tracking fields
+      timeSpentSeconds: 0,
+      totalQuestionsAnswered: 0
     };
   } else {
     // Migrate old topics that don't have XP fields
     getTopicXPData(topicId);
+    // Migrate old topics that don't have time fields
+    if (userData.stats.topics[topicId].timeSpentSeconds === undefined) {
+      userData.stats.topics[topicId].timeSpentSeconds = 0;
+    }
+    if (userData.stats.topics[topicId].totalQuestionsAnswered === undefined) {
+      userData.stats.topics[topicId].totalQuestionsAnswered = 0;
+    }
   }
 
   const topic = userData.stats.topics[topicId];
@@ -3996,6 +4092,17 @@ function saveQuizStats(topicId, completed) {
   if (completed) {
     topic.games++;
     userData.stats.totalGames++;
+    
+    // Calculate time spent in this session (in seconds)
+    const sessionTimeSeconds = Math.floor((Date.now() - quizStartTime) / 1000);
+    topic.timeSpentSeconds += sessionTimeSeconds;
+    
+    // Track total questions answered (for avg time calculation)
+    const questionsThisSession = currentSessionCorrect + currentSessionWrong;
+    topic.totalQuestionsAnswered += questionsThisSession;
+    
+    // Update overall total time (sum of all topics)
+    userData.stats.totalTimeSeconds = (userData.stats.totalTimeSeconds || 0) + sessionTimeSeconds;
   }
 
   topic.correct += currentSessionCorrect;
