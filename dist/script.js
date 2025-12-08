@@ -4300,6 +4300,90 @@ function devUnlockSocial() {
   alert('Developer Mode: Social feature unlocked (placeholder view)');
 }
 
+// ========================================
+// 🏛️ ACHIEVEMENTS RITUAL PAGE
+// ========================================
+
+// Open the Achievements Ritual page
+function openAchievementsRitual() {
+  const ritualView = document.getElementById('achievements-ritual-view');
+  if (ritualView) {
+    ritualView.classList.remove('hidden');
+    // Create floating particles
+    createRitualParticles();
+    // Haptic feedback
+    if (navigator.vibrate) {
+      navigator.vibrate(10);
+    }
+  }
+}
+
+// Close the Achievements Ritual page
+function closeAchievementsRitual() {
+  const ritualView = document.getElementById('achievements-ritual-view');
+  if (ritualView) {
+    ritualView.classList.add('hidden');
+    // Haptic feedback
+    if (navigator.vibrate) {
+      navigator.vibrate(5);
+    }
+  }
+}
+
+// Open a specific House sub-page
+function openHousePage(house, icon, title) {
+  const subpage = document.getElementById('house-subpage');
+  const subpageTitle = document.getElementById('house-subpage-title');
+  const subpageIcon = document.getElementById('house-subpage-icon');
+  
+  if (subpage && subpageTitle && subpageIcon) {
+    subpage.setAttribute('data-house', house);
+    subpageTitle.textContent = title;
+    subpageIcon.textContent = icon;
+    subpage.classList.remove('hidden');
+    
+    // Haptic feedback
+    if (navigator.vibrate) {
+      navigator.vibrate(10);
+    }
+  }
+}
+
+// Close the House sub-page
+function closeHousePage() {
+  const subpage = document.getElementById('house-subpage');
+  if (subpage) {
+    subpage.classList.add('hidden');
+    // Haptic feedback
+    if (navigator.vibrate) {
+      navigator.vibrate(5);
+    }
+  }
+}
+
+// Create floating particles for the ritual page
+function createRitualParticles() {
+  const container = document.getElementById('ritual-particles');
+  if (!container) return;
+  
+  // Clear existing particles
+  container.innerHTML = '';
+  
+  const particleCount = 20;
+  
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'ritual-particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDelay = Math.random() * 15 + 's';
+    particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+    particle.style.opacity = 0.3 + Math.random() * 0.4;
+    particle.style.width = (2 + Math.random() * 3) + 'px';
+    particle.style.height = particle.style.width;
+    container.appendChild(particle);
+  }
+}
+
 // Run on page load
 checkFirstTimeUser();
 updateProfileDisplay();

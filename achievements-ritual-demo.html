@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Achievements Ritual - Quizzena</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            /* House Colors */
+            --progression-primary: #3b82f6;
+            --progression-secondary: #c0c0c0;
+            --precision-primary: #fbbf24;
+            --precision-secondary: #ffffff;
+            --momentum-primary: #ef4444;
+            --momentum-secondary: #f97316;
+            --casual-primary: #22c55e;
+            --casual-secondary: #d4a574;
+            --time-primary: #14b8a6;
+            --time-secondary: #0f0f0f;
+            --survival-primary: #dc2626;
+            --survival-secondary: #374151;
+            --exploration-primary: #166534;
+            --exploration-secondary: #cd7f32;
+            --rituals-primary: #8b5cf6;
+            --rituals-secondary: #1e1b4b;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 30%, #16213e 60%, #0f0c29 100%);
+            min-height: 100vh;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background Effects */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .ambient-orb:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--rituals-primary), transparent);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .ambient-orb:nth-child(2) {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, var(--precision-primary), transparent);
+            bottom: -80px;
+            right: -80px;
+            animation-delay: -7s;
+        }
+
+        .ambient-orb:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--time-primary), transparent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -20px) scale(1.1); }
+            50% { transform: translate(-20px, 30px) scale(0.9); }
+            75% { transform: translate(20px, 20px) scale(1.05); }
+        }
+
+        /* Floating Particles */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Page Container */
+        .ritual-page {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding-bottom: 70px; /* Space for bottom nav */
+        }
+
+        /* Header */
+        .ritual-header {
+            text-align: center;
+            padding: 20px 16px 10px;
+            position: relative;
+        }
+
+        .ritual-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5)); }
+            50% { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
+        }
+
+        .ritual-subtitle {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Center Emblem */
+        .center-emblem {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .emblem-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50%;
+            animation: emblemPulse 4s ease-in-out infinite;
+        }
+
+        .emblem-ring:nth-child(1) {
+            width: 50px;
+            height: 50px;
+            animation-delay: 0s;
+        }
+
+        .emblem-ring:nth-child(2) {
+            width: 70px;
+            height: 70px;
+            animation-delay: -1s;
+        }
+
+        .emblem-ring:nth-child(3) {
+            width: 90px;
+            height: 90px;
+            animation-delay: -2s;
+        }
+
+        @keyframes emblemPulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .emblem-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.2));
+            border-radius: 50%;
+            animation: coreGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes coreGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.8); }
+        }
+
+        /* Houses Grid */
+        .houses-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 8px 6px;
+            padding: 10px 8px;
+            position: relative;
+            align-content: center;
+        }
+
+        /* Mobile: 2 columns x 4 rows */
+        @media (max-width: 480px) {
+            .houses-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 16px 12px;
+                padding: 8px 16px;
+            }
+        }
+
+        /* Base House Card */
+        .house-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: houseEntry 0.6s ease-out backwards;
+        }
+
+        .house-card:nth-child(1) { animation-delay: 0.1s; }
+        .house-card:nth-child(2) { animation-delay: 0.15s; }
+        .house-card:nth-child(3) { animation-delay: 0.2s; }
+        .house-card:nth-child(4) { animation-delay: 0.25s; }
+        .house-card:nth-child(5) { animation-delay: 0.3s; }
+        .house-card:nth-child(6) { animation-delay: 0.35s; }
+        .house-card:nth-child(7) { animation-delay: 0.4s; }
+        .house-card:nth-child(8) { animation-delay: 0.45s; }
+
+        @keyframes houseEntry {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .house-card:active {
+            transform: scale(0.95);
+        }
+
+        .house-shape {
+            position: relative;
+            width: 85%;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .house-icon {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            z-index: 2;
+        }
+
+        /* Text label OUTSIDE the shape */
+        .house-name {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-top: 6px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+        }
+
+        .house-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .house-card:hover .house-glow,
+        .house-card:active .house-glow {
+            opacity: 1;
+        }
+
+        /* ========================================
+           HOUSE 1: PATH OF PROGRESSION
+           Shape: Tall Rectangle with ascending stripes
+        ======================================== */
+        .house-progression .house-shape {
+            background: linear-gradient(180deg, 
+                rgba(59, 130, 246, 0.1) 0%,
+                rgba(59, 130, 246, 0.3) 50%,
+                rgba(59, 130, 246, 0.5) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.6);
+            border-radius: 8px 8px 4px 4px;
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .house-progression .house-shape::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 15%,
+                rgba(192, 192, 192, 0.1) 15%,
+                rgba(192, 192, 192, 0.1) 17%
+            );
+            animation: ascendingBars 3s ease-in-out infinite;
+        }
+
+        @keyframes ascendingBars {
+            0%, 100% { transform: translateY(5%); }
+            50% { transform: translateY(-5%); }
+        }
+
+        .house-progression .house-shape::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(192, 192, 192, 0.1) 50%,
+                transparent 60%
+            );
+            animation: silverShine 4s ease-in-out infinite;
+        }
+
+        @keyframes silverShine {
+            0% { transform: translateX(-100%) rotate(0deg); }
+            100% { transform: translateX(100%) rotate(0deg); }
+        }
+
+        .house-progression .house-glow {
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
+        }
+
+        .house-progression .house-icon { color: var(--progression-secondary); }
+        .house-progression .house-name { color: #93c5fd; }
+
+        /* ========================================
+           HOUSE 2: PATH OF PRECISION
+           Shape: Hexagon
+        ======================================== */
+        .house-precision .house-shape {
+            background: linear-gradient(135deg, 
+                rgba(251, 191, 36, 0.15) 0%,
+                rgba(251, 191, 36, 0.4) 100%);
+            border: 2px solid rgba(251, 191, 36, 0.7);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .house-precision .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            animation: precisionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes precisionPulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .house-precision .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
+        }
+
+        .house-precision .house-glow {
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.5), transparent 70%);
+            animation: goldenPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes goldenPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .house-precision .house-icon { color: var(--precision-primary); }
+        .house-precision .house-name { color: #fef3c7; }
+
+        /* ========================================
+           HOUSE 3: PATH OF MOMENTUM
+           Shape: Angular Diamond
+        ======================================== */
+        .house-momentum .house-shape {
+            background: linear-gradient(135deg, 
+                rgba(239, 68, 68, 0.2) 0%,
+                rgba(249, 115, 22, 0.4) 100%);
+            border: 2px solid rgba(239, 68, 68, 0.7);
+            clip-path: polygon(50% 0%, 95% 50%, 50% 100%, 5% 50%);
+            overflow: hidden;
+        }
+
+        .house-momentum .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(249, 115, 22, 0.2) 20px,
+                rgba(249, 115, 22, 0.2) 22px
+            );
+            animation: streakLines 1s linear infinite;
+        }
+
+        @keyframes streakLines {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(22px); }
+        }
+
+        .house-momentum .house-shape::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(0deg, rgba(239, 68, 68, 0.3), transparent);
+            animation: flameFlicker 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes flameFlicker {
+            0% { opacity: 0.5; transform: scaleY(1); }
+            100% { opacity: 0.8; transform: scaleY(1.1); }
+        }
+
+        .house-momentum .house-glow {
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.5), rgba(249, 115, 22, 0.3), transparent 70%);
+            animation: momentumPulse 0.8s ease-in-out infinite;
+        }
+
+        @keyframes momentumPulse {
+            0%, 100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .house-momentum .house-icon { color: var(--momentum-secondary); }
+        .house-momentum .house-name { color: #fecaca; }
+
+        /* ========================================
+           HOUSE 4: PATH OF CASUAL MASTERY
+           Shape: Rounded Capsule
+        ======================================== */
+        .house-casual .house-shape {
+            background: linear-gradient(180deg, 
+                rgba(34, 197, 94, 0.15) 0%,
+                rgba(34, 197, 94, 0.35) 100%);
+            border: 2px solid rgba(34, 197, 94, 0.5);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .house-casual .house-shape::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(
+                ellipse at 30% 20%,
+                rgba(212, 165, 116, 0.2),
+                transparent 50%
+            );
+        }
+
+        .house-casual .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                circle at 70% 80%,
+                rgba(34, 197, 94, 0.3),
+                transparent 40%
+            );
+            animation: gentleBreath 4s ease-in-out infinite;
+        }
+
+        @keyframes gentleBreath {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        .house-casual .house-glow {
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.4), transparent 70%);
+        }
+
+        .house-casual .house-icon { color: var(--casual-primary); }
+        .house-casual .house-name { color: #bbf7d0; }
+
+        /* ========================================
+           HOUSE 5: PATH OF TIME
+           Shape: Trapezoid (Stopwatch style)
+        ======================================== */
+        .house-time .house-shape {
+            background: linear-gradient(180deg, 
+                rgba(20, 184, 166, 0.1) 0%,
+                rgba(20, 184, 166, 0.4) 100%);
+            border: 2px solid rgba(20, 184, 166, 0.7);
+            clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+            overflow: hidden;
+        }
+
+        .house-time .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, 
+                    transparent 49%, 
+                    rgba(20, 184, 166, 0.3) 49%, 
+                    rgba(20, 184, 166, 0.3) 51%, 
+                    transparent 51%),
+                linear-gradient(0deg, 
+                    transparent 49%, 
+                    rgba(20, 184, 166, 0.3) 49%, 
+                    rgba(20, 184, 166, 0.3) 51%, 
+                    transparent 51%);
+        }
+
+        .house-time .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent,
+                rgba(20, 184, 166, 0.8),
+                transparent
+            );
+            animation: digitalScan 1.5s linear infinite;
+        }
+
+        @keyframes digitalScan {
+            0% { top: 0; opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .house-time .house-glow {
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.5), transparent 70%);
+            animation: neonFlicker 2s ease-in-out infinite;
+        }
+
+        @keyframes neonFlicker {
+            0%, 100% { opacity: 0.4; }
+            10% { opacity: 0.6; }
+            20% { opacity: 0.3; }
+            30% { opacity: 0.7; }
+            50% { opacity: 0.5; }
+        }
+
+        .house-time .house-icon { color: var(--time-primary); text-shadow: 0 0 10px var(--time-primary); }
+        .house-time .house-name { color: #99f6e4; }
+
+        /* ========================================
+           HOUSE 6: PATH OF SURVIVAL
+           Shape: Heart-shaped
+        ======================================== */
+        .house-survival .house-shape {
+            background: linear-gradient(180deg, 
+                rgba(220, 38, 38, 0.2) 0%,
+                rgba(220, 38, 38, 0.5) 100%);
+            border: none;
+            clip-path: path('M 50 20 C 20 0, 0 30, 50 55 C 100 30, 80 0, 50 20');
+            width: 90%;
+            aspect-ratio: 1.1;
+        }
+
+        /* Fallback heart shape using polygon */
+        .house-survival .house-shape {
+            clip-path: polygon(50% 15%, 65% 0%, 85% 0%, 100% 15%, 100% 40%, 50% 95%, 0% 40%, 0% 15%, 15% 0%, 35% 0%);
+            border: 2px solid rgba(220, 38, 38, 0.6);
+        }
+
+        .house-survival .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 25%;
+            height: 25%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+
+        .house-survival .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(55, 65, 81, 0.3) 0%,
+                transparent 50%);
+        }
+
+        .house-survival .house-glow {
+            background: radial-gradient(circle, rgba(220, 38, 38, 0.5), transparent 70%);
+            animation: heartbeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            15% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.6; }
+            30% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            45% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.5; }
+        }
+
+        .house-survival .house-icon { color: var(--survival-primary); }
+        .house-survival .house-name { color: #fca5a5; }
+
+        /* Heart crack effect */
+        .house-survival .crack-line {
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            width: 40%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent,
+                rgba(55, 65, 81, 0.8),
+                transparent
+            );
+            transform: rotate(-15deg);
+            opacity: 0.5;
+        }
+
+        /* ========================================
+           HOUSE 7: PATH OF EXPLORATION
+           Shape: Compass Circle
+        ======================================== */
+        .house-exploration .house-shape {
+            background: linear-gradient(135deg, 
+                rgba(22, 101, 52, 0.2) 0%,
+                rgba(22, 101, 52, 0.4) 100%);
+            border: 3px solid rgba(205, 127, 50, 0.6);
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .house-exploration .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 1px dashed rgba(205, 127, 50, 0.4);
+            border-radius: 50%;
+        }
+
+        .house-exploration .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 40%;
+            background: linear-gradient(180deg, rgba(205, 127, 50, 0.8), transparent);
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%);
+            animation: compassSpin 8s linear infinite;
+        }
+
+        @keyframes compassSpin {
+            0% { transform: translate(-50%, -100%) rotate(0deg); }
+            100% { transform: translate(-50%, -100%) rotate(360deg); }
+        }
+
+        /* Compass cardinal points */
+        .house-exploration .cardinal-n,
+        .house-exploration .cardinal-e,
+        .house-exploration .cardinal-s,
+        .house-exploration .cardinal-w {
+            position: absolute;
+            font-size: 0.4rem;
+            color: rgba(205, 127, 50, 0.7);
+            font-weight: bold;
+        }
+        .house-exploration .cardinal-n { top: 8%; left: 50%; transform: translateX(-50%); }
+        .house-exploration .cardinal-s { bottom: 8%; left: 50%; transform: translateX(-50%); }
+        .house-exploration .cardinal-e { right: 8%; top: 50%; transform: translateY(-50%); }
+        .house-exploration .cardinal-w { left: 8%; top: 50%; transform: translateY(-50%); }
+
+        .house-exploration .house-glow {
+            background: radial-gradient(circle, rgba(205, 127, 50, 0.4), transparent 70%);
+            animation: bronzeShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes bronzeShimmer {
+            0%, 100% { opacity: 0.3; filter: brightness(1); }
+            50% { opacity: 0.5; filter: brightness(1.2); }
+        }
+
+        .house-exploration .house-icon { color: var(--exploration-secondary); }
+        .house-exploration .house-name { color: #bbf7d0; }
+
+        /* ========================================
+           HOUSE 8: PATH OF RITUALS
+           Shape: Mystical Octagon
+        ======================================== */
+        .house-rituals .house-shape {
+            background: linear-gradient(180deg, 
+                rgba(139, 92, 246, 0.15) 0%,
+                rgba(30, 27, 75, 0.6) 100%);
+            border: 2px solid rgba(139, 92, 246, 0.6);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            overflow: hidden;
+        }
+
+        .house-rituals .house-shape::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            animation: ritualPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes ritualPulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+            50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.1) rotate(22.5deg); }
+        }
+
+        /* Cosmic particles inside */
+        .house-rituals .cosmic-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: cosmicFloat 4s ease-in-out infinite;
+        }
+
+        .house-rituals .cosmic-particle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+        .house-rituals .cosmic-particle:nth-child(2) { top: 60%; left: 70%; animation-delay: -1s; }
+        .house-rituals .cosmic-particle:nth-child(3) { top: 40%; left: 20%; animation-delay: -2s; }
+        .house-rituals .cosmic-particle:nth-child(4) { top: 70%; left: 40%; animation-delay: -3s; }
+
+        @keyframes cosmicFloat {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .house-rituals .house-shape::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at 50% 30%,
+                rgba(139, 92, 246, 0.3),
+                transparent 60%
+            );
+        }
+
+        .house-rituals .house-glow {
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.5), transparent 70%);
+            animation: cosmicGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes cosmicGlow {
+            0%, 100% { opacity: 0.3; filter: hue-rotate(0deg); }
+            50% { opacity: 0.6; filter: hue-rotate(20deg); }
+        }
+
+        .house-rituals .house-icon { color: #c4b5fd; text-shadow: 0 0 10px var(--rituals-primary); }
+        .house-rituals .house-name { color: #ddd6fe; }
+
+        /* ========================================
+           STUNNING CRYSTAL BALL
+        ======================================== */
+        .crystal-ball-container {
+            position: relative;
+            width: 42px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .crystal-ball {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle at 30% 30%,
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(167, 139, 250, 0.3) 20%,
+                rgba(139, 92, 246, 0.5) 40%,
+                rgba(109, 40, 217, 0.7) 60%,
+                rgba(76, 29, 149, 0.9) 80%,
+                rgba(46, 16, 101, 1) 100%
+            );
+            box-shadow: 
+                0 0 20px rgba(139, 92, 246, 0.6),
+                0 0 40px rgba(139, 92, 246, 0.4),
+                0 0 60px rgba(139, 92, 246, 0.2),
+                inset 0 0 20px rgba(255, 255, 255, 0.1),
+                inset -5px -5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: crystalFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes crystalFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .crystal-inner-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 60%;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(196, 181, 253, 0.8) 0%,
+                rgba(139, 92, 246, 0.4) 40%,
+                transparent 70%
+            );
+            animation: innerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes innerPulse {
+            0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+        }
+
+        .crystal-shimmer {
+            position: absolute;
+            top: 8%;
+            left: 15%;
+            width: 35%;
+            height: 20%;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.8) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                transparent 100%
+            );
+            border-radius: 50%;
+            filter: blur(1px);
+        }
+
+        .crystal-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 6px #fff, 0 0 10px rgba(139, 92, 246, 0.8);
+            animation: sparkleGlow 1.5s ease-in-out infinite;
+        }
+
+        .crystal-sparkle.s1 {
+            top: 25%;
+            left: 60%;
+            animation-delay: 0s;
+        }
+
+        .crystal-sparkle.s2 {
+            top: 55%;
+            left: 30%;
+            animation-delay: -0.5s;
+            width: 3px;
+            height: 3px;
+        }
+
+        .crystal-sparkle.s3 {
+            top: 70%;
+            left: 65%;
+            animation-delay: -1s;
+            width: 2px;
+            height: 2px;
+        }
+
+        @keyframes sparkleGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .crystal-mist {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 40%;
+            background: radial-gradient(
+                ellipse,
+                rgba(196, 181, 253, 0.5) 0%,
+                rgba(139, 92, 246, 0.3) 40%,
+                transparent 70%
+            );
+            filter: blur(3px);
+            animation: mistSwirl 4s ease-in-out infinite;
+        }
+
+        @keyframes mistSwirl {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); opacity: 0.5; }
+            50% { transform: translateX(-50%) rotate(10deg); opacity: 0.8; }
+        }
+
+        .crystal-base {
+            width: 20px;
+            height: 8px;
+            background: linear-gradient(
+                180deg,
+                rgba(167, 139, 250, 0.8) 0%,
+                rgba(109, 40, 217, 0.9) 50%,
+                rgba(76, 29, 149, 1) 100%
+            );
+            border-radius: 0 0 4px 4px;
+            margin-top: -2px;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Responsive crystal ball */
+        @media (max-width: 480px) {
+            .crystal-ball-container { width: 36px; height: 44px; }
+            .crystal-ball { width: 30px; height: 30px; }
+            .crystal-base { width: 16px; height: 6px; }
+        }
+
+        @media (max-width: 480px) and (max-height: 600px) {
+            .crystal-ball-container { width: 28px; height: 36px; }
+            .crystal-ball { width: 24px; height: 24px; }
+            .crystal-base { width: 12px; height: 5px; }
+        }
+
+        /* ========================================
+           HOUSE SUB-PAGE (Coming Soon)
+        ======================================== */
+        .house-subpage {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f0c29 100%);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 70px;
+        }
+
+        .house-subpage.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .subpage-header {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:active {
+            transform: scale(0.95);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .subpage-title {
+            flex: 1;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-right: 40px;
+        }
+
+        .subpage-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .coming-soon-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .coming-soon-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .coming-soon-text {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            max-width: 280px;
+            line-height: 1.6;
+        }
+
+        /* Sub-page theme colors */
+        .house-subpage[data-house="progression"] .subpage-title { color: var(--progression-primary); }
+        .house-subpage[data-house="precision"] .subpage-title { color: var(--precision-primary); }
+        .house-subpage[data-house="momentum"] .subpage-title { color: var(--momentum-primary); }
+        .house-subpage[data-house="casual"] .subpage-title { color: var(--casual-primary); }
+        .house-subpage[data-house="time"] .subpage-title { color: var(--time-primary); }
+        .house-subpage[data-house="survival"] .subpage-title { color: var(--survival-primary); }
+        .house-subpage[data-house="exploration"] .subpage-title { color: var(--exploration-secondary); }
+        .house-subpage[data-house="rituals"] .subpage-title { color: var(--rituals-primary); }
+
+        /* ========================================
+           BOTTOM NAVIGATION
+        ======================================== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: linear-gradient(180deg, rgba(26, 26, 46, 0.95) 0%, rgba(15, 12, 41, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(139, 92, 246, 0.2);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+            z-index: 200;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .nav-item.active {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        .nav-icon {
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active .nav-icon {
+            filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.8));
+        }
+
+        .nav-label {
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-item.active .nav-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+        ======================================== */
+
+        /* Mobile phones (2x4 grid) */
+        @media (max-width: 480px) {
+            .ritual-header { padding: 16px 12px 8px; }
+            .ritual-title { font-size: 1.3rem; }
+            .ritual-subtitle { font-size: 0.6rem; }
+            
+            .house-shape { width: 70%; }
+            .house-icon { font-size: 1.6rem; }
+            .house-name { font-size: 0.6rem; margin-top: 4px; }
+        }
+        
+        /* Small phones (iPhone SE, etc.) */
+        @media (max-width: 480px) and (max-height: 600px) {
+            .ritual-header { padding: 8px 12px 4px; }
+            .ritual-title { font-size: 1rem; }
+            .ritual-subtitle { display: none; }
+            .houses-container { gap: 6px 8px; padding: 2px 12px; }
+            .house-shape { width: 65%; }
+            .house-icon { font-size: 1.2rem; }
+            .house-name { font-size: 0.45rem; margin-top: 2px; }
+        }
+
+        /* Medium phones */
+        @media (max-width: 480px) and (min-height: 601px) and (max-height: 750px) {
+            .houses-container { gap: 10px 10px; }
+            .house-shape { width: 72%; }
+            .house-icon { font-size: 1.5rem; }
+            .house-name { font-size: 0.55rem; margin-top: 4px; }
+        }
+
+        /* Tall phones (iPhone Pro Max, etc.) */
+        @media (max-width: 480px) and (min-height: 751px) {
+            .ritual-header { padding: 20px 16px 10px; }
+            .ritual-title { font-size: 1.4rem; }
+            .houses-container { gap: 12px 12px; padding: 8px 16px; }
+            .house-shape { width: 75%; }
+            .house-icon { font-size: 1.8rem; }
+            .house-name { font-size: 0.6rem; margin-top: 5px; }
+        }
+
+        /* Very tall phones */
+        @media (max-width: 480px) and (min-height: 850px) {
+            .ritual-header { padding: 24px 16px 12px; }
+            .houses-container { gap: 14px 14px; padding: 10px 20px; }
+            .house-shape { width: 78%; }
+            .house-icon { font-size: 2rem; }
+            .house-name { font-size: 0.65rem; margin-top: 6px; }
+        }
+
+        /* Landscape orientation - keep 4x2 */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .houses-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 4px 4px;
+                padding: 2px 8px;
+            }
+            .ritual-header { padding: 4px 12px 2px; }
+            .ritual-title { font-size: 0.85rem; }
+            .ritual-subtitle { display: none; }
+            .house-shape { width: 85%; }
+            .house-icon { font-size: 0.9rem; }
+            .house-name { font-size: 0.35rem; margin-top: 1px; }
+            .bottom-nav { height: 40px; }
+            .ritual-page { padding-bottom: 40px; }
+        }
+
+        /* Tablet and Desktop - keep 4x2 */
+        @media (min-width: 481px) {
+            .houses-container {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            .house-shape { width: 85%; }
+        }
+
+        @media (min-width: 768px) {
+            .houses-container {
+                max-width: 700px;
+                margin: 0 auto;
+                gap: 16px;
+                padding: 20px;
+            }
+            .house-icon { font-size: 2rem; }
+            .house-name { font-size: 0.7rem; margin-top: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="ambient-orb"></div>
+        <div class="ambient-orb"></div>
+        <div class="ambient-orb"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Main Ritual Page -->
+    <div class="ritual-page">
+        <!-- Header -->
+        <div class="ritual-header">
+            <h1 class="ritual-title">Achievements Ritual</h1>
+            <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+        </div>
+
+        <!-- 8 Houses Grid -->
+        <div class="houses-container">
+            <!-- House 1: Path of Progression -->
+            <div class="house-card house-progression" onclick="openHouse('progression', '🔷', 'Path of Progression')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="house-icon">🔷</span>
+                </div>
+                <span class="house-name">Progression</span>
+            </div>
+
+            <!-- House 2: Path of Precision -->
+            <div class="house-card house-precision" onclick="openHouse('precision', '🎯', 'Path of Precision')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="house-icon">🎯</span>
+                </div>
+                <span class="house-name">Precision</span>
+            </div>
+
+            <!-- House 3: Path of Momentum -->
+            <div class="house-card house-momentum" onclick="openHouse('momentum', '🔥', 'Path of Momentum')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="house-icon">🔥</span>
+                </div>
+                <span class="house-name">Momentum</span>
+            </div>
+
+            <!-- House 4: Path of Casual Mastery -->
+            <div class="house-card house-casual" onclick="openHouse('casual', '🌿', 'Path of Casual Mastery')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="house-icon">🌿</span>
+                </div>
+                <span class="house-name">Casual</span>
+            </div>
+
+            <!-- House 5: Path of Time Attack -->
+            <div class="house-card house-time" onclick="openHouse('time', '⏱️', 'Path of Time Attack')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="house-icon">⏱️</span>
+                </div>
+                <span class="house-name">Time Attack</span>
+            </div>
+
+            <!-- House 6: Path of Survival -->
+            <div class="house-card house-survival" onclick="openHouse('survival', '❤️‍🔥', 'Path of Survival')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <div class="crack-line"></div>
+                    <span class="house-icon">❤️‍🔥</span>
+                </div>
+                <span class="house-name">Survival</span>
+            </div>
+
+            <!-- House 7: Path of Exploration -->
+            <div class="house-card house-exploration" onclick="openHouse('exploration', '🧭', 'Path of Exploration')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <span class="cardinal-n">N</span>
+                    <span class="cardinal-e">E</span>
+                    <span class="cardinal-s">S</span>
+                    <span class="cardinal-w">W</span>
+                    <span class="house-icon">🧭</span>
+                </div>
+                <span class="house-name">Exploration</span>
+            </div>
+
+            <!-- House 8: Path of Behaviour -->
+            <div class="house-card house-rituals" onclick="openHouse('behaviour', '🔮', 'Path of Behaviour')">
+                <div class="house-glow"></div>
+                <div class="house-shape">
+                    <div class="cosmic-particle"></div>
+                    <div class="cosmic-particle"></div>
+                    <div class="cosmic-particle"></div>
+                    <div class="cosmic-particle"></div>
+                    <div class="crystal-ball-container">
+                        <div class="crystal-ball">
+                            <div class="crystal-inner-glow"></div>
+                            <div class="crystal-shimmer"></div>
+                            <div class="crystal-sparkle s1"></div>
+                            <div class="crystal-sparkle s2"></div>
+                            <div class="crystal-sparkle s3"></div>
+                            <div class="crystal-mist"></div>
+                        </div>
+                        <div class="crystal-base"></div>
+                    </div>
+                </div>
+                <span class="house-name">Behaviour</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- House Sub-Page (Coming Soon) -->
+    <div class="house-subpage" id="houseSubpage" data-house="">
+        <div class="subpage-header">
+            <button class="back-btn" onclick="closeHouse()">←</button>
+            <h2 class="subpage-title" id="subpageTitle">Path Name</h2>
+        </div>
+        <div class="subpage-content">
+            <div class="coming-soon-icon" id="subpageIcon">🔷</div>
+            <h3 class="coming-soon-title">Coming Soon</h3>
+            <p class="coming-soon-text">
+                Achievements for this path are being forged in the cosmic fires. 
+                Return soon to claim your destiny.
+            </p>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">HOME</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">🏆</span>
+            <span class="nav-label">RANKED</span>
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">💬</span>
+            <span class="nav-label">SOCIAL</span>
+        </div>
+        <div class="nav-item active">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">PROFILE</span>
+        </div>
+    </nav>
+
+    <script>
+        // Generate floating particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particle.style.opacity = 0.3 + Math.random() * 0.4;
+                particle.style.width = (2 + Math.random() * 3) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+
+        // Open house sub-page
+        function openHouse(house, icon, title) {
+            const subpage = document.getElementById('houseSubpage');
+            const subpageTitle = document.getElementById('subpageTitle');
+            const subpageIcon = document.getElementById('subpageIcon');
+            
+            subpage.setAttribute('data-house', house);
+            subpageTitle.textContent = title;
+            subpageIcon.textContent = icon;
+            
+            subpage.classList.add('active');
+            
+            // Add haptic feedback if available
+            if (navigator.vibrate) {
+                navigator.vibrate(10);
+            }
+        }
+
+        // Close house sub-page
+        function closeHouse() {
+            const subpage = document.getElementById('houseSubpage');
+            subpage.classList.remove('active');
+            
+            if (navigator.vibrate) {
+                navigator.vibrate(5);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+        });
+
+        // Handle back button
+        window.addEventListener('popstate', () => {
+            const subpage = document.getElementById('houseSubpage');
+            if (subpage.classList.contains('active')) {
+                closeHouse();
+            }
+        });
+    </script>
+</body>
+</html>
+
