@@ -2749,6 +2749,9 @@
     <!-- PROFILE SCREEN VIEW -->
     <div class="profile-view hidden" id="profile-view">
 
+      <!-- Floating Particles Background -->
+      <div class="profile-particles"></div>
+
       <!-- Profile Top Bar -->
       <div class="profile-top-bar">
         <div class="profile-settings">⚙️</div>
@@ -2759,53 +2762,63 @@
       <!-- Profile Header Section -->
       <div class="profile-header">
 
-        <!-- Background Banner -->
+        <!-- Background Banner with Animated Glow -->
         <div class="profile-banner"></div>
 
-        <!-- Avatar -->
+        <!-- Glowing Avatar -->
         <div class="profile-avatar">👤</div>
 
-        <!-- User Info -->
+        <!-- Identity Block -->
         <div class="profile-info">
           <div class="profile-name">Guest</div>
           <div class="profile-bio">Add a bio</div>
           <div class="profile-location">🌍 Location not set</div>
           <div class="profile-active">Last Active: Just now</div>
+          <div class="profile-divider"></div>
         </div>
 
-        <!-- Achievement Ribbon -->
-        <div class="profile-achievement">
-          <div class="achievement-text">Best in Flags</div>
-          <div class="achievement-location">in Azerbaijan</div>
-          <div class="achievement-progress">x/x</div>
+        <!-- Three Feature Cards -->
+        <div class="profile-feature-cards">
+          <div class="feature-card achievements-card" onclick="playClickSound();">
+            <span class="feature-card-icon">🏆</span>
+            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-value">0</div>
+          </div>
+          <div class="feature-card best-topic-card" onclick="playClickSound();">
+            <span class="feature-card-icon">🔥</span>
+            <div class="feature-card-title">Best Topic</div>
+            <div class="feature-card-value">—</div>
+          </div>
+          <div class="feature-card quanta-card" onclick="playClickSound(); openQuantaModal();">
+            <span class="feature-card-icon">✦</span>
+            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-value" id="profile-quanta">0</div>
+          </div>
         </div>
 
       </div>
 
-      <!-- Stats Row (Games/Accuracy/Followers/Following) -->
+      <!-- Quick Stats Floating Card -->
       <div class="profile-stats-row">
         <div class="stat-item">
           <div class="stat-label">GAMES</div>
           <div class="stat-value">0</div>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-label">ACCURACY</div>
           <div class="stat-value">0%</div>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-label">FOLLOWERS</div>
           <div class="stat-value">0</div>
         </div>
-        <div class="stat-divider"></div>
         <div class="stat-item">
           <div class="stat-label">FOLLOWING</div>
           <div class="stat-value">0</div>
         </div>
       </div>
 
-      <!-- Statistics Bar (Win/Draw/Loss) -->
+      <!-- Win/Draw/Loss Bar -->
       <div class="profile-statistics">
         <h3>Statistics</h3>
         <div class="stats-labels">
