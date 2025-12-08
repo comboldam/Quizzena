@@ -4178,6 +4178,22 @@ function initRankedSystem() {
 }
 
 // ========================================
+// 🔮 TRAIL RING SYSTEM
+// ========================================
+
+// Open Trail Ring modal
+function openTrailRingModal() {
+  const modal = document.getElementById('trail-ring-modal');
+  if (modal) modal.classList.remove('hidden');
+}
+
+// Close Trail Ring modal
+function closeTrailRingModal() {
+  const modal = document.getElementById('trail-ring-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+// ========================================
 // ✦ QUANTA & LEVEL BADGE SYSTEM
 // ========================================
 
