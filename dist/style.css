@@ -5,6 +5,58 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Remove ugly tap highlight on Android/iOS */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* ========================================
+   📱 ELEGANT TOUCH FEEDBACK
+   ======================================== */
+/* Remove default tap highlight from all interactive elements */
+button,
+a,
+[onclick],
+.nav-item,
+.feature-card,
+.category-card,
+.quiz-card,
+.topic-card,
+.clickable,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  outline: none;
+  /* Smooth transition for touch feedback */
+  transition: transform 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+
+/* Elegant press feedback - subtle scale down */
+button:active,
+a:active,
+[onclick]:active,
+.nav-item:active,
+.feature-card:active,
+.category-card:active,
+.quiz-card:active,
+.topic-card:active,
+.clickable:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+/* For smaller buttons - even subtler feedback */
+.nav-item:active {
+  transform: scale(0.95);
+}
+
+/* Level badge and top bar elements */
+.level-badge:active,
+.quanta-display:active,
+.user-display:active {
+  transform: scale(0.96);
+  filter: brightness(1.1);
 }
 
 /* Prevent double scrollbar - make html/body fixed to viewport */
