@@ -597,59 +597,57 @@ footer button:hover {
   }
 }
 
-/* Top Bar */
+/* ================================ */
+/* PREMIUM TOP BAR - STATUS STRIP */
+/* ================================ */
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 25px;
-  background: linear-gradient(135deg,
-    rgba(124, 58, 237, 0.9) 0%,
-    rgba(72, 52, 212, 0.9) 100%);
-  backdrop-filter: blur(10px);
-  color: white;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, 
+    rgba(15, 12, 41, 0.98) 0%, 
+    rgba(26, 26, 46, 0.95) 50%,
+    rgba(26, 26, 46, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
   width: 100%;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-}
-
-.top-bar::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    transparent 100%);
 }
 
 .app-title {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #ffffff !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
 }
 
+/* Profile Icon */
 .user-profile {
-  font-size: 0.95rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3) 0%, rgba(91, 33, 182, 0.2) 100%);
+  border: 2px solid rgba(124, 58, 237, 0.4);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .user-profile:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.7);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
 }
 
 /* Hero Section */
@@ -1624,23 +1622,29 @@ footer button:hover {
    🎯 PREMIUM TOP BAR - STATUS STRIP
    ======================================== */
 
+/* Left Section - Brand */
 .top-bar-left {
   display: flex;
   align-items: center;
 }
 
+/* Center Section - Level Badge */
 .top-bar-center {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
+/* Right Section - Quanta + Profile */
 .top-bar-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-/* Global Player Level Badge */
+/* ================================ */
+/* GLOBAL PLAYER LEVEL BADGE */
+/* ================================ */
 .level-badge {
   position: relative;
   width: 48px;
@@ -1781,6 +1785,20 @@ footer button:hover {
 @keyframes quantaBreathing {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(167, 139, 250, 0.6)); }
   50% { transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.9)); }
+}
+
+.quanta-icon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+  animation: quantaGlow 3s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+@keyframes quantaGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
 }
 
 .quanta-amount {
