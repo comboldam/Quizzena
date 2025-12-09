@@ -626,14 +626,17 @@ function showDevPanel() {
         </div>
       </div>
       
-      <!-- XP Controls -->
+      <!-- Stats Controls (for testing achievements) -->
       <div style="background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
-        <div style="color:#4CAF50;font-size:16px;font-weight:bold;margin-bottom:10px;">Add XP to Flags</div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-          <button onclick="devAddXP(100)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+100 XP</button>
-          <button onclick="devAddXP(1000)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+1000 XP</button>
-          <button onclick="devAddXP(10000)" style="padding:12px 20px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">+10000 XP</button>
-          <button onclick="devResetXP()" style="padding:12px 20px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Reset XP</button>
+        <div style="color:#4CAF50;font-size:16px;font-weight:bold;margin-bottom:10px;">📊 Test Game Stats</div>
+        <div style="color:#fff;text-align:center;margin-bottom:10px;font-size:12px;">
+          Games: <span style="color:#fbbf24;font-weight:bold;">${userData.stats?.totalGames || 0}</span> | 
+          Questions: <span style="color:#fbbf24;font-weight:bold;">${userData.stats?.correctAnswers || 0}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+          <button onclick="devAddGames(50)" style="padding:10px 16px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+50 Games</button>
+          <button onclick="devAddCorrectAnswers(100)" style="padding:10px 16px;background:#22c55e;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+100 Questions</button>
+          <button onclick="devResetStats()" style="padding:10px 16px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">Reset Stats</button>
         </div>
       </div>
       
@@ -714,6 +717,60 @@ function devResetXP() {
   saveTopicXPData();
   console.log('DEV: Reset flags XP');
   showDevPanel(); // Refresh panel
+}
+
+// Dev function: Add games - uses SAME code path as actual gameplay
+function devAddGames(amount) {
+  // Add to stats (same as saveQuizStats)
+  userData.stats.totalGames = (userData.stats.totalGames || 0) + amount;
+  
+  // Award P-XP using the SAME function as gameplay (10 P-XP per game, 0 correct answers)
+  awardPxp(amount, 0, 'casual');
+  
+  // Check achievements (same as post-game)
+  checkAchievements();
+  
+  // Update displays
+  updateGlobalLevelBadge();
+  updateAllStatsDisplays();
+  
+  console.log(`DEV: +${amount} games (+${amount * 10} P-XP). Total: ${userData.stats.totalGames}`);
+  showDevPanel();
+}
+
+// Dev function: Add correct answers - uses SAME code path as actual gameplay
+function devAddCorrectAnswers(amount) {
+  // Add to stats (same as saveQuizStats)
+  userData.stats.correctAnswers = (userData.stats.correctAnswers || 0) + amount;
+  
+  // Award P-XP using the SAME function as gameplay (0 games, X correct answers)
+  awardPxp(0, amount, 'casual');
+  
+  // Check achievements (same as post-game)
+  checkAchievements();
+  
+  // Update displays
+  updateGlobalLevelBadge();
+  updateAllStatsDisplays();
+  
+  console.log(`DEV: +${amount} correct (+${amount} P-XP). Total: ${userData.stats.correctAnswers}`);
+  showDevPanel();
+}
+
+// Dev function: Reset game stats
+function devResetStats() {
+  if (confirm('Reset totalGames, correctAnswers, and P-XP history?')) {
+    userData.stats.totalGames = 0;
+    userData.stats.correctAnswers = 0;
+    userData.stats.wrongAnswers = 0;
+    // Also reset prestige history for clean chart
+    if (userData.prestige) {
+      userData.prestige.history = {};
+    }
+    saveUserData();
+    console.log('DEV: Reset game stats and P-XP history');
+    showDevPanel();
+  }
 }
 
 function devSkipToLevel(targetLevel) {
@@ -5057,6 +5114,458 @@ const ACHIEVEMENTS = {
     condition: () => userData.prestige?.level >= 1000,
     pxpReward: 10000,
     quantaReward: 50000
+  },
+  
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 2: GAMES COMPLETED
+  // Symbol: Pathway / footstep glyph
+  // Theme: Walk the path through relentless play
+  // ═══════════════════════════════════════════════════════════
+  
+  // TIER 1 — EARLY MOTION
+  'games-10': {
+    id: 'games-10',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'First Footfalls',
+    description: 'Complete 10 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 10,
+    pxpReward: 15,
+    quantaReward: 30
+  },
+  'games-25': {
+    id: 'games-25',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Emerging Rhythm',
+    description: 'Complete 25 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 25,
+    pxpReward: 30,
+    quantaReward: 60
+  },
+  'games-50': {
+    id: 'games-50',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Pulse of Persistence',
+    description: 'Complete 50 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 50,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  
+  // TIER 2 — THE STEADY PATH
+  'games-100': {
+    id: 'games-100',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Keeper of Momentum',
+    description: 'Complete 100 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 100,
+    pxpReward: 100,
+    quantaReward: 200
+  },
+  'games-200': {
+    id: 'games-200',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Flowbound',
+    description: 'Complete 200 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 200,
+    pxpReward: 200,
+    quantaReward: 400
+  },
+  'games-500': {
+    id: 'games-500',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'The Unbroken March',
+    description: 'Complete 500 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 500,
+    pxpReward: 500,
+    quantaReward: 1000
+  },
+  
+  // TIER 3 — DEVOTION PHASE
+  'games-1000': {
+    id: 'games-1000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Bearer of Continuance',
+    description: 'Complete 1,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 1000,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  'games-3000': {
+    id: 'games-3000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Spirit of Repetition',
+    description: 'Complete 3,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 3000,
+    pxpReward: 3000,
+    quantaReward: 7500
+  },
+  'games-5000': {
+    id: 'games-5000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Enduring Pulse',
+    description: 'Complete 5,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 5000,
+    pxpReward: 5000,
+    quantaReward: 12500
+  },
+  
+  // TIER 4 — MYTHIC PROGRESSION
+  'games-10000': {
+    id: 'games-10000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Echo of Ten Thousand Steps',
+    description: 'Complete 10,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 10000,
+    pxpReward: 10000,
+    quantaReward: 25000
+  },
+  'games-50000': {
+    id: 'games-50000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Will of the Enduring',
+    description: 'Complete 50,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 50000,
+    pxpReward: 50000,
+    quantaReward: 125000
+  },
+  'games-100000': {
+    id: 'games-100000',
+    house: 'progression',
+    pillar: 'games-completed',
+    name: 'Eternal Pathbearer',
+    description: 'Complete 100,000 games',
+    icon: '👣',
+    condition: () => userData.stats?.totalGames >= 100000,
+    pxpReward: 100000,
+    quantaReward: 500000
+  },
+  
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 3: TOTAL QUESTIONS ANSWERED
+  // Symbol: Radiant orb / spark of knowledge (◉)
+  // Theme: Expand your mind through accumulated knowledge
+  // ═══════════════════════════════════════════════════════════
+  
+  // TIER 1 — THE FIRST KNOWINGS
+  'questions-100': {
+    id: 'questions-100',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'First Fragments',
+    description: 'Answer 100 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 100,
+    pxpReward: 10,
+    quantaReward: 25
+  },
+  'questions-250': {
+    id: 'questions-250',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Gatherer of Thoughts',
+    description: 'Answer 250 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 250,
+    pxpReward: 25,
+    quantaReward: 50
+  },
+  'questions-500': {
+    id: 'questions-500',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Mind in Motion',
+    description: 'Answer 500 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 500,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  'questions-750': {
+    id: 'questions-750',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Stirrings of Insight',
+    description: 'Answer 750 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 750,
+    pxpReward: 75,
+    quantaReward: 150
+  },
+  
+  // TIER 2 — FORMING UNDERSTANDING
+  'questions-1000': {
+    id: 'questions-1000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Weaver of Understanding',
+    description: 'Answer 1,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 1000,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'questions-1500': {
+    id: 'questions-1500',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Growing Cognition',
+    description: 'Answer 1,500 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 1500,
+    pxpReward: 150,
+    quantaReward: 375
+  },
+  'questions-2000': {
+    id: 'questions-2000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Emergent Awareness',
+    description: 'Answer 2,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 2000,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'questions-2500': {
+    id: 'questions-2500',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Keeper of Recall',
+    description: 'Answer 2,500 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 2500,
+    pxpReward: 250,
+    quantaReward: 625
+  },
+  
+  // TIER 3 — SHAPING THOUGHT
+  'questions-3500': {
+    id: 'questions-3500',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Seeker of Patterns',
+    description: 'Answer 3,500 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 3500,
+    pxpReward: 350,
+    quantaReward: 875
+  },
+  'questions-5000': {
+    id: 'questions-5000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Harvester of Truths',
+    description: 'Answer 5,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 5000,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  'questions-7500': {
+    id: 'questions-7500',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Scribe of Memory',
+    description: 'Answer 7,500 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 7500,
+    pxpReward: 750,
+    quantaReward: 1875
+  },
+  'questions-10000': {
+    id: 'questions-10000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Voice of Reason',
+    description: 'Answer 10,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 10000,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  
+  // TIER 4 — EXPANDING INSIGHT
+  'questions-15000': {
+    id: 'questions-15000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Silent Scholar',
+    description: 'Answer 15,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 15000,
+    pxpReward: 1500,
+    quantaReward: 3750
+  },
+  'questions-20000': {
+    id: 'questions-20000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Bearer of Meaning',
+    description: 'Answer 20,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 20000,
+    pxpReward: 2000,
+    quantaReward: 5000
+  },
+  'questions-25000': {
+    id: 'questions-25000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Architect of Wisdom',
+    description: 'Answer 25,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 25000,
+    pxpReward: 2500,
+    quantaReward: 6250
+  },
+  'questions-30000': {
+    id: 'questions-30000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Keeper of Countless Questions',
+    description: 'Answer 30,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 30000,
+    pxpReward: 3000,
+    quantaReward: 7500
+  },
+  
+  // TIER 5 — THE DEEP MIND
+  'questions-40000': {
+    id: 'questions-40000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'The Endless Mind',
+    description: 'Answer 40,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 40000,
+    pxpReward: 4000,
+    quantaReward: 10000
+  },
+  'questions-50000': {
+    id: 'questions-50000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Truthbound',
+    description: 'Answer 50,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 50000,
+    pxpReward: 5000,
+    quantaReward: 12500
+  },
+  'questions-60000': {
+    id: 'questions-60000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Crown of Knowing',
+    description: 'Answer 60,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 60000,
+    pxpReward: 6000,
+    quantaReward: 15000
+  },
+  'questions-75000': {
+    id: 'questions-75000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'The Reflective One',
+    description: 'Answer 75,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 75000,
+    pxpReward: 7500,
+    quantaReward: 18750
+  },
+  
+  // TIER 6 — COSMIC INTELLECT
+  'questions-100000': {
+    id: 'questions-100000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Bearer of the Infinite Query',
+    description: 'Answer 100,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 100000,
+    pxpReward: 10000,
+    quantaReward: 25000
+  },
+  'questions-150000': {
+    id: 'questions-150000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Mind Beyond Measure',
+    description: 'Answer 150,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 150000,
+    pxpReward: 15000,
+    quantaReward: 37500
+  },
+  'questions-200000': {
+    id: 'questions-200000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Eternal Comprehension',
+    description: 'Answer 200,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 200000,
+    pxpReward: 20000,
+    quantaReward: 50000
+  },
+  'questions-250000': {
+    id: 'questions-250000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'The Thoughtborne Ascendant',
+    description: 'Answer 250,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 250000,
+    pxpReward: 25000,
+    quantaReward: 62500
+  },
+  
+  // TIER 7 — TRANSCENDENT INTELLIGENCE (Mythic)
+  'questions-500000': {
+    id: 'questions-500000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'The Vastness Within',
+    description: 'Answer 500,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 500000,
+    pxpReward: 50000,
+    quantaReward: 125000
+  },
+  'questions-1000000': {
+    id: 'questions-1000000',
+    house: 'progression',
+    pillar: 'questions-answered',
+    name: 'Crown of the Million',
+    description: 'Answer 1,000,000 questions',
+    icon: '◉',
+    condition: () => userData.stats?.correctAnswers >= 1000000,
+    pxpReward: 100000,
+    quantaReward: 500000
   }
 };
 
@@ -5282,23 +5791,37 @@ function openHousePage(house, icon, title) {
 // Generate House 1 - Path of Progression content
 function generateProgressionHouseContent() {
   const achievements = getHouseAchievements('progression');
-  const ascendingAchievements = achievements.filter(a => a.pillar === 'ascending-levels');
   
-  // Count claimed achievements per pillar
+  // Filter achievements by pillar
+  const ascendingAchievements = achievements.filter(a => a.pillar === 'ascending-levels');
+  const gamesAchievements = achievements.filter(a => a.pillar === 'games-completed');
+  const questionsAchievements = achievements.filter(a => a.pillar === 'questions-answered');
+  
+  // Count claimed/pending achievements per pillar
   const ascendingClaimed = ascendingAchievements.filter(a => isAchievementClaimed(a.id)).length;
   const ascendingPending = ascendingAchievements.filter(a => isAchievementPending(a.id)).length;
   const ascendingTotal = ascendingAchievements.length;
+  
+  const gamesClaimed = gamesAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const gamesPending = gamesAchievements.filter(a => isAchievementPending(a.id)).length;
+  const gamesTotal = gamesAchievements.length;
+  
+  const questionsClaimed = questionsAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const questionsPending = questionsAchievements.filter(a => isAchievementPending(a.id)).length;
+  const questionsTotal = questionsAchievements.length;
   
   let html = `
     <div class="house-progression-content">
       <!-- House Header -->
       <div class="house-header-section">
         <div class="house-icon-large">🔷</div>
-        <p class="house-subtitle">Endless ascent, skybreaking milestones</p>
+        <p class="house-subtitle">Your journey begins, rises, and becomes.</p>
       </div>
       
-      <!-- Pillar: Ascending Levels -->
-      <div class="achievement-pillar" id="pillar-ascending-levels">
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 1: Ascending Levels -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-ascending-levels">
         <div class="pillar-header" onclick="togglePillar('ascending-levels')">
           <div class="pillar-header-left">
             <span class="pillar-icon">◆</span>
@@ -5311,11 +5834,67 @@ function generateProgressionHouseContent() {
         </div>
         <p class="pillar-description">Rise through the Prestige ranks</p>
         
-        <div class="achievement-ladder pillar-content" id="pillar-content-ascending-levels">
+        <div class="achievement-ladder pillar-content" id="pillar-content-ascending-levels" style="max-height: 0px;">
   `;
   
   // Add achievement cards for Ascending Levels
   ascendingAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 2: Games Completed -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-games-completed">
+        <div class="pillar-header" onclick="togglePillar('games-completed')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">👣</span>
+            <h3 class="pillar-title-text">Games Completed</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${gamesPending > 0 ? 'has-pending' : ''}">${gamesClaimed}/${gamesTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Walk the path through relentless play.</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-games-completed" style="max-height: 0px;">
+  `;
+  
+  // Add achievement cards for Games Completed
+  gamesAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 3: Total Questions Answered -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-questions-answered">
+        <div class="pillar-header" onclick="togglePillar('questions-answered')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">◉</span>
+            <h3 class="pillar-title-text">Total Questions Answered</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${questionsPending > 0 ? 'has-pending' : ''}">${questionsClaimed}/${questionsTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Expand your mind through accumulated knowledge.</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-questions-answered" style="max-height: 0px;">
+  `;
+  
+  // Add achievement cards for Questions Answered
+  questionsAchievements.forEach(achievement => {
     html += generateAchievementCard(achievement);
   });
   
