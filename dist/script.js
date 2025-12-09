@@ -202,6 +202,35 @@ async function loadFromFirebase() {
           );
         }
         
+        // Merge P-XP (Prestige) data
+        if (cloudData.prestige) {
+          if (!userData.prestige) {
+            userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+          }
+          
+          // Take higher level and P-XP values
+          userData.prestige.level = Math.max(userData.prestige.level || 1, cloudData.prestige.level || 1);
+          userData.prestige.pxp = Math.max(userData.prestige.pxp || 0, cloudData.prestige.pxp || 0);
+          userData.prestige.totalPxp = Math.max(userData.prestige.totalPxp || 0, cloudData.prestige.totalPxp || 0);
+          
+          // Merge history (combine both local and cloud history)
+          if (cloudData.prestige.history) {
+            if (!userData.prestige.history) userData.prestige.history = {};
+            
+            for (const dateKey in cloudData.prestige.history) {
+              const cloudDay = cloudData.prestige.history[dateKey];
+              const localDay = userData.prestige.history[dateKey] || { games: 0, answers: 0, hourly: {} };
+              
+              // Take higher daily totals
+              userData.prestige.history[dateKey] = {
+                games: Math.max(localDay.games || 0, cloudDay.games || 0),
+                answers: Math.max(localDay.answers || 0, cloudDay.answers || 0),
+                hourly: { ...localDay.hourly, ...cloudDay.hourly }
+              };
+            }
+          }
+        }
+        
         // Save merged data locally
         localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
         console.log('🔥 Merged cloud data with local');
@@ -240,6 +269,9 @@ async function syncToFirebase() {
       
       // All Stats (includes XP, levels, modesUnlocked per topic)
       stats: userData.stats,
+      
+      // P-XP (Player Prestige XP) System
+      prestige: userData.prestige,
       
       // Timestamps
       lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
