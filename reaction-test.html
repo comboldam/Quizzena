@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Quiz Reaction Test</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding: 20px;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #a78bfa;
+    }
+    
+    .instructions {
+      color: #888;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+    }
+    
+    .flag-container {
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    
+    .flag {
+      width: 200px;
+      height: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+      opacity: 0;
+      transition: opacity 0.1s;
+      border-radius: 8px;
+    }
+    
+    .flag.show {
+      opacity: 1;
+    }
+    
+    .timer {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fbbf24;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+    }
+    
+    .timer.result {
+      color: #22c55e;
+    }
+    
+    .answers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .answer-btn {
+      padding: 16px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(145deg, rgba(124, 58, 237, 0.3), rgba(91, 33, 182, 0.2));
+      border: 1px solid rgba(124, 58, 237, 0.4);
+      color: white;
+      transition: all 0.15s;
+      font-weight: 600;
+    }
+    
+    .answer-btn:hover:not(:disabled) {
+      background: linear-gradient(145deg, rgba(124, 58, 237, 0.5), rgba(91, 33, 182, 0.4));
+      transform: translateY(-2px);
+    }
+    
+    .answer-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .answer-btn.correct {
+      background: #22c55e !important;
+      border-color: #22c55e;
+    }
+    
+    .answer-btn.wrong {
+      background: #ef4444 !important;
+      border-color: #ef4444;
+    }
+    
+    .start-btn, .retry-btn {
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      font-weight: bold;
+      transition: all 0.2s;
+      margin-top: 20px;
+    }
+    
+    .start-btn:hover, .retry-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+    
+    .stats {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+    }
+    
+    .stats h3 {
+      color: #a78bfa;
+      margin-bottom: 15px;
+    }
+    
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+    
+    .stat-label {
+      color: #888;
+    }
+    
+    .stat-value {
+      font-weight: bold;
+      color: #fbbf24;
+    }
+    
+    .countdown {
+      font-size: 5rem;
+      color: #ef4444;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Flag Quiz Reaction Test</h1>
+    <p class="instructions">How fast can you identify a flag? Click the correct country!</p>
+    
+    <div class="flag-container">
+      <div class="countdown hidden" id="countdown"></div>
+      <img class="flag" id="flag" src="https://flagcdn.com/w320/jp.png" alt="Flag">
+    </div>
+    
+    <div class="timer" id="timer">0.000s</div>
+    
+    <div class="answers hidden" id="answers">
+      <button class="answer-btn" onclick="checkAnswer('Japan')">Japan</button>
+      <button class="answer-btn" onclick="checkAnswer('China')">China</button>
+      <button class="answer-btn" onclick="checkAnswer('South Korea')">South Korea</button>
+      <button class="answer-btn" onclick="checkAnswer('Vietnam')">Vietnam</button>
+    </div>
+    
+    <button class="start-btn" id="startBtn" onclick="startTest()">🚀 Start Test</button>
+    <button class="retry-btn hidden" id="stopBtn" onclick="stopTest()">⏹️ Stop & View Results</button>
+    
+    <div class="stats hidden" id="stats">
+      <h3>📊 Your Results</h3>
+      <div class="stat-row">
+        <span class="stat-label">Attempts</span>
+        <span class="stat-value" id="attempts">0</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Best Time</span>
+        <span class="stat-value" id="bestTime">-</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Average Time</span>
+        <span class="stat-value" id="avgTime">-</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value" id="accuracy">-</span>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    let startTime = 0;
+    let timerInterval = null;
+    let isRunning = false;
+    let isStopped = false;
+    let attempts = 0;
+    let correctAttempts = 0;
+    let times = [];
+    
+    // Different flag questions (using ISO country codes for flagcdn.com)
+    const questions = [
+      { code: 'jp', correct: 'Japan', options: ['Japan', 'China', 'South Korea', 'Vietnam'] },
+      { code: 'fr', correct: 'France', options: ['France', 'Italy', 'Netherlands', 'Belgium'] },
+      { code: 'br', correct: 'Brazil', options: ['Brazil', 'Argentina', 'Colombia', 'Portugal'] },
+      { code: 'de', correct: 'Germany', options: ['Germany', 'Belgium', 'Austria', 'Switzerland'] },
+      { code: 'gb', correct: 'United Kingdom', options: ['United Kingdom', 'Australia', 'New Zealand', 'Iceland'] },
+      { code: 'ca', correct: 'Canada', options: ['Canada', 'Switzerland', 'Peru', 'Lebanon'] },
+      { code: 'it', correct: 'Italy', options: ['Italy', 'Ireland', 'Mexico', 'Hungary'] },
+      { code: 'es', correct: 'Spain', options: ['Spain', 'Portugal', 'Mexico', 'Colombia'] },
+      { code: 'kr', correct: 'South Korea', options: ['South Korea', 'Japan', 'Taiwan', 'Philippines'] },
+      { code: 'au', correct: 'Australia', options: ['Australia', 'New Zealand', 'Fiji', 'United Kingdom'] },
+      { code: 'us', correct: 'United States', options: ['United States', 'Malaysia', 'Liberia', 'Puerto Rico'] },
+      { code: 'mx', correct: 'Mexico', options: ['Mexico', 'Italy', 'Ireland', 'Hungary'] },
+      { code: 'in', correct: 'India', options: ['India', 'Ireland', 'Niger', 'Ivory Coast'] },
+      { code: 'cn', correct: 'China', options: ['China', 'Vietnam', 'Hong Kong', 'Taiwan'] },
+      { code: 'ru', correct: 'Russia', options: ['Russia', 'Netherlands', 'France', 'Serbia'] },
+      { code: 'za', correct: 'South Africa', options: ['South Africa', 'Ghana', 'Jamaica', 'Guyana'] },
+      { code: 'eg', correct: 'Egypt', options: ['Egypt', 'Syria', 'Iraq', 'Yemen'] },
+      { code: 'ng', correct: 'Nigeria', options: ['Nigeria', 'India', 'Ireland', 'Niger'] },
+      { code: 'ar', correct: 'Argentina', options: ['Argentina', 'Uruguay', 'Guatemala', 'Honduras'] },
+      { code: 'se', correct: 'Sweden', options: ['Sweden', 'Finland', 'Denmark', 'Norway'] },
+    ];
+    
+    let currentQuestion = null;
+    
+    // Preload all flag images
+    questions.forEach(q => {
+      const img = new Image();
+      img.src = `https://flagcdn.com/w320/${q.code}.png`;
+    });
+    
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+    
+    function startTest() {
+      isStopped = false;
+      document.getElementById('startBtn').classList.add('hidden');
+      document.getElementById('stopBtn').classList.add('hidden');
+      document.getElementById('flag').classList.remove('show');
+      document.getElementById('answers').classList.add('hidden');
+      document.getElementById('timer').textContent = '0.000s';
+      document.getElementById('timer').classList.remove('result');
+      
+      // Show countdown
+      const countdown = document.getElementById('countdown');
+      countdown.classList.remove('hidden');
+      
+      let count = 3;
+      countdown.textContent = count;
+      
+      const countInterval = setInterval(() => {
+        count--;
+        if (count > 0) {
+          countdown.textContent = count;
+        } else if (count === 0) {
+          countdown.textContent = 'GO!';
+        } else {
+          clearInterval(countInterval);
+          countdown.classList.add('hidden');
+          showQuestion();
+        }
+      }, 700);
+    }
+    
+    function showQuestion() {
+      // Pick random question
+      currentQuestion = questions[Math.floor(Math.random() * questions.length)];
+      
+      // Show flag (real image from flagcdn.com)
+      const flagImg = document.getElementById('flag');
+      flagImg.src = `https://flagcdn.com/w320/${currentQuestion.code}.png`;
+      flagImg.classList.add('show');
+      
+      // Setup answers (shuffled)
+      const answersDiv = document.getElementById('answers');
+      const shuffledOptions = shuffle([...currentQuestion.options]);
+      answersDiv.innerHTML = shuffledOptions.map(opt => 
+        `<button class="answer-btn" onclick="checkAnswer('${opt}')">${opt}</button>`
+      ).join('');
+      answersDiv.classList.remove('hidden');
+      
+      // Enable all buttons
+      document.querySelectorAll('.answer-btn').forEach(btn => btn.disabled = false);
+      
+      // Start timer
+      startTime = performance.now();
+      isRunning = true;
+      
+      timerInterval = setInterval(() => {
+        if (isRunning) {
+          const elapsed = (performance.now() - startTime) / 1000;
+          document.getElementById('timer').textContent = elapsed.toFixed(3) + 's';
+        }
+      }, 10);
+    }
+    
+    function checkAnswer(answer) {
+      if (!isRunning) return;
+      
+      isRunning = false;
+      clearInterval(timerInterval);
+      
+      const elapsed = (performance.now() - startTime) / 1000;
+      attempts++;
+      
+      // Disable all buttons
+      document.querySelectorAll('.answer-btn').forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === currentQuestion.correct) {
+          btn.classList.add('correct');
+        }
+        if (btn.textContent === answer && answer !== currentQuestion.correct) {
+          btn.classList.add('wrong');
+        }
+      });
+      
+      // Show result
+      const timer = document.getElementById('timer');
+      timer.classList.add('result');
+      
+      if (answer === currentQuestion.correct) {
+        correctAttempts++;
+        times.push(elapsed);
+        timer.textContent = `✅ ${elapsed.toFixed(3)}s`;
+        timer.style.color = '#22c55e';
+      } else {
+        timer.textContent = `❌ ${elapsed.toFixed(3)}s (Wrong!)`;
+        timer.style.color = '#ef4444';
+      }
+      
+      // Update stats
+      updateStats();
+      document.getElementById('stats').classList.remove('hidden');
+      document.getElementById('stopBtn').classList.remove('hidden');
+      
+      // Auto-continue after 1 second (if not stopped)
+      setTimeout(() => {
+        if (!isStopped) {
+          document.getElementById('timer').style.color = '#fbbf24';
+          document.querySelectorAll('.answer-btn').forEach(btn => {
+            btn.classList.remove('correct', 'wrong');
+          });
+          showQuestion();
+        }
+      }, 1000);
+    }
+    
+    function stopTest() {
+      isStopped = true;
+      isRunning = false;
+      clearInterval(timerInterval);
+      document.getElementById('stopBtn').classList.add('hidden');
+      document.getElementById('startBtn').classList.remove('hidden');
+      document.getElementById('startBtn').textContent = '🔄 Start Again';
+      document.getElementById('answers').classList.add('hidden');
+      document.getElementById('flag').classList.remove('show');
+    }
+    
+    function updateStats() {
+      document.getElementById('attempts').textContent = attempts;
+      document.getElementById('accuracy').textContent = 
+        Math.round((correctAttempts / attempts) * 100) + '%';
+      
+      if (times.length > 0) {
+        const best = Math.min(...times);
+        const avg = times.reduce((a, b) => a + b, 0) / times.length;
+        document.getElementById('bestTime').textContent = best.toFixed(3) + 's';
+        document.getElementById('avgTime').textContent = avg.toFixed(3) + 's';
+      }
+    }
+    
+  </script>
+</body>
+</html>
+

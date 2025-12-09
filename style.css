@@ -20658,8 +20658,8 @@ body.performance-mode-low .topics-view.hidden {
 :root {
   --house-progression-primary: #3b82f6;
   --house-progression-secondary: #c0c0c0;
-  --house-precision-primary: #fbbf24;
-  --house-precision-secondary: #ffffff;
+  --house-skill-primary: #fbbf24;
+  --house-skill-secondary: #ec4899;
   --house-momentum-primary: #ef4444;
   --house-momentum-secondary: #f97316;
   --house-casual-primary: #22c55e;
@@ -20725,7 +20725,7 @@ body.performance-mode-low .topics-view.hidden {
 .ritual-ambient-orb:nth-child(2) {
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, var(--house-precision-primary), transparent);
+  background: radial-gradient(circle, var(--house-skill-primary), transparent);
   bottom: -80px;
   right: -80px;
   animation-delay: -7s;
@@ -21021,57 +21021,78 @@ body.performance-mode-low .topics-view.hidden {
 .house-progression .ritual-house-name { color: #93c5fd; }
 
 /* ========================================
-   HOUSE 2: PATH OF PRECISION
-   Shape: Hexagon
+   HOUSE 2: PATH OF SKILL
+   Shape: Sharp Angular Hexagon
 ======================================== */
-.house-precision .ritual-house-shape {
+.house-skill .ritual-house-shape {
   background: linear-gradient(135deg, 
     rgba(251, 191, 36, 0.15) 0%,
+    rgba(236, 72, 153, 0.2) 50%,
     rgba(251, 191, 36, 0.4) 100%);
-  border: 2px solid rgba(251, 191, 36, 0.7);
+  border: 2px solid rgba(251, 191, 36, 0.8);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  box-shadow: 
+    inset 0 0 20px rgba(251, 191, 36, 0.3),
+    0 0 15px rgba(236, 72, 153, 0.3);
 }
 
-.house-precision .ritual-house-shape::before {
+.house-skill .ritual-house-shape::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  border: 1px solid rgba(251, 191, 36, 0.3);
+  width: 55%;
+  height: 55%;
+  border: 2px solid rgba(251, 191, 36, 0.5);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  animation: precisionPulseAnim 2s ease-in-out infinite;
+  animation: skillPulseAnim 2.5s ease-in-out infinite;
 }
 
-@keyframes precisionPulseAnim {
-  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+@keyframes skillPulseAnim {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: translate(-50%, -50%) scale(1);
+    border-color: rgba(251, 191, 36, 0.5);
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: translate(-50%, -50%) scale(1.08);
+    border-color: rgba(236, 72, 153, 0.8);
+  }
 }
 
-.house-precision .ritual-house-shape::after {
+.house-skill .ritual-house-shape::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(236, 72, 153, 0.2), transparent 40%);
 }
 
-.house-precision .ritual-house-glow {
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.5), transparent 70%);
-  animation: goldenPulseAnim 1.5s ease-in-out infinite;
+.house-skill .ritual-house-glow {
+  background: radial-gradient(circle, 
+    rgba(251, 191, 36, 0.5) 0%, 
+    rgba(236, 72, 153, 0.3) 50%, 
+    transparent 70%);
+  animation: skillGlowAnim 2s ease-in-out infinite;
 }
 
-@keyframes goldenPulseAnim {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+@keyframes skillGlowAnim {
+  0%, 100% { opacity: 0.35; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.05); }
 }
 
-.house-precision .ritual-house-icon { color: var(--house-precision-primary); }
-.house-precision .ritual-house-name { color: #fef3c7; }
+.house-skill .ritual-house-icon { 
+  color: var(--house-skill-primary); 
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.5);
+  font-weight: bold;
+}
+.house-skill .ritual-house-name { color: #fef3c7; }
 
 /* ========================================
    HOUSE 3: PATH OF MOMENTUM
@@ -21736,7 +21757,7 @@ body.performance-mode-low .topics-view.hidden {
 
 /* Sub-page theme colors */
 .house-subpage[data-house="progression"] .house-subpage-title { color: var(--house-progression-primary); }
-.house-subpage[data-house="precision"] .house-subpage-title { color: var(--house-precision-primary); }
+.house-subpage[data-house="skill"] .house-subpage-title { color: var(--house-skill-primary); }
 .house-subpage[data-house="momentum"] .house-subpage-title { color: var(--house-momentum-primary); }
 .house-subpage[data-house="casual"] .house-subpage-title { color: var(--house-casual-primary); }
 .house-subpage[data-house="time"] .house-subpage-title { color: var(--house-time-primary); }
