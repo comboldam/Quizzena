@@ -629,14 +629,43 @@ function showDevPanel() {
       <!-- Stats Controls (for testing achievements) -->
       <div style="background:rgba(76,175,80,0.1);border:1px solid rgba(76,175,80,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
         <div style="color:#4CAF50;font-size:16px;font-weight:bold;margin-bottom:10px;">📊 Test Game Stats</div>
-        <div style="color:#fff;text-align:center;margin-bottom:10px;font-size:12px;">
+        <div style="color:#fff;text-align:center;margin-bottom:10px;font-size:11px;">
           Games: <span style="color:#fbbf24;font-weight:bold;">${userData.stats?.totalGames || 0}</span> | 
-          Questions: <span style="color:#fbbf24;font-weight:bold;">${userData.stats?.correctAnswers || 0}</span>
+          Correct: <span style="color:#22c55e;font-weight:bold;">${userData.stats?.correctAnswers || 0}</span> |
+          Wrong: <span style="color:#ef4444;font-weight:bold;">${userData.stats?.wrongAnswers || 0}</span>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-          <button onclick="devAddGames(50)" style="padding:10px 16px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+50 Games</button>
-          <button onclick="devAddCorrectAnswers(100)" style="padding:10px 16px;background:#22c55e;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+100 Questions</button>
-          <button onclick="devResetStats()" style="padding:10px 16px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">Reset Stats</button>
+          <button onclick="devAddGames(50)" style="padding:10px 14px;background:#4CAF50;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+50 Games</button>
+          <button onclick="devAddCorrectAnswers(100)" style="padding:10px 14px;background:#22c55e;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+100 Correct</button>
+          <button onclick="devAddWrongAnswers(100)" style="padding:10px 14px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+100 Wrong</button>
+          <button onclick="devResetStats()" style="padding:10px 14px;background:#666;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">Reset</button>
+        </div>
+      </div>
+      
+      <!-- Topic Level Controls (for testing Pillar 4) -->
+      <div style="background:rgba(255,152,0,0.1);border:1px solid rgba(255,152,0,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#FF9800;font-size:16px;font-weight:bold;margin-bottom:10px;">🔥 Topic Level (Flags)</div>
+        <div style="color:#fff;text-align:center;margin-bottom:10px;font-size:12px;">
+          Highest Topic Level: <span style="color:#fbbf24;font-weight:bold;">${getHighestTopicLevel()}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+          <button onclick="devAddTopicLevels(10)" style="padding:10px 16px;background:#FF9800;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+10 Levels</button>
+          <button onclick="devAddTopicLevels(50)" style="padding:10px 16px;background:#f57c00;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">+50 Levels</button>
+          <button onclick="devResetTopicLevels()" style="padding:10px 16px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:13px;cursor:pointer;">Reset Topics</button>
+        </div>
+      </div>
+      
+      <!-- Time Played Controls (for testing Pillar 6) -->
+      <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#8b5cf6;font-size:16px;font-weight:bold;margin-bottom:10px;">⏳ Time Played</div>
+        <div style="color:#fff;text-align:center;margin-bottom:10px;font-size:12px;">
+          Total: <span style="color:#fbbf24;font-weight:bold;">${formatTimeDisplay(userData.stats?.totalTimeSeconds || 0)}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+          <button onclick="devAddTimePlayed(3600)" style="padding:10px 14px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+1 Hour</button>
+          <button onclick="devAddTimePlayed(36000)" style="padding:10px 14px;background:#7c3aed;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+10 Hours</button>
+          <button onclick="devAddTimePlayed(360000)" style="padding:10px 14px;background:#6d28d9;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">+100 Hours</button>
+          <button onclick="devResetTimePlayed()" style="padding:10px 14px;background:#f44336;color:#fff;border:none;border-radius:8px;font-size:12px;cursor:pointer;">Reset</button>
         </div>
       </div>
       
@@ -757,6 +786,24 @@ function devAddCorrectAnswers(amount) {
   showDevPanel();
 }
 
+// Dev function: Add wrong answers (for testing Pillar 5 - Flawed Mind)
+function devAddWrongAnswers(amount) {
+  // Add to stats
+  userData.stats.wrongAnswers = (userData.stats.wrongAnswers || 0) + amount;
+  
+  // Save data
+  saveUserData();
+  
+  // Check achievements
+  checkAchievements();
+  
+  // Update displays
+  updateAllStatsDisplays();
+  
+  console.log(`DEV: +${amount} wrong answers. Total: ${userData.stats.wrongAnswers}`);
+  showDevPanel();
+}
+
 // Dev function: Reset game stats
 function devResetStats() {
   if (confirm('Reset totalGames, correctAnswers, and P-XP history?')) {
@@ -769,6 +816,83 @@ function devResetStats() {
     }
     saveUserData();
     console.log('DEV: Reset game stats and P-XP history');
+    showDevPanel();
+  }
+}
+
+// Dev function: Add topic levels (to test Pillar 4 achievements)
+function devAddTopicLevels(amount) {
+  // Add levels to flags topic (or create if not exists)
+  const topicData = getTopicXPData('flags');
+  topicData.level = (topicData.level || 1) + amount;
+  
+  // Calculate XP needed for new level (to keep XP in sync)
+  topicData.xp = xpNeededForLevel(topicData.level - 1);
+  
+  // Check mode unlocks
+  checkModeUnlocks(topicData);
+  
+  // Save topic data
+  saveTopicXPData();
+  
+  // Check achievements
+  checkAchievements();
+  
+  console.log(`DEV: Added ${amount} levels to Flags. Now level ${topicData.level}`);
+  showDevPanel();
+}
+
+// Dev function: Reset all topic levels
+function devResetTopicLevels() {
+  if (confirm('Reset all topic levels to 1?')) {
+    if (userData.stats?.topics) {
+      for (const topicId in userData.stats.topics) {
+        userData.stats.topics[topicId].level = 1;
+        userData.stats.topics[topicId].xp = 0;
+        userData.stats.topics[topicId].modesUnlocked = {
+          casual: true,
+          timeAttack: false,
+          threeHearts: false
+        };
+      }
+    }
+    saveUserData();
+    console.log('DEV: Reset all topic levels');
+    showDevPanel();
+  }
+}
+
+// Dev function: Add time played (for testing Pillar 6 - Timeless Devotion)
+function devAddTimePlayed(seconds) {
+  // Add to total time
+  userData.stats.totalTimeSeconds = (userData.stats.totalTimeSeconds || 0) + seconds;
+  
+  // Save data
+  saveUserData();
+  
+  // Check achievements
+  checkAchievements();
+  
+  // Update displays
+  updateAllStatsDisplays();
+  
+  const hours = (seconds / 3600).toFixed(1);
+  console.log(`DEV: +${hours} hours. Total: ${formatTimeDisplay(userData.stats.totalTimeSeconds)}`);
+  showDevPanel();
+}
+
+// Dev function: Reset time played
+function devResetTimePlayed() {
+  if (confirm('Reset total time played to 0?')) {
+    userData.stats.totalTimeSeconds = 0;
+    // Also reset topic time
+    if (userData.stats?.topics) {
+      for (const topicId in userData.stats.topics) {
+        userData.stats.topics[topicId].timeSpentSeconds = 0;
+      }
+    }
+    saveUserData();
+    console.log('DEV: Reset time played');
     showDevPanel();
   }
 }
@@ -5566,6 +5690,698 @@ const ACHIEVEMENTS = {
     condition: () => userData.stats?.correctAnswers >= 1000000,
     pxpReward: 100000,
     quantaReward: 500000
+  },
+  
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 4: TOPIC ENTRY PROGRESSION
+  // Symbol: Rising flame / subject sigil (🔥)
+  // Theme: Advance within a single subject toward deep specialization
+  // ═══════════════════════════════════════════════════════════
+  
+  // TIER 1 — FOUNDATIONAL TOPIC GROWTH
+  'topic-level-2': {
+    id: 'topic-level-2',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Dawn of Understanding',
+    description: 'Reach Level 2 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 2,
+    pxpReward: 10,
+    quantaReward: 25
+  },
+  'topic-level-5': {
+    id: 'topic-level-5',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'First Touch of Knowledge',
+    description: 'Reach Level 5 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 5,
+    pxpReward: 25,
+    quantaReward: 50
+  },
+  'topic-level-10': {
+    id: 'topic-level-10',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Opening of the Subject Path',
+    description: 'Reach Level 10 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 10,
+    pxpReward: 50,
+    quantaReward: 125
+  },
+  
+  // TIER 2 — RISING SUBJECT STUDY
+  'topic-level-20': {
+    id: 'topic-level-20',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Steps Toward Mastery',
+    description: 'Reach Level 20 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 20,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'topic-level-30': {
+    id: 'topic-level-30',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Binder of Core Concepts',
+    description: 'Reach Level 30 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 30,
+    pxpReward: 150,
+    quantaReward: 375
+  },
+  'topic-level-40': {
+    id: 'topic-level-40',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Emerging Subject Practitioner',
+    description: 'Reach Level 40 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 40,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'topic-level-50': {
+    id: 'topic-level-50',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'The Subject Initiate',
+    description: 'Reach Level 50 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 50,
+    pxpReward: 250,
+    quantaReward: 625
+  },
+  
+  // TIER 3 — ADVANCED SUBJECT PROFICIENCY
+  'topic-level-75': {
+    id: 'topic-level-75',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Scholar of Focused Study',
+    description: 'Reach Level 75 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 75,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  'topic-level-100': {
+    id: 'topic-level-100',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Adept of the Discipline',
+    description: 'Reach Level 100 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 100,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  
+  // TIER 4 — GRAND SUBJECT MASTERY
+  'topic-level-250': {
+    id: 'topic-level-250',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'Keeper of the Subject Flame',
+    description: 'Reach Level 250 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 250,
+    pxpReward: 2500,
+    quantaReward: 6250
+  },
+  'topic-level-500': {
+    id: 'topic-level-500',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'The Inner Depthwalker',
+    description: 'Reach Level 500 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 500,
+    pxpReward: 5000,
+    quantaReward: 12500
+  },
+  'topic-level-1000': {
+    id: 'topic-level-1000',
+    house: 'progression',
+    pillar: 'topic-progression',
+    name: 'The Apex Subject Sage',
+    description: 'Reach Level 1000 in any topic',
+    icon: '🔥',
+    condition: () => getHighestTopicLevel() >= 1000,
+    pxpReward: 10000,
+    quantaReward: 50000
+  },
+  
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 5: THE PATH OF THE FLAWED MIND
+  // Symbol: Fractured circle / cracked gem (💔)
+  // Theme: Wisdom shapes itself through misjudgment and correction
+  // ═══════════════════════════════════════════════════════════
+  
+  // TIER 1 — THE FIRST FRACTURES
+  'wrong-100': {
+    id: 'wrong-100',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Echoes of Error',
+    description: 'Give 100 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 100,
+    pxpReward: 10,
+    quantaReward: 25
+  },
+  'wrong-250': {
+    id: 'wrong-250',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Seeds of Imperfection',
+    description: 'Give 250 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 250,
+    pxpReward: 25,
+    quantaReward: 50
+  },
+  'wrong-500': {
+    id: 'wrong-500',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Steps Into Uncertainty',
+    description: 'Give 500 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 500,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  'wrong-750': {
+    id: 'wrong-750',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Lessons in Misjudgment',
+    description: 'Give 750 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 750,
+    pxpReward: 75,
+    quantaReward: 150
+  },
+  
+  // TIER 2 — THE EARLY SHAPING
+  'wrong-1000': {
+    id: 'wrong-1000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Bearer of Flawed Attempts',
+    description: 'Give 1,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 1000,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'wrong-1500': {
+    id: 'wrong-1500',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Contours of Correction',
+    description: 'Give 1,500 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 1500,
+    pxpReward: 150,
+    quantaReward: 375
+  },
+  'wrong-2000': {
+    id: 'wrong-2000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Mind Shaped by Mistakes',
+    description: 'Give 2,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 2000,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'wrong-2500': {
+    id: 'wrong-2500',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Keeper of Missteps',
+    description: 'Give 2,500 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 2500,
+    pxpReward: 250,
+    quantaReward: 625
+  },
+  
+  // TIER 3 — THE ART OF ERROR
+  'wrong-3500': {
+    id: 'wrong-3500',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Seeker of Better Ways',
+    description: 'Give 3,500 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 3500,
+    pxpReward: 350,
+    quantaReward: 875
+  },
+  'wrong-5000': {
+    id: 'wrong-5000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Refiner of Flaws',
+    description: 'Give 5,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 5000,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  'wrong-7500': {
+    id: 'wrong-7500',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Scribe of Misjudgment',
+    description: 'Give 7,500 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 7500,
+    pxpReward: 750,
+    quantaReward: 1875
+  },
+  'wrong-10000': {
+    id: 'wrong-10000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Voice of Rethinking',
+    description: 'Give 10,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 10000,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  
+  // TIER 4 — REFINEMENT THROUGH FAILING
+  'wrong-15000': {
+    id: 'wrong-15000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Quiet Collector of Faults',
+    description: 'Give 15,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 15000,
+    pxpReward: 1500,
+    quantaReward: 3750
+  },
+  'wrong-20000': {
+    id: 'wrong-20000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Bearer of Imperfect Truths',
+    description: 'Give 20,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 20000,
+    pxpReward: 2000,
+    quantaReward: 5000
+  },
+  'wrong-25000': {
+    id: 'wrong-25000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Sculptor of Misunderstanding',
+    description: 'Give 25,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 25000,
+    pxpReward: 2500,
+    quantaReward: 6250
+  },
+  'wrong-30000': {
+    id: 'wrong-30000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Keeper of Fallen Answers',
+    description: 'Give 30,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 30000,
+    pxpReward: 3000,
+    quantaReward: 7500
+  },
+  
+  // TIER 5 — THE DEPTH OF ERROR
+  'wrong-40000': {
+    id: 'wrong-40000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Mind Tempered in Failure',
+    description: 'Give 40,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 40000,
+    pxpReward: 4000,
+    quantaReward: 10000
+  },
+  'wrong-50000': {
+    id: 'wrong-50000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Bound to Improvement',
+    description: 'Give 50,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 50000,
+    pxpReward: 5000,
+    quantaReward: 12500
+  },
+  'wrong-60000': {
+    id: 'wrong-60000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Crown of Correction',
+    description: 'Give 60,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 60000,
+    pxpReward: 6000,
+    quantaReward: 15000
+  },
+  'wrong-75000': {
+    id: 'wrong-75000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'The Thoughtful Contrarian',
+    description: 'Give 75,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 75000,
+    pxpReward: 7500,
+    quantaReward: 18750
+  },
+  
+  // TIER 6 — DEPTHS OF THE FALLIBLE MIND
+  'wrong-100000': {
+    id: 'wrong-100000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Bearer of the Unlearned Paths',
+    description: 'Give 100,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 100000,
+    pxpReward: 10000,
+    quantaReward: 25000
+  },
+  'wrong-150000': {
+    id: 'wrong-150000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Mind Shaped by Shadows',
+    description: 'Give 150,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 150000,
+    pxpReward: 15000,
+    quantaReward: 37500
+  },
+  'wrong-200000': {
+    id: 'wrong-200000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Understanding Through Error',
+    description: 'Give 200,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 200000,
+    pxpReward: 20000,
+    quantaReward: 50000
+  },
+  'wrong-250000': {
+    id: 'wrong-250000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'The Crimson Insight',
+    description: 'Give 250,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 250000,
+    pxpReward: 25000,
+    quantaReward: 62500
+  },
+  
+  // TIER 7 — TRANSCENDENCE OF IMPERFECTION (Mythic)
+  'wrong-500000': {
+    id: 'wrong-500000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'The Vast Lesson',
+    description: 'Give 500,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 500000,
+    pxpReward: 50000,
+    quantaReward: 125000
+  },
+  'wrong-1000000': {
+    id: 'wrong-1000000',
+    house: 'progression',
+    pillar: 'flawed-mind',
+    name: 'Sage of Imperfection',
+    description: 'Give 1,000,000 wrong answers',
+    icon: '💔',
+    condition: () => userData.stats?.wrongAnswers >= 1000000,
+    pxpReward: 100000,
+    quantaReward: 500000
+  },
+  
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 6: THE PATH OF TIMELESS DEVOTION
+  // Symbol: Soft glowing clock / sun arc (⏳)
+  // Theme: Presence, endurance, and slow shaping of mastery through time
+  // ═══════════════════════════════════════════════════════════
+  
+  // TIER 1 — FIRST MOMENTS OF PRESENCE
+  'time-1min': {
+    id: 'time-1min',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Whisper of Beginnings',
+    description: 'Play for 1 minute',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 60,
+    pxpReward: 5,
+    quantaReward: 10
+  },
+  'time-5min': {
+    id: 'time-5min',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Stirring of Intent',
+    description: 'Play for 5 minutes',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 300,
+    pxpReward: 10,
+    quantaReward: 25
+  },
+  'time-30min': {
+    id: 'time-30min',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Growing Presence',
+    description: 'Play for 30 minutes',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 1800,
+    pxpReward: 25,
+    quantaReward: 50
+  },
+  'time-1hr': {
+    id: 'time-1hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Settling Into the Journey',
+    description: 'Play for 1 hour',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 3600,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  
+  // TIER 2 — HOURS OF FOUNDATION
+  'time-10hr': {
+    id: 'time-10hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Footsteps in Time',
+    description: 'Play for 10 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 36000,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'time-25hr': {
+    id: 'time-25hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Bearer of Steady Hours',
+    description: 'Play for 25 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 90000,
+    pxpReward: 250,
+    quantaReward: 625
+  },
+  'time-50hr': {
+    id: 'time-50hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'The Rising Continuum',
+    description: 'Play for 50 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 180000,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  
+  // TIER 3 — THE GATHERING OF HOURS
+  'time-100hr': {
+    id: 'time-100hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Keeper of the Long Watch',
+    description: 'Play for 100 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 360000,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  'time-250hr': {
+    id: 'time-250hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Watcher of the Quiet Flow',
+    description: 'Play for 250 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 900000,
+    pxpReward: 2500,
+    quantaReward: 6250
+  },
+  'time-500hr': {
+    id: 'time-500hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Endurant Spirit',
+    description: 'Play for 500 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 1800000,
+    pxpReward: 5000,
+    quantaReward: 12500
+  },
+  
+  // TIER 4 — THE TIME-HONED SELF
+  'time-1000hr': {
+    id: 'time-1000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Mind Tempered by Hours',
+    description: 'Play for 1,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 3600000,
+    pxpReward: 10000,
+    quantaReward: 25000
+  },
+  'time-2000hr': {
+    id: 'time-2000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Bearer of the Lingering Clock',
+    description: 'Play for 2,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 7200000,
+    pxpReward: 20000,
+    quantaReward: 50000
+  },
+  
+  // TIER 5 — THE LONG ARC OF PRESENCE
+  'time-3000hr': {
+    id: 'time-3000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Echoes of Endless Practice',
+    description: 'Play for 3,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 10800000,
+    pxpReward: 30000,
+    quantaReward: 75000
+  },
+  'time-4000hr': {
+    id: 'time-4000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Keeper of the Fading Days',
+    description: 'Play for 4,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 14400000,
+    pxpReward: 40000,
+    quantaReward: 100000
+  },
+  
+  // TIER 6 — THE TIMEWOVEN PATH
+  'time-5000hr': {
+    id: 'time-5000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Walker of Uncounted Moments',
+    description: 'Play for 5,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 18000000,
+    pxpReward: 50000,
+    quantaReward: 125000
+  },
+  'time-6000hr': {
+    id: 'time-6000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'The Enduring Pulse',
+    description: 'Play for 6,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 21600000,
+    pxpReward: 60000,
+    quantaReward: 150000
+  },
+  'time-7000hr': {
+    id: 'time-7000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Sage of Slow Eternity',
+    description: 'Play for 7,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 25200000,
+    pxpReward: 70000,
+    quantaReward: 175000
+  },
+  
+  // TIER 7 — THE TIMELESS ASCENT
+  'time-8000hr': {
+    id: 'time-8000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Voice of Unbroken Time',
+    description: 'Play for 8,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 28800000,
+    pxpReward: 80000,
+    quantaReward: 200000
+  },
+  'time-9000hr': {
+    id: 'time-9000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Guardian of Waning Suns',
+    description: 'Play for 9,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 32400000,
+    pxpReward: 90000,
+    quantaReward: 225000
+  },
+  'time-10000hr': {
+    id: 'time-10000hr',
+    house: 'progression',
+    pillar: 'timeless-devotion',
+    name: 'Master of the Long Horizon',
+    description: 'Play for 10,000 hours',
+    icon: '⏳',
+    condition: () => userData.stats?.totalTimeSeconds >= 36000000,
+    pxpReward: 100000,
+    quantaReward: 500000
   }
 };
 
@@ -5667,6 +6483,20 @@ function updateAchievementCount() {
     const claimedCount = userData.achievements?.unlocked?.length || 0;
     countEl.textContent = claimedCount;
   }
+}
+
+// Get the highest level achieved in any topic
+function getHighestTopicLevel() {
+  let highest = 1;
+  if (userData.stats?.topics) {
+    for (const topicId in userData.stats.topics) {
+      const topic = userData.stats.topics[topicId];
+      if (topic.level && topic.level > highest) {
+        highest = topic.level;
+      }
+    }
+  }
+  return highest;
 }
 
 // Get achievements for a specific house
@@ -5796,6 +6626,8 @@ function generateProgressionHouseContent() {
   const ascendingAchievements = achievements.filter(a => a.pillar === 'ascending-levels');
   const gamesAchievements = achievements.filter(a => a.pillar === 'games-completed');
   const questionsAchievements = achievements.filter(a => a.pillar === 'questions-answered');
+  const topicAchievements = achievements.filter(a => a.pillar === 'topic-progression');
+  const flawedAchievements = achievements.filter(a => a.pillar === 'flawed-mind');
   
   // Count claimed/pending achievements per pillar
   const ascendingClaimed = ascendingAchievements.filter(a => isAchievementClaimed(a.id)).length;
@@ -5809,6 +6641,19 @@ function generateProgressionHouseContent() {
   const questionsClaimed = questionsAchievements.filter(a => isAchievementClaimed(a.id)).length;
   const questionsPending = questionsAchievements.filter(a => isAchievementPending(a.id)).length;
   const questionsTotal = questionsAchievements.length;
+  
+  const topicClaimed = topicAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const topicPending = topicAchievements.filter(a => isAchievementPending(a.id)).length;
+  const topicTotal = topicAchievements.length;
+  
+  const flawedClaimed = flawedAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const flawedPending = flawedAchievements.filter(a => isAchievementPending(a.id)).length;
+  const flawedTotal = flawedAchievements.length;
+  
+  const timeAchievements = achievements.filter(a => a.pillar === 'timeless-devotion');
+  const timeClaimed = timeAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const timePending = timeAchievements.filter(a => isAchievementPending(a.id)).length;
+  const timeTotal = timeAchievements.length;
   
   let html = `
     <div class="house-progression-content">
@@ -5847,7 +6692,35 @@ function generateProgressionHouseContent() {
       </div>
       
       <!-- ═══════════════════════════════════════════════════════════ -->
-      <!-- PILLAR 2: Games Completed -->
+      <!-- PILLAR 2: Topic Entry Progression -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-topic-progression">
+        <div class="pillar-header" onclick="togglePillar('topic-progression')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">🔥</span>
+            <h3 class="pillar-title-text">Topic Entry Progression</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${topicPending > 0 ? 'has-pending' : ''}">${topicClaimed}/${topicTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Advance within a subject toward deep specialization.</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-topic-progression" style="max-height: 0px;">
+  `;
+  
+  // Add achievement cards for Topic Progression
+  topicAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 3: Games Completed -->
       <!-- ═══════════════════════════════════════════════════════════ -->
       <div class="achievement-pillar collapsed" id="pillar-games-completed">
         <div class="pillar-header" onclick="togglePillar('games-completed')">
@@ -5875,7 +6748,7 @@ function generateProgressionHouseContent() {
       </div>
       
       <!-- ═══════════════════════════════════════════════════════════ -->
-      <!-- PILLAR 3: Total Questions Answered -->
+      <!-- PILLAR 4: Total Questions Answered -->
       <!-- ═══════════════════════════════════════════════════════════ -->
       <div class="achievement-pillar collapsed" id="pillar-questions-answered">
         <div class="pillar-header" onclick="togglePillar('questions-answered')">
@@ -5895,6 +6768,62 @@ function generateProgressionHouseContent() {
   
   // Add achievement cards for Questions Answered
   questionsAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 5: The Path of the Flawed Mind -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-flawed-mind">
+        <div class="pillar-header" onclick="togglePillar('flawed-mind')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">💔</span>
+            <h3 class="pillar-title-text">The Path of the Flawed Mind</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${flawedPending > 0 ? 'has-pending' : ''}">${flawedClaimed}/${flawedTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Wisdom shapes itself through misjudgment and correction.</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-flawed-mind" style="max-height: 0px;">
+  `;
+  
+  // Add achievement cards for Flawed Mind (Wrong Answers)
+  flawedAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 6: The Path of Timeless Devotion -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar collapsed" id="pillar-timeless-devotion">
+        <div class="pillar-header" onclick="togglePillar('timeless-devotion')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">⏳</span>
+            <h3 class="pillar-title-text">The Path of Timeless Devotion</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${timePending > 0 ? 'has-pending' : ''}">${timeClaimed}/${timeTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Presence, endurance, and the slow shaping of mastery through time.</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-timeless-devotion" style="max-height: 0px;">
+  `;
+  
+  // Add achievement cards for Timeless Devotion (Time Played)
+  timeAchievements.forEach(achievement => {
     html += generateAchievementCard(achievement);
   });
   
