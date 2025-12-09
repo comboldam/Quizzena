@@ -20,6 +20,9 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  
+  <!-- Chart.js for P-XP Dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -352,20 +355,96 @@
       </div>
     </div>
 
-    <!-- Journey Modal -->
-    <div class="journey-modal hidden" id="journey-modal">
-      <div class="journey-modal-backdrop" onclick="closeJourneyModal()"></div>
-      <div class="journey-modal-content">
-        <button class="journey-modal-close" onclick="closeJourneyModal()">✕</button>
-        <div class="journey-modal-icon">
-          <svg viewBox="0 0 64 64" width="64" height="64">
-            <circle cx="32" cy="32" r="28" fill="none" stroke="url(#levelGradient)" stroke-width="4"/>
-            <text x="32" y="38" text-anchor="middle" fill="url(#levelGradient)" font-family="Orbitron" font-size="18" font-weight="800">LV</text>
+    <!-- P-XP Dashboard (Full Page) -->
+    <div class="pxp-dashboard hidden" id="pxp-dashboard">
+      <!-- Top Bar -->
+      <div class="pxp-top-bar">
+        <button class="pxp-back-btn" onclick="playClickSound(); closePxpDashboard();">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
+        </button>
+        <h1 class="pxp-title">P-XP Dashboard</h1>
+        <div class="pxp-spacer"></div>
+      </div>
+
+      <!-- Level Status Section -->
+      <div class="pxp-status-section">
+        <div class="pxp-level-circle">
+          <svg viewBox="0 0 120 120" class="pxp-ring-svg">
+            <circle class="pxp-ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="pxp-ring-progress" id="pxp-ring-progress" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="pxp-level-inner">
+            <span class="pxp-level-label">LEVEL</span>
+            <span class="pxp-level-number" id="pxp-level-number">1</span>
+          </div>
         </div>
-        <h2 class="journey-modal-title">Your Journey — Coming Soon</h2>
-        <p class="journey-modal-text">Track your overall progress across all quizzes.<br><br>Level up by playing any quiz, earn milestones, and unlock rewards as you grow!</p>
-        <button class="journey-modal-btn" onclick="closeJourneyModal()">OK</button>
+        <div class="pxp-progress-info">
+          <div class="pxp-progress-text">
+            <span id="pxp-current">0</span> / <span id="pxp-required">40</span> P-XP
+          </div>
+          <div class="pxp-progress-bar">
+            <div class="pxp-progress-fill" id="pxp-progress-fill"></div>
+          </div>
+          <div class="pxp-total-text">Total: <span id="pxp-total">0</span> P-XP earned</div>
+        </div>
+      </div>
+
+      <!-- Time Period Tabs -->
+      <div class="pxp-tabs">
+        <button class="pxp-tab active" data-period="day" onclick="switchPxpPeriod('day')">1 Day</button>
+        <button class="pxp-tab" data-period="week" onclick="switchPxpPeriod('week')">1 Week</button>
+        <button class="pxp-tab" data-period="month" onclick="switchPxpPeriod('month')">1 Month</button>
+        <button class="pxp-tab" data-period="year" onclick="switchPxpPeriod('year')">1 Year</button>
+      </div>
+
+      <!-- Chart Container -->
+      <div class="pxp-chart-container">
+        <canvas id="pxp-chart"></canvas>
+      </div>
+
+      <!-- Legend -->
+      <div class="pxp-legend">
+        <div class="pxp-legend-item">
+          <span class="pxp-legend-dot games"></span>
+          <span>Games (+10 each)</span>
+        </div>
+        <div class="pxp-legend-item">
+          <span class="pxp-legend-dot answers"></span>
+          <span>Answers (+1 each)</span>
+        </div>
+      </div>
+
+      <!-- Breakdown Section -->
+      <div class="pxp-breakdown">
+        <h3 class="pxp-breakdown-title" id="pxp-breakdown-title">Today's Breakdown</h3>
+        <div class="pxp-breakdown-card">
+          <div class="pxp-breakdown-row">
+            <span class="pxp-breakdown-label">Games Completed</span>
+            <span class="pxp-breakdown-value"><span id="pxp-games-count">0</span> → <span id="pxp-games-pxp">+0</span> P-XP</span>
+          </div>
+          <div class="pxp-breakdown-row">
+            <span class="pxp-breakdown-label">Correct Answers</span>
+            <span class="pxp-breakdown-value"><span id="pxp-answers-count">0</span> → <span id="pxp-answers-pxp">+0</span> P-XP</span>
+          </div>
+          <div class="pxp-breakdown-divider"></div>
+          <div class="pxp-breakdown-row total">
+            <span class="pxp-breakdown-label">Total Earned</span>
+            <span class="pxp-breakdown-value" id="pxp-period-total">+0 P-XP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- How P-XP Works -->
+      <div class="pxp-info">
+        <h3 class="pxp-info-title">ℹ️ How P-XP Works</h3>
+        <ul class="pxp-info-list">
+          <li>Complete a game: <strong>+10 P-XP</strong></li>
+          <li>Each correct answer: <strong>+1 P-XP</strong></li>
+          <li>2-Player mode: <strong>No P-XP</strong></li>
+          <li>Level formula: <strong>40 × Level²</strong></li>
+        </ul>
       </div>
     </div>
 
