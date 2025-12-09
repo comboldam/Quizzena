@@ -2836,7 +2836,21 @@
 
         <!-- Identity Block -->
         <div class="profile-info">
-          <div class="profile-name">Guest</div>
+          <div class="profile-name-row">
+            <div class="profile-name">Guest</div>
+            <div class="level-badge profile-level-badge" onclick="playClickSound(); openJourneyModal();">
+              <div class="level-badge-ring">
+                <svg viewBox="0 0 48 48">
+                  <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+                  <circle class="level-ring-progress" id="profile-level-ring" cx="24" cy="24" r="22"/>
+                </svg>
+              </div>
+              <div class="level-badge-inner">
+                <span class="level-badge-text">LV</span>
+                <span class="level-badge-number" id="profile-level-number">1</span>
+              </div>
+            </div>
+          </div>
           <div class="profile-bio">Add a bio</div>
           <div class="profile-location">🌍 Location not set</div>
           <div class="profile-active">Last Active: Just now</div>
