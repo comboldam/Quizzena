@@ -2013,12 +2013,15 @@ footer button:hover {
 .top-bar-left {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: flex-start;
 }
 
 /* Center Section - Level Badge */
 .top-bar-center {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -2026,7 +2029,9 @@ footer button:hover {
 .top-bar-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
+  flex: 1;
 }
 
 /* ================================ */
