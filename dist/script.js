@@ -4332,18 +4332,33 @@ function closeJourneyModal() {
 function updateGlobalLevelBadge() {
   const levelNumber = document.getElementById('global-level-number');
   const levelRing = document.getElementById('level-ring');
+  const profileLevelNumber = document.getElementById('profile-level-number');
+  const profileLevelRing = document.getElementById('profile-level-ring');
+  
+  const level = userData.level || 1;
   
   if (levelNumber) {
-    levelNumber.textContent = userData.level || 1;
+    levelNumber.textContent = level;
   }
   
+  // Also update profile level badge
+  if (profileLevelNumber) {
+    profileLevelNumber.textContent = level;
+  }
+  
+  // Calculate XP progress for the rings
+  const levelProgress = getLevelProgress(userData.xp || 0);
+  const progress = levelProgress.progress / 100;
+  const circumference = 2 * Math.PI * 22;
+  const offset = circumference * (1 - progress);
+  
   if (levelRing) {
-    // Calculate XP progress for the ring
-    const levelProgress = getLevelProgress(userData.xp || 0);
-    const progress = levelProgress.progress / 100;
-    const circumference = 2 * Math.PI * 22;
-    const offset = circumference * (1 - progress);
     levelRing.style.strokeDashoffset = offset;
+  }
+  
+  // Also update profile level ring
+  if (profileLevelRing) {
+    profileLevelRing.style.strokeDashoffset = offset;
   }
 }
 

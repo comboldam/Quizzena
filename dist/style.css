@@ -3827,13 +3827,39 @@ footer button:hover {
   z-index: 1;
 }
 
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
 .profile-name {
   font-family: 'Orbitron', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 6px;
+  margin-bottom: 0;
   text-shadow: 0 2px 15px rgba(124, 58, 237, 0.3);
+}
+
+/* Profile Level Badge - identical to top bar, just scaled */
+.profile-level-badge {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-level-badge .level-badge-inner {
+  inset: 4px;
+}
+
+.profile-level-badge .level-badge-text {
+  font-size: 0.5rem;
+}
+
+.profile-level-badge .level-badge-number {
+  font-size: 0.85rem;
 }
 
 .profile-bio {
