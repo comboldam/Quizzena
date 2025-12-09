@@ -646,6 +646,19 @@ function showDevPanel() {
         </div>
       </div>
       
+      <!-- P-XP (Prestige) Controls -->
+      <div style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#3b82f6;font-size:16px;font-weight:bold;margin-bottom:10px;">🔷 Prestige Level (P-XP)</div>
+        <div style="color:#fff;text-align:center;margin-bottom:10px;">
+          Current: Level <span style="color:#fbbf24;font-weight:bold;">${userData.prestige?.level || 1}</span> | P-XP: ${userData.prestige?.pxp || 0}
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+          <button onclick="devSetPrestigeLevel(2)" style="padding:12px 20px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Set Level 2</button>
+          <button onclick="devSetPrestigeLevel(5)" style="padding:12px 20px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Set Level 5</button>
+          <button onclick="devResetPrestige()" style="padding:12px 20px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;">Reset Prestige</button>
+        </div>
+      </div>
+      
       <!-- Game Settings -->
       <div style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
         <div style="color:#FF6B6B;font-size:16px;font-weight:bold;margin-bottom:10px;">Game Settings</div>
@@ -734,6 +747,63 @@ function devResetAllData() {
     console.log('DEV: All data reset');
     alert('All data reset! Reloading...');
     location.reload();
+  }
+}
+
+// Set Prestige Level (P-XP)
+function devSetPrestigeLevel(level) {
+  if (!userData.prestige) {
+    userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+  }
+  
+  userData.prestige.level = level;
+  userData.prestige.pxp = 0;
+  
+  // Calculate totalPxp based on level (sum of all previous level requirements)
+  let totalRequired = 0;
+  for (let i = 1; i < level; i++) {
+    totalRequired += 40 * (i * i);
+  }
+  userData.prestige.totalPxp = totalRequired;
+  
+  saveUserData();
+  updateGlobalLevelBadge();
+  
+  // Check achievements
+  checkAchievements();
+  
+  console.log(`DEV: Prestige set to Level ${level}`);
+  alert(`Prestige Level set to ${level}!`);
+  
+  // Refresh dev panel
+  showDevPanel();
+}
+
+// Reset Prestige to Level 1
+function devResetPrestige() {
+  if (confirm('Reset Prestige Level to 1?')) {
+    userData.prestige = {
+      level: 1,
+      pxp: 0,
+      totalPxp: 0,
+      history: {}
+    };
+    
+    // Also reset achievements
+    userData.achievements = {
+      unlocked: [],
+      pending: [],
+      history: {}
+    };
+    
+    saveUserData();
+    updateGlobalLevelBadge();
+    
+    console.log('DEV: Prestige and Achievements reset');
+    alert('Prestige reset to Level 1!');
+    
+    // Refresh dev panel
+    showDevPanel();
   }
 }
 
@@ -2455,6 +2525,9 @@ function showProfile() {
   
   // Populate stats section in profile
   populateStatsSection();
+  
+  // Update achievement count
+  updateAchievementCount();
 }
 
 // Nav button click handlers - using addEventListener for iOS compatibility
@@ -4549,17 +4622,22 @@ function renderPxpChart(period) {
   
   const ctx = canvas.getContext('2d');
   const history = userData.prestige?.history || {};
+  const achHistory = userData.achievements?.history || {};
   
   let labels = [];
   let gamesData = [];
   let answersData = [];
+  let achievementsData = [];
   let totalGames = 0;
   let totalAnswers = 0;
+  let totalAchievements = 0;
   
   if (period === 'day') {
     // Show 24 hours
     const today = getDateString(0);
     const dayData = history[today] || { hourly: {} };
+    const achDayData = achHistory[today] || { pxp: 0 };
+    const currentHour = new Date().getHours();
     
     for (let h = 0; h < 24; h++) {
       const hourKey = h.toString().padStart(2, '0');
@@ -4568,37 +4646,46 @@ function renderPxpChart(period) {
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
       gamesData.push(hourData.g);
       answersData.push(hourData.a);
+      // Show achievements at the current hour (or latest hour with activity)
+      achievementsData.push(h === currentHour ? (achDayData.pxp || 0) : 0);
       totalGames += hourData.g;
       totalAnswers += hourData.a;
     }
+    totalAchievements = achDayData.pxp || 0;
   } else if (period === 'week') {
     // Show last 7 days
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     for (let i = 6; i >= 0; i--) {
       const dateKey = getDateString(i);
       const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const achDayData = achHistory[dateKey] || { pxp: 0 };
       const date = new Date();
       date.setDate(date.getDate() - i);
       
       labels.push(dayNames[date.getDay()]);
       gamesData.push(dayData.games);
       answersData.push(dayData.answers);
+      achievementsData.push(achDayData.pxp || 0);
       totalGames += dayData.games;
       totalAnswers += dayData.answers;
+      totalAchievements += achDayData.pxp || 0;
     }
   } else if (period === 'month') {
     // Show last 30 days
     for (let i = 29; i >= 0; i--) {
       const dateKey = getDateString(i);
       const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const achDayData = achHistory[dateKey] || { pxp: 0 };
       const date = new Date();
       date.setDate(date.getDate() - i);
       
       labels.push(date.getDate().toString());
       gamesData.push(dayData.games);
       answersData.push(dayData.answers);
+      achievementsData.push(achDayData.pxp || 0);
       totalGames += dayData.games;
       totalAnswers += dayData.answers;
+      totalAchievements += achDayData.pxp || 0;
     }
   } else if (period === 'year') {
     // Show 12 months
@@ -4611,6 +4698,7 @@ function renderPxpChart(period) {
       
       let monthGames = 0;
       let monthAnswers = 0;
+      let monthAchievements = 0;
       
       // Sum all days in this month
       Object.keys(history).forEach(dateKey => {
@@ -4620,11 +4708,19 @@ function renderPxpChart(period) {
         }
       });
       
+      Object.keys(achHistory).forEach(dateKey => {
+        if (dateKey.startsWith(monthKey)) {
+          monthAchievements += achHistory[dateKey].pxp || 0;
+        }
+      });
+      
       labels.push(monthNames[targetDate.getMonth()]);
       gamesData.push(monthGames);
       answersData.push(monthAnswers);
+      achievementsData.push(monthAchievements);
       totalGames += monthGames;
       totalAnswers += monthAnswers;
+      totalAchievements += monthAchievements;
     }
   }
   
@@ -4633,13 +4729,17 @@ function renderPxpChart(period) {
   const gamesPxp = document.getElementById('pxp-games-pxp');
   const answersCount = document.getElementById('pxp-answers-count');
   const answersPxp = document.getElementById('pxp-answers-pxp');
+  const achievementsCount = document.getElementById('pxp-achievements-count');
+  const achievementsPxp = document.getElementById('pxp-achievements-pxp');
   const periodTotal = document.getElementById('pxp-period-total');
   
   if (gamesCount) gamesCount.textContent = totalGames / 10; // Convert back to game count
   if (gamesPxp) gamesPxp.textContent = `+${totalGames}`;
   if (answersCount) answersCount.textContent = totalAnswers;
   if (answersPxp) answersPxp.textContent = `+${totalAnswers}`;
-  if (periodTotal) periodTotal.textContent = `+${totalGames + totalAnswers} P-XP`;
+  if (achievementsCount) achievementsCount.textContent = (userData.achievements?.unlocked?.length || 0);
+  if (achievementsPxp) achievementsPxp.textContent = `+${totalAchievements}`;
+  if (periodTotal) periodTotal.textContent = `+${totalGames + totalAnswers + totalAchievements} P-XP`;
   
   // Destroy existing chart if any
   if (pxpChart) {
@@ -4672,6 +4772,19 @@ function renderPxpChart(period) {
           backgroundColor: 'rgba(251, 191, 36, 0.1)',
           pointBackgroundColor: '#fbbf24',
           pointBorderColor: '#fbbf24',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Achievements P-XP',
+          data: achievementsData,
+          borderColor: '#22c55e',
+          backgroundColor: 'rgba(34, 197, 94, 0.1)',
+          pointBackgroundColor: '#22c55e',
+          pointBorderColor: '#22c55e',
           pointRadius: 4,
           pointHoverRadius: 6,
           borderWidth: 2,
@@ -4793,6 +4906,265 @@ if (!userData.prestige) {
   };
 }
 
+// Initialize Achievements in userData if not exists
+if (!userData.achievements) {
+  userData.achievements = {
+    unlocked: [],      // Claimed achievements: [{id, date, pxpReward, quantaReward}]
+    pending: [],       // Unlocked but not claimed: [{id, date}]
+    history: {}        // For chart: { "YYYY-MM-DD": { pxp: X, quanta: Y } }
+  };
+}
+
+// ========================================
+// 🏆 ACHIEVEMENTS SYSTEM
+// ========================================
+
+// Achievement definitions for House 1 - Path of Progression
+const ACHIEVEMENTS = {
+  // ═══════════════════════════════════════════════════════════
+  // PILLAR 1: ASCENDING LEVELS (Prestige Levels)
+  // Symbol: Vertical diamond ladder / rising stair glyph
+  // Theme: Endless ascent, skybreaking milestones
+  // ═══════════════════════════════════════════════════════════
+  'prestige-level-2': {
+    id: 'prestige-level-2',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Initiate of Ascent',
+    description: 'Reach Level 2',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 2,
+    pxpReward: 20,
+    quantaReward: 50
+  },
+  'prestige-level-5': {
+    id: 'prestige-level-5',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Bearer of Steps',
+    description: 'Reach Level 5',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 5,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  'prestige-level-10': {
+    id: 'prestige-level-10',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Rising One',
+    description: 'Reach Level 10',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 10,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'prestige-level-20': {
+    id: 'prestige-level-20',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Pathwalker',
+    description: 'Reach Level 20',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 20,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'prestige-level-30': {
+    id: 'prestige-level-30',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Summit Seeker',
+    description: 'Reach Level 30',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 30,
+    pxpReward: 300,
+    quantaReward: 750
+  },
+  'prestige-level-40': {
+    id: 'prestige-level-40',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Crestbearer',
+    description: 'Reach Level 40',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 40,
+    pxpReward: 400,
+    quantaReward: 1000
+  },
+  'prestige-level-50': {
+    id: 'prestige-level-50',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Pinnacle Reacher',
+    description: 'Reach Level 50',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 50,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  'prestige-level-75': {
+    id: 'prestige-level-75',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Peak of Seventy-Five',
+    description: 'Reach Level 75',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 75,
+    pxpReward: 750,
+    quantaReward: 2000
+  },
+  'prestige-level-100': {
+    id: 'prestige-level-100',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Zenith Ascended',
+    description: 'Reach Level 100',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 100,
+    pxpReward: 1000,
+    quantaReward: 3000
+  },
+  'prestige-level-250': {
+    id: 'prestige-level-250',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Ascendant of Two Hundred Fifty',
+    description: 'Reach Level 250',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 250,
+    pxpReward: 2500,
+    quantaReward: 7500
+  },
+  'prestige-level-500': {
+    id: 'prestige-level-500',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Bearer of Five Hundred Steps',
+    description: 'Reach Level 500',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 500,
+    pxpReward: 5000,
+    quantaReward: 15000
+  },
+  'prestige-level-1000': {
+    id: 'prestige-level-1000',
+    house: 'progression',
+    pillar: 'ascending-levels',
+    name: 'Thousandfold Apex',
+    description: 'Reach Level 1000',
+    icon: '🔷',
+    condition: () => userData.prestige?.level >= 1000,
+    pxpReward: 10000,
+    quantaReward: 50000
+  }
+};
+
+// Check if an achievement is unlocked (pending or claimed)
+function isAchievementUnlocked(achievementId) {
+  return userData.achievements.unlocked.some(a => a.id === achievementId) ||
+         userData.achievements.pending.some(a => a.id === achievementId);
+}
+
+// Check if an achievement is claimed
+function isAchievementClaimed(achievementId) {
+  return userData.achievements.unlocked.some(a => a.id === achievementId);
+}
+
+// Check if an achievement is pending (unlocked but not claimed)
+function isAchievementPending(achievementId) {
+  return userData.achievements.pending.some(a => a.id === achievementId);
+}
+
+// Check achievements and unlock any that meet conditions
+function checkAchievements() {
+  let newUnlocks = [];
+  
+  for (const [id, achievement] of Object.entries(ACHIEVEMENTS)) {
+    // Skip if already unlocked or pending
+    if (isAchievementUnlocked(id)) continue;
+    
+    // Check if condition is met
+    if (achievement.condition()) {
+      // Add to pending
+      userData.achievements.pending.push({
+        id: id,
+        date: new Date().toISOString()
+      });
+      newUnlocks.push(achievement);
+      console.log(`🏆 Achievement Unlocked: ${achievement.name}`);
+    }
+  }
+  
+  if (newUnlocks.length > 0) {
+    saveUserData();
+    // TODO: Trigger Spark animation for each unlock
+  }
+  
+  return newUnlocks;
+}
+
+// Claim a pending achievement
+function claimAchievement(achievementId) {
+  const pendingIndex = userData.achievements.pending.findIndex(a => a.id === achievementId);
+  if (pendingIndex === -1) return false;
+  
+  const achievement = ACHIEVEMENTS[achievementId];
+  if (!achievement) return false;
+  
+  // Remove from pending
+  const pending = userData.achievements.pending.splice(pendingIndex, 1)[0];
+  
+  // Add to unlocked with rewards
+  userData.achievements.unlocked.push({
+    id: achievementId,
+    date: pending.date,
+    claimedDate: new Date().toISOString(),
+    pxpReward: achievement.pxpReward,
+    quantaReward: achievement.quantaReward
+  });
+  
+  // Give rewards
+  userData.prestige.pxp += achievement.pxpReward;
+  userData.prestige.totalPxp += achievement.pxpReward;
+  userData.quanta = (userData.quanta || 0) + achievement.quantaReward;
+  
+  // Record in achievement history for chart
+  const today = new Date().toISOString().split('T')[0];
+  if (!userData.achievements.history[today]) {
+    userData.achievements.history[today] = { pxp: 0, quanta: 0 };
+  }
+  userData.achievements.history[today].pxp += achievement.pxpReward;
+  userData.achievements.history[today].quanta += achievement.quantaReward;
+  
+  // Check for P-XP level up
+  checkPxpLevelUp();
+  
+  // Save and update displays
+  saveUserData();
+  updateQuantaDisplay();
+  updateGlobalLevelBadge();
+  updateAchievementCount();
+  
+  console.log(`🎁 Achievement Claimed: ${achievement.name} (+${achievement.pxpReward} P-XP, +${achievement.quantaReward} Quanta)`);
+  
+  return true;
+}
+
+// Update achievement count in profile
+function updateAchievementCount() {
+  const countEl = document.getElementById('profile-achievements-count');
+  if (countEl) {
+    const claimedCount = userData.achievements?.unlocked?.length || 0;
+    countEl.textContent = claimedCount;
+  }
+}
+
+// Get achievements for a specific house
+function getHouseAchievements(house) {
+  return Object.values(ACHIEVEMENTS).filter(a => a.house === house);
+}
+
 // ========================================
 // 📱 SOCIAL TAB SYSTEM
 // ========================================
@@ -4874,12 +5246,30 @@ function closeAchievementsRitual() {
 function openHousePage(house, icon, title) {
   const subpage = document.getElementById('house-subpage');
   const subpageTitle = document.getElementById('house-subpage-title');
-  const subpageIcon = document.getElementById('house-subpage-icon');
+  const subpageContent = document.querySelector('.house-subpage-content');
   
-  if (subpage && subpageTitle && subpageIcon) {
+  if (subpage && subpageTitle && subpageContent) {
     subpage.setAttribute('data-house', house);
     subpageTitle.textContent = title;
-    subpageIcon.textContent = icon;
+    
+    // Check achievements when opening house
+    checkAchievements();
+    
+    // Generate content based on house
+    if (house === 'progression') {
+      subpageContent.innerHTML = generateProgressionHouseContent();
+    } else {
+      // Coming soon for other houses
+      subpageContent.innerHTML = `
+        <div class="house-coming-soon-icon">${icon}</div>
+        <h3 class="house-coming-soon-title">Coming Soon</h3>
+        <p class="house-coming-soon-text">
+          Achievements for this path are being forged in the cosmic fires. 
+          Return soon to claim your destiny.
+        </p>
+      `;
+    }
+    
     subpage.classList.remove('hidden');
     
     // Haptic feedback
@@ -4887,6 +5277,187 @@ function openHousePage(house, icon, title) {
       navigator.vibrate(10);
     }
   }
+}
+
+// Generate House 1 - Path of Progression content
+function generateProgressionHouseContent() {
+  const achievements = getHouseAchievements('progression');
+  const ascendingAchievements = achievements.filter(a => a.pillar === 'ascending-levels');
+  
+  // Count claimed achievements per pillar
+  const ascendingClaimed = ascendingAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const ascendingPending = ascendingAchievements.filter(a => isAchievementPending(a.id)).length;
+  const ascendingTotal = ascendingAchievements.length;
+  
+  let html = `
+    <div class="house-progression-content">
+      <!-- House Header -->
+      <div class="house-header-section">
+        <div class="house-icon-large">🔷</div>
+        <p class="house-subtitle">Endless ascent, skybreaking milestones</p>
+      </div>
+      
+      <!-- Pillar: Ascending Levels -->
+      <div class="achievement-pillar" id="pillar-ascending-levels">
+        <div class="pillar-header" onclick="togglePillar('ascending-levels')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon">◆</span>
+            <h3 class="pillar-title-text">Ascending Levels</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${ascendingPending > 0 ? 'has-pending' : ''}">${ascendingClaimed}/${ascendingTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description">Rise through the Prestige ranks</p>
+        
+        <div class="achievement-ladder pillar-content" id="pillar-content-ascending-levels">
+  `;
+  
+  // Add achievement cards for Ascending Levels
+  ascendingAchievements.forEach(achievement => {
+    html += generateAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+    </div>
+  `;
+  
+  return html;
+}
+
+// Generate a single achievement card HTML
+function generateAchievementCard(achievement) {
+  const isPending = isAchievementPending(achievement.id);
+  const isClaimed = isAchievementClaimed(achievement.id);
+  const isLocked = !isPending && !isClaimed;
+  
+  let statusClass = isLocked ? 'locked' : (isPending ? 'pending' : 'claimed');
+  let statusIcon = isLocked ? '🔒' : (isPending ? '✨' : '✅');
+  
+  return `
+    <div class="achievement-card ${statusClass}" data-id="${achievement.id}" onclick="handleAchievementClick('${achievement.id}')">
+      <div class="achievement-icon-wrapper">
+        <span class="achievement-status-icon">${statusIcon}</span>
+      </div>
+      <div class="achievement-info">
+        <h4 class="achievement-name">${achievement.name}</h4>
+        <p class="achievement-desc">${achievement.description}</p>
+        <div class="achievement-rewards">
+          <span class="reward-item pxp">+${achievement.pxpReward} P-XP</span>
+          <span class="reward-item quanta">+${achievement.quantaReward} ✦</span>
+        </div>
+      </div>
+      ${isPending ? '<div class="claim-indicator">TAP TO CLAIM</div>' : ''}
+    </div>
+  `;
+}
+
+// Toggle pillar expansion
+function togglePillar(pillarId) {
+  const content = document.getElementById(`pillar-content-${pillarId}`);
+  const pillar = document.getElementById(`pillar-${pillarId}`);
+  
+  if (content && pillar) {
+    const isCollapsed = pillar.classList.contains('collapsed');
+    
+    if (isCollapsed) {
+      // Expanding - remove collapsed class and let CSS handle the height
+      pillar.classList.remove('collapsed');
+      content.style.maxHeight = 'none';
+    } else {
+      // Collapsing - add collapsed class
+      pillar.classList.add('collapsed');
+      content.style.maxHeight = '0px';
+    }
+  }
+}
+
+// Handle achievement card click
+function handleAchievementClick(achievementId) {
+  if (isAchievementPending(achievementId)) {
+    // Show claim animation
+    claimAchievementWithAnimation(achievementId);
+  } else if (isAchievementClaimed(achievementId)) {
+    // Already claimed - maybe show details
+    console.log('Achievement already claimed');
+  } else {
+    // Locked - show requirement
+    const achievement = ACHIEVEMENTS[achievementId];
+    if (achievement) {
+      console.log(`Locked: ${achievement.description}`);
+    }
+  }
+}
+
+// Claim achievement with animation
+function claimAchievementWithAnimation(achievementId) {
+  const card = document.querySelector(`.achievement-card[data-id="${achievementId}"]`);
+  if (!card) return;
+  
+  // Add claiming animation class
+  card.classList.add('claiming');
+  
+  // Haptic feedback
+  if (navigator.vibrate) {
+    navigator.vibrate([50, 50, 100]);
+  }
+  
+  setTimeout(() => {
+    // Actually claim the achievement
+    const success = claimAchievement(achievementId);
+    
+    if (success) {
+      // Update the card to show claimed state
+      card.classList.remove('pending', 'claiming');
+      card.classList.add('claimed');
+      
+      const statusIcon = card.querySelector('.achievement-status-icon');
+      if (statusIcon) statusIcon.textContent = '✅';
+      
+      const claimIndicator = card.querySelector('.claim-indicator');
+      if (claimIndicator) claimIndicator.remove();
+      
+      // Show reward popup
+      showRewardPopup(ACHIEVEMENTS[achievementId]);
+    }
+  }, 500);
+}
+
+// Show reward popup after claiming
+function showRewardPopup(achievement) {
+  // Create popup element
+  const popup = document.createElement('div');
+  popup.className = 'achievement-reward-popup';
+  popup.innerHTML = `
+    <div class="reward-popup-content">
+      <div class="reward-popup-icon">🎁</div>
+      <h3 class="reward-popup-title">Rewards Claimed!</h3>
+      <div class="reward-popup-items">
+        <div class="reward-popup-item">
+          <span class="reward-amount">+${achievement.pxpReward}</span>
+          <span class="reward-label">P-XP</span>
+        </div>
+        <div class="reward-popup-item">
+          <span class="reward-amount">+${achievement.quantaReward}</span>
+          <span class="reward-label">Quanta ✦</span>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(popup);
+  
+  // Animate in
+  setTimeout(() => popup.classList.add('visible'), 10);
+  
+  // Remove after delay
+  setTimeout(() => {
+    popup.classList.remove('visible');
+    setTimeout(() => popup.remove(), 300);
+  }, 2000);
 }
 
 // Close the House sub-page
