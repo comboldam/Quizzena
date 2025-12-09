@@ -2575,6 +2575,11 @@ footer button:hover {
   box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
 }
 
+.pxp-legend-dot.achievements {
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+}
+
 /* Breakdown Section */
 .pxp-breakdown {
   padding: 15px 20px;
@@ -21688,9 +21693,17 @@ body.performance-mode-low .topics-view.hidden {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.house-subpage-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
 }
 
 .house-coming-soon-icon {
@@ -21730,6 +21743,385 @@ body.performance-mode-low .topics-view.hidden {
 .house-subpage[data-house="survival"] .house-subpage-title { color: var(--house-survival-primary); }
 .house-subpage[data-house="exploration"] .house-subpage-title { color: var(--house-exploration-secondary); }
 .house-subpage[data-house="behaviour"] .house-subpage-title { color: var(--house-behaviour-primary); }
+
+/* ========================================
+   HOUSE 1: PATH OF PROGRESSION CONTENT
+======================================== */
+.house-progression-content {
+  width: 100%;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
+
+.house-header-section {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.house-icon-large {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  animation: floatIconAnim 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
+}
+
+.house-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* Achievement Pillar */
+.achievement-pillar {
+  margin-bottom: 20px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Pillar Header (clickable) */
+.pillar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: rgba(59, 130, 246, 0.08);
+  transition: background 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pillar-header:active {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.pillar-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillar-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillar-icon {
+  font-size: 1.1rem;
+  color: #60a5fa;
+  filter: drop-shadow(0 0 6px rgba(96, 165, 250, 0.5));
+}
+
+.pillar-title-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #93c5fd;
+  margin: 0;
+}
+
+.pillar-count {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.pillar-count.has-pending {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.15);
+  animation: pendingGlow 2s ease-in-out infinite;
+}
+
+@keyframes pendingGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.2); }
+}
+
+.pillar-arrow {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.achievement-pillar.collapsed .pillar-arrow {
+  transform: rotate(-90deg);
+}
+
+.pillar-description {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  padding: 0 16px 12px;
+}
+
+/* Pillar Content (collapsible) */
+.pillar-content {
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 12px 12px;
+}
+
+.achievement-pillar.collapsed .pillar-content {
+  max-height: 0 !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.achievement-pillar.collapsed .pillar-description {
+  display: none;
+}
+
+/* Achievement Ladder (vertical list) */
+.achievement-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Achievement Card */
+.achievement-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:active {
+  transform: scale(0.98);
+}
+
+/* Locked State */
+.achievement-card.locked {
+  opacity: 0.6;
+  background: linear-gradient(135deg, rgba(100, 100, 100, 0.1) 0%, rgba(50, 50, 50, 0.05) 100%);
+  border-color: rgba(100, 100, 100, 0.2);
+}
+
+.achievement-card.locked .achievement-name {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Pending State (Ready to claim) */
+.achievement-card.pending {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-color: rgba(251, 191, 36, 0.4);
+  animation: pendingPulse 2s ease-in-out infinite;
+}
+
+.achievement-card.pending::before {
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.8), transparent);
+}
+
+@keyframes pendingPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 20px 5px rgba(251, 191, 36, 0.2); }
+}
+
+/* Claimed State */
+.achievement-card.claimed {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.achievement-card.claimed .achievement-name {
+  color: #86efac;
+}
+
+/* Claiming Animation */
+.achievement-card.claiming {
+  animation: claimingBurst 0.5s ease-out;
+}
+
+@keyframes claimingBurst {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.05); }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Icon Wrapper */
+.achievement-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.achievement-status-icon {
+  font-size: 1.4rem;
+}
+
+/* Achievement Info */
+.achievement-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.achievement-desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 6px;
+}
+
+.achievement-rewards {
+  display: flex;
+  gap: 12px;
+}
+
+.reward-item {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.reward-item.pxp {
+  background: rgba(124, 58, 237, 0.2);
+  color: #a78bfa;
+}
+
+.reward-item.quanta {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+}
+
+/* Claim Indicator */
+.claim-indicator {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.2);
+  padding: 4px 8px;
+  border-radius: 6px;
+  animation: claimBounce 1s ease-in-out infinite;
+}
+
+@keyframes claimBounce {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-50%) scale(1.05); }
+}
+
+/* Reward Popup */
+.achievement-reward-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-reward-popup.visible {
+  opacity: 1;
+}
+
+.reward-popup-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f0c29 100%);
+  border: 2px solid rgba(251, 191, 36, 0.4);
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-align: center;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.achievement-reward-popup.visible .reward-popup-content {
+  transform: scale(1);
+}
+
+.reward-popup-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: rewardBounce 0.6s ease-out;
+}
+
+@keyframes rewardBounce {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.reward-popup-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fbbf24;
+  margin-bottom: 20px;
+}
+
+.reward-popup-items {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.reward-popup-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.reward-amount {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.reward-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
 
 /* ========================================
    ACHIEVEMENTS RITUAL RESPONSIVE
