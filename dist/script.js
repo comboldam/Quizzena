@@ -119,6 +119,13 @@ const defaultUserData = {
     bestStreak: 0,
     totalTimeSeconds: 0,
     topics: {}
+  },
+  // P-XP (Player Prestige XP) System
+  prestige: {
+    level: 1,
+    pxp: 0,           // Current P-XP toward next level
+    totalPxp: 0,      // Lifetime P-XP earned
+    history: {}       // Format: { "YYYY-MM-DD": { games: X, answers: Y, hourly: { "00": {g:0,a:0}, ... } } }
   }
 };
 
@@ -4134,6 +4141,11 @@ function saveQuizStats(topicId, completed) {
   const globalTotal = userData.stats.correctAnswers + userData.stats.wrongAnswers;
   userData.stats.accuracy = globalTotal > 0 ? Math.round((userData.stats.correctAnswers / globalTotal) * 100) : 0;
 
+  // Award P-XP (Player Prestige XP) - only for completed games, not 2-player mode
+  if (completed && gameMode !== 'two') {
+    awardPxp(1, currentSessionCorrect, gameMode);
+  }
+
   // Save to localStorage
   saveUserData();
 
@@ -4316,16 +4328,379 @@ function closeQuantaModal() {
   if (modal) modal.classList.add('hidden');
 }
 
-// Open Journey modal
-function openJourneyModal() {
-  const modal = document.getElementById('journey-modal');
-  if (modal) modal.classList.remove('hidden');
+// ========================================
+// P-XP (Player Prestige XP) SYSTEM
+// ========================================
+
+// P-XP Formula: Required XP to level up = 40 × (Level²)
+function getPxpRequiredForLevel(level) {
+  return 40 * (level * level);
 }
 
-// Close Journey modal
+// Get current P-XP progress info
+function getPxpProgress() {
+  const level = userData.prestige?.level || 1;
+  const currentPxp = userData.prestige?.pxp || 0;
+  const required = getPxpRequiredForLevel(level);
+  const progress = Math.min((currentPxp / required) * 100, 100);
+  return { level, currentPxp, required, progress };
+}
+
+// Award P-XP (called after quiz completion)
+function awardPxp(gamesCompleted, correctAnswers, gameMode) {
+  // No P-XP for 2-player mode
+  if (gameMode === '2player' || gameMode === 'two-player') return;
+  
+  // Ensure prestige data exists
+  if (!userData.prestige) {
+    userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+  }
+  
+  const pxpFromGames = gamesCompleted * 10;
+  const pxpFromAnswers = correctAnswers * 1;
+  const totalEarned = pxpFromGames + pxpFromAnswers;
+  
+  if (totalEarned <= 0) return;
+  
+  // Add to current P-XP
+  userData.prestige.pxp += totalEarned;
+  userData.prestige.totalPxp += totalEarned;
+  
+  // Record in history
+  recordPxpHistory(pxpFromGames, pxpFromAnswers);
+  
+  // Check for level up
+  checkPxpLevelUp();
+  
+  // Save data
+  saveUserData();
+  
+  console.log(`🏆 P-XP Earned: +${totalEarned} (Games: ${pxpFromGames}, Answers: ${pxpFromAnswers})`);
+}
+
+// Check and handle P-XP level up
+function checkPxpLevelUp() {
+  let levelsGained = 0;
+  let required = getPxpRequiredForLevel(userData.prestige.level);
+  
+  while (userData.prestige.pxp >= required) {
+    userData.prestige.pxp -= required;
+    userData.prestige.level++;
+    levelsGained++;
+    required = getPxpRequiredForLevel(userData.prestige.level);
+    console.log(`🎉 P-XP Level Up! Now Level ${userData.prestige.level}`);
+  }
+  
+  if (levelsGained > 0) {
+    // Update displays
+    updateGlobalLevelBadge();
+  }
+}
+
+// Record P-XP in history
+function recordPxpHistory(gamesXp, answersXp) {
+  const now = new Date();
+  const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+  const hour = now.getHours().toString().padStart(2, '0');
+  
+  if (!userData.prestige.history) {
+    userData.prestige.history = {};
+  }
+  
+  if (!userData.prestige.history[dateKey]) {
+    userData.prestige.history[dateKey] = { games: 0, answers: 0, hourly: {} };
+  }
+  
+  const dayData = userData.prestige.history[dateKey];
+  dayData.games += gamesXp;
+  dayData.answers += answersXp;
+  
+  // Hourly breakdown for "1 Day" view
+  if (!dayData.hourly[hour]) {
+    dayData.hourly[hour] = { g: 0, a: 0 };
+  }
+  dayData.hourly[hour].g += gamesXp;
+  dayData.hourly[hour].a += answersXp;
+}
+
+// Get date string for N days ago
+function getDateString(daysAgo = 0) {
+  const date = new Date();
+  date.setDate(date.getDate() - daysAgo);
+  return date.toISOString().split('T')[0];
+}
+
+// P-XP Dashboard Chart instance
+let pxpChart = null;
+let currentPxpPeriod = 'day';
+
+// Open P-XP Dashboard
+function openJourneyModal() {
+  openPxpDashboard();
+}
+
+function openPxpDashboard() {
+  const dashboard = document.getElementById('pxp-dashboard');
+  if (dashboard) {
+    dashboard.classList.remove('hidden');
+    updatePxpDashboard();
+  }
+}
+
+// Close P-XP Dashboard
 function closeJourneyModal() {
-  const modal = document.getElementById('journey-modal');
-  if (modal) modal.classList.add('hidden');
+  closePxpDashboard();
+}
+
+function closePxpDashboard() {
+  const dashboard = document.getElementById('pxp-dashboard');
+  if (dashboard) dashboard.classList.add('hidden');
+}
+
+// Update P-XP Dashboard display
+function updatePxpDashboard() {
+  // Update level status section
+  const progress = getPxpProgress();
+  
+  const levelNum = document.getElementById('pxp-level-number');
+  const currentEl = document.getElementById('pxp-current');
+  const requiredEl = document.getElementById('pxp-required');
+  const totalEl = document.getElementById('pxp-total');
+  const progressFill = document.getElementById('pxp-progress-fill');
+  const ringProgress = document.getElementById('pxp-ring-progress');
+  
+  if (levelNum) levelNum.textContent = progress.level;
+  if (currentEl) currentEl.textContent = progress.currentPxp;
+  if (requiredEl) requiredEl.textContent = progress.required;
+  if (totalEl) totalEl.textContent = userData.prestige?.totalPxp || 0;
+  if (progressFill) progressFill.style.width = `${progress.progress}%`;
+  
+  // Update ring progress
+  if (ringProgress) {
+    const circumference = 2 * Math.PI * 52;
+    const offset = circumference * (1 - progress.progress / 100);
+    ringProgress.style.strokeDashoffset = offset;
+  }
+  
+  // Render chart
+  renderPxpChart(currentPxpPeriod);
+}
+
+// Switch time period
+function switchPxpPeriod(period) {
+  currentPxpPeriod = period;
+  
+  // Update active tab
+  document.querySelectorAll('.pxp-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.period === period);
+  });
+  
+  // Update breakdown title
+  const titleEl = document.getElementById('pxp-breakdown-title');
+  if (titleEl) {
+    const titles = {
+      'day': "Today's Breakdown",
+      'week': "This Week's Breakdown",
+      'month': "This Month's Breakdown",
+      'year': "This Year's Breakdown"
+    };
+    titleEl.textContent = titles[period] || "Breakdown";
+  }
+  
+  renderPxpChart(period);
+}
+
+// Render P-XP Chart
+function renderPxpChart(period) {
+  const canvas = document.getElementById('pxp-chart');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const history = userData.prestige?.history || {};
+  
+  let labels = [];
+  let gamesData = [];
+  let answersData = [];
+  let totalGames = 0;
+  let totalAnswers = 0;
+  
+  if (period === 'day') {
+    // Show 24 hours
+    const today = getDateString(0);
+    const dayData = history[today] || { hourly: {} };
+    
+    for (let h = 0; h < 24; h++) {
+      const hourKey = h.toString().padStart(2, '0');
+      const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0 };
+      
+      labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
+      gamesData.push(hourData.g);
+      answersData.push(hourData.a);
+      totalGames += hourData.g;
+      totalAnswers += hourData.a;
+    }
+  } else if (period === 'week') {
+    // Show last 7 days
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    for (let i = 6; i >= 0; i--) {
+      const dateKey = getDateString(i);
+      const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      
+      labels.push(dayNames[date.getDay()]);
+      gamesData.push(dayData.games);
+      answersData.push(dayData.answers);
+      totalGames += dayData.games;
+      totalAnswers += dayData.answers;
+    }
+  } else if (period === 'month') {
+    // Show last 30 days
+    for (let i = 29; i >= 0; i--) {
+      const dateKey = getDateString(i);
+      const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      
+      labels.push(date.getDate().toString());
+      gamesData.push(dayData.games);
+      answersData.push(dayData.answers);
+      totalGames += dayData.games;
+      totalAnswers += dayData.answers;
+    }
+  } else if (period === 'year') {
+    // Show 12 months
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const now = new Date();
+    
+    for (let i = 11; i >= 0; i--) {
+      const targetDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const monthKey = `${targetDate.getFullYear()}-${(targetDate.getMonth() + 1).toString().padStart(2, '0')}`;
+      
+      let monthGames = 0;
+      let monthAnswers = 0;
+      
+      // Sum all days in this month
+      Object.keys(history).forEach(dateKey => {
+        if (dateKey.startsWith(monthKey)) {
+          monthGames += history[dateKey].games || 0;
+          monthAnswers += history[dateKey].answers || 0;
+        }
+      });
+      
+      labels.push(monthNames[targetDate.getMonth()]);
+      gamesData.push(monthGames);
+      answersData.push(monthAnswers);
+      totalGames += monthGames;
+      totalAnswers += monthAnswers;
+    }
+  }
+  
+  // Update breakdown numbers
+  const gamesCount = document.getElementById('pxp-games-count');
+  const gamesPxp = document.getElementById('pxp-games-pxp');
+  const answersCount = document.getElementById('pxp-answers-count');
+  const answersPxp = document.getElementById('pxp-answers-pxp');
+  const periodTotal = document.getElementById('pxp-period-total');
+  
+  if (gamesCount) gamesCount.textContent = totalGames / 10; // Convert back to game count
+  if (gamesPxp) gamesPxp.textContent = `+${totalGames}`;
+  if (answersCount) answersCount.textContent = totalAnswers;
+  if (answersPxp) answersPxp.textContent = `+${totalAnswers}`;
+  if (periodTotal) periodTotal.textContent = `+${totalGames + totalAnswers} P-XP`;
+  
+  // Destroy existing chart if any
+  if (pxpChart) {
+    pxpChart.destroy();
+  }
+  
+  // Create new chart
+  pxpChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Games P-XP',
+          data: gamesData,
+          borderColor: '#7c3aed',
+          backgroundColor: 'rgba(124, 58, 237, 0.1)',
+          pointBackgroundColor: '#7c3aed',
+          pointBorderColor: '#7c3aed',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Answers P-XP',
+          data: answersData,
+          borderColor: '#fbbf24',
+          backgroundColor: 'rgba(251, 191, 36, 0.1)',
+          pointBackgroundColor: '#fbbf24',
+          pointBorderColor: '#fbbf24',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        intersect: false,
+        mode: 'index'
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          backgroundColor: 'rgba(26, 26, 46, 0.95)',
+          titleColor: '#fff',
+          bodyColor: '#a78bfa',
+          borderColor: 'rgba(124, 58, 237, 0.3)',
+          borderWidth: 1,
+          padding: 10,
+          displayColors: true,
+          callbacks: {
+            label: function(context) {
+              return `${context.dataset.label}: ${context.parsed.y} P-XP`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: {
+            color: 'rgba(255, 255, 255, 0.05)',
+            drawBorder: false
+          },
+          ticks: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            font: { size: 10 },
+            maxRotation: 0
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(255, 255, 255, 0.05)',
+            drawBorder: false
+          },
+          ticks: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            font: { size: 10 },
+            stepSize: 10
+          }
+        }
+      }
+    }
+  });
 }
 
 // Update global level badge display
@@ -4335,7 +4710,9 @@ function updateGlobalLevelBadge() {
   const profileLevelNumber = document.getElementById('profile-level-number');
   const profileLevelRing = document.getElementById('profile-level-ring');
   
-  const level = userData.level || 1;
+  // Use P-XP (Prestige) level for the global badge
+  const pxpProgress = getPxpProgress();
+  const level = pxpProgress.level;
   
   if (levelNumber) {
     levelNumber.textContent = level;
@@ -4346,9 +4723,8 @@ function updateGlobalLevelBadge() {
     profileLevelNumber.textContent = level;
   }
   
-  // Calculate XP progress for the rings
-  const levelProgress = getLevelProgress(userData.xp || 0);
-  const progress = levelProgress.progress / 100;
+  // Calculate P-XP progress for the rings
+  const progress = pxpProgress.progress / 100;
   const circumference = 2 * Math.PI * 22;
   const offset = circumference * (1 - progress);
   
@@ -4373,6 +4749,16 @@ function updateQuantaDisplay() {
 // Initialize Quanta in userData if not exists
 if (!userData.quanta) {
   userData.quanta = 0;
+}
+
+// Initialize Prestige (P-XP) in userData if not exists
+if (!userData.prestige) {
+  userData.prestige = {
+    level: 1,
+    pxp: 0,
+    totalPxp: 0,
+    history: {}
+  };
 }
 
 // ========================================
