@@ -22145,6 +22145,409 @@ body.performance-mode-low .topics-view.hidden {
 }
 
 /* ========================================
+   HOUSE 2: PATH OF SKILL CONTENT
+======================================== */
+.house-skill-content {
+  width: 100%;
+  padding: 20px 16px;
+  box-sizing: border-box;
+}
+
+/* Skill House Header */
+.skill-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.house-icon-large.skill-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: var(--house-skill-primary);
+  animation: skillIconGlow 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)) 
+          drop-shadow(0 0 40px rgba(236, 72, 153, 0.3));
+}
+
+@keyframes skillIconGlow {
+  0%, 100% { 
+    filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5)) 
+            drop-shadow(0 0 40px rgba(236, 72, 153, 0.3));
+  }
+  50% { 
+    filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.7)) 
+            drop-shadow(0 0 50px rgba(236, 72, 153, 0.5));
+  }
+}
+
+.skill-subtitle {
+  font-size: 0.85rem;
+  color: rgba(251, 191, 36, 0.7);
+  font-style: italic;
+  max-width: 280px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* Skill Achievement Pillar */
+.achievement-pillar.skill-pillar {
+  background: linear-gradient(135deg, 
+    rgba(251, 191, 36, 0.05) 0%,
+    rgba(236, 72, 153, 0.03) 50%,
+    rgba(10, 15, 28, 0.9) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.skill-pillar-header {
+  background: linear-gradient(135deg, 
+    rgba(251, 191, 36, 0.1) 0%,
+    rgba(236, 72, 153, 0.05) 100%);
+}
+
+.skill-pillar-header:active {
+  background: rgba(251, 191, 36, 0.15);
+}
+
+.skill-pillar-icon {
+  color: var(--house-skill-primary) !important;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6)) 
+          drop-shadow(0 0 10px rgba(236, 72, 153, 0.4)) !important;
+}
+
+.skill-pillar-desc {
+  color: rgba(251, 191, 36, 0.5);
+}
+
+/* Skill Tier Dividers */
+.skill-tier-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0 8px;
+  margin-bottom: 8px;
+}
+
+.tier-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(251, 191, 36, 0.8);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.tier-flourish {
+  color: rgba(236, 72, 153, 0.5);
+  font-size: 0.6rem;
+}
+
+/* Skill Achievement Cards */
+.skill-achievement-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold inner glow line on top border (Skill signature) */
+.skill-card-glow-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(251, 191, 36, 0.6) 20%,
+    rgba(236, 72, 153, 0.4) 50%,
+    rgba(251, 191, 36, 0.6) 80%,
+    transparent 100%);
+  opacity: 0.5;
+}
+
+.skill-achievement-card.pending .skill-card-glow-line {
+  opacity: 1;
+  animation: skillGlowLinePulse 1.5s ease-in-out infinite;
+}
+
+.skill-achievement-card.claimed .skill-card-glow-line {
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(34, 197, 94, 0.6) 20%,
+    rgba(251, 191, 36, 0.4) 50%,
+    rgba(34, 197, 94, 0.6) 80%,
+    transparent 100%);
+  opacity: 0.8;
+}
+
+@keyframes skillGlowLinePulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Skill Achievement Card Pending State */
+.skill-achievement-card.pending {
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 
+    0 0 15px rgba(251, 191, 36, 0.2),
+    0 0 30px rgba(236, 72, 153, 0.1);
+}
+
+.skill-achievement-card.pending .achievement-name {
+  color: #fbbf24;
+}
+
+/* Skill Achievement Card Claimed State */
+.skill-achievement-card.claimed {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(251, 191, 36, 0.05) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Skill Achievement Ladder */
+.skill-achievement-ladder {
+  padding: 0 12px 12px;
+}
+
+/* ========================================
+   HOUSE 7: PATH OF EXPLORATION CONTENT
+   Theme: Open, airy, adventurous, map-like
+   Colors: Sky blue, sand gold, mist white
+======================================== */
+
+.exploration-house-content {
+  padding: 16px;
+  min-height: 100%;
+}
+
+/* Exploration Header */
+.exploration-header {
+  text-align: center;
+  padding: 24px 16px 20px;
+  position: relative;
+}
+
+.exploration-compass-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.exploration-compass-icon {
+  font-size: 3.5rem;
+  display: block;
+  animation: compassSway 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(141, 191, 255, 0.4));
+}
+
+@keyframes compassSway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.exploration-compass-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, 
+    rgba(141, 191, 255, 0.3) 0%, 
+    rgba(230, 212, 154, 0.2) 40%,
+    transparent 70%);
+  border-radius: 50%;
+  animation: explorationGlow 3s ease-in-out infinite;
+}
+
+@keyframes explorationGlow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.exploration-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #e6d49a;
+  margin: 0 0 6px;
+  text-shadow: 0 2px 10px rgba(230, 212, 154, 0.3);
+}
+
+.exploration-subtitle {
+  font-size: 0.85rem;
+  color: rgba(141, 191, 255, 0.9);
+  font-style: italic;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Exploration Pillar */
+.exploration-pillar {
+  background: linear-gradient(135deg, 
+    rgba(141, 191, 255, 0.08) 0%, 
+    rgba(230, 212, 154, 0.05) 100%);
+  border: 1px solid rgba(141, 191, 255, 0.2);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.exploration-pillar:hover {
+  border-color: rgba(230, 212, 154, 0.4);
+  box-shadow: 0 4px 20px rgba(141, 191, 255, 0.15);
+}
+
+.exploration-pillar .pillar-header {
+  background: linear-gradient(135deg, 
+    rgba(141, 191, 255, 0.1) 0%, 
+    rgba(230, 212, 154, 0.08) 100%);
+}
+
+.exploration-pillar-icon {
+  background: linear-gradient(135deg, 
+    rgba(141, 191, 255, 0.3) 0%, 
+    rgba(230, 212, 154, 0.2) 100%);
+  border: 1px solid rgba(141, 191, 255, 0.3);
+}
+
+/* Exploration Tier Dividers */
+.exploration-tier-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0 10px;
+  position: relative;
+}
+
+.exploration-tier-divider .tier-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #8dbfff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.exploration-tier-divider .tier-flourish {
+  color: rgba(230, 212, 154, 0.5);
+  font-size: 0.7rem;
+}
+
+.exploration-tier-divider.capstone-tier .tier-label {
+  color: #e6d49a;
+  font-size: 0.85rem;
+  text-shadow: 0 0 10px rgba(230, 212, 154, 0.5);
+}
+
+/* Exploration Achievement Cards */
+.exploration-achievement-card {
+  position: relative;
+  background: linear-gradient(135deg, 
+    rgba(141, 191, 255, 0.05) 0%, 
+    rgba(230, 212, 154, 0.03) 100%);
+  border: 1px solid rgba(141, 191, 255, 0.15);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.exploration-achievement-card:hover {
+  border-color: rgba(230, 212, 154, 0.3);
+  transform: translateX(4px);
+}
+
+/* Compass accent in corner */
+.exploration-card-compass-accent {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle, 
+    rgba(230, 212, 154, 0.15) 0%, 
+    transparent 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.exploration-card-compass-accent::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5rem;
+  color: rgba(230, 212, 154, 0.4);
+}
+
+/* Capstone Card (Tier 3) */
+.exploration-achievement-card.capstone-card {
+  border: 2px solid rgba(230, 212, 154, 0.4);
+  background: linear-gradient(135deg, 
+    rgba(230, 212, 154, 0.1) 0%, 
+    rgba(141, 191, 255, 0.08) 100%);
+  padding: 18px 20px;
+}
+
+.exploration-achievement-card.capstone-card .achievement-name {
+  font-size: 1rem;
+  color: #e6d49a;
+}
+
+.exploration-achievement-card.capstone-card.claimed {
+  box-shadow: 
+    0 0 20px rgba(230, 212, 154, 0.3),
+    inset 0 0 30px rgba(230, 212, 154, 0.05);
+  animation: capstoneRipple 3s ease-in-out infinite;
+}
+
+@keyframes capstoneRipple {
+  0%, 100% { box-shadow: 0 0 20px rgba(230, 212, 154, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(230, 212, 154, 0.5), 0 0 40px rgba(141, 191, 255, 0.2); }
+}
+
+/* Exploration Card States */
+.exploration-achievement-card.locked {
+  opacity: 0.6;
+}
+
+.exploration-achievement-card.locked .achievement-name {
+  color: rgba(141, 191, 255, 0.6);
+}
+
+.exploration-achievement-card.pending {
+  border-color: rgba(230, 212, 154, 0.5);
+  box-shadow: 0 0 15px rgba(230, 212, 154, 0.2);
+}
+
+.exploration-achievement-card.pending .achievement-name {
+  color: #e6d49a;
+}
+
+.exploration-achievement-card.claimed {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.1) 0%, 
+    rgba(141, 191, 255, 0.05) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.exploration-achievement-card.claimed .achievement-name {
+  color: #86efac;
+}
+
+/* Exploration Achievement Ladder */
+.exploration-achievement-ladder {
+  padding: 0 12px 16px;
+}
+
+/* ========================================
    ACHIEVEMENTS RITUAL RESPONSIVE
 ======================================== */
 
