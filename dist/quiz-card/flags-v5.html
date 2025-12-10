@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flags Quiz Card - UN Style</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #87CEEB 0%, #4A90D9 50%, #2E6DB4 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .card-container {
+      position: relative;
+      width: 130px;
+      height: 155px;
+    }
+
+    .topic-card {
+      width: 100%;
+      height: 100%;
+      background: 
+        /* Sky gradient */
+        linear-gradient(180deg, 
+          #87CEEB 0%, 
+          #6BB3E0 30%,
+          #5BA3D0 50%,
+          #4A93C0 70%,
+          #3A83B0 100%);
+      border-radius: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 
+        0 8px 32px rgba(0, 50, 100, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 
+        0 15px 45px rgba(0, 60, 120, 0.4);
+    }
+
+    /* ===== CLOUDS ===== */
+    .clouds {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+
+    .cloud-1 {
+      width: 40px; height: 12px;
+      top: 8%; left: -10%;
+      animation: cloudMove 20s linear infinite;
+    }
+
+    .cloud-2 {
+      width: 30px; height: 10px;
+      top: 15%; right: -20%;
+      animation: cloudMove 25s linear infinite 5s;
+    }
+
+    .cloud-3 {
+      width: 35px; height: 11px;
+      top: 5%; left: 60%;
+      animation: cloudMove 22s linear infinite 10s;
+    }
+
+    @keyframes cloudMove {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(150px); }
+    }
+
+    /* ===== FLAG POLES ROW ===== */
+    .flag-row {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    /* ===== INDIVIDUAL FLAG POLE ===== */
+    .flag-pole-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pole {
+      width: 3px;
+      height: 70px;
+      background: linear-gradient(90deg, 
+        #A0A0A0 0%, 
+        #D0D0D0 30%, 
+        #E8E8E8 50%, 
+        #D0D0D0 70%, 
+        #A0A0A0 100%);
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Gold ball top */
+    .pole::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle at 35% 35%, 
+        #FFD700 0%, #DAA520 50%, #B8860B 100%);
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* Base */
+    .pole::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 4px;
+      background: linear-gradient(180deg, #888 0%, #666 100%);
+      border-radius: 1px;
+    }
+
+    /* ===== FLAGS ===== */
+    .flag {
+      position: absolute;
+      top: 5px;
+      left: 3px;
+      width: 22px;
+      height: 14px;
+      border-radius: 0 1px 1px 0;
+      box-shadow: 2px 1px 4px rgba(0,0,0,0.3);
+      transform-origin: left center;
+    }
+
+    /* Wave animation variations */
+    .flag-1 { animation: flagWave1 3s ease-in-out infinite; }
+    .flag-2 { animation: flagWave2 3.2s ease-in-out infinite 0.3s; }
+    .flag-3 { animation: flagWave1 2.8s ease-in-out infinite 0.6s; }
+    .flag-4 { animation: flagWave2 3.1s ease-in-out infinite 0.9s; }
+    .flag-5 { animation: flagWave1 2.9s ease-in-out infinite 1.2s; }
+    .flag-6 { animation: flagWave2 3.3s ease-in-out infinite 0.2s; }
+    .flag-7 { animation: flagWave1 3s ease-in-out infinite 0.5s; }
+
+    @keyframes flagWave1 {
+      0%, 100% { transform: perspective(50px) rotateY(0deg) scaleX(1); }
+      25% { transform: perspective(50px) rotateY(8deg) scaleX(0.95); }
+      75% { transform: perspective(50px) rotateY(-4deg) scaleX(0.98); }
+    }
+
+    @keyframes flagWave2 {
+      0%, 100% { transform: perspective(50px) rotateY(0deg) scaleX(1); }
+      30% { transform: perspective(50px) rotateY(6deg) scaleX(0.96); }
+      70% { transform: perspective(50px) rotateY(-5deg) scaleX(0.97); }
+    }
+
+    /* Fabric fold overlay */
+    .flag::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+        rgba(0,0,0,0.1) 0%,
+        rgba(255,255,255,0.15) 20%,
+        rgba(0,0,0,0.05) 40%,
+        rgba(255,255,255,0.1) 60%,
+        rgba(0,0,0,0.1) 80%,
+        transparent 100%);
+      pointer-events: none;
+      border-radius: 0 1px 1px 0;
+    }
+
+    /* === ENHANCED FLAG DESIGNS === */
+
+    /* USA - Rich fabric texture */
+    .usa {
+      background: 
+        linear-gradient(180deg,
+          #BF0A30 0%, #BF0A30 7.7%, #FAFAFA 7.7%, #FAFAFA 15.4%,
+          #BF0A30 15.4%, #BF0A30 23.1%, #FAFAFA 23.1%, #FAFAFA 30.8%,
+          #BF0A30 30.8%, #BF0A30 38.5%, #FAFAFA 38.5%, #FAFAFA 46.2%,
+          #BF0A30 46.2%, #BF0A30 53.9%, #FAFAFA 53.9%, #FAFAFA 61.6%,
+          #BF0A30 61.6%, #BF0A30 69.3%, #FAFAFA 69.3%, #FAFAFA 77%,
+          #BF0A30 77%, #BF0A30 84.7%, #FAFAFA 84.7%, #FAFAFA 92.4%,
+          #BF0A30 92.4%, #BF0A30 100%);
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 8px rgba(255,255,255,0.2);
+    }
+    .usa::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 40%; height: 54%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(100,100,180,0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #002868 0%, #3C3B6E 50%, #002050 100%);
+      box-shadow: inset 1px 1px 3px rgba(255,255,255,0.2);
+    }
+
+    /* UK - Deep royal blue */
+    .uk {
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(50,80,150,0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #012169 0%, #00247D 50%, #001040 100%);
+      overflow: hidden;
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 6px rgba(100,150,255,0.2);
+    }
+    .uk::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, #E8E8E8 0%, #FFFFFF 50%, #E8E8E8 100%);
+      transform: translateY(-50%);
+      box-shadow: 0 0 2px rgba(255,255,255,0.5);
+    }
+
+    /* France - Elegant tricolor */
+    .france {
+      background: linear-gradient(90deg, 
+        #002395 0%, #0033A0 16%, #002395 33%, 
+        #F8F8F8 33%, #FFFFFF 50%, #F8F8F8 66%, 
+        #ED2939 66%, #EF3340 83%, #ED2939 100%);
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 6px rgba(255,255,255,0.15);
+    }
+
+    /* Germany - Bold stripes */
+    .germany {
+      background: linear-gradient(180deg, 
+        #000000 0%, #1A1A1A 16%, #000000 33%, 
+        #DD0000 33%, #FF1A1A 50%, #DD0000 66%, 
+        #FFCC00 66%, #FFD633 83%, #FFCC00 100%);
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 5px rgba(255,255,255,0.1);
+    }
+
+    /* Japan - Rising sun glow */
+    .japan {
+      background: 
+        radial-gradient(circle at 50% 50%, rgba(255,200,200,0.3) 0%, transparent 60%),
+        linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 50%, #F5F5F5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 8px rgba(255,255,255,0.5);
+    }
+    .japan::before {
+      content: '';
+      position: absolute;
+      width: 7px; height: 7px;
+      background: 
+        radial-gradient(circle at 35% 35%, 
+          #FF4444 0%, #BC002D 50%, #8B0000 100%);
+      border-radius: 50%;
+      box-shadow: 
+        0 0 4px rgba(188, 0, 45, 0.6),
+        inset 1px 1px 2px rgba(255,100,100,0.4);
+    }
+
+    /* Brazil - Vibrant tropical */
+    .brazil {
+      background: 
+        radial-gradient(circle at 30% 30%, rgba(50,200,100,0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #009C3B 0%, #00A84F 50%, #007A2F 100%);
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 6px rgba(100,255,150,0.2);
+    }
+    .brazil::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 10px; height: 10px;
+      background: 
+        radial-gradient(circle at 40% 40%, 
+          #FFE55C 0%, #FFDF00 50%, #D4AF37 100%);
+      box-shadow: 
+        0 0 3px rgba(255, 223, 0, 0.5),
+        inset 1px 1px 2px rgba(255,255,200,0.4);
+    }
+
+    /* Canada - Maple red */
+    .canada {
+      background: linear-gradient(90deg, 
+        #FF0000 0%, #E00000 14%, #FF0000 28%, 
+        #F8F8F8 28%, #FFFFFF 50%, #F8F8F8 72%, 
+        #FF0000 72%, #E00000 86%, #FF0000 100%);
+      box-shadow: 
+        2px 1px 4px rgba(0,0,0,0.4),
+        inset 0 0 5px rgba(255,255,255,0.15);
+    }
+    .canada::before {
+      content: '🍁';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6px;
+      filter: brightness(0.9);
+    }
+
+    /* ===== LUXURIOUS MARBLE PLAZA ===== */
+    .ground {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: 
+        /* Marble gradient */
+        linear-gradient(180deg, 
+          #E8E4DE 0%, 
+          #D4CFC6 15%,
+          #C8C2B8 40%,
+          #B8B2A8 70%,
+          #A8A298 100%);
+      border-radius: 0 0 16px 16px;
+      box-shadow: 
+        inset 0 2px 8px rgba(255, 255, 255, 0.5),
+        inset 0 -3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Marble veins texture */
+    .ground::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        /* Gold inlay lines */
+        repeating-linear-gradient(90deg,
+          transparent 0px,
+          transparent 17px,
+          rgba(212, 175, 55, 0.4) 17px,
+          rgba(212, 175, 55, 0.4) 18px),
+        /* Subtle marble veins */
+        linear-gradient(135deg, 
+          transparent 0%, 
+          rgba(180, 170, 160, 0.3) 25%,
+          transparent 30%,
+          rgba(160, 150, 140, 0.2) 55%,
+          transparent 60%,
+          rgba(170, 160, 150, 0.25) 85%,
+          transparent 100%);
+      border-radius: 0 0 16px 16px;
+    }
+
+    /* Reflective shine overlay */
+    .ground::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%);
+      border-radius: 0 0 16px 16px;
+    }
+
+    /* Gold border trim */
+    .ground-trim {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg,
+        #8B7355 0%,
+        #D4AF37 15%,
+        #FFD700 30%,
+        #F0E68C 50%,
+        #FFD700 70%,
+        #D4AF37 85%,
+        #8B7355 100%);
+      box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.3),
+        0 0 8px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Decorative corner emblems */
+    .corner-emblem {
+      position: absolute;
+      bottom: 5px;
+      width: 8px;
+      height: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%,
+        rgba(255, 215, 0, 0.4) 0%,
+        rgba(212, 175, 55, 0.2) 100%);
+    }
+
+    .corner-emblem.left { left: 10px; }
+    .corner-emblem.right { right: 10px; }
+
+    /* Center emblem */
+    .center-emblem {
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      background: 
+        radial-gradient(circle at 40% 40%,
+          rgba(255, 223, 100, 0.5) 0%,
+          rgba(212, 175, 55, 0.3) 50%,
+          rgba(184, 134, 11, 0.2) 100%);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+    }
+
+    /* ===== UN BUILDING HINT ===== */
+    .building {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 25px;
+      background: linear-gradient(180deg, 
+        rgba(100, 130, 160, 0.3) 0%,
+        rgba(80, 110, 140, 0.2) 100%);
+      border-radius: 2px 2px 0 0;
+      z-index: 0;
+    }
+
+    .building::before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      right: 5px;
+      height: 100%;
+      background: 
+        repeating-linear-gradient(90deg,
+          rgba(150, 180, 210, 0.3) 0px,
+          rgba(150, 180, 210, 0.3) 8px,
+          rgba(100, 130, 160, 0.2) 8px,
+          rgba(100, 130, 160, 0.2) 10px);
+    }
+
+    /* ===== TITLE ===== */
+    .topic-title {
+      position: absolute;
+      bottom: 10px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.3);
+      z-index: 10;
+    }
+
+    /* ===== WIND INDICATOR ===== */
+    .wind {
+      position: absolute;
+      top: 25%;
+      right: 10px;
+      display: flex;
+      gap: 2px;
+    }
+
+    .wind-line {
+      width: 15px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 1px;
+      animation: windBlow 2s ease-in-out infinite;
+    }
+
+    .wind-line:nth-child(2) { 
+      width: 12px; 
+      animation-delay: 0.3s;
+      transform: translateY(3px);
+    }
+    .wind-line:nth-child(3) { 
+      width: 10px; 
+      animation-delay: 0.6s;
+      transform: translateY(6px);
+    }
+
+    @keyframes windBlow {
+      0%, 100% { opacity: 0.3; transform: translateX(0); }
+      50% { opacity: 0.7; transform: translateX(5px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="topic-card">
+      <!-- Clouds -->
+      <div class="clouds">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+      </div>
+
+      <!-- Wind indicator -->
+      <div class="wind">
+        <div class="wind-line"></div>
+        <div class="wind-line"></div>
+        <div class="wind-line"></div>
+      </div>
+
+      <!-- Building silhouette -->
+      <div class="building"></div>
+
+      <!-- Flag row - UN style -->
+      <div class="flag-row">
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-1 france"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-2 germany"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-3 usa"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-4 uk"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-5 japan"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-6 brazil"></div>
+          </div>
+        </div>
+
+        <div class="flag-pole-unit">
+          <div class="pole">
+            <div class="flag flag-7 canada"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxurious ground plaza -->
+      <div class="ground-trim"></div>
+      <div class="ground">
+        <div class="corner-emblem left"></div>
+        <div class="corner-emblem right"></div>
+        <div class="center-emblem"></div>
+      </div>
+
+      <!-- Title -->
+      <div class="topic-title">FLAGS</div>
+    </div>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "question": "What city did the Ottomans conquer in 1453?",
+    "options": [
+      "Rome",
+      "Jerusalem",
+      "Athens",
+      "Constantinople"
+    ],
+    "answer": "Constantinople",
+    "difficulty": "easy",
+    "category": "conquests"
+  },
+  {
+    "id": 2,
+    "question": "What is Constantinople called today?",
+    "options": [
+      "Bursa",
+      "Ankara",
+      "Izmir",
+      "Istanbul"
+    ],
+    "answer": "Istanbul",
+    "difficulty": "easy",
+    "category": "geography"
+  },
+  {
+    "id": 3,
+    "question": "Who conquered Constantinople?",
+    "options": [
+      "Mehmed II (the Conqueror)",
+      "Osman I",
+      "Suleiman I",
+      "Selim I"
+    ],
+    "answer": "Mehmed II (the Conqueror)",
+    "difficulty": "easy",
+    "category": "sultans"
+  },
+  {
+    "id": 4,
+    "question": "How old was Mehmed II when he conquered Constantinople?",
+    "options": [
+      "15 years old",
+      "30 years old",
+      "40 years old",
+      "21 years old"
+    ],
+    "answer": "21 years old",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 5,
+    "question": "What empire did the Ottomans defeat in 1453?",
+    "options": [
+      "Byzantine Empire",
+      "Mongol Empire",
+      "Persian Empire",
+      "Roman Empire"
+    ],
+    "answer": "Byzantine Empire",
+    "difficulty": "easy",
+    "category": "conquests"
+  },
+  {
+    "id": 6,
+    "question": "Who founded the Ottoman Empire?",
+    "options": [
+      "Osman I",
+      "Suleiman I",
+      "Mehmed II",
+      "Selim I"
+    ],
+    "answer": "Osman I",
+    "difficulty": "easy",
+    "category": "sultans"
+  },
+  {
+    "id": 7,
+    "question": "What year is considered the founding of the Ottoman Empire?",
+    "options": [
+      "1200",
+      "1453",
+      "1520",
+      "1299"
+    ],
+    "answer": "1299",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 8,
+    "question": "What does 'Ottoman' derive from?",
+    "options": [
+      "An Arabic word",
+      "A Turkish word for power",
+      "Osman (founder's name)",
+      "A city name"
+    ],
+    "answer": "Osman (founder's name)",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 9,
+    "question": "Who was the longest-reigning Ottoman sultan?",
+    "options": [
+      "Osman I",
+      "Suleiman the Magnificent",
+      "Abdul Hamid II",
+      "Mehmed II"
+    ],
+    "answer": "Suleiman the Magnificent",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 10,
+    "question": "How long did Suleiman the Magnificent reign?",
+    "options": [
+      "20 years",
+      "60 years",
+      "46 years",
+      "30 years"
+    ],
+    "answer": "46 years",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 11,
+    "question": "What were the elite Ottoman soldiers called?",
+    "options": [
+      "Ghazis",
+      "Mamluks",
+      "Janissaries",
+      "Sipahis"
+    ],
+    "answer": "Janissaries",
+    "difficulty": "easy",
+    "category": "military"
+  },
+  {
+    "id": 12,
+    "question": "How were Janissaries originally recruited?",
+    "options": [
+      "Devshirme (child levy from Christians)",
+      "Volunteer army",
+      "Mercenaries",
+      "Born into military families"
+    ],
+    "answer": "Devshirme (child levy from Christians)",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 13,
+    "question": "What religion did Janissaries convert to?",
+    "options": [
+      "Christianity",
+      "Zoroastrianism",
+      "Islam",
+      "Judaism"
+    ],
+    "answer": "Islam",
+    "difficulty": "easy",
+    "category": "military"
+  },
+  {
+    "id": 14,
+    "question": "Could Janissaries marry?",
+    "options": [
+      "Only officers",
+      "Originally no, later yes",
+      "Never",
+      "Always yes"
+    ],
+    "answer": "Originally no, later yes",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 15,
+    "question": "What was the Janissaries' symbol?",
+    "options": [
+      "A cooking pot",
+      "A sword",
+      "A crescent",
+      "An eagle"
+    ],
+    "answer": "A cooking pot",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 16,
+    "question": "Why was a cooking pot the Janissary symbol?",
+    "options": [
+      "It was decorative",
+      "They ate together as a brotherhood",
+      "They were cooks",
+      "Religious significance"
+    ],
+    "answer": "They ate together as a brotherhood",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 17,
+    "question": "What did overturning the soup cauldron mean?",
+    "options": [
+      "New sultan",
+      "Victory celebration",
+      "Janissary revolt/mutiny",
+      "Peace treaty"
+    ],
+    "answer": "Janissary revolt/mutiny",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 18,
+    "question": "What sultan abolished the Janissaries?",
+    "options": [
+      "Abdul Hamid II",
+      "Mahmud II",
+      "Mehmed II",
+      "Suleiman I"
+    ],
+    "answer": "Mahmud II",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 19,
+    "question": "What year were the Janissaries abolished?",
+    "options": [
+      "1922",
+      "1453",
+      "1700",
+      "1826"
+    ],
+    "answer": "1826",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 20,
+    "question": "What was this event called?",
+    "options": [
+      "Janissary End",
+      "Great Massacre",
+      "Auspicious Incident",
+      "Military Reform"
+    ],
+    "answer": "Auspicious Incident",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 21,
+    "question": "What famous mosque did Suleiman build in Istanbul?",
+    "options": [
+      "Süleymaniye Mosque",
+      "Blue Mosque",
+      "Hagia Sophia",
+      "Selimiye Mosque"
+    ],
+    "answer": "Süleymaniye Mosque",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 22,
+    "question": "Who was the greatest Ottoman architect?",
+    "options": [
+      "Mehmed Aga",
+      "Davud Aga",
+      "Sedefkar Mehmed",
+      "Mimar Sinan"
+    ],
+    "answer": "Mimar Sinan",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 23,
+    "question": "How many structures did Mimar Sinan design?",
+    "options": [
+      "About 100",
+      "Over 300",
+      "Over 500",
+      "About 50"
+    ],
+    "answer": "Over 300",
+    "difficulty": "hard",
+    "category": "architecture"
+  },
+  {
+    "id": 24,
+    "question": "What was Mimar Sinan's masterpiece?",
+    "options": [
+      "Süleymaniye Mosque",
+      "Hagia Sophia restoration",
+      "Blue Mosque",
+      "Selimiye Mosque in Edirne"
+    ],
+    "answer": "Selimiye Mosque in Edirne",
+    "difficulty": "hard",
+    "category": "architecture"
+  },
+  {
+    "id": 25,
+    "question": "What did Ottomans convert Hagia Sophia into?",
+    "options": [
+      "A market",
+      "A museum",
+      "A mosque",
+      "A palace"
+    ],
+    "answer": "A mosque",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 26,
+    "question": "What was Hagia Sophia originally?",
+    "options": [
+      "Byzantine Christian cathedral",
+      "Jewish synagogue",
+      "Roman temple",
+      "Ottoman mosque"
+    ],
+    "answer": "Byzantine Christian cathedral",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 27,
+    "question": "What is the Blue Mosque's real name?",
+    "options": [
+      "Hagia Sophia",
+      "Süleymaniye Mosque",
+      "Sultan Ahmed Mosque",
+      "Selimiye Mosque"
+    ],
+    "answer": "Sultan Ahmed Mosque",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 28,
+    "question": "Why is it called the Blue Mosque?",
+    "options": [
+      "Built by Sultan Blue",
+      "Blue tiles inside",
+      "Blue dome",
+      "Blue exterior"
+    ],
+    "answer": "Blue tiles inside",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 29,
+    "question": "How many minarets does the Blue Mosque have?",
+    "options": [
+      "6",
+      "4",
+      "8",
+      "2"
+    ],
+    "answer": "6",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 30,
+    "question": "Why was 6 minarets controversial?",
+    "options": [
+      "It was too expensive",
+      "Only Mecca's mosque had 6",
+      "Religious rules",
+      "It blocked the view"
+    ],
+    "answer": "Only Mecca's mosque had 6",
+    "difficulty": "hard",
+    "category": "architecture"
+  },
+  {
+    "id": 31,
+    "question": "What palace was the main Ottoman residence?",
+    "options": [
+      "Beylerbeyi Palace",
+      "Topkapi Palace",
+      "Çırağan Palace",
+      "Dolmabahçe Palace"
+    ],
+    "answer": "Topkapi Palace",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 32,
+    "question": "What was the harem?",
+    "options": [
+      "Kitchen",
+      "Private quarters for sultan's family and concubines",
+      "Treasury",
+      "Military barracks"
+    ],
+    "answer": "Private quarters for sultan's family and concubines",
+    "difficulty": "easy",
+    "category": "daily-life"
+  },
+  {
+    "id": 33,
+    "question": "Who guarded the harem?",
+    "options": [
+      "Eunuchs",
+      "Janissaries",
+      "Viziers",
+      "Sipahis"
+    ],
+    "answer": "Eunuchs",
+    "difficulty": "medium",
+    "category": "daily-life"
+  },
+  {
+    "id": 34,
+    "question": "What was the Valide Sultan?",
+    "options": [
+      "Sultan's daughter",
+      "Sultan's sister",
+      "Sultan's wife",
+      "Sultan's mother (very powerful)"
+    ],
+    "answer": "Sultan's mother (very powerful)",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 35,
+    "question": "Could women hold power in the Ottoman Empire?",
+    "options": [
+      "Only in religion",
+      "Only briefly",
+      "Never",
+      "Yes, especially Valide Sultans"
+    ],
+    "answer": "Yes, especially Valide Sultans",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 36,
+    "question": "What was the 'Sultanate of Women'?",
+    "options": [
+      "Period when women had great political influence",
+      "All-female army",
+      "Religious order",
+      "Women's rights movement"
+    ],
+    "answer": "Period when women had great political influence",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 37,
+    "question": "Who was Hürrem Sultan (Roxelana)?",
+    "options": [
+      "Suleiman's powerful wife, former slave",
+      "Military leader",
+      "Religious leader",
+      "Female sultan"
+    ],
+    "answer": "Suleiman's powerful wife, former slave",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 38,
+    "question": "What was unique about Hürrem Sultan?",
+    "options": [
+      "First foreign wife",
+      "First female sultan",
+      "First to leave harem",
+      "First concubine to become legal wife"
+    ],
+    "answer": "First concubine to become legal wife",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 39,
+    "question": "What was Hürrem Sultan's origin?",
+    "options": [
+      "Arab",
+      "Persian",
+      "Ukrainian/Slavic (possibly Ruthenian)",
+      "Turkish"
+    ],
+    "answer": "Ukrainian/Slavic (possibly Ruthenian)",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 40,
+    "question": "What was the Grand Vizier?",
+    "options": [
+      "Military commander",
+      "Treasury official",
+      "Prime minister/chief advisor",
+      "Religious leader"
+    ],
+    "answer": "Prime minister/chief advisor",
+    "difficulty": "easy",
+    "category": "government"
+  },
+  {
+    "id": 41,
+    "question": "What was the Divan?",
+    "options": [
+      "Army unit",
+      "Palace",
+      "Imperial council",
+      "Mosque"
+    ],
+    "answer": "Imperial council",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 42,
+    "question": "What was the millet system?",
+    "options": [
+      "Military organization",
+      "Tax system",
+      "Autonomous religious communities",
+      "Trade regulation"
+    ],
+    "answer": "Autonomous religious communities",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 43,
+    "question": "What did the millet system allow?",
+    "options": [
+      "Free trade",
+      "Religious minorities self-governance",
+      "Land ownership",
+      "Military service exemption"
+    ],
+    "answer": "Religious minorities self-governance",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 44,
+    "question": "Were Christians and Jews allowed in the Ottoman Empire?",
+    "options": [
+      "Only in certain areas",
+      "Yes, as protected dhimmis",
+      "Only if they converted",
+      "Never"
+    ],
+    "answer": "Yes, as protected dhimmis",
+    "difficulty": "easy",
+    "category": "religion"
+  },
+  {
+    "id": 45,
+    "question": "What tax did non-Muslims pay?",
+    "options": [
+      "Tribute",
+      "Jizya",
+      "Tithe",
+      "Zakat"
+    ],
+    "answer": "Jizya",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 46,
+    "question": "What was the Sheikh ul-Islam?",
+    "options": [
+      "Highest religious authority",
+      "Foreign minister",
+      "Palace guard",
+      "Military commander"
+    ],
+    "answer": "Highest religious authority",
+    "difficulty": "medium",
+    "category": "religion"
+  },
+  {
+    "id": 47,
+    "question": "Could the Sheikh ul-Islam depose a sultan?",
+    "options": [
+      "Only with army support",
+      "Never",
+      "Could issue fatwa justifying it",
+      "Yes, directly"
+    ],
+    "answer": "Could issue fatwa justifying it",
+    "difficulty": "hard",
+    "category": "religion"
+  },
+  {
+    "id": 48,
+    "question": "What was fratricide in Ottoman succession?",
+    "options": [
+      "Peace treaty",
+      "Inheritance law",
+      "Killing brothers to secure throne",
+      "Brotherhood ceremony"
+    ],
+    "answer": "Killing brothers to secure throne",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 49,
+    "question": "Which sultan legalized fratricide?",
+    "options": [
+      "Mehmed II",
+      "Selim I",
+      "Osman I",
+      "Suleiman I"
+    ],
+    "answer": "Mehmed II",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 50,
+    "question": "What replaced fratricide later?",
+    "options": [
+      "Oldest son rule",
+      "Democratic election",
+      "Cage system (kafes)",
+      "Council decision"
+    ],
+    "answer": "Cage system (kafes)",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 51,
+    "question": "What was the kafes (cage)?",
+    "options": [
+      "Training facility",
+      "Princes confined in palace quarters",
+      "Execution chamber",
+      "Prison"
+    ],
+    "answer": "Princes confined in palace quarters",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 52,
+    "question": "What battle did Ottomans win to enter Europe?",
+    "options": [
+      "Battle of Vienna",
+      "Battle of Lepanto",
+      "Battle of Kosovo (1389)",
+      "Battle of Mohács"
+    ],
+    "answer": "Battle of Kosovo (1389)",
+    "difficulty": "medium",
+    "category": "conquests"
+  },
+  {
+    "id": 53,
+    "question": "What 1526 battle gave Ottomans Hungary?",
+    "options": [
+      "Battle of Kosovo",
+      "Battle of Ankara",
+      "Battle of Vienna",
+      "Battle of Mohács"
+    ],
+    "answer": "Battle of Mohács",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 54,
+    "question": "What city did Ottomans fail to capture in 1529?",
+    "options": [
+      "Rome",
+      "Vienna",
+      "Venice",
+      "Paris"
+    ],
+    "answer": "Vienna",
+    "difficulty": "easy",
+    "category": "conquests"
+  },
+  {
+    "id": 55,
+    "question": "What stopped the first Siege of Vienna?",
+    "options": [
+      "Disease",
+      "Peace treaty",
+      "Military defeat",
+      "Winter and supply problems"
+    ],
+    "answer": "Winter and supply problems",
+    "difficulty": "medium",
+    "category": "conquests"
+  },
+  {
+    "id": 56,
+    "question": "What year was the second Siege of Vienna?",
+    "options": [
+      "1529",
+      "1700",
+      "1683",
+      "1453"
+    ],
+    "answer": "1683",
+    "difficulty": "medium",
+    "category": "conquests"
+  },
+  {
+    "id": 57,
+    "question": "Who relieved Vienna in 1683?",
+    "options": [
+      "Polish King Jan III Sobieski",
+      "Russian Tsar",
+      "Austrian Emperor",
+      "French King"
+    ],
+    "answer": "Polish King Jan III Sobieski",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 58,
+    "question": "What did the failed 1683 siege begin?",
+    "options": [
+      "Ottoman decline in Europe",
+      "Peace period",
+      "Golden age",
+      "Ottoman expansion"
+    ],
+    "answer": "Ottoman decline in Europe",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 59,
+    "question": "What naval battle was a major Ottoman defeat in 1571?",
+    "options": [
+      "Battle of Djerba",
+      "Battle of Chesma",
+      "Battle of Preveza",
+      "Battle of Lepanto"
+    ],
+    "answer": "Battle of Lepanto",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 60,
+    "question": "Who fought at Lepanto?",
+    "options": [
+      "Britain vs Ottomans",
+      "France vs Ottomans",
+      "Russia vs Ottomans",
+      "Holy League (Spain, Venice, Papacy) vs Ottomans"
+    ],
+    "answer": "Holy League (Spain, Venice, Papacy) vs Ottomans",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 61,
+    "question": "What was the Siege of Malta (1565)?",
+    "options": [
+      "Failed Ottoman siege of Knights of St. John",
+      "Successful conquest",
+      "Peace treaty",
+      "Trade negotiation"
+    ],
+    "answer": "Failed Ottoman siege of Knights of St. John",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 62,
+    "question": "What sultan conquered Egypt and the Levant?",
+    "options": [
+      "Mehmed II",
+      "Bayezid II",
+      "Selim I",
+      "Suleiman I"
+    ],
+    "answer": "Selim I",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 63,
+    "question": "What title did conquering Egypt give the sultan?",
+    "options": [
+      "Pharaoh",
+      "Shah",
+      "Emperor",
+      "Caliph (leader of Sunni Islam)"
+    ],
+    "answer": "Caliph (leader of Sunni Islam)",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 64,
+    "question": "What holy cities came under Ottoman control?",
+    "options": [
+      "Baghdad only",
+      "Damascus only",
+      "Jerusalem only",
+      "Mecca and Medina"
+    ],
+    "answer": "Mecca and Medina",
+    "difficulty": "medium",
+    "category": "conquests"
+  },
+  {
+    "id": 65,
+    "question": "What was Selim I's nickname?",
+    "options": [
+      "Selim the Grim",
+      "Selim the Conqueror",
+      "Selim the Wise",
+      "Selim the Great"
+    ],
+    "answer": "Selim the Grim",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 66,
+    "question": "Why was Selim I called 'the Grim'?",
+    "options": [
+      "His battles",
+      "His policies",
+      "His appearance",
+      "Executed many officials and family"
+    ],
+    "answer": "Executed many officials and family",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 67,
+    "question": "What region did Ottomans control in North Africa?",
+    "options": [
+      "Only Egypt",
+      "Morocco",
+      "All of Africa",
+      "Algeria, Tunisia, Libya, Egypt"
+    ],
+    "answer": "Algeria, Tunisia, Libya, Egypt",
+    "difficulty": "medium",
+    "category": "geography"
+  },
+  {
+    "id": 68,
+    "question": "Who was Barbarossa?",
+    "options": [
+      "Grand Vizier",
+      "Religious leader",
+      "Famous Ottoman admiral/pirate",
+      "Sultan"
+    ],
+    "answer": "Famous Ottoman admiral/pirate",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 69,
+    "question": "What was Barbarossa's real name?",
+    "options": [
+      "Both A and B",
+      "Hayreddin Pasha",
+      "Khair ad-Din",
+      "Ahmed Pasha"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 70,
+    "question": "What sea did Ottomans dominate?",
+    "options": [
+      "Pacific",
+      "Mediterranean",
+      "Indian Ocean",
+      "Atlantic"
+    ],
+    "answer": "Mediterranean",
+    "difficulty": "easy",
+    "category": "military"
+  },
+  {
+    "id": 71,
+    "question": "What was the Ottoman navy called?",
+    "options": [
+      "Great Armada",
+      "Imperial Fleet (Donanma-yı Hümayun)",
+      "Sultan's Ships",
+      "Janissary Navy"
+    ],
+    "answer": "Imperial Fleet (Donanma-yı Hümayun)",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 72,
+    "question": "What product were Ottomans famous for trading?",
+    "options": [
+      "Chocolate",
+      "Tea",
+      "Potatoes",
+      "Coffee"
+    ],
+    "answer": "Coffee",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 73,
+    "question": "What was a kahvehane?",
+    "options": [
+      "Market",
+      "Palace",
+      "Mosque",
+      "Coffeehouse"
+    ],
+    "answer": "Coffeehouse",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 74,
+    "question": "What happened in Ottoman coffeehouses?",
+    "options": [
+      "Military meetings",
+      "Only coffee drinking",
+      "Socializing, news, politics, entertainment",
+      "Religious ceremonies"
+    ],
+    "answer": "Socializing, news, politics, entertainment",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 75,
+    "question": "Did any sultan try to ban coffeehouses?",
+    "options": [
+      "Only once",
+      "Never",
+      "Yes, several times",
+      "Coffee was always illegal"
+    ],
+    "answer": "Yes, several times",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 76,
+    "question": "Why ban coffeehouses?",
+    "options": [
+      "Feared political gatherings and dissent",
+      "Coffee was unhealthy",
+      "Religious reasons only",
+      "Too expensive"
+    ],
+    "answer": "Feared political gatherings and dissent",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 77,
+    "question": "What was the tulip period (Lale Devri)?",
+    "options": [
+      "Economic crisis",
+      "Religious revival",
+      "War period",
+      "Era of peace, luxury, and cultural flourishing"
+    ],
+    "answer": "Era of peace, luxury, and cultural flourishing",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 78,
+    "question": "When was the Tulip Period?",
+    "options": [
+      "1453-1500",
+      "1800-1850",
+      "1600-1650",
+      "1718-1730"
+    ],
+    "answer": "1718-1730",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 79,
+    "question": "What flower became an Ottoman obsession?",
+    "options": [
+      "Carnation",
+      "Tulip",
+      "Lily",
+      "Rose"
+    ],
+    "answer": "Tulip",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 80,
+    "question": "Where did tulips originally come from?",
+    "options": [
+      "Ottoman Empire/Central Asia",
+      "England",
+      "Netherlands",
+      "France"
+    ],
+    "answer": "Ottoman Empire/Central Asia",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 81,
+    "question": "What famous 'mania' did Ottoman tulips cause in Europe?",
+    "options": [
+      "Dutch Tulip Mania",
+      "Flower Craze",
+      "Garden Madness",
+      "Rose Fever"
+    ],
+    "answer": "Dutch Tulip Mania",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 82,
+    "question": "What Ottoman art form decorated mosques?",
+    "options": [
+      "Mosaics only",
+      "Iznik tiles",
+      "Stained glass",
+      "Frescoes"
+    ],
+    "answer": "Iznik tiles",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 83,
+    "question": "What color is Iznik pottery famous for?",
+    "options": [
+      "Cobalt blue and red",
+      "Only green",
+      "Only yellow",
+      "Only white"
+    ],
+    "answer": "Cobalt blue and red",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 84,
+    "question": "What was Ottoman calligraphy used for?",
+    "options": [
+      "Religious texts, imperial decrees, art",
+      "Only Quran",
+      "Only signatures",
+      "Only decoration"
+    ],
+    "answer": "Religious texts, imperial decrees, art",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 85,
+    "question": "What is a tughra?",
+    "options": [
+      "Military unit",
+      "Sultan's calligraphic signature/seal",
+      "Religious text",
+      "Type of sword"
+    ],
+    "answer": "Sultan's calligraphic signature/seal",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 86,
+    "question": "What was Ottoman miniature painting?",
+    "options": [
+      "Portrait photography",
+      "Tiny sculptures",
+      "Wall paintings",
+      "Small detailed illustrations in manuscripts"
+    ],
+    "answer": "Small detailed illustrations in manuscripts",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 87,
+    "question": "What was the Sick Man of Europe?",
+    "options": [
+      "Austrian Empire",
+      "British Empire",
+      "Russian Empire",
+      "Ottoman Empire in decline"
+    ],
+    "answer": "Ottoman Empire in decline",
+    "difficulty": "easy",
+    "category": "decline"
+  },
+  {
+    "id": 88,
+    "question": "Who called the Ottoman Empire 'Sick Man'?",
+    "options": [
+      "Queen Victoria",
+      "Napoleon",
+      "Bismarck",
+      "Tsar Nicholas I of Russia"
+    ],
+    "answer": "Tsar Nicholas I of Russia",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 89,
+    "question": "What were the Tanzimat reforms?",
+    "options": [
+      "Religious reforms",
+      "Military conquests",
+      "Tax changes only",
+      "Modernization and westernization efforts"
+    ],
+    "answer": "Modernization and westernization efforts",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 90,
+    "question": "When were the Tanzimat reforms?",
+    "options": [
+      "1839-1876",
+      "1900-1922",
+      "1700-1750",
+      "1453-1500"
+    ],
+    "answer": "1839-1876",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 91,
+    "question": "What did Tanzimat try to modernize?",
+    "options": [
+      "Only education",
+      "Law, education, military, bureaucracy",
+      "Only economy",
+      "Only military"
+    ],
+    "answer": "Law, education, military, bureaucracy",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 92,
+    "question": "What movement wanted constitutional government?",
+    "options": [
+      "Old Turks",
+      "Janissaries",
+      "Ulema",
+      "Young Turks"
+    ],
+    "answer": "Young Turks",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 93,
+    "question": "What revolution did Young Turks lead?",
+    "options": [
+      "1917 Revolution",
+      "1848 Revolution",
+      "1789 Revolution",
+      "1908 Revolution"
+    ],
+    "answer": "1908 Revolution",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 94,
+    "question": "What war weakened the Ottomans before WW1?",
+    "options": [
+      "Italo-Turkish War",
+      "Russo-Turkish War",
+      "Balkan Wars (1912-1913)",
+      "Crimean War"
+    ],
+    "answer": "Balkan Wars (1912-1913)",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 95,
+    "question": "What did Ottomans lose in the Balkan Wars?",
+    "options": [
+      "Most European territory",
+      "Egypt",
+      "Nothing",
+      "Arabia"
+    ],
+    "answer": "Most European territory",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 96,
+    "question": "Which side did Ottomans join in WW1?",
+    "options": [
+      "Changed sides",
+      "Allies",
+      "Central Powers (Germany, Austria-Hungary)",
+      "Neutral"
+    ],
+    "answer": "Central Powers (Germany, Austria-Hungary)",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 97,
+    "question": "What campaign did Ottomans successfully defend in WW1?",
+    "options": [
+      "Suez Canal",
+      "Mesopotamia",
+      "Caucasus",
+      "Gallipoli"
+    ],
+    "answer": "Gallipoli",
+    "difficulty": "easy",
+    "category": "military"
+  },
+  {
+    "id": 98,
+    "question": "Who led Ottoman defense at Gallipoli?",
+    "options": [
+      "Enver Pasha",
+      "Mustafa Kemal (later Atatürk)",
+      "Cemal Pasha",
+      "Talat Pasha"
+    ],
+    "answer": "Mustafa Kemal (later Atatürk)",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 99,
+    "question": "What genocide occurred during WW1?",
+    "options": [
+      "European Genocide",
+      "Armenian Genocide",
+      "Balkan Genocide",
+      "No genocide"
+    ],
+    "answer": "Armenian Genocide",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 100,
+    "question": "How many Armenians died in the genocide?",
+    "options": [
+      "100,000",
+      "3 million",
+      "About 1.5 million",
+      "500,000"
+    ],
+    "answer": "About 1.5 million",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 101,
+    "question": "What year did the Ottoman Empire officially end?",
+    "options": [
+      "1918",
+      "1922",
+      "1920",
+      "1923"
+    ],
+    "answer": "1922",
+    "difficulty": "easy",
+    "category": "decline"
+  },
+  {
+    "id": 102,
+    "question": "Who was the last Ottoman sultan?",
+    "options": [
+      "Suleiman II",
+      "Mehmed V",
+      "Mehmed VI",
+      "Abdul Hamid II"
+    ],
+    "answer": "Mehmed VI",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 103,
+    "question": "What replaced the Ottoman Empire?",
+    "options": [
+      "Republic of Turkey",
+      "Ottoman Republic",
+      "Turkish Kingdom",
+      "Anatolian State"
+    ],
+    "answer": "Republic of Turkey",
+    "difficulty": "easy",
+    "category": "decline"
+  },
+  {
+    "id": 104,
+    "question": "Who founded the Republic of Turkey?",
+    "options": [
+      "Mehmed VI",
+      "Enver Pasha",
+      "Mustafa Kemal Atatürk",
+      "Ismet Inönü"
+    ],
+    "answer": "Mustafa Kemal Atatürk",
+    "difficulty": "easy",
+    "category": "decline"
+  },
+  {
+    "id": 105,
+    "question": "When was the Republic of Turkey declared?",
+    "options": [
+      "1924",
+      "1922",
+      "1920",
+      "1923"
+    ],
+    "answer": "1923",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 106,
+    "question": "What was abolished with the sultanate?",
+    "options": [
+      "Turkish language",
+      "Military",
+      "The Caliphate (in 1924)",
+      "Islam"
+    ],
+    "answer": "The Caliphate (in 1924)",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 107,
+    "question": "What did Atatürk change about Turkish writing?",
+    "options": [
+      "Adopted Arabic",
+      "Created new alphabet",
+      "Nothing",
+      "Adopted Latin alphabet"
+    ],
+    "answer": "Adopted Latin alphabet",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 108,
+    "question": "What was Abdul Hamid II known for?",
+    "options": [
+      "Religious reformer",
+      "First sultan",
+      "Last powerful sultan, then deposed",
+      "Greatest conqueror"
+    ],
+    "answer": "Last powerful sultan, then deposed",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 109,
+    "question": "What was Abdul Hamid II's nickname?",
+    "options": [
+      "The Great",
+      "The Conqueror",
+      "The Magnificent",
+      "The Red Sultan"
+    ],
+    "answer": "The Red Sultan",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 110,
+    "question": "Why was he called 'Red Sultan'?",
+    "options": [
+      "Red army uniforms",
+      "Red palace",
+      "His red beard",
+      "Massacres of Armenians"
+    ],
+    "answer": "Massacres of Armenians",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 111,
+    "question": "What was the Crimean War about?",
+    "options": [
+      "Internal rebellion",
+      "Ottoman-Austrian war",
+      "Trade dispute",
+      "Ottoman-Russian conflict, with British/French help"
+    ],
+    "answer": "Ottoman-Russian conflict, with British/French help",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 112,
+    "question": "Did Britain and France help the Ottomans?",
+    "options": [
+      "Only France helped",
+      "No, they fought Ottomans",
+      "They were neutral",
+      "Yes, against Russia"
+    ],
+    "answer": "Yes, against Russia",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 113,
+    "question": "What treaty ended the Crimean War?",
+    "options": [
+      "Treaty of Paris (1856)",
+      "Treaty of Versailles",
+      "Treaty of Berlin",
+      "Treaty of Vienna"
+    ],
+    "answer": "Treaty of Paris (1856)",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 114,
+    "question": "What was the Eastern Question?",
+    "options": [
+      "European debate on handling declining Ottomans",
+      "Trade route question",
+      "Ottoman math problem",
+      "Religious debate"
+    ],
+    "answer": "European debate on handling declining Ottomans",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 115,
+    "question": "What region sought independence from Ottomans first?",
+    "options": [
+      "Greece (1821-1829)",
+      "Egypt",
+      "Serbia",
+      "Bulgaria"
+    ],
+    "answer": "Greece (1821-1829)",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 116,
+    "question": "What European powers supported Greek independence?",
+    "options": [
+      "None",
+      "Britain, France, Russia",
+      "Germany, Austria",
+      "Spain, Portugal"
+    ],
+    "answer": "Britain, France, Russia",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 117,
+    "question": "What was Mehmed II's first action after conquest?",
+    "options": [
+      "Built a palace",
+      "Left immediately",
+      "Destroyed the city",
+      "Prayed in Hagia Sophia"
+    ],
+    "answer": "Prayed in Hagia Sophia",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 118,
+    "question": "Did Mehmed II speak multiple languages?",
+    "options": [
+      "No evidence",
+      "Only Turkish",
+      "Only 2",
+      "Yes, reportedly 7 languages"
+    ],
+    "answer": "Yes, reportedly 7 languages",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 119,
+    "question": "What did Mehmed II rename Constantinople?",
+    "options": [
+      "Konstantiniyye (later Istanbul)",
+      "New Rome",
+      "Mehmediye",
+      "Istanbul immediately"
+    ],
+    "answer": "Konstantiniyye (later Istanbul)",
+    "difficulty": "hard",
+    "category": "geography"
+  },
+  {
+    "id": 120,
+    "question": "What does 'Istanbul' possibly derive from?",
+    "options": [
+      "Arabic word",
+      "Persian word",
+      "Turkish word",
+      "Greek 'eis tin polin' (to the city)"
+    ],
+    "answer": "Greek 'eis tin polin' (to the city)",
+    "difficulty": "hard",
+    "category": "geography"
+  },
+  {
+    "id": 121,
+    "question": "What was the Topkapi Dagger?",
+    "options": [
+      "Military sword",
+      "Murder weapon",
+      "Famous jeweled ceremonial dagger",
+      "Cooking knife"
+    ],
+    "answer": "Famous jeweled ceremonial dagger",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 122,
+    "question": "What film featured the Topkapi Dagger heist?",
+    "options": [
+      "Topkapi (1964)",
+      "The Italian Job",
+      "Ocean's Eleven",
+      "The Sting"
+    ],
+    "answer": "Topkapi (1964)",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 123,
+    "question": "What was the Spoonmaker's Diamond?",
+    "options": [
+      "Religious artifact",
+      "Famous 86-carat diamond",
+      "Cooking utensil",
+      "Palace decoration"
+    ],
+    "answer": "Famous 86-carat diamond",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 124,
+    "question": "Where is the Topkapi Dagger today?",
+    "options": [
+      "British Museum",
+      "Topkapi Palace Museum",
+      "Louvre",
+      "Lost"
+    ],
+    "answer": "Topkapi Palace Museum",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 125,
+    "question": "What did Ibrahim I (Ibrahim the Mad) do with his harem?",
+    "options": [
+      "Reportedly drowned 280 concubines",
+      "Married them all",
+      "Freed them all",
+      "Nothing unusual"
+    ],
+    "answer": "Reportedly drowned 280 concubines",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 126,
+    "question": "Why was Ibrahim I called 'the Mad'?",
+    "options": [
+      "His religious views",
+      "His battle tactics",
+      "His building projects",
+      "Erratic and unstable behavior"
+    ],
+    "answer": "Erratic and unstable behavior",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 127,
+    "question": "What did Murad IV ban?",
+    "options": [
+      "Coffee, tobacco, alcohol (on pain of death)",
+      "Trade",
+      "Art",
+      "Music"
+    ],
+    "answer": "Coffee, tobacco, alcohol (on pain of death)",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 128,
+    "question": "How did Murad IV enforce his bans?",
+    "options": [
+      "Exile",
+      "Warnings",
+      "Fines only",
+      "Personally patrolled and executed violators"
+    ],
+    "answer": "Personally patrolled and executed violators",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 129,
+    "question": "What was the köprülü era?",
+    "options": [
+      "Architectural period",
+      "Military era",
+      "Period of strong grand viziers from one family",
+      "Religious reform"
+    ],
+    "answer": "Period of strong grand viziers from one family",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 130,
+    "question": "What did 'Sublime Porte' refer to?",
+    "options": [
+      "Ottoman government (from palace gate)",
+      "A city",
+      "A mosque",
+      "A ship"
+    ],
+    "answer": "Ottoman government (from palace gate)",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 131,
+    "question": "What was Dolmabahçe Palace built to replace?",
+    "options": [
+      "Blue Mosque",
+      "Topkapi Palace as main residence",
+      "Old capital",
+      "Hagia Sophia"
+    ],
+    "answer": "Topkapi Palace as main residence",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 132,
+    "question": "What style is Dolmabahçe Palace?",
+    "options": [
+      "Gothic",
+      "Moorish",
+      "Traditional Ottoman",
+      "European baroque/rococo"
+    ],
+    "answer": "European baroque/rococo",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 133,
+    "question": "Where did Atatürk die?",
+    "options": [
+      "Ankara",
+      "Battlefield",
+      "Istanbul hospital",
+      "Dolmabahçe Palace"
+    ],
+    "answer": "Dolmabahçe Palace",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 134,
+    "question": "What time do clocks in Dolmabahçe show?",
+    "options": [
+      "12:00",
+      "Current time",
+      "9:05 (time of Atatürk's death)",
+      "Midnight"
+    ],
+    "answer": "9:05 (time of Atatürk's death)",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 135,
+    "question": "What was Ottoman military music called?",
+    "options": [
+      "War drums",
+      "Sultan's band",
+      "Janissary march",
+      "Mehter"
+    ],
+    "answer": "Mehter",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 136,
+    "question": "What instruments did Mehter use?",
+    "options": [
+      "Only flutes",
+      "Drums, cymbals, zurnas, bells",
+      "Only drums",
+      "Strings only"
+    ],
+    "answer": "Drums, cymbals, zurnas, bells",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 137,
+    "question": "Did Mehter music influence European composers?",
+    "options": [
+      "Unknown",
+      "Yes, Mozart and others",
+      "No influence",
+      "Only Wagner"
+    ],
+    "answer": "Yes, Mozart and others",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 138,
+    "question": "What Mozart piece shows Ottoman influence?",
+    "options": [
+      "Symphony No. 40",
+      "The Magic Flute",
+      "Eine kleine Nachtmusik",
+      "Turkish March (Rondo alla Turca)"
+    ],
+    "answer": "Turkish March (Rondo alla Turca)",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 139,
+    "question": "What was the Capitulations system?",
+    "options": [
+      "Surrender terms",
+      "Military strategy",
+      "Tax system",
+      "Trade privileges for European nations"
+    ],
+    "answer": "Trade privileges for European nations",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 140,
+    "question": "How did Capitulations hurt Ottomans later?",
+    "options": [
+      "Only helped",
+      "They didn't hurt",
+      "Foreigners gained too much power, hurt economy",
+      "Improved military"
+    ],
+    "answer": "Foreigners gained too much power, hurt economy",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 141,
+    "question": "What was the Treaty of Karlowitz (1699)?",
+    "options": [
+      "First major Ottoman territory loss in Europe",
+      "Peace with Persia",
+      "Alliance treaty",
+      "Trade agreement"
+    ],
+    "answer": "First major Ottoman territory loss in Europe",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 142,
+    "question": "What was the 'Three Pashas' government?",
+    "options": [
+      "Young Turk triumvirate ruling during WW1",
+      "Three sultans",
+      "Three generals",
+      "Peace negotiators"
+    ],
+    "answer": "Young Turk triumvirate ruling during WW1",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 143,
+    "question": "Who were the Three Pashas?",
+    "options": [
+      "Mehmed, Suleiman, Selim",
+      "Mustafa, Ibrahim, Ahmed",
+      "Enver, Talat, Cemal",
+      "None of these"
+    ],
+    "answer": "Enver, Talat, Cemal",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 144,
+    "question": "What was Enver Pasha's role?",
+    "options": [
+      "Religious leader",
+      "Financial minister",
+      "Foreign minister",
+      "War Minister/Military leader"
+    ],
+    "answer": "War Minister/Military leader",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 145,
+    "question": "What disastrous campaign did Enver Pasha lead?",
+    "options": [
+      "Mesopotamia",
+      "Sarikamish against Russia (massive losses)",
+      "Gallipoli",
+      "Suez"
+    ],
+    "answer": "Sarikamish against Russia (massive losses)",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 146,
+    "question": "How many Ottoman soldiers died at Sarikamish?",
+    "options": [
+      "10,000",
+      "1,000",
+      "About 90,000 (mostly from cold)",
+      "200,000"
+    ],
+    "answer": "About 90,000 (mostly from cold)",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 147,
+    "question": "What was the Hamidian cavalry?",
+    "options": [
+      "Palace guard",
+      "Kurdish tribal cavalry units",
+      "Regular army",
+      "Navy"
+    ],
+    "answer": "Kurdish tribal cavalry units",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 148,
+    "question": "What modernization did Mahmud II attempt?",
+    "options": [
+      "Nothing",
+      "Only religious reform",
+      "Only economic reform",
+      "Western-style army, dress, education"
+    ],
+    "answer": "Western-style army, dress, education",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 149,
+    "question": "What did Mahmud II ban?",
+    "options": [
+      "Trade",
+      "Traditional turbans for officials",
+      "Music",
+      "Coffee"
+    ],
+    "answer": "Traditional turbans for officials",
+    "difficulty": "hard",
+    "category": "sultans"
+  },
+  {
+    "id": 150,
+    "question": "What replaced the turban?",
+    "options": [
+      "Fez",
+      "Nothing",
+      "Top hat",
+      "Beret"
+    ],
+    "answer": "Fez",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 151,
+    "question": "What was hammam?",
+    "options": [
+      "School",
+      "Market",
+      "Restaurant",
+      "Turkish bath"
+    ],
+    "answer": "Turkish bath",
+    "difficulty": "easy",
+    "category": "daily-life"
+  },
+  {
+    "id": 152,
+    "question": "Were Ottoman hammams gender-segregated?",
+    "options": [
+      "Only for royalty",
+      "No baths for women",
+      "No",
+      "Yes, or different hours"
+    ],
+    "answer": "Yes, or different hours",
+    "difficulty": "medium",
+    "category": "daily-life"
+  },
+  {
+    "id": 153,
+    "question": "What was the role of hammams beyond bathing?",
+    "options": [
+      "Exercise",
+      "Social gatherings, especially for women",
+      "Only hygiene",
+      "Religious only"
+    ],
+    "answer": "Social gatherings, especially for women",
+    "difficulty": "medium",
+    "category": "daily-life"
+  },
+  {
+    "id": 154,
+    "question": "What was the Grand Bazaar?",
+    "options": [
+      "Mosque",
+      "Palace",
+      "Huge covered market in Istanbul",
+      "Military base"
+    ],
+    "answer": "Huge covered market in Istanbul",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 155,
+    "question": "How many shops does the Grand Bazaar have?",
+    "options": [
+      "About 1,000",
+      "About 100",
+      "About 500",
+      "Over 4,000"
+    ],
+    "answer": "Over 4,000",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 156,
+    "question": "Is the Grand Bazaar still operating?",
+    "options": [
+      "Partially",
+      "Yes, one of world's oldest markets",
+      "No, it's a museum",
+      "Only for tourists"
+    ],
+    "answer": "Yes, one of world's oldest markets",
+    "difficulty": "easy",
+    "category": "architecture"
+  },
+  {
+    "id": 157,
+    "question": "What was a caravanserai?",
+    "options": [
+      "Palace",
+      "Mosque",
+      "Military fort",
+      "Roadside inn for travelers and merchants"
+    ],
+    "answer": "Roadside inn for travelers and merchants",
+    "difficulty": "medium",
+    "category": "architecture"
+  },
+  {
+    "id": 158,
+    "question": "What trade route did Ottoman caravanserais serve?",
+    "options": [
+      "Only local trade",
+      "Sea routes",
+      "Silk Road and others",
+      "None"
+    ],
+    "answer": "Silk Road and others",
+    "difficulty": "medium",
+    "category": "geography"
+  },
+  {
+    "id": 159,
+    "question": "What was ebru?",
+    "options": [
+      "Dance",
+      "Music style",
+      "Food",
+      "Turkish paper marbling art"
+    ],
+    "answer": "Turkish paper marbling art",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 160,
+    "question": "What was shadow puppet theater called?",
+    "options": [
+      "Tuluat",
+      "Karagöz",
+      "Orta oyunu",
+      "Meddah"
+    ],
+    "answer": "Karagöz",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 161,
+    "question": "Who were Karagöz and Hacivat?",
+    "options": [
+      "Generals",
+      "Poets",
+      "Sultans",
+      "Comic shadow puppet characters"
+    ],
+    "answer": "Comic shadow puppet characters",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 162,
+    "question": "What was a meddah?",
+    "options": [
+      "Merchant",
+      "Storyteller/performance artist",
+      "Priest",
+      "Soldier"
+    ],
+    "answer": "Storyteller/performance artist",
+    "difficulty": "hard",
+    "category": "culture"
+  },
+  {
+    "id": 163,
+    "question": "What was Turkish delight (lokum)?",
+    "options": [
+      "Sweet confection",
+      "Savory dish",
+      "Bread",
+      "Drink"
+    ],
+    "answer": "Sweet confection",
+    "difficulty": "easy",
+    "category": "culture"
+  },
+  {
+    "id": 164,
+    "question": "What was baklava's role in Ottoman culture?",
+    "options": [
+      "Everyday food",
+      "Religious offering only",
+      "Symbol of wealth and celebration",
+      "Military ration"
+    ],
+    "answer": "Symbol of wealth and celebration",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 165,
+    "question": "What did Janissaries receive on special occasions?",
+    "options": [
+      "Baklava from the sultan",
+      "Land grants",
+      "Gold coins",
+      "New weapons"
+    ],
+    "answer": "Baklava from the sultan",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 166,
+    "question": "What was the Baklava Procession?",
+    "options": [
+      "Market day",
+      "Cooking competition",
+      "Annual delivery of baklava to Janissaries",
+      "Religious ceremony"
+    ],
+    "answer": "Annual delivery of baklava to Janissaries",
+    "difficulty": "hard",
+    "category": "military"
+  },
+  {
+    "id": 167,
+    "question": "What spice trade did Ottomans control?",
+    "options": [
+      "No spice trade",
+      "Routes between Asia and Europe",
+      "Local spices only",
+      "Only salt"
+    ],
+    "answer": "Routes between Asia and Europe",
+    "difficulty": "medium",
+    "category": "geography"
+  },
+  {
+    "id": 168,
+    "question": "Did Ottoman control of spice routes affect Europe?",
+    "options": [
+      "No impact",
+      "Yes, pushed Europeans to find new routes",
+      "Only minor impact",
+      "Helped Europe"
+    ],
+    "answer": "Yes, pushed Europeans to find new routes",
+    "difficulty": "medium",
+    "category": "events"
+  },
+  {
+    "id": 169,
+    "question": "What was the Sanjak of Novi Pazar?",
+    "options": [
+      "Religious center",
+      "Strategic Ottoman territory in Balkans",
+      "Naval base",
+      "Palace complex"
+    ],
+    "answer": "Strategic Ottoman territory in Balkans",
+    "difficulty": "hard",
+    "category": "geography"
+  },
+  {
+    "id": 170,
+    "question": "What were eyalets?",
+    "options": [
+      "Religious orders",
+      "Military units",
+      "Trade guilds",
+      "Ottoman provinces"
+    ],
+    "answer": "Ottoman provinces",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 171,
+    "question": "What was a pasha?",
+    "options": [
+      "High-ranking official or military commander",
+      "Low-ranking soldier",
+      "Priest",
+      "Merchant"
+    ],
+    "answer": "High-ranking official or military commander",
+    "difficulty": "easy",
+    "category": "government"
+  },
+  {
+    "id": 172,
+    "question": "What was a bey?",
+    "options": [
+      "Foreign ambassador",
+      "Religious leader",
+      "Sultan",
+      "Local chief or governor"
+    ],
+    "answer": "Local chief or governor",
+    "difficulty": "medium",
+    "category": "government"
+  },
+  {
+    "id": 173,
+    "question": "What was a beylerbey?",
+    "options": [
+      "Military commander only",
+      "Governor of a province (bey of beys)",
+      "Religious title",
+      "Trade official"
+    ],
+    "answer": "Governor of a province (bey of beys)",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 174,
+    "question": "What was the timar system?",
+    "options": [
+      "Trade regulation",
+      "Tax collection",
+      "Religious endowment",
+      "Land grants in exchange for military service"
+    ],
+    "answer": "Land grants in exchange for military service",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 175,
+    "question": "What were sipahis?",
+    "options": [
+      "Cavalry soldiers with land grants",
+      "Infantry",
+      "Palace guards",
+      "Navy"
+    ],
+    "answer": "Cavalry soldiers with land grants",
+    "difficulty": "medium",
+    "category": "military"
+  },
+  {
+    "id": 176,
+    "question": "What was a waqf?",
+    "options": [
+      "Religious endowment for public benefit",
+      "Trade license",
+      "Military service",
+      "Tax"
+    ],
+    "answer": "Religious endowment for public benefit",
+    "difficulty": "hard",
+    "category": "religion"
+  },
+  {
+    "id": 177,
+    "question": "What did waqfs fund?",
+    "options": [
+      "Only military",
+      "Mosques, schools, hospitals, fountains",
+      "Only royal family",
+      "Only mosques"
+    ],
+    "answer": "Mosques, schools, hospitals, fountains",
+    "difficulty": "medium",
+    "category": "religion"
+  },
+  {
+    "id": 178,
+    "question": "What was a medrese?",
+    "options": [
+      "Islamic school/college",
+      "Hospital",
+      "Mosque",
+      "Market"
+    ],
+    "answer": "Islamic school/college",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 179,
+    "question": "What was taught in medreses?",
+    "options": [
+      "Only Arabic",
+      "Islamic law, theology, sciences",
+      "Only military training",
+      "Only Quran"
+    ],
+    "answer": "Islamic law, theology, sciences",
+    "difficulty": "medium",
+    "category": "culture"
+  },
+  {
+    "id": 180,
+    "question": "What was the Enderun school?",
+    "options": [
+      "Palace school training future officials",
+      "Girls' school",
+      "Military academy",
+      "Religious school"
+    ],
+    "answer": "Palace school training future officials",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 181,
+    "question": "Who attended Enderun?",
+    "options": [
+      "Devshirme boys and talented youth",
+      "Only wealthy",
+      "Only royalty",
+      "Anyone"
+    ],
+    "answer": "Devshirme boys and talented youth",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 182,
+    "question": "What positions did Enderun graduates reach?",
+    "options": [
+      "Only military",
+      "Grand Vizier and highest offices",
+      "Only religious",
+      "Low-level positions"
+    ],
+    "answer": "Grand Vizier and highest offices",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 183,
+    "question": "What was Suleiman's law code called?",
+    "options": [
+      "Roman law",
+      "Greek law",
+      "Sharia only",
+      "Kanun (secular law)"
+    ],
+    "answer": "Kanun (secular law)",
+    "difficulty": "hard",
+    "category": "government"
+  },
+  {
+    "id": 184,
+    "question": "Why was Suleiman called 'Lawgiver' (Kanuni)?",
+    "options": [
+      "He punished lawbreakers",
+      "He broke laws",
+      "His comprehensive legal reforms",
+      "He studied law"
+    ],
+    "answer": "His comprehensive legal reforms",
+    "difficulty": "medium",
+    "category": "sultans"
+  },
+  {
+    "id": 185,
+    "question": "What European power was Ottoman ally against Habsburgs?",
+    "options": [
+      "Spain",
+      "England",
+      "France",
+      "Portugal"
+    ],
+    "answer": "France",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 186,
+    "question": "What was unusual about French-Ottoman alliance?",
+    "options": [
+      "Nothing unusual",
+      "Christian-Muslim alliance against Christians",
+      "First alliance ever",
+      "Short-lived"
+    ],
+    "answer": "Christian-Muslim alliance against Christians",
+    "difficulty": "hard",
+    "category": "events"
+  },
+  {
+    "id": 187,
+    "question": "What Ottoman siege was longest unsuccessful?",
+    "options": [
+      "Siege of Candia (Crete) - 21 years",
+      "Rhodes",
+      "Malta",
+      "Vienna"
+    ],
+    "answer": "Siege of Candia (Crete) - 21 years",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 188,
+    "question": "What did Ottomans eventually take Candia from?",
+    "options": [
+      "Venice",
+      "Genoa",
+      "Spain",
+      "Portugal"
+    ],
+    "answer": "Venice",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 189,
+    "question": "When did Ottomans take Rhodes?",
+    "options": [
+      "1700",
+      "1522 under Suleiman",
+      "1453",
+      "1600"
+    ],
+    "answer": "1522 under Suleiman",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 190,
+    "question": "Who defended Rhodes?",
+    "options": [
+      "Genoa",
+      "Byzantines",
+      "Venice",
+      "Knights of St. John (Hospitallers)"
+    ],
+    "answer": "Knights of St. John (Hospitallers)",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 191,
+    "question": "Where did the Knights go after Rhodes?",
+    "options": [
+      "Malta",
+      "Sicily",
+      "Spain",
+      "Cyprus"
+    ],
+    "answer": "Malta",
+    "difficulty": "hard",
+    "category": "conquests"
+  },
+  {
+    "id": 192,
+    "question": "What was the Treaty of Sèvres?",
+    "options": [
+      "Alliance",
+      "Post-WW1 treaty partitioning Ottoman lands",
+      "Peace treaty",
+      "Trade agreement"
+    ],
+    "answer": "Post-WW1 treaty partitioning Ottoman lands",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 193,
+    "question": "Who rejected the Treaty of Sèvres?",
+    "options": [
+      "Ottoman sultan",
+      "The Allies",
+      "Turkish nationalists under Atatürk",
+      "Germany"
+    ],
+    "answer": "Turkish nationalists under Atatürk",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 194,
+    "question": "What replaced Treaty of Sèvres?",
+    "options": [
+      "Treaty of Versailles",
+      "Treaty of Paris",
+      "Treaty of Lausanne (1923)",
+      "No replacement"
+    ],
+    "answer": "Treaty of Lausanne (1923)",
+    "difficulty": "hard",
+    "category": "decline"
+  },
+  {
+    "id": 195,
+    "question": "What was the Turkish War of Independence?",
+    "options": [
+      "Fight against Allied occupation (1919-1923)",
+      "Religious war",
+      "Colonial war",
+      "Civil war"
+    ],
+    "answer": "Fight against Allied occupation (1919-1923)",
+    "difficulty": "medium",
+    "category": "decline"
+  },
+  {
+    "id": 196,
+    "question": "How long did the Ottoman Empire last?",
+    "options": [
+      "100 years",
+      "Over 600 years",
+      "300 years",
+      "1000 years"
+    ],
+    "answer": "Over 600 years",
+    "difficulty": "easy",
+    "category": "events"
+  },
+  {
+    "id": 197,
+    "question": "At its height, how many continents did the Ottoman Empire span?",
+    "options": [
+      "2",
+      "4",
+      "1",
+      "3 (Europe, Asia, Africa)"
+    ],
+    "answer": "3 (Europe, Asia, Africa)",
+    "difficulty": "easy",
+    "category": "geography"
+  },
+  {
+    "id": 198,
+    "question": "What modern countries were part of Ottoman Empire?",
+    "options": [
+      "Only Balkans",
+      "Only Turkey",
+      "Turkey, Greece, Bulgaria, Egypt, Iraq, Syria, and more",
+      "Only Middle East"
+    ],
+    "answer": "Turkey, Greece, Bulgaria, Egypt, Iraq, Syria, and more",
+    "difficulty": "easy",
+    "category": "geography"
+  },
+  {
+    "id": 199,
+    "question": "What was the Ottoman capital before Constantinople?",
+    "options": [
+      "Edirne (and before that Bursa)",
+      "Konya",
+      "Izmir",
+      "Ankara"
+    ],
+    "answer": "Edirne (and before that Bursa)",
+    "difficulty": "medium",
+    "category": "geography"
+  },
+  {
+    "id": 200,
+    "question": "What legacy did Ottomans leave in former territories?",
+    "options": [
+      "Only religion",
+      "Nothing",
+      "Architecture, cuisine, language, customs",
+      "Only language"
+    ],
+    "answer": "Architecture, cuisine, language, customs",
+    "difficulty": "easy",
+    "category": "culture"
+  }
+]

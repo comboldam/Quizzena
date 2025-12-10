@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ronaldo Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0a0a15 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(0, 102, 51, 0.15) 0%, 
+        rgba(10, 10, 20, 0.95) 35%,
+        rgba(5, 5, 12, 0.98) 100%
+      );
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.9),
+        0 0 60px rgba(218, 41, 28, 0.1),
+        0 0 30px rgba(255, 215, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Portugal red accent */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 80% 20%, rgba(218, 41, 28, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 102, 51, 0.06) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    /* Shimmer */
+    .card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 215, 0, 0.03) 50%,
+        transparent 60%
+      );
+      animation: shimmer 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-30%) translateY(-30%); }
+      50% { transform: translateX(30%) translateY(30%); }
+    }
+
+    .card-title {
+      color: #ffd700;
+      font-family: 'Georgia', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 6px;
+      text-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.8),
+        0 0 40px rgba(255, 215, 0, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .icon-container {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== CR7 TEXT ===== */
+    .cr7 {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      animation: cr7Float 3s ease-in-out infinite;
+      filter: drop-shadow(0 5px 20px rgba(255, 215, 0, 0.5));
+    }
+
+    @keyframes cr7Float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .cr-text {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      background: linear-gradient(180deg, 
+        #ffd700 0%, 
+        #ffb700 30%,
+        #daa520 60%,
+        #b8860b 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .seven {
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      background: linear-gradient(180deg, 
+        #ffd700 0%, 
+        #ffb700 20%,
+        #daa520 50%,
+        #b8860b 80%,
+        #8b6914 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-left: 2px;
+    }
+
+    /* ===== SIUUU EFFECT ===== */
+    .siuu {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Impact', sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+      color: rgba(255, 215, 0, 0.7);
+      letter-spacing: 2px;
+      animation: siuuPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes siuuPulse {
+      0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+      50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    }
+
+    /* ===== PORTUGAL FLAG ===== */
+    .por-flag {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      width: 20px;
+      height: 14px;
+      border-radius: 2px;
+      overflow: hidden;
+      opacity: 0.6;
+      box-shadow: 0 0 8px rgba(0, 102, 51, 0.5);
+      display: flex;
+    }
+
+    .por-green {
+      width: 40%;
+      height: 100%;
+      background: #006633;
+    }
+
+    .por-red {
+      width: 60%;
+      height: 100%;
+      background: #da291c;
+    }
+
+    .por-emblem {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      width: 6px;
+      height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+      border: 1px solid #da291c;
+    }
+
+    /* ===== CHAMPIONS LEAGUE TROPHIES ===== */
+    .ucl-trophies {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      display: flex;
+      gap: 3px;
+      opacity: 0.5;
+    }
+
+    .ucl-trophy {
+      width: 8px;
+      height: 14px;
+    }
+
+    .ucl-cup {
+      width: 8px;
+      height: 6px;
+      background: linear-gradient(180deg, #c0c0c0, #808080);
+      border-radius: 0 0 50% 50%;
+    }
+
+    .ucl-handles {
+      position: relative;
+      top: -5px;
+      width: 12px;
+      height: 4px;
+      margin-left: -2px;
+    }
+
+    .ucl-handles::before,
+    .ucl-handles::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      height: 4px;
+      border: 1px solid #a0a0a0;
+      border-radius: 50%;
+    }
+
+    .ucl-handles::before { left: 0; }
+    .ucl-handles::after { right: 0; }
+
+    /* ===== BALLON D'OR ===== */
+    .ballon {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle at 35% 35%, 
+        #ffd700 0%, 
+        #daa520 40%,
+        #b8860b 70%,
+        #8b6914 100%
+      );
+      border-radius: 50%;
+      box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+        inset 2px 2px 5px rgba(255, 255, 255, 0.4);
+      animation: ballonSpin 8s linear infinite;
+    }
+
+    @keyframes ballonSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .ballon::before {
+      content: '5';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Georgia', serif;
+      font-size: 10px;
+      font-weight: bold;
+      color: rgba(139, 105, 20, 0.6);
+    }
+
+    /* ===== GOAL COUNTER ===== */
+    .goals {
+      position: absolute;
+      top: 10px;
+      right: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 7px;
+      font-weight: bold;
+      color: rgba(255, 215, 0, 0.6);
+      text-align: right;
+    }
+
+    .goals span {
+      display: block;
+      font-size: 5px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ===== POWER SPARKS ===== */
+    .sparks {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .spark {
+      position: absolute;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkGlow 2s ease-in-out infinite;
+    }
+
+    .spark:nth-child(1) { top: 28px; left: 30px; width: 4px; height: 4px; }
+    .spark:nth-child(2) { top: 35px; right: 35px; width: 3px; height: 3px; animation-delay: 0.4s; }
+    .spark:nth-child(3) { top: 50px; left: 22px; width: 3px; height: 3px; animation-delay: 0.8s; }
+    .spark:nth-child(4) { top: 55px; right: 40px; width: 2px; height: 2px; animation-delay: 1.2s; }
+    .spark:nth-child(5) { bottom: 42px; left: 50px; width: 2px; height: 2px; animation-delay: 1.6s; }
+
+    @keyframes sparkGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ===== CELEBRATION POSE SILHOUETTE ===== */
+    .celebration {
+      position: absolute;
+      bottom: 30px;
+      left: 12px;
+      width: 15px;
+      height: 25px;
+      opacity: 0.2;
+    }
+
+    .celeb-body {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 12px;
+      background: #fff;
+      border-radius: 2px;
+    }
+
+    .celeb-head {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .celeb-arms {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 2px;
+      background: #fff;
+      border-radius: 1px;
+    }
+
+    .celeb-legs {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 10px;
+      background: #fff;
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 60% 100%, 50% 40%, 40% 100%, 0 100%);
+    }
+
+    /* ===== CAREER DOTS ===== */
+    .career-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Sporting */ .dot:nth-child(1) { background: #00843d; box-shadow: 0 0 5px #00843d; }
+    /* Man United */ .dot:nth-child(2) { background: #da291c; box-shadow: 0 0 5px #da291c; animation-delay: 0.1s; }
+    /* Real Madrid */ .dot:nth-child(3) { background: #fff; box-shadow: 0 0 5px #fff; animation-delay: 0.2s; }
+    /* Juventus */ .dot:nth-child(4) { background: linear-gradient(135deg, #000, #fff); box-shadow: 0 0 5px #000; animation-delay: 0.3s; }
+    /* Al-Nassr */ .dot:nth-child(5) { background: #ffe500; box-shadow: 0 0 5px #ffe500; animation-delay: 0.4s; }
+    /* Portugal */ .dot:nth-child(6) { background: #006633; box-shadow: 0 0 5px #006633; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- SIUU -->
+    <div class="siuu">SIUUU!</div>
+
+    <!-- Portugal flag -->
+    <div class="por-flag">
+      <div class="por-green"></div>
+      <div class="por-red"></div>
+      <div class="por-emblem"></div>
+    </div>
+
+    <!-- Goals counter -->
+    <div class="goals">
+      900+
+      <span>GOALS</span>
+    </div>
+
+    <!-- UCL Trophies -->
+    <div class="ucl-trophies">
+      <div class="ucl-trophy"><div class="ucl-handles"></div><div class="ucl-cup"></div></div>
+      <div class="ucl-trophy"><div class="ucl-handles"></div><div class="ucl-cup"></div></div>
+      <div class="ucl-trophy"><div class="ucl-handles"></div><div class="ucl-cup"></div></div>
+      <div class="ucl-trophy"><div class="ucl-handles"></div><div class="ucl-cup"></div></div>
+      <div class="ucl-trophy"><div class="ucl-handles"></div><div class="ucl-cup"></div></div>
+    </div>
+
+    <!-- Celebration silhouette -->
+    <div class="celebration">
+      <div class="celeb-head"></div>
+      <div class="celeb-arms"></div>
+      <div class="celeb-body"></div>
+      <div class="celeb-legs"></div>
+    </div>
+
+    <!-- Sparks -->
+    <div class="sparks">
+      <div class="spark"></div>
+      <div class="spark"></div>
+      <div class="spark"></div>
+      <div class="spark"></div>
+      <div class="spark"></div>
+    </div>
+
+    <!-- Ballon d'Or -->
+    <div class="ballon"></div>
+
+    <!-- Career dots -->
+    <div class="career-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- CR7 -->
+      <div class="cr7">
+        <span class="cr-text">CR</span>
+        <span class="seven">7</span>
+      </div>
+    </div>
+
+    <div class="card-title">RONALDO</div>
+  </div>
+</body>
+</html>
+

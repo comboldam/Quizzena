@@ -1,0 +1,1633 @@
+[
+  {
+    "id": 1,
+    "question": "Which 1994 film features a man sitting on a bench telling his life story?",
+    "options": ["The Shawshank Redemption", "Forrest Gump", "Pulp Fiction", "The Lion King"],
+    "answer": "Forrest Gump",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 2,
+    "question": "Who directed the movie 'Titanic' (1997)?",
+    "options": ["Steven Spielberg", "James Cameron", "Ridley Scott", "Christopher Nolan"],
+    "answer": "James Cameron",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 3,
+    "question": "Which movie features the quote 'I'll be back'?",
+    "options": ["Die Hard", "Rambo", "The Terminator", "Predator"],
+    "answer": "The Terminator",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 4,
+    "question": "What is the highest-grossing film of all time (not adjusted for inflation)?",
+    "options": ["Avengers: Endgame", "Avatar", "Titanic", "Star Wars: The Force Awakens"],
+    "answer": "Avatar",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 5,
+    "question": "Who played the Joker in 'The Dark Knight' (2008)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Heath_Ledger_%282%29.jpg/220px-Heath_Ledger_%282%29.jpg",
+    "options": ["Jack Nicholson", "Heath Ledger", "Jared Leto", "Joaquin Phoenix"],
+    "answer": "Heath Ledger",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 6,
+    "question": "Which film won the Academy Award for Best Picture in 2020?",
+    "options": ["1917", "Joker", "Parasite", "Once Upon a Time in Hollywood"],
+    "answer": "Parasite",
+    "difficulty": "easy",
+    "category": "oscars"
+  },
+  {
+    "id": 7,
+    "question": "In which movie does a character say 'Here's looking at you, kid'?",
+    "options": ["Gone with the Wind", "Casablanca", "Citizen Kane", "The Maltese Falcon"],
+    "answer": "Casablanca",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 8,
+    "question": "Who directed 'Jurassic Park' (1993)?",
+    "options": ["George Lucas", "Steven Spielberg", "James Cameron", "Robert Zemeckis"],
+    "answer": "Steven Spielberg",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 9,
+    "question": "What year was the original 'The Godfather' released?",
+    "options": ["1970", "1972", "1974", "1976"],
+    "answer": "1972",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 10,
+    "question": "Which actor plays Neo in 'The Matrix' trilogy?",
+    "options": ["Brad Pitt", "Keanu Reeves", "Nicolas Cage", "Tom Cruise"],
+    "answer": "Keanu Reeves",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 11,
+    "question": "What is the name of the fictional island in 'Jurassic Park'?",
+    "options": ["Skull Island", "Isla Nublar", "Monster Island", "Dinosaur Island"],
+    "answer": "Isla Nublar",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 12,
+    "question": "Who played Jack Dawson in 'Titanic'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Leonardo_Dicaprio_Cannes_2019.jpg/220px-Leonardo_Dicaprio_Cannes_2019.jpg",
+    "options": ["Matt Damon", "Leonardo DiCaprio", "Brad Pitt", "Johnny Depp"],
+    "answer": "Leonardo DiCaprio",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "Which movie features a great white shark terrorizing a beach town?",
+    "options": ["The Meg", "Deep Blue Sea", "Jaws", "47 Meters Down"],
+    "answer": "Jaws",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 14,
+    "question": "What color is the pill Neo takes in 'The Matrix'?",
+    "options": ["Blue", "Red", "Green", "Yellow"],
+    "answer": "Red",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 15,
+    "question": "Who directed 'Inception' (2010)?",
+    "options": ["Denis Villeneuve", "Christopher Nolan", "David Fincher", "Ridley Scott"],
+    "answer": "Christopher Nolan",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 16,
+    "question": "Which 1999 film features the quote 'I see dead people'?",
+    "options": ["The Ring", "The Sixth Sense", "The Others", "Stir of Echoes"],
+    "answer": "The Sixth Sense",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 17,
+    "question": "What is the name of the fictional African country in 'Black Panther'?",
+    "options": ["Zamunda", "Wakanda", "Genovia", "Latveria"],
+    "answer": "Wakanda",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 18,
+    "question": "Who played the lead role in 'Gladiator' (2000)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Russell_Crowe_%282017%29.jpg/220px-Russell_Crowe_%282017%29.jpg",
+    "options": ["Gerard Butler", "Russell Crowe", "Mel Gibson", "Brad Pitt"],
+    "answer": "Russell Crowe",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 19,
+    "question": "Which movie features the song 'My Heart Will Go On'?",
+    "options": ["Ghost", "Titanic", "The Bodyguard", "Pretty Woman"],
+    "answer": "Titanic",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 20,
+    "question": "What is the name of the hotel in 'The Shining'?",
+    "options": ["The Stanley Hotel", "Bates Motel", "The Overlook Hotel", "Hotel & Resort"],
+    "answer": "The Overlook Hotel",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 21,
+    "question": "Who directed 'Schindler's List' (1993)?",
+    "options": ["Martin Scorsese", "Steven Spielberg", "Francis Ford Coppola", "Roman Polanski"],
+    "answer": "Steven Spielberg",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 22,
+    "question": "Which actress plays Hermione Granger in the Harry Potter films?",
+    "options": ["Emma Stone", "Emma Watson", "Natalie Portman", "Keira Knightley"],
+    "answer": "Emma Watson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 23,
+    "question": "In 'The Silence of the Lambs', what is Hannibal Lecter's profession?",
+    "options": ["Chef", "Psychiatrist", "Surgeon", "Professor"],
+    "answer": "Psychiatrist",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 24,
+    "question": "Which film features the quote 'May the Force be with you'?",
+    "options": ["Star Trek", "Star Wars", "Battlestar Galactica", "Dune"],
+    "answer": "Star Wars",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 25,
+    "question": "Who played Tony Montana in 'Scarface' (1983)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Al_Pacino_2016_%28cropped%29.jpg/220px-Al_Pacino_2016_%28cropped%29.jpg",
+    "options": ["Robert De Niro", "Al Pacino", "Joe Pesci", "Ray Liotta"],
+    "answer": "Al Pacino",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 26,
+    "question": "What year was 'E.T. the Extra-Terrestrial' released?",
+    "options": ["1980", "1982", "1984", "1986"],
+    "answer": "1982",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 27,
+    "question": "Which Christopher Nolan film is about dreams within dreams?",
+    "options": ["Interstellar", "Inception", "Tenet", "The Prestige"],
+    "answer": "Inception",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 28,
+    "question": "Who directed 'Pulp Fiction' (1994)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Quentin_Tarantino_by_Gage_Skidmore.jpg/220px-Quentin_Tarantino_by_Gage_Skidmore.jpg",
+    "options": ["Martin Scorsese", "Quentin Tarantino", "Guy Ritchie", "David Lynch"],
+    "answer": "Quentin Tarantino",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 29,
+    "question": "What is the name of Tom Hanks' character in 'Cast Away'?",
+    "options": ["Chuck Noland", "Wilson", "Jack Ryan", "Sam Baldwin"],
+    "answer": "Chuck Noland",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 30,
+    "question": "Which 1975 film is often credited with creating the summer blockbuster?",
+    "options": ["Star Wars", "Jaws", "The Godfather Part II", "Rocky"],
+    "answer": "Jaws",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 31,
+    "question": "Who plays Vito Corleone in 'The Godfather' (1972)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Marlon_Brando_publicity_for_A_Streetcar_Named_Desire.jpg/220px-Marlon_Brando_publicity_for_A_Streetcar_Named_Desire.jpg",
+    "options": ["Al Pacino", "Marlon Brando", "Robert De Niro", "James Caan"],
+    "answer": "Marlon Brando",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 32,
+    "question": "What is Rosebud in 'Citizen Kane'?",
+    "options": ["A flower", "A sled", "A boat", "A horse"],
+    "answer": "A sled",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 33,
+    "question": "Which film won 11 Academy Awards in 2004?",
+    "options": ["The Lord of the Rings: The Return of the King", "Titanic", "Ben-Hur", "West Side Story"],
+    "answer": "The Lord of the Rings: The Return of the King",
+    "difficulty": "easy",
+    "category": "oscars"
+  },
+  {
+    "id": 34,
+    "question": "Who directed 'The Shawshank Redemption' (1994)?",
+    "options": ["Frank Darabont", "David Fincher", "Steven Spielberg", "Martin Scorsese"],
+    "answer": "Frank Darabont",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 35,
+    "question": "What type of animal is Marlin in 'Finding Nemo'?",
+    "options": ["Clownfish", "Blue Tang", "Shark", "Sea Turtle"],
+    "answer": "Clownfish",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 36,
+    "question": "Which actor plays John Wick?",
+    "options": ["Liam Neeson", "Keanu Reeves", "Jason Statham", "Denzel Washington"],
+    "answer": "Keanu Reeves",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 37,
+    "question": "In which year was 'The Wizard of Oz' released?",
+    "options": ["1935", "1937", "1939", "1941"],
+    "answer": "1939",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 38,
+    "question": "Which movie features the quote 'You can't handle the truth!'?",
+    "options": ["The Firm", "A Few Good Men", "JFK", "The Pelican Brief"],
+    "answer": "A Few Good Men",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 39,
+    "question": "Who played the Genie in the animated 'Aladdin' (1992)?",
+    "options": ["Eddie Murphy", "Robin Williams", "Jim Carrey", "Mike Myers"],
+    "answer": "Robin Williams",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 40,
+    "question": "What is the name of the computer in '2001: A Space Odyssey'?",
+    "options": ["WOPR", "Skynet", "HAL 9000", "Mother"],
+    "answer": "HAL 9000",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 41,
+    "question": "Who directed 'Goodfellas' (1990)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Martin_Scorsese_Berlinale_2010_%28cropped%29.jpg/220px-Martin_Scorsese_Berlinale_2010_%28cropped%29.jpg",
+    "options": ["Francis Ford Coppola", "Martin Scorsese", "Brian De Palma", "Quentin Tarantino"],
+    "answer": "Martin Scorsese",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 42,
+    "question": "What sport is featured in 'Rocky'?",
+    "options": ["Wrestling", "Boxing", "MMA", "Karate"],
+    "answer": "Boxing",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 43,
+    "question": "Which film features a volleyball named Wilson?",
+    "options": ["The Beach", "Cast Away", "Life of Pi", "All Is Lost"],
+    "answer": "Cast Away",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 44,
+    "question": "Who played Forrest Gump?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Tom_Hanks_TIFF_2019.jpg/220px-Tom_Hanks_TIFF_2019.jpg",
+    "options": ["Tom Hanks", "Kevin Costner", "Robin Williams", "Dustin Hoffman"],
+    "answer": "Tom Hanks",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 45,
+    "question": "What is Indiana Jones' profession?",
+    "options": ["Historian", "Archaeologist", "Professor", "Treasure Hunter"],
+    "answer": "Archaeologist",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 46,
+    "question": "Which 1999 film popularized 'bullet time' visual effects?",
+    "options": ["The Matrix", "Fight Club", "The Mummy", "The Sixth Sense"],
+    "answer": "The Matrix",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 47,
+    "question": "Who directed 'E.T. the Extra-Terrestrial'?",
+    "options": ["George Lucas", "Steven Spielberg", "Robert Zemeckis", "James Cameron"],
+    "answer": "Steven Spielberg",
+    "difficulty": "easy",
+    "category": "directors"
+  },
+  {
+    "id": 48,
+    "question": "In 'The Lion King', what is the name of Simba's father?",
+    "options": ["Scar", "Mufasa", "Rafiki", "Zazu"],
+    "answer": "Mufasa",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 49,
+    "question": "Which film features the song 'Stayin' Alive' by the Bee Gees?",
+    "options": ["Grease", "Saturday Night Fever", "Footloose", "Flashdance"],
+    "answer": "Saturday Night Fever",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 50,
+    "question": "Who played James Bond in 'Casino Royale' (2006)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Daniel_Craig_in_2021.jpg/220px-Daniel_Craig_in_2021.jpg",
+    "options": ["Pierce Brosnan", "Daniel Craig", "Sean Connery", "Roger Moore"],
+    "answer": "Daniel Craig",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 51,
+    "question": "What is the ship's name in 'Alien' (1979)?",
+    "options": ["Sulaco", "Nostromo", "Event Horizon", "Prometheus"],
+    "answer": "Nostromo",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 52,
+    "question": "Who directed 'Blade Runner' (1982)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Ridley_Scott_by_Gage_Skidmore.jpg/220px-Ridley_Scott_by_Gage_Skidmore.jpg",
+    "options": ["James Cameron", "Ridley Scott", "Steven Spielberg", "George Lucas"],
+    "answer": "Ridley Scott",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 53,
+    "question": "Which actor has won the most Academy Awards for Best Actor?",
+    "options": ["Jack Nicholson", "Daniel Day-Lewis", "Tom Hanks", "Marlon Brando"],
+    "answer": "Daniel Day-Lewis",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 54,
+    "question": "What year was 'Psycho' directed by Alfred Hitchcock released?",
+    "options": ["1958", "1960", "1962", "1964"],
+    "answer": "1960",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 55,
+    "question": "In 'The Usual Suspects', who is Keyser Soze revealed to be?",
+    "options": ["Dean Keaton", "Roger Kint", "Michael McManus", "Fred Fenster"],
+    "answer": "Roger Kint",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 56,
+    "question": "Who played Tyler Durden in 'Fight Club'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/220px-Brad_Pitt_2019_by_Glenn_Francis.jpg",
+    "options": ["Edward Norton", "Brad Pitt", "Jared Leto", "Meat Loaf"],
+    "answer": "Brad Pitt",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 57,
+    "question": "Which Coen Brothers film won Best Picture in 2008?",
+    "options": ["Fargo", "No Country for Old Men", "True Grit", "The Big Lebowski"],
+    "answer": "No Country for Old Men",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 58,
+    "question": "What is the first rule of Fight Club?",
+    "options": ["Always fight fair", "You do not talk about Fight Club", "Bring a friend", "No weapons"],
+    "answer": "You do not talk about Fight Club",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 59,
+    "question": "Who directed 'The Departed' (2006)?",
+    "options": ["Martin Scorsese", "Clint Eastwood", "Steven Soderbergh", "Michael Mann"],
+    "answer": "Martin Scorsese",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 60,
+    "question": "In 'Memento', what condition does the protagonist have?",
+    "options": ["Amnesia", "Anterograde memory loss", "Blindness", "Multiple personality disorder"],
+    "answer": "Anterograde memory loss",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 61,
+    "question": "Which actress won an Oscar for 'Black Swan'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Natalie_Portman_%2848470988352%29_%28cropped%29.jpg/220px-Natalie_Portman_%2848470988352%29_%28cropped%29.jpg",
+    "options": ["Mila Kunis", "Natalie Portman", "Winona Ryder", "Barbara Hershey"],
+    "answer": "Natalie Portman",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 62,
+    "question": "What does the briefcase in 'Pulp Fiction' contain?",
+    "options": ["Gold bars", "Never revealed", "Diamonds", "Marsellus Wallace's soul"],
+    "answer": "Never revealed",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 63,
+    "question": "Who directed 'The Social Network' (2010)?",
+    "options": ["Aaron Sorkin", "David Fincher", "Bennett Miller", "Danny Boyle"],
+    "answer": "David Fincher",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 64,
+    "question": "Which film features the character Anton Chigurh?",
+    "options": ["There Will Be Blood", "No Country for Old Men", "Hell or High Water", "Sicario"],
+    "answer": "No Country for Old Men",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 65,
+    "question": "Who played the lead in 'Schindler's List'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Liam_Neeson_Deauville_2012.jpg/220px-Liam_Neeson_Deauville_2012.jpg",
+    "options": ["Ralph Fiennes", "Liam Neeson", "Ben Kingsley", "Alan Rickman"],
+    "answer": "Liam Neeson",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 66,
+    "question": "Which Stanley Kubrick film features the quote 'All work and no play makes Jack a dull boy'?",
+    "options": ["A Clockwork Orange", "The Shining", "Full Metal Jacket", "2001: A Space Odyssey"],
+    "answer": "The Shining",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 67,
+    "question": "What year did 'The Godfather Part II' win Best Picture?",
+    "options": ["1973", "1974", "1975", "1976"],
+    "answer": "1975",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 68,
+    "question": "Who plays the villain Thanos in the Marvel Cinematic Universe?",
+    "options": ["James Brolin", "Josh Brolin", "Chris Hemsworth", "Tom Hiddleston"],
+    "answer": "Josh Brolin",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 69,
+    "question": "Which director is known for the 'Three Flavours Cornetto' trilogy?",
+    "options": ["Guy Ritchie", "Matthew Vaughn", "Edgar Wright", "Danny Boyle"],
+    "answer": "Edgar Wright",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 70,
+    "question": "In 'Interstellar', what is the name of the robot companion?",
+    "options": ["CASE", "TARS", "KIPP", "PLEX"],
+    "answer": "TARS",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 71,
+    "question": "Who directed 'Mad Max: Fury Road' (2015)?",
+    "options": ["Neill Blomkamp", "George Miller", "Zack Snyder", "Denis Villeneuve"],
+    "answer": "George Miller",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 72,
+    "question": "Which film features the character Daniel Plainview?",
+    "options": ["The Master", "There Will Be Blood", "Magnolia", "Boogie Nights"],
+    "answer": "There Will Be Blood",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 73,
+    "question": "Who played the Joker in 'Joker' (2019)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Joaquin_Phoenix_at_the_2018_Berlin_Film_Festival.jpg/220px-Joaquin_Phoenix_at_the_2018_Berlin_Film_Festival.jpg",
+    "options": ["Jared Leto", "Joaquin Phoenix", "Heath Ledger", "Jack Nicholson"],
+    "answer": "Joaquin Phoenix",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 74,
+    "question": "Which Alfred Hitchcock film is set almost entirely in one apartment?",
+    "options": ["Vertigo", "Rear Window", "North by Northwest", "The Birds"],
+    "answer": "Rear Window",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 75,
+    "question": "What is the Dude's real name in 'The Big Lebowski'?",
+    "options": ["Jeff Lebowski", "Jeffrey Lebowski", "Walter Sobchak", "The Dude"],
+    "answer": "Jeffrey Lebowski",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 76,
+    "question": "Who directed '12 Years a Slave' (2013)?",
+    "options": ["Spike Lee", "Steve McQueen", "Lee Daniels", "Barry Jenkins"],
+    "answer": "Steve McQueen",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 77,
+    "question": "Which film features the quote 'Life is like a box of chocolates'?",
+    "options": ["Rain Man", "Forrest Gump", "Big", "The Green Mile"],
+    "answer": "Forrest Gump",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 78,
+    "question": "Who won Best Director for 'Birdman' (2014)?",
+    "options": ["Richard Linklater", "Wes Anderson", "Alejandro Gonzalez Inarritu", "David Fincher"],
+    "answer": "Alejandro Gonzalez Inarritu",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 79,
+    "question": "In 'Se7en', which sin is the final murder based on?",
+    "options": ["Pride", "Envy", "Wrath", "Greed"],
+    "answer": "Wrath",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 80,
+    "question": "Who played Hannibal Lecter in 'The Silence of the Lambs'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/AnthonyHopkins10TIFF.jpg/220px-AnthonyHopkins10TIFF.jpg",
+    "options": ["Michael Douglas", "Anthony Hopkins", "Gene Hackman", "Jack Nicholson"],
+    "answer": "Anthony Hopkins",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 81,
+    "question": "Which Wes Anderson film features the fictional country of Zubrowka?",
+    "options": ["Moonrise Kingdom", "The Grand Budapest Hotel", "The Royal Tenenbaums", "Fantastic Mr. Fox"],
+    "answer": "The Grand Budapest Hotel",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 82,
+    "question": "Who directed 'Pan's Labyrinth' (2006)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Guillermo_del_Toro_by_Gage_Skidmore_3.jpg/220px-Guillermo_del_Toro_by_Gage_Skidmore_3.jpg",
+    "options": ["Alfonso Cuaron", "Guillermo del Toro", "Alejandro Gonzalez Inarritu", "Pedro Almodovar"],
+    "answer": "Guillermo del Toro",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 83,
+    "question": "What is the name of the ship in 'Pirates of the Caribbean'?",
+    "options": ["The Queen Anne's Revenge", "The Flying Dutchman", "The Black Pearl", "The Interceptor"],
+    "answer": "The Black Pearl",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 84,
+    "question": "Which film won Best Animated Feature at the first Academy Awards to include that category?",
+    "options": ["Monsters, Inc.", "Shrek", "Ice Age", "Spirited Away"],
+    "answer": "Shrek",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 85,
+    "question": "Who played the lead role in 'American Psycho' (2000)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Christian_Bale_2014_%28cropped%29.jpg/220px-Christian_Bale_2014_%28cropped%29.jpg",
+    "options": ["Jared Leto", "Christian Bale", "Matt Damon", "Edward Norton"],
+    "answer": "Christian Bale",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 86,
+    "question": "Which film features the quote 'Why so serious?'?",
+    "options": ["Batman Begins", "The Dark Knight", "The Dark Knight Rises", "Joker"],
+    "answer": "The Dark Knight",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 87,
+    "question": "Who directed 'Apocalypse Now' (1979)?",
+    "options": ["Martin Scorsese", "Francis Ford Coppola", "Oliver Stone", "Stanley Kubrick"],
+    "answer": "Francis Ford Coppola",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 88,
+    "question": "In 'Shutter Island', what is the name of the mental institution?",
+    "options": ["Arkham Asylum", "Ashecliffe Hospital", "Briarcliff Manor", "Pennhurst Asylum"],
+    "answer": "Ashecliffe Hospital",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 89,
+    "question": "Which actor plays Winston Wolfe in 'Pulp Fiction'?",
+    "options": ["Samuel L. Jackson", "John Travolta", "Harvey Keitel", "Tim Roth"],
+    "answer": "Harvey Keitel",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 90,
+    "question": "What year did 'Parasite' win Best Picture?",
+    "options": ["2018", "2019", "2020", "2021"],
+    "answer": "2020",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 91,
+    "question": "Who directed 'Mulholland Drive' (2001)?",
+    "options": ["Christopher Nolan", "David Lynch", "Darren Aronofsky", "David Cronenberg"],
+    "answer": "David Lynch",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 92,
+    "question": "Which film features the character Ellis Boyd 'Red' Redding?",
+    "options": ["The Green Mile", "The Shawshank Redemption", "Cool Hand Luke", "Midnight Express"],
+    "answer": "The Shawshank Redemption",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 93,
+    "question": "Who played both twins in 'The Social Network'?",
+    "options": ["Jesse Eisenberg", "Andrew Garfield", "Armie Hammer", "Justin Timberlake"],
+    "answer": "Armie Hammer",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 94,
+    "question": "Which film features the quote 'Frankly, my dear, I don't give a damn'?",
+    "options": ["Casablanca", "Gone with the Wind", "Citizen Kane", "The Maltese Falcon"],
+    "answer": "Gone with the Wind",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 95,
+    "question": "Who directed 'The Grand Budapest Hotel' (2014)?",
+    "options": ["Wes Anderson", "Noah Baumbach", "Edgar Wright", "Taika Waititi"],
+    "answer": "Wes Anderson",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 96,
+    "question": "In 'The Prestige', what are the three parts of a magic trick?",
+    "options": ["Setup, Trick, Reveal", "The Pledge, The Turn, The Prestige", "Beginning, Middle, End", "Promise, Performance, Payoff"],
+    "answer": "The Pledge, The Turn, The Prestige",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 97,
+    "question": "Who played Maximus in 'Gladiator'?",
+    "options": ["Gerard Butler", "Russell Crowe", "Brad Pitt", "Eric Bana"],
+    "answer": "Russell Crowe",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 98,
+    "question": "Which Quentin Tarantino film is set during World War II?",
+    "options": ["Kill Bill", "Inglourious Basterds", "Django Unchained", "The Hateful Eight"],
+    "answer": "Inglourious Basterds",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 99,
+    "question": "Who won Best Actress for 'La La Land'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg/220px-Emma_Stone_at_the_39th_Mill_Valley_Film_Festival_%28cropped%29.jpg",
+    "options": ["Natalie Portman", "Emma Stone", "Ryan Gosling", "Jessica Chastain"],
+    "answer": "Emma Stone",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 100,
+    "question": "Which film features a dance contest at Jack Rabbit Slim's?",
+    "options": ["Reservoir Dogs", "Pulp Fiction", "Kill Bill", "Jackie Brown"],
+    "answer": "Pulp Fiction",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 101,
+    "question": "Who directed 'Arrival' (2016)?",
+    "options": ["Christopher Nolan", "Denis Villeneuve", "Alex Garland", "Ridley Scott"],
+    "answer": "Denis Villeneuve",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 102,
+    "question": "What is the name of the AI in 'Ex Machina'?",
+    "options": ["Samantha", "Ava", "Sophia", "Eve"],
+    "answer": "Ava",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 103,
+    "question": "Who played Vincent Vega in 'Pulp Fiction'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/John_Travolta_Cannes_2018.jpg/220px-John_Travolta_Cannes_2018.jpg",
+    "options": ["Bruce Willis", "John Travolta", "Samuel L. Jackson", "Harvey Keitel"],
+    "answer": "John Travolta",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 104,
+    "question": "Which film features the song 'Time' by Hans Zimmer?",
+    "options": ["Interstellar", "Inception", "The Dark Knight", "Dunkirk"],
+    "answer": "Inception",
+    "difficulty": "medium",
+    "category": "blockbusters"
+  },
+  {
+    "id": 105,
+    "question": "Who directed 'Get Out' (2017)?",
+    "options": ["Ari Aster", "Jordan Peele", "Robert Eggers", "Mike Flanagan"],
+    "answer": "Jordan Peele",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 106,
+    "question": "In 'The Truman Show', what is the name of the show's creator?",
+    "options": ["Ed Harris", "Christof", "Marlon", "Meryl"],
+    "answer": "Christof",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 107,
+    "question": "Which actress plays Clarice Starling in 'The Silence of the Lambs'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Jodie_Foster_C%C3%A9sars_2011_%28cropped%29.jpg/220px-Jodie_Foster_C%C3%A9sars_2011_%28cropped%29.jpg",
+    "options": ["Sigourney Weaver", "Jodie Foster", "Glenn Close", "Julianne Moore"],
+    "answer": "Jodie Foster",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 108,
+    "question": "What does the title '2001: A Space Odyssey' refer to?",
+    "options": ["The year of production", "A future year in the story", "A flight number", "A classified mission"],
+    "answer": "A future year in the story",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 109,
+    "question": "Who directed 'Whiplash' (2014)?",
+    "options": ["Damien Chazelle", "David O. Russell", "Bennett Miller", "Tom Hooper"],
+    "answer": "Damien Chazelle",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 110,
+    "question": "Which film features a character named Patrick Bateman?",
+    "options": ["The Machinist", "American Psycho", "Fight Club", "Nightcrawler"],
+    "answer": "American Psycho",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 111,
+    "question": "Who won Best Supporting Actor for 'Inglourious Basterds'?",
+    "options": ["Brad Pitt", "Christoph Waltz", "Michael Fassbender", "Eli Roth"],
+    "answer": "Christoph Waltz",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 112,
+    "question": "Which film features the quote 'You talkin' to me?'?",
+    "options": ["Raging Bull", "Taxi Driver", "Goodfellas", "Mean Streets"],
+    "answer": "Taxi Driver",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 113,
+    "question": "Who directed 'The Revenant' (2015)?",
+    "options": ["Alejandro Gonzalez Inarritu", "Emmanuel Lubezki", "Christopher Nolan", "Terrence Malick"],
+    "answer": "Alejandro Gonzalez Inarritu",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 114,
+    "question": "In 'Eternal Sunshine of the Spotless Mind', what procedure do the characters undergo?",
+    "options": ["Time travel", "Memory erasure", "Dream sharing", "Personality swap"],
+    "answer": "Memory erasure",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 115,
+    "question": "Who played William Wallace in 'Braveheart'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Mel_Gibson_Cannes_2016_2.jpg/220px-Mel_Gibson_Cannes_2016_2.jpg",
+    "options": ["Russell Crowe", "Mel Gibson", "Gerard Butler", "Liam Neeson"],
+    "answer": "Mel Gibson",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 116,
+    "question": "Which Stanley Kubrick film is based on a Stephen King novel?",
+    "options": ["A Clockwork Orange", "The Shining", "Full Metal Jacket", "Eyes Wide Shut"],
+    "answer": "The Shining",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 117,
+    "question": "Who directed 'Her' (2013)?",
+    "options": ["Wes Anderson", "Spike Jonze", "Charlie Kaufman", "Michel Gondry"],
+    "answer": "Spike Jonze",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 118,
+    "question": "What is the name of the prison in 'The Shawshank Redemption'?",
+    "options": ["Alcatraz", "San Quentin", "Shawshank State Penitentiary", "Folsom Prison"],
+    "answer": "Shawshank State Penitentiary",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 119,
+    "question": "Who won Best Actor for 'The Revenant'?",
+    "options": ["Tom Hardy", "Leonardo DiCaprio", "Michael Fassbender", "Eddie Redmayne"],
+    "answer": "Leonardo DiCaprio",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 120,
+    "question": "Which film features the quote 'I'm the king of the world!'?",
+    "options": ["The Wolf of Wall Street", "Titanic", "Catch Me If You Can", "Gangs of New York"],
+    "answer": "Titanic",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 121,
+    "question": "Who directed 'A Clockwork Orange' (1971)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/KubrickForLook_%28cropped%29.jpg/220px-KubrickForLook_%28cropped%29.jpg",
+    "options": ["Martin Scorsese", "Stanley Kubrick", "Francis Ford Coppola", "Roman Polanski"],
+    "answer": "Stanley Kubrick",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 122,
+    "question": "In 'Oldboy' (2003), how long is Oh Dae-su imprisoned?",
+    "options": ["10 years", "15 years", "20 years", "25 years"],
+    "answer": "15 years",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 123,
+    "question": "Who played Andy Dufresne in 'The Shawshank Redemption'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Tim_Robbins_2012.jpg/220px-Tim_Robbins_2012.jpg",
+    "options": ["Morgan Freeman", "Tim Robbins", "Clancy Brown", "William Sadler"],
+    "answer": "Tim Robbins",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 124,
+    "question": "Which film features a spinning top as a recurring motif?",
+    "options": ["The Prestige", "Inception", "Shutter Island", "Memento"],
+    "answer": "Inception",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 125,
+    "question": "Who directed 'Dunkirk' (2017)?",
+    "options": ["Ridley Scott", "Christopher Nolan", "Sam Mendes", "Steven Spielberg"],
+    "answer": "Christopher Nolan",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 126,
+    "question": "What is the significance of the number 23 in 'The Number 23'?",
+    "options": ["Jim Carrey's jersey number", "A conspiracy theory", "Days until death", "Room number"],
+    "answer": "A conspiracy theory",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 127,
+    "question": "Who won Best Actress for 'Monster' (2003)?",
+    "options": ["Nicole Kidman", "Charlize Theron", "Halle Berry", "Hilary Swank"],
+    "answer": "Charlize Theron",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 128,
+    "question": "Which film features the quote 'Here's Johnny!'?",
+    "options": ["Psycho", "The Shining", "Misery", "Carrie"],
+    "answer": "The Shining",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 129,
+    "question": "Who directed 'Taxi Driver' (1976)?",
+    "options": ["Francis Ford Coppola", "Martin Scorsese", "Brian De Palma", "William Friedkin"],
+    "answer": "Martin Scorsese",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 130,
+    "question": "In 'The Departed', who plays the undercover cop?",
+    "options": ["Matt Damon", "Leonardo DiCaprio", "Jack Nicholson", "Mark Wahlberg"],
+    "answer": "Leonardo DiCaprio",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 131,
+    "question": "Which film features the song 'Stuck in the Middle with You' during a torture scene?",
+    "options": ["Pulp Fiction", "Reservoir Dogs", "Kill Bill", "True Romance"],
+    "answer": "Reservoir Dogs",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 132,
+    "question": "Who was the cinematographer for '1917' (2019)?",
+    "options": ["Emmanuel Lubezki", "Roger Deakins", "Hoyte van Hoytema", "Robert Richardson"],
+    "answer": "Roger Deakins",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 133,
+    "question": "Which director's debut feature was 'Eraserhead' (1977)?",
+    "options": ["David Cronenberg", "David Lynch", "John Waters", "Wes Craven"],
+    "answer": "David Lynch",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 134,
+    "question": "In 'Synecdoche, New York', what is the protagonist's name?",
+    "options": ["Caden Cotard", "Joel Barish", "Craig Schwartz", "Charlie Kaufman"],
+    "answer": "Caden Cotard",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 135,
+    "question": "Who played Travis Bickle in 'Taxi Driver'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Robert_De_Niro_Cannes_2016.jpg/220px-Robert_De_Niro_Cannes_2016.jpg",
+    "options": ["Al Pacino", "Robert De Niro", "Dustin Hoffman", "Gene Hackman"],
+    "answer": "Robert De Niro",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 136,
+    "question": "Which film won the Palme d'Or at Cannes in 2019?",
+    "options": ["Joker", "Parasite", "Once Upon a Time in Hollywood", "Portrait of a Lady on Fire"],
+    "answer": "Parasite",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 137,
+    "question": "Who directed 'The Master' (2012)?",
+    "options": ["Paul Thomas Anderson", "Terrence Malick", "David Fincher", "Darren Aronofsky"],
+    "answer": "Paul Thomas Anderson",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 138,
+    "question": "In 'Primer', how many timeline iterations occur by the film's end?",
+    "options": ["3", "5", "9", "Unknown/countless"],
+    "answer": "Unknown/countless",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 139,
+    "question": "Which actor played both roles in 'Dead Ringers' (1988)?",
+    "options": ["Michael Keaton", "Jeremy Irons", "Gary Oldman", "Daniel Day-Lewis"],
+    "answer": "Jeremy Irons",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 140,
+    "question": "What is the name of the technique used in '1917' to appear as one continuous shot?",
+    "options": ["Steadicam", "Long take with hidden cuts", "Tracking shot", "Handheld cinema"],
+    "answer": "Long take with hidden cuts",
+    "difficulty": "hard",
+    "category": "blockbusters"
+  },
+  {
+    "id": 141,
+    "question": "Who directed 'Stalker' (1979)?",
+    "options": ["Sergei Eisenstein", "Andrei Tarkovsky", "Elem Klimov", "Nikita Mikhalkov"],
+    "answer": "Andrei Tarkovsky",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 142,
+    "question": "In 'Rashomon', how many different versions of the story are told?",
+    "options": ["Two", "Three", "Four", "Five"],
+    "answer": "Four",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 143,
+    "question": "Which actor appears in both 'The Godfather' and 'The Godfather Part II' as two different characters?",
+    "options": ["Al Pacino", "Robert De Niro", "James Caan", "Robert Duvall"],
+    "answer": "Robert De Niro",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 144,
+    "question": "Who composed the iconic score for 'Psycho' (1960)?",
+    "options": ["John Williams", "Bernard Herrmann", "Henry Mancini", "Max Steiner"],
+    "answer": "Bernard Herrmann",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 145,
+    "question": "Which film introduced the MacGuffin concept, attributed to Hitchcock?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morgan_Freeman%2C_2006.jpg/220px-Morgan_Freeman%2C_2006.jpg",
+    "options": ["The 39 Steps", "Vertigo", "North by Northwest", "The Lady Vanishes"],
+    "answer": "The 39 Steps",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 146,
+    "question": "Who directed 'Amores Perros' (2000)?",
+    "options": ["Alfonso Cuaron", "Guillermo del Toro", "Alejandro Gonzalez Inarritu", "Carlos Reygadas"],
+    "answer": "Alejandro Gonzalez Inarritu",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 147,
+    "question": "In 'Chinatown', what is Jake Gittes' profession?",
+    "options": ["Police detective", "Private investigator", "Journalist", "Lawyer"],
+    "answer": "Private investigator",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 148,
+    "question": "Which actress won back-to-back Best Actress Oscars in 1936 and 1937?",
+    "options": ["Bette Davis", "Katharine Hepburn", "Luise Rainer", "Vivien Leigh"],
+    "answer": "Luise Rainer",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 149,
+    "question": "Who played the lead in Ingmar Bergman's 'Persona' (1966)?",
+    "options": ["Ingrid Bergman", "Liv Ullmann", "Harriet Andersson", "Bibi Andersson"],
+    "answer": "Liv Ullmann",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 150,
+    "question": "Which director is known for the 'Vengeance Trilogy'?",
+    "options": ["Bong Joon-ho", "Park Chan-wook", "Kim Jee-woon", "Hong Sang-soo"],
+    "answer": "Park Chan-wook",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 151,
+    "question": "In 'Mulholland Drive', what is inside the blue box?",
+    "options": ["A key", "Nothing/emptiness", "A letter", "A photograph"],
+    "answer": "Nothing/emptiness",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 152,
+    "question": "Who was the first Black actor to win an Academy Award?",
+    "options": ["Sidney Poitier", "Hattie McDaniel", "Louis Gossett Jr.", "Denzel Washington"],
+    "answer": "Hattie McDaniel",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 153,
+    "question": "Which film features the 'Odessa Steps' sequence?",
+    "options": ["Metropolis", "Battleship Potemkin", "Nosferatu", "The Cabinet of Dr. Caligari"],
+    "answer": "Battleship Potemkin",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 154,
+    "question": "Who directed 'The Turin Horse' (2011)?",
+    "options": ["Michael Haneke", "Bela Tarr", "Lars von Trier", "Bruno Dumont"],
+    "answer": "Bela Tarr",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 155,
+    "question": "In 'Blade Runner', what year is the film set in?",
+    "options": ["2017", "2019", "2021", "2049"],
+    "answer": "2019",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 156,
+    "question": "Which actor has been nominated for an Oscar the most times without winning?",
+    "options": ["Peter O'Toole", "Glenn Close", "Richard Burton", "Amy Adams"],
+    "answer": "Peter O'Toole",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 157,
+    "question": "Who directed 'In the Mood for Love' (2000)?",
+    "options": ["Ang Lee", "Wong Kar-wai", "Zhang Yimou", "Edward Yang"],
+    "answer": "Wong Kar-wai",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 158,
+    "question": "What technique did Orson Welles innovate with 'Citizen Kane' involving ceilings?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Denzel_Washington_2018.jpg/220px-Denzel_Washington_2018.jpg",
+    "options": ["Painted ceilings", "Showing actual ceilings in shots", "CGI ceilings", "Mirror ceilings"],
+    "answer": "Showing actual ceilings in shots",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 159,
+    "question": "Who played the lead in 'The Wages of Fear' (1953)?",
+    "options": ["Jean-Paul Belmondo", "Yves Montand", "Alain Delon", "Jean Gabin"],
+    "answer": "Yves Montand",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 160,
+    "question": "Which French New Wave director made 'The 400 Blows' (1959)?",
+    "options": ["Jean-Luc Godard", "Francois Truffaut", "Agnes Varda", "Claude Chabrol"],
+    "answer": "Francois Truffaut",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 161,
+    "question": "Who directed 'Holy Motors' (2012)?",
+    "options": ["Gaspar Noe", "Leos Carax", "Claire Denis", "Jacques Audiard"],
+    "answer": "Leos Carax",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 162,
+    "question": "In 'Adaptation', who plays both Charlie and Donald Kaufman?",
+    "options": ["John Cusack", "Nicolas Cage", "John Malkovich", "Chris Cooper"],
+    "answer": "Nicolas Cage",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 163,
+    "question": "Who directed 'Pather Panchali' (1955)?",
+    "options": ["Akira Kurosawa", "Satyajit Ray", "Yasujiro Ozu", "Ritwik Ghatak"],
+    "answer": "Satyajit Ray",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 164,
+    "question": "What was the first film to win both the Palme d'Or and Best Picture Oscar?",
+    "options": ["The Artist", "Parasite", "Marty", "The Lost Weekend"],
+    "answer": "Marty",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 165,
+    "question": "Who composed the score for 'There Will Be Blood'?",
+    "options": ["Hans Zimmer", "Jonny Greenwood", "Trent Reznor", "Johann Johannsson"],
+    "answer": "Jonny Greenwood",
+    "difficulty": "hard",
+    "category": "blockbusters"
+  },
+  {
+    "id": 166,
+    "question": "Which Japanese director made 'Tokyo Story' (1953)?",
+    "options": ["Akira Kurosawa", "Yasujiro Ozu", "Kenji Mizoguchi", "Hayao Miyazaki"],
+    "answer": "Yasujiro Ozu",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 167,
+    "question": "In 'Solaris' (1972), what is the planet Solaris covered by?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Steven_Spielberg_by_Gage_Skidmore.jpg/220px-Steven_Spielberg_by_Gage_Skidmore.jpg",
+    "options": ["Ice", "A sentient ocean", "Desert", "Forest"],
+    "answer": "A sentient ocean",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 168,
+    "question": "Who played the lead in 'The Passion of Joan of Arc' (1928)?",
+    "options": ["Maria Falconetti", "Greta Garbo", "Lillian Gish", "Louise Brooks"],
+    "answer": "Maria Falconetti",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 169,
+    "question": "Which film holds the record for most Oscar nominations without a win?",
+    "options": ["The Color Purple", "The Turning Point", "Gangs of New York", "Both The Color Purple and The Turning Point"],
+    "answer": "Both The Color Purple and The Turning Point",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 170,
+    "question": "Who directed 'Werckmeister Harmonies' (2000)?",
+    "options": ["Michael Haneke", "Bela Tarr", "Lars von Trier", "Aleksandr Sokurov"],
+    "answer": "Bela Tarr",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 171,
+    "question": "What is the German Expressionist film 'The Cabinet of Dr. Caligari' about?",
+    "options": ["A vampire", "A hypnotist and somnambulist", "A mad scientist", "A werewolf"],
+    "answer": "A hypnotist and somnambulist",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 172,
+    "question": "Who directed 'Breathless' (1960), a foundational French New Wave film?",
+    "options": ["Francois Truffaut", "Jean-Luc Godard", "Agnes Varda", "Claude Chabrol"],
+    "answer": "Jean-Luc Godard",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 173,
+    "question": "In 'Eyes Wide Shut', what is the password to enter the secret party?",
+    "options": ["Fidelio", "Amor", "Virtus", "Eros"],
+    "answer": "Fidelio",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 174,
+    "question": "Who won Best Director for 'The Hurt Locker' (2008)?",
+    "options": ["James Cameron", "Kathryn Bigelow", "Steven Spielberg", "Clint Eastwood"],
+    "answer": "Kathryn Bigelow",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 175,
+    "question": "Which film is considered the first feature-length narrative movie?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Meryl_Streep_at_the_Tokyo_International_Film_Festival_2016_%2832801846044%29_%28cropped%29.jpg/220px-Meryl_Streep_at_the_Tokyo_International_Film_Festival_2016_%2832801846044%29_%28cropped%29.jpg",
+    "options": ["The Birth of a Nation", "The Great Train Robbery", "The Story of the Kelly Gang", "A Trip to the Moon"],
+    "answer": "The Story of the Kelly Gang",
+    "difficulty": "hard",
+    "category": "classics"
+  },
+  {
+    "id": 176,
+    "question": "Who directed 'Come and See' (1985)?",
+    "options": ["Andrei Tarkovsky", "Elem Klimov", "Sergei Eisenstein", "Alexander Dovzhenko"],
+    "answer": "Elem Klimov",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 177,
+    "question": "What is the name of the fictional planet in 'Avatar'?",
+    "options": ["Pandora", "Tatooine", "Arrakis", "Endor"],
+    "answer": "Pandora",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 178,
+    "question": "Who directed 'The Seventh Seal' (1957)?",
+    "options": ["Andrei Tarkovsky", "Ingmar Bergman", "Federico Fellini", "Luis Bunuel"],
+    "answer": "Ingmar Bergman",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 179,
+    "question": "Which actress played Mia Wallace in 'Pulp Fiction'?",
+    "options": ["Uma Thurman", "Nicole Kidman", "Sharon Stone", "Demi Moore"],
+    "answer": "Uma Thurman",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 180,
+    "question": "What year was 'Citizen Kane' released?",
+    "options": ["1939", "1941", "1943", "1945"],
+    "answer": "1941",
+    "difficulty": "medium",
+    "category": "classics"
+  },
+  {
+    "id": 181,
+    "question": "Who directed 'La Dolce Vita' (1960)?",
+    "options": ["Roberto Rossellini", "Federico Fellini", "Vittorio De Sica", "Luchino Visconti"],
+    "answer": "Federico Fellini",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 182,
+    "question": "In 'Drive' (2011), what is the Driver's name?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Clint_Eastwood_at_2010_New_York_Film_Festival.jpg/220px-Clint_Eastwood_at_2010_New_York_Film_Festival.jpg",
+    "options": ["Jack", "Unknown/Never revealed", "Ryan", "Driver"],
+    "answer": "Unknown/Never revealed",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 183,
+    "question": "Who played the Terminator in the original film?",
+    "options": ["Sylvester Stallone", "Arnold Schwarzenegger", "Jean-Claude Van Damme", "Dolph Lundgren"],
+    "answer": "Arnold Schwarzenegger",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 184,
+    "question": "Which film features the song 'Somewhere Over the Rainbow'?",
+    "options": ["Singin' in the Rain", "The Wizard of Oz", "Mary Poppins", "Sound of Music"],
+    "answer": "The Wizard of Oz",
+    "difficulty": "easy",
+    "category": "classics"
+  },
+  {
+    "id": 185,
+    "question": "Who directed 'Vertigo' (1958)?",
+    "options": ["Billy Wilder", "Alfred Hitchcock", "Orson Welles", "John Ford"],
+    "answer": "Alfred Hitchcock",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 186,
+    "question": "What is the name of the main character in 'Kill Bill'?",
+    "options": ["Black Mamba", "The Bride", "Beatrix Kiddo", "All of the above"],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 187,
+    "question": "Who played Norman Bates in the original 'Psycho'?",
+    "options": ["James Stewart", "Anthony Perkins", "Cary Grant", "Rock Hudson"],
+    "answer": "Anthony Perkins",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 188,
+    "question": "Which film features a planet-destroying weapon called the Death Star?",
+    "options": ["Star Trek", "Star Wars", "Dune", "Battlestar Galactica"],
+    "answer": "Star Wars",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 189,
+    "question": "Who directed '8 1/2' (1963)?",
+    "options": ["Ingmar Bergman", "Federico Fellini", "Michelangelo Antonioni", "Pier Paolo Pasolini"],
+    "answer": "Federico Fellini",
+    "difficulty": "hard",
+    "category": "directors"
+  },
+  {
+    "id": 190,
+    "question": "What is the twist ending in 'Planet of the Apes' (1968)?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Samuel_L._Jackson_2019_by_Glenn_Francis.jpg/220px-Samuel_L._Jackson_2019_by_Glenn_Francis.jpg",
+    "options": ["The apes are robots", "It was Earth all along", "The humans win", "Time travel"],
+    "answer": "It was Earth all along",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 191,
+    "question": "Who won Best Actor for 'Raging Bull' (1980)?",
+    "options": ["Al Pacino", "Robert De Niro", "Jack Nicholson", "Dustin Hoffman"],
+    "answer": "Robert De Niro",
+    "difficulty": "medium",
+    "category": "oscars"
+  },
+  {
+    "id": 192,
+    "question": "Which Pixar film was the first to be entirely computer-animated?",
+    "options": ["A Bug's Life", "Toy Story", "Finding Nemo", "Monsters, Inc."],
+    "answer": "Toy Story",
+    "difficulty": "easy",
+    "category": "blockbusters"
+  },
+  {
+    "id": 193,
+    "question": "Who directed 'Blue Velvet' (1986)?",
+    "options": ["David Cronenberg", "David Lynch", "John Carpenter", "Wes Craven"],
+    "answer": "David Lynch",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 194,
+    "question": "What is the name of the law firm in 'The Firm'?",
+    "options": ["Bendini, Lambert & Locke", "McKenzie & Associates", "Wolfram & Hart", "Pearson Hardman"],
+    "answer": "Bendini, Lambert & Locke",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 195,
+    "question": "Who played Deckard in 'Blade Runner'?",
+    "options": ["Kurt Russell", "Harrison Ford", "Rutger Hauer", "Sean Young"],
+    "answer": "Harrison Ford",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 196,
+    "question": "Which film features the quote 'After all, tomorrow is another day'?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg/220px-Arnold_Schwarzenegger_by_Gage_Skidmore_4.jpg",
+    "options": ["Casablanca", "Gone with the Wind", "Rebecca", "Now, Voyager"],
+    "answer": "Gone with the Wind",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 197,
+    "question": "Who directed 'Children of Men' (2006)?",
+    "options": ["Guillermo del Toro", "Alfonso Cuaron", "Alejandro Gonzalez Inarritu", "Denis Villeneuve"],
+    "answer": "Alfonso Cuaron",
+    "difficulty": "medium",
+    "category": "directors"
+  },
+  {
+    "id": 198,
+    "question": "In which year is 'Back to the Future' set when Marty travels to the past?",
+    "options": ["1945", "1955", "1965", "1975"],
+    "answer": "1955",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 199,
+    "question": "Who won Best Picture for 'Moonlight' (2016)?",
+    "options": ["Barry Jenkins", "A24", "Plan B Entertainment", "All producers"],
+    "answer": "All producers",
+    "difficulty": "hard",
+    "category": "oscars"
+  },
+  {
+    "id": 200,
+    "question": "Which film is known for the shower scene accompanied by screeching violins?",
+    "options": ["The Birds", "Psycho", "Vertigo", "Rear Window"],
+    "answer": "Psycho",
+    "difficulty": "easy",
+    "category": "classics"
+  }
+]

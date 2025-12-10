@@ -1,0 +1,2602 @@
+[
+  {
+    "id": 1,
+    "question": "Which pharaoh is the Great Pyramid of Giza built for?",
+    "options": [
+      "Khufu",
+      "Ramesses II",
+      "Cleopatra",
+      "Tutankhamun"
+    ],
+    "answer": "Khufu",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 2,
+    "question": "What writing system did the ancient Egyptians use?",
+    "options": [
+      "Hieroglyphics",
+      "Cuneiform",
+      "Latin",
+      "Sanskrit"
+    ],
+    "answer": "Hieroglyphics",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 3,
+    "question": "Which river was essential to ancient Egyptian civilization?",
+    "options": [
+      "Ganges",
+      "Euphrates",
+      "Tigris",
+      "Nile"
+    ],
+    "answer": "Nile",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 4,
+    "question": "What is the name of the Egyptian god of the dead?",
+    "options": [
+      "Osiris",
+      "Anubis",
+      "Horus",
+      "Ra"
+    ],
+    "answer": "Osiris",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 5,
+    "question": "Which female pharaoh ruled Egypt and is known for her prosperous reign?",
+    "options": [
+      "Nefertiti",
+      "Cleopatra",
+      "Isis",
+      "Hatshepsut"
+    ],
+    "answer": "Hatshepsut",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 6,
+    "question": "What process did Egyptians use to preserve bodies after death?",
+    "options": [
+      "Mummification",
+      "Sky burial",
+      "Burial at sea",
+      "Cremation"
+    ],
+    "answer": "Mummification",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 7,
+    "question": "What is the Great Sphinx of Giza believed to represent?",
+    "options": [
+      "A lion with a human head",
+      "The sun god Ra",
+      "A crocodile",
+      "A cat goddess"
+    ],
+    "answer": "A lion with a human head",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 8,
+    "question": "Which pharaoh's tomb was discovered nearly intact in 1922?",
+    "options": [
+      "Akhenaten",
+      "Tutankhamun",
+      "Ramesses II",
+      "Khufu"
+    ],
+    "answer": "Tutankhamun",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 9,
+    "question": "What was the primary purpose of the Egyptian pyramids?",
+    "options": [
+      "Astronomical observatories",
+      "Tombs for pharaohs",
+      "Temples for worship",
+      "Grain storage"
+    ],
+    "answer": "Tombs for pharaohs",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 10,
+    "question": "Who was the Egyptian sun god?",
+    "options": [
+      "Ra",
+      "Anubis",
+      "Thoth",
+      "Osiris"
+    ],
+    "answer": "Ra",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 11,
+    "question": "What is the jackal-headed Egyptian god called?",
+    "options": [
+      "Set",
+      "Horus",
+      "Anubis",
+      "Thoth"
+    ],
+    "answer": "Anubis",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 12,
+    "question": "Which Egyptian queen was the last active ruler of the Ptolemaic Kingdom?",
+    "options": [
+      "Cleopatra VII",
+      "Nefertiti",
+      "Hatshepsut",
+      "Arsinoe"
+    ],
+    "answer": "Cleopatra VII",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 13,
+    "question": "What material was used to write on in ancient Egypt?",
+    "options": [
+      "Clay tablets",
+      "Papyrus",
+      "Parchment",
+      "Bamboo"
+    ],
+    "answer": "Papyrus",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 14,
+    "question": "Which pharaoh is known for building the most monuments in Egypt?",
+    "options": [
+      "Tutankhamun",
+      "Ramesses II",
+      "Akhenaten",
+      "Khufu"
+    ],
+    "answer": "Ramesses II",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 15,
+    "question": "What was the Egyptian symbol of life called?",
+    "options": [
+      "Scarab",
+      "Djed",
+      "Eye of Horus",
+      "Ankh"
+    ],
+    "answer": "Ankh",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 16,
+    "question": "In which modern country are the Pyramids of Giza located?",
+    "options": [
+      "Jordan",
+      "Sudan",
+      "Libya",
+      "Egypt"
+    ],
+    "answer": "Egypt",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 17,
+    "question": "What period of Egyptian history saw the construction of the great pyramids?",
+    "options": [
+      "Late Period",
+      "New Kingdom",
+      "Old Kingdom",
+      "Middle Kingdom"
+    ],
+    "answer": "Old Kingdom",
+    "difficulty": "hard",
+    "category": "egypt"
+  },
+  {
+    "id": 18,
+    "question": "Which Egyptian god had the head of a falcon?",
+    "options": [
+      "Anubis",
+      "Thoth",
+      "Horus",
+      "Set"
+    ],
+    "answer": "Horus",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 19,
+    "question": "What beetle was sacred to the ancient Egyptians?",
+    "options": [
+      "Firefly",
+      "Ladybug",
+      "Dung beetle",
+      "Scarab beetle"
+    ],
+    "answer": "Scarab beetle",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 20,
+    "question": "Who discovered King Tutankhamun's tomb?",
+    "options": [
+      "Heinrich Schliemann",
+      "Arthur Evans",
+      "Howard Carter",
+      "Jean-François Champollion"
+    ],
+    "answer": "Howard Carter",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 21,
+    "question": "What stone helped scholars decode Egyptian hieroglyphics?",
+    "options": [
+      "Behistun Rock",
+      "Moabite Stone",
+      "Black Obelisk",
+      "Rosetta Stone"
+    ],
+    "answer": "Rosetta Stone",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 22,
+    "question": "Which pharaoh attempted to change Egypt to monotheism?",
+    "options": [
+      "Akhenaten",
+      "Tutankhamun",
+      "Ramesses II",
+      "Khufu"
+    ],
+    "answer": "Akhenaten",
+    "difficulty": "hard",
+    "category": "egypt"
+  },
+  {
+    "id": 23,
+    "question": "What was the main crop grown in ancient Egypt?",
+    "options": [
+      "Wheat",
+      "Potatoes",
+      "Rice",
+      "Corn"
+    ],
+    "answer": "Wheat",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 24,
+    "question": "What is the ancient Egyptian afterlife paradise called?",
+    "options": [
+      "Nirvana",
+      "Elysium",
+      "Valhalla",
+      "Field of Reeds"
+    ],
+    "answer": "Field of Reeds",
+    "difficulty": "hard",
+    "category": "egypt"
+  },
+  {
+    "id": 25,
+    "question": "Which pyramid is the oldest and largest at Giza?",
+    "options": [
+      "Great Pyramid of Khufu",
+      "Pyramid of Khafre",
+      "Step Pyramid",
+      "Pyramid of Menkaure"
+    ],
+    "answer": "Great Pyramid of Khufu",
+    "difficulty": "medium",
+    "category": "egypt"
+  },
+  {
+    "id": 26,
+    "question": "What was the Roman amphitheater used for gladiator fights called?",
+    "options": [
+      "Pantheon",
+      "Colosseum",
+      "Circus Maximus",
+      "Forum"
+    ],
+    "answer": "Colosseum",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 27,
+    "question": "Who was the first Roman Emperor?",
+    "options": [
+      "Nero",
+      "Augustus",
+      "Caligula",
+      "Julius Caesar"
+    ],
+    "answer": "Augustus",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 28,
+    "question": "Which Roman general crossed the Rubicon river?",
+    "options": [
+      "Julius Caesar",
+      "Marcus Aurelius",
+      "Pompey",
+      "Trajan"
+    ],
+    "answer": "Julius Caesar",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 29,
+    "question": "What language did the ancient Romans speak?",
+    "options": [
+      "Italian",
+      "Latin",
+      "Greek",
+      "Etruscan"
+    ],
+    "answer": "Latin",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 30,
+    "question": "In what year did Rome traditionally fall to barbarian invaders?",
+    "options": [
+      "500 AD",
+      "395 AD",
+      "476 AD",
+      "410 AD"
+    ],
+    "answer": "476 AD",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 31,
+    "question": "Who were the legendary founders of Rome?",
+    "options": [
+      "Mars and Venus",
+      "Romulus and Remus",
+      "Castor and Pollux",
+      "Aeneas and Anchises"
+    ],
+    "answer": "Romulus and Remus",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 32,
+    "question": "What was a Roman soldier called?",
+    "options": [
+      "Praetorian",
+      "Hoplite",
+      "Centurion",
+      "Legionary"
+    ],
+    "answer": "Legionary",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 33,
+    "question": "Which Roman emperor made Christianity legal?",
+    "options": [
+      "Nero",
+      "Constantine",
+      "Trajan",
+      "Diocletian"
+    ],
+    "answer": "Constantine",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 34,
+    "question": "What was the Roman public square called?",
+    "options": [
+      "Agora",
+      "Forum",
+      "Acropolis",
+      "Plaza"
+    ],
+    "answer": "Forum",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 35,
+    "question": "Who was the Roman god of war?",
+    "options": [
+      "Mars",
+      "Neptune",
+      "Jupiter",
+      "Mercury"
+    ],
+    "answer": "Mars",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 36,
+    "question": "Which emperor was playing the fiddle while Rome burned according to legend?",
+    "options": [
+      "Commodus",
+      "Domitian",
+      "Nero",
+      "Caligula"
+    ],
+    "answer": "Nero",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 37,
+    "question": "What were Roman public baths called?",
+    "options": [
+      "Thermae",
+      "Villae",
+      "Domus",
+      "Insulae"
+    ],
+    "answer": "Thermae",
+    "difficulty": "hard",
+    "category": "rome"
+  },
+  {
+    "id": 38,
+    "question": "Who led Carthage against Rome in the Second Punic War?",
+    "options": [
+      "Scipio",
+      "Hamilcar",
+      "Hannibal",
+      "Hasdrubal"
+    ],
+    "answer": "Hannibal",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 39,
+    "question": "What was the road from Rome to the south of Italy called?",
+    "options": [
+      "Via Flaminia",
+      "Appian Way",
+      "Via Aurelia",
+      "Via Salaria"
+    ],
+    "answer": "Appian Way",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 40,
+    "question": "Which emperor divided the Roman Empire into East and West?",
+    "options": [
+      "Theodosius",
+      "Hadrian",
+      "Diocletian",
+      "Constantine"
+    ],
+    "answer": "Diocletian",
+    "difficulty": "hard",
+    "category": "rome"
+  },
+  {
+    "id": 41,
+    "question": "What was the name of the elite Roman guard protecting the emperor?",
+    "options": [
+      "Legion",
+      "Centurions",
+      "Auxiliaries",
+      "Praetorian Guard"
+    ],
+    "answer": "Praetorian Guard",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 42,
+    "question": "Who famously said 'Et tu, Brute?' upon being stabbed?",
+    "options": [
+      "Nero",
+      "Pompey",
+      "Julius Caesar",
+      "Augustus"
+    ],
+    "answer": "Julius Caesar",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 43,
+    "question": "What was the Roman term for 'seize the day'?",
+    "options": [
+      "Et cetera",
+      "Veni vidi vici",
+      "Caveat emptor",
+      "Carpe diem"
+    ],
+    "answer": "Carpe diem",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 44,
+    "question": "Which Roman structure was built to bring water to cities?",
+    "options": [
+      "Colosseum",
+      "Pantheon",
+      "Circus",
+      "Aqueduct"
+    ],
+    "answer": "Aqueduct",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 45,
+    "question": "Who was the king of the Roman gods?",
+    "options": [
+      "Neptune",
+      "Jupiter",
+      "Mars",
+      "Apollo"
+    ],
+    "answer": "Jupiter",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 46,
+    "question": "What was a Roman apartment building called?",
+    "options": [
+      "Villa",
+      "Forum",
+      "Domus",
+      "Insula"
+    ],
+    "answer": "Insula",
+    "difficulty": "hard",
+    "category": "rome"
+  },
+  {
+    "id": 47,
+    "question": "Which emperor built Hadrian's Wall in Britain?",
+    "options": [
+      "Hadrian",
+      "Claudius",
+      "Augustus",
+      "Trajan"
+    ],
+    "answer": "Hadrian",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 48,
+    "question": "What phrase means 'I came, I saw, I conquered'?",
+    "options": [
+      "E pluribus unum",
+      "Alea iacta est",
+      "Veni, vidi, vici",
+      "Carpe diem"
+    ],
+    "answer": "Veni, vidi, vici",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 49,
+    "question": "Who was the leader of the slave rebellion against Rome in 73 BC?",
+    "options": [
+      "Boudicca",
+      "Spartacus",
+      "Hannibal",
+      "Vercingetorix"
+    ],
+    "answer": "Spartacus",
+    "difficulty": "easy",
+    "category": "rome"
+  },
+  {
+    "id": 50,
+    "question": "What building in Rome has the largest unreinforced concrete dome?",
+    "options": [
+      "Circus Maximus",
+      "Pantheon",
+      "Forum",
+      "Colosseum"
+    ],
+    "answer": "Pantheon",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 51,
+    "question": "Which Greek city-state is credited with inventing democracy?",
+    "options": [
+      "Sparta",
+      "Athens",
+      "Thebes",
+      "Corinth"
+    ],
+    "answer": "Athens",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 52,
+    "question": "What was the Greek marketplace and gathering place called?",
+    "options": [
+      "Parthenon",
+      "Agora",
+      "Forum",
+      "Acropolis"
+    ],
+    "answer": "Agora",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 53,
+    "question": "Who was the king of the Greek gods?",
+    "options": [
+      "Hades",
+      "Apollo",
+      "Zeus",
+      "Poseidon"
+    ],
+    "answer": "Zeus",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 54,
+    "question": "What hilltop fortress in Athens held the Parthenon?",
+    "options": [
+      "Agora",
+      "Acropolis",
+      "Oracle",
+      "Lyceum"
+    ],
+    "answer": "Acropolis",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 55,
+    "question": "Which Greek philosopher was forced to drink hemlock?",
+    "options": [
+      "Plato",
+      "Socrates",
+      "Aristotle",
+      "Pythagoras"
+    ],
+    "answer": "Socrates",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 56,
+    "question": "What athletic competition originated in ancient Greece?",
+    "options": [
+      "Olympic Games",
+      "Chariot races",
+      "Gladiator fights",
+      "Marathon"
+    ],
+    "answer": "Olympic Games",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 57,
+    "question": "Who conquered the Persian Empire and spread Greek culture to Asia?",
+    "options": [
+      "Alexander the Great",
+      "Philip II",
+      "Leonidas",
+      "Pericles"
+    ],
+    "answer": "Alexander the Great",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 58,
+    "question": "What was the Greek city-state known for its military society?",
+    "options": [
+      "Athens",
+      "Thebes",
+      "Sparta",
+      "Corinth"
+    ],
+    "answer": "Sparta",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 59,
+    "question": "Who wrote The Iliad and The Odyssey?",
+    "options": [
+      "Homer",
+      "Herodotus",
+      "Plato",
+      "Sophocles"
+    ],
+    "answer": "Homer",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 60,
+    "question": "What famous temple was dedicated to the goddess Athena?",
+    "options": [
+      "Colosseum",
+      "Temple of Zeus",
+      "Parthenon",
+      "Oracle of Delphi"
+    ],
+    "answer": "Parthenon",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 61,
+    "question": "Which Greek god was the messenger with winged sandals?",
+    "options": [
+      "Apollo",
+      "Ares",
+      "Dionysus",
+      "Hermes"
+    ],
+    "answer": "Hermes",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 62,
+    "question": "Who was the father of Alexander the Great?",
+    "options": [
+      "Pericles",
+      "Leonidas",
+      "Darius III",
+      "Philip II"
+    ],
+    "answer": "Philip II",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 63,
+    "question": "What battle saw 300 Spartans hold off the Persian army?",
+    "options": [
+      "Plataea",
+      "Marathon",
+      "Thermopylae",
+      "Salamis"
+    ],
+    "answer": "Thermopylae",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 64,
+    "question": "Who was the Greek goddess of wisdom?",
+    "options": [
+      "Athena",
+      "Artemis",
+      "Aphrodite",
+      "Hera"
+    ],
+    "answer": "Athena",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 65,
+    "question": "What Greek philosopher was the teacher of Alexander the Great?",
+    "options": [
+      "Aristotle",
+      "Pythagoras",
+      "Socrates",
+      "Plato"
+    ],
+    "answer": "Aristotle",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 66,
+    "question": "What war was fought between Athens and Sparta?",
+    "options": [
+      "Punic Wars",
+      "Persian Wars",
+      "Trojan War",
+      "Peloponnesian War"
+    ],
+    "answer": "Peloponnesian War",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 67,
+    "question": "Who was the Greek god of the sea?",
+    "options": [
+      "Poseidon",
+      "Apollo",
+      "Zeus",
+      "Hades"
+    ],
+    "answer": "Poseidon",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 68,
+    "question": "What was the term for a Greek city-state?",
+    "options": [
+      "Province",
+      "Empire",
+      "Polis",
+      "Forum"
+    ],
+    "answer": "Polis",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 69,
+    "question": "Who was the Spartan king at the Battle of Thermopylae?",
+    "options": [
+      "Alexander",
+      "Philip",
+      "Xerxes",
+      "Leonidas"
+    ],
+    "answer": "Leonidas",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 70,
+    "question": "What Greek hero fought in the Trojan War and was known for his strength?",
+    "options": [
+      "Achilles",
+      "Hector",
+      "Paris",
+      "Odysseus"
+    ],
+    "answer": "Achilles",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 71,
+    "question": "What was the Greek god of the underworld?",
+    "options": [
+      "Hades",
+      "Zeus",
+      "Poseidon",
+      "Ares"
+    ],
+    "answer": "Hades",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 72,
+    "question": "Which philosopher founded the Academy in Athens?",
+    "options": [
+      "Plato",
+      "Aristotle",
+      "Pythagoras",
+      "Socrates"
+    ],
+    "answer": "Plato",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 73,
+    "question": "What Greek mathematician developed a famous theorem about triangles?",
+    "options": [
+      "Pythagoras",
+      "Thales",
+      "Euclid",
+      "Archimedes"
+    ],
+    "answer": "Pythagoras",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 74,
+    "question": "Who was the Greek goddess of love?",
+    "options": [
+      "Artemis",
+      "Hera",
+      "Athena",
+      "Aphrodite"
+    ],
+    "answer": "Aphrodite",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 75,
+    "question": "What is Mesopotamia often called?",
+    "options": [
+      "Middle Kingdom",
+      "Land of the Pharaohs",
+      "Birthplace of Democracy",
+      "Cradle of Civilization"
+    ],
+    "answer": "Cradle of Civilization",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 76,
+    "question": "Between which two rivers was Mesopotamia located?",
+    "options": [
+      "Yellow and Yangtze",
+      "Nile and Congo",
+      "Tigris and Euphrates",
+      "Ganges and Indus"
+    ],
+    "answer": "Tigris and Euphrates",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 77,
+    "question": "What writing system did the Sumerians invent?",
+    "options": [
+      "Pictographs",
+      "Alphabet",
+      "Hieroglyphics",
+      "Cuneiform"
+    ],
+    "answer": "Cuneiform",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 78,
+    "question": "Who was the Babylonian king famous for his law code?",
+    "options": [
+      "Sargon",
+      "Hammurabi",
+      "Gilgamesh",
+      "Nebuchadnezzar"
+    ],
+    "answer": "Hammurabi",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 79,
+    "question": "What principle from Hammurabi's Code is summarized as 'an eye for an eye'?",
+    "options": [
+      "Habeas corpus",
+      "Caveat emptor",
+      "Lex talionis",
+      "Carpe diem"
+    ],
+    "answer": "Lex talionis",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 80,
+    "question": "What ancient Mesopotamian temple tower was called?",
+    "options": [
+      "Ziggurat",
+      "Pyramid",
+      "Obelisk",
+      "Stele"
+    ],
+    "answer": "Ziggurat",
+    "difficulty": "medium",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 81,
+    "question": "Which civilization is considered the first in Mesopotamia?",
+    "options": [
+      "Assyrians",
+      "Babylonians",
+      "Persians",
+      "Sumerians"
+    ],
+    "answer": "Sumerians",
+    "difficulty": "medium",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 82,
+    "question": "What ancient epic features the hero Gilgamesh?",
+    "options": [
+      "Aeneid",
+      "Iliad",
+      "Epic of Gilgamesh",
+      "Odyssey"
+    ],
+    "answer": "Epic of Gilgamesh",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 83,
+    "question": "Where is the Code of Hammurabi displayed today?",
+    "options": [
+      "Metropolitan Museum",
+      "British Museum",
+      "Louvre Museum",
+      "Vatican Museum"
+    ],
+    "answer": "Louvre Museum",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 84,
+    "question": "What material was Hammurabi's law code carved on?",
+    "options": [
+      "Black stone stele",
+      "Clay tablets",
+      "Papyrus",
+      "Parchment"
+    ],
+    "answer": "Black stone stele",
+    "difficulty": "medium",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 85,
+    "question": "Which Babylonian king built the Hanging Gardens?",
+    "options": [
+      "Sargon",
+      "Hammurabi",
+      "Gilgamesh",
+      "Nebuchadnezzar II"
+    ],
+    "answer": "Nebuchadnezzar II",
+    "difficulty": "medium",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 86,
+    "question": "What number system did the Babylonians use as a base?",
+    "options": [
+      "12 (Duodecimal)",
+      "20 (Vigesimal)",
+      "60 (Sexagesimal)",
+      "10 (Decimal)"
+    ],
+    "answer": "60 (Sexagesimal)",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 87,
+    "question": "In which modern country was ancient Mesopotamia located?",
+    "options": [
+      "Iran",
+      "Turkey",
+      "Iraq",
+      "Egypt"
+    ],
+    "answer": "Iraq",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 88,
+    "question": "What was the main Babylonian god?",
+    "options": [
+      "Ishtar",
+      "Shamash",
+      "Enlil",
+      "Marduk"
+    ],
+    "answer": "Marduk",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 89,
+    "question": "Who was the first empire builder in Mesopotamia?",
+    "options": [
+      "Nebuchadnezzar",
+      "Hammurabi",
+      "Gilgamesh",
+      "Sargon of Akkad"
+    ],
+    "answer": "Sargon of Akkad",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 90,
+    "question": "What Mesopotamian civilization was known for its fierce warriors and lion hunting?",
+    "options": [
+      "Assyrians",
+      "Babylonians",
+      "Akkadians",
+      "Sumerians"
+    ],
+    "answer": "Assyrians",
+    "difficulty": "medium",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 91,
+    "question": "What invention is Mesopotamia credited with besides writing?",
+    "options": [
+      "Gunpowder",
+      "Compass",
+      "Paper",
+      "The wheel"
+    ],
+    "answer": "The wheel",
+    "difficulty": "easy",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 92,
+    "question": "What Babylonian god was associated with the sun and justice?",
+    "options": [
+      "Marduk",
+      "Anu",
+      "Shamash",
+      "Enlil"
+    ],
+    "answer": "Shamash",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 93,
+    "question": "How many laws were in the Code of Hammurabi?",
+    "options": [
+      "282",
+      "50",
+      "100",
+      "500"
+    ],
+    "answer": "282",
+    "difficulty": "hard",
+    "category": "mesopotamia"
+  },
+  {
+    "id": 94,
+    "question": "What structure was built by the Chinese to protect against invaders?",
+    "options": [
+      "Forbidden City",
+      "Great Wall",
+      "Terracotta Army",
+      "Grand Canal"
+    ],
+    "answer": "Great Wall",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 95,
+    "question": "Which Chinese dynasty built most of the Great Wall we see today?",
+    "options": [
+      "Tang Dynasty",
+      "Qin Dynasty",
+      "Ming Dynasty",
+      "Han Dynasty"
+    ],
+    "answer": "Ming Dynasty",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 96,
+    "question": "Who was the first emperor to unify China?",
+    "options": [
+      "Emperor Taizong",
+      "Kublai Khan",
+      "Qin Shi Huang",
+      "Wu of Han"
+    ],
+    "answer": "Qin Shi Huang",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 97,
+    "question": "What was the ancient trade route between China and the West called?",
+    "options": [
+      "Tea Trail",
+      "Silk Road",
+      "Spice Route",
+      "Jade Path"
+    ],
+    "answer": "Silk Road",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 98,
+    "question": "What Chinese philosopher emphasized respect for elders and social harmony?",
+    "options": [
+      "Mencius",
+      "Sun Tzu",
+      "Confucius",
+      "Laozi"
+    ],
+    "answer": "Confucius",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 99,
+    "question": "What was buried with Qin Shi Huang to protect him in the afterlife?",
+    "options": [
+      "Great Wall",
+      "Terracotta Army",
+      "Silk tapestries",
+      "Gold statues"
+    ],
+    "answer": "Terracotta Army",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 100,
+    "question": "What material did the Chinese invent around 105 AD?",
+    "options": [
+      "Gunpowder",
+      "Paper",
+      "Silk",
+      "Porcelain"
+    ],
+    "answer": "Paper",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 101,
+    "question": "What explosive substance was invented in ancient China?",
+    "options": [
+      "Nitroglycerin",
+      "Dynamite",
+      "Gunpowder",
+      "TNT"
+    ],
+    "answer": "Gunpowder",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 102,
+    "question": "What navigation tool was invented in ancient China?",
+    "options": [
+      "Sextant",
+      "Compass",
+      "Telescope",
+      "Astrolabe"
+    ],
+    "answer": "Compass",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 103,
+    "question": "Which Chinese dynasty is known for its bronze work and oracle bones?",
+    "options": [
+      "Han Dynasty",
+      "Qing Dynasty",
+      "Ming Dynasty",
+      "Shang Dynasty"
+    ],
+    "answer": "Shang Dynasty",
+    "difficulty": "hard",
+    "category": "china"
+  },
+  {
+    "id": 104,
+    "question": "What Chinese philosophy emphasizes living in harmony with the Tao?",
+    "options": [
+      "Taoism",
+      "Legalism",
+      "Confucianism",
+      "Buddhism"
+    ],
+    "answer": "Taoism",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 105,
+    "question": "What Chinese text is attributed to the military strategist Sun Tzu?",
+    "options": [
+      "Tao Te Ching",
+      "The Art of War",
+      "I Ching",
+      "Analects"
+    ],
+    "answer": "The Art of War",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 106,
+    "question": "Which dynasty established the civil service examination system?",
+    "options": [
+      "Tang Dynasty",
+      "Qin Dynasty",
+      "Han Dynasty",
+      "Ming Dynasty"
+    ],
+    "answer": "Han Dynasty",
+    "difficulty": "hard",
+    "category": "china"
+  },
+  {
+    "id": 107,
+    "question": "What type of fabric was China famous for producing?",
+    "options": [
+      "Linen",
+      "Silk",
+      "Cotton",
+      "Wool"
+    ],
+    "answer": "Silk",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 108,
+    "question": "What major waterway was built to connect northern and southern China?",
+    "options": [
+      "Yellow River",
+      "Pearl River",
+      "Yangtze River",
+      "Grand Canal"
+    ],
+    "answer": "Grand Canal",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 109,
+    "question": "What printing technique did the Chinese invent?",
+    "options": [
+      "Woodblock printing",
+      "Screen printing",
+      "Offset printing",
+      "Lithography"
+    ],
+    "answer": "Woodblock printing",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 110,
+    "question": "Which river is called 'China's Sorrow' due to flooding?",
+    "options": [
+      "Pearl River",
+      "Mekong River",
+      "Yangtze River",
+      "Yellow River"
+    ],
+    "answer": "Yellow River",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 111,
+    "question": "What dynasty is considered China's golden age of poetry and art?",
+    "options": [
+      "Qin Dynasty",
+      "Han Dynasty",
+      "Tang Dynasty",
+      "Shang Dynasty"
+    ],
+    "answer": "Tang Dynasty",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 112,
+    "question": "What ancient Mayan city features the famous pyramid El Castillo?",
+    "options": [
+      "Copan",
+      "Tikal",
+      "Palenque",
+      "Chichen Itza"
+    ],
+    "answer": "Chichen Itza",
+    "difficulty": "easy",
+    "category": "maya"
+  },
+  {
+    "id": 113,
+    "question": "How many days are in the Mayan Haab calendar?",
+    "options": [
+      "260",
+      "365",
+      "360",
+      "400"
+    ],
+    "answer": "365",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 114,
+    "question": "What number did the Maya invent that was revolutionary for mathematics?",
+    "options": [
+      "Pi",
+      "Negative numbers",
+      "Zero",
+      "Infinity"
+    ],
+    "answer": "Zero",
+    "difficulty": "easy",
+    "category": "maya"
+  },
+  {
+    "id": 115,
+    "question": "What peninsula in Mexico was home to many Mayan cities?",
+    "options": [
+      "Baja California",
+      "Florida",
+      "Iberian",
+      "Yucatan"
+    ],
+    "answer": "Yucatan",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 116,
+    "question": "What was the Mayan feathered serpent god called?",
+    "options": [
+      "Kukulkan",
+      "Quetzalcoatl",
+      "Huitzilopochtli",
+      "Tlaloc"
+    ],
+    "answer": "Kukulkan",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 117,
+    "question": "How many steps does El Castillo have in total including the top platform?",
+    "options": [
+      "400",
+      "300",
+      "365",
+      "260"
+    ],
+    "answer": "365",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 118,
+    "question": "What natural wells were sacred to the Maya?",
+    "options": [
+      "Oases",
+      "Cenotes",
+      "Lakes",
+      "Springs"
+    ],
+    "answer": "Cenotes",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 119,
+    "question": "What ancient Mayan city in Guatemala was one of the largest?",
+    "options": [
+      "Copan",
+      "Chichen Itza",
+      "Tikal",
+      "Palenque"
+    ],
+    "answer": "Tikal",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 120,
+    "question": "What base number system did the Maya use?",
+    "options": [
+      "10 (Decimal)",
+      "12 (Duodecimal)",
+      "60 (Sexagesimal)",
+      "20 (Vigesimal)"
+    ],
+    "answer": "20 (Vigesimal)",
+    "difficulty": "hard",
+    "category": "maya"
+  },
+  {
+    "id": 121,
+    "question": "What sport did the Maya play with a rubber ball?",
+    "options": [
+      "Soccer",
+      "Volleyball",
+      "Basketball",
+      "Ball game (Pok-a-tok)"
+    ],
+    "answer": "Ball game (Pok-a-tok)",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 122,
+    "question": "What writing system did the Maya develop?",
+    "options": [
+      "Alphabet",
+      "Hieroglyphic",
+      "Pictographic",
+      "Cuneiform"
+    ],
+    "answer": "Hieroglyphic",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 123,
+    "question": "What was the Mayan rain god called?",
+    "options": [
+      "Kinich Ahau",
+      "Chaac",
+      "Kukulkan",
+      "Itzamna"
+    ],
+    "answer": "Chaac",
+    "difficulty": "hard",
+    "category": "maya"
+  },
+  {
+    "id": 124,
+    "question": "In what year was El Castillo named one of the New Seven Wonders?",
+    "options": [
+      "2000",
+      "2015",
+      "2010",
+      "2007"
+    ],
+    "answer": "2007",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 125,
+    "question": "What was the shorter 260-day Mayan sacred calendar called?",
+    "options": [
+      "Long Count",
+      "Venus Cycle",
+      "Haab",
+      "Tzolkin"
+    ],
+    "answer": "Tzolkin",
+    "difficulty": "hard",
+    "category": "maya"
+  },
+  {
+    "id": 126,
+    "question": "What material did the Maya use to make their famous ball game balls?",
+    "options": [
+      "Leather",
+      "Stone",
+      "Rubber",
+      "Clay"
+    ],
+    "answer": "Rubber",
+    "difficulty": "medium",
+    "category": "maya"
+  },
+  {
+    "id": 127,
+    "question": "What was the capital city of the Aztec Empire?",
+    "options": [
+      "Tenochtitlan",
+      "Tikal",
+      "Chichen Itza",
+      "Cuzco"
+    ],
+    "answer": "Tenochtitlan",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 128,
+    "question": "On what lake was the Aztec capital built?",
+    "options": [
+      "Lake Texcoco",
+      "Lake Superior",
+      "Lake Titicaca",
+      "Lake Victoria"
+    ],
+    "answer": "Lake Texcoco",
+    "difficulty": "medium",
+    "category": "aztec"
+  },
+  {
+    "id": 129,
+    "question": "What Aztec god was depicted as a feathered serpent?",
+    "options": [
+      "Huitzilopochtli",
+      "Tlaloc",
+      "Quetzalcoatl",
+      "Tezcatlipoca"
+    ],
+    "answer": "Quetzalcoatl",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 130,
+    "question": "Who was the Aztec emperor when the Spanish arrived?",
+    "options": [
+      "Itzcoatl",
+      "Nezahualcoyotl",
+      "Montezuma II",
+      "Cuauhtemoc"
+    ],
+    "answer": "Montezuma II",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 131,
+    "question": "Which Spanish conquistador conquered the Aztec Empire?",
+    "options": [
+      "Christopher Columbus",
+      "Vasco da Gama",
+      "Hernán Cortés",
+      "Francisco Pizarro"
+    ],
+    "answer": "Hernán Cortés",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 132,
+    "question": "What was the Aztec sun god and war god called?",
+    "options": [
+      "Quetzalcoatl",
+      "Tlaloc",
+      "Tezcatlipoca",
+      "Huitzilopochtli"
+    ],
+    "answer": "Huitzilopochtli",
+    "difficulty": "hard",
+    "category": "aztec"
+  },
+  {
+    "id": 133,
+    "question": "What modern city is built on the ruins of Tenochtitlan?",
+    "options": [
+      "Monterrey",
+      "Mexico City",
+      "Cancun",
+      "Guadalajara"
+    ],
+    "answer": "Mexico City",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 134,
+    "question": "What practice did the Aztecs perform to please their gods?",
+    "options": [
+      "Fasting",
+      "Animal sacrifice only",
+      "Meditation",
+      "Human sacrifice"
+    ],
+    "answer": "Human sacrifice",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 135,
+    "question": "What food was sacred to the Aztecs and used as currency?",
+    "options": [
+      "Tomatoes",
+      "Cacao beans",
+      "Corn",
+      "Peppers"
+    ],
+    "answer": "Cacao beans",
+    "difficulty": "medium",
+    "category": "aztec"
+  },
+  {
+    "id": 136,
+    "question": "What was the Aztec rain god called?",
+    "options": [
+      "Quetzalcoatl",
+      "Tezcatlipoca",
+      "Tlaloc",
+      "Huitzilopochtli"
+    ],
+    "answer": "Tlaloc",
+    "difficulty": "hard",
+    "category": "aztec"
+  },
+  {
+    "id": 137,
+    "question": "What crop was the staple food of the Aztec diet?",
+    "options": [
+      "Rice",
+      "Potatoes",
+      "Maize (corn)",
+      "Wheat"
+    ],
+    "answer": "Maize (corn)",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 138,
+    "question": "What farming technique did the Aztecs use on Lake Texcoco?",
+    "options": [
+      "Slash and burn",
+      "Irrigation canals",
+      "Terracing",
+      "Chinampas (floating gardens)"
+    ],
+    "answer": "Chinampas (floating gardens)",
+    "difficulty": "medium",
+    "category": "aztec"
+  },
+  {
+    "id": 139,
+    "question": "In what year did the Aztec Empire fall to the Spanish?",
+    "options": [
+      "1533",
+      "1521",
+      "1492",
+      "1500"
+    ],
+    "answer": "1521",
+    "difficulty": "medium",
+    "category": "aztec"
+  },
+  {
+    "id": 140,
+    "question": "What was the name of the last Aztec emperor?",
+    "options": [
+      "Ahuitzotl",
+      "Cuauhtemoc",
+      "Itzcoatl",
+      "Montezuma II"
+    ],
+    "answer": "Cuauhtemoc",
+    "difficulty": "hard",
+    "category": "aztec"
+  },
+  {
+    "id": 141,
+    "question": "What stone calendar is a famous Aztec artifact?",
+    "options": [
+      "Stele",
+      "Moai",
+      "Rosetta Stone",
+      "Sun Stone"
+    ],
+    "answer": "Sun Stone",
+    "difficulty": "medium",
+    "category": "aztec"
+  },
+  {
+    "id": 142,
+    "question": "What famous Incan citadel is located in the Andes Mountains?",
+    "options": [
+      "Tenochtitlan",
+      "Chichen Itza",
+      "Machu Picchu",
+      "Tikal"
+    ],
+    "answer": "Machu Picchu",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 143,
+    "question": "What was the capital of the Inca Empire?",
+    "options": [
+      "Cuzco",
+      "Lima",
+      "Quito",
+      "Bogota"
+    ],
+    "answer": "Cuzco",
+    "difficulty": "medium",
+    "category": "inca"
+  },
+  {
+    "id": 144,
+    "question": "What system of knotted strings did the Incas use to keep records?",
+    "options": [
+      "Hieroglyphics",
+      "Cuneiform",
+      "Pictographs",
+      "Quipu"
+    ],
+    "answer": "Quipu",
+    "difficulty": "medium",
+    "category": "inca"
+  },
+  {
+    "id": 145,
+    "question": "What Spanish conquistador conquered the Inca Empire?",
+    "options": [
+      "Hernán Cortés",
+      "Vasco da Gama",
+      "Francisco Pizarro",
+      "Ferdinand Magellan"
+    ],
+    "answer": "Francisco Pizarro",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 146,
+    "question": "What mountain range was home to the Inca Empire?",
+    "options": [
+      "Himalayas",
+      "Alps",
+      "Rockies",
+      "Andes"
+    ],
+    "answer": "Andes",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 147,
+    "question": "What was the Incan sun god called?",
+    "options": [
+      "Viracocha",
+      "Pachamama",
+      "Inti",
+      "Mama Quilla"
+    ],
+    "answer": "Inti",
+    "difficulty": "hard",
+    "category": "inca"
+  },
+  {
+    "id": 148,
+    "question": "What animal was sacred to the Incas and used for wool?",
+    "options": [
+      "Horse",
+      "Alpaca",
+      "Sheep",
+      "Llama"
+    ],
+    "answer": "Llama",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 149,
+    "question": "In which modern country is Machu Picchu located?",
+    "options": [
+      "Chile",
+      "Peru",
+      "Bolivia",
+      "Ecuador"
+    ],
+    "answer": "Peru",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 150,
+    "question": "What Inca emperor was captured by Pizarro?",
+    "options": [
+      "Huayna Capac",
+      "Pachacuti",
+      "Tupac Inca",
+      "Atahualpa"
+    ],
+    "answer": "Atahualpa",
+    "difficulty": "medium",
+    "category": "inca"
+  },
+  {
+    "id": 151,
+    "question": "What type of roads did the Incas build throughout their empire?",
+    "options": [
+      "Canals",
+      "Wooden bridges",
+      "Dirt paths",
+      "Stone-paved roads"
+    ],
+    "answer": "Stone-paved roads",
+    "difficulty": "medium",
+    "category": "inca"
+  },
+  {
+    "id": 152,
+    "question": "What lake on the border of Peru and Bolivia was sacred to the Incas?",
+    "options": [
+      "Lake Victoria",
+      "Lake Maracaibo",
+      "Lake Texcoco",
+      "Lake Titicaca"
+    ],
+    "answer": "Lake Titicaca",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 153,
+    "question": "What farming technique did the Incas develop for mountain slopes?",
+    "options": [
+      "Chinampas",
+      "Terracing",
+      "Irrigation",
+      "Crop rotation"
+    ],
+    "answer": "Terracing",
+    "difficulty": "easy",
+    "category": "inca"
+  },
+  {
+    "id": 154,
+    "question": "Who founded the Inca Empire and built Machu Picchu?",
+    "options": [
+      "Huayna Capac",
+      "Manco Capac",
+      "Atahualpa",
+      "Pachacuti"
+    ],
+    "answer": "Pachacuti",
+    "difficulty": "hard",
+    "category": "inca"
+  },
+  {
+    "id": 155,
+    "question": "What was the Inca earth goddess called?",
+    "options": [
+      "Pachamama",
+      "Mama Quilla",
+      "Viracocha",
+      "Inti"
+    ],
+    "answer": "Pachamama",
+    "difficulty": "hard",
+    "category": "inca"
+  },
+  {
+    "id": 156,
+    "question": "What founder of the Persian Empire was known for his tolerance?",
+    "options": [
+      "Cyrus the Great",
+      "Xerxes",
+      "Cambyses",
+      "Darius I"
+    ],
+    "answer": "Cyrus the Great",
+    "difficulty": "easy",
+    "category": "persia"
+  },
+  {
+    "id": 157,
+    "question": "What Persian king built the Royal Road?",
+    "options": [
+      "Darius I",
+      "Cyrus the Great",
+      "Xerxes",
+      "Artaxerxes"
+    ],
+    "answer": "Darius I",
+    "difficulty": "hard",
+    "category": "persia"
+  },
+  {
+    "id": 158,
+    "question": "Which Persian king invaded Greece and fought at Thermopylae?",
+    "options": [
+      "Darius I",
+      "Xerxes I",
+      "Cyrus the Great",
+      "Cambyses"
+    ],
+    "answer": "Xerxes I",
+    "difficulty": "easy",
+    "category": "persia"
+  },
+  {
+    "id": 159,
+    "question": "What religion did the ancient Persians follow?",
+    "options": [
+      "Islam",
+      "Buddhism",
+      "Zoroastrianism",
+      "Hinduism"
+    ],
+    "answer": "Zoroastrianism",
+    "difficulty": "medium",
+    "category": "persia"
+  },
+  {
+    "id": 160,
+    "question": "What was the capital of the Persian Empire under Darius?",
+    "options": [
+      "Memphis",
+      "Babylon",
+      "Persepolis",
+      "Athens"
+    ],
+    "answer": "Persepolis",
+    "difficulty": "medium",
+    "category": "persia"
+  },
+  {
+    "id": 161,
+    "question": "What elite fighting force protected the Persian king?",
+    "options": [
+      "Immortals",
+      "Legions",
+      "Spartans",
+      "Praetorian Guard"
+    ],
+    "answer": "Immortals",
+    "difficulty": "easy",
+    "category": "persia"
+  },
+  {
+    "id": 162,
+    "question": "Who defeated the Persian Empire?",
+    "options": [
+      "Pericles",
+      "Alexander the Great",
+      "Julius Caesar",
+      "Leonidas"
+    ],
+    "answer": "Alexander the Great",
+    "difficulty": "easy",
+    "category": "persia"
+  },
+  {
+    "id": 163,
+    "question": "What naval battle saw the Greeks defeat the Persians in 480 BC?",
+    "options": [
+      "Battle of Marathon",
+      "Battle of Thermopylae",
+      "Battle of Plataea",
+      "Battle of Salamis"
+    ],
+    "answer": "Battle of Salamis",
+    "difficulty": "medium",
+    "category": "persia"
+  },
+  {
+    "id": 164,
+    "question": "What Zoroastrian god represents good and light?",
+    "options": [
+      "Ahura Mazda",
+      "Angra Mainyu",
+      "Mithra",
+      "Anahita"
+    ],
+    "answer": "Ahura Mazda",
+    "difficulty": "hard",
+    "category": "persia"
+  },
+  {
+    "id": 165,
+    "question": "What battle in 490 BC saw the Athenians defeat the Persians?",
+    "options": [
+      "Battle of Gaugamela",
+      "Battle of Marathon",
+      "Battle of Salamis",
+      "Battle of Thermopylae"
+    ],
+    "answer": "Battle of Marathon",
+    "difficulty": "medium",
+    "category": "persia"
+  },
+  {
+    "id": 166,
+    "question": "What efficient communication system did the Persians develop?",
+    "options": [
+      "Carrier pigeons",
+      "Telegraph",
+      "Royal messengers and stations",
+      "Smoke signals"
+    ],
+    "answer": "Royal messengers and stations",
+    "difficulty": "hard",
+    "category": "persia"
+  },
+  {
+    "id": 167,
+    "question": "What ancient valley civilization developed along the Indus River?",
+    "options": [
+      "Chinese Civilization",
+      "Egyptian Civilization",
+      "Indus Valley Civilization",
+      "Mesopotamian Civilization"
+    ],
+    "answer": "Indus Valley Civilization",
+    "difficulty": "easy",
+    "category": "india"
+  },
+  {
+    "id": 168,
+    "question": "What were the two major cities of the Indus Valley Civilization?",
+    "options": [
+      "Mohenjo-daro and Harappa",
+      "Varanasi and Patna",
+      "Agra and Jaipur",
+      "Delhi and Mumbai"
+    ],
+    "answer": "Mohenjo-daro and Harappa",
+    "difficulty": "medium",
+    "category": "india"
+  },
+  {
+    "id": 169,
+    "question": "What sophisticated urban feature did Indus Valley cities have?",
+    "options": [
+      "Skyscrapers",
+      "Electric lighting",
+      "Subway systems",
+      "Drainage and sewage systems"
+    ],
+    "answer": "Drainage and sewage systems",
+    "difficulty": "medium",
+    "category": "india"
+  },
+  {
+    "id": 170,
+    "question": "Which Indian emperor converted to Buddhism and spread it across Asia?",
+    "options": [
+      "Ashoka",
+      "Aurangzeb",
+      "Akbar",
+      "Chandragupta"
+    ],
+    "answer": "Ashoka",
+    "difficulty": "medium",
+    "category": "india"
+  },
+  {
+    "id": 171,
+    "question": "What empire did Chandragupta Maurya found?",
+    "options": [
+      "Maurya Empire",
+      "Mughal Empire",
+      "Chola Empire",
+      "Gupta Empire"
+    ],
+    "answer": "Maurya Empire",
+    "difficulty": "hard",
+    "category": "india"
+  },
+  {
+    "id": 172,
+    "question": "What religion originated in ancient India based on the Vedas?",
+    "options": [
+      "Buddhism",
+      "Jainism",
+      "Sikhism",
+      "Hinduism"
+    ],
+    "answer": "Hinduism",
+    "difficulty": "easy",
+    "category": "india"
+  },
+  {
+    "id": 173,
+    "question": "Who founded Buddhism in ancient India?",
+    "options": [
+      "Chandragupta",
+      "Ashoka",
+      "Mahavira",
+      "Siddhartha Gautama"
+    ],
+    "answer": "Siddhartha Gautama",
+    "difficulty": "easy",
+    "category": "india"
+  },
+  {
+    "id": 174,
+    "question": "What ancient Indian text contains philosophical dialogues?",
+    "options": [
+      "Tao Te Ching",
+      "Torah",
+      "Upanishads",
+      "Quran"
+    ],
+    "answer": "Upanishads",
+    "difficulty": "hard",
+    "category": "india"
+  },
+  {
+    "id": 175,
+    "question": "What ancient civilization invented the alphabet as we know it?",
+    "options": [
+      "Phoenicians",
+      "Greeks",
+      "Romans",
+      "Egyptians"
+    ],
+    "answer": "Phoenicians",
+    "difficulty": "medium",
+    "category": "phoenicia"
+  },
+  {
+    "id": 176,
+    "question": "What was the main occupation of the Phoenicians?",
+    "options": [
+      "Sea trade and commerce",
+      "Mining",
+      "Herding",
+      "Farming"
+    ],
+    "answer": "Sea trade and commerce",
+    "difficulty": "easy",
+    "category": "phoenicia"
+  },
+  {
+    "id": 177,
+    "question": "What Phoenician city became a major rival of Rome?",
+    "options": [
+      "Byblos",
+      "Carthage",
+      "Sidon",
+      "Tyre"
+    ],
+    "answer": "Carthage",
+    "difficulty": "easy",
+    "category": "phoenicia"
+  },
+  {
+    "id": 178,
+    "question": "What purple dye were the Phoenicians famous for producing?",
+    "options": [
+      "Indigo",
+      "Scarlet",
+      "Tyrian purple",
+      "Crimson"
+    ],
+    "answer": "Tyrian purple",
+    "difficulty": "hard",
+    "category": "phoenicia"
+  },
+  {
+    "id": 179,
+    "question": "Which ancient wonder was a giant statue in Rhodes?",
+    "options": [
+      "Hanging Gardens",
+      "Colossus of Rhodes",
+      "Lighthouse of Alexandria",
+      "Statue of Zeus"
+    ],
+    "answer": "Colossus of Rhodes",
+    "difficulty": "easy",
+    "category": "wonders"
+  },
+  {
+    "id": 180,
+    "question": "What is the only ancient wonder still standing today?",
+    "options": [
+      "Lighthouse of Alexandria",
+      "Hanging Gardens",
+      "Colossus of Rhodes",
+      "Great Pyramid of Giza"
+    ],
+    "answer": "Great Pyramid of Giza",
+    "difficulty": "easy",
+    "category": "wonders"
+  },
+  {
+    "id": 181,
+    "question": "What ancient wonder was a massive lighthouse?",
+    "options": [
+      "Mausoleum at Halicarnassus",
+      "Lighthouse of Alexandria",
+      "Temple of Artemis",
+      "Colossus of Rhodes"
+    ],
+    "answer": "Lighthouse of Alexandria",
+    "difficulty": "medium",
+    "category": "wonders"
+  },
+  {
+    "id": 182,
+    "question": "Which civilization came first chronologically?",
+    "options": [
+      "Sumerians",
+      "Greeks",
+      "Romans",
+      "Aztecs"
+    ],
+    "answer": "Sumerians",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 183,
+    "question": "Which civilization lasted the longest continuously?",
+    "options": [
+      "Babylonian Empire",
+      "Roman Empire",
+      "Ancient Egypt",
+      "Greek city-states"
+    ],
+    "answer": "Ancient Egypt",
+    "difficulty": "medium",
+    "category": "timeline"
+  },
+  {
+    "id": 184,
+    "question": "What was the Egyptian process of removing internal organs during mummification?",
+    "options": [
+      "Cremation",
+      "Dissection",
+      "Evisceration",
+      "Amputation"
+    ],
+    "answer": "Evisceration",
+    "difficulty": "hard",
+    "category": "egypt"
+  },
+  {
+    "id": 185,
+    "question": "What ancient wonder featured terraced gardens in Babylon?",
+    "options": [
+      "Colossus",
+      "Hanging Gardens",
+      "Lighthouse",
+      "Temple of Artemis"
+    ],
+    "answer": "Hanging Gardens",
+    "difficulty": "easy",
+    "category": "wonders"
+  },
+  {
+    "id": 186,
+    "question": "Who was the Roman goddess of the hearth and home?",
+    "options": [
+      "Diana",
+      "Vesta",
+      "Minerva",
+      "Juno"
+    ],
+    "answer": "Vesta",
+    "difficulty": "hard",
+    "category": "rome"
+  },
+  {
+    "id": 187,
+    "question": "What Greek hero completed twelve labors?",
+    "options": [
+      "Achilles",
+      "Heracles",
+      "Theseus",
+      "Perseus"
+    ],
+    "answer": "Heracles",
+    "difficulty": "easy",
+    "category": "greece"
+  },
+  {
+    "id": 188,
+    "question": "What device did Archimedes reportedly use to set Roman ships on fire?",
+    "options": [
+      "Greek fire",
+      "Burning arrows",
+      "Mirrors reflecting sunlight",
+      "Catapults"
+    ],
+    "answer": "Mirrors reflecting sunlight",
+    "difficulty": "hard",
+    "category": "greece"
+  },
+  {
+    "id": 189,
+    "question": "What Chinese invention revolutionized warfare in medieval times?",
+    "options": [
+      "Cavalry",
+      "Gunpowder",
+      "Armor",
+      "Crossbow"
+    ],
+    "answer": "Gunpowder",
+    "difficulty": "easy",
+    "category": "china"
+  },
+  {
+    "id": 190,
+    "question": "What Aztec goddess was associated with fertility and corn?",
+    "options": [
+      "Chalchiuhtlicue",
+      "Chicomecoatl",
+      "Xochiquetzal",
+      "Coatlicue"
+    ],
+    "answer": "Chicomecoatl",
+    "difficulty": "hard",
+    "category": "aztec"
+  },
+  {
+    "id": 191,
+    "question": "What Mayan city in Honduras was known for its elaborate sculpture?",
+    "options": [
+      "Copan",
+      "Uxmal",
+      "Tikal",
+      "Palenque"
+    ],
+    "answer": "Copan",
+    "difficulty": "hard",
+    "category": "maya"
+  },
+  {
+    "id": 192,
+    "question": "What Persian Wars battle occurred first chronologically?",
+    "options": [
+      "Plataea",
+      "Thermopylae",
+      "Marathon",
+      "Salamis"
+    ],
+    "answer": "Marathon",
+    "difficulty": "medium",
+    "category": "persia"
+  },
+  {
+    "id": 193,
+    "question": "What was the Roman goddess of wisdom and strategic warfare?",
+    "options": [
+      "Venus",
+      "Minerva",
+      "Juno",
+      "Diana"
+    ],
+    "answer": "Minerva",
+    "difficulty": "medium",
+    "category": "rome"
+  },
+  {
+    "id": 194,
+    "question": "What title did Egyptian rulers hold?",
+    "options": [
+      "Pharaoh",
+      "Sultan",
+      "King",
+      "Emperor"
+    ],
+    "answer": "Pharaoh",
+    "difficulty": "easy",
+    "category": "egypt"
+  },
+  {
+    "id": 195,
+    "question": "What ancient Greek mathematician wrote 'Elements'?",
+    "options": [
+      "Archimedes",
+      "Pythagoras",
+      "Euclid",
+      "Plato"
+    ],
+    "answer": "Euclid",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 196,
+    "question": "What dynasty ruled China when the Terracotta Army was created?",
+    "options": [
+      "Han Dynasty",
+      "Qin Dynasty",
+      "Tang Dynasty",
+      "Ming Dynasty"
+    ],
+    "answer": "Qin Dynasty",
+    "difficulty": "medium",
+    "category": "china"
+  },
+  {
+    "id": 197,
+    "question": "What was the main drink made from cacao by the Aztecs?",
+    "options": [
+      "Wine",
+      "Coffee",
+      "Chocolate drink",
+      "Tea"
+    ],
+    "answer": "Chocolate drink",
+    "difficulty": "easy",
+    "category": "aztec"
+  },
+  {
+    "id": 198,
+    "question": "Who was the Greek god of wine and festivity?",
+    "options": [
+      "Apollo",
+      "Hermes",
+      "Ares",
+      "Dionysus"
+    ],
+    "answer": "Dionysus",
+    "difficulty": "medium",
+    "category": "greece"
+  },
+  {
+    "id": 199,
+    "question": "What Inca messenger system used relay runners?",
+    "options": [
+      "Tambo",
+      "Quipu",
+      "Mitma",
+      "Chasqui"
+    ],
+    "answer": "Chasqui",
+    "difficulty": "hard",
+    "category": "inca"
+  },
+  {
+    "id": 200,
+    "question": "What Greek physician is known as the 'Father of Medicine'?",
+    "options": [
+      "Galen",
+      "Hippocrates",
+      "Aristotle",
+      "Plato"
+    ],
+    "answer": "Hippocrates",
+    "difficulty": "medium",
+    "category": "greece"
+  }
+]

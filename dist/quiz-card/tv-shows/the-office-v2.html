@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Office Quiz Card V2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: linear-gradient(160deg, 
+        #2c3e50 0%,
+        #1a252f 30%,
+        #0d1519 60%,
+        #0a0f12 100%
+      );
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(30, 58, 95, 0.3),
+        inset 0 0 50px rgba(30, 58, 95, 0.1);
+    }
+
+    /* Office window with blinds - Scranton view */
+    .window {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 45px;
+      background: linear-gradient(180deg, 
+        #87ceeb 0%,
+        #b0e0e6 40%,
+        #98d1a8 70%,
+        #90c695 100%
+      );
+      border: 3px solid #5d4e37;
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.3),
+        0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Window blinds */
+    .blinds {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: repeating-linear-gradient(
+        180deg,
+        transparent 0px,
+        transparent 4px,
+        rgba(200, 190, 170, 0.7) 4px,
+        rgba(200, 190, 170, 0.7) 6px
+      );
+    }
+
+    /* Scranton buildings silhouette */
+    .skyline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+    }
+
+    .building {
+      position: absolute;
+      bottom: 0;
+      background: linear-gradient(180deg, #4a5568, #2d3748);
+    }
+
+    .building:nth-child(1) { left: 5px; width: 12px; height: 15px; }
+    .building:nth-child(2) { left: 20px; width: 8px; height: 18px; }
+    .building:nth-child(3) { left: 30px; width: 15px; height: 12px; }
+    .building:nth-child(4) { left: 48px; width: 10px; height: 16px; }
+    .building:nth-child(5) { left: 60px; width: 14px; height: 14px; }
+    .building:nth-child(6) { left: 76px; width: 8px; height: 10px; }
+
+    /* Dunder Mifflin sign in window reflection */
+    .dm-reflection {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Arial Black', sans-serif;
+      font-size: 5px;
+      color: rgba(30, 58, 95, 0.6);
+      letter-spacing: -0.3px;
+      text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    }
+
+    /* THE OFFICE Logo - Main focal point */
+    .office-logo {
+      position: absolute;
+      top: 58px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+    }
+
+    .logo-the {
+      font-family: 'Arial', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      color: #ffffff;
+      letter-spacing: 8px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      margin-bottom: -2px;
+    }
+
+    .logo-office {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      font-weight: bold;
+      font-style: italic;
+      color: #ffffff;
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.4),
+        2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes logoGlow {
+      0%, 100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4); }
+      50% { text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 255, 255, 0.6); }
+    }
+
+    /* World's Best Boss Mug - Detailed */
+    .mug {
+      position: absolute;
+      bottom: 50px;
+      left: 8px;
+      width: 32px;
+      height: 30px;
+      z-index: 5;
+    }
+
+    .mug-body {
+      width: 26px;
+      height: 26px;
+      background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #e0e0e0 100%);
+      border-radius: 2px 2px 4px 4px;
+      position: relative;
+      box-shadow: 
+        inset -4px 0 8px rgba(0, 0, 0, 0.1),
+        3px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .mug-handle {
+      position: absolute;
+      right: -10px;
+      top: 5px;
+      width: 12px;
+      height: 16px;
+      border: 4px solid #e8e8e8;
+      border-left: none;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .mug-rim {
+      position: absolute;
+      top: 0;
+      left: -1px;
+      right: -1px;
+      height: 3px;
+      background: linear-gradient(90deg, #d0d0d0, #ffffff, #d0d0d0);
+      border-radius: 2px 2px 0 0;
+    }
+
+    .mug-label {
+      position: absolute;
+      top: 5px;
+      left: 2px;
+      right: 2px;
+      bottom: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mug-text-top {
+      font-family: 'Arial', sans-serif;
+      font-size: 3.5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .mug-text-best {
+      font-family: 'Arial Black', sans-serif;
+      font-size: 6px;
+      color: #c41e3a;
+      margin: 0.5px 0;
+    }
+
+    .mug-text-boss {
+      font-family: 'Arial', sans-serif;
+      font-size: 4px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Coffee & Steam */
+    .coffee {
+      position: absolute;
+      top: 3px;
+      left: 2px;
+      right: 2px;
+      height: 5px;
+      background: linear-gradient(180deg, #3d2817, #1a0f08);
+      border-radius: 1px;
+    }
+
+    .steam-container {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+    }
+
+    .steam {
+      position: absolute;
+      width: 3px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 3px;
+      animation: steamFloat 2s ease-in-out infinite;
+    }
+
+    .steam:nth-child(1) { left: 3px; height: 10px; }
+    .steam:nth-child(2) { left: 9px; height: 14px; animation-delay: 0.3s; }
+    .steam:nth-child(3) { left: 15px; height: 8px; animation-delay: 0.6s; }
+
+    @keyframes steamFloat {
+      0%, 100% { opacity: 0; transform: translateY(0) scaleY(0.5); }
+      50% { opacity: 0.6; transform: translateY(-10px) scaleY(1); }
+    }
+
+    /* Dundie Award - Detailed Gold Trophy */
+    .dundie {
+      position: absolute;
+      bottom: 48px;
+      right: 10px;
+      width: 28px;
+      height: 38px;
+      z-index: 5;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+      animation: dundieShine 4s ease-in-out infinite;
+    }
+
+    @keyframes dundieShine {
+      0%, 100% { filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) brightness(1); }
+      50% { filter: drop-shadow(0 3px 10px rgba(255, 215, 0, 0.5)) brightness(1.1); }
+    }
+
+    .dundie-head {
+      width: 16px;
+      height: 14px;
+      background: radial-gradient(ellipse at 40% 30%, #ffd700, #daa520, #b8860b);
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .dundie-face {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 5px;
+    }
+
+    .dundie-eye {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #5d4e37;
+      border-radius: 50%;
+      top: 0;
+    }
+
+    .dundie-eye.left { left: 1px; }
+    .dundie-eye.right { right: 1px; }
+
+    .dundie-smile {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 2px;
+      border-bottom: 1px solid #5d4e37;
+      border-radius: 0 0 50% 50%;
+    }
+
+    .dundie-neck {
+      width: 6px;
+      height: 4px;
+      background: linear-gradient(180deg, #daa520, #b8860b);
+      margin: 0 auto;
+    }
+
+    .dundie-body {
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(180deg, #ffd700, #daa520, #b8860b);
+      margin: 0 auto;
+      border-radius: 2px;
+      box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .dundie-base-top {
+      width: 18px;
+      height: 4px;
+      background: linear-gradient(180deg, #2d2d2d, #1a1a1a);
+      margin: 0 auto;
+      border-radius: 1px 1px 0 0;
+    }
+
+    .dundie-base {
+      width: 22px;
+      height: 6px;
+      background: linear-gradient(180deg, #1a1a1a, #0a0a0a);
+      margin: 0 auto;
+      border-radius: 0 0 2px 2px;
+    }
+
+    .dundie-plaque {
+      width: 16px;
+      height: 3px;
+      background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+      margin: 1px auto 0;
+      border-radius: 1px;
+    }
+
+    /* Stapler in Jello - Iconic prank */
+    .jello {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 22px;
+      background: linear-gradient(145deg, 
+        rgba(255, 220, 80, 0.75),
+        rgba(255, 190, 50, 0.85),
+        rgba(230, 160, 30, 0.8)
+      );
+      border-radius: 4px;
+      position: relative;
+      animation: jelloWiggle 2.5s ease-in-out infinite;
+      box-shadow: 
+        inset 0 -8px 15px rgba(200, 140, 0, 0.4),
+        inset 0 3px 8px rgba(255, 255, 200, 0.4),
+        0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 4;
+    }
+
+    @keyframes jelloWiggle {
+      0%, 100% { transform: translateX(-50%) scaleX(1) scaleY(1); }
+      20% { transform: translateX(-50%) scaleX(1.03) scaleY(0.97); }
+      40% { transform: translateX(-50%) scaleX(0.97) scaleY(1.03); }
+      60% { transform: translateX(-50%) scaleX(1.02) scaleY(0.98); }
+      80% { transform: translateX(-50%) scaleX(0.99) scaleY(1.01); }
+    }
+
+    /* Jello shine */
+    .jello::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 5px;
+      width: 15px;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      filter: blur(1px);
+    }
+
+    /* Stapler inside */
+    .stapler {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px;
+      height: 10px;
+    }
+
+    .stapler-top {
+      width: 24px;
+      height: 6px;
+      background: linear-gradient(180deg, #dc143c, #b91c1c, #8b0000);
+      border-radius: 2px 2px 0 0;
+      margin-left: 2px;
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .stapler-bottom {
+      width: 28px;
+      height: 4px;
+      background: linear-gradient(180deg, #2d2d2d, #1a1a1a);
+      border-radius: 0 0 2px 2px;
+    }
+
+    /* Flying papers */
+    .papers {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .paper {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 1px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      animation: paperFly 5s ease-in-out infinite;
+    }
+
+    .paper:nth-child(1) { 
+      width: 10px; height: 12px; 
+      top: 90px; left: 5px; 
+      animation-delay: 0s;
+    }
+    .paper:nth-child(2) { 
+      width: 8px; height: 10px; 
+      top: 100px; right: 5px; 
+      animation-delay: 1s;
+    }
+    .paper:nth-child(3) { 
+      width: 7px; height: 9px; 
+      top: 85px; right: 35px; 
+      animation-delay: 2s;
+    }
+    .paper:nth-child(4) { 
+      width: 9px; height: 11px; 
+      top: 95px; left: 35px; 
+      animation-delay: 3s;
+    }
+
+    @keyframes paperFly {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+      25% { transform: translateY(-15px) rotate(15deg); opacity: 1; }
+      50% { transform: translateY(-5px) rotate(-10deg); opacity: 0.8; }
+      75% { transform: translateY(-20px) rotate(5deg); opacity: 1; }
+    }
+
+    /* Paper lines on flying papers */
+    .paper::before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: #ddd;
+      box-shadow: 0 2px 0 #ddd, 0 4px 0 #ddd;
+    }
+
+    /* Character dots */
+    .char-dots {
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .char-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      animation: charPulse 2.5s ease-in-out infinite;
+      box-shadow: 0 0 5px currentColor;
+    }
+
+    .char-dot:nth-child(1) { background: #1e3a5f; color: #1e3a5f; } /* Michael */
+    .char-dot:nth-child(2) { background: #8b4513; color: #8b4513; animation-delay: 0.3s; } /* Dwight */
+    .char-dot:nth-child(3) { background: #2e8b57; color: #2e8b57; animation-delay: 0.6s; } /* Jim */
+    .char-dot:nth-child(4) { background: #ff69b4; color: #ff69b4; animation-delay: 0.9s; } /* Pam */
+    .char-dot:nth-child(5) { background: #722f37; color: #722f37; animation-delay: 1.2s; } /* Angela */
+    .char-dot:nth-child(6) { background: #4169e1; color: #4169e1; animation-delay: 1.5s; } /* Kevin */
+
+    @keyframes charPulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.25); opacity: 1; }
+    }
+
+    /* Dunder Mifflin subtitle */
+    .dm-text {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Arial', sans-serif;
+      font-size: 6px;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Corner office plant */
+    .plant {
+      position: absolute;
+      bottom: 28px;
+      left: 3px;
+      width: 12px;
+      height: 18px;
+    }
+
+    .plant-pot {
+      position: absolute;
+      bottom: 0;
+      width: 10px;
+      height: 6px;
+      background: linear-gradient(180deg, #8b4513, #5d3a1a);
+      border-radius: 1px 1px 2px 2px;
+      left: 1px;
+    }
+
+    .plant-leaf {
+      position: absolute;
+      bottom: 5px;
+      width: 8px;
+      height: 12px;
+      background: linear-gradient(145deg, #228b22, #006400);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+    .plant-leaf:nth-child(1) { left: 0; transform: rotate(-20deg); }
+    .plant-leaf:nth-child(2) { left: 4px; transform: rotate(20deg); }
+
+    /* Ambient office glow */
+    .ambient-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(135, 206, 235, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Shimmer */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      animation: shimmer 5s ease-in-out infinite;
+      z-index: 20;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Ambient glow -->
+    <div class="ambient-glow"></div>
+    
+    <!-- Window with Scranton view -->
+    <div class="window">
+      <div class="dm-reflection">DUNDER MIFFLIN</div>
+      <div class="skyline">
+        <div class="building"></div>
+        <div class="building"></div>
+        <div class="building"></div>
+        <div class="building"></div>
+        <div class="building"></div>
+        <div class="building"></div>
+      </div>
+      <div class="blinds"></div>
+    </div>
+    
+    <!-- THE OFFICE Logo -->
+    <div class="office-logo">
+      <div class="logo-the">THE</div>
+      <div class="logo-office">Office</div>
+    </div>
+    
+    <!-- Flying papers -->
+    <div class="papers">
+      <div class="paper"></div>
+      <div class="paper"></div>
+      <div class="paper"></div>
+      <div class="paper"></div>
+    </div>
+    
+    <!-- World's Best Boss Mug -->
+    <div class="mug">
+      <div class="steam-container">
+        <div class="steam"></div>
+        <div class="steam"></div>
+        <div class="steam"></div>
+      </div>
+      <div class="mug-body">
+        <div class="mug-rim"></div>
+        <div class="coffee"></div>
+        <div class="mug-label">
+          <span class="mug-text-top">WORLD'S</span>
+          <span class="mug-text-best">BEST</span>
+          <span class="mug-text-boss">BOSS</span>
+        </div>
+        <div class="mug-handle"></div>
+      </div>
+    </div>
+    
+    <!-- Dundie Award -->
+    <div class="dundie">
+      <div class="dundie-head">
+        <div class="dundie-face">
+          <div class="dundie-eye left"></div>
+          <div class="dundie-eye right"></div>
+          <div class="dundie-smile"></div>
+        </div>
+      </div>
+      <div class="dundie-neck"></div>
+      <div class="dundie-body"></div>
+      <div class="dundie-base-top"></div>
+      <div class="dundie-base"></div>
+      <div class="dundie-plaque"></div>
+    </div>
+    
+    <!-- Stapler in Jello -->
+    <div class="jello">
+      <div class="stapler">
+        <div class="stapler-top"></div>
+        <div class="stapler-bottom"></div>
+      </div>
+    </div>
+    
+    <!-- Office plant -->
+    <div class="plant">
+      <div class="plant-leaf"></div>
+      <div class="plant-leaf"></div>
+      <div class="plant-pot"></div>
+    </div>
+    
+    <!-- Dunder Mifflin text -->
+    <div class="dm-text">Dunder Mifflin</div>
+    
+    <!-- Character dots -->
+    <div class="char-dots">
+      <div class="char-dot"></div>
+      <div class="char-dot"></div>
+      <div class="char-dot"></div>
+      <div class="char-dot"></div>
+      <div class="char-dot"></div>
+      <div class="char-dot"></div>
+    </div>
+  </div>
+</body>
+</html>
+

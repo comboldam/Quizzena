@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Quiz Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #000000 0%, #0a0a12 50%, #000005 100%);
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(251, 191, 36, 0.08) 0%, 
+        rgba(5, 5, 10, 0.95) 40%,
+        rgba(0, 0, 5, 0.98) 100%
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Star field pattern */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+      background-size: 25px 25px, 15px 15px;
+      background-position: 0 0, 8px 8px;
+      pointer-events: none;
+      border-radius: 20px;
+      opacity: 0.15;
+    }
+
+    /* ===== TITLE ===== */
+    .card-title {
+      color: #fbbf24;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 900;
+      margin-top: 8px;
+      text-shadow: 
+        0 0 12px rgba(251, 191, 36, 0.7),
+        0 0 25px rgba(251, 191, 36, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ===== ICON CONTAINER ===== */
+    .icon-container {
+      position: relative;
+      width: 95px;
+      height: 95px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== LIGHTSABER ===== */
+    .lightsaber {
+      position: relative;
+      width: 14px;
+      height: 75px;
+      animation: saberFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.5));
+    }
+
+    @keyframes saberFloat {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50% { transform: translateY(-5px) rotate(8deg); }
+    }
+
+    /* Handle */
+    .saber-handle {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 22px;
+      background: linear-gradient(90deg, #4a4a4a, #8a8a8a, #6a6a6a, #3a3a3a);
+      border-radius: 2px;
+      box-shadow: 
+        inset 0 2px 4px rgba(255,255,255,0.2),
+        inset 0 -2px 4px rgba(0,0,0,0.4);
+    }
+
+    .saber-handle::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 3px;
+      background: #1a1a1a;
+      border-radius: 1px;
+      box-shadow: 0 5px 0 #1a1a1a, 0 10px 0 #1a1a1a;
+    }
+
+    .saber-handle::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 4px;
+      background: linear-gradient(90deg, #3a3a3a, #5a5a5a, #3a3a3a);
+      border-radius: 0 0 2px 2px;
+    }
+
+    /* Blade */
+    .saber-blade {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 50px;
+      background: linear-gradient(to top, 
+        #60a5fa 0%,
+        #93c5fd 30%,
+        #ffffff 50%,
+        #93c5fd 70%,
+        #60a5fa 100%
+      );
+      border-radius: 3px 3px 50% 50%;
+      box-shadow: 
+        0 0 10px #60a5fa,
+        0 0 20px #60a5fa,
+        0 0 30px #3b82f6,
+        inset 0 0 8px rgba(255,255,255,0.8);
+      animation: bladeGlow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes bladeGlow {
+      0%, 100% { 
+        box-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px #3b82f6;
+        opacity: 0.95;
+      }
+      50% { 
+        box-shadow: 0 0 15px #60a5fa, 0 0 30px #60a5fa, 0 0 45px #3b82f6;
+        opacity: 1;
+      }
+    }
+
+    /* Blade core */
+    .saber-blade::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to top, rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.5));
+      border-radius: 2px;
+    }
+
+    /* ===== DEATH STAR (burst replacement) ===== */
+    .death-star {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      animation: deathStarSpin 8s linear infinite;
+    }
+
+    .death-star-body {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #6b7280, #4b5563, #374151);
+      border-radius: 50%;
+      box-shadow: 
+        inset 3px 3px 6px rgba(255,255,255,0.1),
+        inset -2px -2px 6px rgba(0,0,0,0.4),
+        0 0 8px rgba(0,0,0,0.5);
+    }
+
+    .death-star-dish {
+      position: absolute;
+      top: 6px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(145deg, #374151, #1f2937);
+      border-radius: 50%;
+      box-shadow: inset 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    .death-star-dish::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px;
+      height: 4px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 4px #22c55e, 0 0 8px #22c55e;
+      animation: laserCharge 2s ease-in-out infinite;
+    }
+
+    .death-star-trench {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #1f2937, #1f2937, transparent);
+      transform: translateY(-50%);
+    }
+
+    @keyframes deathStarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes laserCharge {
+      0%, 100% { opacity: 0.5; box-shadow: 0 0 2px #22c55e; }
+      50% { opacity: 1; box-shadow: 0 0 6px #22c55e, 0 0 12px #22c55e; }
+    }
+
+    /* ===== STARS (sparkles) ===== */
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: starTwinkle 2s ease-in-out infinite;
+    }
+
+    .star:nth-child(1) { top: 18px; left: 15px; width: 2px; height: 2px; animation-delay: 0s; }
+    .star:nth-child(2) { top: 35px; left: 10px; width: 3px; height: 3px; animation-delay: 0.3s; box-shadow: 0 0 4px #fff; }
+    .star:nth-child(3) { bottom: 45px; right: 12px; width: 2px; height: 2px; animation-delay: 0.6s; }
+    .star:nth-child(4) { top: 50px; right: 10px; width: 2px; height: 2px; animation-delay: 0.9s; }
+    .star:nth-child(5) { bottom: 55px; left: 12px; width: 3px; height: 3px; animation-delay: 0.4s; box-shadow: 0 0 4px #fff; }
+    .star:nth-child(6) { top: 25px; right: 35px; width: 2px; height: 2px; animation-delay: 0.7s; }
+
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* ===== REBEL ALLIANCE CORNER ===== */
+    .rebel-logo {
+      position: absolute;
+      bottom: 5px;
+      left: 8px;
+      width: 22px;
+      height: 22px;
+      opacity: 0.3;
+    }
+
+    .rebel-logo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #ef4444;
+      clip-path: polygon(
+        50% 0%, 
+        65% 35%, 
+        100% 35%, 
+        70% 55%, 
+        85% 100%, 
+        50% 70%, 
+        15% 100%, 
+        30% 55%, 
+        0% 35%, 
+        35% 35%
+      );
+    }
+
+    /* ===== FORCE TEXT ===== */
+    .force-text {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 5px;
+      color: rgba(251, 191, 36, 0.6);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ===== FACTION DOTS ===== */
+    .faction-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    /* Faction colors */
+    .dot:nth-child(1) { background: #60a5fa; box-shadow: 0 0 4px #60a5fa; animation-delay: 0s; }      /* Jedi Blue */
+    .dot:nth-child(2) { background: #ef4444; box-shadow: 0 0 4px #ef4444; animation-delay: 0.15s; }   /* Sith Red */
+    .dot:nth-child(3) { background: #22c55e; box-shadow: 0 0 4px #22c55e; animation-delay: 0.3s; }    /* Yoda Green */
+    .dot:nth-child(4) { background: #fbbf24; box-shadow: 0 0 4px #fbbf24; animation-delay: 0.45s; }   /* C-3PO Gold */
+    .dot:nth-child(5) { background: #f97316; box-shadow: 0 0 4px #f97316; animation-delay: 0.6s; }    /* Rebels Orange */
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* ===== HYPERSPACE LINES ===== */
+    .hyperspace {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hyper-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      height: 1px;
+      animation: hyperJump 3s ease-in-out infinite;
+    }
+
+    .hyper-line:nth-child(1) { top: 15%; left: -20px; width: 25px; transform: rotate(-20deg); animation-delay: 0s; }
+    .hyper-line:nth-child(2) { top: 30%; right: -15px; width: 20px; transform: rotate(15deg); animation-delay: 0.5s; }
+    .hyper-line:nth-child(3) { top: 70%; left: -18px; width: 22px; transform: rotate(-10deg); animation-delay: 1s; }
+
+    @keyframes hyperJump {
+      0%, 100% { opacity: 0; transform: translateX(0) scaleX(1); }
+      50% { opacity: 0.8; transform: translateX(10px) scaleX(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Force text -->
+    <div class="force-text">The Force</div>
+
+    <!-- Death Star -->
+    <div class="death-star">
+      <div class="death-star-body"></div>
+      <div class="death-star-dish"></div>
+      <div class="death-star-trench"></div>
+    </div>
+
+    <!-- Hyperspace lines -->
+    <div class="hyperspace">
+      <div class="hyper-line"></div>
+      <div class="hyper-line"></div>
+      <div class="hyper-line"></div>
+    </div>
+
+    <!-- Stars -->
+    <div class="stars">
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+
+    <!-- Rebel logo corner -->
+    <div class="rebel-logo"></div>
+
+    <div class="icon-container">
+      <!-- Lightsaber -->
+      <div class="lightsaber">
+        <div class="saber-blade"></div>
+        <div class="saber-handle"></div>
+      </div>
+    </div>
+
+    <!-- Faction dots -->
+    <div class="faction-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="card-title">Star Wars</div>
+  </div>
+</body>
+</html>
+
