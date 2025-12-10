@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things Quiz Card V2</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #0a0a15 100%);
+    }
+
+    .card {
+      width: 140px;
+      height: 170px;
+      background: linear-gradient(165deg, 
+        rgba(139, 0, 0, 0.15) 0%, 
+        rgba(12, 8, 8, 0.95) 35%,
+        rgba(5, 3, 3, 0.98) 100%
+      );
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      border: 1px solid rgba(220, 38, 38, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      cursor: pointer;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.9),
+        0 0 50px rgba(220, 38, 38, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Upside Down particles */
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(1px 1px at 50px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(1px 1px at 70px 110px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1px 1px at 110px 25px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(1px 1px at 30px 140px, rgba(255,255,255,0.2), transparent);
+      animation: floatParticles 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatParticles {
+      0%, 100% { transform: translateY(0); opacity: 0.6; }
+      50% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .card-title {
+      color: #dc2626;
+      font-family: 'Impact', 'Arial Black', sans-serif;
+      font-size: 0.5rem;
+      font-weight: 700;
+      margin-top: 4px;
+      text-shadow: 
+        0 0 15px rgba(220, 38, 38, 0.8),
+        0 0 30px rgba(220, 38, 38, 0.4),
+        2px 2px 0 rgba(0,0,0,0.9);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: titleFlicker 5s ease-in-out infinite;
+    }
+
+    @keyframes titleFlicker {
+      0%, 100% { opacity: 1; }
+      92% { opacity: 1; }
+      93% { opacity: 0.4; }
+      94% { opacity: 1; }
+      96% { opacity: 0.6; }
+      97% { opacity: 1; }
+    }
+
+    .icon-container {
+      position: relative;
+      width: 105px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ===== WIRE ===== */
+    .wire {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      height: 75px;
+    }
+
+    .wire-path {
+      position: absolute;
+      background: #1f1f1f;
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    .wire-path:nth-child(1) { top: 5px; left: 0; width: 18px; transform: rotate(12deg); }
+    .wire-path:nth-child(2) { top: 8px; left: 16px; width: 20px; transform: rotate(-8deg); }
+    .wire-path:nth-child(3) { top: 5px; left: 34px; width: 18px; transform: rotate(10deg); }
+    .wire-path:nth-child(4) { top: 9px; left: 50px; width: 20px; transform: rotate(-12deg); }
+    .wire-path:nth-child(5) { top: 6px; left: 68px; width: 22px; transform: rotate(8deg); }
+
+    .wire-path:nth-child(6) { top: 32px; left: 5px; width: 20px; transform: rotate(-10deg); }
+    .wire-path:nth-child(7) { top: 30px; left: 23px; width: 22px; transform: rotate(8deg); }
+    .wire-path:nth-child(8) { top: 35px; left: 43px; width: 20px; transform: rotate(-6deg); }
+    .wire-path:nth-child(9) { top: 32px; left: 61px; width: 22px; transform: rotate(10deg); }
+
+    .wire-path:nth-child(10) { top: 58px; left: 8px; width: 20px; transform: rotate(8deg); }
+    .wire-path:nth-child(11) { top: 55px; left: 26px; width: 18px; transform: rotate(-10deg); }
+    .wire-path:nth-child(12) { top: 60px; left: 42px; width: 22px; transform: rotate(5deg); }
+    .wire-path:nth-child(13) { top: 56px; left: 62px; width: 18px; transform: rotate(-8deg); }
+
+    /* ===== CHRISTMAS LIGHTS ===== */
+    .lights {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+    }
+
+    .light {
+      position: absolute;
+      width: 9px;
+      height: 12px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+    /* Light base */
+    .light::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background: linear-gradient(180deg, #4a4a4a 0%, #2a2a2a 100%);
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Row 1 */
+    .light:nth-child(1) { top: 8px; left: 8px; }
+    .light:nth-child(2) { top: 5px; left: 26px; }
+    .light:nth-child(3) { top: 9px; left: 44px; }
+    .light:nth-child(4) { top: 6px; left: 62px; }
+    .light:nth-child(5) { top: 10px; left: 80px; }
+
+    /* Row 2 */
+    .light:nth-child(6) { top: 32px; left: 14px; }
+    .light:nth-child(7) { top: 30px; left: 35px; }
+    .light:nth-child(8) { top: 35px; left: 54px; }
+    .light:nth-child(9) { top: 32px; left: 75px; }
+
+    /* Row 3 */
+    .light:nth-child(10) { top: 57px; left: 10px; }
+    .light:nth-child(11) { top: 55px; left: 32px; }
+    .light:nth-child(12) { top: 60px; left: 52px; }
+    .light:nth-child(13) { top: 56px; left: 74px; }
+
+    /* RED lights */
+    .light:nth-child(1), .light:nth-child(5), .light:nth-child(7), .light:nth-child(12) {
+      background: radial-gradient(ellipse at 30% 20%, #ff6b6b 0%, #ef4444 50%, #b91c1c 100%);
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 12px rgba(239, 68, 68, 0.8);
+      animation: glowRed 0.9s ease-in-out infinite;
+    }
+
+    /* YELLOW lights */
+    .light:nth-child(2), .light:nth-child(6), .light:nth-child(9), .light:nth-child(11) {
+      background: radial-gradient(ellipse at 30% 20%, #fef08a 0%, #fbbf24 50%, #d97706 100%);
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.5), 0 0 12px rgba(251, 191, 36, 0.8);
+      animation: glowYellow 1s ease-in-out infinite 0.2s;
+    }
+
+    /* GREEN lights */
+    .light:nth-child(3), .light:nth-child(8), .light:nth-child(10) {
+      background: radial-gradient(ellipse at 30% 20%, #86efac 0%, #22c55e 50%, #15803d 100%);
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 12px rgba(34, 197, 94, 0.8);
+      animation: glowGreen 1.1s ease-in-out infinite 0.4s;
+    }
+
+    /* BLUE lights */
+    .light:nth-child(4), .light:nth-child(13) {
+      background: radial-gradient(ellipse at 30% 20%, #93c5fd 0%, #3b82f6 50%, #1d4ed8 100%);
+      box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 12px rgba(59, 130, 246, 0.8);
+      animation: glowBlue 1.2s ease-in-out infinite 0.6s;
+    }
+
+    @keyframes glowRed {
+      0%, 100% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 8px rgba(239, 68, 68, 0.6); filter: brightness(0.9); }
+      50% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.5), 0 0 20px rgba(239, 68, 68, 1), 0 0 35px rgba(239, 68, 68, 0.5); filter: brightness(1.2); }
+    }
+
+    @keyframes glowYellow {
+      0%, 100% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.5), 0 0 8px rgba(251, 191, 36, 0.6); filter: brightness(0.9); }
+      50% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.6), 0 0 20px rgba(251, 191, 36, 1), 0 0 35px rgba(251, 191, 36, 0.5); filter: brightness(1.2); }
+    }
+
+    @keyframes glowGreen {
+      0%, 100% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 8px rgba(34, 197, 94, 0.6); filter: brightness(0.9); }
+      50% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.5), 0 0 20px rgba(34, 197, 94, 1), 0 0 35px rgba(34, 197, 94, 0.5); filter: brightness(1.2); }
+    }
+
+    @keyframes glowBlue {
+      0%, 100% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.3), inset 0 2px 3px rgba(255,255,255,0.4), 0 0 8px rgba(59, 130, 246, 0.6); filter: brightness(0.9); }
+      50% { box-shadow: inset 0 -2px 5px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.5), 0 0 20px rgba(59, 130, 246, 1), 0 0 35px rgba(59, 130, 246, 0.5); filter: brightness(1.2); }
+    }
+
+    /* Flicker on specific lights */
+    .light:nth-child(3) { animation: glowGreen 1.1s ease-in-out infinite, flicker 6s ease-in-out infinite; }
+    .light:nth-child(9) { animation: glowYellow 1s ease-in-out infinite, flicker 8s ease-in-out infinite 2s; }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      90% { opacity: 1; }
+      91% { opacity: 0.3; }
+      92% { opacity: 0.8; }
+      93% { opacity: 0.2; }
+      94% { opacity: 1; }
+    }
+
+    /* ===== 011 ===== */
+    .eleven {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-family: 'Impact', sans-serif;
+      font-size: 10px;
+      font-weight: 900;
+      color: rgba(220, 38, 38, 0.6);
+      text-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
+    }
+
+    /* ===== UPSIDE DOWN ===== */
+    .upside-down {
+      position: absolute;
+      top: 10px;
+      left: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 5px;
+      color: rgba(220, 38, 38, 0.5);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      animation: upsideDownPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes upsideDownPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+
+    /* ===== VINES ===== */
+    .vines {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 12px;
+      border-radius: 0 0 20px 20px;
+      overflow: hidden;
+    }
+
+    .vine {
+      position: absolute;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, transparent, rgba(30, 40, 30, 0.7));
+      border-radius: 2px;
+    }
+
+    .vine:nth-child(1) { left: 15%; height: 10px; }
+    .vine:nth-child(2) { left: 30%; height: 7px; }
+    .vine:nth-child(3) { left: 45%; height: 12px; }
+    .vine:nth-child(4) { left: 60%; height: 8px; }
+    .vine:nth-child(5) { left: 75%; height: 11px; }
+    .vine:nth-child(6) { left: 88%; height: 6px; }
+
+    /* ===== CHARACTER DOTS ===== */
+    .character-dots {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: dotPulse 2.5s ease-in-out infinite;
+    }
+
+    .dot:nth-child(1) { background: #ef4444; box-shadow: 0 0 5px #ef4444; }
+    .dot:nth-child(2) { background: #fbbf24; box-shadow: 0 0 5px #fbbf24; animation-delay: 0.1s; }
+    .dot:nth-child(3) { background: #22c55e; box-shadow: 0 0 5px #22c55e; animation-delay: 0.2s; }
+    .dot:nth-child(4) { background: #3b82f6; box-shadow: 0 0 5px #3b82f6; animation-delay: 0.3s; }
+    .dot:nth-child(5) { background: #a855f7; box-shadow: 0 0 5px #a855f7; animation-delay: 0.4s; }
+    .dot:nth-child(6) { background: #ec4899; box-shadow: 0 0 5px #ec4899; animation-delay: 0.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.25); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="eleven">011</div>
+    <div class="upside-down">upside down</div>
+
+    <div class="vines">
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+      <div class="vine"></div>
+    </div>
+
+    <div class="character-dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="icon-container">
+      <!-- Wire -->
+      <div class="wire">
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+        <div class="wire-path"></div>
+      </div>
+
+      <!-- Christmas Lights -->
+      <div class="lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </div>
+
+    <div class="card-title">Stranger Things</div>
+  </div>
+</body>
+</html>
+

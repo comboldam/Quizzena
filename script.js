@@ -118,7 +118,9 @@ const defaultUserData = {
     accuracy: 0,
     bestStreak: 0,
     totalTimeSeconds: 0,
-    topics: {}
+    topics: {},
+    recentGameAccuracies: [],  // Array of last 100 game accuracies for Skill achievements
+    hybridBestStreaks: { 80: 0, 90: 0, 100: 0 }  // Best streak achieved at each accuracy threshold
   },
   // P-XP (Player Prestige XP) System
   prestige: {
@@ -669,6 +671,39 @@ function showDevPanel() {
         </div>
       </div>
       
+      <!-- Skill House Testing -->
+      <div style="background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#fbbf24;font-size:16px;font-weight:bold;margin-bottom:10px;">⬡ Skill House Testing</div>
+        <div style="color:#fff;text-align:center;margin-bottom:8px;font-size:10px;">
+          Streak: <span style="color:#ef4444;">${userData.stats?.bestStreak || 0}</span> |
+          Hybrid 80%: <span style="color:#fbbf24;">${userData.stats?.hybridBestStreaks?.[80] || 0}</span> |
+          90%: <span style="color:#f59e0b;">${userData.stats?.hybridBestStreaks?.[90] || 0}</span> |
+          100%: <span style="color:#ec4899;">${userData.stats?.hybridBestStreaks?.[100] || 0}</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;">
+          <button onclick="devSetBestStreak(50)" style="padding:8px 12px;background:#ef4444;color:#fff;border:none;border-radius:6px;font-size:11px;cursor:pointer;">Streak=50</button>
+          <button onclick="devSetHybrid(85, 40)" style="padding:8px 12px;background:#fbbf24;color:#000;border:none;border-radius:6px;font-size:11px;cursor:pointer;">H85=40</button>
+          <button onclick="devSetHybrid(90, 30)" style="padding:8px 12px;background:#f59e0b;color:#000;border:none;border-radius:6px;font-size:11px;cursor:pointer;">H90=30</button>
+          <button onclick="devSetHybrid(100, 20)" style="padding:8px 12px;background:#ec4899;color:#fff;border:none;border-radius:6px;font-size:11px;cursor:pointer;">H100=20</button>
+          <button onclick="devResetSkillStats()" style="padding:8px 12px;background:#666;color:#fff;border:none;border-radius:6px;font-size:11px;cursor:pointer;">Reset</button>
+        </div>
+      </div>
+      
+      <!-- Exploration House -->
+      <div style="background:rgba(141,191,255,0.1);border:1px solid rgba(141,191,255,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
+        <div style="color:#8dbfff;font-size:16px;font-weight:bold;margin-bottom:10px;">🧭 Exploration House</div>
+        <div style="color:#fff;text-align:center;margin-bottom:8px;font-size:10px;">
+          Topics Played: <span style="color:#8dbfff;">${getTopicsPlayedCount()}</span> |
+          Categories: <span style="color:#e6d49a;">${getCategoriesPlayedCount()}/6</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+          <button onclick="devAddTopicsPlayed(5)" style="padding:8px 12px;background:#8dbfff;color:#000;border:none;border-radius:6px;font-size:11px;cursor:pointer;">+5 Topics</button>
+          <button onclick="devAddTopicsPlayed(10)" style="padding:8px 12px;background:#8dbfff;color:#000;border:none;border-radius:6px;font-size:11px;cursor:pointer;">+10 Topics</button>
+          <button onclick="devPlayAllCategories()" style="padding:8px 12px;background:#e6d49a;color:#000;border:none;border-radius:6px;font-size:11px;cursor:pointer;">All Categories</button>
+          <button onclick="devResetExploration()" style="padding:8px 12px;background:#666;color:#fff;border:none;border-radius:6px;font-size:11px;cursor:pointer;">Reset</button>
+        </div>
+      </div>
+      
       <!-- Level Skip -->
       <div style="background:rgba(156,39,176,0.1);border:1px solid rgba(156,39,176,0.3);border-radius:10px;padding:15px;margin-bottom:15px;">
         <div style="color:#9C27B0;font-size:16px;font-weight:bold;margin-bottom:10px;">Skip to Level</div>
@@ -878,6 +913,192 @@ function devAddTimePlayed(seconds) {
   
   const hours = (seconds / 3600).toFixed(1);
   console.log(`DEV: +${hours} hours. Total: ${formatTimeDisplay(userData.stats.totalTimeSeconds)}`);
+}
+
+// Dev function: Add game accuracies (for testing Skill House - Accuracy Feats)
+function devAddAccuracyGames(accuracy, count = 1) {
+  // Initialize array if needed
+  if (!userData.stats.recentGameAccuracies) {
+    userData.stats.recentGameAccuracies = [];
+  }
+  
+  // Add 'count' games with the specified accuracy
+  for (let i = 0; i < count; i++) {
+    userData.stats.recentGameAccuracies.push(accuracy);
+    // Keep only last 100
+    if (userData.stats.recentGameAccuracies.length > 100) {
+      userData.stats.recentGameAccuracies.shift();
+    }
+  }
+  
+  // Also add to total games and award P-XP
+  userData.stats.totalGames = (userData.stats.totalGames || 0) + count;
+  awardPxp(count, 0, 'casual');
+  
+  // Save data
+  saveUserData();
+  
+  // Check achievements
+  checkAchievements();
+  
+  // Update displays
+  updateGlobalLevelBadge();
+  updateAllStatsDisplays();
+  
+  console.log(`DEV: +${count} game(s) with ${accuracy}% accuracy. Recent accuracies: ${userData.stats.recentGameAccuracies.slice(-10).join(', ')}...`);
+  showDevPanel();
+}
+
+// Dev function: Reset accuracy history
+function devResetAccuracy() {
+  userData.stats.recentGameAccuracies = [];
+  saveUserData();
+  console.log('DEV: Reset accuracy history');
+  showDevPanel();
+}
+
+// Dev function: Set best streak (for testing Skill Pillar 2)
+function devSetBestStreak(streak) {
+  userData.stats.bestStreak = streak;
+  saveUserData();
+  checkAchievements();
+  console.log(`DEV: Set best streak to ${streak}`);
+  showDevPanel();
+}
+
+// Dev function: Reset best streak
+function devResetStreak() {
+  userData.stats.bestStreak = 0;
+  saveUserData();
+  console.log('DEV: Reset best streak to 0');
+  showDevPanel();
+}
+
+// Dev function: Set hybrid best streak at accuracy threshold
+function devSetHybrid(accuracy, streak) {
+  if (!userData.stats.hybridBestStreaks) {
+    userData.stats.hybridBestStreaks = { 80: 0, 90: 0, 100: 0 };
+  }
+  userData.stats.hybridBestStreaks[accuracy] = streak;
+  saveUserData();
+  checkAchievements();
+  console.log(`DEV: Set hybrid ${accuracy}% best streak to ${streak}`);
+  showDevPanel();
+}
+
+// Dev function: Reset all Skill house stats
+function devResetSkillStats() {
+  userData.stats.bestStreak = 0;
+  userData.stats.recentGameAccuracies = [];
+  userData.stats.hybridBestStreaks = { 80: 0, 90: 0, 100: 0 };
+  saveUserData();
+  console.log('DEV: Reset all Skill house stats');
+  showDevPanel();
+}
+
+// Helper function to count categories played
+function getCategoriesPlayedCount() {
+  const playedCategories = new Set();
+  if (!userData.stats?.topics) return 0;
+  
+  Object.keys(userData.stats.topics).forEach(topicId => {
+    const topic = userData.stats.topics[topicId];
+    if (topic && topic.games > 0) {
+      const config = TOPIC_CONFIG[topicId];
+      if (config && config.category) {
+        playedCategories.add(config.category);
+      }
+    }
+  });
+  
+  return playedCategories.size;
+}
+
+// Dev function: Add topics played (simulates playing in multiple topics)
+function devAddTopicsPlayed(count) {
+  const allTopics = Object.keys(TOPIC_CONFIG);
+  if (!userData.stats.topics) userData.stats.topics = {};
+  
+  let added = 0;
+  for (const topicId of allTopics) {
+    if (added >= count) break;
+    if (!userData.stats.topics[topicId] || userData.stats.topics[topicId].games === 0) {
+      if (!userData.stats.topics[topicId]) {
+        userData.stats.topics[topicId] = {
+          games: 0, correct: 0, wrong: 0, accuracy: 0,
+          bestStreak: 0, level: 1, xp: 0,
+          modesUnlocked: { casual: true, timeAttack: false, threeHearts: false },
+          timeSpentSeconds: 0, totalQuestionsAnswered: 0
+        };
+      }
+      userData.stats.topics[topicId].games = 5;
+      userData.stats.topics[topicId].correct = 20;
+      userData.stats.topics[topicId].totalQuestionsAnswered = 25;
+      added++;
+    }
+  }
+  
+  // Award P-XP for games played
+  awardPxp(added, added * 20, 'casual');
+  
+  saveUserData();
+  checkAchievements();
+  console.log(`DEV: Added ${added} topics played`);
+  showDevPanel();
+}
+
+// Dev function: Play all categories (for capstone achievement)
+function devPlayAllCategories() {
+  const categoryTopics = {
+    'geography': 'flags',
+    'football': 'football',
+    'history': 'world-history',
+    'movies': 'movies',
+    'tv-shows': 'tv-shows',
+    'logos': 'logos'
+  };
+  
+  if (!userData.stats.topics) userData.stats.topics = {};
+  
+  Object.entries(categoryTopics).forEach(([category, topicId]) => {
+    if (!userData.stats.topics[topicId]) {
+      userData.stats.topics[topicId] = {
+        games: 0, correct: 0, wrong: 0, accuracy: 0,
+        bestStreak: 0, level: 1, xp: 0,
+        modesUnlocked: { casual: true, timeAttack: false, threeHearts: false },
+        timeSpentSeconds: 0, totalQuestionsAnswered: 0
+      };
+    }
+    if (userData.stats.topics[topicId].games === 0) {
+      userData.stats.topics[topicId].games = 1;
+      userData.stats.topics[topicId].correct = 10;
+      userData.stats.topics[topicId].totalQuestionsAnswered = 10;
+    }
+  });
+  
+  // Award P-XP
+  awardPxp(6, 60, 'casual');
+  
+  saveUserData();
+  checkAchievements();
+  console.log('DEV: Played all categories');
+  showDevPanel();
+}
+
+// Dev function: Reset exploration stats
+function devResetExploration() {
+  if (!userData.stats.topics) return;
+  
+  // Reset all topic game counts (but keep XP/level progress)
+  for (const topicId in userData.stats.topics) {
+    userData.stats.topics[topicId].games = 0;
+    userData.stats.topics[topicId].correct = 0;
+    userData.stats.topics[topicId].wrong = 0;
+    userData.stats.topics[topicId].totalQuestionsAnswered = 0;
+  }
+  
+  saveUserData();
+  console.log('DEV: Reset exploration stats');
   showDevPanel();
 }
 
@@ -4427,6 +4648,40 @@ function saveQuizStats(topicId, completed) {
   const globalTotal = userData.stats.correctAnswers + userData.stats.wrongAnswers;
   userData.stats.accuracy = globalTotal > 0 ? Math.round((userData.stats.correctAnswers / globalTotal) * 100) : 0;
 
+  // Track this game's accuracy for Skill achievements (only for completed single-player games)
+  if (completed && gameMode !== 'two') {
+    const sessionTotal = currentSessionCorrect + currentSessionWrong;
+    const sessionAccuracy = sessionTotal > 0 ? Math.round((currentSessionCorrect / sessionTotal) * 100) : 0;
+    
+    // Initialize array if needed
+    if (!userData.stats.recentGameAccuracies) {
+      userData.stats.recentGameAccuracies = [];
+    }
+    
+    // Add to recent accuracies (keep last 100 games)
+    userData.stats.recentGameAccuracies.push(sessionAccuracy);
+    if (userData.stats.recentGameAccuracies.length > 100) {
+      userData.stats.recentGameAccuracies.shift();
+    }
+    
+    // Track hybrid best streaks (best streak achieved at each accuracy threshold)
+    // This is for Pillar 3 achievements
+    if (!userData.stats.hybridBestStreaks) {
+      userData.stats.hybridBestStreaks = { 80: 0, 90: 0, 100: 0 };
+    }
+    
+    // Update hybrid best streaks for each threshold
+    if (sessionAccuracy >= 80 && bestSessionStreak > (userData.stats.hybridBestStreaks[80] || 0)) {
+      userData.stats.hybridBestStreaks[80] = bestSessionStreak;
+    }
+    if (sessionAccuracy >= 90 && bestSessionStreak > (userData.stats.hybridBestStreaks[90] || 0)) {
+      userData.stats.hybridBestStreaks[90] = bestSessionStreak;
+    }
+    if (sessionAccuracy === 100 && bestSessionStreak > (userData.stats.hybridBestStreaks[100] || 0)) {
+      userData.stats.hybridBestStreaks[100] = bestSessionStreak;
+    }
+  }
+
   // Award P-XP (Player Prestige XP) - only for completed games, not 2-player mode
   if (completed && gameMode !== 'two') {
     awardPxp(1, currentSessionCorrect, gameMode);
@@ -6382,8 +6637,689 @@ const ACHIEVEMENTS = {
     condition: () => userData.stats?.totalTimeSeconds >= 36000000,
     pxpReward: 100000,
     quantaReward: 500000
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // HOUSE 2: PATH OF SKILL — PILLAR 1: ACCURACY FEATS
+  // Symbol: Sharp hexagon with target dot
+  // Theme: Single-session brilliance → Sustained mastery
+  // ═══════════════════════════════════════════════════════════════════════════
+  
+  // --- TIER 1: SINGLE-SESSION ACCURACY FEATS ---
+  'skill-accuracy-80': {
+    id: 'skill-accuracy-80',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 1,
+    name: 'Sharper Moment',
+    description: 'Earn 80%+ accuracy in any quiz',
+    icon: '⬡',
+    condition: () => {
+      const recent = userData.stats?.recentGameAccuracies || [];
+      return recent.some(acc => acc >= 80);
+    },
+    pxpReward: 30,
+    quantaReward: 75
+  },
+  'skill-accuracy-90': {
+    id: 'skill-accuracy-90',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 1,
+    name: 'Crystal Precision',
+    description: 'Earn 90%+ accuracy in any quiz',
+    icon: '⬡',
+    condition: () => {
+      const recent = userData.stats?.recentGameAccuracies || [];
+      return recent.some(acc => acc >= 90);
+    },
+    pxpReward: 60,
+    quantaReward: 150
+  },
+  'skill-accuracy-100': {
+    id: 'skill-accuracy-100',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 1,
+    name: 'Flawless Strike',
+    description: 'Earn 100% accuracy in any quiz',
+    icon: '⬡',
+    condition: () => {
+      const recent = userData.stats?.recentGameAccuracies || [];
+      return recent.some(acc => acc === 100);
+    },
+    pxpReward: 100,
+    quantaReward: 300
+  },
+  
+  // --- TIER 2: CONSISTENCY (80% ACCURACY) ---
+  'skill-streak-80-5': {
+    id: 'skill-streak-80-5',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 2,
+    name: 'Rhythm of Accuracy',
+    description: 'Maintain 80%+ accuracy for 5 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(80, 5),
+    pxpReward: 80,
+    quantaReward: 200
+  },
+  'skill-streak-80-10': {
+    id: 'skill-streak-80-10',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 2,
+    name: 'Steady-Hand Pattern',
+    description: 'Maintain 80%+ accuracy for 10 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(80, 10),
+    pxpReward: 150,
+    quantaReward: 400
+  },
+  'skill-streak-80-50': {
+    id: 'skill-streak-80-50',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 2,
+    name: 'Enduring Alignment',
+    description: 'Maintain 80%+ accuracy for 50 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(80, 50),
+    pxpReward: 500,
+    quantaReward: 1500
+  },
+  'skill-streak-80-100': {
+    id: 'skill-streak-80-100',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 2,
+    name: 'Unbroken Calibration',
+    description: 'Maintain 80%+ accuracy for 100 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(80, 100),
+    pxpReward: 1000,
+    quantaReward: 3000
+  },
+  
+  // --- TIER 3: CONSISTENCY (90% ACCURACY) ---
+  'skill-streak-90-5': {
+    id: 'skill-streak-90-5',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 3,
+    name: 'Refined Continuum',
+    description: 'Maintain 90%+ accuracy for 5 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(90, 5),
+    pxpReward: 120,
+    quantaReward: 300
+  },
+  'skill-streak-90-10': {
+    id: 'skill-streak-90-10',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 3,
+    name: 'Polished Sequence',
+    description: 'Maintain 90%+ accuracy for 10 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(90, 10),
+    pxpReward: 250,
+    quantaReward: 600
+  },
+  'skill-streak-90-50': {
+    id: 'skill-streak-90-50',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 3,
+    name: 'Purity of Motion',
+    description: 'Maintain 90%+ accuracy for 50 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(90, 50),
+    pxpReward: 750,
+    quantaReward: 2000
+  },
+  'skill-streak-90-100': {
+    id: 'skill-streak-90-100',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 3,
+    name: 'Precision Ascendant',
+    description: 'Maintain 90%+ accuracy for 100 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(90, 100),
+    pxpReward: 1500,
+    quantaReward: 5000
+  },
+  
+  // --- TIER 4: CONSISTENCY (100% ACCURACY) ---
+  'skill-streak-100-5': {
+    id: 'skill-streak-100-5',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 4,
+    name: 'Faultless Chain',
+    description: 'Maintain 100% accuracy for 5 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(100, 5),
+    pxpReward: 300,
+    quantaReward: 750
+  },
+  'skill-streak-100-10': {
+    id: 'skill-streak-100-10',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 4,
+    name: 'Unerring Lineage',
+    description: 'Maintain 100% accuracy for 10 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(100, 10),
+    pxpReward: 600,
+    quantaReward: 1500
+  },
+  'skill-streak-100-50': {
+    id: 'skill-streak-100-50',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 4,
+    name: 'Immaculate Cycle',
+    description: 'Maintain 100% accuracy for 50 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(100, 50),
+    pxpReward: 2000,
+    quantaReward: 7500
+  },
+  'skill-streak-100-100': {
+    id: 'skill-streak-100-100',
+    house: 'skill',
+    pillar: 'accuracy-feats',
+    tier: 4,
+    name: 'Legend of Perfection',
+    description: 'Maintain 100% accuracy for 100 games in a row',
+    icon: '⬡',
+    condition: () => checkAccuracyStreak(100, 100),
+    pxpReward: 5000,
+    quantaReward: 20000
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // HOUSE 2: PATH OF SKILL — PILLAR 2: STREAK MASTERY
+  // Symbol: Sharp hexagon with rising flame/momentum curve
+  // Theme: Momentum sustained becomes mastery
+  // ═══════════════════════════════════════════════════════════════════════════
+  
+  // --- TIER 1: EARLY MOMENTUM ---
+  'skill-streak-5': {
+    id: 'skill-streak-5',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 1,
+    name: 'Spark of Continuity',
+    description: 'Achieve a 5-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 5,
+    pxpReward: 20,
+    quantaReward: 50
+  },
+  'skill-streak-10': {
+    id: 'skill-streak-10',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 1,
+    name: 'Thread of Flow',
+    description: 'Achieve a 10-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 10,
+    pxpReward: 40,
+    quantaReward: 100
+  },
+  'skill-streak-15': {
+    id: 'skill-streak-15',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 1,
+    name: 'Rising Cadence',
+    description: 'Achieve a 15-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 15,
+    pxpReward: 60,
+    quantaReward: 150
+  },
+  'skill-streak-20': {
+    id: 'skill-streak-20',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 1,
+    name: 'Gathering Pace',
+    description: 'Achieve a 20-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 20,
+    pxpReward: 80,
+    quantaReward: 200
+  },
+  
+  // --- TIER 2: SUSTAINED MOMENTUM ---
+  'skill-streak-30': {
+    id: 'skill-streak-30',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 2,
+    name: 'Unwavering Current',
+    description: 'Achieve a 30-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 30,
+    pxpReward: 120,
+    quantaReward: 300
+  },
+  'skill-streak-40': {
+    id: 'skill-streak-40',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 2,
+    name: 'The Quiet Surge',
+    description: 'Achieve a 40-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 40,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'skill-streak-50': {
+    id: 'skill-streak-50',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 2,
+    name: 'Flowbound Mind',
+    description: 'Achieve a 50-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 50,
+    pxpReward: 300,
+    quantaReward: 750
+  },
+  'skill-streak-60': {
+    id: 'skill-streak-60',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 2,
+    name: 'The Unbroken Thread',
+    description: 'Achieve a 60-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 60,
+    pxpReward: 400,
+    quantaReward: 1000
+  },
+  
+  // --- TIER 3: MASTERFUL MOMENTUM ---
+  'skill-streak-70': {
+    id: 'skill-streak-70',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 3,
+    name: 'Pulse of Continuance',
+    description: 'Achieve a 70-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 70,
+    pxpReward: 500,
+    quantaReward: 1500
+  },
+  'skill-streak-80': {
+    id: 'skill-streak-80',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 3,
+    name: 'The Endless Rise',
+    description: 'Achieve an 80-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 80,
+    pxpReward: 750,
+    quantaReward: 2000
+  },
+  'skill-streak-90': {
+    id: 'skill-streak-90',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 3,
+    name: 'Bearer of the Unbroken Path',
+    description: 'Achieve a 90-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 90,
+    pxpReward: 1000,
+    quantaReward: 3000
+  },
+  'skill-streak-100': {
+    id: 'skill-streak-100',
+    house: 'skill',
+    pillar: 'streak-mastery',
+    tier: 3,
+    name: 'Crown of Momentum',
+    description: 'Achieve a 100-answer streak in any topic',
+    icon: '🔥',
+    condition: () => (userData.stats?.bestStreak || 0) >= 100,
+    pxpReward: 2000,
+    quantaReward: 5000
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // HOUSE 2: PATH OF SKILL — PILLAR 3: HYBRID ACCURACY & STREAK FEATS
+  // Symbol: Sharp hexagon with dual-line motif (accuracy + streak)
+  // Theme: A fusion of precision and momentum
+  // ═══════════════════════════════════════════════════════════════════════════
+  
+  // --- TIER 1: 80% ACCURACY HYBRID FEATS ---
+  'skill-hybrid-80-10': {
+    id: 'skill-hybrid-80-10',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 1,
+    name: 'Harmony of Focus',
+    description: 'Maintain 80%+ accuracy while achieving a 10-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[80] || 0) >= 10,
+    pxpReward: 100,
+    quantaReward: 250
+  },
+  'skill-hybrid-80-20': {
+    id: 'skill-hybrid-80-20',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 1,
+    name: 'Thread of Clarity',
+    description: 'Maintain 80%+ accuracy while achieving a 20-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[80] || 0) >= 20,
+    pxpReward: 200,
+    quantaReward: 500
+  },
+  'skill-hybrid-80-40': {
+    id: 'skill-hybrid-80-40',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 1,
+    name: 'Balance of Mind and Motion',
+    description: 'Maintain 80%+ accuracy while achieving a 40-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[80] || 0) >= 40,
+    pxpReward: 400,
+    quantaReward: 1000
+  },
+  'skill-hybrid-80-60': {
+    id: 'skill-hybrid-80-60',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 1,
+    name: 'Bearer of Sharp Consistency',
+    description: 'Maintain 80%+ accuracy while achieving a 60-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[80] || 0) >= 60,
+    pxpReward: 600,
+    quantaReward: 1500
+  },
+  
+  // --- TIER 2: 90% ACCURACY HYBRID FEATS ---
+  'skill-hybrid-90-10': {
+    id: 'skill-hybrid-90-10',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 2,
+    name: 'The Refined Current',
+    description: 'Maintain 90%+ accuracy while achieving a 10-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[90] || 0) >= 10,
+    pxpReward: 150,
+    quantaReward: 400
+  },
+  'skill-hybrid-90-20': {
+    id: 'skill-hybrid-90-20',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 2,
+    name: 'Rising Exactitude',
+    description: 'Maintain 90%+ accuracy while achieving a 20-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[90] || 0) >= 20,
+    pxpReward: 300,
+    quantaReward: 750
+  },
+  'skill-hybrid-90-40': {
+    id: 'skill-hybrid-90-40',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 2,
+    name: 'Unbroken Purity',
+    description: 'Maintain 90%+ accuracy while achieving a 40-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[90] || 0) >= 40,
+    pxpReward: 600,
+    quantaReward: 1500
+  },
+  'skill-hybrid-90-60': {
+    id: 'skill-hybrid-90-60',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 2,
+    name: 'The Precision Flow',
+    description: 'Maintain 90%+ accuracy while achieving a 60-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[90] || 0) >= 60,
+    pxpReward: 1000,
+    quantaReward: 2500
+  },
+  
+  // --- TIER 3: PERFECT ACCURACY HYBRID FEATS ---
+  'skill-hybrid-100-10': {
+    id: 'skill-hybrid-100-10',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 3,
+    name: 'Cycle of Perfection',
+    description: 'Maintain 100% accuracy while achieving a 10-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[100] || 0) >= 10,
+    pxpReward: 250,
+    quantaReward: 600
+  },
+  'skill-hybrid-100-20': {
+    id: 'skill-hybrid-100-20',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 3,
+    name: 'Faultless Momentum',
+    description: 'Maintain 100% accuracy while achieving a 20-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[100] || 0) >= 20,
+    pxpReward: 500,
+    quantaReward: 1250
+  },
+  'skill-hybrid-100-40': {
+    id: 'skill-hybrid-100-40',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 3,
+    name: 'Mind of the Untouched Path',
+    description: 'Maintain 100% accuracy while achieving a 40-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[100] || 0) >= 40,
+    pxpReward: 1500,
+    quantaReward: 4000
+  },
+  'skill-hybrid-100-60': {
+    id: 'skill-hybrid-100-60',
+    house: 'skill',
+    pillar: 'hybrid-feats',
+    tier: 3,
+    name: 'Crown of Unerring Flow',
+    description: 'Maintain 100% accuracy while achieving a 60-answer streak',
+    icon: '⚡',
+    condition: () => (userData.stats?.hybridBestStreaks?.[100] || 0) >= 60,
+    pxpReward: 3000,
+    quantaReward: 10000
+  },
+
+  // =============================================
+  // EXPLORATION HOUSE — PATH OF DISCOVERY
+  // =============================================
+  
+  // --- TIER 1: TOPIC DISCOVERY ---
+  'exploration-topics-5': {
+    id: 'exploration-topics-5',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 1,
+    name: "Wanderer's First Step",
+    description: 'Play a game in 5 different topics',
+    icon: '🧭',
+    condition: () => getTopicsPlayedCount() >= 5,
+    pxpReward: 50,
+    quantaReward: 100
+  },
+  'exploration-topics-10': {
+    id: 'exploration-topics-10',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 1,
+    name: 'Curious Mind',
+    description: 'Play a game in 10 different topics',
+    icon: '🧭',
+    condition: () => getTopicsPlayedCount() >= 10,
+    pxpReward: 100,
+    quantaReward: 200
+  },
+  'exploration-topics-20': {
+    id: 'exploration-topics-20',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 1,
+    name: 'Seeker of Horizons',
+    description: 'Play a game in 20 different topics',
+    icon: '🧭',
+    condition: () => getTopicsPlayedCount() >= 20,
+    pxpReward: 200,
+    quantaReward: 400
+  },
+  'exploration-topics-30': {
+    id: 'exploration-topics-30',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 1,
+    name: 'Explorer of Thirty Realms',
+    description: 'Play a game in 30 different topics',
+    icon: '🧭',
+    condition: () => getTopicsPlayedCount() >= 30,
+    pxpReward: 400,
+    quantaReward: 800
+  },
+
+  // --- TIER 2: TOPIC DEEP SAMPLING ---
+  'exploration-sampling-5': {
+    id: 'exploration-sampling-5',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 2,
+    name: 'The First Glimpse',
+    description: 'Complete 5 games across 5 different topics',
+    icon: '🗺️',
+    condition: () => getTopicsWithGamesCount(5) >= 5,
+    pxpReward: 75,
+    quantaReward: 150
+  },
+  'exploration-sampling-10': {
+    id: 'exploration-sampling-10',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 2,
+    name: 'The Surveyor',
+    description: 'Complete 10 games across 10 different topics',
+    icon: '🗺️',
+    condition: () => getTopicsWithGamesCount(10) >= 10,
+    pxpReward: 150,
+    quantaReward: 300
+  },
+  'exploration-sampling-20': {
+    id: 'exploration-sampling-20',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 2,
+    name: 'The Pathfarer',
+    description: 'Complete 20 games across 20 different topics',
+    icon: '🗺️',
+    condition: () => getTopicsWithGamesCount(20) >= 20,
+    pxpReward: 300,
+    quantaReward: 600
+  },
+  'exploration-sampling-30': {
+    id: 'exploration-sampling-30',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 2,
+    name: 'The Widefoot Voyager',
+    description: 'Complete 30 games across 30 different topics',
+    icon: '🗺️',
+    condition: () => getTopicsWithGamesCount(30) >= 30,
+    pxpReward: 500,
+    quantaReward: 1000
+  },
+
+  // --- TIER 3: CATEGORY DISCOVERY (Capstone) ---
+  'exploration-all-categories': {
+    id: 'exploration-all-categories',
+    house: 'exploration',
+    pillar: 'path-of-discovery',
+    tier: 3,
+    name: 'Touch of Realms',
+    description: 'Play a game in one topic from each major category',
+    icon: '🌍',
+    condition: () => hasPlayedAllCategories(),
+    pxpReward: 1000,
+    quantaReward: 2500
   }
 };
+
+// Helper function to get count of unique topics played
+function getTopicsPlayedCount() {
+  if (!userData.stats?.topics) return 0;
+  return Object.keys(userData.stats.topics).filter(topicId => {
+    const topic = userData.stats.topics[topicId];
+    return topic && topic.games > 0;
+  }).length;
+}
+
+// Helper function to count topics with at least N games
+function getTopicsWithGamesCount(minGames) {
+  if (!userData.stats?.topics) return 0;
+  return Object.keys(userData.stats.topics).filter(topicId => {
+    const topic = userData.stats.topics[topicId];
+    return topic && topic.games >= minGames;
+  }).length;
+}
+
+// Helper function to check if player has played in all major categories
+function hasPlayedAllCategories() {
+  const allCategories = ['geography', 'football', 'history', 'movies', 'tv-shows', 'logos'];
+  const playedCategories = new Set();
+  
+  if (!userData.stats?.topics) return false;
+  
+  Object.keys(userData.stats.topics).forEach(topicId => {
+    const topic = userData.stats.topics[topicId];
+    if (topic && topic.games > 0) {
+      const config = TOPIC_CONFIG[topicId];
+      if (config && config.category) {
+        playedCategories.add(config.category);
+      }
+    }
+  });
+  
+  return allCategories.every(cat => playedCategories.has(cat));
+}
+
+// Helper function to check accuracy streak (last N games all >= threshold)
+function checkAccuracyStreak(threshold, count) {
+  const recent = userData.stats?.recentGameAccuracies || [];
+  if (recent.length < count) return false;
+  
+  // Check the last 'count' games
+  const lastN = recent.slice(-count);
+  return lastN.every(acc => acc >= threshold);
+}
 
 // Check if an achievement is unlocked (pending or claimed)
 function isAchievementUnlocked(achievementId) {
@@ -6597,6 +7533,10 @@ function openHousePage(house, icon, title) {
     // Generate content based on house
     if (house === 'progression') {
       subpageContent.innerHTML = generateProgressionHouseContent();
+    } else if (house === 'skill') {
+      subpageContent.innerHTML = generateSkillHouseContent();
+    } else if (house === 'exploration') {
+      subpageContent.innerHTML = generateExplorationHouseContent();
     } else {
       // Coming soon for other houses
       subpageContent.innerHTML = `
@@ -6834,6 +7774,411 @@ function generateProgressionHouseContent() {
   `;
   
   return html;
+}
+
+// Generate House 2 - Path of Skill content
+function generateSkillHouseContent() {
+  const achievements = getHouseAchievements('skill');
+  
+  // Filter achievements by pillar
+  const accuracyAchievements = achievements.filter(a => a.pillar === 'accuracy-feats');
+  const streakAchievements = achievements.filter(a => a.pillar === 'streak-mastery');
+  const hybridAchievements = achievements.filter(a => a.pillar === 'hybrid-feats');
+  
+  // Count claimed/pending achievements for Pillar 1
+  const accuracyClaimed = accuracyAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const accuracyPending = accuracyAchievements.filter(a => isAchievementPending(a.id)).length;
+  const accuracyTotal = accuracyAchievements.length;
+  
+  // Count claimed/pending achievements for Pillar 2
+  const streakClaimed = streakAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const streakPending = streakAchievements.filter(a => isAchievementPending(a.id)).length;
+  const streakTotal = streakAchievements.length;
+  
+  // Count claimed/pending achievements for Pillar 3
+  const hybridClaimed = hybridAchievements.filter(a => isAchievementClaimed(a.id)).length;
+  const hybridPending = hybridAchievements.filter(a => isAchievementPending(a.id)).length;
+  const hybridTotal = hybridAchievements.length;
+  
+  // Group Pillar 1 by tier
+  const accTier1 = accuracyAchievements.filter(a => a.tier === 1);
+  const accTier2 = accuracyAchievements.filter(a => a.tier === 2);
+  const accTier3 = accuracyAchievements.filter(a => a.tier === 3);
+  const accTier4 = accuracyAchievements.filter(a => a.tier === 4);
+  
+  // Group Pillar 2 by tier
+  const streakTier1 = streakAchievements.filter(a => a.tier === 1);
+  const streakTier2 = streakAchievements.filter(a => a.tier === 2);
+  const streakTier3 = streakAchievements.filter(a => a.tier === 3);
+  
+  // Group Pillar 3 by tier
+  const hybridTier1 = hybridAchievements.filter(a => a.tier === 1);
+  const hybridTier2 = hybridAchievements.filter(a => a.tier === 2);
+  const hybridTier3 = hybridAchievements.filter(a => a.tier === 3);
+  
+  let html = `
+    <div class="house-skill-content">
+      <!-- House Header -->
+      <div class="house-header-section skill-header">
+        <div class="house-icon-large skill-icon">⬡</div>
+        <p class="house-subtitle skill-subtitle">Mastery is forged in precision, consistency, and flawless execution.</p>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 1: Accuracy Feats -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar skill-pillar collapsed" id="pillar-accuracy-feats">
+        <div class="pillar-header skill-pillar-header" onclick="togglePillar('accuracy-feats')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon skill-pillar-icon">⬡</span>
+            <h3 class="pillar-title-text">Accuracy Feats</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${accuracyPending > 0 ? 'has-pending' : ''}">${accuracyClaimed}/${accuracyTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description skill-pillar-desc">Single-session brilliance → Sustained mastery</p>
+        
+        <div class="achievement-ladder pillar-content skill-achievement-ladder" id="pillar-content-accuracy-feats" style="max-height: 0px;">
+          
+          <!-- TIER 1: Single-Session Accuracy -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Single-Session Accuracy</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 1 Tier 1 achievements
+  accTier1.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 2: Consistency (80% Accuracy) -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Consistency (80%)</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 1 Tier 2 achievements
+  accTier2.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 3: Consistency (90% Accuracy) -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Consistency (90%)</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 1 Tier 3 achievements
+  accTier3.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 4: Consistency (100% Accuracy) -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Consistency (100%)</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 1 Tier 4 achievements
+  accTier4.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 2: Streak Mastery -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar skill-pillar collapsed" id="pillar-streak-mastery">
+        <div class="pillar-header skill-pillar-header" onclick="togglePillar('streak-mastery')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon skill-pillar-icon">🔥</span>
+            <h3 class="pillar-title-text">Streak Mastery</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${streakPending > 0 ? 'has-pending' : ''}">${streakClaimed}/${streakTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description skill-pillar-desc">Momentum sustained becomes mastery.</p>
+        
+        <div class="achievement-ladder pillar-content skill-achievement-ladder" id="pillar-content-streak-mastery" style="max-height: 0px;">
+          
+          <!-- TIER 1: Early Momentum -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Early Momentum</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 2 Tier 1 achievements
+  streakTier1.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 2: Sustained Momentum -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Sustained Momentum</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 2 Tier 2 achievements
+  streakTier2.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 3: Masterful Momentum -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Masterful Momentum</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 2 Tier 3 achievements
+  streakTier3.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+      
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 3: Hybrid Accuracy & Streak Feats -->
+      <!-- ═══════════════════════════════════════════════════════════ -->
+      <div class="achievement-pillar skill-pillar collapsed" id="pillar-hybrid-feats">
+        <div class="pillar-header skill-pillar-header" onclick="togglePillar('hybrid-feats')">
+          <div class="pillar-header-left">
+            <span class="pillar-icon skill-pillar-icon">⚡</span>
+            <h3 class="pillar-title-text">Hybrid Accuracy & Streak</h3>
+          </div>
+          <div class="pillar-header-right">
+            <span class="pillar-count ${hybridPending > 0 ? 'has-pending' : ''}">${hybridClaimed}/${hybridTotal}</span>
+            <span class="pillar-arrow">▼</span>
+          </div>
+        </div>
+        <p class="pillar-description skill-pillar-desc">A fusion of precision and momentum.</p>
+        
+        <div class="achievement-ladder pillar-content skill-achievement-ladder" id="pillar-content-hybrid-feats" style="max-height: 0px;">
+          
+          <!-- TIER 1: 80% Accuracy Hybrid Feats -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">80% Accuracy Hybrid</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 3 Tier 1 achievements
+  hybridTier1.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 2: 90% Accuracy Hybrid Feats -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">90% Accuracy Hybrid</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 3 Tier 2 achievements
+  hybridTier2.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 3: Perfect Accuracy Hybrid Feats -->
+          <div class="skill-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Perfect Accuracy Hybrid</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Pillar 3 Tier 3 achievements
+  hybridTier3.forEach(achievement => {
+    html += generateSkillAchievementCard(achievement);
+  });
+  
+  html += `
+        </div>
+      </div>
+    </div>
+  `;
+  
+  return html;
+}
+
+// Generate a Skill house achievement card (sharper design)
+function generateSkillAchievementCard(achievement) {
+  const isPending = isAchievementPending(achievement.id);
+  const isClaimed = isAchievementClaimed(achievement.id);
+  const isLocked = !isPending && !isClaimed;
+  
+  let statusClass = isLocked ? 'locked' : (isPending ? 'pending' : 'claimed');
+  let statusIcon = isLocked ? '🔒' : (isPending ? '✨' : '✅');
+  
+  return `
+    <div class="achievement-card skill-achievement-card ${statusClass}" data-id="${achievement.id}" onclick="handleAchievementClick('${achievement.id}')">
+      <div class="skill-card-glow-line"></div>
+      <div class="achievement-icon-wrapper">
+        <span class="achievement-status-icon">${statusIcon}</span>
+      </div>
+      <div class="achievement-info">
+        <h4 class="achievement-name">${achievement.name}</h4>
+        <p class="achievement-desc">${achievement.description}</p>
+        <div class="achievement-rewards">
+          <span class="reward-item pxp">+${achievement.pxpReward} P-XP</span>
+          <span class="reward-item quanta">+${achievement.quantaReward} ✦</span>
+        </div>
+      </div>
+      ${isPending ? '<div class="claim-indicator">TAP TO CLAIM</div>' : ''}
+    </div>
+  `;
+}
+
+// =============================================
+// EXPLORATION HOUSE — PATH OF EXPLORATION
+// =============================================
+function generateExplorationHouseContent() {
+  const achievements = getHouseAchievements('exploration');
+  
+  // Filter achievements by tier
+  const tier1 = achievements.filter(a => a.tier === 1);
+  const tier2 = achievements.filter(a => a.tier === 2);
+  const tier3 = achievements.filter(a => a.tier === 3);
+  
+  // Count claimed achievements for progress
+  const claimedCount = achievements.filter(a => isAchievementClaimed(a.id)).length;
+  const totalCount = achievements.length;
+  
+  let html = `
+    <div class="exploration-house-content">
+      <!-- Exploration House Header -->
+      <div class="exploration-header">
+        <div class="exploration-compass-container">
+          <span class="exploration-compass-icon">🧭</span>
+          <div class="exploration-compass-glow"></div>
+        </div>
+        <h2 class="exploration-title">Path of Exploration</h2>
+        <p class="exploration-subtitle">Curiosity guides the seeker.</p>
+      </div>
+      
+      <!-- Single Pillar: The Path of Discovery -->
+      <div class="achievement-pillar exploration-pillar collapsed" id="pillar-path-of-discovery" onclick="togglePillar('path-of-discovery')">
+        <div class="pillar-header">
+          <div class="pillar-icon exploration-pillar-icon">🧭</div>
+          <div class="pillar-title-group">
+            <h3 class="pillar-title">The Path of Discovery</h3>
+            <p class="pillar-description">Walk new lands and touch unfamiliar realms.</p>
+          </div>
+          <div class="pillar-progress">${claimedCount}/${totalCount}</div>
+          <div class="pillar-arrow">▼</div>
+        </div>
+        
+        <div class="achievement-ladder pillar-content exploration-achievement-ladder" id="pillar-content-path-of-discovery" style="max-height: 0px;">
+          
+          <!-- TIER 1: Topic Discovery -->
+          <div class="exploration-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Topic Discovery</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Tier 1 achievements
+  tier1.forEach(achievement => {
+    html += generateExplorationAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 2: Topic Deep Sampling -->
+          <div class="exploration-tier-divider">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">Topic Deep Sampling</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Tier 2 achievements
+  tier2.forEach(achievement => {
+    html += generateExplorationAchievementCard(achievement);
+  });
+  
+  html += `
+          <!-- TIER 3: The World-Wide Touch (Capstone) -->
+          <div class="exploration-tier-divider capstone-tier">
+            <span class="tier-flourish">◂</span>
+            <span class="tier-label">The World-Wide Touch</span>
+            <span class="tier-flourish">▸</span>
+          </div>
+  `;
+  
+  // Add Tier 3 capstone achievement
+  tier3.forEach(achievement => {
+    html += generateExplorationAchievementCard(achievement, true);
+  });
+  
+  html += `
+        </div>
+      </div>
+    </div>
+  `;
+  
+  return html;
+}
+
+// Generate an Exploration house achievement card (softer, airy design)
+function generateExplorationAchievementCard(achievement, isCapstone = false) {
+  const isPending = isAchievementPending(achievement.id);
+  const isClaimed = isAchievementClaimed(achievement.id);
+  const isLocked = !isPending && !isClaimed;
+  
+  let statusClass = isLocked ? 'locked' : (isPending ? 'pending' : 'claimed');
+  let statusIcon = isLocked ? '🔒' : (isPending ? '✨' : '✅');
+  
+  const capstoneClass = isCapstone ? 'capstone-card' : '';
+  
+  return `
+    <div class="achievement-card exploration-achievement-card ${statusClass} ${capstoneClass}" data-id="${achievement.id}" onclick="handleAchievementClick('${achievement.id}')">
+      <div class="exploration-card-compass-accent"></div>
+      <div class="achievement-icon-wrapper">
+        <span class="achievement-status-icon">${statusIcon}</span>
+      </div>
+      <div class="achievement-info">
+        <h4 class="achievement-name">${achievement.name}</h4>
+        <p class="achievement-desc">${achievement.description}</p>
+        <div class="achievement-rewards">
+          <span class="reward-item pxp">+${achievement.pxpReward} P-XP</span>
+          <span class="reward-item quanta">+${achievement.quantaReward} ✦</span>
+        </div>
+      </div>
+      ${isPending ? '<div class="claim-indicator">TAP TO CLAIM</div>' : ''}
+    </div>
+  `;
 }
 
 // Generate a single achievement card HTML

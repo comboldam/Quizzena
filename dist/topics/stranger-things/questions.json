@@ -1,0 +1,2621 @@
+[
+  {
+    "id": 1,
+    "question": "What is the name of the fictional town where Stranger Things is set?",
+    "options": [
+      "Derry",
+      "Hawkins",
+      "Castle Rock",
+      "Riverdale"
+    ],
+    "answer": "Hawkins",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 2,
+    "question": "Who plays Eleven in Stranger Things?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg/250px-Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg",
+    "options": [
+      "Sadie Sink",
+      "Millie Bobby Brown",
+      "Natalia Dyer",
+      "Maya Hawke"
+    ],
+    "answer": "Millie Bobby Brown",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 3,
+    "question": "What is Eleven's real name?",
+    "options": [
+      "Jane Hopper",
+      "Sara Hopper",
+      "El Wheeler",
+      "Jane Ives"
+    ],
+    "answer": "Jane Ives",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 4,
+    "question": "Who plays Mike Wheeler?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Finn_Wolfhard_by_Gage_Skidmore_2.jpg/250px-Finn_Wolfhard_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Gaten Matarazzo",
+      "Caleb McLaughlin",
+      "Finn Wolfhard",
+      "Noah Schnapp"
+    ],
+    "answer": "Finn Wolfhard",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 5,
+    "question": "What is the parallel dimension called in the show?",
+    "options": [
+      "The Other Side",
+      "The Upside Down",
+      "The Shadow Realm",
+      "The Dark World"
+    ],
+    "answer": "The Upside Down",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 6,
+    "question": "Who plays Dustin Henderson?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gaten_Matarazzo.jpg/250px-Gaten_Matarazzo.jpg",
+    "options": [
+      "Finn Wolfhard",
+      "Gaten Matarazzo",
+      "Noah Schnapp",
+      "Caleb McLaughlin"
+    ],
+    "answer": "Gaten Matarazzo",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 7,
+    "question": "What year does Stranger Things Season 1 take place?",
+    "options": [
+      "1982",
+      "1983",
+      "1984",
+      "1985"
+    ],
+    "answer": "1983",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 8,
+    "question": "Who plays Lucas Sinclair?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Caleb_McLaughlin_2025_%281%29.png/250px-Caleb_McLaughlin_2025_%281%29.png",
+    "options": [
+      "Caleb McLaughlin",
+      "Gaten Matarazzo",
+      "Finn Wolfhard",
+      "Noah Schnapp"
+    ],
+    "answer": "Caleb McLaughlin",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 9,
+    "question": "Who plays Will Byers?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Noah_Schnapp_-_NBFF_2025.jpg/250px-Noah_Schnapp_-_NBFF_2025.jpg",
+    "options": [
+      "Finn Wolfhard",
+      "Caleb McLaughlin",
+      "Noah Schnapp",
+      "Gaten Matarazzo"
+    ],
+    "answer": "Noah Schnapp",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 10,
+    "question": "What is the name of Will's mother?",
+    "options": [
+      "Karen Wheeler",
+      "Joyce Byers",
+      "Claudia Henderson",
+      "Susan Hargrove"
+    ],
+    "answer": "Joyce Byers",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 11,
+    "question": "Who plays Joyce Byers?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Winona_Ryder-63849.jpg/250px-Winona_Ryder-63849.jpg",
+    "options": [
+      "Winona Ryder",
+      "Cara Buono",
+      "Catherine Curtin",
+      "Linnea Berthelsen"
+    ],
+    "answer": "Winona Ryder",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 12,
+    "question": "Who plays Chief Jim Hopper?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/David_Harbour_by_Gage_Skidmore_2.jpg/250px-David_Harbour_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Sean Astin",
+      "Matthew Modine",
+      "David Harbour",
+      "Brett Gelman"
+    ],
+    "answer": "David Harbour",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 13,
+    "question": "What secret government lab is featured in the show?",
+    "options": [
+      "Area 51",
+      "Hawkins National Laboratory",
+      "S.H.I.E.L.D.",
+      "Dharma Initiative"
+    ],
+    "answer": "Hawkins National Laboratory",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 14,
+    "question": "What creature terrorizes Hawkins in Season 1?",
+    "options": [
+      "Mind Flayer",
+      "Demogorgon",
+      "Demodogs",
+      "Vecna"
+    ],
+    "answer": "Demogorgon",
+    "difficulty": "easy",
+    "category": "creatures"
+  },
+  {
+    "id": 15,
+    "question": "What game do the boys play at the start of the series?",
+    "options": [
+      "Monopoly",
+      "Dungeons & Dragons",
+      "Risk",
+      "Clue"
+    ],
+    "answer": "Dungeons & Dragons",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 16,
+    "question": "Who plays Nancy Wheeler?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Natalia_Dyer_in_2017.jpg/250px-Natalia_Dyer_in_2017.jpg",
+    "options": [
+      "Maya Hawke",
+      "Natalia Dyer",
+      "Sadie Sink",
+      "Millie Bobby Brown"
+    ],
+    "answer": "Natalia Dyer",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 17,
+    "question": "Who plays Jonathan Byers?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/CharlieHeaton2017_%28cropped%29.jpg/250px-CharlieHeaton2017_%28cropped%29.jpg",
+    "options": [
+      "Joe Keery",
+      "Dacre Montgomery",
+      "Charlie Heaton",
+      "Noah Schnapp"
+    ],
+    "answer": "Charlie Heaton",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 18,
+    "question": "Who plays Steve Harrington?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Joe_Keery_by_Gage_Skidmore.jpg/250px-Joe_Keery_by_Gage_Skidmore.jpg",
+    "options": [
+      "Charlie Heaton",
+      "Joe Keery",
+      "Dacre Montgomery",
+      "Finn Wolfhard"
+    ],
+    "answer": "Joe Keery",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 19,
+    "question": "What food does Eleven love?",
+    "options": [
+      "Pizza",
+      "Waffles",
+      "Pancakes",
+      "Burgers"
+    ],
+    "answer": "Waffles",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 20,
+    "question": "What happens to Eleven when she uses her powers too much?",
+    "options": [
+      "She faints",
+      "Her nose bleeds",
+      "She gets headaches",
+      "She loses her voice"
+    ],
+    "answer": "Her nose bleeds",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 21,
+    "question": "What is Dustin's pet from the Upside Down named?",
+    "options": [
+      "Mews",
+      "Chester",
+      "D'Artagnan",
+      "Demo"
+    ],
+    "answer": "D'Artagnan",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 22,
+    "question": "Who plays Robin Buckley?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Maya_Hawke_2019_by_Glenn_Francis_%28cropped%29.jpg/250px-Maya_Hawke_2019_by_Glenn_Francis_%28cropped%29.jpg",
+    "options": [
+      "Natalia Dyer",
+      "Sadie Sink",
+      "Maya Hawke",
+      "Millie Bobby Brown"
+    ],
+    "answer": "Maya Hawke",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 23,
+    "question": "Who plays Max Mayfield?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sadie_Sink_%2843914734441%29.jpg/250px-Sadie_Sink_%2843914734441%29.jpg",
+    "options": [
+      "Maya Hawke",
+      "Millie Bobby Brown",
+      "Sadie Sink",
+      "Natalia Dyer"
+    ],
+    "answer": "Sadie Sink",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 24,
+    "question": "Who plays Billy Hargrove?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Dacre_Montgomery_by_Gage_Skidmore.jpg/250px-Dacre_Montgomery_by_Gage_Skidmore.jpg",
+    "options": [
+      "Joe Keery",
+      "Dacre Montgomery",
+      "Charlie Heaton",
+      "Sean Astin"
+    ],
+    "answer": "Dacre Montgomery",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 25,
+    "question": "What is the name of Billy's stepsister?",
+    "options": [
+      "Nancy",
+      "Max",
+      "Robin",
+      "El"
+    ],
+    "answer": "Max",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 26,
+    "question": "What state is Hawkins located in?",
+    "options": [
+      "Ohio",
+      "Illinois",
+      "Indiana",
+      "Michigan"
+    ],
+    "answer": "Indiana",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 27,
+    "question": "Who plays Erica Sinclair?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Priah_Ferguson_in_2019.png/250px-Priah_Ferguson_in_2019.png",
+    "options": [
+      "Millie Bobby Brown",
+      "Priah Ferguson",
+      "Sadie Sink",
+      "Maya Hawke"
+    ],
+    "answer": "Priah Ferguson",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 28,
+    "question": "What is Erica's relationship to Lucas?",
+    "options": [
+      "Cousin",
+      "Friend",
+      "Sister",
+      "Neighbor"
+    ],
+    "answer": "Sister",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 29,
+    "question": "Who plays Murray Bauman?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Brett_Gelman_by_Gage_Skidmore_2.jpg/250px-Brett_Gelman_by_Gage_Skidmore_2.jpg",
+    "options": [
+      "Sean Astin",
+      "Matthew Modine",
+      "Brett Gelman",
+      "Paul Reiser"
+    ],
+    "answer": "Brett Gelman",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 30,
+    "question": "Who plays Dr. Martin Brenner?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Matthew_Modine_by_Gage_Skidmore.jpg/250px-Matthew_Modine_by_Gage_Skidmore.jpg",
+    "options": [
+      "Paul Reiser",
+      "Matthew Modine",
+      "Brett Gelman",
+      "Sean Astin"
+    ],
+    "answer": "Matthew Modine",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 31,
+    "question": "What does Eleven call Dr. Brenner?",
+    "options": [
+      "Father",
+      "Papa",
+      "Dad",
+      "Doctor"
+    ],
+    "answer": "Papa",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 32,
+    "question": "Who plays Vecna/Henry Creel/001?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Jamie_Campbell_Bower.jpg/250px-Jamie_Campbell_Bower.jpg",
+    "options": [
+      "Matthew Modine",
+      "Jamie Campbell Bower",
+      "Dacre Montgomery",
+      "Paul Reiser"
+    ],
+    "answer": "Jamie Campbell Bower",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 33,
+    "question": "Who plays Eddie Munson?",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Joseph_Quinn_by_Gage_Skidmore.jpg/250px-Joseph_Quinn_by_Gage_Skidmore.jpg",
+    "options": [
+      "Joe Keery",
+      "Charlie Heaton",
+      "Joseph Quinn",
+      "Dacre Montgomery"
+    ],
+    "answer": "Joseph Quinn",
+    "difficulty": "easy",
+    "category": "actors"
+  },
+  {
+    "id": 34,
+    "question": "What club does Eddie Munson lead?",
+    "options": [
+      "Chess Club",
+      "Hellfire Club",
+      "Science Club",
+      "Drama Club"
+    ],
+    "answer": "Hellfire Club",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 35,
+    "question": "What instrument does Eddie play in the Upside Down?",
+    "options": [
+      "Drums",
+      "Bass",
+      "Guitar",
+      "Keyboard"
+    ],
+    "answer": "Guitar",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 36,
+    "question": "What song does Eddie play to distract the bats?",
+    "options": [
+      "Separate Ways",
+      "Running Up That Hill",
+      "Master of Puppets",
+      "Never Ending Story"
+    ],
+    "answer": "Master of Puppets",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 37,
+    "question": "What song saves Max from Vecna?",
+    "options": [
+      "Master of Puppets",
+      "Running Up That Hill",
+      "Separate Ways",
+      "Should I Stay or Should I Go"
+    ],
+    "answer": "Running Up That Hill",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 38,
+    "question": "Who sings 'Running Up That Hill'?",
+    "options": [
+      "Cyndi Lauper",
+      "Madonna",
+      "Kate Bush",
+      "Pat Benatar"
+    ],
+    "answer": "Kate Bush",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 39,
+    "question": "What is the name of the mall in Season 3?",
+    "options": [
+      "Hawkins Mall",
+      "Starcourt Mall",
+      "Indiana Plaza",
+      "Roane Mall"
+    ],
+    "answer": "Starcourt Mall",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 40,
+    "question": "What ice cream shop do Steve and Robin work at?",
+    "options": [
+      "Baskin-Robbins",
+      "Scoops Ahoy",
+      "Cold Stone",
+      "Dairy Queen"
+    ],
+    "answer": "Scoops Ahoy",
+    "difficulty": "easy",
+    "category": "locations"
+  },
+  {
+    "id": 41,
+    "question": "What Russian phrase do Steve and Robin decode?",
+    "options": [
+      "The week is long",
+      "The silver cat feeds",
+      "Trip to China sounds nice",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 42,
+    "question": "What does the Mind Flayer look like?",
+    "options": [
+      "A giant spider",
+      "A massive shadow creature",
+      "A humanoid",
+      "A dragon"
+    ],
+    "answer": "A massive shadow creature",
+    "difficulty": "easy",
+    "category": "creatures"
+  },
+  {
+    "id": 43,
+    "question": "Who becomes possessed by the Mind Flayer in Season 2?",
+    "options": [
+      "Mike",
+      "Eleven",
+      "Will",
+      "Dustin"
+    ],
+    "answer": "Will",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 44,
+    "question": "Who becomes possessed by the Mind Flayer in Season 3?",
+    "options": [
+      "Steve",
+      "Nancy",
+      "Billy",
+      "Jonathan"
+    ],
+    "answer": "Billy",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 45,
+    "question": "What is Hopper's daughter's name?",
+    "options": [
+      "Jane",
+      "Sara",
+      "El",
+      "Max"
+    ],
+    "answer": "Sara",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 46,
+    "question": "What did Hopper's daughter die from?",
+    "options": [
+      "Car accident",
+      "Cancer",
+      "The Upside Down",
+      "Drowning"
+    ],
+    "answer": "Cancer",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 47,
+    "question": "Where is Hopper held captive in Season 4?",
+    "options": [
+      "Alaska",
+      "Russia",
+      "China",
+      "Germany"
+    ],
+    "answer": "Russia",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 48,
+    "question": "What creature does Hopper fight in Russia?",
+    "options": [
+      "Vecna",
+      "Mind Flayer",
+      "Demogorgon",
+      "Demodogs"
+    ],
+    "answer": "Demogorgon",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 49,
+    "question": "What is Nancy's weapon of choice?",
+    "options": [
+      "Baseball bat",
+      "Shotgun",
+      "Knife",
+      "Crossbow"
+    ],
+    "answer": "Shotgun",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 50,
+    "question": "What is Steve's signature weapon?",
+    "options": [
+      "Shotgun",
+      "Baseball bat with nails",
+      "Axe",
+      "Knife"
+    ],
+    "answer": "Baseball bat with nails",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 51,
+    "question": "What is Steve's nickname?",
+    "options": [
+      "The Babysitter",
+      "King Steve",
+      "Hair God",
+      "Both A and B"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 52,
+    "question": "What video store does Steve work at in Season 4?",
+    "options": [
+      "Blockbuster",
+      "Family Video",
+      "Hollywood Video",
+      "Movie Gallery"
+    ],
+    "answer": "Family Video",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 53,
+    "question": "Who is the creator of Stranger Things?",
+    "options": [
+      "J.J. Abrams",
+      "The Duffer Brothers",
+      "Steven Spielberg",
+      "Shawn Levy"
+    ],
+    "answer": "The Duffer Brothers",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 54,
+    "question": "What streaming service airs Stranger Things?",
+    "options": [
+      "HBO Max",
+      "Amazon Prime",
+      "Netflix",
+      "Disney+"
+    ],
+    "answer": "Netflix",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 55,
+    "question": "What year did Stranger Things premiere?",
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
+    "answer": "2016",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 56,
+    "question": "How many seasons of Stranger Things are there (as of 2024)?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 57,
+    "question": "What is Vecna's real name?",
+    "options": [
+      "Peter Ballard",
+      "Henry Creel",
+      "Victor Creel",
+      "Martin Brenner"
+    ],
+    "answer": "Henry Creel",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 58,
+    "question": "What was Henry Creel's number at Hawkins Lab?",
+    "options": [
+      "001",
+      "008",
+      "010",
+      "011"
+    ],
+    "answer": "001",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 59,
+    "question": "Who did Henry Creel kill in the Creel House?",
+    "options": [
+      "His father only",
+      "His mother and sister",
+      "The entire family",
+      "No one"
+    ],
+    "answer": "His mother and sister",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 60,
+    "question": "What happened to Victor Creel?",
+    "options": [
+      "He died",
+      "He was sent to prison",
+      "He was sent to a psychiatric hospital",
+      "He escaped"
+    ],
+    "answer": "He was sent to a psychiatric hospital",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 61,
+    "question": "How does Vecna choose his victims?",
+    "options": [
+      "Randomly",
+      "By their trauma and guilt",
+      "By their age",
+      "By their location"
+    ],
+    "answer": "By their trauma and guilt",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 62,
+    "question": "What does Vecna do to his victims?",
+    "options": [
+      "Drowns them",
+      "Breaks their bones and eyes",
+      "Burns them",
+      "Freezes them"
+    ],
+    "answer": "Breaks their bones and eyes",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 63,
+    "question": "What is the grandfather clock associated with?",
+    "options": [
+      "Time travel",
+      "Vecna's curse",
+      "The Mind Flayer",
+      "Eleven's powers"
+    ],
+    "answer": "Vecna's curse",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 64,
+    "question": "Who is Vecna's first victim in Season 4?",
+    "options": [
+      "Max",
+      "Fred",
+      "Chrissy",
+      "Patrick"
+    ],
+    "answer": "Chrissy",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 65,
+    "question": "What was Chrissy trying to buy from Eddie?",
+    "options": [
+      "Weed",
+      "Special K",
+      "LSD",
+      "Cocaine"
+    ],
+    "answer": "Special K",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 66,
+    "question": "What does the town accuse Eddie of?",
+    "options": [
+      "Drug dealing",
+      "Satanic murder",
+      "Kidnapping",
+      "Robbery"
+    ],
+    "answer": "Satanic murder",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 67,
+    "question": "What is the name of the basketball captain who hunts Eddie?",
+    "options": [
+      "Tommy",
+      "Jason",
+      "Steve",
+      "Billy"
+    ],
+    "answer": "Jason",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 68,
+    "question": "What song does Will listen to escape the Upside Down vibes?",
+    "options": [
+      "Africa",
+      "Should I Stay or Should I Go",
+      "Every Breath You Take",
+      "Take On Me"
+    ],
+    "answer": "Should I Stay or Should I Go",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 69,
+    "question": "Who sings 'Should I Stay or Should I Go'?",
+    "options": [
+      "The Police",
+      "The Clash",
+      "The Smiths",
+      "Talking Heads"
+    ],
+    "answer": "The Clash",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 70,
+    "question": "What is the name of Dustin's girlfriend from camp?",
+    "options": [
+      "Susan",
+      "Suzie",
+      "Sandy",
+      "Sarah"
+    ],
+    "answer": "Suzie",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 71,
+    "question": "What song do Dustin and Suzie sing together?",
+    "options": [
+      "Thriller",
+      "Never Ending Story",
+      "Time After Time",
+      "Total Eclipse of the Heart"
+    ],
+    "answer": "Never Ending Story",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 72,
+    "question": "What is Eleven's number at Hawkins Lab?",
+    "options": [
+      "008",
+      "010",
+      "011",
+      "001"
+    ],
+    "answer": "011",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 73,
+    "question": "Who is Number Eight (008)?",
+    "options": [
+      "Eleven's sister",
+      "Kali",
+      "A girl with illusion powers",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 74,
+    "question": "What was the controversial episode about Kali?",
+    "options": [
+      "The Vanishing of Will Byers",
+      "The Lost Sister",
+      "The Gate",
+      "The Bite"
+    ],
+    "answer": "The Lost Sister",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 75,
+    "question": "How did Eleven open the gate to the Upside Down?",
+    "options": [
+      "Accident",
+      "By making contact with the Demogorgon",
+      "Dr. Brenner opened it",
+      "It was always open"
+    ],
+    "answer": "By making contact with the Demogorgon",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 76,
+    "question": "What is the sensory deprivation tank used for?",
+    "options": [
+      "Torture",
+      "Enhancing Eleven's powers",
+      "Medical treatment",
+      "Relaxation"
+    ],
+    "answer": "Enhancing Eleven's powers",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 77,
+    "question": "What does Eleven use as a makeshift sensory deprivation tank?",
+    "options": [
+      "Swimming pool",
+      "Bathtub",
+      "Kiddie pool with salt",
+      "Lake"
+    ],
+    "answer": "Kiddie pool with salt",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 78,
+    "question": "Who was Nancy's boyfriend before Steve?",
+    "options": [
+      "Jonathan",
+      "Barb",
+      "No one",
+      "Tommy"
+    ],
+    "answer": "No one",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 79,
+    "question": "What is the name of Nancy's best friend who dies?",
+    "options": [
+      "Robin",
+      "Barb",
+      "Carol",
+      "Heather"
+    ],
+    "answer": "Barb",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 80,
+    "question": "What happens to Barb?",
+    "options": [
+      "She moves away",
+      "Killed by the Demogorgon",
+      "She survives",
+      "Becomes a spy"
+    ],
+    "answer": "Killed by the Demogorgon",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 81,
+    "question": "What hashtag became popular for Barb?",
+    "options": [
+      "#JusticeForBarb",
+      "#SaveBarb",
+      "#BarbLives",
+      "#RememberBarb"
+    ],
+    "answer": "#JusticeForBarb",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 82,
+    "question": "What is Bob Newby's nickname?",
+    "options": [
+      "Bob the Brain",
+      "Bob the Builder",
+      "Bob the Brave",
+      "Bob Newby, Superhero"
+    ],
+    "answer": "Bob Newby, Superhero",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 83,
+    "question": "Who plays Bob Newby?",
+    "options": [
+      "Sean Bean",
+      "Sean Astin",
+      "Sean Penn",
+      "Sean Connery"
+    ],
+    "answer": "Sean Astin",
+    "difficulty": "medium",
+    "category": "actors"
+  },
+  {
+    "id": 84,
+    "question": "How does Bob Newby die?",
+    "options": [
+      "Shot",
+      "Eaten by Demodogs",
+      "Fell",
+      "Explosion"
+    ],
+    "answer": "Eaten by Demodogs",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 85,
+    "question": "What is the name of the reporter investigating Hawkins Lab?",
+    "options": [
+      "Murray Bauman",
+      "Powell",
+      "Callahan",
+      "Hess"
+    ],
+    "answer": "Murray Bauman",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 86,
+    "question": "What does Murray Bauman do for a living?",
+    "options": [
+      "Police officer",
+      "Conspiracy theorist/Investigator",
+      "Scientist",
+      "Teacher"
+    ],
+    "answer": "Conspiracy theorist/Investigator",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 87,
+    "question": "What language does Murray unexpectedly speak?",
+    "options": [
+      "Spanish",
+      "Russian",
+      "German",
+      "French"
+    ],
+    "answer": "Russian",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 88,
+    "question": "What is the name of Will's drawing that maps the tunnels?",
+    "options": [
+      "The Map",
+      "The Vine Map",
+      "The Mind Map",
+      "Will's Vision"
+    ],
+    "answer": "The Vine Map",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 89,
+    "question": "What does Mike say to Eleven to bring her back?",
+    "options": [
+      "I need you",
+      "I love you",
+      "Come back",
+      "Friends don't lie"
+    ],
+    "answer": "I love you",
+    "difficulty": "medium",
+    "category": "quotes"
+  },
+  {
+    "id": 90,
+    "question": "What is Eleven's catchphrase?",
+    "options": [
+      "I'm ready",
+      "Friends don't lie",
+      "Mouth breather",
+      "Promise?"
+    ],
+    "answer": "Friends don't lie",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 91,
+    "question": "What does Eleven call mean people?",
+    "options": [
+      "Bad people",
+      "Mouth breathers",
+      "Monsters",
+      "Meanies"
+    ],
+    "answer": "Mouth breathers",
+    "difficulty": "easy",
+    "category": "quotes"
+  },
+  {
+    "id": 92,
+    "question": "What is the Snow Ball?",
+    "options": [
+      "A weapon",
+      "A school dance",
+      "A creature",
+      "A holiday"
+    ],
+    "answer": "A school dance",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 93,
+    "question": "What song plays during Mike and Eleven's dance?",
+    "options": [
+      "Time After Time",
+      "Every Breath You Take",
+      "I Melt With You",
+      "Take My Breath Away"
+    ],
+    "answer": "Every Breath You Take",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 94,
+    "question": "What fake name does Eleven use when living with Hopper?",
+    "options": [
+      "Jane Hopper",
+      "El Hopper",
+      "Eleanor Hopper",
+      "Jane Ives"
+    ],
+    "answer": "Jane Hopper",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 95,
+    "question": "Where does Hopper hide Eleven?",
+    "options": [
+      "His house",
+      "A cabin in the woods",
+      "The police station",
+      "A bunker"
+    ],
+    "answer": "A cabin in the woods",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 96,
+    "question": "What rules does Hopper set for Eleven?",
+    "options": [
+      "Keep the blinds drawn",
+      "Only open the door for his knock",
+      "Don't go outside",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 97,
+    "question": "What code does Hopper use when knocking?",
+    "options": [
+      "2 knocks",
+      "3 knocks then 2",
+      "SOS",
+      "A pattern"
+    ],
+    "answer": "3 knocks then 2",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 98,
+    "question": "Who originally owned the cabin Hopper uses?",
+    "options": [
+      "His father",
+      "His grandfather",
+      "He bought it",
+      "The state"
+    ],
+    "answer": "His grandfather",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 99,
+    "question": "What does El do when she gets angry at Hopper?",
+    "options": [
+      "Runs away",
+      "Blows out the windows",
+      "Screams",
+      "Cries"
+    ],
+    "answer": "Blows out the windows",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 100,
+    "question": "How many gates does Vecna need to destroy Hawkins?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 101,
+    "question": "What arcade game do the boys play?",
+    "options": [
+      "Pac-Man",
+      "Dragon's Lair",
+      "Dig Dug",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 102,
+    "question": "What is the name of the arcade?",
+    "options": [
+      "Palace Arcade",
+      "Hawkins Arcade",
+      "Fun Zone",
+      "Game World"
+    ],
+    "answer": "Palace Arcade",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 103,
+    "question": "Who holds the high score in Dig Dug?",
+    "options": [
+      "Dustin",
+      "Mike",
+      "Lucas",
+      "MADMAX"
+    ],
+    "answer": "MADMAX",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 104,
+    "question": "What is Max's full name?",
+    "options": [
+      "Maxine Mayfield",
+      "Maxine Hargrove",
+      "Maximilienne Mayfield",
+      "Maximum Mayfield"
+    ],
+    "answer": "Maxine Mayfield",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 105,
+    "question": "Where did Max move from?",
+    "options": [
+      "New York",
+      "California",
+      "Texas",
+      "Florida"
+    ],
+    "answer": "California",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 106,
+    "question": "What does Max ride?",
+    "options": [
+      "Bicycle",
+      "Skateboard",
+      "Scooter",
+      "Motorcycle"
+    ],
+    "answer": "Skateboard",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 107,
+    "question": "Who does Max date?",
+    "options": [
+      "Mike",
+      "Dustin",
+      "Lucas",
+      "Will"
+    ],
+    "answer": "Lucas",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 108,
+    "question": "What happened to Max at the end of Season 4?",
+    "options": [
+      "She died",
+      "She fell into a coma",
+      "She moved away",
+      "She lost her powers"
+    ],
+    "answer": "She fell into a coma",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 109,
+    "question": "What does Billy's Camaro look like?",
+    "options": [
+      "Red",
+      "Blue",
+      "Black",
+      "White"
+    ],
+    "answer": "Blue",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 110,
+    "question": "Where does Billy work in Season 3?",
+    "options": [
+      "Starcourt Mall",
+      "Hawkins Pool",
+      "Family Video",
+      "Melvald's"
+    ],
+    "answer": "Hawkins Pool",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 111,
+    "question": "Who flirts with Billy at the pool?",
+    "options": [
+      "Nancy's mom",
+      "Joyce",
+      "Max's mom",
+      "Robin"
+    ],
+    "answer": "Nancy's mom",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 112,
+    "question": "What is Nancy's mom's name?",
+    "options": [
+      "Karen Wheeler",
+      "Joyce Wheeler",
+      "Claudia Wheeler",
+      "Susan Wheeler"
+    ],
+    "answer": "Karen Wheeler",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 113,
+    "question": "How does Billy die?",
+    "options": [
+      "Shot",
+      "Sacrifices himself to save Eleven",
+      "Car crash",
+      "Explosion"
+    ],
+    "answer": "Sacrifices himself to save Eleven",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 114,
+    "question": "What memory does Eleven show Billy to break the Mind Flayer's hold?",
+    "options": [
+      "His father",
+      "His mother at the beach",
+      "Max as a baby",
+      "His car"
+    ],
+    "answer": "His mother at the beach",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 115,
+    "question": "What year does Season 3 take place?",
+    "options": [
+      "1984",
+      "1985",
+      "1986",
+      "1987"
+    ],
+    "answer": "1985",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 116,
+    "question": "What year does Season 4 take place?",
+    "options": [
+      "1985",
+      "1986",
+      "1987",
+      "1988"
+    ],
+    "answer": "1986",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 117,
+    "question": "What is the name of Eleven's new school in California?",
+    "options": [
+      "Lenora Hills High School",
+      "California High",
+      "Hawkins West",
+      "Pacific High"
+    ],
+    "answer": "Lenora Hills High School",
+    "difficulty": "hard",
+    "category": "locations"
+  },
+  {
+    "id": 118,
+    "question": "Who bullies Eleven at her new school?",
+    "options": [
+      "Angela",
+      "Jennifer",
+      "Stacy",
+      "Brittany"
+    ],
+    "answer": "Angela",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 119,
+    "question": "What does Eleven hit Angela with?",
+    "options": [
+      "Her fist",
+      "A tray",
+      "A roller skate",
+      "A bottle"
+    ],
+    "answer": "A roller skate",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 120,
+    "question": "Who comes to help Eleven escape arrest?",
+    "options": [
+      "Hopper",
+      "Dr. Owens",
+      "Murray",
+      "Joyce"
+    ],
+    "answer": "Dr. Owens",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 121,
+    "question": "What is the name of the project to restore Eleven's powers?",
+    "options": [
+      "Project Nina",
+      "Project Eleven",
+      "Project Hawkins",
+      "Project Upside Down"
+    ],
+    "answer": "Project Nina",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 122,
+    "question": "What is NINA?",
+    "options": [
+      "A tank that lets El relive memories",
+      "A weapon",
+      "A person",
+      "A location"
+    ],
+    "answer": "A tank that lets El relive memories",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 123,
+    "question": "Who is Dr. Sam Owens?",
+    "options": [
+      "A villain",
+      "DOE scientist who helps Eleven",
+      "A monster",
+      "Brenner's assistant"
+    ],
+    "answer": "DOE scientist who helps Eleven",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 124,
+    "question": "Who plays Dr. Sam Owens?",
+    "options": [
+      "Matthew Modine",
+      "Paul Reiser",
+      "Brett Gelman",
+      "Sean Astin"
+    ],
+    "answer": "Paul Reiser",
+    "difficulty": "hard",
+    "category": "actors"
+  },
+  {
+    "id": 125,
+    "question": "What military officer hunts Eleven?",
+    "options": [
+      "Colonel Sullivan",
+      "General Brenner",
+      "Captain Powell",
+      "Major Owens"
+    ],
+    "answer": "Colonel Sullivan",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 126,
+    "question": "What pizza chain delivers to Eleven's house?",
+    "options": [
+      "Domino's",
+      "Pizza Hut",
+      "Surfer Boy Pizza",
+      "Papa John's"
+    ],
+    "answer": "Surfer Boy Pizza",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 127,
+    "question": "Who drives the Surfer Boy Pizza van?",
+    "options": [
+      "Jonathan",
+      "Argyle",
+      "Mike",
+      "Will"
+    ],
+    "answer": "Argyle",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 128,
+    "question": "What is Argyle's personality like?",
+    "options": [
+      "Serious",
+      "Angry",
+      "Laid-back stoner",
+      "Nerdy"
+    ],
+    "answer": "Laid-back stoner",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 129,
+    "question": "How does Jonathan deal with stress in Season 4?",
+    "options": [
+      "Exercise",
+      "Smoking weed",
+      "Reading",
+      "Playing games"
+    ],
+    "answer": "Smoking weed",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 130,
+    "question": "What is the strain between Jonathan and Nancy about?",
+    "options": [
+      "Money",
+      "College choices and long distance",
+      "Other people",
+      "Family"
+    ],
+    "answer": "College choices and long distance",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 131,
+    "question": "What newspaper does Nancy work for?",
+    "options": [
+      "Hawkins Post",
+      "Hawkins Times",
+      "Hawkins Tribune",
+      "Indiana Star"
+    ],
+    "answer": "Hawkins Post",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 132,
+    "question": "What does Robin discover about herself in Season 3?",
+    "options": [
+      "She has powers",
+      "She's gay",
+      "She's adopted",
+      "She's Russian"
+    ],
+    "answer": "She's gay",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 133,
+    "question": "Who does Robin have a crush on in Season 4?",
+    "options": [
+      "Nancy",
+      "Vickie",
+      "Max",
+      "Eleven"
+    ],
+    "answer": "Vickie",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 134,
+    "question": "What is Dustin's scientific interest?",
+    "options": [
+      "Physics",
+      "Biology",
+      "Chemistry",
+      "All sciences"
+    ],
+    "answer": "All sciences",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 135,
+    "question": "What condition does Dustin have?",
+    "options": [
+      "Asthma",
+      "Cleidocranial dysplasia",
+      "Diabetes",
+      "None"
+    ],
+    "answer": "Cleidocranial dysplasia",
+    "difficulty": "hard",
+    "category": "characters"
+  },
+  {
+    "id": 136,
+    "question": "What is notable about Dustin's teeth?",
+    "options": [
+      "They're fake",
+      "He has no front teeth",
+      "They're braces",
+      "They're perfect"
+    ],
+    "answer": "He has no front teeth",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 137,
+    "question": "Who does Dustin often pair up with?",
+    "options": [
+      "Mike",
+      "Lucas",
+      "Steve",
+      "Will"
+    ],
+    "answer": "Steve",
+    "difficulty": "easy",
+    "category": "characters"
+  },
+  {
+    "id": 138,
+    "question": "What do Dustin and Steve call their friendship?",
+    "options": [
+      "Best friends",
+      "Adopted brothers",
+      "Hair buddies",
+      "No official name but fan favorite duo"
+    ],
+    "answer": "No official name but fan favorite duo",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 139,
+    "question": "What product does Steve use for his hair?",
+    "options": [
+      "Gel",
+      "Farrah Fawcett spray",
+      "Mousse",
+      "Nothing"
+    ],
+    "answer": "Farrah Fawcett spray",
+    "difficulty": "medium",
+    "category": "details"
+  },
+  {
+    "id": 140,
+    "question": "Who tells Dustin about the Farrah Fawcett spray?",
+    "options": [
+      "Nancy",
+      "Steve",
+      "His mom",
+      "Robin"
+    ],
+    "answer": "Steve",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 141,
+    "question": "What is the main theme song composer?",
+    "options": [
+      "John Williams",
+      "Kyle Dixon and Michael Stein",
+      "Hans Zimmer",
+      "Trent Reznor"
+    ],
+    "answer": "Kyle Dixon and Michael Stein",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 142,
+    "question": "What band does Kyle Dixon and Michael Stein belong to?",
+    "options": [
+      "Survive",
+      "Tangerine Dream",
+      "Kraftwerk",
+      "Daft Punk"
+    ],
+    "answer": "Survive",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 143,
+    "question": "What 80s movie heavily influenced Stranger Things?",
+    "options": [
+      "Back to the Future",
+      "E.T. the Extra-Terrestrial",
+      "The Breakfast Club",
+      "Ferris Bueller"
+    ],
+    "answer": "E.T. the Extra-Terrestrial",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 144,
+    "question": "What horror author's work influenced the show?",
+    "options": [
+      "H.P. Lovecraft",
+      "Stephen King",
+      "Dean Koontz",
+      "Clive Barker"
+    ],
+    "answer": "Stephen King",
+    "difficulty": "easy",
+    "category": "production"
+  },
+  {
+    "id": 145,
+    "question": "What government project inspired Hawkins Lab?",
+    "options": [
+      "Manhattan Project",
+      "MKUltra",
+      "Area 51",
+      "Project Blue Book"
+    ],
+    "answer": "MKUltra",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 146,
+    "question": "What director is the show an homage to?",
+    "options": [
+      "George Lucas",
+      "Steven Spielberg",
+      "James Cameron",
+      "Ridley Scott"
+    ],
+    "answer": "Steven Spielberg",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 147,
+    "question": "What movie franchise are the Duffer Brothers fans of?",
+    "options": [
+      "Star Wars",
+      "Indiana Jones",
+      "Both A and B",
+      "Neither"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "medium",
+    "category": "production"
+  },
+  {
+    "id": 148,
+    "question": "What font is used in the Stranger Things logo?",
+    "options": [
+      "Benguiat",
+      "Helvetica",
+      "Times New Roman",
+      "Futura"
+    ],
+    "answer": "Benguiat",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 149,
+    "question": "What color scheme is associated with the Upside Down?",
+    "options": [
+      "Blue and cold",
+      "Red and hot",
+      "Green and misty",
+      "Black and white"
+    ],
+    "answer": "Blue and cold",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 150,
+    "question": "What floats in the air in the Upside Down?",
+    "options": [
+      "Dust",
+      "Spores/Particles",
+      "Snow",
+      "Feathers"
+    ],
+    "answer": "Spores/Particles",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 151,
+    "question": "What is the temperature like in the Upside Down?",
+    "options": [
+      "Hot",
+      "Normal",
+      "Cold",
+      "Varies"
+    ],
+    "answer": "Cold",
+    "difficulty": "easy",
+    "category": "details"
+  },
+  {
+    "id": 152,
+    "question": "What do the vines in the Upside Down do when touched?",
+    "options": [
+      "Nothing",
+      "They alert the creatures",
+      "They attack",
+      "They glow"
+    ],
+    "answer": "They alert the creatures",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 153,
+    "question": "What is the relationship between Vecna and the Mind Flayer?",
+    "options": [
+      "Enemies",
+      "Vecna controls the Mind Flayer",
+      "Mind Flayer controls Vecna",
+      "No relationship"
+    ],
+    "answer": "Vecna controls the Mind Flayer",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 154,
+    "question": "What did Henry/001 do to the other children at Hawkins Lab?",
+    "options": [
+      "Freed them",
+      "Killed them all",
+      "Helped them escape",
+      "Nothing"
+    ],
+    "answer": "Killed them all",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 155,
+    "question": "Who sent Henry to the Upside Down?",
+    "options": [
+      "Dr. Brenner",
+      "Eleven",
+      "The government",
+      "He went willingly"
+    ],
+    "answer": "Eleven",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 156,
+    "question": "What triggered Eleven's memory block about the massacre?",
+    "options": [
+      "Trauma",
+      "Dr. Brenner's conditioning",
+      "The Mind Flayer",
+      "Both A and B"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 157,
+    "question": "What is the Russian name for the Demogorgon?",
+    "options": [
+      "Monster",
+      "The American",
+      "Demon",
+      "Unknown"
+    ],
+    "answer": "The American",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 158,
+    "question": "What did the Soviets build under Starcourt Mall?",
+    "options": [
+      "A bunker",
+      "A portal machine",
+      "A prison",
+      "A lab"
+    ],
+    "answer": "A portal machine",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 159,
+    "question": "What is the Key?",
+    "options": [
+      "A literal key",
+      "A machine to open the gate",
+      "A person",
+      "A code"
+    ],
+    "answer": "A machine to open the gate",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 160,
+    "question": "How do Joyce and Hopper destroy the Key?",
+    "options": [
+      "Explosion",
+      "Turn it off",
+      "Overload it",
+      "Both turn keys simultaneously"
+    ],
+    "answer": "Both turn keys simultaneously",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 161,
+    "question": "What happens to Hopper at the end of Season 3?",
+    "options": [
+      "He dies",
+      "He's captured by Russians",
+      "He escapes",
+      "He marries Joyce"
+    ],
+    "answer": "He's captured by Russians",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 162,
+    "question": "What is Hopper's prisoner number in Russia?",
+    "options": [
+      "001",
+      "369",
+      "187",
+      "Unknown"
+    ],
+    "answer": "Unknown",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 163,
+    "question": "Who helps Hopper escape from the Russian prison?",
+    "options": [
+      "Dmitri (Enzo)",
+      "A guard",
+      "Joyce",
+      "Murray"
+    ],
+    "answer": "Dmitri (Enzo)",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 164,
+    "question": "What does Enzo want in return for helping Hopper?",
+    "options": [
+      "Freedom",
+      "Money",
+      "Safe passage to America for him and his son",
+      "Revenge"
+    ],
+    "answer": "Safe passage to America for him and his son",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 165,
+    "question": "Who does Yuri betray?",
+    "options": [
+      "The Americans",
+      "Joyce and Murray",
+      "Hopper",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 166,
+    "question": "What is Yuri's profession?",
+    "options": [
+      "Pilot/Smuggler",
+      "Guard",
+      "Scientist",
+      "Soldier"
+    ],
+    "answer": "Pilot/Smuggler",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 167,
+    "question": "What weapon do they use against the Russian Demogorgon?",
+    "options": [
+      "Guns",
+      "Fire/Flamethrower",
+      "Explosives",
+      "A sword"
+    ],
+    "answer": "Fire/Flamethrower",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 168,
+    "question": "What does El use to contact her friends from far away?",
+    "options": [
+      "Phone",
+      "Sensory deprivation/The Void",
+      "Radio",
+      "Letters"
+    ],
+    "answer": "Sensory deprivation/The Void",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 169,
+    "question": "What does Eleven use to enter the void in Season 4?",
+    "options": [
+      "A tank",
+      "A bathtub with ice",
+      "A freezer in a pizza shop",
+      "A pool"
+    ],
+    "answer": "A freezer in a pizza shop",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 170,
+    "question": "How does Mike get to Eleven in California?",
+    "options": [
+      "Plane",
+      "Car",
+      "Bus",
+      "Hitchhiking"
+    ],
+    "answer": "Plane",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 171,
+    "question": "What is the name of the D&D campaign in Season 4?",
+    "options": [
+      "The Hunt for Vecna",
+      "Cult of Vecna",
+      "Vecna's Curse",
+      "The Vecna Campaign"
+    ],
+    "answer": "Cult of Vecna",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 172,
+    "question": "Who is the Dungeon Master of Hellfire Club?",
+    "options": [
+      "Mike",
+      "Dustin",
+      "Eddie",
+      "Lucas"
+    ],
+    "answer": "Eddie",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 173,
+    "question": "Who substitutes for Lucas in the D&D game?",
+    "options": [
+      "Mike",
+      "Dustin",
+      "Erica",
+      "Will"
+    ],
+    "answer": "Erica",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 174,
+    "question": "Why can't Lucas play in the championship game?",
+    "options": [
+      "He's sick",
+      "He has basketball",
+      "He's grounded",
+      "He doesn't want to"
+    ],
+    "answer": "He has basketball",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 175,
+    "question": "What is the basketball team called?",
+    "options": [
+      "Hawks",
+      "Tigers",
+      "Bulldogs",
+      "Panthers"
+    ],
+    "answer": "Tigers",
+    "difficulty": "hard",
+    "category": "details"
+  },
+  {
+    "id": 176,
+    "question": "Who is the star player of the basketball team?",
+    "options": [
+      "Lucas",
+      "Jason",
+      "Patrick",
+      "Tommy"
+    ],
+    "answer": "Jason",
+    "difficulty": "medium",
+    "category": "characters"
+  },
+  {
+    "id": 177,
+    "question": "Who dies in Lover's Lake?",
+    "options": [
+      "Eddie",
+      "Patrick",
+      "Fred",
+      "Jason"
+    ],
+    "answer": "Patrick",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 178,
+    "question": "What is special about the Creel House?",
+    "options": [
+      "It's haunted",
+      "It's a gate location",
+      "Vecna's first victims died there",
+      "All of the above"
+    ],
+    "answer": "All of the above",
+    "difficulty": "medium",
+    "category": "locations"
+  },
+  {
+    "id": 179,
+    "question": "What is the Upside Down version of the Creel House significant for?",
+    "options": [
+      "Nothing",
+      "It's Vecna's lair",
+      "It has treasure",
+      "It's the exit"
+    ],
+    "answer": "It's Vecna's lair",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 180,
+    "question": "What do Nancy, Steve, Robin, and Eddie call their plan?",
+    "options": [
+      "Operation Kill Vecna",
+      "The Watergate plan",
+      "Attack from all sides",
+      "No specific name"
+    ],
+    "answer": "No specific name",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 181,
+    "question": "What does Nancy see in her Vecna vision?",
+    "options": [
+      "Her death",
+      "The future destruction of Hawkins",
+      "Barb's death",
+      "Both B and C"
+    ],
+    "answer": "Both B and C",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 182,
+    "question": "What does Steve get attacked by in the Upside Down?",
+    "options": [
+      "Demogorgon",
+      "Demodogs",
+      "Demobats",
+      "Vecna"
+    ],
+    "answer": "Demobats",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 183,
+    "question": "Who helps bandage Steve's wounds?",
+    "options": [
+      "Nancy",
+      "Robin",
+      "Eddie",
+      "All of them"
+    ],
+    "answer": "Nancy",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 184,
+    "question": "What does Steve confess to Nancy?",
+    "options": [
+      "He's scared",
+      "He still has feelings for her",
+      "He wants to run away",
+      "He has a plan"
+    ],
+    "answer": "He still has feelings for her",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 185,
+    "question": "How does Eddie die?",
+    "options": [
+      "Vecna kills him",
+      "Demobats attack him",
+      "He falls",
+      "Explosion"
+    ],
+    "answer": "Demobats attack him",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 186,
+    "question": "Why does Eddie stand and fight instead of running?",
+    "options": [
+      "To protect Dustin",
+      "He's tired of running",
+      "Both A and B",
+      "He has no choice"
+    ],
+    "answer": "Both A and B",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 187,
+    "question": "What are Eddie's last words?",
+    "options": [
+      "I love you",
+      "I didn't run",
+      "Tell them I'm innocent",
+      "You're gonna make it"
+    ],
+    "answer": "I didn't run",
+    "difficulty": "hard",
+    "category": "quotes"
+  },
+  {
+    "id": 188,
+    "question": "What happens to Jason?",
+    "options": [
+      "He survives",
+      "He's split in half by the gate",
+      "Vecna kills him",
+      "He drowns"
+    ],
+    "answer": "He's split in half by the gate",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 189,
+    "question": "What happens to Hawkins at the end of Season 4?",
+    "options": [
+      "Nothing",
+      "Earthquake destroys parts of it",
+      "It's evacuated",
+      "It disappears"
+    ],
+    "answer": "Earthquake destroys parts of it",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 190,
+    "question": "What do the cracks in Hawkins represent?",
+    "options": [
+      "Earthquake damage",
+      "Vecna's gates merging",
+      "Normal destruction",
+      "Nothing special"
+    ],
+    "answer": "Vecna's gates merging",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 191,
+    "question": "What does Eleven do to save Max's life?",
+    "options": [
+      "CPR",
+      "Uses her powers to restart Max's heart",
+      "Gets help",
+      "Nothing"
+    ],
+    "answer": "Uses her powers to restart Max's heart",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 192,
+    "question": "What is Max's condition at the end of Season 4?",
+    "options": [
+      "Fine",
+      "Dead",
+      "Coma, blind, broken limbs",
+      "Missing"
+    ],
+    "answer": "Coma, blind, broken limbs",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 193,
+    "question": "Where does El go to find Max's mind?",
+    "options": [
+      "The Upside Down",
+      "The Void",
+      "A memory",
+      "Nowhere - Max's mind is empty"
+    ],
+    "answer": "Nowhere - Max's mind is empty",
+    "difficulty": "hard",
+    "category": "plot"
+  },
+  {
+    "id": 194,
+    "question": "Who reunites at the end of Season 4?",
+    "options": [
+      "Mike and El",
+      "Joyce and Hopper",
+      "Everyone",
+      "Both A and B"
+    ],
+    "answer": "Everyone",
+    "difficulty": "easy",
+    "category": "plot"
+  },
+  {
+    "id": 195,
+    "question": "What does the group see happening to Hawkins?",
+    "options": [
+      "Fire",
+      "Flowers dying, Upside Down spreading",
+      "People disappearing",
+      "Nothing unusual"
+    ],
+    "answer": "Flowers dying, Upside Down spreading",
+    "difficulty": "medium",
+    "category": "plot"
+  },
+  {
+    "id": 196,
+    "question": "How many total episodes are in Season 4?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "12"
+    ],
+    "answer": "9",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 197,
+    "question": "How long is the Season 4 finale?",
+    "options": [
+      "1 hour",
+      "Over 2 hours",
+      "90 minutes",
+      "45 minutes"
+    ],
+    "answer": "Over 2 hours",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 198,
+    "question": "What is the Season 4 subtitle?",
+    "options": [
+      "The Upside Down",
+      "No subtitle",
+      "The Massacre",
+      "Vecna's Curse"
+    ],
+    "answer": "No subtitle",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 199,
+    "question": "When was Season 5 announced?",
+    "options": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
+    "answer": "2022",
+    "difficulty": "hard",
+    "category": "production"
+  },
+  {
+    "id": 200,
+    "question": "Season 5 will be which season?",
+    "options": [
+      "The fourth",
+      "The final season",
+      "The middle season",
+      "Unknown"
+    ],
+    "answer": "The final season",
+    "difficulty": "easy",
+    "category": "production"
+  }
+]
+

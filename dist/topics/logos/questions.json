@@ -1,0 +1,3222 @@
+[
+  {
+    "id": 1,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/1password.svg",
+    "options": [
+      "1Password",
+      "LastPass",
+      "Bitwarden",
+      "Dashlane"
+    ],
+    "answer": "1Password",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 2,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/activision.svg",
+    "options": [
+      "Ubisoft",
+      "EA",
+      "Blizzard",
+      "Activision"
+    ],
+    "answer": "Activision",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 3,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/adidas.svg",
+    "options": [
+      "Under Armour",
+      "Nike",
+      "Puma",
+      "Adidas"
+    ],
+    "answer": "Adidas",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 4,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/airbnb.svg",
+    "options": [
+      "Vrbo",
+      "Hotels.com",
+      "Booking.com",
+      "Airbnb"
+    ],
+    "answer": "Airbnb",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 5,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/alfaromeo.svg",
+    "options": [
+      "Fiat",
+      "Maserati",
+      "Ferrari",
+      "Alfa Romeo"
+    ],
+    "answer": "Alfa Romeo",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 6,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/aliexpress.svg",
+    "options": [
+      "Amazon",
+      "eBay",
+      "AliExpress",
+      "Alibaba"
+    ],
+    "answer": "AliExpress",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 7,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/amd.svg",
+    "options": [
+      "Intel",
+      "AMD",
+      "NVIDIA",
+      "ARM"
+    ],
+    "answer": "AMD",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 8,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/americanexpress.svg",
+    "options": [
+      "Mastercard",
+      "American Express",
+      "Visa",
+      "Discover"
+    ],
+    "answer": "American Express",
+    "difficulty": "medium",
+    "category": "finance"
+  },
+  {
+    "id": 9,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/apple.svg",
+    "options": [
+      "Samsung",
+      "Apple",
+      "Huawei",
+      "Xiaomi"
+    ],
+    "answer": "Apple",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 10,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/applemusic.svg",
+    "options": [
+      "Apple Music",
+      "Spotify",
+      "Tidal",
+      "Deezer"
+    ],
+    "answer": "Apple Music",
+    "difficulty": "easy",
+    "category": "music"
+  },
+  {
+    "id": 11,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/asana.svg",
+    "options": [
+      "Jira",
+      "Trello",
+      "Asana",
+      "Monday"
+    ],
+    "answer": "Asana",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 12,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/astonmartin.svg",
+    "options": [
+      "Maserati",
+      "Bentley",
+      "Jaguar",
+      "Aston Martin"
+    ],
+    "answer": "Aston Martin",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 13,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/asus.svg",
+    "options": [
+      "MSI",
+      "Gigabyte",
+      "Acer",
+      "ASUS"
+    ],
+    "answer": "ASUS",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 14,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/audacity.svg",
+    "options": [
+      "Ableton",
+      "FL Studio",
+      "Audacity",
+      "GarageBand"
+    ],
+    "answer": "Audacity",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 15,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/audi.svg",
+    "options": [
+      "Audi",
+      "BMW",
+      "Porsche",
+      "Mercedes-Benz"
+    ],
+    "answer": "Audi",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 16,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/audible.svg",
+    "options": [
+      "Spotify",
+      "Scribd",
+      "Amazon Music",
+      "Audible"
+    ],
+    "answer": "Audible",
+    "difficulty": "medium",
+    "category": "music"
+  },
+  {
+    "id": 17,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bandcamp.svg",
+    "options": [
+      "Spotify",
+      "SoundCloud",
+      "Audiomack",
+      "Bandcamp"
+    ],
+    "answer": "Bandcamp",
+    "difficulty": "medium",
+    "category": "music"
+  },
+  {
+    "id": 18,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/battlenet.svg",
+    "options": [
+      "Battle.net",
+      "Epic Games",
+      "Origin",
+      "Steam"
+    ],
+    "answer": "Battle.net",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 19,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/beatport.svg",
+    "options": [
+      "SoundCloud",
+      "Bandcamp",
+      "Juno",
+      "Beatport"
+    ],
+    "answer": "Beatport",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 20,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bentley.svg",
+    "options": [
+      "Aston Martin",
+      "Rolls-Royce",
+      "Bentley",
+      "Maybach"
+    ],
+    "answer": "Bentley",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 21,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bereal.svg",
+    "options": [
+      "Snapchat",
+      "BeReal",
+      "Instagram",
+      "TikTok"
+    ],
+    "answer": "BeReal",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 22,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/binance.svg",
+    "options": [
+      "Coinbase",
+      "FTX",
+      "Kraken",
+      "Binance"
+    ],
+    "answer": "Binance",
+    "difficulty": "medium",
+    "category": "crypto"
+  },
+  {
+    "id": 23,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bitcoin.svg",
+    "options": [
+      "Dogecoin",
+      "Bitcoin",
+      "Ethereum",
+      "Litecoin"
+    ],
+    "answer": "Bitcoin",
+    "difficulty": "easy",
+    "category": "finance"
+  },
+  {
+    "id": 24,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bitwarden.svg",
+    "options": [
+      "Dashlane",
+      "Bitwarden",
+      "LastPass",
+      "1Password"
+    ],
+    "answer": "Bitwarden",
+    "difficulty": "hard",
+    "category": "software"
+  },
+  {
+    "id": 25,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/blender.svg",
+    "options": [
+      "Blender",
+      "Cinema 4D",
+      "Maya",
+      "3ds Max"
+    ],
+    "answer": "Blender",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 26,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bluesky.svg",
+    "options": [
+      "X",
+      "Bluesky",
+      "Mastodon",
+      "Threads"
+    ],
+    "answer": "Bluesky",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 27,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bmw.svg",
+    "options": [
+      "Volkswagen",
+      "BMW",
+      "Mercedes-Benz",
+      "Audi"
+    ],
+    "answer": "BMW",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 28,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bookingdotcom.svg",
+    "options": [
+      "Airbnb",
+      "Expedia",
+      "Booking.com",
+      "Hotels.com"
+    ],
+    "answer": "Booking.com",
+    "difficulty": "easy",
+    "category": "ecommerce"
+  },
+  {
+    "id": 29,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/brave.svg",
+    "options": [
+      "Firefox",
+      "Chrome",
+      "Brave",
+      "Opera"
+    ],
+    "answer": "Brave",
+    "difficulty": "medium",
+    "category": "browsers"
+  },
+  {
+    "id": 30,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/britishairways.svg",
+    "options": [
+      "Lufthansa",
+      "Virgin Atlantic",
+      "Air France",
+      "British Airways"
+    ],
+    "answer": "British Airways",
+    "difficulty": "hard",
+    "category": "airlines"
+  },
+  {
+    "id": 31,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/broadcom.svg",
+    "options": [
+      "Marvell",
+      "Intel",
+      "Qualcomm",
+      "Broadcom"
+    ],
+    "answer": "Broadcom",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 32,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/bugatti.svg",
+    "options": [
+      "Pagani",
+      "Bugatti",
+      "Lamborghini",
+      "Koenigsegg"
+    ],
+    "answer": "Bugatti",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 33,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/burgerking.svg",
+    "options": [
+      "McDonald's",
+      "Carl's Jr",
+      "Wendy's",
+      "Burger King"
+    ],
+    "answer": "Burger King",
+    "difficulty": "easy",
+    "category": "fastfood"
+  },
+  {
+    "id": 34,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/canva.svg",
+    "options": [
+      "Adobe",
+      "Crello",
+      "Canva",
+      "Figma"
+    ],
+    "answer": "Canva",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 35,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/cardano.svg",
+    "options": [
+      "Ethereum",
+      "Solana",
+      "Cardano",
+      "Polkadot"
+    ],
+    "answer": "Cardano",
+    "difficulty": "hard",
+    "category": "crypto"
+  },
+  {
+    "id": 36,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/cashapp.svg",
+    "options": [
+      "PayPal",
+      "Venmo",
+      "Cash App",
+      "Zelle"
+    ],
+    "answer": "Cash App",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 37,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/castbox.svg",
+    "options": [
+      "Pocket Casts",
+      "Stitcher",
+      "Spotify",
+      "Castbox"
+    ],
+    "answer": "Castbox",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 38,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/chainlink.svg",
+    "options": [
+      "Chainlink",
+      "Ethereum",
+      "Polkadot",
+      "The Graph"
+    ],
+    "answer": "Chainlink",
+    "difficulty": "hard",
+    "category": "crypto"
+  },
+  {
+    "id": 39,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/chevrolet.svg",
+    "options": [
+      "Dodge",
+      "GMC",
+      "Chevrolet",
+      "Ford"
+    ],
+    "answer": "Chevrolet",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 40,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/cisco.svg",
+    "options": [
+      "Cisco",
+      "Huawei",
+      "Juniper",
+      "Netgear"
+    ],
+    "answer": "Cisco",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 41,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/clubhouse.svg",
+    "options": [
+      "Discord",
+      "Twitter Spaces",
+      "Clubhouse",
+      "Spotify Greenroom"
+    ],
+    "answer": "Clubhouse",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 42,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/coinbase.svg",
+    "options": [
+      "Binance",
+      "Coinbase",
+      "Gemini",
+      "Kraken"
+    ],
+    "answer": "Coinbase",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 43,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/confluence.svg",
+    "options": [
+      "Jira",
+      "Notion",
+      "SharePoint",
+      "Confluence"
+    ],
+    "answer": "Confluence",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 44,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/counterstrike.svg",
+    "options": [
+      "Counter-Strike",
+      "Rainbow Six",
+      "Call of Duty",
+      "Valorant"
+    ],
+    "answer": "Counter-Strike",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 45,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/davinciresolve.svg",
+    "options": [
+      "DaVinci Resolve",
+      "Premiere Pro",
+      "Vegas Pro",
+      "Final Cut Pro"
+    ],
+    "answer": "DaVinci Resolve",
+    "difficulty": "hard",
+    "category": "software"
+  },
+  {
+    "id": 46,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/dell.svg",
+    "options": [
+      "Asus",
+      "Lenovo",
+      "Dell",
+      "HP"
+    ],
+    "answer": "Dell",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 47,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/delta.svg",
+    "options": [
+      "American Airlines",
+      "United",
+      "Southwest",
+      "Delta"
+    ],
+    "answer": "Delta",
+    "difficulty": "medium",
+    "category": "airlines"
+  },
+  {
+    "id": 48,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/discord.svg",
+    "options": [
+      "Slack",
+      "TeamSpeak",
+      "Discord",
+      "Skype"
+    ],
+    "answer": "Discord",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 49,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/docker.svg",
+    "options": [
+      "Vagrant",
+      "Kubernetes",
+      "VMware",
+      "Docker"
+    ],
+    "answer": "Docker",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 50,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/dogecoin.svg",
+    "options": [
+      "Litecoin",
+      "Shiba Inu",
+      "Dogecoin",
+      "Bitcoin"
+    ],
+    "answer": "Dogecoin",
+    "difficulty": "easy",
+    "category": "crypto"
+  },
+  {
+    "id": 51,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/doordash.svg",
+    "options": [
+      "DoorDash",
+      "Postmates",
+      "Uber Eats",
+      "Grubhub"
+    ],
+    "answer": "DoorDash",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 52,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/dropbox.svg",
+    "options": [
+      "Dropbox",
+      "iCloud",
+      "OneDrive",
+      "Google Drive"
+    ],
+    "answer": "Dropbox",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 53,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/duolingo.svg",
+    "options": [
+      "Rosetta Stone",
+      "Duolingo",
+      "Memrise",
+      "Babbel"
+    ],
+    "answer": "Duolingo",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 54,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ea.svg",
+    "options": [
+      "EA",
+      "Activision",
+      "Ubisoft",
+      "Epic Games"
+    ],
+    "answer": "EA",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 55,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ebay.svg",
+    "options": [
+      "Amazon",
+      "Etsy",
+      "Alibaba",
+      "eBay"
+    ],
+    "answer": "eBay",
+    "difficulty": "easy",
+    "category": "retail"
+  },
+  {
+    "id": 56,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/emirates.svg",
+    "options": [
+      "Qatar Airways",
+      "Emirates",
+      "Etihad",
+      "Turkish Airlines"
+    ],
+    "answer": "Emirates",
+    "difficulty": "medium",
+    "category": "airlines"
+  },
+  {
+    "id": 57,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/epicgames.svg",
+    "options": [
+      "Steam",
+      "Ubisoft",
+      "EA",
+      "Epic Games"
+    ],
+    "answer": "Epic Games",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 58,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ethereum.svg",
+    "options": [
+      "Ethereum",
+      "Bitcoin",
+      "Solana",
+      "Cardano"
+    ],
+    "answer": "Ethereum",
+    "difficulty": "medium",
+    "category": "finance"
+  },
+  {
+    "id": 59,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/etsy.svg",
+    "options": [
+      "Depop",
+      "Amazon",
+      "Etsy",
+      "eBay"
+    ],
+    "answer": "Etsy",
+    "difficulty": "easy",
+    "category": "ecommerce"
+  },
+  {
+    "id": 60,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/evernote.svg",
+    "options": [
+      "OneNote",
+      "Evernote",
+      "Notion",
+      "Bear"
+    ],
+    "answer": "Evernote",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 61,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/expedia.svg",
+    "options": [
+      "Expedia",
+      "Kayak",
+      "Booking.com",
+      "Priceline"
+    ],
+    "answer": "Expedia",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 62,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/facebook.svg",
+    "options": [
+      "MySpace",
+      "Facebook",
+      "LinkedIn",
+      "Twitter"
+    ],
+    "answer": "Facebook",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 63,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ferrari.svg",
+    "options": [
+      "Porsche",
+      "Ferrari",
+      "Maserati",
+      "Lamborghini"
+    ],
+    "answer": "Ferrari",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 64,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/figma.svg",
+    "options": [
+      "InVision",
+      "Sketch",
+      "Figma",
+      "Adobe XD"
+    ],
+    "answer": "Figma",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 65,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/fila.svg",
+    "options": [
+      "Champion",
+      "Reebok",
+      "Kappa",
+      "Fila"
+    ],
+    "answer": "Fila",
+    "difficulty": "medium",
+    "category": "brands"
+  },
+  {
+    "id": 66,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/firebase.svg",
+    "options": [
+      "Supabase",
+      "MongoDB",
+      "Firebase",
+      "AWS"
+    ],
+    "answer": "Firebase",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 67,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/firefox.svg",
+    "options": [
+      "Opera",
+      "Safari",
+      "Chrome",
+      "Firefox"
+    ],
+    "answer": "Firefox",
+    "difficulty": "easy",
+    "category": "browsers"
+  },
+  {
+    "id": 68,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/fiverr.svg",
+    "options": [
+      "Freelancer",
+      "Fiverr",
+      "Toptal",
+      "Upwork"
+    ],
+    "answer": "Fiverr",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 69,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/flickr.svg",
+    "options": [
+      "Flickr",
+      "Pinterest",
+      "Instagram",
+      "500px"
+    ],
+    "answer": "Flickr",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 70,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ford.svg",
+    "options": [
+      "Dodge",
+      "Ford",
+      "Chevrolet",
+      "Jeep"
+    ],
+    "answer": "Ford",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 71,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/fortnite.svg",
+    "options": [
+      "Apex Legends",
+      "Fortnite",
+      "PUBG",
+      "Warzone"
+    ],
+    "answer": "Fortnite",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 72,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/gimp.svg",
+    "options": [
+      "Photoshop",
+      "GIMP",
+      "Affinity Photo",
+      "Paint.NET"
+    ],
+    "answer": "GIMP",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 73,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/github.svg",
+    "options": [
+      "SourceForge",
+      "GitLab",
+      "GitHub",
+      "Bitbucket"
+    ],
+    "answer": "GitHub",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 74,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/gitlab.svg",
+    "options": [
+      "GitHub",
+      "Bitbucket",
+      "GitLab",
+      "Azure DevOps"
+    ],
+    "answer": "GitLab",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 75,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/godotengine.svg",
+    "options": [
+      "GameMaker",
+      "Godot Engine",
+      "Unreal Engine",
+      "Unity"
+    ],
+    "answer": "Godot Engine",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 76,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/gog.svg",
+    "options": [
+      "Epic Games",
+      "GOG",
+      "Steam",
+      "Origin"
+    ],
+    "answer": "GOG",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 77,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/google.svg",
+    "options": [
+      "Google",
+      "DuckDuckGo",
+      "Bing",
+      "Yahoo"
+    ],
+    "answer": "Google",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 78,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/googlechrome.svg",
+    "options": [
+      "Safari",
+      "Edge",
+      "Google Chrome",
+      "Firefox"
+    ],
+    "answer": "Google Chrome",
+    "difficulty": "easy",
+    "category": "browsers"
+  },
+  {
+    "id": 79,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/googlecloud.svg",
+    "options": [
+      "IBM Cloud",
+      "AWS",
+      "Azure",
+      "Google Cloud"
+    ],
+    "answer": "Google Cloud",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 80,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/googlemaps.svg",
+    "options": [
+      "Waze",
+      "Apple Maps",
+      "HERE Maps",
+      "Google Maps"
+    ],
+    "answer": "Google Maps",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 81,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/grammarly.svg",
+    "options": [
+      "Grammarly",
+      "ProWritingAid",
+      "Ginger",
+      "Hemingway"
+    ],
+    "answer": "Grammarly",
+    "difficulty": "easy",
+    "category": "ecommerce"
+  },
+  {
+    "id": 82,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/hbo.svg",
+    "options": [
+      "Netflix",
+      "Starz",
+      "Showtime",
+      "HBO"
+    ],
+    "answer": "HBO",
+    "difficulty": "medium",
+    "category": "entertainment"
+  },
+  {
+    "id": 83,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/heroku.svg",
+    "options": [
+      "Heroku",
+      "Netlify",
+      "Vercel",
+      "AWS"
+    ],
+    "answer": "Heroku",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 84,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/honda.svg",
+    "options": [
+      "Nissan",
+      "Honda",
+      "Toyota",
+      "Mazda"
+    ],
+    "answer": "Honda",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 85,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/hp.svg",
+    "options": [
+      "Lenovo",
+      "Acer",
+      "HP",
+      "Dell"
+    ],
+    "answer": "HP",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 86,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/huawei.svg",
+    "options": [
+      "Xiaomi",
+      "Vivo",
+      "Oppo",
+      "Huawei"
+    ],
+    "answer": "Huawei",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 87,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/hubspot.svg",
+    "options": [
+      "Salesforce",
+      "Zoho",
+      "HubSpot",
+      "Mailchimp"
+    ],
+    "answer": "HubSpot",
+    "difficulty": "hard",
+    "category": "ecommerce"
+  },
+  {
+    "id": 88,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/humble.svg",
+    "options": [
+      "Steam",
+      "Humble Bundle",
+      "Fanatical",
+      "GOG"
+    ],
+    "answer": "Humble Bundle",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 89,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/hyundai.svg",
+    "options": [
+      "Hyundai",
+      "Toyota",
+      "Honda",
+      "Kia"
+    ],
+    "answer": "Hyundai",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 90,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ikea.svg",
+    "options": [
+      "Pottery Barn",
+      "IKEA",
+      "West Elm",
+      "Wayfair"
+    ],
+    "answer": "IKEA",
+    "difficulty": "easy",
+    "category": "retail"
+  },
+  {
+    "id": 91,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/inkscape.svg",
+    "options": [
+      "Inkscape",
+      "Illustrator",
+      "CorelDRAW",
+      "Affinity Designer"
+    ],
+    "answer": "Inkscape",
+    "difficulty": "hard",
+    "category": "software"
+  },
+  {
+    "id": 92,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/instacart.svg",
+    "options": [
+      "Walmart+",
+      "Instacart",
+      "Amazon Fresh",
+      "Shipt"
+    ],
+    "answer": "Instacart",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 93,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/instagram.svg",
+    "options": [
+      "Instagram",
+      "Pinterest",
+      "TikTok",
+      "Snapchat"
+    ],
+    "answer": "Instagram",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 94,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/intel.svg",
+    "options": [
+      "Qualcomm",
+      "AMD",
+      "NVIDIA",
+      "Intel"
+    ],
+    "answer": "Intel",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 95,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/intellijidea.svg",
+    "options": [
+      "NetBeans",
+      "IntelliJ IDEA",
+      "Eclipse",
+      "VS Code"
+    ],
+    "answer": "IntelliJ IDEA",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 96,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/invision.svg",
+    "options": [
+      "Sketch",
+      "Adobe XD",
+      "Figma",
+      "InVision"
+    ],
+    "answer": "InVision",
+    "difficulty": "hard",
+    "category": "software"
+  },
+  {
+    "id": 97,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/itch.svg",
+    "options": [
+      "Epic Games",
+      "itch.io",
+      "GOG",
+      "Steam"
+    ],
+    "answer": "itch.io",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 98,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/jaguar.svg",
+    "options": [
+      "Land Rover",
+      "Bentley",
+      "Aston Martin",
+      "Jaguar"
+    ],
+    "answer": "Jaguar",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 99,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/jeep.svg",
+    "options": [
+      "Ford",
+      "Toyota",
+      "Land Rover",
+      "Jeep"
+    ],
+    "answer": "Jeep",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 100,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/jira.svg",
+    "options": [
+      "Asana",
+      "Trello",
+      "Jira",
+      "Monday"
+    ],
+    "answer": "Jira",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 101,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/jordanbrand.svg",
+    "options": [
+      "Puma",
+      "Jordan",
+      "Adidas",
+      "Nike"
+    ],
+    "answer": "Jordan",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 102,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/kakaotalk.svg",
+    "options": [
+      "WeChat",
+      "Line",
+      "WhatsApp",
+      "KakaoTalk"
+    ],
+    "answer": "KakaoTalk",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 103,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/kfc.svg",
+    "options": [
+      "KFC",
+      "Chick-fil-A",
+      "Church's",
+      "Popeyes"
+    ],
+    "answer": "KFC",
+    "difficulty": "easy",
+    "category": "fastfood"
+  },
+  {
+    "id": 104,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/kia.svg",
+    "options": [
+      "Hyundai",
+      "Toyota",
+      "Honda",
+      "Kia"
+    ],
+    "answer": "Kia",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 105,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/kubernetes.svg",
+    "options": [
+      "Docker",
+      "Rancher",
+      "OpenShift",
+      "Kubernetes"
+    ],
+    "answer": "Kubernetes",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 106,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lamborghini.svg",
+    "options": [
+      "Lamborghini",
+      "McLaren",
+      "Ferrari",
+      "Bugatti"
+    ],
+    "answer": "Lamborghini",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 107,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/landrover.svg",
+    "options": [
+      "Range Rover",
+      "Land Rover",
+      "Toyota",
+      "Jeep"
+    ],
+    "answer": "Land Rover",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 108,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lastfm.svg",
+    "options": [
+      "SoundCloud",
+      "Spotify",
+      "Shazam",
+      "Last.fm"
+    ],
+    "answer": "Last.fm",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 109,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lastpass.svg",
+    "options": [
+      "Bitwarden",
+      "LastPass",
+      "Dashlane",
+      "1Password"
+    ],
+    "answer": "LastPass",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 110,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/leagueoflegends.svg",
+    "options": [
+      "Dota 2",
+      "Valorant",
+      "Overwatch",
+      "League of Legends"
+    ],
+    "answer": "League of Legends",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 111,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lenovo.svg",
+    "options": [
+      "Dell",
+      "HP",
+      "Asus",
+      "Lenovo"
+    ],
+    "answer": "Lenovo",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 112,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lg.svg",
+    "options": [
+      "Philips",
+      "Sony",
+      "Samsung",
+      "LG"
+    ],
+    "answer": "LG",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 113,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/line.svg",
+    "options": [
+      "Line",
+      "KakaoTalk",
+      "WhatsApp",
+      "WeChat"
+    ],
+    "answer": "Line",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 114,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/linux.svg",
+    "options": [
+      "Linux",
+      "Ubuntu",
+      "Windows",
+      "macOS"
+    ],
+    "answer": "Linux",
+    "difficulty": "medium",
+    "category": "os"
+  },
+  {
+    "id": 115,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/litecoin.svg",
+    "options": [
+      "Dogecoin",
+      "Bitcoin",
+      "Litecoin",
+      "Ethereum"
+    ],
+    "answer": "Litecoin",
+    "difficulty": "medium",
+    "category": "crypto"
+  },
+  {
+    "id": 116,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/logitech.svg",
+    "options": [
+      "Logitech",
+      "Corsair",
+      "Razer",
+      "SteelSeries"
+    ],
+    "answer": "Logitech",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 117,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lufthansa.svg",
+    "options": [
+      "British Airways",
+      "KLM",
+      "Air France",
+      "Lufthansa"
+    ],
+    "answer": "Lufthansa",
+    "difficulty": "hard",
+    "category": "airlines"
+  },
+  {
+    "id": 118,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/lyft.svg",
+    "options": [
+      "Uber",
+      "Bolt",
+      "Grab",
+      "Lyft"
+    ],
+    "answer": "Lyft",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 119,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mailchimp.svg",
+    "options": [
+      "HubSpot",
+      "Mailchimp",
+      "Constant Contact",
+      "SendGrid"
+    ],
+    "answer": "Mailchimp",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 120,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/maserati.svg",
+    "options": [
+      "Alfa Romeo",
+      "Maserati",
+      "Ferrari",
+      "Lamborghini"
+    ],
+    "answer": "Maserati",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 121,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mastercard.svg",
+    "options": [
+      "American Express",
+      "Visa",
+      "Mastercard",
+      "JCB"
+    ],
+    "answer": "Mastercard",
+    "difficulty": "easy",
+    "category": "finance"
+  },
+  {
+    "id": 122,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mastodon.svg",
+    "options": [
+      "Mastodon",
+      "X",
+      "Threads",
+      "Bluesky"
+    ],
+    "answer": "Mastodon",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 123,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mazda.svg",
+    "options": [
+      "Honda",
+      "Nissan",
+      "Mazda",
+      "Toyota"
+    ],
+    "answer": "Mazda",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 124,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mcdonalds.svg",
+    "options": [
+      "McDonald's",
+      "KFC",
+      "Burger King",
+      "Wendy's"
+    ],
+    "answer": "McDonald's",
+    "difficulty": "easy",
+    "category": "fastfood"
+  },
+  {
+    "id": 125,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mclaren.svg",
+    "options": [
+      "Lamborghini",
+      "Ferrari",
+      "McLaren",
+      "Bugatti"
+    ],
+    "answer": "McLaren",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 126,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/medium.svg",
+    "options": [
+      "Medium",
+      "Blogger",
+      "WordPress",
+      "Substack"
+    ],
+    "answer": "Medium",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 127,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/messenger.svg",
+    "options": [
+      "Telegram",
+      "WhatsApp",
+      "Messenger",
+      "Viber"
+    ],
+    "answer": "Messenger",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 128,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/mixcloud.svg",
+    "options": [
+      "Mixcloud",
+      "SoundCloud",
+      "Spotify",
+      "Bandcamp"
+    ],
+    "answer": "Mixcloud",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 129,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/monero.svg",
+    "options": [
+      "Bitcoin",
+      "Zcash",
+      "Dash",
+      "Monero"
+    ],
+    "answer": "Monero",
+    "difficulty": "hard",
+    "category": "crypto"
+  },
+  {
+    "id": 130,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/netflix.svg",
+    "options": [
+      "HBO Max",
+      "Hulu",
+      "Netflix",
+      "Disney+"
+    ],
+    "answer": "Netflix",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 131,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/netlify.svg",
+    "options": [
+      "Firebase",
+      "Vercel",
+      "Heroku",
+      "Netlify"
+    ],
+    "answer": "Netlify",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 132,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/newbalance.svg",
+    "options": [
+      "New Balance",
+      "ASICS",
+      "Nike",
+      "Adidas"
+    ],
+    "answer": "New Balance",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 133,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/nike.svg",
+    "options": [
+      "Reebok",
+      "Puma",
+      "Nike",
+      "Adidas"
+    ],
+    "answer": "Nike",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 134,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/nissan.svg",
+    "options": [
+      "Toyota",
+      "Nissan",
+      "Honda",
+      "Mazda"
+    ],
+    "answer": "Nissan",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 135,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/notion.svg",
+    "options": [
+      "Roam",
+      "Notion",
+      "Evernote",
+      "Obsidian"
+    ],
+    "answer": "Notion",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 136,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/nvidia.svg",
+    "options": [
+      "AMD",
+      "Intel",
+      "ARM",
+      "NVIDIA"
+    ],
+    "answer": "NVIDIA",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 137,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/obs.svg",
+    "options": [
+      "OBS Studio",
+      "Streamlabs",
+      "Twitch Studio",
+      "XSplit"
+    ],
+    "answer": "OBS Studio",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 138,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/oculus.svg",
+    "options": [
+      "Oculus",
+      "HTC Vive",
+      "Valve Index",
+      "PlayStation VR"
+    ],
+    "answer": "Oculus",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 139,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/opensea.svg",
+    "options": [
+      "Foundation",
+      "SuperRare",
+      "Rarible",
+      "OpenSea"
+    ],
+    "answer": "OpenSea",
+    "difficulty": "medium",
+    "category": "crypto"
+  },
+  {
+    "id": 140,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/opera.svg",
+    "options": [
+      "Vivaldi",
+      "Chrome",
+      "Firefox",
+      "Opera"
+    ],
+    "answer": "Opera",
+    "difficulty": "medium",
+    "category": "browsers"
+  },
+  {
+    "id": 141,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/origin.svg",
+    "options": [
+      "Epic Games",
+      "Steam",
+      "Origin",
+      "Uplay"
+    ],
+    "answer": "Origin",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 142,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/pandora.svg",
+    "options": [
+      "iHeartRadio",
+      "Spotify",
+      "Pandora",
+      "TuneIn"
+    ],
+    "answer": "Pandora",
+    "difficulty": "medium",
+    "category": "music"
+  },
+  {
+    "id": 143,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/paypal.svg",
+    "options": [
+      "Cash App",
+      "PayPal",
+      "Zelle",
+      "Venmo"
+    ],
+    "answer": "PayPal",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 144,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/pinterest.svg",
+    "options": [
+      "Instagram",
+      "Flickr",
+      "Pinterest",
+      "Tumblr"
+    ],
+    "answer": "Pinterest",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 145,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/playstation.svg",
+    "options": [
+      "Xbox",
+      "Steam",
+      "PlayStation",
+      "Nintendo"
+    ],
+    "answer": "PlayStation",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 146,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/pocketcasts.svg",
+    "options": [
+      "Spotify",
+      "Apple Podcasts",
+      "Pocket Casts",
+      "Overcast"
+    ],
+    "answer": "Pocket Casts",
+    "difficulty": "hard",
+    "category": "music"
+  },
+  {
+    "id": 147,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/polkadot.svg",
+    "options": [
+      "Ethereum",
+      "Polkadot",
+      "Cardano",
+      "Cosmos"
+    ],
+    "answer": "Polkadot",
+    "difficulty": "hard",
+    "category": "crypto"
+  },
+  {
+    "id": 148,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/porsche.svg",
+    "options": [
+      "Porsche",
+      "Maserati",
+      "Audi",
+      "Ferrari"
+    ],
+    "answer": "Porsche",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 149,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/postman.svg",
+    "options": [
+      "Postman",
+      "Swagger",
+      "cURL",
+      "Insomnia"
+    ],
+    "answer": "Postman",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 150,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/pubg.svg",
+    "options": [
+      "Fortnite",
+      "Apex Legends",
+      "Call of Duty",
+      "PUBG"
+    ],
+    "answer": "PUBG",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 151,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/puma.svg",
+    "options": [
+      "Reebok",
+      "Nike",
+      "Adidas",
+      "Puma"
+    ],
+    "answer": "Puma",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 152,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/qatarairways.svg",
+    "options": [
+      "Emirates",
+      "Qatar Airways",
+      "Etihad",
+      "Singapore Airlines"
+    ],
+    "answer": "Qatar Airways",
+    "difficulty": "hard",
+    "category": "airlines"
+  },
+  {
+    "id": 153,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/qualcomm.svg",
+    "options": [
+      "MediaTek",
+      "Qualcomm",
+      "Intel",
+      "ARM"
+    ],
+    "answer": "Qualcomm",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 154,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/quora.svg",
+    "options": [
+      "Stack Overflow",
+      "Yahoo Answers",
+      "Quora",
+      "Reddit"
+    ],
+    "answer": "Quora",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 155,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/razer.svg",
+    "options": [
+      "SteelSeries",
+      "Logitech",
+      "Razer",
+      "Corsair"
+    ],
+    "answer": "Razer",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 156,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/reddit.svg",
+    "options": [
+      "Digg",
+      "Reddit",
+      "Quora",
+      "4chan"
+    ],
+    "answer": "Reddit",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 157,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/reebok.svg",
+    "options": [
+      "Nike",
+      "Puma",
+      "Reebok",
+      "Adidas"
+    ],
+    "answer": "Reebok",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 158,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/riotgames.svg",
+    "options": [
+      "Valve",
+      "Blizzard",
+      "Riot Games",
+      "Epic Games"
+    ],
+    "answer": "Riot Games",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 159,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/robinhood.svg",
+    "options": [
+      "E*TRADE",
+      "Webull",
+      "Robinhood",
+      "TD Ameritrade"
+    ],
+    "answer": "Robinhood",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 160,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/roblox.svg",
+    "options": [
+      "Minecraft",
+      "Roblox Studio",
+      "Roblox",
+      "Fortnite"
+    ],
+    "answer": "Roblox",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 161,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/rockstargames.svg",
+    "options": [
+      "EA",
+      "Rockstar Games",
+      "Ubisoft",
+      "Activision"
+    ],
+    "answer": "Rockstar Games",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 162,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/rollsroyce.svg",
+    "options": [
+      "Rolls-Royce",
+      "Maybach",
+      "Aston Martin",
+      "Bentley"
+    ],
+    "answer": "Rolls-Royce",
+    "difficulty": "hard",
+    "category": "cars"
+  },
+  {
+    "id": 163,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/safari.svg",
+    "options": [
+      "Edge",
+      "Safari",
+      "Chrome",
+      "Firefox"
+    ],
+    "answer": "Safari",
+    "difficulty": "easy",
+    "category": "browsers"
+  },
+  {
+    "id": 164,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/salesforce.svg",
+    "options": [
+      "Salesforce",
+      "Microsoft",
+      "Oracle",
+      "SAP"
+    ],
+    "answer": "Salesforce",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 165,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/samsung.svg",
+    "options": [
+      "Apple",
+      "LG",
+      "Sony",
+      "Samsung"
+    ],
+    "answer": "Samsung",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 166,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/sap.svg",
+    "options": [
+      "SAP",
+      "Salesforce",
+      "IBM",
+      "Oracle"
+    ],
+    "answer": "SAP",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 167,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/seagate.svg",
+    "options": [
+      "Western Digital",
+      "Toshiba",
+      "Seagate",
+      "Samsung"
+    ],
+    "answer": "Seagate",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 168,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/sega.svg",
+    "options": [
+      "SEGA",
+      "Konami",
+      "Nintendo",
+      "Capcom"
+    ],
+    "answer": "SEGA",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 169,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/shazam.svg",
+    "options": [
+      "Shazam",
+      "Spotify",
+      "Apple Music",
+      "SoundHound"
+    ],
+    "answer": "Shazam",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 170,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/shopify.svg",
+    "options": [
+      "Shopify",
+      "WooCommerce",
+      "BigCommerce",
+      "Magento"
+    ],
+    "answer": "Shopify",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 171,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/signal.svg",
+    "options": [
+      "WhatsApp",
+      "Viber",
+      "Telegram",
+      "Signal"
+    ],
+    "answer": "Signal",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 172,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/sketch.svg",
+    "options": [
+      "Sketch",
+      "InVision",
+      "Adobe XD",
+      "Figma"
+    ],
+    "answer": "Sketch",
+    "difficulty": "medium",
+    "category": "software"
+  },
+  {
+    "id": 173,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/slack.svg",
+    "options": [
+      "Slack",
+      "Zoom",
+      "Discord",
+      "Microsoft Teams"
+    ],
+    "answer": "Slack",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 174,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/snapchat.svg",
+    "options": [
+      "Snapchat",
+      "Instagram",
+      "BeReal",
+      "TikTok"
+    ],
+    "answer": "Snapchat",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 175,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/solana.svg",
+    "options": [
+      "Cardano",
+      "Polkadot",
+      "Ethereum",
+      "Solana"
+    ],
+    "answer": "Solana",
+    "difficulty": "medium",
+    "category": "crypto"
+  },
+  {
+    "id": 176,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/sony.svg",
+    "options": [
+      "Panasonic",
+      "Sony",
+      "LG",
+      "Samsung"
+    ],
+    "answer": "Sony",
+    "difficulty": "easy",
+    "category": "tech"
+  },
+  {
+    "id": 177,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/soundcloud.svg",
+    "options": [
+      "Spotify",
+      "Mixcloud",
+      "SoundCloud",
+      "Bandcamp"
+    ],
+    "answer": "SoundCloud",
+    "difficulty": "easy",
+    "category": "music"
+  },
+  {
+    "id": 178,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/spotify.svg",
+    "options": [
+      "Apple Music",
+      "Spotify",
+      "Deezer",
+      "Tidal"
+    ],
+    "answer": "Spotify",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 179,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/starbucks.svg",
+    "options": [
+      "Costa Coffee",
+      "Dunkin'",
+      "Starbucks",
+      "Tim Hortons"
+    ],
+    "answer": "Starbucks",
+    "difficulty": "easy",
+    "category": "fastfood"
+  },
+  {
+    "id": 180,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/steam.svg",
+    "options": [
+      "Steam",
+      "GOG",
+      "Epic Games",
+      "Origin"
+    ],
+    "answer": "Steam",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 181,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/strava.svg",
+    "options": [
+      "Nike Run Club",
+      "Strava",
+      "MapMyRun",
+      "Runkeeper"
+    ],
+    "answer": "Strava",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 182,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/stripe.svg",
+    "options": [
+      "PayPal",
+      "Square",
+      "Adyen",
+      "Stripe"
+    ],
+    "answer": "Stripe",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 183,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/subaru.svg",
+    "options": [
+      "Honda",
+      "Mazda",
+      "Subaru",
+      "Toyota"
+    ],
+    "answer": "Subaru",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 184,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/sublimetext.svg",
+    "options": [
+      "Atom",
+      "Sublime Text",
+      "Notepad++",
+      "VS Code"
+    ],
+    "answer": "Sublime Text",
+    "difficulty": "medium",
+    "category": "devtools"
+  },
+  {
+    "id": 185,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tacobell.svg",
+    "options": [
+      "Taco Bell",
+      "Qdoba",
+      "Chipotle",
+      "Del Taco"
+    ],
+    "answer": "Taco Bell",
+    "difficulty": "easy",
+    "category": "fastfood"
+  },
+  {
+    "id": 186,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/target.svg",
+    "options": [
+      "Best Buy",
+      "Walmart",
+      "Costco",
+      "Target"
+    ],
+    "answer": "Target",
+    "difficulty": "easy",
+    "category": "retail"
+  },
+  {
+    "id": 187,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/telegram.svg",
+    "options": [
+      "Viber",
+      "WhatsApp",
+      "Telegram",
+      "Signal"
+    ],
+    "answer": "Telegram",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 188,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tesla.svg",
+    "options": [
+      "Lucid",
+      "Tesla",
+      "Rivian",
+      "Polestar"
+    ],
+    "answer": "Tesla",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 189,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/thenorthface.svg",
+    "options": [
+      "Patagonia",
+      "Arc'teryx",
+      "Columbia",
+      "The North Face"
+    ],
+    "answer": "The North Face",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 190,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/threads.svg",
+    "options": [
+      "Threads",
+      "Mastodon",
+      "Bluesky",
+      "X"
+    ],
+    "answer": "Threads",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 191,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tidal.svg",
+    "options": [
+      "Apple Music",
+      "Spotify",
+      "Deezer",
+      "Tidal"
+    ],
+    "answer": "Tidal",
+    "difficulty": "medium",
+    "category": "music"
+  },
+  {
+    "id": 192,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tiktok.svg",
+    "options": [
+      "Instagram Reels",
+      "Snapchat",
+      "TikTok",
+      "YouTube Shorts"
+    ],
+    "answer": "TikTok",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 193,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/todoist.svg",
+    "options": [
+      "TickTick",
+      "Any.do",
+      "Todoist",
+      "Microsoft To Do"
+    ],
+    "answer": "Todoist",
+    "difficulty": "hard",
+    "category": "apps"
+  },
+  {
+    "id": 194,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tor.svg",
+    "options": [
+      "Brave",
+      "DuckDuckGo",
+      "Tor Browser",
+      "Firefox"
+    ],
+    "answer": "Tor Browser",
+    "difficulty": "hard",
+    "category": "browsers"
+  },
+  {
+    "id": 195,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/toyota.svg",
+    "options": [
+      "Honda",
+      "Nissan",
+      "Toyota",
+      "Mazda"
+    ],
+    "answer": "Toyota",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 196,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/trello.svg",
+    "options": [
+      "Jira",
+      "Asana",
+      "Monday",
+      "Trello"
+    ],
+    "answer": "Trello",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 197,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tripadvisor.svg",
+    "options": [
+      "Yelp",
+      "Expedia",
+      "Booking.com",
+      "TripAdvisor"
+    ],
+    "answer": "TripAdvisor",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 198,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/tumblr.svg",
+    "options": [
+      "Medium",
+      "Tumblr",
+      "WordPress",
+      "Blogger"
+    ],
+    "answer": "Tumblr",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 199,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/twitch.svg",
+    "options": [
+      "Kick",
+      "Facebook Gaming",
+      "YouTube Gaming",
+      "Twitch"
+    ],
+    "answer": "Twitch",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 200,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/uber.svg",
+    "options": [
+      "Uber",
+      "Lyft",
+      "Grab",
+      "Bolt"
+    ],
+    "answer": "Uber",
+    "difficulty": "easy",
+    "category": "apps"
+  },
+  {
+    "id": 201,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ubereats.svg",
+    "options": [
+      "Grubhub",
+      "DoorDash",
+      "Uber Eats",
+      "Deliveroo"
+    ],
+    "answer": "Uber Eats",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 202,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ubisoft.svg",
+    "options": [
+      "EA",
+      "Rockstar",
+      "Ubisoft",
+      "Activision"
+    ],
+    "answer": "Ubisoft",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 203,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/ubuntu.svg",
+    "options": [
+      "Ubuntu",
+      "Debian",
+      "Fedora",
+      "Linux"
+    ],
+    "answer": "Ubuntu",
+    "difficulty": "medium",
+    "category": "os"
+  },
+  {
+    "id": 204,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/underarmour.svg",
+    "options": [
+      "Under Armour",
+      "Nike",
+      "Adidas",
+      "Reebok"
+    ],
+    "answer": "Under Armour",
+    "difficulty": "easy",
+    "category": "brands"
+  },
+  {
+    "id": 205,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/uniqlo.svg",
+    "options": [
+      "H&M",
+      "Gap",
+      "Uniqlo",
+      "Zara"
+    ],
+    "answer": "Uniqlo",
+    "difficulty": "medium",
+    "category": "fashion"
+  },
+  {
+    "id": 206,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/united.svg",
+    "options": [
+      "United Airlines",
+      "American Airlines",
+      "Southwest",
+      "Delta"
+    ],
+    "answer": "United Airlines",
+    "difficulty": "medium",
+    "category": "airlines"
+  },
+  {
+    "id": 207,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/unity.svg",
+    "options": [
+      "Godot",
+      "Unity",
+      "CryEngine",
+      "Unreal Engine"
+    ],
+    "answer": "Unity",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 208,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/unrealengine.svg",
+    "options": [
+      "Godot",
+      "CryEngine",
+      "Unity",
+      "Unreal Engine"
+    ],
+    "answer": "Unreal Engine",
+    "difficulty": "medium",
+    "category": "gaming"
+  },
+  {
+    "id": 209,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/upwork.svg",
+    "options": [
+      "Toptal",
+      "Fiverr",
+      "Freelancer",
+      "Upwork"
+    ],
+    "answer": "Upwork",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 210,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/valorant.svg",
+    "options": [
+      "Overwatch",
+      "Counter-Strike",
+      "Apex Legends",
+      "Valorant"
+    ],
+    "answer": "Valorant",
+    "difficulty": "easy",
+    "category": "gaming"
+  },
+  {
+    "id": 211,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/valve.svg",
+    "options": [
+      "Ubisoft",
+      "Epic Games",
+      "Steam",
+      "Valve"
+    ],
+    "answer": "Valve",
+    "difficulty": "hard",
+    "category": "gaming"
+  },
+  {
+    "id": 212,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/venmo.svg",
+    "options": [
+      "Venmo",
+      "PayPal",
+      "Cash App",
+      "Zelle"
+    ],
+    "answer": "Venmo",
+    "difficulty": "medium",
+    "category": "apps"
+  },
+  {
+    "id": 213,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/vercel.svg",
+    "options": [
+      "Heroku",
+      "Vercel",
+      "AWS",
+      "Netlify"
+    ],
+    "answer": "Vercel",
+    "difficulty": "hard",
+    "category": "devtools"
+  },
+  {
+    "id": 214,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/viber.svg",
+    "options": [
+      "Viber",
+      "Telegram",
+      "Signal",
+      "WhatsApp"
+    ],
+    "answer": "Viber",
+    "difficulty": "hard",
+    "category": "social"
+  },
+  {
+    "id": 215,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/visa.svg",
+    "options": [
+      "American Express",
+      "Visa",
+      "Discover",
+      "Mastercard"
+    ],
+    "answer": "Visa",
+    "difficulty": "easy",
+    "category": "finance"
+  },
+  {
+    "id": 216,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/vlcmediaplayer.svg",
+    "options": [
+      "QuickTime",
+      "Windows Media Player",
+      "MPC-HC",
+      "VLC"
+    ],
+    "answer": "VLC",
+    "difficulty": "easy",
+    "category": "software"
+  },
+  {
+    "id": 217,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/vmware.svg",
+    "options": [
+      "VMware",
+      "Citrix",
+      "Microsoft",
+      "Oracle"
+    ],
+    "answer": "VMware",
+    "difficulty": "hard",
+    "category": "tech"
+  },
+  {
+    "id": 218,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/volkswagen.svg",
+    "options": [
+      "Audi",
+      "Skoda",
+      "Volkswagen",
+      "Seat"
+    ],
+    "answer": "Volkswagen",
+    "difficulty": "easy",
+    "category": "cars"
+  },
+  {
+    "id": 219,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/volvo.svg",
+    "options": [
+      "BMW",
+      "Volvo",
+      "Saab",
+      "Audi"
+    ],
+    "answer": "Volvo",
+    "difficulty": "medium",
+    "category": "cars"
+  },
+  {
+    "id": 220,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/walmart.svg",
+    "options": [
+      "Amazon",
+      "Target",
+      "Costco",
+      "Walmart"
+    ],
+    "answer": "Walmart",
+    "difficulty": "easy",
+    "category": "retail"
+  },
+  {
+    "id": 221,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/wechat.svg",
+    "options": [
+      "KakaoTalk",
+      "Line",
+      "WhatsApp",
+      "WeChat"
+    ],
+    "answer": "WeChat",
+    "difficulty": "medium",
+    "category": "social"
+  },
+  {
+    "id": 222,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/whatsapp.svg",
+    "options": [
+      "Signal",
+      "WhatsApp",
+      "Telegram",
+      "Messenger"
+    ],
+    "answer": "WhatsApp",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 223,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/woocommerce.svg",
+    "options": [
+      "Magento",
+      "WooCommerce",
+      "BigCommerce",
+      "Shopify"
+    ],
+    "answer": "WooCommerce",
+    "difficulty": "hard",
+    "category": "ecommerce"
+  },
+  {
+    "id": 224,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/x.svg",
+    "options": [
+      "Mastodon",
+      "Threads",
+      "X",
+      "Bluesky"
+    ],
+    "answer": "X",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 225,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/xiaomi.svg",
+    "options": [
+      "OnePlus",
+      "Huawei",
+      "Oppo",
+      "Xiaomi"
+    ],
+    "answer": "Xiaomi",
+    "difficulty": "medium",
+    "category": "tech"
+  },
+  {
+    "id": 226,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/yelp.svg",
+    "options": [
+      "Foursquare",
+      "Yelp",
+      "Google Maps",
+      "TripAdvisor"
+    ],
+    "answer": "Yelp",
+    "difficulty": "medium",
+    "category": "ecommerce"
+  },
+  {
+    "id": 227,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/youtube.svg",
+    "options": [
+      "Twitch",
+      "Vimeo",
+      "Dailymotion",
+      "YouTube"
+    ],
+    "answer": "YouTube",
+    "difficulty": "easy",
+    "category": "social"
+  },
+  {
+    "id": 228,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/youtubemusic.svg",
+    "options": [
+      "Spotify",
+      "Apple Music",
+      "YouTube",
+      "YouTube Music"
+    ],
+    "answer": "YouTube Music",
+    "difficulty": "easy",
+    "category": "music"
+  },
+  {
+    "id": 229,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/zara.svg",
+    "options": [
+      "H&M",
+      "Uniqlo",
+      "Zara",
+      "Forever 21"
+    ],
+    "answer": "Zara",
+    "difficulty": "easy",
+    "category": "fashion"
+  },
+  {
+    "id": 230,
+    "question": "Which brand uses this logo?",
+    "image": "logo_images/zoom.svg",
+    "options": [
+      "Google Meet",
+      "Microsoft Teams",
+      "Zoom",
+      "Skype"
+    ],
+    "answer": "Zoom",
+    "difficulty": "easy",
+    "category": "apps"
+  }
+]
