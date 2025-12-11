@@ -5746,6 +5746,154 @@ footer button:hover {
 }
 
 /* ========================================
+   🔥 TOPIC SELECTOR DROPDOWN (Stats Page 2)
+   ======================================== */
+
+/* Topic Selector Dropdown */
+.topic-selector-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.topic-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(124, 58, 237, 0.3);
+  border: 1px solid rgba(124, 58, 237, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.topic-selector:hover {
+  background: rgba(124, 58, 237, 0.4);
+}
+
+.topic-selector-icon {
+  font-size: 1.5rem;
+}
+
+.topic-selector-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.topic-selector-arrow {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.topic-selector.open .topic-selector-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown */
+.topic-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  right: 10px;
+  margin-top: 5px;
+  background: rgba(26, 26, 46, 0.98);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 12px;
+  max-height: 300px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.topic-dropdown.hidden {
+  display: none;
+}
+
+.topic-dropdown-search {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topic-dropdown-search input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.1);
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.topic-dropdown-search input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.topic-dropdown-search input:focus {
+  border-color: rgba(124, 58, 237, 0.6);
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.topic-dropdown-list {
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.topic-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.topic-dropdown-item:hover {
+  background: rgba(124, 58, 237, 0.3);
+}
+
+.topic-dropdown-item.selected {
+  background: rgba(124, 58, 237, 0.5);
+}
+
+.topic-dropdown-item-icon {
+  font-size: 1.3rem;
+}
+
+.topic-dropdown-item-name {
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.topic-dropdown-item-games {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Page 2 specific: 5 buttons layout (3 top + 2 bottom filling width) */
+#stats-page-2 .stats-type-selector {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+#stats-page-2 .stats-type-selector .stats-type-btn:nth-child(1),
+#stats-page-2 .stats-type-selector .stats-type-btn:nth-child(2),
+#stats-page-2 .stats-type-selector .stats-type-btn:nth-child(3) {
+  grid-column: span 2;
+}
+
+#stats-page-2 .stats-type-selector .stats-type-btn:nth-child(4),
+#stats-page-2 .stats-type-selector .stats-type-btn:nth-child(5) {
+  grid-column: span 3;
+}
+
+/* ========================================
    🏆 LEADERBOARD PAGE STYLES
    ======================================== */
 
