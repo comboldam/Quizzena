@@ -546,12 +546,82 @@
         </div>
       </div>
 
-      <!-- Page 2: Most Played (Coming Later) -->
+      <!-- Page 2: Topic Stats Chart (Same layout as Page 1 + Topic Dropdown) -->
       <div class="stats-page hidden" id="stats-page-2">
-        <div class="stats-page-placeholder">
-          <span class="stats-placeholder-icon">🚧</span>
-          <span class="stats-placeholder-text">Most Played Topics</span>
-          <span class="stats-placeholder-subtext">Coming soon...</span>
+        <!-- Topic Selector Dropdown -->
+        <div class="topic-selector-wrapper">
+          <div class="topic-selector" id="topic-selector" onclick="toggleTopicDropdown()">
+            <span class="topic-selector-icon" id="selected-topic-icon">🏳️</span>
+            <span class="topic-selector-name" id="selected-topic-name">Flags</span>
+            <span class="topic-selector-arrow">▼</span>
+          </div>
+          
+          <!-- Dropdown -->
+          <div class="topic-dropdown hidden" id="topic-dropdown">
+            <div class="topic-dropdown-search">
+              <input type="text" id="topic-dropdown-search" placeholder="Search topics..." oninput="filterTopicDropdown(this.value)"/>
+            </div>
+            <div class="topic-dropdown-list" id="topic-dropdown-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stat Type Selector (Same as Page 1) -->
+        <div class="stats-type-selector">
+          <button class="stats-type-btn active" data-stat="games" onclick="switchTopicStatType('games')">
+            <span class="stats-type-icon">🎮</span>
+            <span class="stats-type-label">Games</span>
+          </button>
+          <button class="stats-type-btn" data-stat="accuracy" onclick="switchTopicStatType('accuracy')">
+            <span class="stats-type-icon">🎯</span>
+            <span class="stats-type-label">Accuracy</span>
+          </button>
+          <button class="stats-type-btn" data-stat="streak" onclick="switchTopicStatType('streak')">
+            <span class="stats-type-icon">🔥</span>
+            <span class="stats-type-label">Streak</span>
+          </button>
+          <button class="stats-type-btn" data-stat="time" onclick="switchTopicStatType('time')">
+            <span class="stats-type-icon">⏱️</span>
+            <span class="stats-type-label">Time</span>
+          </button>
+          <button class="stats-type-btn" data-stat="avgtime" onclick="switchTopicStatType('avgtime')">
+            <span class="stats-type-icon">⚡</span>
+            <span class="stats-type-label">A.Time</span>
+          </button>
+        </div>
+
+        <!-- Time Period Tabs (Same as Page 1) -->
+        <div class="stats-period-tabs">
+          <button class="stats-period-tab active" data-period="day" onclick="switchTopicPeriod('day')">1 Day</button>
+          <button class="stats-period-tab" data-period="week" onclick="switchTopicPeriod('week')">1 Week</button>
+          <button class="stats-period-tab" data-period="month" onclick="switchTopicPeriod('month')">1 Month</button>
+          <button class="stats-period-tab" data-period="year" onclick="switchTopicPeriod('year')">1 Year</button>
+        </div>
+
+        <!-- Chart Container (Same as Page 1) -->
+        <div class="stats-chart-container">
+          <canvas id="topic-stats-chart"></canvas>
+          <div class="stats-chart-empty hidden" id="topic-chart-empty">
+            <span class="stats-empty-icon">📊</span>
+            <span class="stats-empty-text">Play some games to see your stats here!</span>
+          </div>
+        </div>
+
+        <!-- Summary Cards (Same as Page 1) -->
+        <div class="stats-summary-cards">
+          <div class="stats-summary-card peak">
+            <span class="stats-summary-label">Peak</span>
+            <span class="stats-summary-value" id="topic-peak-value">0</span>
+          </div>
+          <div class="stats-summary-card average">
+            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-value" id="topic-avg-value">0</span>
+          </div>
+          <div class="stats-summary-card total">
+            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-value" id="topic-total-value">0</span>
+          </div>
         </div>
       </div>
     </div>
