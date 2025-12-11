@@ -120,7 +120,8 @@ const defaultUserData = {
     totalTimeSeconds: 0,
     topics: {},
     recentGameAccuracies: [],  // Array of last 100 game accuracies for Skill achievements
-    hybridBestStreaks: { 80: 0, 90: 0, 100: 0 }  // Best streak achieved at each accuracy threshold
+    hybridBestStreaks: { 80: 0, 90: 0, 100: 0 },  // Best streak achieved at each accuracy threshold
+    history: {}  // Stats history for chart: { "YYYY-MM-DD": { games, correct, wrong, time, streak, hourly: {...} } }
   },
   // P-XP (Player Prestige XP) System
   prestige: {
@@ -4687,6 +4688,12 @@ function saveQuizStats(topicId, completed) {
     awardPxp(1, currentSessionCorrect, gameMode);
   }
 
+  // Record stats history for chart (only for completed single-player games)
+  if (completed && gameMode !== 'two') {
+    const sessionTimeSeconds = Math.floor((Date.now() - quizStartTime) / 1000);
+    recordStatsHistory(1, currentSessionCorrect, currentSessionWrong, sessionTimeSeconds, bestSessionStreak);
+  }
+
   // Save to localStorage
   saveUserData();
 
@@ -4962,6 +4969,64 @@ function recordPxpHistory(gamesXp, answersXp) {
   }
   dayData.hourly[hour].g += gamesXp;
   dayData.hourly[hour].a += answersXp;
+}
+
+// Record stats history (games, correct, wrong, time, streak)
+function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, bestStreak) {
+  const now = new Date();
+  const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+  const hour = now.getHours().toString().padStart(2, '0');
+  
+  // Initialize stats if not exists (migration for existing users)
+  if (!userData.stats) {
+    userData.stats = {};
+  }
+  
+  // Initialize stats history if not exists
+  if (!userData.stats.history) {
+    userData.stats.history = {};
+  }
+  
+  // Initialize day entry if not exists
+  if (!userData.stats.history[dateKey]) {
+    userData.stats.history[dateKey] = { 
+      games: 0, 
+      correct: 0, 
+      wrong: 0, 
+      time: 0, 
+      streak: 0,
+      hourly: {} 
+    };
+  }
+  
+  const dayData = userData.stats.history[dateKey];
+  
+  // Add to daily totals
+  dayData.games += gamesCount;
+  dayData.correct += correctCount;
+  dayData.wrong += wrongCount;
+  dayData.time += timeSeconds;
+  
+  // Track best streak observed today (keep the highest)
+  if (bestStreak > dayData.streak) {
+    dayData.streak = bestStreak;
+  }
+  
+  // Hourly breakdown for "1 Day" view
+  if (!dayData.hourly[hour]) {
+    dayData.hourly[hour] = { g: 0, c: 0, w: 0, t: 0, s: 0 };
+  }
+  
+  const hourData = dayData.hourly[hour];
+  hourData.g += gamesCount;
+  hourData.c += correctCount;
+  hourData.w += wrongCount;
+  hourData.t += timeSeconds;
+  
+  // Track best streak for this hour (keep the highest)
+  if (bestStreak > hourData.s) {
+    hourData.s = bestStreak;
+  }
 }
 
 // Get date string for N days ago
@@ -5277,6 +5342,508 @@ function renderPxpChart(period) {
             color: 'rgba(255, 255, 255, 0.5)',
             font: { size: 10 },
             stepSize: 10
+          }
+        }
+      }
+    }
+  });
+}
+
+// ========================================
+// STATS CHART DASHBOARD
+// ========================================
+
+let statsChart = null;
+let currentStatType = 'games';
+let currentStatsPeriod = 'day';
+
+// Open Stats Chart Dashboard
+function openStatsChart() {
+  const dashboard = document.getElementById('stats-chart-dashboard');
+  if (dashboard) {
+    dashboard.classList.remove('hidden');
+    switchStatsPage(1); // Start on Page 1
+    renderStatsChart();
+  }
+}
+
+// Close Stats Chart Dashboard
+function closeStatsChart() {
+  const dashboard = document.getElementById('stats-chart-dashboard');
+  if (dashboard) {
+    dashboard.classList.add('hidden');
+  }
+}
+
+// Switch between stats pages
+function switchStatsPage(page) {
+  const page1 = document.getElementById('stats-page-1');
+  const page2 = document.getElementById('stats-page-2');
+  const tab1 = document.getElementById('stats-page-1-tab');
+  const tab2 = document.getElementById('stats-page-2-tab');
+  
+  if (page === 1) {
+    page1?.classList.remove('hidden');
+    page2?.classList.add('hidden');
+    tab1?.classList.add('active');
+    tab2?.classList.remove('active');
+    renderStatsChart();
+  } else {
+    page1?.classList.add('hidden');
+    page2?.classList.remove('hidden');
+    tab1?.classList.remove('active');
+    tab2?.classList.add('active');
+  }
+}
+
+// Switch stat type (games, questions, correct, wrong, time, streak)
+function switchStatType(type) {
+  currentStatType = type;
+  
+  // Update button states
+  document.querySelectorAll('.stats-type-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.stat === type);
+  });
+  
+  renderStatsChart();
+}
+
+// Switch time period
+function switchStatsPeriod(period) {
+  currentStatsPeriod = period;
+  
+  // Update tab states
+  document.querySelectorAll('.stats-period-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.period === period);
+  });
+  
+  renderStatsChart();
+}
+
+// Render Stats Chart
+function renderStatsChart() {
+  const canvas = document.getElementById('stats-chart');
+  const emptyEl = document.getElementById('stats-chart-empty');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const history = userData.stats?.history || {};
+  
+  let labels = [];
+  let data = [];
+  let total = 0;
+  let peak = 0;
+  
+  // Get data based on period and type
+  if (currentStatsPeriod === 'day') {
+    // Show 24 hours
+    const today = getDateString(0);
+    const dayData = history[today] || { hourly: {} };
+    
+    for (let h = 0; h < 24; h++) {
+      const hourKey = h.toString().padStart(2, '0');
+      const hourData = dayData.hourly?.[hourKey] || { g: 0, c: 0, w: 0, t: 0, s: 0 };
+      
+      labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
+      
+      let value = 0;
+      switch (currentStatType) {
+        case 'games': value = hourData.g; break;
+        case 'questions': value = hourData.c + hourData.w; break;
+        case 'correct': value = hourData.c; break;
+        case 'wrong': value = hourData.w; break;
+        case 'time': value = hourData.t; break; // Seconds (raw)
+        case 'streak': value = hourData.s; break;
+      }
+      
+      data.push(value);
+      total += (currentStatType === 'streak') ? 0 : value;
+      if (value > peak) peak = value;
+    }
+    
+    // For streak, total is the max observed today
+    if (currentStatType === 'streak') {
+      total = dayData.streak || 0;
+    }
+    
+  } else if (currentStatsPeriod === 'week') {
+    // Show last 7 days
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    
+    for (let i = 6; i >= 0; i--) {
+      const dateKey = getDateString(i);
+      const dayData = history[dateKey] || { games: 0, correct: 0, wrong: 0, time: 0, streak: 0 };
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      
+      labels.push(dayNames[date.getDay()]);
+      
+      let value = 0;
+      switch (currentStatType) {
+        case 'games': value = dayData.games; break;
+        case 'questions': value = dayData.correct + dayData.wrong; break;
+        case 'correct': value = dayData.correct; break;
+        case 'wrong': value = dayData.wrong; break;
+        case 'time': value = dayData.time; break; // Seconds (raw)
+        case 'streak': value = dayData.streak; break;
+      }
+      
+      data.push(value);
+      total += (currentStatType === 'streak') ? 0 : value;
+      if (value > peak) peak = value;
+    }
+    
+    if (currentStatType === 'streak') {
+      total = Math.max(...data);
+    }
+    
+  } else if (currentStatsPeriod === 'month') {
+    // Show last 30 days (grouped by ~5 day periods)
+    const periods = 6;
+    const daysPerPeriod = 5;
+    
+    for (let p = periods - 1; p >= 0; p--) {
+      let periodTotal = 0;
+      let periodPeak = 0;
+      
+      for (let d = 0; d < daysPerPeriod; d++) {
+        const daysAgo = p * daysPerPeriod + d;
+        const dateKey = getDateString(daysAgo);
+        const dayData = history[dateKey] || { games: 0, correct: 0, wrong: 0, time: 0, streak: 0 };
+        
+        let value = 0;
+        switch (currentStatType) {
+          case 'games': value = dayData.games; break;
+          case 'questions': value = dayData.correct + dayData.wrong; break;
+          case 'correct': value = dayData.correct; break;
+          case 'wrong': value = dayData.wrong; break;
+          case 'time': value = dayData.time; break; // Seconds (raw)
+          case 'streak': value = dayData.streak; break;
+        }
+        
+        if (currentStatType === 'streak') {
+          if (value > periodPeak) periodPeak = value;
+        } else {
+          periodTotal += value;
+        }
+      }
+      
+      const endDaysAgo = p * daysPerPeriod;
+      const endDate = new Date();
+      endDate.setDate(endDate.getDate() - endDaysAgo);
+      labels.push(`${endDate.getMonth()+1}/${endDate.getDate()}`);
+      
+      const val = currentStatType === 'streak' ? periodPeak : periodTotal;
+      data.push(val);
+      total += (currentStatType === 'streak') ? 0 : val;
+      if (val > peak) peak = val;
+    }
+    
+    if (currentStatType === 'streak') {
+      total = Math.max(...data);
+    }
+    
+  } else if (currentStatsPeriod === 'year') {
+    // Show last 12 months
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const today = new Date();
+    
+    for (let m = 11; m >= 0; m--) {
+      const targetDate = new Date(today.getFullYear(), today.getMonth() - m, 1);
+      const targetMonth = targetDate.getMonth();
+      const targetYear = targetDate.getFullYear();
+      
+      let monthTotal = 0;
+      let monthPeak = 0;
+      
+      // Sum all days in this month
+      Object.keys(history).forEach(dateKey => {
+        const date = new Date(dateKey);
+        if (date.getMonth() === targetMonth && date.getFullYear() === targetYear) {
+          const dayData = history[dateKey];
+          
+          let value = 0;
+          switch (currentStatType) {
+            case 'games': value = dayData.games || 0; break;
+            case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
+            case 'correct': value = dayData.correct || 0; break;
+            case 'wrong': value = dayData.wrong || 0; break;
+            case 'time': value = dayData.time || 0; break; // Seconds (raw)
+            case 'streak': value = dayData.streak || 0; break;
+          }
+          
+          if (currentStatType === 'streak') {
+            if (value > monthPeak) monthPeak = value;
+          } else {
+            monthTotal += value;
+          }
+        }
+      });
+      
+      labels.push(monthNames[targetMonth]);
+      const val = currentStatType === 'streak' ? monthPeak : monthTotal;
+      data.push(val);
+      total += (currentStatType === 'streak') ? 0 : val;
+      if (val > peak) peak = val;
+    }
+    
+    if (currentStatType === 'streak') {
+      total = Math.max(...data);
+    }
+    
+  } else if (currentStatsPeriod === 'all') {
+    // Show all time data grouped by month
+    const allDates = Object.keys(history).sort();
+    
+    if (allDates.length === 0) {
+      labels = ['No Data'];
+      data = [0];
+    } else {
+      const monthlyData = {};
+      
+      allDates.forEach(dateKey => {
+        const date = new Date(dateKey);
+        const monthKey = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}`;
+        
+        if (!monthlyData[monthKey]) {
+          monthlyData[monthKey] = { total: 0, peak: 0 };
+        }
+        
+        const dayData = history[dateKey];
+        let value = 0;
+        switch (currentStatType) {
+          case 'games': value = dayData.games || 0; break;
+          case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
+          case 'correct': value = dayData.correct || 0; break;
+          case 'wrong': value = dayData.wrong || 0; break;
+          case 'time': value = dayData.time || 0; break; // Seconds (raw)
+          case 'streak': value = dayData.streak || 0; break;
+        }
+        
+        if (currentStatType === 'streak') {
+          if (value > monthlyData[monthKey].peak) {
+            monthlyData[monthKey].peak = value;
+          }
+        } else {
+          monthlyData[monthKey].total += value;
+        }
+      });
+      
+      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const sortedMonths = Object.keys(monthlyData).sort();
+      
+      sortedMonths.forEach(monthKey => {
+        const [year, month] = monthKey.split('-');
+        labels.push(`${monthNames[parseInt(month)-1]} '${year.slice(2)}`);
+        
+        const val = currentStatType === 'streak' ? monthlyData[monthKey].peak : monthlyData[monthKey].total;
+        data.push(val);
+        total += (currentStatType === 'streak') ? 0 : val;
+        if (val > peak) peak = val;
+      });
+      
+      if (currentStatType === 'streak') {
+        total = Math.max(...data, 0);
+      }
+    }
+  }
+  
+  // Check if all data is zero
+  const hasData = data.some(v => v > 0);
+  
+  // Show/hide empty state
+  if (emptyEl) {
+    emptyEl.classList.toggle('hidden', hasData);
+  }
+  canvas.style.display = hasData ? 'block' : 'none';
+  
+  // Update summary cards
+  const avg = data.length > 0 ? Math.round(data.reduce((a, b) => a + b, 0) / data.length) : 0;
+  
+  const peakEl = document.getElementById('stats-peak-value');
+  const avgEl = document.getElementById('stats-avg-value');
+  const totalEl = document.getElementById('stats-total-value');
+  
+  // Determine time unit based on max value (for chart Y-axis)
+  // maxSeconds is the max value in seconds
+  const maxSeconds = Math.max(...data, 0);
+  let timeUnit = 'seconds'; // 's', 'm', or 'h'
+  if (currentStatType === 'time') {
+    if (maxSeconds >= 3600) {
+      timeUnit = 'hours';
+    } else if (maxSeconds >= 60) {
+      timeUnit = 'minutes';
+    }
+  }
+  
+  // Format values for summary cards (smart formatting)
+  const formatValue = (val) => {
+    if (currentStatType === 'time') {
+      // val is in seconds
+      if (val < 60) {
+        // Show seconds
+        return `${Math.round(val)}s`;
+      } else if (val < 3600) {
+        // Show minutes and seconds (e.g., "1m 30s" or "5m")
+        const mins = Math.floor(val / 60);
+        const secs = Math.round(val % 60);
+        return secs > 0 ? `${mins}m ${secs}s` : `${mins}m`;
+      } else {
+        // Hours - smart decimal formatting
+        const hours = val / 3600;
+        if (hours >= 10000) {
+          // 10k+ hours: no decimal
+          return `${Math.round(hours)}h`;
+        } else {
+          // 1-9999 hours: 1 decimal place
+          return `${hours.toFixed(1)}h`;
+        }
+      }
+    }
+    return val.toLocaleString();
+  };
+  
+  // Format Y-axis values (auto-convert based on max)
+  const formatYAxisValue = (val) => {
+    if (currentStatType !== 'time') return val;
+    
+    // Convert based on determined unit
+    if (timeUnit === 'hours') {
+      return (val / 3600).toFixed(1);
+    } else if (timeUnit === 'minutes') {
+      return Math.round(val / 60);
+    }
+    return val; // seconds
+  };
+  
+  // Get Y-axis unit suffix
+  const getYAxisSuffix = () => {
+    if (currentStatType !== 'time') return '';
+    if (timeUnit === 'hours') return 'h';
+    if (timeUnit === 'minutes') return 'm';
+    return 's';
+  };
+  
+  if (peakEl) peakEl.textContent = formatValue(peak);
+  if (avgEl) avgEl.textContent = formatValue(avg);
+  if (totalEl) totalEl.textContent = formatValue(total);
+  
+  // Destroy existing chart
+  if (statsChart) {
+    statsChart.destroy();
+  }
+  
+  if (!hasData) return;
+  
+  // Get chart color based on stat type
+  const colors = {
+    games: { line: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+    questions: { line: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' },
+    correct: { line: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+    wrong: { line: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)' },
+    time: { line: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' },
+    streak: { line: '#f97316', bg: 'rgba(249, 115, 22, 0.1)' }
+  };
+  
+  const color = colors[currentStatType] || colors.games;
+  
+  // Create gradient
+  const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+  gradient.addColorStop(0, color.bg.replace('0.1', '0.3'));
+  gradient.addColorStop(1, color.bg.replace('0.1', '0'));
+  
+  // Create chart
+  statsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        borderColor: color.line,
+        backgroundColor: gradient,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 4,
+        pointBackgroundColor: color.line,
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: 'index',
+        intersect: false
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          backgroundColor: 'rgba(15, 23, 42, 0.95)',
+          titleColor: '#fff',
+          bodyColor: 'rgba(255, 255, 255, 0.8)',
+          borderColor: color.line,
+          borderWidth: 1,
+          padding: 12,
+          displayColors: false,
+          callbacks: {
+            title: (items) => items[0].label,
+            label: (item) => {
+              const statNames = {
+                games: 'Games Played',
+                questions: 'Questions Answered',
+                correct: 'Correct Answers',
+                wrong: 'Wrong Answers',
+                time: 'Time Played',
+                streak: 'Best Streak'
+              };
+              return `${statNames[currentStatType]}: ${formatValue(item.raw)}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: {
+            color: 'rgba(255, 255, 255, 0.05)',
+            drawBorder: false
+          },
+          ticks: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            font: { size: 10 },
+            maxRotation: 0
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(255, 255, 255, 0.05)',
+            drawBorder: false
+          },
+          ticks: {
+            color: 'rgba(255, 255, 255, 0.5)',
+            font: { size: 10 },
+            callback: function(value) {
+              if (currentStatType === 'time') {
+                if (timeUnit === 'hours') {
+                  // Always 1 decimal for hours
+                  return (value / 3600).toFixed(1) + 'h';
+                } else if (timeUnit === 'minutes') {
+                  // Show decimal minutes if max < 5 min, otherwise whole
+                  const mins = value / 60;
+                  if (maxSeconds < 300) {
+                    return mins.toFixed(1) + 'm';
+                  }
+                  return Math.round(mins) + 'm';
+                }
+                // Seconds - whole numbers
+                return Math.round(value) + 's';
+              }
+              return value;
+            }
           }
         }
       }
