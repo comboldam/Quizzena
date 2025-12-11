@@ -4456,6 +4456,399 @@ function searchTopic(query) {
   }
 }
 
+// ========================================
+// 🔥 TOPIC STATS PAGE 2 FUNCTIONS
+// ========================================
+
+let currentTopicPage2 = 'flags';  // Currently selected topic
+let currentTopicPeriod = 'day';   // day, week, month, year
+let currentTopicStatType = 'games';  // games, accuracy, streak, time, avgtime
+let topicStatsChart = null;
+
+// Toggle topic dropdown
+function toggleTopicDropdown() {
+  const dropdown = document.getElementById('topic-dropdown');
+  const selector = document.getElementById('topic-selector');
+  
+  if (dropdown.classList.contains('hidden')) {
+    dropdown.classList.remove('hidden');
+    selector.classList.add('open');
+    populateTopicDropdown();
+  } else {
+    dropdown.classList.add('hidden');
+    selector.classList.remove('open');
+  }
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  const wrapper = document.querySelector('.topic-selector-wrapper');
+  if (wrapper && !wrapper.contains(e.target)) {
+    const dropdown = document.getElementById('topic-dropdown');
+    const selector = document.getElementById('topic-selector');
+    if (dropdown) dropdown.classList.add('hidden');
+    if (selector) selector.classList.remove('open');
+  }
+});
+
+// Populate topic dropdown list
+function populateTopicDropdown(filter = '') {
+  const list = document.getElementById('topic-dropdown-list');
+  if (!list) return;
+  
+  const topics = Object.entries(TOPIC_CONFIG).map(([id, cfg]) => ({
+    id,
+    name: cfg.name,
+    icon: cfg.icon,
+    games: userData.stats.topics[id]?.games || 0
+  }));
+  
+  // Sort by games played (most played first)
+  topics.sort((a, b) => b.games - a.games);
+  
+  // Filter if search query provided
+  const filtered = filter 
+    ? topics.filter(t => t.name.toLowerCase().includes(filter.toLowerCase()) || t.id.includes(filter.toLowerCase()))
+    : topics;
+  
+  list.innerHTML = filtered.map(t => `
+    <div class="topic-dropdown-item ${t.id === currentTopicPage2 ? 'selected' : ''}" onclick="selectTopic('${t.id}')">
+      <span class="topic-dropdown-item-icon">${t.icon}</span>
+      <span class="topic-dropdown-item-name">${t.name}</span>
+      <span class="topic-dropdown-item-games">${t.games} games</span>
+    </div>
+  `).join('');
+}
+
+// Filter dropdown
+function filterTopicDropdown(query) {
+  populateTopicDropdown(query);
+}
+
+// Select a topic
+function selectTopic(topicId) {
+  currentTopicPage2 = topicId;
+  
+  // Update selector display
+  const cfg = TOPIC_CONFIG[topicId];
+  document.getElementById('selected-topic-icon').textContent = cfg.icon;
+  document.getElementById('selected-topic-name').textContent = cfg.name;
+  
+  // Close dropdown
+  document.getElementById('topic-dropdown').classList.add('hidden');
+  document.getElementById('topic-selector').classList.remove('open');
+  
+  // Clear search
+  const searchInput = document.getElementById('topic-dropdown-search');
+  if (searchInput) searchInput.value = '';
+  
+  // Render chart
+  renderTopicStatsChart();
+}
+
+// Switch period
+function switchTopicPeriod(period) {
+  currentTopicPeriod = period;
+  
+  // Update button states (Page 2 only)
+  const page2 = document.getElementById('stats-page-2');
+  if (page2) {
+    page2.querySelectorAll('.stats-period-tab').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.period === period);
+    });
+  }
+  
+  renderTopicStatsChart();
+}
+
+// Switch stat type
+function switchTopicStatType(type) {
+  currentTopicStatType = type;
+  
+  // Update button states (Page 2 only)
+  const page2 = document.getElementById('stats-page-2');
+  if (page2) {
+    page2.querySelectorAll('.stats-type-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.stat === type);
+    });
+  }
+  
+  renderTopicStatsChart();
+}
+
+// Render topic stats chart
+function renderTopicStatsChart() {
+  const canvas = document.getElementById('topic-stats-chart');
+  const emptyEl = document.getElementById('topic-chart-empty');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  const history = userData.stats?.history || {};
+  const topicId = currentTopicPage2;
+  
+  let labels = [];
+  let data = [];
+  let total = 0;
+  let peak = 0;
+  
+  // Get data based on period
+  if (currentTopicPeriod === 'day') {
+    const today = getDateString(0);
+    const dayData = history[today]?.topics?.[topicId] || { hourly: {} };
+    
+    for (let h = 0; h < 24; h++) {
+      const hourKey = h.toString().padStart(2, '0');
+      const hourData = dayData.hourly?.[hourKey] || { g: 0, c: 0, w: 0, t: 0, s: 0, at: 0 };
+      
+      labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
+      
+      let value = 0;
+      switch (currentTopicStatType) {
+        case 'games': value = hourData.g; break;
+        case 'accuracy': 
+          const totalQ = hourData.c + hourData.w;
+          value = totalQ > 0 ? Math.round((hourData.c / totalQ) * 100) : 0;
+          break;
+        case 'streak': value = hourData.s; break;
+        case 'time': value = hourData.t; break;
+        case 'avgtime':
+          const qCount = hourData.c + hourData.w;
+          value = qCount > 0 ? (hourData.at / qCount) / 1000 : 0;
+          break;
+      }
+      
+      data.push(value);
+      if (currentTopicStatType !== 'streak' && currentTopicStatType !== 'accuracy') {
+        total += value;
+      }
+      if (value > peak) peak = value;
+    }
+    
+    if (currentTopicStatType === 'streak') total = dayData.streak || 0;
+    if (currentTopicStatType === 'accuracy') {
+      const totalC = dayData.correct || 0;
+      const totalW = dayData.wrong || 0;
+      total = (totalC + totalW) > 0 ? Math.round((totalC / (totalC + totalW)) * 100) : 0;
+    }
+    
+  } else if (currentTopicPeriod === 'week') {
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    for (let i = 6; i >= 0; i--) {
+      const dateKey = getDateString(i);
+      const dayData = history[dateKey]?.topics?.[topicId] || { games: 0, correct: 0, wrong: 0, time: 0, streak: 0, answerTimeMs: 0 };
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      
+      labels.push(dayNames[date.getDay()]);
+      
+      let value = 0;
+      switch (currentTopicStatType) {
+        case 'games': value = dayData.games; break;
+        case 'accuracy':
+          const totalQ = dayData.correct + dayData.wrong;
+          value = totalQ > 0 ? Math.round((dayData.correct / totalQ) * 100) : 0;
+          break;
+        case 'streak': value = dayData.streak; break;
+        case 'time': value = dayData.time; break;
+        case 'avgtime':
+          const qCount = dayData.correct + dayData.wrong;
+          value = qCount > 0 ? (dayData.answerTimeMs / qCount) / 1000 : 0;
+          break;
+      }
+      
+      data.push(value);
+      if (currentTopicStatType !== 'streak' && currentTopicStatType !== 'accuracy') {
+        total += value;
+      }
+      if (value > peak) peak = value;
+    }
+    
+    if (currentTopicStatType === 'streak') total = Math.max(...data, 0);
+    if (currentTopicStatType === 'accuracy') total = data.filter(v => v > 0).length > 0 ? Math.round(data.reduce((a,b) => a+b, 0) / data.filter(v => v > 0).length) : 0;
+    
+  } else if (currentTopicPeriod === 'month') {
+    for (let i = 29; i >= 0; i--) {
+      const dateKey = getDateString(i);
+      const dayData = history[dateKey]?.topics?.[topicId] || { games: 0, correct: 0, wrong: 0, time: 0, streak: 0, answerTimeMs: 0 };
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      
+      labels.push(`${date.getMonth() + 1}/${date.getDate()}`);
+      
+      let value = 0;
+      switch (currentTopicStatType) {
+        case 'games': value = dayData.games; break;
+        case 'accuracy':
+          const totalQ = dayData.correct + dayData.wrong;
+          value = totalQ > 0 ? Math.round((dayData.correct / totalQ) * 100) : 0;
+          break;
+        case 'streak': value = dayData.streak; break;
+        case 'time': value = dayData.time; break;
+        case 'avgtime':
+          const qCount = dayData.correct + dayData.wrong;
+          value = qCount > 0 ? (dayData.answerTimeMs / qCount) / 1000 : 0;
+          break;
+      }
+      
+      data.push(value);
+      if (currentTopicStatType !== 'streak' && currentTopicStatType !== 'accuracy') {
+        total += value;
+      }
+      if (value > peak) peak = value;
+    }
+    
+    if (currentTopicStatType === 'streak') total = Math.max(...data, 0);
+    if (currentTopicStatType === 'accuracy') total = data.filter(v => v > 0).length > 0 ? Math.round(data.reduce((a,b) => a+b, 0) / data.filter(v => v > 0).length) : 0;
+    
+  } else if (currentTopicPeriod === 'year') {
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const now = new Date();
+    
+    for (let i = 11; i >= 0; i--) {
+      const monthDate = new Date(now.getFullYear(), now.getMonth() - i, 1);
+      const monthKey = `${monthDate.getFullYear()}-${String(monthDate.getMonth() + 1).padStart(2, '0')}`;
+      
+      labels.push(monthNames[monthDate.getMonth()]);
+      
+      // Sum all days in this month for the topic
+      let monthTotal = { games: 0, correct: 0, wrong: 0, time: 0, streak: 0, answerTimeMs: 0 };
+      Object.keys(history).filter(k => k.startsWith(monthKey)).forEach(dateKey => {
+        const dayData = history[dateKey]?.topics?.[topicId] || {};
+        monthTotal.games += dayData.games || 0;
+        monthTotal.correct += dayData.correct || 0;
+        monthTotal.wrong += dayData.wrong || 0;
+        monthTotal.time += dayData.time || 0;
+        monthTotal.answerTimeMs += dayData.answerTimeMs || 0;
+        if ((dayData.streak || 0) > monthTotal.streak) monthTotal.streak = dayData.streak;
+      });
+      
+      let value = 0;
+      switch (currentTopicStatType) {
+        case 'games': value = monthTotal.games; break;
+        case 'accuracy':
+          const totalQ = monthTotal.correct + monthTotal.wrong;
+          value = totalQ > 0 ? Math.round((monthTotal.correct / totalQ) * 100) : 0;
+          break;
+        case 'streak': value = monthTotal.streak; break;
+        case 'time': value = monthTotal.time; break;
+        case 'avgtime':
+          const qCount = monthTotal.correct + monthTotal.wrong;
+          value = qCount > 0 ? (monthTotal.answerTimeMs / qCount) / 1000 : 0;
+          break;
+      }
+      
+      data.push(value);
+      if (currentTopicStatType !== 'streak' && currentTopicStatType !== 'accuracy') {
+        total += value;
+      }
+      if (value > peak) peak = value;
+    }
+    
+    if (currentTopicStatType === 'streak') total = Math.max(...data, 0);
+    if (currentTopicStatType === 'accuracy') total = data.filter(v => v > 0).length > 0 ? Math.round(data.reduce((a,b) => a+b, 0) / data.filter(v => v > 0).length) : 0;
+  }
+  
+  // Check if has data
+  const hasData = data.some(v => v > 0);
+  
+  // Show/hide empty state
+  if (emptyEl) {
+    emptyEl.classList.toggle('hidden', hasData);
+  }
+  canvas.style.display = hasData ? 'block' : 'none';
+  
+  // Update summary cards
+  const avg = data.length > 0 ? data.reduce((a, b) => a + b, 0) / data.length : 0;
+  
+  const formatTopicValue = (val) => {
+    if (currentTopicStatType === 'time') return formatTimeDisplay(val);
+    if (currentTopicStatType === 'avgtime') return formatAvgTime(val);
+    if (currentTopicStatType === 'accuracy') return val + '%';
+    return Math.round(val).toLocaleString();
+  };
+  
+  const peakEl = document.getElementById('topic-peak-value');
+  const avgEl = document.getElementById('topic-avg-value');
+  const totalEl = document.getElementById('topic-total-value');
+  
+  if (peakEl) peakEl.textContent = formatTopicValue(peak);
+  if (avgEl) avgEl.textContent = formatTopicValue(avg);
+  if (totalEl) totalEl.textContent = formatTopicValue(total);
+  
+  // Destroy existing chart
+  if (topicStatsChart) {
+    topicStatsChart.destroy();
+  }
+  
+  if (!hasData) return;
+  
+  // Chart colors based on stat type
+  const colors = {
+    games: { line: '#fbbf24', bg: 'rgba(251, 191, 36, 0.1)' },
+    accuracy: { line: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+    streak: { line: '#f97316', bg: 'rgba(249, 115, 22, 0.1)' },
+    time: { line: '#3b82f6', bg: 'rgba(59, 130, 246, 0.1)' },
+    avgtime: { line: '#8b5cf6', bg: 'rgba(139, 92, 246, 0.1)' }
+  };
+  
+  const color = colors[currentTopicStatType] || colors.games;
+  
+  // Create gradient
+  const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+  gradient.addColorStop(0, color.bg.replace('0.1', '0.4'));
+  gradient.addColorStop(1, color.bg.replace('0.1', '0'));
+  
+  // Create chart
+  topicStatsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        borderColor: color.line,
+        backgroundColor: gradient,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 3,
+        pointBackgroundColor: color.line,
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointHoverRadius: 5
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(15, 23, 42, 0.95)',
+          titleColor: '#fff',
+          bodyColor: 'rgba(255, 255, 255, 0.8)',
+          borderColor: color.line,
+          borderWidth: 1,
+          padding: 10,
+          displayColors: false,
+          callbacks: {
+            label: (item) => formatTopicValue(item.raw)
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+          ticks: { color: 'rgba(255, 255, 255, 0.5)', font: { size: 9 }, maxRotation: 0 }
+        },
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(255, 255, 255, 0.05)', drawBorder: false },
+          ticks: { color: 'rgba(255, 255, 255, 0.5)', font: { size: 9 } }
+        }
+      }
+    }
+  });
+}
 
 // ========================================
 // 🏆 LEADERBOARD PAGE FUNCTIONS
@@ -4729,7 +5122,8 @@ function saveQuizStats(topicId, completed) {
   // Record stats history for chart (only for completed single-player games)
   if (completed && gameMode !== 'two') {
     const sessionTimeSeconds = Math.floor((Date.now() - quizStartTime) / 1000);
-    recordStatsHistory(1, currentSessionCorrect, currentSessionWrong, sessionTimeSeconds, bestSessionStreak);
+    const sessionAnswerTimeMs = sessionAnswerTimes.reduce((a, b) => a + b, 0);
+    recordStatsHistory(1, currentSessionCorrect, currentSessionWrong, sessionTimeSeconds, bestSessionStreak, topicId, sessionAnswerTimeMs);
   }
 
   // Save to localStorage
@@ -5011,8 +5405,8 @@ function recordPxpHistory(gamesXp, answersXp) {
   dayData.hourly[hour].a += answersXp;
 }
 
-// Record stats history (games, correct, wrong, time, streak)
-function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, bestStreak) {
+// Record stats history (games, correct, wrong, time, streak, topic, answerTime)
+function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, bestStreak, topicId = null, answerTimeMs = 0) {
   const now = new Date();
   const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
   const hour = now.getHours().toString().padStart(2, '0');
@@ -5035,13 +5429,19 @@ function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, b
       wrong: 0, 
       time: 0, 
       streak: 0,
-      hourly: {} 
+      hourly: {},
+      topics: {}  // Per-topic history
     };
   }
   
   const dayData = userData.stats.history[dateKey];
   
-  // Add to daily totals
+  // Migrate old data that doesn't have topics
+  if (!dayData.topics) {
+    dayData.topics = {};
+  }
+  
+  // Add to daily totals (global)
   dayData.games += gamesCount;
   dayData.correct += correctCount;
   dayData.wrong += wrongCount;
@@ -5052,7 +5452,7 @@ function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, b
     dayData.streak = bestStreak;
   }
   
-  // Hourly breakdown for "1 Day" view
+  // Hourly breakdown for "1 Day" view (global)
   if (!dayData.hourly[hour]) {
     dayData.hourly[hour] = { g: 0, c: 0, w: 0, t: 0, s: 0 };
   }
@@ -5066,6 +5466,52 @@ function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, b
   // Track best streak for this hour (keep the highest)
   if (bestStreak > hourData.s) {
     hourData.s = bestStreak;
+  }
+  
+  // ========== PER-TOPIC HISTORY ==========
+  if (topicId) {
+    // Initialize topic entry for this day if not exists
+    if (!dayData.topics[topicId]) {
+      dayData.topics[topicId] = {
+        games: 0,
+        correct: 0,
+        wrong: 0,
+        time: 0,
+        streak: 0,
+        answerTimeMs: 0,
+        hourly: {}
+      };
+    }
+    
+    const topicDayData = dayData.topics[topicId];
+    
+    // Add to topic daily totals
+    topicDayData.games += gamesCount;
+    topicDayData.correct += correctCount;
+    topicDayData.wrong += wrongCount;
+    topicDayData.time += timeSeconds;
+    topicDayData.answerTimeMs += answerTimeMs;
+    
+    // Track best streak for this topic today
+    if (bestStreak > topicDayData.streak) {
+      topicDayData.streak = bestStreak;
+    }
+    
+    // Topic hourly breakdown
+    if (!topicDayData.hourly[hour]) {
+      topicDayData.hourly[hour] = { g: 0, c: 0, w: 0, t: 0, s: 0, at: 0 };
+    }
+    
+    const topicHourData = topicDayData.hourly[hour];
+    topicHourData.g += gamesCount;
+    topicHourData.c += correctCount;
+    topicHourData.w += wrongCount;
+    topicHourData.t += timeSeconds;
+    topicHourData.at += answerTimeMs;
+    
+    if (bestStreak > topicHourData.s) {
+      topicHourData.s = bestStreak;
+    }
   }
 }
 
@@ -5433,6 +5879,7 @@ function switchStatsPage(page) {
     page2?.classList.remove('hidden');
     tab1?.classList.remove('active');
     tab2?.classList.add('active');
+    renderTopicStatsChart();  // Render the topic stats chart
   }
 }
 
