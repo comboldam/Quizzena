@@ -1577,6 +1577,7 @@ function resetGame() {
   bestSessionStreak = 0;
   sessionStartTime = new Date();
   gameEnded = false;
+  sessionAnswerTimes = [];  // Reset answer times for new session
   
   // Reset quiz timer for time tracking
   quizStartTime = Date.now();
@@ -1586,6 +1587,8 @@ function resetGame() {
 // ⏱️ TIME TRACKING SYSTEM
 // ========================================
 let quizStartTime = 0;
+let questionOptionsShownTime = 0;  // When options appear (for avg answer time)
+let sessionAnswerTimes = [];       // Array of individual answer times (ms)
 
 // Format seconds into human-readable time (45s, 5.3m, 2.5h, 3.2d, 2.1w, 1.3y)
 function formatTimeDisplay(totalSeconds) {
@@ -2368,6 +2371,9 @@ function startRound() {
     answersDiv.appendChild(btn);
   });
 
+  // Start answer time tracking (for avg time per question)
+  questionOptionsShownTime = Date.now();
+
   const correctAnswer = currentTopic === 'capitals' ? randomFlag.capital :
                         currentTopic === 'area' ? formatArea(randomFlag.area) :
                         randomFlag.country;
@@ -2420,6 +2426,12 @@ function generateBaitAnswers(correctFlag) {
 // ========================================
 function checkAnswer(selected, correct) {
   if (answered) return;
+  
+  // Record answer time (reaction time for this question)
+  if (questionOptionsShownTime > 0) {
+    const answerTime = Date.now() - questionOptionsShownTime;
+    sessionAnswerTimes.push(answerTime);
+  }
   
   // List of topics that track stats
   const trackedTopics = ALL_TOPICS;
@@ -3691,6 +3703,9 @@ function displayUnifiedQuestion() {
     btn.onclick = () => checkUnifiedAnswer(btn.dataset.answer, btn.dataset.correct);
   });
 
+  // Start answer time tracking (for avg time per question)
+  questionOptionsShownTime = Date.now();
+
   // Start timer
   startTimer(correctAnswer);
 }
@@ -3699,6 +3714,12 @@ function displayUnifiedQuestion() {
 function checkUnifiedAnswer(selected, correct) {
   if (answered) return;
   answered = true;
+
+  // Record answer time (reaction time for this question)
+  if (questionOptionsShownTime > 0) {
+    const answerTime = Date.now() - questionOptionsShownTime;
+    sessionAnswerTimes.push(answerTime);
+  }
 
   // List of topics that track stats
   const trackedTopics = ALL_TOPICS;
@@ -4268,10 +4289,14 @@ function populateStatsSection() {
   const statBestStreak = document.getElementById('stat-best-streak');
   if (statBestStreak) statBestStreak.textContent = bestStreak;
 
-  // Calculate avg time per question (overall)
-  const avgTime = totalQuestions > 0 ? (totalTimeSeconds / totalQuestions).toFixed(1) : '0.0';
+  // Calculate avg time per question (overall) - sum totalAnswerTimeMs across all topics
+  let globalTotalAnswerTimeMs = 0;
+  for (const topicId in userData.stats.topics) {
+    globalTotalAnswerTimeMs += userData.stats.topics[topicId].totalAnswerTimeMs || 0;
+  }
+  const avgTimeSeconds = totalQuestions > 0 ? (globalTotalAnswerTimeMs / totalQuestions) / 1000 : 0;
   const statAvgTime = document.getElementById('stat-avg-time');
-  if (statAvgTime) statAvgTime.textContent = avgTime + 's';
+  if (statAvgTime) statAvgTime.textContent = avgTimeSeconds.toFixed(1) + 's';
 
   // Format total time played using the new formatting function
   const statTotalTime = document.getElementById('stat-total-time');
@@ -4291,10 +4316,12 @@ function populateStatsSection() {
       accuracy: 0, 
       bestStreak: 0,
       timeSpentSeconds: 0,
-      totalQuestionsAnswered: 0
+      totalQuestionsAnswered: 0,
+      totalAnswerTimeMs: 0
     };
+    // Calculate avg answer time (reaction time) - totalAnswerTimeMs is in milliseconds
     const avgTimePerQ = stats.totalQuestionsAnswered > 0 
-      ? stats.timeSpentSeconds / stats.totalQuestionsAnswered 
+      ? (stats.totalAnswerTimeMs / stats.totalQuestionsAnswered) / 1000  // Convert ms to seconds
       : 0;
     return {
       ...topic,
@@ -4380,14 +4407,17 @@ function searchTopic(query) {
       accuracy: 0, 
       bestStreak: 0,
       timeSpentSeconds: 0,
-      totalQuestionsAnswered: 0
+      totalQuestionsAnswered: 0,
+      totalAnswerTimeMs: 0
     };
     const games = topicStats.games || 0;
     const accuracy = topicStats.accuracy || 0;
     const bestStreak = topicStats.bestStreak || 0;
     const timeSpent = topicStats.timeSpentSeconds || 0;
     const totalQ = topicStats.totalQuestionsAnswered || 0;
-    const avgTimePerQ = totalQ > 0 ? timeSpent / totalQ : 0;
+    const totalAnswerMs = topicStats.totalAnswerTimeMs || 0;
+    // Calculate avg answer time (reaction time) - convert ms to seconds
+    const avgTimePerQ = totalQ > 0 ? (totalAnswerMs / totalQ) / 1000 : 0;
 
     // Show found topic with real stats (5 columns)
     searchResult.innerHTML = `
@@ -4587,7 +4617,8 @@ function saveQuizStats(topicId, completed) {
       },
       // Time tracking fields
       timeSpentSeconds: 0,
-      totalQuestionsAnswered: 0
+      totalQuestionsAnswered: 0,
+      totalAnswerTimeMs: 0  // Sum of all individual answer times (for avg calculation)
     };
   } else {
     // Migrate old topics that don't have XP fields
@@ -4598,6 +4629,9 @@ function saveQuizStats(topicId, completed) {
     }
     if (userData.stats.topics[topicId].totalQuestionsAnswered === undefined) {
       userData.stats.topics[topicId].totalQuestionsAnswered = 0;
+    }
+    if (userData.stats.topics[topicId].totalAnswerTimeMs === undefined) {
+      userData.stats.topics[topicId].totalAnswerTimeMs = 0;
     }
   }
 
@@ -4615,6 +4649,10 @@ function saveQuizStats(topicId, completed) {
     // Track total questions answered (for avg time calculation)
     const questionsThisSession = currentSessionCorrect + currentSessionWrong;
     topic.totalQuestionsAnswered += questionsThisSession;
+    
+    // Track total answer time (sum of individual answer times for avg calculation)
+    const sessionAnswerTimeMs = sessionAnswerTimes.reduce((a, b) => a + b, 0);
+    topic.totalAnswerTimeMs += sessionAnswerTimeMs;
     
     // Update overall total time (sum of all topics)
     userData.stats.totalTimeSeconds = (userData.stats.totalTimeSeconds || 0) + sessionTimeSeconds;
@@ -4706,6 +4744,8 @@ function saveQuizStats(topicId, completed) {
     sessionCorrect: currentSessionCorrect,
     sessionWrong: currentSessionWrong,
     bestStreak: bestSessionStreak,
+    sessionAnswerTimes: sessionAnswerTimes,
+    avgAnswerTimeMs: sessionAnswerTimes.length > 0 ? Math.round(sessionAnswerTimes.reduce((a,b) => a+b, 0) / sessionAnswerTimes.length) : 0,
     topicStats: topic,
     globalAccuracy: userData.stats.accuracy
   });
