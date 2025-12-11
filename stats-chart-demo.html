@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats Chart - Quizzena Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+      min-height: 100vh;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .stats-page {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .stats-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(100, 100, 255, 0.1), rgba(150, 100, 255, 0.05));
+      border-radius: 16px;
+      border: 1px solid rgba(150, 150, 255, 0.2);
+    }
+
+    .back-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .stats-title {
+      flex: 1;
+    }
+
+    .stats-title h1 {
+      font-size: 24px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff, #a0a0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stats-title p {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+    }
+
+    .stats-icon {
+      font-size: 32px;
+    }
+
+    /* Page Tabs */
+    .page-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .page-tab {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .page-tab:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .page-tab.active {
+      background: linear-gradient(135deg, rgba(100, 150, 255, 0.3), rgba(150, 100, 255, 0.2));
+      border-color: rgba(150, 150, 255, 0.5);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(100, 150, 255, 0.3);
+    }
+
+    /* Stat Type Selector */
+    .stat-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-btn {
+      flex: 1;
+      min-width: calc(33% - 8px);
+      padding: 12px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .stat-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .stat-btn.active {
+      background: linear-gradient(135deg, #4a90ff, #7c5cff);
+      border-color: #7c5cff;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(100, 120, 255, 0.4);
+    }
+
+    .stat-btn .stat-icon {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    /* Time Range Selector */
+    .time-selector {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+
+    .time-btn {
+      flex: 1;
+      padding: 10px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .time-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .time-btn.active {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    /* Chart Container */
+    .chart-container {
+      background: linear-gradient(180deg, rgba(20, 20, 40, 0.9), rgba(10, 10, 30, 0.95));
+      border-radius: 20px;
+      border: 1px solid rgba(100, 100, 255, 0.2);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .chart-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .chart-value {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a90ff, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .chart-subtitle {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 2px;
+    }
+
+    .chart-wrapper {
+      height: 200px;
+      position: relative;
+    }
+
+    /* Summary Cards */
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .summary-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    .summary-card-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .summary-card-label {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+      opacity: 0.5;
+    }
+
+    .empty-state-text {
+      font-size: 14px;
+    }
+
+    /* Page 2 Content (Most Played) */
+    .page-content {
+      display: none;
+    }
+
+    .page-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Most Played Cards */
+    .most-played-section {
+      margin-top: 20px;
+    }
+
+    .most-played-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(40, 40, 80, 0.6), rgba(30, 30, 60, 0.4));
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .most-played-card:hover {
+      transform: translateX(5px);
+      border-color: rgba(150, 150, 255, 0.3);
+    }
+
+    .most-played-rank {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a90ff, #7c5cff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .most-played-rank.gold {
+      background: linear-gradient(135deg, #ffd700, #ff8c00);
+    }
+
+    .most-played-rank.silver {
+      background: linear-gradient(135deg, #c0c0c0, #808080);
+    }
+
+    .most-played-rank.bronze {
+      background: linear-gradient(135deg, #cd7f32, #8b4513);
+    }
+
+    .most-played-icon {
+      font-size: 32px;
+    }
+
+    .most-played-info {
+      flex: 1;
+    }
+
+    .most-played-name {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .most-played-stats {
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .mp-stat {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .mp-stat-label {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .mp-stat-value {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Footer Note */
+    .footer-note {
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stats-page">
+    
+    <!-- Header -->
+    <div class="stats-header">
+      <button class="back-btn">◀</button>
+      <div class="stats-title">
+        <h1>Stats Overview</h1>
+        <p>A clear view of your journey over time</p>
+      </div>
+      <div class="stats-icon">📊</div>
+    </div>
+
+    <!-- Page Tabs -->
+    <div class="page-tabs">
+      <button class="page-tab active" onclick="switchPage('overall')">📈 Overall Stats</button>
+      <button class="page-tab" onclick="switchPage('topics')">🏆 Most Played</button>
+    </div>
+
+    <!-- Page 1: Overall Stats -->
+    <div class="page-content active" id="page-overall">
+      
+      <!-- Stat Type Selector -->
+      <div class="stat-selector">
+        <button class="stat-btn active" onclick="selectStat('games')">
+          <span class="stat-icon">🎮</span>
+          Games
+        </button>
+        <button class="stat-btn" onclick="selectStat('questions')">
+          <span class="stat-icon">❓</span>
+          Questions
+        </button>
+        <button class="stat-btn" onclick="selectStat('correct')">
+          <span class="stat-icon">✅</span>
+          Correct
+        </button>
+        <button class="stat-btn" onclick="selectStat('wrong')">
+          <span class="stat-icon">❌</span>
+          Wrong
+        </button>
+        <button class="stat-btn" onclick="selectStat('time')">
+          <span class="stat-icon">⏱️</span>
+          Time
+        </button>
+        <button class="stat-btn" onclick="selectStat('streak')">
+          <span class="stat-icon">🔥</span>
+          Streak
+        </button>
+      </div>
+
+      <!-- Time Range Selector -->
+      <div class="time-selector">
+        <button class="time-btn active" onclick="selectTime('day')">1 Day</button>
+        <button class="time-btn" onclick="selectTime('week')">1 Week</button>
+        <button class="time-btn" onclick="selectTime('month')">1 Month</button>
+        <button class="time-btn" onclick="selectTime('year')">1 Year</button>
+        <button class="time-btn" onclick="selectTime('all')">All Time</button>
+      </div>
+
+      <!-- Chart Container -->
+      <div class="chart-container">
+        <div class="chart-header">
+          <div>
+            <div class="chart-title" id="chart-title">Games Played</div>
+            <div class="chart-subtitle" id="chart-subtitle">Today's Activity</div>
+          </div>
+          <div style="text-align: right;">
+            <div class="chart-value" id="chart-total">127</div>
+            <div class="chart-subtitle">Total this period</div>
+          </div>
+        </div>
+        
+        <div class="chart-wrapper">
+          <canvas id="stats-chart"></canvas>
+        </div>
+
+        <div class="summary-cards">
+          <div class="summary-card">
+            <div class="summary-card-value" id="summary-high">24</div>
+            <div class="summary-card-label">Peak</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-card-value" id="summary-avg">5.3</div>
+            <div class="summary-card-label">Average</div>
+          </div>
+          <div class="summary-card">
+            <div class="summary-card-value" id="summary-low">0</div>
+            <div class="summary-card-label">Lowest</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Page 2: Most Played Topics -->
+    <div class="page-content" id="page-topics">
+      
+      <div class="most-played-section">
+        
+        <div class="most-played-card">
+          <div class="most-played-rank gold">1</div>
+          <div class="most-played-icon">🏳️</div>
+          <div class="most-played-info">
+            <div class="most-played-name">Flags</div>
+            <div class="most-played-stats">
+              <div class="mp-stat">
+                <span class="mp-stat-label">G:</span>
+                <span class="mp-stat-value">342</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Ac:</span>
+                <span class="mp-stat-value">87%</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Str:</span>
+                <span class="mp-stat-value">45</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">T:</span>
+                <span class="mp-stat-value">12.4h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="most-played-card">
+          <div class="most-played-rank silver">2</div>
+          <div class="most-played-icon">🏛️</div>
+          <div class="most-played-info">
+            <div class="most-played-name">Capitals</div>
+            <div class="most-played-stats">
+              <div class="mp-stat">
+                <span class="mp-stat-label">G:</span>
+                <span class="mp-stat-value">156</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Ac:</span>
+                <span class="mp-stat-value">79%</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Str:</span>
+                <span class="mp-stat-value">23</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">T:</span>
+                <span class="mp-stat-value">5.2h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="most-played-card">
+          <div class="most-played-rank bronze">3</div>
+          <div class="most-played-icon">🗺️</div>
+          <div class="most-played-info">
+            <div class="most-played-name">Maps</div>
+            <div class="most-played-stats">
+              <div class="mp-stat">
+                <span class="mp-stat-label">G:</span>
+                <span class="mp-stat-value">89</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Ac:</span>
+                <span class="mp-stat-value">72%</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Str:</span>
+                <span class="mp-stat-value">18</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">T:</span>
+                <span class="mp-stat-value">2.8h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="most-played-card">
+          <div class="most-played-rank">4</div>
+          <div class="most-played-icon">👥</div>
+          <div class="most-played-info">
+            <div class="most-played-name">Population</div>
+            <div class="most-played-stats">
+              <div class="mp-stat">
+                <span class="mp-stat-label">G:</span>
+                <span class="mp-stat-value">45</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Ac:</span>
+                <span class="mp-stat-value">68%</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Str:</span>
+                <span class="mp-stat-value">12</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">T:</span>
+                <span class="mp-stat-value">1.3h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="most-played-card">
+          <div class="most-played-rank">5</div>
+          <div class="most-played-icon">📐</div>
+          <div class="most-played-info">
+            <div class="most-played-name">Area</div>
+            <div class="most-played-stats">
+              <div class="mp-stat">
+                <span class="mp-stat-label">G:</span>
+                <span class="mp-stat-value">32</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Ac:</span>
+                <span class="mp-stat-value">65%</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">Str:</span>
+                <span class="mp-stat-value">9</span>
+              </div>
+              <div class="mp-stat">
+                <span class="mp-stat-label">T:</span>
+                <span class="mp-stat-value">0.9h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-note">
+        Showing top 5 most played topics
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    // Demo data
+    const demoData = {
+      games: {
+        day: [2, 0, 0, 0, 0, 0, 1, 3, 5, 8, 12, 15, 10, 8, 6, 4, 7, 9, 11, 14, 8, 5, 3, 1],
+        week: [45, 32, 28, 56, 41, 38, 27],
+        month: [120, 145, 98, 167],
+        year: [450, 520, 380, 620, 710, 590, 480, 550, 620, 580, 490, 530],
+        all: [2400, 3200, 4100, 5800]
+      }
+    };
+
+    let currentStat = 'games';
+    let currentTime = 'day';
+    let chart = null;
+
+    // Initialize chart
+    function initChart() {
+      const ctx = document.getElementById('stats-chart').getContext('2d');
+      
+      const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+      gradient.addColorStop(0, 'rgba(74, 144, 255, 0.4)');
+      gradient.addColorStop(1, 'rgba(74, 144, 255, 0)');
+
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: getLabels('day'),
+          datasets: [{
+            label: 'Games',
+            data: demoData.games.day,
+            borderColor: '#4a90ff',
+            backgroundColor: gradient,
+            borderWidth: 2,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 3,
+            pointBackgroundColor: '#4a90ff',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 1,
+            pointHoverRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(20, 20, 40, 0.95)',
+              titleColor: '#fff',
+              bodyColor: '#a0a0ff',
+              borderColor: 'rgba(100, 100, 255, 0.3)',
+              borderWidth: 1,
+              padding: 12,
+              displayColors: false,
+              callbacks: {
+                title: function(items) {
+                  return items[0].label;
+                },
+                label: function(context) {
+                  return `Games: ${context.parsed.y}`;
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: 'rgba(255, 255, 255, 0.4)', font: { size: 10 } }
+            },
+            y: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: 'rgba(255, 255, 255, 0.4)', font: { size: 10 } },
+              beginAtZero: true
+            }
+          },
+          interaction: {
+            intersect: false,
+            mode: 'index'
+          }
+        }
+      });
+
+      updateSummary(demoData.games.day);
+    }
+
+    function getLabels(period) {
+      if (period === 'day') {
+        return ['12a', '1a', '2a', '3a', '4a', '5a', '6a', '7a', '8a', '9a', '10a', '11a', 
+                '12p', '1p', '2p', '3p', '4p', '5p', '6p', '7p', '8p', '9p', '10p', '11p'];
+      } else if (period === 'week') {
+        return ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+      } else if (period === 'month') {
+        return ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+      } else if (period === 'year') {
+        return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      } else {
+        return ['Year 1', 'Year 2', 'Year 3', 'Year 4'];
+      }
+    }
+
+    function selectStat(stat) {
+      currentStat = stat;
+      document.querySelectorAll('.stat-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.closest('.stat-btn').classList.add('active');
+      
+      const titles = {
+        games: 'Games Played',
+        questions: 'Questions Answered',
+        correct: 'Correct Answers',
+        wrong: 'Wrong Answers',
+        time: 'Time Played',
+        streak: 'Best Streak'
+      };
+      
+      document.getElementById('chart-title').textContent = titles[stat];
+      updateChart();
+    }
+
+    function selectTime(time) {
+      currentTime = time;
+      document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      const subtitles = {
+        day: "Today's Activity",
+        week: "This Week",
+        month: "This Month",
+        year: "This Year",
+        all: "All Time"
+      };
+      
+      document.getElementById('chart-subtitle').textContent = subtitles[time];
+      updateChart();
+    }
+
+    function updateChart() {
+      const data = demoData.games[currentTime] || demoData.games.day;
+      chart.data.labels = getLabels(currentTime);
+      chart.data.datasets[0].data = data;
+      chart.update('active');
+      updateSummary(data);
+    }
+
+    function updateSummary(data) {
+      const total = data.reduce((a, b) => a + b, 0);
+      const high = Math.max(...data);
+      const low = Math.min(...data);
+      const avg = (total / data.length).toFixed(1);
+
+      document.getElementById('chart-total').textContent = total;
+      document.getElementById('summary-high').textContent = high;
+      document.getElementById('summary-avg').textContent = avg;
+      document.getElementById('summary-low').textContent = low;
+    }
+
+    function switchPage(page) {
+      document.querySelectorAll('.page-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.page-content').forEach(content => content.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById('page-' + (page === 'overall' ? 'overall' : 'topics')).classList.add('active');
+    }
+
+    // Initialize on load
+    initChart();
+  </script>
+
+</body>
+</html>
+

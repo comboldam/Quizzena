@@ -78,6 +78,8 @@
   "settings_sound": "Sonido",
   "settings_coming_soon": "Próximamente",
   "settings_close": "Cerrar",
+  "settings_performance": "Modo Rendimiento",
+  "settings_performance_hint": "Activa para un desplazamiento más fluido (desactiva animaciones)",
 
   "sound_music": "Música",
   "sound_effects": "Efectos de Sonido",
