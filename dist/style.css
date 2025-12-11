@@ -2677,6 +2677,385 @@ footer button:hover {
   color: #a78bfa;
 }
 
+/* ========================================
+   STATS CHART DASHBOARD
+   ======================================== */
+
+/* Stats Chart Button on Profile */
+.stats-chart-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stats-chart-button:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.25) 100%);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+}
+
+.stats-chart-btn-icon {
+  font-size: 1.3rem;
+}
+
+.stats-chart-btn-text {
+  flex: 1;
+  text-align: left;
+  margin-left: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+.stats-chart-btn-arrow {
+  font-size: 1.2rem;
+  color: rgba(96, 165, 250, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.stats-chart-button:hover .stats-chart-btn-arrow {
+  transform: translateX(4px);
+  color: #60a5fa;
+}
+
+/* Stats Chart Dashboard */
+.stats-chart-dashboard {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: linear-gradient(180deg, #0a0a1a 0%, #0f172a 50%, #1e1b4b 100%);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.stats-chart-dashboard:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Top Bar */
+.stats-chart-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.stats-chart-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stats-chart-back-btn:hover {
+  background: rgba(59, 130, 246, 0.3);
+  transform: scale(1.05);
+}
+
+.stats-chart-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-chart-spacer {
+  width: 40px;
+}
+
+/* Page Navigation Tabs */
+.stats-page-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.stats-page-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stats-page-tab.active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: #fff;
+}
+
+.stats-page-tab:hover:not(.active) {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stats-page-tab-icon {
+  font-size: 1.1rem;
+}
+
+.stats-page-tab-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Stats Page Content */
+.stats-page {
+  flex: 1;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stats-page.hidden {
+  display: none;
+}
+
+/* Stat Type Selector */
+.stats-type-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stats-type-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stats-type-btn.active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(139, 92, 246, 0.25) 100%);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.stats-type-btn:hover:not(.active) {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.stats-type-icon {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.stats-type-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Time Period Tabs */
+.stats-period-tabs {
+  display: flex;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.stats-period-tab {
+  flex: 1;
+  padding: 8px 6px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stats-period-tab.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.stats-period-tab:hover:not(.active) {
+  background: rgba(59, 130, 246, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Chart Container */
+.stats-chart-container {
+  position: relative;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.8) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  padding: 15px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stats-chart {
+  width: 100%;
+  height: 200px;
+}
+
+.stats-chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stats-chart-empty.hidden {
+  display: none;
+}
+
+.stats-empty-icon {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.stats-empty-text {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Summary Cards */
+.stats-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stats-summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.stats-summary-card.peak {
+  border-color: rgba(251, 191, 36, 0.3);
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+}
+
+.stats-summary-card.average {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.stats-summary-card.total {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+}
+
+.stats-summary-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 4px;
+}
+
+.stats-summary-value {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stats-summary-card.peak .stats-summary-value {
+  color: #fbbf24;
+}
+
+.stats-summary-card.average .stats-summary-value {
+  color: #60a5fa;
+}
+
+.stats-summary-card.total .stats-summary-value {
+  color: #10b981;
+}
+
+/* Page 2 Placeholder */
+.stats-page-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stats-placeholder-icon {
+  font-size: 4rem;
+  opacity: 0.5;
+}
+
+.stats-placeholder-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.stats-placeholder-subtext {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
 /* Developer Debug Button */
 .dev-debug-btn {
   position: fixed;
