@@ -629,59 +629,26 @@
     <!-- HOME SCREEN VIEW -->
     <div class="home-view" id="home-view">
 
-      <!-- Trail Ring Visual Placeholder -->
-      <div class="trail-ring-section">
-        <div class="trail-ring-container" onclick="playClickSound(); openTrailRingModal();">
-          <!-- Ambient Glow -->
-          <div class="trail-ring-visual">
-            <div class="trail-ring-glow"></div>
-            
-            <!-- Orbiting Sparkles -->
-            <div class="trail-ring-sparkles">
-              <div class="trail-sparkle"></div>
-              <div class="trail-sparkle"></div>
-              <div class="trail-sparkle"></div>
-              <div class="trail-sparkle"></div>
-              <div class="trail-sparkle"></div>
-              <div class="trail-sparkle"></div>
-            </div>
-            
-            <!-- The Ring SVG -->
-            <svg class="trail-ring-svg" viewBox="0 0 100 100">
+      <!-- Top Row: Trail Ring (right aligned) -->
+      <div class="home-top-row">
+        <div class="home-greeting"></div>
+        <div class="trail-ring-mini" onclick="playClickSound(); openTrailRingModal();">
+          <div class="trail-ring-mini-visual">
+            <svg class="trail-ring-mini-svg" viewBox="0 0 100 100">
               <defs>
-                <linearGradient id="trailGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="trailGradientMini1" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" style="stop-color:#7c3aed"/>
                   <stop offset="100%" style="stop-color:#6366f1"/>
                 </linearGradient>
-                <linearGradient id="trailGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#a78bfa"/>
-                  <stop offset="100%" style="stop-color:#8b5cf6"/>
-                </linearGradient>
               </defs>
-              <!-- 8 Segments (each 40° with 5° gap) -->
-              <path class="trail-ring-segment" d="M50 8 A42 42 0 0 1 85.8 26.2"/>
-              <path class="trail-ring-segment" d="M88.5 31.5 A42 42 0 0 1 92 50"/>
-              <path class="trail-ring-segment" d="M92 54 A42 42 0 0 1 85.8 73.8"/>
-              <path class="trail-ring-segment" d="M82.5 78 A42 42 0 0 1 65 89"/>
-              <path class="trail-ring-segment" d="M60 91 A42 42 0 0 1 40 91"/>
-              <path class="trail-ring-segment" d="M35 89 A42 42 0 0 1 17.5 78"/>
-              <path class="trail-ring-segment" d="M14.2 73.8 A42 42 0 0 1 8 54"/>
-              <path class="trail-ring-segment" d="M8 50 A42 42 0 0 1 14.2 26.2"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="url(#trailGradientMini1)" stroke-width="6" stroke-dasharray="20 10"/>
             </svg>
-            
-            <!-- Center Icon -->
-            <div class="trail-ring-center">🔮</div>
-          </div>
-          
-          <!-- Label -->
-          <div class="trail-ring-label">
-            <div class="trail-ring-title">Trail Ring</div>
-            <div class="trail-ring-subtitle">Coming Soon</div>
+            <span class="trail-ring-mini-icon">🔮</span>
           </div>
         </div>
       </div>
 
-      <!-- Trail Ring Modal -->
+      <!-- Trail Ring Modal (keep existing) -->
       <div class="trail-ring-modal hidden" id="trail-ring-modal">
         <div class="trail-ring-modal-backdrop" onclick="closeTrailRingModal()"></div>
         <div class="trail-ring-modal-content">
@@ -695,114 +662,125 @@
         </div>
       </div>
 
-      <!-- Featured Quiz of the Day -->
-      <div class="home-featured-section">
-        <div class="home-featured-label">🏆 QUIZ OF THE DAY</div>
-        <button class="home-featured-card" onclick="playClickSound(); document.getElementById('football-general-topic-btn').click()">
-          <div class="football-v2-card-topic home-featured-card-inner">
-            <div class="football-v2-kickoff-text">Kick Off!</div>
-            <div class="football-v2-whistle-burst">
-              <div class="football-v2-whistle">
-                <div class="football-v2-whistle-body"></div>
-              </div>
-            </div>
-            <div class="football-v2-flags">
-              <div class="football-v2-flag"></div>
-              <div class="football-v2-flag"></div>
-              <div class="football-v2-flag"></div>
-              <div class="football-v2-flag"></div>
-            </div>
-            <div class="football-v2-goal-net"></div>
-            <div class="football-v2-club-dots">
-              <div class="football-v2-dot"></div>
-              <div class="football-v2-dot"></div>
-              <div class="football-v2-dot"></div>
-              <div class="football-v2-dot"></div>
-              <div class="football-v2-dot"></div>
-              <div class="football-v2-dot"></div>
-            </div>
-            <div class="football-v2-icon-container">
-              <div class="football-v2-pitch">
-                <div class="football-v2-center-circle"></div>
-                <div class="football-v2-penalty-box top"></div>
-                <div class="football-v2-penalty-box bottom"></div>
-                <div class="football-v2-goal-box top"></div>
-                <div class="football-v2-goal-box bottom"></div>
-                <div class="football-v2-corner top-left"></div>
-                <div class="football-v2-corner top-right"></div>
-                <div class="football-v2-corner bottom-left"></div>
-                <div class="football-v2-corner bottom-right"></div>
-              </div>
-              <div class="football-v2-ball">
-                <div class="football-v2-patch football-v2-patch-1"></div>
-                <div class="football-v2-patch football-v2-patch-2"></div>
-                <div class="football-v2-patch football-v2-patch-3"></div>
-                <div class="football-v2-patch football-v2-patch-4"></div>
-                <div class="football-v2-patch football-v2-patch-5"></div>
-                <div class="football-v2-ball-shine"></div>
-              </div>
-            </div>
-            <div class="football-v2-card-title">Football</div>
+      <!-- Quiz of the Day - Compact -->
+      <div class="qotd-section-compact">
+        <div class="qotd-title-compact">Quiz of the Day</div>
+        <div class="qotd-card-compact" onclick="playClickSound(); startQuizOfTheDay();">
+          <img src="https://assets.api.uizard.io/api/cdn/stream/97cde2db-6eff-42dd-a9a1-0cf388a876a9.png" alt="Quiz of the Day" class="qotd-image-compact">
+          <div class="qotd-play-overlay">
+            <span class="qotd-play-text">▶ Play</span>
           </div>
-          <div class="home-featured-play">▶ PLAY NOW</div>
-        </button>
+        </div>
       </div>
 
-      <!-- Ranked Mode Button -->
-      <div class="ranked-section">
-        <button class="ranked-button" id="ranked-button" onclick="playClickSound(); openRankedModal();">
-          <div class="ranked-button-glow"></div>
-          <div class="ranked-button-content">
-            <div class="ranked-lock-icon" id="ranked-lock-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
-              </svg>
-            </div>
-            <div class="ranked-qualified-icon hidden" id="ranked-qualified-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-            </div>
-            <span class="ranked-button-text">RANKED</span>
-          </div>
-        </button>
-      </div>
-
-      <!-- Explore Categories -->
-      <div class="home-categories-section">
-        <h2 class="home-categories-title">Explore Categories</h2>
-        <div class="home-categories-grid">
-          <button class="home-category-card" data-category="geography">
-            <div class="home-category-icon">🌍</div>
-            <div class="home-category-name">Geography</div>
-            <div class="home-category-count">3 quizzes</div>
+      <!-- Quick Play Section -->
+      <div class="quick-play-section">
+        <h3 class="section-title-compact">Quick Play</h3>
+        <div class="quick-play-row">
+          <button class="quick-play-card" onclick="playClickSound(); startRandomQuiz();">
+            <span class="quick-play-icon">🎲</span>
+            <span class="quick-play-label">Random</span>
           </button>
-          <button class="home-category-card" data-category="football">
-            <div class="home-category-icon">⚽</div>
-            <div class="home-category-name">Football</div>
-            <div class="home-category-count">8 quizzes</div>
+          <button class="quick-play-card" onclick="playClickSound(); startQuizOfTheDay();">
+            <span class="quick-play-icon">⚡</span>
+            <span class="quick-play-label">Daily</span>
           </button>
-          <button class="home-category-card" data-category="movies">
-            <div class="home-category-icon">🎬</div>
-            <div class="home-category-name">Movies</div>
-            <div class="home-category-count">7 quizzes</div>
-          </button>
-          <button class="home-category-card" data-category="tvshows">
-            <div class="home-category-icon">📺</div>
-            <div class="home-category-name">TV Shows</div>
-            <div class="home-category-count">7 quizzes</div>
-          </button>
-          <button class="home-category-card" data-category="history">
-            <div class="home-category-icon">📜</div>
-            <div class="home-category-name">History</div>
-            <div class="home-category-count">7 quizzes</div>
-          </button>
-          <button class="home-category-card" data-category="logos">
-            <div class="home-category-icon">🎨</div>
-            <div class="home-category-name">Logos</div>
-            <div class="home-category-count">1 quiz</div>
+          <button class="quick-play-card" onclick="playClickSound(); openRankedModal();">
+            <span class="quick-play-icon">🏆</span>
+            <span class="quick-play-label">Ranked</span>
           </button>
         </div>
+      </div>
+
+      <!-- Continue Playing Section -->
+      <div class="continue-section">
+        <h3 class="section-title-compact">Continue Playing</h3>
+        <div class="continue-row" id="continue-row">
+          <!-- Will be populated by JS with recently played topics -->
+          <div class="continue-card" onclick="playClickSound(); document.getElementById('flags-topic-btn').click();">
+            <span class="continue-icon">🏳️</span>
+            <span class="continue-name">Flags</span>
+          </div>
+          <div class="continue-card" onclick="playClickSound(); document.getElementById('football-general-topic-btn').click();">
+            <span class="continue-icon">⚽</span>
+            <span class="continue-name">Football</span>
+          </div>
+          <div class="continue-card" onclick="playClickSound(); document.getElementById('movies-general-topic-btn').click();">
+            <span class="continue-icon">🎬</span>
+            <span class="continue-name">Movies</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore Categories - Compact Grid -->
+      <div class="home-categories-section-compact">
+        <h3 class="section-title-compact">Explore</h3>
+        <div class="home-categories-grid-compact">
+          <button class="home-category-card-compact" data-category="geography">
+            <span class="cat-icon-compact">🌍</span>
+            <span class="cat-name-compact">Geography</span>
+          </button>
+          <button class="home-category-card-compact" data-category="football">
+            <span class="cat-icon-compact">⚽</span>
+            <span class="cat-name-compact">Football</span>
+          </button>
+          <button class="home-category-card-compact" data-category="movies">
+            <span class="cat-icon-compact">🎬</span>
+            <span class="cat-name-compact">Movies</span>
+          </button>
+          <button class="home-category-card-compact" data-category="tvshows">
+            <span class="cat-icon-compact">📺</span>
+            <span class="cat-name-compact">TV Shows</span>
+          </button>
+          <button class="home-category-card-compact" data-category="history">
+            <span class="cat-icon-compact">📜</span>
+            <span class="cat-name-compact">History</span>
+          </button>
+          <button class="home-category-card-compact" data-category="logos">
+            <span class="cat-icon-compact">🎨</span>
+            <span class="cat-name-compact">Logos</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hot Topics Section -->
+      <div class="hot-topics-section">
+        <h3 class="section-title-compact">🔥 Hot Topics</h3>
+        <div class="hot-topics-list">
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('game-of-thrones-topic-btn').click();">
+            <span class="hot-topic-icon">🐉</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">Game of Thrones</span>
+              <span class="hot-topic-category">TV Shows</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('ww2-topic-btn').click();">
+            <span class="hot-topic-icon">✠</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">World War II</span>
+              <span class="hot-topic-category">History</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('marvel-movies-topic-btn').click();">
+            <span class="hot-topic-icon">🦸</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">Marvel</span>
+              <span class="hot-topic-category">Movies</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ranked Mode Button - Bottom -->
+      <div class="ranked-section-bottom">
+        <button class="ranked-button-compact" id="ranked-button" onclick="playClickSound(); openRankedModal();">
+          <span class="ranked-icon-compact">⚔️</span>
+          <span class="ranked-text-compact">Enter Ranked Mode</span>
+          <span class="ranked-arrow-compact">›</span>
+        </button>
       </div>
 
     </div>
@@ -3155,25 +3133,6 @@
         </div>
       </div>
 
-      <!-- Win/Draw/Loss Bar -->
-      <div class="profile-statistics">
-        <h3>Statistics</h3>
-        <div class="stats-labels">
-          <span>WINS</span>
-          <span>DRAWS</span>
-          <span>LOSSES</span>
-        </div>
-        <div class="stats-bar">
-          <div class="stat-wins" style="width: 64%"></div>
-          <div class="stat-draws" style="width: 14%"></div>
-          <div class="stat-losses" style="width: 22%"></div>
-        </div>
-        <div class="stats-percentages">
-          <span class="win-percent">64%</span>
-          <span class="draw-percent">14%</span>
-          <span class="loss-percent">22%</span>
-        </div>
-      </div>
 
       <!-- Stats Content (Moved from Stats Tab) -->
       <div class="profile-stats-section">
@@ -3334,50 +3293,6 @@
 
       </div>
 
-      <!-- Topic Progress Section -->
-      <div class="profile-topics">
-        <h3>Topic Progress</h3>
-
-        <!-- Flags Topic -->
-        <div class="topic-progress-item">
-          <div class="topic-progress-header">
-            <span class="topic-progress-icon">🏳️</span>
-            <span class="topic-progress-name">Flags</span>
-          </div>
-          <div class="topic-progress-level">Level x → Level x</div>
-          <div class="topic-progress-bar-container">
-            <div class="topic-progress-bar" style="width: 75%"></div>
-          </div>
-          <div class="topic-progress-xp">750 / 1,000 XP</div>
-        </div>
-
-        <!-- Capitals Topic -->
-        <div class="topic-progress-item">
-          <div class="topic-progress-header">
-            <span class="topic-progress-icon">🏛️</span>
-            <span class="topic-progress-name">Capitals</span>
-          </div>
-          <div class="topic-progress-level">Level x → Level x</div>
-          <div class="topic-progress-bar-container">
-            <div class="topic-progress-bar" style="width: 38%"></div>
-          </div>
-          <div class="topic-progress-xp">300 / 800 XP</div>
-        </div>
-
-        <!-- Area Topic -->
-        <div class="topic-progress-item">
-          <div class="topic-progress-header">
-            <span class="topic-progress-icon">📏</span>
-            <span class="topic-progress-name">Area</span>
-          </div>
-          <div class="topic-progress-level">Level x → Level x</div>
-          <div class="topic-progress-bar-container">
-            <div class="topic-progress-bar" style="width: 38%"></div>
-          </div>
-          <div class="topic-progress-xp">450 / 1,200 XP</div>
-        </div>
-
-      </div>
 
 
     </div>

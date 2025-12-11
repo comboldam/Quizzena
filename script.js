@@ -3057,6 +3057,15 @@ document.querySelectorAll('.home-category-card').forEach(card => {
   });
 });
 
+// Event listeners for compact category cards (new home layout)
+document.querySelectorAll('.home-category-card-compact').forEach(card => {
+  card.addEventListener('click', () => {
+    playClickSound();
+    const category = card.dataset.category;
+    openCategoryModal(category);
+  });
+});
+
 // Close modal on backdrop click
 if (categoryModalBackdrop) {
   categoryModalBackdrop.addEventListener('click', () => {
@@ -5293,6 +5302,96 @@ function closeTrailRingModal() {
   const modal = document.getElementById('trail-ring-modal');
   if (modal) modal.classList.add('hidden');
 }
+
+// ========================================
+// 🧠 QUIZ OF THE DAY SYSTEM
+// ========================================
+
+// All available topics for daily rotation
+const qotdTopics = [
+  { id: 'flags-topic-btn', icon: '🏳️', name: 'Flags' },
+  { id: 'capitals-topic-btn', icon: '🏛️', name: 'Capitals' },
+  { id: 'area-topic-btn', icon: '📏', name: 'Area' },
+  { id: 'borders-topic-btn', icon: '🗺️', name: 'Borders' },
+  { id: 'football-general-topic-btn', icon: '⚽', name: 'Football' },
+  { id: 'premier-league-topic-btn', icon: '🏴󠁧󠁢󠁥󠁮󠁧󠁿', name: 'Premier League' },
+  { id: 'champions-league-topic-btn', icon: '🏆', name: 'Champions League' },
+  { id: 'world-cup-topic-btn', icon: '🌍', name: 'World Cup' },
+  { id: 'derbies-topic-btn', icon: '🔥', name: 'Derbies' },
+  { id: 'messi-topic-btn', icon: '🐐', name: 'Messi' },
+  { id: 'ronaldo-topic-btn', icon: '🐐', name: 'Ronaldo' },
+  { id: 'movies-general-topic-btn', icon: '🎬', name: 'Movies' },
+  { id: 'marvel-movies-topic-btn', icon: '🦸', name: 'Marvel' },
+  { id: 'dc-movies-topic-btn', icon: '🦇', name: 'DC' },
+  { id: 'disney-movies-topic-btn', icon: '🏰', name: 'Disney' },
+  { id: 'harry-potter-topic-btn', icon: '⚡', name: 'Harry Potter' },
+  { id: 'star-wars-topic-btn', icon: '⭐', name: 'Star Wars' },
+  { id: 'lotr-topic-btn', icon: '💍', name: 'LOTR' },
+  { id: 'tv-general-topic-btn', icon: '📺', name: 'TV Shows' },
+  { id: 'sitcoms-topic-btn', icon: '😂', name: 'Sitcoms' },
+  { id: 'game-of-thrones-topic-btn', icon: '🐉', name: 'Game of Thrones' },
+  { id: 'breaking-bad-topic-btn', icon: '🧪', name: 'Breaking Bad' },
+  { id: 'stranger-things-topic-btn', icon: '👾', name: 'Stranger Things' },
+  { id: 'money-heist-topic-btn', icon: '💰', name: 'Money Heist' },
+  { id: 'the-office-topic-btn', icon: '📋', name: 'The Office' },
+  { id: 'world-history-topic-btn', icon: '📜', name: 'World History' },
+  { id: 'ww2-topic-btn', icon: '✠', name: 'World War II' },
+  { id: 'ww1-topic-btn', icon: '⚔️', name: 'World War I' },
+  { id: 'roman-empire-topic-btn', icon: '🏛️', name: 'Roman Empire' },
+  { id: 'ottoman-empire-topic-btn', icon: '🌙', name: 'Ottoman Empire' },
+  { id: 'egyptian-topic-btn', icon: '🔱', name: 'Egyptian' }
+];
+
+// Get today's quiz based on day of year
+function getTodaysQuiz() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now - start;
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  
+  // Use day of year to select topic (cycles through all topics)
+  const topicIndex = dayOfYear % qotdTopics.length;
+  return qotdTopics[topicIndex];
+}
+
+// Initialize Quiz of the Day
+function initQuizOfTheDay() {
+  const topic = getTodaysQuiz();
+  const iconEl = document.getElementById('qotd-topic-icon');
+  
+  if (iconEl) {
+    iconEl.textContent = topic.icon;
+  }
+}
+
+// Start Quiz of the Day
+function startQuizOfTheDay() {
+  const topic = getTodaysQuiz();
+  const btn = document.getElementById(topic.id);
+  
+  if (btn) {
+    btn.click();
+  } else {
+    console.warn('Quiz of the Day topic button not found:', topic.id);
+  }
+}
+
+// Start a random quiz from any topic
+function startRandomQuiz() {
+  const randomIndex = Math.floor(Math.random() * allTopicIds.length);
+  const randomTopicId = allTopicIds[randomIndex];
+  const btn = document.getElementById(randomTopicId);
+  
+  if (btn) {
+    btn.click();
+  } else {
+    console.warn('Random topic button not found:', randomTopicId);
+  }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', initQuizOfTheDay);
 
 // ========================================
 // ✦ QUANTA & LEVEL BADGE SYSTEM
