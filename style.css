@@ -1339,21 +1339,77 @@ footer button:hover {
   max-width: 100%;
   cursor: pointer;
   border-radius: 28px;
-  overflow: hidden;
+  overflow: visible;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
 }
 
+/* Glowing aura behind brain */
+.qotd-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 120%;
+  background: radial-gradient(ellipse, rgba(167, 139, 250, 0.4) 0%, rgba(139, 92, 246, 0.2) 40%, transparent 70%);
+  filter: blur(20px);
+  animation: qotdGlowPulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes qotdGlowPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Floating particles container */
+.qotd-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Individual floating particles */
+.qotd-particle {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0.8;
+  animation: qotdFloat 4s ease-in-out infinite;
+}
+
+.qotd-particle:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 0.9rem; }
+.qotd-particle:nth-child(2) { top: 5%; right: 10%; animation-delay: 0.5s; font-size: 1.1rem; }
+.qotd-particle:nth-child(3) { top: 20%; right: 5%; animation-delay: 1s; font-size: 0.8rem; }
+.qotd-particle:nth-child(4) { bottom: 20%; left: 8%; animation-delay: 1.5s; font-size: 1rem; }
+.qotd-particle:nth-child(5) { bottom: 10%; right: 15%; animation-delay: 2s; font-size: 0.9rem; }
+.qotd-particle:nth-child(6) { top: 40%; left: 2%; animation-delay: 2.5s; font-size: 0.8rem; }
+.qotd-particle:nth-child(7) { top: 15%; left: 20%; animation-delay: 3s; font-size: 1rem; }
+.qotd-particle:nth-child(8) { bottom: 30%; right: 3%; animation-delay: 3.5s; font-size: 0.9rem; }
+
+@keyframes qotdFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  25% { transform: translateY(-8px) rotate(5deg); opacity: 1; }
+  50% { transform: translateY(-4px) rotate(-3deg); opacity: 0.8; }
+  75% { transform: translateY(-10px) rotate(3deg); opacity: 0.9; }
+}
+
 .qotd-image-compact {
   width: 100%;
-  height: 140px;
+  height: 160px;
   object-fit: cover;
   display: block;
   border-radius: 28px;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
+  position: relative;
+  z-index: 1;
 }
 
 .qotd-play-overlay {
