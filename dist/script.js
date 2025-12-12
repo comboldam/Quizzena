@@ -5042,6 +5042,7 @@ function saveQuizStats(topicId, completed) {
   // Update topic stats
   if (completed) {
     topic.games++;
+    topic.lastPlayed = Date.now(); // Track when this topic was last played
     userData.stats.totalGames++;
     
     // Calculate time spent in this session (in seconds)
@@ -5390,8 +5391,83 @@ function startRandomQuiz() {
   }
 }
 
+// Populate Continue Playing section with recently played topics (clones actual topic cards)
+function populateContinuePlaying() {
+  const continueSection = document.querySelector('.continue-section');
+  const continueRow = document.getElementById('continue-row');
+  if (!continueRow || !continueSection) return;
+  
+  // Get topics with games played, sorted by MOST RECENTLY PLAYED (left = most recent)
+  const playedTopics = [];
+  
+  if (userData.stats && userData.stats.topics) {
+    for (const topicId in userData.stats.topics) {
+      const stats = userData.stats.topics[topicId];
+      if (stats.games && stats.games > 0) {
+        playedTopics.push({
+          id: topicId,
+          lastPlayed: stats.lastPlayed || 0 // Use timestamp, default to 0 if not set
+        });
+      }
+    }
+  }
+  
+  // Sort by lastPlayed timestamp (most recent first = LEFT side)
+  playedTopics.sort((a, b) => b.lastPlayed - a.lastPlayed);
+  
+  // Take top 4 (fits screen width)
+  const topTopics = playedTopics.slice(0, 4);
+  
+  // If no topics played, HIDE the entire section
+  if (topTopics.length === 0) {
+    continueSection.style.display = 'none';
+    return;
+  }
+  
+  // Show the section
+  continueSection.style.display = 'block';
+  continueRow.innerHTML = '';
+  
+  // Clone the actual topic cards from the DOM
+  topTopics.forEach(topic => {
+    // Map topic ID to button ID (handle special cases)
+    let btnId = `${topic.id}-topic-btn`;
+    if (topic.id === 'football') btnId = 'football-general-topic-btn';
+    else if (topic.id === 'movies') btnId = 'movies-general-topic-btn';
+    else if (topic.id === 'marvel') btnId = 'marvel-movies-topic-btn';
+    else if (topic.id === 'tv-shows') btnId = 'tv-general-topic-btn';
+    else if (topic.id === 'dc') btnId = 'dc-movies-topic-btn';
+    else if (topic.id === 'disney') btnId = 'disney-movies-topic-btn';
+    else if (topic.id === 'ottoman') btnId = 'ottoman-empire-topic-btn';
+    
+    // Find the original topic card button
+    const originalBtn = document.getElementById(btnId);
+    if (originalBtn) {
+      // Clone the parent container (status-active div) which contains the full styled card
+      const originalCard = originalBtn.closest('.status-active') || originalBtn.parentElement;
+      if (originalCard) {
+        const clonedCard = originalCard.cloneNode(true);
+        // Make sure cloned button has a unique ID to avoid conflicts
+        const clonedBtn = clonedCard.querySelector('button[id]');
+        if (clonedBtn) {
+          clonedBtn.id = `continue-${clonedBtn.id}`;
+          // Add click handler to trigger the original button
+          clonedBtn.onclick = function() {
+            playClickSound();
+            originalBtn.click();
+          };
+        }
+        continueRow.appendChild(clonedCard);
+      }
+    }
+  });
+}
+
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', initQuizOfTheDay);
+document.addEventListener('DOMContentLoaded', () => {
+  initQuizOfTheDay();
+  populateContinuePlaying();
+});
 
 // ========================================
 // ✦ QUANTA & LEVEL BADGE SYSTEM

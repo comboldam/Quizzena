@@ -673,6 +673,14 @@
         </div>
       </div>
 
+      <!-- Continue Playing Section -->
+      <div class="continue-section">
+        <h3 class="section-title-compact">Continue Playing</h3>
+        <div class="continue-row" id="continue-row">
+          <!-- Populated dynamically by JS with cloned actual topic cards -->
+        </div>
+      </div>
+
       <!-- Quick Play Section -->
       <div class="quick-play-section">
         <h3 class="section-title-compact">Quick Play</h3>
@@ -689,26 +697,6 @@
             <span class="quick-play-icon">🏆</span>
             <span class="quick-play-label">Ranked</span>
           </button>
-        </div>
-      </div>
-
-      <!-- Continue Playing Section -->
-      <div class="continue-section">
-        <h3 class="section-title-compact">Continue Playing</h3>
-        <div class="continue-row" id="continue-row">
-          <!-- Will be populated by JS with recently played topics -->
-          <div class="continue-card" onclick="playClickSound(); document.getElementById('flags-topic-btn').click();">
-            <span class="continue-icon">🏳️</span>
-            <span class="continue-name">Flags</span>
-          </div>
-          <div class="continue-card" onclick="playClickSound(); document.getElementById('football-general-topic-btn').click();">
-            <span class="continue-icon">⚽</span>
-            <span class="continue-name">Football</span>
-          </div>
-          <div class="continue-card" onclick="playClickSound(); document.getElementById('movies-general-topic-btn').click();">
-            <span class="continue-icon">🎬</span>
-            <span class="continue-name">Movies</span>
-          </div>
         </div>
       </div>
 
