@@ -19282,14 +19282,15 @@ footer button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* The image inside the circle */
 .floating-card-image {
-  width: 100px;
-  height: 100px;
+  width: 130%;
+  height: 130%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 40%;
   border-radius: 50%;
 }
 
