@@ -19278,6 +19278,18 @@ footer button:hover {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  padding: 3px;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #ec4899 100%);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.4), 0 0 30px rgba(124, 58, 237, 0.2);
+}
+
+.floating-card-circle::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: #1a0a2e;
+  z-index: -1;
 }
 
 /* The image inside the circle */
