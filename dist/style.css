@@ -19284,25 +19284,13 @@ footer button:hover {
   justify-content: center;
 }
 
-/* Inner circle that holds the image */
-.floating-card-circle::before {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #1a0a2e;
-}
-
 /* The image inside the circle */
 .floating-card-image {
-  width: 94px;
-  height: 94px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   object-position: center 35%;
   border-radius: 50%;
-  position: relative;
-  z-index: 1;
 }
 
 /* Title below the circle */
