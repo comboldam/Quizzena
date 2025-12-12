@@ -5415,8 +5415,8 @@ function populateContinuePlaying() {
   // Sort by lastPlayed timestamp (most recent first = LEFT side)
   playedTopics.sort((a, b) => b.lastPlayed - a.lastPlayed);
   
-  // Take top 4 (fits screen width)
-  const topTopics = playedTopics.slice(0, 4);
+  // Take top 2 (fits mobile screen like Quick Play)
+  const topTopics = playedTopics.slice(0, 2);
   
   // If no topics played, HIDE the entire section
   if (topTopics.length === 0) {

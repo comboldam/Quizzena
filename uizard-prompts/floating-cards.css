@@ -1,0 +1,218 @@
+/* ===== FLOATING CIRCULAR TOPIC CARDS - COMPLETE THEME SYSTEM ===== */
+
+/* Base floating card styles */
+.floating-card-topic {
+  width: 130px;
+  height: 165px;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base glow effect */
+.floating-card-glow {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.5) 0%, rgba(139, 92, 246, 0.3) 40%, transparent 70%);
+  filter: blur(15px);
+  border-radius: 50%;
+  animation: floatingGlow 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes floatingGlow {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+/* Circular container */
+.floating-card-circle {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #ec4899 100%);
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.4), 0 0 30px rgba(124, 58, 237, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image inside circle */
+.floating-card-image {
+  width: 130%;
+  height: 130%;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 50%;
+}
+
+/* Title below circle */
+.floating-card-title {
+  color: #a78bfa;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-top: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+/* Active/pressed state */
+.floating-card-topic:active .floating-card-circle {
+  transform: scale(0.95);
+}
+
+.floating-card-topic:active .floating-card-glow {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.2);
+}
+
+
+/* ===== THEME VARIANTS ===== */
+
+/* --- PREMIER LEAGUE (Purple/Pink) --- */
+/* Default theme, no additional classes needed */
+
+
+/* --- CHAMPIONS LEAGUE (Blue/Silver) --- */
+.floating-card-glow-ucl {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.5) 0%, rgba(147, 197, 253, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-ucl .floating-card-circle {
+  background: linear-gradient(135deg, #60a5fa 0%, #1e40af 50%, #93c5fd 100%);
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.4), 0 0 30px rgba(30, 64, 175, 0.2);
+}
+
+.floating-card-ucl .floating-card-title {
+  color: #93c5fd;
+  text-shadow: 0 0 10px rgba(147, 197, 253, 0.5);
+}
+
+
+/* --- FLAGS (Green/Teal) --- */
+.floating-card-glow-flags {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.5) 0%, rgba(52, 211, 153, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-flags .floating-card-circle {
+  background: linear-gradient(135deg, #34d399 0%, #059669 50%, #10b981 100%);
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.4), 0 0 30px rgba(5, 150, 105, 0.2);
+}
+
+.floating-card-flags .floating-card-title {
+  color: #34d399;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+}
+
+
+/* --- WORLD CUP (Gold/Amber) --- */
+.floating-card-glow-worldcup {
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.5) 0%, rgba(245, 158, 11, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-worldcup .floating-card-circle {
+  background: linear-gradient(135deg, #fcd34d 0%, #d97706 50%, #fbbf24 100%);
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4), 0 0 30px rgba(217, 119, 6, 0.2);
+}
+
+.floating-card-worldcup .floating-card-title {
+  color: #fcd34d;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+
+/* --- FOOTBALL GENERAL (Green/Lime) --- */
+.floating-card-glow-football {
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.5) 0%, rgba(74, 222, 128, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-football .floating-card-circle {
+  background: linear-gradient(135deg, #4ade80 0%, #16a34a 50%, #22c55e 100%);
+  box-shadow: 0 0 15px rgba(74, 222, 128, 0.4), 0 0 30px rgba(22, 163, 74, 0.2);
+}
+
+.floating-card-football .floating-card-title {
+  color: #4ade80;
+  text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+
+/* --- CAPITALS (Orange/Coral) --- */
+.floating-card-glow-capitals {
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.5) 0%, rgba(253, 186, 116, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-capitals .floating-card-circle {
+  background: linear-gradient(135deg, #fdba74 0%, #ea580c 50%, #fb923c 100%);
+  box-shadow: 0 0 15px rgba(251, 146, 60, 0.4), 0 0 30px rgba(234, 88, 12, 0.2);
+}
+
+.floating-card-capitals .floating-card-title {
+  color: #fdba74;
+  text-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+}
+
+
+/* --- MOVIES (Red/Rose) --- */
+.floating-card-glow-movies {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.5) 0%, rgba(251, 113, 133, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-movies .floating-card-circle {
+  background: linear-gradient(135deg, #fb7185 0%, #be123c 50%, #f43f5e 100%);
+  box-shadow: 0 0 15px rgba(251, 113, 133, 0.4), 0 0 30px rgba(190, 18, 60, 0.2);
+}
+
+.floating-card-movies .floating-card-title {
+  color: #fb7185;
+  text-shadow: 0 0 10px rgba(251, 113, 133, 0.5);
+}
+
+
+/* --- HISTORY (Bronze/Sepia) --- */
+.floating-card-glow-history {
+  background: radial-gradient(circle, rgba(180, 83, 9, 0.5) 0%, rgba(217, 119, 6, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-history .floating-card-circle {
+  background: linear-gradient(135deg, #d97706 0%, #92400e 50%, #b45309 100%);
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.4), 0 0 30px rgba(146, 64, 14, 0.2);
+}
+
+.floating-card-history .floating-card-title {
+  color: #d97706;
+  text-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+}
+
+
+/* --- TV SHOWS (Cyan/Sky) --- */
+.floating-card-glow-tv {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.5) 0%, rgba(103, 232, 249, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-tv .floating-card-circle {
+  background: linear-gradient(135deg, #67e8f9 0%, #0891b2 50%, #06b6d4 100%);
+  box-shadow: 0 0 15px rgba(103, 232, 249, 0.4), 0 0 30px rgba(8, 145, 178, 0.2);
+}
+
+.floating-card-tv .floating-card-title {
+  color: #67e8f9;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.5);
+}
+

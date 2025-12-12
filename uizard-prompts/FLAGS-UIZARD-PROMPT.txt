@@ -1,0 +1,73 @@
+=====================================================
+🌍 FLAGS CARD - UIZARD GENERATION PROMPT
+=====================================================
+Copy this ENTIRE prompt to Uizard:
+=====================================================
+
+STYLE REFERENCE (CRITICAL - READ FIRST):
+This card must match the EXACT quality of these reference cards:
+- History card: Photorealistic ancient scroll with golden edges
+- Movies card: Metallic film reel with rainbow light reflections  
+- Football card: Cinematic stadium with dramatic green lighting
+- Champions League: Silver trophy with starfield, spotlight effect
+
+NOW GENERATE THIS FLAGS CARD:
+
+Create a hyper-realistic, cinematic circular icon for a "Flags" quiz topic.
+
+SUBJECT:
+- A stunning 3D holographic globe floating in center
+- The globe has glowing cyan/blue grid lines (like a futuristic hologram)
+- 5-6 photorealistic national flags planted around the globe, waving dynamically
+- Flags include: USA stars & stripes, UK Union Jack, Japan rising sun, Brazil green/yellow, France tricolor
+- Each flag on a small golden flagpole
+- Flags have realistic fabric texture with folds and shadows
+
+LIGHTING & EFFECTS:
+- Dramatic rim lighting from behind (cyan/teal glow)
+- Globe emits soft blue holographic light
+- Subtle lens flare from the light source
+- Floating particles/dust catching the light
+- Flags have slight motion blur suggesting movement
+
+COLORS:
+- Primary: Deep teal (#0d9488), emerald green (#10b981)
+- Accent: Cyan glow (#22d3d1), gold highlights (#fbbf24)
+- Background: Dark navy gradient (#0f172a to #1e1b4b)
+- Flags: Vibrant, saturated national colors
+
+BACKGROUND:
+- Dark navy to purple gradient (#0f172a to #1e1b4b)
+- Subtle world map silhouette in background (very faint)
+- Stars/sparkles scattered around edges
+- Purple/teal atmospheric glow
+
+COMPOSITION:
+- Globe perfectly centered
+- Circular composition (will be cropped to circle)
+- 3D depth: flags in foreground, globe in mid, glow in back
+- Leave dark space at edges for circular crop
+
+QUALITY REQUIREMENTS:
+✅ Photorealistic/Cinematic quality (like movie poster)
+✅ 3D depth with foreground, midground, background layers
+✅ Dramatic lighting with glows and reflections
+✅ Rich, vibrant colors (not cartoonish)
+✅ High detail - fabric texture on flags visible
+✅ Dark background consistent with other cards
+✅ Professional, premium app aesthetic
+
+OUTPUT:
+- Square image (512x512 or 1024x1024)
+- Centered composition for circular crop
+- High resolution, sharp details
+
+DO NOT:
+❌ Make it flat or 2D
+❌ Use cartoon/illustration style
+❌ Make background too bright
+❌ Crop the main subject at edges
+❌ Use low-quality or blurry rendering
+
+=====================================================
+
