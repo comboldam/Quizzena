@@ -19487,6 +19487,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
 }
 
+/* ===== MARVEL FLOATING CARD ===== */
+.floating-card-glow-marvel {
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.5) 0%, rgba(255, 215, 0, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-marvel .floating-card-circle {
+  background: linear-gradient(135deg, #b91c1c 0%, #ffd700 50%, #b91c1c 100%);
+  box-shadow: 0 0 15px rgba(185, 28, 28, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.floating-card-marvel .floating-card-title {
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21572,7 +21587,7 @@ footer button:hover {
 @media (max-width: 480px) {
   /* Scale animated cards to fit 3 + peek */
   .movies-card-topic,
-  .marvel-card-topic,
+  .floating-card-marvel,
   .dc-card-topic,
   .disney-card-topic,
   .hp-card-topic,
@@ -21698,7 +21713,7 @@ footer button:hover {
   
   /* Scale cards smaller to fit 3 + peek of 4th */
   .movies-card-topic,
-  .marvel-card-topic,
+  .floating-card-marvel,
   .dc-card-topic,
   .disney-card-topic,
   .hp-card-topic,
