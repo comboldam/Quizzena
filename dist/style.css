@@ -19427,6 +19427,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(210, 180, 140, 0.5);
 }
 
+/* ===== THE OFFICE FLOATING CARD ===== */
+.floating-card-glow-office {
+  background: radial-gradient(circle, rgba(139, 119, 101, 0.5) 0%, rgba(222, 184, 135, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-office .floating-card-circle {
+  background: linear-gradient(135deg, #8b7765 0%, #deb887 50%, #8b7765 100%);
+  box-shadow: 0 0 15px rgba(139, 119, 101, 0.4), 0 0 30px rgba(222, 184, 135, 0.3);
+}
+
+.floating-card-office .floating-card-title {
+  color: #deb887;
+  text-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21541,7 +21556,7 @@ footer button:hover {
   .bb-card-topic,
   .st-card-topic,
   .mh-card-topic,
-  .office-card-topic {
+  .floating-card-office {
     transform: scale(0.68);
     transform-origin: top left;
     margin-right: -45px; /* Compensate for scale gap */
@@ -21667,7 +21682,7 @@ footer button:hover {
   .bb-card-topic,
   .st-card-topic,
   .mh-card-topic,
-  .office-card-topic {
+  .floating-card-office {
     transform: scale(0.55) !important;
     transform-origin: top left !important;
     margin-right: -60px !important;
