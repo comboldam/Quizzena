@@ -19622,6 +19622,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
+/* ===== AREA FLOATING CARD ===== */
+.floating-card-glow-area {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, rgba(236, 72, 153, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-area .floating-card-circle {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #8b5cf6 100%);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4), 0 0 30px rgba(236, 72, 153, 0.3);
+}
+
+.floating-card-area .floating-card-title {
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21726,7 +21741,7 @@ footer button:hover {
   .floating-card-ottoman,
   .british-card-topic,
   .floating-card-capitals,
-  .area-card-topic,
+  .floating-card-area,
   .floating-card-egyptian,
   .floating-card-worldcup,
   .derbies-card-topic,
@@ -21852,7 +21867,7 @@ footer button:hover {
   .floating-card-ottoman,
   .british-card-topic,
   .floating-card-capitals,
-  .area-card-topic,
+  .floating-card-area,
   .floating-card-egyptian,
   .floating-card-worldcup,
   .derbies-card-topic,
