@@ -19442,6 +19442,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(222, 184, 135, 0.5);
 }
 
+/* ===== WWII FLOATING CARD ===== */
+.floating-card-glow-wwii {
+  background: radial-gradient(circle, rgba(85, 107, 47, 0.5) 0%, rgba(220, 60, 60, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-wwii .floating-card-circle {
+  background: linear-gradient(135deg, #556b2f 0%, #dc3c3c 50%, #556b2f 100%);
+  box-shadow: 0 0 15px rgba(85, 107, 47, 0.4), 0 0 30px rgba(220, 60, 60, 0.3);
+}
+
+.floating-card-wwii .floating-card-title {
+  color: #dc3c3c;
+  text-shadow: 0 0 10px rgba(220, 60, 60, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21540,7 +21555,7 @@ footer button:hover {
   .football-v2-card-topic,
   .history-card-topic,
   .flags-card-topic,
-  .wwii-card-topic,
+  .floating-card-wwii,
   .floating-card-wwi,
   .roman-card-topic,
   .ottoman-card-topic,
@@ -21666,7 +21681,7 @@ footer button:hover {
   .football-v2-card-topic,
   .history-card-topic,
   .flags-card-topic,
-  .wwii-card-topic,
+  .floating-card-wwii,
   .floating-card-wwi,
   .roman-card-topic,
   .ottoman-card-topic,
