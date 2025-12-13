@@ -19472,6 +19472,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
 }
 
+/* ===== OTTOMAN FLOATING CARD ===== */
+.floating-card-glow-ottoman {
+  background: radial-gradient(circle, rgba(25, 55, 95, 0.5) 0%, rgba(218, 165, 32, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-ottoman .floating-card-circle {
+  background: linear-gradient(135deg, #19375f 0%, #daa520 50%, #19375f 100%);
+  box-shadow: 0 0 15px rgba(25, 55, 95, 0.4), 0 0 30px rgba(218, 165, 32, 0.3);
+}
+
+.floating-card-ottoman .floating-card-title {
+  color: #daa520;
+  text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21573,7 +21588,7 @@ footer button:hover {
   .floating-card-wwii,
   .floating-card-wwi,
   .roman-card-topic,
-  .ottoman-card-topic,
+  .floating-card-ottoman,
   .british-card-topic,
   .floating-card-capitals,
   .area-card-topic,
@@ -21699,7 +21714,7 @@ footer button:hover {
   .floating-card-wwii,
   .floating-card-wwi,
   .roman-card-topic,
-  .ottoman-card-topic,
+  .floating-card-ottoman,
   .british-card-topic,
   .floating-card-capitals,
   .area-card-topic,
