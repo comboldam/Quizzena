@@ -19547,6 +19547,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
 }
 
+/* ===== GAME OF THRONES FLOATING CARD ===== */
+.floating-card-glow-got {
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.4) 0%, rgba(100, 149, 237, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-got .floating-card-circle {
+  background: linear-gradient(135deg, #ff6b00 0%, #1e293b 50%, #60a5fa 100%);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.4), 0 0 30px rgba(96, 165, 250, 0.3);
+}
+
+.floating-card-got .floating-card-title {
+  color: #94a3b8;
+  text-shadow: 0 0 10px rgba(148, 163, 184, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21641,7 +21656,7 @@ footer button:hover {
   .tv-card-topic,
   .ucl-card-topic,
   .sitcoms-card-topic,
-  .got-card-topic,
+  .floating-card-got,
   .football-v2-card-topic,
   .history-card-topic,
   .flags-card-topic,
@@ -21767,7 +21782,7 @@ footer button:hover {
   .tv-card-topic,
   .ucl-card-topic,
   .sitcoms-card-topic,
-  .got-card-topic,
+  .floating-card-got,
   .football-v2-card-topic,
   .history-card-topic,
   .flags-card-topic,
