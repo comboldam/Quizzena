@@ -19397,6 +19397,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(117, 170, 219, 0.5);
 }
 
+/* ===== RONALDO FLOATING CARD ===== */
+.floating-card-glow-ronaldo {
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.5) 0%, rgba(255, 215, 0, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-ronaldo .floating-card-circle {
+  background: linear-gradient(135deg, #dc2626 0%, #ffd700 50%, #dc2626 100%);
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.floating-card-ronaldo .floating-card-title {
+  color: #dc2626;
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21506,7 +21521,7 @@ footer button:hover {
   .worldcup-card-topic,
   .derbies-card-topic,
   .floating-card-messi,
-  .ronaldo-card-topic,
+  .floating-card-ronaldo,
   .pl-card-topic,
   .bb-card-topic,
   .st-card-topic,
@@ -21632,7 +21647,7 @@ footer button:hover {
   .worldcup-card-topic,
   .derbies-card-topic,
   .floating-card-messi,
-  .ronaldo-card-topic,
+  .floating-card-ronaldo,
   .pl-card-topic,
   .bb-card-topic,
   .st-card-topic,
