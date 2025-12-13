@@ -144,3 +144,4 @@ Once you have the Uizard-generated image URL, use this HTML structure:
 | Football | Green #22c55e | White #fff | Green |
 
 
+
