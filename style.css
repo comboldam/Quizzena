@@ -19532,6 +19532,21 @@ footer button:hover {
   text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
 }
 
+/* ===== MONEY HEIST FLOATING CARD ===== */
+.floating-card-glow-moneyheist {
+  background: radial-gradient(circle, rgba(185, 28, 28, 0.5) 0%, rgba(127, 29, 29, 0.3) 40%, transparent 70%);
+}
+
+.floating-card-moneyheist .floating-card-circle {
+  background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 50%, #dc2626 100%);
+  box-shadow: 0 0 15px rgba(185, 28, 28, 0.4), 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+.floating-card-moneyheist .floating-card-title {
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
 /* ===== PREMIER LEAGUE CARD (OLD - keeping for reference) ===== */
 .pl-card-topic {
   width: 140px;
@@ -21645,7 +21660,7 @@ footer button:hover {
   .pl-card-topic,
   .bb-card-topic,
   .st-card-topic,
-  .mh-card-topic,
+  .floating-card-moneyheist,
   .floating-card-office {
     transform: scale(0.68);
     transform-origin: top left;
@@ -21771,7 +21786,7 @@ footer button:hover {
   .pl-card-topic,
   .bb-card-topic,
   .st-card-topic,
-  .mh-card-topic,
+  .floating-card-moneyheist,
   .floating-card-office {
     transform: scale(0.55) !important;
     transform-origin: top left !important;
