@@ -473,11 +473,11 @@
       <div class="stats-page-tabs">
         <button class="stats-page-tab active" id="stats-page-1-tab" onclick="switchStatsPage(1)">
           <span class="stats-page-tab-icon">📊</span>
-          <span class="stats-page-tab-text">Performance</span>
+          <span class="stats-page-tab-text">Overall</span>
         </button>
         <button class="stats-page-tab" id="stats-page-2-tab" onclick="switchStatsPage(2)">
-          <span class="stats-page-tab-icon">🎮</span>
-          <span class="stats-page-tab-text">Most Played</span>
+          <span class="stats-page-tab-icon">🎯</span>
+          <span class="stats-page-tab-text">By Topic</span>
         </button>
       </div>
 
@@ -1761,153 +1761,6 @@
           <span class="stats-chart-btn-text" data-i18n="view_stats_chart">View Stats Chart</span>
           <span class="stats-chart-btn-arrow">→</span>
         </button>
-
-        <!-- Overall Performance Box -->
-        <div class="stats-box" id="overall-performance-box">
-          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('overall-performance')">
-            <span class="stats-box-icon">📊</span>
-            <span class="stats-box-title" data-i18n="stats_overall_performance">Overall Performance</span>
-            <span class="stats-box-arrow" id="overall-performance-arrow">▼</span>
-          </div>
-          <div class="stats-box-content hidden" id="overall-performance-content">
-            <table class="stats-table">
-              <tr>
-                <td class="stat-name" data-i18n="stats_total_games_played">Total Games Played</td>
-                <td class="stat-value" id="stat-total-games">0</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_total_questions_answered">Total Questions Answered</td>
-                <td class="stat-value" id="stat-total-questions">0</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_correct_answers">Correct Answers</td>
-                <td class="stat-value" id="stat-correct">0</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_wrong_answers">Wrong Answers</td>
-                <td class="stat-value" id="stat-wrong">0</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_overall_accuracy">Overall Accuracy</td>
-                <td class="stat-value" id="stat-accuracy">0%</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_avg_time_per_question">Avg Time per Question</td>
-                <td class="stat-value" id="stat-avg-time">0.0s</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_best_streak_label">Best Streak</td>
-                <td class="stat-value" id="stat-best-streak">0</td>
-              </tr>
-              <tr>
-                <td class="stat-name" data-i18n="stats_total_time_played">Total Time Played</td>
-                <td class="stat-value" id="stat-total-time">0m 0s</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-
-        <!-- Most Played Topics Box -->
-        <div class="stats-box" id="most-played-box">
-          <div class="stats-box-header" onclick="playClickSound(); toggleStatsBox('most-played')">
-            <span class="stats-box-icon">🔥</span>
-            <span class="stats-box-title" data-i18n="stats_most_played">Most Played</span>
-            <span class="stats-box-arrow" id="most-played-arrow">▼</span>
-          </div>
-          <div class="stats-box-content hidden" id="most-played-content">
-            <div class="most-played-grid">
-              <div class="most-played-card">
-                <div class="most-played-rank">1</div>
-                <div class="most-played-icon">🏳️</div>
-                <div class="most-played-name">Flags</div>
-                <div class="most-played-stats five-columns">
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">G</span>
-                    <span class="mini-stat-value" id="flags-games">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Ac</span>
-                    <span class="mini-stat-value" id="flags-accuracy">0%</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Str</span>
-                    <span class="mini-stat-value" id="flags-streak">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">T</span>
-                    <span class="mini-stat-value" id="flags-time">0s</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">A.T</span>
-                    <span class="mini-stat-value" id="flags-avgtime">0s</span>
-                  </div>
-                </div>
-              </div>
-              <div class="most-played-card">
-                <div class="most-played-rank">2</div>
-                <div class="most-played-icon">🏛️</div>
-                <div class="most-played-name">Capitals</div>
-                <div class="most-played-stats five-columns">
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">G</span>
-                    <span class="mini-stat-value" id="capitals-games">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Ac</span>
-                    <span class="mini-stat-value" id="capitals-accuracy">0%</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Str</span>
-                    <span class="mini-stat-value" id="capitals-streak">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">T</span>
-                    <span class="mini-stat-value" id="capitals-time">0s</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">A.T</span>
-                    <span class="mini-stat-value" id="capitals-avgtime">0s</span>
-                  </div>
-                </div>
-              </div>
-              <div class="most-played-card">
-                <div class="most-played-rank">3</div>
-                <div class="most-played-icon">⚽</div>
-                <div class="most-played-name">Football</div>
-                <div class="most-played-stats five-columns">
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">G</span>
-                    <span class="mini-stat-value" id="football-games">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Ac</span>
-                    <span class="mini-stat-value" id="football-accuracy">0%</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">Str</span>
-                    <span class="mini-stat-value" id="football-streak">0</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">T</span>
-                    <span class="mini-stat-value" id="football-time">0s</span>
-                  </div>
-                  <div class="mini-stat">
-                    <span class="mini-stat-label">A.T</span>
-                    <span class="mini-stat-value" id="football-avgtime">0s</span>
-                  </div>
-                </div>
-              </div>
-              <div class="most-played-card search-card">
-                <div class="most-played-icon">🔍</div>
-                <div class="most-played-name" data-i18n="stats_search_topic">Search Topic</div>
-                <div class="search-input-wrapper">
-                  <input type="text" id="topic-search-input" class="topic-search-input" data-i18n-placeholder="stats_search_placeholder" placeholder="Type topic name..." oninput="searchTopic(this.value)"/>
-                </div>
-                <div id="search-result" class="search-result hidden"></div>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
 
