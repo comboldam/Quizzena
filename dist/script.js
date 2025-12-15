@@ -3094,6 +3094,11 @@ document.addEventListener('keydown', (e) => {
     if (settingsModal && !settingsModal.classList.contains('hidden')) {
       closeSettingsModal();
     }
+    // Close slot modal on Escape
+    const slotModal = document.getElementById('slot-modal');
+    if (slotModal && !slotModal.classList.contains('hidden')) {
+      closeSlotModal();
+    }
   }
 });
 
@@ -3394,12 +3399,17 @@ function showUnifiedModeSelection(quizName, icon) {
     ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💜 3 Hearts</button>`
     : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 3 Hearts<br><span style="font-size:12px;color:#666;">Reach Level 10 to unlock</span></button>`;
 
-  // Show mode selection with level display
+// Show mode selection with level display
   modeScreen.innerHTML = `
       <button onclick="playClickSound(); exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-      
+
+      <!-- Add to Slot Button -->
+      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" style="position:absolute;top:15px;right:15px;background:rgba(167,139,250,0.2);border:1px solid rgba(167,139,250,0.5);color:#a78bfa;padding:10px 15px;border-radius:8px;font-size:0.9rem;cursor:pointer;font-weight:600;transition:all 0.3s ease;display:flex;align-items:center;gap:6px;">
+        <span style="font-size:1.1rem;">+</span> Add to Slot
+      </button>
+
       <h2 style="color:#fff;font-size:28px;margin-bottom:5px;">${icon} ${quizName} Quiz</h2>
-      
+
       <!-- Level Display -->
       <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:10px 20px;margin-bottom:20px;">
         <div style="color:#FFD700;font-size:16px;font-weight:bold;">Level ${topicData.level}</div>
@@ -3408,7 +3418,7 @@ function showUnifiedModeSelection(quizName, icon) {
         </div>
         <div style="color:#a78bfa;font-size:11px;margin-top:3px;">${progress.current}/${progress.needed} XP</div>
       </div>
-      
+
       <h3 style="color:#a78bfa;font-size:18px;margin-bottom:20px;">Choose Game Mode</h3>
 
       <!-- Casual - Always unlocked -->
@@ -4185,6 +4195,11 @@ function showUnifiedResults() {
       ${gameMode !== 'two' ? `<p style="color:#00d4aa;font-size:16px;margin:20px 0;">${message}</p>` : ''}
 
       <button onclick="playClickSound(); restartUnifiedQuiz()" style="width:100%;padding:16px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#00ff88);color:#1a1a2e;font-weight:600;cursor:pointer;box-shadow:0 8px 25px rgba(0,212,170,0.4);">▶ Play Again</button>
+      
+      <!-- Add to Slot Button -->
+      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" style="width:100%;padding:14px;margin:8px 0;font-size:16px;border:2px solid rgba(167,139,250,0.5);border-radius:12px;background:rgba(167,139,250,0.15);color:#a78bfa;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.3s ease;">
+        <span style="font-size:1.2rem;">+</span> Add to My Slots
+      </button>
     </div>
   `;
   
@@ -5425,6 +5440,253 @@ function startRandomQuiz() {
   startUnifiedGame(selected.mode);
 }
 
+// ========================================
+// 🎰 MY SLOTS SYSTEM
+// ========================================
+
+// Storage key for slots
+const SLOTS_STORAGE_KEY = 'quizzena_my_slots';
+
+// Topic image path mapping (category -> folder name)
+const TOPIC_IMAGE_FOLDERS = {
+  'geography': 'geography',
+  'football': 'football',
+  'history': 'history',
+  'movies': 'movies',
+  'tv-shows': 'tvshows',
+  'logos': 'logos'
+};
+
+// Get topic image path
+function getTopicImagePath(topicId) {
+  const config = getTopicConfig(topicId);
+  const folder = TOPIC_IMAGE_FOLDERS[config.category] || config.category;
+  
+  // Handle special cases where topicId doesn't match filename
+  const imageNameMap = {
+    'ancient-civs': 'ancient-civilizations',
+    'ottoman': 'ottoman-empire',
+    'tv-shows': 'tvshows',
+    'sitcoms': 'sitcoms',
+    'game-of-thrones': 'game-of-thrones',
+    'breaking-bad': 'breaking-bad',
+    'stranger-things': 'stranger-things',
+    'money-heist': 'money-heist',
+    'the-office': 'the-office'
+  };
+  
+  const imageName = imageNameMap[topicId] || topicId;
+  return `images/topics/${folder}/${imageName}.png`;
+}
+
+// Load slots from localStorage
+function loadSlots() {
+  try {
+    const stored = localStorage.getItem(SLOTS_STORAGE_KEY);
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn('Failed to load slots from storage:', e);
+  }
+  return { slot1: null, slot2: null };
+}
+
+// Save slots to localStorage
+function saveSlots(slots) {
+  try {
+    localStorage.setItem(SLOTS_STORAGE_KEY, JSON.stringify(slots));
+  } catch (e) {
+    console.warn('Failed to save slots to storage:', e);
+  }
+}
+
+// Get current slots
+function getSlots() {
+  return loadSlots();
+}
+
+// Render a single slot
+function renderSlot(slotNumber) {
+  const slots = getSlots();
+  const topicId = slots[`slot${slotNumber}`];
+  const slotElement = document.getElementById(`slot-${slotNumber}`);
+  
+  if (!slotElement) return;
+  
+  const imgElement = slotElement.querySelector('.slot-topic-img');
+  const labelElement = slotElement.querySelector('.slot-label');
+  const emptyIcon = slotElement.querySelector('.slot-empty-icon');
+  const clearBtn = slotElement.querySelector('.slot-clear-btn');
+  
+  // Remove any existing tooltip
+  const existingTooltip = slotElement.querySelector('.slot-tooltip');
+  if (existingTooltip) existingTooltip.remove();
+  
+  if (topicId && TOPIC_CONFIG[topicId]) {
+    // Filled state
+    const config = getTopicConfig(topicId);
+    slotElement.classList.remove('slot-empty');
+    slotElement.classList.add('slot-filled');
+    
+    imgElement.src = getTopicImagePath(topicId);
+    imgElement.alt = config.name;
+    labelElement.textContent = config.name;
+  } else {
+    // Empty state
+    slotElement.classList.remove('slot-filled');
+    slotElement.classList.add('slot-empty');
+    
+    imgElement.src = '';
+    imgElement.alt = '';
+    labelElement.textContent = `Slot ${slotNumber}`;
+  }
+}
+
+// Render all slots
+function renderAllSlots() {
+  renderSlot(1);
+  renderSlot(2);
+}
+
+// Handle slot click
+function handleSlotClick(slotNumber) {
+  const slots = getSlots();
+  const topicId = slots[`slot${slotNumber}`];
+
+  if (topicId && TOPIC_CONFIG[topicId]) {
+    // Filled slot - go to mode selection
+    currentTopic = topicId;
+    const config = getTopicConfig(topicId);
+    showUnifiedModeSelection(config.name, config.icon);
+  } else {
+    // Empty slot - go to Topics page so user can pick a quiz
+    showTopics();
+  }
+}
+
+// Show tooltip for empty slot
+function showSlotTooltip(slotNumber) {
+  const slotElement = document.getElementById(`slot-${slotNumber}`);
+  if (!slotElement) return;
+  
+  // Remove any existing tooltips
+  document.querySelectorAll('.slot-tooltip').forEach(t => t.remove());
+  
+  // Create tooltip
+  const tooltip = document.createElement('div');
+  tooltip.className = 'slot-tooltip';
+  tooltip.textContent = 'Assign a quiz from any topic';
+  slotElement.appendChild(tooltip);
+  
+  // Show tooltip
+  requestAnimationFrame(() => {
+    tooltip.classList.add('show');
+  });
+  
+  // Hide after 2.5 seconds
+  setTimeout(() => {
+    tooltip.classList.remove('show');
+    setTimeout(() => tooltip.remove(), 300);
+  }, 2500);
+}
+
+// Variable to store pending topic for slot assignment
+let pendingSlotTopic = null;
+
+// Open slot selection modal
+function openSlotModal(topicId) {
+  pendingSlotTopic = topicId;
+  
+  const modal = document.getElementById('slot-modal');
+  const slots = getSlots();
+  
+  // Update modal buttons to show current slot contents
+  const btn1Text = document.getElementById('slot-modal-btn-1');
+  const btn2Text = document.getElementById('slot-modal-btn-2');
+  
+  if (slots.slot1 && TOPIC_CONFIG[slots.slot1]) {
+    btn1Text.textContent = getTopicConfig(slots.slot1).name;
+    btn1Text.classList.add('has-topic');
+  } else {
+    btn1Text.textContent = 'Empty';
+    btn1Text.classList.remove('has-topic');
+  }
+  
+  if (slots.slot2 && TOPIC_CONFIG[slots.slot2]) {
+    btn2Text.textContent = getTopicConfig(slots.slot2).name;
+    btn2Text.classList.add('has-topic');
+  } else {
+    btn2Text.textContent = 'Empty';
+    btn2Text.classList.remove('has-topic');
+  }
+  
+  modal.classList.remove('hidden');
+}
+
+// Close slot selection modal
+function closeSlotModal() {
+  const modal = document.getElementById('slot-modal');
+  modal.classList.add('hidden');
+  pendingSlotTopic = null;
+}
+
+// Assign topic to slot
+function assignToSlot(slotNumber) {
+  if (!pendingSlotTopic) {
+    closeSlotModal();
+    return;
+  }
+
+  const slots = getSlots();
+  slots[`slot${slotNumber}`] = pendingSlotTopic;
+  saveSlots(slots);
+
+  // Get topic name for toast
+  const config = getTopicConfig(pendingSlotTopic);
+
+  closeSlotModal();
+
+  // Render slots with updated data (for when user returns to home)
+  renderAllSlots();
+
+  // Show success toast
+  showToast(`${config.name} added to Slot ${slotNumber}! ✓`);
+}
+
+// Clear a slot
+function clearSlot(slotNumber) {
+  const slots = getSlots();
+  const topicId = slots[`slot${slotNumber}`];
+  
+  if (topicId) {
+    const config = getTopicConfig(topicId);
+    slots[`slot${slotNumber}`] = null;
+    saveSlots(slots);
+    renderAllSlots();
+    showToast(`Slot ${slotNumber} cleared`);
+  }
+}
+
+// Show toast notification
+function showToast(message) {
+  const toast = document.getElementById('toast-notification');
+  const messageEl = toast.querySelector('.toast-message');
+  
+  messageEl.textContent = message;
+  toast.classList.remove('hidden');
+  
+  // Hide after 2.5 seconds
+  setTimeout(() => {
+    toast.classList.add('hidden');
+  }, 2500);
+}
+
+// Initialize slots on page load
+function initializeSlots() {
+  renderAllSlots();
+}
+
 // Populate Continue Playing section with recently played topics (clones actual topic cards)
 function populateContinuePlaying() {
   const continueSection = document.querySelector('.continue-section');
@@ -5542,6 +5804,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuizOfTheDay();
   populateContinuePlaying();
   populateMiniStats();
+  initializeSlots();
 });
 
 // ========================================

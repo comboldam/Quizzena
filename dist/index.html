@@ -702,14 +702,18 @@
             <img src="images/icons/random-dice.png" class="quick-play-icon-img" alt="Random">
             <span class="quick-play-label">Random</span>
           </button>
-          <button class="quick-play-card" onclick="playClickSound(); startQuizOfTheDay();">
-            <span class="quick-play-icon">⚡</span>
-            <span class="quick-play-label">Daily</span>
-          </button>
-          <button class="quick-play-card" onclick="playClickSound(); openRankedModal();">
-            <span class="quick-play-icon">🏆</span>
-            <span class="quick-play-label">Ranked</span>
-          </button>
+          <div class="quick-play-card quick-play-slot" id="slot-1" data-slot="1" onclick="playClickSound(); handleSlotClick(1);">
+            <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(1);" role="button" aria-label="Clear slot">✕</span>
+            <img src="" class="slot-topic-img" alt="">
+            <span class="slot-empty-icon">+</span>
+            <span class="quick-play-label slot-label">Slot 1</span>
+          </div>
+          <div class="quick-play-card quick-play-slot" id="slot-2" data-slot="2" onclick="playClickSound(); handleSlotClick(2);">
+            <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(2);" role="button" aria-label="Clear slot">✕</span>
+            <img src="" class="slot-topic-img" alt="">
+            <span class="slot-empty-icon">+</span>
+            <span class="quick-play-label slot-label">Slot 2</span>
+          </div>
         </div>
       </div>
 
@@ -2229,6 +2233,31 @@
       <button id="play-again" style="display:none;">🔁 Play Again</button>
       <button id="main-menu" style="display:none;">🏠 Main Menu</button>
     </footer>
+  </div>
+
+  <!-- Slot Selection Modal (outside all containers for z-index) -->
+  <div class="slot-modal hidden" id="slot-modal">
+    <div class="slot-modal-backdrop" onclick="closeSlotModal()"></div>
+    <div class="slot-modal-content">
+      <h3 class="slot-modal-title">Add to Slot</h3>
+      <p class="slot-modal-subtitle">Choose a slot for this quiz</p>
+      <div class="slot-modal-buttons">
+        <button class="slot-modal-btn" onclick="playClickSound(); assignToSlot(1);">
+          <span class="slot-modal-btn-num">1</span>
+          <span class="slot-modal-btn-text" id="slot-modal-btn-1">Empty</span>
+        </button>
+        <button class="slot-modal-btn" onclick="playClickSound(); assignToSlot(2);">
+          <span class="slot-modal-btn-num">2</span>
+          <span class="slot-modal-btn-text" id="slot-modal-btn-2">Empty</span>
+        </button>
+      </div>
+      <button class="slot-modal-cancel" onclick="playClickSound(); closeSlotModal();">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification (outside all containers for z-index) -->
+  <div class="toast-notification hidden" id="toast-notification">
+    <span class="toast-message"></span>
   </div>
 
   <script src="script.js"></script>
