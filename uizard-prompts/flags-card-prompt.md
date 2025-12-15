@@ -147,3 +147,9 @@ Once you have the Uizard-generated image URL, use this HTML structure:
 
 
 
+
+
+
+
+
+
