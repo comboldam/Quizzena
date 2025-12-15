@@ -698,8 +698,8 @@
       <div class="quick-play-section">
         <h3 class="section-title-compact">Quick Play</h3>
         <div class="quick-play-row">
-          <button class="quick-play-card" onclick="playClickSound(); startRandomQuiz();">
-            <span class="quick-play-icon">🎲</span>
+          <button class="quick-play-card quick-play-random" onclick="playClickSound(); startRandomQuiz();">
+            <img src="images/icons/random-dice.png" class="quick-play-icon-img" alt="Random">
             <span class="quick-play-label">Random</span>
           </button>
           <button class="quick-play-card" onclick="playClickSound(); startQuizOfTheDay();">
@@ -967,9 +967,9 @@
 
           <!-- Flags Card - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="flags-topic-btn" class="floating-card-topic floating-card-flags" style="cursor: pointer; font-family: inherit;">
+            <button id="flags-topic-btn" class="breakout-card breakout-card-flags" style="cursor: pointer; font-family: inherit;">
               <!-- Teal/Cyan glow behind -->
-              <div class="floating-card-glow floating-card-glow-flags"></div>
+              <div class="breakout-card-glow breakout-card-glow-flags"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -983,9 +983,9 @@
 
           <!-- Capitals Card - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="capitals-topic-btn" class="floating-card-topic floating-card-capitals" style="cursor: pointer; font-family: inherit;">
+            <button id="capitals-topic-btn" class="breakout-card breakout-card-capitals" style="cursor: pointer; font-family: inherit;">
               <!-- Amber/Gold glow behind -->
-              <div class="floating-card-glow floating-card-glow-capitals"></div>
+              <div class="breakout-card-glow breakout-card-glow-capitals"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -999,9 +999,9 @@
 
           <!-- Area Card - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="area-topic-btn" class="floating-card-topic floating-card-area" style="cursor: pointer; font-family: inherit;">
+            <button id="area-topic-btn" class="breakout-card breakout-card-area" style="cursor: pointer; font-family: inherit;">
               <!-- Neon purple globe glow behind -->
-              <div class="floating-card-glow floating-card-glow-area"></div>
+              <div class="breakout-card-glow breakout-card-glow-area"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1031,9 +1031,9 @@
 
           <!-- Card 1: Football General - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="football-general-topic-btn" class="floating-card-topic floating-card-football" style="cursor: pointer; font-family: inherit;">
+            <button id="football-general-topic-btn" class="breakout-card breakout-card-football" style="cursor: pointer; font-family: inherit;">
               <!-- Stadium red glow behind -->
-              <div class="floating-card-glow floating-card-glow-football"></div>
+              <div class="breakout-card-glow breakout-card-glow-football"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1047,9 +1047,9 @@
 
           <!-- Card 2: Premier League - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="premier-league-topic-btn" class="floating-card-topic" style="cursor: pointer; font-family: inherit;">
+            <button id="premier-league-topic-btn" class="breakout-card" style="cursor: pointer; font-family: inherit;">
               <!-- Purple glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1063,9 +1063,9 @@
 
           <!-- Card 3: Champions League - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="champions-league-topic-btn" class="floating-card-topic floating-card-ucl" style="cursor: pointer; font-family: inherit;">
+            <button id="champions-league-topic-btn" class="breakout-card breakout-card-ucl" style="cursor: pointer; font-family: inherit;">
               <!-- Blue/Silver glow behind -->
-              <div class="floating-card-glow floating-card-glow-ucl"></div>
+              <div class="breakout-card-glow breakout-card-glow-ucl"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1079,9 +1079,9 @@
 
           <!-- Card 4: World Cup - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="world-cup-topic-btn" class="floating-card-topic floating-card-worldcup" style="cursor: pointer; font-family: inherit;">
+            <button id="world-cup-topic-btn" class="breakout-card breakout-card-worldcup" style="cursor: pointer; font-family: inherit;">
               <!-- Golden trophy glow behind -->
-              <div class="floating-card-glow floating-card-glow-worldcup"></div>
+              <div class="breakout-card-glow breakout-card-glow-worldcup"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1095,9 +1095,9 @@
 
           <!-- Card 5: Derbies - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="derbies-topic-btn" class="floating-card-topic floating-card-derbies" style="cursor: pointer; font-family: inherit;">
+            <button id="derbies-topic-btn" class="breakout-card breakout-card-derbies" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1111,9 +1111,9 @@
 
           <!-- Card 6: Lionel Messi - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="messi-topic-btn" class="floating-card-topic floating-card-messi" style="cursor: pointer; font-family: inherit;">
+            <button id="messi-topic-btn" class="breakout-card breakout-card-messi" style="cursor: pointer; font-family: inherit;">
               <!-- Argentina blue/white glow behind -->
-              <div class="floating-card-glow floating-card-glow-messi"></div>
+              <div class="breakout-card-glow breakout-card-glow-messi"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1127,9 +1127,9 @@
 
           <!-- Card 7: Cristiano Ronaldo - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="ronaldo-topic-btn" class="floating-card-topic floating-card-ronaldo" style="cursor: pointer; font-family: inherit;">
+            <button id="ronaldo-topic-btn" class="breakout-card breakout-card-ronaldo" style="cursor: pointer; font-family: inherit;">
               <!-- Portugal red/gold glow behind -->
-              <div class="floating-card-glow floating-card-glow-ronaldo"></div>
+              <div class="breakout-card-glow breakout-card-glow-ronaldo"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1151,9 +1151,9 @@
 
           <!-- Card 1: Movies General - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="movies-general-topic-btn" class="floating-card-topic floating-card-movies" style="cursor: pointer; font-family: inherit;">
+            <button id="movies-general-topic-btn" class="breakout-card breakout-card-movies" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1167,9 +1167,9 @@
 
           <!-- Card 2: Marvel Movies - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="marvel-movies-topic-btn" class="floating-card-topic floating-card-marvel" style="cursor: pointer; font-family: inherit;">
+            <button id="marvel-movies-topic-btn" class="breakout-card breakout-card-marvel" style="cursor: pointer; font-family: inherit;">
               <!-- Red/gold hero glow behind -->
-              <div class="floating-card-glow floating-card-glow-marvel"></div>
+              <div class="breakout-card-glow"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1183,9 +1183,9 @@
 
           <!-- Card 3: DC Movies - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="dc-movies-topic-btn" class="floating-card-topic floating-card-dc" style="cursor: pointer; font-family: inherit;">
+            <button id="dc-movies-topic-btn" class="breakout-card breakout-card-dc" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1199,9 +1199,9 @@
 
           <!-- Card 4: Disney Movies - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="disney-movies-topic-btn" class="floating-card-topic floating-card-disney" style="cursor: pointer; font-family: inherit;">
+            <button id="disney-movies-topic-btn" class="breakout-card breakout-card-disney" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1215,9 +1215,9 @@
 
           <!-- Card 5: Harry Potter - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="harry-potter-topic-btn" class="floating-card-topic floating-card-harrypotter" style="cursor: pointer; font-family: inherit;">
+            <button id="harry-potter-topic-btn" class="breakout-card breakout-card-harrypotter" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1231,9 +1231,9 @@
 
           <!-- Card 6: Star Wars - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="star-wars-topic-btn" class="floating-card-topic floating-card-starwars" style="cursor: pointer; font-family: inherit;">
+            <button id="star-wars-topic-btn" class="breakout-card breakout-card-starwars" style="cursor: pointer; font-family: inherit;">
               <!-- Blue/red lightsaber glow behind -->
-              <div class="floating-card-glow floating-card-glow-starwars"></div>
+              <div class="breakout-card-glow breakout-card-glow-starwars"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1247,9 +1247,9 @@
 
           <!-- Card 7: Lord of the Rings - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="lotr-topic-btn" class="floating-card-topic floating-card-lotr" style="cursor: pointer; font-family: inherit;">
+            <button id="lotr-topic-btn" class="breakout-card breakout-card-lotr" style="cursor: pointer; font-family: inherit;">
               <!-- Fiery gold ring glow behind -->
-              <div class="floating-card-glow floating-card-glow-lotr"></div>
+              <div class="breakout-card-glow breakout-card-glow-lotr"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1271,9 +1271,9 @@
 
           <!-- Card 1: TV Shows General - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="tv-general-topic-btn" class="floating-card-topic floating-card-tvshows" style="cursor: pointer; font-family: inherit;">
+            <button id="tv-general-topic-btn" class="breakout-card breakout-card-tvshows" style="cursor: pointer; font-family: inherit;">
               <!-- Warm vintage glow behind -->
-              <div class="floating-card-glow floating-card-glow-tvshows"></div>
+              <div class="breakout-card-glow breakout-card-glow-tvshows"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1287,9 +1287,9 @@
 
           <!-- Card 2: Sitcoms - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="sitcoms-topic-btn" class="floating-card-topic floating-card-sitcoms" style="cursor: pointer; font-family: inherit;">
+            <button id="sitcoms-topic-btn" class="breakout-card breakout-card-sitcoms" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1303,9 +1303,9 @@
 
           <!-- Card 3: Game of Thrones - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="game-of-thrones-topic-btn" class="floating-card-topic floating-card-got" style="cursor: pointer; font-family: inherit;">
+            <button id="game-of-thrones-topic-btn" class="breakout-card breakout-card-got" style="cursor: pointer; font-family: inherit;">
               <!-- Fire and ice glow behind -->
-              <div class="floating-card-glow floating-card-glow-got"></div>
+              <div class="breakout-card-glow breakout-card-glow-got"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1319,9 +1319,9 @@
 
           <!-- Card 4: Breaking Bad - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="breaking-bad-topic-btn" class="floating-card-topic floating-card-breakingbad" style="cursor: pointer; font-family: inherit;">
+            <button id="breaking-bad-topic-btn" class="breakout-card breakout-card-breakingbad" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1335,9 +1335,9 @@
 
           <!-- Card 5: Stranger Things - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="stranger-things-topic-btn" class="floating-card-topic floating-card-strangerthings" style="cursor: pointer; font-family: inherit;">
+            <button id="stranger-things-topic-btn" class="breakout-card breakout-card-strangerthings" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1351,9 +1351,9 @@
 
           <!-- Card 6: Money Heist - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="money-heist-topic-btn" class="floating-card-topic floating-card-moneyheist" style="cursor: pointer; font-family: inherit;">
+            <button id="money-heist-topic-btn" class="breakout-card breakout-card-moneyheist" style="cursor: pointer; font-family: inherit;">
               <!-- Red heist glow behind -->
-              <div class="floating-card-glow floating-card-glow-moneyheist"></div>
+              <div class="breakout-card-glow breakout-card-glow-moneyheist"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1367,9 +1367,9 @@
 
           <!-- Card 7: The Office - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="the-office-topic-btn" class="floating-card-topic floating-card-office" style="cursor: pointer; font-family: inherit;">
+            <button id="the-office-topic-btn" class="breakout-card breakout-card-office" style="cursor: pointer; font-family: inherit;">
               <!-- Beige/brown office glow behind -->
-              <div class="floating-card-glow floating-card-glow-office"></div>
+              <div class="breakout-card-glow breakout-card-glow-office"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1391,9 +1391,9 @@
 
           <!-- Card 1: World History - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="world-history-topic-btn" class="floating-card-topic floating-card-worldhistory" style="cursor: pointer; font-family: inherit;">
+            <button id="world-history-topic-btn" class="breakout-card breakout-card-worldhistory" style="cursor: pointer; font-family: inherit;">
               <!-- Glow behind -->
-              <div class="floating-card-glow"></div>
+              <div class="breakout-card-glow"></div>
               
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1407,9 +1407,9 @@
 
           <!-- Card 2: World War II - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="ww2-topic-btn" class="floating-card-topic floating-card-wwii" style="cursor: pointer; font-family: inherit;">
+            <button id="ww2-topic-btn" class="breakout-card breakout-card-wwii" style="cursor: pointer; font-family: inherit;">
               <!-- Military olive/red poppy glow behind -->
-              <div class="floating-card-glow floating-card-glow-wwii"></div>
+              <div class="breakout-card-glow breakout-card-glow-wwii"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1423,9 +1423,9 @@
 
           <!-- Card 3: World War I - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="ww1-topic-btn" class="floating-card-topic floating-card-wwi" style="cursor: pointer; font-family: inherit;">
+            <button id="ww1-topic-btn" class="breakout-card breakout-card-wwi" style="cursor: pointer; font-family: inherit;">
               <!-- Sepia/brown glow behind -->
-              <div class="floating-card-glow floating-card-glow-wwi"></div>
+              <div class="breakout-card-glow breakout-card-glow-wwi"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1515,9 +1515,9 @@
 
           <!-- Card 5: Ottoman Empire - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="ottoman-empire-topic-btn" class="floating-card-topic floating-card-ottoman" style="cursor: pointer; font-family: inherit;">
+            <button id="ottoman-empire-topic-btn" class="breakout-card breakout-card-ottoman" style="cursor: pointer; font-family: inherit;">
               <!-- Navy blue/gold glow behind -->
-              <div class="floating-card-glow floating-card-glow-ottoman"></div>
+              <div class="breakout-card-glow breakout-card-glow-ottoman"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1531,9 +1531,9 @@
 
           <!-- Card 6: Egyptian History - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="egyptian-topic-btn" class="floating-card-topic floating-card-egyptian" style="cursor: pointer; font-family: inherit;">
+            <button id="egyptian-topic-btn" class="breakout-card breakout-card-egyptian" style="cursor: pointer; font-family: inherit;">
               <!-- Golden sand/pyramid glow behind -->
-              <div class="floating-card-glow floating-card-glow-egyptian"></div>
+              <div class="breakout-card-glow breakout-card-glow-egyptian"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">
@@ -1618,9 +1618,9 @@
 
           <!-- Card 8: Ancient Civilizations - Floating Circular Design -->
           <div class="status-active" style="flex-shrink: 0;">
-            <button id="ancient-civs-topic-btn" class="floating-card-topic floating-card-ancient" style="cursor: pointer; font-family: inherit;">
+            <button id="ancient-civs-topic-btn" class="breakout-card breakout-card-ancient" style="cursor: pointer; font-family: inherit;">
               <!-- Golden sunset glow behind -->
-              <div class="floating-card-glow floating-card-glow-ancient"></div>
+              <div class="breakout-card-glow breakout-card-glow-ancient"></div>
 
               <!-- Circular image container with gradient mask -->
               <div class="floating-card-circle">

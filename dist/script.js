@@ -2904,13 +2904,16 @@ function showHome() {
   const newIndex = NAV_ORDER.indexOf('home');
   const direction = newIndex < currentNavIndex ? 'left' : 'right';
   currentNavIndex = newIndex;
-  
+
   hideAllViewsExcept('home');
   applyNavAnimation(homeView, direction);
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navHome.classList.add('active');
+
+  // Update mini stats
+  populateMiniStats();
 }
 
 // Show Topics screen
@@ -4250,6 +4253,11 @@ function exitUnifiedQuiz() {
 // 📊 STATS PAGE FUNCTIONS
 // ========================================
 
+// Open Overall Stats dashboard directly
+function showOverallStats() {
+  openStatsChart();
+}
+
 // Toggle stats box expand/collapse
 function toggleStatsBox(boxId) {
   const content = document.getElementById(boxId + '-content');
@@ -5378,17 +5386,43 @@ function startQuizOfTheDay() {
   }
 }
 
-// Start a random quiz from any topic
+// Start a random quiz from any topic with a random unlocked mode
 function startRandomQuiz() {
-  const randomIndex = Math.floor(Math.random() * allTopicIds.length);
-  const randomTopicId = allTopicIds[randomIndex];
-  const btn = document.getElementById(randomTopicId);
+  // Build pool of all valid (topic, mode) combinations
+  const availableCombinations = [];
+  const modes = ['casual', 'time-attack', 'three-hearts'];
   
-  if (btn) {
-    btn.click();
-  } else {
-    console.warn('Random topic button not found:', randomTopicId);
+  ALL_TOPICS.forEach(topicId => {
+    const topicData = getTopicXPData(topicId);
+    
+    modes.forEach(mode => {
+      // Check if this mode is unlocked for this topic
+      if (isModeUnlocked(topicData, mode)) {
+        availableCombinations.push({
+          topicId: topicId,
+          mode: mode
+        });
+      }
+    });
+  });
+  
+  // If no combinations available (shouldn't happen - casual is always unlocked)
+  if (availableCombinations.length === 0) {
+    console.warn('No available quiz combinations!');
+    return;
   }
+  
+  // Pick a random combination
+  const randomIndex = Math.floor(Math.random() * availableCombinations.length);
+  const selected = availableCombinations[randomIndex];
+  
+  console.log(`🎲 Random Quiz: ${selected.topicId} - ${selected.mode}`);
+  
+  // Set current topic
+  currentTopic = selected.topicId;
+  
+  // Start the game directly with selected mode (bypassing mode selection screen)
+  startUnifiedGame(selected.mode);
 }
 
 // Populate Continue Playing section with recently played topics (clones actual topic cards)
@@ -5463,10 +5497,51 @@ function populateContinuePlaying() {
   });
 }
 
+// Populate Mini Stats Snapshot
+function populateMiniStats() {
+  const section = document.getElementById('mini-stats-section');
+  if (!section) return;
+
+  const stats = userData.stats || {};
+  const totalGames = stats.totalGames || 0;
+
+  // Only show if user has played at least 1 game
+  if (totalGames < 1) {
+    section.classList.add('hidden');
+    return;
+  }
+
+  const totalQuestions = (stats.correctAnswers || 0) + (stats.wrongAnswers || 0);
+  const bestStreak = stats.bestStreak || 0;
+  const totalTimeSeconds = stats.totalTimeSeconds || 0;
+
+  // Format time
+  let timeDisplay;
+  if (totalTimeSeconds < 60) {
+    timeDisplay = totalTimeSeconds + 's';
+  } else if (totalTimeSeconds < 3600) {
+    timeDisplay = Math.floor(totalTimeSeconds / 60) + 'm';
+  } else {
+    const hours = Math.floor(totalTimeSeconds / 3600);
+    const mins = Math.floor((totalTimeSeconds % 3600) / 60);
+    timeDisplay = hours + 'h ' + mins + 'm';
+  }
+
+  // Update values
+  document.getElementById('mini-stat-games').textContent = totalGames;
+  document.getElementById('mini-stat-questions').textContent = totalQuestions;
+  document.getElementById('mini-stat-streak').textContent = bestStreak;
+  document.getElementById('mini-stat-time').textContent = timeDisplay;
+
+  // Show section
+  section.classList.remove('hidden');
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   initQuizOfTheDay();
   populateContinuePlaying();
+  populateMiniStats();
 });
 
 // ========================================
