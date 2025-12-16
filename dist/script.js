@@ -107,6 +107,7 @@ const defaultUserData = {
   profile: {
     username: "Guest",
     avatar: "👤",
+    profilePicture: null, // URL to uploaded profile picture
     country: "",
     createdAt: null
   },
@@ -4973,6 +4974,11 @@ function showLeaderboard() {
 // ============================================
 
 let selectedAvatar = '👤';
+let selectedProfilePicture = null; // File object for upload
+let profilePictureDataUrl = null; // Base64 preview
+
+// Initialize Firebase Storage
+const firebaseStorage = firebase.storage ? firebase.storage() : null;
 
 function checkFirstTimeUser() {
   if (!userData.isSetupComplete) {
@@ -4990,6 +4996,77 @@ if (welcomeStartBtn) {
   };
 }
 
+// Profile picture upload handling
+const profilePictureInput = document.getElementById('profile-picture-input');
+if (profilePictureInput) {
+  profilePictureInput.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image too large. Please select an image under 5MB.');
+        return;
+      }
+      
+      selectedProfilePicture = file;
+      
+      // Create preview
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        profilePictureDataUrl = event.target.result;
+        updateProfilePicturePreview();
+      };
+      reader.readAsDataURL(file);
+      
+      // Clear avatar selection when photo is uploaded
+      document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
+      selectedAvatar = null;
+    }
+  };
+}
+
+// Remove photo button
+const removePhotoBtn = document.getElementById('remove-photo-btn');
+if (removePhotoBtn) {
+  removePhotoBtn.onclick = () => {
+    playClickSound();
+    selectedProfilePicture = null;
+    profilePictureDataUrl = null;
+    document.getElementById('profile-picture-input').value = '';
+    
+    // Reset to default avatar
+    selectedAvatar = '👤';
+    document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelector('.avatar-btn[data-avatar="👤"]')?.classList.add('selected');
+    
+    updateProfilePicturePreview();
+  };
+}
+
+function updateProfilePicturePreview() {
+  const previewAvatar = document.getElementById('preview-avatar');
+  const previewImage = document.getElementById('preview-image');
+  const removeBtn = document.getElementById('remove-photo-btn');
+  
+  if (profilePictureDataUrl) {
+    // Show uploaded image
+    if (previewAvatar) previewAvatar.classList.add('hidden');
+    if (previewImage) {
+      previewImage.src = profilePictureDataUrl;
+      previewImage.classList.remove('hidden');
+    }
+    if (removeBtn) removeBtn.classList.remove('hidden');
+  } else {
+    // Show emoji avatar
+    if (previewImage) previewImage.classList.add('hidden');
+    if (previewAvatar) {
+      previewAvatar.textContent = selectedAvatar || '👤';
+      previewAvatar.classList.remove('hidden');
+    }
+    if (removeBtn) removeBtn.classList.add('hidden');
+  }
+}
+
 // Avatar selection
 const avatarGrid = document.getElementById('avatar-grid');
 if (avatarGrid) {
@@ -4999,38 +5076,162 @@ if (avatarGrid) {
       document.querySelectorAll('.avatar-btn').forEach(b => b.classList.remove('selected'));
       e.target.classList.add('selected');
       selectedAvatar = e.target.dataset.avatar;
+      
+      // Clear profile picture when emoji is selected
+      selectedProfilePicture = null;
+      profilePictureDataUrl = null;
+      document.getElementById('profile-picture-input').value = '';
+      
+      updateProfilePicturePreview();
     }
   };
+}
+
+// Upload profile picture to Firebase Storage (with local fallback)
+async function uploadProfilePicture(file) {
+  // First, convert to base64 for local storage fallback
+  const base64Promise = new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => resolve(e.target.result);
+    reader.onerror = () => resolve(null);
+    reader.readAsDataURL(file);
+  });
+  
+  const base64Data = await base64Promise;
+  
+  // If no Firebase Storage or no user, use base64 locally
+  if (!firebaseStorage || !firebaseUser) {
+    console.log('Using local base64 storage for profile picture');
+    return base64Data;
+  }
+
+  try {
+    // Try Firebase Storage upload with timeout
+    const uploadPromise = new Promise(async (resolve, reject) => {
+      try {
+        const storageRef = firebaseStorage.ref();
+        const fileRef = storageRef.child(`profile-pictures/${firebaseUser.uid}`);
+        const snapshot = await fileRef.put(file);
+        const downloadURL = await snapshot.ref.getDownloadURL();
+        resolve(downloadURL);
+      } catch (err) {
+        reject(err);
+      }
+    });
+    
+    const timeoutPromise = new Promise((_, reject) => 
+      setTimeout(() => reject(new Error('Upload timed out')), 10000)
+    );
+    
+    const downloadURL = await Promise.race([uploadPromise, timeoutPromise]);
+    console.log('Profile picture uploaded to Firebase:', downloadURL);
+    return downloadURL;
+  } catch (error) {
+    console.error('Firebase upload failed, using local base64:', error);
+    // Fall back to base64 for local testing
+    console.log('Using local base64 storage as fallback');
+    return base64Data;
+  }
 }
 
 // Save profile
 const setupSaveBtn = document.getElementById('setup-save-btn');
 if (setupSaveBtn) {
-  setupSaveBtn.onclick = () => {
+  setupSaveBtn.onclick = async () => {
     playClickSound();
+    
+    // Show loading state
+    setupSaveBtn.textContent = 'Saving...';
+    setupSaveBtn.disabled = true;
+    
     userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
-    userData.profile.avatar = selectedAvatar;
+    userData.profile.avatar = selectedAvatar || '👤';
     const countrySelect = document.getElementById('setup-country');
     userData.profile.country = countrySelect.value;
     userData.profile.countryName = countrySelect.options[countrySelect.selectedIndex].text;
     userData.profile.createdAt = new Date().toISOString();
+    
+    // Upload profile picture if selected
+    if (selectedProfilePicture) {
+      const pictureUrl = await uploadProfilePicture(selectedProfilePicture);
+      if (pictureUrl) {
+        userData.profile.profilePicture = pictureUrl;
+      }
+    } else {
+      userData.profile.profilePicture = null;
+    }
+    
     userData.isSetupComplete = true;
 
     saveUserData();
     document.getElementById('setup-screen').classList.add('hidden');
     updateProfileDisplay();
     console.log('Profile saved:', userData.profile);
+    
+    // Reset button
+    setupSaveBtn.textContent = 'Save & Start';
+    setupSaveBtn.disabled = false;
+    
+    // Start tutorial automatically for new users
+    setTimeout(() => {
+      startTutorial();
+    }, 500); // Small delay to let the home screen render first
   };
 }
 
 function updateProfileDisplay() {
-  // Top bar
-  const topBar = document.querySelector('.user-profile');
-  if (topBar) topBar.textContent = userData.profile.username + ' ' + userData.profile.avatar;
+  const profilePicture = userData.profile.profilePicture;
+  const avatar = userData.profile.avatar || '👤';
+  
+  // Top bar - show profile picture or avatar
+  const navAvatar = document.getElementById('nav-avatar');
+  const navProfileImage = document.getElementById('nav-profile-image');
+  
+  const userProfileEl = document.querySelector('.user-profile');
+  
+  if (profilePicture) {
+    // Show profile picture
+    if (navAvatar) navAvatar.classList.add('hidden');
+    if (navProfileImage) {
+      navProfileImage.src = profilePicture;
+      navProfileImage.classList.remove('hidden');
+    }
+    if (userProfileEl) userProfileEl.classList.add('has-image');
+  } else {
+    // Show emoji avatar
+    if (navProfileImage) navProfileImage.classList.add('hidden');
+    if (userProfileEl) userProfileEl.classList.remove('has-image');
+    if (navAvatar) {
+      navAvatar.textContent = avatar;
+      navAvatar.classList.remove('hidden');
+    }
+  }
 
-  // Profile avatar
-  const avatar = document.querySelector('.profile-avatar');
-  if (avatar) avatar.textContent = userData.profile.avatar;
+  // Profile page avatar
+  const profileAvatar = document.querySelector('.profile-avatar');
+  const profileAvatarImg = document.querySelector('.profile-avatar-image');
+  
+  if (profilePicture) {
+    if (profileAvatar) profileAvatar.classList.add('hidden');
+    if (profileAvatarImg) {
+      profileAvatarImg.src = profilePicture;
+      profileAvatarImg.classList.remove('hidden');
+    } else if (profileAvatar) {
+      // Create image element if it doesn't exist
+      const img = document.createElement('img');
+      img.className = 'profile-avatar-image';
+      img.src = profilePicture;
+      img.alt = 'Profile';
+      profileAvatar.parentNode.insertBefore(img, profileAvatar);
+      profileAvatar.classList.add('hidden');
+    }
+  } else {
+    if (profileAvatarImg) profileAvatarImg.classList.add('hidden');
+    if (profileAvatar) {
+      profileAvatar.textContent = avatar;
+      profileAvatar.classList.remove('hidden');
+    }
+  }
 
   // Profile name
   const name = document.querySelector('.profile-name');
@@ -5047,6 +5248,189 @@ function updateProfileDisplay() {
       location.textContent = '🌍 Location not set';
     }
   }
+}
+
+// ============================================
+// EDIT PROFILE MODAL
+// ============================================
+
+let editSelectedAvatar = null;
+let editProfilePicture = null;
+let editProfilePictureDataUrl = null;
+
+function openEditProfileModal() {
+  // Close settings modal
+  const settingsModal = document.getElementById('settings-modal');
+  if (settingsModal) settingsModal.classList.add('hidden');
+  
+  // Open edit profile modal
+  const modal = document.getElementById('edit-profile-modal');
+  if (modal) modal.classList.remove('hidden');
+  
+  // Populate with current data
+  const usernameInput = document.getElementById('edit-username');
+  if (usernameInput) usernameInput.value = userData.profile.username || '';
+  
+  // Set current avatar/picture
+  editSelectedAvatar = userData.profile.avatar || '👤';
+  editProfilePicture = null;
+  editProfilePictureDataUrl = userData.profile.profilePicture || null;
+  
+  // Update preview
+  updateEditProfilePreview();
+  
+  // Highlight current avatar if no profile picture
+  document.querySelectorAll('.avatar-btn-edit').forEach(btn => {
+    btn.classList.remove('selected');
+    if (!userData.profile.profilePicture && btn.dataset.avatar === editSelectedAvatar) {
+      btn.classList.add('selected');
+    }
+  });
+}
+
+function closeEditProfileModal() {
+  const modal = document.getElementById('edit-profile-modal');
+  if (modal) modal.classList.add('hidden');
+  
+  // Reset temp variables
+  editSelectedAvatar = null;
+  editProfilePicture = null;
+  editProfilePictureDataUrl = null;
+}
+
+function updateEditProfilePreview() {
+  const previewAvatar = document.getElementById('edit-preview-avatar');
+  const previewImage = document.getElementById('edit-preview-image');
+  const removeBtn = document.getElementById('edit-remove-photo-btn');
+  
+  if (editProfilePictureDataUrl) {
+    // Show uploaded/existing image
+    if (previewAvatar) previewAvatar.classList.add('hidden');
+    if (previewImage) {
+      previewImage.src = editProfilePictureDataUrl;
+      previewImage.classList.remove('hidden');
+    }
+    if (removeBtn) removeBtn.classList.remove('hidden');
+  } else {
+    // Show emoji avatar
+    if (previewImage) previewImage.classList.add('hidden');
+    if (previewAvatar) {
+      previewAvatar.textContent = editSelectedAvatar || '👤';
+      previewAvatar.classList.remove('hidden');
+    }
+    if (removeBtn) removeBtn.classList.add('hidden');
+  }
+}
+
+// Edit profile picture input handler
+const editProfilePictureInput = document.getElementById('edit-profile-picture-input');
+if (editProfilePictureInput) {
+  editProfilePictureInput.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image too large. Please select an image under 5MB.');
+        return;
+      }
+      
+      editProfilePicture = file;
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        editProfilePictureDataUrl = event.target.result;
+        updateEditProfilePreview();
+      };
+      reader.readAsDataURL(file);
+      
+      // Clear avatar selection
+      document.querySelectorAll('.avatar-btn-edit').forEach(b => b.classList.remove('selected'));
+      editSelectedAvatar = null;
+    }
+  };
+}
+
+// Edit avatar grid selection
+const editAvatarGrid = document.getElementById('edit-avatar-grid');
+if (editAvatarGrid) {
+  editAvatarGrid.onclick = (e) => {
+    if (e.target.classList.contains('avatar-btn-edit')) {
+      playClickSound();
+      document.querySelectorAll('.avatar-btn-edit').forEach(b => b.classList.remove('selected'));
+      e.target.classList.add('selected');
+      editSelectedAvatar = e.target.dataset.avatar;
+      
+      // Clear profile picture
+      editProfilePicture = null;
+      editProfilePictureDataUrl = null;
+      document.getElementById('edit-profile-picture-input').value = '';
+      
+      updateEditProfilePreview();
+    }
+  };
+}
+
+function removeEditProfilePicture() {
+  playClickSound();
+  editProfilePicture = null;
+  editProfilePictureDataUrl = null;
+  document.getElementById('edit-profile-picture-input').value = '';
+  
+  // Reset to current avatar or default
+  editSelectedAvatar = userData.profile.avatar || '👤';
+  document.querySelectorAll('.avatar-btn-edit').forEach(b => {
+    b.classList.remove('selected');
+    if (b.dataset.avatar === editSelectedAvatar) {
+      b.classList.add('selected');
+    }
+  });
+  
+  updateEditProfilePreview();
+}
+
+async function saveEditedProfile() {
+  playClickSound();
+  
+  const saveBtn = document.getElementById('edit-save-btn');
+  if (saveBtn) {
+    saveBtn.textContent = 'Saving...';
+    saveBtn.disabled = true;
+  }
+  
+  // Update username
+  const newUsername = document.getElementById('edit-username').value.trim();
+  if (newUsername) {
+    userData.profile.username = newUsername;
+  }
+  
+  // Upload new profile picture if selected
+  if (editProfilePicture) {
+    const pictureUrl = await uploadProfilePicture(editProfilePicture);
+    if (pictureUrl) {
+      userData.profile.profilePicture = pictureUrl;
+      userData.profile.avatar = editSelectedAvatar || '👤';
+    }
+  } else if (editProfilePictureDataUrl === null && editSelectedAvatar) {
+    // User removed picture and selected avatar
+    userData.profile.profilePicture = null;
+    userData.profile.avatar = editSelectedAvatar;
+  } else if (editSelectedAvatar && !editProfilePictureDataUrl) {
+    // User selected avatar without picture
+    userData.profile.profilePicture = null;
+    userData.profile.avatar = editSelectedAvatar;
+  }
+  
+  // Save and update
+  saveUserData();
+  updateProfileDisplay();
+  
+  // Reset button and close modal
+  if (saveBtn) {
+    saveBtn.textContent = 'Save Changes';
+    saveBtn.disabled = false;
+  }
+  
+  closeEditProfileModal();
+  console.log('Profile updated:', userData.profile);
 }
 
 // Update all stats displays (Profile + Overall Performance use same data)

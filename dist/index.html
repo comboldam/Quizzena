@@ -20,6 +20,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
   
   <!-- Chart.js for P-XP Dashboard -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -28,11 +29,274 @@
 
   <!-- WELCOME SCREEN -->
   <div id="welcome-screen" class="welcome-overlay hidden">
-    <div class="welcome-container">
-      <div class="welcome-logo">🎯</div>
-      <h1 class="welcome-title">Welcome to Quizzena!</h1>
-      <p class="welcome-subtitle">Learn the world, one quiz at a time.</p>
-      <button id="welcome-start-btn" class="welcome-btn">Get Started</button>
+    <!-- Animated background orbs -->
+    <div class="welcome-bg-orbs">
+      <div class="welcome-orb welcome-orb-1"></div>
+      <div class="welcome-orb welcome-orb-2"></div>
+      <div class="welcome-orb welcome-orb-3"></div>
+    </div>
+    
+    <!-- Floating particles -->
+    <div class="welcome-particles">
+      <div class="w-particle w-particle-1"></div>
+      <div class="w-particle w-particle-2"></div>
+      <div class="w-particle w-particle-3"></div>
+      <div class="w-particle w-particle-4"></div>
+      <div class="w-particle w-particle-5"></div>
+      <div class="w-particle w-particle-6"></div>
+    </div>
+    
+    <div class="welcome-content">
+      <!-- Logo Section -->
+      <div class="welcome-logo-section">
+        <div class="welcome-logo-ring">
+          <svg viewBox="0 0 200 200" class="welcome-ring-svg">
+            <circle class="welcome-ring-bg" cx="100" cy="100" r="90" fill="none" stroke="rgba(147, 51, 234, 0.2)" stroke-width="2"/>
+            <circle class="welcome-ring-progress" cx="100" cy="100" r="90" fill="none" stroke="url(#welcomeRingGrad)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="welcome-logo-inner">
+            <svg class="welcome-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120" height="120">
+              <defs>
+                <linearGradient id="welcomeRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ffd700"/>
+                  <stop offset="50%" style="stop-color:#a855f7"/>
+                  <stop offset="100%" style="stop-color:#6366f1"/>
+                </linearGradient>
+                <linearGradient id="welcomeGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ffd700"/>
+                  <stop offset="50%" style="stop-color:#f59e0b"/>
+                  <stop offset="100%" style="stop-color:#d97706"/>
+                </linearGradient>
+                <linearGradient id="welcomeCrownGold" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ffd700"/>
+                  <stop offset="50%" style="stop-color:#f59e0b"/>
+                  <stop offset="100%" style="stop-color:#d97706"/>
+                </linearGradient>
+                <radialGradient id="welcomeRedGem" cx="35%" cy="35%" r="60%">
+                  <stop offset="0%" style="stop-color:#ff6b6b"/>
+                  <stop offset="40%" style="stop-color:#ef4444"/>
+                  <stop offset="100%" style="stop-color:#b91c1c"/>
+                </radialGradient>
+                <radialGradient id="welcomeBlueGem" cx="35%" cy="35%" r="60%">
+                  <stop offset="0%" style="stop-color:#60a5fa"/>
+                  <stop offset="40%" style="stop-color:#3b82f6"/>
+                  <stop offset="100%" style="stop-color:#1d4ed8"/>
+                </radialGradient>
+                <filter id="welcomeGoldGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="welcomeCrownGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="welcomeLightningGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="5" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Q Ring -->
+              <g filter="url(#welcomeGoldGlow)">
+                <circle cx="220" cy="270" r="105" fill="none" stroke="url(#welcomeGoldGrad)" stroke-width="34"/>
+                <ellipse cx="175" cy="190" rx="32" ry="12" fill="rgba(255,255,255,0.35)" transform="rotate(-45 175 190)"/>
+              </g>
+              <!-- Lightning Tail -->
+              <g filter="url(#welcomeLightningGlow)">
+                <path d="M 295 340 L 330 360 L 310 365 L 360 410 L 335 405 L 390 470 L 320 420 L 345 425 L 295 380 L 315 375 L 280 355 Z" fill="url(#welcomeGoldGrad)"/>
+                <path d="M 300 345 L 325 362 L 312 365 L 350 400 L 325 395 L 355 430 L 320 400 L 335 405 L 305 375 L 315 372 L 295 358 Z" fill="rgba(255,255,255,0.25)"/>
+              </g>
+              <!-- Crown -->
+              <g filter="url(#welcomeCrownGlow)" transform="translate(220, 125)">
+                <path d="M-55 35 L-55 20 C-55 15 -50 10 -45 10 L45 10 C50 10 55 15 55 20 L55 35 C55 40 50 45 45 45 L-45 45 C-50 45 -55 40 -55 35 Z" fill="url(#welcomeCrownGold)"/>
+                <rect x="-45" y="35" width="90" height="5" rx="2" fill="#b45309"/>
+                <polygon points="-45,10 -55,-30 -35,10" fill="url(#welcomeCrownGold)"/>
+                <polygon points="-12,10 0,-50 12,10" fill="url(#welcomeCrownGold)"/>
+                <polygon points="35,10 55,-30 45,10" fill="url(#welcomeCrownGold)"/>
+                <polygon points="-30,10 -25,-15 -20,10" fill="url(#welcomeCrownGold)"/>
+                <polygon points="20,10 25,-15 30,10" fill="url(#welcomeCrownGold)"/>
+              </g>
+              <!-- Gems -->
+              <ellipse cx="220" cy="145" rx="12" ry="10" fill="url(#welcomeRedGem)"/>
+              <ellipse cx="175" cy="150" rx="8" ry="7" fill="url(#welcomeBlueGem)"/>
+              <ellipse cx="265" cy="150" rx="8" ry="7" fill="url(#welcomeBlueGem)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Title Section -->
+      <div class="welcome-text-section">
+        <h1 class="welcome-title">Quizzena</h1>
+        <p class="welcome-tagline">The Ultimate Knowledge Arena</p>
+      </div>
+      
+      <!-- Features Preview -->
+      <div class="welcome-features">
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">🌍</div>
+          <span>30+ Topics</span>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">🏆</div>
+          <span>Achievements</span>
+        </div>
+        <div class="welcome-feature">
+          <div class="welcome-feature-icon">📈</div>
+          <span>Track Progress</span>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <button id="welcome-start-btn" class="welcome-cta-btn">
+        <span class="welcome-cta-text">Get Started</span>
+        <div class="welcome-cta-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </button>
+      
+      <!-- Bottom text -->
+      <p class="welcome-footer">Challenge your mind. Master the world.</p>
+    </div>
+  </div>
+  
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="login-overlay hidden">
+    <!-- Background orbs -->
+    <div class="login-bg-orbs">
+      <div class="login-orb login-orb-1"></div>
+      <div class="login-orb login-orb-2"></div>
+    </div>
+    
+    <div class="login-card">
+      <!-- Card header with logo -->
+      <div class="login-header">
+        <div class="login-logo-container">
+          <div class="login-logo-glow"></div>
+          <svg class="login-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60">
+            <defs>
+              <linearGradient id="loginGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffd700"/>
+                <stop offset="50%" style="stop-color:#f59e0b"/>
+                <stop offset="100%" style="stop-color:#d97706"/>
+              </linearGradient>
+              <linearGradient id="loginCrownGold" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffd700"/>
+                <stop offset="50%" style="stop-color:#f59e0b"/>
+                <stop offset="100%" style="stop-color:#d97706"/>
+              </linearGradient>
+              <radialGradient id="loginRedGem" cx="35%" cy="35%" r="60%">
+                <stop offset="0%" style="stop-color:#ff6b6b"/>
+                <stop offset="40%" style="stop-color:#ef4444"/>
+                <stop offset="100%" style="stop-color:#b91c1c"/>
+              </radialGradient>
+              <radialGradient id="loginBlueGem" cx="35%" cy="35%" r="60%">
+                <stop offset="0%" style="stop-color:#60a5fa"/>
+                <stop offset="40%" style="stop-color:#3b82f6"/>
+                <stop offset="100%" style="stop-color:#1d4ed8"/>
+              </radialGradient>
+              <filter id="loginGoldGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="loginCrownGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g filter="url(#loginGoldGlow)">
+              <circle cx="220" cy="270" r="105" fill="none" stroke="url(#loginGoldGrad)" stroke-width="34"/>
+            </g>
+            <g filter="url(#loginGoldGlow)">
+              <path d="M 295 340 L 330 360 L 310 365 L 360 410 L 335 405 L 390 470 L 320 420 L 345 425 L 295 380 L 315 375 L 280 355 Z" fill="url(#loginGoldGrad)"/>
+            </g>
+            <g filter="url(#loginCrownGlow)" transform="translate(220, 125)">
+              <path d="M-55 35 L-55 20 C-55 15 -50 10 -45 10 L45 10 C50 10 55 15 55 20 L55 35 C55 40 50 45 45 45 L-45 45 C-50 45 -55 40 -55 35 Z" fill="url(#loginCrownGold)"/>
+              <polygon points="-45,10 -55,-30 -35,10" fill="url(#loginCrownGold)"/>
+              <polygon points="-12,10 0,-50 12,10" fill="url(#loginCrownGold)"/>
+              <polygon points="35,10 55,-30 45,10" fill="url(#loginCrownGold)"/>
+            </g>
+            <ellipse cx="220" cy="145" rx="10" ry="8" fill="url(#loginRedGem)"/>
+            <ellipse cx="175" cy="150" rx="7" ry="6" fill="url(#loginBlueGem)"/>
+            <ellipse cx="265" cy="150" rx="7" ry="6" fill="url(#loginBlueGem)"/>
+          </svg>
+        </div>
+        <h2 class="login-title">Welcome Back</h2>
+        <p class="login-subtitle">Sign in to continue your journey</p>
+      </div>
+      
+      <!-- Login Form -->
+      <form id="login-form" class="login-form">
+        <div class="login-input-wrapper">
+          <div class="login-input-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <input type="email" id="login-email" class="login-input" placeholder="Email address" required>
+        </div>
+        
+        <div class="login-input-wrapper">
+          <div class="login-input-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <input type="password" id="login-password" class="login-input" placeholder="Password" required>
+        </div>
+        
+        <div class="login-options">
+          <label class="login-remember">
+            <input type="checkbox" id="remember-me">
+            <span class="checkmark"></span>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="login-submit-btn">
+          <span>Sign In</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+      
+      <!-- Divider -->
+      <div class="login-divider">
+        <span>or continue with</span>
+      </div>
+      
+      <!-- Social Login -->
+      <div class="social-buttons">
+        <button id="google-login-btn" class="social-btn-new google-btn-new">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+        </button>
+        <button id="facebook-login-btn" class="social-btn-new facebook-btn-new">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </button>
+        <button id="apple-login-btn" class="social-btn-new apple-btn-new">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Sign Up Link -->
+      <div class="login-footer">
+        <span>Don't have an account?</span>
+        <a href="#" id="goto-signup-btn" class="signup-link-btn">Create Account</a>
+      </div>
     </div>
   </div>
 
@@ -47,7 +311,28 @@
       </div>
 
       <div class="setup-section">
-        <label class="setup-label">Avatar</label>
+        <label class="setup-label">Profile Picture</label>
+        <div class="profile-picture-setup">
+          <!-- Preview area -->
+          <div class="profile-picture-preview" id="profile-picture-preview">
+            <span class="preview-avatar" id="preview-avatar">👤</span>
+            <img class="preview-image hidden" id="preview-image" alt="Profile">
+          </div>
+          <!-- Upload button -->
+          <div class="profile-picture-actions">
+            <label class="upload-photo-btn" for="profile-picture-input">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span>Upload Photo</span>
+            </label>
+            <input type="file" id="profile-picture-input" accept="image/*" class="hidden">
+            <button type="button" class="remove-photo-btn hidden" id="remove-photo-btn">✕ Remove</button>
+          </div>
+        </div>
+        <p class="setup-hint">Or choose an emoji avatar:</p>
         <div class="avatar-grid" id="avatar-grid">
           <button class="avatar-btn selected" data-avatar="👤">👤</button>
           <button class="avatar-btn" data-avatar="👨">👨</button>
@@ -334,7 +619,10 @@
           </div>
           <span class="quanta-amount" id="quanta-amount">0</span>
         </div>
-        <div class="user-profile" onclick="playClickSound(); showProfile();">👤</div>
+        <div class="user-profile" onclick="playClickSound(); showProfile();">
+          <span class="user-profile-avatar" id="nav-avatar">👤</span>
+          <img class="user-profile-image hidden" id="nav-profile-image" alt="Profile">
+        </div>
       </div>
     </div>
 
@@ -853,6 +1141,17 @@
         </div>
         <div class="settings-modal-body">
           
+          <!-- Edit Profile Button -->
+          <div class="settings-item settings-item-clickable" id="settings-edit-profile-btn" onclick="playClickSound(); openEditProfileModal();">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">👤</span>
+              <span>Edit Profile</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-arrow">→</span>
+            </div>
+          </div>
+
           <!-- Language Setting -->
           <div class="settings-item">
             <div class="settings-item-label">
@@ -921,6 +1220,72 @@
         </div>
         <div class="settings-modal-footer">
           <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="edit-profile-modal hidden" id="edit-profile-modal">
+      <div class="edit-profile-backdrop" onclick="closeEditProfileModal()"></div>
+      <div class="edit-profile-content">
+        <div class="edit-profile-header">
+          <h2 class="edit-profile-title">Edit Profile</h2>
+          <button class="edit-profile-close" onclick="closeEditProfileModal()">✕</button>
+        </div>
+        <div class="edit-profile-body">
+          
+          <!-- Profile Picture Section -->
+          <div class="edit-section">
+            <label class="edit-label">Profile Picture</label>
+            <div class="profile-picture-edit">
+              <div class="profile-picture-preview-edit" id="edit-profile-preview">
+                <span class="preview-avatar-edit" id="edit-preview-avatar">👤</span>
+                <img class="preview-image-edit hidden" id="edit-preview-image" alt="Profile">
+              </div>
+              <div class="profile-picture-actions-edit">
+                <label class="upload-photo-btn" for="edit-profile-picture-input">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                  </svg>
+                  <span>Upload Photo</span>
+                </label>
+                <input type="file" id="edit-profile-picture-input" accept="image/*" class="hidden">
+                <button type="button" class="remove-photo-btn hidden" id="edit-remove-photo-btn" onclick="removeEditProfilePicture()">✕ Remove</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Avatar Selection -->
+          <div class="edit-section">
+            <label class="edit-label">Or choose an emoji:</label>
+            <div class="avatar-grid-edit" id="edit-avatar-grid">
+              <button class="avatar-btn-edit" data-avatar="👤">👤</button>
+              <button class="avatar-btn-edit" data-avatar="👨">👨</button>
+              <button class="avatar-btn-edit" data-avatar="👩">👩</button>
+              <button class="avatar-btn-edit" data-avatar="🧑">🧑</button>
+              <button class="avatar-btn-edit" data-avatar="🎮">🎮</button>
+              <button class="avatar-btn-edit" data-avatar="⚽">⚽</button>
+              <button class="avatar-btn-edit" data-avatar="🦊">🦊</button>
+              <button class="avatar-btn-edit" data-avatar="🐼">🐼</button>
+              <button class="avatar-btn-edit" data-avatar="🤖">🤖</button>
+              <button class="avatar-btn-edit" data-avatar="👽">👽</button>
+              <button class="avatar-btn-edit" data-avatar="🦁">🦁</button>
+              <button class="avatar-btn-edit" data-avatar="🐸">🐸</button>
+            </div>
+          </div>
+          
+          <!-- Username Section -->
+          <div class="edit-section">
+            <label class="edit-label">Username</label>
+            <input type="text" id="edit-username" class="edit-input" placeholder="Enter username" maxlength="15">
+          </div>
+          
+        </div>
+        <div class="edit-profile-footer">
+          <button class="edit-cancel-btn" onclick="closeEditProfileModal()">Cancel</button>
+          <button class="edit-save-btn" id="edit-save-btn" onclick="saveEditedProfile()">Save Changes</button>
         </div>
       </div>
     </div>
@@ -1595,8 +1960,16 @@
         <!-- Background Banner with Animated Glow -->
         <div class="profile-banner"></div>
 
-        <!-- Glowing Avatar -->
-        <div class="profile-avatar">👤</div>
+        <!-- Glowing Avatar with Edit Button -->
+        <div class="profile-avatar-wrapper">
+          <div class="profile-avatar">👤</div>
+          <button class="profile-avatar-edit-btn" onclick="playClickSound(); openEditProfileModal();" title="Edit Profile">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+        </div>
 
         <!-- Identity Block -->
         <div class="profile-info">
