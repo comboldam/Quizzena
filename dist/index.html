@@ -907,6 +907,17 @@
             <span data-i18n="settings_performance_hint">Enable for smoother scrolling (disables animations)</span>
           </div>
 
+          <!-- Tutorial Button -->
+          <div class="settings-item settings-item-clickable" id="settings-tutorial-btn" onclick="playClickSound(); startTutorial();">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">📖</span>
+              <span data-i18n="settings_tutorial">Tutorial</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-arrow">→</span>
+            </div>
+          </div>
+
         </div>
         <div class="settings-modal-footer">
           <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
@@ -1674,7 +1685,6 @@
       <!-- Profile Top Bar -->
       <div class="profile-top-bar">
         <div class="profile-settings">⚙️</div>
-        <div class="profile-username-top">Guest</div>
         <div class="profile-spacer"></div>
       </div>
 
@@ -1690,7 +1700,6 @@
         <!-- Identity Block -->
         <div class="profile-info">
           <div class="profile-name-row">
-            <div class="profile-name">Guest</div>
             <div class="level-badge profile-level-badge" onclick="playClickSound(); openJourneyModal();">
               <div class="level-badge-ring">
                 <svg viewBox="0 0 48 48">
@@ -2111,6 +2120,318 @@
   <!-- Toast Notification (outside all containers for z-index) -->
   <div class="toast-notification hidden" id="toast-notification">
     <span class="toast-message"></span>
+  </div>
+
+  <!-- Static Tutorial Profile Page (for step 12/19) - Uses SAME classes as real profile -->
+  <div class="tutorial-static-profile hidden" id="tutorial-static-profile">
+    <!-- Reuses exact same structure and classes as real profile-view -->
+    <div class="profile-view" style="display: flex; flex-direction: column;">
+      
+      <!-- Profile Header Section -->
+      <div class="profile-header">
+        <!-- Background Banner with Animated Glow -->
+        <div class="profile-banner"></div>
+        
+        <!-- Glowing Avatar -->
+        <div class="profile-avatar">👤</div>
+        
+        <!-- Identity Block -->
+        <div class="profile-info">
+          <div class="profile-name-row">
+            <div class="level-badge profile-level-badge">
+              <div class="level-badge-ring">
+                <svg viewBox="0 0 48 48">
+                  <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+                  <circle class="level-ring-progress" cx="24" cy="24" r="22" style="stroke-dashoffset: 100;"/>
+                </svg>
+              </div>
+              <div class="level-badge-inner">
+                <span class="level-badge-text">LV</span>
+                <span class="level-badge-number">2</span>
+              </div>
+            </div>
+          </div>
+          <div class="profile-bio">Add a bio</div>
+          <div class="profile-location">🌍 Location not set</div>
+          <div class="profile-active">Last Active: Just now</div>
+          <div class="profile-divider"></div>
+        </div>
+        
+        <!-- Three Feature Cards -->
+        <div class="profile-feature-cards">
+          <div class="feature-card achievements-card" id="tutorial-achievements-target">
+            <span class="feature-card-icon">🏆</span>
+            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-value">0</div>
+          </div>
+          <div class="feature-card best-topic-card">
+            <span class="feature-card-icon">🔥</span>
+            <div class="feature-card-title">Best Topic</div>
+            <div class="feature-card-value">—</div>
+          </div>
+          <div class="feature-card quanta-card">
+            <span class="feature-card-icon">✦</span>
+            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-value">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Stats Floating Card -->
+      <div class="profile-stats-row">
+        <div class="stat-item">
+          <div class="stat-label">GAMES</div>
+          <div class="stat-value">10</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">ACCURACY</div>
+          <div class="stat-value">64%</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-value">0</div>
+        </div>
+      </div>
+      
+      <!-- Stats Chart Button for tutorial -->
+      <div class="profile-stats-section">
+        <button class="stats-chart-button" id="tutorial-stats-button">
+          <span class="stats-chart-btn-icon">📈</span>
+          <span class="stats-chart-btn-text">View Stats Chart</span>
+          <span class="stats-chart-btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static Tutorial Achievements Page (for step 14/19) - EXACT COPY -->
+  <div class="tutorial-static-achievements hidden" id="tutorial-static-achievements">
+    <div class="achievements-ritual-view" style="display: flex !important;">
+      <!-- Ambient Background -->
+      <div class="ritual-ambient-bg">
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+      </div>
+
+      <!-- Header with Back Button -->
+      <div class="ritual-header">
+        <button class="ritual-back-btn">←</button>
+        <div class="ritual-title-container">
+          <h1 class="ritual-title">Achievements Ritual</h1>
+          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+        </div>
+      </div>
+
+      <!-- 8 Houses Grid -->
+      <div class="ritual-houses-container" id="tutorial-houses-grid">
+        <!-- House 1: Path of Progression -->
+        <div class="ritual-house-card house-progression">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔷</span>
+          </div>
+          <span class="ritual-house-name">Progression</span>
+        </div>
+
+        <!-- House 2: Path of Skill -->
+        <div class="ritual-house-card house-skill">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape skill-hexagon">
+            <span class="ritual-house-icon">⬡</span>
+          </div>
+          <span class="ritual-house-name">Skill</span>
+        </div>
+
+        <!-- House 3: Path of Exploration -->
+        <div class="ritual-house-card house-exploration">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="compass-cardinal-n">N</span>
+            <span class="compass-cardinal-e">E</span>
+            <span class="compass-cardinal-s">S</span>
+            <span class="compass-cardinal-w">W</span>
+            <span class="ritual-house-icon">🧭</span>
+          </div>
+          <span class="ritual-house-name">Exploration</span>
+        </div>
+
+        <!-- House 4: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <span class="ritual-house-icon">🔮</span>
+          </div>
+          <span class="ritual-house-name">Behaviour</span>
+        </div>
+
+        <!-- House 5: Path of Time Attack -->
+        <div class="ritual-house-card house-time">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">⏱️</span>
+          </div>
+          <span class="ritual-house-name">Time Attack</span>
+        </div>
+
+        <!-- House 6: Path of Survival -->
+        <div class="ritual-house-card house-survival">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="survival-crack-line"></div>
+            <span class="ritual-house-icon">❤️‍🔥</span>
+          </div>
+          <span class="ritual-house-name">Survival</span>
+        </div>
+
+        <!-- House 7: Path of Momentum -->
+        <div class="ritual-house-card house-momentum">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔥</span>
+          </div>
+          <span class="ritual-house-name">Momentum</span>
+        </div>
+
+        <!-- House 8: Path of Casual Mastery -->
+        <div class="ritual-house-card house-casual">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🌿</span>
+          </div>
+          <span class="ritual-house-name">Casual</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static Tutorial Stats Page (for steps 17-18/19) - EXACT COPY -->
+  <div class="tutorial-static-stats hidden" id="tutorial-static-stats">
+    <div class="stats-chart-dashboard" style="display: flex !important;">
+      <!-- Top Bar -->
+      <div class="stats-chart-top-bar">
+        <button class="stats-chart-back-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <h1 class="stats-chart-title">Overall Stats</h1>
+        <div class="stats-chart-spacer"></div>
+      </div>
+
+      <!-- Page Navigation Tabs -->
+      <div class="stats-page-tabs">
+        <button class="stats-page-tab active" id="tutorial-stats-tab-1">
+          <span class="stats-page-tab-icon">📊</span>
+          <span class="stats-page-tab-text">Overall</span>
+        </button>
+        <button class="stats-page-tab" id="tutorial-stats-tab-2">
+          <span class="stats-page-tab-icon">🎯</span>
+          <span class="stats-page-tab-text">By Topic</span>
+        </button>
+      </div>
+
+      <!-- Page 1: Overall Stats Chart -->
+      <div class="stats-page" id="tutorial-stats-page-1">
+        <!-- Stat Type Selector -->
+        <div class="stats-type-selector" id="tutorial-stats-selector">
+          <button class="stats-type-btn active" data-stat="games">
+            <span class="stats-type-icon">🎮</span>
+            <span class="stats-type-label">Games</span>
+          </button>
+          <button class="stats-type-btn" data-stat="questions">
+            <span class="stats-type-icon">❓</span>
+            <span class="stats-type-label">Questions</span>
+          </button>
+          <button class="stats-type-btn" data-stat="correct">
+            <span class="stats-type-icon">✅</span>
+            <span class="stats-type-label">Correct</span>
+          </button>
+          <button class="stats-type-btn" data-stat="wrong">
+            <span class="stats-type-icon">❌</span>
+            <span class="stats-type-label">Wrong</span>
+          </button>
+          <button class="stats-type-btn" data-stat="time">
+            <span class="stats-type-icon">⏱️</span>
+            <span class="stats-type-label">Time</span>
+          </button>
+          <button class="stats-type-btn" data-stat="streak">
+            <span class="stats-type-icon">🔥</span>
+            <span class="stats-type-label">Streak</span>
+          </button>
+        </div>
+
+        <!-- Time Period Tabs -->
+        <div class="stats-period-tabs">
+          <button class="stats-period-tab active" data-period="day">1 Day</button>
+          <button class="stats-period-tab" data-period="week">1 Week</button>
+          <button class="stats-period-tab" data-period="month">1 Month</button>
+          <button class="stats-period-tab" data-period="year">1 Year</button>
+          <button class="stats-period-tab" data-period="all">All Time</button>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="stats-chart-container">
+          <div class="stats-chart-empty">
+            <span class="stats-empty-icon">📭</span>
+            <span class="stats-empty-text">No data available for this time range</span>
+          </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-summary-cards">
+          <div class="stats-summary-card peak">
+            <span class="stats-summary-label">Peak</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+          <div class="stats-summary-card average">
+            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+          <div class="stats-summary-card total">
+            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guided Tutorial Overlay System -->
+  <div class="tutorial-overlay hidden" id="tutorial-overlay">
+    <!-- Dark backdrop with spotlight cutout (controlled via JS) -->
+    <div class="tutorial-spotlight-mask" id="tutorial-spotlight-mask"></div>
+    
+    <!-- Highlight ring around element -->
+    <div class="tutorial-highlight-ring hidden" id="tutorial-highlight-ring"></div>
+    
+    <!-- Tap indicator -->
+    <div class="tutorial-tap-indicator hidden" id="tutorial-tap-indicator">
+      <span class="tap-hand">👆</span>
+      <span class="tap-text">Tap here</span>
+    </div>
+    
+    <!-- Tutorial text box with arrow -->
+    <div class="tutorial-textbox" id="tutorial-textbox">
+      <div class="tutorial-textbox-arrow" id="tutorial-textbox-arrow"></div>
+      <div class="tutorial-textbox-content">
+        <div class="tutorial-step-indicator" id="tutorial-step-indicator">1 / 15</div>
+        <h3 class="tutorial-textbox-title" id="tutorial-textbox-title">Welcome!</h3>
+        <p class="tutorial-textbox-text" id="tutorial-textbox-text">Welcome to Quizzena tutorial.</p>
+      </div>
+      <div class="tutorial-textbox-buttons">
+        <button class="tutorial-skip-btn" id="tutorial-skip-btn">Skip</button>
+        <button class="tutorial-next-btn" id="tutorial-next-btn">Next</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

@@ -9922,3 +9922,664 @@ updateAllStatsDisplays();
 initRankedSystem();
 updateGlobalLevelBadge();
 updateQuantaDisplay();
+
+// ============================================
+// 📖 GUIDED TUTORIAL SYSTEM
+// ============================================
+
+const GUIDED_TUTORIAL_STEPS = [
+  // Step 0: Welcome
+  {
+    type: 'welcome',
+    title: 'Welcome to Quizzena! 👋',
+    text: 'Let\'s take a quick tour to show you around. This will only take a minute!',
+    screen: 'home',
+    icon: '🧠'
+  },
+  // Step 1: Level Badge
+  {
+    type: 'highlight',
+    target: '.level-badge',
+    title: 'Your Level',
+    text: 'This is your Player Level. It shows your overall mastery in Quizzena. Tap it to see your P-XP progress!',
+    screen: 'home',
+    position: 'bottom',
+    showTap: true,
+    tapAction: 'openPxpDashboard'
+  },
+  // Step 2: Inside P-XP Dashboard
+  {
+    type: 'highlight',
+    target: '.pxp-ring-container',
+    title: 'P-XP Dashboard',
+    text: 'Here you can see your Prestige XP progress. Earn P-XP by playing games, answering correctly, and claiming achievements!',
+    screen: 'pxp-dashboard',
+    position: 'bottom',
+    showTap: false
+  },
+  // Step 3: Quanta (navigate back to home first)
+  {
+    type: 'highlight',
+    target: '.quanta-display',
+    title: 'Quanta ✦',
+    text: 'Quanta is the knowledge currency of Quizzena. Earn it through achievements and spend it on special features (coming soon)!',
+    screen: 'home',
+    position: 'bottom-left',
+    showTap: false,
+    navigateTo: 'home-from-pxp'
+  },
+  // Step 4: Quiz of the Day
+  {
+    type: 'highlight',
+    target: '.qotd-card-compact',
+    title: 'Quiz of the Day',
+    text: 'Every day brings a new featured quiz! Tap here to discover today\'s challenge and test your knowledge.',
+    screen: 'home',
+    position: 'bottom',
+    showTap: true,
+    tapAction: 'none'
+  },
+  // Step 5: Quick Play Section
+  {
+    type: 'highlight',
+    target: '.quick-play-section',
+    title: 'Quick Play',
+    text: 'Jump straight into action! Use Random for a surprise quiz, or save your favorites to Slot 1 & Slot 2 for instant access.',
+    screen: 'home',
+    position: 'top',
+    showTap: false
+  },
+  // Step 6: Explore Section
+  {
+    type: 'highlight',
+    target: '.home-categories-section-compact',
+    title: 'Explore Categories',
+    text: 'Browse quiz categories here! Tap any category to see all available topics within it.',
+    screen: 'home',
+    position: 'top',
+    showTap: false
+  },
+  // Step 7: Hot Topics
+  {
+    type: 'highlight',
+    target: '.hot-topics-section',
+    title: '🔥 Hot Topics',
+    text: 'These are the most popular quizzes right now! Jump into trending topics that other players are enjoying.',
+    screen: 'home',
+    position: 'top',
+    showTap: false
+  },
+  // Step 8: Navigate to Topics
+  {
+    type: 'navigate',
+    title: 'Topics Library',
+    text: 'Let\'s explore all available topics! Here you\'ll find 30+ quizzes across multiple categories.',
+    screen: 'topics',
+    navigateTo: 'topics'
+  },
+  // Step 9: Topic Cards
+  {
+    type: 'highlight',
+    target: '.topics-scroll-row .status-active:first-child',
+    title: 'Topic Cards',
+    text: 'Each card represents a quiz topic. You can see your level progress on each card. Higher levels unlock harder game modes!',
+    screen: 'topics',
+    position: 'bottom',
+    showTap: true,
+    tapAction: 'openFirstTopic'
+  },
+  // Step 10: Mode Selection
+  {
+    type: 'highlight',
+    target: '.unified-mode-selection',
+    title: 'Game Modes',
+    text: '<b>Casual</b> — Relaxed, no penalties<br><b>Time Attack</b> — Race the clock (Lvl 5)<br><b>3 Hearts</b> — Survival mode (Lvl 10)<br><br>Level up to unlock all modes!',
+    screen: 'mode-selection',
+    position: 'center',
+    showTap: false
+  },
+  // Step 11: Navigate to REAL profile page
+  {
+    type: 'navigate',
+    title: 'Your Profile',
+    text: 'Welcome to your Profile! Here you can track your achievements, stats, and progress.',
+    screen: 'profile',
+    navigateTo: 'profile'
+  },
+  // Step 12: Highlight Achievements on REAL profile
+  {
+    type: 'highlight',
+    target: '.feature-card.achievements-card',
+    title: 'Achievements',
+    text: 'Tap here to view the Achievements Ritual — 8 paths of mastery with unique challenges to complete!',
+    screen: 'profile',
+    position: 'bottom',
+    showTap: true,
+    tapAction: 'openAchievements'
+  },
+  // Step 13: Achievements Ritual Page (14/19) - Uses static achievements page
+  {
+    type: 'highlight',
+    target: '#tutorial-houses-grid',
+    title: 'The Eight Paths',
+    text: 'Each house represents a different type of achievement: Progression, Skill, Exploration, Casual, Time Attack, Survival, and more!',
+    screen: 'achievements',
+    position: 'center',
+    showTap: false,
+    showStaticAchievements: true
+  },
+  // Step 14: Back to REAL Profile, show Stats (15/19)
+  {
+    type: 'navigate',
+    title: 'Statistics',
+    text: 'Now let\'s look at your statistics to track your gaming journey!',
+    screen: 'profile',
+    navigateTo: 'profile-back'
+  },
+  // Step 15: Stats Button (16/19) - REAL profile
+  {
+    type: 'highlight',
+    target: '.stats-chart-button',
+    title: 'View Stats',
+    text: 'Tap here to see detailed statistics about your games, accuracy, streaks, and more!',
+    screen: 'profile',
+    position: 'top',
+    showTap: true,
+    tapAction: 'openStats'
+  },
+  // Step 16: Inside Stats (17/19) - Uses static stats page
+  {
+    type: 'highlight',
+    target: '#tutorial-stats-selector',
+    title: 'Stats Overview',
+    text: 'Track your Games, Questions, Correct answers, Wrong, Time spent, and Streaks. Use the time filters to see different periods!',
+    screen: 'stats',
+    position: 'bottom',
+    showTap: false,
+    showStaticStats: true
+  },
+  // Step 17: By Topic Tab (18/19) - Uses static stats page
+  {
+    type: 'highlight',
+    target: '#tutorial-stats-tab-2',
+    title: 'By Topic Stats',
+    text: 'Switch to "By Topic" to see your performance breakdown for each individual quiz topic!',
+    screen: 'stats',
+    position: 'bottom',
+    showTap: false,
+    showStaticStats: true
+  },
+  // Step 18: Finish (navigate back to home)
+  {
+    type: 'finish',
+    title: 'You\'re All Set! 🎉',
+    text: 'That\'s the tour! Start playing to level up, unlock achievements, and become a Quizzena master. Good luck!',
+    screen: 'home',
+    icon: '🏆',
+    navigateTo: 'home-finish'
+  }
+];
+
+let tutorialCurrentStep = 0;
+let tutorialActive = false;
+
+function startTutorial() {
+  // Close settings modal if open
+  const settingsModal = document.getElementById('settings-modal');
+  if (settingsModal) settingsModal.classList.add('hidden');
+  
+  // Close any open overlays
+  closePxpDashboard();
+  closeUnifiedModeSelection();
+  closeAchievementsRitual();
+  
+  // Go to home screen
+  showHome();
+  
+  tutorialCurrentStep = 0;
+  tutorialActive = true;
+  
+  const overlay = document.getElementById('tutorial-overlay');
+  overlay.classList.remove('hidden');
+  
+  // Setup button listeners
+  document.getElementById('tutorial-skip-btn').onclick = endTutorial;
+  document.getElementById('tutorial-next-btn').onclick = nextTutorialStep;
+  
+  // Show first step
+  showGuidedTutorialStep(0);
+}
+
+function showGuidedTutorialStep(stepIndex) {
+  const step = GUIDED_TUTORIAL_STEPS[stepIndex];
+  const totalSteps = GUIDED_TUTORIAL_STEPS.length;
+  
+  // Update step indicator
+  document.getElementById('tutorial-step-indicator').textContent = `${stepIndex + 1} / ${totalSteps}`;
+  document.getElementById('tutorial-textbox-title').textContent = step.title;
+  document.getElementById('tutorial-textbox-text').innerHTML = step.text;
+  
+  // Update next button
+  const nextBtn = document.getElementById('tutorial-next-btn');
+  if (stepIndex === totalSteps - 1) {
+    nextBtn.textContent = 'Finish ✓';
+    nextBtn.classList.add('finish-btn');
+  } else {
+    nextBtn.textContent = 'Next →';
+    nextBtn.classList.remove('finish-btn');
+  }
+  
+  // Handle different step types
+  if (step.type === 'welcome' || step.type === 'finish') {
+    showWelcomeStep(step);
+  } else if (step.type === 'navigate') {
+    showNavigateStep(step);
+  } else if (step.type === 'highlight') {
+    showHighlightStep(step);
+  }
+}
+
+function showWelcomeStep(step) {
+  // Handle static pages
+  const staticProfile = document.getElementById('tutorial-static-profile');
+  const staticAchievements = document.getElementById('tutorial-static-achievements');
+  const staticStats = document.getElementById('tutorial-static-stats');
+  
+  // Hide all static pages first
+  if (staticProfile) staticProfile.classList.add('hidden');
+  if (staticAchievements) staticAchievements.classList.add('hidden');
+  if (staticStats) staticStats.classList.add('hidden');
+  
+  // Show the appropriate static page
+  if (step.showStaticProfile && staticProfile) {
+    staticProfile.classList.remove('hidden');
+  }
+  if (step.showStaticAchievements && staticAchievements) {
+    staticAchievements.classList.remove('hidden');
+  }
+  if (step.showStaticStats && staticStats) {
+    staticStats.classList.remove('hidden');
+  }
+  
+  // Navigate first if needed (for finish step)
+  if (step.navigateTo && step.type === 'finish') {
+    performNavigation(step.navigateTo);
+  }
+  
+  const textbox = document.getElementById('tutorial-textbox');
+  const highlightRing = document.getElementById('tutorial-highlight-ring');
+  const tapIndicator = document.getElementById('tutorial-tap-indicator');
+  const arrow = document.getElementById('tutorial-textbox-arrow');
+  const mask = document.getElementById('tutorial-spotlight-mask');
+  
+  // Hide highlight elements
+  highlightRing.classList.add('hidden');
+  tapIndicator.classList.add('hidden');
+  arrow.className = 'tutorial-textbox-arrow hidden';
+  
+  // Fully transparent (no dark overlay)
+  mask.style.clipPath = 'none';
+  mask.style.background = 'transparent';
+  
+  // Center the textbox with icon
+  textbox.classList.add('welcome-mode');
+  textbox.style.top = '50%';
+  textbox.style.left = '50%';
+  textbox.style.transform = 'translate(-50%, -50%)';
+  textbox.style.bottom = 'auto';
+  textbox.style.right = 'auto';
+  
+  // Add icon if exists
+  const content = textbox.querySelector('.tutorial-textbox-content');
+  let iconEl = content.querySelector('.tutorial-welcome-icon');
+  if (!iconEl && step.icon) {
+    iconEl = document.createElement('div');
+    iconEl.className = 'tutorial-welcome-icon';
+    content.insertBefore(iconEl, content.firstChild);
+  }
+  if (iconEl) {
+    iconEl.textContent = step.icon || '👋';
+  }
+}
+
+function showNavigateStep(step) {
+  // Hide all static pages
+  const staticProfile = document.getElementById('tutorial-static-profile');
+  const staticAchievements = document.getElementById('tutorial-static-achievements');
+  const staticStats = document.getElementById('tutorial-static-stats');
+  if (staticProfile) staticProfile.classList.add('hidden');
+  if (staticAchievements) staticAchievements.classList.add('hidden');
+  if (staticStats) staticStats.classList.add('hidden');
+  
+  // Navigate FIRST, then show the message on the new page
+  if (step.navigateTo) {
+    performNavigation(step.navigateTo);
+  }
+  
+  // Wait for navigation transition to complete and DOM to be ready
+  setTimeout(() => {
+    requestAnimationFrame(() => {
+      showWelcomeStep(step);
+    });
+  }, 500);
+}
+
+function showHighlightStep(step) {
+  // Handle static pages
+  const staticProfile = document.getElementById('tutorial-static-profile');
+  const staticAchievements = document.getElementById('tutorial-static-achievements');
+  const staticStats = document.getElementById('tutorial-static-stats');
+  
+  // Hide all static pages first
+  if (staticProfile) staticProfile.classList.add('hidden');
+  if (staticAchievements) staticAchievements.classList.add('hidden');
+  if (staticStats) staticStats.classList.add('hidden');
+  
+  // Show the appropriate static page
+  if (step.showStaticProfile && staticProfile) {
+    staticProfile.classList.remove('hidden');
+  }
+  if (step.showStaticAchievements && staticAchievements) {
+    staticAchievements.classList.remove('hidden');
+  }
+  if (step.showStaticStats && staticStats) {
+    staticStats.classList.remove('hidden');
+  }
+  
+  // Navigate first if needed (only if not using static pages)
+  if (step.navigateTo && !step.showStaticProfile && !step.showStaticAchievements && !step.showStaticStats) {
+    performNavigation(step.navigateTo);
+  }
+  
+  const textbox = document.getElementById('tutorial-textbox');
+  const highlightRing = document.getElementById('tutorial-highlight-ring');
+  const tapIndicator = document.getElementById('tutorial-tap-indicator');
+  const arrow = document.getElementById('tutorial-textbox-arrow');
+  const mask = document.getElementById('tutorial-spotlight-mask');
+  
+  // Remove welcome mode
+  textbox.classList.remove('welcome-mode');
+  
+  // Remove welcome icon if exists
+  const iconEl = textbox.querySelector('.tutorial-welcome-icon');
+  if (iconEl) iconEl.remove();
+  
+  // Small delay to ensure static page is rendered
+  const delay = step.showStaticProfile ? 100 : 0;
+  
+  setTimeout(() => {
+    // Find target element
+    const target = document.querySelector(step.target);
+    if (!target) {
+      console.warn('Tutorial target not found:', step.target);
+      // Show centered instead
+      showWelcomeStep(step);
+      return;
+    }
+    
+    // Scroll element into view if needed
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Wait for scroll to complete, then position elements
+    setTimeout(() => {
+      positionHighlightElements(target, step, textbox, highlightRing, tapIndicator, arrow, mask);
+    }, 350);
+  }, delay);
+}
+
+function positionHighlightElements(target, step, textbox, highlightRing, tapIndicator, arrow, mask) {
+  // Get target position after scroll
+  const rect = target.getBoundingClientRect();
+  const padding = 8;
+  
+  // Position highlight ring
+  highlightRing.classList.remove('hidden');
+  highlightRing.style.top = (rect.top - padding) + 'px';
+  highlightRing.style.left = (rect.left - padding) + 'px';
+  highlightRing.style.width = (rect.width + padding * 2) + 'px';
+  highlightRing.style.height = (rect.height + padding * 2) + 'px';
+  
+  // Create spotlight cutout
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const rx = (rect.width / 2) + padding + 10;
+  const ry = (rect.height / 2) + padding + 10;
+  
+  mask.style.background = 'transparent';
+  mask.style.clipPath = `polygon(
+    0% 0%, 0% 100%, 100% 100%, 100% 0%, 0% 0%,
+    ${cx - rx}px ${cy}px,
+    ${cx}px ${cy - ry}px,
+    ${cx + rx}px ${cy}px,
+    ${cx}px ${cy + ry}px,
+    ${cx - rx}px ${cy}px
+  )`;
+  
+  // Position tap indicator
+  if (step.showTap) {
+    tapIndicator.classList.remove('hidden');
+    tapIndicator.style.top = (rect.bottom + 10) + 'px';
+    tapIndicator.style.left = (rect.left + rect.width / 2) + 'px';
+    tapIndicator.style.transform = 'translateX(-50%)';
+  } else {
+    tapIndicator.classList.add('hidden');
+  }
+  
+  // Position textbox based on step.position
+  positionTextbox(textbox, arrow, rect, step.position || 'bottom');
+}
+
+function positionTextbox(textbox, arrow, targetRect, position) {
+  const margin = 20;
+  const boxWidth = 320;
+  const boxHeight = 200; // approximate
+  
+  // Reset styles
+  textbox.style.top = 'auto';
+  textbox.style.bottom = 'auto';
+  textbox.style.left = 'auto';
+  textbox.style.right = 'auto';
+  textbox.style.transform = 'none';
+  
+  arrow.className = 'tutorial-textbox-arrow';
+  
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  
+  if (position === 'bottom' || position === 'bottom-left') {
+    // Textbox below element
+    textbox.style.top = (targetRect.bottom + margin + 30) + 'px';
+    textbox.style.left = Math.max(20, Math.min(viewportWidth - boxWidth - 20, targetRect.left + targetRect.width / 2 - boxWidth / 2)) + 'px';
+    arrow.classList.add('arrow-up');
+  } else if (position === 'top') {
+    // Textbox above element
+    textbox.style.bottom = (viewportHeight - targetRect.top + margin + 30) + 'px';
+    textbox.style.left = Math.max(20, Math.min(viewportWidth - boxWidth - 20, targetRect.left + targetRect.width / 2 - boxWidth / 2)) + 'px';
+    arrow.classList.add('arrow-down');
+  } else if (position === 'center') {
+    // Center on screen
+    textbox.style.top = '50%';
+    textbox.style.left = '50%';
+    textbox.style.transform = 'translate(-50%, -50%)';
+    arrow.classList.add('hidden');
+  }
+}
+
+function nextTutorialStep() {
+  playClickSound();
+  
+  const currentStep = GUIDED_TUTORIAL_STEPS[tutorialCurrentStep];
+  
+  // Handle tap actions (navigation for 'navigate' type steps now happens when step is shown)
+  if (currentStep.tapAction && currentStep.tapAction !== 'none') {
+    performTapAction(currentStep.tapAction);
+  }
+  
+  // Move to next step
+  tutorialCurrentStep++;
+  
+  if (tutorialCurrentStep >= GUIDED_TUTORIAL_STEPS.length) {
+    endTutorial();
+    return;
+  }
+  
+  // Delay for navigation transitions
+  const nextStep = GUIDED_TUTORIAL_STEPS[tutorialCurrentStep];
+  const delay = (currentStep.type === 'navigate' || currentStep.tapAction) ? 400 : 100;
+  
+  setTimeout(() => {
+    showGuidedTutorialStep(tutorialCurrentStep);
+  }, delay);
+}
+
+function performNavigation(destination) {
+  switch (destination) {
+    case 'home':
+      showHome();
+      closeStatsChart();
+      break;
+    case 'home-from-pxp':
+      closePxpDashboard();
+      showHome();
+      break;
+    case 'home-finish':
+      // Close everything and go home for tutorial finish
+      closeStatsChart();
+      closeAchievementsRitual();
+      closePxpDashboard();
+      showHome();
+      break;
+    case 'topics':
+      showTopics();
+      break;
+    case 'profile':
+      // Ensure home-screen container is visible
+      const homeScreenProfile = document.getElementById('home-screen');
+      if (homeScreenProfile) homeScreenProfile.classList.remove('hidden');
+      // Remove the mode screen completely  
+      const modeScreen = document.getElementById('unified-mode-screen');
+      if (modeScreen) modeScreen.classList.add('hidden');
+      showProfile();
+      break;
+    case 'profile-back':
+      // Ensure home-screen container is visible
+      const homeScreenBack = document.getElementById('home-screen');
+      if (homeScreenBack) homeScreenBack.classList.remove('hidden');
+      closeAchievementsRitual();
+      // Show profile
+      showProfile();
+      break;
+    case 'stats':
+      openStatsChart();
+      break;
+  }
+}
+
+function performTapAction(action) {
+  switch (action) {
+    case 'openPxpDashboard':
+      openPxpDashboard();
+      break;
+    case 'openFirstTopic':
+      // Find first topic and simulate click to open mode selection
+      const firstTopicBtn = document.querySelector('.topics-scroll-row .status-active button');
+      if (firstTopicBtn) {
+        firstTopicBtn.click();
+      }
+      break;
+    case 'openAchievements':
+      // Remove any blocking screens first
+      const modeScreenAch = document.getElementById('unified-mode-screen');
+      const quizScreenAch = document.getElementById('unified-quiz-screen');
+      if (modeScreenAch) modeScreenAch.remove();
+      if (quizScreenAch) quizScreenAch.remove();
+      // Hide static tutorial profile
+      const staticProfileAch = document.getElementById('tutorial-static-profile');
+      if (staticProfileAch) staticProfileAch.classList.add('hidden');
+      // Open achievements
+      openAchievementsRitual();
+      break;
+    case 'openStats':
+      openStatsChart();
+      break;
+  }
+}
+
+// Close the mode selection overlay
+function closeUnifiedModeSelection() {
+  // Return to topics or home
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.classList.add('hidden');
+  }
+  // Also hide any mode selection overlays
+  const modeOverlay = document.querySelector('.unified-mode-selection');
+  if (modeOverlay) {
+    // The mode selection is part of the unified screen, just show topics
+    showTopics();
+  }
+}
+
+function endTutorial() {
+  tutorialActive = false;
+  
+  // Hide tutorial overlay
+  const overlay = document.getElementById('tutorial-overlay');
+  if (overlay) overlay.classList.add('hidden');
+  
+  // Hide all static tutorial pages
+  const staticProfile = document.getElementById('tutorial-static-profile');
+  const staticAchievements = document.getElementById('tutorial-static-achievements');
+  const staticStats = document.getElementById('tutorial-static-stats');
+  if (staticProfile) staticProfile.classList.add('hidden');
+  if (staticAchievements) staticAchievements.classList.add('hidden');
+  if (staticStats) staticStats.classList.add('hidden');
+  
+  // Hide tutorial elements
+  const mask = document.getElementById('tutorial-spotlight-mask');
+  const ring = document.getElementById('tutorial-highlight-ring');
+  const textbox = document.getElementById('tutorial-textbox');
+  const tapIndicator = document.getElementById('tutorial-tap-indicator');
+  if (mask) mask.style.clipPath = '';
+  if (ring) ring.classList.add('hidden');
+  if (textbox) textbox.classList.add('hidden');
+  if (tapIndicator) tapIndicator.classList.add('hidden');
+  
+  // Close any open overlays
+  try { closePxpDashboard(); } catch(e) {}
+  try { closeAchievementsRitual(); } catch(e) {}
+  try { closeStatsChart(); } catch(e) {}
+  try { closeCategoryModal(); } catch(e) {}
+  try { closeSettingsModal(); } catch(e) {}
+  
+  // Reset body styles that might be blocking
+  document.body.style.overflow = '';
+  
+  // **FIX: Show the home-screen container (it gets hidden during mode selection)**
+  const homeScreen = document.getElementById('home-screen');
+  if (homeScreen) homeScreen.classList.remove('hidden');
+  
+  // Hide unified mode screen if visible
+  const unifiedModeScreen = document.getElementById('unified-mode-screen');
+  if (unifiedModeScreen) unifiedModeScreen.classList.add('hidden');
+  
+  // Navigate to home using the proper function
+  showHome();
+  
+  // Mark as seen
+  localStorage.setItem('quizzena_tutorial_seen', 'true');
+  
+  playClickSound();
+}
+
+// Close P-XP dashboard if it exists
+function closePxpDashboard() {
+  const dashboard = document.getElementById('pxp-dashboard');
+  if (dashboard) dashboard.classList.add('hidden');
+}
+
+// Open P-XP dashboard
+function openPxpDashboard() {
+  const dashboard = document.getElementById('pxp-dashboard');
+  if (dashboard) dashboard.classList.remove('hidden');
+}
