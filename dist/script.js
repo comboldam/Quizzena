@@ -345,6 +345,7 @@ async function syncToFirebase() {
 async function resetUserData() {
   // Clear localStorage
   localStorage.removeItem('quizzena_user_data');
+  localStorage.removeItem('quizzena_my_slots');
   
   // Also clear Firebase data if not in dev mode
   if (!DEV_MODE && firebaseDb && firebaseUser) {
@@ -1201,6 +1202,7 @@ function devResetTimeAttack() {
 function devResetAllData() {
   if (confirm('⚠️ This will delete ALL game data. Are you sure?')) {
     localStorage.removeItem('quizzena_user_data');
+    localStorage.removeItem('quizzena_my_slots');
     GAME_CONFIG.TIME_ATTACK_DURATION = 60;
     console.log('DEV: All data reset');
     alert('All data reset! Reloading...');
