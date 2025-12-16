@@ -1,0 +1,2340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Quizzena</title>
+  
+  <!-- Mobile App Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1a0a2e">
+  
+  <!-- Google Fonts - Orbitron & Rajdhani -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css?v=8">
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  
+  <!-- Chart.js for P-XP Dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- WELCOME SCREEN -->
+  <div id="welcome-screen" class="welcome-overlay hidden">
+    <div class="welcome-container">
+      <div class="welcome-logo">🎯</div>
+      <h1 class="welcome-title">Welcome to Quizzena!</h1>
+      <p class="welcome-subtitle">Learn the world, one quiz at a time.</p>
+      <button id="welcome-start-btn" class="welcome-btn">Get Started</button>
+    </div>
+  </div>
+
+  <!-- SETUP SCREEN -->
+  <div id="setup-screen" class="setup-overlay hidden">
+    <div class="setup-container">
+      <h2 class="setup-title">Create Your Profile</h2>
+
+      <div class="setup-section">
+        <label class="setup-label">Username</label>
+        <input type="text" id="setup-username" class="setup-input" placeholder="Enter username" maxlength="15">
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Avatar</label>
+        <div class="avatar-grid" id="avatar-grid">
+          <button class="avatar-btn selected" data-avatar="👤">👤</button>
+          <button class="avatar-btn" data-avatar="👨">👨</button>
+          <button class="avatar-btn" data-avatar="👩">👩</button>
+          <button class="avatar-btn" data-avatar="🧑">🧑</button>
+          <button class="avatar-btn" data-avatar="🎮">🎮</button>
+          <button class="avatar-btn" data-avatar="⚽">⚽</button>
+          <button class="avatar-btn" data-avatar="🦊">🦊</button>
+          <button class="avatar-btn" data-avatar="🐼">🐼</button>
+          <button class="avatar-btn" data-avatar="🤖">🤖</button>
+          <button class="avatar-btn" data-avatar="👽">👽</button>
+          <button class="avatar-btn" data-avatar="🦁">🦁</button>
+          <button class="avatar-btn" data-avatar="🐸">🐸</button>
+        </div>
+      </div>
+
+      <div class="setup-section">
+        <label class="setup-label">Country</label>
+        <select id="setup-country" class="setup-select">
+          <option value="">-- Select Country --</option>
+          <option value="AF">Afghanistan</option>
+          <option value="AL">Albania</option>
+          <option value="DZ">Algeria</option>
+          <option value="AD">Andorra</option>
+          <option value="AO">Angola</option>
+          <option value="AG">Antigua and Barbuda</option>
+          <option value="AR">Argentina</option>
+          <option value="AM">Armenia</option>
+          <option value="AU">Australia</option>
+          <option value="AT">Austria</option>
+          <option value="AZ">Azerbaijan</option>
+          <option value="BS">Bahamas</option>
+          <option value="BH">Bahrain</option>
+          <option value="BD">Bangladesh</option>
+          <option value="BB">Barbados</option>
+          <option value="BY">Belarus</option>
+          <option value="BE">Belgium</option>
+          <option value="BZ">Belize</option>
+          <option value="BJ">Benin</option>
+          <option value="BT">Bhutan</option>
+          <option value="BO">Bolivia</option>
+          <option value="BA">Bosnia and Herzegovina</option>
+          <option value="BW">Botswana</option>
+          <option value="BR">Brazil</option>
+          <option value="BN">Brunei</option>
+          <option value="BG">Bulgaria</option>
+          <option value="BF">Burkina Faso</option>
+          <option value="BI">Burundi</option>
+          <option value="KH">Cambodia</option>
+          <option value="CM">Cameroon</option>
+          <option value="CA">Canada</option>
+          <option value="CV">Cape Verde</option>
+          <option value="CF">Central African Republic</option>
+          <option value="TD">Chad</option>
+          <option value="CL">Chile</option>
+          <option value="CN">China</option>
+          <option value="CO">Colombia</option>
+          <option value="KM">Comoros</option>
+          <option value="CG">Congo</option>
+          <option value="CR">Costa Rica</option>
+          <option value="HR">Croatia</option>
+          <option value="CU">Cuba</option>
+          <option value="CY">Cyprus</option>
+          <option value="CZ">Czech Republic</option>
+          <option value="DK">Denmark</option>
+          <option value="DJ">Djibouti</option>
+          <option value="DM">Dominica</option>
+          <option value="DO">Dominican Republic</option>
+          <option value="EC">Ecuador</option>
+          <option value="EG">Egypt</option>
+          <option value="SV">El Salvador</option>
+          <option value="GQ">Equatorial Guinea</option>
+          <option value="ER">Eritrea</option>
+          <option value="EE">Estonia</option>
+          <option value="ET">Ethiopia</option>
+          <option value="FJ">Fiji</option>
+          <option value="FI">Finland</option>
+          <option value="FR">France</option>
+          <option value="GA">Gabon</option>
+          <option value="GM">Gambia</option>
+          <option value="GE">Georgia</option>
+          <option value="DE">Germany</option>
+          <option value="GH">Ghana</option>
+          <option value="GR">Greece</option>
+          <option value="GD">Grenada</option>
+          <option value="GT">Guatemala</option>
+          <option value="GN">Guinea</option>
+          <option value="GW">Guinea-Bissau</option>
+          <option value="GY">Guyana</option>
+          <option value="HT">Haiti</option>
+          <option value="HN">Honduras</option>
+          <option value="HU">Hungary</option>
+          <option value="IS">Iceland</option>
+          <option value="IN">India</option>
+          <option value="ID">Indonesia</option>
+          <option value="IR">Iran</option>
+          <option value="IQ">Iraq</option>
+          <option value="IE">Ireland</option>
+          <option value="IL">Israel</option>
+          <option value="IT">Italy</option>
+          <option value="CI">Ivory Coast</option>
+          <option value="JM">Jamaica</option>
+          <option value="JP">Japan</option>
+          <option value="JO">Jordan</option>
+          <option value="KZ">Kazakhstan</option>
+          <option value="KE">Kenya</option>
+          <option value="KI">Kiribati</option>
+          <option value="KW">Kuwait</option>
+          <option value="KG">Kyrgyzstan</option>
+          <option value="LA">Laos</option>
+          <option value="LV">Latvia</option>
+          <option value="LB">Lebanon</option>
+          <option value="LS">Lesotho</option>
+          <option value="LR">Liberia</option>
+          <option value="LY">Libya</option>
+          <option value="LI">Liechtenstein</option>
+          <option value="LT">Lithuania</option>
+          <option value="LU">Luxembourg</option>
+          <option value="MK">North Macedonia</option>
+          <option value="MG">Madagascar</option>
+          <option value="MW">Malawi</option>
+          <option value="MY">Malaysia</option>
+          <option value="MV">Maldives</option>
+          <option value="ML">Mali</option>
+          <option value="MT">Malta</option>
+          <option value="MH">Marshall Islands</option>
+          <option value="MR">Mauritania</option>
+          <option value="MU">Mauritius</option>
+          <option value="MX">Mexico</option>
+          <option value="FM">Micronesia</option>
+          <option value="MD">Moldova</option>
+          <option value="MC">Monaco</option>
+          <option value="MN">Mongolia</option>
+          <option value="ME">Montenegro</option>
+          <option value="MA">Morocco</option>
+          <option value="MZ">Mozambique</option>
+          <option value="MM">Myanmar</option>
+          <option value="NA">Namibia</option>
+          <option value="NR">Nauru</option>
+          <option value="NP">Nepal</option>
+          <option value="NL">Netherlands</option>
+          <option value="NZ">New Zealand</option>
+          <option value="NI">Nicaragua</option>
+          <option value="NE">Niger</option>
+          <option value="NG">Nigeria</option>
+          <option value="KP">North Korea</option>
+          <option value="NO">Norway</option>
+          <option value="OM">Oman</option>
+          <option value="PK">Pakistan</option>
+          <option value="PW">Palau</option>
+          <option value="PS">Palestine</option>
+          <option value="PA">Panama</option>
+          <option value="PG">Papua New Guinea</option>
+          <option value="PY">Paraguay</option>
+          <option value="PE">Peru</option>
+          <option value="PH">Philippines</option>
+          <option value="PL">Poland</option>
+          <option value="PT">Portugal</option>
+          <option value="QA">Qatar</option>
+          <option value="RO">Romania</option>
+          <option value="RU">Russia</option>
+          <option value="RW">Rwanda</option>
+          <option value="KN">Saint Kitts and Nevis</option>
+          <option value="LC">Saint Lucia</option>
+          <option value="VC">Saint Vincent</option>
+          <option value="WS">Samoa</option>
+          <option value="SM">San Marino</option>
+          <option value="ST">Sao Tome and Principe</option>
+          <option value="SA">Saudi Arabia</option>
+          <option value="SN">Senegal</option>
+          <option value="RS">Serbia</option>
+          <option value="SC">Seychelles</option>
+          <option value="SL">Sierra Leone</option>
+          <option value="SG">Singapore</option>
+          <option value="SK">Slovakia</option>
+          <option value="SI">Slovenia</option>
+          <option value="SB">Solomon Islands</option>
+          <option value="SO">Somalia</option>
+          <option value="ZA">South Africa</option>
+          <option value="KR">South Korea</option>
+          <option value="SS">South Sudan</option>
+          <option value="ES">Spain</option>
+          <option value="LK">Sri Lanka</option>
+          <option value="SD">Sudan</option>
+          <option value="SR">Suriname</option>
+          <option value="SZ">Eswatini</option>
+          <option value="SE">Sweden</option>
+          <option value="CH">Switzerland</option>
+          <option value="SY">Syria</option>
+          <option value="TW">Taiwan</option>
+          <option value="TJ">Tajikistan</option>
+          <option value="TZ">Tanzania</option>
+          <option value="TH">Thailand</option>
+          <option value="TL">Timor-Leste</option>
+          <option value="TG">Togo</option>
+          <option value="TO">Tonga</option>
+          <option value="TT">Trinidad and Tobago</option>
+          <option value="TN">Tunisia</option>
+          <option value="TR">Turkey</option>
+          <option value="TM">Turkmenistan</option>
+          <option value="TV">Tuvalu</option>
+          <option value="UG">Uganda</option>
+          <option value="UA">Ukraine</option>
+          <option value="AE">United Arab Emirates</option>
+          <option value="GB">United Kingdom</option>
+          <option value="US">United States</option>
+          <option value="UY">Uruguay</option>
+          <option value="UZ">Uzbekistan</option>
+          <option value="VU">Vanuatu</option>
+          <option value="VA">Vatican City</option>
+          <option value="VE">Venezuela</option>
+          <option value="VN">Vietnam</option>
+          <option value="YE">Yemen</option>
+          <option value="ZM">Zambia</option>
+          <option value="ZW">Zimbabwe</option>
+        </select>
+      </div>
+
+      <button id="setup-save-btn" class="setup-btn">Save & Start</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🏠 HOME SCREEN (TOPIC SELECTION) -->
+  <!-- ================================ -->
+  <div id="home-screen">
+
+    <!-- SVG Definitions for Level & Quanta -->
+    <svg width="0" height="0" style="position:absolute">
+      <defs>
+        <linearGradient id="levelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fbbf24"/>
+          <stop offset="50%" style="stop-color:#a78bfa"/>
+          <stop offset="100%" style="stop-color:#6366f1"/>
+        </linearGradient>
+        <linearGradient id="quantaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#c4b5fd"/>
+          <stop offset="30%" style="stop-color:#a78bfa"/>
+          <stop offset="60%" style="stop-color:#8b5cf6"/>
+          <stop offset="100%" style="stop-color:#6366f1"/>
+        </linearGradient>
+        <radialGradient id="quantaInnerGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8"/>
+          <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/>
+        </radialGradient>
+        <filter id="quantaGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Top Bar - Status Strip -->
+    <div class="top-bar">
+      <!-- Left: Brand -->
+      <div class="top-bar-left">
+        <div class="app-title">Quizzena</div>
+      </div>
+
+      <!-- Center: Level Badge -->
+      <div class="top-bar-center">
+        <div class="level-badge" id="level-badge" onclick="playClickSound(); openJourneyModal();">
+          <div class="level-badge-ring">
+            <svg viewBox="0 0 48 48">
+              <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+              <circle class="level-ring-progress" id="level-ring" cx="24" cy="24" r="22"/>
+            </svg>
+          </div>
+          <div class="level-badge-inner">
+            <span class="level-badge-text">LV</span>
+            <span class="level-badge-number" id="global-level-number">1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Quanta + Profile -->
+      <div class="top-bar-right">
+        <div class="quanta-display" onclick="playClickSound(); openQuantaModal();">
+          <div class="quanta-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" filter="url(#quantaGlow)">
+              <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="url(#quantaGradient)"/>
+              <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
+            </svg>
+          </div>
+          <span class="quanta-amount" id="quanta-amount">0</span>
+        </div>
+        <div class="user-profile" onclick="playClickSound(); showProfile();">👤</div>
+      </div>
+    </div>
+
+    <!-- Quanta Modal -->
+    <div class="quanta-modal hidden" id="quanta-modal">
+      <div class="quanta-modal-backdrop" onclick="closeQuantaModal()"></div>
+      <div class="quanta-modal-content">
+        <button class="quanta-modal-close" onclick="closeQuantaModal()">✕</button>
+        <div class="quanta-modal-icon">
+          <svg viewBox="0 0 24 24" width="64" height="64">
+            <path d="M12 0 L14.5 9.5 L24 12 L14.5 14.5 L12 24 L9.5 14.5 L0 12 L9.5 9.5 Z" fill="url(#quantaGradient)"/>
+            <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
+          </svg>
+        </div>
+        <h2 class="quanta-modal-title">✦ Quanta — Coming Soon</h2>
+        <p class="quanta-modal-text">Quanta is the knowledge currency of Quizzena.<br><br>Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.</p>
+        <button class="quanta-modal-btn" onclick="closeQuantaModal()">OK</button>
+      </div>
+    </div>
+
+    <!-- P-XP Dashboard (Full Page) -->
+    <div class="pxp-dashboard hidden" id="pxp-dashboard">
+      <!-- Top Bar -->
+      <div class="pxp-top-bar">
+        <button class="pxp-back-btn" onclick="playClickSound(); closePxpDashboard();">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <h1 class="pxp-title">P-XP Dashboard</h1>
+        <div class="pxp-spacer"></div>
+      </div>
+
+      <!-- Level Status Section -->
+      <div class="pxp-status-section">
+        <div class="pxp-level-circle">
+          <svg viewBox="0 0 120 120" class="pxp-ring-svg">
+            <circle class="pxp-ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="pxp-ring-progress" id="pxp-ring-progress" cx="60" cy="60" r="52"/>
+          </svg>
+          <div class="pxp-level-inner">
+            <span class="pxp-level-label">LEVEL</span>
+            <span class="pxp-level-number" id="pxp-level-number">1</span>
+          </div>
+        </div>
+        <div class="pxp-progress-info">
+          <div class="pxp-progress-text">
+            <span id="pxp-current">0</span> / <span id="pxp-required">40</span> P-XP
+          </div>
+          <div class="pxp-progress-bar">
+            <div class="pxp-progress-fill" id="pxp-progress-fill"></div>
+          </div>
+          <div class="pxp-total-text">Total: <span id="pxp-total">0</span> P-XP earned</div>
+        </div>
+      </div>
+
+      <!-- Time Period Tabs -->
+      <div class="pxp-tabs">
+        <button class="pxp-tab active" data-period="day" onclick="switchPxpPeriod('day')">1 Day</button>
+        <button class="pxp-tab" data-period="week" onclick="switchPxpPeriod('week')">1 Week</button>
+        <button class="pxp-tab" data-period="month" onclick="switchPxpPeriod('month')">1 Month</button>
+        <button class="pxp-tab" data-period="year" onclick="switchPxpPeriod('year')">1 Year</button>
+      </div>
+
+      <!-- Chart Container -->
+      <div class="pxp-chart-container">
+        <canvas id="pxp-chart"></canvas>
+      </div>
+
+      <!-- Legend -->
+      <div class="pxp-legend">
+        <div class="pxp-legend-item">
+          <span class="pxp-legend-dot games"></span>
+          <span>Games (+10 each)</span>
+        </div>
+        <div class="pxp-legend-item">
+          <span class="pxp-legend-dot answers"></span>
+          <span>Answers (+1 each)</span>
+        </div>
+        <div class="pxp-legend-item">
+          <span class="pxp-legend-dot achievements"></span>
+          <span>Achievements</span>
+        </div>
+      </div>
+
+      <!-- Breakdown Section -->
+      <div class="pxp-breakdown">
+        <h3 class="pxp-breakdown-title" id="pxp-breakdown-title">Today's Breakdown</h3>
+        <div class="pxp-breakdown-card">
+          <div class="pxp-breakdown-row">
+            <span class="pxp-breakdown-label">Games Completed</span>
+            <span class="pxp-breakdown-value"><span id="pxp-games-count">0</span> → <span id="pxp-games-pxp">+0</span> P-XP</span>
+          </div>
+          <div class="pxp-breakdown-row">
+            <span class="pxp-breakdown-label">Correct Answers</span>
+            <span class="pxp-breakdown-value"><span id="pxp-answers-count">0</span> → <span id="pxp-answers-pxp">+0</span> P-XP</span>
+          </div>
+          <div class="pxp-breakdown-row">
+            <span class="pxp-breakdown-label">Achievements Claimed</span>
+            <span class="pxp-breakdown-value"><span id="pxp-achievements-count">0</span> → <span id="pxp-achievements-pxp">+0</span> P-XP</span>
+          </div>
+          <div class="pxp-breakdown-divider"></div>
+          <div class="pxp-breakdown-row total">
+            <span class="pxp-breakdown-label">Total Earned</span>
+            <span class="pxp-breakdown-value" id="pxp-period-total">+0 P-XP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- How P-XP Works -->
+      <div class="pxp-info">
+        <h3 class="pxp-info-title">ℹ️ How P-XP Works</h3>
+        <ul class="pxp-info-list">
+          <li>Complete a game: <strong>+10 P-XP</strong></li>
+          <li>Each correct answer: <strong>+1 P-XP</strong></li>
+          <li>2-Player mode: <strong>No P-XP</strong></li>
+          <li>Level formula: <strong>40 × Level²</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Stats Chart Dashboard (Full Page) -->
+    <div class="stats-chart-dashboard hidden" id="stats-chart-dashboard">
+      <!-- Top Bar -->
+      <div class="stats-chart-top-bar">
+        <button class="stats-chart-back-btn" onclick="playClickSound(); closeStatsChart();">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <h1 class="stats-chart-title">Overall Stats</h1>
+        <div class="stats-chart-spacer"></div>
+      </div>
+
+      <!-- Page Navigation Tabs -->
+      <div class="stats-page-tabs">
+        <button class="stats-page-tab active" id="stats-page-1-tab" onclick="switchStatsPage(1)">
+          <span class="stats-page-tab-icon">📊</span>
+          <span class="stats-page-tab-text">Overall</span>
+        </button>
+        <button class="stats-page-tab" id="stats-page-2-tab" onclick="switchStatsPage(2)">
+          <span class="stats-page-tab-icon">🎯</span>
+          <span class="stats-page-tab-text">By Topic</span>
+        </button>
+      </div>
+
+      <!-- Page 1: Overall Stats Chart -->
+      <div class="stats-page" id="stats-page-1">
+        <!-- Stat Type Selector -->
+        <div class="stats-type-selector">
+          <button class="stats-type-btn active" data-stat="games" onclick="switchStatType('games')">
+            <span class="stats-type-icon">🎮</span>
+            <span class="stats-type-label">Games</span>
+          </button>
+          <button class="stats-type-btn" data-stat="questions" onclick="switchStatType('questions')">
+            <span class="stats-type-icon">❓</span>
+            <span class="stats-type-label">Questions</span>
+          </button>
+          <button class="stats-type-btn" data-stat="correct" onclick="switchStatType('correct')">
+            <span class="stats-type-icon">✅</span>
+            <span class="stats-type-label">Correct</span>
+          </button>
+          <button class="stats-type-btn" data-stat="wrong" onclick="switchStatType('wrong')">
+            <span class="stats-type-icon">❌</span>
+            <span class="stats-type-label">Wrong</span>
+          </button>
+          <button class="stats-type-btn" data-stat="time" onclick="switchStatType('time')">
+            <span class="stats-type-icon">⏱️</span>
+            <span class="stats-type-label">Time</span>
+          </button>
+          <button class="stats-type-btn" data-stat="streak" onclick="switchStatType('streak')">
+            <span class="stats-type-icon">🔥</span>
+            <span class="stats-type-label">Streak</span>
+          </button>
+        </div>
+
+        <!-- Time Period Tabs -->
+        <div class="stats-period-tabs">
+          <button class="stats-period-tab active" data-period="day" onclick="switchStatsPeriod('day')">1 Day</button>
+          <button class="stats-period-tab" data-period="week" onclick="switchStatsPeriod('week')">1 Week</button>
+          <button class="stats-period-tab" data-period="month" onclick="switchStatsPeriod('month')">1 Month</button>
+          <button class="stats-period-tab" data-period="year" onclick="switchStatsPeriod('year')">1 Year</button>
+          <button class="stats-period-tab" data-period="all" onclick="switchStatsPeriod('all')">All Time</button>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="stats-chart-container">
+          <canvas id="stats-chart"></canvas>
+          <div class="stats-chart-empty hidden" id="stats-chart-empty">
+            <span class="stats-empty-icon">📭</span>
+            <span class="stats-empty-text">No data available for this time range</span>
+          </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-summary-cards">
+          <div class="stats-summary-card peak">
+            <span class="stats-summary-label">Peak</span>
+            <span class="stats-summary-value" id="stats-peak-value">0</span>
+          </div>
+          <div class="stats-summary-card average">
+            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-value" id="stats-avg-value">0</span>
+          </div>
+          <div class="stats-summary-card total">
+            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-value" id="stats-total-value">0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 2: Topic Stats Chart (Same layout as Page 1 + Topic Dropdown) -->
+      <div class="stats-page hidden" id="stats-page-2">
+        <!-- Topic Selector Dropdown -->
+        <div class="topic-selector-wrapper">
+          <div class="topic-selector" id="topic-selector" onclick="toggleTopicDropdown()">
+            <span class="topic-selector-icon" id="selected-topic-icon">🏳️</span>
+            <span class="topic-selector-name" id="selected-topic-name">Flags</span>
+            <span class="topic-selector-arrow">▼</span>
+          </div>
+          
+          <!-- Dropdown -->
+          <div class="topic-dropdown hidden" id="topic-dropdown">
+            <div class="topic-dropdown-search">
+              <input type="text" id="topic-dropdown-search" placeholder="Search topics..." oninput="filterTopicDropdown(this.value)"/>
+            </div>
+            <div class="topic-dropdown-list" id="topic-dropdown-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stat Type Selector (Same as Page 1) -->
+        <div class="stats-type-selector">
+          <button class="stats-type-btn active" data-stat="games" onclick="switchTopicStatType('games')">
+            <span class="stats-type-icon">🎮</span>
+            <span class="stats-type-label">Games</span>
+          </button>
+          <button class="stats-type-btn" data-stat="accuracy" onclick="switchTopicStatType('accuracy')">
+            <span class="stats-type-icon">🎯</span>
+            <span class="stats-type-label">Accuracy</span>
+          </button>
+          <button class="stats-type-btn" data-stat="streak" onclick="switchTopicStatType('streak')">
+            <span class="stats-type-icon">🔥</span>
+            <span class="stats-type-label">Streak</span>
+          </button>
+          <button class="stats-type-btn" data-stat="time" onclick="switchTopicStatType('time')">
+            <span class="stats-type-icon">⏱️</span>
+            <span class="stats-type-label">Time</span>
+          </button>
+          <button class="stats-type-btn" data-stat="avgtime" onclick="switchTopicStatType('avgtime')">
+            <span class="stats-type-icon">⚡</span>
+            <span class="stats-type-label">A.Time</span>
+          </button>
+        </div>
+
+        <!-- Time Period Tabs (Same as Page 1) -->
+        <div class="stats-period-tabs">
+          <button class="stats-period-tab active" data-period="day" onclick="switchTopicPeriod('day')">1 Day</button>
+          <button class="stats-period-tab" data-period="week" onclick="switchTopicPeriod('week')">1 Week</button>
+          <button class="stats-period-tab" data-period="month" onclick="switchTopicPeriod('month')">1 Month</button>
+          <button class="stats-period-tab" data-period="year" onclick="switchTopicPeriod('year')">1 Year</button>
+        </div>
+
+        <!-- Chart Container (Same as Page 1) -->
+        <div class="stats-chart-container">
+          <canvas id="topic-stats-chart"></canvas>
+          <div class="stats-chart-empty hidden" id="topic-chart-empty">
+            <span class="stats-empty-icon">📊</span>
+            <span class="stats-empty-text">Play some games to see your stats here!</span>
+          </div>
+        </div>
+
+        <!-- Summary Cards (Same as Page 1) -->
+        <div class="stats-summary-cards">
+          <div class="stats-summary-card peak">
+            <span class="stats-summary-label">Peak</span>
+            <span class="stats-summary-value" id="topic-peak-value">0</span>
+          </div>
+          <div class="stats-summary-card average">
+            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-value" id="topic-avg-value">0</span>
+          </div>
+          <div class="stats-summary-card total">
+            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-value" id="topic-total-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOME SCREEN VIEW -->
+    <div class="home-view" id="home-view">
+
+      <!-- Top Row: Trail Ring (right aligned) -->
+      <div class="home-top-row">
+        <div class="home-greeting"></div>
+        <div class="trail-ring-mini" onclick="playClickSound(); openTrailRingModal();">
+          <div class="trail-ring-mini-visual">
+            <svg class="trail-ring-mini-svg" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="trailGradientMini1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#7c3aed"/>
+                  <stop offset="100%" style="stop-color:#6366f1"/>
+                </linearGradient>
+              </defs>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="url(#trailGradientMini1)" stroke-width="6" stroke-dasharray="20 10"/>
+            </svg>
+            <span class="trail-ring-mini-icon">🔮</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trail Ring Modal (keep existing) -->
+      <div class="trail-ring-modal hidden" id="trail-ring-modal">
+        <div class="trail-ring-modal-backdrop" onclick="closeTrailRingModal()"></div>
+        <div class="trail-ring-modal-content">
+          <div class="trail-ring-modal-icon">🔮</div>
+          <h2 class="trail-ring-modal-title">Trail Rings</h2>
+          <p class="trail-ring-modal-text">
+            Trail Rings will unlock in a future update.<br><br>
+            Grow your knowledge to ignite your ring.
+          </p>
+          <button class="trail-ring-modal-btn" onclick="closeTrailRingModal()">OK</button>
+        </div>
+      </div>
+
+      <!-- Quiz of the Day - Compact with animations -->
+      <div class="qotd-section-compact">
+        <div class="qotd-title-compact">Quiz of the Day</div>
+        <div class="qotd-card-compact" onclick="playClickSound(); startQuizOfTheDay();">
+          <!-- Glow aura behind brain -->
+          <div class="qotd-glow"></div>
+          
+          <!-- Floating particles -->
+          <div class="qotd-particles">
+            <span class="qotd-particle">✨</span>
+            <span class="qotd-particle">💡</span>
+            <span class="qotd-particle">⭐</span>
+            <span class="qotd-particle">🧠</span>
+            <span class="qotd-particle">💜</span>
+            <span class="qotd-particle">✨</span>
+            <span class="qotd-particle">🎯</span>
+            <span class="qotd-particle">⚡</span>
+          </div>
+          
+          <!-- Brain image -->
+          <img src="https://assets.api.uizard.io/api/cdn/stream/21c44258-4687-4984-875c-b0f0e0c900c5.png" alt="Quiz of the Day" class="qotd-image-compact">
+        </div>
+      </div>
+
+      <!-- Continue Playing Section -->
+      <div class="continue-section">
+        <h3 class="section-title-compact">Continue Playing</h3>
+        <div class="continue-row" id="continue-row">
+          <!-- Populated dynamically by JS with cloned actual topic cards -->
+        </div>
+      </div>
+
+      <!-- Quick Play Section -->
+      <div class="quick-play-section">
+        <h3 class="section-title-compact">Quick Play</h3>
+        <div class="quick-play-row">
+          <button class="quick-play-card quick-play-random" onclick="playClickSound(); startRandomQuiz();">
+            <img src="images/icons/random-dice.png" class="quick-play-icon-img" alt="Random">
+            <span class="quick-play-label">Random</span>
+          </button>
+          <div class="quick-play-card quick-play-slot" id="slot-1" data-slot="1" onclick="playClickSound(); handleSlotClick(1);">
+            <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(1);" role="button" aria-label="Clear slot">✕</span>
+            <img src="" class="slot-topic-img" alt="">
+            <span class="slot-empty-icon">+</span>
+            <span class="quick-play-label slot-label">Slot 1</span>
+          </div>
+          <div class="quick-play-card quick-play-slot" id="slot-2" data-slot="2" onclick="playClickSound(); handleSlotClick(2);">
+            <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(2);" role="button" aria-label="Clear slot">✕</span>
+            <img src="" class="slot-topic-img" alt="">
+            <span class="slot-empty-icon">+</span>
+            <span class="quick-play-label slot-label">Slot 2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore Categories - Compact Grid -->
+      <div class="home-categories-section-compact">
+        <h3 class="section-title-compact">Explore</h3>
+        <div class="home-categories-grid-compact">
+          <button class="home-category-card-compact" data-category="geography">
+            <img src="images/categories/geography.png" class="cat-icon-compact cat-icon-img" alt="Geography">
+            <span class="cat-name-compact">Geography</span>
+          </button>
+          <button class="home-category-card-compact" data-category="football">
+            <img src="images/categories/football.png" class="cat-icon-compact cat-icon-img" alt="Football">
+            <span class="cat-name-compact">Football</span>
+          </button>
+          <button class="home-category-card-compact" data-category="movies">
+            <img src="images/categories/movies.png" class="cat-icon-compact cat-icon-img" alt="Movies">
+            <span class="cat-name-compact">Movies</span>
+          </button>
+          <button class="home-category-card-compact" data-category="tvshows">
+            <img src="images/categories/tvshows.png" class="cat-icon-compact cat-icon-img" alt="TV Shows">
+            <span class="cat-name-compact">TV Shows</span>
+          </button>
+          <button class="home-category-card-compact" data-category="history">
+            <img src="images/categories/history.png" class="cat-icon-compact cat-icon-img" alt="History">
+            <span class="cat-name-compact">History</span>
+          </button>
+          <button class="home-category-card-compact" data-category="logos">
+            <img src="images/categories/logos.png" class="cat-icon-compact cat-icon-img" alt="Logos">
+            <span class="cat-name-compact">Logos</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hot Topics Section -->
+      <div class="hot-topics-section">
+        <h3 class="section-title-compact">🔥 Hot Topics</h3>
+        <div class="hot-topics-list">
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('game-of-thrones-topic-btn').click();">
+            <span class="hot-topic-icon">🐉</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">Game of Thrones</span>
+              <span class="hot-topic-category">TV Shows</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('ww2-topic-btn').click();">
+            <span class="hot-topic-icon">✠</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">World War II</span>
+              <span class="hot-topic-category">History</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('marvel-movies-topic-btn').click();">
+            <span class="hot-topic-icon">🦸</span>
+            <div class="hot-topic-info">
+              <span class="hot-topic-name">Marvel</span>
+              <span class="hot-topic-category">Movies</span>
+            </div>
+            <span class="hot-topic-arrow">›</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ranked Mode Button - Bottom -->
+      <div class="ranked-section-bottom">
+        <button class="ranked-button-compact" id="ranked-button" onclick="playClickSound(); openRankedModal();">
+          <span class="ranked-icon-compact">⚔️</span>
+          <span class="ranked-text-compact">Enter Ranked Mode</span>
+          <span class="ranked-arrow-compact">›</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Category Modal Overlay -->
+    <div class="category-modal hidden" id="category-modal">
+      <div class="category-modal-backdrop" id="category-modal-backdrop"></div>
+      <div class="category-modal-content">
+        <div class="category-modal-header">
+          <h2 class="category-modal-title" id="category-modal-title">Category</h2>
+          <button class="category-modal-close" id="category-modal-close">✕</button>
+        </div>
+        <div class="category-modal-quizzes" id="category-modal-quizzes">
+          <!-- Quizzes will be inserted here dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ranked Modal - Locked State -->
+    <div class="ranked-modal hidden" id="ranked-modal-locked">
+      <div class="ranked-modal-backdrop" onclick="closeRankedModal()"></div>
+      <div class="ranked-modal-content ranked-modal-locked">
+        <button class="ranked-modal-close" onclick="closeRankedModal()">✕</button>
+        <div class="ranked-modal-icon locked">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64">
+            <path d="M12 1C8.676 1 6 3.676 6 7v2H4v14h16V9h-2V7c0-3.324-2.676-6-6-6zm0 2c2.276 0 4 1.724 4 4v2H8V7c0-2.276 1.724-4 4-4zm0 10c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+          </svg>
+        </div>
+        <h2 class="ranked-modal-title">Ranked Mode — Locked</h2>
+        <p class="ranked-modal-subtitle">Prove your knowledge to qualify for Ranked.</p>
+        <p class="ranked-modal-body">Complete <span id="ranked-remaining-quizzes">30</span> quizzes to unlock Ranked Mode.<br>Get ready for divisions, competition, and IQ.</p>
+        <div class="ranked-progress-bar">
+          <div class="ranked-progress-fill" id="ranked-progress-fill"></div>
+          <span class="ranked-progress-text" id="ranked-progress-text">0 / 30</span>
+        </div>
+        <button class="ranked-modal-btn disabled" disabled>Not Yet Available</button>
+      </div>
+    </div>
+
+    <!-- Ranked Modal - Qualified State -->
+    <div class="ranked-modal hidden" id="ranked-modal-qualified">
+      <div class="ranked-modal-backdrop" onclick="closeRankedModal()"></div>
+      <div class="ranked-modal-content ranked-modal-qualified">
+        <button class="ranked-modal-close" onclick="closeRankedModal()">✕</button>
+        <div class="ranked-modal-icon qualified">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+        <div class="ranked-confetti"></div>
+        <h2 class="ranked-modal-title qualified">You Are Qualified!</h2>
+        <p class="ranked-modal-subtitle">Ranked Mode is launching soon.</p>
+        <p class="ranked-modal-body">You've completed 30 quizzes and earned eligibility for Ranked Mode. You will be among the first to enter when it releases.</p>
+        <button class="ranked-modal-btn notify" onclick="notifyRankedRelease()">Notify Me When Ranked Opens</button>
+      </div>
+    </div>
+
+    <!-- Settings Modal Overlay -->
+    <div class="settings-modal hidden" id="settings-modal">
+      <div class="settings-modal-backdrop" id="settings-modal-backdrop"></div>
+      <div class="settings-modal-content">
+        <div class="settings-modal-header">
+          <h2 class="settings-modal-title" data-i18n="settings_title">Settings</h2>
+          <button class="settings-modal-close" id="settings-modal-close">✕</button>
+        </div>
+        <div class="settings-modal-body">
+          
+          <!-- Language Setting -->
+          <div class="settings-item">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🌍</span>
+              <span data-i18n="settings_language">Language</span>
+            </div>
+            <div class="settings-item-control">
+              <select class="settings-dropdown" id="language-select">
+                <option value="en">🇺🇸 English</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="tr">🇹🇷 Türkçe</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Theme Setting (Coming Soon) -->
+          <div class="settings-item settings-item-disabled">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🎨</span>
+              <span data-i18n="settings_theme">Theme</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Setting (Opens Sound Overlay) -->
+          <div class="settings-item settings-item-clickable" id="settings-sound-btn">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">🔊</span>
+              <span data-i18n="settings_sound">Sound</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-arrow">→</span>
+            </div>
+          </div>
+          <!-- Performance Mode Setting -->
+          <div class="settings-item">
+            <div class="settings-item-label">
+              <span class="settings-item-icon"></span>
+              <span data-i18n="settings_performance">Performance Mode</span>
+            </div>
+            <div class="settings-item-control">
+              <label class="toggle-switch">
+                <input type="checkbox" id="performance-toggle">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="settings-item-hint" id="performance-hint">
+            <span data-i18n="settings_performance_hint">Enable for smoother scrolling (disables animations)</span>
+          </div>
+
+          <!-- Tutorial Button -->
+          <div class="settings-item settings-item-clickable" id="settings-tutorial-btn" onclick="playClickSound(); startTutorial();">
+            <div class="settings-item-label">
+              <span class="settings-item-icon">📖</span>
+              <span data-i18n="settings_tutorial">Tutorial</span>
+            </div>
+            <div class="settings-item-control">
+              <span class="settings-arrow">→</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="settings-modal-footer">
+          <span class="settings-version" id="settings-version">Quizzena v1 Beta</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sound Settings Overlay -->
+    <div class="sound-overlay hidden" id="sound-overlay">
+      <div class="sound-overlay-backdrop" id="sound-overlay-backdrop"></div>
+      <div class="sound-overlay-content">
+        <div class="sound-overlay-header">
+          <button class="sound-overlay-back" id="sound-overlay-back">←</button>
+          <h2 class="sound-overlay-title" data-i18n="settings_sound">Sound</h2>
+          <div class="sound-overlay-spacer"></div>
+        </div>
+        <div class="sound-overlay-body">
+          
+          <!-- Music Setting (Coming Soon) -->
+          <div class="sound-setting-section sound-setting-disabled">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🎵</span>
+              <span class="sound-setting-name" data-i18n="sound_music">Music</span>
+            </div>
+            <div class="sound-setting-content">
+              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+            </div>
+          </div>
+
+          <!-- Sound Effects Setting -->
+          <div class="sound-setting-section">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🔊</span>
+              <span class="sound-setting-name" data-i18n="sound_effects">Sound Effects</span>
+            </div>
+            <div class="sound-setting-content">
+              <div class="volume-control">
+                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="sfx-volume-slider" min="0" max="100" value="70">
+                  <span class="volume-value" id="sfx-volume-value">70%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="sfx-mute-btn">
+                <span class="mute-icon" id="sfx-mute-icon">🔊</span>
+                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPICS SCREEN VIEW -->
+    <div class="topics-view hidden" id="topics-view">
+
+      <!-- Geography Category -->
+      <div class="geography-section">
+        <h3 class="geography-title">Geography</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Flags Card - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="flags-topic-btn" class="breakout-card breakout-card-flags" style="cursor: pointer; font-family: inherit;">
+              <!-- Teal/Cyan glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-flags"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/geography/flags.png" alt="Flags" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Flags</div>
+            </button>
+          </div>
+
+          <!-- Capitals Card - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="capitals-topic-btn" class="breakout-card breakout-card-capitals" style="cursor: pointer; font-family: inherit;">
+              <!-- Amber/Gold glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-capitals"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/geography/capitals.png" alt="Capitals" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Capitals</div>
+            </button>
+          </div>
+
+          <!-- Area Card - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="area-topic-btn" class="breakout-card breakout-card-area" style="cursor: pointer; font-family: inherit;">
+              <!-- Neon purple globe glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-area"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/geography/area.png" alt="Country Area" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Country Area</div>
+            </button>
+          </div>
+
+          <!-- Borders Card -->
+          <div class="topic-card-small">
+            <button id="borders-topic-btn" class="topic-card-btn">
+              <div class="topic-icon-small">🗺️</div>
+              <div class="topic-name-small">Borders</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Football Section -->
+      <div class="football-section">
+        <h3 class="section-title">⚽ Football</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Football General - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="football-general-topic-btn" class="breakout-card breakout-card-football" style="cursor: pointer; font-family: inherit;">
+              <!-- Stadium red glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-football"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/football.png" alt="Football" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Football</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Premier League - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="premier-league-topic-btn" class="breakout-card" style="cursor: pointer; font-family: inherit;">
+              <!-- Purple glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/premier-league.png" alt="Premier League" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Premier League</div>
+            </button>
+          </div>
+
+          <!-- Card 3: Champions League - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="champions-league-topic-btn" class="breakout-card breakout-card-ucl" style="cursor: pointer; font-family: inherit;">
+              <!-- Blue/Silver glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-ucl"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/champions-league.png" alt="Champions League" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Champions League</div>
+            </button>
+          </div>
+
+          <!-- Card 4: World Cup - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="world-cup-topic-btn" class="breakout-card breakout-card-worldcup" style="cursor: pointer; font-family: inherit;">
+              <!-- Golden trophy glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-worldcup"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/world-cup.png" alt="World Cup" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">World Cup</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Derbies - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="derbies-topic-btn" class="breakout-card breakout-card-derbies" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/derbies.png" alt="Derbies" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Derbies</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Lionel Messi - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="messi-topic-btn" class="breakout-card breakout-card-messi" style="cursor: pointer; font-family: inherit;">
+              <!-- Argentina blue/white glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-messi"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/messi.png" alt="Messi" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Messi</div>
+            </button>
+          </div>
+
+          <!-- Card 7: Cristiano Ronaldo - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ronaldo-topic-btn" class="breakout-card breakout-card-ronaldo" style="cursor: pointer; font-family: inherit;">
+              <!-- Portugal red/gold glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-ronaldo"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/football/ronaldo.png" alt="Ronaldo" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Ronaldo</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Movies Section -->
+      <div class="movies-section">
+        <h3 class="section-title">🎬 Movies</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Movies General - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="movies-general-topic-btn" class="breakout-card breakout-card-movies" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/movies.png" alt="Movies" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Movies</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Marvel Movies - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="marvel-movies-topic-btn" class="breakout-card breakout-card-marvel" style="cursor: pointer; font-family: inherit;">
+              <!-- Red/gold hero glow behind -->
+              <div class="breakout-card-glow"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/marvel.png" alt="Marvel" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Marvel</div>
+            </button>
+          </div>
+
+          <!-- Card 3: DC Movies - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="dc-movies-topic-btn" class="breakout-card breakout-card-dc" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/dc.png" alt="DC" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">DC</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Disney Movies - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="disney-movies-topic-btn" class="breakout-card breakout-card-disney" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/disney.png" alt="Disney" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Disney</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Harry Potter - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="harry-potter-topic-btn" class="breakout-card breakout-card-harrypotter" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/harry-potter.png" alt="Harry Potter" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Harry Potter</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Star Wars - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="star-wars-topic-btn" class="breakout-card breakout-card-starwars" style="cursor: pointer; font-family: inherit;">
+              <!-- Blue/red lightsaber glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-starwars"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/star-wars.png" alt="Star Wars" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Star Wars</div>
+            </button>
+          </div>
+
+          <!-- Card 7: Lord of the Rings - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="lotr-topic-btn" class="breakout-card breakout-card-lotr" style="cursor: pointer; font-family: inherit;">
+              <!-- Fiery gold ring glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-lotr"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/movies/lotr.png" alt="Lord of the Rings" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">LOTR</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TV Shows Section -->
+      <div class="tvshows-section">
+        <h3 class="section-title">📺 TV Shows</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: TV Shows General - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="tv-general-topic-btn" class="breakout-card breakout-card-tvshows" style="cursor: pointer; font-family: inherit;">
+              <!-- Warm vintage glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-tvshows"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/tvshows.png" alt="TV Shows" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">TV Shows</div>
+            </button>
+          </div>
+
+          <!-- Card 2: Sitcoms - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="sitcoms-topic-btn" class="breakout-card breakout-card-sitcoms" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/sitcoms.png" alt="Sitcoms" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Sitcoms</div>
+            </button>
+          </div>
+
+          <!-- Card 3: Game of Thrones - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="game-of-thrones-topic-btn" class="breakout-card breakout-card-got" style="cursor: pointer; font-family: inherit;">
+              <!-- Fire and ice glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-got"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/game-of-thrones.png" alt="Game of Thrones" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Game of Thrones</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Breaking Bad - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="breaking-bad-topic-btn" class="breakout-card breakout-card-breakingbad" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/breaking-bad.png" alt="Breaking Bad" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Breaking Bad</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Stranger Things - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="stranger-things-topic-btn" class="breakout-card breakout-card-strangerthings" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/stranger-things.png" alt="Stranger Things" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">Stranger Things</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Money Heist - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="money-heist-topic-btn" class="breakout-card breakout-card-moneyheist" style="cursor: pointer; font-family: inherit;">
+              <!-- Red heist glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-moneyheist"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/money-heist.png" alt="Money Heist" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Money Heist</div>
+            </button>
+          </div>
+
+          <!-- Card 7: The Office - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="the-office-topic-btn" class="breakout-card breakout-card-office" style="cursor: pointer; font-family: inherit;">
+              <!-- Beige/brown office glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-office"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/tvshows/the-office.png" alt="The Office" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">The Office</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- History Section -->
+      <div class="history-section">
+        <h3 class="section-title">📜 History</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: World History - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="world-history-topic-btn" class="breakout-card breakout-card-worldhistory" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+              
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/world-history.png" alt="World History" class="floating-card-image">
+              </div>
+              
+              <!-- Title below -->
+              <div class="floating-card-title">World History</div>
+            </button>
+          </div>
+
+          <!-- Card 2: World War II - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ww2-topic-btn" class="breakout-card breakout-card-wwii" style="cursor: pointer; font-family: inherit;">
+              <!-- Military olive/red poppy glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-wwii"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="https://assets.api.uizard.io/api/cdn/stream/0523c3a2-de3a-4636-8235-e6e2826bdab6.png" alt="WWII" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">WWII</div>
+            </button>
+          </div>
+
+          <!-- Card 3: World War I - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ww1-topic-btn" class="breakout-card breakout-card-wwi" style="cursor: pointer; font-family: inherit;">
+              <!-- Sepia/brown glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-wwi"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="https://assets.api.uizard.io/api/cdn/stream/6d1913d8-ecba-41e6-acae-83d2e819dfbe.png" alt="WWI" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">WWI</div>
+            </button>
+          </div>
+
+          <!-- Card 4: Roman Empire - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="roman-empire-topic-btn" class="breakout-card breakout-card-roman" style="cursor: pointer; font-family: inherit;">
+              <!-- Golden glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-roman"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/roman-empire.png" alt="Roman Empire" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Roman Empire</div>
+            </button>
+          </div>
+
+          <!-- Card 5: Ottoman Empire - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ottoman-empire-topic-btn" class="breakout-card breakout-card-ottoman" style="cursor: pointer; font-family: inherit;">
+              <!-- Navy blue/gold glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-ottoman"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/ottoman-empire.png" alt="Ottoman Empire" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Ottoman</div>
+            </button>
+          </div>
+
+          <!-- Card 6: Egyptian History - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="egyptian-topic-btn" class="breakout-card breakout-card-egyptian" style="cursor: pointer; font-family: inherit;">
+              <!-- Golden sand/pyramid glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-egyptian"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/egyptian.png" alt="Egyptian" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Egyptian</div>
+            </button>
+          </div>
+
+          <!-- Card 7: British Monarchy - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="british-monarchy-topic-btn" class="breakout-card breakout-card-british" style="cursor: pointer; font-family: inherit;">
+              <!-- Royal glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-british"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/british-monarchy.png" alt="British Monarchy" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">British Monarchy</div>
+            </button>
+          </div>
+
+          <!-- Card 8: Ancient Civilizations - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="ancient-civs-topic-btn" class="breakout-card breakout-card-ancient" style="cursor: pointer; font-family: inherit;">
+              <!-- Golden sunset glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-ancient"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/ancient-civilizations.png" alt="Ancient Civilizations" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Ancient Civs</div>
+            </button>
+          </div>
+
+          <!-- Card 9: Cold War - Floating Circular Design -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="cold-war-topic-btn" class="breakout-card breakout-card-coldwar" style="cursor: pointer; font-family: inherit;">
+              <!-- Cold blue glow behind -->
+              <div class="breakout-card-glow breakout-card-glow-coldwar"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/history/cold-war.png" alt="Cold War" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Cold War</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Logos Section -->
+      <div class="logos-section">
+        <h3 class="section-title">✨ Logos</h3>
+        <div class="topics-scroll-row stagger-reveal">
+
+          <!-- Card 1: Logos General -->
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="logos-topic-btn" class="breakout-card" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/logos/logos.png" alt="Logos" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Logos</div>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PROFILE SCREEN VIEW -->
+    <div class="profile-view hidden" id="profile-view">
+
+      <!-- Floating Particles Background -->
+      <div class="profile-particles"></div>
+
+      <!-- Profile Top Bar -->
+      <div class="profile-top-bar">
+        <div class="profile-settings">⚙️</div>
+        <div class="profile-spacer"></div>
+      </div>
+
+      <!-- Profile Header Section -->
+      <div class="profile-header">
+
+        <!-- Background Banner with Animated Glow -->
+        <div class="profile-banner"></div>
+
+        <!-- Glowing Avatar -->
+        <div class="profile-avatar">👤</div>
+
+        <!-- Identity Block -->
+        <div class="profile-info">
+          <div class="profile-name-row">
+            <div class="level-badge profile-level-badge" onclick="playClickSound(); openJourneyModal();">
+              <div class="level-badge-ring">
+                <svg viewBox="0 0 48 48">
+                  <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+                  <circle class="level-ring-progress" id="profile-level-ring" cx="24" cy="24" r="22"/>
+                </svg>
+              </div>
+              <div class="level-badge-inner">
+                <span class="level-badge-text">LV</span>
+                <span class="level-badge-number" id="profile-level-number">1</span>
+              </div>
+            </div>
+          </div>
+          <div class="profile-bio">Add a bio</div>
+          <div class="profile-location">🌍 Location not set</div>
+          <div class="profile-active">Last Active: Just now</div>
+          <div class="profile-divider"></div>
+        </div>
+
+        <!-- Three Feature Cards -->
+        <div class="profile-feature-cards">
+          <div class="feature-card achievements-card" onclick="playClickSound(); openAchievementsRitual();">
+            <span class="feature-card-icon">🏆</span>
+            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-value" id="profile-achievements-count">0</div>
+          </div>
+          <div class="feature-card best-topic-card" onclick="playClickSound();">
+            <span class="feature-card-icon">🔥</span>
+            <div class="feature-card-title">Best Topic</div>
+            <div class="feature-card-value">—</div>
+          </div>
+          <div class="feature-card quanta-card" onclick="playClickSound(); openQuantaModal();">
+            <span class="feature-card-icon">✦</span>
+            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-value" id="profile-quanta">0</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Stats Floating Card -->
+      <div class="profile-stats-row">
+        <div class="stat-item">
+          <div class="stat-label">GAMES</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">ACCURACY</div>
+          <div class="stat-value">0%</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-value">0</div>
+        </div>
+      </div>
+
+
+      <!-- Stats Content (Moved from Stats Tab) -->
+      <div class="profile-stats-section">
+
+        <!-- Stats Chart Button -->
+        <button class="stats-chart-button" onclick="playClickSound(); openStatsChart()">
+          <span class="stats-chart-btn-icon">📈</span>
+          <span class="stats-chart-btn-text" data-i18n="view_stats_chart">View Stats Chart</span>
+          <span class="stats-chart-btn-arrow">→</span>
+        </button>
+
+      </div>
+
+
+
+    </div>
+
+    <!-- SOCIAL TEASER MODAL -->
+    <div class="social-modal hidden" id="social-modal">
+      <div class="social-modal-backdrop" onclick="closeSocialTeaser()"></div>
+      <div class="social-modal-content">
+        <button class="social-modal-close" onclick="closeSocialTeaser()">✕</button>
+        <div class="social-modal-gradient-bg"></div>
+        <div class="social-modal-sparkles"></div>
+        <div class="social-modal-icon">
+          <svg viewBox="0 0 24 24" width="64" height="64">
+            <defs>
+              <linearGradient id="socialModalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f09433"/>
+                <stop offset="25%" style="stop-color:#e6683c"/>
+                <stop offset="50%" style="stop-color:#dc2743"/>
+                <stop offset="75%" style="stop-color:#cc2366"/>
+                <stop offset="100%" style="stop-color:#bc1888"/>
+              </linearGradient>
+            </defs>
+            <!-- Main chat bubble -->
+            <path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="url(#socialModalGradient)"/>
+            <!-- Secondary bubble (overlapping) -->
+            <path d="M20 8h-2v6a2 2 0 0 1-2 2H9l1 1h6l3 3v-3h1a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2z" fill="url(#socialModalGradient)" opacity="0.7"/>
+            <!-- Connection dots -->
+            <circle cx="6" cy="10" r="1.2" fill="white"/>
+            <circle cx="10" cy="10" r="1.2" fill="white"/>
+            <circle cx="14" cy="10" r="1.2" fill="white"/>
+          </svg>
+          <span class="social-sparkle">✨</span>
+        </div>
+        <h2 class="social-modal-title">Quizzena Social — Coming Soon</h2>
+        <p class="social-modal-subtitle">A new way to explore quizzes.</p>
+        <div class="social-modal-features">
+          <p>Scroll through quizzes like a feed.</p>
+          <p>React. Share. Discover. Follow knowledge.</p>
+          <p>Quiz content becomes social.</p>
+        </div>
+        <button class="social-modal-btn disabled" disabled>Not Yet Available</button>
+      </div>
+    </div>
+
+    <!-- SOCIAL FEED VIEW (Placeholder for future) -->
+    <div class="social-view hidden" id="social-view">
+      <div class="social-header">
+        <h1>Social Feed</h1>
+        <p>Coming Soon</p>
+      </div>
+    </div>
+
+    <!-- LEADERBOARD SCREEN VIEW -->
+    <div class="leaderboard-view hidden" id="leaderboard-view">
+
+      <!-- Leaderboard Title -->
+      <div class="leaderboard-header">
+        <h1>🏆 <span data-i18n="leaderboard_title">Leaderboard</span></h1>
+        <p data-i18n="leaderboard_global">Global Rankings</p>
+      </div>
+
+      <!-- Leaderboard Content Area -->
+      <div class="leaderboard-content">
+
+        <!-- Coming Soon Message (temporary) -->
+        <div class="coming-soon-box">
+          <div class="coming-soon-icon">🚀</div>
+          <div class="coming-soon-title">Coming Soon!</div>
+          <div class="coming-soon-text">
+            Global leaderboards are being developed. Soon you'll be able to compete with players worldwide!
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================================ -->
+    <!-- 🏛️ ACHIEVEMENTS RITUAL PAGE -->
+    <!-- ================================ -->
+    <div class="achievements-ritual-view hidden" id="achievements-ritual-view">
+      <!-- Ambient Background -->
+      <div class="ritual-ambient-bg">
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+      </div>
+
+      <!-- Floating Particles -->
+      <div class="ritual-particles" id="ritual-particles"></div>
+
+      <!-- Header with Back Button -->
+      <div class="ritual-header">
+        <button class="ritual-back-btn" onclick="closeAchievementsRitual()">←</button>
+        <div class="ritual-title-container">
+          <h1 class="ritual-title">Achievements Ritual</h1>
+          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+        </div>
+      </div>
+
+      <!-- 8 Houses Grid -->
+      <div class="ritual-houses-container">
+        <!-- House 1: Path of Progression -->
+        <div class="ritual-house-card house-progression" onclick="openHousePage('progression', '🔷', 'Path of Progression')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔷</span>
+          </div>
+          <span class="ritual-house-name">Progression</span>
+        </div>
+
+        <!-- House 2: Path of Skill -->
+        <div class="ritual-house-card house-skill" onclick="openHousePage('skill', '⬡', 'Path of Skill')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape skill-hexagon">
+            <span class="ritual-house-icon">⬡</span>
+          </div>
+          <span class="ritual-house-name">Skill</span>
+        </div>
+
+        <!-- House 3: Path of Exploration -->
+        <div class="ritual-house-card house-exploration" onclick="openHousePage('exploration', '🧭', 'Path of Exploration')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="compass-cardinal-n">N</span>
+            <span class="compass-cardinal-e">E</span>
+            <span class="compass-cardinal-s">S</span>
+            <span class="compass-cardinal-w">W</span>
+            <span class="ritual-house-icon">🧭</span>
+          </div>
+          <span class="ritual-house-name">Exploration</span>
+        </div>
+
+        <!-- House 4: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour" onclick="openHousePage('behaviour', '🔮', 'Path of Behaviour')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <span class="ritual-house-icon">🔮</span>
+          </div>
+          <span class="ritual-house-name">Behaviour</span>
+        </div>
+
+        <!-- House 5: Path of Time Attack -->
+        <div class="ritual-house-card house-time" onclick="openHousePage('time', '⏱️', 'Path of Time Attack')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">⏱️</span>
+          </div>
+          <span class="ritual-house-name">Time Attack</span>
+        </div>
+
+        <!-- House 6: Path of Survival -->
+        <div class="ritual-house-card house-survival" onclick="openHousePage('survival', '❤️‍🔥', 'Path of Survival')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="survival-crack-line"></div>
+            <span class="ritual-house-icon">❤️‍🔥</span>
+          </div>
+          <span class="ritual-house-name">Survival</span>
+        </div>
+
+        <!-- House 7: Path of Momentum -->
+        <div class="ritual-house-card house-momentum" onclick="openHousePage('momentum', '🔥', 'Path of Momentum')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔥</span>
+          </div>
+          <span class="ritual-house-name">Momentum</span>
+        </div>
+
+        <!-- House 8: Path of Casual Mastery -->
+        <div class="ritual-house-card house-casual" onclick="openHousePage('casual', '🌿', 'Path of Casual Mastery')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🌿</span>
+          </div>
+          <span class="ritual-house-name">Casual</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================ -->
+    <!-- 🏠 HOUSE SUB-PAGE (Coming Soon) -->
+    <!-- ================================ -->
+    <div class="house-subpage hidden" id="house-subpage" data-house="">
+      <div class="house-subpage-header">
+        <button class="house-back-btn" onclick="closeHousePage()">←</button>
+        <h2 class="house-subpage-title" id="house-subpage-title">Path Name</h2>
+      </div>
+      <div class="house-subpage-content">
+        <div class="house-coming-soon-icon" id="house-subpage-icon">🔷</div>
+        <h3 class="house-coming-soon-title">Coming Soon</h3>
+        <p class="house-coming-soon-text">
+          Achievements for this path are being forged in the cosmic fires. 
+          Return soon to claim your destiny.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+      <div class="nav-item active" id="nav-home">
+        🏠<br><span data-i18n="nav_home">Home</span>
+      </div>
+      <div class="nav-item" id="nav-topics">
+        🌍<br><span data-i18n="nav_topics">Topics</span>
+      </div>
+      <div class="nav-item" id="nav-social" onclick="playClickSound(); openSocialTeaser();">
+        <div class="social-nav-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <defs>
+              <linearGradient id="socialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f09433"/>
+                <stop offset="25%" style="stop-color:#e6683c"/>
+                <stop offset="50%" style="stop-color:#dc2743"/>
+                <stop offset="75%" style="stop-color:#cc2366"/>
+                <stop offset="100%" style="stop-color:#bc1888"/>
+              </linearGradient>
+            </defs>
+            <!-- Main chat bubble -->
+            <path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="url(#socialGradient)"/>
+            <!-- Secondary bubble (overlapping) -->
+            <path d="M20 8h-2v6a2 2 0 0 1-2 2H9l1 1h6l3 3v-3h1a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2z" fill="url(#socialGradient)" opacity="0.7"/>
+            <!-- Connection dots -->
+            <circle cx="6" cy="10" r="1.2" fill="white"/>
+            <circle cx="10" cy="10" r="1.2" fill="white"/>
+            <circle cx="14" cy="10" r="1.2" fill="white"/>
+          </svg>
+          <span class="social-lock-badge">🔒</span>
+        </div>
+        <span data-i18n="nav_social">Social</span>
+      </div>
+      <div class="nav-item" id="nav-leaderboard">
+        🏆<br><span data-i18n="nav_leaderboard">Leaderboard</span>
+      </div>
+      <div class="nav-item" id="nav-profile">
+        👤<br><span data-i18n="nav_profile">Profile</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================================ -->
+  <!-- 👥 PLAYER SELECTION SCREEN -->
+  <!-- ================================ -->
+  <div id="player-select" class="hidden">
+    <h2>Choose Game Mode</h2>
+    <div class="mode-buttons">
+      <button id="single-player-btn">🎮 Single Player</button>
+      <button id="two-player-btn">👥 2 Players</button>
+      <button id="back-to-home-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎯 MODE SELECT SCREEN -->
+  <!-- ================================ -->
+  <div id="mode-select" class="hidden">
+    <h2>Choose Game Mode</h2>
+    <div class="mode-buttons">
+      <button id="time-attack-btn">⚡ Time Attack (60s)</button>
+      <button id="casual-btn">🎯 Casual (5 questions)</button>
+      <button id="three-hearts-btn">💜 3 Hearts</button>
+      <button id="back-btn" class="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎯 DIFFICULTY SELECTION SCREEN -->
+  <!-- ================================ -->
+  <div id="area-difficulty-screen" class="hidden">
+    <h2>Select Difficulty Level</h2>
+    <div class="difficulty-buttons">
+      <button id="area-easy-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🟢</span>
+        <span class="difficulty-name">Easy</span>
+        <span class="difficulty-desc">10 Largest Countries</span>
+      </button>
+      <button id="area-medium-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🟡</span>
+        <span class="difficulty-name">Medium</span>
+        <span class="difficulty-desc">155 Mid-size Countries</span>
+      </button>
+      <button id="area-hard-btn" class="difficulty-btn">
+        <span class="difficulty-icon">🔴</span>
+        <span class="difficulty-name">Hard</span>
+        <span class="difficulty-desc">25 Smallest Countries</span>
+      </button>
+    </div>
+    <button id="back-from-difficulty" class="back-btn">← Back</button>
+  </div>
+
+  <!-- ================================ -->
+  <!-- 🎮 GAME SCREEN -->
+  <!-- ================================ -->
+  <div id="game-screen" class="hidden">
+    <!-- Exit Button (Top Left) -->
+    <button id="back-to-menu" class="exit-btn">←</button>
+    
+    <!-- Question Counter (Top Right) -->
+    <div id="question-counter" class="question-counter" style="display:none;"></div>
+    
+    <header>
+      <h2 id="question">Which country's flag is this?</h2>
+      <div id="score">Score: 0</div>
+      <div id="timer">⏳ 60s</div>
+    </header>
+
+    <main>
+      <img id="flag" src="" alt="Flag">
+      <div id="answers"></div>
+      <div id="result"></div>
+    </main>
+
+    <footer>
+      <button id="play-again" style="display:none;">🔁 Play Again</button>
+      <button id="main-menu" style="display:none;">🏠 Main Menu</button>
+    </footer>
+  </div>
+
+  <!-- Slot Selection Modal (outside all containers for z-index) -->
+  <div class="slot-modal hidden" id="slot-modal">
+    <div class="slot-modal-backdrop" onclick="closeSlotModal()"></div>
+    <div class="slot-modal-content">
+      <h3 class="slot-modal-title">Add to Slot</h3>
+      <p class="slot-modal-subtitle">Choose a slot for this quiz</p>
+      <div class="slot-modal-buttons">
+        <button class="slot-modal-btn" onclick="playClickSound(); assignToSlot(1);">
+          <span class="slot-modal-btn-num">1</span>
+          <span class="slot-modal-btn-text" id="slot-modal-btn-1">Empty</span>
+        </button>
+        <button class="slot-modal-btn" onclick="playClickSound(); assignToSlot(2);">
+          <span class="slot-modal-btn-num">2</span>
+          <span class="slot-modal-btn-text" id="slot-modal-btn-2">Empty</span>
+        </button>
+      </div>
+      <button class="slot-modal-cancel" onclick="playClickSound(); closeSlotModal();">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification (outside all containers for z-index) -->
+  <div class="toast-notification hidden" id="toast-notification">
+    <span class="toast-message"></span>
+  </div>
+
+  <!-- Static Tutorial Profile Page (for step 12/19) - Uses SAME classes as real profile -->
+  <div class="tutorial-static-profile hidden" id="tutorial-static-profile">
+    <!-- Reuses exact same structure and classes as real profile-view -->
+    <div class="profile-view" style="display: flex; flex-direction: column;">
+      
+      <!-- Profile Header Section -->
+      <div class="profile-header">
+        <!-- Background Banner with Animated Glow -->
+        <div class="profile-banner"></div>
+        
+        <!-- Glowing Avatar -->
+        <div class="profile-avatar">👤</div>
+        
+        <!-- Identity Block -->
+        <div class="profile-info">
+          <div class="profile-name-row">
+            <div class="level-badge profile-level-badge">
+              <div class="level-badge-ring">
+                <svg viewBox="0 0 48 48">
+                  <circle class="level-ring-bg" cx="24" cy="24" r="22"/>
+                  <circle class="level-ring-progress" cx="24" cy="24" r="22" style="stroke-dashoffset: 100;"/>
+                </svg>
+              </div>
+              <div class="level-badge-inner">
+                <span class="level-badge-text">LV</span>
+                <span class="level-badge-number">2</span>
+              </div>
+            </div>
+          </div>
+          <div class="profile-bio">Add a bio</div>
+          <div class="profile-location">🌍 Location not set</div>
+          <div class="profile-active">Last Active: Just now</div>
+          <div class="profile-divider"></div>
+        </div>
+        
+        <!-- Three Feature Cards -->
+        <div class="profile-feature-cards">
+          <div class="feature-card achievements-card" id="tutorial-achievements-target">
+            <span class="feature-card-icon">🏆</span>
+            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-value">0</div>
+          </div>
+          <div class="feature-card best-topic-card">
+            <span class="feature-card-icon">🔥</span>
+            <div class="feature-card-title">Best Topic</div>
+            <div class="feature-card-value">—</div>
+          </div>
+          <div class="feature-card quanta-card">
+            <span class="feature-card-icon">✦</span>
+            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-value">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Quick Stats Floating Card -->
+      <div class="profile-stats-row">
+        <div class="stat-item">
+          <div class="stat-label">GAMES</div>
+          <div class="stat-value">10</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">ACCURACY</div>
+          <div class="stat-value">64%</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-value">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-value">0</div>
+        </div>
+      </div>
+      
+      <!-- Stats Chart Button for tutorial -->
+      <div class="profile-stats-section">
+        <button class="stats-chart-button" id="tutorial-stats-button">
+          <span class="stats-chart-btn-icon">📈</span>
+          <span class="stats-chart-btn-text">View Stats Chart</span>
+          <span class="stats-chart-btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static Tutorial Achievements Page (for step 14/19) - EXACT COPY -->
+  <div class="tutorial-static-achievements hidden" id="tutorial-static-achievements">
+    <div class="achievements-ritual-view" style="display: flex !important;">
+      <!-- Ambient Background -->
+      <div class="ritual-ambient-bg">
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+        <div class="ritual-ambient-orb"></div>
+      </div>
+
+      <!-- Header with Back Button -->
+      <div class="ritual-header">
+        <button class="ritual-back-btn">←</button>
+        <div class="ritual-title-container">
+          <h1 class="ritual-title">Achievements Ritual</h1>
+          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+        </div>
+      </div>
+
+      <!-- 8 Houses Grid -->
+      <div class="ritual-houses-container" id="tutorial-houses-grid">
+        <!-- House 1: Path of Progression -->
+        <div class="ritual-house-card house-progression">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔷</span>
+          </div>
+          <span class="ritual-house-name">Progression</span>
+        </div>
+
+        <!-- House 2: Path of Skill -->
+        <div class="ritual-house-card house-skill">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape skill-hexagon">
+            <span class="ritual-house-icon">⬡</span>
+          </div>
+          <span class="ritual-house-name">Skill</span>
+        </div>
+
+        <!-- House 3: Path of Exploration -->
+        <div class="ritual-house-card house-exploration">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="compass-cardinal-n">N</span>
+            <span class="compass-cardinal-e">E</span>
+            <span class="compass-cardinal-s">S</span>
+            <span class="compass-cardinal-w">W</span>
+            <span class="ritual-house-icon">🧭</span>
+          </div>
+          <span class="ritual-house-name">Exploration</span>
+        </div>
+
+        <!-- House 4: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <span class="ritual-house-icon">🔮</span>
+          </div>
+          <span class="ritual-house-name">Behaviour</span>
+        </div>
+
+        <!-- House 5: Path of Time Attack -->
+        <div class="ritual-house-card house-time">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">⏱️</span>
+          </div>
+          <span class="ritual-house-name">Time Attack</span>
+        </div>
+
+        <!-- House 6: Path of Survival -->
+        <div class="ritual-house-card house-survival">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="survival-crack-line"></div>
+            <span class="ritual-house-icon">❤️‍🔥</span>
+          </div>
+          <span class="ritual-house-name">Survival</span>
+        </div>
+
+        <!-- House 7: Path of Momentum -->
+        <div class="ritual-house-card house-momentum">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🔥</span>
+          </div>
+          <span class="ritual-house-name">Momentum</span>
+        </div>
+
+        <!-- House 8: Path of Casual Mastery -->
+        <div class="ritual-house-card house-casual">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <span class="ritual-house-icon">🌿</span>
+          </div>
+          <span class="ritual-house-name">Casual</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Static Tutorial Stats Page (for steps 17-18/19) - EXACT COPY -->
+  <div class="tutorial-static-stats hidden" id="tutorial-static-stats">
+    <div class="stats-chart-dashboard" style="display: flex !important;">
+      <!-- Top Bar -->
+      <div class="stats-chart-top-bar">
+        <button class="stats-chart-back-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <h1 class="stats-chart-title">Overall Stats</h1>
+        <div class="stats-chart-spacer"></div>
+      </div>
+
+      <!-- Page Navigation Tabs -->
+      <div class="stats-page-tabs">
+        <button class="stats-page-tab active" id="tutorial-stats-tab-1">
+          <span class="stats-page-tab-icon">📊</span>
+          <span class="stats-page-tab-text">Overall</span>
+        </button>
+        <button class="stats-page-tab" id="tutorial-stats-tab-2">
+          <span class="stats-page-tab-icon">🎯</span>
+          <span class="stats-page-tab-text">By Topic</span>
+        </button>
+      </div>
+
+      <!-- Page 1: Overall Stats Chart -->
+      <div class="stats-page" id="tutorial-stats-page-1">
+        <!-- Stat Type Selector -->
+        <div class="stats-type-selector" id="tutorial-stats-selector">
+          <button class="stats-type-btn active" data-stat="games">
+            <span class="stats-type-icon">🎮</span>
+            <span class="stats-type-label">Games</span>
+          </button>
+          <button class="stats-type-btn" data-stat="questions">
+            <span class="stats-type-icon">❓</span>
+            <span class="stats-type-label">Questions</span>
+          </button>
+          <button class="stats-type-btn" data-stat="correct">
+            <span class="stats-type-icon">✅</span>
+            <span class="stats-type-label">Correct</span>
+          </button>
+          <button class="stats-type-btn" data-stat="wrong">
+            <span class="stats-type-icon">❌</span>
+            <span class="stats-type-label">Wrong</span>
+          </button>
+          <button class="stats-type-btn" data-stat="time">
+            <span class="stats-type-icon">⏱️</span>
+            <span class="stats-type-label">Time</span>
+          </button>
+          <button class="stats-type-btn" data-stat="streak">
+            <span class="stats-type-icon">🔥</span>
+            <span class="stats-type-label">Streak</span>
+          </button>
+        </div>
+
+        <!-- Time Period Tabs -->
+        <div class="stats-period-tabs">
+          <button class="stats-period-tab active" data-period="day">1 Day</button>
+          <button class="stats-period-tab" data-period="week">1 Week</button>
+          <button class="stats-period-tab" data-period="month">1 Month</button>
+          <button class="stats-period-tab" data-period="year">1 Year</button>
+          <button class="stats-period-tab" data-period="all">All Time</button>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="stats-chart-container">
+          <div class="stats-chart-empty">
+            <span class="stats-empty-icon">📭</span>
+            <span class="stats-empty-text">No data available for this time range</span>
+          </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="stats-summary-cards">
+          <div class="stats-summary-card peak">
+            <span class="stats-summary-label">Peak</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+          <div class="stats-summary-card average">
+            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+          <div class="stats-summary-card total">
+            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-value">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guided Tutorial Overlay System -->
+  <div class="tutorial-overlay hidden" id="tutorial-overlay">
+    <!-- Dark backdrop with spotlight cutout (controlled via JS) -->
+    <div class="tutorial-spotlight-mask" id="tutorial-spotlight-mask"></div>
+    
+    <!-- Highlight ring around element -->
+    <div class="tutorial-highlight-ring hidden" id="tutorial-highlight-ring"></div>
+    
+    <!-- Tap indicator -->
+    <div class="tutorial-tap-indicator hidden" id="tutorial-tap-indicator">
+      <span class="tap-hand">👆</span>
+      <span class="tap-text">Tap here</span>
+    </div>
+    
+    <!-- Tutorial text box with arrow -->
+    <div class="tutorial-textbox" id="tutorial-textbox">
+      <div class="tutorial-textbox-arrow" id="tutorial-textbox-arrow"></div>
+      <div class="tutorial-textbox-content">
+        <div class="tutorial-step-indicator" id="tutorial-step-indicator">1 / 15</div>
+        <h3 class="tutorial-textbox-title" id="tutorial-textbox-title">Welcome!</h3>
+        <p class="tutorial-textbox-text" id="tutorial-textbox-text">Welcome to Quizzena tutorial.</p>
+      </div>
+      <div class="tutorial-textbox-buttons">
+        <button class="tutorial-skip-btn" id="tutorial-skip-btn">Skip</button>
+        <button class="tutorial-next-btn" id="tutorial-next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

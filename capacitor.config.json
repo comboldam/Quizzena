@@ -1,9 +1,0 @@
-{
-  "appId": "com.quizzena.app",
-  "appName": "Quizzena",
-  "webDir": "dist",
-  "server": {
-    "androidScheme": "https"
-  }
-}
-
