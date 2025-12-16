@@ -1557,10 +1557,18 @@
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Card 1: Logos General -->
-          <div class="topic-card-small status-active">
-            <button id="logos-topic-btn" class="topic-card-btn">
-              <div class="topic-icon-small">🏷️</div>
-              <div class="topic-name-small">Logos</div>
+          <div class="status-active" style="flex-shrink: 0;">
+            <button id="logos-topic-btn" class="breakout-card" style="cursor: pointer; font-family: inherit;">
+              <!-- Glow behind -->
+              <div class="breakout-card-glow"></div>
+
+              <!-- Circular image container with gradient mask -->
+              <div class="floating-card-circle">
+                <img src="images/topics/logos/logos.png" alt="Logos" class="floating-card-image">
+              </div>
+
+              <!-- Title below -->
+              <div class="floating-card-title">Logos</div>
             </button>
           </div>
 
