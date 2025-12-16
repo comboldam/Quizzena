@@ -1,0 +1,32 @@
+rules_version = '2';
+
+// Firestore Security Rules for Quizzena
+// Copy these rules to Firebase Console > Firestore > Rules
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Users collection - each user can only read/write their own document
+    match /users/{userId} {
+      // Allow read/write only if the request is from the authenticated user
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Validate data structure on write
+      allow create, update: if request.auth != null 
+        && request.auth.uid == userId
+        && validateUserData(request.resource.data);
+    }
+    
+    // Helper function to validate user data structure
+    function validateUserData(data) {
+      // Basic validation - ensure required fields exist
+      return data.keys().hasAny(['profile', 'stats', 'prestige', 'quanta', 'achievements', 'lastUpdated']);
+    }
+    
+    // Deny all other access by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+

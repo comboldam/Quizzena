@@ -234,6 +234,54 @@ async function loadFromFirebase() {
           }
         }
         
+        // 💎 Merge Quanta (take higher value)
+        if (cloudData.quanta !== undefined) {
+          userData.quanta = Math.max(userData.quanta || 0, cloudData.quanta || 0);
+        }
+        
+        // 🏆 Merge Achievements
+        if (cloudData.achievements) {
+          if (!userData.achievements) {
+            userData.achievements = { unlocked: [], pending: [], history: {} };
+          }
+          
+          // Merge unlocked achievements (combine unique IDs)
+          if (cloudData.achievements.unlocked) {
+            const localUnlockedIds = new Set((userData.achievements.unlocked || []).map(a => a.id));
+            for (const cloudAchievement of cloudData.achievements.unlocked) {
+              if (!localUnlockedIds.has(cloudAchievement.id)) {
+                userData.achievements.unlocked.push(cloudAchievement);
+              }
+            }
+          }
+          
+          // Merge pending achievements (combine unique IDs, but remove if already in unlocked)
+          if (cloudData.achievements.pending) {
+            const unlockedIds = new Set((userData.achievements.unlocked || []).map(a => a.id));
+            const localPendingIds = new Set((userData.achievements.pending || []).map(a => a.id));
+            for (const cloudPending of cloudData.achievements.pending) {
+              if (!unlockedIds.has(cloudPending.id) && !localPendingIds.has(cloudPending.id)) {
+                userData.achievements.pending.push(cloudPending);
+              }
+            }
+          }
+          
+          // Merge achievement history (combine dates, take higher values)
+          if (cloudData.achievements.history) {
+            if (!userData.achievements.history) userData.achievements.history = {};
+            
+            for (const dateKey in cloudData.achievements.history) {
+              const cloudDay = cloudData.achievements.history[dateKey];
+              const localDay = userData.achievements.history[dateKey] || { pxp: 0, quanta: 0 };
+              
+              userData.achievements.history[dateKey] = {
+                pxp: Math.max(localDay.pxp || 0, cloudDay.pxp || 0),
+                quanta: Math.max(localDay.quanta || 0, cloudDay.quanta || 0)
+              };
+            }
+          }
+        }
+        
         // Save merged data locally
         localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
         console.log('🔥 Merged cloud data with local');
@@ -275,6 +323,12 @@ async function syncToFirebase() {
       
       // P-XP (Player Prestige XP) System
       prestige: userData.prestige,
+      
+      // 💎 Quanta Currency
+      quanta: userData.quanta || 0,
+      
+      // 🏆 Achievements System
+      achievements: userData.achievements || { unlocked: [], pending: [], history: {} },
       
       // Timestamps
       lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
