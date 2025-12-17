@@ -15,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Eleven in Stranger Things?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg/250px-Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg",
     "options": [
       "Sadie Sink",
       "Millie Bobby Brown",
@@ -42,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Mike Wheeler?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Finn_Wolfhard_by_Gage_Skidmore_2.jpg/250px-Finn_Wolfhard_by_Gage_Skidmore_2.jpg",
     "options": [
       "Gaten Matarazzo",
       "Caleb McLaughlin",
@@ -69,7 +67,6 @@
   {
     "id": 6,
     "question": "Who plays Dustin Henderson?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Gaten_Matarazzo.jpg/250px-Gaten_Matarazzo.jpg",
     "options": [
       "Finn Wolfhard",
       "Gaten Matarazzo",
@@ -96,7 +93,6 @@
   {
     "id": 8,
     "question": "Who plays Lucas Sinclair?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Caleb_McLaughlin_2025_%281%29.png/250px-Caleb_McLaughlin_2025_%281%29.png",
     "options": [
       "Caleb McLaughlin",
       "Gaten Matarazzo",
@@ -110,7 +106,6 @@
   {
     "id": 9,
     "question": "Who plays Will Byers?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Noah_Schnapp_-_NBFF_2025.jpg/250px-Noah_Schnapp_-_NBFF_2025.jpg",
     "options": [
       "Finn Wolfhard",
       "Caleb McLaughlin",
@@ -137,7 +132,6 @@
   {
     "id": 11,
     "question": "Who plays Joyce Byers?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Winona_Ryder-63849.jpg/250px-Winona_Ryder-63849.jpg",
     "options": [
       "Winona Ryder",
       "Cara Buono",
@@ -151,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Chief Jim Hopper?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/David_Harbour_by_Gage_Skidmore_2.jpg/250px-David_Harbour_by_Gage_Skidmore_2.jpg",
     "options": [
       "Sean Astin",
       "Matthew Modine",
@@ -204,7 +197,6 @@
   {
     "id": 16,
     "question": "Who plays Nancy Wheeler?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Natalia_Dyer_in_2017.jpg/250px-Natalia_Dyer_in_2017.jpg",
     "options": [
       "Maya Hawke",
       "Natalia Dyer",
@@ -218,7 +210,6 @@
   {
     "id": 17,
     "question": "Who plays Jonathan Byers?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/CharlieHeaton2017_%28cropped%29.jpg/250px-CharlieHeaton2017_%28cropped%29.jpg",
     "options": [
       "Joe Keery",
       "Dacre Montgomery",
@@ -232,7 +223,6 @@
   {
     "id": 18,
     "question": "Who plays Steve Harrington?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Joe_Keery_by_Gage_Skidmore.jpg/250px-Joe_Keery_by_Gage_Skidmore.jpg",
     "options": [
       "Charlie Heaton",
       "Joe Keery",
@@ -285,7 +275,6 @@
   {
     "id": 22,
     "question": "Who plays Robin Buckley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Maya_Hawke_2019_by_Glenn_Francis_%28cropped%29.jpg/250px-Maya_Hawke_2019_by_Glenn_Francis_%28cropped%29.jpg",
     "options": [
       "Natalia Dyer",
       "Sadie Sink",
@@ -299,7 +288,6 @@
   {
     "id": 23,
     "question": "Who plays Max Mayfield?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sadie_Sink_%2843914734441%29.jpg/250px-Sadie_Sink_%2843914734441%29.jpg",
     "options": [
       "Maya Hawke",
       "Millie Bobby Brown",
@@ -313,7 +301,6 @@
   {
     "id": 24,
     "question": "Who plays Billy Hargrove?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Dacre_Montgomery_by_Gage_Skidmore.jpg/250px-Dacre_Montgomery_by_Gage_Skidmore.jpg",
     "options": [
       "Joe Keery",
       "Dacre Montgomery",
@@ -353,7 +340,6 @@
   {
     "id": 27,
     "question": "Who plays Erica Sinclair?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Priah_Ferguson_in_2019.png/250px-Priah_Ferguson_in_2019.png",
     "options": [
       "Millie Bobby Brown",
       "Priah Ferguson",
@@ -380,7 +366,6 @@
   {
     "id": 29,
     "question": "Who plays Murray Bauman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Brett_Gelman_by_Gage_Skidmore_2.jpg/250px-Brett_Gelman_by_Gage_Skidmore_2.jpg",
     "options": [
       "Sean Astin",
       "Matthew Modine",
@@ -394,7 +379,6 @@
   {
     "id": 30,
     "question": "Who plays Dr. Martin Brenner?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Matthew_Modine_by_Gage_Skidmore.jpg/250px-Matthew_Modine_by_Gage_Skidmore.jpg",
     "options": [
       "Paul Reiser",
       "Matthew Modine",
@@ -421,7 +405,6 @@
   {
     "id": 32,
     "question": "Who plays Vecna/Henry Creel/001?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Jamie_Campbell_Bower.jpg/250px-Jamie_Campbell_Bower.jpg",
     "options": [
       "Matthew Modine",
       "Jamie Campbell Bower",
@@ -435,7 +418,6 @@
   {
     "id": 33,
     "question": "Who plays Eddie Munson?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Joseph_Quinn_by_Gage_Skidmore.jpg/250px-Joseph_Quinn_by_Gage_Skidmore.jpg",
     "options": [
       "Joe Keery",
       "Charlie Heaton",
@@ -2618,4 +2600,3 @@
     "category": "production"
   }
 ]
-

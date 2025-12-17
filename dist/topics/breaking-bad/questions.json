@@ -15,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Walter White in Breaking Bad?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bryan_Cranston_2022_%283x4_cropped%29.jpg/250px-Bryan_Cranston_2022_%283x4_cropped%29.jpg",
     "options": [
       "Bryan Cranston",
       "Aaron Paul",
@@ -42,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Jesse Pinkman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Aaron_Paul_-_AMC_The_Grove_-_Ash.jpg/250px-Aaron_Paul_-_AMC_The_Grove_-_Ash.jpg",
     "options": [
       "RJ Mitte",
       "Jesse Plemons",
@@ -95,7 +93,6 @@
   {
     "id": 8,
     "question": "Who plays Hank Schrader?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Dean_Norris_by_Gage_Skidmore_4.jpg/250px-Dean_Norris_by_Gage_Skidmore_4.jpg",
     "options": [
       "Dean Norris",
       "Steven Michael Quezada",
@@ -122,7 +119,6 @@
   {
     "id": 10,
     "question": "Who plays Skyler White?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Anna_Gunn_by_Gage_Skidmore_3.jpg/250px-Anna_Gunn_by_Gage_Skidmore_3.jpg",
     "options": [
       "Anna Gunn",
       "Betsy Brandt",
@@ -149,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Saul Goodman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Bob_Odenkirk_by_Gage_Skidmore_2.jpg/250px-Bob_Odenkirk_by_Gage_Skidmore_2.jpg",
     "options": [
       "Bob Odenkirk",
       "Bill Burr",
@@ -202,7 +197,6 @@
   {
     "id": 16,
     "question": "Who plays Walter Jr.?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/RJ_Mitte_by_Gage_Skidmore_3.jpg/250px-RJ_Mitte_by_Gage_Skidmore_3.jpg",
     "options": [
       "RJ Mitte",
       "Aaron Paul",
@@ -229,7 +223,6 @@
   {
     "id": 18,
     "question": "Who plays Marie Schrader?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Betsy_Brandt_by_Gage_Skidmore_3.jpg/250px-Betsy_Brandt_by_Gage_Skidmore_3.jpg",
     "options": [
       "Betsy Brandt",
       "Anna Gunn",
@@ -269,7 +262,6 @@
   {
     "id": 21,
     "question": "Who plays Gus Fring?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Giancarlo_Esposito_Anemone-22_%28cropped%29.jpg/250px-Giancarlo_Esposito_Anemone-22_%28cropped%29.jpg",
     "options": [
       "Giancarlo Esposito",
       "Mark Margolis",
@@ -322,7 +314,6 @@
   {
     "id": 25,
     "question": "Who plays Mike Ehrmantraut?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Jonathan_Banks_2012_2.jpg/250px-Jonathan_Banks_2012_2.jpg",
     "options": [
       "Jonathan Banks",
       "Michael McKean",
@@ -414,7 +405,6 @@
   {
     "id": 32,
     "question": "Who plays Tuco Salamanca?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Raymond_Cruz_by_Gage_Skidmore.jpg/250px-Raymond_Cruz_by_Gage_Skidmore.jpg",
     "options": [
       "Raymond Cruz",
       "Mark Margolis",
@@ -441,7 +431,6 @@
   {
     "id": 34,
     "question": "Who plays Jane Margolis?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Krysten_Ritter_Photo_Op_GalaxyCon_Austin_2023_%28cropped%29.jpg/250px-Krysten_Ritter_Photo_Op_GalaxyCon_Austin_2023_%28cropped%29.jpg",
     "options": [
       "Krysten Ritter",
       "Emily Rios",
@@ -507,7 +496,6 @@
   {
     "id": 39,
     "question": "Who plays Hector Salamanca?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mark_Margolis.jpg/250px-Mark_Margolis.jpg",
     "options": [
       "Mark Margolis",
       "Raymond Cruz",
@@ -638,7 +626,6 @@
   {
     "id": 49,
     "question": "Who plays Gale Boetticher?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/David_Costabile_%28cropped_v2%29.jpg/250px-David_Costabile_%28cropped_v2%29.jpg",
     "options": [
       "David Costabile",
       "Matt Jones",
@@ -678,7 +665,6 @@
   {
     "id": 52,
     "question": "Who plays Skinny Pete?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Charles_Baker_2011.jpg/250px-Charles_Baker_2011.jpg",
     "options": [
       "Charles Baker",
       "Matt Jones",
@@ -731,7 +717,6 @@
   {
     "id": 56,
     "question": "Who plays Lydia Rodarte-Quayle?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Laura_Fraser_At_Premiere_of_The_Boys_Are_Back_%28cropped%29.jpg/250px-Laura_Fraser_At_Premiere_of_The_Boys_Are_Back_%28cropped%29.jpg",
     "options": [
       "Laura Fraser",
       "Anna Gunn",
@@ -771,7 +756,6 @@
   {
     "id": 59,
     "question": "Who plays Todd Alquist?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Jesse_Plemons.png/250px-Jesse_Plemons.png",
     "options": [
       "Jesse Plemons",
       "Aaron Paul",
@@ -1006,7 +990,6 @@
   {
     "id": 77,
     "question": "Who plays one of The Cousins?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Luis_Moncada_2010.jpg/250px-Luis_Moncada_2010.jpg",
     "options": [
       "Luis Moncada",
       "Daniel Moncada",
@@ -1358,7 +1341,6 @@
   {
     "id": 104,
     "question": "Who plays Andrea Cantillo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Emily_Rios_2006_%283x4_cropped%29.jpg/250px-Emily_Rios_2006_%283x4_cropped%29.jpg",
     "options": [
       "Emily Rios",
       "Krysten Ritter",
@@ -1385,7 +1367,6 @@
   {
     "id": 106,
     "question": "Who plays Huell Babineaux?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/LavellCrawfordByPhilKonstantin_%283x4_cropped%29.JPG/250px-LavellCrawfordByPhilKonstantin_%283x4_cropped%29.JPG",
     "options": [
       "Lavell Crawford",
       "Bill Burr",
@@ -2335,7 +2316,6 @@
   {
     "id": 179,
     "question": "Who plays Ted Beneke?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Christopher_Cousins_2010.jpg/250px-Christopher_Cousins_2010.jpg",
     "options": [
       "Christopher Cousins",
       "Steven Michael Quezada",
@@ -2620,4 +2600,3 @@
     "category": "plot"
   }
 ]
-

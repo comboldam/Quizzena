@@ -2,7 +2,6 @@
   {
     "id": 1,
     "question": "Who plays Frodo Baggins?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Elijah_Wood_at_the_2025_Sundance_Film_Festival_%28cropped%292.jpg/250px-Elijah_Wood_at_the_2025_Sundance_Film_Festival_%28cropped%292.jpg",
     "options": [
       "Tobey Maguire",
       "Orlando Bloom",
@@ -16,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Gandalf?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/SDCC13_-_Ian_McKellen.jpg/250px-SDCC13_-_Ian_McKellen.jpg",
     "options": [
       "Ian McKellen",
       "John Rhys-Davies",
@@ -30,7 +28,6 @@
   {
     "id": 3,
     "question": "Who plays Aragorn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Viggo_Mortensen_B_%282020%29.jpg/250px-Viggo_Mortensen_B_%282020%29.jpg",
     "options": [
       "Sean Bean",
       "Karl Urban",
@@ -44,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Legolas?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg/250px-Orlando_Bloom_at_the_2024_Toronto_International_Film_Festival_%28cropped2%29.jpg",
     "options": [
       "Viggo Mortensen",
       "Billy Boyd",
@@ -58,7 +54,6 @@
   {
     "id": 5,
     "question": "Who plays Samwise Gamgee?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sean_Astin_%2827506939735%29_%28cropped%29.jpg/250px-Sean_Astin_%2827506939735%29_%28cropped%29.jpg",
     "options": [
       "Dominic Monaghan",
       "Billy Boyd",
@@ -150,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Gimli?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/John_Rhys-Davies_NASA_2025.jpg/250px-John_Rhys-Davies_NASA_2025.jpg",
     "options": [
       "John Rhys-Davies",
       "Bernard Hill",
@@ -190,7 +184,6 @@
   {
     "id": 15,
     "question": "Who plays Arwen?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Liv_Tyler_%282016%29.jpg/250px-Liv_Tyler_%282016%29.jpg",
     "options": [
       "Liv Tyler",
       "Kate Winslet",
@@ -204,7 +197,6 @@
   {
     "id": 16,
     "question": "Who plays Galadriel?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Cate_Blanchett-63298_%28cropped_2%29.jpg/250px-Cate_Blanchett-63298_%28cropped_2%29.jpg",
     "options": [
       "Miranda Otto",
       "Cate Blanchett",
@@ -270,7 +262,6 @@
   {
     "id": 21,
     "question": "Who plays Bilbo Baggins in LOTR?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ian_Holm.jpg/250px-Ian_Holm.jpg",
     "options": [
       "Ian Holm",
       "Ian McKellen",
@@ -297,7 +288,6 @@
   {
     "id": 23,
     "question": "Who plays Elrond?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/MJK_08925_Hugo_Weaving_%28Berlinale_2018%29_bw43.jpg/250px-MJK_08925_Hugo_Weaving_%28Berlinale_2018%29_bw43.jpg",
     "options": [
       "Ian McKellen",
       "Christopher Lee",
@@ -350,7 +340,6 @@
   {
     "id": 27,
     "question": "Who plays Merry?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Dominic_Monaghan_by_Gage_Skidmore.jpg/250px-Dominic_Monaghan_by_Gage_Skidmore.jpg",
     "options": [
       "Dominic Monaghan",
       "Billy Boyd",
@@ -442,7 +431,6 @@
   {
     "id": 34,
     "question": "Who plays Boromir?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Sean_Bean_Anemone-25_%28cropped%29.jpg/250px-Sean_Bean_Anemone-25_%28cropped%29.jpg",
     "options": [
       "Karl Urban",
       "Viggo Mortensen",
@@ -508,7 +496,6 @@
   {
     "id": 39,
     "question": "Who plays Faramir?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/David_Wenham_April_2016.jpg/250px-David_Wenham_April_2016.jpg",
     "options": [
       "David Wenham",
       "Orlando Bloom",
@@ -587,7 +574,6 @@
   {
     "id": 45,
     "question": "Who plays Saruman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Christopher_Lee_2009.jpg/250px-Christopher_Lee_2009.jpg",
     "options": [
       "Christopher Lee",
       "Hugo Weaving",
@@ -653,7 +639,6 @@
   {
     "id": 50,
     "question": "Who plays Gollum?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Andy_Serkis_at_MEGACON_Orlando_2025.png/250px-Andy_Serkis_at_MEGACON_Orlando_2025.png",
     "options": [
       "Doug Jones",
       "Warwick Davis",
@@ -771,7 +756,6 @@
   {
     "id": 59,
     "question": "Who plays King Théoden?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bernard_Hill_cropped.jpg/250px-Bernard_Hill_cropped.jpg",
     "options": [
       "John Noble",
       "Karl Urban",
@@ -811,7 +795,6 @@
   {
     "id": 62,
     "question": "Who plays Wormtongue?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Brad_Dourif_2002.jpg/250px-Brad_Dourif_2002.jpg",
     "options": [
       "Andy Serkis",
       "Brad Dourif",
@@ -838,7 +821,6 @@
   {
     "id": 64,
     "question": "Who plays Éowyn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Miranda_Otto_by_Gage_Skidmore.jpg/250px-Miranda_Otto_by_Gage_Skidmore.jpg",
     "options": [
       "Liv Tyler",
       "Miranda Otto",
@@ -865,7 +847,6 @@
   {
     "id": 66,
     "question": "Who plays Éomer?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Karl_Urban_SXSW_2022_%28cropped%29.jpg/250px-Karl_Urban_SXSW_2022_%28cropped%29.jpg",
     "options": [
       "Viggo Mortensen",
       "Sean Bean",
@@ -2140,7 +2121,6 @@
   {
     "id": 164,
     "question": "Who plays Bilbo in The Hobbit trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Martin_Freeman-5341.jpg/250px-Martin_Freeman-5341.jpg",
     "options": [
       "Martin Freeman",
       "Ian Holm",
@@ -2219,7 +2199,6 @@
   {
     "id": 170,
     "question": "Who voices Smaug?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
     "options": [
       "Ian McKellen",
       "Benedict Cumberbatch",
@@ -2259,7 +2238,6 @@
   {
     "id": 173,
     "question": "Who plays Thorin Oakenshield?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Richard_Armitage_2014_%28cropped%29.jpg/250px-Richard_Armitage_2014_%28cropped%29.jpg",
     "options": [
       "Luke Evans",
       "Martin Freeman",
@@ -2299,7 +2277,6 @@
   {
     "id": 176,
     "question": "Who plays Thranduil?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Lee_Pace_at_Foundations_Season_3_press_day.jpg/250px-Lee_Pace_at_Foundations_Season_3_press_day.jpg",
     "options": [
       "Lee Pace",
       "Cate Blanchett",
@@ -2326,7 +2303,6 @@
   {
     "id": 178,
     "question": "Who plays Tauriel?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Evangeline_Lilly_%2853390939662%29.jpg/250px-Evangeline_Lilly_%2853390939662%29.jpg",
     "options": [
       "Cate Blanchett",
       "Evangeline Lilly",
@@ -2340,7 +2316,6 @@
   {
     "id": 179,
     "question": "Who plays Bard the Bowman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Luke_Evans_in_2018_%28cropped_4%29.jpg/250px-Luke_Evans_in_2018_%28cropped_4%29.jpg",
     "options": [
       "Richard Armitage",
       "Lee Pace",
@@ -2484,7 +2459,6 @@
   {
     "id": 190,
     "question": "Who plays Radagast the Brown?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Sylvester_McCoy_in_2018.jpg/250px-Sylvester_McCoy_in_2018.jpg",
     "options": [
       "Benedict Cumberbatch",
       "Sylvester McCoy",
@@ -2524,7 +2498,6 @@
   {
     "id": 193,
     "question": "Who voices the Necromancer/Sauron in The Hobbit?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
     "options": [
       "Christopher Lee",
       "Benedict Cumberbatch",

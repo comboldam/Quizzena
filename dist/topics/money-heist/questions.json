@@ -15,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays The Professor?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg/250px-%C3%81lvaro_Morte%2C_2020_%28cropped%29.jpg",
     "options": [
       "Pedro Alonso",
       "Álvaro Morte",
@@ -42,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Tokyo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/%C3%9Arsula_Corber%C3%B3-65339.jpg/250px-%C3%9Arsula_Corber%C3%B3-65339.jpg",
     "options": [
       "Alba Flores",
       "Úrsula Corberó",
@@ -69,7 +67,6 @@
   {
     "id": 6,
     "question": "Who plays Inspector Raquel Murillo / Lisbon?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Itziar_Itu%C3%B1o_2019_2_%28cropped%29.jpg/250px-Itziar_Itu%C3%B1o_2019_2_%28cropped%29.jpg",
     "options": [
       "Najwa Nimri",
       "Alba Flores",
@@ -96,7 +93,6 @@
   {
     "id": 8,
     "question": "Who plays Berlin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/HospitalReal01_%28cropped%29.jpg/250px-HospitalReal01_%28cropped%29.jpg",
     "options": [
       "Álvaro Morte",
       "Pedro Alonso",
@@ -123,7 +119,6 @@
   {
     "id": 10,
     "question": "Who plays Nairobi?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Goyas_2024_-_Alba_Flores.jpg/250px-Goyas_2024_-_Alba_Flores.jpg",
     "options": [
       "Úrsula Corberó",
       "Alba Flores",
@@ -150,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Rio?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Miguel_Herr%C3%A1n_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/250px-Miguel_Herr%C3%A1n_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg",
     "options": [
       "Jaime Lorente",
       "Miguel Herrán",
@@ -177,7 +171,6 @@
   {
     "id": 14,
     "question": "Who plays Denver?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente.jpg/250px-Festival_de_M%C3%A1laga_2024_-_Jaime_Lorente.jpg",
     "options": [
       "Miguel Herrán",
       "Jaime Lorente",
@@ -204,7 +197,6 @@
   {
     "id": 16,
     "question": "Who plays Stockholm (formerly Mónica)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Esther_Acebo.jpg/250px-Esther_Acebo.jpg",
     "options": [
       "Alba Flores",
       "Esther Acebo",
@@ -231,7 +223,6 @@
   {
     "id": 18,
     "question": "Who plays Arturo Román?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Enriquearce.jpg",
     "options": [
       "Fernando Cayo",
       "Enrique Arce",
@@ -271,7 +262,6 @@
   {
     "id": 21,
     "question": "Who plays Helsinki?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Darko-Peric.jpg/250px-Darko-Peric.jpg",
     "options": [
       "Hovik Keuchkerian",
       "Darko Perić",
@@ -298,7 +288,6 @@
   {
     "id": 23,
     "question": "Who plays Bogotá?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Goyas_2024_-_Hovik_Keuchkerian.jpg/250px-Goyas_2024_-_Hovik_Keuchkerian.jpg",
     "options": [
       "Darko Perić",
       "Hovik Keuchkerian",
@@ -312,7 +301,6 @@
   {
     "id": 24,
     "question": "Who plays Marseille?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Luka_peros_2021_2.jpg/250px-Luka_peros_2021_2.jpg",
     "options": [
       "Darko Perić",
       "Hovik Keuchkerian",
@@ -326,7 +314,6 @@
   {
     "id": 25,
     "question": "Who plays Manila?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Malaga_Film_Festival_2025_-_Bel%C3%A9n_Cuesta_01.jpg/250px-Malaga_Film_Festival_2025_-_Bel%C3%A9n_Cuesta_01.jpg",
     "options": [
       "Alba Flores",
       "Belén Cuesta",
@@ -353,7 +340,6 @@
   {
     "id": 27,
     "question": "Who plays Palermo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rodrigo_de_la_Serna-F%C3%A9nix_2017_%28cropped%29.jpg/250px-Rodrigo_de_la_Serna-F%C3%A9nix_2017_%28cropped%29.jpg",
     "options": [
       "Pedro Alonso",
       "Rodrigo de la Serna",
@@ -380,7 +366,6 @@
   {
     "id": 29,
     "question": "Who plays Inspector Alicia Sierra?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Najwa_Nimri_%28200x290%29.jpg/250px-Najwa_Nimri_%28200x290%29.jpg",
     "options": [
       "Itziar Ituño",
       "Najwa Nimri",
@@ -394,7 +379,6 @@
   {
     "id": 30,
     "question": "Who plays Colonel Tamayo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Goyas_2024_-_Fernando_Cayo_and_Carmela_Martins_%28cropped%29.jpg/250px-Goyas_2024_-_Fernando_Cayo_and_Carmela_Martins_%28cropped%29.jpg",
     "options": [
       "Enrique Arce",
       "Fernando Cayo",
@@ -2616,4 +2600,3 @@
     "category": "production"
   }
 ]
-

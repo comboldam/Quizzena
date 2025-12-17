@@ -1493,7 +1493,7 @@ function getTopicConfig(topicId) {
 // Instructions: See CLOUDINARY_SETUP.md for setup details
 const CLOUDINARY_CLOUD_NAME = 'duuvz86ph';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/f_auto,q_auto/`;
-const USE_LOCAL_IMAGES = false; // Set to 'true' for local development, 'false' for production CDN
+const USE_LOCAL_IMAGES = true; // Set to 'true' for local images, 'false' for Cloudinary CDN
 
 // ========================================
 // 🎮 GAME STATE VARIABLES
@@ -1971,19 +1971,25 @@ backToMenuBtn.onclick = () => {
 // ========================================
 async function loadFlags() {
   try {
-    if (currentTopic === 'flags') {
-      const res = await fetch("https://flagcdn.com/en/codes.json");
+if (currentTopic === 'flags') {
+      const res = await fetch("topic_images/flags/codes.json");
       const data = await res.json();
+
+      // Types to include in the quiz (exclude only us-state and uninhabited)
+      const includedTypes = ["country", "organization", "special-region", "uk-constituent", 
+                             "crown-dependency", "island", "french-territory", "caribbean-territory",
+                             "special-territory"];
       
       flags = Object.entries(data)
         .filter(([code, name]) => {
-          const entityType = getEntityType(name);
-          return entityType === "country";
+          const entityType = getEntityType(name, code);
+          return includedTypes.includes(entityType);
         })
         .map(([code, name]) => ({
           country: name.replace(/\bStates\b/gi, '').trim(),
-          flag: `https://flagcdn.com/w320/${code}.png`,
-          originalName: name
+          flag: `topic_images/flags/${code}.png`,
+          originalName: name,
+          entityType: getEntityType(name, code)
         }));
         
     } else if (currentTopic === 'capitals') {
@@ -2056,19 +2062,10 @@ async function loadFlags() {
 }
 
 // ========================================
-// 🚫 FILTER - EXCLUDE NON-COUNTRIES
+// 🚫 FILTER & CLASSIFY FLAG ENTITIES
 // ========================================
-function getEntityType(name) {
-  const territories = ["Puerto Rico", "Guam", "American Samoa", "U.S. Virgin Islands", 
-                       "Northern Mariana Islands", "Greenland", "Faroe Islands", "Åland Islands",
-                       "French Polynesia", "New Caledonia", "Martinique", "Guadeloupe", "Réunion",
-                       "Mayotte", "French Guiana", "Saint Martin", "Saint Barthélemy",
-                       "Bermuda", "Cayman Islands", "British Virgin Islands", "Turks and Caicos Islands",
-                       "Gibraltar", "Falkland Islands", "Montserrat", "Anguilla", "Saint Helena",
-                       "Aruba", "Curaçao", "Sint Maarten", "Caribbean Netherlands"];
-  
-  const dependencies = ["Isle of Man", "Jersey", "Guernsey", "Cook Islands", "Niue", "Tokelau"];
-  
+function getEntityType(name, code = '') {
+  // US States - excluded from quiz
   const usStates = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
                     "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
                     "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", 
@@ -2079,10 +2076,77 @@ function getEntityType(name) {
                     "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", 
                     "Washington", "West Virginia", "Wisconsin", "Wyoming"];
   
-  if (territories.some(t => name.includes(t))) return "territory";
-  if (dependencies.some(d => name.includes(d))) return "dependency";
-  if (usStates.some(s => name === s)) return "us-state";
+  // Check US states exclusion (only codes starting with us-)
+  if (code.startsWith('us-')) return "us-state";
+  
+  // UK Constituent countries - INCLUDED
+  if (code.startsWith('gb-')) return "uk-constituent";
+  if (["England", "Scotland", "Wales", "Northern Ireland"].includes(name)) return "uk-constituent";
+  
+  // International organizations
+  if (["European Union", "United Nations"].includes(name)) return "organization";
+  
+  // Special Administrative Regions
+  if (["Hong Kong", "Macau"].includes(name)) return "special-region";
+  
+  // Crown Dependencies - INCLUDED as territories
+  if (["Isle of Man", "Jersey", "Guernsey"].includes(name)) return "crown-dependency";
+  
+// Uninhabited territories - exclude from quiz (no population to know them)
+  const uninhabited = ["Bouvet Island", "Heard Island and McDonald Islands",
+                       "United States Minor Outlying Islands"];
+  if (uninhabited.some(u => name.includes(u))) return "uninhabited";
+  
+  // Special territories (Antarctica, research stations)
+  if (["Antarctica", "French Southern and Antarctic Lands", "British Indian Ocean Territory"].some(t => name.includes(t))) return "special-territory";
+  
+  // Islands and territories - INCLUDED
+  const islands = ["Åland Islands", "Faroe Islands", "Greenland", "Bermuda", "Cayman Islands", 
+                   "British Virgin Islands", "Turks and Caicos Islands", "Falkland Islands",
+                   "Gibraltar", "Montserrat", "Anguilla", "Saint Helena", "South Georgia",
+                   "Svalbard and Jan Mayen", "Cocos (Keeling) Islands", "Christmas Island", 
+                   "Norfolk Island", "Pitcairn Islands", "Cook Islands", "Niue", "Tokelau",
+                   "Marshall Islands", "Solomon Islands", "Wallis and Futuna"];
+  if (islands.some(i => name.includes(i))) return "island";
+  
+  // French overseas territories - INCLUDED
+  const frenchTerritories = ["French Polynesia", "New Caledonia", "Martinique", "Guadeloupe", 
+                              "Réunion", "Mayotte", "French Guiana", "Saint Martin", 
+                              "Saint Barthélemy", "Saint Pierre and Miquelon"];
+  if (frenchTerritories.some(t => name.includes(t))) return "french-territory";
+  
+  // Caribbean/Dutch territories - INCLUDED  
+  const caribbeanTerritories = ["Puerto Rico", "Guam", "American Samoa", "U.S. Virgin Islands",
+                                 "Northern Mariana Islands", "Aruba", "Curaçao", "Sint Maarten", 
+                                 "Caribbean Netherlands"];
+  if (caribbeanTerritories.some(t => name.includes(t))) return "caribbean-territory";
+  
+  // Everything else is a country
   return "country";
+}
+
+// Get appropriate question text based on entity type
+function getQuestionTextForEntity(entityType) {
+  switch (entityType) {
+    case "organization":
+      return "Which organization's flag is this?";
+    case "special-region":
+      return "Which region's flag is this?";
+    case "uk-constituent":
+      return "Which nation's flag is this?";
+    case "crown-dependency":
+      return "Which territory's flag is this?";
+    case "island":
+      return "Which island's flag is this?";
+    case "french-territory":
+      return "Which territory's flag is this?";
+    case "caribbean-territory":
+      return "Which territory's flag is this?";
+    case "special-territory":
+      return "Which territory's flag is this?";
+    default:
+      return "Which country's flag is this?";
+  }
 }
 
 // ========================================
@@ -2322,6 +2386,8 @@ function startRound() {
     question.textContent = "Which country's border is this?";
   } else if (currentTopic === 'area') {
     question.textContent = `What is the area of ${randomFlag.country}?`;
+  } else if (currentTopic === 'flags' && randomFlag.entityType) {
+    question.textContent = getQuestionTextForEntity(randomFlag.entityType);
   } else {
     question.textContent = "Which country's flag is this?";
   }
@@ -2341,7 +2407,7 @@ function startRound() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
 
     // Use Cloudinary CDN or local images based on configuration
-    const imageBase = USE_LOCAL_IMAGES ? './images.js/capital_images/' : CLOUDINARY_BASE_URL;
+    const imageBase = USE_LOCAL_IMAGES ? './topic_images/capital_images/' : CLOUDINARY_BASE_URL;
     const finalUrl = `${imageBase}${sanitizedCapital}.jpg`;
 
     // DEBUG: Log the URL being used
@@ -2363,7 +2429,7 @@ function startRound() {
     flagImg.className = "border-image";
 
     // Use absolute path for border images
-    const borderPath = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
+    const borderPath = `topic_images/country_silhouettes/${randomFlag.isoCode}.png`;
     flagImg.src = borderPath;
 
     flagImg.onerror = function() {
@@ -2378,17 +2444,17 @@ function startRound() {
 
     if (missingBorders.includes(randomFlag.isoCode)) {
       // Use flag fallback for missing borders
-      flagImg.src = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+      flagImg.src = `topic_images/flags/${randomFlag.isoCode}.png`;
       flagImg.classList.add('fallback-flag');
     } else {
       // Use border silhouette
-      flagImg.src = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
+      flagImg.src = `topic_images/country_silhouettes/${randomFlag.isoCode}.png`;
       flagImg.classList.remove('fallback-flag');
     }
 
     flagImg.onerror = function() {
       // Fallback to flag if border image fails
-      this.src = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+      this.src = `topic_images/flags/${randomFlag.isoCode}.png`;
       this.classList.add('fallback-flag');
       this.onerror = null;
     };
@@ -3639,6 +3705,8 @@ function displayUnifiedQuestion() {
     questionText = "Which country's border is this?";
   } else if (currentTopic === 'area') {
     questionText = `What is the area of ${randomFlag.country}?`;
+  } else if (currentTopic === 'flags' && randomFlag.entityType) {
+    questionText = getQuestionTextForEntity(randomFlag.entityType);
   } else {
     questionText = "Which country's flag is this?";
   }
@@ -3652,16 +3720,18 @@ function displayUnifiedQuestion() {
     // UNIFIED image handling for all JSON topics
     const config = getTopicConfig(currentTopic);
     if (randomFlag.image) {
-      // Special handling for logos - use Cloudinary SVG
+      // Special handling for logos - use local SVG files
       if (currentTopic === 'logos') {
         const filename = randomFlag.image.replace('logo_images/', '');
-        imageSrc = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/image/upload/Quizzena/logos/${filename}`;
+        imageSrc = `topic_images/logo_images/${filename}`;
         imageClass = 'logo-image';
       } else {
         imageSrc = randomFlag.image;
       }
     } else {
-      imageHTML = `<div style="font-size:80px;margin:20px 0;">${config.icon}</div>`;
+      // Use topic icon image instead of emoji
+      const topicIconPath = getTopicImagePath(currentTopic);
+      imageHTML = `<div style="margin:20px 0;"><img src="${topicIconPath}" style="width:120px;height:120px;object-fit:cover;border-radius:50%;border:2px solid rgba(167, 139, 250, 0.3);box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">${config.icon}</div></div>`;
     }
   } else if (currentTopic === 'flags') {
     imageSrc = randomFlag.flag;
@@ -3669,19 +3739,19 @@ function displayUnifiedQuestion() {
     const sanitizedCapital = randomFlag.capital.replace(/[/\\?%*:|"<>]/g, "_");
     // Use Cloudinary CDN or local images based on configuration
     imageSrc = USE_LOCAL_IMAGES
-      ? `./images.js/capital_images/${sanitizedCapital}.jpg`
+      ? `./topic_images/capital_images/${sanitizedCapital}.jpg`
       : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
     // DEBUG: Log unified quiz system image URL
     console.log('[Unified Quiz] Loading capital image:', imageSrc);
   } else if (currentTopic === 'borders') {
-    imageSrc = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
+    imageSrc = `topic_images/country_silhouettes/${randomFlag.isoCode}.png`;
     imageClass = 'border-style';
   } else if (currentTopic === 'area') {
     const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
     if (missingBorders.includes(randomFlag.isoCode)) {
-      imageSrc = `https://flagcdn.com/w320/${randomFlag.isoCode}.png`;
+      imageSrc = `topic_images/flags/${randomFlag.isoCode}.png`;
     } else {
-      imageSrc = `images.js/country_silhouettes/${randomFlag.isoCode}.png`;
+      imageSrc = `topic_images/country_silhouettes/${randomFlag.isoCode}.png`;
       imageClass = 'border-style';
     }
   }
@@ -5916,7 +5986,7 @@ function getTopicImagePath(topicId) {
   };
   
   const imageName = imageNameMap[topicId] || topicId;
-  return `images/topics/${folder}/${imageName}.png`;
+  return `icons/topics/${folder}/${imageName}.png`;
 }
 
 // Load slots from localStorage
