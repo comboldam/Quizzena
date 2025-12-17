@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-12-17",
+  "baseUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/language-packs/",
+  "defaultLanguage": "en",
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "nativeName": "English",
+      "flag": "🇺🇸",
+      "bundled": true,
+      "size": "4.3 KB",
+      "file": "en.json"
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "nativeName": "Español",
+      "flag": "🇪🇸",
+      "bundled": false,
+      "size": "4.7 KB",
+      "file": "es.json"
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "nativeName": "Русский",
+      "flag": "🇷🇺",
+      "bundled": false,
+      "size": "5.8 KB",
+      "file": "ru.json"
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "nativeName": "Türkçe",
+      "flag": "🇹🇷",
+      "bundled": false,
+      "size": "4.5 KB",
+      "file": "tr.json"
+    }
+  ]
+}

@@ -1289,14 +1289,138 @@ console.log('Dev Panel initialized');
 // so they work inside Capacitor/Cordova native shells.
 
 const LANGUAGE_DATA = {
-  en: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Home","nav_topics":"Topics","nav_stats":"Stats","nav_leaderboard":"Leaderboard","nav_profile":"Profile","home_quiz_of_day":"🏆 QUIZ OF THE DAY","home_play_now":"▶ PLAY NOW","home_explore_categories":"Explore Categories","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geography","category_football":"Football","category_movies":"Movies","category_tvshows":"TV Shows","category_history":"History","category_logos":"Logos","profile_settings":"Settings","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Wins","profile_stats_accuracy":"Accuracy","profile_achievements":"Achievements","profile_progress":"Progress","stats_title":"Stats","stats_total_played":"Total Played","stats_total_correct":"Total Correct","stats_accuracy":"Accuracy","stats_best_streak":"Best Streak","stats_most_played":"Most Played","stats_overall_performance":"Overall Performance","stats_total_games_played":"Total Games Played","stats_total_questions_answered":"Total Questions Answered","stats_correct_answers":"Correct Answers","stats_wrong_answers":"Wrong Answers","stats_overall_accuracy":"Overall Accuracy","stats_avg_time_per_question":"Avg Time per Question","stats_best_streak_label":"Best Streak","stats_total_time_played":"Total Time Played","stats_games":"Games","stats_best_label":"Best","stats_search_topic":"Search Topic","stats_search_placeholder":"Type topic name...","stats_search_found":"Found:","stats_search_not_found":"Topic not found","leaderboard_title":"Leaderboard","leaderboard_global":"Global Rankings","leaderboard_coming_soon":"Coming Soon","game_score":"Score","game_timer":"Time","game_question":"Question","game_next":"Next","game_correct":"Correct!","game_wrong":"Wrong!","game_lives":"Lives","game_streak":"Streak","result_game_over":"Game Over","result_final_score":"Final Score","result_play_again":"Play Again","result_main_menu":"Main Menu","result_perfect":"Perfect Score!","result_great":"Great Job!","result_good":"Good Effort!","result_try_again":"Keep Practicing!","settings_title":"Settings","settings_language":"Language","settings_theme":"Theme","settings_sound":"Sound","settings_coming_soon":"Coming Soon","settings_close":"Close","settings_performance":"Performance Mode","settings_performance_hint":"Enable for smoother scrolling (disables animations)","sound_music":"Music","sound_effects":"Sound Effects","sound_volume":"Volume","sound_mute":"Mute","sound_unmute":"Unmute","mode_single_player":"Single Player","mode_two_player":"Two Player","mode_time_attack":"Time Attack","mode_quick_game":"Quick Game","mode_three_strikes":"Three Strikes","mode_select_mode":"Select Mode","mode_back":"Back","difficulty_easy":"Easy","difficulty_medium":"Medium","difficulty_hard":"Hard","difficulty_select":"Select Difficulty","common_loading":"Loading...","common_error":"Error","common_retry":"Retry","common_cancel":"Cancel","common_confirm":"Confirm","common_save":"Save","common_reset":"Reset","common_yes":"Yes","common_no":"No"},
-  es: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Inicio","nav_topics":"Temas","nav_stats":"Estadísticas","nav_leaderboard":"Clasificación","nav_profile":"Perfil","home_quiz_of_day":"🏆 QUIZ DEL DÍA","home_play_now":"▶ JUGAR","home_explore_categories":"Explorar Categorías","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geografía","category_football":"Fútbol","category_movies":"Películas","category_tvshows":"Series","category_history":"Historia","category_logos":"Logos","profile_settings":"Ajustes","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Victorias","profile_stats_accuracy":"Precisión","profile_achievements":"Logros","profile_progress":"Progreso","stats_title":"Estadísticas","stats_total_played":"Total Jugados","stats_total_correct":"Total Correctas","stats_accuracy":"Precisión","stats_best_streak":"Mejor Racha","stats_most_played":"Más Jugados","stats_overall_performance":"Rendimiento General","stats_total_games_played":"Total de Partidas Jugadas","stats_total_questions_answered":"Total de Preguntas Respondidas","stats_correct_answers":"Respuestas Correctas","stats_wrong_answers":"Respuestas Incorrectas","stats_overall_accuracy":"Precisión General","stats_avg_time_per_question":"Tiempo Promedio por Pregunta","stats_best_streak_label":"Mejor Racha","stats_total_time_played":"Tiempo Total Jugado","stats_games":"Partidas","stats_best_label":"Mejor","stats_search_topic":"Buscar Tema","stats_search_placeholder":"Escribe el nombre del tema...","stats_search_found":"Encontrado:","stats_search_not_found":"Tema no encontrado","leaderboard_title":"Clasificación","leaderboard_global":"Ranking Global","leaderboard_coming_soon":"Próximamente","game_score":"Puntuación","game_timer":"Tiempo","game_question":"Pregunta","game_next":"Siguiente","game_correct":"¡Correcto!","game_wrong":"¡Incorrecto!","game_lives":"Vidas","game_streak":"Racha","result_game_over":"Fin del Juego","result_final_score":"Puntuación Final","result_play_again":"Jugar de Nuevo","result_main_menu":"Menú Principal","result_perfect":"¡Puntuación Perfecta!","result_great":"¡Excelente!","result_good":"¡Buen Trabajo!","result_try_again":"¡Sigue Practicando!","settings_title":"Ajustes","settings_language":"Idioma","settings_theme":"Tema","settings_sound":"Sonido","settings_coming_soon":"Próximamente","settings_close":"Cerrar","settings_performance":"Modo Rendimiento","settings_performance_hint":"Activa para un desplazamiento más fluido (desactiva animaciones)","sound_music":"Música","sound_effects":"Efectos de Sonido","sound_volume":"Volumen","sound_mute":"Silenciar","sound_unmute":"Activar Sonido","mode_single_player":"Un Jugador","mode_two_player":"Dos Jugadores","mode_time_attack":"Contrarreloj","mode_quick_game":"Partida Rápida","mode_three_strikes":"Tres Strikes","mode_select_mode":"Seleccionar Modo","mode_back":"Atrás","difficulty_easy":"Fácil","difficulty_medium":"Medio","difficulty_hard":"Difícil","difficulty_select":"Seleccionar Dificultad","common_loading":"Cargando...","common_error":"Error","common_retry":"Reintentar","common_cancel":"Cancelar","common_confirm":"Confirmar","common_save":"Guardar","common_reset":"Restablecer","common_yes":"Sí","common_no":"No"},
-  ru: {"app_name":"Quizzena","version":"Quizzena v1 Бета","nav_home":"Главная","nav_topics":"Темы","nav_stats":"Статистика","nav_leaderboard":"Рейтинг","nav_profile":"Профиль","home_quiz_of_day":"🏆 ВИКТОРИНА ДНЯ","home_play_now":"▶ ИГРАТЬ","home_explore_categories":"Категории","home_quizzes":"викторин","home_quiz":"викторина","category_geography":"География","category_football":"Футбол","category_movies":"Фильмы","category_tvshows":"Сериалы","category_history":"История","category_logos":"Логотипы","profile_settings":"Настройки","profile_stats_quizzes":"Викторины","profile_stats_wins":"Победы","profile_stats_accuracy":"Точность","profile_achievements":"Достижения","profile_progress":"Прогресс","stats_title":"Статистика","stats_total_played":"Всего сыграно","stats_total_correct":"Правильных ответов","stats_accuracy":"Точность","stats_best_streak":"Лучшая серия","stats_most_played":"Часто играемые","stats_overall_performance":"Общая статистика","stats_total_games_played":"Всего игр","stats_total_questions_answered":"Всего вопросов","stats_correct_answers":"Правильные ответы","stats_wrong_answers":"Неправильные ответы","stats_overall_accuracy":"Общая точность","stats_avg_time_per_question":"Среднее время на вопрос","stats_best_streak_label":"Лучшая серия","stats_total_time_played":"Общее время игры","stats_games":"Игры","stats_best_label":"Лучший","stats_search_topic":"Поиск темы","stats_search_placeholder":"Введите название темы...","stats_search_found":"Найдено:","stats_search_not_found":"Тема не найдена","leaderboard_title":"Рейтинг","leaderboard_global":"Мировой рейтинг","leaderboard_coming_soon":"Скоро","game_score":"Счёт","game_timer":"Время","game_question":"Вопрос","game_next":"Далее","game_correct":"Правильно!","game_wrong":"Неправильно!","game_lives":"Жизни","game_streak":"Серия","result_game_over":"Игра окончена","result_final_score":"Итоговый счёт","result_play_again":"Играть снова","result_main_menu":"Главное меню","result_perfect":"Идеальный результат!","result_great":"Отлично!","result_good":"Хорошо!","result_try_again":"Продолжай практиковаться!","settings_title":"Настройки","settings_language":"Язык","settings_theme":"Тема","settings_sound":"Звук","settings_coming_soon":"Скоро","settings_close":"Закрыть","settings_performance":"Режим производительности","settings_performance_hint":"Включите для плавной прокрутки (отключает анимации)","sound_music":"Музыка","sound_effects":"Звуковые эффекты","sound_volume":"Громкость","sound_mute":"Выключить звук","sound_unmute":"Включить звук","mode_single_player":"Один игрок","mode_two_player":"Два игрока","mode_time_attack":"На время","mode_quick_game":"Быстрая игра","mode_three_strikes":"Три ошибки","mode_select_mode":"Выберите режим","mode_back":"Назад","difficulty_easy":"Легко","difficulty_medium":"Средне","difficulty_hard":"Сложно","difficulty_select":"Выберите сложность","common_loading":"Загрузка...","common_error":"Ошибка","common_retry":"Повторить","common_cancel":"Отмена","common_confirm":"Подтвердить","common_save":"Сохранить","common_reset":"Сбросить","common_yes":"Да","common_no":"Нет"},
-  tr: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Ana Sayfa","nav_topics":"Konular","nav_stats":"İstatistikler","nav_leaderboard":"Sıralama","nav_profile":"Profil","home_quiz_of_day":"🏆 GÜNÜN BİLMECESİ","home_play_now":"▶ OYNA","home_explore_categories":"Kategorileri Keşfet","home_quizzes":"bilmece","home_quiz":"bilmece","category_geography":"Coğrafya","category_football":"Futbol","category_movies":"Filmler","category_tvshows":"Diziler","category_history":"Tarih","category_logos":"Logolar","profile_settings":"Ayarlar","profile_stats_quizzes":"Bilmeceler","profile_stats_wins":"Kazanımlar","profile_stats_accuracy":"Doğruluk","profile_achievements":"Başarılar","profile_progress":"İlerleme","stats_title":"İstatistikler","stats_total_played":"Toplam Oynanan","stats_total_correct":"Toplam Doğru","stats_accuracy":"Doğruluk","stats_best_streak":"En İyi Seri","stats_most_played":"En Çok Oynanan","stats_overall_performance":"Genel Performans","stats_total_games_played":"Toplam Oynanan Oyun","stats_total_questions_answered":"Toplam Yanıtlanan Soru","stats_correct_answers":"Doğru Cevaplar","stats_wrong_answers":"Yanlış Cevaplar","stats_overall_accuracy":"Genel Doğruluk","stats_avg_time_per_question":"Soru Başına Ortalama Süre","stats_best_streak_label":"En İyi Seri","stats_total_time_played":"Toplam Oynama Süresi","stats_games":"Oyunlar","stats_best_label":"En İyi","stats_search_topic":"Konu Ara","stats_search_placeholder":"Konu adını yaz...","stats_search_found":"Bulundu:","stats_search_not_found":"Konu bulunamadı","leaderboard_title":"Sıralama","leaderboard_global":"Dünya Sıralaması","leaderboard_coming_soon":"Yakında","game_score":"Puan","game_timer":"Süre","game_question":"Soru","game_next":"Sonraki","game_correct":"Doğru!","game_wrong":"Yanlış!","game_lives":"Can","game_streak":"Seri","result_game_over":"Oyun Bitti","result_final_score":"Final Puanı","result_play_again":"Tekrar Oyna","result_main_menu":"Ana Menü","result_perfect":"Mükemmel Skor!","result_great":"Harika!","result_good":"İyi İş!","result_try_again":"Pratik Yapmaya Devam Et!","settings_title":"Ayarlar","settings_language":"Dil","settings_theme":"Tema","settings_sound":"Ses","settings_coming_soon":"Yakında","settings_close":"Kapat","settings_performance":"Performans Modu","settings_performance_hint":"Daha akıcı kaydırma için etkinleştir (animasyonları kapatır)","sound_music":"Müzik","sound_effects":"Ses Efektleri","sound_volume":"Ses Seviyesi","sound_mute":"Sessiz","sound_unmute":"Sesi Aç","mode_single_player":"Tek Oyuncu","mode_two_player":"İki Oyuncu","mode_time_attack":"Zamana Karşı","mode_quick_game":"Hızlı Oyun","mode_three_strikes":"Üç Hak","mode_select_mode":"Mod Seç","mode_back":"Geri","difficulty_easy":"Kolay","difficulty_medium":"Orta","difficulty_hard":"Zor","difficulty_select":"Zorluk Seç","common_loading":"Yükleniyor...","common_error":"Hata","common_retry":"Tekrar Dene","common_cancel":"İptal","common_confirm":"Onayla","common_save":"Kaydet","common_reset":"Sıfırla","common_yes":"Evet","common_no":"Hayır"}
+  en: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Home","nav_topics":"Topics","nav_stats":"Stats","nav_leaderboard":"Competition","nav_profile":"Profile","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ OF THE DAY","home_play_now":"▶ PLAY NOW","home_explore_categories":"Explore Categories","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geography","category_football":"Football","category_movies":"Movies","category_tvshows":"TV Shows","category_history":"History","category_logos":"Logos","profile_settings":"Settings","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Wins","profile_stats_accuracy":"Accuracy","profile_achievements":"Achievements","profile_progress":"Progress","profile_streaks":"Streaks","profile_quanta":"Quanta","profile_games":"GAMES","profile_accuracy":"ACCURACY","profile_followers":"FOLLOWERS","profile_following":"FOLLOWING","stats_title":"Stats","stats_total_played":"Total Played","stats_total_correct":"Total Correct","stats_accuracy":"Accuracy","stats_best_streak":"Best Streak","stats_most_played":"Most Played","stats_overall_performance":"Overall Performance","stats_total_games_played":"Total Games Played","stats_total_questions_answered":"Total Questions Answered","stats_correct_answers":"Correct Answers","stats_wrong_answers":"Wrong Answers","stats_overall_accuracy":"Overall Accuracy","stats_avg_time_per_question":"Avg Time per Question","stats_best_streak_label":"Best Streak","stats_total_time_played":"Total Time Played","stats_games":"Games","stats_best_label":"Best","stats_search_topic":"Search Topic","stats_search_placeholder":"Type topic name...","stats_search_found":"Found:","stats_search_not_found":"Topic not found","leaderboard_title":"Leaderboard","leaderboard_global":"Global Rankings","leaderboard_coming_soon":"Coming Soon","leaderboard_developing":"Global leaderboards are being developed. Soon you'll be able to compete with players worldwide!","game_score":"Score","game_timer":"Time","game_question":"Question","game_next":"Next","game_correct":"Correct!","game_wrong":"Wrong!","game_lives":"Lives","game_streak":"Streak","result_game_over":"Game Over","result_final_score":"Final Score","result_play_again":"Play Again","result_main_menu":"Main Menu","result_perfect":"Perfect Score!","result_great":"Great Job!","result_good":"Good Effort!","result_try_again":"Keep Practicing!","settings_title":"Settings","settings_language":"Language","settings_theme":"Theme","settings_sound":"Sound","settings_coming_soon":"Coming Soon","settings_close":"Close","settings_performance":"Performance Mode","settings_performance_hint":"Enable for smoother scrolling (disables animations)","settings_tutorial":"Tutorial","sound_music":"Music","sound_effects":"Sound Effects","sound_volume":"Volume","sound_mute":"Mute","sound_unmute":"Unmute","mode_single_player":"Single Player","mode_two_player":"Two Player","mode_time_attack":"Time Attack","mode_quick_game":"Quick Game","mode_three_strikes":"Three Strikes","mode_select_mode":"Select Mode","mode_back":"Back","difficulty_easy":"Easy","difficulty_medium":"Medium","difficulty_hard":"Hard","difficulty_select":"Select Difficulty","common_loading":"Loading...","common_error":"Error","common_retry":"Retry","common_cancel":"Cancel","common_confirm":"Confirm","common_save":"Save","common_reset":"Reset","common_yes":"Yes","common_no":"No","common_ok":"OK","edit_profile":"Edit Profile","edit_profile_picture":"Profile Picture","edit_upload_photo":"Upload Photo","edit_choose_emoji":"Or choose an emoji:","edit_username":"Username","edit_background":"Background Picture","edit_upload_background":"Upload Background","edit_save_changes":"Save Changes","edit_remove":"Remove","setup_save_start":"Save & Start","quanta_title":"✦ Quanta — Coming Soon","quanta_description":"Quanta is the knowledge currency of Quizzena. Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.","social_coming_soon":"Quizzena Social — Coming Soon","social_subtitle":"A new way to explore quizzes.","social_feed":"Social Feed","achievements_ritual":"Achievements Ritual","achievements_subtitle":"The Eight Paths of Mastery","achievements_house_coming":"Achievements for this path are being forged in the cosmic fires. Return soon to claim your destiny.","view_stats_chart":"View Stats Chart"},
+  es: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Inicio","nav_topics":"Temas","nav_stats":"Estadísticas","nav_leaderboard":"Competición","nav_profile":"Perfil","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ DEL DÍA","home_play_now":"▶ JUGAR","home_explore_categories":"Explorar Categorías","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geografía","category_football":"Fútbol","category_movies":"Películas","category_tvshows":"Series","category_history":"Historia","category_logos":"Logos","profile_settings":"Ajustes","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Victorias","profile_stats_accuracy":"Precisión","profile_achievements":"Logros","profile_progress":"Progreso","profile_streaks":"Rachas","profile_quanta":"Quanta","profile_games":"PARTIDAS","profile_accuracy":"PRECISIÓN","profile_followers":"SEGUIDORES","profile_following":"SIGUIENDO","stats_title":"Estadísticas","stats_total_played":"Total Jugados","stats_total_correct":"Total Correctas","stats_accuracy":"Precisión","stats_best_streak":"Mejor Racha","stats_most_played":"Más Jugados","stats_overall_performance":"Rendimiento General","stats_total_games_played":"Total de Partidas Jugadas","stats_total_questions_answered":"Total de Preguntas Respondidas","stats_correct_answers":"Respuestas Correctas","stats_wrong_answers":"Respuestas Incorrectas","stats_overall_accuracy":"Precisión General","stats_avg_time_per_question":"Tiempo Promedio por Pregunta","stats_best_streak_label":"Mejor Racha","stats_total_time_played":"Tiempo Total Jugado","stats_games":"Partidas","stats_best_label":"Mejor","stats_search_topic":"Buscar Tema","stats_search_placeholder":"Escribe el nombre del tema...","stats_search_found":"Encontrado:","stats_search_not_found":"Tema no encontrado","leaderboard_title":"Clasificación","leaderboard_global":"Ranking Global","leaderboard_coming_soon":"Próximamente","leaderboard_developing":"Las clasificaciones globales están en desarrollo. ¡Pronto podrás competir con jugadores de todo el mundo!","game_score":"Puntuación","game_timer":"Tiempo","game_question":"Pregunta","game_next":"Siguiente","game_correct":"¡Correcto!","game_wrong":"¡Incorrecto!","game_lives":"Vidas","game_streak":"Racha","result_game_over":"Fin del Juego","result_final_score":"Puntuación Final","result_play_again":"Jugar de Nuevo","result_main_menu":"Menú Principal","result_perfect":"¡Puntuación Perfecta!","result_great":"¡Excelente!","result_good":"¡Buen Trabajo!","result_try_again":"¡Sigue Practicando!","settings_title":"Ajustes","settings_language":"Idioma","settings_theme":"Tema","settings_sound":"Sonido","settings_coming_soon":"Próximamente","settings_close":"Cerrar","settings_performance":"Modo Rendimiento","settings_performance_hint":"Activa para un desplazamiento más fluido (desactiva animaciones)","settings_tutorial":"Tutorial","sound_music":"Música","sound_effects":"Efectos de Sonido","sound_volume":"Volumen","sound_mute":"Silenciar","sound_unmute":"Activar Sonido","mode_single_player":"Un Jugador","mode_two_player":"Dos Jugadores","mode_time_attack":"Contrarreloj","mode_quick_game":"Partida Rápida","mode_three_strikes":"Tres Strikes","mode_select_mode":"Seleccionar Modo","mode_back":"Atrás","difficulty_easy":"Fácil","difficulty_medium":"Medio","difficulty_hard":"Difícil","difficulty_select":"Seleccionar Dificultad","common_loading":"Cargando...","common_error":"Error","common_retry":"Reintentar","common_cancel":"Cancelar","common_confirm":"Confirmar","common_save":"Guardar","common_reset":"Restablecer","common_yes":"Sí","common_no":"No","common_ok":"OK","edit_profile":"Editar Perfil","edit_profile_picture":"Foto de Perfil","edit_upload_photo":"Subir Foto","edit_choose_emoji":"O elige un emoji:","edit_username":"Nombre de usuario","edit_background":"Imagen de Fondo","edit_upload_background":"Subir Fondo","edit_save_changes":"Guardar Cambios","edit_remove":"Eliminar","setup_save_start":"Guardar e Iniciar","quanta_title":"✦ Quanta — Próximamente","quanta_description":"Quanta es la moneda del conocimiento de Quizzena. Gana Quanta en futuras actualizaciones dominando quizzes, explorando desafíos y demostrando tu inteligencia.","social_coming_soon":"Quizzena Social — Próximamente","social_subtitle":"Una nueva forma de explorar quizzes.","social_feed":"Feed Social","achievements_ritual":"Ritual de Logros","achievements_subtitle":"Los Ocho Caminos de la Maestría","achievements_house_coming":"Los logros de este camino se están forjando en los fuegos cósmicos. Regresa pronto para reclamar tu destino.","view_stats_chart":"Ver Gráfico de Estadísticas"},
+  ru: {"app_name":"Quizzena","version":"Quizzena v1 Бета","nav_home":"Главная","nav_topics":"Темы","nav_stats":"Статистика","nav_leaderboard":"Соревнование","nav_profile":"Профиль","nav_social":"Лента","home_quiz_of_day":"🏆 ВИКТОРИНА ДНЯ","home_play_now":"▶ ИГРАТЬ","home_explore_categories":"Категории","home_quizzes":"викторин","home_quiz":"викторина","category_geography":"География","category_football":"Футбол","category_movies":"Фильмы","category_tvshows":"Сериалы","category_history":"История","category_logos":"Логотипы","profile_settings":"Настройки","profile_stats_quizzes":"Викторины","profile_stats_wins":"Победы","profile_stats_accuracy":"Точность","profile_achievements":"Достижения","profile_progress":"Прогресс","profile_streaks":"Серии","profile_quanta":"Quanta","profile_games":"ИГРЫ","profile_accuracy":"ТОЧНОСТЬ","profile_followers":"ПОДПИСЧИКИ","profile_following":"ПОДПИСКИ","stats_title":"Статистика","stats_total_played":"Всего сыграно","stats_total_correct":"Правильных ответов","stats_accuracy":"Точность","stats_best_streak":"Лучшая серия","stats_most_played":"Часто играемые","stats_overall_performance":"Общая статистика","stats_total_games_played":"Всего игр","stats_total_questions_answered":"Всего вопросов","stats_correct_answers":"Правильные ответы","stats_wrong_answers":"Неправильные ответы","stats_overall_accuracy":"Общая точность","stats_avg_time_per_question":"Среднее время на вопрос","stats_best_streak_label":"Лучшая серия","stats_total_time_played":"Общее время игры","stats_games":"Игры","stats_best_label":"Лучший","stats_search_topic":"Поиск темы","stats_search_placeholder":"Введите название темы...","stats_search_found":"Найдено:","stats_search_not_found":"Тема не найдена","leaderboard_title":"Рейтинг","leaderboard_global":"Мировой рейтинг","leaderboard_coming_soon":"Скоро","leaderboard_developing":"Глобальные рейтинги в разработке. Скоро вы сможете соревноваться с игроками со всего мира!","game_score":"Счёт","game_timer":"Время","game_question":"Вопрос","game_next":"Далее","game_correct":"Правильно!","game_wrong":"Неправильно!","game_lives":"Жизни","game_streak":"Серия","result_game_over":"Игра окончена","result_final_score":"Итоговый счёт","result_play_again":"Играть снова","result_main_menu":"Главное меню","result_perfect":"Идеальный результат!","result_great":"Отлично!","result_good":"Хорошо!","result_try_again":"Продолжай практиковаться!","settings_title":"Настройки","settings_language":"Язык","settings_theme":"Тема","settings_sound":"Звук","settings_coming_soon":"Скоро","settings_close":"Закрыть","settings_performance":"Режим производительности","settings_performance_hint":"Включите для плавной прокрутки (отключает анимации)","settings_tutorial":"Обучение","sound_music":"Музыка","sound_effects":"Звуковые эффекты","sound_volume":"Громкость","sound_mute":"Выключить звук","sound_unmute":"Включить звук","mode_single_player":"Один игрок","mode_two_player":"Два игрока","mode_time_attack":"На время","mode_quick_game":"Быстрая игра","mode_three_strikes":"Три ошибки","mode_select_mode":"Выберите режим","mode_back":"Назад","difficulty_easy":"Легко","difficulty_medium":"Средне","difficulty_hard":"Сложно","difficulty_select":"Выберите сложность","common_loading":"Загрузка...","common_error":"Ошибка","common_retry":"Повторить","common_cancel":"Отмена","common_confirm":"Подтвердить","common_save":"Сохранить","common_reset":"Сбросить","common_yes":"Да","common_no":"Нет","common_ok":"ОК","edit_profile":"Редактировать профиль","edit_profile_picture":"Фото профиля","edit_upload_photo":"Загрузить фото","edit_choose_emoji":"Или выберите эмодзи:","edit_username":"Имя пользователя","edit_background":"Фон профиля","edit_upload_background":"Загрузить фон","edit_save_changes":"Сохранить изменения","edit_remove":"Удалить","setup_save_start":"Сохранить и начать","quanta_title":"✦ Quanta — Скоро","quanta_description":"Quanta — это валюта знаний Quizzena. Зарабатывайте Quanta в будущих обновлениях, осваивая викторины, исследуя задания и доказывая свой интеллект.","social_coming_soon":"Quizzena Лента — Скоро","social_subtitle":"Новый способ исследовать викторины.","social_feed":"Лента","achievements_ritual":"Ритуал достижений","achievements_subtitle":"Восемь путей мастерства","achievements_house_coming":"Достижения этого пути куются в космическом огне. Возвращайтесь скоро, чтобы получить свою судьбу.","view_stats_chart":"Посмотреть график статистики"},
+  tr: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Ana Sayfa","nav_topics":"Konular","nav_stats":"İstatistikler","nav_leaderboard":"Yarışma","nav_profile":"Profil","nav_social":"Sosyal","home_quiz_of_day":"🏆 GÜNÜN BİLMECESİ","home_play_now":"▶ OYNA","home_explore_categories":"Kategorileri Keşfet","home_quizzes":"bilmece","home_quiz":"bilmece","category_geography":"Coğrafya","category_football":"Futbol","category_movies":"Filmler","category_tvshows":"Diziler","category_history":"Tarih","category_logos":"Logolar","profile_settings":"Ayarlar","profile_stats_quizzes":"Bilmeceler","profile_stats_wins":"Kazanımlar","profile_stats_accuracy":"Doğruluk","profile_achievements":"Başarılar","profile_progress":"İlerleme","profile_streaks":"Seriler","profile_quanta":"Quanta","profile_games":"OYUNLAR","profile_accuracy":"DOĞRULUK","profile_followers":"TAKİPÇİLER","profile_following":"TAKİP","stats_title":"İstatistikler","stats_total_played":"Toplam Oynanan","stats_total_correct":"Toplam Doğru","stats_accuracy":"Doğruluk","stats_best_streak":"En İyi Seri","stats_most_played":"En Çok Oynanan","stats_overall_performance":"Genel Performans","stats_total_games_played":"Toplam Oynanan Oyun","stats_total_questions_answered":"Toplam Yanıtlanan Soru","stats_correct_answers":"Doğru Cevaplar","stats_wrong_answers":"Yanlış Cevaplar","stats_overall_accuracy":"Genel Doğruluk","stats_avg_time_per_question":"Soru Başına Ortalama Süre","stats_best_streak_label":"En İyi Seri","stats_total_time_played":"Toplam Oynama Süresi","stats_games":"Oyunlar","stats_best_label":"En İyi","stats_search_topic":"Konu Ara","stats_search_placeholder":"Konu adını yaz...","stats_search_found":"Bulundu:","stats_search_not_found":"Konu bulunamadı","leaderboard_title":"Sıralama","leaderboard_global":"Dünya Sıralaması","leaderboard_coming_soon":"Yakında","leaderboard_developing":"Global sıralamalar geliştiriliyor. Yakında dünya çapındaki oyuncularla yarışabileceksiniz!","game_score":"Puan","game_timer":"Süre","game_question":"Soru","game_next":"Sonraki","game_correct":"Doğru!","game_wrong":"Yanlış!","game_lives":"Can","game_streak":"Seri","result_game_over":"Oyun Bitti","result_final_score":"Final Puanı","result_play_again":"Tekrar Oyna","result_main_menu":"Ana Menü","result_perfect":"Mükemmel Skor!","result_great":"Harika!","result_good":"İyi İş!","result_try_again":"Pratik Yapmaya Devam Et!","settings_title":"Ayarlar","settings_language":"Dil","settings_theme":"Tema","settings_sound":"Ses","settings_coming_soon":"Yakında","settings_close":"Kapat","settings_performance":"Performans Modu","settings_performance_hint":"Daha akıcı kaydırma için etkinleştir (animasyonları kapatır)","settings_tutorial":"Eğitim","sound_music":"Müzik","sound_effects":"Ses Efektleri","sound_volume":"Ses Seviyesi","sound_mute":"Sessiz","sound_unmute":"Sesi Aç","mode_single_player":"Tek Oyuncu","mode_two_player":"İki Oyuncu","mode_time_attack":"Zamana Karşı","mode_quick_game":"Hızlı Oyun","mode_three_strikes":"Üç Hak","mode_select_mode":"Mod Seç","mode_back":"Geri","difficulty_easy":"Kolay","difficulty_medium":"Orta","difficulty_hard":"Zor","difficulty_select":"Zorluk Seç","common_loading":"Yükleniyor...","common_error":"Hata","common_retry":"Tekrar Dene","common_cancel":"İptal","common_confirm":"Onayla","common_save":"Kaydet","common_reset":"Sıfırla","common_yes":"Evet","common_no":"Hayır","common_ok":"Tamam","edit_profile":"Profili Düzenle","edit_profile_picture":"Profil Fotoğrafı","edit_upload_photo":"Fotoğraf Yükle","edit_choose_emoji":"Veya bir emoji seç:","edit_username":"Kullanıcı Adı","edit_background":"Arka Plan Resmi","edit_upload_background":"Arka Plan Yükle","edit_save_changes":"Değişiklikleri Kaydet","edit_remove":"Kaldır","setup_save_start":"Kaydet ve Başla","quanta_title":"✦ Quanta — Yakında","quanta_description":"Quanta, Quizzena'nın bilgi para birimidir. Gelecek güncellemelerde bilmecelerde ustalaşarak, meydan okumaları keşfederek ve zekanızı kanıtlayarak Quanta kazanın.","social_coming_soon":"Quizzena Sosyal — Yakında","social_subtitle":"Bilmeceleri keşfetmenin yeni bir yolu.","social_feed":"Sosyal Akış","achievements_ritual":"Başarı Ritüeli","achievements_subtitle":"Ustalığın Sekiz Yolu","achievements_house_coming":"Bu yolun başarıları kozmik ateşlerde dövülüyor. Kaderinizi talep etmek için yakında geri dönün.","view_stats_chart":"İstatistik Grafiğini Görüntüle"}
 };
 
 let currentLanguage = localStorage.getItem('quizzena_language') || 'en';
 let translations = LANGUAGE_DATA[currentLanguage] || LANGUAGE_DATA.en;
+
+// ============================================
+// 🌍 LANGUAGE MANAGER - DOWNLOADABLE LANGUAGE PACKS
+// ============================================
+
+// Available languages configuration
+const AVAILABLE_LANGUAGES = [
+  { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸', bundled: true, size: '4.3 KB' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', bundled: false, size: '4.7 KB' },
+  { code: 'ru', name: 'Russian', nativeName: 'Русский', flag: '🇷🇺', bundled: false, size: '5.8 KB' },
+  { code: 'tr', name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷', bundled: false, size: '4.5 KB' }
+];
+
+// Base URL for language packs - UPDATE THIS WITH YOUR GITHUB REPO
+// For local testing, use relative path. For production, use CDN URL below:
+// const LANGUAGE_PACK_BASE_URL = 'https://cdn.jsdelivr.net/gh/YOUR_USERNAME/flag_quiz@main/language-packs/';
+// const LANGUAGE_PACK_BASE_URL = 'https://raw.githubusercontent.com/YOUR_USERNAME/flag_quiz/main/language-packs/';
+const LANGUAGE_PACK_BASE_URL = './language-packs/';
+
+// Get downloaded languages from localStorage
+function getDownloadedLanguages() {
+  try {
+    return JSON.parse(localStorage.getItem('quizzena_downloaded_languages')) || ['en'];
+  } catch {
+    return ['en'];
+  }
+}
+
+// Save downloaded languages to localStorage
+function saveDownloadedLanguages(languages) {
+  localStorage.setItem('quizzena_downloaded_languages', JSON.stringify(languages));
+}
+
+// Get cached language data from localStorage
+function getCachedLanguageData(langCode) {
+  try {
+    const data = localStorage.getItem(`quizzena_lang_pack_${langCode}`);
+    return data ? JSON.parse(data) : null;
+  } catch {
+    return null;
+  }
+}
+
+// Save language data to localStorage cache
+function cacheLanguageData(langCode, data) {
+  try {
+    localStorage.setItem(`quizzena_lang_pack_${langCode}`, JSON.stringify(data));
+  } catch (e) {
+    console.warn('Could not cache language data:', e);
+  }
+}
+
+// Delete cached language data
+function deleteCachedLanguage(langCode) {
+  localStorage.removeItem(`quizzena_lang_pack_${langCode}`);
+  const downloaded = getDownloadedLanguages().filter(l => l !== langCode);
+  saveDownloadedLanguages(downloaded);
+}
+
+// Download a language pack
+async function downloadLanguagePack(langCode) {
+  const langConfig = AVAILABLE_LANGUAGES.find(l => l.code === langCode);
+  if (!langConfig) {
+    throw new Error('Language not found');
+  }
+  
+  if (langConfig.bundled) {
+    // Already bundled, no download needed
+    return LANGUAGE_DATA[langCode];
+  }
+  
+  try {
+    const response = await fetch(`${LANGUAGE_PACK_BASE_URL}${langCode}.json`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch language pack');
+    }
+    
+    const data = await response.json();
+    
+    // Cache the language data
+    cacheLanguageData(langCode, data);
+    
+    // Add to downloaded list
+    const downloaded = getDownloadedLanguages();
+    if (!downloaded.includes(langCode)) {
+      downloaded.push(langCode);
+      saveDownloadedLanguages(downloaded);
+    }
+    
+    // Add to LANGUAGE_DATA for current session
+    if (data.ui) {
+      LANGUAGE_DATA[langCode] = data.ui;
+    }
+    
+    return data;
+  } catch (error) {
+    console.error('Error downloading language pack:', error);
+    throw error;
+  }
+}
+
+// Check if a language is downloaded
+function isLanguageDownloaded(langCode) {
+  if (AVAILABLE_LANGUAGES.find(l => l.code === langCode)?.bundled) {
+    return true;
+  }
+  return getDownloadedLanguages().includes(langCode);
+}
+
+// Load cached languages into LANGUAGE_DATA on startup
+function loadCachedLanguages() {
+  const downloaded = getDownloadedLanguages();
+  downloaded.forEach(langCode => {
+    if (langCode !== 'en' && !LANGUAGE_DATA[langCode]) {
+      const cached = getCachedLanguageData(langCode);
+      if (cached && cached.ui) {
+        LANGUAGE_DATA[langCode] = cached.ui;
+      }
+    }
+  });
+}
+
+// Initialize cached languages
+loadCachedLanguages();
 
 // Load language (sync - no HTTP needed, works in native apps)
 function loadLanguage(lang) {
@@ -1307,6 +1431,129 @@ function loadLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('quizzena_language', lang);
   applyTranslations();
+  updateCurrentLanguageDisplay();
+}
+
+// Update the current language display in settings
+function updateCurrentLanguageDisplay() {
+  const display = document.getElementById('current-language-display');
+  if (display) {
+    const langConfig = AVAILABLE_LANGUAGES.find(l => l.code === currentLanguage);
+    if (langConfig) {
+      display.textContent = `${langConfig.flag} ${langConfig.nativeName}`;
+    }
+  }
+}
+
+// Open language manager modal
+function openLanguageManager() {
+  const modal = document.getElementById('language-manager-modal');
+  if (modal) {
+    renderLanguageList();
+    modal.classList.remove('hidden');
+  }
+}
+
+// Close language manager modal
+function closeLanguageManager() {
+  const modal = document.getElementById('language-manager-modal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+// Render the language list in the modal
+function renderLanguageList() {
+  const list = document.getElementById('language-list');
+  if (!list) return;
+  
+  const downloaded = getDownloadedLanguages();
+  
+  list.innerHTML = AVAILABLE_LANGUAGES.map(lang => {
+    const isDownloaded = lang.bundled || downloaded.includes(lang.code);
+    const isActive = lang.code === currentLanguage;
+    
+    return `
+      <div class="language-item ${isActive ? 'active' : ''}" data-lang="${lang.code}">
+        <div class="language-item-info">
+          <span class="language-flag">${lang.flag}</span>
+          <div class="language-details">
+            <span class="language-name">${lang.name}</span>
+            <span class="language-native">${lang.nativeName}</span>
+            <span class="language-size">${lang.size}</span>
+          </div>
+        </div>
+        <div class="language-item-actions">
+          ${lang.bundled ? `
+            <span class="lang-status-bundled">Included</span>
+          ` : isDownloaded ? `
+            <button class="lang-btn lang-btn-delete" onclick="deleteLanguage('${lang.code}')" title="Delete">🗑️</button>
+          ` : `
+            <button class="lang-btn lang-btn-download" onclick="handleDownloadLanguage('${lang.code}', this)">
+              Download
+            </button>
+          `}
+          ${isActive ? `
+            <button class="lang-btn lang-btn-active">✓ Active</button>
+          ` : isDownloaded || lang.bundled ? `
+            <button class="lang-btn lang-btn-select" onclick="selectLanguage('${lang.code}')">
+              Select
+            </button>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Handle download button click
+async function handleDownloadLanguage(langCode, btn) {
+  if (btn) {
+    btn.textContent = 'Downloading...';
+    btn.classList.add('lang-btn-downloading');
+    btn.disabled = true;
+  }
+  
+  try {
+    await downloadLanguagePack(langCode);
+    playClickSound();
+    renderLanguageList();
+  } catch (error) {
+    if (btn) {
+      btn.textContent = 'Failed - Retry';
+      btn.classList.remove('lang-btn-downloading');
+      btn.disabled = false;
+    }
+    console.error('Download failed:', error);
+  }
+}
+
+// Select a language
+function selectLanguage(langCode) {
+  if (isLanguageDownloaded(langCode) || LANGUAGE_DATA[langCode]) {
+    loadLanguage(langCode);
+    playClickSound();
+    renderLanguageList();
+  }
+}
+
+// Delete a downloaded language
+function deleteLanguage(langCode) {
+  if (langCode === 'en') return; // Can't delete English
+  
+  // If currently using this language, switch to English
+  if (currentLanguage === langCode) {
+    loadLanguage('en');
+  }
+  
+  // Remove from LANGUAGE_DATA
+  delete LANGUAGE_DATA[langCode];
+  
+  // Delete from cache
+  deleteCachedLanguage(langCode);
+  
+  playClickSound();
+  renderLanguageList();
 }
 
 // Get translation by key
@@ -1417,6 +1664,7 @@ function updateDynamicTranslations() {
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
   loadLanguage(currentLanguage);
+  updateCurrentLanguageDisplay();
 });
 
 // ============================================
@@ -3053,12 +3301,14 @@ function showTopics() {
   navTopics.classList.add('active');
 }
 
-// Show Profile screen (slides from bottom - it's special)
+// Show Profile screen (no animation - instant display)
 function showProfile() {
   currentNavIndex = NAV_ORDER.indexOf('profile');
-  
+
   hideAllViewsExcept('profile');
-  applyNavAnimation(profileView, 'bottom');
+  
+  // Remove any animation classes for instant display
+  profileView.classList.remove('slide-from-left', 'slide-from-right', 'slide-from-bottom');
 
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -3069,6 +3319,9 @@ function showProfile() {
   
   // Update achievement count
   updateAchievementCount();
+  
+  // Update best streak
+  updateBestStreakDisplay();
 }
 
 // Nav button click handlers - using addEventListener for iOS compatibility
@@ -3231,16 +3484,14 @@ document.addEventListener('keydown', (e) => {
 const settingsModal = document.getElementById('settings-modal');
 const settingsModalBackdrop = document.getElementById('settings-modal-backdrop');
 const settingsModalClose = document.getElementById('settings-modal-close');
-const languageSelect = document.getElementById('language-select');
+// Language select dropdown removed - now using Language Manager modal
 const profileSettingsBtn = document.querySelector('.profile-settings');
 
 // Open settings modal
 function openSettingsModal() {
   if (settingsModal) {
-    // Set current language in dropdown
-    if (languageSelect) {
-      languageSelect.value = currentLanguage;
-    }
+    // Update current language display
+    updateCurrentLanguageDisplay();
     settingsModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
@@ -3278,13 +3529,7 @@ if (settingsModalClose) {
   });
 }
 
-// Language change handler
-if (languageSelect) {
-  languageSelect.addEventListener('change', (e) => {
-    const newLang = e.target.value;
-    loadLanguage(newLang);
-  });
-}
+// Language change is now handled by the Language Manager modal
 
 
 // ========================================
@@ -5324,13 +5569,39 @@ if (setupSaveBtn) {
   setupSaveBtn.onclick = async () => {
     playClickSound();
     
+    // Validate required fields
+    const usernameInput = document.getElementById('setup-username');
+    const countrySelect = document.getElementById('setup-country');
+    const username = usernameInput.value.trim();
+    const country = countrySelect.value;
+    
+    // Check username
+    if (!username || username.length < 2) {
+      usernameInput.style.border = '2px solid #ef4444';
+      usernameInput.placeholder = 'Username required (min 2 characters)';
+      usernameInput.focus();
+      setTimeout(() => {
+        usernameInput.style.border = '';
+        usernameInput.placeholder = 'Enter username';
+      }, 3000);
+      return;
+    }
+    
+    // Check country
+    if (!country) {
+      countrySelect.style.border = '2px solid #ef4444';
+      setTimeout(() => {
+        countrySelect.style.border = '';
+      }, 3000);
+      return;
+    }
+    
     // Show loading state
     setupSaveBtn.textContent = 'Saving...';
     setupSaveBtn.disabled = true;
     
-    userData.profile.username = document.getElementById('setup-username').value.trim() || 'Player';
+    userData.profile.username = username;
     userData.profile.avatar = selectedAvatar || '👤';
-    const countrySelect = document.getElementById('setup-country');
     userData.profile.country = countrySelect.value;
     userData.profile.countryName = countrySelect.options[countrySelect.selectedIndex].text;
     userData.profile.createdAt = new Date().toISOString();
@@ -5432,6 +5703,27 @@ function updateProfileDisplay() {
       location.textContent = '🌍 Location not set';
     }
   }
+  
+  // Update profile banner
+  updateProfileBanner();
+}
+
+// Update profile banner background
+function updateProfileBanner() {
+  const banner = document.getElementById('profile-banner');
+  if (!banner) return;
+  
+  const backgroundPicture = userData.profile?.backgroundPicture;
+  
+  if (backgroundPicture) {
+    // Apply custom background image using full background shorthand to override CSS
+    banner.style.background = `url(${backgroundPicture}) center/cover no-repeat`;
+    banner.classList.add('has-custom-bg');
+  } else {
+    // Reset to default gradient (clear inline style, let CSS take over)
+    banner.style.background = '';
+    banner.classList.remove('has-custom-bg');
+  }
 }
 
 // ============================================
@@ -5441,6 +5733,8 @@ function updateProfileDisplay() {
 let editSelectedAvatar = null;
 let editProfilePicture = null;
 let editProfilePictureDataUrl = null;
+let editBackgroundPicture = null;
+let editBackgroundPictureDataUrl = null;
 
 function openEditProfileModal() {
   // Close settings modal
@@ -5460,8 +5754,13 @@ function openEditProfileModal() {
   editProfilePicture = null;
   editProfilePictureDataUrl = userData.profile.profilePicture || null;
   
-  // Update preview
+  // Set current background picture
+  editBackgroundPicture = null;
+  editBackgroundPictureDataUrl = userData.profile.backgroundPicture || null;
+  
+  // Update previews
   updateEditProfilePreview();
+  updateEditBackgroundPreview();
   
   // Highlight current avatar if no profile picture
   document.querySelectorAll('.avatar-btn-edit').forEach(btn => {
@@ -5475,11 +5774,13 @@ function openEditProfileModal() {
 function closeEditProfileModal() {
   const modal = document.getElementById('edit-profile-modal');
   if (modal) modal.classList.add('hidden');
-  
+
   // Reset temp variables
   editSelectedAvatar = null;
   editProfilePicture = null;
   editProfilePictureDataUrl = null;
+  editBackgroundPicture = null;
+  editBackgroundPictureDataUrl = null;
 }
 
 function updateEditProfilePreview() {
@@ -5571,6 +5872,60 @@ function removeEditProfilePicture() {
   updateEditProfilePreview();
 }
 
+// Update background preview in edit modal
+function updateEditBackgroundPreview() {
+  const previewDefault = document.getElementById('edit-background-default');
+  const previewImage = document.getElementById('edit-background-image');
+  const removeBtn = document.getElementById('edit-remove-background-btn');
+  
+  if (editBackgroundPictureDataUrl) {
+    // Show background image
+    if (previewDefault) previewDefault.classList.add('hidden');
+    if (previewImage) {
+      previewImage.src = editBackgroundPictureDataUrl;
+      previewImage.classList.remove('hidden');
+    }
+    if (removeBtn) removeBtn.classList.remove('hidden');
+  } else {
+    // Show default
+    if (previewImage) previewImage.classList.add('hidden');
+    if (previewDefault) previewDefault.classList.remove('hidden');
+    if (removeBtn) removeBtn.classList.add('hidden');
+  }
+}
+
+// Edit background picture input handler
+const editBackgroundPictureInput = document.getElementById('edit-background-picture-input');
+if (editBackgroundPictureInput) {
+  editBackgroundPictureInput.onchange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert('Image too large. Please select an image under 5MB.');
+        return;
+      }
+      
+      editBackgroundPicture = file;
+      
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        editBackgroundPictureDataUrl = event.target.result;
+        updateEditBackgroundPreview();
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+}
+
+function removeEditBackgroundPicture() {
+  playClickSound();
+  editBackgroundPicture = null;
+  editBackgroundPictureDataUrl = null;
+  const input = document.getElementById('edit-background-picture-input');
+  if (input) input.value = '';
+  updateEditBackgroundPreview();
+}
+
 async function saveEditedProfile() {
   playClickSound();
   
@@ -5586,26 +5941,28 @@ async function saveEditedProfile() {
     userData.profile.username = newUsername;
   }
   
-  // Upload new profile picture if selected
-  if (editProfilePicture) {
-    const pictureUrl = await uploadProfilePicture(editProfilePicture);
-    if (pictureUrl) {
-      userData.profile.profilePicture = pictureUrl;
-      userData.profile.avatar = editSelectedAvatar || '👤';
-    }
-  } else if (editProfilePictureDataUrl === null && editSelectedAvatar) {
-    // User removed picture and selected avatar
+  // Handle profile picture - use the already-loaded base64 data
+  if (editProfilePictureDataUrl) {
+    // User has a profile picture (either new or existing)
+    userData.profile.profilePicture = editProfilePictureDataUrl;
+    userData.profile.avatar = editSelectedAvatar || '👤';
+  } else if (editSelectedAvatar) {
+    // User removed picture or selected avatar only
     userData.profile.profilePicture = null;
     userData.profile.avatar = editSelectedAvatar;
-  } else if (editSelectedAvatar && !editProfilePictureDataUrl) {
-    // User selected avatar without picture
-    userData.profile.profilePicture = null;
-    userData.profile.avatar = editSelectedAvatar;
+  }
+  
+  // Handle background picture - use the already-loaded base64 data
+  if (editBackgroundPictureDataUrl) {
+    userData.profile.backgroundPicture = editBackgroundPictureDataUrl;
+  } else {
+    userData.profile.backgroundPicture = null;
   }
   
   // Save and update
   saveUserData();
   updateProfileDisplay();
+  updateProfileBanner();
   
   // Reset button and close modal
   if (saveBtn) {
@@ -5628,6 +5985,9 @@ function updateAllStatsDisplays() {
 
   // Update Profile Stats Row - Accuracy (2nd stat-item)
   if (statItems[1]) statItems[1].querySelector('.stat-value').textContent = accuracy + '%';
+
+  // Update Best Streak in profile feature card
+  updateBestStreakDisplay();
 
   console.log('Stats displays updated:', { totalGames, accuracy });
 }
@@ -9610,6 +9970,15 @@ function updateAchievementCount() {
   }
 }
 
+// Update best streak in profile
+function updateBestStreakDisplay() {
+  const streakEl = document.getElementById('profile-best-streak');
+  if (streakEl) {
+    const bestStreak = userData.stats?.bestStreak || 0;
+    streakEl.textContent = bestStreak;
+  }
+}
+
 // Get the highest level achieved in any topic
 function getHighestTopicLevel() {
   let highest = 1;
@@ -10731,14 +11100,22 @@ const GUIDED_TUTORIAL_STEPS = [
     showTap: false,
     showStaticStats: true
   },
-  // Step 18: Finish (navigate back to home)
+  // Step 18: Language Settings (19/20)
+  {
+    type: 'info',
+    title: '🌍 Language Options',
+    text: 'Quizzena supports multiple languages! Go to <b>Settings → Language</b> to download and switch between English, Spanish, Russian, Turkish, and more coming soon!',
+    screen: 'home',
+    icon: '🌍',
+    navigateTo: 'home-finish'
+  },
+  // Step 19: Finish (20/20)
   {
     type: 'finish',
     title: 'You\'re All Set! 🎉',
     text: 'That\'s the tour! Start playing to level up, unlock achievements, and become a Quizzena master. Good luck!',
     screen: 'home',
-    icon: '🏆',
-    navigateTo: 'home-finish'
+    icon: '🏆'
   }
 ];
 

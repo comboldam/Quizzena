@@ -306,8 +306,8 @@
       <h2 class="setup-title">Create Your Profile</h2>
 
       <div class="setup-section">
-        <label class="setup-label">Username</label>
-        <input type="text" id="setup-username" class="setup-input" placeholder="Enter username" maxlength="15">
+        <label class="setup-label">Username <span style="color:#ef4444">*</span></label>
+        <input type="text" id="setup-username" class="setup-input" placeholder="Enter username" maxlength="15" required>
       </div>
 
       <div class="setup-section">
@@ -350,8 +350,8 @@
       </div>
 
       <div class="setup-section">
-        <label class="setup-label">Country</label>
-        <select id="setup-country" class="setup-select">
+        <label class="setup-label">Country <span style="color:#ef4444">*</span></label>
+        <select id="setup-country" class="setup-select" required>
           <option value="">-- Select Country --</option>
           <option value="AF">Afghanistan</option>
           <option value="AL">Albania</option>
@@ -551,7 +551,7 @@
         </select>
       </div>
 
-      <button id="setup-save-btn" class="setup-btn">Save & Start</button>
+      <button id="setup-save-btn" class="setup-btn" data-i18n="setup_save_start">Save & Start</button>
     </div>
   </div>
 
@@ -637,9 +637,9 @@
             <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
           </svg>
         </div>
-        <h2 class="quanta-modal-title">✦ Quanta — Coming Soon</h2>
-        <p class="quanta-modal-text">Quanta is the knowledge currency of Quizzena.<br><br>Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.</p>
-        <button class="quanta-modal-btn" onclick="closeQuantaModal()">OK</button>
+        <h2 class="quanta-modal-title" data-i18n="quanta_title">✦ Quanta — Coming Soon</h2>
+        <p class="quanta-modal-text" data-i18n="quanta_description">Quanta is the knowledge currency of Quizzena. Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.</p>
+        <button class="quanta-modal-btn" onclick="closeQuantaModal()" data-i18n="common_ok">OK</button>
       </div>
     </div>
 
@@ -1152,19 +1152,15 @@
             </div>
           </div>
 
-          <!-- Language Setting -->
-          <div class="settings-item">
+          <!-- Language Setting - Opens Language Manager -->
+          <div class="settings-item settings-item-clickable" id="settings-language-btn" onclick="playClickSound(); openLanguageManager();">
             <div class="settings-item-label">
               <span class="settings-item-icon">🌍</span>
               <span data-i18n="settings_language">Language</span>
             </div>
             <div class="settings-item-control">
-              <select class="settings-dropdown" id="language-select">
-                <option value="en">🇺🇸 English</option>
-                <option value="ru">🇷🇺 Русский</option>
-                <option value="es">🇪🇸 Español</option>
-                <option value="tr">🇹🇷 Türkçe</option>
-              </select>
+              <span class="current-language-display" id="current-language-display">🇺🇸 English</span>
+              <span class="settings-arrow">→</span>
             </div>
           </div>
 
@@ -1224,19 +1220,36 @@
       </div>
     </div>
 
+    <!-- Language Manager Modal -->
+    <div class="language-manager-modal hidden" id="language-manager-modal">
+      <div class="language-manager-backdrop" onclick="closeLanguageManager()"></div>
+      <div class="language-manager-content">
+        <div class="language-manager-header">
+          <h2 class="language-manager-title">🌍 Language</h2>
+          <button class="language-manager-close" onclick="closeLanguageManager()">✕</button>
+        </div>
+        <div class="language-manager-body">
+          <p class="language-manager-hint">Download additional languages to use them. English is included by default.</p>
+          <div class="language-list" id="language-list">
+            <!-- Languages will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Edit Profile Modal -->
     <div class="edit-profile-modal hidden" id="edit-profile-modal">
       <div class="edit-profile-backdrop" onclick="closeEditProfileModal()"></div>
       <div class="edit-profile-content">
         <div class="edit-profile-header">
-          <h2 class="edit-profile-title">Edit Profile</h2>
+          <h2 class="edit-profile-title" data-i18n="edit_profile">Edit Profile</h2>
           <button class="edit-profile-close" onclick="closeEditProfileModal()">✕</button>
         </div>
         <div class="edit-profile-body">
           
           <!-- Profile Picture Section -->
           <div class="edit-section">
-            <label class="edit-label">Profile Picture</label>
+            <label class="edit-label" data-i18n="edit_profile_picture">Profile Picture</label>
             <div class="profile-picture-edit">
               <div class="profile-picture-preview-edit" id="edit-profile-preview">
                 <span class="preview-avatar-edit" id="edit-preview-avatar">👤</span>
@@ -1249,7 +1262,7 @@
                     <polyline points="17 8 12 3 7 8"/>
                     <line x1="12" y1="3" x2="12" y2="15"/>
                   </svg>
-                  <span>Upload Photo</span>
+                  <span data-i18n="edit_upload_photo">Upload Photo</span>
                 </label>
                 <input type="file" id="edit-profile-picture-input" accept="image/*" class="hidden">
                 <button type="button" class="remove-photo-btn hidden" id="edit-remove-photo-btn" onclick="removeEditProfilePicture()">✕ Remove</button>
@@ -1278,14 +1291,40 @@
           
           <!-- Username Section -->
           <div class="edit-section">
-            <label class="edit-label">Username</label>
+            <label class="edit-label" data-i18n="edit_username">Username</label>
             <input type="text" id="edit-username" class="edit-input" placeholder="Enter username" maxlength="15">
+          </div>
+
+          <!-- Background Picture Section -->
+          <div class="edit-section">
+            <label class="edit-label" data-i18n="edit_background">Background Picture</label>
+            <div class="background-picture-edit">
+              <div class="background-picture-preview-edit" id="edit-background-preview">
+                <div class="background-preview-default" id="edit-background-default">
+                  <span>🖼️</span>
+                  <span class="background-preview-text">No background</span>
+                </div>
+                <img class="background-preview-image hidden" id="edit-background-image" alt="Background">
+              </div>
+              <div class="background-picture-actions-edit">
+                <label class="upload-photo-btn" for="edit-background-picture-input">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                  </svg>
+                  <span>Upload Background</span>
+                </label>
+                <input type="file" id="edit-background-picture-input" accept="image/*" class="hidden">
+                <button type="button" class="remove-photo-btn hidden" id="edit-remove-background-btn" onclick="removeEditBackgroundPicture()">✕ Remove</button>
+              </div>
+            </div>
           </div>
           
         </div>
         <div class="edit-profile-footer">
-          <button class="edit-cancel-btn" onclick="closeEditProfileModal()">Cancel</button>
-          <button class="edit-save-btn" id="edit-save-btn" onclick="saveEditedProfile()">Save Changes</button>
+          <button class="edit-cancel-btn" onclick="closeEditProfileModal()" data-i18n="common_cancel">Cancel</button>
+          <button class="edit-save-btn" id="edit-save-btn" onclick="saveEditedProfile()" data-i18n="edit_save_changes">Save Changes</button>
         </div>
       </div>
     </div>
@@ -1958,7 +1997,7 @@
       <div class="profile-header">
 
         <!-- Background Banner with Animated Glow -->
-        <div class="profile-banner"></div>
+        <div class="profile-banner" id="profile-banner"></div>
 
         <!-- Glowing Avatar with Edit Button -->
         <div class="profile-avatar-wrapper">
@@ -1987,9 +2026,7 @@
               </div>
             </div>
           </div>
-          <div class="profile-bio">Add a bio</div>
           <div class="profile-location">🌍 Location not set</div>
-          <div class="profile-active">Last Active: Just now</div>
           <div class="profile-divider"></div>
         </div>
 
@@ -1997,17 +2034,17 @@
         <div class="profile-feature-cards">
           <div class="feature-card achievements-card" onclick="playClickSound(); openAchievementsRitual();">
             <span class="feature-card-icon">🏆</span>
-            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-title" data-i18n="profile_achievements">Achievements</div>
             <div class="feature-card-value" id="profile-achievements-count">0</div>
           </div>
-          <div class="feature-card best-topic-card" onclick="playClickSound();">
+          <div class="feature-card streaks-card" onclick="playClickSound();">
             <span class="feature-card-icon">🔥</span>
-            <div class="feature-card-title">Best Topic</div>
-            <div class="feature-card-value">—</div>
+            <div class="feature-card-title" data-i18n="profile_streaks">Streaks</div>
+            <div class="feature-card-value" id="profile-best-streak">0</div>
           </div>
           <div class="feature-card quanta-card" onclick="playClickSound(); openQuantaModal();">
             <span class="feature-card-icon">✦</span>
-            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-title" data-i18n="profile_quanta">Quanta</div>
             <div class="feature-card-value" id="profile-quanta">0</div>
           </div>
         </div>
@@ -2021,15 +2058,15 @@
           <div class="stat-value">0</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">ACCURACY</div>
+          <div class="stat-label" data-i18n="profile_accuracy">ACCURACY</div>
           <div class="stat-value">0%</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-label" data-i18n="profile_followers">FOLLOWERS</div>
           <div class="stat-value">0</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-label" data-i18n="profile_following">FOLLOWING</div>
           <div class="stat-value">0</div>
         </div>
       </div>
@@ -2080,8 +2117,8 @@
           </svg>
           <span class="social-sparkle">✨</span>
         </div>
-        <h2 class="social-modal-title">Quizzena Social — Coming Soon</h2>
-        <p class="social-modal-subtitle">A new way to explore quizzes.</p>
+        <h2 class="social-modal-title" data-i18n="social_coming_soon">Quizzena Social — Coming Soon</h2>
+        <p class="social-modal-subtitle" data-i18n="social_subtitle">A new way to explore quizzes.</p>
         <div class="social-modal-features">
           <p>Scroll through quizzes like a feed.</p>
           <p>React. Share. Discover. Follow knowledge.</p>
@@ -2114,8 +2151,8 @@
         <!-- Coming Soon Message (temporary) -->
         <div class="coming-soon-box">
           <div class="coming-soon-icon">🚀</div>
-          <div class="coming-soon-title">Coming Soon!</div>
-          <div class="coming-soon-text">
+          <div class="coming-soon-title" data-i18n="leaderboard_coming_soon">Coming Soon!</div>
+          <div class="coming-soon-text" data-i18n="leaderboard_developing">
             Global leaderboards are being developed. Soon you'll be able to compete with players worldwide!
           </div>
         </div>
@@ -2142,8 +2179,8 @@
       <div class="ritual-header">
         <button class="ritual-back-btn" onclick="closeAchievementsRitual()">←</button>
         <div class="ritual-title-container">
-          <h1 class="ritual-title">Achievements Ritual</h1>
-          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements Ritual</h1>
+          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Eight Paths of Mastery</p>
         </div>
       </div>
 
@@ -2242,10 +2279,9 @@
       </div>
       <div class="house-subpage-content">
         <div class="house-coming-soon-icon" id="house-subpage-icon">🔷</div>
-        <h3 class="house-coming-soon-title">Coming Soon</h3>
-        <p class="house-coming-soon-text">
-          Achievements for this path are being forged in the cosmic fires. 
-          Return soon to claim your destiny.
+        <h3 class="house-coming-soon-title" data-i18n="settings_coming_soon">Coming Soon</h3>
+        <p class="house-coming-soon-text" data-i18n="achievements_house_coming">
+          Achievements for this path are being forged in the cosmic fires. Return soon to claim your destiny.
         </p>
       </div>
     </div>
@@ -2259,32 +2295,26 @@
         🌍<br><span data-i18n="nav_topics">Topics</span>
       </div>
       <div class="nav-item" id="nav-social" onclick="playClickSound(); openSocialTeaser();">
-        <div class="social-nav-icon">
-          <svg viewBox="0 0 24 24" width="24" height="24">
-            <defs>
-              <linearGradient id="socialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#f09433"/>
-                <stop offset="25%" style="stop-color:#e6683c"/>
-                <stop offset="50%" style="stop-color:#dc2743"/>
-                <stop offset="75%" style="stop-color:#cc2366"/>
-                <stop offset="100%" style="stop-color:#bc1888"/>
-              </linearGradient>
-            </defs>
-            <!-- Main chat bubble -->
-            <path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="url(#socialGradient)"/>
-            <!-- Secondary bubble (overlapping) -->
-            <path d="M20 8h-2v6a2 2 0 0 1-2 2H9l1 1h6l3 3v-3h1a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2z" fill="url(#socialGradient)" opacity="0.7"/>
-            <!-- Connection dots -->
-            <circle cx="6" cy="10" r="1.2" fill="white"/>
-            <circle cx="10" cy="10" r="1.2" fill="white"/>
-            <circle cx="14" cy="10" r="1.2" fill="white"/>
-          </svg>
-          <span class="social-lock-badge">🔒</span>
-        </div>
+        <svg viewBox="0 0 24 24" width="28" height="28" style="display:block;margin:0 auto 2px;">
+          <defs>
+            <linearGradient id="socialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="25%" style="stop-color:#e6683c"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="75%" style="stop-color:#cc2366"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient>
+          </defs>
+          <path d="M4 4h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-3l-3 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="url(#socialGradient)"/>
+          <path d="M20 8h-2v6a2 2 0 0 1-2 2H9l1 1h6l3 3v-3h1a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2z" fill="url(#socialGradient)" opacity="0.7"/>
+          <circle cx="6" cy="10" r="1.2" fill="white"/>
+          <circle cx="10" cy="10" r="1.2" fill="white"/>
+          <circle cx="14" cy="10" r="1.2" fill="white"/>
+        </svg>
         <span data-i18n="nav_social">Social</span>
       </div>
       <div class="nav-item" id="nav-leaderboard">
-        🏆<br><span data-i18n="nav_leaderboard">Leaderboard</span>
+        🏆<br><span data-i18n="nav_leaderboard">Competition</span>
       </div>
       <div class="nav-item" id="nav-profile">
         👤<br><span data-i18n="nav_profile">Profile</span>
@@ -2425,9 +2455,7 @@
               </div>
             </div>
           </div>
-          <div class="profile-bio">Add a bio</div>
           <div class="profile-location">🌍 Location not set</div>
-          <div class="profile-active">Last Active: Just now</div>
           <div class="profile-divider"></div>
         </div>
         
@@ -2435,17 +2463,17 @@
         <div class="profile-feature-cards">
           <div class="feature-card achievements-card" id="tutorial-achievements-target">
             <span class="feature-card-icon">🏆</span>
-            <div class="feature-card-title">Achievements</div>
+            <div class="feature-card-title" data-i18n="profile_achievements">Achievements</div>
             <div class="feature-card-value">0</div>
           </div>
-          <div class="feature-card best-topic-card">
+          <div class="feature-card streaks-card">
             <span class="feature-card-icon">🔥</span>
-            <div class="feature-card-title">Best Topic</div>
-            <div class="feature-card-value">—</div>
+            <div class="feature-card-title" data-i18n="profile_streaks">Streaks</div>
+            <div class="feature-card-value">0</div>
           </div>
           <div class="feature-card quanta-card">
             <span class="feature-card-icon">✦</span>
-            <div class="feature-card-title">Quanta</div>
+            <div class="feature-card-title" data-i18n="profile_quanta">Quanta</div>
             <div class="feature-card-value">0</div>
           </div>
         </div>
@@ -2458,15 +2486,15 @@
           <div class="stat-value">10</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">ACCURACY</div>
+          <div class="stat-label" data-i18n="profile_accuracy">ACCURACY</div>
           <div class="stat-value">64%</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">FOLLOWERS</div>
+          <div class="stat-label" data-i18n="profile_followers">FOLLOWERS</div>
           <div class="stat-value">0</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">FOLLOWING</div>
+          <div class="stat-label" data-i18n="profile_following">FOLLOWING</div>
           <div class="stat-value">0</div>
         </div>
       </div>
@@ -2496,8 +2524,8 @@
       <div class="ritual-header">
         <button class="ritual-back-btn">←</button>
         <div class="ritual-title-container">
-          <h1 class="ritual-title">Achievements Ritual</h1>
-          <p class="ritual-subtitle">The Eight Paths of Mastery</p>
+          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements Ritual</h1>
+          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Eight Paths of Mastery</p>
         </div>
       </div>
 

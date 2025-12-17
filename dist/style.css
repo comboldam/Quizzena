@@ -5934,6 +5934,10 @@ footer button:hover {
   background: linear-gradient(to top, rgba(26, 26, 46, 0.8) 0%, transparent 100%);
 }
 
+.profile-banner.has-custom-bg::before {
+  display: none;
+}
+
 @keyframes bannerGlow {
   0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
   25% { transform: translate(10%, 5%) rotate(5deg); opacity: 0.7; }
@@ -5956,7 +5960,6 @@ footer button:hover {
   justify-content: center;
   font-size: 3.5rem;
   z-index: 5;
-  animation: avatarEntry 0.6s ease-out;
 }
 
 .profile-avatar::before {
@@ -6142,8 +6145,8 @@ footer button:hover {
   text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
 }
 
-/* Special styling for Best Topic card */
-.feature-card.best-topic-card .feature-card-icon {
+/* Special styling for Streaks card */
+.feature-card.streaks-card .feature-card-icon {
   color: #f97316;
   text-shadow: 0 0 15px rgba(249, 115, 22, 0.6);
 }
@@ -6162,7 +6165,6 @@ footer button:hover {
   background: transparent;
   margin: 0 15px 20px;
   border: none;
-  animation: statsCardEntry 0.5s ease-out 0.2s both;
 }
 
 @keyframes statsCardEntry {
@@ -8470,6 +8472,216 @@ footer button:hover {
   }
 }
 
+/* ===== LANGUAGE MANAGER MODAL ===== */
+.language-manager-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.language-manager-modal.hidden {
+  display: none;
+}
+
+.language-manager-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.language-manager-content {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  max-height: 80vh;
+  background: linear-gradient(165deg, rgba(30, 15, 60, 0.98) 0%, rgba(15, 8, 25, 0.99) 100%);
+  border-radius: 24px;
+  border: 1px solid rgba(147, 51, 234, 0.3);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 58, 237, 0.15);
+  overflow: hidden;
+  animation: modalScaleIn 0.25s ease-out;
+}
+
+.language-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.language-manager-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.language-manager-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.language-manager-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.language-manager-body {
+  padding: 16px 20px 24px;
+  overflow-y: auto;
+  max-height: calc(80vh - 80px);
+}
+
+.language-manager-hint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.language-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s;
+}
+
+.language-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.language-item.active {
+  background: rgba(147, 51, 234, 0.2);
+  border-color: rgba(147, 51, 234, 0.5);
+}
+
+.language-item-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-flag {
+  font-size: 1.6rem;
+}
+
+.language-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.language-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.language-native {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.language-size {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.language-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.lang-btn-download {
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  color: #fff;
+}
+
+.lang-btn-download:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}
+
+.lang-btn-select {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+}
+
+.lang-btn-select:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.lang-btn-delete {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  padding: 8px 12px;
+}
+
+.lang-btn-delete:hover {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.lang-btn-active {
+  background: rgba(147, 51, 234, 0.3);
+  color: #a78bfa;
+  cursor: default;
+}
+
+.lang-btn-downloading {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: wait;
+}
+
+.lang-status-bundled {
+  font-size: 0.75rem;
+  color: rgba(16, 185, 129, 0.8);
+  background: rgba(16, 185, 129, 0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.current-language-display {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 8px;
+}
+
 /* ===== EDIT PROFILE MODAL ===== */
 .edit-profile-modal {
   position: fixed;
@@ -8604,6 +8816,60 @@ footer button:hover {
 }
 
 .profile-picture-actions-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Edit background picture section */
+.background-picture-edit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background: rgba(147, 51, 234, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.background-picture-preview-edit {
+  width: 120px;
+  height: 70px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+  border: 2px solid rgba(147, 51, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.background-preview-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.background-preview-default span:first-child {
+  font-size: 1.5rem;
+}
+
+.background-preview-text {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.background-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.background-picture-actions-edit {
   display: flex;
   flex-direction: column;
   gap: 8px;
