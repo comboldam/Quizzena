@@ -3440,53 +3440,104 @@ function showUnifiedModeSelection(quizName, icon) {
   if (!modeScreen) {
     modeScreen = document.createElement('div');
     modeScreen.id = 'unified-mode-screen';
-    modeScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;';
     document.body.appendChild(modeScreen);
   }
 
-  // Build mode buttons with lock states
+  // Use premium design for all topics
+  modeScreen.className = 'premium-mode-screen';
+  modeScreen.style.cssText = '';
+  
+  // Build premium Time Attack button
   const timeAttackBtn = timeAttackUnlocked 
-    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>`
-    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 Time Attack<br><span style="font-size:12px;color:#666;">Reach Level 5 to unlock</span></button>`;
+    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" class="pm-mode-btn pm-mode-unlocked">
+         <span class="pm-mode-icon">⏱️</span>
+         <span>Time Attack (60s)</span>
+       </button>`
+    : `<div class="pm-mode-btn pm-mode-locked">
+         <div class="pm-mode-main">
+           <span class="pm-lock-icon">🔒</span>
+           <span>Time Attack</span>
+         </div>
+         <span class="pm-unlock-hint">Reach Level 5 to unlock</span>
+       </div>`;
 
+  // Build premium 3 Hearts button
   const threeHeartsBtn = threeHeartsUnlocked
-    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💜 3 Hearts</button>`
-    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 3 Hearts<br><span style="font-size:12px;color:#666;">Reach Level 10 to unlock</span></button>`;
+    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" class="pm-mode-btn pm-mode-unlocked">
+         <span class="pm-mode-icon">💜</span>
+         <span>3 Hearts</span>
+       </button>`
+    : `<div class="pm-mode-btn pm-mode-locked">
+         <div class="pm-mode-main">
+           <span class="pm-lock-icon">🔒</span>
+           <span>3 Hearts</span>
+         </div>
+         <span class="pm-unlock-hint">Reach Level 10 to unlock</span>
+       </div>`;
 
-// Show mode selection with level display
   modeScreen.innerHTML = `
-      <button onclick="playClickSound(); exitUnifiedQuiz()" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-
-      <!-- Add to Slot Button -->
-      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" style="position:absolute;top:15px;right:15px;background:rgba(167,139,250,0.2);border:1px solid rgba(167,139,250,0.5);color:#a78bfa;padding:10px 15px;border-radius:8px;font-size:0.9rem;cursor:pointer;font-weight:600;transition:all 0.3s ease;display:flex;align-items:center;gap:6px;">
-        <span style="font-size:1.1rem;">+</span> Add to Slot
+    <!-- Header buttons -->
+    <div class="pm-header">
+      <button onclick="playClickSound(); exitUnifiedQuiz()" class="pm-back-btn">←</button>
+      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" class="pm-slot-btn">
+        <span style="font-size:1rem;">+</span> Add to Slot
       </button>
+    </div>
 
-      <h2 style="color:#fff;font-size:28px;margin-bottom:5px;">${icon} ${quizName} Quiz</h2>
-
-      <!-- Level Display -->
-      <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:10px 20px;margin-bottom:20px;">
-        <div style="color:#FFD700;font-size:16px;font-weight:bold;">Level ${topicData.level}</div>
-        <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:6px;width:150px;margin-top:5px;overflow:hidden;">
-          <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
+    <!-- Content -->
+    <div class="pm-content">
+      <!-- Hero section -->
+      <div class="pm-hero">
+        <div class="pm-icon-wrapper">
+          <div class="pm-icon-glow"></div>
+          <div class="pm-icon-ring">
+            <span class="pm-icon">${icon}</span>
+          </div>
         </div>
-        <div style="color:#a78bfa;font-size:11px;margin-top:3px;">${progress.current}/${progress.needed} XP</div>
+        <h2 class="pm-title">${quizName} Quiz</h2>
       </div>
 
-      <h3 style="color:#a78bfa;font-size:18px;margin-bottom:20px;">Choose Game Mode</h3>
+      <!-- Level card -->
+      <div class="pm-level-card">
+        <div class="pm-level-badge">
+          <span class="pm-level-star">⭐</span>
+          <span class="pm-level-text">Level ${topicData.level}</span>
+        </div>
+        <div class="pm-xp-bar">
+          <div class="pm-xp-fill" style="width:${progress.percentage}%"></div>
+        </div>
+        <div class="pm-xp-text">${progress.current}/${progress.needed} XP</div>
+      </div>
 
-      <!-- Casual - Always unlocked -->
-      <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
+      <!-- Section header -->
+      <div class="pm-section-header">
+        <div class="pm-section-line"></div>
+        <span class="pm-section-title">Choose Game Mode</span>
+        <div class="pm-section-line"></div>
+      </div>
 
-      <!-- Time Attack - Unlocks at Level 5 -->
-      ${timeAttackBtn}
+      <!-- Mode buttons -->
+      <div class="pm-modes">
+        <!-- Casual - Always unlocked -->
+        <button onclick="playClickSound(); startUnifiedGame('casual')" class="pm-mode-btn pm-mode-unlocked">
+          <span class="pm-mode-icon">⚡</span>
+          <span>Casual (5 questions)</span>
+        </button>
 
-      <!-- 3 Hearts - Unlocks at Level 10 -->
-      ${threeHeartsBtn}
+        <!-- Time Attack -->
+        ${timeAttackBtn}
 
-      <!-- 2 Players - Always unlocked -->
-      <button onclick="playClickSound(); startUnifiedGame('two')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
-    `;
+        <!-- 3 Hearts -->
+        ${threeHeartsBtn}
+
+        <!-- 2 Players - Always unlocked -->
+        <button onclick="playClickSound(); startUnifiedGame('two')" class="pm-mode-btn pm-mode-unlocked pm-mode-2p">
+          <span class="pm-mode-icon">👥</span>
+          <span>2 Players</span>
+        </button>
+      </div>
+    </div>
+  `;
 
   modeScreen.classList.remove('hidden');
 }
@@ -3502,43 +3553,104 @@ function selectAreaDifficulty(difficulty) {
   const threeHeartsUnlocked = isModeUnlocked(topicData, 'three-hearts');
   const progress = getLevelProgress(topicData);
 
-  // Build mode buttons with lock states
+  // Build premium Time Attack button
   const timeAttackBtn = timeAttackUnlocked 
-    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#FF6B6B,#ee5a5a);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(255, 107, 107, 0.4);">⏱️ Time Attack (60s)</button>`
-    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 Time Attack<br><span style="font-size:12px;color:#666;">Reach Level 5 to unlock</span></button>`;
+    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" class="pm-mode-btn pm-mode-unlocked">
+         <span class="pm-mode-icon">⏱️</span>
+         <span>Time Attack (60s)</span>
+       </button>`
+    : `<div class="pm-mode-btn pm-mode-locked">
+         <div class="pm-mode-main">
+           <span class="pm-lock-icon">🔒</span>
+           <span>Time Attack</span>
+         </div>
+         <span class="pm-unlock-hint">Reach Level 5 to unlock</span>
+       </div>`;
 
+  // Build premium 3 Hearts button
   const threeHeartsBtn = threeHeartsUnlocked
-    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#9C27B0,#7B1FA2);color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(156, 39, 176, 0.4);">💜 3 Hearts</button>`
-    : `<button disabled style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,#444,#333);color:#888;cursor:not-allowed;position:relative;">🔒 3 Hearts<br><span style="font-size:12px;color:#666;">Reach Level 10 to unlock</span></button>`;
+    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" class="pm-mode-btn pm-mode-unlocked">
+         <span class="pm-mode-icon">💜</span>
+         <span>3 Hearts</span>
+       </button>`
+    : `<div class="pm-mode-btn pm-mode-locked">
+         <div class="pm-mode-main">
+           <span class="pm-lock-icon">🔒</span>
+           <span>3 Hearts</span>
+         </div>
+         <span class="pm-unlock-hint">Reach Level 10 to unlock</span>
+       </div>`;
 
-  // Update mode screen to show game modes
+  // Update mode screen to show game modes with premium design
   const modeScreen = document.getElementById('unified-mode-screen');
+  modeScreen.className = 'premium-mode-screen';
   modeScreen.innerHTML = `
-    <button onclick="playClickSound(); showUnifiedModeSelection('Area', '📏')" style="position:absolute;top:15px;left:15px;background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;transition:all 0.3s ease;">←</button>
-    <h2 style="color:#fff;font-size:28px;margin-bottom:5px;">📏 Area Quiz</h2>
-    
-    <!-- Level Display -->
-    <div style="background:rgba(255,215,0,0.1);border:1px solid rgba(255,215,0,0.3);border-radius:10px;padding:10px 20px;margin-bottom:10px;">
-      <div style="color:#FFD700;font-size:16px;font-weight:bold;">Level ${topicData.level}</div>
-      <div style="background:rgba(255,255,255,0.2);border-radius:10px;height:6px;width:150px;margin-top:5px;overflow:hidden;">
-        <div style="background:linear-gradient(90deg,#FFD700,#FFA500);height:100%;width:${progress.percentage}%;border-radius:10px;"></div>
-      </div>
-      <div style="color:#a78bfa;font-size:11px;margin-top:3px;">${progress.current}/${progress.needed} XP</div>
+    <!-- Header buttons -->
+    <div class="pm-header">
+      <button onclick="playClickSound(); showUnifiedModeSelection('Area', '📏')" class="pm-back-btn">←</button>
+      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" class="pm-slot-btn">
+        <span style="font-size:1rem;">+</span> Add to Slot
+      </button>
     </div>
-    
-    <h3 style="color:#a78bfa;font-size:18px;margin-bottom:20px;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>
 
-    <!-- Casual - Always unlocked -->
-    <button onclick="playClickSound(); startUnifiedGame('casual')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">⚡ Casual (5 questions)</button>
+    <!-- Content -->
+    <div class="pm-content">
+      <!-- Hero section -->
+      <div class="pm-hero">
+        <div class="pm-icon-wrapper">
+          <div class="pm-icon-glow"></div>
+          <div class="pm-icon-ring">
+            <span class="pm-icon">📏</span>
+          </div>
+        </div>
+        <h2 class="pm-title">Area Quiz</h2>
+      </div>
 
-    <!-- Time Attack - Unlocks at Level 5 -->
-    ${timeAttackBtn}
+      <!-- Level card -->
+      <div class="pm-level-card">
+        <div class="pm-level-badge">
+          <span class="pm-level-star">⭐</span>
+          <span class="pm-level-text">Level ${topicData.level}</span>
+        </div>
+        <div class="pm-xp-bar">
+          <div class="pm-xp-fill" style="width:${progress.percentage}%"></div>
+        </div>
+        <div class="pm-xp-text">${progress.current}/${progress.needed} XP</div>
+      </div>
 
-    <!-- 3 Hearts - Unlocks at Level 10 -->
-    ${threeHeartsBtn}
+      <!-- Difficulty badge -->
+      <div style="background:rgba(167,139,250,0.15);border:1px solid rgba(167,139,250,0.3);border-radius:10px;padding:8px 20px;margin-bottom:20px;">
+        <span style="color:#a78bfa;font-size:14px;font-weight:600;">Difficulty: ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</span>
+      </div>
 
-    <!-- 2 Players - Always unlocked -->
-    <button onclick="playClickSound(); startUnifiedGame('two')" style="width:80%;max-width:300px;padding:18px;margin:10px 0;font-size:18px;border:none;border-radius:12px;background:linear-gradient(135deg,rgba(124, 58, 237, 0.9),rgba(72, 52, 212, 0.9));color:#fff;cursor:pointer;box-shadow:0 8px 25px rgba(124, 58, 237, 0.4);">👥 2 Players</button>
+      <!-- Section header -->
+      <div class="pm-section-header">
+        <div class="pm-section-line"></div>
+        <span class="pm-section-title">Choose Game Mode</span>
+        <div class="pm-section-line"></div>
+      </div>
+
+      <!-- Mode buttons -->
+      <div class="pm-modes">
+        <!-- Casual - Always unlocked -->
+        <button onclick="playClickSound(); startUnifiedGame('casual')" class="pm-mode-btn pm-mode-unlocked">
+          <span class="pm-mode-icon">⚡</span>
+          <span>Casual (5 questions)</span>
+        </button>
+
+        <!-- Time Attack -->
+        ${timeAttackBtn}
+
+        <!-- 3 Hearts -->
+        ${threeHeartsBtn}
+
+        <!-- 2 Players - Always unlocked -->
+        <button onclick="playClickSound(); startUnifiedGame('two')" class="pm-mode-btn pm-mode-unlocked pm-mode-2p">
+          <span class="pm-mode-icon">👥</span>
+          <span>2 Players</span>
+        </button>
+      </div>
+    </div>
   `;
 }
 

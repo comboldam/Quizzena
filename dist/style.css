@@ -25037,3 +25037,301 @@ body.performance-mode-low .topics-view.hidden {
   .crystal-ball { width: 60px; height: 60px; }
   .crystal-base { width: 34px; height: 14px; }
 }
+
+/* ============================================ */
+/* 🎮 PREMIUM MODE SELECTION SCREEN - FLAGS    */
+/* ============================================ */
+
+.premium-mode-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0c29 100%);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Subtle background glow - matches Quizzena */
+.premium-mode-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content container */
+.pm-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  padding-top: 70px;
+}
+
+/* Header buttons */
+.pm-header {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.pm-back-btn {
+  background: rgba(124, 58, 237, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.pm-back-btn:active {
+  background: rgba(124, 58, 237, 0.4);
+  transform: scale(0.95);
+}
+
+.pm-slot-btn {
+  background: rgba(167, 139, 250, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #a78bfa;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pm-slot-btn:active {
+  background: rgba(167, 139, 250, 0.3);
+  transform: scale(0.95);
+}
+
+/* Topic hero section */
+.pm-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pm-icon-wrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.pm-icon-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.5) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(25px);
+}
+
+.pm-icon-ring {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #9333ea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.4), 0 0 50px rgba(124, 58, 237, 0.2);
+}
+
+.pm-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.pm-title {
+  font-family: 'Orbitron', 'Rajdhani', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Level card - Quizzena style */
+.pm-level-card {
+  background: rgba(255, 215, 0, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 14px;
+  padding: 14px 24px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.pm-level-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.pm-level-star {
+  font-size: 1rem;
+}
+
+.pm-level-text {
+  color: #FFD700;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.pm-xp-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.pm-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.pm-xp-text {
+  color: #a78bfa;
+  font-size: 11px;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Section header */
+.pm-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.pm-section-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.3), transparent);
+}
+
+.pm-section-title {
+  color: #a78bfa;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Mode buttons */
+.pm-modes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.pm-mode-btn {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* Unlocked mode button - Quizzena purple */
+.pm-mode-unlocked {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(72, 52, 212, 0.9) 100%);
+  border: none;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+}
+
+.pm-mode-unlocked:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* Locked mode button */
+.pm-mode-locked {
+  background: linear-gradient(135deg, rgba(60, 60, 80, 0.6) 0%, rgba(40, 40, 55, 0.7) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: not-allowed;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.pm-mode-locked .pm-mode-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pm-mode-locked .pm-lock-icon {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.pm-mode-locked .pm-unlock-hint {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  margin-left: 28px;
+}
+
+/* 2 Players - same purple style */
+.pm-mode-2p {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.9) 0%, rgba(72, 52, 212, 0.9) 100%);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+}
+
+.pm-mode-icon {
+  font-size: 1.2rem;
+}
