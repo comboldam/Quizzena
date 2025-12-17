@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "sync:images": "powershell -ExecutionPolicy Bypass -File sync-images.ps1",
+    "sync:android": "npx cap sync android",
+    "deploy": "npm run sync:images && npm run sync:android",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

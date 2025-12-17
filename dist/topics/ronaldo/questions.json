@@ -1,202 +1,2602 @@
 [
-  {"id":1,"question":"Who is this player known as 'CR7'?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Cristiano Ronaldo","Ronaldo Nazario","Ronaldinho","Raul"],"answer":"Cristiano Ronaldo","difficulty":"easy","category":"personal"},
-  {"id":2,"question":"In what year did Ronaldo win the European Championship with Portugal?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["2012","2016","2020","2004"],"answer":"2016","difficulty":"easy","category":"portugal"},
-  {"id":3,"question":"How many Ballon d'Or awards has Ronaldo won?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["4","5","6","7"],"answer":"5","difficulty":"easy","category":"records"},
-  {"id":4,"question":"Which club did Ronaldo join after leaving Real Madrid in 2018?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Manchester United","Paris Saint-Germain","Juventus","Inter Milan"],"answer":"Juventus","difficulty":"easy","category":"career"},
-  {"id":5,"question":"What is Ronaldo's birthdate?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["February 5, 1985","February 5, 1984","February 5, 1986","February 5, 1987"],"answer":"February 5, 1985","difficulty":"medium","category":"personal"},
-  {"id":6,"question":"On which Portuguese island was Ronaldo born?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Azores","Madeira","Porto Santo","Lisbon"],"answer":"Madeira","difficulty":"easy","category":"personal"},
-  {"id":7,"question":"What is the name of the city where Ronaldo was born?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Lisbon","Porto","Funchal","Braga"],"answer":"Funchal","difficulty":"medium","category":"personal"},
-  {"id":8,"question":"Which Portuguese club did Ronaldo start his professional career with?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Benfica","Porto","Sporting CP","Braga"],"answer":"Sporting CP","difficulty":"easy","category":"early-career"},
-  {"id":9,"question":"At what age did Ronaldo join Sporting CP's academy?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["10","11","12","13"],"answer":"12","difficulty":"medium","category":"early-career"},
-  {"id":10,"question":"Why is Ronaldo named 'Cristiano Ronaldo'?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["After Cristiano Zanetti","After Ronald Reagan","After his godfather","Random choice"],"answer":"After Ronald Reagan","difficulty":"hard","category":"personal"},
-  {"id":11,"question":"Who was the Manchester United manager that signed Ronaldo in 2003?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Alex_Ferguson%2C_June_2014_%281%29.jpg/220px-Alex_Ferguson%2C_June_2014_%281%29.jpg","options":["Jose Mourinho","Arsene Wenger","Sir Alex Ferguson","Rafael Benitez"],"answer":"Sir Alex Ferguson","difficulty":"easy","category":"manchester-united"},
-  {"id":12,"question":"How much did Manchester United pay for Ronaldo in 2003?","options":["£8 million","£12.24 million","£15 million","£20 million"],"answer":"£12.24 million","difficulty":"medium","category":"manchester-united"},
-  {"id":13,"question":"Which shirt number did Ronaldo initially wear at Manchester United?","options":["7","9","17","28"],"answer":"28","difficulty":"hard","category":"manchester-united"},
-  {"id":14,"question":"Who did Ronaldo inherit the number 7 shirt from at Manchester United?","options":["Eric Cantona","David Beckham","Roy Keane","Ryan Giggs"],"answer":"David Beckham","difficulty":"medium","category":"manchester-united"},
-  {"id":15,"question":"Against which team did Ronaldo make his Manchester United debut?","options":["Arsenal","Chelsea","Bolton Wanderers","Liverpool"],"answer":"Bolton Wanderers","difficulty":"hard","category":"manchester-united"},
-  {"id":16,"question":"How many Premier League titles did Ronaldo win with Manchester United (first spell)?","options":["2","3","4","5"],"answer":"3","difficulty":"medium","category":"trophies"},
-  {"id":17,"question":"How many Champions League titles did Ronaldo win with Manchester United?","options":["0","1","2","3"],"answer":"1","difficulty":"easy","category":"trophies"},
-  {"id":18,"question":"In which year did Ronaldo win his first Ballon d'Or?","options":["2007","2008","2009","2010"],"answer":"2008","difficulty":"easy","category":"records"},
-  {"id":19,"question":"Who did Manchester United beat in the 2008 Champions League final?","options":["Barcelona","Chelsea","AC Milan","Bayern Munich"],"answer":"Chelsea","difficulty":"medium","category":"trophies"},
-  {"id":20,"question":"Where was the 2008 Champions League final held?","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/220px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg","options":["Wembley","Moscow","Rome","Paris"],"answer":"Moscow","difficulty":"medium","category":"trophies"},
-  {"id":21,"question":"How many goals did Ronaldo score in his final season at Manchester United (2008-09)?","options":["18","22","26","31"],"answer":"26","difficulty":"hard","category":"manchester-united"},
-  {"id":22,"question":"What world record transfer fee did Real Madrid pay for Ronaldo in 2009?","options":["£60 million","£70 million","£80 million","£94 million"],"answer":"£80 million","difficulty":"medium","category":"real-madrid"},
-  {"id":23,"question":"How many total goals did Ronaldo score for Real Madrid?","options":["400","425","450","451"],"answer":"450","difficulty":"medium","category":"records"},
-  {"id":24,"question":"How many appearances did Ronaldo make for Real Madrid?","options":["400","438","450","500"],"answer":"438","difficulty":"hard","category":"records"},
-  {"id":25,"question":"How many La Liga titles did Ronaldo win with Real Madrid?","options":["1","2","3","4"],"answer":"2","difficulty":"medium","category":"trophies"},
-  {"id":26,"question":"How many Champions League titles did Ronaldo win with Real Madrid?","options":["2","3","4","5"],"answer":"4","difficulty":"easy","category":"trophies"},
-  {"id":27,"question":"What historic feat did Real Madrid achieve from 2016-2018 in the Champions League?","options":["Two consecutive titles","Three consecutive titles","Four consecutive titles","Unbeaten run"],"answer":"Three consecutive titles","difficulty":"medium","category":"real-madrid"},
-  {"id":28,"question":"Who was Real Madrid's manager during most of Ronaldo's time there?","options":["Carlo Ancelotti","Zinedine Zidane","Jose Mourinho","Rafael Benitez"],"answer":"Zinedine Zidane","difficulty":"easy","category":"real-madrid"},
-  {"id":29,"question":"What is Ronaldo's famous goal celebration called?","options":["The Jump","The Spin","SIUUU","The Salute"],"answer":"SIUUU","difficulty":"easy","category":"iconic-moments"},
-  {"id":30,"question":"What does 'SIUUU' reportedly mean?","options":["Nothing specific","Yes in Spanish","His initials","Simply I Unite"],"answer":"Yes in Spanish","difficulty":"medium","category":"iconic-moments"},
-  {"id":31,"question":"Against which club did Ronaldo score his famous bicycle kick in 2018?","options":["Barcelona","Atletico Madrid","Juventus","Bayern Munich"],"answer":"Juventus","difficulty":"easy","category":"iconic-moments"},
-  {"id":32,"question":"What did Juventus fans do after Ronaldo's bicycle kick goal against them?","options":["Booed him","Gave him a standing ovation","Left the stadium","Threw objects"],"answer":"Gave him a standing ovation","difficulty":"easy","category":"iconic-moments"},
-  {"id":33,"question":"How many hat-tricks did Ronaldo score for Real Madrid?","options":["34","44","54","64"],"answer":"44","difficulty":"hard","category":"records"},
-  {"id":34,"question":"What is Ronaldo's record for most goals in a Champions League season?","options":["15","17","19","21"],"answer":"17","difficulty":"hard","category":"records"},
-  {"id":35,"question":"In which season did Ronaldo score 17 Champions League goals?","options":["2012-13","2013-14","2015-16","2017-18"],"answer":"2013-14","difficulty":"hard","category":"records"},
-  {"id":36,"question":"How many total Champions League goals has Ronaldo scored?","options":["130","140","145","150"],"answer":"140","difficulty":"medium","category":"records"},
-  {"id":37,"question":"Who is the all-time top scorer in Champions League history?","options":["Messi","Ronaldo","Lewandowski","Benzema"],"answer":"Ronaldo","difficulty":"easy","category":"records"},
-  {"id":38,"question":"How many Serie A titles did Ronaldo win with Juventus?","options":["1","2","3","0"],"answer":"2","difficulty":"medium","category":"trophies"},
-  {"id":39,"question":"How many goals did Ronaldo score for Juventus in total?","options":["81","91","101","111"],"answer":"101","difficulty":"hard","category":"career"},
-  {"id":40,"question":"In how many appearances did Ronaldo score 101 goals for Juventus?","options":["114","124","134","144"],"answer":"134","difficulty":"hard","category":"career"},
-  {"id":41,"question":"When did Ronaldo return to Manchester United for his second spell?","options":["2020","2021","2022","2023"],"answer":"2021","difficulty":"easy","category":"career"},
-  {"id":42,"question":"How did Ronaldo's second spell at Manchester United end?","options":["Mutual agreement","Contract expired","Interview controversy","Injury"],"answer":"Interview controversy","difficulty":"medium","category":"career"},
-  {"id":43,"question":"Which journalist did Ronaldo give his controversial interview to?","options":["Gary Neville","Piers Morgan","Rio Ferdinand","Jamie Carragher"],"answer":"Piers Morgan","difficulty":"medium","category":"career"},
-  {"id":44,"question":"Which club did Ronaldo join in January 2023?","options":["Inter Miami","Al-Hilal","Al-Nassr","Al-Ittihad"],"answer":"Al-Nassr","difficulty":"easy","category":"career"},
-  {"id":45,"question":"In which country is Al-Nassr based?","options":["UAE","Qatar","Saudi Arabia","Bahrain"],"answer":"Saudi Arabia","difficulty":"easy","category":"career"},
-  {"id":46,"question":"What is Ronaldo's reported weekly salary at Al-Nassr?","options":["$1 million","$2 million","$3 million","$5 million"],"answer":"$3 million","difficulty":"medium","category":"career"},
-  {"id":47,"question":"Who is Ronaldo's long-term partner?","options":["Irina Shayk","Georgina Rodriguez","Kim Kardashian","Shakira"],"answer":"Georgina Rodriguez","difficulty":"easy","category":"personal"},
-  {"id":48,"question":"How many children does Ronaldo have?","options":["3","4","5","6"],"answer":"5","difficulty":"easy","category":"personal"},
-  {"id":49,"question":"What is the name of Ronaldo's eldest son?","options":["Cristiano Jr.","Mateo","Alana","Eva"],"answer":"Cristiano Jr.","difficulty":"easy","category":"personal"},
-  {"id":50,"question":"What is Ronaldo's lifestyle brand called?","options":["CR7","CR Brand","Ronaldo Sports","7 Sports"],"answer":"CR7","difficulty":"easy","category":"personal"},
-  {"id":51,"question":"What business does Ronaldo have in the hospitality industry?","options":["Restaurants","Hotels","Airlines","Cruise ships"],"answer":"Hotels","difficulty":"medium","category":"personal"},
-  {"id":52,"question":"What is the name of Ronaldo's hotel chain?","options":["CR7 Hotels","Pestana CR7","Ronaldo Suites","7 Stars"],"answer":"Pestana CR7","difficulty":"hard","category":"personal"},
-  {"id":53,"question":"What is Ronaldo's full name?","options":["Cristiano Ronaldo Santos Aveiro","Cristiano Ronaldo dos Santos Aveiro","Cristiano Ronaldo Aveiro Santos","Cristiano dos Santos Ronaldo"],"answer":"Cristiano Ronaldo dos Santos Aveiro","difficulty":"medium","category":"personal"},
-  {"id":54,"question":"What was Ronaldo's father's name?","options":["Jose Aveiro","Dinis Aveiro","Hugo Aveiro","Luis Aveiro"],"answer":"Jose Dinis Aveiro","difficulty":"hard","category":"personal"},
-  {"id":55,"question":"What tragic issue did Ronaldo's father struggle with?","options":["Heart disease","Alcoholism","Cancer","Diabetes"],"answer":"Alcoholism","difficulty":"medium","category":"personal"},
-  {"id":56,"question":"At what age did Ronaldo lose his father?","options":["18","20","22","24"],"answer":"20","difficulty":"hard","category":"personal"},
-  {"id":57,"question":"What heart condition did Ronaldo have surgery for as a teenager?","options":["Heart murmur","Racing heart","Hole in heart","Valve problem"],"answer":"Racing heart","difficulty":"hard","category":"personal"},
-  {"id":58,"question":"At what age did Ronaldo have heart surgery?","options":["13","14","15","16"],"answer":"15","difficulty":"hard","category":"personal"},
-  {"id":59,"question":"What is Ronaldo known for regarding his physique?","options":["Being naturally gifted","Extreme dedication to fitness","Never training","Eating whatever he wants"],"answer":"Extreme dedication to fitness","difficulty":"easy","category":"personal"},
-  {"id":60,"question":"How many hours of sleep does Ronaldo reportedly get using polyphasic sleep?","options":["8 hours straight","5 x 90 minute naps","6 hours straight","4 x 2 hour naps"],"answer":"5 x 90 minute naps","difficulty":"hard","category":"personal"},
-  {"id":61,"question":"How many international goals has Ronaldo scored (all-time record)?","options":["118","125","130","136"],"answer":"136","difficulty":"medium","category":"records"},
-  {"id":62,"question":"Who held the international goals record before Ronaldo broke it?","options":["Pele","Ali Daei","Messi","Miroslav Klose"],"answer":"Ali Daei","difficulty":"medium","category":"records"},
-  {"id":63,"question":"How many goals did Ali Daei score for Iran?","options":["99","105","109","115"],"answer":"109","difficulty":"hard","category":"records"},
-  {"id":64,"question":"How many appearances has Ronaldo made for Portugal?","options":["180","190","200","215"],"answer":"215","difficulty":"hard","category":"portugal"},
-  {"id":65,"question":"At what age did Ronaldo make his Portugal debut?","options":["17","18","19","20"],"answer":"18","difficulty":"medium","category":"portugal"},
-  {"id":66,"question":"Against which country did Ronaldo make his Portugal debut?","options":["Spain","France","Kazakhstan","Germany"],"answer":"Kazakhstan","difficulty":"hard","category":"portugal"},
-  {"id":67,"question":"In which tournament did Ronaldo first captain Portugal?","options":["Euro 2008","World Cup 2010","Euro 2012","World Cup 2006"],"answer":"World Cup 2010","difficulty":"hard","category":"portugal"},
-  {"id":68,"question":"How many World Cups has Ronaldo played in?","options":["4","5","6","7"],"answer":"5","difficulty":"medium","category":"portugal"},
-  {"id":69,"question":"What happened to Ronaldo in the Euro 2016 final?","options":["Scored winning goal","Got red card","Injured and substituted","Missed penalty"],"answer":"Injured and substituted","difficulty":"easy","category":"portugal"},
-  {"id":70,"question":"Who scored the winning goal in the Euro 2016 final for Portugal?","options":["Nani","Quaresma","Eder","Renato Sanches"],"answer":"Eder","difficulty":"medium","category":"portugal"},
-  {"id":71,"question":"Which country did Portugal beat in the Euro 2016 final?","options":["Germany","Spain","France","Italy"],"answer":"France","difficulty":"easy","category":"portugal"},
-  {"id":72,"question":"What did Ronaldo famously do during the Euro 2016 final after being injured?","options":["Left the stadium","Coached from sidelines","Cried in locker room","Celebrated alone"],"answer":"Coached from sidelines","difficulty":"easy","category":"iconic-moments"},
-  {"id":73,"question":"Which insect landed on Ronaldo's face during the Euro 2016 final?","options":["Butterfly","Bee","Moth","Fly"],"answer":"Moth","difficulty":"medium","category":"iconic-moments"},
-  {"id":74,"question":"What other major trophy did Portugal win with Ronaldo?","options":["World Cup","Confederations Cup","UEFA Nations League","Copa America"],"answer":"UEFA Nations League","difficulty":"easy","category":"trophies"},
-  {"id":75,"question":"In which year did Portugal win the UEFA Nations League?","options":["2018","2019","2020","2021"],"answer":"2019","difficulty":"medium","category":"trophies"},
-  {"id":76,"question":"How many goals did Ronaldo score at Euro 2020 (held in 2021)?","options":["3","4","5","6"],"answer":"5","difficulty":"medium","category":"portugal"},
-  {"id":77,"question":"What record did Ronaldo set at Euro 2020?","options":["Most Euro goals ever","Most Euro assists","Oldest Euro scorer","Most Euro appearances"],"answer":"Most Euro goals ever","difficulty":"medium","category":"records"},
-  {"id":78,"question":"How many European Championship goals has Ronaldo scored in total?","options":["12","14","16","18"],"answer":"14","difficulty":"hard","category":"records"},
-  {"id":79,"question":"How many European Championships has Ronaldo played in?","options":["4","5","6","7"],"answer":"6","difficulty":"medium","category":"portugal"},
-  {"id":80,"question":"At which World Cup did Ronaldo score a hat-trick against Spain?","options":["2010","2014","2018","2022"],"answer":"2018","difficulty":"easy","category":"iconic-moments"},
-  {"id":81,"question":"What was the final score of Portugal vs Spain at World Cup 2018?","options":["2-2","3-3","4-3","3-2"],"answer":"3-3","difficulty":"medium","category":"portugal"},
-  {"id":82,"question":"What type of goal completed Ronaldo's hat-trick against Spain?","options":["Header","Penalty","Free kick","Long range shot"],"answer":"Free kick","difficulty":"medium","category":"iconic-moments"},
-  {"id":83,"question":"Which goalkeeper did Ronaldo chip with a panenka penalty for Portugal?","options":["Iker Casillas","Thibaut Courtois","Manuel Neuer","David de Gea"],"answer":"Thibaut Courtois","difficulty":"hard","category":"iconic-moments"},
-  {"id":84,"question":"How many career hat-tricks has Ronaldo scored?","options":["50","57","65","70"],"answer":"65","difficulty":"medium","category":"records"},
-  {"id":85,"question":"What is Ronaldo's record for most hat-tricks in international football?","options":["8","10","12","14"],"answer":"10","difficulty":"hard","category":"records"},
-  {"id":86,"question":"Against which country did Ronaldo score back-to-back hat-tricks in Euro qualifiers?","options":["Lithuania","Luxembourg","Andorra","Liechtenstein"],"answer":"Lithuania","difficulty":"hard","category":"portugal"},
-  {"id":87,"question":"How many goals did Ronaldo score in his first season at Real Madrid?","options":["26","33","40","45"],"answer":"33","difficulty":"hard","category":"real-madrid"},
-  {"id":88,"question":"What is Ronaldo's record for most La Liga goals in a single season?","options":["40","46","48","51"],"answer":"48","difficulty":"hard","category":"records"},
-  {"id":89,"question":"In which season did Ronaldo score 48 La Liga goals?","options":["2010-11","2011-12","2014-15","2015-16"],"answer":"2014-15","difficulty":"hard","category":"records"},
-  {"id":90,"question":"How many total La Liga goals did Ronaldo score?","options":["311","331","351","371"],"answer":"311","difficulty":"hard","category":"records"},
-  {"id":91,"question":"Who provided the most assists to Ronaldo at Real Madrid?","options":["Marcelo","Karim Benzema","Gareth Bale","Luka Modric"],"answer":"Karim Benzema","difficulty":"medium","category":"teammates"},
-  {"id":92,"question":"What was the famous attacking trio called at Real Madrid?","options":["MSN","BBC","The Galacticos","The Trident"],"answer":"BBC","difficulty":"easy","category":"teammates"},
-  {"id":93,"question":"What does 'BBC' stand for at Real Madrid?","options":["Bale-Benzema-Cristiano","Bale-Benzema-Casemiro","Best-Benzema-Cristiano","Bale-Brahim-Cristiano"],"answer":"Bale-Benzema-Cristiano","difficulty":"easy","category":"teammates"},
-  {"id":94,"question":"How many El Clasico goals did Ronaldo score?","options":["15","18","21","25"],"answer":"18","difficulty":"hard","category":"records"},
-  {"id":95,"question":"How many El Clasico matches did Ronaldo play?","options":["25","30","35","40"],"answer":"30","difficulty":"hard","category":"real-madrid"},
-  {"id":96,"question":"What is Ronaldo's record in Champions League finals?","options":["Won 3, Lost 1","Won 4, Lost 1","Won 5, Lost 0","Won 5, Lost 1"],"answer":"Won 5, Lost 1","difficulty":"medium","category":"records"},
-  {"id":97,"question":"Which Champions League final did Ronaldo lose?","options":["2004 with United","2009 with United","2008 with United","He never lost one"],"answer":"2009 with United","difficulty":"hard","category":"trophies"},
-  {"id":98,"question":"Who beat Manchester United in the 2009 Champions League final?","options":["Inter Milan","AC Milan","Barcelona","Bayern Munich"],"answer":"Barcelona","difficulty":"medium","category":"trophies"},
-  {"id":99,"question":"How many goals did Ronaldo score in the 2017 Champions League final?","options":["0","1","2","3"],"answer":"2","difficulty":"medium","category":"iconic-moments"},
-  {"id":100,"question":"Who did Real Madrid beat in the 2017 Champions League final?","options":["Atletico Madrid","Juventus","Liverpool","Tottenham"],"answer":"Juventus","difficulty":"easy","category":"trophies"},
-  {"id":101,"question":"What was the score in the 2017 Champions League final?","options":["2-1","3-1","4-1","3-0"],"answer":"4-1","difficulty":"medium","category":"trophies"},
-  {"id":102,"question":"How many goals did Ronaldo score in the 2013-14 Champions League campaign?","options":["15","17","19","21"],"answer":"17","difficulty":"hard","category":"records"},
-  {"id":103,"question":"What famous goal did Ronaldo score in the 2014 Champions League final?","options":["Header","Free kick","Penalty","Bicycle kick"],"answer":"Penalty","difficulty":"hard","category":"iconic-moments"},
-  {"id":104,"question":"What was special about Ronaldo's penalty in the 2014 final?","options":["Shirtless celebration","Panenka","Last minute","All of these"],"answer":"Shirtless celebration","difficulty":"easy","category":"iconic-moments"},
-  {"id":105,"question":"Who did Real Madrid beat in the 2014 Champions League final?","options":["Barcelona","Bayern Munich","Atletico Madrid","Chelsea"],"answer":"Atletico Madrid","difficulty":"easy","category":"trophies"},
-  {"id":106,"question":"What was this final called due to both teams being from Madrid?","options":["El Clasico","Derby Final","Madrid Derby","El Derbi"],"answer":"Madrid Derby","difficulty":"easy","category":"trophies"},
-  {"id":107,"question":"How many consecutive Champions League finals did Ronaldo score in?","options":["2","3","4","5"],"answer":"3","difficulty":"hard","category":"records"},
-  {"id":108,"question":"What unique record does Ronaldo hold in the Champions League knockout stages?","options":["Most goals","Most assists","Most hat-tricks","All of these"],"answer":"Most goals","difficulty":"medium","category":"records"},
-  {"id":109,"question":"How many knockout stage goals has Ronaldo scored in the Champions League?","options":["57","67","77","87"],"answer":"67","difficulty":"hard","category":"records"},
-  {"id":110,"question":"Against which club has Ronaldo scored the most Champions League goals?","options":["Barcelona","Bayern Munich","Juventus","Atletico Madrid"],"answer":"Juventus","difficulty":"medium","category":"records"},
-  {"id":111,"question":"What was Ronaldo's shirt number at Sporting CP?","options":["7","17","28","31"],"answer":"28","difficulty":"hard","category":"early-career"},
-  {"id":112,"question":"Which famous match convinced Ferguson to sign Ronaldo?","options":["Sporting vs Benfica","Sporting vs Man United friendly","Portugal vs England","Sporting vs Porto"],"answer":"Sporting vs Man United friendly","difficulty":"medium","category":"early-career"},
-  {"id":113,"question":"What did United players reportedly tell Ferguson after facing teenage Ronaldo?","options":["He's average","Sign him immediately","He needs time","He's too young"],"answer":"Sign him immediately","difficulty":"easy","category":"early-career"},
-  {"id":114,"question":"How old was Ronaldo when he moved to Manchester United?","options":["16","17","18","19"],"answer":"18","difficulty":"easy","category":"early-career"},
-  {"id":115,"question":"What did Ronaldo struggle with in his early United career?","options":["Speed","Diving and showboating criticism","Heading","Stamina"],"answer":"Diving and showboating criticism","difficulty":"medium","category":"manchester-united"},
-  {"id":116,"question":"What tragic event happened during the 2006 World Cup involving Ronaldo?","options":["Red card","Wayne Rooney wink incident","Missed penalty","Got injured"],"answer":"Wayne Rooney wink incident","difficulty":"medium","category":"iconic-moments"},
-  {"id":117,"question":"What happened after Ronaldo winked following Rooney's red card?","options":["Nothing","English fans booed him","He was fined","He apologized publicly"],"answer":"English fans booed him","difficulty":"easy","category":"iconic-moments"},
-  {"id":118,"question":"How did Ronaldo and Rooney resolve their conflict?","options":["Never spoke again","Ferguson mediated","They fought","Court case"],"answer":"Ferguson mediated","difficulty":"medium","category":"manchester-united"},
-  {"id":119,"question":"What award did Ronaldo win in 2008 besides Ballon d'Or?","options":["World Player of Year","PFA Player of Year","Golden Boot","All of these"],"answer":"All of these","difficulty":"medium","category":"records"},
-  {"id":120,"question":"How many Premier League goals did Ronaldo score in 2007-08?","options":["26","31","35","42"],"answer":"31","difficulty":"hard","category":"manchester-united"},
-  {"id":121,"question":"What is Ronaldo's record for most goals in a Premier League season?","options":["26","31","34","36"],"answer":"31","difficulty":"medium","category":"records"},
-  {"id":122,"question":"Which English club has Ronaldo scored the most goals against?","options":["Arsenal","Chelsea","Tottenham","Aston Villa"],"answer":"Tottenham","difficulty":"hard","category":"records"},
-  {"id":123,"question":"How many free-kick goals has Ronaldo scored in his career?","options":["45","55","60","65"],"answer":"60","difficulty":"hard","category":"records"},
-  {"id":124,"question":"What technique is Ronaldo famous for with free kicks?","options":["Bending","Dipping knuckleball","Curve","Power shot"],"answer":"Dipping knuckleball","difficulty":"easy","category":"iconic-moments"},
-  {"id":125,"question":"Against which team did Ronaldo score his first career hat-trick?","options":["Newcastle United","Tottenham","Arsenal","Manchester City"],"answer":"Newcastle United","difficulty":"hard","category":"manchester-united"},
-  {"id":126,"question":"In what year was Ronaldo's first career hat-trick?","options":["2006","2007","2008","2009"],"answer":"2008","difficulty":"hard","category":"manchester-united"},
-  {"id":127,"question":"What is Ronaldo's career total for club goals?","options":["750+","800+","850+","900+"],"answer":"750+","difficulty":"medium","category":"records"},
-  {"id":128,"question":"What is Ronaldo's combined career goals (club + country)?","options":["850+","875+","900+","925+"],"answer":"900+","difficulty":"medium","category":"records"},
-  {"id":129,"question":"How many seasons has Ronaldo scored 50+ goals in all competitions?","options":["5","7","9","11"],"answer":"9","difficulty":"hard","category":"records"},
-  {"id":130,"question":"What is Ronaldo's record for most goals scored for Real Madrid in a season?","options":["55","61","66","70"],"answer":"61","difficulty":"hard","category":"records"},
-  {"id":131,"question":"In which season did Ronaldo score 61 goals for Real Madrid?","options":["2011-12","2012-13","2014-15","2015-16"],"answer":"2014-15","difficulty":"hard","category":"records"},
-  {"id":132,"question":"How many penalties has Ronaldo scored in his career?","options":["120+","140+","160+","180+"],"answer":"160+","difficulty":"hard","category":"records"},
-  {"id":133,"question":"What is Ronaldo's penalty conversion rate approximately?","options":["74%","80%","84%","88%"],"answer":"84%","difficulty":"hard","category":"records"},
-  {"id":134,"question":"How many header goals has Ronaldo scored in his career?","options":["120+","140+","160+","180+"],"answer":"140+","difficulty":"hard","category":"records"},
-  {"id":135,"question":"What is Ronaldo's vertical leap height?","options":["60cm","71cm","78cm","85cm"],"answer":"78cm","difficulty":"hard","category":"personal"},
-  {"id":136,"question":"What height did Ronaldo reach for his famous header against Wales at Euro 2016?","options":["2.20m","2.41m","2.65m","2.88m"],"answer":"2.65m","difficulty":"hard","category":"iconic-moments"},
-  {"id":137,"question":"How many times has Ronaldo been top scorer in the Champions League?","options":["5","6","7","8"],"answer":"7","difficulty":"medium","category":"records"},
-  {"id":138,"question":"How many FIFA Best Men's Player awards has Ronaldo won?","options":["1","2","3","4"],"answer":"2","difficulty":"medium","category":"records"},
-  {"id":139,"question":"Who did Ronaldo beat to win his 2016 Ballon d'Or?","options":["Messi","Griezmann","Neymar","Suarez"],"answer":"Messi","difficulty":"medium","category":"records"},
-  {"id":140,"question":"Who did Ronaldo beat to win his 2017 Ballon d'Or?","options":["Messi","Neymar","Modric","Griezmann"],"answer":"Messi","difficulty":"medium","category":"records"},
-  {"id":141,"question":"What is Ronaldo's highest finish in Ballon d'Or voting when not winning?","options":["2nd","3rd","4th","5th"],"answer":"2nd","difficulty":"easy","category":"records"},
-  {"id":142,"question":"How many times was Ronaldo runner-up for Ballon d'Or?","options":["3","4","5","6"],"answer":"5","difficulty":"hard","category":"records"},
-  {"id":143,"question":"What is Ronaldo's body fat percentage reportedly?","options":["3%","5%","7%","10%"],"answer":"7%","difficulty":"medium","category":"personal"},
-  {"id":144,"question":"What is Ronaldo's reported top speed?","options":["33.6 km/h","35.5 km/h","38.6 km/h","40.2 km/h"],"answer":"33.6 km/h","difficulty":"hard","category":"personal"},
-  {"id":145,"question":"How many Instagram followers does Ronaldo have (most followed person)?","options":["400 million+","500 million+","600 million+","700 million+"],"answer":"600 million+","difficulty":"medium","category":"personal"},
-  {"id":146,"question":"What is the name of Ronaldo's documentary?","options":["CR7","Ronaldo","The Making of Ronaldo","Cristiano"],"answer":"Ronaldo","difficulty":"medium","category":"personal"},
-  {"id":147,"question":"In what year was Ronaldo's documentary released?","options":["2013","2014","2015","2016"],"answer":"2015","difficulty":"hard","category":"personal"},
-  {"id":148,"question":"What airport in Portugal was renamed after Ronaldo?","options":["Lisbon Airport","Porto Airport","Madeira Airport","Faro Airport"],"answer":"Madeira Airport","difficulty":"easy","category":"personal"},
-  {"id":149,"question":"What became an internet meme after Ronaldo's statue was unveiled?","options":["The pose","The face/bust","The inscription","The location"],"answer":"The face/bust","difficulty":"easy","category":"iconic-moments"},
-  {"id":150,"question":"What did Ronaldo famously do with Coca-Cola bottles at a press conference?","options":["Drank them","Moved them away","Threw them","Signed them"],"answer":"Moved them away","difficulty":"easy","category":"iconic-moments"},
-  {"id":151,"question":"What did Ronaldo say after moving the Coca-Cola bottles?","options":["No Coca-Cola","Agua","Water!","Drink water"],"answer":"Agua","difficulty":"easy","category":"iconic-moments"},
-  {"id":152,"question":"How much did Coca-Cola's stock reportedly drop after Ronaldo's action?","options":["$1 billion","$2 billion","$4 billion","$8 billion"],"answer":"$4 billion","difficulty":"medium","category":"iconic-moments"},
-  {"id":153,"question":"What jersey number does Ronaldo wear at Al-Nassr?","options":["7","9","10","77"],"answer":"7","difficulty":"easy","category":"career"},
-  {"id":154,"question":"Which former teammate joined Ronaldo at Al-Nassr?","options":["Benzema","Marcelo","Pepe","Sadio Mane"],"answer":"Sadio Mane","difficulty":"medium","category":"teammates"},
-  {"id":155,"question":"How many goals did Ronaldo score in his second Manchester United spell?","options":["18","24","27","32"],"answer":"24","difficulty":"hard","category":"manchester-united"},
-  {"id":156,"question":"Against which team did Ronaldo score on his second Manchester United debut?","options":["Leeds United","Newcastle United","Liverpool","Arsenal"],"answer":"Newcastle United","difficulty":"medium","category":"iconic-moments"},
-  {"id":157,"question":"How many goals did Ronaldo score on his second United debut?","options":["1","2","3","0"],"answer":"2","difficulty":"medium","category":"iconic-moments"},
-  {"id":158,"question":"Who was Manchester United's manager when Ronaldo returned?","options":["Ole Gunnar Solskjaer","Ralf Rangnick","Erik ten Hag","David Moyes"],"answer":"Ole Gunnar Solskjaer","difficulty":"medium","category":"manchester-united"},
-  {"id":159,"question":"Who was the manager when Ronaldo's contract was terminated?","options":["Ole Gunnar Solskjaer","Ralf Rangnick","Erik ten Hag","Carrick"],"answer":"Erik ten Hag","difficulty":"easy","category":"manchester-united"},
-  {"id":160,"question":"What did Ronaldo say about Erik ten Hag in his Piers Morgan interview?","options":["Praised him","Said he had no respect for him","Called him the best","Said nothing"],"answer":"Said he had no respect for him","difficulty":"easy","category":"iconic-moments"},
-  {"id":161,"question":"Which Portuguese manager did Ronaldo play under at Real Madrid?","options":["Carlos Queiroz","Jose Mourinho","Fernando Santos","Leonardo Jardim"],"answer":"Jose Mourinho","difficulty":"easy","category":"real-madrid"},
-  {"id":162,"question":"How many goals did Ronaldo score under Mourinho at Real Madrid?","options":["100","118","146","168"],"answer":"168","difficulty":"hard","category":"real-madrid"},
-  {"id":163,"question":"What is Ronaldo's record against Barcelona in all competitions?","options":["10 goals","15 goals","18 goals","22 goals"],"answer":"22 goals","difficulty":"hard","category":"records"},
-  {"id":164,"question":"Against which goalkeeper has Ronaldo scored the most goals?","options":["Casillas","Buffon","Cech","Valdes"],"answer":"Buffon","difficulty":"medium","category":"records"},
-  {"id":165,"question":"How many goals has Ronaldo scored against Buffon?","options":["8","10","12","14"],"answer":"10","difficulty":"hard","category":"records"},
-  {"id":166,"question":"What is Ronaldo's record for scoring in consecutive matches?","options":["10 games","11 games","12 games","15 games"],"answer":"11 games","difficulty":"hard","category":"records"},
-  {"id":167,"question":"For which club did Ronaldo achieve this 11-game scoring streak?","options":["Man United","Real Madrid","Juventus","Portugal"],"answer":"Real Madrid","difficulty":"medium","category":"records"},
-  {"id":168,"question":"What unique Champions League feat did Ronaldo achieve at Juventus?","options":["Hat-trick vs Atletico comeback","First Juventus CL goal","Nothing special","Penalty in every game"],"answer":"Hat-trick vs Atletico comeback","difficulty":"medium","category":"iconic-moments"},
-  {"id":169,"question":"What was Juventus trailing in the tie before Ronaldo's hat-trick vs Atletico?","options":["0-2","1-2","0-3","1-3"],"answer":"0-2","difficulty":"medium","category":"iconic-moments"},
-  {"id":170,"question":"What celebration did Ronaldo do after eliminating Atletico?","options":["Shirt off","Slide","Cojones gesture","SIUU only"],"answer":"Cojones gesture","difficulty":"medium","category":"iconic-moments"},
-  {"id":171,"question":"Who did Ronaldo mimic with the 'cojones' celebration?","options":["Messi","Simeone","Griezmann","Godin"],"answer":"Simeone","difficulty":"medium","category":"iconic-moments"},
-  {"id":172,"question":"How many Serie A goals did Ronaldo score?","options":["71","81","91","101"],"answer":"81","difficulty":"hard","category":"records"},
-  {"id":173,"question":"What award did Ronaldo win in his first Serie A season?","options":["MVP","Top Scorer","Best Player","Golden Boot"],"answer":"MVP","difficulty":"medium","category":"trophies"},
-  {"id":174,"question":"How many Coppa Italia titles did Ronaldo win?","options":["0","1","2","3"],"answer":"1","difficulty":"medium","category":"trophies"},
-  {"id":175,"question":"What is Ronaldo's record for most goals in a Serie A season?","options":["27","29","31","33"],"answer":"29","difficulty":"hard","category":"records"},
-  {"id":176,"question":"Why couldn't Ronaldo win the Champions League with Juventus?","options":["Eliminated by Ajax, Lyon, Porto","Injury every time","Never qualified","Suspended"],"answer":"Eliminated by Ajax, Lyon, Porto","difficulty":"medium","category":"career"},
-  {"id":177,"question":"Who was Ronaldo's strike partner at Juventus?","options":["Morata","Dybala","Higuain","All of them at different times"],"answer":"All of them at different times","difficulty":"medium","category":"teammates"},
-  {"id":178,"question":"What is Ronaldo's mother's name?","options":["Maria","Dolores","Ana","Lucia"],"answer":"Dolores","difficulty":"medium","category":"personal"},
-  {"id":179,"question":"What is Ronaldo's older brother's name?","options":["Hugo","Jose","Dinis","Carlos"],"answer":"Hugo","difficulty":"hard","category":"personal"},
-  {"id":180,"question":"How many siblings does Ronaldo have?","options":["1","2","3","4"],"answer":"3","difficulty":"medium","category":"personal"},
-  {"id":181,"question":"What youth academy in Madeira did Ronaldo first join?","options":["Andorinha","Nacional","Maritimo","Porto Santo"],"answer":"Andorinha","difficulty":"hard","category":"early-career"},
-  {"id":182,"question":"Why is the club called 'Andorinha'?","options":["Founder's name","Means 'swallow' (bird)","Local area","Random name"],"answer":"Means 'swallow' (bird)","difficulty":"hard","category":"early-career"},
-  {"id":183,"question":"Which Madeira club did Ronaldo join after Andorinha?","options":["Nacional","Maritimo","Porto Santo","Sporting"],"answer":"Nacional","difficulty":"hard","category":"early-career"},
-  {"id":184,"question":"At what age did Ronaldo leave Madeira for Lisbon?","options":["10","11","12","13"],"answer":"12","difficulty":"medium","category":"early-career"},
-  {"id":185,"question":"What made young Ronaldo cry when he first moved to Lisbon?","options":["Homesickness","Bullying for his accent","Missing family","All of these"],"answer":"Bullying for his accent","difficulty":"medium","category":"early-career"},
-  {"id":186,"question":"What is Ronaldo's native accent from?","options":["Lisbon","Porto","Madeira","Azores"],"answer":"Madeira","difficulty":"medium","category":"personal"},
-  {"id":187,"question":"Who is Ronaldo's longtime agent?","options":["Mino Raiola","Jorge Mendes","Jonathan Barnett","Pini Zahavi"],"answer":"Jorge Mendes","difficulty":"easy","category":"career"},
-  {"id":188,"question":"What is Jorge Mendes's agency called?","options":["Gestifute","Stellar","CAA","Wasserman"],"answer":"Gestifute","difficulty":"hard","category":"career"},
-  {"id":189,"question":"What charity did Ronaldo notably support?","options":["Save the Children","Red Cross","UNICEF","All of them"],"answer":"All of them","difficulty":"medium","category":"personal"},
-  {"id":190,"question":"Why doesn't Ronaldo have tattoos?","options":["Doesn't like them","Religious reasons","To donate blood","Fear of needles"],"answer":"To donate blood","difficulty":"medium","category":"personal"},
-  {"id":191,"question":"What is Ronaldo's net worth estimated at?","options":["$300 million","$400 million","$500 million","$600 million"],"answer":"$500 million","difficulty":"medium","category":"personal"},
-  {"id":192,"question":"Which car brand is Ronaldo famous for collecting?","options":["Ferrari","Lamborghini","Bugatti","All expensive cars"],"answer":"All expensive cars","difficulty":"easy","category":"personal"},
-  {"id":193,"question":"What is Ronaldo's reported most expensive car?","options":["Bugatti La Voiture Noire","Bugatti Chiron","Ferrari LaFerrari","Rolls Royce"],"answer":"Bugatti La Voiture Noire","difficulty":"hard","category":"personal"},
-  {"id":194,"question":"What number does Ronaldo consider his lucky number?","options":["7","9","10","17"],"answer":"7","difficulty":"easy","category":"personal"},
-  {"id":195,"question":"What did Ronaldo say when asked about retirement?","options":["Soon","At 40","When body says no","Never"],"answer":"When body says no","difficulty":"medium","category":"personal"},
-  {"id":196,"question":"What is Ronaldo's YouTube channel focused on?","options":["Gaming","Fitness","Football skills","Lifestyle/vlog"],"answer":"Football skills","difficulty":"hard","category":"personal"},
-  {"id":197,"question":"What record did Ronaldo set on YouTube?","options":["Fastest to 1M subs","Most viewed sports video","Both","Neither"],"answer":"Fastest to 1M subs","difficulty":"medium","category":"personal"},
-  {"id":198,"question":"How long did it take Ronaldo to reach 1 million YouTube subscribers?","options":["30 minutes","90 minutes","2 hours","24 hours"],"answer":"90 minutes","difficulty":"hard","category":"personal"},
-  {"id":199,"question":"What did Pele call Ronaldo?","options":["The best ever","Better than me","Greatest of his generation","Just good"],"answer":"Greatest of his generation","difficulty":"medium","category":"personal"},
-  {"id":200,"question":"What is Ronaldo's famous quote about success?","options":["Talent without work is nothing","Hard work beats talent","I am the best","Dreams are free"],"answer":"Talent without work is nothing","difficulty":"easy","category":"personal"}
+  {
+    "id": 1,
+    "question": "Who is this player known as 'CR7'?",
+    "options": [
+      "Cristiano Ronaldo",
+      "Ronaldo Nazario",
+      "Ronaldinho",
+      "Raul"
+    ],
+    "answer": "Cristiano Ronaldo",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 2,
+    "question": "In what year did Ronaldo win the European Championship with Portugal?",
+    "options": [
+      "2012",
+      "2016",
+      "2020",
+      "2004"
+    ],
+    "answer": "2016",
+    "difficulty": "easy",
+    "category": "portugal"
+  },
+  {
+    "id": 3,
+    "question": "How many Ballon d'Or awards has Ronaldo won?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "difficulty": "easy",
+    "category": "records"
+  },
+  {
+    "id": 4,
+    "question": "Which club did Ronaldo join after leaving Real Madrid in 2018?",
+    "options": [
+      "Manchester United",
+      "Paris Saint-Germain",
+      "Juventus",
+      "Inter Milan"
+    ],
+    "answer": "Juventus",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 5,
+    "question": "What is Ronaldo's birthdate?",
+    "options": [
+      "February 5, 1985",
+      "February 5, 1984",
+      "February 5, 1986",
+      "February 5, 1987"
+    ],
+    "answer": "February 5, 1985",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 6,
+    "question": "On which Portuguese island was Ronaldo born?",
+    "options": [
+      "Azores",
+      "Madeira",
+      "Porto Santo",
+      "Lisbon"
+    ],
+    "answer": "Madeira",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 7,
+    "question": "What is the name of the city where Ronaldo was born?",
+    "options": [
+      "Lisbon",
+      "Porto",
+      "Funchal",
+      "Braga"
+    ],
+    "answer": "Funchal",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 8,
+    "question": "Which Portuguese club did Ronaldo start his professional career with?",
+    "options": [
+      "Benfica",
+      "Porto",
+      "Sporting CP",
+      "Braga"
+    ],
+    "answer": "Sporting CP",
+    "difficulty": "easy",
+    "category": "early-career"
+  },
+  {
+    "id": 9,
+    "question": "At what age did Ronaldo join Sporting CP's academy?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": "12",
+    "difficulty": "medium",
+    "category": "early-career"
+  },
+  {
+    "id": 10,
+    "question": "Why is Ronaldo named 'Cristiano Ronaldo'?",
+    "options": [
+      "After Cristiano Zanetti",
+      "After Ronald Reagan",
+      "After his godfather",
+      "Random choice"
+    ],
+    "answer": "After Ronald Reagan",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 11,
+    "question": "Who was the Manchester United manager that signed Ronaldo in 2003?",
+    "options": [
+      "Jose Mourinho",
+      "Arsene Wenger",
+      "Sir Alex Ferguson",
+      "Rafael Benitez"
+    ],
+    "answer": "Sir Alex Ferguson",
+    "difficulty": "easy",
+    "category": "manchester-united"
+  },
+  {
+    "id": 12,
+    "question": "How much did Manchester United pay for Ronaldo in 2003?",
+    "options": [
+      "£8 million",
+      "£12.24 million",
+      "£15 million",
+      "£20 million"
+    ],
+    "answer": "£12.24 million",
+    "difficulty": "medium",
+    "category": "manchester-united"
+  },
+  {
+    "id": 13,
+    "question": "Which shirt number did Ronaldo initially wear at Manchester United?",
+    "options": [
+      "7",
+      "9",
+      "17",
+      "28"
+    ],
+    "answer": "28",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 14,
+    "question": "Who did Ronaldo inherit the number 7 shirt from at Manchester United?",
+    "options": [
+      "Eric Cantona",
+      "David Beckham",
+      "Roy Keane",
+      "Ryan Giggs"
+    ],
+    "answer": "David Beckham",
+    "difficulty": "medium",
+    "category": "manchester-united"
+  },
+  {
+    "id": 15,
+    "question": "Against which team did Ronaldo make his Manchester United debut?",
+    "options": [
+      "Arsenal",
+      "Chelsea",
+      "Bolton Wanderers",
+      "Liverpool"
+    ],
+    "answer": "Bolton Wanderers",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 16,
+    "question": "How many Premier League titles did Ronaldo win with Manchester United (first spell)?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 17,
+    "question": "How many Champions League titles did Ronaldo win with Manchester United?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "1",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 18,
+    "question": "In which year did Ronaldo win his first Ballon d'Or?",
+    "options": [
+      "2007",
+      "2008",
+      "2009",
+      "2010"
+    ],
+    "answer": "2008",
+    "difficulty": "easy",
+    "category": "records"
+  },
+  {
+    "id": 19,
+    "question": "Who did Manchester United beat in the 2008 Champions League final?",
+    "options": [
+      "Barcelona",
+      "Chelsea",
+      "AC Milan",
+      "Bayern Munich"
+    ],
+    "answer": "Chelsea",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 20,
+    "question": "Where was the 2008 Champions League final held?",
+    "options": [
+      "Wembley",
+      "Moscow",
+      "Rome",
+      "Paris"
+    ],
+    "answer": "Moscow",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 21,
+    "question": "How many goals did Ronaldo score in his final season at Manchester United (2008-09)?",
+    "options": [
+      "18",
+      "22",
+      "26",
+      "31"
+    ],
+    "answer": "26",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 22,
+    "question": "What world record transfer fee did Real Madrid pay for Ronaldo in 2009?",
+    "options": [
+      "£60 million",
+      "£70 million",
+      "£80 million",
+      "£94 million"
+    ],
+    "answer": "£80 million",
+    "difficulty": "medium",
+    "category": "real-madrid"
+  },
+  {
+    "id": 23,
+    "question": "How many total goals did Ronaldo score for Real Madrid?",
+    "options": [
+      "400",
+      "425",
+      "450",
+      "451"
+    ],
+    "answer": "450",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 24,
+    "question": "How many appearances did Ronaldo make for Real Madrid?",
+    "options": [
+      "400",
+      "438",
+      "450",
+      "500"
+    ],
+    "answer": "438",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 25,
+    "question": "How many La Liga titles did Ronaldo win with Real Madrid?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 26,
+    "question": "How many Champions League titles did Ronaldo win with Real Madrid?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 27,
+    "question": "What historic feat did Real Madrid achieve from 2016-2018 in the Champions League?",
+    "options": [
+      "Two consecutive titles",
+      "Three consecutive titles",
+      "Four consecutive titles",
+      "Unbeaten run"
+    ],
+    "answer": "Three consecutive titles",
+    "difficulty": "medium",
+    "category": "real-madrid"
+  },
+  {
+    "id": 28,
+    "question": "Who was Real Madrid's manager during most of Ronaldo's time there?",
+    "options": [
+      "Carlo Ancelotti",
+      "Zinedine Zidane",
+      "Jose Mourinho",
+      "Rafael Benitez"
+    ],
+    "answer": "Zinedine Zidane",
+    "difficulty": "easy",
+    "category": "real-madrid"
+  },
+  {
+    "id": 29,
+    "question": "What is Ronaldo's famous goal celebration called?",
+    "options": [
+      "The Jump",
+      "The Spin",
+      "SIUUU",
+      "The Salute"
+    ],
+    "answer": "SIUUU",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 30,
+    "question": "What does 'SIUUU' reportedly mean?",
+    "options": [
+      "Nothing specific",
+      "Yes in Spanish",
+      "His initials",
+      "Simply I Unite"
+    ],
+    "answer": "Yes in Spanish",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 31,
+    "question": "Against which club did Ronaldo score his famous bicycle kick in 2018?",
+    "options": [
+      "Barcelona",
+      "Atletico Madrid",
+      "Juventus",
+      "Bayern Munich"
+    ],
+    "answer": "Juventus",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 32,
+    "question": "What did Juventus fans do after Ronaldo's bicycle kick goal against them?",
+    "options": [
+      "Booed him",
+      "Gave him a standing ovation",
+      "Left the stadium",
+      "Threw objects"
+    ],
+    "answer": "Gave him a standing ovation",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 33,
+    "question": "How many hat-tricks did Ronaldo score for Real Madrid?",
+    "options": [
+      "34",
+      "44",
+      "54",
+      "64"
+    ],
+    "answer": "44",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 34,
+    "question": "What is Ronaldo's record for most goals in a Champions League season?",
+    "options": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "answer": "17",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 35,
+    "question": "In which season did Ronaldo score 17 Champions League goals?",
+    "options": [
+      "2012-13",
+      "2013-14",
+      "2015-16",
+      "2017-18"
+    ],
+    "answer": "2013-14",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 36,
+    "question": "How many total Champions League goals has Ronaldo scored?",
+    "options": [
+      "130",
+      "140",
+      "145",
+      "150"
+    ],
+    "answer": "140",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 37,
+    "question": "Who is the all-time top scorer in Champions League history?",
+    "options": [
+      "Messi",
+      "Ronaldo",
+      "Lewandowski",
+      "Benzema"
+    ],
+    "answer": "Ronaldo",
+    "difficulty": "easy",
+    "category": "records"
+  },
+  {
+    "id": 38,
+    "question": "How many Serie A titles did Ronaldo win with Juventus?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 39,
+    "question": "How many goals did Ronaldo score for Juventus in total?",
+    "options": [
+      "81",
+      "91",
+      "101",
+      "111"
+    ],
+    "answer": "101",
+    "difficulty": "hard",
+    "category": "career"
+  },
+  {
+    "id": 40,
+    "question": "In how many appearances did Ronaldo score 101 goals for Juventus?",
+    "options": [
+      "114",
+      "124",
+      "134",
+      "144"
+    ],
+    "answer": "134",
+    "difficulty": "hard",
+    "category": "career"
+  },
+  {
+    "id": 41,
+    "question": "When did Ronaldo return to Manchester United for his second spell?",
+    "options": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
+    "answer": "2021",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 42,
+    "question": "How did Ronaldo's second spell at Manchester United end?",
+    "options": [
+      "Mutual agreement",
+      "Contract expired",
+      "Interview controversy",
+      "Injury"
+    ],
+    "answer": "Interview controversy",
+    "difficulty": "medium",
+    "category": "career"
+  },
+  {
+    "id": 43,
+    "question": "Which journalist did Ronaldo give his controversial interview to?",
+    "options": [
+      "Gary Neville",
+      "Piers Morgan",
+      "Rio Ferdinand",
+      "Jamie Carragher"
+    ],
+    "answer": "Piers Morgan",
+    "difficulty": "medium",
+    "category": "career"
+  },
+  {
+    "id": 44,
+    "question": "Which club did Ronaldo join in January 2023?",
+    "options": [
+      "Inter Miami",
+      "Al-Hilal",
+      "Al-Nassr",
+      "Al-Ittihad"
+    ],
+    "answer": "Al-Nassr",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 45,
+    "question": "In which country is Al-Nassr based?",
+    "options": [
+      "UAE",
+      "Qatar",
+      "Saudi Arabia",
+      "Bahrain"
+    ],
+    "answer": "Saudi Arabia",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 46,
+    "question": "What is Ronaldo's reported weekly salary at Al-Nassr?",
+    "options": [
+      "$1 million",
+      "$2 million",
+      "$3 million",
+      "$5 million"
+    ],
+    "answer": "$3 million",
+    "difficulty": "medium",
+    "category": "career"
+  },
+  {
+    "id": 47,
+    "question": "Who is Ronaldo's long-term partner?",
+    "options": [
+      "Irina Shayk",
+      "Georgina Rodriguez",
+      "Kim Kardashian",
+      "Shakira"
+    ],
+    "answer": "Georgina Rodriguez",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 48,
+    "question": "How many children does Ronaldo have?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 49,
+    "question": "What is the name of Ronaldo's eldest son?",
+    "options": [
+      "Cristiano Jr.",
+      "Mateo",
+      "Alana",
+      "Eva"
+    ],
+    "answer": "Cristiano Jr.",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 50,
+    "question": "What is Ronaldo's lifestyle brand called?",
+    "options": [
+      "CR7",
+      "CR Brand",
+      "Ronaldo Sports",
+      "7 Sports"
+    ],
+    "answer": "CR7",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 51,
+    "question": "What business does Ronaldo have in the hospitality industry?",
+    "options": [
+      "Restaurants",
+      "Hotels",
+      "Airlines",
+      "Cruise ships"
+    ],
+    "answer": "Hotels",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 52,
+    "question": "What is the name of Ronaldo's hotel chain?",
+    "options": [
+      "CR7 Hotels",
+      "Pestana CR7",
+      "Ronaldo Suites",
+      "7 Stars"
+    ],
+    "answer": "Pestana CR7",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 53,
+    "question": "What is Ronaldo's full name?",
+    "options": [
+      "Cristiano Ronaldo Santos Aveiro",
+      "Cristiano Ronaldo dos Santos Aveiro",
+      "Cristiano Ronaldo Aveiro Santos",
+      "Cristiano dos Santos Ronaldo"
+    ],
+    "answer": "Cristiano Ronaldo dos Santos Aveiro",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 54,
+    "question": "What was Ronaldo's father's name?",
+    "options": [
+      "Jose Aveiro",
+      "Dinis Aveiro",
+      "Hugo Aveiro",
+      "Luis Aveiro"
+    ],
+    "answer": "Jose Dinis Aveiro",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 55,
+    "question": "What tragic issue did Ronaldo's father struggle with?",
+    "options": [
+      "Heart disease",
+      "Alcoholism",
+      "Cancer",
+      "Diabetes"
+    ],
+    "answer": "Alcoholism",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 56,
+    "question": "At what age did Ronaldo lose his father?",
+    "options": [
+      "18",
+      "20",
+      "22",
+      "24"
+    ],
+    "answer": "20",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 57,
+    "question": "What heart condition did Ronaldo have surgery for as a teenager?",
+    "options": [
+      "Heart murmur",
+      "Racing heart",
+      "Hole in heart",
+      "Valve problem"
+    ],
+    "answer": "Racing heart",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 58,
+    "question": "At what age did Ronaldo have heart surgery?",
+    "options": [
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "answer": "15",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 59,
+    "question": "What is Ronaldo known for regarding his physique?",
+    "options": [
+      "Being naturally gifted",
+      "Extreme dedication to fitness",
+      "Never training",
+      "Eating whatever he wants"
+    ],
+    "answer": "Extreme dedication to fitness",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 60,
+    "question": "How many hours of sleep does Ronaldo reportedly get using polyphasic sleep?",
+    "options": [
+      "8 hours straight",
+      "5 x 90 minute naps",
+      "6 hours straight",
+      "4 x 2 hour naps"
+    ],
+    "answer": "5 x 90 minute naps",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 61,
+    "question": "How many international goals has Ronaldo scored (all-time record)?",
+    "options": [
+      "118",
+      "125",
+      "130",
+      "136"
+    ],
+    "answer": "136",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 62,
+    "question": "Who held the international goals record before Ronaldo broke it?",
+    "options": [
+      "Pele",
+      "Ali Daei",
+      "Messi",
+      "Miroslav Klose"
+    ],
+    "answer": "Ali Daei",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 63,
+    "question": "How many goals did Ali Daei score for Iran?",
+    "options": [
+      "99",
+      "105",
+      "109",
+      "115"
+    ],
+    "answer": "109",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 64,
+    "question": "How many appearances has Ronaldo made for Portugal?",
+    "options": [
+      "180",
+      "190",
+      "200",
+      "215"
+    ],
+    "answer": "215",
+    "difficulty": "hard",
+    "category": "portugal"
+  },
+  {
+    "id": 65,
+    "question": "At what age did Ronaldo make his Portugal debut?",
+    "options": [
+      "17",
+      "18",
+      "19",
+      "20"
+    ],
+    "answer": "18",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 66,
+    "question": "Against which country did Ronaldo make his Portugal debut?",
+    "options": [
+      "Spain",
+      "France",
+      "Kazakhstan",
+      "Germany"
+    ],
+    "answer": "Kazakhstan",
+    "difficulty": "hard",
+    "category": "portugal"
+  },
+  {
+    "id": 67,
+    "question": "In which tournament did Ronaldo first captain Portugal?",
+    "options": [
+      "Euro 2008",
+      "World Cup 2010",
+      "Euro 2012",
+      "World Cup 2006"
+    ],
+    "answer": "World Cup 2010",
+    "difficulty": "hard",
+    "category": "portugal"
+  },
+  {
+    "id": 68,
+    "question": "How many World Cups has Ronaldo played in?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "5",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 69,
+    "question": "What happened to Ronaldo in the Euro 2016 final?",
+    "options": [
+      "Scored winning goal",
+      "Got red card",
+      "Injured and substituted",
+      "Missed penalty"
+    ],
+    "answer": "Injured and substituted",
+    "difficulty": "easy",
+    "category": "portugal"
+  },
+  {
+    "id": 70,
+    "question": "Who scored the winning goal in the Euro 2016 final for Portugal?",
+    "options": [
+      "Nani",
+      "Quaresma",
+      "Eder",
+      "Renato Sanches"
+    ],
+    "answer": "Eder",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 71,
+    "question": "Which country did Portugal beat in the Euro 2016 final?",
+    "options": [
+      "Germany",
+      "Spain",
+      "France",
+      "Italy"
+    ],
+    "answer": "France",
+    "difficulty": "easy",
+    "category": "portugal"
+  },
+  {
+    "id": 72,
+    "question": "What did Ronaldo famously do during the Euro 2016 final after being injured?",
+    "options": [
+      "Left the stadium",
+      "Coached from sidelines",
+      "Cried in locker room",
+      "Celebrated alone"
+    ],
+    "answer": "Coached from sidelines",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 73,
+    "question": "Which insect landed on Ronaldo's face during the Euro 2016 final?",
+    "options": [
+      "Butterfly",
+      "Bee",
+      "Moth",
+      "Fly"
+    ],
+    "answer": "Moth",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 74,
+    "question": "What other major trophy did Portugal win with Ronaldo?",
+    "options": [
+      "World Cup",
+      "Confederations Cup",
+      "UEFA Nations League",
+      "Copa America"
+    ],
+    "answer": "UEFA Nations League",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 75,
+    "question": "In which year did Portugal win the UEFA Nations League?",
+    "options": [
+      "2018",
+      "2019",
+      "2020",
+      "2021"
+    ],
+    "answer": "2019",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 76,
+    "question": "How many goals did Ronaldo score at Euro 2020 (held in 2021)?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 77,
+    "question": "What record did Ronaldo set at Euro 2020?",
+    "options": [
+      "Most Euro goals ever",
+      "Most Euro assists",
+      "Oldest Euro scorer",
+      "Most Euro appearances"
+    ],
+    "answer": "Most Euro goals ever",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 78,
+    "question": "How many European Championship goals has Ronaldo scored in total?",
+    "options": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "answer": "14",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 79,
+    "question": "How many European Championships has Ronaldo played in?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "answer": "6",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 80,
+    "question": "At which World Cup did Ronaldo score a hat-trick against Spain?",
+    "options": [
+      "2010",
+      "2014",
+      "2018",
+      "2022"
+    ],
+    "answer": "2018",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 81,
+    "question": "What was the final score of Portugal vs Spain at World Cup 2018?",
+    "options": [
+      "2-2",
+      "3-3",
+      "4-3",
+      "3-2"
+    ],
+    "answer": "3-3",
+    "difficulty": "medium",
+    "category": "portugal"
+  },
+  {
+    "id": 82,
+    "question": "What type of goal completed Ronaldo's hat-trick against Spain?",
+    "options": [
+      "Header",
+      "Penalty",
+      "Free kick",
+      "Long range shot"
+    ],
+    "answer": "Free kick",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 83,
+    "question": "Which goalkeeper did Ronaldo chip with a panenka penalty for Portugal?",
+    "options": [
+      "Iker Casillas",
+      "Thibaut Courtois",
+      "Manuel Neuer",
+      "David de Gea"
+    ],
+    "answer": "Thibaut Courtois",
+    "difficulty": "hard",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 84,
+    "question": "How many career hat-tricks has Ronaldo scored?",
+    "options": [
+      "50",
+      "57",
+      "65",
+      "70"
+    ],
+    "answer": "65",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 85,
+    "question": "What is Ronaldo's record for most hat-tricks in international football?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": "10",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 86,
+    "question": "Against which country did Ronaldo score back-to-back hat-tricks in Euro qualifiers?",
+    "options": [
+      "Lithuania",
+      "Luxembourg",
+      "Andorra",
+      "Liechtenstein"
+    ],
+    "answer": "Lithuania",
+    "difficulty": "hard",
+    "category": "portugal"
+  },
+  {
+    "id": 87,
+    "question": "How many goals did Ronaldo score in his first season at Real Madrid?",
+    "options": [
+      "26",
+      "33",
+      "40",
+      "45"
+    ],
+    "answer": "33",
+    "difficulty": "hard",
+    "category": "real-madrid"
+  },
+  {
+    "id": 88,
+    "question": "What is Ronaldo's record for most La Liga goals in a single season?",
+    "options": [
+      "40",
+      "46",
+      "48",
+      "51"
+    ],
+    "answer": "48",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 89,
+    "question": "In which season did Ronaldo score 48 La Liga goals?",
+    "options": [
+      "2010-11",
+      "2011-12",
+      "2014-15",
+      "2015-16"
+    ],
+    "answer": "2014-15",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 90,
+    "question": "How many total La Liga goals did Ronaldo score?",
+    "options": [
+      "311",
+      "331",
+      "351",
+      "371"
+    ],
+    "answer": "311",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 91,
+    "question": "Who provided the most assists to Ronaldo at Real Madrid?",
+    "options": [
+      "Marcelo",
+      "Karim Benzema",
+      "Gareth Bale",
+      "Luka Modric"
+    ],
+    "answer": "Karim Benzema",
+    "difficulty": "medium",
+    "category": "teammates"
+  },
+  {
+    "id": 92,
+    "question": "What was the famous attacking trio called at Real Madrid?",
+    "options": [
+      "MSN",
+      "BBC",
+      "The Galacticos",
+      "The Trident"
+    ],
+    "answer": "BBC",
+    "difficulty": "easy",
+    "category": "teammates"
+  },
+  {
+    "id": 93,
+    "question": "What does 'BBC' stand for at Real Madrid?",
+    "options": [
+      "Bale-Benzema-Cristiano",
+      "Bale-Benzema-Casemiro",
+      "Best-Benzema-Cristiano",
+      "Bale-Brahim-Cristiano"
+    ],
+    "answer": "Bale-Benzema-Cristiano",
+    "difficulty": "easy",
+    "category": "teammates"
+  },
+  {
+    "id": 94,
+    "question": "How many El Clasico goals did Ronaldo score?",
+    "options": [
+      "15",
+      "18",
+      "21",
+      "25"
+    ],
+    "answer": "18",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 95,
+    "question": "How many El Clasico matches did Ronaldo play?",
+    "options": [
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
+    "answer": "30",
+    "difficulty": "hard",
+    "category": "real-madrid"
+  },
+  {
+    "id": 96,
+    "question": "What is Ronaldo's record in Champions League finals?",
+    "options": [
+      "Won 3, Lost 1",
+      "Won 4, Lost 1",
+      "Won 5, Lost 0",
+      "Won 5, Lost 1"
+    ],
+    "answer": "Won 5, Lost 1",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 97,
+    "question": "Which Champions League final did Ronaldo lose?",
+    "options": [
+      "2004 with United",
+      "2009 with United",
+      "2008 with United",
+      "He never lost one"
+    ],
+    "answer": "2009 with United",
+    "difficulty": "hard",
+    "category": "trophies"
+  },
+  {
+    "id": 98,
+    "question": "Who beat Manchester United in the 2009 Champions League final?",
+    "options": [
+      "Inter Milan",
+      "AC Milan",
+      "Barcelona",
+      "Bayern Munich"
+    ],
+    "answer": "Barcelona",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 99,
+    "question": "How many goals did Ronaldo score in the 2017 Champions League final?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 100,
+    "question": "Who did Real Madrid beat in the 2017 Champions League final?",
+    "options": [
+      "Atletico Madrid",
+      "Juventus",
+      "Liverpool",
+      "Tottenham"
+    ],
+    "answer": "Juventus",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 101,
+    "question": "What was the score in the 2017 Champions League final?",
+    "options": [
+      "2-1",
+      "3-1",
+      "4-1",
+      "3-0"
+    ],
+    "answer": "4-1",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 102,
+    "question": "How many goals did Ronaldo score in the 2013-14 Champions League campaign?",
+    "options": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "answer": "17",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 103,
+    "question": "What famous goal did Ronaldo score in the 2014 Champions League final?",
+    "options": [
+      "Header",
+      "Free kick",
+      "Penalty",
+      "Bicycle kick"
+    ],
+    "answer": "Penalty",
+    "difficulty": "hard",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 104,
+    "question": "What was special about Ronaldo's penalty in the 2014 final?",
+    "options": [
+      "Shirtless celebration",
+      "Panenka",
+      "Last minute",
+      "All of these"
+    ],
+    "answer": "Shirtless celebration",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 105,
+    "question": "Who did Real Madrid beat in the 2014 Champions League final?",
+    "options": [
+      "Barcelona",
+      "Bayern Munich",
+      "Atletico Madrid",
+      "Chelsea"
+    ],
+    "answer": "Atletico Madrid",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 106,
+    "question": "What was this final called due to both teams being from Madrid?",
+    "options": [
+      "El Clasico",
+      "Derby Final",
+      "Madrid Derby",
+      "El Derbi"
+    ],
+    "answer": "Madrid Derby",
+    "difficulty": "easy",
+    "category": "trophies"
+  },
+  {
+    "id": 107,
+    "question": "How many consecutive Champions League finals did Ronaldo score in?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 108,
+    "question": "What unique record does Ronaldo hold in the Champions League knockout stages?",
+    "options": [
+      "Most goals",
+      "Most assists",
+      "Most hat-tricks",
+      "All of these"
+    ],
+    "answer": "Most goals",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 109,
+    "question": "How many knockout stage goals has Ronaldo scored in the Champions League?",
+    "options": [
+      "57",
+      "67",
+      "77",
+      "87"
+    ],
+    "answer": "67",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 110,
+    "question": "Against which club has Ronaldo scored the most Champions League goals?",
+    "options": [
+      "Barcelona",
+      "Bayern Munich",
+      "Juventus",
+      "Atletico Madrid"
+    ],
+    "answer": "Juventus",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 111,
+    "question": "What was Ronaldo's shirt number at Sporting CP?",
+    "options": [
+      "7",
+      "17",
+      "28",
+      "31"
+    ],
+    "answer": "28",
+    "difficulty": "hard",
+    "category": "early-career"
+  },
+  {
+    "id": 112,
+    "question": "Which famous match convinced Ferguson to sign Ronaldo?",
+    "options": [
+      "Sporting vs Benfica",
+      "Sporting vs Man United friendly",
+      "Portugal vs England",
+      "Sporting vs Porto"
+    ],
+    "answer": "Sporting vs Man United friendly",
+    "difficulty": "medium",
+    "category": "early-career"
+  },
+  {
+    "id": 113,
+    "question": "What did United players reportedly tell Ferguson after facing teenage Ronaldo?",
+    "options": [
+      "He's average",
+      "Sign him immediately",
+      "He needs time",
+      "He's too young"
+    ],
+    "answer": "Sign him immediately",
+    "difficulty": "easy",
+    "category": "early-career"
+  },
+  {
+    "id": 114,
+    "question": "How old was Ronaldo when he moved to Manchester United?",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
+    "answer": "18",
+    "difficulty": "easy",
+    "category": "early-career"
+  },
+  {
+    "id": 115,
+    "question": "What did Ronaldo struggle with in his early United career?",
+    "options": [
+      "Speed",
+      "Diving and showboating criticism",
+      "Heading",
+      "Stamina"
+    ],
+    "answer": "Diving and showboating criticism",
+    "difficulty": "medium",
+    "category": "manchester-united"
+  },
+  {
+    "id": 116,
+    "question": "What tragic event happened during the 2006 World Cup involving Ronaldo?",
+    "options": [
+      "Red card",
+      "Wayne Rooney wink incident",
+      "Missed penalty",
+      "Got injured"
+    ],
+    "answer": "Wayne Rooney wink incident",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 117,
+    "question": "What happened after Ronaldo winked following Rooney's red card?",
+    "options": [
+      "Nothing",
+      "English fans booed him",
+      "He was fined",
+      "He apologized publicly"
+    ],
+    "answer": "English fans booed him",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 118,
+    "question": "How did Ronaldo and Rooney resolve their conflict?",
+    "options": [
+      "Never spoke again",
+      "Ferguson mediated",
+      "They fought",
+      "Court case"
+    ],
+    "answer": "Ferguson mediated",
+    "difficulty": "medium",
+    "category": "manchester-united"
+  },
+  {
+    "id": 119,
+    "question": "What award did Ronaldo win in 2008 besides Ballon d'Or?",
+    "options": [
+      "World Player of Year",
+      "PFA Player of Year",
+      "Golden Boot",
+      "All of these"
+    ],
+    "answer": "All of these",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 120,
+    "question": "How many Premier League goals did Ronaldo score in 2007-08?",
+    "options": [
+      "26",
+      "31",
+      "35",
+      "42"
+    ],
+    "answer": "31",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 121,
+    "question": "What is Ronaldo's record for most goals in a Premier League season?",
+    "options": [
+      "26",
+      "31",
+      "34",
+      "36"
+    ],
+    "answer": "31",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 122,
+    "question": "Which English club has Ronaldo scored the most goals against?",
+    "options": [
+      "Arsenal",
+      "Chelsea",
+      "Tottenham",
+      "Aston Villa"
+    ],
+    "answer": "Tottenham",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 123,
+    "question": "How many free-kick goals has Ronaldo scored in his career?",
+    "options": [
+      "45",
+      "55",
+      "60",
+      "65"
+    ],
+    "answer": "60",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 124,
+    "question": "What technique is Ronaldo famous for with free kicks?",
+    "options": [
+      "Bending",
+      "Dipping knuckleball",
+      "Curve",
+      "Power shot"
+    ],
+    "answer": "Dipping knuckleball",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 125,
+    "question": "Against which team did Ronaldo score his first career hat-trick?",
+    "options": [
+      "Newcastle United",
+      "Tottenham",
+      "Arsenal",
+      "Manchester City"
+    ],
+    "answer": "Newcastle United",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 126,
+    "question": "In what year was Ronaldo's first career hat-trick?",
+    "options": [
+      "2006",
+      "2007",
+      "2008",
+      "2009"
+    ],
+    "answer": "2008",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 127,
+    "question": "What is Ronaldo's career total for club goals?",
+    "options": [
+      "750+",
+      "800+",
+      "850+",
+      "900+"
+    ],
+    "answer": "750+",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 128,
+    "question": "What is Ronaldo's combined career goals (club + country)?",
+    "options": [
+      "850+",
+      "875+",
+      "900+",
+      "925+"
+    ],
+    "answer": "900+",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 129,
+    "question": "How many seasons has Ronaldo scored 50+ goals in all competitions?",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "11"
+    ],
+    "answer": "9",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 130,
+    "question": "What is Ronaldo's record for most goals scored for Real Madrid in a season?",
+    "options": [
+      "55",
+      "61",
+      "66",
+      "70"
+    ],
+    "answer": "61",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 131,
+    "question": "In which season did Ronaldo score 61 goals for Real Madrid?",
+    "options": [
+      "2011-12",
+      "2012-13",
+      "2014-15",
+      "2015-16"
+    ],
+    "answer": "2014-15",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 132,
+    "question": "How many penalties has Ronaldo scored in his career?",
+    "options": [
+      "120+",
+      "140+",
+      "160+",
+      "180+"
+    ],
+    "answer": "160+",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 133,
+    "question": "What is Ronaldo's penalty conversion rate approximately?",
+    "options": [
+      "74%",
+      "80%",
+      "84%",
+      "88%"
+    ],
+    "answer": "84%",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 134,
+    "question": "How many header goals has Ronaldo scored in his career?",
+    "options": [
+      "120+",
+      "140+",
+      "160+",
+      "180+"
+    ],
+    "answer": "140+",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 135,
+    "question": "What is Ronaldo's vertical leap height?",
+    "options": [
+      "60cm",
+      "71cm",
+      "78cm",
+      "85cm"
+    ],
+    "answer": "78cm",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 136,
+    "question": "What height did Ronaldo reach for his famous header against Wales at Euro 2016?",
+    "options": [
+      "2.20m",
+      "2.41m",
+      "2.65m",
+      "2.88m"
+    ],
+    "answer": "2.65m",
+    "difficulty": "hard",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 137,
+    "question": "How many times has Ronaldo been top scorer in the Champions League?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "answer": "7",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 138,
+    "question": "How many FIFA Best Men's Player awards has Ronaldo won?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 139,
+    "question": "Who did Ronaldo beat to win his 2016 Ballon d'Or?",
+    "options": [
+      "Messi",
+      "Griezmann",
+      "Neymar",
+      "Suarez"
+    ],
+    "answer": "Messi",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 140,
+    "question": "Who did Ronaldo beat to win his 2017 Ballon d'Or?",
+    "options": [
+      "Messi",
+      "Neymar",
+      "Modric",
+      "Griezmann"
+    ],
+    "answer": "Messi",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 141,
+    "question": "What is Ronaldo's highest finish in Ballon d'Or voting when not winning?",
+    "options": [
+      "2nd",
+      "3rd",
+      "4th",
+      "5th"
+    ],
+    "answer": "2nd",
+    "difficulty": "easy",
+    "category": "records"
+  },
+  {
+    "id": 142,
+    "question": "How many times was Ronaldo runner-up for Ballon d'Or?",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "5",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 143,
+    "question": "What is Ronaldo's body fat percentage reportedly?",
+    "options": [
+      "3%",
+      "5%",
+      "7%",
+      "10%"
+    ],
+    "answer": "7%",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 144,
+    "question": "What is Ronaldo's reported top speed?",
+    "options": [
+      "33.6 km/h",
+      "35.5 km/h",
+      "38.6 km/h",
+      "40.2 km/h"
+    ],
+    "answer": "33.6 km/h",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 145,
+    "question": "How many Instagram followers does Ronaldo have (most followed person)?",
+    "options": [
+      "400 million+",
+      "500 million+",
+      "600 million+",
+      "700 million+"
+    ],
+    "answer": "600 million+",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 146,
+    "question": "What is the name of Ronaldo's documentary?",
+    "options": [
+      "CR7",
+      "Ronaldo",
+      "The Making of Ronaldo",
+      "Cristiano"
+    ],
+    "answer": "Ronaldo",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 147,
+    "question": "In what year was Ronaldo's documentary released?",
+    "options": [
+      "2013",
+      "2014",
+      "2015",
+      "2016"
+    ],
+    "answer": "2015",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 148,
+    "question": "What airport in Portugal was renamed after Ronaldo?",
+    "options": [
+      "Lisbon Airport",
+      "Porto Airport",
+      "Madeira Airport",
+      "Faro Airport"
+    ],
+    "answer": "Madeira Airport",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 149,
+    "question": "What became an internet meme after Ronaldo's statue was unveiled?",
+    "options": [
+      "The pose",
+      "The face/bust",
+      "The inscription",
+      "The location"
+    ],
+    "answer": "The face/bust",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 150,
+    "question": "What did Ronaldo famously do with Coca-Cola bottles at a press conference?",
+    "options": [
+      "Drank them",
+      "Moved them away",
+      "Threw them",
+      "Signed them"
+    ],
+    "answer": "Moved them away",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 151,
+    "question": "What did Ronaldo say after moving the Coca-Cola bottles?",
+    "options": [
+      "No Coca-Cola",
+      "Agua",
+      "Water!",
+      "Drink water"
+    ],
+    "answer": "Agua",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 152,
+    "question": "How much did Coca-Cola's stock reportedly drop after Ronaldo's action?",
+    "options": [
+      "$1 billion",
+      "$2 billion",
+      "$4 billion",
+      "$8 billion"
+    ],
+    "answer": "$4 billion",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 153,
+    "question": "What jersey number does Ronaldo wear at Al-Nassr?",
+    "options": [
+      "7",
+      "9",
+      "10",
+      "77"
+    ],
+    "answer": "7",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 154,
+    "question": "Which former teammate joined Ronaldo at Al-Nassr?",
+    "options": [
+      "Benzema",
+      "Marcelo",
+      "Pepe",
+      "Sadio Mane"
+    ],
+    "answer": "Sadio Mane",
+    "difficulty": "medium",
+    "category": "teammates"
+  },
+  {
+    "id": 155,
+    "question": "How many goals did Ronaldo score in his second Manchester United spell?",
+    "options": [
+      "18",
+      "24",
+      "27",
+      "32"
+    ],
+    "answer": "24",
+    "difficulty": "hard",
+    "category": "manchester-united"
+  },
+  {
+    "id": 156,
+    "question": "Against which team did Ronaldo score on his second Manchester United debut?",
+    "options": [
+      "Leeds United",
+      "Newcastle United",
+      "Liverpool",
+      "Arsenal"
+    ],
+    "answer": "Newcastle United",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 157,
+    "question": "How many goals did Ronaldo score on his second United debut?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
+    "answer": "2",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 158,
+    "question": "Who was Manchester United's manager when Ronaldo returned?",
+    "options": [
+      "Ole Gunnar Solskjaer",
+      "Ralf Rangnick",
+      "Erik ten Hag",
+      "David Moyes"
+    ],
+    "answer": "Ole Gunnar Solskjaer",
+    "difficulty": "medium",
+    "category": "manchester-united"
+  },
+  {
+    "id": 159,
+    "question": "Who was the manager when Ronaldo's contract was terminated?",
+    "options": [
+      "Ole Gunnar Solskjaer",
+      "Ralf Rangnick",
+      "Erik ten Hag",
+      "Carrick"
+    ],
+    "answer": "Erik ten Hag",
+    "difficulty": "easy",
+    "category": "manchester-united"
+  },
+  {
+    "id": 160,
+    "question": "What did Ronaldo say about Erik ten Hag in his Piers Morgan interview?",
+    "options": [
+      "Praised him",
+      "Said he had no respect for him",
+      "Called him the best",
+      "Said nothing"
+    ],
+    "answer": "Said he had no respect for him",
+    "difficulty": "easy",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 161,
+    "question": "Which Portuguese manager did Ronaldo play under at Real Madrid?",
+    "options": [
+      "Carlos Queiroz",
+      "Jose Mourinho",
+      "Fernando Santos",
+      "Leonardo Jardim"
+    ],
+    "answer": "Jose Mourinho",
+    "difficulty": "easy",
+    "category": "real-madrid"
+  },
+  {
+    "id": 162,
+    "question": "How many goals did Ronaldo score under Mourinho at Real Madrid?",
+    "options": [
+      "100",
+      "118",
+      "146",
+      "168"
+    ],
+    "answer": "168",
+    "difficulty": "hard",
+    "category": "real-madrid"
+  },
+  {
+    "id": 163,
+    "question": "What is Ronaldo's record against Barcelona in all competitions?",
+    "options": [
+      "10 goals",
+      "15 goals",
+      "18 goals",
+      "22 goals"
+    ],
+    "answer": "22 goals",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 164,
+    "question": "Against which goalkeeper has Ronaldo scored the most goals?",
+    "options": [
+      "Casillas",
+      "Buffon",
+      "Cech",
+      "Valdes"
+    ],
+    "answer": "Buffon",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 165,
+    "question": "How many goals has Ronaldo scored against Buffon?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
+    "answer": "10",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 166,
+    "question": "What is Ronaldo's record for scoring in consecutive matches?",
+    "options": [
+      "10 games",
+      "11 games",
+      "12 games",
+      "15 games"
+    ],
+    "answer": "11 games",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 167,
+    "question": "For which club did Ronaldo achieve this 11-game scoring streak?",
+    "options": [
+      "Man United",
+      "Real Madrid",
+      "Juventus",
+      "Portugal"
+    ],
+    "answer": "Real Madrid",
+    "difficulty": "medium",
+    "category": "records"
+  },
+  {
+    "id": 168,
+    "question": "What unique Champions League feat did Ronaldo achieve at Juventus?",
+    "options": [
+      "Hat-trick vs Atletico comeback",
+      "First Juventus CL goal",
+      "Nothing special",
+      "Penalty in every game"
+    ],
+    "answer": "Hat-trick vs Atletico comeback",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 169,
+    "question": "What was Juventus trailing in the tie before Ronaldo's hat-trick vs Atletico?",
+    "options": [
+      "0-2",
+      "1-2",
+      "0-3",
+      "1-3"
+    ],
+    "answer": "0-2",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 170,
+    "question": "What celebration did Ronaldo do after eliminating Atletico?",
+    "options": [
+      "Shirt off",
+      "Slide",
+      "Cojones gesture",
+      "SIUU only"
+    ],
+    "answer": "Cojones gesture",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 171,
+    "question": "Who did Ronaldo mimic with the 'cojones' celebration?",
+    "options": [
+      "Messi",
+      "Simeone",
+      "Griezmann",
+      "Godin"
+    ],
+    "answer": "Simeone",
+    "difficulty": "medium",
+    "category": "iconic-moments"
+  },
+  {
+    "id": 172,
+    "question": "How many Serie A goals did Ronaldo score?",
+    "options": [
+      "71",
+      "81",
+      "91",
+      "101"
+    ],
+    "answer": "81",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 173,
+    "question": "What award did Ronaldo win in his first Serie A season?",
+    "options": [
+      "MVP",
+      "Top Scorer",
+      "Best Player",
+      "Golden Boot"
+    ],
+    "answer": "MVP",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 174,
+    "question": "How many Coppa Italia titles did Ronaldo win?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": "1",
+    "difficulty": "medium",
+    "category": "trophies"
+  },
+  {
+    "id": 175,
+    "question": "What is Ronaldo's record for most goals in a Serie A season?",
+    "options": [
+      "27",
+      "29",
+      "31",
+      "33"
+    ],
+    "answer": "29",
+    "difficulty": "hard",
+    "category": "records"
+  },
+  {
+    "id": 176,
+    "question": "Why couldn't Ronaldo win the Champions League with Juventus?",
+    "options": [
+      "Eliminated by Ajax, Lyon, Porto",
+      "Injury every time",
+      "Never qualified",
+      "Suspended"
+    ],
+    "answer": "Eliminated by Ajax, Lyon, Porto",
+    "difficulty": "medium",
+    "category": "career"
+  },
+  {
+    "id": 177,
+    "question": "Who was Ronaldo's strike partner at Juventus?",
+    "options": [
+      "Morata",
+      "Dybala",
+      "Higuain",
+      "All of them at different times"
+    ],
+    "answer": "All of them at different times",
+    "difficulty": "medium",
+    "category": "teammates"
+  },
+  {
+    "id": 178,
+    "question": "What is Ronaldo's mother's name?",
+    "options": [
+      "Maria",
+      "Dolores",
+      "Ana",
+      "Lucia"
+    ],
+    "answer": "Dolores",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 179,
+    "question": "What is Ronaldo's older brother's name?",
+    "options": [
+      "Hugo",
+      "Jose",
+      "Dinis",
+      "Carlos"
+    ],
+    "answer": "Hugo",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 180,
+    "question": "How many siblings does Ronaldo have?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": "3",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 181,
+    "question": "What youth academy in Madeira did Ronaldo first join?",
+    "options": [
+      "Andorinha",
+      "Nacional",
+      "Maritimo",
+      "Porto Santo"
+    ],
+    "answer": "Andorinha",
+    "difficulty": "hard",
+    "category": "early-career"
+  },
+  {
+    "id": 182,
+    "question": "Why is the club called 'Andorinha'?",
+    "options": [
+      "Founder's name",
+      "Means 'swallow' (bird)",
+      "Local area",
+      "Random name"
+    ],
+    "answer": "Means 'swallow' (bird)",
+    "difficulty": "hard",
+    "category": "early-career"
+  },
+  {
+    "id": 183,
+    "question": "Which Madeira club did Ronaldo join after Andorinha?",
+    "options": [
+      "Nacional",
+      "Maritimo",
+      "Porto Santo",
+      "Sporting"
+    ],
+    "answer": "Nacional",
+    "difficulty": "hard",
+    "category": "early-career"
+  },
+  {
+    "id": 184,
+    "question": "At what age did Ronaldo leave Madeira for Lisbon?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "answer": "12",
+    "difficulty": "medium",
+    "category": "early-career"
+  },
+  {
+    "id": 185,
+    "question": "What made young Ronaldo cry when he first moved to Lisbon?",
+    "options": [
+      "Homesickness",
+      "Bullying for his accent",
+      "Missing family",
+      "All of these"
+    ],
+    "answer": "Bullying for his accent",
+    "difficulty": "medium",
+    "category": "early-career"
+  },
+  {
+    "id": 186,
+    "question": "What is Ronaldo's native accent from?",
+    "options": [
+      "Lisbon",
+      "Porto",
+      "Madeira",
+      "Azores"
+    ],
+    "answer": "Madeira",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 187,
+    "question": "Who is Ronaldo's longtime agent?",
+    "options": [
+      "Mino Raiola",
+      "Jorge Mendes",
+      "Jonathan Barnett",
+      "Pini Zahavi"
+    ],
+    "answer": "Jorge Mendes",
+    "difficulty": "easy",
+    "category": "career"
+  },
+  {
+    "id": 188,
+    "question": "What is Jorge Mendes's agency called?",
+    "options": [
+      "Gestifute",
+      "Stellar",
+      "CAA",
+      "Wasserman"
+    ],
+    "answer": "Gestifute",
+    "difficulty": "hard",
+    "category": "career"
+  },
+  {
+    "id": 189,
+    "question": "What charity did Ronaldo notably support?",
+    "options": [
+      "Save the Children",
+      "Red Cross",
+      "UNICEF",
+      "All of them"
+    ],
+    "answer": "All of them",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 190,
+    "question": "Why doesn't Ronaldo have tattoos?",
+    "options": [
+      "Doesn't like them",
+      "Religious reasons",
+      "To donate blood",
+      "Fear of needles"
+    ],
+    "answer": "To donate blood",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 191,
+    "question": "What is Ronaldo's net worth estimated at?",
+    "options": [
+      "$300 million",
+      "$400 million",
+      "$500 million",
+      "$600 million"
+    ],
+    "answer": "$500 million",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 192,
+    "question": "Which car brand is Ronaldo famous for collecting?",
+    "options": [
+      "Ferrari",
+      "Lamborghini",
+      "Bugatti",
+      "All expensive cars"
+    ],
+    "answer": "All expensive cars",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 193,
+    "question": "What is Ronaldo's reported most expensive car?",
+    "options": [
+      "Bugatti La Voiture Noire",
+      "Bugatti Chiron",
+      "Ferrari LaFerrari",
+      "Rolls Royce"
+    ],
+    "answer": "Bugatti La Voiture Noire",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 194,
+    "question": "What number does Ronaldo consider his lucky number?",
+    "options": [
+      "7",
+      "9",
+      "10",
+      "17"
+    ],
+    "answer": "7",
+    "difficulty": "easy",
+    "category": "personal"
+  },
+  {
+    "id": 195,
+    "question": "What did Ronaldo say when asked about retirement?",
+    "options": [
+      "Soon",
+      "At 40",
+      "When body says no",
+      "Never"
+    ],
+    "answer": "When body says no",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 196,
+    "question": "What is Ronaldo's YouTube channel focused on?",
+    "options": [
+      "Gaming",
+      "Fitness",
+      "Football skills",
+      "Lifestyle/vlog"
+    ],
+    "answer": "Football skills",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 197,
+    "question": "What record did Ronaldo set on YouTube?",
+    "options": [
+      "Fastest to 1M subs",
+      "Most viewed sports video",
+      "Both",
+      "Neither"
+    ],
+    "answer": "Fastest to 1M subs",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 198,
+    "question": "How long did it take Ronaldo to reach 1 million YouTube subscribers?",
+    "options": [
+      "30 minutes",
+      "90 minutes",
+      "2 hours",
+      "24 hours"
+    ],
+    "answer": "90 minutes",
+    "difficulty": "hard",
+    "category": "personal"
+  },
+  {
+    "id": 199,
+    "question": "What did Pele call Ronaldo?",
+    "options": [
+      "The best ever",
+      "Better than me",
+      "Greatest of his generation",
+      "Just good"
+    ],
+    "answer": "Greatest of his generation",
+    "difficulty": "medium",
+    "category": "personal"
+  },
+  {
+    "id": 200,
+    "question": "What is Ronaldo's famous quote about success?",
+    "options": [
+      "Talent without work is nothing",
+      "Hard work beats talent",
+      "I am the best",
+      "Dreams are free"
+    ],
+    "answer": "Talent without work is nothing",
+    "difficulty": "easy",
+    "category": "personal"
+  }
 ]

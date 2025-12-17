@@ -2,8 +2,12 @@
   {
     "id": 1,
     "question": "Who is this player known as 'La Pulga' (The Flea)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Lionel Messi","Diego Maradona","Cristiano Ronaldo","Neymar"],
+    "options": [
+      "Lionel Messi",
+      "Diego Maradona",
+      "Cristiano Ronaldo",
+      "Neymar"
+    ],
     "answer": "Lionel Messi",
     "difficulty": "easy",
     "category": "personal"
@@ -11,8 +15,12 @@
   {
     "id": 2,
     "question": "In what year did Messi finally win the FIFA World Cup?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lionel_Messi_World_Cup_Trophy.jpg/220px-Lionel_Messi_World_Cup_Trophy.jpg",
-    "options": ["2018","2022","2014","2010"],
+    "options": [
+      "2018",
+      "2022",
+      "2014",
+      "2010"
+    ],
     "answer": "2022",
     "difficulty": "easy",
     "category": "argentina"
@@ -20,8 +28,12 @@
   {
     "id": 3,
     "question": "How many Ballon d'Or awards has Messi won (as of 2024)?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Lionel_Messi_20180626.jpg/220px-Lionel_Messi_20180626.jpg",
-    "options": ["6","7","8","9"],
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
     "answer": "8",
     "difficulty": "easy",
     "category": "records"
@@ -29,8 +41,12 @@
   {
     "id": 4,
     "question": "Which club did Messi join after leaving Barcelona in 2021?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lionel_Messi_PSG_2022.jpg/220px-Lionel_Messi_PSG_2022.jpg",
-    "options": ["Manchester City","Inter Miami","Paris Saint-Germain","Juventus"],
+    "options": [
+      "Manchester City",
+      "Inter Miami",
+      "Paris Saint-Germain",
+      "Juventus"
+    ],
     "answer": "Paris Saint-Germain",
     "difficulty": "easy",
     "category": "career"
@@ -38,8 +54,12 @@
   {
     "id": 5,
     "question": "What is Messi's birthdate?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["June 24, 1987","June 24, 1986","June 24, 1988","June 24, 1985"],
+    "options": [
+      "June 24, 1987",
+      "June 24, 1986",
+      "June 24, 1988",
+      "June 24, 1985"
+    ],
     "answer": "June 24, 1987",
     "difficulty": "medium",
     "category": "personal"
@@ -47,8 +67,12 @@
   {
     "id": 6,
     "question": "In which Argentine city was Messi born?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Buenos Aires","Rosario","Cordoba","Mendoza"],
+    "options": [
+      "Buenos Aires",
+      "Rosario",
+      "Cordoba",
+      "Mendoza"
+    ],
     "answer": "Rosario",
     "difficulty": "easy",
     "category": "personal"
@@ -56,8 +80,12 @@
   {
     "id": 7,
     "question": "At what age did Messi move to Barcelona's La Masia academy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/FC_Barcelona_Messi_Banner.jpg/220px-FC_Barcelona_Messi_Banner.jpg",
-    "options": ["11","12","13","14"],
+    "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+    ],
     "answer": "13",
     "difficulty": "medium",
     "category": "early-career"
@@ -65,8 +93,12 @@
   {
     "id": 8,
     "question": "Which Barcelona legend famously had Messi's first contract written on a napkin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Johan Cruyff","Carles Rexach","Frank Rijkaard","Pep Guardiola"],
+    "options": [
+      "Johan Cruyff",
+      "Carles Rexach",
+      "Frank Rijkaard",
+      "Pep Guardiola"
+    ],
     "answer": "Carles Rexach",
     "difficulty": "hard",
     "category": "early-career"
@@ -74,8 +106,12 @@
   {
     "id": 9,
     "question": "What medical condition did Barcelona agree to pay for when signing young Messi?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Asthma treatment","Growth hormone deficiency","Heart condition","Knee surgery"],
+    "options": [
+      "Asthma treatment",
+      "Growth hormone deficiency",
+      "Heart condition",
+      "Knee surgery"
+    ],
     "answer": "Growth hormone deficiency",
     "difficulty": "easy",
     "category": "early-career"
@@ -83,8 +119,12 @@
   {
     "id": 10,
     "question": "Who was the manager when Messi made his Barcelona first-team debut?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Frank_Rijkaard_2.jpg/220px-Frank_Rijkaard_2.jpg",
-    "options": ["Pep Guardiola","Louis van Gaal","Frank Rijkaard","Tito Vilanova"],
+    "options": [
+      "Pep Guardiola",
+      "Louis van Gaal",
+      "Frank Rijkaard",
+      "Tito Vilanova"
+    ],
     "answer": "Frank Rijkaard",
     "difficulty": "medium",
     "category": "barcelona"
@@ -92,8 +132,12 @@
   {
     "id": 11,
     "question": "Against which team did Messi score his first official Barcelona goal?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Real Madrid","Albacete","Valencia","Sevilla"],
+    "options": [
+      "Real Madrid",
+      "Albacete",
+      "Valencia",
+      "Sevilla"
+    ],
     "answer": "Albacete",
     "difficulty": "hard",
     "category": "barcelona"
@@ -101,8 +145,12 @@
   {
     "id": 12,
     "question": "Who assisted Messi's first ever Barcelona goal?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ronaldinho_11feb2007.jpg/220px-Ronaldinho_11feb2007.jpg",
-    "options": ["Xavi","Iniesta","Ronaldinho","Deco"],
+    "options": [
+      "Xavi",
+      "Iniesta",
+      "Ronaldinho",
+      "Deco"
+    ],
     "answer": "Ronaldinho",
     "difficulty": "medium",
     "category": "barcelona"
@@ -110,8 +158,12 @@
   {
     "id": 13,
     "question": "How many Champions League titles did Messi win with Barcelona?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["3","4","5","6"],
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
     "answer": "4",
     "difficulty": "easy",
     "category": "trophies"
@@ -119,8 +171,12 @@
   {
     "id": 14,
     "question": "In which year did Messi win his first Ballon d'Or?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2008","2009","2010","2011"],
+    "options": [
+      "2008",
+      "2009",
+      "2010",
+      "2011"
+    ],
     "answer": "2009",
     "difficulty": "easy",
     "category": "records"
@@ -128,8 +184,12 @@
   {
     "id": 15,
     "question": "How many consecutive Ballon d'Or awards did Messi win from 2009-2012?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["3","4","5","6"],
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
     "answer": "4",
     "difficulty": "medium",
     "category": "records"
@@ -137,8 +197,12 @@
   {
     "id": 16,
     "question": "What is Messi's record for most goals scored in a calendar year?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["73","79","86","91"],
+    "options": [
+      "73",
+      "79",
+      "86",
+      "91"
+    ],
     "answer": "91",
     "difficulty": "medium",
     "category": "records"
@@ -146,8 +210,12 @@
   {
     "id": 17,
     "question": "In which year did Messi score 91 goals?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2010","2011","2012","2013"],
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2013"
+    ],
     "answer": "2012",
     "difficulty": "medium",
     "category": "records"
@@ -155,8 +223,12 @@
   {
     "id": 18,
     "question": "Who is Messi's wife?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Shakira","Antonela Roccuzzo","Georgina Rodriguez","Sofia Balbi"],
+    "options": [
+      "Shakira",
+      "Antonela Roccuzzo",
+      "Georgina Rodriguez",
+      "Sofia Balbi"
+    ],
     "answer": "Antonela Roccuzzo",
     "difficulty": "easy",
     "category": "personal"
@@ -164,8 +236,12 @@
   {
     "id": 19,
     "question": "How many children does Messi have?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2","3","4","5"],
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
     "answer": "3",
     "difficulty": "easy",
     "category": "personal"
@@ -173,8 +249,12 @@
   {
     "id": 20,
     "question": "What are the names of Messi's three sons?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Thiago, Mateo, Ciro","Thiago, Marco, Ciro","Thiago, Mateo, Enzo","Diego, Mateo, Ciro"],
+    "options": [
+      "Thiago, Mateo, Ciro",
+      "Thiago, Marco, Ciro",
+      "Thiago, Mateo, Enzo",
+      "Diego, Mateo, Ciro"
+    ],
     "answer": "Thiago, Mateo, Ciro",
     "difficulty": "medium",
     "category": "personal"
@@ -182,7 +262,12 @@
   {
     "id": 21,
     "question": "What shirt number did Messi initially wear at Barcelona before getting number 10?",
-    "options": ["19","30","17","9"],
+    "options": [
+      "19",
+      "30",
+      "17",
+      "9"
+    ],
     "answer": "30",
     "difficulty": "hard",
     "category": "barcelona"
@@ -190,7 +275,12 @@
   {
     "id": 22,
     "question": "In what year did Messi first wear the number 10 shirt for Barcelona?",
-    "options": ["2006","2007","2008","2009"],
+    "options": [
+      "2006",
+      "2007",
+      "2008",
+      "2009"
+    ],
     "answer": "2008",
     "difficulty": "hard",
     "category": "barcelona"
@@ -198,7 +288,12 @@
   {
     "id": 23,
     "question": "Who did Messi inherit the number 10 shirt from at Barcelona?",
-    "options": ["Rivaldo","Ronaldinho","Deco","Maradona"],
+    "options": [
+      "Rivaldo",
+      "Ronaldinho",
+      "Deco",
+      "Maradona"
+    ],
     "answer": "Ronaldinho",
     "difficulty": "medium",
     "category": "barcelona"
@@ -206,7 +301,12 @@
   {
     "id": 24,
     "question": "How many La Liga titles did Messi win with Barcelona?",
-    "options": ["8","9","10","11"],
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
     "answer": "10",
     "difficulty": "medium",
     "category": "trophies"
@@ -214,7 +314,12 @@
   {
     "id": 25,
     "question": "How many Copa del Rey titles did Messi win with Barcelona?",
-    "options": ["5","6","7","8"],
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
     "answer": "7",
     "difficulty": "hard",
     "category": "trophies"
@@ -222,7 +327,12 @@
   {
     "id": 26,
     "question": "How many total trophies did Messi win with Barcelona?",
-    "options": ["30","33","35","38"],
+    "options": [
+      "30",
+      "33",
+      "35",
+      "38"
+    ],
     "answer": "35",
     "difficulty": "hard",
     "category": "trophies"
@@ -230,7 +340,12 @@
   {
     "id": 27,
     "question": "What is Messi's all-time goal tally for Barcelona?",
-    "options": ["572","612","672","700"],
+    "options": [
+      "572",
+      "612",
+      "672",
+      "700"
+    ],
     "answer": "672",
     "difficulty": "hard",
     "category": "records"
@@ -238,7 +353,12 @@
   {
     "id": 28,
     "question": "How many assists did Messi provide during his Barcelona career?",
-    "options": ["205","268","303","350"],
+    "options": [
+      "205",
+      "268",
+      "303",
+      "350"
+    ],
     "answer": "303",
     "difficulty": "hard",
     "category": "records"
@@ -246,7 +366,12 @@
   {
     "id": 29,
     "question": "Who is Barcelona's all-time top scorer?",
-    "options": ["Cesar Rodriguez","Luis Suarez","Messi","Kubala"],
+    "options": [
+      "Cesar Rodriguez",
+      "Luis Suarez",
+      "Messi",
+      "Kubala"
+    ],
     "answer": "Messi",
     "difficulty": "easy",
     "category": "records"
@@ -254,7 +379,12 @@
   {
     "id": 30,
     "question": "What was Messi's famous celebration where he held up his shirt to the Real Madrid fans?",
-    "options": ["At Camp Nou","At the Bernabeu","At the World Cup","At Wembley"],
+    "options": [
+      "At Camp Nou",
+      "At the Bernabeu",
+      "At the World Cup",
+      "At Wembley"
+    ],
     "answer": "At the Bernabeu",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -262,8 +392,12 @@
   {
     "id": 31,
     "question": "In which El Clasico year did Messi show his shirt to Madrid fans at the Bernabeu?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2015","2016","2017","2018"],
+    "options": [
+      "2015",
+      "2016",
+      "2017",
+      "2018"
+    ],
     "answer": "2017",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -271,8 +405,12 @@
   {
     "id": 32,
     "question": "Against which team did Messi score 4 goals in a Champions League semi-final in 2010?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Real Madrid","Bayern Munich","Arsenal","Manchester United"],
+    "options": [
+      "Real Madrid",
+      "Bayern Munich",
+      "Arsenal",
+      "Manchester United"
+    ],
     "answer": "Arsenal",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -280,8 +418,12 @@
   {
     "id": 33,
     "question": "Who was the goalkeeper when Messi chipped the ball over him in that Arsenal match?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Jens Lehmann","Manuel Almunia","David Seaman","Wojciech Szczesny"],
+    "options": [
+      "Jens Lehmann",
+      "Manuel Almunia",
+      "David Seaman",
+      "Wojciech Szczesny"
+    ],
     "answer": "Manuel Almunia",
     "difficulty": "hard",
     "category": "iconic-moments"
@@ -289,8 +431,12 @@
   {
     "id": 34,
     "question": "How many goals did Messi score in the famous 6-2 El Clasico win in 2009?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["1","2","3","4"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "answer": "2",
     "difficulty": "hard",
     "category": "iconic-moments"
@@ -298,8 +444,12 @@
   {
     "id": 35,
     "question": "Which manager did Messi form the legendary MSN attack under?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Luis_Enrique_2016.jpg/220px-Luis_Enrique_2016.jpg",
-    "options": ["Pep Guardiola","Luis Enrique","Ernesto Valverde","Tito Vilanova"],
+    "options": [
+      "Pep Guardiola",
+      "Luis Enrique",
+      "Ernesto Valverde",
+      "Tito Vilanova"
+    ],
     "answer": "Luis Enrique",
     "difficulty": "medium",
     "category": "barcelona"
@@ -307,8 +457,12 @@
   {
     "id": 36,
     "question": "What does 'MSN' stand for in Messi's famous attacking trio?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Messi-Suarez-Neymar","Messi-Sanchez-Neymar","Messi-Suarez-Neres","Messi-Sergio-Neymar"],
+    "options": [
+      "Messi-Suarez-Neymar",
+      "Messi-Sanchez-Neymar",
+      "Messi-Suarez-Neres",
+      "Messi-Sergio-Neymar"
+    ],
     "answer": "Messi-Suarez-Neymar",
     "difficulty": "easy",
     "category": "teammates"
@@ -316,8 +470,12 @@
   {
     "id": 37,
     "question": "How many goals did MSN score in the 2014-15 treble-winning season?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["100","110","122","130"],
+    "options": [
+      "100",
+      "110",
+      "122",
+      "130"
+    ],
     "answer": "122",
     "difficulty": "hard",
     "category": "teammates"
@@ -325,8 +483,12 @@
   {
     "id": 38,
     "question": "Who did Barcelona beat in the 2015 Champions League final?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Real Madrid","Bayern Munich","Juventus","Manchester City"],
+    "options": [
+      "Real Madrid",
+      "Bayern Munich",
+      "Juventus",
+      "Manchester City"
+    ],
     "answer": "Juventus",
     "difficulty": "medium",
     "category": "trophies"
@@ -334,8 +496,12 @@
   {
     "id": 39,
     "question": "What was the score in the 2015 Champions League final?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2-1","3-1","3-0","4-1"],
+    "options": [
+      "2-1",
+      "3-1",
+      "3-0",
+      "4-1"
+    ],
     "answer": "3-1",
     "difficulty": "medium",
     "category": "trophies"
@@ -343,8 +509,12 @@
   {
     "id": 40,
     "question": "Against which team did Messi score his 500th career goal?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Atletico Madrid","Real Madrid","Valencia","Sevilla"],
+    "options": [
+      "Atletico Madrid",
+      "Real Madrid",
+      "Valencia",
+      "Sevilla"
+    ],
     "answer": "Real Madrid",
     "difficulty": "medium",
     "category": "records"
@@ -352,7 +522,12 @@
   {
     "id": 41,
     "question": "What is the name of Messi's childhood club in Rosario?",
-    "options": ["Rosario Central","Newell's Old Boys","River Plate","Boca Juniors"],
+    "options": [
+      "Rosario Central",
+      "Newell's Old Boys",
+      "River Plate",
+      "Boca Juniors"
+    ],
     "answer": "Newell's Old Boys",
     "difficulty": "easy",
     "category": "early-career"
@@ -360,7 +535,12 @@
   {
     "id": 42,
     "question": "At what age did Messi join Newell's Old Boys?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "6",
     "difficulty": "hard",
     "category": "early-career"
@@ -368,7 +548,12 @@
   {
     "id": 43,
     "question": "What nickname was given to young Messi's team at Newell's Old Boys?",
-    "options": ["The Dream Team","The Machine of '87","The Little Giants","The Golden Boys"],
+    "options": [
+      "The Dream Team",
+      "The Machine of '87",
+      "The Little Giants",
+      "The Golden Boys"
+    ],
     "answer": "The Machine of '87",
     "difficulty": "hard",
     "category": "early-career"
@@ -376,7 +561,12 @@
   {
     "id": 44,
     "question": "How many goals did Messi reportedly score for Newell's youth teams?",
-    "options": ["234","345","456","500"],
+    "options": [
+      "234",
+      "345",
+      "456",
+      "500"
+    ],
     "answer": "500",
     "difficulty": "hard",
     "category": "early-career"
@@ -384,7 +574,12 @@
   {
     "id": 45,
     "question": "Which Spanish club also tried to sign young Messi before Barcelona?",
-    "options": ["Real Madrid","Atletico Madrid","Valencia","Sevilla"],
+    "options": [
+      "Real Madrid",
+      "Atletico Madrid",
+      "Valencia",
+      "Sevilla"
+    ],
     "answer": "Real Madrid",
     "difficulty": "hard",
     "category": "early-career"
@@ -392,7 +587,12 @@
   {
     "id": 46,
     "question": "What was Messi's height when he first arrived at La Masia?",
-    "options": ["4'2\" (127cm)","4'5\" (135cm)","4'7\" (140cm)","4'11\" (150cm)"],
+    "options": [
+      "4'2\" (127cm)",
+      "4'5\" (135cm)",
+      "4'7\" (140cm)",
+      "4'11\" (150cm)"
+    ],
     "answer": "4'7\" (140cm)",
     "difficulty": "hard",
     "category": "early-career"
@@ -400,7 +600,12 @@
   {
     "id": 47,
     "question": "What is Messi's current height?",
-    "options": ["5'5\" (165cm)","5'7\" (170cm)","5'9\" (175cm)","5'11\" (180cm)"],
+    "options": [
+      "5'5\" (165cm)",
+      "5'7\" (170cm)",
+      "5'9\" (175cm)",
+      "5'11\" (180cm)"
+    ],
     "answer": "5'7\" (170cm)",
     "difficulty": "medium",
     "category": "personal"
@@ -408,7 +613,12 @@
   {
     "id": 48,
     "question": "Which Barcelona youth team category did Messi skip due to his talent?",
-    "options": ["Infantil B","Cadete B","Juvenil B","All of them at some point"],
+    "options": [
+      "Infantil B",
+      "Cadete B",
+      "Juvenil B",
+      "All of them at some point"
+    ],
     "answer": "All of them at some point",
     "difficulty": "hard",
     "category": "early-career"
@@ -416,7 +626,12 @@
   {
     "id": 49,
     "question": "How old was Messi when he made his official Barcelona debut?",
-    "options": ["15","16","17","18"],
+    "options": [
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
     "answer": "17",
     "difficulty": "medium",
     "category": "barcelona"
@@ -424,7 +639,12 @@
   {
     "id": 50,
     "question": "Against which team did Messi make his official Barcelona debut?",
-    "options": ["Real Madrid","Espanyol","Athletic Bilbao","Valencia"],
+    "options": [
+      "Real Madrid",
+      "Espanyol",
+      "Athletic Bilbao",
+      "Valencia"
+    ],
     "answer": "Espanyol",
     "difficulty": "medium",
     "category": "barcelona"
@@ -432,7 +652,12 @@
   {
     "id": 51,
     "question": "How many goals did Messi score in his debut season (2004-05)?",
-    "options": ["1","3","5","7"],
+    "options": [
+      "1",
+      "3",
+      "5",
+      "7"
+    ],
     "answer": "1",
     "difficulty": "hard",
     "category": "barcelona"
@@ -440,7 +665,12 @@
   {
     "id": 52,
     "question": "Which trophy did Messi win in his first full season at Barcelona?",
-    "options": ["La Liga","Champions League","Copa del Rey","Both La Liga and Champions League"],
+    "options": [
+      "La Liga",
+      "Champions League",
+      "Copa del Rey",
+      "Both La Liga and Champions League"
+    ],
     "answer": "Both La Liga and Champions League",
     "difficulty": "medium",
     "category": "trophies"
@@ -448,7 +678,12 @@
   {
     "id": 53,
     "question": "In the 2006 Champions League final, why didn't Messi play the full match?",
-    "options": ["Tactical decision","Injury","Red card","He was on the bench"],
+    "options": [
+      "Tactical decision",
+      "Injury",
+      "Red card",
+      "He was on the bench"
+    ],
     "answer": "Injury",
     "difficulty": "medium",
     "category": "barcelona"
@@ -456,7 +691,12 @@
   {
     "id": 54,
     "question": "Who did Barcelona beat in the 2006 Champions League final?",
-    "options": ["Real Madrid","AC Milan","Arsenal","Juventus"],
+    "options": [
+      "Real Madrid",
+      "AC Milan",
+      "Arsenal",
+      "Juventus"
+    ],
     "answer": "Arsenal",
     "difficulty": "medium",
     "category": "trophies"
@@ -464,7 +704,12 @@
   {
     "id": 55,
     "question": "What was Messi's first major international tournament with Argentina?",
-    "options": ["2006 World Cup","2007 Copa America","2010 World Cup","2004 Olympics"],
+    "options": [
+      "2006 World Cup",
+      "2007 Copa America",
+      "2010 World Cup",
+      "2004 Olympics"
+    ],
     "answer": "2006 World Cup",
     "difficulty": "medium",
     "category": "argentina"
@@ -472,7 +717,12 @@
   {
     "id": 56,
     "question": "At which tournament did Messi win Olympic Gold with Argentina?",
-    "options": ["2004 Athens","2008 Beijing","2012 London","He never won Olympic Gold"],
+    "options": [
+      "2004 Athens",
+      "2008 Beijing",
+      "2012 London",
+      "He never won Olympic Gold"
+    ],
     "answer": "2008 Beijing",
     "difficulty": "medium",
     "category": "argentina"
@@ -480,7 +730,12 @@
   {
     "id": 57,
     "question": "Who was Argentina's manager when they won Olympic Gold in 2008?",
-    "options": ["Diego Maradona","Sergio Batista","Alfio Basile","Jose Pekerman"],
+    "options": [
+      "Diego Maradona",
+      "Sergio Batista",
+      "Alfio Basile",
+      "Jose Pekerman"
+    ],
     "answer": "Sergio Batista",
     "difficulty": "hard",
     "category": "argentina"
@@ -488,7 +743,12 @@
   {
     "id": 58,
     "question": "How many Copa America finals did Messi lose before finally winning?",
-    "options": ["2","3","4","5"],
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
     "answer": "3",
     "difficulty": "medium",
     "category": "argentina"
@@ -496,7 +756,12 @@
   {
     "id": 59,
     "question": "In which year did Messi finally win the Copa America?",
-    "options": ["2019","2020","2021","2022"],
+    "options": [
+      "2019",
+      "2020",
+      "2021",
+      "2022"
+    ],
     "answer": "2021",
     "difficulty": "easy",
     "category": "argentina"
@@ -504,7 +769,12 @@
   {
     "id": 60,
     "question": "Which country did Argentina beat in the 2021 Copa America final?",
-    "options": ["Colombia","Brazil","Uruguay","Chile"],
+    "options": [
+      "Colombia",
+      "Brazil",
+      "Uruguay",
+      "Chile"
+    ],
     "answer": "Brazil",
     "difficulty": "easy",
     "category": "argentina"
@@ -512,8 +782,12 @@
   {
     "id": 61,
     "question": "Where was the 2021 Copa America final held?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Buenos Aires","Rio de Janeiro","Brasilia","Sao Paulo"],
+    "options": [
+      "Buenos Aires",
+      "Rio de Janeiro",
+      "Brasilia",
+      "Sao Paulo"
+    ],
     "answer": "Rio de Janeiro",
     "difficulty": "medium",
     "category": "argentina"
@@ -521,8 +795,12 @@
   {
     "id": 62,
     "question": "Who scored Argentina's only goal in the 2021 Copa America final?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Angel_Di_Maria_2018.jpg/220px-Angel_Di_Maria_2018.jpg",
-    "options": ["Messi","Di Maria","Lautaro Martinez","De Paul"],
+    "options": [
+      "Messi",
+      "Di Maria",
+      "Lautaro Martinez",
+      "De Paul"
+    ],
     "answer": "Di Maria",
     "difficulty": "medium",
     "category": "argentina"
@@ -530,8 +808,12 @@
   {
     "id": 63,
     "question": "How many goals did Messi score at the 2022 World Cup?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["5","6","7","8"],
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
     "answer": "7",
     "difficulty": "easy",
     "category": "argentina"
@@ -539,8 +821,12 @@
   {
     "id": 64,
     "question": "How many assists did Messi provide at the 2022 World Cup?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["1","2","3","4"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "answer": "3",
     "difficulty": "medium",
     "category": "argentina"
@@ -548,8 +834,12 @@
   {
     "id": 65,
     "question": "Which award did Messi win at the 2022 World Cup?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Golden Boot","Golden Glove","Golden Ball","All three"],
+    "options": [
+      "Golden Boot",
+      "Golden Glove",
+      "Golden Ball",
+      "All three"
+    ],
     "answer": "Golden Ball",
     "difficulty": "easy",
     "category": "argentina"
@@ -557,8 +847,12 @@
   {
     "id": 66,
     "question": "What was the final score in the 2022 World Cup final after extra time?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2-2","3-3","4-3","4-4"],
+    "options": [
+      "2-2",
+      "3-3",
+      "4-3",
+      "4-4"
+    ],
     "answer": "3-3",
     "difficulty": "easy",
     "category": "argentina"
@@ -566,8 +860,12 @@
   {
     "id": 67,
     "question": "How many goals did Messi score in the 2022 World Cup final?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["1","2","3","4"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "answer": "2",
     "difficulty": "easy",
     "category": "argentina"
@@ -575,8 +873,12 @@
   {
     "id": 68,
     "question": "Who saved a crucial penalty in the 2022 World Cup final shootout?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Emiliano_Mart%C3%ADnez_2021.jpg/220px-Emiliano_Mart%C3%ADnez_2021.jpg",
-    "options": ["Franco Armani","Emi Martinez","Geronimo Rulli","Juan Musso"],
+    "options": [
+      "Franco Armani",
+      "Emi Martinez",
+      "Geronimo Rulli",
+      "Juan Musso"
+    ],
     "answer": "Emi Martinez",
     "difficulty": "easy",
     "category": "argentina"
@@ -584,8 +886,12 @@
   {
     "id": 69,
     "question": "How many World Cup appearances has Messi made in his career?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "5",
     "difficulty": "medium",
     "category": "argentina"
@@ -593,8 +899,12 @@
   {
     "id": 70,
     "question": "How many total World Cup goals has Messi scored?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["11","13","15","17"],
+    "options": [
+      "11",
+      "13",
+      "15",
+      "17"
+    ],
     "answer": "13",
     "difficulty": "medium",
     "category": "argentina"
@@ -602,7 +912,12 @@
   {
     "id": 71,
     "question": "What is Messi's record for most goals scored for Argentina?",
-    "options": ["90","98","106","109"],
+    "options": [
+      "90",
+      "98",
+      "106",
+      "109"
+    ],
     "answer": "109",
     "difficulty": "medium",
     "category": "records"
@@ -610,7 +925,12 @@
   {
     "id": 72,
     "question": "How many total appearances has Messi made for Argentina?",
-    "options": ["150","165","180","187"],
+    "options": [
+      "150",
+      "165",
+      "180",
+      "187"
+    ],
     "answer": "187",
     "difficulty": "hard",
     "category": "records"
@@ -618,7 +938,12 @@
   {
     "id": 73,
     "question": "Who is Argentina's all-time top scorer?",
-    "options": ["Diego Maradona","Gabriel Batistuta","Sergio Aguero","Messi"],
+    "options": [
+      "Diego Maradona",
+      "Gabriel Batistuta",
+      "Sergio Aguero",
+      "Messi"
+    ],
     "answer": "Messi",
     "difficulty": "easy",
     "category": "records"
@@ -626,7 +951,12 @@
   {
     "id": 74,
     "question": "How many international goals did Maradona score for comparison?",
-    "options": ["24","34","44","54"],
+    "options": [
+      "24",
+      "34",
+      "44",
+      "54"
+    ],
     "answer": "34",
     "difficulty": "hard",
     "category": "records"
@@ -634,7 +964,12 @@
   {
     "id": 75,
     "question": "What is Messi's record for most assists in international football history?",
-    "options": ["48","52","58","62"],
+    "options": [
+      "48",
+      "52",
+      "58",
+      "62"
+    ],
     "answer": "58",
     "difficulty": "hard",
     "category": "records"
@@ -642,7 +977,12 @@
   {
     "id": 76,
     "question": "How many hat-tricks has Messi scored for Argentina?",
-    "options": ["6","8","10","12"],
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
     "answer": "10",
     "difficulty": "hard",
     "category": "records"
@@ -650,7 +990,12 @@
   {
     "id": 77,
     "question": "Against which country did Messi score 5 goals in a single match for Argentina?",
-    "options": ["Bolivia","Estonia","Nicaragua","Ecuador"],
+    "options": [
+      "Bolivia",
+      "Estonia",
+      "Nicaragua",
+      "Ecuador"
+    ],
     "answer": "Estonia",
     "difficulty": "hard",
     "category": "records"
@@ -658,7 +1003,12 @@
   {
     "id": 78,
     "question": "What year was Messi's 5-goal game against Estonia?",
-    "options": ["2020","2021","2022","2023"],
+    "options": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
     "answer": "2022",
     "difficulty": "hard",
     "category": "records"
@@ -666,7 +1016,12 @@
   {
     "id": 79,
     "question": "How many Champions League goals did Messi score in total?",
-    "options": ["110","120","129","140"],
+    "options": [
+      "110",
+      "120",
+      "129",
+      "140"
+    ],
     "answer": "129",
     "difficulty": "medium",
     "category": "records"
@@ -674,7 +1029,12 @@
   {
     "id": 80,
     "question": "Who is the all-time top scorer in Champions League history?",
-    "options": ["Messi","Cristiano Ronaldo","Robert Lewandowski","Karim Benzema"],
+    "options": [
+      "Messi",
+      "Cristiano Ronaldo",
+      "Robert Lewandowski",
+      "Karim Benzema"
+    ],
     "answer": "Cristiano Ronaldo",
     "difficulty": "easy",
     "category": "records"
@@ -682,7 +1042,12 @@
   {
     "id": 81,
     "question": "What is Messi's record for most La Liga goals in a single season?",
-    "options": ["40","46","50","54"],
+    "options": [
+      "40",
+      "46",
+      "50",
+      "54"
+    ],
     "answer": "50",
     "difficulty": "medium",
     "category": "records"
@@ -690,7 +1055,12 @@
   {
     "id": 82,
     "question": "In which season did Messi score 50 La Liga goals?",
-    "options": ["2010-11","2011-12","2012-13","2013-14"],
+    "options": [
+      "2010-11",
+      "2011-12",
+      "2012-13",
+      "2013-14"
+    ],
     "answer": "2011-12",
     "difficulty": "hard",
     "category": "records"
@@ -698,7 +1068,12 @@
   {
     "id": 83,
     "question": "How many total La Liga goals did Messi score?",
-    "options": ["424","456","474","496"],
+    "options": [
+      "424",
+      "456",
+      "474",
+      "496"
+    ],
     "answer": "474",
     "difficulty": "hard",
     "category": "records"
@@ -706,7 +1081,12 @@
   {
     "id": 84,
     "question": "What is Messi's record for most assists in a La Liga season?",
-    "options": ["18","20","21","24"],
+    "options": [
+      "18",
+      "20",
+      "21",
+      "24"
+    ],
     "answer": "21",
     "difficulty": "hard",
     "category": "records"
@@ -714,7 +1094,12 @@
   {
     "id": 85,
     "question": "How many career hat-tricks has Messi scored?",
-    "options": ["45","50","57","65"],
+    "options": [
+      "45",
+      "50",
+      "57",
+      "65"
+    ],
     "answer": "57",
     "difficulty": "medium",
     "category": "records"
@@ -722,7 +1107,12 @@
   {
     "id": 86,
     "question": "What is Messi's record for most El Clasico goals?",
-    "options": ["21","26","30","34"],
+    "options": [
+      "21",
+      "26",
+      "30",
+      "34"
+    ],
     "answer": "26",
     "difficulty": "medium",
     "category": "records"
@@ -730,7 +1120,12 @@
   {
     "id": 87,
     "question": "How many El Clasico matches has Messi played?",
-    "options": ["35","40","45","50"],
+    "options": [
+      "35",
+      "40",
+      "45",
+      "50"
+    ],
     "answer": "45",
     "difficulty": "hard",
     "category": "records"
@@ -738,7 +1133,12 @@
   {
     "id": 88,
     "question": "What is Messi's record for most goals against a single opponent (Sevilla)?",
-    "options": ["30","35","38","42"],
+    "options": [
+      "30",
+      "35",
+      "38",
+      "42"
+    ],
     "answer": "38",
     "difficulty": "hard",
     "category": "records"
@@ -746,7 +1146,12 @@
   {
     "id": 89,
     "question": "How many times has Messi won the Pichichi Trophy (La Liga top scorer)?",
-    "options": ["6","7","8","9"],
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
     "answer": "8",
     "difficulty": "medium",
     "category": "records"
@@ -754,7 +1159,12 @@
   {
     "id": 90,
     "question": "How many times has Messi won the European Golden Shoe?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "6",
     "difficulty": "medium",
     "category": "records"
@@ -762,8 +1172,12 @@
   {
     "id": 91,
     "question": "Which manager has won the most trophies with Messi?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Pep_Guardiola_2023.jpg/220px-Pep_Guardiola_2023.jpg",
-    "options": ["Luis Enrique","Ernesto Valverde","Pep Guardiola","Frank Rijkaard"],
+    "options": [
+      "Luis Enrique",
+      "Ernesto Valverde",
+      "Pep Guardiola",
+      "Frank Rijkaard"
+    ],
     "answer": "Pep Guardiola",
     "difficulty": "easy",
     "category": "teammates"
@@ -771,8 +1185,12 @@
   {
     "id": 92,
     "question": "How many trophies did Messi win under Pep Guardiola?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Pep_Guardiola_2023.jpg/220px-Pep_Guardiola_2023.jpg",
-    "options": ["12","14","16","18"],
+    "options": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
     "answer": "14",
     "difficulty": "hard",
     "category": "teammates"
@@ -780,8 +1198,12 @@
   {
     "id": 93,
     "question": "Who provided the most assists to Messi at Barcelona?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Xavi","Iniesta","Dani Alves","Neymar"],
+    "options": [
+      "Xavi",
+      "Iniesta",
+      "Dani Alves",
+      "Neymar"
+    ],
     "answer": "Dani Alves",
     "difficulty": "medium",
     "category": "teammates"
@@ -789,8 +1211,12 @@
   {
     "id": 94,
     "question": "How many assists did Dani Alves provide to Messi?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["32","42","52","62"],
+    "options": [
+      "32",
+      "42",
+      "52",
+      "62"
+    ],
     "answer": "42",
     "difficulty": "hard",
     "category": "teammates"
@@ -798,8 +1224,12 @@
   {
     "id": 95,
     "question": "Which midfielder formed the legendary midfield trio with Xavi and Iniesta alongside Messi?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Cesc Fabregas","Sergio Busquets","Yaya Toure","Seydou Keita"],
+    "options": [
+      "Cesc Fabregas",
+      "Sergio Busquets",
+      "Yaya Toure",
+      "Seydou Keita"
+    ],
     "answer": "Sergio Busquets",
     "difficulty": "easy",
     "category": "teammates"
@@ -807,8 +1237,12 @@
   {
     "id": 96,
     "question": "Who was Messi's strike partner before Luis Suarez arrived?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Samuel Eto'o","David Villa","Zlatan Ibrahimovic","Alexis Sanchez"],
+    "options": [
+      "Samuel Eto'o",
+      "David Villa",
+      "Zlatan Ibrahimovic",
+      "Alexis Sanchez"
+    ],
     "answer": "David Villa",
     "difficulty": "medium",
     "category": "teammates"
@@ -816,8 +1250,12 @@
   {
     "id": 97,
     "question": "Which defender was Messi's longest-serving teammate at Barcelona?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Carles Puyol","Gerard Pique","Jordi Alba","Eric Abidal"],
+    "options": [
+      "Carles Puyol",
+      "Gerard Pique",
+      "Jordi Alba",
+      "Eric Abidal"
+    ],
     "answer": "Gerard Pique",
     "difficulty": "medium",
     "category": "teammates"
@@ -825,8 +1263,12 @@
   {
     "id": 98,
     "question": "Who was Barcelona's captain before Messi took the armband?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Xavi","Carles Puyol","Andres Iniesta","All three at different times"],
+    "options": [
+      "Xavi",
+      "Carles Puyol",
+      "Andres Iniesta",
+      "All three at different times"
+    ],
     "answer": "Andres Iniesta",
     "difficulty": "hard",
     "category": "barcelona"
@@ -834,8 +1276,12 @@
   {
     "id": 99,
     "question": "In what year did Messi become Barcelona captain?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["2017","2018","2019","2020"],
+    "options": [
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
     "answer": "2018",
     "difficulty": "medium",
     "category": "barcelona"
@@ -843,8 +1289,12 @@
   {
     "id": 100,
     "question": "Which goalkeeper did Messi score the most goals against?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg/220px-Lionel-Messi-Argentina-2022-FIFA-World-Cup_%28cropped%29.jpg",
-    "options": ["Iker Casillas","Diego Lopez","Jan Oblak","David de Gea"],
+    "options": [
+      "Iker Casillas",
+      "Diego Lopez",
+      "Jan Oblak",
+      "David de Gea"
+    ],
     "answer": "Diego Lopez",
     "difficulty": "hard",
     "category": "records"
@@ -852,7 +1302,12 @@
   {
     "id": 101,
     "question": "What unique record does Messi hold for consecutive La Liga scoring?",
-    "options": ["Scored in 21 consecutive games","Scored in 19 consecutive games","Scored vs all 20 teams in a season","Both B and C"],
+    "options": [
+      "Scored in 21 consecutive games",
+      "Scored in 19 consecutive games",
+      "Scored vs all 20 teams in a season",
+      "Both B and C"
+    ],
     "answer": "Both B and C",
     "difficulty": "hard",
     "category": "records"
@@ -860,7 +1315,12 @@
   {
     "id": 102,
     "question": "How many seasons did Messi score 40+ goals for Barcelona?",
-    "options": ["5","6","7","8"],
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
     "answer": "8",
     "difficulty": "hard",
     "category": "records"
@@ -868,7 +1328,12 @@
   {
     "id": 103,
     "question": "What is Messi's record for most free-kick goals at Barcelona?",
-    "options": ["40","48","50","58"],
+    "options": [
+      "40",
+      "48",
+      "50",
+      "58"
+    ],
     "answer": "50",
     "difficulty": "hard",
     "category": "records"
@@ -876,7 +1341,12 @@
   {
     "id": 104,
     "question": "Against which English club has Messi scored the most Champions League goals?",
-    "options": ["Manchester United","Arsenal","Manchester City","Chelsea"],
+    "options": [
+      "Manchester United",
+      "Arsenal",
+      "Manchester City",
+      "Chelsea"
+    ],
     "answer": "Arsenal",
     "difficulty": "medium",
     "category": "records"
@@ -884,7 +1354,12 @@
   {
     "id": 105,
     "question": "How many goals did Messi score against Arsenal in total?",
-    "options": ["7","9","11","13"],
+    "options": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
     "answer": "9",
     "difficulty": "hard",
     "category": "records"
@@ -892,7 +1367,12 @@
   {
     "id": 106,
     "question": "What famous solo goal did Messi score against Getafe in 2007?",
-    "options": ["A header","A free kick","A Maradona-style dribble","A penalty"],
+    "options": [
+      "A header",
+      "A free kick",
+      "A Maradona-style dribble",
+      "A penalty"
+    ],
     "answer": "A Maradona-style dribble",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -900,7 +1380,12 @@
   {
     "id": 107,
     "question": "How many players did Messi dribble past in his famous goal against Getafe?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "6",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -908,7 +1393,12 @@
   {
     "id": 108,
     "question": "Whose famous World Cup goal was Messi's Getafe goal compared to?",
-    "options": ["Pele 1958","Maradona 1986","Ronaldo 2002","Zidane 2006"],
+    "options": [
+      "Pele 1958",
+      "Maradona 1986",
+      "Ronaldo 2002",
+      "Zidane 2006"
+    ],
     "answer": "Maradona 1986",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -916,7 +1406,12 @@
   {
     "id": 109,
     "question": "Against which team did Messi score a similar solo goal in the Copa del Rey final 2015?",
-    "options": ["Athletic Bilbao","Real Madrid","Sevilla","Valencia"],
+    "options": [
+      "Athletic Bilbao",
+      "Real Madrid",
+      "Sevilla",
+      "Valencia"
+    ],
     "answer": "Athletic Bilbao",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -924,7 +1419,12 @@
   {
     "id": 110,
     "question": "What is the famous 'Messi assist' where he chipped the ball to set up a goal?",
-    "options": ["Panenka pass","No-look pass","Outside foot chip","All of these"],
+    "options": [
+      "Panenka pass",
+      "No-look pass",
+      "Outside foot chip",
+      "All of these"
+    ],
     "answer": "All of these",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -932,7 +1432,12 @@
   {
     "id": 111,
     "question": "How many Supercopa de Espana titles did Messi win?",
-    "options": ["6","8","10","12"],
+    "options": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
     "answer": "8",
     "difficulty": "hard",
     "category": "trophies"
@@ -940,7 +1445,12 @@
   {
     "id": 112,
     "question": "How many UEFA Super Cup titles did Messi win?",
-    "options": ["2","3","4","5"],
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
     "answer": "3",
     "difficulty": "hard",
     "category": "trophies"
@@ -948,7 +1458,12 @@
   {
     "id": 113,
     "question": "How many FIFA Club World Cup titles did Messi win?",
-    "options": ["2","3","4","5"],
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
     "answer": "3",
     "difficulty": "medium",
     "category": "trophies"
@@ -956,7 +1471,12 @@
   {
     "id": 114,
     "question": "In which year did Messi win the FIFA World Player of the Year (before Ballon d'Or merger)?",
-    "options": ["2008","2009","Never won it separately","2007"],
+    "options": [
+      "2008",
+      "2009",
+      "Never won it separately",
+      "2007"
+    ],
     "answer": "2009",
     "difficulty": "hard",
     "category": "records"
@@ -964,7 +1484,12 @@
   {
     "id": 115,
     "question": "How many times was Messi runner-up for the Ballon d'Or?",
-    "options": ["3","4","5","6"],
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
     "answer": "5",
     "difficulty": "hard",
     "category": "records"
@@ -972,7 +1497,12 @@
   {
     "id": 116,
     "question": "Who beat Messi to the Ballon d'Or in 2010?",
-    "options": ["Cristiano Ronaldo","Wesley Sneijder","Andres Iniesta","Nobody - Messi won"],
+    "options": [
+      "Cristiano Ronaldo",
+      "Wesley Sneijder",
+      "Andres Iniesta",
+      "Nobody - Messi won"
+    ],
     "answer": "Nobody - Messi won",
     "difficulty": "medium",
     "category": "records"
@@ -980,7 +1510,12 @@
   {
     "id": 117,
     "question": "What year did Messi lose the Ballon d'Or to Ronaldo for the first time?",
-    "options": ["2012","2013","2014","2015"],
+    "options": [
+      "2012",
+      "2013",
+      "2014",
+      "2015"
+    ],
     "answer": "2013",
     "difficulty": "medium",
     "category": "records"
@@ -988,7 +1523,12 @@
   {
     "id": 118,
     "question": "How many goals did Messi score in the 2014-15 season (all competitions)?",
-    "options": ["48","52","58","62"],
+    "options": [
+      "48",
+      "52",
+      "58",
+      "62"
+    ],
     "answer": "58",
     "difficulty": "hard",
     "category": "records"
@@ -996,7 +1536,12 @@
   {
     "id": 119,
     "question": "What shirt number does Messi wear at Inter Miami?",
-    "options": ["10","30","19","7"],
+    "options": [
+      "10",
+      "30",
+      "19",
+      "7"
+    ],
     "answer": "10",
     "difficulty": "easy",
     "category": "career"
@@ -1004,7 +1549,12 @@
   {
     "id": 120,
     "question": "When did Messi join Inter Miami?",
-    "options": ["June 2023","July 2023","August 2023","September 2023"],
+    "options": [
+      "June 2023",
+      "July 2023",
+      "August 2023",
+      "September 2023"
+    ],
     "answer": "July 2023",
     "difficulty": "medium",
     "category": "career"
@@ -1012,7 +1562,12 @@
   {
     "id": 121,
     "question": "Which trophy did Messi win in his first month at Inter Miami?",
-    "options": ["MLS Cup","US Open Cup","Leagues Cup","Supporters' Shield"],
+    "options": [
+      "MLS Cup",
+      "US Open Cup",
+      "Leagues Cup",
+      "Supporters' Shield"
+    ],
     "answer": "Leagues Cup",
     "difficulty": "easy",
     "category": "trophies"
@@ -1020,7 +1575,12 @@
   {
     "id": 122,
     "question": "Who is Inter Miami's co-owner that helped bring Messi to the club?",
-    "options": ["LeBron James","David Beckham","Tom Brady","Michael Jordan"],
+    "options": [
+      "LeBron James",
+      "David Beckham",
+      "Tom Brady",
+      "Michael Jordan"
+    ],
     "answer": "David Beckham",
     "difficulty": "easy",
     "category": "career"
@@ -1028,7 +1588,12 @@
   {
     "id": 123,
     "question": "How many goals did Messi score in his debut for Inter Miami?",
-    "options": ["0","1","2","3"],
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
     "answer": "1",
     "difficulty": "medium",
     "category": "career"
@@ -1036,7 +1601,12 @@
   {
     "id": 124,
     "question": "What type of goal did Messi score on his Inter Miami debut?",
-    "options": ["Penalty","Header","Free kick","Long-range shot"],
+    "options": [
+      "Penalty",
+      "Header",
+      "Free kick",
+      "Long-range shot"
+    ],
     "answer": "Free kick",
     "difficulty": "medium",
     "category": "career"
@@ -1044,7 +1614,12 @@
   {
     "id": 125,
     "question": "Which former Barcelona teammate joined Messi at Inter Miami?",
-    "options": ["Sergio Busquets","Jordi Alba","Both A and B","Neither"],
+    "options": [
+      "Sergio Busquets",
+      "Jordi Alba",
+      "Both A and B",
+      "Neither"
+    ],
     "answer": "Both A and B",
     "difficulty": "easy",
     "category": "teammates"
@@ -1052,7 +1627,12 @@
   {
     "id": 126,
     "question": "How many goals did Messi score at PSG in total?",
-    "options": ["22","28","32","38"],
+    "options": [
+      "22",
+      "28",
+      "32",
+      "38"
+    ],
     "answer": "32",
     "difficulty": "hard",
     "category": "career"
@@ -1060,7 +1640,12 @@
   {
     "id": 127,
     "question": "How many assists did Messi provide at PSG?",
-    "options": ["25","30","35","40"],
+    "options": [
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
     "answer": "35",
     "difficulty": "hard",
     "category": "career"
@@ -1068,7 +1653,12 @@
   {
     "id": 128,
     "question": "How many Ligue 1 titles did Messi win at PSG?",
-    "options": ["1","2","3","0"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
     "answer": "2",
     "difficulty": "medium",
     "category": "trophies"
@@ -1076,7 +1666,12 @@
   {
     "id": 129,
     "question": "Who were Messi's attacking partners at PSG?",
-    "options": ["Mbappe and Neymar","Mbappe and Di Maria","Neymar and Icardi","Mbappe only"],
+    "options": [
+      "Mbappe and Neymar",
+      "Mbappe and Di Maria",
+      "Neymar and Icardi",
+      "Mbappe only"
+    ],
     "answer": "Mbappe and Neymar",
     "difficulty": "easy",
     "category": "teammates"
@@ -1084,7 +1679,12 @@
   {
     "id": 130,
     "question": "Why did Messi leave Barcelona in 2021?",
-    "options": ["Wanted a new challenge","Contract couldn't be registered due to La Liga rules","Retirement plan","Transfer fee disagreement"],
+    "options": [
+      "Wanted a new challenge",
+      "Contract couldn't be registered due to La Liga rules",
+      "Retirement plan",
+      "Transfer fee disagreement"
+    ],
     "answer": "Contract couldn't be registered due to La Liga rules",
     "difficulty": "easy",
     "category": "career"
@@ -1092,7 +1692,12 @@
   {
     "id": 131,
     "question": "What was Messi's release clause at Barcelona in 2020 before it expired?",
-    "options": ["500 million","700 million","900 million","1 billion"],
+    "options": [
+      "500 million",
+      "700 million",
+      "900 million",
+      "1 billion"
+    ],
     "answer": "700 million",
     "difficulty": "medium",
     "category": "career"
@@ -1100,7 +1705,12 @@
   {
     "id": 132,
     "question": "Which club tried to sign Messi in 2020 before he stayed at Barcelona?",
-    "options": ["PSG","Manchester City","Juventus","Inter Milan"],
+    "options": [
+      "PSG",
+      "Manchester City",
+      "Juventus",
+      "Inter Milan"
+    ],
     "answer": "Manchester City",
     "difficulty": "medium",
     "category": "career"
@@ -1108,7 +1718,12 @@
   {
     "id": 133,
     "question": "What emotional event happened during Messi's Barcelona farewell press conference?",
-    "options": ["He sang","He cried","He refused to speak","He walked out"],
+    "options": [
+      "He sang",
+      "He cried",
+      "He refused to speak",
+      "He walked out"
+    ],
     "answer": "He cried",
     "difficulty": "easy",
     "category": "career"
@@ -1116,7 +1731,12 @@
   {
     "id": 134,
     "question": "Which manager was at Barcelona when Messi left?",
-    "options": ["Ronald Koeman","Xavi","Quique Setien","Ernesto Valverde"],
+    "options": [
+      "Ronald Koeman",
+      "Xavi",
+      "Quique Setien",
+      "Ernesto Valverde"
+    ],
     "answer": "Ronald Koeman",
     "difficulty": "medium",
     "category": "career"
@@ -1124,7 +1744,12 @@
   {
     "id": 135,
     "question": "What did Messi say he wanted to do before retiring?",
-    "options": ["Win Champions League with another club","Win World Cup","Play with Cristiano Ronaldo","Return to Newell's Old Boys"],
+    "options": [
+      "Win Champions League with another club",
+      "Win World Cup",
+      "Play with Cristiano Ronaldo",
+      "Return to Newell's Old Boys"
+    ],
     "answer": "Return to Newell's Old Boys",
     "difficulty": "medium",
     "category": "personal"
@@ -1132,7 +1757,12 @@
   {
     "id": 136,
     "question": "What is the name of Messi's foundation?",
-    "options": ["Messi Foundation","Leo Messi Foundation","Fundacion Messi","M10 Foundation"],
+    "options": [
+      "Messi Foundation",
+      "Leo Messi Foundation",
+      "Fundacion Messi",
+      "M10 Foundation"
+    ],
     "answer": "Leo Messi Foundation",
     "difficulty": "medium",
     "category": "personal"
@@ -1140,7 +1770,12 @@
   {
     "id": 137,
     "question": "What does Messi's foundation primarily focus on?",
-    "options": ["Environmental issues","Children's health and education","Animal welfare","Poverty in Europe"],
+    "options": [
+      "Environmental issues",
+      "Children's health and education",
+      "Animal welfare",
+      "Poverty in Europe"
+    ],
     "answer": "Children's health and education",
     "difficulty": "medium",
     "category": "personal"
@@ -1148,7 +1783,12 @@
   {
     "id": 138,
     "question": "What is Messi's dog's breed that became famous on social media?",
-    "options": ["Labrador","Dogue de Bordeaux","German Shepherd","Golden Retriever"],
+    "options": [
+      "Labrador",
+      "Dogue de Bordeaux",
+      "German Shepherd",
+      "Golden Retriever"
+    ],
     "answer": "Dogue de Bordeaux",
     "difficulty": "hard",
     "category": "personal"
@@ -1156,7 +1796,12 @@
   {
     "id": 139,
     "question": "What is the name of Messi's famous dog?",
-    "options": ["Hulk","Thor","Senor M","Abu"],
+    "options": [
+      "Hulk",
+      "Thor",
+      "Senor M",
+      "Abu"
+    ],
     "answer": "Hulk",
     "difficulty": "hard",
     "category": "personal"
@@ -1164,7 +1809,12 @@
   {
     "id": 140,
     "question": "Which video game has featured Messi on its cover multiple times?",
-    "options": ["PES","FIFA","Both","Neither"],
+    "options": [
+      "PES",
+      "FIFA",
+      "Both",
+      "Neither"
+    ],
     "answer": "FIFA",
     "difficulty": "easy",
     "category": "personal"
@@ -1172,7 +1822,12 @@
   {
     "id": 141,
     "question": "How many times has Messi been on the FIFA video game cover?",
-    "options": ["3","4","5","6"],
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
     "answer": "4",
     "difficulty": "hard",
     "category": "personal"
@@ -1180,7 +1835,12 @@
   {
     "id": 142,
     "question": "What brand is Messi's lifetime sponsorship deal with?",
-    "options": ["Nike","Puma","Adidas","New Balance"],
+    "options": [
+      "Nike",
+      "Puma",
+      "Adidas",
+      "New Balance"
+    ],
     "answer": "Adidas",
     "difficulty": "easy",
     "category": "personal"
@@ -1188,7 +1848,12 @@
   {
     "id": 143,
     "question": "What is Messi's estimated career earnings from football?",
-    "options": ["$500 million","$800 million","$1 billion+","$1.5 billion+"],
+    "options": [
+      "$500 million",
+      "$800 million",
+      "$1 billion+",
+      "$1.5 billion+"
+    ],
     "answer": "$1 billion+",
     "difficulty": "medium",
     "category": "personal"
@@ -1196,7 +1861,12 @@
   {
     "id": 144,
     "question": "What is Messi's jersey number for Argentina?",
-    "options": ["7","9","10","11"],
+    "options": [
+      "7",
+      "9",
+      "10",
+      "11"
+    ],
     "answer": "10",
     "difficulty": "easy",
     "category": "argentina"
@@ -1204,7 +1874,12 @@
   {
     "id": 145,
     "question": "Who did Messi replace as Argentina's number 10?",
-    "options": ["Diego Maradona","Juan Roman Riquelme","Ariel Ortega","Pablo Aimar"],
+    "options": [
+      "Diego Maradona",
+      "Juan Roman Riquelme",
+      "Ariel Ortega",
+      "Pablo Aimar"
+    ],
     "answer": "Juan Roman Riquelme",
     "difficulty": "hard",
     "category": "argentina"
@@ -1212,7 +1887,12 @@
   {
     "id": 146,
     "question": "Which Argentine legend did young Messi idolize?",
-    "options": ["Diego Maradona","Gabriel Batistuta","Pablo Aimar","Juan Roman Riquelme"],
+    "options": [
+      "Diego Maradona",
+      "Gabriel Batistuta",
+      "Pablo Aimar",
+      "Juan Roman Riquelme"
+    ],
     "answer": "Pablo Aimar",
     "difficulty": "hard",
     "category": "personal"
@@ -1220,7 +1900,12 @@
   {
     "id": 147,
     "question": "What nickname did Maradona give to Messi?",
-    "options": ["The GOAT","My successor","The Little One","El Pibe de Oro"],
+    "options": [
+      "The GOAT",
+      "My successor",
+      "The Little One",
+      "El Pibe de Oro"
+    ],
     "answer": "My successor",
     "difficulty": "medium",
     "category": "personal"
@@ -1228,7 +1913,12 @@
   {
     "id": 148,
     "question": "How old was Messi when he received his first Argentina call-up?",
-    "options": ["16","17","18","19"],
+    "options": [
+      "16",
+      "17",
+      "18",
+      "19"
+    ],
     "answer": "17",
     "difficulty": "medium",
     "category": "argentina"
@@ -1236,7 +1926,12 @@
   {
     "id": 149,
     "question": "What happened in Messi's Argentina debut in 2005?",
-    "options": ["He scored a hat-trick","He got a red card","He scored the winner","He assisted a goal"],
+    "options": [
+      "He scored a hat-trick",
+      "He got a red card",
+      "He scored the winner",
+      "He assisted a goal"
+    ],
     "answer": "He got a red card",
     "difficulty": "hard",
     "category": "argentina"
@@ -1244,7 +1939,12 @@
   {
     "id": 150,
     "question": "How long did Messi play before getting sent off on his Argentina debut?",
-    "options": ["30 seconds","47 seconds","2 minutes","5 minutes"],
+    "options": [
+      "30 seconds",
+      "47 seconds",
+      "2 minutes",
+      "5 minutes"
+    ],
     "answer": "47 seconds",
     "difficulty": "hard",
     "category": "argentina"
@@ -1252,7 +1952,12 @@
   {
     "id": 151,
     "question": "Against which team was Messi's disastrous Argentina debut?",
-    "options": ["Brazil","Hungary","Uruguay","Chile"],
+    "options": [
+      "Brazil",
+      "Hungary",
+      "Uruguay",
+      "Chile"
+    ],
     "answer": "Hungary",
     "difficulty": "hard",
     "category": "argentina"
@@ -1260,7 +1965,12 @@
   {
     "id": 152,
     "question": "Why was Messi sent off on his debut?",
-    "options": ["Violent conduct","Elbowing a player","Second yellow","Spitting"],
+    "options": [
+      "Violent conduct",
+      "Elbowing a player",
+      "Second yellow",
+      "Spitting"
+    ],
     "answer": "Elbowing a player",
     "difficulty": "hard",
     "category": "argentina"
@@ -1268,7 +1978,12 @@
   {
     "id": 153,
     "question": "In which World Cup final did Messi lose to Germany?",
-    "options": ["2010","2014","2018","2022"],
+    "options": [
+      "2010",
+      "2014",
+      "2018",
+      "2022"
+    ],
     "answer": "2014",
     "difficulty": "easy",
     "category": "argentina"
@@ -1276,7 +1991,12 @@
   {
     "id": 154,
     "question": "What was the score in the 2014 World Cup final?",
-    "options": ["1-0","2-1","2-0","1-0 (aet)"],
+    "options": [
+      "1-0",
+      "2-1",
+      "2-0",
+      "1-0 (aet)"
+    ],
     "answer": "1-0 (aet)",
     "difficulty": "medium",
     "category": "argentina"
@@ -1284,7 +2004,12 @@
   {
     "id": 155,
     "question": "Who scored the winning goal against Argentina in the 2014 final?",
-    "options": ["Thomas Muller","Miroslav Klose","Mario Gotze","Andre Schurrle"],
+    "options": [
+      "Thomas Muller",
+      "Miroslav Klose",
+      "Mario Gotze",
+      "Andre Schurrle"
+    ],
     "answer": "Mario Gotze",
     "difficulty": "medium",
     "category": "argentina"
@@ -1292,7 +2017,12 @@
   {
     "id": 156,
     "question": "How many Copa America finals did Messi lose to Chile?",
-    "options": ["1","2","3","0"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "0"
+    ],
     "answer": "2",
     "difficulty": "medium",
     "category": "argentina"
@@ -1300,7 +2030,12 @@
   {
     "id": 157,
     "question": "What controversial statement did Messi make after losing Copa America 2016?",
-    "options": ["He retired from international football","He blamed the coach","He criticized teammates","He blamed VAR"],
+    "options": [
+      "He retired from international football",
+      "He blamed the coach",
+      "He criticized teammates",
+      "He blamed VAR"
+    ],
     "answer": "He retired from international football",
     "difficulty": "easy",
     "category": "argentina"
@@ -1308,7 +2043,12 @@
   {
     "id": 158,
     "question": "How long did Messi's international retirement last?",
-    "options": ["He never came back","A few weeks","A few months","A year"],
+    "options": [
+      "He never came back",
+      "A few weeks",
+      "A few months",
+      "A year"
+    ],
     "answer": "A few months",
     "difficulty": "medium",
     "category": "argentina"
@@ -1316,7 +2056,12 @@
   {
     "id": 159,
     "question": "Who convinced Messi to return to the Argentina national team?",
-    "options": ["Diego Maradona","Fans and family","AFA president","Jorge Messi"],
+    "options": [
+      "Diego Maradona",
+      "Fans and family",
+      "AFA president",
+      "Jorge Messi"
+    ],
     "answer": "Fans and family",
     "difficulty": "medium",
     "category": "argentina"
@@ -1324,7 +2069,12 @@
   {
     "id": 160,
     "question": "What was Argentina's unbeaten run before winning the 2022 World Cup?",
-    "options": ["26 games","31 games","36 games","42 games"],
+    "options": [
+      "26 games",
+      "31 games",
+      "36 games",
+      "42 games"
+    ],
     "answer": "36 games",
     "difficulty": "hard",
     "category": "argentina"
@@ -1332,7 +2082,12 @@
   {
     "id": 161,
     "question": "Which team ended Argentina's unbeaten run at the 2022 World Cup?",
-    "options": ["France","Saudi Arabia","Netherlands","Croatia"],
+    "options": [
+      "France",
+      "Saudi Arabia",
+      "Netherlands",
+      "Croatia"
+    ],
     "answer": "Saudi Arabia",
     "difficulty": "easy",
     "category": "argentina"
@@ -1340,7 +2095,12 @@
   {
     "id": 162,
     "question": "What was the shock result when Argentina lost to Saudi Arabia?",
-    "options": ["1-0","2-1","3-1","2-0"],
+    "options": [
+      "1-0",
+      "2-1",
+      "3-1",
+      "2-0"
+    ],
     "answer": "2-1",
     "difficulty": "medium",
     "category": "argentina"
@@ -1348,7 +2108,12 @@
   {
     "id": 163,
     "question": "How many goals did Argentina score in the knockout rounds of 2022 World Cup?",
-    "options": ["8","10","12","14"],
+    "options": [
+      "8",
+      "10",
+      "12",
+      "14"
+    ],
     "answer": "12",
     "difficulty": "hard",
     "category": "argentina"
@@ -1356,7 +2121,12 @@
   {
     "id": 164,
     "question": "Against which team did Messi assist Di Maria's goal in the 2022 World Cup?",
-    "options": ["France in final","Croatia semi-final","Netherlands quarter-final","Australia round of 16"],
+    "options": [
+      "France in final",
+      "Croatia semi-final",
+      "Netherlands quarter-final",
+      "Australia round of 16"
+    ],
     "answer": "France in final",
     "difficulty": "medium",
     "category": "argentina"
@@ -1364,7 +2134,12 @@
   {
     "id": 165,
     "question": "What record did Messi set for most World Cup appearances by an Argentine?",
-    "options": ["22","25","26","28"],
+    "options": [
+      "22",
+      "25",
+      "26",
+      "28"
+    ],
     "answer": "26",
     "difficulty": "hard",
     "category": "records"
@@ -1372,7 +2147,12 @@
   {
     "id": 166,
     "question": "What La Liga record does Messi hold for consecutive seasons as top scorer?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "5",
     "difficulty": "hard",
     "category": "records"
@@ -1380,7 +2160,12 @@
   {
     "id": 167,
     "question": "How many times did Messi win La Liga Player of the Year?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "6",
     "difficulty": "hard",
     "category": "records"
@@ -1388,7 +2173,12 @@
   {
     "id": 168,
     "question": "What record does Messi hold for most Champions League goals in a single season?",
-    "options": ["12","14","17","20"],
+    "options": [
+      "12",
+      "14",
+      "17",
+      "20"
+    ],
     "answer": "14",
     "difficulty": "hard",
     "category": "records"
@@ -1396,7 +2186,12 @@
   {
     "id": 169,
     "question": "In which season did Messi score 14 Champions League goals?",
-    "options": ["2010-11","2011-12","2012-13","2014-15"],
+    "options": [
+      "2010-11",
+      "2011-12",
+      "2012-13",
+      "2014-15"
+    ],
     "answer": "2011-12",
     "difficulty": "hard",
     "category": "records"
@@ -1404,7 +2199,12 @@
   {
     "id": 170,
     "question": "Against which team did Messi score 5 goals in a Champions League match?",
-    "options": ["Arsenal","Bayer Leverkusen","Real Madrid","Bayern Munich"],
+    "options": [
+      "Arsenal",
+      "Bayer Leverkusen",
+      "Real Madrid",
+      "Bayern Munich"
+    ],
     "answer": "Bayer Leverkusen",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -1412,7 +2212,12 @@
   {
     "id": 171,
     "question": "What year did Messi score 5 goals against Bayer Leverkusen?",
-    "options": ["2010","2011","2012","2013"],
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2013"
+    ],
     "answer": "2012",
     "difficulty": "hard",
     "category": "iconic-moments"
@@ -1420,7 +2225,12 @@
   {
     "id": 172,
     "question": "What is Messi's nickname in Spanish meaning 'The Messiah'?",
-    "options": ["El Mesias","D10S","El Pulga","El Atomico"],
+    "options": [
+      "El Mesias",
+      "D10S",
+      "El Pulga",
+      "El Atomico"
+    ],
     "answer": "D10S",
     "difficulty": "medium",
     "category": "personal"
@@ -1428,7 +2238,12 @@
   {
     "id": 173,
     "question": "What does 'D10S' combine?",
-    "options": ["Dios (God) + 10 shirt number","Diego + 10","Diez (Ten) + S","Divine + 10 + Star"],
+    "options": [
+      "Dios (God) + 10 shirt number",
+      "Diego + 10",
+      "Diez (Ten) + S",
+      "Divine + 10 + Star"
+    ],
     "answer": "Dios (God) + 10 shirt number",
     "difficulty": "medium",
     "category": "personal"
@@ -1436,7 +2251,12 @@
   {
     "id": 174,
     "question": "Which controversial phrase did Messi say to the Netherlands bench at 2022 World Cup?",
-    "options": ["What are you looking at, fool?","Come here!","You're going home!","Shut up!"],
+    "options": [
+      "What are you looking at, fool?",
+      "Come here!",
+      "You're going home!",
+      "Shut up!"
+    ],
     "answer": "What are you looking at, fool?",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -1444,7 +2264,12 @@
   {
     "id": 175,
     "question": "Against whom did Messi say the famous 'fool' phrase?",
-    "options": ["Louis van Gaal","Wout Weghorst","Virgil van Dijk","Memphis Depay"],
+    "options": [
+      "Louis van Gaal",
+      "Wout Weghorst",
+      "Virgil van Dijk",
+      "Memphis Depay"
+    ],
     "answer": "Wout Weghorst",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -1452,7 +2277,12 @@
   {
     "id": 176,
     "question": "What viral photo showed Messi sleeping with the World Cup trophy?",
-    "options": ["In his bed","On a plane","In the locker room","On the bus"],
+    "options": [
+      "In his bed",
+      "On a plane",
+      "In the locker room",
+      "On the bus"
+    ],
     "answer": "In his bed",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -1460,7 +2290,12 @@
   {
     "id": 177,
     "question": "How many likes did Messi's World Cup Instagram post get (world record)?",
-    "options": ["50 million","60 million","75 million","87 million"],
+    "options": [
+      "50 million",
+      "60 million",
+      "75 million",
+      "87 million"
+    ],
     "answer": "75 million",
     "difficulty": "medium",
     "category": "personal"
@@ -1468,7 +2303,12 @@
   {
     "id": 178,
     "question": "What unusual outfit did Messi wear when lifting the World Cup trophy?",
-    "options": ["Regular Argentina kit","A bisht (Arab robe)","A suit","A cape"],
+    "options": [
+      "Regular Argentina kit",
+      "A bisht (Arab robe)",
+      "A suit",
+      "A cape"
+    ],
     "answer": "A bisht (Arab robe)",
     "difficulty": "easy",
     "category": "iconic-moments"
@@ -1476,7 +2316,12 @@
   {
     "id": 179,
     "question": "Who gave Messi the bisht during the trophy ceremony?",
-    "options": ["FIFA president","Qatar's Emir","Didier Deschamps","Scaloni"],
+    "options": [
+      "FIFA president",
+      "Qatar's Emir",
+      "Didier Deschamps",
+      "Scaloni"
+    ],
     "answer": "Qatar's Emir",
     "difficulty": "medium",
     "category": "iconic-moments"
@@ -1484,7 +2329,12 @@
   {
     "id": 180,
     "question": "What chant do Argentina fans sing for Messi?",
-    "options": ["Muchachos","Vamos Argentina","Ole Ole","La Mano de Dios"],
+    "options": [
+      "Muchachos",
+      "Vamos Argentina",
+      "Ole Ole",
+      "La Mano de Dios"
+    ],
     "answer": "Muchachos",
     "difficulty": "easy",
     "category": "personal"
@@ -1492,7 +2342,12 @@
   {
     "id": 181,
     "question": "In 'Muchachos', what do the lyrics say about Messi?",
-    "options": ["He is the greatest","Diego is watching from heaven","We will be champions","Born in Argentina"],
+    "options": [
+      "He is the greatest",
+      "Diego is watching from heaven",
+      "We will be champions",
+      "Born in Argentina"
+    ],
     "answer": "Diego is watching from heaven",
     "difficulty": "medium",
     "category": "personal"
@@ -1500,7 +2355,12 @@
   {
     "id": 182,
     "question": "What award did Messi win after the 2022 World Cup at The Best FIFA Awards?",
-    "options": ["Best Player","Best Forward","FIFA Special Award","Best Men's Player"],
+    "options": [
+      "Best Player",
+      "Best Forward",
+      "FIFA Special Award",
+      "Best Men's Player"
+    ],
     "answer": "Best Men's Player",
     "difficulty": "easy",
     "category": "records"
@@ -1508,7 +2368,12 @@
   {
     "id": 183,
     "question": "How many times has Messi won FIFA Best Men's Player award?",
-    "options": ["2","3","4","5"],
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
     "answer": "3",
     "difficulty": "medium",
     "category": "records"
@@ -1516,7 +2381,12 @@
   {
     "id": 184,
     "question": "What record does Messi hold for most man of the match awards at a single World Cup?",
-    "options": ["4","5","6","7"],
+    "options": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
     "answer": "5",
     "difficulty": "hard",
     "category": "records"
@@ -1524,7 +2394,12 @@
   {
     "id": 185,
     "question": "Against which team did Messi NOT score at the 2022 World Cup?",
-    "options": ["Saudi Arabia","Mexico","Poland","Croatia"],
+    "options": [
+      "Saudi Arabia",
+      "Mexico",
+      "Poland",
+      "Croatia"
+    ],
     "answer": "Poland",
     "difficulty": "hard",
     "category": "argentina"
@@ -1532,7 +2407,12 @@
   {
     "id": 186,
     "question": "What happened when Messi took a penalty against Poland?",
-    "options": ["He scored","He missed","Keeper saved it","Hit the post"],
+    "options": [
+      "He scored",
+      "He missed",
+      "Keeper saved it",
+      "Hit the post"
+    ],
     "answer": "Keeper saved it",
     "difficulty": "medium",
     "category": "argentina"
@@ -1540,7 +2420,12 @@
   {
     "id": 187,
     "question": "Who saved Messi's penalty against Poland?",
-    "options": ["Szczęsny","Grabara","Fabianski","Skorupski"],
+    "options": [
+      "Szczęsny",
+      "Grabara",
+      "Fabianski",
+      "Skorupski"
+    ],
     "answer": "Szczęsny",
     "difficulty": "hard",
     "category": "argentina"
@@ -1548,7 +2433,12 @@
   {
     "id": 188,
     "question": "Despite missing the penalty, what did Argentina do against Poland?",
-    "options": ["Lost 1-0","Drew 0-0","Won 2-0","Won 1-0"],
+    "options": [
+      "Lost 1-0",
+      "Drew 0-0",
+      "Won 2-0",
+      "Won 1-0"
+    ],
     "answer": "Won 2-0",
     "difficulty": "medium",
     "category": "argentina"
@@ -1556,7 +2446,12 @@
   {
     "id": 189,
     "question": "How many assists did Messi provide to Julian Alvarez at the 2022 World Cup?",
-    "options": ["1","2","3","4"],
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
     "answer": "2",
     "difficulty": "hard",
     "category": "argentina"
@@ -1564,7 +2459,12 @@
   {
     "id": 190,
     "question": "What special World Cup record did Messi set for most games played?",
-    "options": ["25","26","27","28"],
+    "options": [
+      "25",
+      "26",
+      "27",
+      "28"
+    ],
     "answer": "26",
     "difficulty": "hard",
     "category": "records"
@@ -1572,7 +2472,12 @@
   {
     "id": 191,
     "question": "What is Messi's tattoo on his left leg?",
-    "options": ["A football","His mother's face","His son's handprints","Number 10"],
+    "options": [
+      "A football",
+      "His mother's face",
+      "His son's handprints",
+      "Number 10"
+    ],
     "answer": "His son's handprints",
     "difficulty": "medium",
     "category": "personal"
@@ -1580,7 +2485,12 @@
   {
     "id": 192,
     "question": "What is Messi's tattoo on his right leg?",
-    "options": ["A rose","His wife's lips","A football","A sword"],
+    "options": [
+      "A rose",
+      "His wife's lips",
+      "A football",
+      "A sword"
+    ],
     "answer": "His wife's lips",
     "difficulty": "hard",
     "category": "personal"
@@ -1588,7 +2498,12 @@
   {
     "id": 193,
     "question": "What does Messi point to the sky for when celebrating?",
-    "options": ["His grandmother in heaven","God","His late friend","All answers could be correct"],
+    "options": [
+      "His grandmother in heaven",
+      "God",
+      "His late friend",
+      "All answers could be correct"
+    ],
     "answer": "His grandmother in heaven",
     "difficulty": "medium",
     "category": "personal"
@@ -1596,7 +2511,12 @@
   {
     "id": 194,
     "question": "What food is Messi famously known to love?",
-    "options": ["Pizza","Milanesa","Asado","Empanadas"],
+    "options": [
+      "Pizza",
+      "Milanesa",
+      "Asado",
+      "Empanadas"
+    ],
     "answer": "Milanesa",
     "difficulty": "hard",
     "category": "personal"
@@ -1604,7 +2524,12 @@
   {
     "id": 195,
     "question": "What did Messi change in his diet to improve his performance after 2014?",
-    "options": ["Went vegan","Cut out sugar and processed food","Only ate fish","Stopped eating meat"],
+    "options": [
+      "Went vegan",
+      "Cut out sugar and processed food",
+      "Only ate fish",
+      "Stopped eating meat"
+    ],
     "answer": "Cut out sugar and processed food",
     "difficulty": "medium",
     "category": "personal"
@@ -1612,7 +2537,12 @@
   {
     "id": 196,
     "question": "Who is credited with helping Messi change his diet?",
-    "options": ["Pep Guardiola","A personal nutritionist","Italian doctor Giuliano Poser","His wife"],
+    "options": [
+      "Pep Guardiola",
+      "A personal nutritionist",
+      "Italian doctor Giuliano Poser",
+      "His wife"
+    ],
     "answer": "Italian doctor Giuliano Poser",
     "difficulty": "hard",
     "category": "personal"
@@ -1620,7 +2550,12 @@
   {
     "id": 197,
     "question": "What charitable act did Messi do with his 8th Ballon d'Or?",
-    "options": ["Donated it to charity","Gave it to his children","Displayed it in Argentina","Auctioned it for UNICEF"],
+    "options": [
+      "Donated it to charity",
+      "Gave it to his children",
+      "Displayed it in Argentina",
+      "Auctioned it for UNICEF"
+    ],
     "answer": "Displayed it in Argentina",
     "difficulty": "hard",
     "category": "personal"
@@ -1628,7 +2563,12 @@
   {
     "id": 198,
     "question": "What is the name of Messi's clothing brand?",
-    "options": ["M10","The Messi Store","Messi Brand","Leo Messi Collection"],
+    "options": [
+      "M10",
+      "The Messi Store",
+      "Messi Brand",
+      "Leo Messi Collection"
+    ],
     "answer": "The Messi Store",
     "difficulty": "hard",
     "category": "personal"
@@ -1636,7 +2576,12 @@
   {
     "id": 199,
     "question": "Which prestigious award did TIME magazine give Messi in 2023?",
-    "options": ["Person of the Year","Athlete of the Year","Most Influential","Icon of the Year"],
+    "options": [
+      "Person of the Year",
+      "Athlete of the Year",
+      "Most Influential",
+      "Icon of the Year"
+    ],
     "answer": "Athlete of the Year",
     "difficulty": "medium",
     "category": "records"
@@ -1644,7 +2589,12 @@
   {
     "id": 200,
     "question": "What is widely considered Messi's greatest achievement according to fans?",
-    "options": ["8 Ballon d'Ors","91 goals in 2012","2022 World Cup","672 Barcelona goals"],
+    "options": [
+      "8 Ballon d'Ors",
+      "91 goals in 2012",
+      "2022 World Cup",
+      "672 Barcelona goals"
+    ],
     "answer": "2022 World Cup",
     "difficulty": "easy",
     "category": "argentina"

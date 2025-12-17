@@ -41,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Walter White in Breaking Bad?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bryan_Cranston_2022_%283x4_cropped%29.jpg/250px-Bryan_Cranston_2022_%283x4_cropped%29.jpg",
     "options": [
       "Bryan Cranston",
       "Dean Norris",
@@ -146,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Tyrion Lannister in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Peter_Dinklage_by_Gage_Skidmore_2.jpg/250px-Peter_Dinklage_by_Gage_Skidmore_2.jpg",
     "options": [
       "Kit Harington",
       "Lena Headey",
@@ -212,7 +210,6 @@
   {
     "id": 17,
     "question": "Who plays Daenerys Targaryen in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg/250px-Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg",
     "options": [
       "Maisie Williams",
       "Sophie Turner",
@@ -382,7 +379,6 @@
   {
     "id": 30,
     "question": "Who plays Eleven in Stranger Things?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg/250px-Millie_Bobby_Brown_-_MBB_-_Portrait_1_-_SFM5_-_July_10%2C_2022_at_Stranger_Fan_Meet_5_People_Convention_%28cropped%29.jpg",
     "options": [
       "Winona Ryder",
       "Natalia Dyer",
@@ -435,7 +431,6 @@
   {
     "id": 34,
     "question": "Who plays Tony Soprano?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/James_Gandolfini_%40_Toronto_International_Film_Festival_2011.jpg/250px-James_Gandolfini_%40_Toronto_International_Film_Festival_2011.jpg",
     "options": [
       "James Gandolfini",
       "Edie Falco",
@@ -514,7 +509,6 @@
   {
     "id": 40,
     "question": "Who plays Cersei Lannister in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Lena_Headey_%2847086135862%29_%28cropped%29.jpg/250px-Lena_Headey_%2847086135862%29_%28cropped%29.jpg",
     "options": [
       "Natalie Dormer",
       "Lena Headey",
@@ -567,7 +561,6 @@
   {
     "id": 44,
     "question": "Who plays House in House M.D.?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Hugh_Laurie%2C_from_a_bit_of_Fry_%26_Laurie%2C_http---en.wikipedia.org-wiki-Hugh_laurie_%289450843901%29_%28cropped%29.jpg/250px-Hugh_Laurie%2C_from_a_bit_of_Fry_%26_Laurie%2C_http---en.wikipedia.org-wiki-Hugh_laurie_%289450843901%29_%28cropped%29.jpg",
     "options": [
       "Omar Epps",
       "Robert Sean Leonard",
@@ -620,7 +613,6 @@
   {
     "id": 48,
     "question": "Who plays Rachel Green in Friends?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/JenniferAnistonHWoFFeb2012.jpg/250px-JenniferAnistonHWoFFeb2012.jpg",
     "options": [
       "Lisa Kudrow",
       "Courteney Cox",
@@ -673,7 +665,6 @@
   {
     "id": 52,
     "question": "Who plays Sherlock in the BBC's Sherlock?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Benedict_Cumberbatch-67555.jpg/250px-Benedict_Cumberbatch-67555.jpg",
     "options": [
       "Martin Freeman",
       "Robert Downey Jr.",
@@ -778,7 +769,6 @@
   {
     "id": 60,
     "question": "Who plays Leslie Knope in Parks and Recreation?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amy_Poehler_%2853671989427%29_cropped.jpg/250px-Amy_Poehler_%2853671989427%29_cropped.jpg",
     "options": [
       "Rashida Jones",
       "Aubrey Plaza",
@@ -831,7 +821,6 @@
   {
     "id": 64,
     "question": "Who plays Jon Snow in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/32/Kit_harrington_by_sachyn_mital_%28cropped_2%29.jpg",
     "options": [
       "Richard Madden",
       "Alfie Allen",
@@ -897,7 +886,6 @@
   {
     "id": 69,
     "question": "Who plays Olivia Pope in Scandal?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kerry_Washington_in_%282024%29_%28cropped%29.jpg/250px-Kerry_Washington_in_%282024%29_%28cropped%29.jpg",
     "options": [
       "Kerry Washington",
       "Regina King",
@@ -950,7 +938,6 @@
   {
     "id": 73,
     "question": "Who plays Dexter Morgan?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dexter_panel_%2854305394548%29_%28cropped%29.jpg/250px-Dexter_panel_%2854305394548%29_%28cropped%29.jpg",
     "options": [
       "David Duchovny",
       "James Spader",
@@ -1003,7 +990,6 @@
   {
     "id": 77,
     "question": "Who plays Jack Bauer in 24?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Kiefer_Sutherland_Photo_Op_GalaxyCon_Columbus_2024.jpg/250px-Kiefer_Sutherland_Photo_Op_GalaxyCon_Columbus_2024.jpg",
     "options": [
       "James Badge Dale",
       "Kiefer Sutherland",
@@ -1056,7 +1042,6 @@
   {
     "id": 81,
     "question": "Who plays Jeff Winger in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Joel_McHale_%2853199285501%29.jpg/250px-Joel_McHale_%2853199285501%29.jpg",
     "options": [
       "Chevy Chase",
       "Danny Pudi",
@@ -1109,7 +1094,6 @@
   {
     "id": 85,
     "question": "Who plays Piper Chapman in Orange Is the New Black?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Taylor_Schilling_at_Paley_Fest_Orange_Is_The_New_Black.jpg/250px-Taylor_Schilling_at_Paley_Fest_Orange_Is_The_New_Black.jpg",
     "options": [
       "Uzo Aduba",
       "Taylor Schilling",
@@ -1162,7 +1146,6 @@
   {
     "id": 89,
     "question": "Who plays Annalise Keating in How to Get Away with Murder?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg/250px-Viola_Davis_at_the_Air_Premiere_at_SXSW_%28cropped%29.jpg",
     "options": [
       "Taraji P. Henson",
       "Viola Davis",
@@ -1215,7 +1198,6 @@
   {
     "id": 93,
     "question": "Who plays Claire Underwood in House of Cards?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Robin_Wright_Cannes_2017.jpg/250px-Robin_Wright_Cannes_2017.jpg",
     "options": [
       "Sakina Jaffrey",
       "Neve Campbell",
@@ -1268,7 +1250,6 @@
   {
     "id": 97,
     "question": "Who plays Frank Underwood in House of Cards?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Kevin_Spacey-9243.jpg/250px-Kevin_Spacey-9243.jpg",
     "options": [
       "Robin Wright",
       "Kevin Spacey",
@@ -1321,7 +1302,6 @@
   {
     "id": 101,
     "question": "Who plays Arya Stark in Game of Thrones?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Maisie_Williams_by_Gage_Skidmore_3.jpg/250px-Maisie_Williams_by_Gage_Skidmore_3.jpg",
     "options": [
       "Natalie Dormer",
       "Sophie Turner",
@@ -1374,7 +1354,6 @@
   {
     "id": 105,
     "question": "Who plays Ted Lasso?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jason_Sudeikis_on_March_20%2C_2023_in_the_Oval_Office_of_the_White_House_-_P20230320AS-2571_%28cropped%29.jpg/250px-Jason_Sudeikis_on_March_20%2C_2023_in_the_Oval_Office_of_the_White_House_-_P20230320AS-2571_%28cropped%29.jpg",
     "options": [
       "Will Arnett",
       "Jason Sudeikis",
@@ -1427,7 +1406,6 @@
   {
     "id": 109,
     "question": "Who plays Villanelle in Killing Eve?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jodie_Comer%2C_The_Bikeriders_premiere.jpg/250px-Jodie_Comer%2C_The_Bikeriders_premiere.jpg",
     "options": [
       "Jodie Comer",
       "Fiona Shaw",
@@ -1480,7 +1458,6 @@
   {
     "id": 113,
     "question": "Who plays Elizabeth Jennings in The Americans?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Keri_Russell_%2813948636905%29_%28cropped%29.jpg/250px-Keri_Russell_%2813948636905%29_%28cropped%29.jpg",
     "options": [
       "Keri Russell",
       "Alison Wright",
@@ -1533,7 +1510,6 @@
   {
     "id": 117,
     "question": "Who plays Ragnar Lothbrok in Vikings?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Travis_Fimmel_by_Gage_Skidmore.jpg/250px-Travis_Fimmel_by_Gage_Skidmore.jpg",
     "options": [
       "Gustaf Skarsgård",
       "Travis Fimmel",
@@ -1586,7 +1562,6 @@
   {
     "id": 121,
     "question": "Who plays Eleanor Shellstrop in The Good Place?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Kristen_Bell_at_Televerse_2025.jpg/250px-Kristen_Bell_at_Televerse_2025.jpg",
     "options": [
       "D'Arcy Carden",
       "Manny Jacinto",
@@ -1639,7 +1614,6 @@
   {
     "id": 125,
     "question": "Who plays Marty Byrde in Ozark?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jason_Batement_at_the_Air_Premiere_%28cropped%29.jpg/250px-Jason_Batement_at_the_Air_Premiere_%28cropped%29.jpg",
     "options": [
       "Michael Cera",
       "Jason Bateman",
@@ -1692,7 +1666,6 @@
   {
     "id": 129,
     "question": "Who plays Rue Bennett in Euphoria?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Zendaya_-_2019_by_Glenn_Francis.jpg/250px-Zendaya_-_2019_by_Glenn_Francis.jpg",
     "options": [
       "Alexa Demie",
       "Zendaya",
@@ -1784,7 +1757,6 @@
   {
     "id": 136,
     "question": "Who plays Hannah Horvath in Girls?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Lena_Dunham_at_Berlinale_2024.jpg/250px-Lena_Dunham_at_Berlinale_2024.jpg",
     "options": [
       "Zosia Mamet",
       "Lena Dunham",
@@ -1837,7 +1809,6 @@
   {
     "id": 140,
     "question": "Who plays John Dutton in Yellowstone?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg/250px-Kevin_Costner_at_81st_Venice_Film_Festival_%28cropped%29.jpg",
     "options": [
       "Sam Elliott",
       "Kevin Costner",
@@ -1890,7 +1861,6 @@
   {
     "id": 144,
     "question": "Who plays Olivia Benson in Law & Order: SVU?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Mariska_Hargitay_Woodstock_Film_Festival.jpg/250px-Mariska_Hargitay_Woodstock_Film_Festival.jpg",
     "options": [
       "Ice-T",
       "Dann Florek",
@@ -1982,7 +1952,6 @@
   {
     "id": 151,
     "question": "Who plays Rust Cohle in True Detective?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg/250px-Matthew_McConaughey_at_the_2025_Toronto_Film_Festival_%28Cropped%29.jpg",
     "options": [
       "Matthew McConaughey",
       "Colin Farrell",
@@ -2035,7 +2004,6 @@
   {
     "id": 155,
     "question": "Who plays Carrie Mathison in Homeland?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Claire_Danes_in_2015.jpg/250px-Claire_Danes_in_2015.jpg",
     "options": [
       "Damian Lewis",
       "Claire Danes",
@@ -2088,7 +2056,6 @@
   {
     "id": 159,
     "question": "Who plays Tommy Shelby in Peaky Blinders?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg/250px-Cillian_Murphy_at_the_London_premier_of_Steve_in_September_2025_Cropped.jpg",
     "options": [
       "Sam Neill",
       "Paul Anderson",
@@ -2141,7 +2108,6 @@
   {
     "id": 163,
     "question": "Who plays Penny in The Big Bang Theory?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Kaley_Cuoco_by_Gage_Skidmore.jpg/250px-Kaley_Cuoco_by_Gage_Skidmore.jpg",
     "options": [
       "Kaley Cuoco",
       "Sara Gilbert",
@@ -2194,7 +2160,6 @@
   {
     "id": 167,
     "question": "Who plays Michonne in The Walking Dead?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Danai_Gurira_by_Gage_Skidmore_3.jpg/250px-Danai_Gurira_by_Gage_Skidmore_3.jpg",
     "options": [
       "Lauren Cohan",
       "Danai Gurira",
@@ -2247,7 +2212,6 @@
   {
     "id": 171,
     "question": "Who plays Rick Grimes in The Walking Dead?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Andrew_Lincoln_%2842749683025%29_%28cropped%29.jpg/250px-Andrew_Lincoln_%2842749683025%29_%28cropped%29.jpg",
     "options": [
       "Andrew Lincoln",
       "Jon Bernthal",
@@ -2300,7 +2264,6 @@
   {
     "id": 175,
     "question": "Who plays Nadia in Russian Doll?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Natasha_Lyonne_by_Gage_Skidmore.jpg/250px-Natasha_Lyonne_by_Gage_Skidmore.jpg",
     "options": [
       "Elizabeth Ashley",
       "Natasha Lyonne",
@@ -2353,7 +2316,6 @@
   {
     "id": 179,
     "question": "Who plays BoJack in BoJack Horseman?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Will_Arnett_Is_This_Thing_On-11_%28cropped%29.jpg/250px-Will_Arnett_Is_This_Thing_On-11_%28cropped%29.jpg",
     "options": [
       "Paul F. Tompkins",
       "Aaron Paul",
@@ -2406,7 +2368,6 @@
   {
     "id": 183,
     "question": "Who plays Geralt of Rivia in The Witcher?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Henry_Cavill_%2848417913146%29_%28cropped%29.jpg/250px-Henry_Cavill_%2848417913146%29_%28cropped%29.jpg",
     "options": [
       "Liam Hemsworth",
       "Jason Momoa",
@@ -2459,7 +2420,6 @@
   {
     "id": 187,
     "question": "Who plays Homelander in The Boys?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Antony_Starr_Photo_Op_GalaxyCon_Oklahoma_City_2024.jpg/250px-Antony_Starr_Photo_Op_GalaxyCon_Oklahoma_City_2024.jpg",
     "options": [
       "Karl Urban",
       "Jack Quaid",
@@ -2512,7 +2472,6 @@
   {
     "id": 191,
     "question": "Who plays Oliver Queen in Arrow?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Stephen_Amell_%2852773145678%29.jpg/250px-Stephen_Amell_%2852773145678%29.jpg",
     "options": [
       "Tyler Hoechlin",
       "Stephen Amell",
@@ -2565,7 +2524,6 @@
   {
     "id": 195,
     "question": "Who plays June/Offred in The Handmaid's Tale?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Square_01_%2837062396652%29_%28cropped%29.jpg/250px-Square_01_%2837062396652%29_%28cropped%29.jpg",
     "options": [
       "Alexis Bledel",
       "Yvonne Strahovski",
@@ -2618,7 +2576,6 @@
   {
     "id": 199,
     "question": "Who plays Geralt in The Witcher starting Season 4?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Liam_Hemsworth_June_2016.jpg/250px-Liam_Hemsworth_June_2016.jpg",
     "options": [
       "Liam Hemsworth",
       "Jason Momoa",

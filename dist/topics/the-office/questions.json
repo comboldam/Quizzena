@@ -15,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Michael Scott?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Steve_Carell_-_The_40-Year-Old-Virgin.jpg/250px-Steve_Carell_-_The_40-Year-Old-Virgin.jpg",
     "options": [
       "Rainn Wilson",
       "John Krasinski",
@@ -42,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Dwight Schrute?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg/250px-Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg",
     "options": [
       "Steve Carell",
       "Rainn Wilson",
@@ -69,7 +67,6 @@
   {
     "id": 6,
     "question": "Who plays Jim Halpert?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Krasinski_2022.jpg/250px-John_Krasinski_2022.jpg",
     "options": [
       "Steve Carell",
       "John Krasinski",
@@ -83,7 +80,6 @@
   {
     "id": 7,
     "question": "Who plays Pam Beesly?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Jenna_Fischer_May08_cropped.jpg/250px-Jenna_Fischer_May08_cropped.jpg",
     "options": [
       "Jenna Fischer",
       "Mindy Kaling",
@@ -110,7 +106,6 @@
   {
     "id": 9,
     "question": "Who plays Ryan Howard?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/BJNovak-byPhilipRomano.jpg/250px-BJNovak-byPhilipRomano.jpg",
     "options": [
       "John Krasinski",
       "B.J. Novak",
@@ -137,7 +132,6 @@
   {
     "id": 11,
     "question": "Who plays Andy Bernard?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Ed_Helms_-_SNAFU.jpg/250px-Ed_Helms_-_SNAFU.jpg",
     "options": [
       "Rainn Wilson",
       "Ed Helms",
@@ -164,7 +158,6 @@
   {
     "id": 13,
     "question": "Who plays Kelly Kapoor?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mindy_Kaling_Jan_2023.jpg/250px-Mindy_Kaling_Jan_2023.jpg",
     "options": [
       "Jenna Fischer",
       "Mindy Kaling",
@@ -178,7 +171,6 @@
   {
     "id": 14,
     "question": "Who plays Darryl Philbin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Craig_Robinson_by_Gage_Skidmore.jpg/250px-Craig_Robinson_by_Gage_Skidmore.jpg",
     "options": [
       "Craig Robinson",
       "Leslie David Baker",
@@ -205,7 +197,6 @@
   {
     "id": 16,
     "question": "Who plays Robert California?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/James_Spader_by_Gage_Skidmore.jpg/250px-James_Spader_by_Gage_Skidmore.jpg",
     "options": [
       "James Spader",
       "Will Ferrell",
@@ -219,7 +210,6 @@
   {
     "id": 17,
     "question": "Who plays Erin Hannon?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Ellie_Kemper_%2827810608597%29_%28cropped%29_%28cropped%29.jpg/250px-Ellie_Kemper_%2827810608597%29_%28cropped%29_%28cropped%29.jpg",
     "options": [
       "Mindy Kaling",
       "Ellie Kemper",
@@ -233,7 +223,6 @@
   {
     "id": 18,
     "question": "Who plays Angela Martin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Angela_Kinsey_%282009%29.jpg/250px-Angela_Kinsey_%282009%29.jpg",
     "options": [
       "Jenna Fischer",
       "Angela Kinsey",
@@ -260,7 +249,6 @@
   {
     "id": 20,
     "question": "Who plays Oscar Martinez?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/2009_CUN_Award_Party_Oscar_Nu%C3%B1ez_058.JPG/250px-2009_CUN_Award_Party_Oscar_Nu%C3%B1ez_058.JPG",
     "options": [
       "Oscar Nunez",
       "Brian Baumgartner",
@@ -274,7 +262,6 @@
   {
     "id": 21,
     "question": "Who plays Kevin Malone?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Brian_Baumgartner_visits_Camp_Pendleton_%282%29_%28cropped%29.jpg/250px-Brian_Baumgartner_visits_Camp_Pendleton_%282%29_%28cropped%29.jpg",
     "options": [
       "Oscar Nunez",
       "Brian Baumgartner",
@@ -301,7 +288,6 @@
   {
     "id": 23,
     "question": "Who plays Meredith Palmer?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Kate_Flannery_%2830044752398%29.jpg/250px-Kate_Flannery_%2830044752398%29.jpg",
     "options": [
       "Phyllis Smith",
       "Kate Flannery",
@@ -315,7 +301,6 @@
   {
     "id": 24,
     "question": "Who plays Stanley Hudson?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Leslie_David_Baker_Photo_Op_GalaxyCon_Raleigh_2019.jpg/250px-Leslie_David_Baker_Photo_Op_GalaxyCon_Raleigh_2019.jpg",
     "options": [
       "Craig Robinson",
       "Leslie David Baker",
@@ -342,7 +327,6 @@
   {
     "id": 26,
     "question": "Who plays Phyllis Vance?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Phyllis_Smith_FOX_2_St._Louis_%28cropped%29.JPG/250px-Phyllis_Smith_FOX_2_St._Louis_%28cropped%29.JPG",
     "options": [
       "Kate Flannery",
       "Phyllis Smith",
@@ -356,7 +340,6 @@
   {
     "id": 27,
     "question": "Who plays Creed Bratton?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Creed_Bratton_2019_%2848474439927%29_CROPPED.jpg/250px-Creed_Bratton_2019_%2848474439927%29_CROPPED.jpg",
     "options": [
       "Paul Lieberstein",
       "Brian Baumgartner",
@@ -370,7 +353,6 @@
   {
     "id": 28,
     "question": "Who plays Toby Flenderson?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Paul_Lieberstein_at_Los_Angeles_Comic_Con_2023.jpg/250px-Paul_Lieberstein_at_Los_Angeles_Comic_Con_2023.jpg",
     "options": [
       "B.J. Novak",
       "Paul Lieberstein",
@@ -2618,4 +2600,3 @@
     "category": "production"
   }
 ]
-

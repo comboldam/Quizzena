@@ -2,7 +2,6 @@
   {
     "id": 1,
     "question": "Who plays Harry Potter in the film series?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/DanielRadcliffe.jpg/250px-DanielRadcliffe.jpg",
     "options": [
       "Rupert Grint",
       "Tom Felton",
@@ -16,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Hermione Granger?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Emma_Watson_2013.jpg/250px-Emma_Watson_2013.jpg",
     "options": [
       "Evanna Lynch",
       "Emma Watson",
@@ -30,7 +28,6 @@
   {
     "id": 3,
     "question": "Who plays Ron Weasley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/RupertGrint2018.jpg/250px-RupertGrint2018.jpg",
     "options": [
       "Tom Felton",
       "James Phelps",
@@ -96,7 +93,6 @@
   {
     "id": 8,
     "question": "Who plays Albus Dumbledore from the third film onward?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Michael_Gambon_cropped.jpg/250px-Michael_Gambon_cropped.jpg",
     "options": [
       "Richard Harris",
       "Ian McKellen",
@@ -149,7 +145,6 @@
   {
     "id": 12,
     "question": "Who plays Severus Snape?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Alan_Rickman_after_Seminar_%283%29.jpg/250px-Alan_Rickman_after_Seminar_%283%29.jpg",
     "options": [
       "Alan Rickman",
       "Gary Oldman",
@@ -163,7 +158,6 @@
   {
     "id": 13,
     "question": "Who plays Lord Voldemort?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ralph_Fiennes_2024.jpg/250px-Ralph_Fiennes_2024.jpg",
     "options": [
       "Tom Felton",
       "Jason Isaacs",
@@ -190,7 +184,6 @@
   {
     "id": 15,
     "question": "Who plays Draco Malfoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Tom_Felton_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg/250px-Tom_Felton_at_the_2025_Toronto_International_Film_Festival_%28cropped%29.jpg",
     "options": [
       "Matthew Lewis",
       "Rupert Grint",
@@ -334,7 +327,6 @@
   {
     "id": 26,
     "question": "Who plays Hagrid?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Robbiecoltrane_%28cropped%29.jpg/250px-Robbiecoltrane_%28cropped%29.jpg",
     "options": [
       "John Cleese",
       "Warwick Davis",
@@ -387,7 +379,6 @@
   {
     "id": 30,
     "question": "Who plays Professor McGonagall?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Maggie_Smith_-_Vintage_%28trim%29.jpg/250px-Maggie_Smith_-_Vintage_%28trim%29.jpg",
     "options": [
       "Maggie Smith",
       "Emma Thompson",
@@ -466,7 +457,6 @@
   {
     "id": 36,
     "question": "Who plays Sirius Black?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Gary_Oldman_%2813925515511%29_%28cropped%29.jpg/250px-Gary_Oldman_%2813925515511%29_%28cropped%29.jpg",
     "options": [
       "Gary Oldman",
       "Alan Rickman",
@@ -506,7 +496,6 @@
   {
     "id": 39,
     "question": "Who plays Remus Lupin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/David_Thewlis_2008.jpg/250px-David_Thewlis_2008.jpg",
     "options": [
       "David Thewlis",
       "Brendan Gleeson",
@@ -585,7 +574,6 @@
   {
     "id": 45,
     "question": "Who plays Bellatrix Lestrange?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg/250px-MerchantIvoryCurzMayfair201124_%2816_of_28%29_%2854154554145%29_%28cropped%29.jpg",
     "options": [
       "Helena Bonham Carter",
       "Julie Walters",
@@ -599,7 +587,6 @@
   {
     "id": 46,
     "question": "Who plays Dolores Umbridge?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Imelda_Staunton%2C_October_2019.jpg/250px-Imelda_Staunton%2C_October_2019.jpg",
     "options": [
       "Imelda Staunton",
       "Helena Bonham Carter",
@@ -717,7 +704,6 @@
   {
     "id": 55,
     "question": "Who plays Ginny Weasley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Bonnie_Wright_by_Gage_Skidmore.jpg/250px-Bonnie_Wright_by_Gage_Skidmore.jpg",
     "options": [
       "Evanna Lynch",
       "Bonnie Wright",
@@ -731,7 +717,6 @@
   {
     "id": 56,
     "question": "Who plays Luna Lovegood?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/2021-10-30_13-16-35_ILCE-7C_DSC07547_DxO_%2851691991968%29.jpg/250px-2021-10-30_13-16-35_ILCE-7C_DSC07547_DxO_%2851691991968%29.jpg",
     "options": [
       "Jessie Cave",
       "Katie Leung",
@@ -823,7 +808,6 @@
   {
     "id": 63,
     "question": "Who plays Neville Longbottom?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Matthew_Lewis_Photo_Op_GalaxyCon_Richmond_2020.jpg/250px-Matthew_Lewis_Photo_Op_GalaxyCon_Richmond_2020.jpg",
     "options": [
       "Rupert Grint",
       "Devon Murray",
@@ -967,7 +951,6 @@
   {
     "id": 74,
     "question": "Who plays Mad-Eye Moody?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/BansheesBFI131022_%2811_of_22%29_%2852448245670%29_%28Brendan_Gleeson%29.jpg/250px-BansheesBFI131022_%2811_of_22%29_%2852448245670%29_%28Brendan_Gleeson%29.jpg",
     "options": [
       "Michael Gambon",
       "Brendan Gleeson",
@@ -1020,7 +1003,6 @@
   {
     "id": 78,
     "question": "Who plays Cedric Diggory?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Robert_Pattinson_at_Berlinale_2025.jpg/250px-Robert_Pattinson_at_Berlinale_2025.jpg",
     "options": [
       "Robert Pattinson",
       "Rupert Grint",
@@ -1047,7 +1029,6 @@
   {
     "id": 80,
     "question": "Who plays Cho Chang?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Katie_Leung_2020.jpg/250px-Katie_Leung_2020.jpg",
     "options": [
       "Evanna Lynch",
       "Katie Leung",
@@ -1165,7 +1146,6 @@
   {
     "id": 89,
     "question": "Who plays Peter Pettigrew?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg/250px-Timothy_Spall_World_Premiere_The_Party_Berlinale_2017_02.jpg",
     "options": [
       "David Thewlis",
       "Timothy Spall",
@@ -1179,7 +1159,6 @@
   {
     "id": 90,
     "question": "Who plays Lucius Malfoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Jason_Isaacs-45_%28cropped%29.jpg/250px-Jason_Isaacs-45_%28cropped%29.jpg",
     "options": [
       "Tom Felton",
       "Alan Rickman",
@@ -1193,7 +1172,6 @@
   {
     "id": 91,
     "question": "Who plays Narcissa Malfoy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Helen_McCrory_2017_%28Extract%29.jpg/250px-Helen_McCrory_2017_%28Extract%29.jpg",
     "options": [
       "Helen McCrory",
       "Helena Bonham Carter",
@@ -1233,7 +1211,6 @@
   {
     "id": 94,
     "question": "Who plays the Weasley twins?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/James_and_Oliver_Phelps_-_Lucca_Comics_and_Games_2011_-_2.jpg/250px-James_and_Oliver_Phelps_-_Lucca_Comics_and_Games_2011_-_2.jpg",
     "options": [
       "James and Fred Phelps",
       "Fred and George Phelps",
@@ -1377,7 +1354,6 @@
   {
     "id": 105,
     "question": "Who plays Ollivander?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/John_Hurt_at_the_2009_Tribeca_Film_Festival.jpg/250px-John_Hurt_at_the_2009_Tribeca_Film_Festival.jpg",
     "options": [
       "Michael Caine",
       "John Hurt",
@@ -1469,7 +1445,6 @@
   {
     "id": 112,
     "question": "Who plays Horace Slughorn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Jim_Broadbent_2012.jpg/250px-Jim_Broadbent_2012.jpg",
     "options": [
       "Michael Gambon",
       "Jim Broadbent",
@@ -1574,7 +1549,6 @@
   {
     "id": 120,
     "question": "Who plays Vernon Dursley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Richard_Griffiths_at_BAFTA_2007_%28387023768%29.jpg/250px-Richard_Griffiths_at_BAFTA_2007_%28387023768%29.jpg",
     "options": [
       "John Cleese",
       "Jim Broadbent",
@@ -1588,7 +1562,6 @@
   {
     "id": 121,
     "question": "Who plays Petunia Dursley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ThatXmasBFILFF19.10.2024_%2855_of_119%29_%2854100308426%29_%28Fiona_Shaw%29.jpg/250px-ThatXmasBFILFF19.10.2024_%2855_of_119%29_%2854100308426%29_%28Fiona_Shaw%29.jpg",
     "options": [
       "Fiona Shaw",
       "Imelda Staunton",
@@ -1602,7 +1575,6 @@
   {
     "id": 122,
     "question": "Who plays Molly Weasley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Julie_Walters_2014_%28cropped%29.jpg/250px-Julie_Walters_2014_%28cropped%29.jpg",
     "options": [
       "Julie Walters",
       "Emma Thompson",
@@ -1616,7 +1588,6 @@
   {
     "id": 123,
     "question": "Who plays Arthur Weasley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Stuttgart_2021_-Comic_Con_Germany-_by-RaBoe_168_%28cropped%29.jpg/250px-Stuttgart_2021_-Comic_Con_Germany-_by-RaBoe_168_%28cropped%29.jpg",
     "options": [
       "David Thewlis",
       "Bill Nighy",
@@ -1669,7 +1640,6 @@
   {
     "id": 127,
     "question": "Who plays Bill Weasley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Domhnall_Gleeson_by_Gage_Skidmore.jpg/250px-Domhnall_Gleeson_by_Gage_Skidmore.jpg",
     "options": [
       "Brendan Gleeson",
       "James Phelps",
@@ -1683,7 +1653,6 @@
   {
     "id": 128,
     "question": "Who plays Fleur Delacour?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Clemence_Poesy_Paris_Fashion_Week_Autumn_Winter_2019.jpg/250px-Clemence_Poesy_Paris_Fashion_Week_Autumn_Winter_2019.jpg",
     "options": [
       "Emma Watson",
       "Bonnie Wright",
@@ -1723,7 +1692,6 @@
   {
     "id": 131,
     "question": "Who plays Tonks?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Natalia_Tena_%2829613976213%29.jpg/250px-Natalia_Tena_%2829613976213%29.jpg",
     "options": [
       "Evanna Lynch",
       "Emma Watson",
@@ -2088,7 +2056,6 @@
   {
     "id": 159,
     "question": "Who plays Nearly Headless Nick?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/John_Cleese_in_2024_-_54020963437.jpg/250px-John_Cleese_in_2024_-_54020963437.jpg",
     "options": [
       "Jim Broadbent",
       "John Cleese",
@@ -2154,7 +2121,6 @@
   {
     "id": 164,
     "question": "Who plays the Grey Lady?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Kelly_Macdonald_at_Brave_premiere_%28cropped%29.jpg/250px-Kelly_Macdonald_at_Brave_premiere_%28cropped%29.jpg",
     "options": [
       "Nina Young",
       "Kelly Macdonald",
@@ -2311,7 +2277,6 @@
   {
     "id": 176,
     "question": "Who plays Professor Trelawney?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg/250px-Emma_Thompson_at_the_78th_Locarno_Film_Festival_photocall_01_%28cropped%29.jpg",
     "options": [
       "Maggie Smith",
       "Emma Thompson",

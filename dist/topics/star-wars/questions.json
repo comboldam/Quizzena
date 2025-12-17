@@ -28,7 +28,6 @@
   {
     "id": 3,
     "question": "Who plays Luke Skywalker in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Mark_Hamill_by_Gage_Skidmore_4.jpg/250px-Mark_Hamill_by_Gage_Skidmore_4.jpg",
     "options": [
       "Mark Hamill",
       "Harrison Ford",
@@ -42,7 +41,6 @@
   {
     "id": 4,
     "question": "Who plays Han Solo in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Harrison_Ford_-_Televerse_2025_%28cropped%29.jpg/250px-Harrison_Ford_-_Televerse_2025_%28cropped%29.jpg",
     "options": [
       "Billy Dee Williams",
       "Peter Mayhew",
@@ -56,7 +54,6 @@
   {
     "id": 5,
     "question": "Who plays Princess Leia?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Carrie_Fisher_2013-a_straightened.jpg/250px-Carrie_Fisher_2013-a_straightened.jpg",
     "options": [
       "Natalie Portman",
       "Felicity Jones",
@@ -161,7 +158,6 @@
   {
     "id": 13,
     "question": "Who plays Obi-Wan Kenobi in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sir_Alec_Guinness_Allan_Warren.jpg/250px-Sir_Alec_Guinness_Allan_Warren.jpg",
     "options": [
       "Ewan McGregor",
       "Ian McDiarmid",
@@ -331,7 +327,6 @@
   {
     "id": 26,
     "question": "Who plays Lando Calrissian in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Billy_Dee_Williams_Photo_Op_GalaxyCon_Raleigh_2023_%28cropped%29.jpg/250px-Billy_Dee_Williams_Photo_Op_GalaxyCon_Raleigh_2023_%28cropped%29.jpg",
     "options": [
       "Billy Dee Williams",
       "Forest Whitaker",
@@ -436,7 +431,6 @@
   {
     "id": 34,
     "question": "Who plays Emperor Palpatine?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ian_McDiarmid_Brussels_Comic_Con_2020.jpg/250px-Ian_McDiarmid_Brussels_Comic_Con_2020.jpg",
     "options": [
       "Christopher Lee",
       "Peter Cushing",
@@ -463,7 +457,6 @@
   {
     "id": 36,
     "question": "Who plays young Anakin in The Phantom Menace?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/10.2.10JakeLloydByLuigiNovi.jpg/250px-10.2.10JakeLloydByLuigiNovi.jpg",
     "options": [
       "Hayden Christensen",
       "Matt Lanter",
@@ -477,7 +470,6 @@
   {
     "id": 37,
     "question": "Who plays Anakin in Attack of the Clones and Revenge of the Sith?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Hayden_Christensen_-_GalaxyCon_Columbus_2024_%28A20929%29.jpg/250px-Hayden_Christensen_-_GalaxyCon_Columbus_2024_%28A20929%29.jpg",
     "options": [
       "Ewan McGregor",
       "Liam Neeson",
@@ -491,7 +483,6 @@
   {
     "id": 38,
     "question": "Who plays Obi-Wan in the prequel trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg/250px-Ewan_McGregor_-_Los_Angeles_Comic_Con_2024.jpg",
     "options": [
       "Samuel L. Jackson",
       "Ewan McGregor",
@@ -505,7 +496,6 @@
   {
     "id": 39,
     "question": "Who plays Qui-Gon Jinn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Liam_Neeson_Deauville_2012_2.jpg/250px-Liam_Neeson_Deauville_2012_2.jpg",
     "options": [
       "Christopher Lee",
       "Liam Neeson",
@@ -545,7 +535,6 @@
   {
     "id": 42,
     "question": "Who plays Mace Windu?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/SamuelLJackson.jpg/250px-SamuelLJackson.jpg",
     "options": [
       "Laurence Fishburne",
       "Morgan Freeman",
@@ -572,7 +561,6 @@
   {
     "id": 44,
     "question": "Who plays Padmé Amidala?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Natalie_Portman_2023.jpg/250px-Natalie_Portman_2023.jpg",
     "options": [
       "Carrie Fisher",
       "Natalie Portman",
@@ -612,7 +600,6 @@
   {
     "id": 47,
     "question": "Who plays Count Dooku?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Christopher_Lee_2009.jpg/250px-Christopher_Lee_2009.jpg",
     "options": [
       "Ian McKellen",
       "Peter Cushing",
@@ -743,7 +730,6 @@
   {
     "id": 57,
     "question": "Who plays Rey?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Daisy_Ridley_Our_Movie_Guide_2024.png/250px-Daisy_Ridley_Our_Movie_Guide_2024.png",
     "options": [
       "Emilia Clarke",
       "Felicity Jones",
@@ -757,7 +743,6 @@
   {
     "id": 58,
     "question": "Who plays Finn?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/John_Boyega_by_Gage_Skidmore.jpg/250px-John_Boyega_by_Gage_Skidmore.jpg",
     "options": [
       "John Boyega",
       "Domhnall Gleeson",
@@ -771,7 +756,6 @@
   {
     "id": 59,
     "question": "Who plays Poe Dameron?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg/250px-Oscar_Isaac_at_82nd_Venice_International_Film_Festival-1_%28cropped%29.jpg",
     "options": [
       "Domhnall Gleeson",
       "John Boyega",
@@ -785,7 +769,6 @@
   {
     "id": 60,
     "question": "Who plays Kylo Ren?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Adam_Driver.jpg/250px-Adam_Driver.jpg",
     "options": [
       "Domhnall Gleeson",
       "Adam Driver",
@@ -916,7 +899,6 @@
   {
     "id": 70,
     "question": "Who plays C-3PO?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Anthony_Daniels_2011.jpg/250px-Anthony_Daniels_2011.jpg",
     "options": [
       "Peter Mayhew",
       "Anthony Daniels",
@@ -930,7 +912,6 @@
   {
     "id": 71,
     "question": "Who was inside R2-D2 in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Kenny_Baker_at_Star_Wars_Celebration_VI_%287868145702%29.jpg/250px-Kenny_Baker_at_Star_Wars_Celebration_VI_%287868145702%29.jpg",
     "options": [
       "Kenny Baker",
       "Peter Mayhew",
@@ -957,7 +938,6 @@
   {
     "id": 73,
     "question": "Who plays Supreme Leader Snoke?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Andy_Serkis_at_MEGACON_Orlando_2025.png/250px-Andy_Serkis_at_MEGACON_Orlando_2025.png",
     "options": [
       "Adam Driver",
       "Ian McDiarmid",
@@ -1088,7 +1068,6 @@
   {
     "id": 83,
     "question": "Who plays Captain Phasma?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Gwendoline_christie_by_sachyn_mital_%28cropped2%29.jpg/220px-Gwendoline_christie_by_sachyn_mital_%28cropped2%29.jpg",
     "options": [
       "Gwendoline Christie",
       "Lupita Nyong'o",
@@ -1128,7 +1107,6 @@
   {
     "id": 86,
     "question": "Who plays Vice Admiral Holdo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Laura_Dern_Is_This_Thing_On-21_%28cropped%29.jpg/250px-Laura_Dern_Is_This_Thing_On-21_%28cropped%29.jpg",
     "options": [
       "Laura Dern",
       "Carrie Fisher",
@@ -1155,7 +1133,6 @@
   {
     "id": 88,
     "question": "Who plays Rose Tico?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Kelly_Marie_Tran_Oscars_2020.jpg/250px-Kelly_Marie_Tran_Oscars_2020.jpg",
     "options": [
       "Kelly Marie Tran",
       "Gwendoline Christie",
@@ -1208,7 +1185,6 @@
   {
     "id": 92,
     "question": "Who plays Jyn Erso?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Felicity_Jones_at_TIFF_2025_01_%28cropped%29.jpg/250px-Felicity_Jones_at_TIFF_2025_01_%28cropped%29.jpg",
     "options": [
       "Natalie Portman",
       "Felicity Jones",
@@ -1235,7 +1211,6 @@
   {
     "id": 94,
     "question": "Who plays Cassian Andor?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Diego_Luna_-_Andor.jpg/250px-Diego_Luna_-_Andor.jpg",
     "options": [
       "Diego Luna",
       "Benicio del Toro",
@@ -1262,7 +1237,6 @@
   {
     "id": 96,
     "question": "Who voices K-2SO?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/AlanTudyk-byPhilipRomano.jpg/250px-AlanTudyk-byPhilipRomano.jpg",
     "options": [
       "Anthony Daniels",
       "James Earl Jones",
@@ -1276,7 +1250,6 @@
   {
     "id": 97,
     "question": "Who plays Director Krennic?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Ben_Mendelsohn_by_Gage_Skidmore.jpg/250px-Ben_Mendelsohn_by_Gage_Skidmore.jpg",
     "options": [
       "Forest Whitaker",
       "Ben Mendelsohn",
@@ -1290,7 +1263,6 @@
   {
     "id": 98,
     "question": "Who plays the blind warrior Chirrut Îmwe?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Donnie_Yen_20250323.jpg/250px-Donnie_Yen_20250323.jpg",
     "options": [
       "Donnie Yen",
       "Jiang Wen",
@@ -1317,7 +1289,6 @@
   {
     "id": 100,
     "question": "Who plays Saw Gerrera?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Forest_Whitaker_by_Gage_Skidmore.jpg/250px-Forest_Whitaker_by_Gage_Skidmore.jpg",
     "options": [
       "Ben Mendelsohn",
       "Riz Ahmed",
@@ -1344,7 +1315,6 @@
   {
     "id": 102,
     "question": "Who plays young Han Solo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Solo_A_Star_Wars_Story_Japan_Premiere_Red_Carpet_Alden_Ehrenreich_%2841008143870%29.jpg/250px-Solo_A_Star_Wars_Story_Japan_Premiere_Red_Carpet_Alden_Ehrenreich_%2841008143870%29.jpg",
     "options": [
       "Donald Glover",
       "Harrison Ford",
@@ -1358,7 +1328,6 @@
   {
     "id": 103,
     "question": "Who plays young Lando in Solo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Donald_Glover_TIFF_2015.jpg/250px-Donald_Glover_TIFF_2015.jpg",
     "options": [
       "John Boyega",
       "Billy Dee Williams",
@@ -1398,7 +1367,6 @@
   {
     "id": 106,
     "question": "Who plays Qi'ra in Solo?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg/250px-Emilia_Clarke_at_the_2025_Global_Gift_Gala.jpg",
     "options": [
       "Emilia Clarke",
       "Daisy Ridley",
@@ -1412,7 +1380,6 @@
   {
     "id": 107,
     "question": "Who plays Tobias Beckett?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Woody_Harrelson_191020-N-NU281-1028_%28cropped%29.jpg/250px-Woody_Harrelson_191020-N-NU281-1028_%28cropped%29.jpg",
     "options": [
       "Paul Bettany",
       "Jon Favreau",
@@ -1439,7 +1406,6 @@
   {
     "id": 109,
     "question": "Who voices Darth Vader?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/James_Earl_Jones_Baltimore.jpg/250px-James_Earl_Jones_Baltimore.jpg",
     "options": [
       "Hayden Christensen",
       "David Prowse",
@@ -1453,7 +1419,6 @@
   {
     "id": 110,
     "question": "Who was in the Darth Vader suit originally?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/David_Prowse_2013.jpg/250px-David_Prowse_2013.jpg",
     "options": [
       "David Prowse",
       "Peter Mayhew",
@@ -1623,7 +1588,6 @@
   {
     "id": 123,
     "question": "Who plays Jango Fett?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Temuera_Morrison_2016.jpg/250px-Temuera_Morrison_2016.jpg",
     "options": [
       "Temuera Morrison",
       "Daniel Logan",
@@ -1637,7 +1601,6 @@
   {
     "id": 124,
     "question": "Who played Boba Fett in the original trilogy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/4.17.16JeremyBullochByLuigiNovi1b.jpg/250px-4.17.16JeremyBullochByLuigiNovi1b.jpg",
     "options": [
       "Daniel Logan",
       "Joe Johnston",
@@ -2392,7 +2355,6 @@
   {
     "id": 182,
     "question": "Who plays Grand Moff Tarkin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png/250px-Revenge_of_Frankenstein_%28trailer%29_-_Peter_Cushing_%28cropped%29.png",
     "options": [
       "Terence Stamp",
       "Christopher Lee",

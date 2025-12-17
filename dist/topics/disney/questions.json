@@ -41,7 +41,6 @@
   {
     "id": 4,
     "question": "Who voices Mufasa in the original Lion King?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/James_Earl_Jones_Baltimore.jpg/250px-James_Earl_Jones_Baltimore.jpg",
     "options": [
       "Jeremy Irons",
       "James Earl Jones",
@@ -419,7 +418,6 @@
   {
     "id": 33,
     "question": "Who voices the Genie in the original Aladdin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Robin_Williams_2011a_%282%29.jpg/250px-Robin_Williams_2011a_%282%29.jpg",
     "options": [
       "Will Smith",
       "Eddie Murphy",
@@ -511,7 +509,6 @@
   {
     "id": 40,
     "question": "Who voices Mushu?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Eddie_Murphy_by_David_Shankbone.jpg/250px-Eddie_Murphy_by_David_Shankbone.jpg",
     "options": [
       "Eddie Murphy",
       "Chris Rock",
@@ -590,7 +587,6 @@
   {
     "id": 46,
     "question": "Who voices Maui?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Dwayne_Johnson-1809_%28cropped%29.jpg/250px-Dwayne_Johnson-1809_%28cropped%29.jpg",
     "options": [
       "Jason Momoa",
       "Terry Crews",
@@ -721,7 +717,6 @@
   {
     "id": 56,
     "question": "Who voices Elsa in Frozen?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/IdinaMenzel-byPhilipRomano.jpg/250px-IdinaMenzel-byPhilipRomano.jpg",
     "options": [
       "Mandy Moore",
       "Idina Menzel",
@@ -735,7 +730,6 @@
   {
     "id": 57,
     "question": "Who voices Anna in Frozen?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Kristen_Bell_at_Televerse_2025.jpg/250px-Kristen_Bell_at_Televerse_2025.jpg",
     "options": [
       "Amy Adams",
       "Kristen Bell",
@@ -788,7 +782,6 @@
   {
     "id": 61,
     "question": "Who voices Rapunzel?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Mandy_Moore_at_SXSW_2018_%2825904503147%29_%28cropped%29.jpg/250px-Mandy_Moore_at_SXSW_2018_%2825904503147%29_%28cropped%29.jpg",
     "options": [
       "Idina Menzel",
       "Kristen Bell",
@@ -1348,7 +1341,6 @@
   {
     "id": 104,
     "question": "Who voices Woody?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg/250px-TomHanksPrincEdw031223_%2811_of_41%29_%28cropped%29.jpg",
     "options": [
       "Tom Hanks",
       "Tim Allen",
@@ -1362,7 +1354,6 @@
   {
     "id": 105,
     "question": "Who voices Buzz Lightyear?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tim_Allen_2012.jpg/250px-Tim_Allen_2012.jpg",
     "options": [
       "John Goodman",
       "Tim Allen",
@@ -1415,7 +1406,6 @@
   {
     "id": 109,
     "question": "Who voices Dory?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Ellen_DeGeneres_2011.jpg/250px-Ellen_DeGeneres_2011.jpg",
     "options": [
       "Ellen Pompeo",
       "Tina Fey",
@@ -1468,7 +1458,6 @@
   {
     "id": 113,
     "question": "Who voices Mike Wazowski?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Billy_Crystal_by_Gage_Skidmore.jpg/250px-Billy_Crystal_by_Gage_Skidmore.jpg",
     "options": [
       "Billy Crystal",
       "John Goodman",
@@ -1482,7 +1471,6 @@
   {
     "id": 114,
     "question": "Who voices Sulley?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/John_Goodman_%2830383991304%29_%28cropped%29.jpg/250px-John_Goodman_%2830383991304%29_%28cropped%29.jpg",
     "options": [
       "John Goodman",
       "Frank Oz",
@@ -1639,7 +1627,6 @@
   {
     "id": 126,
     "question": "Who voices Joy in Inside Out?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amy_Poehler_%2853671989427%29_cropped.jpg/250px-Amy_Poehler_%2853671989427%29_cropped.jpg",
     "options": [
       "Maya Rudolph",
       "Tina Fey",
@@ -2082,7 +2069,6 @@
   {
     "id": 160,
     "question": "Who voices Wreck-It Ralph?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/John_C._Reilly_%2843646997525%29_%28cropped_2%29.jpg/250px-John_C._Reilly_%2843646997525%29_%28cropped_2%29.jpg",
     "options": [
       "Sarah Silverman",
       "Jane Lynch",
@@ -2187,7 +2173,6 @@
   {
     "id": 168,
     "question": "Who voices Hades in Hercules?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/James_Woods_2015.jpg/250px-James_Woods_2015.jpg",
     "options": [
       "Danny DeVito",
       "James Woods",
@@ -2227,7 +2212,6 @@
   {
     "id": 171,
     "question": "Who voices Phil in Hercules?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Danny_DeVito_cropped_and_edited_for_brightness.jpg/250px-Danny_DeVito_cropped_and_edited_for_brightness.jpg",
     "options": [
       "Tate Donovan",
       "James Woods",
@@ -2527,7 +2511,6 @@
   {
     "id": 194,
     "question": "Who plays Maleficent in the live-action films?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Angelina_Jolie-643531_%28cropped%29.jpg/250px-Angelina_Jolie-643531_%28cropped%29.jpg",
     "options": [
       "Helena Bonham Carter",
       "Charlize Theron",
@@ -2541,7 +2524,6 @@
   {
     "id": 195,
     "question": "Who plays Aladdin in the 2019 live-action film?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Run_This_Town_cast_-_Mena_Massoud_%2833463322988%29.jpg/250px-Run_This_Town_cast_-_Mena_Massoud_%2833463322988%29.jpg",
     "options": [
       "Marwan Kenzari",
       "Naomi Scott",
@@ -2555,7 +2537,6 @@
   {
     "id": 196,
     "question": "Who plays the Genie in the 2019 Aladdin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg/250px-TechCrunch_Disrupt_San_Francisco_2019_-_Day_1_%2848834070763%29_%28cropped%29.jpg",
     "options": [
       "Dwayne Johnson",
       "Kevin Hart",
@@ -2569,7 +2550,6 @@
   {
     "id": 197,
     "question": "Who plays Ariel in the 2023 Little Mermaid?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Halle_Bailey_in_2023.jpg/250px-Halle_Bailey_in_2023.jpg",
     "options": [
       "Zendaya",
       "Halle Berry",

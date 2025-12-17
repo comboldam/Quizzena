@@ -15,7 +15,6 @@
   {
     "id": 2,
     "question": "Who plays Michael Scott in The Office?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Steve_Carell_-_The_40-Year-Old-Virgin.jpg/250px-Steve_Carell_-_The_40-Year-Old-Virgin.jpg",
     "options": [
       "Rainn Wilson",
       "John Krasinski",
@@ -133,7 +132,6 @@
   {
     "id": 11,
     "question": "Who plays Leslie Knope in Parks and Recreation?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amy_Poehler_%2853671989427%29_cropped.jpg/250px-Amy_Poehler_%2853671989427%29_cropped.jpg",
     "options": [
       "Aubrey Plaza",
       "Retta",
@@ -186,7 +184,6 @@
   {
     "id": 15,
     "question": "Who plays Barney Stinson in How I Met Your Mother?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/NeilPatrickHarris-byPhilipRomano.jpg/250px-NeilPatrickHarris-byPhilipRomano.jpg",
     "options": [
       "Alyson Hannigan",
       "Jason Segel",
@@ -291,7 +288,6 @@
   {
     "id": 23,
     "question": "Who plays Jeff Winger in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Joel_McHale_%2853199285501%29.jpg/250px-Joel_McHale_%2853199285501%29.jpg",
     "options": [
       "Danny Pudi",
       "Joel McHale",
@@ -344,7 +340,6 @@
   {
     "id": 27,
     "question": "Who plays Dwight Schrute?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg/250px-Rainn_Wilson_Photo_Op_GalaxyCon_Richmond_2025_%28cropped%29.jpg",
     "options": [
       "Steve Carell",
       "B.J. Novak",
@@ -397,7 +392,6 @@
   {
     "id": 31,
     "question": "Who plays Phil Dunphy in Modern Family?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Ty_Burrell_2_2014.jpg/250px-Ty_Burrell_2_2014.jpg",
     "options": [
       "Eric Stonestreet",
       "Ed O'Neill",
@@ -450,7 +444,6 @@
   {
     "id": 35,
     "question": "Who plays Ron Swanson?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Nick_Offerman_2022_National_Book_Festival_%2852342575962%29_%28cropped%29.jpg/250px-Nick_Offerman_2022_National_Book_Festival_%2852342575962%29_%28cropped%29.jpg",
     "options": [
       "Nick Offerman",
       "Chris Pratt",
@@ -503,7 +496,6 @@
   {
     "id": 39,
     "question": "Who plays Penny in The Big Bang Theory?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Kaley_Cuoco_by_Gage_Skidmore.jpg/250px-Kaley_Cuoco_by_Gage_Skidmore.jpg",
     "options": [
       "Mayim Bialik",
       "Kaley Cuoco",
@@ -582,7 +574,6 @@
   {
     "id": 45,
     "question": "Who plays Gloria Pritchett in Modern Family?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sof%C3%ADa_Vergara_2019_by_Glenn_Francis.jpg/250px-Sof%C3%ADa_Vergara_2019_by_Glenn_Francis.jpg",
     "options": [
       "Ariel Winter",
       "Sarah Hyland",
@@ -635,7 +626,6 @@
   {
     "id": 49,
     "question": "Who plays Andy Dwyer in Parks and Rec?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Chris_Pratt_Jurassic_World_Fallen_Kingdom_Japan_Premiere_Red_Carpet_%283x4_cropped%29.jpg/250px-Chris_Pratt_Jurassic_World_Fallen_Kingdom_Japan_Premiere_Red_Carpet_%283x4_cropped%29.jpg",
     "options": [
       "Adam Scott",
       "Aziz Ansari",
@@ -688,7 +678,6 @@
   {
     "id": 53,
     "question": "Who plays Dean Pelton in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Jim_Rash_by_Gage_Skidmore_%28cropped%29.jpg/250px-Jim_Rash_by_Gage_Skidmore_%28cropped%29.jpg",
     "options": [
       "John Oliver",
       "Jim Rash",
@@ -767,7 +756,6 @@
   {
     "id": 59,
     "question": "Who plays Marshall Eriksen in HIMYM?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Jason_Segel_at_Televerse_2025.jpg/250px-Jason_Segel_at_Televerse_2025.jpg",
     "options": [
       "Neil Patrick Harris",
       "Alyson Hannigan",
@@ -833,7 +821,6 @@
   {
     "id": 64,
     "question": "Who plays Cameron Tucker in Modern Family?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eric_Stonestreet_at_2015_PaleyFest.jpg/250px-Eric_Stonestreet_at_2015_PaleyFest.jpg",
     "options": [
       "Ed O'Neill",
       "Eric Stonestreet",
@@ -899,7 +886,6 @@
   {
     "id": 69,
     "question": "Who plays Britta Perry in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Gillian_Jacobs_2014_Comic_Con_%28cropped%29.jpg/250px-Gillian_Jacobs_2014_Comic_Con_%28cropped%29.jpg",
     "options": [
       "Gillian Jacobs",
       "Chevy Chase",
@@ -1004,7 +990,6 @@
   {
     "id": 77,
     "question": "Who plays Annie Edison in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Alison_Brie_at_the_2025_Sundance_Film_Festival_02_%28cropped%29.jpg/250px-Alison_Brie_at_the_2025_Sundance_Film_Festival_02_%28cropped%29.jpg",
     "options": [
       "Paget Brewster",
       "Gillian Jacobs",
@@ -1096,7 +1081,6 @@
   {
     "id": 84,
     "question": "Who plays Troy Barnes in Community?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Donald_Glover_TIFF_2015.jpg/250px-Donald_Glover_TIFF_2015.jpg",
     "options": [
       "Donald Glover",
       "Joel McHale",
@@ -1123,7 +1107,6 @@
   {
     "id": 86,
     "question": "Who plays Tom Haverford?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Aziz_Ansari_at_TIFF_2025_02.jpg/250px-Aziz_Ansari_at_TIFF_2025_02.jpg",
     "options": [
       "Adam Scott",
       "Chris Pratt",
@@ -1150,7 +1133,6 @@
   {
     "id": 88,
     "question": "Who plays Angela Martin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Angela_Kinsey_%282009%29.jpg/250px-Angela_Kinsey_%282009%29.jpg",
     "options": [
       "Kate Flannery",
       "Angela Kinsey",
@@ -1229,7 +1211,6 @@
   {
     "id": 94,
     "question": "Who plays Lily Aldrin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg/250px-Alyson_Hannigan%2C_2013-07-20_%28cropped%29.jpg",
     "options": [
       "Ashley Williams",
       "Cobie Smulders",
@@ -1282,7 +1263,6 @@
   {
     "id": 98,
     "question": "Who plays Abed Nadir?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Danny_Pudi_by_Gage_Skidmore_2.jpg/250px-Danny_Pudi_by_Gage_Skidmore_2.jpg",
     "options": [
       "Donald Glover",
       "Ken Jeong",
@@ -1335,7 +1315,6 @@
   {
     "id": 102,
     "question": "Who plays Pam Beesly?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Jenna_Fischer_May08_cropped.jpg/250px-Jenna_Fischer_May08_cropped.jpg",
     "options": [
       "Ellie Kemper",
       "Angela Kinsey",
@@ -1362,7 +1341,6 @@
   {
     "id": 104,
     "question": "Who plays Leonard Hofstadter?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Johnny_Galecki_by_Gage_Skidmore.jpg/250px-Johnny_Galecki_by_Gage_Skidmore.jpg",
     "options": [
       "Johnny Galecki",
       "Simon Helberg",
@@ -1545,7 +1523,6 @@
   {
     "id": 118,
     "question": "Who plays Raj Koothrappali?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kunal_Nayyar_at_Berlinale_2024.jpg/250px-Kunal_Nayyar_at_Berlinale_2024.jpg",
     "options": [
       "Johnny Galecki",
       "Kunal Nayyar",
@@ -1585,7 +1562,6 @@
   {
     "id": 121,
     "question": "Who plays Ben Wyatt?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Adam_Scott_-_Severance.jpg/250px-Adam_Scott_-_Severance.jpg",
     "options": [
       "Adam Scott",
       "Rob Lowe",
@@ -1651,7 +1627,6 @@
   {
     "id": 126,
     "question": "Who plays Shirley Bennett?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Yvette_Nicole_Brown_in_2019.jpg/250px-Yvette_Nicole_Brown_in_2019.jpg",
     "options": [
       "Gillian Jacobs",
       "Paget Brewster",
@@ -1691,7 +1666,6 @@
   {
     "id": 129,
     "question": "Who plays Ted Mosby?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Josh_Radnor_%289448570254%29.jpg/250px-Josh_Radnor_%289448570254%29.jpg",
     "options": [
       "Neil Patrick Harris",
       "Alyson Hannigan",
@@ -1744,7 +1718,6 @@
   {
     "id": 133,
     "question": "Who plays Pierce Hawthorne?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ChevyChaseMar10.jpg/250px-ChevyChaseMar10.jpg",
     "options": [
       "Joel McHale",
       "Jim Rash",
@@ -1784,7 +1757,6 @@
   {
     "id": 136,
     "question": "Who plays Robin Scherbatsky?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Cobie_Smulders_2019_by_Glenn_Francis_%28cropped2%29.jpg/250px-Cobie_Smulders_2019_by_Glenn_Francis_%28cropped2%29.jpg",
     "options": [
       "Cristin Milioti",
       "Sarah Chalke",
@@ -1889,7 +1861,6 @@
   {
     "id": 144,
     "question": "Who plays Kelly Kapoor?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mindy_Kaling_Jan_2023.jpg/250px-Mindy_Kaling_Jan_2023.jpg",
     "options": [
       "Mindy Kaling",
       "Angela Kinsey",
@@ -1916,7 +1887,6 @@
   {
     "id": 146,
     "question": "Who plays Amy Farrah Fowler?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Mayim_Bialik%2C_March_2018_%284116%29_%28cropped%29.jpg/250px-Mayim_Bialik%2C_March_2018_%284116%29_%28cropped%29.jpg",
     "options": [
       "Melissa Rauch",
       "Kaley Cuoco",
@@ -1956,7 +1926,6 @@
   {
     "id": 149,
     "question": "Who plays Ann Perkins?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Rashida_Jones_2017_%28cropped%29.jpg/250px-Rashida_Jones_2017_%28cropped%29.jpg",
     "options": [
       "Retta",
       "Aubrey Plaza",
@@ -2191,7 +2160,6 @@
   {
     "id": 167,
     "question": "Who plays Bernadette?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Melissa_Rauch_at_PaleyFest_2013_%28edited%29.jpg/250px-Melissa_Rauch_at_PaleyFest_2013_%28edited%29.jpg",
     "options": [
       "Kaley Cuoco",
       "Melissa Rauch",
@@ -2218,7 +2186,6 @@
   {
     "id": 169,
     "question": "Who plays Haley Dunphy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Sarah_Hyland_at_2015_PaleyFest.jpg/250px-Sarah_Hyland_at_2015_PaleyFest.jpg",
     "options": [
       "Julie Bowen",
       "Sarah Hyland",
@@ -2297,7 +2264,6 @@
   {
     "id": 175,
     "question": "Who plays Ben Chang?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ken_Jeong_by_Gage_Skidmore.jpg/250px-Ken_Jeong_by_Gage_Skidmore.jpg",
     "options": [
       "Donald Glover",
       "Danny Pudi",
@@ -2311,7 +2277,6 @@
   {
     "id": 176,
     "question": "Who plays Claire Dunphy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Julie_Bowen_PaleyFest_2015_%2817045838362%29.jpg/250px-Julie_Bowen_PaleyFest_2015_%2817045838362%29.jpg",
     "options": [
       "Sarah Hyland",
       "Julie Bowen",
@@ -2351,7 +2316,6 @@
   {
     "id": 179,
     "question": "Who plays Darryl Philbin?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Craig_Robinson_by_Gage_Skidmore.jpg/250px-Craig_Robinson_by_Gage_Skidmore.jpg",
     "options": [
       "Brian Baumgartner",
       "Craig Robinson",
@@ -2404,7 +2368,6 @@
   {
     "id": 183,
     "question": "Who plays Mitchell Pritchett?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/JesseTylerFerguson.jpg/250px-JesseTylerFerguson.jpg",
     "options": [
       "Eric Stonestreet",
       "Ed O'Neill",
@@ -2470,7 +2433,6 @@
   {
     "id": 188,
     "question": "Who plays Howard Wolowitz?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Simon_Helberg_at_PaleyFest_2013.jpg/250px-Simon_Helberg_at_PaleyFest_2013.jpg",
     "options": [
       "Johnny Galecki",
       "Kevin Sussman",
@@ -2497,7 +2459,6 @@
   {
     "id": 190,
     "question": "Who plays Alex Dunphy?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Ariel_Winter_PaleyFest_2015_%2816859744400%29.jpg/250px-Ariel_Winter_PaleyFest_2015_%2816859744400%29.jpg",
     "options": [
       "Sofia Vergara",
       "Ariel Winter",
@@ -2563,7 +2524,6 @@
   {
     "id": 195,
     "question": "Who plays Sheldon Cooper?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/JimParsons-byPhilipRomano.jpg/250px-JimParsons-byPhilipRomano.jpg",
     "options": [
       "Johnny Galecki",
       "Jim Parsons",
@@ -2603,7 +2563,6 @@
   {
     "id": 198,
     "question": "Who plays April Ludgate?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Aubrey_Plaza_at_the_2024_Cannes_Film_Festival_%28head_shot%29.jpg/250px-Aubrey_Plaza_at_the_2024_Cannes_Film_Festival_%28head_shot%29.jpg",
     "options": [
       "Amy Poehler",
       "Aubrey Plaza",
@@ -2630,7 +2589,6 @@
   {
     "id": 200,
     "question": "Who plays Jim Halpert?",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/John_Krasinski_2022.jpg/250px-John_Krasinski_2022.jpg",
     "options": [
       "Steve Carell",
       "John Krasinski",
