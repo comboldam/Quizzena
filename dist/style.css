@@ -27260,3 +27260,28 @@ footer button:hover {
     height: 80px;
   }
 }
+
+/* ==========================================
+   INFINITE MENU - 3D SPHERE
+   ========================================== */
+
+.infinite-menu-wrapper {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+#infinite-menu-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: default;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(30, 20, 50, 0.3) 0%, transparent 70%);
+}
+
+@media (max-width: 768px) {
+  .infinite-menu-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+}

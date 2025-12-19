@@ -4570,12 +4570,14 @@ function shouldUse3DCardMode() {
   return card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
 }
 
-// 3D Carousel state
-let carouselRotation = 0;
-let carouselCards = [];
-const CAROUSEL_CARD_COUNT = 6; // Number of cards in the carousel
+// ==========================================
+// INFINITE MENU - 3D SPHERE QUIZ
+// ==========================================
 
-// Display 3D Card question layout with infinite carousel
+let infiniteMenuInstance = null;
+let currentQuestionData = null;
+
+// Display 3D Card question layout with InfiniteMenu sphere
 function display3DCardQuestion() {
   if (gameEnded) return;
   
@@ -4591,7 +4593,7 @@ function display3DCardQuestion() {
     return;
   }
   
-  // Get current question (same logic as displayUnifiedQuestion)
+  // Get current question
   let remaining = flags.filter(f => !usedFlags.includes(f.country));
   if (remaining.length === 0) {
     usedFlags = [];
@@ -4603,52 +4605,71 @@ function display3DCardQuestion() {
   usedFlags.push(randomFlag.country);
   questionCount++;
   
-  // Prepare question data
-  const imageSrc = randomFlag.flag;
-  const questionText = randomFlag.entityType 
-    ? getQuestionTextForEntity(randomFlag.entityType) 
-    : "Which country's flag is this?";
-  const correctAnswer = randomFlag.country;
+  // Store current question data
+  currentQuestionData = {
+    imageSrc: randomFlag.flag,
+    questionText: randomFlag.entityType 
+      ? getQuestionTextForEntity(randomFlag.entityType) 
+      : "Which country's flag is this?",
+    correctAnswer: randomFlag.country
+  };
   
-  // Generate options using the same bait answer logic
+  // Generate options
   const wrongAnswers = generateBaitAnswers(randomFlag);
   let options = shuffle([randomFlag, ...wrongAnswers]).map(opt => opt.country);
   
   // Build options HTML
   const optionsHTML = options.map(country => 
-    `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
+    `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
   ).join('');
   
-  // Generate carousel cards (current + decorative blurred cards)
-  const carouselCardsHTML = generateCarouselCards(imageSrc);
+  // Check if InfiniteMenu already exists
+  const existingCanvas = contentWrapper.querySelector('#infinite-menu-canvas');
   
-  // Build the 3D card layout with carousel
-  contentWrapper.innerHTML = `
-    <div class="card3d-quiz-container">
-      <div class="card3d-top-bar">
-        <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
-        <div class="card3d-score">Score: ${singlePlayerScore}</div>
-      </div>
-      
-      <div class="card3d-main-content">
-        <div class="card3d-question-side">
-          <p class="card3d-question-text">${questionText}</p>
+  if (!existingCanvas) {
+    // First question - create full layout
+    contentWrapper.innerHTML = `
+      <div class="card3d-quiz-container">
+        <div class="card3d-top-bar">
+          <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
+          <div class="card3d-score" id="card3d-score">Score: ${singlePlayerScore}</div>
         </div>
         
-        <div class="card3d-center">
-          <div class="carousel-scene">
-            <div class="carousel-container" id="carousel-container" style="transform: rotateY(${carouselRotation}deg)">
-              ${carouselCardsHTML}
+        <div class="card3d-main-content">
+          <div class="card3d-question-side">
+            <p class="card3d-question-text" id="card3d-question">${currentQuestionData.questionText}</p>
+          </div>
+          
+          <div class="card3d-center">
+            <div class="infinite-menu-wrapper" id="infinite-menu-wrapper">
+              <canvas id="infinite-menu-canvas"></canvas>
             </div>
           </div>
-        </div>
-        
-        <div class="card3d-answers-side">
-          ${optionsHTML}
+          
+          <div class="card3d-answers-side" id="card3d-answers">
+            ${optionsHTML}
+          </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+    
+    // Initialize InfiniteMenu with flag images
+    initInfiniteMenu();
+  } else {
+    // Update existing layout
+    const questionEl = document.getElementById('card3d-question');
+    const answersEl = document.getElementById('card3d-answers');
+    const scoreEl = document.getElementById('card3d-score');
+    
+    if (questionEl) questionEl.textContent = currentQuestionData.questionText;
+    if (scoreEl) scoreEl.textContent = `Score: ${singlePlayerScore}`;
+    if (answersEl) answersEl.innerHTML = optionsHTML;
+    
+    // Trigger rotation animation
+    if (infiniteMenuInstance) {
+      infiniteMenuInstance.autoRotate();
+    }
+  }
   
   // Add click handlers
   document.querySelectorAll('.card3d-answer-btn').forEach(btn => {
@@ -4658,44 +4679,478 @@ function display3DCardQuestion() {
   // Track answer time
   questionOptionsShownTime = Date.now();
   
-  // Start timer (use main timer function)
-  startTimer(correctAnswer);
+  // Start timer
+  startTimer(currentQuestionData.correctAnswer);
 }
 
-// Generate carousel cards HTML
-function generateCarouselCards(currentImage) {
-  const angleStep = 360 / CAROUSEL_CARD_COUNT;
-  const radius = 200; // Distance from center
+// Initialize the InfiniteMenu 3D sphere
+function initInfiniteMenu() {
+  const canvas = document.getElementById('infinite-menu-canvas');
+  if (!canvas) return;
   
-  // Get random flags for decorative cards
-  const decorativeFlags = shuffle([...flags]).slice(0, CAROUSEL_CARD_COUNT - 1);
+  // Get flag images for the sphere
+  const flagImages = shuffle([...flags]).slice(0, 12).map(f => f.flag);
   
-  let cardsHTML = '';
-  
-  for (let i = 0; i < CAROUSEL_CARD_COUNT; i++) {
-    const angle = i * angleStep;
-    const isFront = i === 0;
-    const flagSrc = isFront ? currentImage : (decorativeFlags[i - 1]?.flag || currentImage);
-    
-    cardsHTML += `
-      <div class="carousel-card ${isFront ? 'front-card' : 'back-card'}" 
-           style="transform: rotateY(${angle}deg) translateZ(${radius}px)">
-        <div class="carousel-card-inner">
-          <img src="${flagSrc}" alt="Flag" class="carousel-card-img" onerror="this.style.opacity='0.3'">
-        </div>
-      </div>
-    `;
+  // Add current question flag at front
+  if (currentQuestionData) {
+    flagImages[0] = currentQuestionData.imageSrc;
   }
   
-  return cardsHTML;
+  try {
+    infiniteMenuInstance = new InfiniteGridMenu(canvas, flagImages);
+    infiniteMenuInstance.run();
+  } catch (e) {
+    console.error('Failed to initialize InfiniteMenu:', e);
+  }
 }
 
-// Rotate carousel to next card
-function rotateCarousel() {
-  carouselRotation -= (360 / CAROUSEL_CARD_COUNT);
-  const container = document.getElementById('carousel-container');
-  if (container) {
-    container.style.transform = `rotateY(${carouselRotation}deg)`;
+// Destroy InfiniteMenu when leaving quiz
+function destroyInfiniteMenu() {
+  if (infiniteMenuInstance) {
+    infiniteMenuInstance.destroy();
+    infiniteMenuInstance = null;
+  }
+}
+
+// ==========================================
+// INFINITE GRID MENU - WebGL2 Implementation
+// ==========================================
+
+const discVertShaderSource = `#version 300 es
+uniform mat4 uWorldMatrix;
+uniform mat4 uViewMatrix;
+uniform mat4 uProjectionMatrix;
+uniform vec4 uRotationAxisVelocity;
+
+in vec3 aModelPosition;
+in vec2 aModelUvs;
+in mat4 aInstanceMatrix;
+
+out vec2 vUvs;
+out float vAlpha;
+flat out int vInstanceId;
+
+void main() {
+    vec4 worldPosition = uWorldMatrix * aInstanceMatrix * vec4(aModelPosition, 1.);
+    vec3 centerPos = (uWorldMatrix * aInstanceMatrix * vec4(0., 0., 0., 1.)).xyz;
+    float radius = length(centerPos.xyz);
+
+    if (gl_VertexID > 0) {
+        vec3 rotationAxis = uRotationAxisVelocity.xyz;
+        float rotationVelocity = min(.15, uRotationAxisVelocity.w * 15.);
+        vec3 stretchDir = normalize(cross(centerPos, rotationAxis));
+        vec3 relativeVertexPos = normalize(worldPosition.xyz - centerPos);
+        float strength = dot(stretchDir, relativeVertexPos);
+        float invAbsStrength = min(0., abs(strength) - 1.);
+        strength = rotationVelocity * sign(strength) * abs(invAbsStrength * invAbsStrength * invAbsStrength + 1.);
+        worldPosition.xyz += stretchDir * strength;
+    }
+
+    worldPosition.xyz = radius * normalize(worldPosition.xyz);
+    gl_Position = uProjectionMatrix * uViewMatrix * worldPosition;
+
+    vAlpha = smoothstep(0.5, 1., normalize(worldPosition.xyz).z) * .9 + .1;
+    vUvs = aModelUvs;
+    vInstanceId = gl_InstanceID;
+}
+`;
+
+const discFragShaderSource = `#version 300 es
+precision highp float;
+
+uniform sampler2D uTex;
+uniform int uItemCount;
+uniform int uAtlasSize;
+
+out vec4 outColor;
+
+in vec2 vUvs;
+in float vAlpha;
+flat in int vInstanceId;
+
+void main() {
+    int itemIndex = vInstanceId % uItemCount;
+    int cellsPerRow = uAtlasSize;
+    int cellX = itemIndex % cellsPerRow;
+    int cellY = itemIndex / cellsPerRow;
+    vec2 cellSize = vec2(1.0) / vec2(float(cellsPerRow));
+    vec2 cellOffset = vec2(float(cellX), float(cellY)) * cellSize;
+
+    vec2 st = vec2(vUvs.x, 1.0 - vUvs.y);
+    st = st * cellSize + cellOffset;
+    
+    outColor = texture(uTex, st);
+    outColor.a *= vAlpha;
+}
+`;
+
+class InfiniteGridMenu {
+  constructor(canvas, images) {
+    this.canvas = canvas;
+    this.images = images || [];
+    this.SPHERE_RADIUS = 2;
+    this.destroyed = false;
+    this.animationId = null;
+    this.time = 0;
+    this.autoRotateAngle = 0;
+    
+    this.camera = {
+      position: [0, 0, 3.5],
+      up: [0, 1, 0],
+      fov: Math.PI / 4,
+      aspect: 1,
+      near: 0.1,
+      far: 40
+    };
+    
+    this.init();
+  }
+  
+  init() {
+    const gl = this.canvas.getContext('webgl2', { antialias: true, alpha: true });
+    if (!gl) {
+      console.error('WebGL2 not supported');
+      return;
+    }
+    this.gl = gl;
+    
+    // Resize canvas
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
+    
+    // Create shader program
+    this.program = this.createProgram(discVertShaderSource, discFragShaderSource);
+    if (!this.program) return;
+    
+    // Get locations
+    this.locations = {
+      aModelPosition: gl.getAttribLocation(this.program, 'aModelPosition'),
+      aModelUvs: gl.getAttribLocation(this.program, 'aModelUvs'),
+      aInstanceMatrix: gl.getAttribLocation(this.program, 'aInstanceMatrix'),
+      uWorldMatrix: gl.getUniformLocation(this.program, 'uWorldMatrix'),
+      uViewMatrix: gl.getUniformLocation(this.program, 'uViewMatrix'),
+      uProjectionMatrix: gl.getUniformLocation(this.program, 'uProjectionMatrix'),
+      uRotationAxisVelocity: gl.getUniformLocation(this.program, 'uRotationAxisVelocity'),
+      uTex: gl.getUniformLocation(this.program, 'uTex'),
+      uItemCount: gl.getUniformLocation(this.program, 'uItemCount'),
+      uAtlasSize: gl.getUniformLocation(this.program, 'uAtlasSize')
+    };
+    
+    // Create disc geometry
+    this.createDiscGeometry();
+    
+    // Create icosahedron vertices for instance positions
+    this.createSpherePositions();
+    
+    // Create instance matrices
+    this.createInstances();
+    
+    // Load textures
+    this.loadTextures();
+    
+    // Create matrices
+    this.worldMatrix = glMatrix.mat4.create();
+    this.viewMatrix = glMatrix.mat4.create();
+    this.projectionMatrix = glMatrix.mat4.create();
+    this.orientation = glMatrix.quat.create();
+    
+    this.updateCamera();
+  }
+  
+  createProgram(vertSrc, fragSrc) {
+    const gl = this.gl;
+    
+    const vertShader = gl.createShader(gl.VERTEX_SHADER);
+    gl.shaderSource(vertShader, vertSrc);
+    gl.compileShader(vertShader);
+    if (!gl.getShaderParameter(vertShader, gl.COMPILE_STATUS)) {
+      console.error('Vertex shader error:', gl.getShaderInfoLog(vertShader));
+      return null;
+    }
+    
+    const fragShader = gl.createShader(gl.FRAGMENT_SHADER);
+    gl.shaderSource(fragShader, fragSrc);
+    gl.compileShader(fragShader);
+    if (!gl.getShaderParameter(fragShader, gl.COMPILE_STATUS)) {
+      console.error('Fragment shader error:', gl.getShaderInfoLog(fragShader));
+      return null;
+    }
+    
+    const program = gl.createProgram();
+    gl.attachShader(program, vertShader);
+    gl.attachShader(program, fragShader);
+    gl.linkProgram(program);
+    
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+      console.error('Program link error:', gl.getProgramInfoLog(program));
+      return null;
+    }
+    
+    return program;
+  }
+  
+  createDiscGeometry() {
+    const gl = this.gl;
+    const steps = 32;
+    const radius = 1;
+    
+    const vertices = [0, 0, 0];
+    const uvs = [0.5, 0.5];
+    const indices = [];
+    
+    for (let i = 0; i <= steps; i++) {
+      const angle = (i / steps) * Math.PI * 2;
+      const x = Math.cos(angle) * radius;
+      const y = Math.sin(angle) * radius;
+      vertices.push(x, y, 0);
+      uvs.push(x * 0.5 + 0.5, y * 0.5 + 0.5);
+      
+      if (i > 0) {
+        indices.push(0, i, i + 1);
+      }
+    }
+    indices.push(0, steps, 1);
+    
+    // Create VAO
+    this.discVAO = gl.createVertexArray();
+    gl.bindVertexArray(this.discVAO);
+    
+    // Vertex buffer
+    const vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(this.locations.aModelPosition);
+    gl.vertexAttribPointer(this.locations.aModelPosition, 3, gl.FLOAT, false, 0, 0);
+    
+    // UV buffer
+    const uvBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, uvBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(uvs), gl.STATIC_DRAW);
+    gl.enableVertexAttribArray(this.locations.aModelUvs);
+    gl.vertexAttribPointer(this.locations.aModelUvs, 2, gl.FLOAT, false, 0, 0);
+    
+    // Index buffer
+    const indexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+    
+    this.discIndexCount = indices.length;
+    
+    gl.bindVertexArray(null);
+  }
+  
+  createSpherePositions() {
+    // Create icosahedron vertices
+    const t = (1 + Math.sqrt(5)) / 2;
+    const vertices = [
+      [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
+      [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
+      [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1]
+    ];
+    
+    // Normalize to sphere
+    this.instancePositions = vertices.map(v => {
+      const len = Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
+      return [v[0]/len * this.SPHERE_RADIUS, v[1]/len * this.SPHERE_RADIUS, v[2]/len * this.SPHERE_RADIUS];
+    });
+    
+    this.instanceCount = this.instancePositions.length;
+  }
+  
+  createInstances() {
+    const gl = this.gl;
+    
+    this.instanceMatrices = new Float32Array(this.instanceCount * 16);
+    
+    gl.bindVertexArray(this.discVAO);
+    
+    this.instanceBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.instanceBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, this.instanceMatrices, gl.DYNAMIC_DRAW);
+    
+    // Set up instanced attributes (mat4 = 4 vec4s)
+    for (let i = 0; i < 4; i++) {
+      const loc = this.locations.aInstanceMatrix + i;
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 4, gl.FLOAT, false, 64, i * 16);
+      gl.vertexAttribDivisor(loc, 1);
+    }
+    
+    gl.bindVertexArray(null);
+  }
+  
+  loadTextures() {
+    const gl = this.gl;
+    
+    this.atlasSize = Math.ceil(Math.sqrt(this.images.length));
+    const cellSize = 256;
+    
+    const canvas = document.createElement('canvas');
+    canvas.width = this.atlasSize * cellSize;
+    canvas.height = this.atlasSize * cellSize;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#1a1a2e';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    this.texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, this.texture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    
+    // Load images
+    let loadedCount = 0;
+    this.images.forEach((src, i) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        const x = (i % this.atlasSize) * cellSize;
+        const y = Math.floor(i / this.atlasSize) * cellSize;
+        ctx.drawImage(img, x, y, cellSize, cellSize);
+        loadedCount++;
+        
+        if (loadedCount === this.images.length) {
+          gl.bindTexture(gl.TEXTURE_2D, this.texture);
+          gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+        }
+      };
+      img.onerror = () => {
+        loadedCount++;
+      };
+      img.src = src;
+    });
+  }
+  
+  resize() {
+    const dpr = Math.min(2, window.devicePixelRatio);
+    const wrapper = this.canvas.parentElement;
+    if (!wrapper) return;
+    
+    const width = wrapper.clientWidth;
+    const height = wrapper.clientHeight;
+    
+    this.canvas.width = width * dpr;
+    this.canvas.height = height * dpr;
+    this.canvas.style.width = width + 'px';
+    this.canvas.style.height = height + 'px';
+    
+    if (this.gl) {
+      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+    }
+    
+    this.camera.aspect = width / height;
+    this.updateProjection();
+  }
+  
+  updateCamera() {
+    glMatrix.mat4.lookAt(this.viewMatrix, this.camera.position, [0, 0, 0], this.camera.up);
+    this.updateProjection();
+  }
+  
+  updateProjection() {
+    glMatrix.mat4.perspective(
+      this.projectionMatrix,
+      this.camera.fov,
+      this.camera.aspect,
+      this.camera.near,
+      this.camera.far
+    );
+  }
+  
+  autoRotate() {
+    this.autoRotateAngle += Math.PI / 6; // Rotate 30 degrees
+  }
+  
+  animate() {
+    if (this.destroyed) return;
+    
+    this.time += 0.016;
+    
+    // Auto rotation
+    const targetAngle = this.autoRotateAngle + this.time * 0.1;
+    glMatrix.quat.setAxisAngle(this.orientation, [0, 1, 0], targetAngle);
+    
+    // Update instance matrices
+    const scale = 0.25;
+    for (let i = 0; i < this.instanceCount; i++) {
+      const pos = this.instancePositions[i];
+      const rotatedPos = glMatrix.vec3.create();
+      glMatrix.vec3.transformQuat(rotatedPos, pos, this.orientation);
+      
+      const matrix = new Float32Array(this.instanceMatrices.buffer, i * 64, 16);
+      glMatrix.mat4.identity(matrix);
+      
+      // Position on sphere
+      glMatrix.mat4.translate(matrix, matrix, [-rotatedPos[0], -rotatedPos[1], -rotatedPos[2]]);
+      
+      // Look at center
+      const lookMatrix = glMatrix.mat4.create();
+      glMatrix.mat4.targetTo(lookMatrix, [0, 0, 0], rotatedPos, [0, 1, 0]);
+      glMatrix.mat4.multiply(matrix, matrix, lookMatrix);
+      
+      // Scale based on Z position
+      const zFactor = (Math.abs(rotatedPos[2]) / this.SPHERE_RADIUS) * 0.6 + 0.4;
+      const finalScale = scale * zFactor;
+      glMatrix.mat4.scale(matrix, matrix, [finalScale, finalScale, finalScale]);
+      
+      // Move to sphere surface
+      glMatrix.mat4.translate(matrix, matrix, [0, 0, -this.SPHERE_RADIUS]);
+    }
+    
+    // Upload instance matrices
+    const gl = this.gl;
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.instanceBuffer);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, this.instanceMatrices);
+  }
+  
+  render() {
+    const gl = this.gl;
+    if (!gl || this.destroyed) return;
+    
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    
+    gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    
+    gl.useProgram(this.program);
+    
+    gl.uniformMatrix4fv(this.locations.uWorldMatrix, false, this.worldMatrix);
+    gl.uniformMatrix4fv(this.locations.uViewMatrix, false, this.viewMatrix);
+    gl.uniformMatrix4fv(this.locations.uProjectionMatrix, false, this.projectionMatrix);
+    gl.uniform4f(this.locations.uRotationAxisVelocity, 0, 1, 0, 0.02);
+    gl.uniform1i(this.locations.uItemCount, this.images.length);
+    gl.uniform1i(this.locations.uAtlasSize, this.atlasSize);
+    gl.uniform1i(this.locations.uTex, 0);
+    
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, this.texture);
+    
+    gl.bindVertexArray(this.discVAO);
+    gl.drawElementsInstanced(gl.TRIANGLES, this.discIndexCount, gl.UNSIGNED_SHORT, 0, this.instanceCount);
+    gl.bindVertexArray(null);
+  }
+  
+  run(time = 0) {
+    if (this.destroyed) return;
+    
+    this.animate();
+    this.render();
+    
+    this.animationId = requestAnimationFrame(t => this.run(t));
+  }
+  
+  destroy() {
+    this.destroyed = true;
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+    }
+    if (this.gl) {
+      this.gl.getExtension('WEBGL_lose_context')?.loseContext();
+    }
   }
 }
 
@@ -4742,17 +5197,19 @@ function check3DCardAnswer(btnElement, selected, correct) {
     return;
   }
   
-  // Transition to next question with carousel rotation
+  // Transition to next question with sphere rotation
   setTimeout(() => {
-    // Rotate the carousel
-    rotateCarousel();
+    // Rotate the sphere
+    if (infiniteMenuInstance) {
+      infiniteMenuInstance.autoRotate();
+    }
     
-    // After rotation completes, load new question
+    // After rotation, load new question
     setTimeout(() => {
       answered = false;
       display3DCardQuestion();
-    }, 800);
-  }, 600);
+    }, 600);
+  }, 500);
 }
 
 // Timer for 3D card mode
@@ -5480,6 +5937,8 @@ function showUnifiedResults() {
 function restartUnifiedQuiz() {
   // Destroy galaxy background when going back to mode selection
   destroyGalaxyBackground();
+  // Destroy InfiniteMenu
+  destroyInfiniteMenu();
   
   resetGame();
   const topicIcon = currentTopic === 'flags' ? '🏳️' :
@@ -5503,6 +5962,8 @@ function exitUnifiedQuiz() {
 
   // Destroy galaxy background
   destroyGalaxyBackground();
+  // Destroy InfiniteMenu
+  destroyInfiniteMenu();
 
   const quizScreen = document.getElementById('unified-quiz-screen');
   const modeScreen = document.getElementById('unified-mode-screen');
