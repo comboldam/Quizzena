@@ -2638,6 +2638,9 @@ function startTimer(correctAnswer) {
     if (isUnified) {
       const unifiedTimer = document.getElementById('unified-timer');
       if (unifiedTimer) unifiedTimer.textContent = `${timeLeft}s`;
+      // Also update 3D card timer if present
+      const card3dTimer = document.getElementById('card3d-timer');
+      if (card3dTimer) card3dTimer.textContent = `${timeLeft}s`;
     } else {
       timerDisplay.textContent = `⏳ ${timeLeft}s`;
     }
@@ -2667,6 +2670,14 @@ function startTimer(correctAnswer) {
             unifiedTimer.style.color = '#FF6B6B';
           }
         }
+        // Also update 3D card timer if present
+        const card3dTimer = document.getElementById('card3d-timer');
+        if (card3dTimer) {
+          card3dTimer.textContent = `${timeLeft}s`;
+          if (timeLeft <= 10) {
+            card3dTimer.style.color = '#FF6B6B';
+          }
+        }
       } else {
         timerDisplay.textContent = `⏳ ${timeLeft}s`;
       }
@@ -2680,6 +2691,9 @@ function startTimer(correctAnswer) {
     if (isUnified) {
       const unifiedTimer = document.getElementById('unified-timer');
       if (unifiedTimer) unifiedTimer.textContent = `${timeLeft}s`;
+      // Also update 3D card timer if present
+      const card3dTimer = document.getElementById('card3d-timer');
+      if (card3dTimer) card3dTimer.textContent = `${timeLeft}s`;
     } else {
       timerDisplay.textContent = `⏳ ${timeLeft}s`;
     }
@@ -2716,6 +2730,14 @@ function startTimer(correctAnswer) {
           // Red warning at 5 seconds
           if (timeLeft <= 5) {
             unifiedTimer.style.color = '#FF6B6B';
+          }
+        }
+        // Also update 3D card timer if present
+        const card3dTimer = document.getElementById('card3d-timer');
+        if (card3dTimer) {
+          card3dTimer.textContent = `${timeLeft}s`;
+          if (timeLeft <= 5) {
+            card3dTimer.style.color = '#FF6B6B';
           }
         }
       } else {
@@ -3781,6 +3803,25 @@ function initGalaxyModeToggle() {
   }
 }
 
+// 3D Card Transitions Setting
+let card3dModeEnabled = localStorage.getItem('quizzena_card3d_mode') === 'true'; // Default: false (OFF)
+
+function saveCard3dModeSetting() {
+  localStorage.setItem('quizzena_card3d_mode', card3dModeEnabled.toString());
+}
+
+// Initialize 3D card mode toggle
+function initCard3dModeToggle() {
+  const toggle = document.getElementById('card3d-mode-toggle');
+  if (toggle) {
+    toggle.checked = card3dModeEnabled;
+    toggle.addEventListener('change', () => {
+      card3dModeEnabled = toggle.checked;
+      saveCard3dModeSetting();
+    });
+  }
+}
+
 // Sound effect audio element
 const clickSound = new Audio('sounds/click.mp3');
 
@@ -4524,8 +4565,176 @@ function buildUnifiedQuizScreen() {
   }, 50);
 }
 
+// Check if 3D Card mode should be used
+function shouldUse3DCardMode() {
+  return card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
+}
+
+// Display 3D Card question layout
+function display3DCardQuestion() {
+  if (gameEnded) return;
+  
+  const quizScreen = document.getElementById('unified-quiz-screen');
+  if (!quizScreen) return;
+  
+  const contentWrapper = document.getElementById('quiz-content-wrapper');
+  if (!contentWrapper) return;
+  
+  // Get current question
+  const randomFlag = flagsData[currentQuestion];
+  if (!randomFlag) return;
+  
+  questionCount++;
+  
+  // Prepare question data
+  const imageSrc = `flags/${randomFlag.country.toLowerCase().replace(/ /g, '-')}.svg`;
+  const questionText = "Which country's flag is this?";
+  const correctAnswer = randomFlag.country;
+  
+  // Generate options
+  let options = [correctAnswer];
+  while (options.length < 4) {
+    const randomOption = flagsData[Math.floor(Math.random() * flagsData.length)].country;
+    if (!options.includes(randomOption)) {
+      options.push(randomOption);
+    }
+  }
+  options = options.sort(() => Math.random() - 0.5);
+  
+  // Build options HTML
+  const optionsHTML = options.map(opt => 
+    `<button class="card3d-answer-btn" data-answer="${opt}" data-correct="${correctAnswer}">${opt}</button>`
+  ).join('');
+  
+  // Check if this is a new question (for zoom animation)
+  const isNewQuestion = contentWrapper.querySelector('.card3d-circle');
+  const zoomClass = isNewQuestion ? 'zoom-in' : '';
+  
+  // Build the 3D card layout
+  contentWrapper.innerHTML = `
+    <div class="card3d-quiz-container">
+      <div class="card3d-top-bar">
+        <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
+        <div class="card3d-score">Score: ${singlePlayerScore}</div>
+      </div>
+      
+      <div class="card3d-main-content">
+        <div class="card3d-question-side">
+          <p class="card3d-question-text">${questionText}</p>
+        </div>
+        
+        <div class="card3d-center">
+          <div class="card3d-circle ${zoomClass}" id="card3d-circle">
+            <div class="card3d-flag-container">
+              <img src="${imageSrc}" alt="Flag" class="card3d-flag-img" onerror="this.src='flags/unknown.svg'">
+            </div>
+          </div>
+        </div>
+        
+        <div class="card3d-answers-side">
+          ${optionsHTML}
+        </div>
+      </div>
+    </div>
+  `;
+  
+  // Add click handlers
+  document.querySelectorAll('.card3d-answer-btn').forEach(btn => {
+    btn.onclick = () => check3DCardAnswer(btn, btn.dataset.answer, btn.dataset.correct);
+  });
+  
+  // Track answer time
+  questionOptionsShownTime = Date.now();
+  
+  // Start timer
+  start3DCardTimer(correctAnswer);
+}
+
+// Check answer in 3D card mode
+function check3DCardAnswer(btnElement, selected, correct) {
+  if (answered) return;
+  answered = true;
+  
+  // Record answer time
+  if (questionOptionsShownTime > 0) {
+    const answerTime = Date.now() - questionOptionsShownTime;
+    sessionAnswerTimes.push(answerTime);
+  }
+  
+  const isCorrect = selected === correct;
+  
+  // Visual feedback
+  document.querySelectorAll('.card3d-answer-btn').forEach(btn => {
+    btn.style.pointerEvents = 'none';
+    if (btn.dataset.answer === correct) {
+      btn.classList.add('correct');
+    } else if (btn === btnElement && !isCorrect) {
+      btn.classList.add('wrong');
+    }
+  });
+  
+  // Update score
+  if (isCorrect) {
+    singlePlayerScore++;
+    currentSessionCorrect++;
+  } else {
+    currentSessionWrong++;
+  }
+  
+  // Play sound
+  if (isCorrect) {
+    playClickSound();
+  }
+  
+  // Check if game should end
+  if (questionCount >= maxQuestions) {
+    clearInterval(timer);
+    setTimeout(() => showUnifiedResults(), 800);
+    return;
+  }
+  
+  // Transition to next question with zoom effect
+  setTimeout(() => {
+    const circle = document.getElementById('card3d-circle');
+    if (circle) {
+      circle.classList.add('zoom-out');
+    }
+    
+    setTimeout(() => {
+      answered = false;
+      display3DCardQuestion();
+    }, 500);
+  }, 800);
+}
+
+// Timer for 3D card mode
+let card3dTimerInterval = null;
+
+function start3DCardTimer(correctAnswer) {
+  clearInterval(card3dTimerInterval);
+  
+  if (gameMode !== 'casual') return; // Casual has no time pressure per question
+  
+  // For casual mode, we don't have a per-question timer
+  // Just update the display if there's a global timer
+}
+
+// Update 3D card timer display
+function update3DCardTimerDisplay() {
+  const timerEl = document.getElementById('card3d-timer');
+  if (timerEl) {
+    timerEl.textContent = `${timeLeft}s`;
+  }
+}
+
 // Display question in unified quiz screen
 function displayUnifiedQuestion() {
+  // Check if we should use 3D card mode
+  if (shouldUse3DCardMode()) {
+    display3DCardQuestion();
+    return;
+  }
+  
   // Don't display new question if game ended
   if (gameEnded) return;
 
@@ -7303,6 +7512,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateMiniStats();
   initializeSlots();
   initGalaxyModeToggle();
+  initCard3dModeToggle();
 });
 
 // ========================================
