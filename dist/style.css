@@ -26811,3 +26811,97 @@ footer button:hover {
 .pm-mode-icon {
   font-size: 1.2rem;
 }
+
+/* ==========================================
+   QUIZ LOADING SCREEN
+   ========================================== */
+
+.quiz-loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.quiz-loading-screen.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.quiz-loading-screen.fade-out {
+  opacity: 0;
+}
+
+.quiz-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 100px; /* Move content higher */
+}
+
+.quiz-loading-logo {
+  animation: quiz-loading-pulse 1.5s ease-in-out infinite;
+}
+
+.quiz-loading-logo svg {
+  filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+}
+
+@keyframes quiz-loading-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.quiz-loading-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffd700 0%, #f5a623 50%, #e8920b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 6px;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  animation: quiz-loading-title-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes quiz-loading-title-glow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)); }
+  50% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)); }
+}
+
+.quiz-loading-lottie {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+/* Galaxy Background for Quiz Screen */
+#galaxy-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#galaxy-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#unified-quiz-screen > *:not(#galaxy-bg) {
+  position: relative;
+  z-index: 1;
+}

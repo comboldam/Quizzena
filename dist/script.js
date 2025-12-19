@@ -4131,44 +4131,300 @@ function selectAreaDifficulty(difficulty) {
   `;
 }
 
+// Store lottie animation instance
+let quizLoadingAnim = null;
+
+// Show quiz loading screen
+function showQuizLoadingScreen(callback) {
+  const loadingScreen = document.getElementById('quiz-loading-screen');
+  const lottieContainer = document.getElementById('quiz-loading-lottie');
+  
+  if (!loadingScreen || !lottieContainer) {
+    // If loading screen doesn't exist, just run callback
+    if (callback) callback();
+    return;
+  }
+  
+  // Clear previous animation
+  lottieContainer.innerHTML = '';
+  
+  // Show loading screen
+  loadingScreen.classList.remove('hidden');
+  loadingScreen.classList.remove('fade-out');
+  
+  // Initialize Lottie animation
+  if (typeof lottie !== 'undefined') {
+    quizLoadingAnim = lottie.loadAnimation({
+      container: lottieContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'loading.json'
+    });
+  }
+  
+  // After 0.8 seconds, fade out and run callback
+  setTimeout(() => {
+    loadingScreen.classList.add('fade-out');
+    
+    // After fade animation, hide and run callback
+    setTimeout(() => {
+      loadingScreen.classList.add('hidden');
+      if (quizLoadingAnim) {
+        quizLoadingAnim.destroy();
+        quizLoadingAnim = null;
+      }
+      if (callback) callback();
+    }, 300); // 300ms for fade out animation
+  }, 800); // 800ms display time
+}
+
 // Start game with selected mode
 function startUnifiedGame(mode) {
   // Hide mode selection screen
   const modeScreen = document.getElementById('unified-mode-screen');
   if (modeScreen) modeScreen.remove();
+  
+  // Show loading screen, then start game
+  showQuizLoadingScreen(() => {
+    // CRITICAL: Reset ALL game state variables
+    resetGame(); // Call the existing resetGame() function
 
-  // CRITICAL: Reset ALL game state variables
-  resetGame(); // Call the existing resetGame() function
+    // Set game mode and parameters
+    gameMode = mode;
 
-  // Set game mode and parameters
-  gameMode = mode;
+    if (mode === 'time-attack') {
+      timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
+      maxQuestions = 9999; // Unlimited questions
+    } else if (mode === 'casual') {
+      maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
+      timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
+    } else if (mode === 'three-hearts') {
+      livesRemaining = GAME_CONFIG.THREE_HEARTS_LIVES;
+      maxQuestions = 9999; // Unlimited until 3 strikes
+    } else if (mode === 'two') {
+      maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
+      timeLeft = GAME_CONFIG.TWO_PLAYER_TIME_PER_Q;
+    }
 
-  if (mode === 'time-attack') {
-    timeLeft = GAME_CONFIG.TIME_ATTACK_DURATION;
-    maxQuestions = 9999; // Unlimited questions
-  } else if (mode === 'casual') {
-    maxQuestions = GAME_CONFIG.CASUAL_QUESTIONS;
-    timeLeft = GAME_CONFIG.CASUAL_TIME_PER_Q;
-  } else if (mode === 'three-hearts') {
-    livesRemaining = GAME_CONFIG.THREE_HEARTS_LIVES;
-    maxQuestions = 9999; // Unlimited until 3 strikes
-  } else if (mode === 'two') {
-    maxQuestions = GAME_CONFIG.TWO_PLAYER_QUESTIONS;
-    timeLeft = GAME_CONFIG.TWO_PLAYER_TIME_PER_Q;
+    // Reset scores explicitly (belt-and-suspenders approach)
+    singlePlayerScore = 0;
+    player1Score = 0;
+    player2Score = 0;
+    questionCount = 0;
+    currentPlayer = 1;
+
+    // Create unified quiz screen
+    buildUnifiedQuizScreen();
+
+    // Load questions and start
+    loadFlags();
+  });
+}
+
+// ==========================================
+// GALAXY BACKGROUND EFFECT (Pure WebGL)
+// ==========================================
+
+const GALAXY_VERTEX_SHADER = `
+attribute vec2 position;
+varying vec2 vUv;
+void main() {
+  vUv = position * 0.5 + 0.5;
+  gl_Position = vec4(position, 0.0, 1.0);
+}
+`;
+
+const GALAXY_FRAGMENT_SHADER = `
+precision mediump float;
+uniform float uTime;
+uniform vec2 uResolution;
+varying vec2 vUv;
+
+// Reduced layers for better mobile performance
+#define NUM_LAYERS 3.0
+
+float hash21(vec2 p) {
+  p = fract(p * vec2(123.34, 456.21));
+  p += dot(p, p + 45.32);
+  return fract(p.x * p.y);
+}
+
+vec3 hsv2rgb(vec3 c) {
+  vec4 K = vec4(1.0, 2.0/3.0, 1.0/3.0, 3.0);
+  vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+  return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+float star(vec2 uv, float flare) {
+  float d = length(uv);
+  float m = 0.02 / d;
+  float rays = max(0.0, 1.0 - abs(uv.x * uv.y * 1000.0));
+  m += rays * flare;
+  m *= smoothstep(1.0, 0.2, d);
+  return m;
+}
+
+vec3 starLayer(vec2 uv) {
+  vec3 col = vec3(0.0);
+  vec2 gv = fract(uv) - 0.5;
+  vec2 id = floor(uv);
+  
+  for(int y = -1; y <= 1; y++) {
+    for(int x = -1; x <= 1; x++) {
+      vec2 offs = vec2(float(x), float(y));
+      float n = hash21(id + offs);
+      float size = fract(n * 345.32);
+      
+      vec2 starPos = offs - gv + vec2(n, fract(n * 34.0)) - 0.5;
+      float d = length(starPos);
+      
+      float brightness = star(starPos, smoothstep(0.9, 1.0, size));
+      
+      // Twinkle
+      float twinkle = sin(uTime * 3.0 + n * 6.28) * 0.5 + 0.5;
+      brightness *= mix(0.5, 1.0, twinkle);
+      
+      // Color - purple/blue tones
+      float hue = 0.6 + n * 0.2;
+      vec3 starCol = hsv2rgb(vec3(hue, 0.5, 1.0));
+      
+      col += brightness * size * starCol;
+    }
   }
+  return col;
+}
 
-  // Reset scores explicitly (belt-and-suspenders approach)
-  singlePlayerScore = 0;
-  player1Score = 0;
-  player2Score = 0;
-  questionCount = 0;
-  currentPlayer = 1;
+void main() {
+  vec2 uv = (vUv - 0.5) * vec2(uResolution.x / uResolution.y, 1.0);
+  
+  // Slow rotation
+  float angle = uTime * 0.02;
+  mat2 rot = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
+  uv = rot * uv;
+  
+  vec3 col = vec3(0.0);
+  
+  // Multiple layers for depth
+  for(float i = 0.0; i < 1.0; i += 1.0 / NUM_LAYERS) {
+    float depth = fract(i + uTime * 0.02);
+    float scale = mix(30.0, 5.0, depth);
+    float fade = depth * smoothstep(1.0, 0.9, depth);
+    col += starLayer(uv * scale + i * 453.32) * fade;
+  }
+  
+  // Add subtle purple glow in center
+  float glow = exp(-length(uv) * 2.0) * 0.15;
+  col += vec3(0.3, 0.1, 0.5) * glow;
+  
+  gl_FragColor = vec4(col, 1.0);
+}
+`;
 
-  // Create unified quiz screen
-  buildUnifiedQuizScreen();
+let galaxyInstance = null;
 
-  // Load questions and start
-  loadFlags();
+function initGalaxyBackground(container) {
+  // Create canvas
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;';
+  container.appendChild(canvas);
+  
+  // Get WebGL context
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) {
+    console.warn('WebGL not supported');
+    return null;
+  }
+  
+  // Compile shader
+  function compileShader(type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error('Shader compile error:', gl.getShaderInfoLog(shader));
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }
+  
+  const vertShader = compileShader(gl.VERTEX_SHADER, GALAXY_VERTEX_SHADER);
+  const fragShader = compileShader(gl.FRAGMENT_SHADER, GALAXY_FRAGMENT_SHADER);
+  
+  if (!vertShader || !fragShader) return null;
+  
+  // Create program
+  const program = gl.createProgram();
+  gl.attachShader(program, vertShader);
+  gl.attachShader(program, fragShader);
+  gl.linkProgram(program);
+  
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    console.error('Program link error:', gl.getProgramInfoLog(program));
+    return null;
+  }
+  
+  gl.useProgram(program);
+  
+  // Create fullscreen quad
+  const vertices = new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]);
+  const buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+  
+  const posLoc = gl.getAttribLocation(program, 'position');
+  gl.enableVertexAttribArray(posLoc);
+  gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
+  
+  // Get uniform locations
+  const uTime = gl.getUniformLocation(program, 'uTime');
+  const uResolution = gl.getUniformLocation(program, 'uResolution');
+  
+  let animateId;
+  let destroyed = false;
+  let startTime = Date.now();
+  
+  function resize() {
+    canvas.width = container.offsetWidth * window.devicePixelRatio;
+    canvas.height = container.offsetHeight * window.devicePixelRatio;
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uResolution, canvas.width, canvas.height);
+  }
+  
+  function render() {
+    if (destroyed) return;
+    animateId = requestAnimationFrame(render);
+    
+    const time = (Date.now() - startTime) * 0.001;
+    gl.uniform1f(uTime, time);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+  
+  window.addEventListener('resize', resize);
+  resize();
+  render();
+  
+  console.log('Galaxy background initialized successfully!');
+  
+  return {
+    destroy: function() {
+      destroyed = true;
+      cancelAnimationFrame(animateId);
+      window.removeEventListener('resize', resize);
+      if (canvas.parentNode) {
+        canvas.parentNode.removeChild(canvas);
+      }
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+    }
+  };
+}
+
+function destroyGalaxyBackground() {
+  if (galaxyInstance) {
+    galaxyInstance.destroy();
+    galaxyInstance = null;
+  }
 }
 
 // Build unified quiz screen (matches Football quiz design)
@@ -4176,13 +4432,33 @@ function buildUnifiedQuizScreen() {
   // Remove existing screen if present
   let quizScreen = document.getElementById('unified-quiz-screen');
   if (quizScreen) quizScreen.remove();
+  
+  // Destroy previous galaxy instance
+  destroyGalaxyBackground();
 
   // Create new full-screen quiz overlay
   quizScreen = document.createElement('div');
   quizScreen.id = 'unified-quiz-screen';
-  quizScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow-y:auto;';
-
+  quizScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:#0f0c29;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow-y:auto;';
+  
+  // Add galaxy background container (stays persistent)
+  const galaxyContainer = document.createElement('div');
+  galaxyContainer.id = 'galaxy-bg';
+  galaxyContainer.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;pointer-events:none;';
+  quizScreen.appendChild(galaxyContainer);
+  
+  // Add content wrapper (this gets updated, not the whole screen)
+  const contentWrapper = document.createElement('div');
+  contentWrapper.id = 'quiz-content-wrapper';
+  contentWrapper.style.cssText = 'width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1;';
+  quizScreen.appendChild(contentWrapper);
+  
   document.body.appendChild(quizScreen);
+  
+  // Initialize galaxy background
+  setTimeout(() => {
+    galaxyInstance = initGalaxyBackground(galaxyContainer);
+  }, 50);
 }
 
 // Display question in unified quiz screen
@@ -4347,25 +4623,28 @@ function displayUnifiedQuestion() {
     optionsHTML += `<button class="unified-option-btn" data-answer="${btnAnswer.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}" style="width:100%;padding:16px;font-size:16px;border:2px solid rgba(167, 139, 250, 0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;cursor:pointer;transition:all 0.2s;">${btnText}</button>`;
   });
 
-  // Render the screen
-  quizScreen.innerHTML = `
-    <div style="position:absolute;top:15px;left:15px;">
-      <button onclick="playClickSound(); exitUnifiedQuiz()" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;">←</button>
-    </div>
-    <div style="width:100%;max-width:500px;text-align:center;">
-      ${headerInfo}
-      ${playerInfo}
-      ${scoreDisplay}
-      ${JSON_TOPICS.includes(currentTopic) ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" class="${imageClass}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">${getTopicConfig(currentTopic).icon}</div></div>` : imageHTML) : ''}
-      ${!JSON_TOPICS.includes(currentTopic) && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
-      <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
-        <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
+  // Render the content (only update content wrapper, keep galaxy intact)
+  const contentWrapper = document.getElementById('quiz-content-wrapper');
+  if (contentWrapper) {
+    contentWrapper.innerHTML = `
+      <div style="position:absolute;top:15px;left:15px;">
+        <button onclick="playClickSound(); exitUnifiedQuiz()" style="background:rgba(255,255,255,0.2);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:10px 15px;border-radius:8px;font-size:1.2rem;cursor:pointer;font-weight:bold;">←</button>
       </div>
-      <div id="unified-options" style="display:flex;flex-direction:column;gap:12px;">
-        ${optionsHTML}
+      <div style="width:100%;max-width:500px;text-align:center;">
+        ${headerInfo}
+        ${playerInfo}
+        ${scoreDisplay}
+        ${JSON_TOPICS.includes(currentTopic) ? (imageSrc ? `<div style="margin:20px 0;"><img src="${imageSrc}" class="${imageClass}" style="max-width:350px;width:90%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='block';"><div style="display:none;font-size:80px;">${getTopicConfig(currentTopic).icon}</div></div>` : imageHTML) : ''}
+        ${!JSON_TOPICS.includes(currentTopic) && imageSrc ? `<img src="${imageSrc}" style="max-width:350px;width:90%;height:auto;margin:20px auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.3);" onerror="this.style.display='none'">` : ''}
+        <div style="background:rgba(255,255,255,0.1);border-radius:15px;padding:25px;margin:20px 0;box-shadow:0 4px 15px rgba(124, 58, 237, 0.2);">
+          <p style="color:#fff;font-size:20px;line-height:1.4;">${questionText}</p>
+        </div>
+        <div id="unified-options" style="display:flex;flex-direction:column;gap:12px;">
+          ${optionsHTML}
+        </div>
       </div>
-    </div>
-  `;
+    `;
+  }
 
   // Add click handlers to options
   document.querySelectorAll('.unified-option-btn').forEach(btn => {
@@ -4763,11 +5042,13 @@ function showUnifiedResults() {
     totalXPEarned = xpResult.xpGained;
   }
 
-  // Apply dark theme background
-  quizScreen.style.background = 'linear-gradient(180deg, #1a1a2e 0%, #0d0d1a 100%)';
+  // Keep galaxy background visible (don't override with gradient)
+  // Update content wrapper, not the whole screen
+  const contentWrapper = document.getElementById('quiz-content-wrapper');
+  if (!contentWrapper) return;
   
-  quizScreen.innerHTML = `
-    <div style="text-align:center;max-width:450px;padding:20px;position:relative;">
+  contentWrapper.innerHTML = `
+    <div style="text-align:center;max-width:450px;padding:20px;position:relative;z-index:1;">
       <!-- Header -->
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
         <div style="width:36px;"></div>
@@ -4877,6 +5158,9 @@ function showUnifiedResults() {
 
 // Restart unified quiz
 function restartUnifiedQuiz() {
+  // Destroy galaxy background when going back to mode selection
+  destroyGalaxyBackground();
+  
   resetGame();
   const topicIcon = currentTopic === 'flags' ? '🏳️' :
                     currentTopic === 'capitals' ? '🏛️' :
@@ -4896,6 +5180,9 @@ function exitUnifiedQuiz() {
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
+
+  // Destroy galaxy background
+  destroyGalaxyBackground();
 
   const quizScreen = document.getElementById('unified-quiz-screen');
   const modeScreen = document.getElementById('unified-mode-screen');
