@@ -2572,13 +2572,8 @@ footer button:hover {
 }
 
 .hot-topic-item::after {
-  content: '🔥';
-  position: absolute;
-  right: -5px;
-  top: -5px;
-  font-size: 1.5rem;
-  opacity: 0.15;
-  transform: rotate(15deg);
+  content: '';
+  display: none;
 }
 
 .hot-topic-item:active {
@@ -2586,15 +2581,12 @@ footer button:hover {
 }
 
 .hot-topic-icon {
-  font-size: 1.5rem;
   width: 40px;
   height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2) 0%, rgba(239, 68, 68, 0.15) 100%);
-  border-radius: 12px;
+  border-radius: 10px;
+  object-fit: cover;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
 }
 
 .hot-topic-info {
@@ -3500,6 +3492,7 @@ footer button:hover {
   height: 48px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  overflow: visible;
 }
 
 .level-badge:hover {
@@ -3536,7 +3529,6 @@ footer button:hover {
   stroke-dasharray: 138.23;
   stroke-dashoffset: 138.23;
   transition: stroke-dashoffset 1s ease-out;
-  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.6));
 }
 
 .level-badge-inner {
@@ -3544,31 +3536,12 @@ footer button:hover {
   inset: 5px;
   border-radius: 50%;
   background: linear-gradient(145deg, #1a1a2e 0%, #0f0c29 100%);
-  border: 2px solid transparent;
-  background-clip: padding-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 
-    inset 0 2px 10px rgba(0, 0, 0, 0.5),
-    0 0 20px rgba(124, 58, 237, 0.2);
 }
 
-.level-badge-inner::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fbbf24 0%, #a78bfa 50%, #6366f1 100%);
-  z-index: -1;
-  animation: levelBorderGlow 3s ease-in-out infinite;
-}
-
-@keyframes levelBorderGlow {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
-}
 
 .level-badge-text {
   font-family: 'Orbitron', sans-serif;
@@ -5901,7 +5874,7 @@ footer button:hover {
 /* ===== PREMIUM BANNER WITH ANIMATED GLOW ===== */
 .profile-header {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .profile-banner {
@@ -6000,7 +5973,7 @@ footer button:hover {
 /* ===== IDENTITY BLOCK ===== */
 .profile-info {
   text-align: center;
-  padding: 60px 20px 15px;
+  padding: 30px 20px 5px;
   position: relative;
   z-index: 1;
 }
@@ -6010,7 +5983,7 @@ footer button:hover {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 
 .profile-name {
@@ -6018,7 +5991,7 @@ footer button:hover {
   font-size: 1.6rem;
   font-weight: 700;
   color: white;
-  margin-bottom: 0;
+  margin: 0 0 2px 0;
   text-shadow: 0 2px 15px rgba(124, 58, 237, 0.3);
 }
 
@@ -6050,7 +6023,18 @@ footer button:hover {
 .profile-location {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 5px;
+  margin: 2px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-country-flag {
+  width: 26px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .profile-active {
@@ -6063,7 +6047,7 @@ footer button:hover {
   width: 60px;
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.6), transparent);
-  margin: 15px auto;
+  margin: 8px auto;
   border-radius: 1px;
 }
 
@@ -6073,7 +6057,7 @@ footer button:hover {
   justify-content: center;
   gap: 12px;
   padding: 0 15px;
-  margin: 10px 0 20px;
+  margin: 5px 0 15px;
 }
 
 .feature-card {
@@ -6301,6 +6285,49 @@ footer button:hover {
 
 /* Topic Progress Section */
 /* ===== TOPIC PROGRESS SECTION - PREMIUM ===== */
+
+.topic-progress-section {
+  padding: 20px 15px 30px;
+}
+
+.topic-progress-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 18px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.topic-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.topic-progress-empty {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  border: 1px dashed rgba(124, 58, 237, 0.3);
+}
+
+.topic-progress-empty-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+.topic-progress-empty p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 .profile-topics {
   display: none; /* Hidden from profile */
   padding: 0 15px 40px;
@@ -6316,66 +6343,150 @@ footer button:hover {
 }
 
 .topic-progress-item {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(124, 58, 237, 0.15);
-  border-radius: 18px;
-  padding: 18px;
-  margin-bottom: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 16px 18px;
+  box-shadow:
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.topic-progress-item::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.topic-progress-item:hover::before {
+  opacity: 1;
 }
 
 .topic-progress-item:hover {
-  border-color: rgba(124, 58, 237, 0.3);
-  transform: translateX(4px);
-  box-shadow: 0 6px 25px rgba(124, 58, 237, 0.15);
+  border-color: rgba(124, 58, 237, 0.4);
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px 0 rgba(31, 38, 135, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 .topic-progress-header {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.topic-progress-icon-wrap {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  position: relative;
+  top: -2px;
 }
 
 .topic-progress-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.topic-progress-icon-fallback {
+  display: none;
+  width: 48px;
+  height: 48px;
   font-size: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
 }
 
 .topic-progress-name {
-  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
   color: white;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 12px;
 }
 
 .topic-progress-level {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .topic-progress-bar-container {
-  height: 12px;
+  height: 10px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
+  border-radius: 5px;
   overflow: hidden;
   margin-bottom: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .topic-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
-  border-radius: 6px;
-  transition: width 0.3s ease;
-  box-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 50%, #6d28d9 100%);
+  border-radius: 5px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.6);
+  position: relative;
+}
+
+.topic-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  border-radius: 5px 5px 0 0;
 }
 
 .topic-progress-xp {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.6);
   text-align: right;
+  font-weight: 500;
+}
+
+/* Mobile performance optimization for topic progress */
+@media (max-width: 900px), (pointer: coarse) {
+  .topic-progress-item {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(30, 18, 52, 0.92) !important;
+    box-shadow:
+      0 10px 24px rgba(5, 0, 20, 0.45),
+      0 2px 6px rgba(0, 0, 0, 0.35) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .topic-progress-item::before {
+    display: none !important;
+  }
 }
 
 /* ========================================
@@ -24348,123 +24459,6 @@ footer button:hover {
 }
 
 /* ========================================
-    PERFORMANCE MODE - User Toggle
-   Applied via body.performance-mode-low class
-   ======================================== */
-body.performance-mode-low * {
-  transition: none !important;
-  animation: none !important;
-}
-
-body.performance-mode-low .topic-card-small {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  background: rgba(30, 18, 52, 0.95) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transform-style: flat !important;
-  perspective: none !important;
-}
-
-body.performance-mode-low .topic-card-small::before,
-body.performance-mode-low .topic-card-small::after {
-  display: none !important;
-}
-
-body.performance-mode-low .topic-icon-small,
-body.performance-mode-low .category-icon,
-body.performance-mode-low .quick-icon {
-  filter: none !important;
-  -webkit-filter: none !important;
-}
-
-body.performance-mode-low .home-category-card {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-  opacity: 1 !important;
-  background: rgba(30, 18, 52, 0.95) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-body.performance-mode-low .home-category-card::before,
-body.performance-mode-low .home-category-card::after {
-  display: none !important;
-}
-
-body.performance-mode-low .featured-quiz-card {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-}
-
-body.performance-mode-low .featured-quiz-card::before,
-body.performance-mode-low .featured-quiz-card::after {
-  display: none !important;
-}
-
-body.performance-mode-low .quick-start-card {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-body.performance-mode-low .quick-start-card::before,
-body.performance-mode-low .quick-start-card::after {
-  display: none !important;
-}
-
-body.performance-mode-low .topics-scroll-row {
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: auto !important;
-}
-
-body.performance-mode-low .stagger-reveal > * {
-  animation: none !important;
-  opacity: 1 !important;
-}
-
-body.performance-mode-low .slide-from-left,
-body.performance-mode-low .slide-from-right,
-body.performance-mode-low .slide-from-bottom {
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-/* ========================================
-   PERFORMANCE MODE - Topics View Extra Optimizations
-   Makes topics page navigation instant
-   ======================================== */
-body.performance-mode-low .topics-view * {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-
-body.performance-mode-low .topics-view [class*="card"] {
-  background: rgba(30, 18, 52, 0.95) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-body.performance-mode-low .topics-view [class*="card"]::before,
-body.performance-mode-low .topics-view [class*="card"]::after {
-  display: none !important;
-}
-
-/* Pre-render topics for instant switching in performance mode */
-body.performance-mode-low .topics-view.hidden {
-  display: block !important;
-  visibility: hidden !important;
-  position: absolute !important;
-  pointer-events: none !important;
-  left: 0;
-  right: 0;
-}
-
-/* ========================================
    🏛️ ACHIEVEMENTS RITUAL PAGE
 ======================================== */
 
@@ -24499,8 +24493,9 @@ body.performance-mode-low .topics-view.hidden {
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  padding-bottom: 70px;
-  overflow: hidden;
+  padding-bottom: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .achievements-ritual-view.hidden {
@@ -24673,13 +24668,22 @@ body.performance-mode-low .topics-view.hidden {
   align-content: center;
 }
 
-/* Mobile: 2 columns x 4 rows */
+/* Mobile: 2 columns x 4 rows (7 items total) */
 @media (max-width: 480px) {
   .ritual-houses-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
     gap: 16px 12px;
-    padding: 8px 16px;
+    padding: 8px 16px 60px;
+    flex: none;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+  /* Center the last (7th) item and make it same size as others */
+  .ritual-houses-container .ritual-house-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 50%;
   }
 }
 

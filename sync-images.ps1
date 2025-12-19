@@ -38,3 +38,7 @@ Write-Host "=== Sync Complete ===" -ForegroundColor Green
 Write-Host ""
 Write-Host "To sync to Android, run: npx cap sync android" -ForegroundColor Yellow
 
+
+
+
+

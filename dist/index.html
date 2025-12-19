@@ -637,7 +637,7 @@
             <path d="M12 6 L13.5 10.5 L18 12 L13.5 13.5 L12 18 L10.5 13.5 L6 12 L10.5 10.5 Z" fill="url(#quantaInnerGlow)"/>
           </svg>
         </div>
-        <h2 class="quanta-modal-title" data-i18n="quanta_title">✦ Quanta — Coming Soon</h2>
+        <h2 class="quanta-modal-title" data-i18n="quanta_title">✦ Quanta</h2>
         <p class="quanta-modal-text" data-i18n="quanta_description">Quanta is the knowledge currency of Quizzena. Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.</p>
         <button class="quanta-modal-btn" onclick="closeQuantaModal()" data-i18n="common_ok">OK</button>
       </div>
@@ -652,7 +652,7 @@
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
         </button>
-        <h1 class="pxp-title">P-XP Dashboard</h1>
+        <h1 class="pxp-title" data-i18n="pxp_dashboard">P-XP Dashboard</h1>
         <div class="pxp-spacer"></div>
       </div>
 
@@ -681,10 +681,10 @@
 
       <!-- Time Period Tabs -->
       <div class="pxp-tabs">
-        <button class="pxp-tab active" data-period="day" onclick="switchPxpPeriod('day')">1 Day</button>
-        <button class="pxp-tab" data-period="week" onclick="switchPxpPeriod('week')">1 Week</button>
-        <button class="pxp-tab" data-period="month" onclick="switchPxpPeriod('month')">1 Month</button>
-        <button class="pxp-tab" data-period="year" onclick="switchPxpPeriod('year')">1 Year</button>
+        <button class="pxp-tab active" data-period="day" onclick="switchPxpPeriod('day')" data-i18n="pxp_1_day">1 Day</button>
+        <button class="pxp-tab" data-period="week" onclick="switchPxpPeriod('week')" data-i18n="pxp_1_week">1 Week</button>
+        <button class="pxp-tab" data-period="month" onclick="switchPxpPeriod('month')" data-i18n="pxp_1_month">1 Month</button>
+        <button class="pxp-tab" data-period="year" onclick="switchPxpPeriod('year')" data-i18n="pxp_1_year">1 Year</button>
       </div>
 
       <!-- Chart Container -->
@@ -696,11 +696,11 @@
       <div class="pxp-legend">
         <div class="pxp-legend-item">
           <span class="pxp-legend-dot games"></span>
-          <span>Games (+10 each)</span>
+          <span data-i18n="pxp_games_each">Games (+10 each)</span>
         </div>
         <div class="pxp-legend-item">
           <span class="pxp-legend-dot answers"></span>
-          <span>Answers (+1 each)</span>
+          <span data-i18n="pxp_answers_each">Answers (+1 each)</span>
         </div>
         <div class="pxp-legend-item">
           <span class="pxp-legend-dot achievements"></span>
@@ -713,7 +713,7 @@
         <h3 class="pxp-breakdown-title" id="pxp-breakdown-title">Today's Breakdown</h3>
         <div class="pxp-breakdown-card">
           <div class="pxp-breakdown-row">
-            <span class="pxp-breakdown-label">Games Completed</span>
+            <span class="pxp-breakdown-label" data-i18n="pxp_games_completed">Games Completed</span>
             <span class="pxp-breakdown-value"><span id="pxp-games-count">0</span> → <span id="pxp-games-pxp">+0</span> P-XP</span>
           </div>
           <div class="pxp-breakdown-row">
@@ -721,12 +721,12 @@
             <span class="pxp-breakdown-value"><span id="pxp-answers-count">0</span> → <span id="pxp-answers-pxp">+0</span> P-XP</span>
           </div>
           <div class="pxp-breakdown-row">
-            <span class="pxp-breakdown-label">Achievements Claimed</span>
+            <span class="pxp-breakdown-label" data-i18n="pxp_achievements_claimed">Achievements Claimed</span>
             <span class="pxp-breakdown-value"><span id="pxp-achievements-count">0</span> → <span id="pxp-achievements-pxp">+0</span> P-XP</span>
           </div>
           <div class="pxp-breakdown-divider"></div>
           <div class="pxp-breakdown-row total">
-            <span class="pxp-breakdown-label">Total Earned</span>
+            <span class="pxp-breakdown-label" data-i18n="pxp_total_earned_label">Total Earned</span>
             <span class="pxp-breakdown-value" id="pxp-period-total">+0 P-XP</span>
           </div>
         </div>
@@ -734,7 +734,7 @@
 
       <!-- How P-XP Works -->
       <div class="pxp-info">
-        <h3 class="pxp-info-title">ℹ️ How P-XP Works</h3>
+        <h3 class="pxp-info-title" data-i18n="pxp_how_it_works">ℹ️ How P-XP Works</h3>
         <ul class="pxp-info-list">
           <li>Complete a game: <strong>+10 P-XP</strong></li>
           <li>Each correct answer: <strong>+1 P-XP</strong></li>
@@ -761,11 +761,11 @@
       <div class="stats-page-tabs">
         <button class="stats-page-tab active" id="stats-page-1-tab" onclick="switchStatsPage(1)">
           <span class="stats-page-tab-icon">📊</span>
-          <span class="stats-page-tab-text">Overall</span>
+          <span class="stats-page-tab-text" data-i18n="stats_overall">Overall</span>
         </button>
         <button class="stats-page-tab" id="stats-page-2-tab" onclick="switchStatsPage(2)">
           <span class="stats-page-tab-icon">🎯</span>
-          <span class="stats-page-tab-text">By Topic</span>
+          <span class="stats-page-tab-text" data-i18n="stats_by_topic">By Topic</span>
         </button>
       </div>
 
@@ -775,11 +775,11 @@
         <div class="stats-type-selector">
           <button class="stats-type-btn active" data-stat="games" onclick="switchStatType('games')">
             <span class="stats-type-icon">🎮</span>
-            <span class="stats-type-label">Games</span>
+            <span class="stats-type-label" data-i18n="stats_games_label">Games</span>
           </button>
           <button class="stats-type-btn" data-stat="questions" onclick="switchStatType('questions')">
             <span class="stats-type-icon">❓</span>
-            <span class="stats-type-label">Questions</span>
+            <span class="stats-type-label" data-i18n="stats_questions_label">Questions</span>
           </button>
           <button class="stats-type-btn" data-stat="correct" onclick="switchStatType('correct')">
             <span class="stats-type-icon">✅</span>
@@ -787,7 +787,7 @@
           </button>
           <button class="stats-type-btn" data-stat="wrong" onclick="switchStatType('wrong')">
             <span class="stats-type-icon">❌</span>
-            <span class="stats-type-label">Wrong</span>
+            <span class="stats-type-label" data-i18n="stats_wrong_label">Wrong</span>
           </button>
           <button class="stats-type-btn" data-stat="time" onclick="switchStatType('time')">
             <span class="stats-type-icon">⏱️</span>
@@ -795,17 +795,17 @@
           </button>
           <button class="stats-type-btn" data-stat="streak" onclick="switchStatType('streak')">
             <span class="stats-type-icon">🔥</span>
-            <span class="stats-type-label">Streak</span>
+            <span class="stats-type-label" data-i18n="stats_streak_label">Streak</span>
           </button>
         </div>
 
         <!-- Time Period Tabs -->
         <div class="stats-period-tabs">
-          <button class="stats-period-tab active" data-period="day" onclick="switchStatsPeriod('day')">1 Day</button>
-          <button class="stats-period-tab" data-period="week" onclick="switchStatsPeriod('week')">1 Week</button>
-          <button class="stats-period-tab" data-period="month" onclick="switchStatsPeriod('month')">1 Month</button>
-          <button class="stats-period-tab" data-period="year" onclick="switchStatsPeriod('year')">1 Year</button>
-          <button class="stats-period-tab" data-period="all" onclick="switchStatsPeriod('all')">All Time</button>
+          <button class="stats-period-tab active" data-period="day" onclick="switchStatsPeriod('day')" data-i18n="pxp_1_day">1 Day</button>
+          <button class="stats-period-tab" data-period="week" onclick="switchStatsPeriod('week')" data-i18n="pxp_1_week">1 Week</button>
+          <button class="stats-period-tab" data-period="month" onclick="switchStatsPeriod('month')" data-i18n="pxp_1_month">1 Month</button>
+          <button class="stats-period-tab" data-period="year" onclick="switchStatsPeriod('year')" data-i18n="pxp_1_year">1 Year</button>
+          <button class="stats-period-tab" data-period="all" onclick="switchStatsPeriod('all')" data-i18n="pxp_all_time">All Time</button>
         </div>
 
         <!-- Chart Container -->
@@ -813,7 +813,7 @@
           <canvas id="stats-chart"></canvas>
           <div class="stats-chart-empty hidden" id="stats-chart-empty">
             <span class="stats-empty-icon">📭</span>
-            <span class="stats-empty-text">No data available for this time range</span>
+            <span class="stats-empty-text" data-i18n="stats_no_data">No data available for this time range</span>
           </div>
         </div>
 
@@ -824,11 +824,11 @@
             <span class="stats-summary-value" id="stats-peak-value">0</span>
           </div>
           <div class="stats-summary-card average">
-            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-label" data-i18n="stats_average">Average</span>
             <span class="stats-summary-value" id="stats-avg-value">0</span>
           </div>
           <div class="stats-summary-card total">
-            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-label" data-i18n="stats_total">Total</span>
             <span class="stats-summary-value" id="stats-total-value">0</span>
           </div>
         </div>
@@ -859,7 +859,7 @@
         <div class="stats-type-selector">
           <button class="stats-type-btn active" data-stat="games" onclick="switchTopicStatType('games')">
             <span class="stats-type-icon">🎮</span>
-            <span class="stats-type-label">Games</span>
+            <span class="stats-type-label" data-i18n="stats_games_label">Games</span>
           </button>
           <button class="stats-type-btn" data-stat="accuracy" onclick="switchTopicStatType('accuracy')">
             <span class="stats-type-icon">🎯</span>
@@ -867,7 +867,7 @@
           </button>
           <button class="stats-type-btn" data-stat="streak" onclick="switchTopicStatType('streak')">
             <span class="stats-type-icon">🔥</span>
-            <span class="stats-type-label">Streak</span>
+            <span class="stats-type-label" data-i18n="stats_streak_label">Streak</span>
           </button>
           <button class="stats-type-btn" data-stat="time" onclick="switchTopicStatType('time')">
             <span class="stats-type-icon">⏱️</span>
@@ -881,10 +881,10 @@
 
         <!-- Time Period Tabs (Same as Page 1) -->
         <div class="stats-period-tabs">
-          <button class="stats-period-tab active" data-period="day" onclick="switchTopicPeriod('day')">1 Day</button>
-          <button class="stats-period-tab" data-period="week" onclick="switchTopicPeriod('week')">1 Week</button>
-          <button class="stats-period-tab" data-period="month" onclick="switchTopicPeriod('month')">1 Month</button>
-          <button class="stats-period-tab" data-period="year" onclick="switchTopicPeriod('year')">1 Year</button>
+          <button class="stats-period-tab active" data-period="day" onclick="switchTopicPeriod('day')" data-i18n="pxp_1_day">1 Day</button>
+          <button class="stats-period-tab" data-period="week" onclick="switchTopicPeriod('week')" data-i18n="pxp_1_week">1 Week</button>
+          <button class="stats-period-tab" data-period="month" onclick="switchTopicPeriod('month')" data-i18n="pxp_1_month">1 Month</button>
+          <button class="stats-period-tab" data-period="year" onclick="switchTopicPeriod('year')" data-i18n="pxp_1_year">1 Year</button>
         </div>
 
         <!-- Chart Container (Same as Page 1) -->
@@ -903,11 +903,11 @@
             <span class="stats-summary-value" id="topic-peak-value">0</span>
           </div>
           <div class="stats-summary-card average">
-            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-label" data-i18n="stats_average">Average</span>
             <span class="stats-summary-value" id="topic-avg-value">0</span>
           </div>
           <div class="stats-summary-card total">
-            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-label" data-i18n="stats_total">Total</span>
             <span class="stats-summary-value" id="topic-total-value">0</span>
           </div>
         </div>
@@ -976,7 +976,7 @@
 
       <!-- Continue Playing Section -->
       <div class="continue-section">
-        <h3 class="section-title-compact">Continue Playing</h3>
+        <h3 class="section-title-compact" data-i18n="home_continue_playing">Continue Playing</h3>
         <div class="continue-row" id="continue-row">
           <!-- Populated dynamically by JS with cloned actual topic cards -->
         </div>
@@ -984,30 +984,30 @@
 
       <!-- Quick Play Section -->
       <div class="quick-play-section">
-        <h3 class="section-title-compact">Quick Play</h3>
+        <h3 class="section-title-compact" data-i18n="home_quick_play">Quick Play</h3>
         <div class="quick-play-row">
           <button class="quick-play-card quick-play-random" onclick="playClickSound(); startRandomQuiz();">
             <img src="icons/random_icon/random-dice.png" class="quick-play-icon-img" alt="Random">
-            <span class="quick-play-label">Random</span>
+            <span class="quick-play-label" data-i18n="home_random">Random</span>
           </button>
           <div class="quick-play-card quick-play-slot" id="slot-1" data-slot="1" onclick="playClickSound(); handleSlotClick(1);">
             <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(1);" role="button" aria-label="Clear slot">✕</span>
             <img src="" class="slot-topic-img" alt="">
             <span class="slot-empty-icon">+</span>
-            <span class="quick-play-label slot-label">Slot 1</span>
+            <span class="quick-play-label slot-label" data-i18n="home_slot">Slot 1</span>
           </div>
           <div class="quick-play-card quick-play-slot" id="slot-2" data-slot="2" onclick="playClickSound(); handleSlotClick(2);">
             <span class="slot-clear-btn" onclick="event.stopPropagation(); playClickSound(); clearSlot(2);" role="button" aria-label="Clear slot">✕</span>
             <img src="" class="slot-topic-img" alt="">
             <span class="slot-empty-icon">+</span>
-            <span class="quick-play-label slot-label">Slot 2</span>
+            <span class="quick-play-label slot-label" data-i18n="home_slot">Slot 2</span>
           </div>
         </div>
       </div>
 
       <!-- Explore Categories - Compact Grid -->
       <div class="home-categories-section-compact">
-        <h3 class="section-title-compact">Explore</h3>
+        <h3 class="section-title-compact" data-i18n="home_explore">Explore</h3>
         <div class="home-categories-grid-compact">
           <button class="home-category-card-compact" data-category="geography">
             <img src="icons/categories/geography.png" class="cat-icon-compact cat-icon-img" alt="Geography">
@@ -1023,7 +1023,7 @@
           </button>
           <button class="home-category-card-compact" data-category="tvshows">
             <img src="icons/categories/tvshows.png" class="cat-icon-compact cat-icon-img" alt="TV Shows">
-            <span class="cat-name-compact">TV Shows</span>
+            <span class="cat-name-compact" data-i18n="category_tvshows">TV Shows</span>
           </button>
           <button class="home-category-card-compact" data-category="history">
             <img src="icons/categories/history.png" class="cat-icon-compact cat-icon-img" alt="History">
@@ -1038,29 +1038,29 @@
 
       <!-- Hot Topics Section -->
       <div class="hot-topics-section">
-        <h3 class="section-title-compact">🔥 Hot Topics</h3>
+        <h3 class="section-title-compact" data-i18n="home_hot_topics">🔥 Hot Topics</h3>
         <div class="hot-topics-list">
-          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('game-of-thrones-topic-btn').click();">
-            <span class="hot-topic-icon">🐉</span>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('flags-topic-btn').click();">
+            <img class="hot-topic-icon" src="icons/topics/geography/flags.png" alt="Flags">
             <div class="hot-topic-info">
-              <span class="hot-topic-name">Game of Thrones</span>
-              <span class="hot-topic-category">TV Shows</span>
+              <span class="hot-topic-name" data-i18n="topic_flags">Flags</span>
+              <span class="hot-topic-category" data-i18n="category_geography">Geography</span>
             </div>
             <span class="hot-topic-arrow">›</span>
           </div>
-          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('ww2-topic-btn').click();">
-            <span class="hot-topic-icon">✠</span>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('capitals-topic-btn').click();">
+            <img class="hot-topic-icon" src="icons/topics/geography/capitals.png" alt="Capitals">
             <div class="hot-topic-info">
-              <span class="hot-topic-name">World War II</span>
-              <span class="hot-topic-category">History</span>
+              <span class="hot-topic-name" data-i18n="topic_capitals">Capitals</span>
+              <span class="hot-topic-category" data-i18n="category_geography">Geography</span>
             </div>
             <span class="hot-topic-arrow">›</span>
           </div>
-          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('marvel-movies-topic-btn').click();">
-            <span class="hot-topic-icon">🦸</span>
+          <div class="hot-topic-item" onclick="playClickSound(); document.getElementById('logos-topic-btn').click();">
+            <img class="hot-topic-icon" src="icons/topics/logos/logos.png" alt="Logos">
             <div class="hot-topic-info">
-              <span class="hot-topic-name">Marvel</span>
-              <span class="hot-topic-category">Movies</span>
+              <span class="hot-topic-name" data-i18n="topic_logos">Logos</span>
+              <span class="hot-topic-category" data-i18n="category_logos">Logos</span>
             </div>
             <span class="hot-topic-arrow">›</span>
           </div>
@@ -1071,7 +1071,7 @@
       <div class="ranked-section-bottom">
         <button class="ranked-button-compact" id="ranked-button" onclick="playClickSound(); openRankedModal();">
           <span class="ranked-icon-compact">⚔️</span>
-          <span class="ranked-text-compact">Enter Ranked Mode</span>
+          <span class="ranked-text-compact" data-i18n="home_ranked_mode">Enter Ranked Mode</span>
           <span class="ranked-arrow-compact">›</span>
         </button>
       </div>
@@ -1185,23 +1185,6 @@
               <span class="settings-arrow">→</span>
             </div>
           </div>
-          <!-- Performance Mode Setting -->
-          <div class="settings-item">
-            <div class="settings-item-label">
-              <span class="settings-item-icon"></span>
-              <span data-i18n="settings_performance">Performance Mode</span>
-            </div>
-            <div class="settings-item-control">
-              <label class="toggle-switch">
-                <input type="checkbox" id="performance-toggle">
-                <span class="toggle-slider"></span>
-              </label>
-            </div>
-          </div>
-          <div class="settings-item-hint" id="performance-hint">
-            <span data-i18n="settings_performance_hint">Enable for smoother scrolling (disables animations)</span>
-          </div>
-
           <!-- Tutorial Button -->
           <div class="settings-item settings-item-clickable" id="settings-tutorial-btn" onclick="playClickSound(); startTutorial();">
             <div class="settings-item-label">
@@ -1381,7 +1364,7 @@
 
       <!-- Geography Category -->
       <div class="geography-section">
-        <h3 class="geography-title">Geography</h3>
+        <h3 class="geography-title" data-i18n="category_geography">Geography</h3>
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Flags Card - Floating Circular Design -->
@@ -1396,7 +1379,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Flags</div>
+              <div class="floating-card-title" data-i18n="topic_flags">Flags</div>
             </button>
           </div>
 
@@ -1412,7 +1395,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Capitals</div>
+              <div class="floating-card-title" data-i18n="topic_capitals">Capitals</div>
             </button>
           </div>
 
@@ -1428,7 +1411,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Country Area</div>
+              <div class="floating-card-title" data-i18n="topic_area">Country Area</div>
             </button>
           </div>
 
@@ -1436,7 +1419,7 @@
           <div class="topic-card-small">
             <button id="borders-topic-btn" class="topic-card-btn">
               <div class="topic-icon-small">🗺️</div>
-              <div class="topic-name-small">Borders</div>
+              <div class="topic-name-small" data-i18n="topic_borders">Borders</div>
             </button>
           </div>
 
@@ -1445,7 +1428,7 @@
 
       <!-- Football Section -->
       <div class="football-section">
-        <h3 class="section-title">⚽ Football</h3>
+        <h3 class="section-title" data-i18n="category_football">⚽ Football</h3>
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Card 1: Football General - Floating Circular Design -->
@@ -1460,7 +1443,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Football</div>
+              <div class="floating-card-title" data-i18n="topic_football">Football</div>
             </button>
           </div>
 
@@ -1476,7 +1459,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Premier League</div>
+              <div class="floating-card-title" data-i18n="topic_premier_league">Premier League</div>
             </button>
           </div>
 
@@ -1492,7 +1475,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Champions League</div>
+              <div class="floating-card-title" data-i18n="topic_champions_league">Champions League</div>
             </button>
           </div>
 
@@ -1508,7 +1491,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">World Cup</div>
+              <div class="floating-card-title" data-i18n="topic_world_cup">World Cup</div>
             </button>
           </div>
 
@@ -1524,7 +1507,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Derbies</div>
+              <div class="floating-card-title" data-i18n="topic_derbies">Derbies</div>
             </button>
           </div>
 
@@ -1540,7 +1523,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Messi</div>
+              <div class="floating-card-title" data-i18n="topic_messi">Messi</div>
             </button>
           </div>
 
@@ -1556,7 +1539,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Ronaldo</div>
+              <div class="floating-card-title" data-i18n="topic_ronaldo">Ronaldo</div>
             </button>
           </div>
 
@@ -1565,7 +1548,7 @@
 
       <!-- Movies Section -->
       <div class="movies-section">
-        <h3 class="section-title">🎬 Movies</h3>
+        <h3 class="section-title" data-i18n="category_movies">🎬 Movies</h3>
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Card 1: Movies General - Floating Circular Design -->
@@ -1580,7 +1563,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Movies</div>
+              <div class="floating-card-title" data-i18n="topic_movies">Movies</div>
             </button>
           </div>
 
@@ -1612,7 +1595,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">DC</div>
+              <div class="floating-card-title" data-i18n="topic_dc">DC</div>
             </button>
           </div>
 
@@ -1628,7 +1611,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Disney</div>
+              <div class="floating-card-title" data-i18n="topic_disney">Disney</div>
             </button>
           </div>
 
@@ -1644,7 +1627,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Harry Potter</div>
+              <div class="floating-card-title" data-i18n="topic_harry_potter">Harry Potter</div>
             </button>
           </div>
 
@@ -1660,7 +1643,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Star Wars</div>
+              <div class="floating-card-title" data-i18n="topic_star_wars">Star Wars</div>
             </button>
           </div>
 
@@ -1676,7 +1659,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">LOTR</div>
+              <div class="floating-card-title" data-i18n="topic_lotr">LOTR</div>
             </button>
           </div>
 
@@ -1700,7 +1683,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">TV Shows</div>
+              <div class="floating-card-title" data-i18n="topic_tv_shows">TV Shows</div>
             </button>
           </div>
 
@@ -1716,7 +1699,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Sitcoms</div>
+              <div class="floating-card-title" data-i18n="topic_sitcoms">Sitcoms</div>
             </button>
           </div>
 
@@ -1732,7 +1715,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Game of Thrones</div>
+              <div class="floating-card-title" data-i18n="topic_got">Game of Thrones</div>
             </button>
           </div>
 
@@ -1764,7 +1747,7 @@
               </div>
               
               <!-- Title below -->
-              <div class="floating-card-title">Stranger Things</div>
+              <div class="floating-card-title" data-i18n="topic_stranger_things">Stranger Things</div>
             </button>
           </div>
 
@@ -1780,7 +1763,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Money Heist</div>
+              <div class="floating-card-title" data-i18n="topic_money_heist">Money Heist</div>
             </button>
           </div>
 
@@ -1796,7 +1779,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">The Office</div>
+              <div class="floating-card-title" data-i18n="topic_the_office">The Office</div>
             </button>
           </div>
 
@@ -1805,7 +1788,7 @@
 
       <!-- History Section -->
       <div class="history-section">
-        <h3 class="section-title">📜 History</h3>
+        <h3 class="section-title" data-i18n="category_history">📜 History</h3>
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Card 1: World History - Floating Circular Design -->
@@ -1836,7 +1819,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">WWII</div>
+              <div class="floating-card-title" data-i18n="topic_wwii">WWII</div>
             </button>
           </div>
 
@@ -1852,7 +1835,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">WWI</div>
+              <div class="floating-card-title" data-i18n="topic_wwi">WWI</div>
             </button>
           </div>
 
@@ -1868,7 +1851,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Roman Empire</div>
+              <div class="floating-card-title" data-i18n="topic_roman_empire">Roman Empire</div>
             </button>
           </div>
 
@@ -1884,7 +1867,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Ottoman</div>
+              <div class="floating-card-title" data-i18n="topic_ottoman">Ottoman</div>
             </button>
           </div>
 
@@ -1916,7 +1899,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">British Monarchy</div>
+              <div class="floating-card-title" data-i18n="topic_british_monarchy">British Monarchy</div>
             </button>
           </div>
 
@@ -1932,7 +1915,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Ancient Civs</div>
+              <div class="floating-card-title" data-i18n="topic_ancient_civs">Ancient Civs</div>
             </button>
           </div>
 
@@ -1948,7 +1931,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Cold War</div>
+              <div class="floating-card-title" data-i18n="topic_cold_war">Cold War</div>
             </button>
           </div>
 
@@ -1957,7 +1940,7 @@
 
       <!-- Logos Section -->
       <div class="logos-section">
-        <h3 class="section-title">✨ Logos</h3>
+        <h3 class="section-title" data-i18n="category_logos">✨ Logos</h3>
         <div class="topics-scroll-row stagger-reveal">
 
           <!-- Card 1: Logos General -->
@@ -1972,7 +1955,7 @@
               </div>
 
               <!-- Title below -->
-              <div class="floating-card-title">Logos</div>
+              <div class="floating-card-title" data-i18n="topic_logos">Logos</div>
             </button>
           </div>
 
@@ -2012,6 +1995,7 @@
 
         <!-- Identity Block -->
         <div class="profile-info">
+          <h2 class="profile-name">Username</h2>
           <div class="profile-name-row">
             <div class="level-badge profile-level-badge" onclick="playClickSound(); openJourneyModal();">
               <div class="level-badge-ring">
@@ -2084,6 +2068,13 @@
 
       </div>
 
+      <!-- Topic Progress Section -->
+      <div class="topic-progress-section">
+        <h3 class="topic-progress-title" data-i18n="topic_progress">Topic Progress</h3>
+        <div class="topic-progress-list" id="topic-progress-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
 
 
     </div>
@@ -2179,8 +2170,8 @@
       <div class="ritual-header">
         <button class="ritual-back-btn" onclick="closeAchievementsRitual()">←</button>
         <div class="ritual-title-container">
-          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements Ritual</h1>
-          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Eight Paths of Mastery</p>
+          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements</h1>
+          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Seven Paths of Mastery</p>
         </div>
       </div>
 
@@ -2192,7 +2183,7 @@
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">🔷</span>
           </div>
-          <span class="ritual-house-name">Progression</span>
+          <span class="ritual-house-name" data-i18n="achievement_progression">Progression</span>
         </div>
 
         <!-- House 2: Path of Skill -->
@@ -2201,7 +2192,7 @@
           <div class="ritual-house-shape skill-hexagon">
             <span class="ritual-house-icon">⬡</span>
           </div>
-          <span class="ritual-house-name">Skill</span>
+          <span class="ritual-house-name" data-i18n="achievement_skill">Skill</span>
         </div>
 
         <!-- House 3: Path of Exploration -->
@@ -2217,26 +2208,13 @@
           <span class="ritual-house-name">Exploration</span>
         </div>
 
-        <!-- House 4: Path of Behaviour -->
-        <div class="ritual-house-card house-behaviour" onclick="openHousePage('behaviour', '🔮', 'Path of Behaviour')">
-          <div class="ritual-house-glow"></div>
-          <div class="ritual-house-shape">
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <span class="ritual-house-icon">🔮</span>
-          </div>
-          <span class="ritual-house-name">Behaviour</span>
-        </div>
-
-        <!-- House 5: Path of Time Attack -->
+        <!-- House 4: Path of Time Attack -->
         <div class="ritual-house-card house-time" onclick="openHousePage('time', '⏱️', 'Path of Time Attack')">
           <div class="ritual-house-glow"></div>
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">⏱️</span>
           </div>
-          <span class="ritual-house-name">Time Attack</span>
+          <span class="ritual-house-name" data-i18n="achievement_time_attack">Time Attack</span>
         </div>
 
         <!-- House 6: Path of Survival -->
@@ -2249,22 +2227,26 @@
           <span class="ritual-house-name">Survival</span>
         </div>
 
-        <!-- House 7: Path of Momentum -->
-        <div class="ritual-house-card house-momentum" onclick="openHousePage('momentum', '🔥', 'Path of Momentum')">
-          <div class="ritual-house-glow"></div>
-          <div class="ritual-house-shape">
-            <span class="ritual-house-icon">🔥</span>
-          </div>
-          <span class="ritual-house-name">Momentum</span>
-        </div>
-
-        <!-- House 8: Path of Casual Mastery -->
+        <!-- House 6: Path of Casual Mastery -->
         <div class="ritual-house-card house-casual" onclick="openHousePage('casual', '🌿', 'Path of Casual Mastery')">
           <div class="ritual-house-glow"></div>
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">🌿</span>
           </div>
-          <span class="ritual-house-name">Casual</span>
+          <span class="ritual-house-name" data-i18n="achievement_casual">Casual</span>
+        </div>
+
+        <!-- House 7: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour" onclick="openHousePage('behaviour', '🔮', 'Path of Behaviour')">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <span class="ritual-house-icon">🔮</span>
+          </div>
+          <span class="ritual-house-name" data-i18n="achievement_behaviour">Behaviour</span>
         </div>
       </div>
     </div>
@@ -2314,7 +2296,7 @@
         <span data-i18n="nav_social">Social</span>
       </div>
       <div class="nav-item" id="nav-leaderboard">
-        🏆<br><span data-i18n="nav_leaderboard">Competition</span>
+        🏆<br><span data-i18n="nav_leaderboard">Leaderboard</span>
       </div>
       <div class="nav-item" id="nav-profile">
         👤<br><span data-i18n="nav_profile">Profile</span>
@@ -2405,7 +2387,7 @@
   <div class="slot-modal hidden" id="slot-modal">
     <div class="slot-modal-backdrop" onclick="closeSlotModal()"></div>
     <div class="slot-modal-content">
-      <h3 class="slot-modal-title">Add to Slot</h3>
+      <h3 class="slot-modal-title" data-i18n="topic_add_to_slot">Add to Slot</h3>
       <p class="slot-modal-subtitle">Choose a slot for this quiz</p>
       <div class="slot-modal-buttons">
         <button class="slot-modal-btn" onclick="playClickSound(); assignToSlot(1);">
@@ -2441,6 +2423,7 @@
         
         <!-- Identity Block -->
         <div class="profile-info">
+          <h2 class="profile-name">Player</h2>
           <div class="profile-name-row">
             <div class="level-badge profile-level-badge">
               <div class="level-badge-ring">
@@ -2524,8 +2507,8 @@
       <div class="ritual-header">
         <button class="ritual-back-btn">←</button>
         <div class="ritual-title-container">
-          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements Ritual</h1>
-          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Eight Paths of Mastery</p>
+          <h1 class="ritual-title" data-i18n="achievements_ritual">Achievements</h1>
+          <p class="ritual-subtitle" data-i18n="achievements_subtitle">The Seven Paths of Mastery</p>
         </div>
       </div>
 
@@ -2537,7 +2520,7 @@
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">🔷</span>
           </div>
-          <span class="ritual-house-name">Progression</span>
+          <span class="ritual-house-name" data-i18n="achievement_progression">Progression</span>
         </div>
 
         <!-- House 2: Path of Skill -->
@@ -2546,7 +2529,7 @@
           <div class="ritual-house-shape skill-hexagon">
             <span class="ritual-house-icon">⬡</span>
           </div>
-          <span class="ritual-house-name">Skill</span>
+          <span class="ritual-house-name" data-i18n="achievement_skill">Skill</span>
         </div>
 
         <!-- House 3: Path of Exploration -->
@@ -2562,29 +2545,16 @@
           <span class="ritual-house-name">Exploration</span>
         </div>
 
-        <!-- House 4: Path of Behaviour -->
-        <div class="ritual-house-card house-behaviour">
-          <div class="ritual-house-glow"></div>
-          <div class="ritual-house-shape">
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <div class="behaviour-cosmic-particle"></div>
-            <span class="ritual-house-icon">🔮</span>
-          </div>
-          <span class="ritual-house-name">Behaviour</span>
-        </div>
-
-        <!-- House 5: Path of Time Attack -->
+        <!-- House 4: Path of Time Attack -->
         <div class="ritual-house-card house-time">
           <div class="ritual-house-glow"></div>
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">⏱️</span>
           </div>
-          <span class="ritual-house-name">Time Attack</span>
+          <span class="ritual-house-name" data-i18n="achievement_time_attack">Time Attack</span>
         </div>
 
-        <!-- House 6: Path of Survival -->
+        <!-- House 5: Path of Survival -->
         <div class="ritual-house-card house-survival">
           <div class="ritual-house-glow"></div>
           <div class="ritual-house-shape">
@@ -2594,22 +2564,26 @@
           <span class="ritual-house-name">Survival</span>
         </div>
 
-        <!-- House 7: Path of Momentum -->
-        <div class="ritual-house-card house-momentum">
-          <div class="ritual-house-glow"></div>
-          <div class="ritual-house-shape">
-            <span class="ritual-house-icon">🔥</span>
-          </div>
-          <span class="ritual-house-name">Momentum</span>
-        </div>
-
-        <!-- House 8: Path of Casual Mastery -->
+        <!-- House 6: Path of Casual Mastery -->
         <div class="ritual-house-card house-casual">
           <div class="ritual-house-glow"></div>
           <div class="ritual-house-shape">
             <span class="ritual-house-icon">🌿</span>
           </div>
-          <span class="ritual-house-name">Casual</span>
+          <span class="ritual-house-name" data-i18n="achievement_casual">Casual</span>
+        </div>
+
+        <!-- House 7: Path of Behaviour -->
+        <div class="ritual-house-card house-behaviour">
+          <div class="ritual-house-glow"></div>
+          <div class="ritual-house-shape">
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <div class="behaviour-cosmic-particle"></div>
+            <span class="ritual-house-icon">🔮</span>
+          </div>
+          <span class="ritual-house-name" data-i18n="achievement_behaviour">Behaviour</span>
         </div>
       </div>
     </div>
@@ -2633,11 +2607,11 @@
       <div class="stats-page-tabs">
         <button class="stats-page-tab active" id="tutorial-stats-tab-1">
           <span class="stats-page-tab-icon">📊</span>
-          <span class="stats-page-tab-text">Overall</span>
+          <span class="stats-page-tab-text" data-i18n="stats_overall">Overall</span>
         </button>
         <button class="stats-page-tab" id="tutorial-stats-tab-2">
           <span class="stats-page-tab-icon">🎯</span>
-          <span class="stats-page-tab-text">By Topic</span>
+          <span class="stats-page-tab-text" data-i18n="stats_by_topic">By Topic</span>
         </button>
       </div>
 
@@ -2647,11 +2621,11 @@
         <div class="stats-type-selector" id="tutorial-stats-selector">
           <button class="stats-type-btn active" data-stat="games">
             <span class="stats-type-icon">🎮</span>
-            <span class="stats-type-label">Games</span>
+            <span class="stats-type-label" data-i18n="stats_games_label">Games</span>
           </button>
           <button class="stats-type-btn" data-stat="questions">
             <span class="stats-type-icon">❓</span>
-            <span class="stats-type-label">Questions</span>
+            <span class="stats-type-label" data-i18n="stats_questions_label">Questions</span>
           </button>
           <button class="stats-type-btn" data-stat="correct">
             <span class="stats-type-icon">✅</span>
@@ -2659,7 +2633,7 @@
           </button>
           <button class="stats-type-btn" data-stat="wrong">
             <span class="stats-type-icon">❌</span>
-            <span class="stats-type-label">Wrong</span>
+            <span class="stats-type-label" data-i18n="stats_wrong_label">Wrong</span>
           </button>
           <button class="stats-type-btn" data-stat="time">
             <span class="stats-type-icon">⏱️</span>
@@ -2667,24 +2641,24 @@
           </button>
           <button class="stats-type-btn" data-stat="streak">
             <span class="stats-type-icon">🔥</span>
-            <span class="stats-type-label">Streak</span>
+            <span class="stats-type-label" data-i18n="stats_streak_label">Streak</span>
           </button>
         </div>
 
         <!-- Time Period Tabs -->
         <div class="stats-period-tabs">
-          <button class="stats-period-tab active" data-period="day">1 Day</button>
-          <button class="stats-period-tab" data-period="week">1 Week</button>
-          <button class="stats-period-tab" data-period="month">1 Month</button>
-          <button class="stats-period-tab" data-period="year">1 Year</button>
-          <button class="stats-period-tab" data-period="all">All Time</button>
+          <button class="stats-period-tab active" data-period="day" data-i18n="pxp_1_day">1 Day</button>
+          <button class="stats-period-tab" data-period="week" data-i18n="pxp_1_week">1 Week</button>
+          <button class="stats-period-tab" data-period="month" data-i18n="pxp_1_month">1 Month</button>
+          <button class="stats-period-tab" data-period="year" data-i18n="pxp_1_year">1 Year</button>
+          <button class="stats-period-tab" data-period="all" data-i18n="pxp_all_time">All Time</button>
         </div>
 
         <!-- Chart Container -->
         <div class="stats-chart-container">
           <div class="stats-chart-empty">
             <span class="stats-empty-icon">📭</span>
-            <span class="stats-empty-text">No data available for this time range</span>
+            <span class="stats-empty-text" data-i18n="stats_no_data">No data available for this time range</span>
           </div>
         </div>
 
@@ -2695,11 +2669,11 @@
             <span class="stats-summary-value">0</span>
           </div>
           <div class="stats-summary-card average">
-            <span class="stats-summary-label">Average</span>
+            <span class="stats-summary-label" data-i18n="stats_average">Average</span>
             <span class="stats-summary-value">0</span>
           </div>
           <div class="stats-summary-card total">
-            <span class="stats-summary-label">Total</span>
+            <span class="stats-summary-label" data-i18n="stats_total">Total</span>
             <span class="stats-summary-value">0</span>
           </div>
         </div>

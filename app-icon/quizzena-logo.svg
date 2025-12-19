@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="35%" style="stop-color:#f5a623"/>
+      <stop offset="70%" style="stop-color:#e8920b"/>
+      <stop offset="100%" style="stop-color:#c77b05"/>
+    </linearGradient>
+    
+    <!-- Gold Gradient Vertical -->
+    <linearGradient id="goldGradV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="50%" style="stop-color:#f5a623"/>
+      <stop offset="100%" style="stop-color:#c77b05"/>
+    </linearGradient>
+    
+    <!-- Crown Gold -->
+    <linearGradient id="crownGold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffe066"/>
+      <stop offset="40%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#d4940a"/>
+    </linearGradient>
+    
+    <!-- Red Gem Gradient -->
+    <radialGradient id="redGem" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#ff6b6b"/>
+      <stop offset="50%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#991b1b"/>
+    </radialGradient>
+    
+    <!-- Orange Gem Gradient -->
+    <radialGradient id="orangeGem" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#fcd34d"/>
+      <stop offset="50%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#b45309"/>
+    </radialGradient>
+    
+    <!-- Gold Glow -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Soft Glow -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gem Glow -->
+    <filter id="gemGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- ==================== GOLDEN Q RING ==================== -->
+  <g filter="url(#goldGlow)">
+    <!-- Main Q Circle -->
+    <circle cx="256" cy="280" r="100" fill="none" stroke="url(#goldGrad)" stroke-width="32"/>
+    
+    <!-- Highlight on ring -->
+    <path d="M 185 195 A 100 100 0 0 1 290 185" 
+          fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  
+  <!-- ==================== LIGHTNING BOLT (Q TAIL) ==================== -->
+  <g filter="url(#goldGlow)">
+    <path d="
+      M 325 350
+      L 370 378
+      L 342 382
+      L 400 440
+      L 368 434
+      L 435 510
+      L 358 445
+      L 390 450
+      L 332 395
+      L 358 392
+      L 315 365
+      Z
+    " fill="url(#goldGradV)"/>
+    
+    <!-- Lightning highlight -->
+    <path d="
+      M 332 356
+      L 362 378
+      L 345 382
+      L 388 425
+      L 365 420
+      L 398 465
+      L 358 435
+      L 378 440
+      L 338 395
+      L 355 392
+      L 328 370
+      Z
+    " fill="rgba(255,255,255,0.25)"/>
+  </g>
+  
+  <!-- ==================== CROWN ==================== -->
+  <g filter="url(#softGlow)" transform="translate(256, 138)">
+    <!-- Crown Base Band -->
+    <path d="M-58 35 L-58 20 C-58 13 -52 8 -44 8 L44 8 C52 8 58 13 58 20 L58 35 C58 42 52 47 44 47 L-44 47 C-52 47 -58 42 -58 35 Z" 
+          fill="url(#crownGold)"/>
+    
+    <!-- Crown base bottom shadow -->
+    <rect x="-48" y="37" width="96" height="5" rx="2" fill="#a67c00" opacity="0.6"/>
+    
+    <!-- Crown base top highlight -->
+    <rect x="-48" y="14" width="96" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+    
+    <!-- Left Point -->
+    <polygon points="-46,8 -60,-35 -32,8" fill="url(#crownGold)"/>
+    <polygon points="-46,8 -60,-35 -52,8" fill="rgba(255,255,255,0.2)"/>
+    
+    <!-- Center Point (Tallest) -->
+    <polygon points="-12,8 0,-58 12,8" fill="url(#crownGold)"/>
+    <polygon points="-7,8 0,-58 2,8" fill="rgba(255,255,255,0.25)"/>
+    
+    <!-- Right Point -->
+    <polygon points="32,8 60,-35 46,8" fill="url(#crownGold)"/>
+    <polygon points="36,8 60,-35 46,8" fill="rgba(255,255,255,0.2)"/>
+    
+    <!-- Left-Center Small Point -->
+    <polygon points="-30,8 -25,-15 -20,8" fill="url(#crownGold)"/>
+    
+    <!-- Right-Center Small Point -->
+    <polygon points="20,8 25,-15 30,8" fill="url(#crownGold)"/>
+  </g>
+  
+  <!-- ==================== CROWN GEMS ==================== -->
+  <!-- Center Red Gem (larger) -->
+  <g filter="url(#gemGlow)" transform="translate(256, 158)">
+    <ellipse cx="0" cy="0" rx="14" ry="12" fill="url(#redGem)"/>
+    <ellipse cx="-4" cy="-3" rx="5" ry="3" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  
+  <!-- Left Orange Gem -->
+  <g filter="url(#gemGlow)" transform="translate(212, 162)">
+    <ellipse cx="0" cy="0" rx="9" ry="8" fill="url(#orangeGem)"/>
+    <ellipse cx="-2" cy="-2" rx="3" ry="2" fill="rgba(255,255,255,0.5)"/>
+  </g>
+  
+  <!-- Right Orange Gem -->
+  <g filter="url(#gemGlow)" transform="translate(300, 162)">
+    <ellipse cx="0" cy="0" rx="9" ry="8" fill="url(#orangeGem)"/>
+    <ellipse cx="-2" cy="-2" rx="3" ry="2" fill="rgba(255,255,255,0.5)"/>
+  </g>
+  
+</svg>
+
