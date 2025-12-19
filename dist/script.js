@@ -4580,30 +4580,38 @@ function display3DCardQuestion() {
   const contentWrapper = document.getElementById('quiz-content-wrapper');
   if (!contentWrapper) return;
   
-  // Get current question
-  const randomFlag = flagsData[currentQuestion];
+  // Safety check - make sure flags are loaded
+  if (!flags || flags.length === 0) {
+    console.error('3D Card: Flags data not loaded');
+    return;
+  }
+  
+  // Get current question (same logic as displayUnifiedQuestion)
+  let remaining = flags.filter(f => !usedFlags.includes(f.country));
+  if (remaining.length === 0) {
+    usedFlags = [];
+    remaining = flags; // Use all flags after reset
+  }
+  const randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
   if (!randomFlag) return;
   
+  usedFlags.push(randomFlag.country);
   questionCount++;
   
   // Prepare question data
-  const imageSrc = `flags/${randomFlag.country.toLowerCase().replace(/ /g, '-')}.svg`;
-  const questionText = "Which country's flag is this?";
+  const imageSrc = randomFlag.flag;
+  const questionText = randomFlag.entityType 
+    ? getQuestionTextForEntity(randomFlag.entityType) 
+    : "Which country's flag is this?";
   const correctAnswer = randomFlag.country;
   
-  // Generate options
-  let options = [correctAnswer];
-  while (options.length < 4) {
-    const randomOption = flagsData[Math.floor(Math.random() * flagsData.length)].country;
-    if (!options.includes(randomOption)) {
-      options.push(randomOption);
-    }
-  }
-  options = options.sort(() => Math.random() - 0.5);
+  // Generate options using the same bait answer logic
+  const wrongAnswers = generateBaitAnswers(randomFlag);
+  let options = shuffle([randomFlag, ...wrongAnswers]).map(opt => opt.country);
   
   // Build options HTML
-  const optionsHTML = options.map(opt => 
-    `<button class="card3d-answer-btn" data-answer="${opt}" data-correct="${correctAnswer}">${opt}</button>`
+  const optionsHTML = options.map(country => 
+    `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
   ).join('');
   
   // Check if this is a new question (for zoom animation)
@@ -4626,7 +4634,7 @@ function display3DCardQuestion() {
         <div class="card3d-center">
           <div class="card3d-circle ${zoomClass}" id="card3d-circle">
             <div class="card3d-flag-container">
-              <img src="${imageSrc}" alt="Flag" class="card3d-flag-img" onerror="this.src='flags/unknown.svg'">
+              <img src="${imageSrc}" alt="Flag" class="card3d-flag-img" onerror="this.style.display='none'">
             </div>
           </div>
         </div>
@@ -4646,8 +4654,8 @@ function display3DCardQuestion() {
   // Track answer time
   questionOptionsShownTime = Date.now();
   
-  // Start timer
-  start3DCardTimer(correctAnswer);
+  // Start timer (use main timer function)
+  startTimer(correctAnswer);
 }
 
 // Check answer in 3D card mode
