@@ -4570,7 +4570,12 @@ function shouldUse3DCardMode() {
   return card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
 }
 
-// Display 3D Card question layout
+// 3D Carousel state
+let carouselRotation = 0;
+let carouselCards = [];
+const CAROUSEL_CARD_COUNT = 6; // Number of cards in the carousel
+
+// Display 3D Card question layout with infinite carousel
 function display3DCardQuestion() {
   if (gameEnded) return;
   
@@ -4590,7 +4595,7 @@ function display3DCardQuestion() {
   let remaining = flags.filter(f => !usedFlags.includes(f.country));
   if (remaining.length === 0) {
     usedFlags = [];
-    remaining = flags; // Use all flags after reset
+    remaining = flags;
   }
   const randomFlag = remaining[Math.floor(Math.random() * remaining.length)];
   if (!randomFlag) return;
@@ -4614,11 +4619,10 @@ function display3DCardQuestion() {
     `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
   ).join('');
   
-  // Check if this is a new question (for zoom animation)
-  const isNewQuestion = contentWrapper.querySelector('.card3d-circle');
-  const zoomClass = isNewQuestion ? 'zoom-in' : '';
+  // Generate carousel cards (current + decorative blurred cards)
+  const carouselCardsHTML = generateCarouselCards(imageSrc);
   
-  // Build the 3D card layout
+  // Build the 3D card layout with carousel
   contentWrapper.innerHTML = `
     <div class="card3d-quiz-container">
       <div class="card3d-top-bar">
@@ -4632,9 +4636,9 @@ function display3DCardQuestion() {
         </div>
         
         <div class="card3d-center">
-          <div class="card3d-circle ${zoomClass}" id="card3d-circle">
-            <div class="card3d-flag-container">
-              <img src="${imageSrc}" alt="Flag" class="card3d-flag-img" onerror="this.style.display='none'">
+          <div class="carousel-scene">
+            <div class="carousel-container" id="carousel-container" style="transform: rotateY(${carouselRotation}deg)">
+              ${carouselCardsHTML}
             </div>
           </div>
         </div>
@@ -4656,6 +4660,43 @@ function display3DCardQuestion() {
   
   // Start timer (use main timer function)
   startTimer(correctAnswer);
+}
+
+// Generate carousel cards HTML
+function generateCarouselCards(currentImage) {
+  const angleStep = 360 / CAROUSEL_CARD_COUNT;
+  const radius = 200; // Distance from center
+  
+  // Get random flags for decorative cards
+  const decorativeFlags = shuffle([...flags]).slice(0, CAROUSEL_CARD_COUNT - 1);
+  
+  let cardsHTML = '';
+  
+  for (let i = 0; i < CAROUSEL_CARD_COUNT; i++) {
+    const angle = i * angleStep;
+    const isFront = i === 0;
+    const flagSrc = isFront ? currentImage : (decorativeFlags[i - 1]?.flag || currentImage);
+    
+    cardsHTML += `
+      <div class="carousel-card ${isFront ? 'front-card' : 'back-card'}" 
+           style="transform: rotateY(${angle}deg) translateZ(${radius}px)">
+        <div class="carousel-card-inner">
+          <img src="${flagSrc}" alt="Flag" class="carousel-card-img" onerror="this.style.opacity='0.3'">
+        </div>
+      </div>
+    `;
+  }
+  
+  return cardsHTML;
+}
+
+// Rotate carousel to next card
+function rotateCarousel() {
+  carouselRotation -= (360 / CAROUSEL_CARD_COUNT);
+  const container = document.getElementById('carousel-container');
+  if (container) {
+    container.style.transform = `rotateY(${carouselRotation}deg)`;
+  }
 }
 
 // Check answer in 3D card mode
@@ -4701,18 +4742,17 @@ function check3DCardAnswer(btnElement, selected, correct) {
     return;
   }
   
-  // Transition to next question with zoom effect
+  // Transition to next question with carousel rotation
   setTimeout(() => {
-    const circle = document.getElementById('card3d-circle');
-    if (circle) {
-      circle.classList.add('zoom-out');
-    }
+    // Rotate the carousel
+    rotateCarousel();
     
+    // After rotation completes, load new question
     setTimeout(() => {
       answered = false;
       display3DCardQuestion();
-    }, 500);
-  }, 800);
+    }, 800);
+  }, 600);
 }
 
 // Timer for 3D card mode
