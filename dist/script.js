@@ -1,4 +1,23 @@
 // ============================================
+// 🔁 GL-MATRIX COMPATIBILITY CHECK
+// ============================================
+// Ensure glMatrix global is available (some CDNs expose it differently)
+if (typeof glMatrix === 'undefined' && typeof window !== 'undefined') {
+  // Check if gl-matrix exposed individual modules on window
+  if (typeof window.mat4 !== 'undefined') {
+    window.glMatrix = {
+      mat4: window.mat4,
+      mat3: window.mat3,
+      vec2: window.vec2,
+      vec3: window.vec3,
+      vec4: window.vec4,
+      quat: window.quat
+    };
+    console.log('glMatrix: Created from window globals');
+  }
+}
+
+// ============================================
 // 🔥 FIREBASE INITIALIZATION
 // ============================================
 
@@ -4567,7 +4586,9 @@ function buildUnifiedQuizScreen() {
 
 // Check if 3D Card mode should be used
 function shouldUse3DCardMode() {
-  return card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
+  const should = card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
+  console.log('shouldUse3DCardMode:', should, '| card3dModeEnabled:', card3dModeEnabled, '| topic:', currentTopic, '| mode:', gameMode);
+  return should;
 }
 
 // ==========================================
@@ -4577,19 +4598,30 @@ function shouldUse3DCardMode() {
 let infiniteMenuInstance = null;
 let currentQuestionData = null;
 
-// Display 3D Card question layout with InfiniteMenu sphere
+// Display 3D Card question layout with InfiniteMenu sphere (FULL SCREEN)
 function display3DCardQuestion() {
-  if (gameEnded) return;
+  console.log('🎴 display3DCardQuestion called');
+  
+  if (gameEnded) {
+    console.log('🎴 Game ended, returning');
+    return;
+  }
   
   const quizScreen = document.getElementById('unified-quiz-screen');
-  if (!quizScreen) return;
+  if (!quizScreen) {
+    console.log('🎴 No quiz screen found');
+    return;
+  }
   
   const contentWrapper = document.getElementById('quiz-content-wrapper');
-  if (!contentWrapper) return;
+  if (!contentWrapper) {
+    console.log('🎴 No content wrapper found');
+    return;
+  }
   
   // Safety check - make sure flags are loaded
   if (!flags || flags.length === 0) {
-    console.error('3D Card: Flags data not loaded');
+    console.error('🎴 Flags data not loaded');
     return;
   }
   
@@ -4627,33 +4659,37 @@ function display3DCardQuestion() {
   const existingCanvas = contentWrapper.querySelector('#infinite-menu-canvas');
   
   if (!existingCanvas) {
-    // First question - create full layout
+    // First question - create FULL SCREEN layout
     contentWrapper.innerHTML = `
       <div class="card3d-quiz-container">
-        <div class="card3d-top-bar">
-          <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
-          <div class="card3d-score" id="card3d-score">Score: ${singlePlayerScore}</div>
+        <!-- FULL SCREEN SPHERE BACKGROUND -->
+        <div class="card3d-sphere-bg">
+          <canvas id="infinite-menu-canvas"></canvas>
         </div>
         
-        <div class="card3d-main-content">
-          <div class="card3d-question-side">
-            <p class="card3d-question-text" id="card3d-question">${currentQuestionData.questionText}</p>
+        <!-- CONTENT OVERLAY -->
+        <div class="card3d-content-overlay">
+          <div class="card3d-top-bar">
+            <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
+            <div class="card3d-score" id="card3d-score">Score: ${singlePlayerScore}</div>
           </div>
           
-          <div class="card3d-center">
-            <div class="infinite-menu-wrapper" id="infinite-menu-wrapper">
-              <canvas id="infinite-menu-canvas"></canvas>
+          <div class="card3d-main-content">
+            <div class="card3d-question-side">
+              <p class="card3d-question-text" id="card3d-question">${currentQuestionData.questionText}</p>
             </div>
-          </div>
-          
-          <div class="card3d-answers-side" id="card3d-answers">
-            ${optionsHTML}
+            
+            <div class="card3d-center-spacer"></div>
+            
+            <div class="card3d-answers-side" id="card3d-answers">
+              ${optionsHTML}
+            </div>
           </div>
         </div>
       </div>
     `;
     
-    // Initialize InfiniteMenu with flag images
+    // Initialize InfiniteMenu with flag images (full screen)
     initInfiniteMenu();
   } else {
     // Update existing layout
@@ -4665,7 +4701,7 @@ function display3DCardQuestion() {
     if (scoreEl) scoreEl.textContent = `Score: ${singlePlayerScore}`;
     if (answersEl) answersEl.innerHTML = optionsHTML;
     
-    // Trigger rotation animation
+    // Trigger rotation animation to next disc
     if (infiniteMenuInstance) {
       infiniteMenuInstance.autoRotate();
     }
@@ -4683,24 +4719,47 @@ function display3DCardQuestion() {
   startTimer(currentQuestionData.correctAnswer);
 }
 
-// Initialize the InfiniteMenu 3D sphere
+// Initialize the InfiniteMenu 3D sphere (FULL SCREEN)
 function initInfiniteMenu() {
+  console.log('🎴 initInfiniteMenu called');
+  
   const canvas = document.getElementById('infinite-menu-canvas');
-  if (!canvas) return;
+  if (!canvas) {
+    console.error('🎴 Canvas not found!');
+    return;
+  }
+  console.log('🎴 Canvas found:', canvas.clientWidth, 'x', canvas.clientHeight);
   
-  // Get flag images for the sphere
-  const flagImages = shuffle([...flags]).slice(0, 12).map(f => f.flag);
+  // Get more flag images for the full-screen sphere (42 vertices after subdivision)
+  const shuffledFlags = shuffle([...flags]);
+  const flagImages = shuffledFlags.slice(0, 42).map(f => f.flag);
+  console.log('🎴 Flag images count:', flagImages.length);
   
-  // Add current question flag at front
-  if (currentQuestionData) {
+  // Ensure current question flag is in the mix
+  if (currentQuestionData && currentQuestionData.imageSrc) {
+    // Put current flag at position 0 (will be front-facing initially)
     flagImages[0] = currentQuestionData.imageSrc;
   }
   
+  // Check if glMatrix is available
+  if (typeof glMatrix === 'undefined') {
+    console.error('🎴 glMatrix is NOT defined!');
+    return;
+  }
+  console.log('🎴 glMatrix is available');
+  
   try {
-    infiniteMenuInstance = new InfiniteGridMenu(canvas, flagImages);
+    // Create instance with callback for active item changes
+    console.log('🎴 Creating InfiniteGridMenu...');
+    infiniteMenuInstance = new InfiniteGridMenu(canvas, flagImages, (activeIndex) => {
+      // Could use this to track which flag is currently front-facing
+      // console.log('Active flag index:', activeIndex);
+    });
+    console.log('🎴 InfiniteGridMenu created, calling run()...');
     infiniteMenuInstance.run();
+    console.log('🎴 InfiniteGridMenu running!');
   } catch (e) {
-    console.error('Failed to initialize InfiniteMenu:', e);
+    console.error('🎴 Failed to initialize InfiniteMenu:', e);
   }
 }
 
@@ -4713,16 +4772,19 @@ function destroyInfiniteMenu() {
 }
 
 // ==========================================
-// INFINITE GRID MENU - WebGL2 Implementation
+// INFINITE GRID MENU - EXACT React-Bits WebGL2 Implementation
 // ==========================================
 
 const discVertShaderSource = `#version 300 es
+
 uniform mat4 uWorldMatrix;
 uniform mat4 uViewMatrix;
 uniform mat4 uProjectionMatrix;
+uniform vec3 uCameraPosition;
 uniform vec4 uRotationAxisVelocity;
 
 in vec3 aModelPosition;
+in vec3 aModelNormal;
 in vec2 aModelUvs;
 in mat4 aInstanceMatrix;
 
@@ -4730,8 +4792,11 @@ out vec2 vUvs;
 out float vAlpha;
 flat out int vInstanceId;
 
+#define PI 3.141593
+
 void main() {
     vec4 worldPosition = uWorldMatrix * aInstanceMatrix * vec4(aModelPosition, 1.);
+
     vec3 centerPos = (uWorldMatrix * aInstanceMatrix * vec4(0., 0., 0., 1.)).xyz;
     float radius = length(centerPos.xyz);
 
@@ -4747,6 +4812,7 @@ void main() {
     }
 
     worldPosition.xyz = radius * normalize(worldPosition.xyz);
+
     gl_Position = uProjectionMatrix * uViewMatrix * worldPosition;
 
     vAlpha = smoothstep(0.5, 1., normalize(worldPosition.xyz).z) * .9 + .1;
@@ -4776,7 +4842,18 @@ void main() {
     vec2 cellSize = vec2(1.0) / vec2(float(cellsPerRow));
     vec2 cellOffset = vec2(float(cellX), float(cellY)) * cellSize;
 
+    ivec2 texSize = textureSize(uTex, 0);
+    float imageAspect = float(texSize.x) / float(texSize.y);
+    float containerAspect = 1.0;
+    
+    float scale = max(imageAspect / containerAspect, 
+                     containerAspect / imageAspect);
+    
     vec2 st = vec2(vUvs.x, 1.0 - vUvs.y);
+    st = (st - 0.5) * scale + 0.5;
+    
+    st = clamp(st, 0.0, 1.0);
+    
     st = st * cellSize + cellOffset;
     
     outColor = texture(uTex, st);
@@ -4784,222 +4861,535 @@ void main() {
 }
 `;
 
-class InfiniteGridMenu {
-  constructor(canvas, images) {
-    this.canvas = canvas;
-    this.images = images || [];
-    this.SPHERE_RADIUS = 2;
-    this.destroyed = false;
-    this.animationId = null;
-    this.time = 0;
-    this.autoRotateAngle = 0;
-    
-    this.camera = {
-      position: [0, 0, 3.5],
-      up: [0, 1, 0],
-      fov: Math.PI / 4,
-      aspect: 1,
-      near: 0.1,
-      far: 40
+// ==========================================
+// GEOMETRY CLASSES
+// ==========================================
+
+class Face {
+  constructor(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  }
+}
+
+class Vertex {
+  constructor(x, y, z) {
+    this.position = glMatrix.vec3.fromValues(x, y, z);
+    this.normal = glMatrix.vec3.create();
+    this.uv = glMatrix.vec2.create();
+  }
+}
+
+class Geometry {
+  constructor() {
+    this.vertices = [];
+    this.faces = [];
+  }
+
+  addVertex(...args) {
+    for (let i = 0; i < args.length; i += 3) {
+      this.vertices.push(new Vertex(args[i], args[i + 1], args[i + 2]));
+    }
+    return this;
+  }
+
+  addFace(...args) {
+    for (let i = 0; i < args.length; i += 3) {
+      this.faces.push(new Face(args[i], args[i + 1], args[i + 2]));
+    }
+    return this;
+  }
+
+  get lastVertex() {
+    return this.vertices[this.vertices.length - 1];
+  }
+
+  subdivide(divisions = 1) {
+    const midPointCache = {};
+    let f = this.faces;
+
+    for (let div = 0; div < divisions; ++div) {
+      const newFaces = new Array(f.length * 4);
+
+      f.forEach((face, ndx) => {
+        const mAB = this.getMidPoint(face.a, face.b, midPointCache);
+        const mBC = this.getMidPoint(face.b, face.c, midPointCache);
+        const mCA = this.getMidPoint(face.c, face.a, midPointCache);
+
+        const i = ndx * 4;
+        newFaces[i + 0] = new Face(face.a, mAB, mCA);
+        newFaces[i + 1] = new Face(face.b, mBC, mAB);
+        newFaces[i + 2] = new Face(face.c, mCA, mBC);
+        newFaces[i + 3] = new Face(mAB, mBC, mCA);
+      });
+
+      f = newFaces;
+    }
+
+    this.faces = f;
+    return this;
+  }
+
+  spherize(radius = 1) {
+    this.vertices.forEach(vertex => {
+      glMatrix.vec3.normalize(vertex.normal, vertex.position);
+      glMatrix.vec3.scale(vertex.position, vertex.normal, radius);
+    });
+    return this;
+  }
+
+  get data() {
+    return {
+      vertices: this.vertexData,
+      indices: this.indexData,
+      normals: this.normalData,
+      uvs: this.uvData
     };
-    
-    this.init();
   }
-  
-  init() {
-    const gl = this.canvas.getContext('webgl2', { antialias: true, alpha: true });
-    if (!gl) {
-      console.error('WebGL2 not supported');
-      return;
-    }
-    this.gl = gl;
-    
-    // Resize canvas
-    this.resize();
-    window.addEventListener('resize', () => this.resize());
-    
-    // Create shader program
-    this.program = this.createProgram(discVertShaderSource, discFragShaderSource);
-    if (!this.program) return;
-    
-    // Get locations
-    this.locations = {
-      aModelPosition: gl.getAttribLocation(this.program, 'aModelPosition'),
-      aModelUvs: gl.getAttribLocation(this.program, 'aModelUvs'),
-      aInstanceMatrix: gl.getAttribLocation(this.program, 'aInstanceMatrix'),
-      uWorldMatrix: gl.getUniformLocation(this.program, 'uWorldMatrix'),
-      uViewMatrix: gl.getUniformLocation(this.program, 'uViewMatrix'),
-      uProjectionMatrix: gl.getUniformLocation(this.program, 'uProjectionMatrix'),
-      uRotationAxisVelocity: gl.getUniformLocation(this.program, 'uRotationAxisVelocity'),
-      uTex: gl.getUniformLocation(this.program, 'uTex'),
-      uItemCount: gl.getUniformLocation(this.program, 'uItemCount'),
-      uAtlasSize: gl.getUniformLocation(this.program, 'uAtlasSize')
-    };
-    
-    // Create disc geometry
-    this.createDiscGeometry();
-    
-    // Create icosahedron vertices for instance positions
-    this.createSpherePositions();
-    
-    // Create instance matrices
-    this.createInstances();
-    
-    // Load textures
-    this.loadTextures();
-    
-    // Create matrices
-    this.worldMatrix = glMatrix.mat4.create();
-    this.viewMatrix = glMatrix.mat4.create();
-    this.projectionMatrix = glMatrix.mat4.create();
-    this.orientation = glMatrix.quat.create();
-    
-    this.updateCamera();
+
+  get vertexData() {
+    return new Float32Array(this.vertices.flatMap(v => Array.from(v.position)));
   }
-  
-  createProgram(vertSrc, fragSrc) {
-    const gl = this.gl;
-    
-    const vertShader = gl.createShader(gl.VERTEX_SHADER);
-    gl.shaderSource(vertShader, vertSrc);
-    gl.compileShader(vertShader);
-    if (!gl.getShaderParameter(vertShader, gl.COMPILE_STATUS)) {
-      console.error('Vertex shader error:', gl.getShaderInfoLog(vertShader));
-      return null;
-    }
-    
-    const fragShader = gl.createShader(gl.FRAGMENT_SHADER);
-    gl.shaderSource(fragShader, fragSrc);
-    gl.compileShader(fragShader);
-    if (!gl.getShaderParameter(fragShader, gl.COMPILE_STATUS)) {
-      console.error('Fragment shader error:', gl.getShaderInfoLog(fragShader));
-      return null;
-    }
-    
-    const program = gl.createProgram();
-    gl.attachShader(program, vertShader);
-    gl.attachShader(program, fragShader);
-    gl.linkProgram(program);
-    
-    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      console.error('Program link error:', gl.getProgramInfoLog(program));
-      return null;
-    }
-    
-    return program;
+
+  get normalData() {
+    return new Float32Array(this.vertices.flatMap(v => Array.from(v.normal)));
   }
-  
-  createDiscGeometry() {
-    const gl = this.gl;
-    const steps = 32;
-    const radius = 1;
-    
-    const vertices = [0, 0, 0];
-    const uvs = [0.5, 0.5];
-    const indices = [];
-    
-    for (let i = 0; i <= steps; i++) {
-      const angle = (i / steps) * Math.PI * 2;
-      const x = Math.cos(angle) * radius;
-      const y = Math.sin(angle) * radius;
-      vertices.push(x, y, 0);
-      uvs.push(x * 0.5 + 0.5, y * 0.5 + 0.5);
-      
+
+  get uvData() {
+    return new Float32Array(this.vertices.flatMap(v => Array.from(v.uv)));
+  }
+
+  get indexData() {
+    return new Uint16Array(this.faces.flatMap(f => [f.a, f.b, f.c]));
+  }
+
+  getMidPoint(ndxA, ndxB, cache) {
+    const cacheKey = ndxA < ndxB ? `k_${ndxB}_${ndxA}` : `k_${ndxA}_${ndxB}`;
+    if (Object.prototype.hasOwnProperty.call(cache, cacheKey)) {
+      return cache[cacheKey];
+    }
+    const a = this.vertices[ndxA].position;
+    const b = this.vertices[ndxB].position;
+    const ndx = this.vertices.length;
+    cache[cacheKey] = ndx;
+    this.addVertex((a[0] + b[0]) * 0.5, (a[1] + b[1]) * 0.5, (a[2] + b[2]) * 0.5);
+    return ndx;
+  }
+}
+
+class IcosahedronGeometry extends Geometry {
+  constructor() {
+    super();
+    const t = Math.sqrt(5) * 0.5 + 0.5;
+    this.addVertex(
+      -1, t, 0, 1, t, 0, -1, -t, 0, 1, -t, 0,
+      0, -1, t, 0, 1, t, 0, -1, -t, 0, 1, -t,
+      t, 0, -1, t, 0, 1, -t, 0, -1, -t, 0, 1
+    ).addFace(
+      0, 11, 5, 0, 5, 1, 0, 1, 7, 0, 7, 10, 0, 10, 11,
+      1, 5, 9, 5, 11, 4, 11, 10, 2, 10, 7, 6, 7, 1, 8,
+      3, 9, 4, 3, 4, 2, 3, 2, 6, 3, 6, 8, 3, 8, 9,
+      4, 9, 5, 2, 4, 11, 6, 2, 10, 8, 6, 7, 9, 8, 1
+    );
+  }
+}
+
+class DiscGeometry extends Geometry {
+  constructor(steps = 4, radius = 1) {
+    super();
+    steps = Math.max(4, steps);
+
+    const alpha = (2 * Math.PI) / steps;
+
+    this.addVertex(0, 0, 0);
+    this.lastVertex.uv[0] = 0.5;
+    this.lastVertex.uv[1] = 0.5;
+
+    for (let i = 0; i < steps; ++i) {
+      const x = Math.cos(alpha * i);
+      const y = Math.sin(alpha * i);
+      this.addVertex(radius * x, radius * y, 0);
+      this.lastVertex.uv[0] = x * 0.5 + 0.5;
+      this.lastVertex.uv[1] = y * 0.5 + 0.5;
+
       if (i > 0) {
-        indices.push(0, i, i + 1);
+        this.addFace(0, i, i + 1);
       }
     }
-    indices.push(0, steps, 1);
+    this.addFace(0, steps, 1);
+  }
+}
+
+// ==========================================
+// ARCBALL CONTROL (Modified for Auto-Rotation)
+// ==========================================
+
+class ArcballControl {
+  // Fields initialized in constructor (glMatrix not available at class definition time)
+  isPointerDown = false;
+  orientation = null;
+  pointerRotation = null;
+  rotationVelocity = 0;
+  rotationAxis = null;
+  snapDirection = null;
+  snapTargetDirection = null;
+  EPSILON = 0.1;
+  IDENTITY_QUAT = null;
+
+  // Auto-rotation properties
+  autoRotateTarget = null;
+  autoRotating = false;
+
+  constructor(canvas, updateCallback) {
+    this.canvas = canvas;
+    this.updateCallback = updateCallback || (() => null);
+
+    // Initialize glMatrix objects here (after library is loaded)
+    this.orientation = glMatrix.quat.create();
+    this.pointerRotation = glMatrix.quat.create();
+    this.rotationAxis = glMatrix.vec3.fromValues(1, 0, 0);
+    this.snapDirection = glMatrix.vec3.fromValues(0, 0, -1);
+    this.IDENTITY_QUAT = glMatrix.quat.create();
     
-    // Create VAO
-    this.discVAO = gl.createVertexArray();
-    gl.bindVertexArray(this.discVAO);
+    this.pointerPos = glMatrix.vec2.create();
+    this.previousPointerPos = glMatrix.vec2.create();
+    this._rotationVelocity = 0;
+    this._combinedQuat = glMatrix.quat.create();
+
+    // NO pointer events - quiz controls rotation
+    canvas.style.touchAction = 'none';
+    canvas.style.pointerEvents = 'none';
+  }
+
+  // Trigger auto-rotation to next item
+  triggerAutoRotate() {
+    this.autoRotating = true;
+    // Create a rotation impulse
+    const impulseAxis = glMatrix.vec3.fromValues(
+      (Math.random() - 0.5) * 0.5,
+      1,
+      (Math.random() - 0.5) * 0.5
+    );
+    glMatrix.vec3.normalize(impulseAxis, impulseAxis);
     
-    // Vertex buffer
-    const vertexBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
-    gl.enableVertexAttribArray(this.locations.aModelPosition);
-    gl.vertexAttribPointer(this.locations.aModelPosition, 3, gl.FLOAT, false, 0, 0);
+    const impulseQuat = glMatrix.quat.create();
+    glMatrix.quat.setAxisAngle(impulseQuat, impulseAxis, Math.PI / 4);
+    glMatrix.quat.multiply(this.pointerRotation, impulseQuat, this.pointerRotation);
     
-    // UV buffer
-    const uvBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, uvBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(uvs), gl.STATIC_DRAW);
-    gl.enableVertexAttribArray(this.locations.aModelUvs);
-    gl.vertexAttribPointer(this.locations.aModelUvs, 2, gl.FLOAT, false, 0, 0);
-    
-    // Index buffer
+    setTimeout(() => {
+      this.autoRotating = false;
+    }, 800);
+  }
+
+  update(deltaTime, targetFrameDuration = 16) {
+    const timeScale = deltaTime / targetFrameDuration + 0.00001;
+    let angleFactor = timeScale;
+    let snapRotation = glMatrix.quat.create();
+
+    // Always apply damping (no pointer interaction)
+    const INTENSITY = 0.1 * timeScale;
+    glMatrix.quat.slerp(this.pointerRotation, this.pointerRotation, this.IDENTITY_QUAT, INTENSITY);
+
+    if (this.snapTargetDirection && !this.autoRotating) {
+      const SNAPPING_INTENSITY = 0.2;
+      const a = this.snapTargetDirection;
+      const b = this.snapDirection;
+      const sqrDist = glMatrix.vec3.squaredDistance(a, b);
+      const distanceFactor = Math.max(0.1, 1 - sqrDist * 10);
+      angleFactor *= SNAPPING_INTENSITY * distanceFactor;
+      this.quatFromVectors(a, b, snapRotation, angleFactor);
+    }
+
+    const combinedQuat = glMatrix.quat.multiply(glMatrix.quat.create(), snapRotation, this.pointerRotation);
+    this.orientation = glMatrix.quat.multiply(glMatrix.quat.create(), combinedQuat, this.orientation);
+    glMatrix.quat.normalize(this.orientation, this.orientation);
+
+    const RA_INTENSITY = 0.8 * timeScale;
+    glMatrix.quat.slerp(this._combinedQuat, this._combinedQuat, combinedQuat, RA_INTENSITY);
+    glMatrix.quat.normalize(this._combinedQuat, this._combinedQuat);
+
+    const rad = Math.acos(this._combinedQuat[3]) * 2.0;
+    const s = Math.sin(rad / 2.0);
+    let rv = 0;
+    if (s > 0.000001) {
+      rv = rad / (2 * Math.PI);
+      this.rotationAxis[0] = this._combinedQuat[0] / s;
+      this.rotationAxis[1] = this._combinedQuat[1] / s;
+      this.rotationAxis[2] = this._combinedQuat[2] / s;
+    }
+
+    const RV_INTENSITY = 0.5 * timeScale;
+    this._rotationVelocity += (rv - this._rotationVelocity) * RV_INTENSITY;
+    this.rotationVelocity = this._rotationVelocity / timeScale;
+
+    this.updateCallback(deltaTime);
+  }
+
+  quatFromVectors(a, b, out, angleFactor = 1) {
+    const axis = glMatrix.vec3.cross(glMatrix.vec3.create(), a, b);
+    glMatrix.vec3.normalize(axis, axis);
+    const d = Math.max(-1, Math.min(1, glMatrix.vec3.dot(a, b)));
+    const angle = Math.acos(d) * angleFactor;
+    glMatrix.quat.setAxisAngle(out, axis, angle);
+    return { q: out, axis, angle };
+  }
+}
+
+// ==========================================
+// WebGL Helper Functions
+// ==========================================
+
+function createShaderIM(gl, type, source) {
+  const shader = gl.createShader(type);
+  gl.shaderSource(shader, source);
+  gl.compileShader(shader);
+  if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+    return shader;
+  }
+  console.error(gl.getShaderInfoLog(shader));
+  gl.deleteShader(shader);
+  return null;
+}
+
+function createProgramIM(gl, shaderSources, attribLocations) {
+  const program = gl.createProgram();
+
+  [gl.VERTEX_SHADER, gl.FRAGMENT_SHADER].forEach((type, ndx) => {
+    const shader = createShaderIM(gl, type, shaderSources[ndx]);
+    if (shader) gl.attachShader(program, shader);
+  });
+
+  if (attribLocations) {
+    for (const attrib in attribLocations) {
+      gl.bindAttribLocation(program, attribLocations[attrib], attrib);
+    }
+  }
+
+  gl.linkProgram(program);
+  if (gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    return program;
+  }
+
+  console.error(gl.getProgramInfoLog(program));
+  gl.deleteProgram(program);
+  return null;
+}
+
+function makeVertexArrayIM(gl, bufLocNumElmPairs, indices) {
+  const va = gl.createVertexArray();
+  gl.bindVertexArray(va);
+
+  for (const [buffer, loc, numElem] of bufLocNumElmPairs) {
+    if (loc === -1) continue;
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, numElem, gl.FLOAT, false, 0, 0);
+  }
+
+  if (indices) {
     const indexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
-    
-    this.discIndexCount = indices.length;
-    
-    gl.bindVertexArray(null);
   }
-  
-  createSpherePositions() {
-    // Create icosahedron vertices
-    const t = (1 + Math.sqrt(5)) / 2;
-    const vertices = [
-      [-1, t, 0], [1, t, 0], [-1, -t, 0], [1, -t, 0],
-      [0, -1, t], [0, 1, t], [0, -1, -t], [0, 1, -t],
-      [t, 0, -1], [t, 0, 1], [-t, 0, -1], [-t, 0, 1]
-    ];
+
+  gl.bindVertexArray(null);
+  return va;
+}
+
+function makeBufferIM(gl, sizeOrData, usage) {
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, sizeOrData, usage);
+  gl.bindBuffer(gl.ARRAY_BUFFER, null);
+  return buf;
+}
+
+// ==========================================
+// INFINITE GRID MENU - Full Implementation
+// ==========================================
+
+class InfiniteGridMenu {
+  TARGET_FRAME_DURATION = 1000 / 60;
+  SPHERE_RADIUS = 2;
+
+  #time = 0;
+  #deltaTime = 0;
+  #deltaFrames = 0;
+  #frames = 0;
+
+  // Camera initialized in constructor (glMatrix not available at class definition time)
+  camera = null;
+
+  smoothRotationVelocity = 0;
+  destroyed = false;
+  animationId = null;
+
+  constructor(canvas, images, onActiveItemChange) {
+    this.canvas = canvas;
+    this.images = images || [];
+    this.onActiveItemChange = onActiveItemChange || (() => {});
     
-    // Normalize to sphere
-    this.instancePositions = vertices.map(v => {
-      const len = Math.sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
-      return [v[0]/len * this.SPHERE_RADIUS, v[1]/len * this.SPHERE_RADIUS, v[2]/len * this.SPHERE_RADIUS];
-    });
+    // Initialize camera here (after glMatrix is loaded)
+    this.camera = {
+      matrix: glMatrix.mat4.create(),
+      near: 0.1,
+      far: 40,
+      fov: Math.PI / 4,
+      aspect: 1,
+      position: glMatrix.vec3.fromValues(0, 0, 2.2), // ZOOMED IN - closer camera
+      up: glMatrix.vec3.fromValues(0, 1, 0),
+      matrices: {
+        view: glMatrix.mat4.create(),
+        projection: glMatrix.mat4.create(),
+        inversProjection: glMatrix.mat4.create()
+      }
+    };
     
-    this.instanceCount = this.instancePositions.length;
+    this.#init();
   }
-  
-  createInstances() {
+
+  resize() {
     const gl = this.gl;
+    if (!gl) return;
     
-    this.instanceMatrices = new Float32Array(this.instanceCount * 16);
+    const dpr = Math.min(2, window.devicePixelRatio);
+    const displayWidth = Math.round(this.canvas.clientWidth * dpr);
+    const displayHeight = Math.round(this.canvas.clientHeight * dpr);
     
-    gl.bindVertexArray(this.discVAO);
-    
-    this.instanceBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, this.instanceBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, this.instanceMatrices, gl.DYNAMIC_DRAW);
-    
-    // Set up instanced attributes (mat4 = 4 vec4s)
-    for (let i = 0; i < 4; i++) {
-      const loc = this.locations.aInstanceMatrix + i;
-      gl.enableVertexAttribArray(loc);
-      gl.vertexAttribPointer(loc, 4, gl.FLOAT, false, 64, i * 16);
-      gl.vertexAttribDivisor(loc, 1);
+    if (this.canvas.width !== displayWidth || this.canvas.height !== displayHeight) {
+      this.canvas.width = displayWidth;
+      this.canvas.height = displayHeight;
+      gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
     }
-    
-    gl.bindVertexArray(null);
+
+    this.#updateProjectionMatrix(gl);
   }
-  
-  loadTextures() {
+
+  run(time = 0) {
+    if (this.destroyed) return;
+    
+    this.#deltaTime = Math.min(32, time - this.#time);
+    this.#time = time;
+    this.#deltaFrames = this.#deltaTime / this.TARGET_FRAME_DURATION;
+    this.#frames += this.#deltaFrames;
+
+    this.#animate(this.#deltaTime);
+    this.#render();
+
+    this.animationId = requestAnimationFrame(t => this.run(t));
+  }
+
+  // Auto-rotate to next question
+  autoRotate() {
+    if (this.control) {
+      this.control.triggerAutoRotate();
+    }
+  }
+
+  #init() {
+    console.log('🌐 InfiniteGridMenu #init starting...');
+    console.log('🌐 Canvas dimensions:', this.canvas.clientWidth, 'x', this.canvas.clientHeight);
+    
+    this.gl = this.canvas.getContext('webgl2', { antialias: true, alpha: true });
+    const gl = this.gl;
+    if (!gl) {
+      console.error('🌐 No WebGL 2 context!');
+      return;
+    }
+    console.log('🌐 WebGL2 context obtained');
+
+    this.viewportSize = glMatrix.vec2.fromValues(this.canvas.clientWidth, this.canvas.clientHeight);
+
+    this.discProgram = createProgramIM(gl, [discVertShaderSource, discFragShaderSource], {
+      aModelPosition: 0,
+      aModelNormal: 1,
+      aModelUvs: 2,
+      aInstanceMatrix: 3
+    });
+
+    if (!this.discProgram) {
+      console.error('🌐 Failed to create disc program');
+      return;
+    }
+    console.log('🌐 Shader program created');
+
+    this.discLocations = {
+      aModelPosition: gl.getAttribLocation(this.discProgram, 'aModelPosition'),
+      aModelUvs: gl.getAttribLocation(this.discProgram, 'aModelUvs'),
+      aInstanceMatrix: gl.getAttribLocation(this.discProgram, 'aInstanceMatrix'),
+      uWorldMatrix: gl.getUniformLocation(this.discProgram, 'uWorldMatrix'),
+      uViewMatrix: gl.getUniformLocation(this.discProgram, 'uViewMatrix'),
+      uProjectionMatrix: gl.getUniformLocation(this.discProgram, 'uProjectionMatrix'),
+      uCameraPosition: gl.getUniformLocation(this.discProgram, 'uCameraPosition'),
+      uRotationAxisVelocity: gl.getUniformLocation(this.discProgram, 'uRotationAxisVelocity'),
+      uTex: gl.getUniformLocation(this.discProgram, 'uTex'),
+      uItemCount: gl.getUniformLocation(this.discProgram, 'uItemCount'),
+      uAtlasSize: gl.getUniformLocation(this.discProgram, 'uAtlasSize')
+    };
+
+    // Create disc geometry with more steps for smoother circles
+    this.discGeo = new DiscGeometry(56, 1);
+    this.discBuffers = this.discGeo.data;
+    this.discVAO = makeVertexArrayIM(
+      gl,
+      [
+        [makeBufferIM(gl, this.discBuffers.vertices, gl.STATIC_DRAW), this.discLocations.aModelPosition, 3],
+        [makeBufferIM(gl, this.discBuffers.uvs, gl.STATIC_DRAW), this.discLocations.aModelUvs, 2]
+      ],
+      this.discBuffers.indices
+    );
+
+    // Create icosahedron and subdivide for more discs
+    this.icoGeo = new IcosahedronGeometry();
+    this.icoGeo.subdivide(1).spherize(this.SPHERE_RADIUS);
+    this.instancePositions = this.icoGeo.vertices.map(v => v.position);
+    this.DISC_INSTANCE_COUNT = this.icoGeo.vertices.length;
+    this.#initDiscInstances(this.DISC_INSTANCE_COUNT);
+
+    this.worldMatrix = glMatrix.mat4.create();
+    this.#initTexture();
+
+    // Create control (no user interaction)
+    this.control = new ArcballControl(this.canvas, deltaTime => this.#onControlUpdate(deltaTime));
+
+    this.#updateCameraMatrix();
+    this.#updateProjectionMatrix(gl);
+    this.resize();
+    
+    // Handle resize
+    this._resizeHandler = () => this.resize();
+    window.addEventListener('resize', this._resizeHandler);
+    
+    console.log('🌐 InfiniteGridMenu #init COMPLETE');
+  }
+
+  #initTexture() {
     const gl = this.gl;
     
-    this.atlasSize = Math.ceil(Math.sqrt(this.images.length));
-    const cellSize = 256;
-    
-    const canvas = document.createElement('canvas');
-    canvas.width = this.atlasSize * cellSize;
-    canvas.height = this.atlasSize * cellSize;
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#1a1a2e';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    this.texture = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, this.texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    this.tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, this.tex);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+
+    const itemCount = Math.max(1, this.images.length);
+    this.atlasSize = Math.ceil(Math.sqrt(itemCount));
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const cellSize = 512;
+
+    canvas.width = this.atlasSize * cellSize;
+    canvas.height = this.atlasSize * cellSize;
     
+    // Fill with dark background
+    ctx.fillStyle = '#0a0a15';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Upload initial texture
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+
     // Load images
     let loadedCount = 0;
     this.images.forEach((src, i) => {
@@ -5008,145 +5398,239 @@ class InfiniteGridMenu {
       img.onload = () => {
         const x = (i % this.atlasSize) * cellSize;
         const y = Math.floor(i / this.atlasSize) * cellSize;
-        ctx.drawImage(img, x, y, cellSize, cellSize);
-        loadedCount++;
         
+        // Draw with cover fit
+        const imgAspect = img.width / img.height;
+        const cellAspect = 1;
+        let drawW, drawH, drawX, drawY;
+        
+        if (imgAspect > cellAspect) {
+          drawH = cellSize;
+          drawW = cellSize * imgAspect;
+          drawX = x - (drawW - cellSize) / 2;
+          drawY = y;
+        } else {
+          drawW = cellSize;
+          drawH = cellSize / imgAspect;
+          drawX = x;
+          drawY = y - (drawH - cellSize) / 2;
+        }
+        
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(x, y, cellSize, cellSize);
+        ctx.clip();
+        ctx.drawImage(img, drawX, drawY, drawW, drawH);
+        ctx.restore();
+        
+        loadedCount++;
+
         if (loadedCount === this.images.length) {
-          gl.bindTexture(gl.TEXTURE_2D, this.texture);
+          gl.bindTexture(gl.TEXTURE_2D, this.tex);
           gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+          gl.generateMipmap(gl.TEXTURE_2D);
         }
       };
-      img.onerror = () => {
-        loadedCount++;
-      };
+      img.onerror = () => loadedCount++;
       img.src = src;
     });
   }
-  
-  resize() {
-    const dpr = Math.min(2, window.devicePixelRatio);
-    const wrapper = this.canvas.parentElement;
-    if (!wrapper) return;
+
+  #initDiscInstances(count) {
+    const gl = this.gl;
+    this.discInstances = {
+      matricesArray: new Float32Array(count * 16),
+      matrices: [],
+      buffer: gl.createBuffer()
+    };
     
-    const width = wrapper.clientWidth;
-    const height = wrapper.clientHeight;
-    
-    this.canvas.width = width * dpr;
-    this.canvas.height = height * dpr;
-    this.canvas.style.width = width + 'px';
-    this.canvas.style.height = height + 'px';
-    
-    if (this.gl) {
-      this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
+    for (let i = 0; i < count; ++i) {
+      const instanceMatrixArray = new Float32Array(this.discInstances.matricesArray.buffer, i * 16 * 4, 16);
+      instanceMatrixArray.set(glMatrix.mat4.create());
+      this.discInstances.matrices.push(instanceMatrixArray);
     }
     
-    this.camera.aspect = width / height;
-    this.updateProjection();
+    gl.bindVertexArray(this.discVAO);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.discInstances.buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, this.discInstances.matricesArray.byteLength, gl.DYNAMIC_DRAW);
+    
+    const mat4AttribSlotCount = 4;
+    const bytesPerMatrix = 16 * 4;
+    for (let j = 0; j < mat4AttribSlotCount; ++j) {
+      const loc = this.discLocations.aInstanceMatrix + j;
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 4, gl.FLOAT, false, bytesPerMatrix, j * 4 * 4);
+      gl.vertexAttribDivisor(loc, 1);
+    }
+    
+    gl.bindBuffer(gl.ARRAY_BUFFER, null);
+    gl.bindVertexArray(null);
   }
-  
-  updateCamera() {
-    glMatrix.mat4.lookAt(this.viewMatrix, this.camera.position, [0, 0, 0], this.camera.up);
-    this.updateProjection();
+
+  #animate(deltaTime) {
+    const gl = this.gl;
+    if (!gl) return;
+    
+    this.control.update(deltaTime, this.TARGET_FRAME_DURATION);
+
+    // Transform positions by current orientation
+    let positions = this.instancePositions.map(p => 
+      glMatrix.vec3.transformQuat(glMatrix.vec3.create(), p, this.control.orientation)
+    );
+    
+    const scale = 0.35; // Larger discs for zoomed-in effect
+    const SCALE_INTENSITY = 0.6;
+    
+    positions.forEach((p, ndx) => {
+      const s = (Math.abs(p[2]) / this.SPHERE_RADIUS) * SCALE_INTENSITY + (1 - SCALE_INTENSITY);
+      const finalScale = s * scale;
+      const matrix = glMatrix.mat4.create();
+      
+      glMatrix.mat4.multiply(matrix, matrix, glMatrix.mat4.fromTranslation(glMatrix.mat4.create(), glMatrix.vec3.negate(glMatrix.vec3.create(), p)));
+      glMatrix.mat4.multiply(matrix, matrix, glMatrix.mat4.targetTo(glMatrix.mat4.create(), [0, 0, 0], p, [0, 1, 0]));
+      glMatrix.mat4.multiply(matrix, matrix, glMatrix.mat4.fromScaling(glMatrix.mat4.create(), [finalScale, finalScale, finalScale]));
+      glMatrix.mat4.multiply(matrix, matrix, glMatrix.mat4.fromTranslation(glMatrix.mat4.create(), [0, 0, -this.SPHERE_RADIUS]));
+
+      glMatrix.mat4.copy(this.discInstances.matrices[ndx], matrix);
+    });
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.discInstances.buffer);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, this.discInstances.matricesArray);
+    gl.bindBuffer(gl.ARRAY_BUFFER, null);
+
+    this.smoothRotationVelocity = this.control.rotationVelocity;
   }
-  
-  updateProjection() {
+
+  #render() {
+    const gl = this.gl;
+    if (!gl || this.destroyed) return;
+    
+    gl.useProgram(this.discProgram);
+
+    gl.enable(gl.CULL_FACE);
+    gl.enable(gl.DEPTH_TEST);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    gl.uniformMatrix4fv(this.discLocations.uWorldMatrix, false, this.worldMatrix);
+    gl.uniformMatrix4fv(this.discLocations.uViewMatrix, false, this.camera.matrices.view);
+    gl.uniformMatrix4fv(this.discLocations.uProjectionMatrix, false, this.camera.matrices.projection);
+    gl.uniform3f(
+      this.discLocations.uCameraPosition,
+      this.camera.position[0],
+      this.camera.position[1],
+      this.camera.position[2]
+    );
+    gl.uniform4f(
+      this.discLocations.uRotationAxisVelocity,
+      this.control.rotationAxis[0],
+      this.control.rotationAxis[1],
+      this.control.rotationAxis[2],
+      this.smoothRotationVelocity * 1.1
+    );
+
+    gl.uniform1i(this.discLocations.uItemCount, this.images.length);
+    gl.uniform1i(this.discLocations.uAtlasSize, this.atlasSize);
+    gl.uniform1i(this.discLocations.uTex, 0);
+    
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, this.tex);
+
+    gl.bindVertexArray(this.discVAO);
+    gl.drawElementsInstanced(
+      gl.TRIANGLES,
+      this.discBuffers.indices.length,
+      gl.UNSIGNED_SHORT,
+      0,
+      this.DISC_INSTANCE_COUNT
+    );
+    gl.bindVertexArray(null);
+  }
+
+  #updateCameraMatrix() {
+    glMatrix.mat4.targetTo(this.camera.matrix, this.camera.position, [0, 0, 0], this.camera.up);
+    glMatrix.mat4.invert(this.camera.matrices.view, this.camera.matrix);
+  }
+
+  #updateProjectionMatrix(gl) {
+    this.camera.aspect = gl.canvas.clientWidth / gl.canvas.clientHeight;
+    const height = this.SPHERE_RADIUS * 0.6; // Zoomed in view
+    const distance = this.camera.position[2];
+    
+    if (this.camera.aspect > 1) {
+      this.camera.fov = 2 * Math.atan(height / distance);
+    } else {
+      this.camera.fov = 2 * Math.atan(height / this.camera.aspect / distance);
+    }
+    
     glMatrix.mat4.perspective(
-      this.projectionMatrix,
+      this.camera.matrices.projection,
       this.camera.fov,
       this.camera.aspect,
       this.camera.near,
       this.camera.far
     );
+    glMatrix.mat4.invert(this.camera.matrices.inversProjection, this.camera.matrices.projection);
   }
-  
-  autoRotate() {
-    this.autoRotateAngle += Math.PI / 6; // Rotate 30 degrees
-  }
-  
-  animate() {
-    if (this.destroyed) return;
+
+  #onControlUpdate(deltaTime) {
+    const timeScale = deltaTime / this.TARGET_FRAME_DURATION + 0.0001;
+    let damping = 5 / timeScale;
+    let cameraTargetZ = 2.2; // Zoomed in
+
+    // Find nearest vertex for snapping
+    const nearestVertexIndex = this.#findNearestVertexIndex();
+    const itemIndex = nearestVertexIndex % Math.max(1, this.images.length);
+    this.onActiveItemChange(itemIndex);
     
-    this.time += 0.016;
-    
-    // Auto rotation
-    const targetAngle = this.autoRotateAngle + this.time * 0.1;
-    glMatrix.quat.setAxisAngle(this.orientation, [0, 1, 0], targetAngle);
-    
-    // Update instance matrices
-    const scale = 0.25;
-    for (let i = 0; i < this.instanceCount; i++) {
-      const pos = this.instancePositions[i];
-      const rotatedPos = glMatrix.vec3.create();
-      glMatrix.vec3.transformQuat(rotatedPos, pos, this.orientation);
-      
-      const matrix = new Float32Array(this.instanceMatrices.buffer, i * 64, 16);
-      glMatrix.mat4.identity(matrix);
-      
-      // Position on sphere
-      glMatrix.mat4.translate(matrix, matrix, [-rotatedPos[0], -rotatedPos[1], -rotatedPos[2]]);
-      
-      // Look at center
-      const lookMatrix = glMatrix.mat4.create();
-      glMatrix.mat4.targetTo(lookMatrix, [0, 0, 0], rotatedPos, [0, 1, 0]);
-      glMatrix.mat4.multiply(matrix, matrix, lookMatrix);
-      
-      // Scale based on Z position
-      const zFactor = (Math.abs(rotatedPos[2]) / this.SPHERE_RADIUS) * 0.6 + 0.4;
-      const finalScale = scale * zFactor;
-      glMatrix.mat4.scale(matrix, matrix, [finalScale, finalScale, finalScale]);
-      
-      // Move to sphere surface
-      glMatrix.mat4.translate(matrix, matrix, [0, 0, -this.SPHERE_RADIUS]);
+    const snapDirection = glMatrix.vec3.normalize(
+      glMatrix.vec3.create(), 
+      this.#getVertexWorldPosition(nearestVertexIndex)
+    );
+    this.control.snapTargetDirection = snapDirection;
+
+    // Dynamic camera zoom based on rotation
+    if (this.control.autoRotating) {
+      cameraTargetZ += this.control.rotationVelocity * 40 + 1;
+      damping = 7 / timeScale;
     }
-    
-    // Upload instance matrices
-    const gl = this.gl;
-    gl.bindBuffer(gl.ARRAY_BUFFER, this.instanceBuffer);
-    gl.bufferSubData(gl.ARRAY_BUFFER, 0, this.instanceMatrices);
+
+    this.camera.position[2] += (cameraTargetZ - this.camera.position[2]) / damping;
+    this.#updateCameraMatrix();
   }
-  
-  render() {
-    const gl = this.gl;
-    if (!gl || this.destroyed) return;
-    
-    gl.clearColor(0, 0, 0, 0);
-    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-    
-    gl.enable(gl.DEPTH_TEST);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-    
-    gl.useProgram(this.program);
-    
-    gl.uniformMatrix4fv(this.locations.uWorldMatrix, false, this.worldMatrix);
-    gl.uniformMatrix4fv(this.locations.uViewMatrix, false, this.viewMatrix);
-    gl.uniformMatrix4fv(this.locations.uProjectionMatrix, false, this.projectionMatrix);
-    gl.uniform4f(this.locations.uRotationAxisVelocity, 0, 1, 0, 0.02);
-    gl.uniform1i(this.locations.uItemCount, this.images.length);
-    gl.uniform1i(this.locations.uAtlasSize, this.atlasSize);
-    gl.uniform1i(this.locations.uTex, 0);
-    
-    gl.activeTexture(gl.TEXTURE0);
-    gl.bindTexture(gl.TEXTURE_2D, this.texture);
-    
-    gl.bindVertexArray(this.discVAO);
-    gl.drawElementsInstanced(gl.TRIANGLES, this.discIndexCount, gl.UNSIGNED_SHORT, 0, this.instanceCount);
-    gl.bindVertexArray(null);
+
+  #findNearestVertexIndex() {
+    const n = this.control.snapDirection;
+    const inversOrientation = glMatrix.quat.conjugate(glMatrix.quat.create(), this.control.orientation);
+    const nt = glMatrix.vec3.transformQuat(glMatrix.vec3.create(), n, inversOrientation);
+
+    let maxD = -1;
+    let nearestVertexIndex = 0;
+    for (let i = 0; i < this.instancePositions.length; ++i) {
+      const d = glMatrix.vec3.dot(nt, this.instancePositions[i]);
+      if (d > maxD) {
+        maxD = d;
+        nearestVertexIndex = i;
+      }
+    }
+    return nearestVertexIndex;
   }
-  
-  run(time = 0) {
-    if (this.destroyed) return;
-    
-    this.animate();
-    this.render();
-    
-    this.animationId = requestAnimationFrame(t => this.run(t));
+
+  #getVertexWorldPosition(index) {
+    const nearestVertexPos = this.instancePositions[index];
+    return glMatrix.vec3.transformQuat(glMatrix.vec3.create(), nearestVertexPos, this.control.orientation);
   }
-  
+
   destroy() {
     this.destroyed = true;
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
+    }
+    if (this._resizeHandler) {
+      window.removeEventListener('resize', this._resizeHandler);
     }
     if (this.gl) {
       this.gl.getExtension('WEBGL_lose_context')?.loseContext();
