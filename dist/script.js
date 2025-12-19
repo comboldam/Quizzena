@@ -3762,6 +3762,25 @@ const defaultSoundSettings = {
 
 let soundSettings = JSON.parse(localStorage.getItem('quizzena_sound_settings')) || { ...defaultSoundSettings };
 
+// Galaxy Background Setting (Performance Mode)
+let galaxyModeEnabled = localStorage.getItem('quizzena_galaxy_mode') !== 'false'; // Default: true (ON)
+
+function saveGalaxyModeSetting() {
+  localStorage.setItem('quizzena_galaxy_mode', galaxyModeEnabled.toString());
+}
+
+// Initialize galaxy mode toggle
+function initGalaxyModeToggle() {
+  const toggle = document.getElementById('galaxy-mode-toggle');
+  if (toggle) {
+    toggle.checked = galaxyModeEnabled;
+    toggle.addEventListener('change', () => {
+      galaxyModeEnabled = toggle.checked;
+      saveGalaxyModeSetting();
+    });
+  }
+}
+
 // Sound effect audio element
 const clickSound = new Audio('sounds/click.mp3');
 
@@ -4236,86 +4255,120 @@ void main() {
 `;
 
 const GALAXY_FRAGMENT_SHADER = `
-precision mediump float;
+precision highp float;
 uniform float uTime;
 uniform vec2 uResolution;
 varying vec2 vUv;
 
-// Reduced layers for better mobile performance
-#define NUM_LAYERS 3.0
+#define NUM_LAYER 4.0
+#define STAR_COLOR_CUTOFF 0.2
+#define MAT45 mat2(0.7071, -0.7071, 0.7071, 0.7071)
+#define PERIOD 3.0
 
-float hash21(vec2 p) {
+float Hash21(vec2 p) {
   p = fract(p * vec2(123.34, 456.21));
   p += dot(p, p + 45.32);
   return fract(p.x * p.y);
 }
 
+float tri(float x) {
+  return abs(fract(x) * 2.0 - 1.0);
+}
+
+float tris(float x) {
+  float t = fract(x);
+  return 1.0 - smoothstep(0.0, 1.0, abs(2.0 * t - 1.0));
+}
+
+float trisn(float x) {
+  float t = fract(x);
+  return 2.0 * (1.0 - smoothstep(0.0, 1.0, abs(2.0 * t - 1.0))) - 1.0;
+}
+
 vec3 hsv2rgb(vec3 c) {
-  vec4 K = vec4(1.0, 2.0/3.0, 1.0/3.0, 3.0);
+  vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
   vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
   return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
 }
 
-float star(vec2 uv, float flare) {
+float Star(vec2 uv, float flare, float glowIntensity) {
   float d = length(uv);
-  float m = 0.02 / d;
-  float rays = max(0.0, 1.0 - abs(uv.x * uv.y * 1000.0));
-  m += rays * flare;
+  float m = (0.05 * glowIntensity) / d;
+  float rays = smoothstep(0.0, 1.0, 1.0 - abs(uv.x * uv.y * 1000.0));
+  m += rays * flare * glowIntensity;
+  uv *= MAT45;
+  rays = smoothstep(0.0, 1.0, 1.0 - abs(uv.x * uv.y * 1000.0));
+  m += rays * 0.3 * flare * glowIntensity;
   m *= smoothstep(1.0, 0.2, d);
   return m;
 }
 
-vec3 starLayer(vec2 uv) {
+vec3 StarLayer(vec2 uv, float starSpeed, float density, float hueShift, float glowIntensity, float saturation, float twinkleIntensity, float speed) {
   vec3 col = vec3(0.0);
   vec2 gv = fract(uv) - 0.5;
   vec2 id = floor(uv);
   
-  for(int y = -1; y <= 1; y++) {
-    for(int x = -1; x <= 1; x++) {
-      vec2 offs = vec2(float(x), float(y));
-      float n = hash21(id + offs);
-      float size = fract(n * 345.32);
+  for (int y = -1; y <= 1; y++) {
+    for (int x = -1; x <= 1; x++) {
+      vec2 offset = vec2(float(x), float(y));
+      vec2 si = id + offset;
+      float seed = Hash21(si);
+      float size = fract(seed * 345.32);
+      float glossLocal = tri(starSpeed / (PERIOD * seed + 1.0));
+      float flareSize = smoothstep(0.9, 1.0, size) * glossLocal;
       
-      vec2 starPos = offs - gv + vec2(n, fract(n * 34.0)) - 0.5;
-      float d = length(starPos);
+      float red = smoothstep(STAR_COLOR_CUTOFF, 1.0, Hash21(si + 1.0)) + STAR_COLOR_CUTOFF;
+      float blu = smoothstep(STAR_COLOR_CUTOFF, 1.0, Hash21(si + 3.0)) + STAR_COLOR_CUTOFF;
+      float grn = min(red, blu) * seed;
+      vec3 base = vec3(red, grn, blu);
       
-      float brightness = star(starPos, smoothstep(0.9, 1.0, size));
+      float hue = atan(base.g - base.r, base.b - base.r) / (2.0 * 3.14159) + 0.5;
+      hue = fract(hue + hueShift / 360.0);
+      float sat = length(base - vec3(dot(base, vec3(0.299, 0.587, 0.114)))) * saturation;
+      float val = max(max(base.r, base.g), base.b);
+      base = hsv2rgb(vec3(hue, sat, val));
       
-      // Twinkle
-      float twinkle = sin(uTime * 3.0 + n * 6.28) * 0.5 + 0.5;
-      brightness *= mix(0.5, 1.0, twinkle);
+      vec2 pad = vec2(tris(seed * 34.0 + uTime * speed / 10.0), tris(seed * 38.0 + uTime * speed / 30.0)) - 0.5;
+      float star = Star(gv - offset - pad, flareSize, glowIntensity);
       
-      // Color - purple/blue tones
-      float hue = 0.6 + n * 0.2;
-      vec3 starCol = hsv2rgb(vec3(hue, 0.5, 1.0));
+      float twinkle = trisn(uTime * speed + seed * 6.2831) * 0.5 + 1.0;
+      twinkle = mix(1.0, twinkle, twinkleIntensity);
+      star *= twinkle;
       
-      col += brightness * size * starCol;
+      col += star * size * base;
     }
   }
   return col;
 }
 
 void main() {
-  vec2 uv = (vUv - 0.5) * vec2(uResolution.x / uResolution.y, 1.0);
+  vec2 focal = vec2(0.5, 0.5);
+  vec2 focalPx = focal * uResolution.xy;
+  vec2 uv = (vUv * uResolution.xy - focalPx) / uResolution.y;
   
-  // Slow rotation
-  float angle = uTime * 0.02;
-  mat2 rot = mat2(cos(angle), -sin(angle), sin(angle), cos(angle));
-  uv = rot * uv;
+  // Parameters
+  float density = 1.5;
+  float hueShift = 240.0;
+  float glowIntensity = 0.5;
+  float saturation = 0.8;
+  float twinkleIntensity = 0.3;
+  float rotationSpeed = 0.05;
+  float speed = 1.0;
+  float starSpeed = uTime * 0.5 / 10.0;
+  
+  // Rotation
+  float autoRotAngle = uTime * rotationSpeed;
+  mat2 autoRot = mat2(cos(autoRotAngle), -sin(autoRotAngle), sin(autoRotAngle), cos(autoRotAngle));
+  uv = autoRot * uv;
   
   vec3 col = vec3(0.0);
   
-  // Multiple layers for depth
-  for(float i = 0.0; i < 1.0; i += 1.0 / NUM_LAYERS) {
-    float depth = fract(i + uTime * 0.02);
-    float scale = mix(30.0, 5.0, depth);
+  for (float i = 0.0; i < 1.0; i += 1.0 / NUM_LAYER) {
+    float depth = fract(i + starSpeed * speed);
+    float scale = mix(20.0 * density, 0.5 * density, depth);
     float fade = depth * smoothstep(1.0, 0.9, depth);
-    col += starLayer(uv * scale + i * 453.32) * fade;
+    col += StarLayer(uv * scale + i * 453.32, starSpeed, density, hueShift, glowIntensity, saturation, twinkleIntensity, speed) * fade;
   }
-  
-  // Add subtle purple glow in center
-  float glow = exp(-length(uv) * 2.0) * 0.15;
-  col += vec3(0.3, 0.1, 0.5) * glow;
   
   gl_FragColor = vec4(col, 1.0);
 }
@@ -4324,6 +4377,12 @@ void main() {
 let galaxyInstance = null;
 
 function initGalaxyBackground(container) {
+  // Check if galaxy mode is enabled
+  if (!galaxyModeEnabled) {
+    console.log('Galaxy background disabled (Performance Mode)');
+    return null;
+  }
+  
   // Create canvas
   const canvas = document.createElement('canvas');
   canvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;';
@@ -4439,9 +4498,13 @@ function buildUnifiedQuizScreen() {
   // Create new full-screen quiz overlay
   quizScreen = document.createElement('div');
   quizScreen.id = 'unified-quiz-screen';
-  quizScreen.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:#0f0c29;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow-y:auto;';
-  
-  // Add galaxy background container (stays persistent)
+  // Use solid dark for galaxy mode (stars show through), gradient for performance mode
+  const bgStyle = galaxyModeEnabled 
+    ? 'background:#0f0c29;' 
+    : 'background:linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);';
+  quizScreen.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;${bgStyle}z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;overflow-y:auto;`;
+
+  // Add galaxy background container (stays persistent, only if galaxy mode enabled)
   const galaxyContainer = document.createElement('div');
   galaxyContainer.id = 'galaxy-bg';
   galaxyContainer.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;pointer-events:none;';
@@ -7239,6 +7302,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateContinuePlaying();
   populateMiniStats();
   initializeSlots();
+  initGalaxyModeToggle();
 });
 
 // ========================================
