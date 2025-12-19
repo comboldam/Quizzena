@@ -26952,236 +26952,510 @@ footer button:hover {
   z-index: 1;
 }
 
-/* Quiz content wrapper - MUST have height for 3D sphere */
-#quiz-content-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 /* ==========================================
-   3D CARD QUIZ LAYOUT - FULL SCREEN SPHERE
+   PHASE 1: Simple layout like reference image
+   Large centered circular flag, question left, answers right
+   Partial flags at corners for zoom animation prep
    ========================================== */
 
-.card3d-quiz-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #000;
-}
-
-/* Full screen sphere canvas - THE BACKGROUND */
-.card3d-sphere-bg {
+/* Main layout container - transparent to show Quizzena background */
+.card3d-layout {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Large centered circular flag image - THE MAIN FEATURE */
+.card3d-center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e1e2e;  /* Dark consistent background */
+}
+
+.card3d-flag-img {
+  width: 70%;
+  height: auto;
+  max-height: 70%;
+  object-fit: contain;  /* Show FULL flag centered */
+}
+
+/* Corner flags - partial circles showing CROPPED flags */
+.card3d-corner-flags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
   z-index: 1;
 }
 
-#infinite-menu-canvas {
-  width: 100% !important;
-  height: 100% !important;
-  display: block;
-}
-
-/* Content overlay - ON TOP of sphere */
-.card3d-content-overlay {
+.card3d-corner-flag {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  pointer-events: none;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  background: #1e1e2e;
 }
 
-/* Top bar - Timer & Score */
+.card3d-corner-flag img {
+  width: 140%;
+  height: 140%;
+  object-fit: cover;  /* CROP the flag - show only part */
+  object-position: center;
+  opacity: 1;
+}
+
+/* Top-left corner - mostly hidden, showing edge */
+.card3d-corner-flag.top-left {
+  width: 25vmin;
+  height: 25vmin;
+  top: -14vmin;
+  left: -12vmin;
+}
+
+/* Top-right corner */
+.card3d-corner-flag.top-right {
+  width: 22vmin;
+  height: 22vmin;
+  top: -10vmin;
+  right: -10vmin;
+}
+
+/* Bottom-left corner */
+.card3d-corner-flag.bottom-left {
+  width: 20vmin;
+  height: 20vmin;
+  bottom: -12vmin;
+  left: -10vmin;
+}
+
+/* Bottom-right corner */
+.card3d-corner-flag.bottom-right {
+  width: 24vmin;
+  height: 24vmin;
+  bottom: -14vmin;
+  right: -12vmin;
+}
+
+/* Back button - top left */
+.card3d-back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 100;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card3d-back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Timer and Score - top center */
 .card3d-top-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding: 30px 20px;
-  pointer-events: auto;
+  gap: 30px;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .card3d-timer {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #a78bfa;
-  text-shadow: 
-    0 0 10px rgba(167, 139, 250, 0.8),
-    0 0 30px rgba(167, 139, 250, 0.4);
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+  font-family: 'Orbitron', sans-serif;
 }
 
 .card3d-score {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #00d4aa;
-  text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+  text-shadow: 0 0 10px rgba(0, 212, 170, 0.4);
 }
 
-/* Main content area - question left, answers right */
-.card3d-main-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px 40px;
-  gap: 20px;
-}
-
-/* Question side - LEFT */
+/* Question side - LEFT of screen, vertically centered */
 .card3d-question-side {
-  flex: 0 0 250px;
-  text-align: left;
-  pointer-events: auto;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 280px;
+  z-index: 100;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.card3d-question-text {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 600;
+.card3d-question-side.hidden {
+  opacity: 0;
+  transform: translateY(-50%) translateX(-30px);
+  pointer-events: none;
+}
+
+.card3d-title {
+  font-size: 2.8rem;
+  font-weight: 900;
   color: #fff;
-  line-height: 1.5;
-  text-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.8),
-    0 0 30px rgba(0, 0, 0, 0.5);
-  max-width: 220px;
+  text-align: left;
+  line-height: 1.2;
+  user-select: none;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Center spacer - where sphere shows through */
-.card3d-center-spacer {
-  flex: 1;
-  min-width: 200px;
+.card3d-title.fading {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
-/* Answers side - RIGHT */
+/* Answers side - RIGHT of screen, vertically centered */
 .card3d-answers-side {
-  flex: 0 0 280px;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   gap: 14px;
-  pointer-events: auto;
+  max-width: 300px;
+  z-index: 100;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card3d-answers-side.hidden {
+  opacity: 0;
+  transform: translateY(-50%) translateX(30px);
+  pointer-events: none;
+}
+
+.card3d-answers-side.fading {
+  opacity: 0;
+  transform: translateY(-50%) translateX(20px);
 }
 
 .card3d-answer-btn {
   padding: 16px 24px;
-  font-family: 'Rajdhani', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(167, 139, 250, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 14px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .card3d-answer-btn:hover {
   background: rgba(167, 139, 250, 0.3);
-  border-color: rgba(167, 139, 250, 0.8);
-  transform: translateX(8px);
-  box-shadow: 0 6px 25px rgba(167, 139, 250, 0.3);
-}
-
-.card3d-answer-btn.correct {
-  background: rgba(34, 197, 94, 0.3) !important;
-  border-color: #22c55e !important;
+  border-color: rgba(167, 139, 250, 0.6);
+  transform: translateX(-8px);
+  box-shadow: 0 4px 25px rgba(167, 139, 250, 0.4);
 }
 
 .card3d-answer-btn.correct {
   background: rgba(34, 197, 94, 0.5) !important;
   border-color: #22c55e !important;
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5) !important;
+  transform: scale(1.02);
 }
 
 .card3d-answer-btn.wrong {
   background: rgba(239, 68, 68, 0.5) !important;
   border-color: #ef4444 !important;
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.5) !important;
 }
 
-/* Mobile responsive - Full Screen Sphere */
-@media (max-width: 900px) {
-  .card3d-main-content {
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 20px 30px;
-  }
-  
-  .card3d-question-side {
-    flex: 0 0 auto;
-    text-align: center;
-    order: 1;
-    margin-bottom: 20px;
-  }
-  
-  .card3d-question-text {
-    font-size: 1.4rem;
-    max-width: 100%;
-    text-align: center;
-  }
-  
-  .card3d-center-spacer {
-    display: none;
-  }
-  
-  .card3d-answers-side {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 320px;
-    order: 2;
-    align-items: center;
-  }
-  
-  .card3d-answer-btn {
-    width: 100%;
-    text-align: center;
-    padding: 14px 20px;
-    font-size: 1rem;
-  }
-  
-  .card3d-top-bar {
-    padding: 20px 15px;
-    gap: 25px;
-  }
-  
-  .card3d-timer {
+/* Mobile responsive - SAME LAYOUT as desktop */
+@media (max-width: 1200px) {
+  .card3d-title {
     font-size: 2rem;
   }
   
-  .card3d-score {
-    font-size: 1.2rem;
+  .card3d-question-side {
+    left: 20px;
+    max-width: 180px;
   }
-}
-
-@media (max-width: 480px) {
-  .card3d-question-text {
-    font-size: 1.2rem;
+  
+  .card3d-answers-side {
+    right: 20px;
+    max-width: 200px;
+  }
+  
+  .card3d-center-image {
+    width: 32vmin;
+    height: 32vmin;
   }
   
   .card3d-answer-btn {
     padding: 12px 16px;
     font-size: 0.95rem;
   }
+}
+
+@media (max-width: 768px) {
+  /* KEEP SAME LAYOUT - question left, answers right, flag center */
+  .card3d-title {
+    font-size: 1.4rem;
+  }
+  
+  .card3d-question-side {
+    left: 15px;
+    max-width: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .card3d-question-side.hidden {
+    transform: translateY(-50%) translateX(-20px);
+  }
+  
+  .card3d-answers-side {
+    right: 15px;
+    max-width: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 10px;
+  }
+  
+  .card3d-answers-side.hidden {
+    transform: translateY(-50%) translateX(20px);
+  }
+  
+  .card3d-center-image {
+    width: 36vmin;
+    height: 36vmin;
+  }
+  
+  .card3d-answer-btn {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+  
+  .card3d-answer-btn:hover {
+    transform: translateX(-5px);
+  }
+  
+  .card3d-top-bar {
+    top: 15px;
+    padding: 8px 16px;
+    gap: 15px;
+  }
   
   .card3d-timer {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  
+  .card3d-back-btn {
+    padding: 10px 14px;
+    font-size: 1.2rem;
+  }
+  
+  /* Corner flags on mobile - show partial flags */
+  .card3d-corner-flag.top-left {
+    width: 22vmin;
+    height: 22vmin;
+    top: -14vmin;
+    left: -12vmin;
+  }
+  .card3d-corner-flag.top-right {
+    width: 18vmin;
+    height: 18vmin;
+    top: -10vmin;
+    right: -10vmin;
+  }
+  .card3d-corner-flag.bottom-left {
+    width: 16vmin;
+    height: 16vmin;
+    bottom: -10vmin;
+    left: -10vmin;
+  }
+  .card3d-corner-flag.bottom-right {
+    width: 20vmin;
+    height: 20vmin;
+    bottom: -12vmin;
+    right: -10vmin;
+  }
+  
+  .card3d-center-image {
+    width: 42vmin;
+    height: 42vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .card3d-title {
+    font-size: 1.1rem;
+  }
+  
+  .card3d-question-side {
+    left: 10px;
+    max-width: 20%;
+  }
+  
+  .card3d-answers-side {
+    right: 10px;
+    max-width: 25%;
+    gap: 8px;
+  }
+  
+  .card3d-answer-btn {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .card3d-timer {
+    font-size: 1.2rem;
+  }
+  
+  .card3d-score {
+    font-size: 0.9rem;
+  }
+  
+  .card3d-center-image {
+    width: 40vmin;
+    height: 40vmin;
+  }
+}
+
+/* ==========================================
+   3D INFINITE CAROUSEL (Legacy - kept for compatibility)
+   ========================================== */
+
+.carousel-scene {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-card {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 50px;
+  top: 50px;
+  border-radius: 50%;
+  background: rgba(30, 20, 50, 0.9);
+  border: 3px solid rgba(167, 139, 250, 0.3);
+  box-shadow: 
+    0 0 30px rgba(167, 139, 250, 0.2),
+    inset 0 0 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.carousel-card.front-card {
+  border-color: rgba(167, 139, 250, 0.6);
+  box-shadow: 
+    0 0 50px rgba(167, 139, 250, 0.4),
+    0 0 100px rgba(124, 58, 237, 0.2),
+    inset 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-card.back-card {
+  filter: blur(2px) brightness(0.5);
+  opacity: 0.6;
+}
+
+.carousel-card-inner {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 8px;
+}
+
+.front-card .carousel-card-inner {
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(167, 139, 250, 0.3);
+}
+
+.front-card .carousel-card-img {
+  border-color: rgba(255, 215, 0, 0.8);
+}
+
+/* Carousel rotation animation */
+@keyframes carouselSpin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(-60deg); }
+}
+
+.carousel-container.rotating {
+  animation: carouselSpin 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Mobile adjustments for carousel */
+@media (max-width: 768px) {
+  .carousel-scene {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .carousel-card {
+    width: 160px;
+    height: 160px;
+    left: 40px;
+    top: 40px;
+  }
+  
+  .carousel-card-inner {
+    width: 120px;
+    height: 80px;
   }
 }
