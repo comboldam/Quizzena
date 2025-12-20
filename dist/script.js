@@ -3911,13 +3911,20 @@ function updateAllSfxMuteUI() {
 function updateMasterMuteUI() {
   const btn = document.getElementById('sfx-master-mute-btn');
   const icon = document.getElementById('sfx-master-mute-icon');
+  const text = btn ? btn.querySelector('.mute-text') : null;
   if (!btn || !icon) return;
   if (sfxSettings.masterMuted) {
     btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
     icon.textContent = '🔇';
+    if (text) text.textContent = 'Unmute All';
   } else {
     btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
     icon.textContent = '🔊';
+    if (text) text.textContent = 'Mute All';
   }
 }
 
@@ -3927,9 +3934,13 @@ function updateClickMuteUI() {
   if (!btn || !icon) return;
   if (sfxSettings.clickMuted) {
     btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
     icon.textContent = '🔇';
   } else {
     btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
     icon.textContent = '👆';
   }
 }
@@ -3940,9 +3951,13 @@ function updateXpFillMuteUI() {
   if (!btn || !icon) return;
   if (sfxSettings.xpFillMuted) {
     btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
     icon.textContent = '🔇';
   } else {
     btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
     icon.textContent = '⬆️';
   }
 }
