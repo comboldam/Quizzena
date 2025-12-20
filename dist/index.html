@@ -1275,31 +1275,54 @@
             </div>
           </div>
 
-          <!-- Performance Mode Toggle -->
-          <div class="settings-item">
+          <!-- Extra Effects Section -->
+          <div class="settings-item settings-item-clickable" id="settings-extra-effects-btn">
             <div class="settings-item-label">
-              <span class="settings-item-icon">✨</span>
-              <span>Galaxy Background</span>
+              <span class="settings-item-icon">🎨</span>
+              <span>Extra Effects</span>
             </div>
             <div class="settings-item-control">
-              <label class="settings-toggle">
-                <input type="checkbox" id="galaxy-mode-toggle" checked>
-                <span class="settings-toggle-slider"></span>
-              </label>
+              <span class="settings-arrow" id="extra-effects-arrow">→</span>
             </div>
           </div>
 
-          <!-- 3D Cards Toggle -->
-          <div class="settings-item">
-            <div class="settings-item-label">
-              <span class="settings-item-icon">🎴</span>
-              <span>3D Card Transitions</span>
+          <!-- Extra Effects Expandable Content -->
+          <div class="settings-extra-effects-content hidden" id="extra-effects-content">
+            <!-- Galaxy Background Toggle -->
+            <div class="settings-sub-item">
+              <div class="settings-item-label">
+                <span class="settings-item-icon">✨</span>
+                <span>Galaxy Background</span>
+              </div>
+              <div class="settings-item-control">
+                <label class="settings-toggle">
+                  <input type="checkbox" id="galaxy-mode-toggle" checked>
+                  <span class="settings-toggle-slider"></span>
+                </label>
+              </div>
             </div>
-            <div class="settings-item-control">
-              <label class="settings-toggle">
-                <input type="checkbox" id="card3d-mode-toggle">
-                <span class="settings-toggle-slider"></span>
-              </label>
+
+            <!-- 3D Card Transitions Toggle -->
+            <div class="settings-sub-item">
+              <div class="settings-item-label">
+                <span class="settings-item-icon">🎴</span>
+                <span>3D Card Transitions</span>
+              </div>
+              <div class="settings-item-control">
+                <label class="settings-toggle">
+                  <input type="checkbox" id="card3d-mode-toggle">
+                  <span class="settings-toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            <div class="settings-sub-note">
+              <span>🎯 Only available for Flags (Casual mode)</span>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="settings-disclaimer">
+              <span class="settings-disclaimer-icon">⚠️</span>
+              <span>These effects require more processing power. If you experience lag or battery drain, try disabling them on older devices.</span>
             </div>
           </div>
 

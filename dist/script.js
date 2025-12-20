@@ -3822,6 +3822,21 @@ function initCard3dModeToggle() {
   }
 }
 
+// Initialize Extra Effects expandable section
+function initExtraEffectsToggle() {
+  const btn = document.getElementById('settings-extra-effects-btn');
+  const content = document.getElementById('extra-effects-content');
+  const arrow = document.getElementById('extra-effects-arrow');
+  
+  if (btn && content && arrow) {
+    btn.addEventListener('click', () => {
+      playClickSound();
+      content.classList.toggle('hidden');
+      arrow.classList.toggle('rotated');
+    });
+  }
+}
+
 // Sound effect audio element
 const clickSound = new Audio('sounds/click.mp3');
 
@@ -8690,6 +8705,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeSlots();
   initGalaxyModeToggle();
   initCard3dModeToggle();
+  initExtraEffectsToggle();
 });
 
 // ========================================
