@@ -3842,10 +3842,8 @@ function initExtraEffectsToggle() {
 const clickSound = new Audio('sounds/click.mp3');
 const levelUpSound = new Audio('sounds/level-up.mp3');
 
-// XP Fill sound settings (play only 55-58 seconds)
-const XP_FILL_START = 55;
-const XP_FILL_END = 58;
-const XP_FILL_DURATION = (XP_FILL_END - XP_FILL_START) * 1000; // 3 seconds
+// XP Fill sound duration (trimmed file is 2.2 seconds)
+const XP_FILL_DURATION = 2200; // 2.2 seconds
 
 // Sound Effects settings (with master toggle)
 let sfxSettings = JSON.parse(localStorage.getItem('quizzena_sfx_settings')) || {
@@ -3947,31 +3945,20 @@ function updateXpFillMuteUI() {
   }
 }
 
-// Play XP Fill sound (trimmed to 55-58s, loops during animation)
-let xpFillSoundTimeout = null;
+// Play XP Fill sound (2.2 second trimmed file)
 function playXpFillSound() {
   if (sfxSettings.masterMuted || sfxSettings.xpFillMuted) return;
   
   levelUpSound.volume = sfxSettings.xpFillVolume / 100;
-  levelUpSound.currentTime = XP_FILL_START;
+  levelUpSound.currentTime = 0;
   levelUpSound.play().catch(err => {
     console.log('XP Fill sound blocked:', err.message);
   });
-  
-  // Stop after 3 seconds (at 58s mark)
-  xpFillSoundTimeout = setTimeout(() => {
-    levelUpSound.pause();
-    levelUpSound.currentTime = XP_FILL_START;
-  }, XP_FILL_DURATION);
 }
 
 function stopXpFillSound() {
-  if (xpFillSoundTimeout) {
-    clearTimeout(xpFillSoundTimeout);
-    xpFillSoundTimeout = null;
-  }
   levelUpSound.pause();
-  levelUpSound.currentTime = XP_FILL_START;
+  levelUpSound.currentTime = 0;
 }
 
 // Background music audio element
@@ -6553,7 +6540,7 @@ function checkUnifiedAnswer(selected, correct) {
 }
 
 // ⭐ XP CIRCLE ANIMATION HELPERS
-const XP_ANIMATION_DURATION = 3000; // 3 seconds (matches XP Fill sound)
+const XP_ANIMATION_DURATION = 2200; // 2.2 seconds (matches XP Fill sound)
 
 function animateXPNumber(element, startValue, endValue, duration, prefix = '') {
   const startTime = performance.now();
