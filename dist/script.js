@@ -4727,7 +4727,7 @@ function display3DCardQuestion(isInitial = true) {
   startTimer(currentQuestionData.correctAnswer);
 }
 
-// Animate to next question with 3D sphere effect - FAST SPIN
+// Animate to next question with 3D sphere effect - ZOOM IN not slide
 function animateToNextQuestion(callback) {
   const sphere = document.getElementById('card3d-sphere');
   const questionSide = document.getElementById('card3d-question-side');
@@ -4746,7 +4746,7 @@ function animateToNextQuestion(callback) {
   sphere.classList.add('zoomed-out');
   
   setTimeout(() => {
-    // Phase 2: Start spinning fast
+    // Phase 2: Start spinning
     sphere.classList.add('spinning');
     
     // Phase 3: Continue spinning
@@ -4772,53 +4772,59 @@ function animateToNextQuestion(callback) {
         }
       });
       
-      // Phase 4: Settle and zoom in
+      // Update question data now
+      const currentFlag = carouselFlags[0];
+      currentQuestionData = {
+        imageSrc: currentFlag.flag,
+        questionText: currentFlag.entityType 
+          ? getQuestionTextForEntity(currentFlag.entityType) 
+          : "Which country's flag is this?",
+        correctAnswer: currentFlag.country
+      };
+      
+      // Phase 4: Settle to front (rotation back to 0)
       setTimeout(() => {
         sphere.classList.remove('spinning-more');
-        sphere.classList.remove('zoomed-out');
+        sphere.classList.add('settling');
         
-        // Update question data
-        const currentFlag = carouselFlags[0];
-        currentQuestionData = {
-          imageSrc: currentFlag.flag,
-          questionText: currentFlag.entityType 
-            ? getQuestionTextForEntity(currentFlag.entityType) 
-            : "Which country's flag is this?",
-          correctAnswer: currentFlag.country
-        };
-        
+        // Phase 5: ZOOM IN from center
         setTimeout(() => {
-          // Update UI
-          const questionEl = document.getElementById('card3d-question');
-          if (questionEl) questionEl.textContent = currentQuestionData.questionText;
+          sphere.classList.remove('settling');
+          sphere.classList.remove('zoomed-out');
           
-          // Generate new options
-          const wrongAnswers = generateBaitAnswers(currentFlag);
-          let options = shuffle([currentFlag, ...wrongAnswers]).map(opt => opt.country);
-          
-          // Update answer buttons
-          if (answersSide) {
-            answersSide.innerHTML = options.map(country => 
-              `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
-            ).join('');
+          setTimeout(() => {
+            // Update UI
+            const questionEl = document.getElementById('card3d-question');
+            if (questionEl) questionEl.textContent = currentQuestionData.questionText;
             
-            answersSide.querySelectorAll('.card3d-answer-btn').forEach(btn => {
-              btn.onclick = () => check3DCardAnswer(btn, btn.dataset.answer, btn.dataset.correct);
-            });
-          }
-          
-          // Show UI
-          if (questionSide) questionSide.classList.remove('hidden');
-          if (answersSide) answersSide.classList.remove('hidden');
-          
-          usedFlags.push(currentFlag.country);
-          questionCount++;
-          
-          callback && callback();
-        }, 250);
-      }, 200);
+            // Generate new options
+            const wrongAnswers = generateBaitAnswers(currentFlag);
+            let options = shuffle([currentFlag, ...wrongAnswers]).map(opt => opt.country);
+            
+            // Update answer buttons
+            if (answersSide) {
+              answersSide.innerHTML = options.map(country => 
+                `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
+              ).join('');
+              
+              answersSide.querySelectorAll('.card3d-answer-btn').forEach(btn => {
+                btn.onclick = () => check3DCardAnswer(btn, btn.dataset.answer, btn.dataset.correct);
+              });
+            }
+            
+            // Show UI
+            if (questionSide) questionSide.classList.remove('hidden');
+            if (answersSide) answersSide.classList.remove('hidden');
+            
+            usedFlags.push(currentFlag.country);
+            questionCount++;
+            
+            callback && callback();
+          }, 200);
+        }, 150);
+      }, 180);
     }, 200);
-  }, 250);
+  }, 200);
 }
 
 // Get next unused flag for carousel
