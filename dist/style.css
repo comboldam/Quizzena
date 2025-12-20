@@ -2411,34 +2411,12 @@ footer button:hover {
 
 .continue-row .status-active button {
   cursor: pointer;
-  width: 100%;
-  max-width: 160px;
 }
 
-/* Override card sizing for continue row */
+/* Force consistent card sizing in continue row */
 .continue-row .breakout-card {
-  width: 120px;
-  height: 150px;
-  padding: 0 8px 10px 8px;
-}
-
-.continue-row .floating-card-circle {
-  width: 80px;
-  height: 80px;
-  top: 12px;
-}
-
-.continue-row .breakout-card-glow,
-.continue-row .floating-card-glow {
-  width: 85px;
-  height: 85px;
-}
-
-.continue-row .floating-card-title {
-  font-size: 0.6rem;
-  line-height: 1.2;
-  max-height: 28px;
-  overflow: hidden;
+  width: 130px !important;
+  height: 160px !important;
 }
 
 /* Compact Categories Grid */
