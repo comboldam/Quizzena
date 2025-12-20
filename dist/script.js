@@ -6775,13 +6775,17 @@ function showUnifiedResults() {
       newLevel: xpResult.newLevel
     };
     
+    // Show OLD level initially if leveling up, otherwise current level
+    const displayLevel = leveledUp ? xpResult.oldLevel : topicData.level;
+    const nextLevelNum = leveledUp ? xpResult.newLevel : topicData.level + 1;
+    
     xpDisplayHTML = `
       <div id="xpCircleWrapper" style="position:relative;width:180px;height:180px;margin:20px auto;">
         <div style="position:absolute;width:100%;height:100%;border-radius:50%;background:#1a1a2e;border:8px solid #2a2a3e;"></div>
         <div id="xpCircleProgress" style="position:absolute;width:100%;height:100%;border-radius:50%;background:transparent;"></div>
         <div style="position:absolute;inset:12px;border-radius:50%;background:linear-gradient(145deg,#1e2740,#151c2e);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 2px 15px rgba(0,0,0,0.5);">
           <span style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#ff6b6b;opacity:0.9;">Level</span>
-          <span style="font-size:52px;font-weight:800;color:#fff;line-height:1;">${topicData.level}</span>
+          <span id="xpLevelNumber" style="font-size:52px;font-weight:800;color:#fff;line-height:1;">${displayLevel}</span>
         </div>
         
         <!-- XP GAINED (right side) -->
@@ -6798,7 +6802,7 @@ function showUnifiedResults() {
         <div class="xp-arrow-needed" style="position:absolute;pointer-events:none;overflow:visible;"></div>
         <div class="xp-label-needed" style="position:absolute;left:-100px;top:50%;transform:translateY(-50%);font-size:11px;white-space:nowrap;text-align:center;color:#888;">
           <div style="display:flex;align-items:center;gap:8px;">
-            <span>XP TO LEVEL ${topicData.level + 1}</span>
+            <span id="xpToLevelText">XP TO LEVEL ${nextLevelNum}</span>
             <span class="xp-dot-needed" style="width:6px;height:6px;border-radius:50%;background:#888;margin-top:14px;"></span>
           </div>
           <div id="xpNeededValue" style="font-size:11px;font-weight:700;margin-top:2px;">${progress.remaining + xpResult.xpGained}</div>
@@ -6954,7 +6958,8 @@ function showUnifiedResults() {
       const circle = document.getElementById('xpCircleProgress');
       const xpGainedEl = document.getElementById('xpGainedValue');
       const xpNeededEl = document.getElementById('xpNeededValue');
-      const levelDisplay = wrapper ? wrapper.querySelector('span[style*="font-size:52px"]') : null;
+      const levelDisplay = document.getElementById('xpLevelNumber');
+      const xpToLevelText = document.getElementById('xpToLevelText');
 
       if (wrapper && circle) {
         // Play XP Fill sound
@@ -6980,9 +6985,10 @@ function showUnifiedResults() {
             circle.style.opacity = '0.3';
             setTimeout(() => {
               circle.style.opacity = '1';
-              // Update level number
+              // Update level number and "XP TO LEVEL" text
               if (levelDisplay) levelDisplay.textContent = xpAnimationData.newLevel;
-              
+              if (xpToLevelText) xpToLevelText.textContent = `XP TO LEVEL ${xpAnimationData.newLevel + 1}`;
+
               // Reset and animate new level
               const newDeg = (xpAnimationData.newPercent / 100) * 360;
               animateXPCircleFill(circle, 0, newDeg, phase2Duration, (existDeg, totalDeg) => {
