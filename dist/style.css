@@ -26966,7 +26966,8 @@ footer button:hover {
   height: 100%;
   overflow: hidden;
   background: transparent;
-  perspective: 1200px;
+  perspective: 600px;
+  perspective-origin: 50% 50%;
 }
 
 /* 3D Sphere container - holds all flag circles */
@@ -26981,21 +26982,21 @@ footer button:hover {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Zoomed out state - shrink to show sphere */
+/* Zoomed out state - shrink to show sphere with flags on surface */
 .card3d-sphere.zoomed-out {
-  transform: translate(-50%, -50%) scale(0.25);
+  transform: translate(-50%, -50%) scale(0.55);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Spinning states - FAST rotation */
+/* Spinning states - sphere rotates, flags orbit on surface */
 .card3d-sphere.spinning {
-  transform: translate(-50%, -50%) scale(0.25) rotateY(180deg) rotateX(20deg);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+  transform: translate(-50%, -50%) scale(0.55) rotateY(140deg) rotateX(20deg);
+  transition: transform 0.22s cubic-bezier(0.3, 0, 0.6, 1);
 }
 
 .card3d-sphere.spinning-more {
-  transform: translate(-50%, -50%) scale(0.25) rotateY(360deg) rotateX(-15deg);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+  transform: translate(-50%, -50%) scale(0.55) rotateY(320deg) rotateX(-15deg);
+  transition: transform 0.22s cubic-bezier(0.3, 0, 0.6, 1);
 }
 
 /* Base flag circle style */
@@ -27186,81 +27187,127 @@ footer button:hover {
   opacity: 0;
 }
 
-/* When zoomed out, show ALL flags */
+/* When zoomed out, show ALL flags and reposition to sphere surface */
 .card3d-sphere.zoomed-out .card3d-flag,
 .card3d-sphere.spinning .card3d-flag,
-.card3d-sphere.spinning-more .card3d-flag,
-.card3d-sphere.settling .card3d-flag {
+.card3d-sphere.spinning-more .card3d-flag {
   opacity: 1 !important;
+  /* Reset positions - all flags move to center then rotate onto sphere */
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 18vmin !important;
+  height: 18vmin !important;
 }
 
-/* Adjust positions when zoomed out to form sphere shape */
+/* CENTER stays at front of sphere */
+.card3d-sphere.zoomed-out .card3d-flag-center,
+.card3d-sphere.spinning .card3d-flag-center,
+.card3d-sphere.spinning-more .card3d-flag-center {
+  width: 22vmin !important;
+  height: 22vmin !important;
+  transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg) translateZ(28vmin) !important;
+  z-index: 100;
+}
+
+/* Inner ring - 4 corners on sphere surface */
 .card3d-sphere.zoomed-out .card3d-flag-tl,
 .card3d-sphere.spinning .card3d-flag-tl,
-.card3d-sphere.spinning-more .card3d-flag-tl,
-.card3d-sphere.settling .card3d-flag-tl {
-  top: 10%;
-  left: 15%;
-  transform: translateZ(-80px) rotateY(-25deg);
+.card3d-sphere.spinning-more .card3d-flag-tl {
+  transform: translate(-50%, -50%) rotateY(-45deg) rotateX(-30deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-tr,
 .card3d-sphere.spinning .card3d-flag-tr,
-.card3d-sphere.spinning-more .card3d-flag-tr,
-.card3d-sphere.settling .card3d-flag-tr {
-  top: 10%;
-  right: 15%;
-  transform: translateZ(-80px) rotateY(25deg);
+.card3d-sphere.spinning-more .card3d-flag-tr {
+  transform: translate(-50%, -50%) rotateY(45deg) rotateX(-30deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-bl,
 .card3d-sphere.spinning .card3d-flag-bl,
-.card3d-sphere.spinning-more .card3d-flag-bl,
-.card3d-sphere.settling .card3d-flag-bl {
-  bottom: 10%;
-  left: 15%;
-  transform: translateZ(-80px) rotateY(-25deg);
+.card3d-sphere.spinning-more .card3d-flag-bl {
+  transform: translate(-50%, -50%) rotateY(-45deg) rotateX(30deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-br,
 .card3d-sphere.spinning .card3d-flag-br,
-.card3d-sphere.spinning-more .card3d-flag-br,
-.card3d-sphere.settling .card3d-flag-br {
-  bottom: 10%;
-  right: 15%;
-  transform: translateZ(-80px) rotateY(25deg);
+.card3d-sphere.spinning-more .card3d-flag-br {
+  transform: translate(-50%, -50%) rotateY(45deg) rotateX(30deg) translateZ(28vmin) !important;
 }
 
+/* Middle ring - 4 edges on sphere surface */
 .card3d-sphere.zoomed-out .card3d-flag-l,
 .card3d-sphere.spinning .card3d-flag-l,
-.card3d-sphere.spinning-more .card3d-flag-l,
-.card3d-sphere.settling .card3d-flag-l {
-  left: 5%;
-  transform: translateY(-50%) translateZ(-120px) rotateY(-45deg);
+.card3d-sphere.spinning-more .card3d-flag-l {
+  transform: translate(-50%, -50%) rotateY(-75deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-r,
 .card3d-sphere.spinning .card3d-flag-r,
-.card3d-sphere.spinning-more .card3d-flag-r,
-.card3d-sphere.settling .card3d-flag-r {
-  right: 5%;
-  transform: translateY(-50%) translateZ(-120px) rotateY(45deg);
+.card3d-sphere.spinning-more .card3d-flag-r {
+  transform: translate(-50%, -50%) rotateY(75deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-t,
 .card3d-sphere.spinning .card3d-flag-t,
-.card3d-sphere.spinning-more .card3d-flag-t,
-.card3d-sphere.settling .card3d-flag-t {
-  top: 5%;
-  transform: translateX(-50%) translateZ(-150px) rotateX(35deg);
+.card3d-sphere.spinning-more .card3d-flag-t {
+  transform: translate(-50%, -50%) rotateX(-75deg) translateZ(28vmin) !important;
 }
 
 .card3d-sphere.zoomed-out .card3d-flag-b,
 .card3d-sphere.spinning .card3d-flag-b,
-.card3d-sphere.spinning-more .card3d-flag-b,
-.card3d-sphere.settling .card3d-flag-b {
-  bottom: 5%;
-  transform: translateX(-50%) translateZ(-150px) rotateX(-35deg);
+.card3d-sphere.spinning-more .card3d-flag-b {
+  transform: translate(-50%, -50%) rotateX(75deg) translateZ(28vmin) !important;
+}
+
+/* Outer ring - back of sphere */
+.card3d-sphere.zoomed-out .card3d-flag-far-tl,
+.card3d-sphere.spinning .card3d-flag-far-tl,
+.card3d-sphere.spinning-more .card3d-flag-far-tl {
+  transform: translate(-50%, -50%) rotateY(-120deg) rotateX(-25deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-tr,
+.card3d-sphere.spinning .card3d-flag-far-tr,
+.card3d-sphere.spinning-more .card3d-flag-far-tr {
+  transform: translate(-50%, -50%) rotateY(120deg) rotateX(-25deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-bl,
+.card3d-sphere.spinning .card3d-flag-far-bl,
+.card3d-sphere.spinning-more .card3d-flag-far-bl {
+  transform: translate(-50%, -50%) rotateY(-120deg) rotateX(25deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-br,
+.card3d-sphere.spinning .card3d-flag-far-br,
+.card3d-sphere.spinning-more .card3d-flag-far-br {
+  transform: translate(-50%, -50%) rotateY(120deg) rotateX(25deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-l,
+.card3d-sphere.spinning .card3d-flag-far-l,
+.card3d-sphere.spinning-more .card3d-flag-far-l {
+  transform: translate(-50%, -50%) rotateY(-150deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-r,
+.card3d-sphere.spinning .card3d-flag-far-r,
+.card3d-sphere.spinning-more .card3d-flag-far-r {
+  transform: translate(-50%, -50%) rotateY(150deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-t,
+.card3d-sphere.spinning .card3d-flag-far-t,
+.card3d-sphere.spinning-more .card3d-flag-far-t {
+  transform: translate(-50%, -50%) rotateY(180deg) rotateX(-40deg) translateZ(28vmin) !important;
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-far-b,
+.card3d-sphere.spinning .card3d-flag-far-b,
+.card3d-sphere.spinning-more .card3d-flag-far-b {
+  transform: translate(-50%, -50%) rotateY(180deg) rotateX(40deg) translateZ(28vmin) !important;
 }
 
 /* Back button - top left */
