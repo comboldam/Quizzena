@@ -3868,16 +3868,18 @@ function applyMasterVolume(volume) {
   updateAllSfxVolumeUI();
 }
 
-// Toggle master mute (mutes all, individual unmutes override)
+// Toggle master mute (mutes/unmutes all)
 function toggleMasterMute() {
   sfxSettings.masterMuted = !sfxSettings.masterMuted;
   if (sfxSettings.masterMuted) {
     // Mute all
     sfxSettings.clickMuted = true;
     sfxSettings.xpFillMuted = true;
+  } else {
+    // Unmute all
+    sfxSettings.clickMuted = false;
+    sfxSettings.xpFillMuted = false;
   }
-  // When unmuting master, just set masterMuted to false
-  // Individual sounds stay as they were (user may have unmuted some individually)
   saveSfxSettings();
   updateAllSfxMuteUI();
 }
