@@ -26953,104 +26953,314 @@ footer button:hover {
 }
 
 /* ==========================================
-   PHASE 1: Simple layout like reference image
-   Large centered circular flag, question left, answers right
-   Partial flags at corners for zoom animation prep
+   3D CARD - CSS Sphere with zoom animation
+   Like the InfiniteMenu reference component
    ========================================== */
 
-/* Main layout container - transparent to show Quizzena background */
+/* Main layout container */
 .card3d-layout {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
   overflow: hidden;
+  background: transparent;
+  perspective: 1200px;
 }
 
-/* Large centered circular flag image - THE MAIN FEATURE */
-.card3d-center-image {
+/* 3D Sphere container - holds all flag circles */
+.card3d-sphere {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40vmin;
-  height: 40vmin;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Zoomed out state - shrink to show sphere */
+.card3d-sphere.zoomed-out {
+  transform: translate(-50%, -50%) scale(0.25);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Spinning states - FAST rotation */
+.card3d-sphere.spinning {
+  transform: translate(-50%, -50%) scale(0.25) rotateY(180deg) rotateX(20deg);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.card3d-sphere.spinning-more {
+  transform: translate(-50%, -50%) scale(0.25) rotateY(360deg) rotateX(-15deg);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Base flag circle style */
+.card3d-flag {
+  position: absolute;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  background: #1e1e2e;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #1e1e2e;  /* Dark consistent background */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card3d-flag-img {
-  width: 70%;
+.card3d-flag img {
+  width: 90%;
   height: auto;
-  max-height: 70%;
-  object-fit: contain;  /* Show FULL flag centered */
+  max-height: 90%;
+  object-fit: contain;
 }
 
-/* Corner flags - partial circles showing CROPPED flags */
-.card3d-corner-flags {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+/* CENTER flag - main question (large, front) */
+.card3d-flag-center {
+  width: 50vmin;
+  height: 50vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(50px);
+  z-index: 100;
+}
+
+/* Corner flags - HIDDEN at corners in zoomed-in state (like android3) */
+/* Only small part visible, not distracting */
+.card3d-flag-tl {
+  width: 50vmin;
+  height: 50vmin;
+  top: -38vmin;
+  left: -35vmin;
+  transform: translateZ(-100px);
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.card3d-flag-tr {
+  width: 50vmin;
+  height: 50vmin;
+  top: -35vmin;
+  right: -38vmin;
+  transform: translateZ(-100px);
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.card3d-flag-bl {
+  width: 50vmin;
+  height: 50vmin;
+  bottom: -38vmin;
+  left: -38vmin;
+  transform: translateZ(-100px);
+  z-index: 5;
+  opacity: 0.7;
+}
+
+.card3d-flag-br {
+  width: 50vmin;
+  height: 50vmin;
+  bottom: -35vmin;
+  right: -35vmin;
+  transform: translateZ(-100px);
+  z-index: 5;
+  opacity: 0.7;
+}
+
+/* Edge flags - COMPLETELY HIDDEN in zoomed-in state */
+.card3d-flag-l,
+.card3d-flag-r,
+.card3d-flag-t,
+.card3d-flag-b {
+  width: 45vmin;
+  height: 45vmin;
+  opacity: 0;
   z-index: 1;
 }
 
-.card3d-corner-flag {
-  position: absolute;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-  background: #1e1e2e;
+.card3d-flag-l {
+  top: 50%;
+  left: -50vmin;
+  transform: translateY(-50%) translateZ(-200px);
 }
 
-.card3d-corner-flag img {
-  width: 140%;
-  height: 140%;
-  object-fit: cover;  /* CROP the flag - show only part */
-  object-position: center;
-  opacity: 1;
+.card3d-flag-r {
+  top: 50%;
+  right: -50vmin;
+  transform: translateY(-50%) translateZ(-200px);
 }
 
-/* Top-left corner - mostly hidden, showing edge */
-.card3d-corner-flag.top-left {
-  width: 25vmin;
-  height: 25vmin;
-  top: -14vmin;
-  left: -12vmin;
+.card3d-flag-t {
+  top: -50vmin;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-200px);
 }
 
-/* Top-right corner */
-.card3d-corner-flag.top-right {
-  width: 22vmin;
-  height: 22vmin;
+.card3d-flag-b {
+  bottom: -50vmin;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-200px);
+}
+
+/* OUTER RING - Far flags (only visible when zoomed out) */
+.card3d-flag-far-tl {
+  width: 35vmin;
+  height: 35vmin;
   top: -10vmin;
-  right: -10vmin;
+  left: 5vmin;
+  transform: translateZ(-300px) rotateY(-40deg) rotateX(20deg);
+  z-index: 1;
+  opacity: 0;
 }
 
-/* Bottom-left corner */
-.card3d-corner-flag.bottom-left {
-  width: 20vmin;
-  height: 20vmin;
-  bottom: -12vmin;
-  left: -10vmin;
+.card3d-flag-far-tr {
+  width: 35vmin;
+  height: 35vmin;
+  top: -10vmin;
+  right: 5vmin;
+  transform: translateZ(-300px) rotateY(40deg) rotateX(20deg);
+  z-index: 1;
+  opacity: 0;
 }
 
-/* Bottom-right corner */
-.card3d-corner-flag.bottom-right {
-  width: 24vmin;
-  height: 24vmin;
-  bottom: -14vmin;
-  right: -12vmin;
+.card3d-flag-far-bl {
+  width: 35vmin;
+  height: 35vmin;
+  bottom: -10vmin;
+  left: 5vmin;
+  transform: translateZ(-300px) rotateY(-40deg) rotateX(-20deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.card3d-flag-far-br {
+  width: 35vmin;
+  height: 35vmin;
+  bottom: -10vmin;
+  right: 5vmin;
+  transform: translateZ(-300px) rotateY(40deg) rotateX(-20deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.card3d-flag-far-l {
+  width: 30vmin;
+  height: 30vmin;
+  top: 50%;
+  left: 15vmin;
+  transform: translateY(-50%) translateZ(-350px) rotateY(-60deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.card3d-flag-far-r {
+  width: 30vmin;
+  height: 30vmin;
+  top: 50%;
+  right: 15vmin;
+  transform: translateY(-50%) translateZ(-350px) rotateY(60deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.card3d-flag-far-t {
+  width: 28vmin;
+  height: 28vmin;
+  top: 5vmin;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-400px) rotateX(50deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+.card3d-flag-far-b {
+  width: 28vmin;
+  height: 28vmin;
+  bottom: 5vmin;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-400px) rotateX(-50deg);
+  z-index: 1;
+  opacity: 0;
+}
+
+/* When zoomed out, show ALL flags */
+.card3d-sphere.zoomed-out .card3d-flag,
+.card3d-sphere.spinning .card3d-flag,
+.card3d-sphere.spinning-more .card3d-flag,
+.card3d-sphere.settling .card3d-flag {
+  opacity: 1 !important;
+}
+
+/* Adjust positions when zoomed out to form sphere shape */
+.card3d-sphere.zoomed-out .card3d-flag-tl,
+.card3d-sphere.spinning .card3d-flag-tl,
+.card3d-sphere.spinning-more .card3d-flag-tl,
+.card3d-sphere.settling .card3d-flag-tl {
+  top: 10%;
+  left: 15%;
+  transform: translateZ(-80px) rotateY(-25deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-tr,
+.card3d-sphere.spinning .card3d-flag-tr,
+.card3d-sphere.spinning-more .card3d-flag-tr,
+.card3d-sphere.settling .card3d-flag-tr {
+  top: 10%;
+  right: 15%;
+  transform: translateZ(-80px) rotateY(25deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-bl,
+.card3d-sphere.spinning .card3d-flag-bl,
+.card3d-sphere.spinning-more .card3d-flag-bl,
+.card3d-sphere.settling .card3d-flag-bl {
+  bottom: 10%;
+  left: 15%;
+  transform: translateZ(-80px) rotateY(-25deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-br,
+.card3d-sphere.spinning .card3d-flag-br,
+.card3d-sphere.spinning-more .card3d-flag-br,
+.card3d-sphere.settling .card3d-flag-br {
+  bottom: 10%;
+  right: 15%;
+  transform: translateZ(-80px) rotateY(25deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-l,
+.card3d-sphere.spinning .card3d-flag-l,
+.card3d-sphere.spinning-more .card3d-flag-l,
+.card3d-sphere.settling .card3d-flag-l {
+  left: 5%;
+  transform: translateY(-50%) translateZ(-120px) rotateY(-45deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-r,
+.card3d-sphere.spinning .card3d-flag-r,
+.card3d-sphere.spinning-more .card3d-flag-r,
+.card3d-sphere.settling .card3d-flag-r {
+  right: 5%;
+  transform: translateY(-50%) translateZ(-120px) rotateY(45deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-t,
+.card3d-sphere.spinning .card3d-flag-t,
+.card3d-sphere.spinning-more .card3d-flag-t,
+.card3d-sphere.settling .card3d-flag-t {
+  top: 5%;
+  transform: translateX(-50%) translateZ(-150px) rotateX(35deg);
+}
+
+.card3d-sphere.zoomed-out .card3d-flag-b,
+.card3d-sphere.spinning .card3d-flag-b,
+.card3d-sphere.spinning-more .card3d-flag-b,
+.card3d-sphere.settling .card3d-flag-b {
+  bottom: 5%;
+  transform: translateX(-50%) translateZ(-150px) rotateX(-35deg);
 }
 
 /* Back button - top left */
@@ -27216,11 +27426,6 @@ footer button:hover {
     max-width: 200px;
   }
   
-  .card3d-center-image {
-    width: 32vmin;
-    height: 32vmin;
-  }
-  
   .card3d-answer-btn {
     padding: 12px 16px;
     font-size: 0.95rem;
@@ -27228,7 +27433,7 @@ footer button:hover {
 }
 
 @media (max-width: 768px) {
-  /* KEEP SAME LAYOUT - question left, answers right, flag center */
+  /* KEEP SAME LAYOUT - question left, answers right, WebGL center */
   .card3d-title {
     font-size: 1.4rem;
   }
@@ -27241,7 +27446,9 @@ footer button:hover {
   }
   
   .card3d-question-side.hidden {
+    opacity: 0;
     transform: translateY(-50%) translateX(-20px);
+    pointer-events: none;
   }
   
   .card3d-answers-side {
@@ -27253,12 +27460,9 @@ footer button:hover {
   }
   
   .card3d-answers-side.hidden {
+    opacity: 0;
     transform: translateY(-50%) translateX(20px);
-  }
-  
-  .card3d-center-image {
-    width: 36vmin;
-    height: 36vmin;
+    pointer-events: none;
   }
   
   .card3d-answer-btn {
@@ -27284,37 +27488,6 @@ footer button:hover {
   .card3d-back-btn {
     padding: 10px 14px;
     font-size: 1.2rem;
-  }
-  
-  /* Corner flags on mobile - show partial flags */
-  .card3d-corner-flag.top-left {
-    width: 22vmin;
-    height: 22vmin;
-    top: -14vmin;
-    left: -12vmin;
-  }
-  .card3d-corner-flag.top-right {
-    width: 18vmin;
-    height: 18vmin;
-    top: -10vmin;
-    right: -10vmin;
-  }
-  .card3d-corner-flag.bottom-left {
-    width: 16vmin;
-    height: 16vmin;
-    bottom: -10vmin;
-    left: -10vmin;
-  }
-  .card3d-corner-flag.bottom-right {
-    width: 20vmin;
-    height: 20vmin;
-    bottom: -12vmin;
-    right: -10vmin;
-  }
-  
-  .card3d-center-image {
-    width: 42vmin;
-    height: 42vmin;
   }
 }
 
@@ -27345,11 +27518,6 @@ footer button:hover {
   
   .card3d-score {
     font-size: 0.9rem;
-  }
-  
-  .card3d-center-image {
-    width: 40vmin;
-    height: 40vmin;
   }
 }
 

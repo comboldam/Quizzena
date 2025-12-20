@@ -4576,12 +4576,14 @@ function shouldUse3DCardMode() {
 
 let infiniteMenuInstance = null;
 let currentQuestionData = null;
+let carouselFlags = [];  // Array of flags for the 3D carousel (5 flags)
+let carouselIndex = 0;   // Current front flag index
 
 // ===========================================
-// PHASE 1: Simple layout like reference image
-// Large centered circular flag, question left, answers right
+// 3D CARD - CSS 3D Carousel with zoom transitions
+// Corner flags visible, zoom out shows sphere effect
 // ===========================================
-function display3DCardQuestion() {
+function display3DCardQuestion(isInitial = true) {
   if (gameEnded) return;
   
   const quizScreen = document.getElementById('unified-quiz-screen');
@@ -4596,13 +4598,14 @@ function display3DCardQuestion() {
     return;
   }
   
-  // Get random flag for question
-  let remaining = flags.filter(f => !usedFlags.includes(f.country));
-  if (remaining.length === 0) {
-    usedFlags = [];
-    remaining = flags;
+  // Initialize carousel flags on first call
+  if (isInitial || carouselFlags.length === 0) {
+    carouselFlags = shuffle([...flags]).slice(0, 17);  // 17 flags for full sphere effect
+    carouselIndex = 0;
   }
-  const currentFlag = remaining[Math.floor(Math.random() * remaining.length)];
+  
+  // Get current flag (the one at front/center)
+  const currentFlag = carouselFlags[carouselIndex];
   if (!currentFlag) return;
   
   usedFlags.push(currentFlag.country);
@@ -4629,18 +4632,66 @@ function display3DCardQuestion() {
   // Set content wrapper to full screen
   contentWrapper.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;padding:0;margin:0;';
   
-  // Get some random flags for corner decorations (prep for zoom animation)
-  const cornerFlags = shuffle([...flags]).slice(0, 4).map(f => f.flag);
-  
-  // Create layout: centered image, question left, answers right, corner flags
+  // Create layout with 3D sphere of flags (17 flags for full sphere)
   contentWrapper.innerHTML = `
     <div class="card3d-layout">
-      <!-- Corner flags - partial circles at edges (like reference) -->
-      <div class="card3d-corner-flags">
-        <div class="card3d-corner-flag top-left"><img src="${cornerFlags[0]}" alt=""></div>
-        <div class="card3d-corner-flag top-right"><img src="${cornerFlags[1]}" alt=""></div>
-        <div class="card3d-corner-flag bottom-left"><img src="${cornerFlags[2]}" alt=""></div>
-        <div class="card3d-corner-flag bottom-right"><img src="${cornerFlags[3]}" alt=""></div>
+      <!-- 3D Sphere Container -->
+      <div class="card3d-sphere" id="card3d-sphere">
+        <!-- Center flag (current question) -->
+        <div class="card3d-flag card3d-flag-center" data-pos="0">
+          <img src="${carouselFlags[0].flag}" alt="">
+        </div>
+        <!-- Inner ring (4 corners) -->
+        <div class="card3d-flag card3d-flag-tl" data-pos="1">
+          <img src="${carouselFlags[1].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-tr" data-pos="2">
+          <img src="${carouselFlags[2].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-bl" data-pos="3">
+          <img src="${carouselFlags[3].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-br" data-pos="4">
+          <img src="${carouselFlags[4].flag}" alt="">
+        </div>
+        <!-- Middle ring (4 edges) -->
+        <div class="card3d-flag card3d-flag-l" data-pos="5">
+          <img src="${carouselFlags[5].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-r" data-pos="6">
+          <img src="${carouselFlags[6].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-t" data-pos="7">
+          <img src="${carouselFlags[7].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-b" data-pos="8">
+          <img src="${carouselFlags[8].flag}" alt="">
+        </div>
+        <!-- Outer ring (8 more flags for full sphere) -->
+        <div class="card3d-flag card3d-flag-far-tl" data-pos="9">
+          <img src="${carouselFlags[9].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-tr" data-pos="10">
+          <img src="${carouselFlags[10].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-bl" data-pos="11">
+          <img src="${carouselFlags[11].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-br" data-pos="12">
+          <img src="${carouselFlags[12].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-l" data-pos="13">
+          <img src="${carouselFlags[13].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-r" data-pos="14">
+          <img src="${carouselFlags[14].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-t" data-pos="15">
+          <img src="${carouselFlags[15].flag}" alt="">
+        </div>
+        <div class="card3d-flag card3d-flag-far-b" data-pos="16">
+          <img src="${carouselFlags[16].flag}" alt="">
+        </div>
       </div>
       
       <!-- Back Arrow -->
@@ -4655,11 +4706,6 @@ function display3DCardQuestion() {
       <!-- Question on LEFT -->
       <div class="card3d-question-side" id="card3d-question-side">
         <h2 class="card3d-title" id="card3d-question">${currentQuestionData.questionText}</h2>
-      </div>
-      
-      <!-- LARGE centered circular flag image -->
-      <div class="card3d-center-image">
-        <img src="${currentQuestionData.imageSrc}" alt="Flag" class="card3d-flag-img" id="card3d-flag-img">
       </div>
       
       <!-- Answers on RIGHT -->
@@ -4681,6 +4727,114 @@ function display3DCardQuestion() {
   startTimer(currentQuestionData.correctAnswer);
 }
 
+// Animate to next question with 3D sphere effect - FAST SPIN
+function animateToNextQuestion(callback) {
+  const sphere = document.getElementById('card3d-sphere');
+  const questionSide = document.getElementById('card3d-question-side');
+  const answersSide = document.getElementById('card3d-answers');
+  
+  if (!sphere) {
+    callback && callback();
+    return;
+  }
+  
+  // Hide UI during transition
+  if (questionSide) questionSide.classList.add('hidden');
+  if (answersSide) answersSide.classList.add('hidden');
+  
+  // Phase 1: Zoom OUT (show full sphere)
+  sphere.classList.add('zoomed-out');
+  
+  setTimeout(() => {
+    // Phase 2: Start spinning fast
+    sphere.classList.add('spinning');
+    
+    // Phase 3: Continue spinning
+    setTimeout(() => {
+      sphere.classList.remove('spinning');
+      sphere.classList.add('spinning-more');
+      
+      // Move to next flag and update carousel
+      carouselIndex = (carouselIndex + 1) % carouselFlags.length;
+      
+      // Get a new flag to replace the one that was asked
+      const newFlag = getNextUnusedFlag();
+      if (newFlag) {
+        carouselFlags.push(carouselFlags.shift());
+        carouselFlags[carouselFlags.length - 1] = newFlag;
+      }
+      
+      // Update all flag images
+      const flagElements = sphere.querySelectorAll('.card3d-flag img');
+      flagElements.forEach((img, i) => {
+        if (carouselFlags[i]) {
+          img.src = carouselFlags[i].flag;
+        }
+      });
+      
+      // Phase 4: Settle and zoom in
+      setTimeout(() => {
+        sphere.classList.remove('spinning-more');
+        sphere.classList.remove('zoomed-out');
+        
+        // Update question data
+        const currentFlag = carouselFlags[0];
+        currentQuestionData = {
+          imageSrc: currentFlag.flag,
+          questionText: currentFlag.entityType 
+            ? getQuestionTextForEntity(currentFlag.entityType) 
+            : "Which country's flag is this?",
+          correctAnswer: currentFlag.country
+        };
+        
+        setTimeout(() => {
+          // Update UI
+          const questionEl = document.getElementById('card3d-question');
+          if (questionEl) questionEl.textContent = currentQuestionData.questionText;
+          
+          // Generate new options
+          const wrongAnswers = generateBaitAnswers(currentFlag);
+          let options = shuffle([currentFlag, ...wrongAnswers]).map(opt => opt.country);
+          
+          // Update answer buttons
+          if (answersSide) {
+            answersSide.innerHTML = options.map(country => 
+              `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
+            ).join('');
+            
+            answersSide.querySelectorAll('.card3d-answer-btn').forEach(btn => {
+              btn.onclick = () => check3DCardAnswer(btn, btn.dataset.answer, btn.dataset.correct);
+            });
+          }
+          
+          // Show UI
+          if (questionSide) questionSide.classList.remove('hidden');
+          if (answersSide) answersSide.classList.remove('hidden');
+          
+          usedFlags.push(currentFlag.country);
+          questionCount++;
+          
+          callback && callback();
+        }, 250);
+      }, 200);
+    }, 200);
+  }, 250);
+}
+
+// Get next unused flag for carousel
+function getNextUnusedFlag() {
+  const remaining = flags.filter(f => 
+    !usedFlags.includes(f.country) && 
+    !carouselFlags.some(cf => cf.country === f.country)
+  );
+  
+  if (remaining.length === 0) {
+    return shuffle([...flags])[0];
+  }
+  
+  return remaining[Math.floor(Math.random() * remaining.length)];
+}
+
 // Initialize the InfiniteMenu 3D sphere
 function initInfiniteMenu() {
   // Wait for DOM to be ready and wrapper to have dimensions
@@ -4699,10 +4853,12 @@ function initInfiniteMenu() {
       return;
     }
     
-    // Get flag images for the sphere - these will be the questions in ORDER
-    const shuffledFlags = shuffle([...flags]);
-    sphereFlags = shuffledFlags.slice(0, 42);  // Store full flag objects for questions
-    sphereQuestionIndex = 0;  // Start at first flag
+    // Use sphereFlags that were already initialized by display3DCardQuestion
+    // (don't reinitialize them here)
+    if (sphereFlags.length === 0) {
+      sphereFlags = shuffle([...flags]).slice(0, 42);
+      sphereQuestionIndex = 0;
+    }
     
     const flagImages = sphereFlags.map(f => f.flag);
     
@@ -5663,7 +5819,7 @@ class InfiniteGridMenu {
   }
 }
 
-// Check answer in 3D card mode - PHASE 1: Simple, no transitions
+// Check answer in 3D card mode - WITH CSS 3D ANIMATION
 function check3DCardAnswer(btnElement, selected, correct) {
   if (answered) return;
   answered = true;
@@ -5686,13 +5842,15 @@ function check3DCardAnswer(btnElement, selected, correct) {
     }
   });
 
-  // Update score
+  // Update score display
+  const scoreEl = document.getElementById('card3d-score');
   if (isCorrect) {
     singlePlayerScore++;
     currentSessionCorrect++;
   } else {
     currentSessionWrong++;
   }
+  if (scoreEl) scoreEl.textContent = `Score: ${singlePlayerScore}`;
 
   // Play sound
   if (isCorrect) {
@@ -5706,11 +5864,14 @@ function check3DCardAnswer(btnElement, selected, correct) {
     return;
   }
 
-  // PHASE 1: Simple transition - just show next question after delay
+  // Animate to next question using CSS 3D transition
   setTimeout(() => {
-    answered = false;
-    display3DCardQuestion();
-  }, 600); // Show correct/wrong feedback for 600ms before transitioning
+    animateToNextQuestion(() => {
+      answered = false;
+      questionOptionsShownTime = Date.now();
+      startTimer(currentQuestionData.correctAnswer);
+    });
+  }, 500); // Show correct/wrong feedback for 500ms before animating
 }
 
 // Timer for 3D card mode
