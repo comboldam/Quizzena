@@ -1464,14 +1464,24 @@
         </div>
         <div class="sound-overlay-body">
           
-          <!-- Music Setting (Coming Soon) -->
-          <div class="sound-setting-section sound-setting-disabled">
+          <!-- Music Setting -->
+          <div class="sound-setting-section">
             <div class="sound-setting-header">
               <span class="sound-setting-icon">🎵</span>
               <span class="sound-setting-name" data-i18n="sound_music">Music</span>
             </div>
             <div class="sound-setting-content">
-              <span class="settings-coming-soon" data-i18n="settings_coming_soon">Coming Soon</span>
+              <div class="volume-control">
+                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="music-volume-slider" min="0" max="100" value="30">
+                  <span class="volume-value" id="music-volume-value">30%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="music-mute-btn">
+                <span class="mute-icon" id="music-mute-icon">🎵</span>
+                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+              </button>
             </div>
           </div>
 

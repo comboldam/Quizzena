@@ -3841,6 +3841,95 @@ function initExtraEffectsToggle() {
 // Sound effect audio element
 const clickSound = new Audio('sounds/click.mp3');
 
+// Background music audio element
+const backgroundMusic = new Audio('sounds/background-music.mp3');
+backgroundMusic.loop = true;
+backgroundMusic.volume = 0.3; // Default 30%
+
+// Music settings
+let musicSettings = JSON.parse(localStorage.getItem('quizzena_music_settings')) || {
+  musicVolume: 30,
+  musicMuted: false
+};
+
+function saveMusicSettings() {
+  localStorage.setItem('quizzena_music_settings', JSON.stringify(musicSettings));
+}
+
+// Start background music (call after user interaction)
+let musicStarted = false;
+function startBackgroundMusic() {
+  if (musicStarted || musicSettings.musicMuted) return;
+  
+  backgroundMusic.volume = musicSettings.musicVolume / 100;
+  backgroundMusic.play().catch(err => {
+    console.log('Music autoplay blocked:', err.message);
+  });
+  musicStarted = true;
+}
+
+// Update music volume
+function updateMusicVolume(volume) {
+  musicSettings.musicVolume = volume;
+  backgroundMusic.volume = volume / 100;
+  saveMusicSettings();
+}
+
+// Toggle music mute
+function toggleMusicMute() {
+  musicSettings.musicMuted = !musicSettings.musicMuted;
+  if (musicSettings.musicMuted) {
+    backgroundMusic.pause();
+  } else {
+    backgroundMusic.volume = musicSettings.musicVolume / 100;
+    backgroundMusic.play().catch(() => {});
+    musicStarted = true;
+  }
+  saveMusicSettings();
+  updateMusicMuteButtonUI();
+}
+
+// Update music mute button UI
+function updateMusicMuteButtonUI() {
+  const musicMuteBtn = document.getElementById('music-mute-btn');
+  const musicMuteIcon = document.getElementById('music-mute-icon');
+  if (!musicMuteBtn || !musicMuteIcon) return;
+
+  if (musicSettings.musicMuted) {
+    musicMuteBtn.classList.add('muted');
+    musicMuteIcon.textContent = '🔇';
+  } else {
+    musicMuteBtn.classList.remove('muted');
+    musicMuteIcon.textContent = '🎵';
+  }
+}
+
+// Initialize music controls
+function initMusicControls() {
+  const musicVolumeSlider = document.getElementById('music-volume-slider');
+  const musicVolumeValue = document.getElementById('music-volume-value');
+  const musicMuteBtn = document.getElementById('music-mute-btn');
+
+  if (musicVolumeSlider) {
+    musicVolumeSlider.value = musicSettings.musicVolume;
+    musicVolumeSlider.addEventListener('input', (e) => {
+      const volume = parseInt(e.target.value);
+      updateMusicVolume(volume);
+      if (musicVolumeValue) musicVolumeValue.textContent = volume + '%';
+    });
+  }
+
+  if (musicVolumeValue) {
+    musicVolumeValue.textContent = musicSettings.musicVolume + '%';
+  }
+
+  if (musicMuteBtn) {
+    musicMuteBtn.addEventListener('click', toggleMusicMute);
+  }
+
+  updateMusicMuteButtonUI();
+}
+
 // Save sound settings
 function saveSoundSettings() {
   localStorage.setItem('quizzena_sound_settings', JSON.stringify(soundSettings));
@@ -3871,11 +3960,18 @@ const sfxMuteIcon = document.getElementById('sfx-mute-icon');
 // Open Sound Overlay (from Settings)
 function openSoundOverlay() {
   if (soundOverlay) {
-    // Update UI with current settings
+    // Update SFX UI with current settings
     if (sfxVolumeSlider) sfxVolumeSlider.value = soundSettings.sfxVolume;
     if (sfxVolumeValue) sfxVolumeValue.textContent = soundSettings.sfxVolume + '%';
     updateMuteButtonUI();
-    
+
+    // Update Music UI with current settings
+    const musicVolumeSlider = document.getElementById('music-volume-slider');
+    const musicVolumeValue = document.getElementById('music-volume-value');
+    if (musicVolumeSlider) musicVolumeSlider.value = musicSettings.musicVolume;
+    if (musicVolumeValue) musicVolumeValue.textContent = musicSettings.musicVolume + '%';
+    updateMusicMuteButtonUI();
+
     soundOverlay.classList.remove('hidden');
   }
 }
@@ -7024,11 +7120,21 @@ function renderTopicStatsChart() {
   
   // Get data based on period
   if (currentTopicPeriod === 'day') {
+    // Show rolling 24 hours ending at current hour
     const today = getDateString(0);
-    const dayData = history[today]?.topics?.[topicId] || { hourly: {} };
+    const yesterday = getDateString(1);
+    const todayTopicData = history[today]?.topics?.[topicId] || { hourly: {} };
+    const yesterdayTopicData = history[yesterday]?.topics?.[topicId] || { hourly: {} };
+    const currentHour = new Date().getHours();
     
-    for (let h = 0; h < 24; h++) {
+    let totalCorrect = 0, totalWrong = 0;
+    
+    for (let i = 0; i < 24; i++) {
+      const h = (currentHour + 1 + i) % 24;
       const hourKey = h.toString().padStart(2, '0');
+      
+      const isYesterday = (currentHour + 1 + i) < 24;
+      const dayData = isYesterday ? yesterdayTopicData : todayTopicData;
       const hourData = dayData.hourly?.[hourKey] || { g: 0, c: 0, w: 0, t: 0, s: 0, at: 0 };
       
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
@@ -7049,17 +7155,19 @@ function renderTopicStatsChart() {
       }
       
       data.push(value);
+      totalCorrect += hourData.c;
+      totalWrong += hourData.w;
       if (currentTopicStatType !== 'streak' && currentTopicStatType !== 'accuracy') {
         total += value;
       }
       if (value > peak) peak = value;
     }
     
-    if (currentTopicStatType === 'streak') total = dayData.streak || 0;
+    if (currentTopicStatType === 'streak') {
+      total = Math.max(todayTopicData.streak || 0, yesterdayTopicData.streak || 0);
+    }
     if (currentTopicStatType === 'accuracy') {
-      const totalC = dayData.correct || 0;
-      const totalW = dayData.wrong || 0;
-      total = (totalC + totalW) > 0 ? Math.round((totalC / (totalC + totalW)) * 100) : 0;
+      total = (totalCorrect + totalWrong) > 0 ? Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100) : 0;
     }
     
   } else if (currentTopicPeriod === 'week') {
@@ -8707,6 +8815,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalaxyModeToggle();
   initCard3dModeToggle();
   initExtraEffectsToggle();
+  initMusicControls();
+  
+  // Start background music on first user interaction
+  document.addEventListener('click', () => {
+    startBackgroundMusic();
+  }, { once: true });
 });
 
 // ========================================
@@ -9038,25 +9152,32 @@ function renderPxpChart(period) {
   let totalAchievements = 0;
   
   if (period === 'day') {
-    // Show 24 hours
+    // Show rolling 24 hours ending at current hour
     const today = getDateString(0);
-    const dayData = history[today] || { hourly: {} };
-    const achDayData = achHistory[today] || { pxp: 0 };
+    const yesterday = getDateString(1);
+    const todayData = history[today] || { hourly: {} };
+    const yesterdayData = history[yesterday] || { hourly: {} };
+    const achTodayData = achHistory[today] || { pxp: 0 };
+    const achYesterdayData = achHistory[yesterday] || { pxp: 0 };
     const currentHour = new Date().getHours();
-    
-    for (let h = 0; h < 24; h++) {
+
+    for (let i = 0; i < 24; i++) {
+      const h = (currentHour + 1 + i) % 24;
       const hourKey = h.toString().padStart(2, '0');
-      const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0 };
       
+      const isYesterday = (currentHour + 1 + i) < 24;
+      const dayData = isYesterday ? yesterdayData : todayData;
+      const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0 };
+
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
       gamesData.push(hourData.g);
       answersData.push(hourData.a);
-      // Show achievements at the current hour (or latest hour with activity)
-      achievementsData.push(h === currentHour ? (achDayData.pxp || 0) : 0);
+      // Show achievements at the current hour (last point)
+      achievementsData.push(i === 23 ? (achTodayData.pxp || 0) : 0);
       totalGames += hourData.g;
       totalAnswers += hourData.a;
     }
-    totalAchievements = achDayData.pxp || 0;
+    totalAchievements = (achTodayData.pxp || 0) + (achYesterdayData.pxp || 0);
   } else if (period === 'week') {
     // Show last 7 days
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -9341,16 +9462,26 @@ function renderStatsChart() {
   
   // Get data based on period and type
   if (currentStatsPeriod === 'day') {
-    // Show 24 hours
+    // Show rolling 24 hours ending at current hour
     const today = getDateString(0);
-    const dayData = history[today] || { hourly: {} };
-    
-    for (let h = 0; h < 24; h++) {
+    const yesterday = getDateString(1);
+    const todayData = history[today] || { hourly: {} };
+    const yesterdayData = history[yesterday] || { hourly: {} };
+    const currentHour = new Date().getHours();
+
+    // Loop through last 24 hours (from currentHour+1 yesterday to currentHour today)
+    for (let i = 0; i < 24; i++) {
+      // Calculate which hour this represents (starting 23 hours ago)
+      const h = (currentHour + 1 + i) % 24;
       const hourKey = h.toString().padStart(2, '0');
+      
+      // Use yesterday's data for hours after current hour, today's for hours up to current
+      const isYesterday = (currentHour + 1 + i) < 24;
+      const dayData = isYesterday ? yesterdayData : todayData;
       const hourData = dayData.hourly?.[hourKey] || { g: 0, c: 0, w: 0, t: 0, s: 0 };
-      
+
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
-      
+
       let value = 0;
       switch (currentStatType) {
         case 'games': value = hourData.g; break;
@@ -9360,15 +9491,15 @@ function renderStatsChart() {
         case 'time': value = hourData.t; break; // Seconds (raw)
         case 'streak': value = hourData.s; break;
       }
-      
+
       data.push(value);
       total += (currentStatType === 'streak') ? 0 : value;
       if (value > peak) peak = value;
     }
-    
-    // For streak, total is the max observed today
+
+    // For streak, total is the max observed in the 24h window
     if (currentStatType === 'streak') {
-      total = dayData.streak || 0;
+      total = Math.max(todayData.streak || 0, yesterdayData.streak || 0);
     }
     
   } else if (currentStatsPeriod === 'week') {
