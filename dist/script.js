@@ -3838,8 +3838,141 @@ function initExtraEffectsToggle() {
   }
 }
 
-// Sound effect audio element
+// Sound effect audio elements
 const clickSound = new Audio('sounds/click.mp3');
+const levelUpSound = new Audio('sounds/level-up.mp3');
+
+// XP Fill sound settings (play only 55-58 seconds)
+const XP_FILL_START = 55;
+const XP_FILL_END = 58;
+const XP_FILL_DURATION = (XP_FILL_END - XP_FILL_START) * 1000; // 3 seconds
+
+// Sound Effects settings (with master toggle)
+let sfxSettings = JSON.parse(localStorage.getItem('quizzena_sfx_settings')) || {
+  masterMuted: false,   // Master mute for all SFX
+  masterVolume: 70,     // Master volume (sets all when adjusted)
+  clickVolume: 70,
+  clickMuted: false,
+  xpFillVolume: 70,
+  xpFillMuted: false
+};
+
+function saveSfxSettings() {
+  localStorage.setItem('quizzena_sfx_settings', JSON.stringify(sfxSettings));
+}
+
+// Apply master volume to all sound effects
+function applyMasterVolume(volume) {
+  sfxSettings.masterVolume = volume;
+  sfxSettings.clickVolume = volume;
+  sfxSettings.xpFillVolume = volume;
+  saveSfxSettings();
+  updateAllSfxVolumeUI();
+}
+
+// Toggle master mute (mutes all, individual unmutes override)
+function toggleMasterMute() {
+  sfxSettings.masterMuted = !sfxSettings.masterMuted;
+  if (sfxSettings.masterMuted) {
+    // Mute all
+    sfxSettings.clickMuted = true;
+    sfxSettings.xpFillMuted = true;
+  }
+  // When unmuting master, just set masterMuted to false
+  // Individual sounds stay as they were (user may have unmuted some individually)
+  saveSfxSettings();
+  updateAllSfxMuteUI();
+}
+
+// Update all SFX volume UI elements
+function updateAllSfxVolumeUI() {
+  const masterSlider = document.getElementById('sfx-master-volume-slider');
+  const masterValue = document.getElementById('sfx-master-volume-value');
+  const clickSlider = document.getElementById('sfx-volume-slider');
+  const clickValue = document.getElementById('sfx-volume-value');
+  const xpFillSlider = document.getElementById('xpfill-volume-slider');
+  const xpFillValue = document.getElementById('xpfill-volume-value');
+  
+  if (masterSlider) masterSlider.value = sfxSettings.masterVolume;
+  if (masterValue) masterValue.textContent = sfxSettings.masterVolume + '%';
+  if (clickSlider) clickSlider.value = sfxSettings.clickVolume;
+  if (clickValue) clickValue.textContent = sfxSettings.clickVolume + '%';
+  if (xpFillSlider) xpFillSlider.value = sfxSettings.xpFillVolume;
+  if (xpFillValue) xpFillValue.textContent = sfxSettings.xpFillVolume + '%';
+}
+
+// Update all SFX mute button UIs
+function updateAllSfxMuteUI() {
+  updateMasterMuteUI();
+  updateClickMuteUI();
+  updateXpFillMuteUI();
+}
+
+function updateMasterMuteUI() {
+  const btn = document.getElementById('sfx-master-mute-btn');
+  const icon = document.getElementById('sfx-master-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.masterMuted) {
+    btn.classList.add('muted');
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    icon.textContent = '🔊';
+  }
+}
+
+function updateClickMuteUI() {
+  const btn = document.getElementById('sfx-mute-btn');
+  const icon = document.getElementById('sfx-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.clickMuted) {
+    btn.classList.add('muted');
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    icon.textContent = '👆';
+  }
+}
+
+function updateXpFillMuteUI() {
+  const btn = document.getElementById('xpfill-mute-btn');
+  const icon = document.getElementById('xpfill-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.xpFillMuted) {
+    btn.classList.add('muted');
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    icon.textContent = '⬆️';
+  }
+}
+
+// Play XP Fill sound (trimmed to 55-58s, loops during animation)
+let xpFillSoundTimeout = null;
+function playXpFillSound() {
+  if (sfxSettings.masterMuted || sfxSettings.xpFillMuted) return;
+  
+  levelUpSound.volume = sfxSettings.xpFillVolume / 100;
+  levelUpSound.currentTime = XP_FILL_START;
+  levelUpSound.play().catch(err => {
+    console.log('XP Fill sound blocked:', err.message);
+  });
+  
+  // Stop after 3 seconds (at 58s mark)
+  xpFillSoundTimeout = setTimeout(() => {
+    levelUpSound.pause();
+    levelUpSound.currentTime = XP_FILL_START;
+  }, XP_FILL_DURATION);
+}
+
+function stopXpFillSound() {
+  if (xpFillSoundTimeout) {
+    clearTimeout(xpFillSoundTimeout);
+    xpFillSoundTimeout = null;
+  }
+  levelUpSound.pause();
+  levelUpSound.currentTime = XP_FILL_START;
+}
 
 // Background music audio element
 const backgroundMusic = new Audio('sounds/background-music.mp3');
@@ -3937,9 +4070,9 @@ function saveSoundSettings() {
 
 // Play click sound effect
 function playClickSound() {
-  if (soundSettings.sfxMuted) return;
+  if (sfxSettings.masterMuted || sfxSettings.clickMuted) return;
   
-  clickSound.volume = soundSettings.sfxVolume / 100;
+  clickSound.volume = sfxSettings.clickVolume / 100;
   clickSound.currentTime = 0;
   clickSound.play().catch(err => {
     // Ignore autoplay errors (user hasn't interacted yet)
@@ -3980,6 +4113,127 @@ function openSoundOverlay() {
 function closeSoundOverlay() {
   if (soundOverlay) {
     soundOverlay.classList.add('hidden');
+  }
+}
+
+// Open Music Overlay
+function openMusicOverlay() {
+  const musicOverlay = document.getElementById('music-overlay');
+  if (musicOverlay) {
+    // Update Music UI
+    const musicVolumeSlider = document.getElementById('music-volume-slider');
+    const musicVolumeValue = document.getElementById('music-volume-value');
+    if (musicVolumeSlider) musicVolumeSlider.value = musicSettings.musicVolume;
+    if (musicVolumeValue) musicVolumeValue.textContent = musicSettings.musicVolume + '%';
+    updateMusicMuteButtonUI();
+    
+    musicOverlay.classList.remove('hidden');
+  }
+}
+
+// Close Music Overlay
+function closeMusicOverlay() {
+  const musicOverlay = document.getElementById('music-overlay');
+  if (musicOverlay) {
+    musicOverlay.classList.add('hidden');
+  }
+}
+
+// Open Sound Effects Overlay
+function openSfxOverlay() {
+  const sfxOverlay = document.getElementById('sfx-overlay');
+  if (sfxOverlay) {
+    // Update all SFX UI
+    updateAllSfxVolumeUI();
+    updateAllSfxMuteUI();
+    sfxOverlay.classList.remove('hidden');
+  }
+}
+
+// Initialize all SFX controls
+function initSfxControls() {
+  // Master controls
+  const masterSlider = document.getElementById('sfx-master-volume-slider');
+  const masterMuteBtn = document.getElementById('sfx-master-mute-btn');
+  
+  if (masterSlider) {
+    masterSlider.value = sfxSettings.masterVolume;
+    masterSlider.addEventListener('input', (e) => {
+      applyMasterVolume(parseInt(e.target.value));
+    });
+  }
+  
+  if (masterMuteBtn) {
+    masterMuteBtn.addEventListener('click', () => {
+      toggleMasterMute();
+    });
+  }
+  
+  // Click controls
+  const clickSlider = document.getElementById('sfx-volume-slider');
+  const clickMuteBtn = document.getElementById('sfx-mute-btn');
+  
+  if (clickSlider) {
+    clickSlider.value = sfxSettings.clickVolume;
+    clickSlider.addEventListener('input', (e) => {
+      sfxSettings.clickVolume = parseInt(e.target.value);
+      const clickValue = document.getElementById('sfx-volume-value');
+      if (clickValue) clickValue.textContent = sfxSettings.clickVolume + '%';
+      saveSfxSettings();
+      playClickSound(); // Preview
+    });
+  }
+  
+  if (clickMuteBtn) {
+    clickMuteBtn.addEventListener('click', () => {
+      sfxSettings.clickMuted = !sfxSettings.clickMuted;
+      // If unmuting individual, also unmute master
+      if (!sfxSettings.clickMuted && sfxSettings.masterMuted) {
+        sfxSettings.masterMuted = false;
+        updateMasterMuteUI();
+      }
+      saveSfxSettings();
+      updateClickMuteUI();
+      if (!sfxSettings.clickMuted) playClickSound();
+    });
+  }
+  
+  // XP Fill controls
+  const xpFillSlider = document.getElementById('xpfill-volume-slider');
+  const xpFillMuteBtn = document.getElementById('xpfill-mute-btn');
+  
+  if (xpFillSlider) {
+    xpFillSlider.value = sfxSettings.xpFillVolume;
+    xpFillSlider.addEventListener('input', (e) => {
+      sfxSettings.xpFillVolume = parseInt(e.target.value);
+      const xpFillValue = document.getElementById('xpfill-volume-value');
+      if (xpFillValue) xpFillValue.textContent = sfxSettings.xpFillVolume + '%';
+      saveSfxSettings();
+    });
+  }
+  
+  if (xpFillMuteBtn) {
+    xpFillMuteBtn.addEventListener('click', () => {
+      sfxSettings.xpFillMuted = !sfxSettings.xpFillMuted;
+      // If unmuting individual, also unmute master
+      if (!sfxSettings.xpFillMuted && sfxSettings.masterMuted) {
+        sfxSettings.masterMuted = false;
+        updateMasterMuteUI();
+      }
+      saveSfxSettings();
+      updateXpFillMuteUI();
+    });
+  }
+  
+  // Initialize UI
+  updateAllSfxMuteUI();
+}
+
+// Close Sound Effects Overlay
+function closeSfxOverlay() {
+  const sfxOverlay = document.getElementById('sfx-overlay');
+  if (sfxOverlay) {
+    sfxOverlay.classList.add('hidden');
   }
 }
 
@@ -6299,7 +6553,7 @@ function checkUnifiedAnswer(selected, correct) {
 }
 
 // ⭐ XP CIRCLE ANIMATION HELPERS
-const XP_ANIMATION_DURATION = 500; // 0.5 seconds
+const XP_ANIMATION_DURATION = 3000; // 3 seconds (matches XP Fill sound)
 
 function animateXPNumber(element, startValue, endValue, duration, prefix = '') {
   const startTime = performance.now();
@@ -6496,16 +6750,31 @@ function showUnifiedResults() {
   // Build XP display HTML with circular progress
   let xpDisplayHTML = '';
   let xpAnimationData = null;
-  
+
   if (xpResult && gameMode !== 'two') {
     const topicData = getTopicXPData(currentTopic);
     const progress = getLevelProgress(topicData);
-    
+
     // Calculate existing XP percent (bright red) and new XP percent (dim red)
-    const existingXPInLevel = progress.current - xpResult.xpGained;
-    const existingPercent = xpResult.leveledUp ? 0 : Math.max(0, (existingXPInLevel / progress.needed) * 100);
-    const newPercent = (xpResult.xpGained / progress.needed) * 100;
+    let existingPercent, newPercent, leveledUp = xpResult.leveledUp;
+    let oldLevelExistingPercent = 0; // For level up animation phase 1
     
+    if (leveledUp) {
+      // Calculate old level's fill percentage before the game
+      const oldLevelReq = xpNeededForLevel(xpResult.oldLevel) - (xpResult.oldLevel > 1 ? xpNeededForLevel(xpResult.oldLevel - 1) : 0);
+      const xpUsedToCompleteOldLevel = xpResult.xpGained - progress.current;
+      const xpInOldLevelBefore = oldLevelReq - xpUsedToCompleteOldLevel;
+      oldLevelExistingPercent = Math.max(0, (xpInOldLevelBefore / oldLevelReq) * 100);
+      
+      // New level starts at 0, fills to current progress
+      existingPercent = 0;
+      newPercent = (progress.current / progress.needed) * 100;
+    } else {
+      const existingXPInLevel = progress.current - xpResult.xpGained;
+      existingPercent = Math.max(0, (existingXPInLevel / progress.needed) * 100);
+      newPercent = (xpResult.xpGained / progress.needed) * 100;
+    }
+
     // Store data for animation
     xpAnimationData = {
       xpGained: xpResult.xpGained,
@@ -6513,7 +6782,10 @@ function showUnifiedResults() {
       newPercent,
       totalXP: topicData.xp,
       xpToLevel: progress.remaining,
-      level: topicData.level
+      level: topicData.level,
+      leveledUp: leveledUp,
+      oldLevelExistingPercent: oldLevelExistingPercent,
+      newLevel: xpResult.newLevel
     };
     
     xpDisplayHTML = `
@@ -6695,19 +6967,61 @@ function showUnifiedResults() {
       const circle = document.getElementById('xpCircleProgress');
       const xpGainedEl = document.getElementById('xpGainedValue');
       const xpNeededEl = document.getElementById('xpNeededValue');
-      
+      const levelDisplay = wrapper ? wrapper.querySelector('span[style*="font-size:52px"]') : null;
+
       if (wrapper && circle) {
-        const existingDeg = (xpAnimationData.existingPercent / 100) * 360;
-        const newDeg = (xpAnimationData.newPercent / 100) * 360;
+        // Play XP Fill sound
+        playXpFillSound();
         
-        // Animate numbers
-        if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
-        if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
-        
-        // Animate circle fill
-        animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
-          positionXPArrows(existDeg, totalDeg, wrapper);
-        });
+        if (xpAnimationData.leveledUp) {
+          // TWO-PHASE ANIMATION for level up
+          // Phase 1: Fill old level from existing to 100%
+          const oldExistingDeg = (xpAnimationData.oldLevelExistingPercent / 100) * 360;
+          const remainingToFillDeg = 360 - oldExistingDeg;
+          const phase1Duration = XP_ANIMATION_DURATION * 0.6; // 60% of time for phase 1
+          const phase2Duration = XP_ANIMATION_DURATION * 0.4; // 40% of time for phase 2
+          
+          // Phase 1: Fill to 100%
+          animateXPCircleFill(circle, oldExistingDeg, remainingToFillDeg, phase1Duration, (existDeg, totalDeg) => {
+            positionXPArrows(existDeg, totalDeg, wrapper);
+          });
+          
+          // Phase 2: After phase 1, flash and start new level
+          setTimeout(() => {
+            // Flash effect
+            circle.style.transition = 'opacity 0.15s';
+            circle.style.opacity = '0.3';
+            setTimeout(() => {
+              circle.style.opacity = '1';
+              // Update level number
+              if (levelDisplay) levelDisplay.textContent = xpAnimationData.newLevel;
+              
+              // Reset and animate new level
+              const newDeg = (xpAnimationData.newPercent / 100) * 360;
+              animateXPCircleFill(circle, 0, newDeg, phase2Duration, (existDeg, totalDeg) => {
+                positionXPArrows(existDeg, totalDeg, wrapper);
+              });
+            }, 150);
+          }, phase1Duration);
+          
+          // Animate numbers
+          if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
+          if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
+          
+        } else {
+          // SINGLE-PHASE ANIMATION (no level up)
+          const existingDeg = (xpAnimationData.existingPercent / 100) * 360;
+          const newDeg = (xpAnimationData.newPercent / 100) * 360;
+
+          // Animate numbers
+          if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
+          if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
+
+          // Animate circle fill
+          animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
+            positionXPArrows(existDeg, totalDeg, wrapper);
+          });
+        }
       }
     }, 300);
   }
@@ -8816,7 +9130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCard3dModeToggle();
   initExtraEffectsToggle();
   initMusicControls();
-  
+  initSfxControls();
+
   // Start background music on first user interaction
   document.addEventListener('click', () => {
     startBackgroundMusic();

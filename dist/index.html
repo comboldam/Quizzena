@@ -1453,7 +1453,7 @@
       </div>
     </div>
 
-    <!-- Sound Settings Overlay -->
+    <!-- Sound Settings Overlay (Main) -->
     <div class="sound-overlay hidden" id="sound-overlay">
       <div class="sound-overlay-backdrop" id="sound-overlay-backdrop"></div>
       <div class="sound-overlay-content">
@@ -1464,15 +1464,48 @@
         </div>
         <div class="sound-overlay-body">
           
-          <!-- Music Setting -->
+          <!-- Music Button -->
+          <div class="sound-nav-item" id="sound-nav-music" onclick="playClickSound(); openMusicOverlay();">
+            <div class="sound-nav-label">
+              <span class="sound-nav-icon">🎵</span>
+              <span>Music</span>
+            </div>
+            <span class="sound-nav-arrow">→</span>
+          </div>
+
+          <!-- Sound Effects Button -->
+          <div class="sound-nav-item" id="sound-nav-sfx" onclick="playClickSound(); openSfxOverlay();">
+            <div class="sound-nav-label">
+              <span class="sound-nav-icon">🔊</span>
+              <span>Sound Effects</span>
+            </div>
+            <span class="sound-nav-arrow">→</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Music Settings Overlay -->
+    <div class="sound-overlay hidden" id="music-overlay">
+      <div class="sound-overlay-backdrop" onclick="closeMusicOverlay();"></div>
+      <div class="sound-overlay-content">
+        <div class="sound-overlay-header">
+          <button class="sound-overlay-back" onclick="closeMusicOverlay();">←</button>
+          <h2 class="sound-overlay-title">🎵 Music</h2>
+          <div class="sound-overlay-spacer"></div>
+        </div>
+        <div class="sound-overlay-body">
+          
+          <!-- Music -->
           <div class="sound-setting-section">
             <div class="sound-setting-header">
               <span class="sound-setting-icon">🎵</span>
-              <span class="sound-setting-name" data-i18n="sound_music">Music</span>
+              <span class="sound-setting-name">Music</span>
             </div>
             <div class="sound-setting-content">
               <div class="volume-control">
-                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <span class="volume-label">Volume</span>
                 <div class="volume-slider-container">
                   <input type="range" class="volume-slider" id="music-volume-slider" min="0" max="100" value="30">
                   <span class="volume-value" id="music-volume-value">30%</span>
@@ -1480,28 +1513,97 @@
               </div>
               <button class="mute-btn" id="music-mute-btn">
                 <span class="mute-icon" id="music-mute-icon">🎵</span>
-                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+                <span class="mute-text">Mute</span>
               </button>
             </div>
           </div>
 
-          <!-- Sound Effects Setting -->
-          <div class="sound-setting-section">
+          <!-- Music+ (Coming Soon) -->
+          <div class="sound-setting-section sound-setting-disabled">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">🎶</span>
+              <span class="sound-setting-name">Music+</span>
+            </div>
+            <div class="sound-setting-content">
+              <span class="settings-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sound Effects Settings Overlay -->
+    <div class="sound-overlay hidden" id="sfx-overlay">
+      <div class="sound-overlay-backdrop" onclick="closeSfxOverlay();"></div>
+      <div class="sound-overlay-content">
+        <div class="sound-overlay-header">
+          <button class="sound-overlay-back" onclick="closeSfxOverlay();">←</button>
+          <h2 class="sound-overlay-title">🔊 Sound Effects</h2>
+          <div class="sound-overlay-spacer"></div>
+        </div>
+        <div class="sound-overlay-body">
+          
+          <!-- Master Sound Effects Toggle -->
+          <div class="sound-setting-section sound-setting-master">
             <div class="sound-setting-header">
               <span class="sound-setting-icon">🔊</span>
-              <span class="sound-setting-name" data-i18n="sound_effects">Sound Effects</span>
+              <span class="sound-setting-name">Sound Effects</span>
+              <span class="sound-setting-badge">Master</span>
             </div>
             <div class="sound-setting-content">
               <div class="volume-control">
-                <span class="volume-label" data-i18n="sound_volume">Volume</span>
+                <span class="volume-label">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="sfx-master-volume-slider" min="0" max="100" value="70">
+                  <span class="volume-value" id="sfx-master-volume-value">70%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="sfx-master-mute-btn">
+                <span class="mute-icon" id="sfx-master-mute-icon">🔊</span>
+                <span class="mute-text">Mute All</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Click Sound -->
+          <div class="sound-setting-section">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">👆</span>
+              <span class="sound-setting-name">Click</span>
+            </div>
+            <div class="sound-setting-content">
+              <div class="volume-control">
+                <span class="volume-label">Volume</span>
                 <div class="volume-slider-container">
                   <input type="range" class="volume-slider" id="sfx-volume-slider" min="0" max="100" value="70">
                   <span class="volume-value" id="sfx-volume-value">70%</span>
                 </div>
               </div>
               <button class="mute-btn" id="sfx-mute-btn">
-                <span class="mute-icon" id="sfx-mute-icon">🔊</span>
-                <span class="mute-text" data-i18n="sound_mute">Mute</span>
+                <span class="mute-icon" id="sfx-mute-icon">👆</span>
+                <span class="mute-text">Mute</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- XP Fill Sound -->
+          <div class="sound-setting-section">
+            <div class="sound-setting-header">
+              <span class="sound-setting-icon">⬆️</span>
+              <span class="sound-setting-name">XP Fill</span>
+            </div>
+            <div class="sound-setting-content">
+              <div class="volume-control">
+                <span class="volume-label">Volume</span>
+                <div class="volume-slider-container">
+                  <input type="range" class="volume-slider" id="xpfill-volume-slider" min="0" max="100" value="70">
+                  <span class="volume-value" id="xpfill-volume-value">70%</span>
+                </div>
+              </div>
+              <button class="mute-btn" id="xpfill-mute-btn">
+                <span class="mute-icon" id="xpfill-mute-icon">⬆️</span>
+                <span class="mute-text">Mute</span>
               </button>
             </div>
           </div>
