@@ -26985,24 +26985,24 @@ footer button:hover {
 /* Zoomed out state - shrink to show sphere with flags on surface */
 .card3d-sphere.zoomed-out {
   transform: translate(-50%, -50%) scale(0.55);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.13s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Spinning states - sphere rotates, flags orbit on surface */
 .card3d-sphere.spinning {
   transform: translate(-50%, -50%) scale(0.55) rotateY(140deg) rotateX(20deg);
-  transition: transform 0.2s cubic-bezier(0.3, 0, 0.6, 1);
+  transition: transform 0.13s cubic-bezier(0.3, 0, 0.6, 1);
 }
 
 .card3d-sphere.spinning-more {
   transform: translate(-50%, -50%) scale(0.55) rotateY(320deg) rotateX(-15deg);
-  transition: transform 0.2s cubic-bezier(0.3, 0, 0.6, 1);
+  transition: transform 0.13s cubic-bezier(0.3, 0, 0.6, 1);
 }
 
 /* Settling - rotate back to 0° so zoom in is straight */
 .card3d-sphere.settling {
   transform: translate(-50%, -50%) scale(0.55) rotateY(360deg) rotateX(0deg);
-  transition: transform 0.18s cubic-bezier(0.2, 0, 0.4, 1);
+  transition: transform 0.1s cubic-bezier(0.2, 0, 0.4, 1);
 }
 
 /* Base flag circle style */

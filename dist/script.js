@@ -4742,14 +4742,14 @@ function animateToNextQuestion(callback) {
   if (questionSide) questionSide.classList.add('hidden');
   if (answersSide) answersSide.classList.add('hidden');
   
-  // Phase 1: Zoom OUT (show full sphere)
+  // Phase 1: Zoom OUT (show full sphere) - 130ms
   sphere.classList.add('zoomed-out');
   
   setTimeout(() => {
-    // Phase 2: Start spinning
+    // Phase 2: Start spinning - 130ms
     sphere.classList.add('spinning');
     
-    // Phase 3: Continue spinning
+    // Phase 3: Continue spinning - 130ms
     setTimeout(() => {
       sphere.classList.remove('spinning');
       sphere.classList.add('spinning-more');
@@ -4782,12 +4782,12 @@ function animateToNextQuestion(callback) {
         correctAnswer: currentFlag.country
       };
       
-      // Phase 4: Settle to front (rotation back to 0)
+      // Phase 4: Settle to front - 100ms
       setTimeout(() => {
         sphere.classList.remove('spinning-more');
         sphere.classList.add('settling');
         
-        // Phase 5: ZOOM IN from center
+        // Phase 5: ZOOM IN from center - 80ms
         setTimeout(() => {
           sphere.classList.remove('settling');
           sphere.classList.remove('zoomed-out');
@@ -4820,11 +4820,11 @@ function animateToNextQuestion(callback) {
             questionCount++;
             
             callback && callback();
-          }, 200);
-        }, 150);
-      }, 180);
-    }, 200);
-  }, 200);
+          }, 80);
+        }, 80);
+      }, 100);
+    }, 130);
+  }, 130);
 }
 
 // Get next unused flag for carousel
@@ -5877,7 +5877,7 @@ function check3DCardAnswer(btnElement, selected, correct) {
       questionOptionsShownTime = Date.now();
       startTimer(currentQuestionData.correctAnswer);
     });
-  }, 500); // Show correct/wrong feedback for 500ms before animating
+  }, 480); // Show feedback before animating (480ms + 520ms animation = 1s total)
 }
 
 // Timer for 3D card mode
