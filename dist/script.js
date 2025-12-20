@@ -191,9 +191,10 @@ let screenTimeTracker = {
     if (typeof userData === 'undefined' || !userData.stats) return;
     
     const now = new Date();
-    const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+    // Use local date to match local hours
+    const dateKey = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
     const hour = now.getHours().toString().padStart(2, '0');
-    
+
     // Initialize stats history if not exists
     if (!userData.stats.history) {
       userData.stats.history = {};
@@ -8796,7 +8797,8 @@ function checkPxpLevelUp() {
 // Record P-XP in history
 function recordPxpHistory(gamesXp, answersXp) {
   const now = new Date();
-  const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+  // Use local date to match local hours
+  const dateKey = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
   const hour = now.getHours().toString().padStart(2, '0');
   
   if (!userData.prestige.history) {
@@ -8822,7 +8824,8 @@ function recordPxpHistory(gamesXp, answersXp) {
 // Record stats history (games, correct, wrong, time, streak, topic, answerTime)
 function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, bestStreak, topicId = null, answerTimeMs = 0) {
   const now = new Date();
-  const dateKey = now.toISOString().split('T')[0]; // "YYYY-MM-DD"
+  // Use local date to match local hours
+  const dateKey = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
   const hour = now.getHours().toString().padStart(2, '0');
   
   // Initialize stats if not exists (migration for existing users)
@@ -8933,7 +8936,8 @@ function recordStatsHistory(gamesCount, correctCount, wrongCount, timeSeconds, b
 function getDateString(daysAgo = 0) {
   const date = new Date();
   date.setDate(date.getDate() - daysAgo);
-  return date.toISOString().split('T')[0];
+  // Use local date (not UTC) to match local hours
+  return `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2,'0')}-${date.getDate().toString().padStart(2,'0')}`;
 }
 
 // P-XP Dashboard Chart instance
@@ -11859,7 +11863,8 @@ function claimAchievement(achievementId) {
   userData.quanta = (userData.quanta || 0) + achievement.quantaReward;
   
   // Record in achievement history for chart
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const today = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
   if (!userData.achievements.history[today]) {
     userData.achievements.history[today] = { pxp: 0, quanta: 0 };
   }
