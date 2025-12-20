@@ -2415,27 +2415,30 @@ footer button:hover {
   max-width: 160px;
 }
 
-/* Override floating card sizing for continue row */
-.continue-row .floating-card-topic {
-  width: 100%;
-  max-width: 160px;
-  height: auto;
-  min-height: 150px;
+/* Override card sizing for continue row */
+.continue-row .breakout-card {
+  width: 120px;
+  height: 150px;
+  padding: 0 8px 10px 8px;
 }
 
 .continue-row .floating-card-circle {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
+  top: 12px;
 }
 
+.continue-row .breakout-card-glow,
 .continue-row .floating-card-glow {
-  width: 95px;
-  height: 95px;
+  width: 85px;
+  height: 85px;
 }
 
 .continue-row .floating-card-title {
-  margin-top: 20px;
-  min-height: 28px;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  max-height: 28px;
+  overflow: hidden;
 }
 
 /* Compact Categories Grid */
