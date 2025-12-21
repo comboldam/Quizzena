@@ -9769,8 +9769,60 @@ function closePxpDashboard() {
   if (dashboard) dashboard.classList.add('hidden');
 }
 
+// Repair P-XP data from history (fixes desync issues)
+function repairPxpFromHistory() {
+  if (!userData.prestige) {
+    userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+  }
+  
+  const history = userData.prestige.history || {};
+  const achHistory = userData.achievements?.history || {};
+  
+  // Calculate total from history
+  let calculatedTotal = 0;
+  
+  // Sum from prestige history (games + answers)
+  Object.values(history).forEach(dayData => {
+    calculatedTotal += (dayData.games || 0) + (dayData.answers || 0);
+  });
+  
+  // Sum from achievements history
+  Object.values(achHistory).forEach(dayData => {
+    calculatedTotal += (dayData.pxp || 0);
+  });
+  
+  // If history total is higher than stored total, we have a desync
+  if (calculatedTotal > userData.prestige.totalPxp) {
+    console.log(`🔧 P-XP Repair: History shows ${calculatedTotal}, stored was ${userData.prestige.totalPxp}`);
+    userData.prestige.totalPxp = calculatedTotal;
+    
+    // Recalculate level from total P-XP
+    let remainingPxp = calculatedTotal;
+    let level = 1;
+    let required = getPxpRequiredForLevel(level);
+    
+    while (remainingPxp >= required) {
+      remainingPxp -= required;
+      level++;
+      required = getPxpRequiredForLevel(level);
+    }
+    
+    userData.prestige.level = level;
+    userData.prestige.pxp = remainingPxp;
+    
+    console.log(`🔧 P-XP Repair: Level ${level}, Current P-XP ${remainingPxp}/${required}`);
+    saveUserData();
+    
+    // Update global level badge after repair
+    updateGlobalLevelBadge();
+  }
+}
+
 // Update P-XP Dashboard display
 function updatePxpDashboard() {
+  // First repair any data inconsistencies
+  repairPxpFromHistory();
+  
   // Update level status section
   const progress = getPxpProgress();
   
@@ -9885,7 +9937,8 @@ function renderPxpChart(period) {
       totalAchievements += achDayData.pxp || 0;
     }
   } else if (period === 'month') {
-    // Show last 30 days
+    // Show last 30 days with cleaner labels
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     for (let i = 29; i >= 0; i--) {
       const dateKey = getDateString(i);
       const dayData = history[dateKey] || { games: 0, answers: 0 };
@@ -9893,7 +9946,16 @@ function renderPxpChart(period) {
       const date = new Date();
       date.setDate(date.getDate() - i);
       
-      labels.push(date.getDate().toString());
+      // Show label every 5 days, or first/last day, with month prefix
+      const dayNum = date.getDate();
+      if (i === 29 || i === 0 || dayNum === 1 || dayNum === 15) {
+        labels.push(`${monthNames[date.getMonth()]} ${dayNum}`);
+      } else if (i % 5 === 0) {
+        labels.push(dayNum.toString());
+      } else {
+        labels.push('');
+      }
+      
       gamesData.push(dayData.games);
       answersData.push(dayData.answers);
       achievementsData.push(achDayData.pxp || 0);
