@@ -3582,10 +3582,25 @@ function displayProfile() {
   // Remove any animation classes for instant display
   profileView.classList.remove('slide-from-left', 'slide-from-right', 'slide-from-bottom');
 
-  // Update active state only if viewing own profile
+  // Show/hide back button and settings based on profile ownership
+  const backBtn = document.getElementById('profile-back-btn');
+  const settingsBtn = document.getElementById('profile-settings-btn');
+  const editBtn = document.querySelector('.profile-avatar-edit-btn');
+  
   if (isViewingOwnProfile()) {
+    // Viewing own profile - show settings, hide back
+    if (backBtn) backBtn.classList.add('hidden');
+    if (settingsBtn) settingsBtn.classList.remove('hidden');
+    if (editBtn) editBtn.classList.remove('hidden');
+    
+    // Update nav active state
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
     navProfile.classList.add('active');
+  } else {
+    // Viewing other's profile - show back, hide settings/edit
+    if (backBtn) backBtn.classList.remove('hidden');
+    if (settingsBtn) settingsBtn.classList.add('hidden');
+    if (editBtn) editBtn.classList.add('hidden');
   }
   
   // Get the data to display (own or other user's)
@@ -3605,6 +3620,13 @@ function displayProfile() {
   
   // Update topic progress
   updateTopicProgressWithData(profileData);
+}
+
+// Go back from viewing another user's profile
+function goBackFromProfile() {
+  clearViewingProfile();
+  // Go back to leaderboard (or could track previous location)
+  showLeaderboard();
 }
 
 // Load another user's profile from Firebase
@@ -8170,7 +8192,7 @@ function renderTopicStatsChart() {
 // Show Leaderboard screen
 function showLeaderboard() {
   clearViewingProfile(); // Clear any viewed profile state
-  
+
   const newIndex = NAV_ORDER.indexOf('leaderboard');
   const direction = newIndex < currentNavIndex ? 'left' : 'right';
   currentNavIndex = newIndex;
@@ -8195,6 +8217,66 @@ function showLeaderboard() {
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   const navLeaderboard = document.getElementById('nav-leaderboard');
   if (navLeaderboard) navLeaderboard.classList.add('active');
+}
+
+// Handle leaderboard row click - opens user profile
+function handleLeaderboardRowClick(userId) {
+  if (!userId) return;
+  
+  playClickSound();
+  console.log('👤 Leaderboard row clicked, viewing profile:', userId);
+  showProfile(userId);
+}
+
+// Populate leaderboard with real data (call when data is available)
+function populateLeaderboard(leaderboardData) {
+  const listContainer = document.querySelector('.lb-preview-list');
+  if (!listContainer) return;
+  
+  // Clear existing rows
+  listContainer.innerHTML = '';
+  
+  // Rank styling classes
+  const rankClasses = ['lb-rank-gold', 'lb-rank-silver', 'lb-rank-bronze'];
+  
+  leaderboardData.forEach((entry, index) => {
+    const row = document.createElement('div');
+    row.className = 'lb-preview-row';
+    row.style.cssText = 'display:flex !important; cursor:pointer;';
+    row.dataset.userId = entry.userId;
+    
+    // Click handler
+    row.addEventListener('click', () => handleLeaderboardRowClick(entry.userId));
+    
+    // Rank
+    const rank = document.createElement('span');
+    rank.className = `lb-rank ${rankClasses[index] || ''}`.trim();
+    rank.textContent = `#${index + 1}`;
+    
+    // Avatar
+    const avatar = document.createElement('span');
+    avatar.className = 'lb-avatar';
+    avatar.textContent = entry.avatar || '👤';
+    
+    // Username
+    const username = document.createElement('span');
+    username.className = 'lb-username';
+    username.textContent = entry.username || 'Player';
+    
+    // Score/stat
+    const stat = document.createElement('span');
+    stat.className = 'lb-stat';
+    stat.textContent = entry.displayStat || '';
+    
+    row.appendChild(rank);
+    row.appendChild(avatar);
+    row.appendChild(username);
+    row.appendChild(stat);
+    
+    listContainer.appendChild(row);
+  });
+  
+  console.log('📊 Leaderboard populated with', leaderboardData.length, 'entries');
 }
 
 // ============================================

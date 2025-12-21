@@ -14,7 +14,7 @@
   <!-- Google Fonts - Orbitron & Rajdhani -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="stylesheet" href="style.css?v=17">
   
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
@@ -2288,8 +2288,9 @@
 
       <!-- Profile Top Bar -->
       <div class="profile-top-bar">
-        <div class="profile-settings">⚙️</div>
+        <button class="profile-back-btn hidden" id="profile-back-btn" onclick="playClickSound(); goBackFromProfile();">←</button>
         <div class="profile-spacer"></div>
+        <div class="profile-settings" id="profile-settings-btn">⚙️</div>
       </div>
 
       <!-- Profile Header Section -->
@@ -3084,6 +3085,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=26"></script>
+  <script src="script.js?v=27"></script>
 </body>
 </html>
