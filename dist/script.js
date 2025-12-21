@@ -8808,7 +8808,7 @@ function getTopicImagePath(topicId) {
   };
   
   const imageName = imageNameMap[topicId] || topicId;
-  return `icons/topics/${folder}/${imageName}.png`;
+  return `./icons/topics/${folder}/${imageName}.png`;
 }
 
 // Load slots from localStorage
