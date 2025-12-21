@@ -9774,10 +9774,13 @@ function calculateAllTimePxp() {
   const history = userData.prestige?.history || {};
   const achHistory = userData.achievements?.history || {};
   let total = 0;
+
+  console.log('📊 P-XP History keys:', Object.keys(history));
   
   // Sum all days from prestige history
   Object.keys(history).forEach(dateKey => {
     const day = history[dateKey];
+    console.log(`📊 Day ${dateKey}:`, day);
     // Sum from hourly data
     if (day.hourly) {
       Object.values(day.hourly).forEach(h => {
@@ -9785,12 +9788,13 @@ function calculateAllTimePxp() {
       });
     }
   });
-  
+
   // Sum from achievements history
   Object.keys(achHistory).forEach(dateKey => {
     total += achHistory[dateKey]?.pxp || 0;
   });
-  
+
+  console.log('📊 Total calculated:', total);
   return total;
 }
 
