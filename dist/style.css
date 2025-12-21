@@ -3837,7 +3837,6 @@ footer button:hover {
   stroke-dasharray: 326.73;
   stroke-dashoffset: 326.73;
   transition: stroke-dashoffset 1s ease-out;
-  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
 }
 
 .pxp-level-inner {
@@ -3897,7 +3896,6 @@ footer button:hover {
   background: linear-gradient(90deg, #7c3aed 0%, #fbbf24 100%);
   border-radius: 6px;
   transition: width 0.5s ease-out;
-  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
 .pxp-total-text {
