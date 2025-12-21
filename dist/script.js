@@ -9769,89 +9769,8 @@ function closePxpDashboard() {
   if (dashboard) dashboard.classList.add('hidden');
 }
 
-// Repair P-XP data from history (fixes desync issues)
-function repairPxpFromHistory() {
-  // Ensure prestige object exists
-  if (!userData.prestige) {
-    userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
-  }
-  
-  const history = userData.prestige.history || {};
-  const achHistory = userData.achievements?.history || {};
-  
-  // Calculate total P-XP from all history
-  let calculatedTotal = 0;
-  
-  // Sum from prestige history (games P-XP + answers P-XP)
-  Object.keys(history).forEach(dateKey => {
-    const dayData = history[dateKey];
-    
-    // Try daily totals first
-    let dayGames = dayData.games || 0;
-    let dayAnswers = dayData.answers || 0;
-    
-    // If daily totals are 0, calculate from hourly data
-    if (dayGames === 0 && dayAnswers === 0 && dayData.hourly) {
-      Object.values(dayData.hourly).forEach(hourData => {
-        dayGames += hourData.g || 0;
-        dayAnswers += hourData.a || 0;
-      });
-      // Also fix the daily totals while we're here
-      if (dayGames > 0 || dayAnswers > 0) {
-        dayData.games = dayGames;
-        dayData.answers = dayAnswers;
-      }
-    }
-    
-    calculatedTotal += dayGames + dayAnswers;
-  });
-  
-  // Sum from achievements history
-  Object.keys(achHistory).forEach(dateKey => {
-    const dayData = achHistory[dateKey];
-    calculatedTotal += (dayData.pxp || 0);
-  });
-  
-  console.log(`🔧 P-XP Check: Calculated ${calculatedTotal} from history, stored totalPxp: ${userData.prestige.totalPxp}, stored level: ${userData.prestige.level}, stored pxp: ${userData.prestige.pxp}`);
-  
-  // Always recalculate if there's history data and level is wrong
-  if (calculatedTotal > 0) {
-    // Recalculate correct level from total P-XP
-    let remainingPxp = calculatedTotal;
-    let level = 1;
-    let required = getPxpRequiredForLevel(level);
-    
-    while (remainingPxp >= required) {
-      remainingPxp -= required;
-      level++;
-      required = getPxpRequiredForLevel(level);
-    }
-    
-    // Check if stored values are wrong
-    const needsRepair = (
-      userData.prestige.totalPxp !== calculatedTotal ||
-      userData.prestige.level !== level ||
-      userData.prestige.pxp !== remainingPxp
-    );
-    
-    if (needsRepair) {
-      console.log(`🔧 P-XP Repair: Fixing! Total: ${calculatedTotal}, Level: ${level}, Current P-XP: ${remainingPxp}/${required}`);
-      
-      userData.prestige.totalPxp = calculatedTotal;
-      userData.prestige.level = level;
-      userData.prestige.pxp = remainingPxp;
-      
-      saveUserData();
-      updateGlobalLevelBadge();
-    }
-  }
-}
-
 // Update P-XP Dashboard display
 function updatePxpDashboard() {
-  // First repair any data inconsistencies
-  repairPxpFromHistory();
-  
   // Update level status section
   const progress = getPxpProgress();
   
@@ -9966,8 +9885,7 @@ function renderPxpChart(period) {
       totalAchievements += achDayData.pxp || 0;
     }
   } else if (period === 'month') {
-    // Show last 30 days with cleaner labels
-    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // Show last 30 days
     for (let i = 29; i >= 0; i--) {
       const dateKey = getDateString(i);
       const dayData = history[dateKey] || { games: 0, answers: 0 };
@@ -9975,16 +9893,7 @@ function renderPxpChart(period) {
       const date = new Date();
       date.setDate(date.getDate() - i);
       
-      // Show label every 5 days, or first/last day, with month prefix
-      const dayNum = date.getDate();
-      if (i === 29 || i === 0 || dayNum === 1 || dayNum === 15) {
-        labels.push(`${monthNames[date.getMonth()]} ${dayNum}`);
-      } else if (i % 5 === 0) {
-        labels.push(dayNum.toString());
-      } else {
-        labels.push('');
-      }
-      
+      labels.push(date.getDate().toString());
       gamesData.push(dayData.games);
       answersData.push(dayData.answers);
       achievementsData.push(achDayData.pxp || 0);
