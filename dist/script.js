@@ -9785,8 +9785,24 @@ function repairPxpFromHistory() {
   // Sum from prestige history (games P-XP + answers P-XP)
   Object.keys(history).forEach(dateKey => {
     const dayData = history[dateKey];
-    const dayGames = dayData.games || 0;
-    const dayAnswers = dayData.answers || 0;
+    
+    // Try daily totals first
+    let dayGames = dayData.games || 0;
+    let dayAnswers = dayData.answers || 0;
+    
+    // If daily totals are 0, calculate from hourly data
+    if (dayGames === 0 && dayAnswers === 0 && dayData.hourly) {
+      Object.values(dayData.hourly).forEach(hourData => {
+        dayGames += hourData.g || 0;
+        dayAnswers += hourData.a || 0;
+      });
+      // Also fix the daily totals while we're here
+      if (dayGames > 0 || dayAnswers > 0) {
+        dayData.games = dayGames;
+        dayData.answers = dayAnswers;
+      }
+    }
+    
     calculatedTotal += dayGames + dayAnswers;
   });
   
