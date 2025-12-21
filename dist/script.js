@@ -3523,6 +3523,9 @@ function showHome() {
   // Update active state
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   navHome.classList.add('active');
+  
+  // Refresh Continue Playing section to show most recently played
+  populateContinuePlaying();
 
   // Update mini stats
   populateMiniStats();
