@@ -3506,6 +3506,8 @@ function hideAllViewsExcept(targetKey) {
 
 // Show Home screen
 function showHome() {
+  clearViewingProfile(); // Clear any viewed profile state
+  
   const newIndex = NAV_ORDER.indexOf('home');
   const direction = newIndex < currentNavIndex ? 'left' : 'right';
   currentNavIndex = newIndex;
@@ -3526,10 +3528,12 @@ function showHome() {
 
 // Show Topics screen
 function showTopics() {
+  clearViewingProfile(); // Clear any viewed profile state
+  
   const newIndex = NAV_ORDER.indexOf('topics');
   const direction = newIndex < currentNavIndex ? 'left' : 'right';
   currentNavIndex = newIndex;
-  
+
   hideAllViewsExcept('topics');
   applyNavAnimation(topicsView, direction);
 
@@ -3603,19 +3607,107 @@ function displayProfile() {
   updateTopicProgressWithData(profileData);
 }
 
-// Load another user's profile from Firebase (placeholder for now)
-function loadOtherUserProfile(userId) {
-  console.log('Loading profile for user:', userId);
+// Load another user's profile from Firebase
+async function loadOtherUserProfile(userId) {
+  console.log('👤 Loading profile for user:', userId);
   
-  // TODO: Implement Firebase fetch for other user's public profile
-  // For now, show a loading state then display what we have
-  viewingProfileData = null;
+  try {
+    // Fetch user document from Firestore
+    const userDoc = await firebaseDb.collection('users').doc(userId).get();
+    
+    if (userDoc.exists) {
+      const data = userDoc.data();
+      
+      // Build profile data structure matching userData format
+      viewingProfileData = {
+        odooId: userId,
+        profile: {
+          username: data.profile?.username || 'Player',
+          avatar: data.profile?.avatar || '👤',
+          profilePicture: data.profile?.profilePicture || null,
+          backgroundPicture: data.profile?.backgroundPicture || null,
+          country: data.profile?.country || null,
+          countryName: data.profile?.countryName || null
+        },
+        stats: {
+          totalGames: data.stats?.totalGames || 0,
+          correctAnswers: data.stats?.correctAnswers || 0,
+          wrongAnswers: data.stats?.wrongAnswers || 0,
+          accuracy: data.stats?.accuracy || 0,
+          bestStreak: data.stats?.bestStreak || 0,
+          totalTimeSeconds: data.stats?.totalTimeSeconds || 0,
+          topics: data.stats?.topics || {}
+        },
+        achievements: {
+          unlocked: data.achievements?.unlocked || []
+        },
+        prestige: {
+          level: data.prestige?.level || 1,
+          pxp: data.prestige?.pxp || 0,
+          totalPxp: data.prestige?.totalPxp || 0
+        }
+      };
+      
+      console.log('👤 Profile loaded successfully:', viewingProfileData.profile.username);
+    } else {
+      console.log('👤 User not found, showing default profile');
+      // User doesn't exist - show default empty profile
+      viewingProfileData = {
+        odooId: userId,
+        profile: {
+          username: 'Unknown Player',
+          avatar: '👤',
+          profilePicture: null,
+          backgroundPicture: null,
+          country: null,
+          countryName: null
+        },
+        stats: {
+          totalGames: 0,
+          correctAnswers: 0,
+          wrongAnswers: 0,
+          accuracy: 0,
+          bestStreak: 0,
+          totalTimeSeconds: 0,
+          topics: {}
+        },
+        achievements: {
+          unlocked: []
+        },
+        prestige: {
+          level: 1,
+          pxp: 0,
+          totalPxp: 0
+        }
+      };
+    }
+  } catch (error) {
+    console.error('👤 Error loading profile:', error);
+    // On error, show default profile
+    viewingProfileData = {
+      odooId: userId,
+      profile: {
+        username: 'Error Loading',
+        avatar: '❌',
+        profilePicture: null,
+        backgroundPicture: null,
+        country: null,
+        countryName: null
+      },
+      stats: { totalGames: 0, correctAnswers: 0, wrongAnswers: 0, accuracy: 0, bestStreak: 0, totalTimeSeconds: 0, topics: {} },
+      achievements: { unlocked: [] },
+      prestige: { level: 1, pxp: 0, totalPxp: 0 }
+    };
+  }
   
-  // Placeholder: In future, this will fetch from Firebase
-  // firebase.firestore().collection('users').doc(userId).get()...
-  
-  // For now, just display the profile view (will show empty/default)
+  // Display the profile
   displayProfile();
+}
+
+// Clear viewed profile state (call when leaving profile)
+function clearViewingProfile() {
+  viewingProfileData = null;
+  viewingProfileUserId = null;
 }
 
 // Nav button click handlers - using addEventListener for iOS compatibility
@@ -8077,10 +8169,12 @@ function renderTopicStatsChart() {
 
 // Show Leaderboard screen
 function showLeaderboard() {
+  clearViewingProfile(); // Clear any viewed profile state
+  
   const newIndex = NAV_ORDER.indexOf('leaderboard');
   const direction = newIndex < currentNavIndex ? 'left' : 'right';
   currentNavIndex = newIndex;
-  
+
   // Hide all views
   const homeView = document.getElementById('home-view');
   const topicsView = document.getElementById('topics-view');
@@ -12974,6 +13068,8 @@ function closeSocialTeaser() {
 
 // Show Social feed (placeholder for future)
 function showSocialFeed() {
+  clearViewingProfile(); // Clear any viewed profile state
+  
   hideAllViewsExcept('social');
   document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
   const navSocial = document.getElementById('nav-social');
