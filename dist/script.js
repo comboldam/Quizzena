@@ -14459,8 +14459,11 @@ function closePxpDashboard() {
   if (dashboard) dashboard.classList.add('hidden');
 }
 
-// Open P-XP dashboard
+// Open P-XP dashboard - calls updatePxpDashboard to refresh data
 function openPxpDashboard() {
   const dashboard = document.getElementById('pxp-dashboard');
-  if (dashboard) dashboard.classList.remove('hidden');
+  if (dashboard) {
+    dashboard.classList.remove('hidden');
+    updatePxpDashboard();
+  }
 }
