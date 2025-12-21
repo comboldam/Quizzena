@@ -311,6 +311,10 @@ window.addEventListener('pagehide', () => {
 // When false: Data syncs to Firebase for cross-device play
 const DEV_MODE = true;
 
+// When true: Shows dev panel button
+// When false: Hides dev panel (production UI)
+const SHOW_DEV_UI = true;
+
 // ============================================
 // USER DATA SYSTEM
 // ============================================
@@ -1499,8 +1503,8 @@ function createDevPanelButton() {
   document.body.appendChild(devBtn);
 }
 
-// Initialize dev button when DOM is ready (only in DEV_MODE)
-if (DEV_MODE) {
+// Initialize dev button when DOM is ready (only when SHOW_DEV_UI is true)
+if (SHOW_DEV_UI) {
   document.addEventListener('DOMContentLoaded', createDevPanelButton);
   console.log('Dev Panel initialized');
 }
@@ -8622,9 +8626,9 @@ function devResetQuizCount() {
   console.log('🛠️ DEV: Quiz count reset to 0');
 }
 
-// Add developer debug button (only if DEV_MODE is true)
+// Add developer debug button (only if SHOW_DEV_UI is true)
 function addDevDebugButton() {
-  if (!DEV_MODE) return;
+  if (!SHOW_DEV_UI) return;
   
   // Check if button already exists
   if (document.getElementById('dev-ranked-btn')) return;
