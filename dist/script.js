@@ -194,7 +194,7 @@ let screenTimeTracker = {
     // Use local date to match local hours
     const dateKey = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
     const hour = now.getHours().toString().padStart(2, '0');
-
+    
     // Initialize stats history if not exists
     if (!userData.stats.history) {
       userData.stats.history = {};
@@ -1505,8 +1505,8 @@ function createDevPanelButton() {
 
 // Initialize dev button when DOM is ready (only when SHOW_DEV_UI is true)
 if (SHOW_DEV_UI) {
-  document.addEventListener('DOMContentLoaded', createDevPanelButton);
-  console.log('Dev Panel initialized');
+document.addEventListener('DOMContentLoaded', createDevPanelButton);
+console.log('Dev Panel initialized');
 }
 
 // ============================================
@@ -1516,10 +1516,10 @@ if (SHOW_DEV_UI) {
 // so they work inside Capacitor/Cordova native shells.
 
 const LANGUAGE_DATA = {
-  en: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Home","nav_topics":"Topics","nav_stats":"Stats","nav_leaderboard":"Leaderboard","nav_profile":"Profile","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ OF THE DAY","home_play_now":"▶ PLAY NOW","home_explore_categories":"Explore Categories","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geography","category_football":"Football","category_movies":"Movies","category_tvshows":"TV Shows","category_history":"History","category_logos":"Logos","profile_settings":"Settings","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Wins","profile_stats_accuracy":"Accuracy","profile_achievements":"Achievements","profile_progress":"Progress","profile_streaks":"Streaks","profile_quanta":"Quanta","profile_games":"GAMES","profile_accuracy":"ACCURACY","profile_followers":"FOLLOWERS","profile_following":"FOLLOWING","stats_title":"Stats","stats_total_played":"Total Played","stats_total_correct":"Total Correct","stats_accuracy":"Accuracy","stats_best_streak":"Best Streak","stats_most_played":"Most Played","stats_overall_performance":"Overall Performance","stats_total_games_played":"Total Games Played","stats_total_questions_answered":"Total Questions Answered","stats_correct_answers":"Correct Answers","stats_wrong_answers":"Wrong Answers","stats_overall_accuracy":"Overall Accuracy","stats_avg_time_per_question":"Avg Time per Question","stats_best_streak_label":"Best Streak","stats_total_time_played":"Total Time Played","stats_games":"Games","stats_best_label":"Best","stats_search_topic":"Search Topic","stats_search_placeholder":"Type topic name...","stats_search_found":"Found:","stats_search_not_found":"Topic not found","leaderboard_title":"Leaderboard","leaderboard_global":"Global Rankings","leaderboard_coming_soon":"Coming Soon","leaderboard_developing":"Global leaderboards are being developed. Soon you'll be able to compete with players worldwide!","game_score":"Score","game_timer":"Time","game_question":"Question","game_next":"Next","game_correct":"Correct!","game_wrong":"Wrong!","game_lives":"Lives","game_streak":"Streak","result_game_over":"Game Over","result_final_score":"Final Score","result_play_again":"Play Again","result_main_menu":"Main Menu","result_perfect":"Perfect Score!","result_great":"Great Job!","result_good":"Good Effort!","result_try_again":"Keep Practicing!","settings_title":"Settings","settings_language":"Language","settings_theme":"Theme","settings_sound":"Sound","settings_coming_soon":"Coming Soon","settings_close":"Close","settings_performance":"Performance Mode","settings_performance_hint":"Enable for smoother scrolling (disables animations)","settings_tutorial":"Tutorial","sound_music":"Music","sound_effects":"Sound Effects","sound_volume":"Volume","sound_mute":"Mute","sound_unmute":"Unmute","mode_single_player":"Single Player","mode_two_player":"Two Player","mode_time_attack":"Time Attack","mode_quick_game":"Quick Game","mode_three_strikes":"Three Strikes","mode_select_mode":"Select Mode","mode_back":"Back","difficulty_easy":"Easy","difficulty_medium":"Medium","difficulty_hard":"Hard","difficulty_select":"Select Difficulty","common_loading":"Loading...","common_error":"Error","common_retry":"Retry","common_cancel":"Cancel","common_confirm":"Confirm","common_save":"Save","common_reset":"Reset","common_yes":"Yes","common_no":"No","common_ok":"OK","edit_profile":"Edit Profile","edit_profile_picture":"Profile Picture","edit_upload_photo":"Upload Photo","edit_choose_emoji":"Or choose an emoji:","edit_username":"Username","edit_background":"Background Picture","edit_upload_background":"Upload Background","edit_save_changes":"Save Changes","edit_remove":"Remove","setup_save_start":"Save & Start","quanta_title":"✦ Quanta","quanta_description":"Quanta is the knowledge currency of Quizzena. Earn Quanta in future updates by mastering quizzes, exploring challenges, and proving your intelligence.","social_coming_soon":"Quizzena Social — Coming Soon","social_subtitle":"A new way to explore quizzes.","social_feed":"Social Feed","achievements_ritual":"Achievements","achievements_subtitle":"The Seven Paths of Mastery","achievements_house_coming":"Achievements for this path are being forged in the cosmic fires. Return soon to claim your destiny.","view_stats_chart":"View Stats Chart","pxp_dashboard":"P-XP Dashboard","pxp_level":"LEVEL","pxp_total_earned":"Total: {0} P-XP earned","pxp_1_day":"1 Day","pxp_1_week":"1 Week","pxp_1_month":"1 Month","pxp_1_year":"1 Year","pxp_all_time":"All Time","pxp_games_each":"Games (+10 each)","pxp_answers_each":"Answers (+1 each)","pxp_achievements":"Achievements","pxp_today_breakdown":"Today's Breakdown","pxp_games_completed":"Games Completed","pxp_correct_answers":"Correct Answers","pxp_achievements_claimed":"Achievements Claimed","pxp_total_earned_label":"Total Earned","stats_overall":"Overall","stats_by_topic":"By Topic","stats_games_label":"GAMES","stats_questions_label":"QUESTIONS","stats_correct_label":"CORRECT","stats_wrong_label":"WRONG","stats_time_label":"TIME","stats_streak_label":"STREAK","stats_no_data":"No data available for this time range","stats_peak":"PEAK","stats_average":"AVERAGE","stats_total":"TOTAL","home_continue_playing":"Continue Playing","home_quick_play":"Quick Play","home_random":"Random","home_slot":"Slot","home_explore":"Explore","topic_add_to_slot":"+ Add to Slot","topic_level":"Level","topic_choose_mode":"CHOOSE GAME MODE","topic_casual":"Casual","topic_questions":"questions","topic_time_attack":"Time Attack","topic_reach_level":"Reach Level {0} to unlock","topic_3_hearts":"3 Hearts","topic_2_players":"2 Players","topic_progress":"Topic Progress","topic_level_arrow":"Level {0} → Level {1}","pxp_today_breakdown":"Today's Breakdown","pxp_week_breakdown":"This Week's Breakdown","pxp_month_breakdown":"This Month's Breakdown","pxp_year_breakdown":"This Year's Breakdown","pxp_breakdown":"Breakdown","pxp_how_it_works":"ℹ️ How P-XP Works","topic_flags":"Flags","topic_capitals":"Capitals","topic_area":"Country Area","topic_football":"Football","topic_premier_league":"Premier League","topic_champions_league":"Champions League","topic_movies":"Movies","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"TV Shows","topic_got":"Game of Thrones","topic_stranger_things":"Stranger Things","topic_money_heist":"Money Heist","topic_logos":"Logos","topic_world_history":"World History","home_hot_topics":"🔥 Hot Topics","home_ranked_mode":"Enter Ranked Mode","topic_borders":"Borders","topic_world_cup":"World Cup","topic_derbies":"Derbies","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Star Wars","topic_lotr":"LOTR","topic_sitcoms":"Sitcoms","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"WWII","topic_wwi":"WWI","topic_roman_empire":"Roman Empire","topic_ottoman":"Ottoman","topic_egyptian":"Egyptian","topic_british_monarchy":"British Monarchy","topic_ancient_civs":"Ancient Civs","topic_cold_war":"Cold War","achievement_progression":"Progression","achievement_skill":"Skill","achievement_exploration":"Exploration","achievement_time_attack":"Time Attack","achievement_survival":"Survival","achievement_casual":"Casual","achievement_behaviour":"Behaviour","house_progression":"Path of Progression","house_skill":"Path of Skill","house_exploration":"Path of Exploration","house_time":"Path of Time Attack","house_survival":"Path of Survival","house_casual":"Path of Casual Mastery","house_behaviour":"Path of Behaviour","house_coming_soon":"Coming Soon","house_progression_subtitle":"Your journey begins, rises, and becomes.","pillar_ascending_levels":"Ascending Levels","pillar_ascending_levels_desc":"Rise through the Prestige ranks","pillar_topic_entry":"Topic Entry Progression","pillar_topic_entry_desc":"Advance within a subject toward deep specialization.","pillar_games_completed":"Games Completed","pillar_games_completed_desc":"Walk the path through relentless play.","pillar_questions_answered":"Total Questions Answered","pillar_questions_answered_desc":"Expand your mind through accumulated knowledge.","pillar_flawed_mind":"The Path of the Flawed Mind","pillar_flawed_mind_desc":"Wisdom shapes itself through misjudgment and correction.","pillar_timeless_devotion":"The Path of Timeless Devotion","pillar_timeless_devotion_desc":"Presence, endurance, and the slow shaping of mastery through time.","ach_tap_to_claim":"TAP TO CLAIM","ach_prestige_level_2_name":"Initiate of Ascent","ach_prestige_level_2_desc":"Reach Level 2","ach_prestige_level_5_name":"Bearer of Steps","ach_prestige_level_5_desc":"Reach Level 5","ach_prestige_level_10_name":"Rising One","ach_prestige_level_10_desc":"Reach Level 10","ach_prestige_level_20_name":"Pathwalker","ach_prestige_level_20_desc":"Reach Level 20","ach_prestige_level_30_name":"Summit Seeker","ach_prestige_level_30_desc":"Reach Level 30","ach_prestige_level_40_name":"Crestbearer","ach_prestige_level_40_desc":"Reach Level 40","ach_prestige_level_50_name":"Pinnacle Reacher","ach_prestige_level_50_desc":"Reach Level 50","ach_prestige_level_75_name":"Peak of Seventy-Five","ach_prestige_level_75_desc":"Reach Level 75","ach_prestige_level_100_name":"Zenith Ascended","ach_prestige_level_100_desc":"Reach Level 100","ach_prestige_level_250_name":"Ascendant of Two Hundred Fifty","ach_prestige_level_250_desc":"Reach Level 250","ach_prestige_level_500_name":"Bearer of Five Hundred Steps","ach_prestige_level_500_desc":"Reach Level 500","ach_prestige_level_1000_name":"Thousandfold Apex","ach_prestige_level_1000_desc":"Reach Level 1000","ach_games_10_name":"First Footfalls","ach_games_10_desc":"Complete 10 games","ach_games_25_name":"Emerging Rhythm","ach_games_25_desc":"Complete 25 games","ach_games_50_name":"Pulse of Persistence","ach_games_50_desc":"Complete 50 games","ach_games_100_name":"Keeper of Momentum","ach_games_100_desc":"Complete 100 games","ach_games_200_name":"Flowbound","ach_games_200_desc":"Complete 200 games","ach_games_500_name":"The Unbroken March","ach_games_500_desc":"Complete 500 games","ach_games_1000_name":"Bearer of Continuance","ach_games_1000_desc":"Complete 1,000 games","ach_games_3000_name":"Spirit of Repetition","ach_games_3000_desc":"Complete 3,000 games","ach_games_5000_name":"Enduring Pulse","ach_games_5000_desc":"Complete 5,000 games","ach_games_10000_name":"Echo of Ten Thousand Steps","ach_games_10000_desc":"Complete 10,000 games","ach_games_50000_name":"Will of the Enduring","ach_games_50000_desc":"Complete 50,000 games","ach_games_100000_name":"Eternal Pathbearer","ach_games_100000_desc":"Complete 100,000 games","ach_questions_100_name":"First Fragments","ach_questions_100_desc":"Answer 100 questions","ach_questions_250_name":"Gatherer of Thoughts","ach_questions_250_desc":"Answer 250 questions","ach_questions_500_name":"Mind in Motion","ach_questions_500_desc":"Answer 500 questions","ach_questions_750_name":"Stirrings of Insight","ach_questions_750_desc":"Answer 750 questions","ach_questions_1000_name":"Weaver of Understanding","ach_questions_1000_desc":"Answer 1,000 questions","ach_questions_1500_name":"Growing Cognition","ach_questions_1500_desc":"Answer 1,500 questions","ach_questions_2000_name":"Emergent Awareness","ach_questions_2000_desc":"Answer 2,000 questions","ach_questions_2500_name":"Keeper of Recall","ach_questions_2500_desc":"Answer 2,500 questions","ach_questions_3500_name":"Seeker of Patterns","ach_questions_3500_desc":"Answer 3,500 questions","ach_questions_5000_name":"Harvester of Truths","ach_questions_5000_desc":"Answer 5,000 questions","ach_questions_7500_name":"Scribe of Memory","ach_questions_7500_desc":"Answer 7,500 questions","ach_questions_10000_name":"Voice of Reason","ach_questions_10000_desc":"Answer 10,000 questions","ach_questions_15000_name":"Silent Scholar","ach_questions_15000_desc":"Answer 15,000 questions","ach_questions_20000_name":"Bearer of Meaning","ach_questions_20000_desc":"Answer 20,000 questions","ach_questions_25000_name":"Architect of Wisdom","ach_questions_25000_desc":"Answer 25,000 questions","ach_questions_30000_name":"Keeper of Countless Questions","ach_questions_30000_desc":"Answer 30,000 questions","ach_questions_40000_name":"The Endless Mind","ach_questions_40000_desc":"Answer 40,000 questions","ach_questions_50000_name":"Truthbound","ach_questions_50000_desc":"Answer 50,000 questions","ach_questions_60000_name":"Crown of Knowing","ach_questions_60000_desc":"Answer 60,000 questions","ach_questions_75000_name":"The Reflective One","ach_questions_75000_desc":"Answer 75,000 questions","ach_questions_100000_name":"Bearer of the Infinite Query","ach_questions_100000_desc":"Answer 100,000 questions","ach_questions_150000_name":"Mind Beyond Measure","ach_questions_150000_desc":"Answer 150,000 questions","ach_questions_200000_name":"Eternal Comprehension","ach_questions_200000_desc":"Answer 200,000 questions","ach_questions_250000_name":"The Thoughtborne Ascendant","ach_questions_250000_desc":"Answer 250,000 questions","ach_questions_500000_name":"The Vastness Within","ach_questions_500000_desc":"Answer 500,000 questions","ach_questions_1000000_name":"Crown of the Million","ach_questions_1000000_desc":"Answer 1,000,000 questions"},
-  es: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Inicio","nav_topics":"Temas","nav_stats":"Estadísticas","nav_leaderboard":"Clasificación","nav_profile":"Perfil","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ DEL DÍA","home_play_now":"▶ JUGAR","home_explore_categories":"Explorar Categorías","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geografía","category_football":"Fútbol","category_movies":"Películas","category_tvshows":"Series","category_history":"Historia","category_logos":"Logos","profile_settings":"Ajustes","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Victorias","profile_stats_accuracy":"Precisión","profile_achievements":"Logros","profile_progress":"Progreso","profile_streaks":"Rachas","profile_quanta":"Quanta","profile_games":"PARTIDAS","profile_accuracy":"PRECISIÓN","profile_followers":"SEGUIDORES","profile_following":"SIGUIENDO","stats_title":"Estadísticas","stats_total_played":"Total Jugados","stats_total_correct":"Total Correctas","stats_accuracy":"Precisión","stats_best_streak":"Mejor Racha","stats_most_played":"Más Jugados","stats_overall_performance":"Rendimiento General","stats_total_games_played":"Total de Partidas Jugadas","stats_total_questions_answered":"Total de Preguntas Respondidas","stats_correct_answers":"Respuestas Correctas","stats_wrong_answers":"Respuestas Incorrectas","stats_overall_accuracy":"Precisión General","stats_avg_time_per_question":"Tiempo Promedio por Pregunta","stats_best_streak_label":"Mejor Racha","stats_total_time_played":"Tiempo Total Jugado","stats_games":"Partidas","stats_best_label":"Mejor","stats_search_topic":"Buscar Tema","stats_search_placeholder":"Escribe el nombre del tema...","stats_search_found":"Encontrado:","stats_search_not_found":"Tema no encontrado","leaderboard_title":"Clasificación","leaderboard_global":"Ranking Global","leaderboard_coming_soon":"Próximamente","leaderboard_developing":"Las clasificaciones globales están en desarrollo. ¡Pronto podrás competir con jugadores de todo el mundo!","game_score":"Puntuación","game_timer":"Tiempo","game_question":"Pregunta","game_next":"Siguiente","game_correct":"¡Correcto!","game_wrong":"¡Incorrecto!","game_lives":"Vidas","game_streak":"Racha","result_game_over":"Fin del Juego","result_final_score":"Puntuación Final","result_play_again":"Jugar de Nuevo","result_main_menu":"Menú Principal","result_perfect":"¡Puntuación Perfecta!","result_great":"¡Excelente!","result_good":"¡Buen Trabajo!","result_try_again":"¡Sigue Practicando!","settings_title":"Ajustes","settings_language":"Idioma","settings_theme":"Tema","settings_sound":"Sonido","settings_coming_soon":"Próximamente","settings_close":"Cerrar","settings_performance":"Modo Rendimiento","settings_performance_hint":"Activa para un desplazamiento más fluido (desactiva animaciones)","settings_tutorial":"Tutorial","sound_music":"Música","sound_effects":"Efectos de Sonido","sound_volume":"Volumen","sound_mute":"Silenciar","sound_unmute":"Activar Sonido","mode_single_player":"Un Jugador","mode_two_player":"Dos Jugadores","mode_time_attack":"Contrarreloj","mode_quick_game":"Partida Rápida","mode_three_strikes":"Tres Strikes","mode_select_mode":"Seleccionar Modo","mode_back":"Atrás","difficulty_easy":"Fácil","difficulty_medium":"Medio","difficulty_hard":"Difícil","difficulty_select":"Seleccionar Dificultad","common_loading":"Cargando...","common_error":"Error","common_retry":"Reintentar","common_cancel":"Cancelar","common_confirm":"Confirmar","common_save":"Guardar","common_reset":"Restablecer","common_yes":"Sí","common_no":"No","common_ok":"OK","edit_profile":"Editar Perfil","edit_profile_picture":"Foto de Perfil","edit_upload_photo":"Subir Foto","edit_choose_emoji":"O elige un emoji:","edit_username":"Nombre de usuario","edit_background":"Imagen de Fondo","edit_upload_background":"Subir Fondo","edit_save_changes":"Guardar Cambios","edit_remove":"Eliminar","setup_save_start":"Guardar e Iniciar","quanta_title":"✦ Quanta — Próximamente","quanta_description":"Quanta es la moneda del conocimiento de Quizzena. Gana Quanta en futuras actualizaciones dominando quizzes, explorando desafíos y demostrando tu inteligencia.","social_coming_soon":"Quizzena Social — Próximamente","social_subtitle":"Una nueva forma de explorar quizzes.","social_feed":"Feed Social","achievements_ritual":"Logros","achievements_subtitle":"Los Ocho Caminos de la Maestría","achievements_house_coming":"Los logros de este camino se están forjando en los fuegos cósmicos. Regresa pronto para reclamar tu destino.","view_stats_chart":"Ver Gráfico de Estadísticas","pxp_dashboard":"Panel de P-XP","pxp_level":"NIVEL","pxp_total_earned":"Total: {0} P-XP ganado","pxp_1_day":"1 Día","pxp_1_week":"1 Semana","pxp_1_month":"1 Mes","pxp_1_year":"1 Año","pxp_all_time":"Todo el Tiempo","pxp_games_each":"Partidas (+10 c/u)","pxp_answers_each":"Respuestas (+1 c/u)","pxp_achievements":"Logros","pxp_today_breakdown":"Desglose de Hoy","pxp_games_completed":"Partidas Completadas","pxp_correct_answers":"Respuestas Correctas","pxp_achievements_claimed":"Logros Reclamados","pxp_total_earned_label":"Total Ganado","stats_overall":"General","stats_by_topic":"Por Tema","stats_games_label":"PARTIDAS","stats_questions_label":"PREGUNTAS","stats_correct_label":"CORRECTAS","stats_wrong_label":"INCORRECTAS","stats_time_label":"TIEMPO","stats_streak_label":"RACHA","stats_no_data":"No hay datos para este período","stats_peak":"MÁXIMO","stats_average":"PROMEDIO","stats_total":"TOTAL","home_continue_playing":"Continuar Jugando","home_quick_play":"Juego Rápido","home_random":"Aleatorio","home_slot":"Espacio","home_explore":"Explorar","topic_add_to_slot":"+ Agregar a Espacio","topic_level":"Nivel","topic_choose_mode":"ELIGE MODO DE JUEGO","topic_casual":"Casual","topic_questions":"preguntas","topic_time_attack":"Contrarreloj","topic_reach_level":"Alcanza Nivel {0} para desbloquear","topic_3_hearts":"3 Corazones","topic_2_players":"2 Jugadores","topic_progress":"Progreso de Temas","topic_level_arrow":"Nivel {0} → Nivel {1}","pxp_today_breakdown":"Desglose de Hoy","pxp_week_breakdown":"Desglose de Esta Semana","pxp_month_breakdown":"Desglose de Este Mes","pxp_year_breakdown":"Desglose de Este Año","pxp_breakdown":"Desglose","pxp_how_it_works":"ℹ️ Cómo Funciona P-XP","topic_flags":"Banderas","topic_capitals":"Capitales","topic_area":"Área de Países","topic_football":"Fútbol","topic_premier_league":"Premier League","topic_champions_league":"Champions League","topic_movies":"Películas","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Series","topic_got":"Juego de Tronos","topic_stranger_things":"Stranger Things","topic_money_heist":"La Casa de Papel","topic_logos":"Logos","topic_world_history":"Historia Mundial","home_hot_topics":"🔥 Temas Populares","home_ranked_mode":"Entrar Modo Clasificatorio","topic_borders":"Fronteras","topic_world_cup":"Copa del Mundo","topic_derbies":"Derbis","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Star Wars","topic_lotr":"El Señor de los Anillos","topic_sitcoms":"Comedias","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"Segunda Guerra Mundial","topic_wwi":"Primera Guerra Mundial","topic_roman_empire":"Imperio Romano","topic_ottoman":"Imperio Otomano","topic_egyptian":"Egipto Antiguo","topic_british_monarchy":"Monarquía Británica","topic_ancient_civs":"Civilizaciones Antiguas","topic_cold_war":"Guerra Fría","achievement_progression":"Progresión","achievement_skill":"Habilidad","achievement_exploration":"Exploración","achievement_time_attack":"Contrarreloj","achievement_survival":"Supervivencia","achievement_casual":"Casual","achievement_behaviour":"Comportamiento","house_progression":"Camino de Progresión","house_skill":"Camino de Habilidad","house_exploration":"Camino de Exploración","house_time":"Camino Contrarreloj","house_survival":"Camino de Supervivencia","house_casual":"Camino del Maestro Casual","house_behaviour":"Camino del Comportamiento","house_coming_soon":"Próximamente","house_progression_subtitle":"Tu viaje comienza, asciende y se transforma.","pillar_ascending_levels":"Niveles Ascendentes","pillar_ascending_levels_desc":"Asciende a través de los rangos de Prestigio","pillar_topic_entry":"Progresión de Temas","pillar_topic_entry_desc":"Avanza en un tema hacia la especialización profunda.","pillar_games_completed":"Partidas Completadas","pillar_games_completed_desc":"Camina el sendero a través del juego constante.","pillar_questions_answered":"Total de Preguntas Respondidas","pillar_questions_answered_desc":"Expande tu mente a través del conocimiento acumulado.","pillar_flawed_mind":"El Camino de la Mente Imperfecta","pillar_flawed_mind_desc":"La sabiduría se forma a través del error y la corrección.","pillar_timeless_devotion":"El Camino de la Devoción Eterna","pillar_timeless_devotion_desc":"Presencia, resistencia y la formación lenta de la maestría a través del tiempo.","ach_tap_to_claim":"TOCA PARA RECLAMAR","ach_prestige_level_2_name":"Iniciado del Ascenso","ach_prestige_level_2_desc":"Alcanza el Nivel 2","ach_prestige_level_5_name":"Portador de Pasos","ach_prestige_level_5_desc":"Alcanza el Nivel 5","ach_prestige_level_10_name":"El Ascendente","ach_prestige_level_10_desc":"Alcanza el Nivel 10","ach_prestige_level_20_name":"Caminante del Sendero","ach_prestige_level_20_desc":"Alcanza el Nivel 20","ach_prestige_level_30_name":"Buscador de Cumbres","ach_prestige_level_30_desc":"Alcanza el Nivel 30","ach_prestige_level_40_name":"Portador de la Cresta","ach_prestige_level_40_desc":"Alcanza el Nivel 40","ach_prestige_level_50_name":"Alcanzador del Pináculo","ach_prestige_level_50_desc":"Alcanza el Nivel 50","ach_prestige_level_75_name":"Cumbre de los Setenta y Cinco","ach_prestige_level_75_desc":"Alcanza el Nivel 75","ach_prestige_level_100_name":"Cénit Ascendido","ach_prestige_level_100_desc":"Alcanza el Nivel 100","ach_prestige_level_250_name":"Ascendente de Doscientos Cincuenta","ach_prestige_level_250_desc":"Alcanza el Nivel 250","ach_prestige_level_500_name":"Portador de Quinientos Pasos","ach_prestige_level_500_desc":"Alcanza el Nivel 500","ach_prestige_level_1000_name":"Ápice de los Mil","ach_prestige_level_1000_desc":"Alcanza el Nivel 1000","ach_games_10_name":"Primeros Pasos","ach_games_10_desc":"Completa 10 partidas","ach_games_25_name":"Ritmo Emergente","ach_games_25_desc":"Completa 25 partidas","ach_games_50_name":"Pulso de Persistencia","ach_games_50_desc":"Completa 50 partidas","ach_games_100_name":"Guardián del Impulso","ach_games_100_desc":"Completa 100 partidas","ach_games_200_name":"Flujo Constante","ach_games_200_desc":"Completa 200 partidas","ach_games_500_name":"La Marcha Inquebrantable","ach_games_500_desc":"Completa 500 partidas","ach_games_1000_name":"Portador de la Continuidad","ach_games_1000_desc":"Completa 1.000 partidas","ach_games_3000_name":"Espíritu de Repetición","ach_games_3000_desc":"Completa 3.000 partidas","ach_games_5000_name":"Pulso Duradero","ach_games_5000_desc":"Completa 5.000 partidas","ach_games_10000_name":"Eco de Diez Mil Pasos","ach_games_10000_desc":"Completa 10.000 partidas","ach_games_50000_name":"Voluntad del Perseverante","ach_games_50000_desc":"Completa 50.000 partidas","ach_games_100000_name":"Portador Eterno del Camino","ach_games_100000_desc":"Completa 100.000 partidas","ach_questions_100_name":"Primeros Fragmentos","ach_questions_100_desc":"Responde 100 preguntas","ach_questions_250_name":"Recolector de Pensamientos","ach_questions_250_desc":"Responde 250 preguntas","ach_questions_500_name":"Mente en Movimiento","ach_questions_500_desc":"Responde 500 preguntas","ach_questions_750_name":"Destellos de Perspicacia","ach_questions_750_desc":"Responde 750 preguntas","ach_questions_1000_name":"Tejedor del Entendimiento","ach_questions_1000_desc":"Responde 1.000 preguntas","ach_questions_1500_name":"Cognición Creciente","ach_questions_1500_desc":"Responde 1.500 preguntas","ach_questions_2000_name":"Conciencia Emergente","ach_questions_2000_desc":"Responde 2.000 preguntas","ach_questions_2500_name":"Guardián del Recuerdo","ach_questions_2500_desc":"Responde 2.500 preguntas","ach_questions_3500_name":"Buscador de Patrones","ach_questions_3500_desc":"Responde 3.500 preguntas","ach_questions_5000_name":"Cosechador de Verdades","ach_questions_5000_desc":"Responde 5.000 preguntas","ach_questions_7500_name":"Escriba de la Memoria","ach_questions_7500_desc":"Responde 7.500 preguntas","ach_questions_10000_name":"Voz de la Razón","ach_questions_10000_desc":"Responde 10.000 preguntas","ach_questions_15000_name":"Erudito Silencioso","ach_questions_15000_desc":"Responde 15.000 preguntas","ach_questions_20000_name":"Portador del Significado","ach_questions_20000_desc":"Responde 20.000 preguntas","ach_questions_25000_name":"Arquitecto de la Sabiduría","ach_questions_25000_desc":"Responde 25.000 preguntas","ach_questions_30000_name":"Guardián de Innumerables Preguntas","ach_questions_30000_desc":"Responde 30.000 preguntas","ach_questions_40000_name":"La Mente Infinita","ach_questions_40000_desc":"Responde 40.000 preguntas","ach_questions_50000_name":"Atado a la Verdad","ach_questions_50000_desc":"Responde 50.000 preguntas","ach_questions_60000_name":"Corona del Conocimiento","ach_questions_60000_desc":"Responde 60.000 preguntas","ach_questions_75000_name":"El Reflexivo","ach_questions_75000_desc":"Responde 75.000 preguntas","ach_questions_100000_name":"Portador de la Consulta Infinita","ach_questions_100000_desc":"Responde 100.000 preguntas","ach_questions_150000_name":"Mente Sin Límites","ach_questions_150000_desc":"Responde 150.000 preguntas","ach_questions_200000_name":"Comprensión Eterna","ach_questions_200000_desc":"Responde 200.000 preguntas","ach_questions_250000_name":"El Ascendiente del Pensamiento","ach_questions_250000_desc":"Responde 250.000 preguntas","ach_questions_500000_name":"La Vastedad Interior","ach_questions_500000_desc":"Responde 500.000 preguntas","ach_questions_1000000_name":"Corona del Millón","ach_questions_1000000_desc":"Responde 1.000.000 preguntas"},
-  ru: {"app_name":"Quizzena","version":"Quizzena v1 Бета","nav_home":"Главная","nav_topics":"Темы","nav_stats":"Статистика","nav_leaderboard":"Рейтинг","nav_profile":"Профиль","nav_social":"Лента","home_quiz_of_day":"🏆 ВИКТОРИНА ДНЯ","home_play_now":"▶ ИГРАТЬ","home_explore_categories":"Категории","home_quizzes":"викторин","home_quiz":"викторина","category_geography":"География","category_football":"Футбол","category_movies":"Фильмы","category_tvshows":"Сериалы","category_history":"История","category_logos":"Логотипы","profile_settings":"Настройки","profile_stats_quizzes":"Викторины","profile_stats_wins":"Победы","profile_stats_accuracy":"Точность","profile_achievements":"Достижения","profile_progress":"Прогресс","profile_streaks":"Серии","profile_quanta":"Quanta","profile_games":"ИГРЫ","profile_accuracy":"ТОЧНОСТЬ","profile_followers":"ПОДПИСЧИКИ","profile_following":"ПОДПИСКИ","stats_title":"Статистика","stats_total_played":"Всего сыграно","stats_total_correct":"Правильных ответов","stats_accuracy":"Точность","stats_best_streak":"Лучшая серия","stats_most_played":"Часто играемые","stats_overall_performance":"Общая статистика","stats_total_games_played":"Всего игр","stats_total_questions_answered":"Всего вопросов","stats_correct_answers":"Правильные ответы","stats_wrong_answers":"Неправильные ответы","stats_overall_accuracy":"Общая точность","stats_avg_time_per_question":"Среднее время на вопрос","stats_best_streak_label":"Лучшая серия","stats_total_time_played":"Общее время игры","stats_games":"Игры","stats_best_label":"Лучший","stats_search_topic":"Поиск темы","stats_search_placeholder":"Введите название темы...","stats_search_found":"Найдено:","stats_search_not_found":"Тема не найдена","leaderboard_title":"Рейтинг","leaderboard_global":"Мировой рейтинг","leaderboard_coming_soon":"Скоро","leaderboard_developing":"Глобальные рейтинги в разработке. Скоро вы сможете соревноваться с игроками со всего мира!","game_score":"Счёт","game_timer":"Время","game_question":"Вопрос","game_next":"Далее","game_correct":"Правильно!","game_wrong":"Неправильно!","game_lives":"Жизни","game_streak":"Серия","result_game_over":"Игра окончена","result_final_score":"Итоговый счёт","result_play_again":"Играть снова","result_main_menu":"Главное меню","result_perfect":"Идеальный результат!","result_great":"Отлично!","result_good":"Хорошо!","result_try_again":"Продолжай практиковаться!","settings_title":"Настройки","settings_language":"Язык","settings_theme":"Тема","settings_sound":"Звук","settings_coming_soon":"Скоро","settings_close":"Закрыть","settings_performance":"Режим производительности","settings_performance_hint":"Включите для плавной прокрутки (отключает анимации)","settings_tutorial":"Обучение","sound_music":"Музыка","sound_effects":"Звуковые эффекты","sound_volume":"Громкость","sound_mute":"Выключить звук","sound_unmute":"Включить звук","mode_single_player":"Один игрок","mode_two_player":"Два игрока","mode_time_attack":"На время","mode_quick_game":"Быстрая игра","mode_three_strikes":"Три ошибки","mode_select_mode":"Выберите режим","mode_back":"Назад","difficulty_easy":"Легко","difficulty_medium":"Средне","difficulty_hard":"Сложно","difficulty_select":"Выберите сложность","common_loading":"Загрузка...","common_error":"Ошибка","common_retry":"Повторить","common_cancel":"Отмена","common_confirm":"Подтвердить","common_save":"Сохранить","common_reset":"Сбросить","common_yes":"Да","common_no":"Нет","common_ok":"ОК","edit_profile":"Редактировать профиль","edit_profile_picture":"Фото профиля","edit_upload_photo":"Загрузить фото","edit_choose_emoji":"Или выберите эмодзи:","edit_username":"Имя пользователя","edit_background":"Фон профиля","edit_upload_background":"Загрузить фон","edit_save_changes":"Сохранить изменения","edit_remove":"Удалить","setup_save_start":"Сохранить и начать","quanta_title":"✦ Quanta — Скоро","quanta_description":"Quanta — это валюта знаний Quizzena. Зарабатывайте Quanta в будущих обновлениях, осваивая викторины, исследуя задания и доказывая свой интеллект.","social_coming_soon":"Quizzena Лента — Скоро","social_subtitle":"Новый способ исследовать викторины.","social_feed":"Лента","achievements_ritual":"Достижения","achievements_subtitle":"Семь путей мастерства","achievements_house_coming":"Достижения этого пути куются в космическом огне. Возвращайтесь скоро, чтобы получить свою судьбу.","view_stats_chart":"Посмотреть график статистики","pxp_dashboard":"Панель P-XP","pxp_level":"УРОВЕНЬ","pxp_total_earned":"Всего: {0} P-XP заработано","pxp_1_day":"1 День","pxp_1_week":"1 Неделя","pxp_1_month":"1 Месяц","pxp_1_year":"1 Год","pxp_all_time":"Всё Время","pxp_games_each":"Игры (+10 каждая)","pxp_answers_each":"Ответы (+1 каждый)","pxp_achievements":"Достижения","pxp_today_breakdown":"Сегодняшняя Разбивка","pxp_games_completed":"Игр Завершено","pxp_correct_answers":"Правильных Ответов","pxp_achievements_claimed":"Достижений Получено","pxp_total_earned_label":"Всего Заработано","stats_overall":"Общее","stats_by_topic":"По Темам","stats_games_label":"ИГРЫ","stats_questions_label":"ВОПРОСЫ","stats_correct_label":"ВЕРНО","stats_wrong_label":"НЕВЕРНО","stats_time_label":"ВРЕМЯ","stats_streak_label":"СЕРИЯ","stats_no_data":"Нет данных за этот период","stats_peak":"МАКС","stats_average":"СРЕДНЕЕ","stats_total":"ВСЕГО","home_continue_playing":"Продолжить Игру","home_quick_play":"Быстрая Игра","home_random":"Случайно","home_slot":"Слот","home_explore":"Обзор","topic_add_to_slot":"+ Добавить в слот","topic_level":"Уровень","topic_choose_mode":"ВЫБЕРИТЕ РЕЖИМ ИГРЫ","topic_casual":"Обычный","topic_questions":"вопросов","topic_time_attack":"На Время","topic_reach_level":"Достигните Уровня {0}","topic_3_hearts":"3 Сердца","topic_2_players":"2 Игрока","topic_progress":"Прогресс Тем","topic_level_arrow":"Уровень {0} → Уровень {1}","pxp_today_breakdown":"Разбивка за Сегодня","pxp_week_breakdown":"Разбивка за Неделю","pxp_month_breakdown":"Разбивка за Месяц","pxp_year_breakdown":"Разбивка за Год","pxp_breakdown":"Разбивка","pxp_how_it_works":"ℹ️ Как работает P-XP","topic_flags":"Флаги","topic_capitals":"Столицы","topic_area":"Площадь Стран","topic_football":"Футбол","topic_premier_league":"Премьер-Лига","topic_champions_league":"Лига Чемпионов","topic_movies":"Фильмы","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Сериалы","topic_got":"Игра Престолов","topic_stranger_things":"Очень Странные Дела","topic_money_heist":"Бумажный Дом","topic_logos":"Логотипы","topic_world_history":"Мировая История","home_hot_topics":"🔥 Популярные Темы","home_ranked_mode":"Рейтинговый Режим","topic_borders":"Границы","topic_world_cup":"Чемпионат Мира","topic_derbies":"Дерби","topic_messi":"Месси","topic_ronaldo":"Роналду","topic_disney":"Дисней","topic_harry_potter":"Гарри Поттер","topic_star_wars":"Звёздные Войны","topic_lotr":"Властелин Колец","topic_sitcoms":"Ситкомы","topic_breaking_bad":"Во Все Тяжкие","topic_the_office":"Офис","topic_wwii":"Вторая Мировая","topic_wwi":"Первая Мировая","topic_roman_empire":"Римская Империя","topic_ottoman":"Османская Империя","topic_egyptian":"Древний Египет","topic_british_monarchy":"Британская Монархия","topic_ancient_civs":"Древние Цивилизации","topic_cold_war":"Холодная Война","achievement_progression":"Прогресс","achievement_skill":"Мастерство","achievement_exploration":"Исследование","achievement_time_attack":"На Время","achievement_survival":"Выживание","achievement_casual":"Обычный","achievement_behaviour":"Поведение","house_progression":"Путь Прогресса","house_skill":"Путь Мастерства","house_exploration":"Путь Исследования","house_time":"Путь На Время","house_survival":"Путь Выживания","house_casual":"Путь Обычного Мастера","house_behaviour":"Путь Поведения","house_coming_soon":"Скоро","house_progression_subtitle":"Твой путь начинается, восходит и преображается.","pillar_ascending_levels":"Восхождение по Уровням","pillar_ascending_levels_desc":"Поднимайся по рангам Престижа","pillar_topic_entry":"Прогресс по Темам","pillar_topic_entry_desc":"Продвигайся в теме к глубокой специализации.","pillar_games_completed":"Завершённые Игры","pillar_games_completed_desc":"Иди по пути неустанной игры.","pillar_questions_answered":"Всего Ответов на Вопросы","pillar_questions_answered_desc":"Расширяй свой разум через накопленные знания.","pillar_flawed_mind":"Путь Несовершенного Разума","pillar_flawed_mind_desc":"Мудрость формируется через ошибки и исправления.","pillar_timeless_devotion":"Путь Вечной Преданности","pillar_timeless_devotion_desc":"Присутствие, выносливость и медленное формирование мастерства через время.","ach_tap_to_claim":"НАЖМИ ЧТОБЫ ПОЛУЧИТЬ","ach_prestige_level_2_name":"Посвящённый Восхождения","ach_prestige_level_2_desc":"Достигни 2 Уровня","ach_prestige_level_5_name":"Носитель Шагов","ach_prestige_level_5_desc":"Достигни 5 Уровня","ach_prestige_level_10_name":"Восходящий","ach_prestige_level_10_desc":"Достигни 10 Уровня","ach_prestige_level_20_name":"Путник","ach_prestige_level_20_desc":"Достигни 20 Уровня","ach_prestige_level_30_name":"Искатель Вершин","ach_prestige_level_30_desc":"Достигни 30 Уровня","ach_prestige_level_40_name":"Носитель Гребня","ach_prestige_level_40_desc":"Достигни 40 Уровня","ach_prestige_level_50_name":"Достигший Вершины","ach_prestige_level_50_desc":"Достигни 50 Уровня","ach_prestige_level_75_name":"Пик Семидесяти Пяти","ach_prestige_level_75_desc":"Достигни 75 Уровня","ach_prestige_level_100_name":"Зенит Вознесённый","ach_prestige_level_100_desc":"Достигни 100 Уровня","ach_prestige_level_250_name":"Вознесённый Двухсот Пятидесяти","ach_prestige_level_250_desc":"Достигни 250 Уровня","ach_prestige_level_500_name":"Носитель Пятисот Шагов","ach_prestige_level_500_desc":"Достигни 500 Уровня","ach_prestige_level_1000_name":"Тысячекратный Апекс","ach_prestige_level_1000_desc":"Достигни 1000 Уровня","ach_games_10_name":"Первые Шаги","ach_games_10_desc":"Заверши 10 игр","ach_games_25_name":"Зарождающийся Ритм","ach_games_25_desc":"Заверши 25 игр","ach_games_50_name":"Пульс Настойчивости","ach_games_50_desc":"Заверши 50 игр","ach_games_100_name":"Хранитель Импульса","ach_games_100_desc":"Заверши 100 игр","ach_games_200_name":"Связанный Потоком","ach_games_200_desc":"Заверши 200 игр","ach_games_500_name":"Несломленный Марш","ach_games_500_desc":"Заверши 500 игр","ach_games_1000_name":"Носитель Продолжения","ach_games_1000_desc":"Заверши 1000 игр","ach_games_3000_name":"Дух Повторения","ach_games_3000_desc":"Заверши 3000 игр","ach_games_5000_name":"Стойкий Пульс","ach_games_5000_desc":"Заверши 5000 игр","ach_games_10000_name":"Эхо Десяти Тысяч Шагов","ach_games_10000_desc":"Заверши 10000 игр","ach_games_50000_name":"Воля Стойкого","ach_games_50000_desc":"Заверши 50000 игр","ach_games_100000_name":"Вечный Путеносец","ach_games_100000_desc":"Заверши 100000 игр","ach_questions_100_name":"Первые Фрагменты","ach_questions_100_desc":"Ответь на 100 вопросов","ach_questions_250_name":"Собиратель Мыслей","ach_questions_250_desc":"Ответь на 250 вопросов","ach_questions_500_name":"Разум в Движении","ach_questions_500_desc":"Ответь на 500 вопросов","ach_questions_750_name":"Проблески Озарения","ach_questions_750_desc":"Ответь на 750 вопросов","ach_questions_1000_name":"Ткач Понимания","ach_questions_1000_desc":"Ответь на 1000 вопросов","ach_questions_1500_name":"Растущее Познание","ach_questions_1500_desc":"Ответь на 1500 вопросов","ach_questions_2000_name":"Пробуждающееся Осознание","ach_questions_2000_desc":"Ответь на 2000 вопросов","ach_questions_2500_name":"Хранитель Памяти","ach_questions_2500_desc":"Ответь на 2500 вопросов","ach_questions_3500_name":"Искатель Закономерностей","ach_questions_3500_desc":"Ответь на 3500 вопросов","ach_questions_5000_name":"Жнец Истин","ach_questions_5000_desc":"Ответь на 5000 вопросов","ach_questions_7500_name":"Писец Памяти","ach_questions_7500_desc":"Ответь на 7500 вопросов","ach_questions_10000_name":"Голос Разума","ach_questions_10000_desc":"Ответь на 10000 вопросов","ach_questions_15000_name":"Тихий Учёный","ach_questions_15000_desc":"Ответь на 15000 вопросов","ach_questions_20000_name":"Носитель Смысла","ach_questions_20000_desc":"Ответь на 20000 вопросов","ach_questions_25000_name":"Архитектор Мудрости","ach_questions_25000_desc":"Ответь на 25000 вопросов","ach_questions_30000_name":"Хранитель Бесчисленных Вопросов","ach_questions_30000_desc":"Ответь на 30000 вопросов","ach_questions_40000_name":"Бесконечный Разум","ach_questions_40000_desc":"Ответь на 40000 вопросов","ach_questions_50000_name":"Связанный Истиной","ach_questions_50000_desc":"Ответь на 50000 вопросов","ach_questions_60000_name":"Корона Познания","ach_questions_60000_desc":"Ответь на 60000 вопросов","ach_questions_75000_name":"Размышляющий","ach_questions_75000_desc":"Ответь на 75000 вопросов","ach_questions_100000_name":"Носитель Бесконечного Запроса","ach_questions_100000_desc":"Ответь на 100000 вопросов","ach_questions_150000_name":"Разум За Пределами Меры","ach_questions_150000_desc":"Ответь на 150000 вопросов","ach_questions_200000_name":"Вечное Понимание","ach_questions_200000_desc":"Ответь на 200000 вопросов","ach_questions_250000_name":"Вознесённый Мысли","ach_questions_250000_desc":"Ответь на 250000 вопросов","ach_questions_500000_name":"Бескрайность Внутри","ach_questions_500000_desc":"Ответь на 500000 вопросов","ach_questions_1000000_name":"Корона Миллиона","ach_questions_1000000_desc":"Ответь на 1000000 вопросов"},
-  tr: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Ana Sayfa","nav_topics":"Konular","nav_stats":"İstatistikler","nav_leaderboard":"Sıralama","nav_profile":"Profil","nav_social":"Sosyal","home_quiz_of_day":"🏆 GÜNÜN BİLMECESİ","home_play_now":"▶ OYNA","home_explore_categories":"Kategorileri Keşfet","home_quizzes":"bilmece","home_quiz":"bilmece","category_geography":"Coğrafya","category_football":"Futbol","category_movies":"Filmler","category_tvshows":"Diziler","category_history":"Tarih","category_logos":"Logolar","profile_settings":"Ayarlar","profile_stats_quizzes":"Bilmeceler","profile_stats_wins":"Kazanımlar","profile_stats_accuracy":"Doğruluk","profile_achievements":"Başarılar","profile_progress":"İlerleme","profile_streaks":"Seriler","profile_quanta":"Quanta","profile_games":"OYUNLAR","profile_accuracy":"DOĞRULUK","profile_followers":"TAKİPÇİLER","profile_following":"TAKİP","stats_title":"İstatistikler","stats_total_played":"Toplam Oynanan","stats_total_correct":"Toplam Doğru","stats_accuracy":"Doğruluk","stats_best_streak":"En İyi Seri","stats_most_played":"En Çok Oynanan","stats_overall_performance":"Genel Performans","stats_total_games_played":"Toplam Oynanan Oyun","stats_total_questions_answered":"Toplam Yanıtlanan Soru","stats_correct_answers":"Doğru Cevaplar","stats_wrong_answers":"Yanlış Cevaplar","stats_overall_accuracy":"Genel Doğruluk","stats_avg_time_per_question":"Soru Başına Ortalama Süre","stats_best_streak_label":"En İyi Seri","stats_total_time_played":"Toplam Oynama Süresi","stats_games":"Oyunlar","stats_best_label":"En İyi","stats_search_topic":"Konu Ara","stats_search_placeholder":"Konu adını yaz...","stats_search_found":"Bulundu:","stats_search_not_found":"Konu bulunamadı","leaderboard_title":"Sıralama","leaderboard_global":"Dünya Sıralaması","leaderboard_coming_soon":"Yakında","leaderboard_developing":"Global sıralamalar geliştiriliyor. Yakında dünya çapındaki oyuncularla yarışabileceksiniz!","game_score":"Puan","game_timer":"Süre","game_question":"Soru","game_next":"Sonraki","game_correct":"Doğru!","game_wrong":"Yanlış!","game_lives":"Can","game_streak":"Seri","result_game_over":"Oyun Bitti","result_final_score":"Final Puanı","result_play_again":"Tekrar Oyna","result_main_menu":"Ana Menü","result_perfect":"Mükemmel Skor!","result_great":"Harika!","result_good":"İyi İş!","result_try_again":"Pratik Yapmaya Devam Et!","settings_title":"Ayarlar","settings_language":"Dil","settings_theme":"Tema","settings_sound":"Ses","settings_coming_soon":"Yakında","settings_close":"Kapat","settings_performance":"Performans Modu","settings_performance_hint":"Daha akıcı kaydırma için etkinleştir (animasyonları kapatır)","settings_tutorial":"Eğitim","sound_music":"Müzik","sound_effects":"Ses Efektleri","sound_volume":"Ses Seviyesi","sound_mute":"Sessiz","sound_unmute":"Sesi Aç","mode_single_player":"Tek Oyuncu","mode_two_player":"İki Oyuncu","mode_time_attack":"Zamana Karşı","mode_quick_game":"Hızlı Oyun","mode_three_strikes":"Üç Hak","mode_select_mode":"Mod Seç","mode_back":"Geri","difficulty_easy":"Kolay","difficulty_medium":"Orta","difficulty_hard":"Zor","difficulty_select":"Zorluk Seç","common_loading":"Yükleniyor...","common_error":"Hata","common_retry":"Tekrar Dene","common_cancel":"İptal","common_confirm":"Onayla","common_save":"Kaydet","common_reset":"Sıfırla","common_yes":"Evet","common_no":"Hayır","common_ok":"Tamam","edit_profile":"Profili Düzenle","edit_profile_picture":"Profil Fotoğrafı","edit_upload_photo":"Fotoğraf Yükle","edit_choose_emoji":"Veya bir emoji seç:","edit_username":"Kullanıcı Adı","edit_background":"Arka Plan Resmi","edit_upload_background":"Arka Plan Yükle","edit_save_changes":"Değişiklikleri Kaydet","edit_remove":"Kaldır","setup_save_start":"Kaydet ve Başla","quanta_title":"✦ Quanta — Yakında","quanta_description":"Quanta, Quizzena'nın bilgi para birimidir. Gelecek güncellemelerde bilmecelerde ustalaşarak, meydan okumaları keşfederek ve zekanızı kanıtlayarak Quanta kazanın.","social_coming_soon":"Quizzena Sosyal — Yakında","social_subtitle":"Bilmeceleri keşfetmenin yeni bir yolu.","social_feed":"Sosyal Akış","achievements_ritual":"Başarılar","achievements_subtitle":"Ustalığın Yedi Yolu","achievements_house_coming":"Bu yolun başarıları kozmik ateşlerde dövülüyor. Kaderinizi talep etmek için yakında geri dönün.","view_stats_chart":"İstatistik Grafiğini Görüntüle","pxp_dashboard":"P-XP Paneli","pxp_level":"SEVİYE","pxp_total_earned":"Toplam: {0} P-XP kazanıldı","pxp_1_day":"1 Gün","pxp_1_week":"1 Hafta","pxp_1_month":"1 Ay","pxp_1_year":"1 Yıl","pxp_all_time":"Tüm Zamanlar","pxp_games_each":"Oyunlar (+10 her biri)","pxp_answers_each":"Cevaplar (+1 her biri)","pxp_achievements":"Başarılar","pxp_today_breakdown":"Bugünün Dökümü","pxp_games_completed":"Tamamlanan Oyunlar","pxp_correct_answers":"Doğru Cevaplar","pxp_achievements_claimed":"Kazanılan Başarılar","pxp_total_earned_label":"Toplam Kazanılan","stats_overall":"Genel","stats_by_topic":"Konuya Göre","stats_games_label":"OYUNLAR","stats_questions_label":"SORULAR","stats_correct_label":"DOĞRU","stats_wrong_label":"YANLIŞ","stats_time_label":"SÜRE","stats_streak_label":"SERİ","stats_no_data":"Bu dönem için veri yok","stats_peak":"ZİRVE","stats_average":"ORTALAMA","stats_total":"TOPLAM","home_continue_playing":"Oynamaya Devam","home_quick_play":"Hızlı Oyun","home_random":"Rastgele","home_slot":"Slot","home_explore":"Keşfet","topic_add_to_slot":"+ Slota Ekle","topic_level":"Seviye","topic_choose_mode":"OYUN MODUNU SEÇ","topic_casual":"Normal","topic_questions":"soru","topic_time_attack":"Zamana Karşı","topic_reach_level":"Seviye {0}'a ulaşın","topic_3_hearts":"3 Can","topic_2_players":"2 Oyuncu","topic_progress":"Konu İlerlemesi","topic_level_arrow":"Seviye {0} → Seviye {1}","pxp_today_breakdown":"Bugünün Dökümü","pxp_week_breakdown":"Bu Haftanın Dökümü","pxp_month_breakdown":"Bu Ayın Dökümü","pxp_year_breakdown":"Bu Yılın Dökümü","pxp_breakdown":"Döküm","pxp_how_it_works":"ℹ️ P-XP Nasıl Çalışır","topic_flags":"Bayraklar","topic_capitals":"Başkentler","topic_area":"Ülke Alanı","topic_football":"Futbol","topic_premier_league":"Premier Lig","topic_champions_league":"Şampiyonlar Ligi","topic_movies":"Filmler","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Diziler","topic_got":"Taht Oyunları","topic_stranger_things":"Stranger Things","topic_money_heist":"La Casa de Papel","topic_logos":"Logolar","topic_world_history":"Dünya Tarihi","home_hot_topics":"🔥 Popüler Konular","home_ranked_mode":"Dereceli Moda Gir","topic_borders":"Sınırlar","topic_world_cup":"Dünya Kupası","topic_derbies":"Derbiler","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Yıldız Savaşları","topic_lotr":"Yüzüklerin Efendisi","topic_sitcoms":"Sitkomlar","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"İkinci Dünya Savaşı","topic_wwi":"Birinci Dünya Savaşı","topic_roman_empire":"Roma İmparatorluğu","topic_ottoman":"Osmanlı İmparatorluğu","topic_egyptian":"Antik Mısır","topic_british_monarchy":"İngiliz Monarşisi","topic_ancient_civs":"Antik Medeniyetler","topic_cold_war":"Soğuk Savaş","achievement_progression":"İlerleme","achievement_skill":"Beceri","achievement_exploration":"Keşif","achievement_time_attack":"Zamana Karşı","achievement_survival":"Hayatta Kalma","achievement_casual":"Normal","achievement_behaviour":"Davranış","house_progression":"İlerleme Yolu","house_skill":"Beceri Yolu","house_exploration":"Keşif Yolu","house_time":"Zamana Karşı Yolu","house_survival":"Hayatta Kalma Yolu","house_casual":"Normal Ustalık Yolu","house_behaviour":"Davranış Yolu","house_coming_soon":"Yakında","house_progression_subtitle":"Yolculuğun başlıyor, yükseliyor ve dönüşüyor.","pillar_ascending_levels":"Yükselen Seviyeler","pillar_ascending_levels_desc":"Prestij sıralarında yüksel","pillar_topic_entry":"Konu İlerlemesi","pillar_topic_entry_desc":"Bir konuda derin uzmanlığa doğru ilerle.","pillar_games_completed":"Tamamlanan Oyunlar","pillar_games_completed_desc":"Aralıksız oyunla yolda yürü.","pillar_questions_answered":"Toplam Cevaplanan Sorular","pillar_questions_answered_desc":"Biriken bilgiyle aklını genişlet.","pillar_flawed_mind":"Kusurlu Zihin Yolu","pillar_flawed_mind_desc":"Bilgelik hata ve düzeltmeyle şekillenir.","pillar_timeless_devotion":"Zamansız Adanmışlık Yolu","pillar_timeless_devotion_desc":"Varlık, dayanıklılık ve zamanla yavaş ustalık oluşumu.","ach_tap_to_claim":"ALMAK İÇİN DOKUN","ach_prestige_level_2_name":"Yükselişin Çırağı","ach_prestige_level_2_desc":"Seviye 2'ye Ulaş","ach_prestige_level_5_name":"Adım Taşıyıcısı","ach_prestige_level_5_desc":"Seviye 5'e Ulaş","ach_prestige_level_10_name":"Yükselen","ach_prestige_level_10_desc":"Seviye 10'a Ulaş","ach_prestige_level_20_name":"Yol Yürüyücüsü","ach_prestige_level_20_desc":"Seviye 20'ye Ulaş","ach_prestige_level_30_name":"Zirve Arayıcısı","ach_prestige_level_30_desc":"Seviye 30'a Ulaş","ach_prestige_level_40_name":"Tepe Taşıyıcısı","ach_prestige_level_40_desc":"Seviye 40'a Ulaş","ach_prestige_level_50_name":"Doruk Ulaşan","ach_prestige_level_50_desc":"Seviye 50'ye Ulaş","ach_prestige_level_75_name":"Yetmiş Beşin Zirvesi","ach_prestige_level_75_desc":"Seviye 75'e Ulaş","ach_prestige_level_100_name":"Zenit Yükseleni","ach_prestige_level_100_desc":"Seviye 100'e Ulaş","ach_prestige_level_250_name":"İki Yüz Ellinin Yükseleni","ach_prestige_level_250_desc":"Seviye 250'ye Ulaş","ach_prestige_level_500_name":"Beş Yüz Adımın Taşıyıcısı","ach_prestige_level_500_desc":"Seviye 500'e Ulaş","ach_prestige_level_1000_name":"Binkat Zirve","ach_prestige_level_1000_desc":"Seviye 1000'e Ulaş","ach_games_10_name":"İlk Adımlar","ach_games_10_desc":"10 oyun tamamla","ach_games_25_name":"Beliren Ritim","ach_games_25_desc":"25 oyun tamamla","ach_games_50_name":"Sebat Nabzı","ach_games_50_desc":"50 oyun tamamla","ach_games_100_name":"İvme Koruyucusu","ach_games_100_desc":"100 oyun tamamla","ach_games_200_name":"Akışa Bağlı","ach_games_200_desc":"200 oyun tamamla","ach_games_500_name":"Kırılmaz Yürüyüş","ach_games_500_desc":"500 oyun tamamla","ach_games_1000_name":"Devamlılık Taşıyıcısı","ach_games_1000_desc":"1000 oyun tamamla","ach_games_3000_name":"Tekrar Ruhu","ach_games_3000_desc":"3000 oyun tamamla","ach_games_5000_name":"Kalıcı Nabız","ach_games_5000_desc":"5000 oyun tamamla","ach_games_10000_name":"On Bin Adımın Yankısı","ach_games_10000_desc":"10000 oyun tamamla","ach_games_50000_name":"Dayanıklının İradesi","ach_games_50000_desc":"50000 oyun tamamla","ach_games_100000_name":"Ebedi Yol Taşıyıcısı","ach_games_100000_desc":"100000 oyun tamamla","ach_questions_100_name":"İlk Parçalar","ach_questions_100_desc":"100 soruya cevap ver","ach_questions_250_name":"Düşünce Toplayıcısı","ach_questions_250_desc":"250 soruya cevap ver","ach_questions_500_name":"Hareket Eden Zihin","ach_questions_500_desc":"500 soruya cevap ver","ach_questions_750_name":"Kavrayış Kıvılcımları","ach_questions_750_desc":"750 soruya cevap ver","ach_questions_1000_name":"Anlayış Dokuyucusu","ach_questions_1000_desc":"1000 soruya cevap ver","ach_questions_1500_name":"Büyüyen Biliş","ach_questions_1500_desc":"1500 soruya cevap ver","ach_questions_2000_name":"Beliren Farkındalık","ach_questions_2000_desc":"2000 soruya cevap ver","ach_questions_2500_name":"Hatıra Koruyucusu","ach_questions_2500_desc":"2500 soruya cevap ver","ach_questions_3500_name":"Kalıp Arayıcısı","ach_questions_3500_desc":"3500 soruya cevap ver","ach_questions_5000_name":"Hakikat Hasatçısı","ach_questions_5000_desc":"5000 soruya cevap ver","ach_questions_7500_name":"Bellek Yazıcısı","ach_questions_7500_desc":"7500 soruya cevap ver","ach_questions_10000_name":"Akıl Sesi","ach_questions_10000_desc":"10000 soruya cevap ver","ach_questions_15000_name":"Sessiz Bilgin","ach_questions_15000_desc":"15000 soruya cevap ver","ach_questions_20000_name":"Anlam Taşıyıcısı","ach_questions_20000_desc":"20000 soruya cevap ver","ach_questions_25000_name":"Bilgelik Mimarı","ach_questions_25000_desc":"25000 soruya cevap ver","ach_questions_30000_name":"Sayısız Sorunun Koruyucusu","ach_questions_30000_desc":"30000 soruya cevap ver","ach_questions_40000_name":"Sonsuz Zihin","ach_questions_40000_desc":"40000 soruya cevap ver","ach_questions_50000_name":"Hakikate Bağlı","ach_questions_50000_desc":"50000 soruya cevap ver","ach_questions_60000_name":"Bilme Tacı","ach_questions_60000_desc":"60000 soruya cevap ver","ach_questions_75000_name":"Düşünceli","ach_questions_75000_desc":"75000 soruya cevap ver","ach_questions_100000_name":"Sonsuz Sorgunun Taşıyıcısı","ach_questions_100000_desc":"100000 soruya cevap ver","ach_questions_150000_name":"Ölçüsüz Zihin","ach_questions_150000_desc":"150000 soruya cevap ver","ach_questions_200000_name":"Ebedi Kavrayış","ach_questions_200000_desc":"200000 soruya cevap ver","ach_questions_250000_name":"Düşüncenin Yükseleni","ach_questions_250000_desc":"250000 soruya cevap ver","ach_questions_500000_name":"İçteki Enginlik","ach_questions_500000_desc":"500000 soruya cevap ver","ach_questions_1000000_name":"Milyonun Tacı","ach_questions_1000000_desc":"1000000 soruya cevap ver"}
+  en: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Home","nav_topics":"Topics","nav_stats":"Stats","nav_leaderboard":"Leaderboard","nav_profile":"Profile","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ OF THE DAY","home_play_now":"▶ PLAY NOW","home_explore_categories":"Explore Categories","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geography","category_football":"Football","category_movies":"Movies","category_tvshows":"TV Shows","category_history":"History","category_logos":"Logos","profile_settings":"Settings","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Wins","profile_stats_accuracy":"Accuracy","profile_achievements":"Achievements","profile_progress":"Progress","profile_streaks":"Streaks","profile_quanta":"Quanta","profile_games":"GAMES","profile_accuracy":"ACCURACY","profile_followers":"FOLLOWERS","profile_following":"FOLLOWING","stats_title":"Stats","stats_total_played":"Total Played","stats_total_correct":"Total Correct","stats_accuracy":"Accuracy","stats_best_streak":"Best Streak","stats_most_played":"Most Played","stats_overall_performance":"Overall Performance","stats_total_games_played":"Total Games Played","stats_total_questions_answered":"Total Questions Answered","stats_correct_answers":"Correct Answers","stats_wrong_answers":"Wrong Answers","stats_overall_accuracy":"Overall Accuracy","stats_avg_time_per_question":"Avg Time per Question","stats_best_streak_label":"Best Streak","stats_total_time_played":"Total Time Played","stats_games":"Games","stats_best_label":"Best","stats_search_topic":"Search Topic","stats_search_placeholder":"Type topic name...","stats_search_found":"Found:","stats_search_not_found":"Topic not found","lb_title":"LEADERBOARD","lb_subtitle":"Founders Season · Preparing","lb_founders_title":"Founders Leaderboard","lb_founders_desc":"The first competitive season of Quizzena is being prepared.","lb_status":"STATUS: COLLECTING FOUNDERS DATA","lb_status_helper":"Your activity now will shape the first rankings.","lb_founders_recognition":"Early players gain Founders recognition.","lb_rankings_unlock":"Rankings unlock when Founders Season begins.","lb_what_matters":"WHAT WILL MATTER","lb_games_played":"Games played","lb_accuracy":"Accuracy","lb_streaks":"Streaks","lb_achievements":"Achievements","lb_season_soon":"SEASON STARTING SOON","lb_early_modal":"You're early. Keep playing.","game_score":"Score","game_timer":"Time","game_question":"Question","game_next":"Next","game_correct":"Correct!","game_wrong":"Wrong!","game_lives":"Lives","game_streak":"Streak","result_game_over":"Game Over","result_final_score":"Final Score","result_play_again":"Play Again","result_main_menu":"Main Menu","result_perfect":"Perfect Score!","result_great":"Great Job!","result_good":"Good Effort!","result_try_again":"Keep Practicing!","settings_title":"Settings","settings_language":"Language","settings_theme":"Theme","settings_sound":"Sound","settings_coming_soon":"Coming Soon","settings_close":"Close","settings_performance":"Performance Mode","settings_performance_hint":"Enable for smoother scrolling (disables animations)","settings_tutorial":"Tutorial","sound_music":"Music","sound_effects":"Sound Effects","sound_volume":"Volume","sound_mute":"Mute","sound_unmute":"Unmute","mode_single_player":"Single Player","mode_two_player":"Two Player","mode_time_attack":"Time Attack","mode_quick_game":"Quick Game","mode_three_strikes":"Three Strikes","mode_select_mode":"Select Mode","mode_back":"Back","difficulty_easy":"Easy","difficulty_medium":"Medium","difficulty_hard":"Hard","difficulty_select":"Select Difficulty","common_loading":"Loading...","common_error":"Error","common_retry":"Retry","common_cancel":"Cancel","common_confirm":"Confirm","common_save":"Save","common_reset":"Reset","common_yes":"Yes","common_no":"No","common_ok":"OK","edit_profile":"Edit Profile","edit_profile_picture":"Profile Picture","edit_upload_photo":"Upload Photo","edit_choose_emoji":"Or choose an emoji:","edit_username":"Username","edit_background":"Background Picture","edit_upload_background":"Upload Background","edit_save_changes":"Save Changes","edit_remove":"Remove","setup_save_start":"Save & Start","quanta_title":"✦ Quanta","quanta_description":"Quanta is the knowledge currency of Quizzena. You earn Quanta by playing quizzes, improving accuracy, and unlocking achievements. Quanta will determine access to Founders privileges and future competitive features.","social_coming_soon":"Quizzena Social — Coming Soon","social_subtitle":"A new way to explore quizzes.","social_feed":"Social Feed","achievements_ritual":"Achievements","achievements_subtitle":"The Seven Paths of Mastery","achievements_house_coming":"Achievements for this path are being forged in the cosmic fires. Return soon to claim your destiny.","view_stats_chart":"View Stats Chart","pxp_dashboard":"P-XP Dashboard","pxp_level":"LEVEL","pxp_total_earned":"Total: {0} P-XP earned","pxp_1_day":"1 Day","pxp_1_week":"1 Week","pxp_1_month":"1 Month","pxp_1_year":"1 Year","pxp_all_time":"All Time","pxp_games_each":"Games (+10 each)","pxp_answers_each":"Answers (+1 each)","pxp_achievements":"Achievements","pxp_today_breakdown":"Today's Breakdown","pxp_games_completed":"Games Completed","pxp_correct_answers":"Correct Answers","pxp_achievements_claimed":"Achievements Claimed","pxp_total_earned_label":"Total Earned","stats_overall":"Overall","stats_by_topic":"By Topic","stats_games_label":"GAMES","stats_questions_label":"QUESTIONS","stats_correct_label":"CORRECT","stats_wrong_label":"WRONG","stats_time_label":"TIME","stats_streak_label":"STREAK","stats_no_data":"No data available for this time range","stats_peak":"PEAK","stats_average":"AVERAGE","stats_total":"TOTAL","home_continue_playing":"Continue Playing","home_quick_play":"Quick Play","home_random":"Random","home_slot":"Slot","home_explore":"Explore","topic_add_to_slot":"+ Add to Slot","topic_level":"Level","topic_choose_mode":"CHOOSE GAME MODE","topic_casual":"Casual","topic_questions":"questions","topic_time_attack":"Time Attack","topic_reach_level":"Reach Level {0} to unlock","topic_3_hearts":"3 Hearts","topic_2_players":"2 Players","topic_progress":"Topic Progress","topic_level_arrow":"Level {0} → Level {1}","pxp_today_breakdown":"Today's Breakdown","pxp_week_breakdown":"This Week's Breakdown","pxp_month_breakdown":"This Month's Breakdown","pxp_year_breakdown":"This Year's Breakdown","pxp_breakdown":"Breakdown","pxp_how_it_works":"ℹ️ How P-XP Works","topic_flags":"Flags","topic_capitals":"Capitals","topic_area":"Country Area","topic_football":"Football","topic_premier_league":"Premier League","topic_champions_league":"Champions League","topic_movies":"Movies","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"TV Shows","topic_got":"Game of Thrones","topic_stranger_things":"Stranger Things","topic_money_heist":"Money Heist","topic_logos":"Logos","topic_world_history":"World History","home_hot_topics":"🔥 Hot Topics","home_ranked_mode":"Enter Ranked Mode","topic_borders":"Borders","topic_world_cup":"World Cup","topic_derbies":"Derbies","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Star Wars","topic_lotr":"LOTR","topic_sitcoms":"Sitcoms","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"WWII","topic_wwi":"WWI","topic_roman_empire":"Roman Empire","topic_ottoman":"Ottoman","topic_egyptian":"Egyptian","topic_british_monarchy":"British Monarchy","topic_ancient_civs":"Ancient Civs","topic_cold_war":"Cold War","achievement_progression":"Progression","achievement_skill":"Skill","achievement_exploration":"Exploration","achievement_time_attack":"Time Attack","achievement_survival":"Survival","achievement_casual":"Casual","achievement_behaviour":"Behaviour","house_progression":"Path of Progression","house_skill":"Path of Skill","house_exploration":"Path of Exploration","house_time":"Path of Time Attack","house_survival":"Path of Survival","house_casual":"Path of Casual Mastery","house_behaviour":"Path of Behaviour","house_coming_soon":"Coming Soon","house_progression_subtitle":"Your journey begins, rises, and becomes.","pillar_ascending_levels":"Ascending Levels","pillar_ascending_levels_desc":"Rise through the Prestige ranks","pillar_topic_entry":"Topic Entry Progression","pillar_topic_entry_desc":"Advance within a subject toward deep specialization.","pillar_games_completed":"Games Completed","pillar_games_completed_desc":"Walk the path through relentless play.","pillar_questions_answered":"Total Questions Answered","pillar_questions_answered_desc":"Expand your mind through accumulated knowledge.","pillar_flawed_mind":"The Path of the Flawed Mind","pillar_flawed_mind_desc":"Wisdom shapes itself through misjudgment and correction.","pillar_timeless_devotion":"The Path of Timeless Devotion","pillar_timeless_devotion_desc":"Presence, endurance, and the slow shaping of mastery through time.","ach_tap_to_claim":"TAP TO CLAIM","ach_prestige_level_2_name":"Initiate of Ascent","ach_prestige_level_2_desc":"Reach Level 2","ach_prestige_level_5_name":"Bearer of Steps","ach_prestige_level_5_desc":"Reach Level 5","ach_prestige_level_10_name":"Rising One","ach_prestige_level_10_desc":"Reach Level 10","ach_prestige_level_20_name":"Pathwalker","ach_prestige_level_20_desc":"Reach Level 20","ach_prestige_level_30_name":"Summit Seeker","ach_prestige_level_30_desc":"Reach Level 30","ach_prestige_level_40_name":"Crestbearer","ach_prestige_level_40_desc":"Reach Level 40","ach_prestige_level_50_name":"Pinnacle Reacher","ach_prestige_level_50_desc":"Reach Level 50","ach_prestige_level_75_name":"Peak of Seventy-Five","ach_prestige_level_75_desc":"Reach Level 75","ach_prestige_level_100_name":"Zenith Ascended","ach_prestige_level_100_desc":"Reach Level 100","ach_prestige_level_250_name":"Ascendant of Two Hundred Fifty","ach_prestige_level_250_desc":"Reach Level 250","ach_prestige_level_500_name":"Bearer of Five Hundred Steps","ach_prestige_level_500_desc":"Reach Level 500","ach_prestige_level_1000_name":"Thousandfold Apex","ach_prestige_level_1000_desc":"Reach Level 1000","ach_games_10_name":"First Footfalls","ach_games_10_desc":"Complete 10 games","ach_games_25_name":"Emerging Rhythm","ach_games_25_desc":"Complete 25 games","ach_games_50_name":"Pulse of Persistence","ach_games_50_desc":"Complete 50 games","ach_games_100_name":"Keeper of Momentum","ach_games_100_desc":"Complete 100 games","ach_games_200_name":"Flowbound","ach_games_200_desc":"Complete 200 games","ach_games_500_name":"The Unbroken March","ach_games_500_desc":"Complete 500 games","ach_games_1000_name":"Bearer of Continuance","ach_games_1000_desc":"Complete 1,000 games","ach_games_3000_name":"Spirit of Repetition","ach_games_3000_desc":"Complete 3,000 games","ach_games_5000_name":"Enduring Pulse","ach_games_5000_desc":"Complete 5,000 games","ach_games_10000_name":"Echo of Ten Thousand Steps","ach_games_10000_desc":"Complete 10,000 games","ach_games_50000_name":"Will of the Enduring","ach_games_50000_desc":"Complete 50,000 games","ach_games_100000_name":"Eternal Pathbearer","ach_games_100000_desc":"Complete 100,000 games","ach_questions_100_name":"First Fragments","ach_questions_100_desc":"Answer 100 questions","ach_questions_250_name":"Gatherer of Thoughts","ach_questions_250_desc":"Answer 250 questions","ach_questions_500_name":"Mind in Motion","ach_questions_500_desc":"Answer 500 questions","ach_questions_750_name":"Stirrings of Insight","ach_questions_750_desc":"Answer 750 questions","ach_questions_1000_name":"Weaver of Understanding","ach_questions_1000_desc":"Answer 1,000 questions","ach_questions_1500_name":"Growing Cognition","ach_questions_1500_desc":"Answer 1,500 questions","ach_questions_2000_name":"Emergent Awareness","ach_questions_2000_desc":"Answer 2,000 questions","ach_questions_2500_name":"Keeper of Recall","ach_questions_2500_desc":"Answer 2,500 questions","ach_questions_3500_name":"Seeker of Patterns","ach_questions_3500_desc":"Answer 3,500 questions","ach_questions_5000_name":"Harvester of Truths","ach_questions_5000_desc":"Answer 5,000 questions","ach_questions_7500_name":"Scribe of Memory","ach_questions_7500_desc":"Answer 7,500 questions","ach_questions_10000_name":"Voice of Reason","ach_questions_10000_desc":"Answer 10,000 questions","ach_questions_15000_name":"Silent Scholar","ach_questions_15000_desc":"Answer 15,000 questions","ach_questions_20000_name":"Bearer of Meaning","ach_questions_20000_desc":"Answer 20,000 questions","ach_questions_25000_name":"Architect of Wisdom","ach_questions_25000_desc":"Answer 25,000 questions","ach_questions_30000_name":"Keeper of Countless Questions","ach_questions_30000_desc":"Answer 30,000 questions","ach_questions_40000_name":"The Endless Mind","ach_questions_40000_desc":"Answer 40,000 questions","ach_questions_50000_name":"Truthbound","ach_questions_50000_desc":"Answer 50,000 questions","ach_questions_60000_name":"Crown of Knowing","ach_questions_60000_desc":"Answer 60,000 questions","ach_questions_75000_name":"The Reflective One","ach_questions_75000_desc":"Answer 75,000 questions","ach_questions_100000_name":"Bearer of the Infinite Query","ach_questions_100000_desc":"Answer 100,000 questions","ach_questions_150000_name":"Mind Beyond Measure","ach_questions_150000_desc":"Answer 150,000 questions","ach_questions_200000_name":"Eternal Comprehension","ach_questions_200000_desc":"Answer 200,000 questions","ach_questions_250000_name":"The Thoughtborne Ascendant","ach_questions_250000_desc":"Answer 250,000 questions","ach_questions_500000_name":"The Vastness Within","ach_questions_500000_desc":"Answer 500,000 questions","ach_questions_1000000_name":"Crown of the Million","ach_questions_1000000_desc":"Answer 1,000,000 questions"},
+  es: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Inicio","nav_topics":"Temas","nav_stats":"Estadísticas","nav_leaderboard":"Clasificación","nav_profile":"Perfil","nav_social":"Social","home_quiz_of_day":"🏆 QUIZ DEL DÍA","home_play_now":"▶ JUGAR","home_explore_categories":"Explorar Categorías","home_quizzes":"quizzes","home_quiz":"quiz","category_geography":"Geografía","category_football":"Fútbol","category_movies":"Películas","category_tvshows":"Series","category_history":"Historia","category_logos":"Logos","profile_settings":"Ajustes","profile_stats_quizzes":"Quizzes","profile_stats_wins":"Victorias","profile_stats_accuracy":"Precisión","profile_achievements":"Logros","profile_progress":"Progreso","profile_streaks":"Rachas","profile_quanta":"Quanta","profile_games":"PARTIDAS","profile_accuracy":"PRECISIÓN","profile_followers":"SEGUIDORES","profile_following":"SIGUIENDO","stats_title":"Estadísticas","stats_total_played":"Total Jugados","stats_total_correct":"Total Correctas","stats_accuracy":"Precisión","stats_best_streak":"Mejor Racha","stats_most_played":"Más Jugados","stats_overall_performance":"Rendimiento General","stats_total_games_played":"Total de Partidas Jugadas","stats_total_questions_answered":"Total de Preguntas Respondidas","stats_correct_answers":"Respuestas Correctas","stats_wrong_answers":"Respuestas Incorrectas","stats_overall_accuracy":"Precisión General","stats_avg_time_per_question":"Tiempo Promedio por Pregunta","stats_best_streak_label":"Mejor Racha","stats_total_time_played":"Tiempo Total Jugado","stats_games":"Partidas","stats_best_label":"Mejor","stats_search_topic":"Buscar Tema","stats_search_placeholder":"Escribe el nombre del tema...","stats_search_found":"Encontrado:","stats_search_not_found":"Tema no encontrado","lb_title":"CLASIFICACIÓN","lb_subtitle":"Temporada Fundadores · Preparando","lb_founders_title":"Tabla de Fundadores","lb_founders_desc":"La primera temporada competitiva de Quizzena está siendo preparada.","lb_status":"ESTADO: RECOPILANDO DATOS DE FUNDADORES","lb_status_helper":"Tu actividad ahora dará forma a las primeras clasificaciones.","lb_founders_recognition":"Los jugadores tempranos obtienen reconocimiento de Fundador.","lb_rankings_unlock":"Las clasificaciones se desbloquean cuando comience la Temporada de Fundadores.","lb_what_matters":"QUÉ IMPORTARÁ","lb_games_played":"Partidas jugadas","lb_accuracy":"Precisión","lb_streaks":"Rachas","lb_achievements":"Logros","lb_season_soon":"TEMPORADA PRÓXIMAMENTE","lb_early_modal":"Llegaste temprano. Sigue jugando.","game_score":"Puntuación","game_timer":"Tiempo","game_question":"Pregunta","game_next":"Siguiente","game_correct":"¡Correcto!","game_wrong":"¡Incorrecto!","game_lives":"Vidas","game_streak":"Racha","result_game_over":"Fin del Juego","result_final_score":"Puntuación Final","result_play_again":"Jugar de Nuevo","result_main_menu":"Menú Principal","result_perfect":"¡Puntuación Perfecta!","result_great":"¡Excelente!","result_good":"¡Buen Trabajo!","result_try_again":"¡Sigue Practicando!","settings_title":"Ajustes","settings_language":"Idioma","settings_theme":"Tema","settings_sound":"Sonido","settings_coming_soon":"Próximamente","settings_close":"Cerrar","settings_performance":"Modo Rendimiento","settings_performance_hint":"Activa para un desplazamiento más fluido (desactiva animaciones)","settings_tutorial":"Tutorial","sound_music":"Música","sound_effects":"Efectos de Sonido","sound_volume":"Volumen","sound_mute":"Silenciar","sound_unmute":"Activar Sonido","mode_single_player":"Un Jugador","mode_two_player":"Dos Jugadores","mode_time_attack":"Contrarreloj","mode_quick_game":"Partida Rápida","mode_three_strikes":"Tres Strikes","mode_select_mode":"Seleccionar Modo","mode_back":"Atrás","difficulty_easy":"Fácil","difficulty_medium":"Medio","difficulty_hard":"Difícil","difficulty_select":"Seleccionar Dificultad","common_loading":"Cargando...","common_error":"Error","common_retry":"Reintentar","common_cancel":"Cancelar","common_confirm":"Confirmar","common_save":"Guardar","common_reset":"Restablecer","common_yes":"Sí","common_no":"No","common_ok":"OK","edit_profile":"Editar Perfil","edit_profile_picture":"Foto de Perfil","edit_upload_photo":"Subir Foto","edit_choose_emoji":"O elige un emoji:","edit_username":"Nombre de usuario","edit_background":"Imagen de Fondo","edit_upload_background":"Subir Fondo","edit_save_changes":"Guardar Cambios","edit_remove":"Eliminar","setup_save_start":"Guardar e Iniciar","quanta_title":"✦ Quanta","quanta_description":"Quanta es la moneda del conocimiento de Quizzena. Ganas Quanta jugando quizzes, mejorando tu precisión y desbloqueando logros. Quanta determinará el acceso a privilegios de Fundadores y futuras funciones competitivas.","social_coming_soon":"Quizzena Social — Próximamente","social_subtitle":"Una nueva forma de explorar quizzes.","social_feed":"Feed Social","achievements_ritual":"Logros","achievements_subtitle":"Los Ocho Caminos de la Maestría","achievements_house_coming":"Los logros de este camino se están forjando en los fuegos cósmicos. Regresa pronto para reclamar tu destino.","view_stats_chart":"Ver Gráfico de Estadísticas","pxp_dashboard":"Panel de P-XP","pxp_level":"NIVEL","pxp_total_earned":"Total: {0} P-XP ganado","pxp_1_day":"1 Día","pxp_1_week":"1 Semana","pxp_1_month":"1 Mes","pxp_1_year":"1 Año","pxp_all_time":"Todo el Tiempo","pxp_games_each":"Partidas (+10 c/u)","pxp_answers_each":"Respuestas (+1 c/u)","pxp_achievements":"Logros","pxp_today_breakdown":"Desglose de Hoy","pxp_games_completed":"Partidas Completadas","pxp_correct_answers":"Respuestas Correctas","pxp_achievements_claimed":"Logros Reclamados","pxp_total_earned_label":"Total Ganado","stats_overall":"General","stats_by_topic":"Por Tema","stats_games_label":"PARTIDAS","stats_questions_label":"PREGUNTAS","stats_correct_label":"CORRECTAS","stats_wrong_label":"INCORRECTAS","stats_time_label":"TIEMPO","stats_streak_label":"RACHA","stats_no_data":"No hay datos para este período","stats_peak":"MÁXIMO","stats_average":"PROMEDIO","stats_total":"TOTAL","home_continue_playing":"Continuar Jugando","home_quick_play":"Juego Rápido","home_random":"Aleatorio","home_slot":"Espacio","home_explore":"Explorar","topic_add_to_slot":"+ Agregar a Espacio","topic_level":"Nivel","topic_choose_mode":"ELIGE MODO DE JUEGO","topic_casual":"Casual","topic_questions":"preguntas","topic_time_attack":"Contrarreloj","topic_reach_level":"Alcanza Nivel {0} para desbloquear","topic_3_hearts":"3 Corazones","topic_2_players":"2 Jugadores","topic_progress":"Progreso de Temas","topic_level_arrow":"Nivel {0} → Nivel {1}","pxp_today_breakdown":"Desglose de Hoy","pxp_week_breakdown":"Desglose de Esta Semana","pxp_month_breakdown":"Desglose de Este Mes","pxp_year_breakdown":"Desglose de Este Año","pxp_breakdown":"Desglose","pxp_how_it_works":"ℹ️ Cómo Funciona P-XP","topic_flags":"Banderas","topic_capitals":"Capitales","topic_area":"Área de Países","topic_football":"Fútbol","topic_premier_league":"Premier League","topic_champions_league":"Champions League","topic_movies":"Películas","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Series","topic_got":"Juego de Tronos","topic_stranger_things":"Stranger Things","topic_money_heist":"La Casa de Papel","topic_logos":"Logos","topic_world_history":"Historia Mundial","home_hot_topics":"🔥 Temas Populares","home_ranked_mode":"Entrar Modo Clasificatorio","topic_borders":"Fronteras","topic_world_cup":"Copa del Mundo","topic_derbies":"Derbis","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Star Wars","topic_lotr":"El Señor de los Anillos","topic_sitcoms":"Comedias","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"Segunda Guerra Mundial","topic_wwi":"Primera Guerra Mundial","topic_roman_empire":"Imperio Romano","topic_ottoman":"Imperio Otomano","topic_egyptian":"Egipto Antiguo","topic_british_monarchy":"Monarquía Británica","topic_ancient_civs":"Civilizaciones Antiguas","topic_cold_war":"Guerra Fría","achievement_progression":"Progresión","achievement_skill":"Habilidad","achievement_exploration":"Exploración","achievement_time_attack":"Contrarreloj","achievement_survival":"Supervivencia","achievement_casual":"Casual","achievement_behaviour":"Comportamiento","house_progression":"Camino de Progresión","house_skill":"Camino de Habilidad","house_exploration":"Camino de Exploración","house_time":"Camino Contrarreloj","house_survival":"Camino de Supervivencia","house_casual":"Camino del Maestro Casual","house_behaviour":"Camino del Comportamiento","house_coming_soon":"Próximamente","house_progression_subtitle":"Tu viaje comienza, asciende y se transforma.","pillar_ascending_levels":"Niveles Ascendentes","pillar_ascending_levels_desc":"Asciende a través de los rangos de Prestigio","pillar_topic_entry":"Progresión de Temas","pillar_topic_entry_desc":"Avanza en un tema hacia la especialización profunda.","pillar_games_completed":"Partidas Completadas","pillar_games_completed_desc":"Camina el sendero a través del juego constante.","pillar_questions_answered":"Total de Preguntas Respondidas","pillar_questions_answered_desc":"Expande tu mente a través del conocimiento acumulado.","pillar_flawed_mind":"El Camino de la Mente Imperfecta","pillar_flawed_mind_desc":"La sabiduría se forma a través del error y la corrección.","pillar_timeless_devotion":"El Camino de la Devoción Eterna","pillar_timeless_devotion_desc":"Presencia, resistencia y la formación lenta de la maestría a través del tiempo.","ach_tap_to_claim":"TOCA PARA RECLAMAR","ach_prestige_level_2_name":"Iniciado del Ascenso","ach_prestige_level_2_desc":"Alcanza el Nivel 2","ach_prestige_level_5_name":"Portador de Pasos","ach_prestige_level_5_desc":"Alcanza el Nivel 5","ach_prestige_level_10_name":"El Ascendente","ach_prestige_level_10_desc":"Alcanza el Nivel 10","ach_prestige_level_20_name":"Caminante del Sendero","ach_prestige_level_20_desc":"Alcanza el Nivel 20","ach_prestige_level_30_name":"Buscador de Cumbres","ach_prestige_level_30_desc":"Alcanza el Nivel 30","ach_prestige_level_40_name":"Portador de la Cresta","ach_prestige_level_40_desc":"Alcanza el Nivel 40","ach_prestige_level_50_name":"Alcanzador del Pináculo","ach_prestige_level_50_desc":"Alcanza el Nivel 50","ach_prestige_level_75_name":"Cumbre de los Setenta y Cinco","ach_prestige_level_75_desc":"Alcanza el Nivel 75","ach_prestige_level_100_name":"Cénit Ascendido","ach_prestige_level_100_desc":"Alcanza el Nivel 100","ach_prestige_level_250_name":"Ascendente de Doscientos Cincuenta","ach_prestige_level_250_desc":"Alcanza el Nivel 250","ach_prestige_level_500_name":"Portador de Quinientos Pasos","ach_prestige_level_500_desc":"Alcanza el Nivel 500","ach_prestige_level_1000_name":"Ápice de los Mil","ach_prestige_level_1000_desc":"Alcanza el Nivel 1000","ach_games_10_name":"Primeros Pasos","ach_games_10_desc":"Completa 10 partidas","ach_games_25_name":"Ritmo Emergente","ach_games_25_desc":"Completa 25 partidas","ach_games_50_name":"Pulso de Persistencia","ach_games_50_desc":"Completa 50 partidas","ach_games_100_name":"Guardián del Impulso","ach_games_100_desc":"Completa 100 partidas","ach_games_200_name":"Flujo Constante","ach_games_200_desc":"Completa 200 partidas","ach_games_500_name":"La Marcha Inquebrantable","ach_games_500_desc":"Completa 500 partidas","ach_games_1000_name":"Portador de la Continuidad","ach_games_1000_desc":"Completa 1.000 partidas","ach_games_3000_name":"Espíritu de Repetición","ach_games_3000_desc":"Completa 3.000 partidas","ach_games_5000_name":"Pulso Duradero","ach_games_5000_desc":"Completa 5.000 partidas","ach_games_10000_name":"Eco de Diez Mil Pasos","ach_games_10000_desc":"Completa 10.000 partidas","ach_games_50000_name":"Voluntad del Perseverante","ach_games_50000_desc":"Completa 50.000 partidas","ach_games_100000_name":"Portador Eterno del Camino","ach_games_100000_desc":"Completa 100.000 partidas","ach_questions_100_name":"Primeros Fragmentos","ach_questions_100_desc":"Responde 100 preguntas","ach_questions_250_name":"Recolector de Pensamientos","ach_questions_250_desc":"Responde 250 preguntas","ach_questions_500_name":"Mente en Movimiento","ach_questions_500_desc":"Responde 500 preguntas","ach_questions_750_name":"Destellos de Perspicacia","ach_questions_750_desc":"Responde 750 preguntas","ach_questions_1000_name":"Tejedor del Entendimiento","ach_questions_1000_desc":"Responde 1.000 preguntas","ach_questions_1500_name":"Cognición Creciente","ach_questions_1500_desc":"Responde 1.500 preguntas","ach_questions_2000_name":"Conciencia Emergente","ach_questions_2000_desc":"Responde 2.000 preguntas","ach_questions_2500_name":"Guardián del Recuerdo","ach_questions_2500_desc":"Responde 2.500 preguntas","ach_questions_3500_name":"Buscador de Patrones","ach_questions_3500_desc":"Responde 3.500 preguntas","ach_questions_5000_name":"Cosechador de Verdades","ach_questions_5000_desc":"Responde 5.000 preguntas","ach_questions_7500_name":"Escriba de la Memoria","ach_questions_7500_desc":"Responde 7.500 preguntas","ach_questions_10000_name":"Voz de la Razón","ach_questions_10000_desc":"Responde 10.000 preguntas","ach_questions_15000_name":"Erudito Silencioso","ach_questions_15000_desc":"Responde 15.000 preguntas","ach_questions_20000_name":"Portador del Significado","ach_questions_20000_desc":"Responde 20.000 preguntas","ach_questions_25000_name":"Arquitecto de la Sabiduría","ach_questions_25000_desc":"Responde 25.000 preguntas","ach_questions_30000_name":"Guardián de Innumerables Preguntas","ach_questions_30000_desc":"Responde 30.000 preguntas","ach_questions_40000_name":"La Mente Infinita","ach_questions_40000_desc":"Responde 40.000 preguntas","ach_questions_50000_name":"Atado a la Verdad","ach_questions_50000_desc":"Responde 50.000 preguntas","ach_questions_60000_name":"Corona del Conocimiento","ach_questions_60000_desc":"Responde 60.000 preguntas","ach_questions_75000_name":"El Reflexivo","ach_questions_75000_desc":"Responde 75.000 preguntas","ach_questions_100000_name":"Portador de la Consulta Infinita","ach_questions_100000_desc":"Responde 100.000 preguntas","ach_questions_150000_name":"Mente Sin Límites","ach_questions_150000_desc":"Responde 150.000 preguntas","ach_questions_200000_name":"Comprensión Eterna","ach_questions_200000_desc":"Responde 200.000 preguntas","ach_questions_250000_name":"El Ascendiente del Pensamiento","ach_questions_250000_desc":"Responde 250.000 preguntas","ach_questions_500000_name":"La Vastedad Interior","ach_questions_500000_desc":"Responde 500.000 preguntas","ach_questions_1000000_name":"Corona del Millón","ach_questions_1000000_desc":"Responde 1.000.000 preguntas"},
+  ru: {"app_name":"Quizzena","version":"Quizzena v1 Бета","nav_home":"Главная","nav_topics":"Темы","nav_stats":"Статистика","nav_leaderboard":"Рейтинг","nav_profile":"Профиль","nav_social":"Лента","home_quiz_of_day":"🏆 ВИКТОРИНА ДНЯ","home_play_now":"▶ ИГРАТЬ","home_explore_categories":"Категории","home_quizzes":"викторин","home_quiz":"викторина","category_geography":"География","category_football":"Футбол","category_movies":"Фильмы","category_tvshows":"Сериалы","category_history":"История","category_logos":"Логотипы","profile_settings":"Настройки","profile_stats_quizzes":"Викторины","profile_stats_wins":"Победы","profile_stats_accuracy":"Точность","profile_achievements":"Достижения","profile_progress":"Прогресс","profile_streaks":"Серии","profile_quanta":"Quanta","profile_games":"ИГРЫ","profile_accuracy":"ТОЧНОСТЬ","profile_followers":"ПОДПИСЧИКИ","profile_following":"ПОДПИСКИ","stats_title":"Статистика","stats_total_played":"Всего сыграно","stats_total_correct":"Правильных ответов","stats_accuracy":"Точность","stats_best_streak":"Лучшая серия","stats_most_played":"Часто играемые","stats_overall_performance":"Общая статистика","stats_total_games_played":"Всего игр","stats_total_questions_answered":"Всего вопросов","stats_correct_answers":"Правильные ответы","stats_wrong_answers":"Неправильные ответы","stats_overall_accuracy":"Общая точность","stats_avg_time_per_question":"Среднее время на вопрос","stats_best_streak_label":"Лучшая серия","stats_total_time_played":"Общее время игры","stats_games":"Игры","stats_best_label":"Лучший","stats_search_topic":"Поиск темы","stats_search_placeholder":"Введите название темы...","stats_search_found":"Найдено:","stats_search_not_found":"Тема не найдена","lb_title":"РЕЙТИНГ","lb_subtitle":"Сезон Основателей · Подготовка","lb_founders_title":"Рейтинг Основателей","lb_founders_desc":"Первый соревновательный сезон Quizzena готовится.","lb_status":"СТАТУС: СБОР ДАННЫХ ОСНОВАТЕЛЕЙ","lb_status_helper":"Ваша активность сейчас определит первые рейтинги.","lb_founders_recognition":"Ранние игроки получат признание Основателей.","lb_rankings_unlock":"Рейтинги откроются с началом Сезона Основателей.","lb_what_matters":"ЧТО БУДЕТ ВАЖНО","lb_games_played":"Игры сыграны","lb_accuracy":"Точность","lb_streaks":"Серии","lb_achievements":"Достижения","lb_season_soon":"СЕЗОН СКОРО НАЧНЁТСЯ","lb_early_modal":"Вы рано. Продолжайте играть.","game_score":"Счёт","game_timer":"Время","game_question":"Вопрос","game_next":"Далее","game_correct":"Правильно!","game_wrong":"Неправильно!","game_lives":"Жизни","game_streak":"Серия","result_game_over":"Игра окончена","result_final_score":"Итоговый счёт","result_play_again":"Играть снова","result_main_menu":"Главное меню","result_perfect":"Идеальный результат!","result_great":"Отлично!","result_good":"Хорошо!","result_try_again":"Продолжай практиковаться!","settings_title":"Настройки","settings_language":"Язык","settings_theme":"Тема","settings_sound":"Звук","settings_coming_soon":"Скоро","settings_close":"Закрыть","settings_performance":"Режим производительности","settings_performance_hint":"Включите для плавной прокрутки (отключает анимации)","settings_tutorial":"Обучение","sound_music":"Музыка","sound_effects":"Звуковые эффекты","sound_volume":"Громкость","sound_mute":"Выключить звук","sound_unmute":"Включить звук","mode_single_player":"Один игрок","mode_two_player":"Два игрока","mode_time_attack":"На время","mode_quick_game":"Быстрая игра","mode_three_strikes":"Три ошибки","mode_select_mode":"Выберите режим","mode_back":"Назад","difficulty_easy":"Легко","difficulty_medium":"Средне","difficulty_hard":"Сложно","difficulty_select":"Выберите сложность","common_loading":"Загрузка...","common_error":"Ошибка","common_retry":"Повторить","common_cancel":"Отмена","common_confirm":"Подтвердить","common_save":"Сохранить","common_reset":"Сбросить","common_yes":"Да","common_no":"Нет","common_ok":"ОК","edit_profile":"Редактировать профиль","edit_profile_picture":"Фото профиля","edit_upload_photo":"Загрузить фото","edit_choose_emoji":"Или выберите эмодзи:","edit_username":"Имя пользователя","edit_background":"Фон профиля","edit_upload_background":"Загрузить фон","edit_save_changes":"Сохранить изменения","edit_remove":"Удалить","setup_save_start":"Сохранить и начать","quanta_title":"✦ Quanta","quanta_description":"Quanta — это валюта знаний Quizzena. Вы зарабатываете Quanta, играя в викторины, улучшая точность и открывая достижения. Quanta определит доступ к привилегиям Основателей и будущим соревновательным функциям.","social_coming_soon":"Quizzena Лента — Скоро","social_subtitle":"Новый способ исследовать викторины.","social_feed":"Лента","achievements_ritual":"Достижения","achievements_subtitle":"Семь путей мастерства","achievements_house_coming":"Достижения этого пути куются в космическом огне. Возвращайтесь скоро, чтобы получить свою судьбу.","view_stats_chart":"Посмотреть график статистики","pxp_dashboard":"Панель P-XP","pxp_level":"УРОВЕНЬ","pxp_total_earned":"Всего: {0} P-XP заработано","pxp_1_day":"1 День","pxp_1_week":"1 Неделя","pxp_1_month":"1 Месяц","pxp_1_year":"1 Год","pxp_all_time":"Всё Время","pxp_games_each":"Игры (+10 каждая)","pxp_answers_each":"Ответы (+1 каждый)","pxp_achievements":"Достижения","pxp_today_breakdown":"Сегодняшняя Разбивка","pxp_games_completed":"Игр Завершено","pxp_correct_answers":"Правильных Ответов","pxp_achievements_claimed":"Достижений Получено","pxp_total_earned_label":"Всего Заработано","stats_overall":"Общее","stats_by_topic":"По Темам","stats_games_label":"ИГРЫ","stats_questions_label":"ВОПРОСЫ","stats_correct_label":"ВЕРНО","stats_wrong_label":"НЕВЕРНО","stats_time_label":"ВРЕМЯ","stats_streak_label":"СЕРИЯ","stats_no_data":"Нет данных за этот период","stats_peak":"МАКС","stats_average":"СРЕДНЕЕ","stats_total":"ВСЕГО","home_continue_playing":"Продолжить Игру","home_quick_play":"Быстрая Игра","home_random":"Случайно","home_slot":"Слот","home_explore":"Обзор","topic_add_to_slot":"+ Добавить в слот","topic_level":"Уровень","topic_choose_mode":"ВЫБЕРИТЕ РЕЖИМ ИГРЫ","topic_casual":"Обычный","topic_questions":"вопросов","topic_time_attack":"На Время","topic_reach_level":"Достигните Уровня {0}","topic_3_hearts":"3 Сердца","topic_2_players":"2 Игрока","topic_progress":"Прогресс Тем","topic_level_arrow":"Уровень {0} → Уровень {1}","pxp_today_breakdown":"Разбивка за Сегодня","pxp_week_breakdown":"Разбивка за Неделю","pxp_month_breakdown":"Разбивка за Месяц","pxp_year_breakdown":"Разбивка за Год","pxp_breakdown":"Разбивка","pxp_how_it_works":"ℹ️ Как работает P-XP","topic_flags":"Флаги","topic_capitals":"Столицы","topic_area":"Площадь Стран","topic_football":"Футбол","topic_premier_league":"Премьер-Лига","topic_champions_league":"Лига Чемпионов","topic_movies":"Фильмы","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Сериалы","topic_got":"Игра Престолов","topic_stranger_things":"Очень Странные Дела","topic_money_heist":"Бумажный Дом","topic_logos":"Логотипы","topic_world_history":"Мировая История","home_hot_topics":"🔥 Популярные Темы","home_ranked_mode":"Рейтинговый Режим","topic_borders":"Границы","topic_world_cup":"Чемпионат Мира","topic_derbies":"Дерби","topic_messi":"Месси","topic_ronaldo":"Роналду","topic_disney":"Дисней","topic_harry_potter":"Гарри Поттер","topic_star_wars":"Звёздные Войны","topic_lotr":"Властелин Колец","topic_sitcoms":"Ситкомы","topic_breaking_bad":"Во Все Тяжкие","topic_the_office":"Офис","topic_wwii":"Вторая Мировая","topic_wwi":"Первая Мировая","topic_roman_empire":"Римская Империя","topic_ottoman":"Османская Империя","topic_egyptian":"Древний Египет","topic_british_monarchy":"Британская Монархия","topic_ancient_civs":"Древние Цивилизации","topic_cold_war":"Холодная Война","achievement_progression":"Прогресс","achievement_skill":"Мастерство","achievement_exploration":"Исследование","achievement_time_attack":"На Время","achievement_survival":"Выживание","achievement_casual":"Обычный","achievement_behaviour":"Поведение","house_progression":"Путь Прогресса","house_skill":"Путь Мастерства","house_exploration":"Путь Исследования","house_time":"Путь На Время","house_survival":"Путь Выживания","house_casual":"Путь Обычного Мастера","house_behaviour":"Путь Поведения","house_coming_soon":"Скоро","house_progression_subtitle":"Твой путь начинается, восходит и преображается.","pillar_ascending_levels":"Восхождение по Уровням","pillar_ascending_levels_desc":"Поднимайся по рангам Престижа","pillar_topic_entry":"Прогресс по Темам","pillar_topic_entry_desc":"Продвигайся в теме к глубокой специализации.","pillar_games_completed":"Завершённые Игры","pillar_games_completed_desc":"Иди по пути неустанной игры.","pillar_questions_answered":"Всего Ответов на Вопросы","pillar_questions_answered_desc":"Расширяй свой разум через накопленные знания.","pillar_flawed_mind":"Путь Несовершенного Разума","pillar_flawed_mind_desc":"Мудрость формируется через ошибки и исправления.","pillar_timeless_devotion":"Путь Вечной Преданности","pillar_timeless_devotion_desc":"Присутствие, выносливость и медленное формирование мастерства через время.","ach_tap_to_claim":"НАЖМИ ЧТОБЫ ПОЛУЧИТЬ","ach_prestige_level_2_name":"Посвящённый Восхождения","ach_prestige_level_2_desc":"Достигни 2 Уровня","ach_prestige_level_5_name":"Носитель Шагов","ach_prestige_level_5_desc":"Достигни 5 Уровня","ach_prestige_level_10_name":"Восходящий","ach_prestige_level_10_desc":"Достигни 10 Уровня","ach_prestige_level_20_name":"Путник","ach_prestige_level_20_desc":"Достигни 20 Уровня","ach_prestige_level_30_name":"Искатель Вершин","ach_prestige_level_30_desc":"Достигни 30 Уровня","ach_prestige_level_40_name":"Носитель Гребня","ach_prestige_level_40_desc":"Достигни 40 Уровня","ach_prestige_level_50_name":"Достигший Вершины","ach_prestige_level_50_desc":"Достигни 50 Уровня","ach_prestige_level_75_name":"Пик Семидесяти Пяти","ach_prestige_level_75_desc":"Достигни 75 Уровня","ach_prestige_level_100_name":"Зенит Вознесённый","ach_prestige_level_100_desc":"Достигни 100 Уровня","ach_prestige_level_250_name":"Вознесённый Двухсот Пятидесяти","ach_prestige_level_250_desc":"Достигни 250 Уровня","ach_prestige_level_500_name":"Носитель Пятисот Шагов","ach_prestige_level_500_desc":"Достигни 500 Уровня","ach_prestige_level_1000_name":"Тысячекратный Апекс","ach_prestige_level_1000_desc":"Достигни 1000 Уровня","ach_games_10_name":"Первые Шаги","ach_games_10_desc":"Заверши 10 игр","ach_games_25_name":"Зарождающийся Ритм","ach_games_25_desc":"Заверши 25 игр","ach_games_50_name":"Пульс Настойчивости","ach_games_50_desc":"Заверши 50 игр","ach_games_100_name":"Хранитель Импульса","ach_games_100_desc":"Заверши 100 игр","ach_games_200_name":"Связанный Потоком","ach_games_200_desc":"Заверши 200 игр","ach_games_500_name":"Несломленный Марш","ach_games_500_desc":"Заверши 500 игр","ach_games_1000_name":"Носитель Продолжения","ach_games_1000_desc":"Заверши 1000 игр","ach_games_3000_name":"Дух Повторения","ach_games_3000_desc":"Заверши 3000 игр","ach_games_5000_name":"Стойкий Пульс","ach_games_5000_desc":"Заверши 5000 игр","ach_games_10000_name":"Эхо Десяти Тысяч Шагов","ach_games_10000_desc":"Заверши 10000 игр","ach_games_50000_name":"Воля Стойкого","ach_games_50000_desc":"Заверши 50000 игр","ach_games_100000_name":"Вечный Путеносец","ach_games_100000_desc":"Заверши 100000 игр","ach_questions_100_name":"Первые Фрагменты","ach_questions_100_desc":"Ответь на 100 вопросов","ach_questions_250_name":"Собиратель Мыслей","ach_questions_250_desc":"Ответь на 250 вопросов","ach_questions_500_name":"Разум в Движении","ach_questions_500_desc":"Ответь на 500 вопросов","ach_questions_750_name":"Проблески Озарения","ach_questions_750_desc":"Ответь на 750 вопросов","ach_questions_1000_name":"Ткач Понимания","ach_questions_1000_desc":"Ответь на 1000 вопросов","ach_questions_1500_name":"Растущее Познание","ach_questions_1500_desc":"Ответь на 1500 вопросов","ach_questions_2000_name":"Пробуждающееся Осознание","ach_questions_2000_desc":"Ответь на 2000 вопросов","ach_questions_2500_name":"Хранитель Памяти","ach_questions_2500_desc":"Ответь на 2500 вопросов","ach_questions_3500_name":"Искатель Закономерностей","ach_questions_3500_desc":"Ответь на 3500 вопросов","ach_questions_5000_name":"Жнец Истин","ach_questions_5000_desc":"Ответь на 5000 вопросов","ach_questions_7500_name":"Писец Памяти","ach_questions_7500_desc":"Ответь на 7500 вопросов","ach_questions_10000_name":"Голос Разума","ach_questions_10000_desc":"Ответь на 10000 вопросов","ach_questions_15000_name":"Тихий Учёный","ach_questions_15000_desc":"Ответь на 15000 вопросов","ach_questions_20000_name":"Носитель Смысла","ach_questions_20000_desc":"Ответь на 20000 вопросов","ach_questions_25000_name":"Архитектор Мудрости","ach_questions_25000_desc":"Ответь на 25000 вопросов","ach_questions_30000_name":"Хранитель Бесчисленных Вопросов","ach_questions_30000_desc":"Ответь на 30000 вопросов","ach_questions_40000_name":"Бесконечный Разум","ach_questions_40000_desc":"Ответь на 40000 вопросов","ach_questions_50000_name":"Связанный Истиной","ach_questions_50000_desc":"Ответь на 50000 вопросов","ach_questions_60000_name":"Корона Познания","ach_questions_60000_desc":"Ответь на 60000 вопросов","ach_questions_75000_name":"Размышляющий","ach_questions_75000_desc":"Ответь на 75000 вопросов","ach_questions_100000_name":"Носитель Бесконечного Запроса","ach_questions_100000_desc":"Ответь на 100000 вопросов","ach_questions_150000_name":"Разум За Пределами Меры","ach_questions_150000_desc":"Ответь на 150000 вопросов","ach_questions_200000_name":"Вечное Понимание","ach_questions_200000_desc":"Ответь на 200000 вопросов","ach_questions_250000_name":"Вознесённый Мысли","ach_questions_250000_desc":"Ответь на 250000 вопросов","ach_questions_500000_name":"Бескрайность Внутри","ach_questions_500000_desc":"Ответь на 500000 вопросов","ach_questions_1000000_name":"Корона Миллиона","ach_questions_1000000_desc":"Ответь на 1000000 вопросов"},
+  tr: {"app_name":"Quizzena","version":"Quizzena v1 Beta","nav_home":"Ana Sayfa","nav_topics":"Konular","nav_stats":"İstatistikler","nav_leaderboard":"Sıralama","nav_profile":"Profil","nav_social":"Sosyal","home_quiz_of_day":"🏆 GÜNÜN BİLMECESİ","home_play_now":"▶ OYNA","home_explore_categories":"Kategorileri Keşfet","home_quizzes":"bilmece","home_quiz":"bilmece","category_geography":"Coğrafya","category_football":"Futbol","category_movies":"Filmler","category_tvshows":"Diziler","category_history":"Tarih","category_logos":"Logolar","profile_settings":"Ayarlar","profile_stats_quizzes":"Bilmeceler","profile_stats_wins":"Kazanımlar","profile_stats_accuracy":"Doğruluk","profile_achievements":"Başarılar","profile_progress":"İlerleme","profile_streaks":"Seriler","profile_quanta":"Quanta","profile_games":"OYUNLAR","profile_accuracy":"DOĞRULUK","profile_followers":"TAKİPÇİLER","profile_following":"TAKİP","stats_title":"İstatistikler","stats_total_played":"Toplam Oynanan","stats_total_correct":"Toplam Doğru","stats_accuracy":"Doğruluk","stats_best_streak":"En İyi Seri","stats_most_played":"En Çok Oynanan","stats_overall_performance":"Genel Performans","stats_total_games_played":"Toplam Oynanan Oyun","stats_total_questions_answered":"Toplam Yanıtlanan Soru","stats_correct_answers":"Doğru Cevaplar","stats_wrong_answers":"Yanlış Cevaplar","stats_overall_accuracy":"Genel Doğruluk","stats_avg_time_per_question":"Soru Başına Ortalama Süre","stats_best_streak_label":"En İyi Seri","stats_total_time_played":"Toplam Oynama Süresi","stats_games":"Oyunlar","stats_best_label":"En İyi","stats_search_topic":"Konu Ara","stats_search_placeholder":"Konu adını yaz...","stats_search_found":"Bulundu:","stats_search_not_found":"Konu bulunamadı","lb_title":"SIRALAMA","lb_subtitle":"Kurucu Sezonu · Hazırlanıyor","lb_founders_title":"Kurucu Sıralaması","lb_founders_desc":"Quizzena'nın ilk rekabetçi sezonu hazırlanıyor.","lb_status":"DURUM: KURUCU VERİLERİ TOPLANIYOR","lb_status_helper":"Şu anki aktiviteniz ilk sıralamaları şekillendirecek.","lb_founders_recognition":"Erken oyuncular Kurucu tanınırlığı kazanır.","lb_rankings_unlock":"Sıralamalar Kurucu Sezonu başladığında açılır.","lb_what_matters":"NE ÖNEMLİ OLACAK","lb_games_played":"Oynanan oyunlar","lb_accuracy":"Doğruluk","lb_streaks":"Seriler","lb_achievements":"Başarılar","lb_season_soon":"SEZON YAKINDA BAŞLIYOR","lb_early_modal":"Erken geldiniz. Oynamaya devam edin.","game_score":"Puan","game_timer":"Süre","game_question":"Soru","game_next":"Sonraki","game_correct":"Doğru!","game_wrong":"Yanlış!","game_lives":"Can","game_streak":"Seri","result_game_over":"Oyun Bitti","result_final_score":"Final Puanı","result_play_again":"Tekrar Oyna","result_main_menu":"Ana Menü","result_perfect":"Mükemmel Skor!","result_great":"Harika!","result_good":"İyi İş!","result_try_again":"Pratik Yapmaya Devam Et!","settings_title":"Ayarlar","settings_language":"Dil","settings_theme":"Tema","settings_sound":"Ses","settings_coming_soon":"Yakında","settings_close":"Kapat","settings_performance":"Performans Modu","settings_performance_hint":"Daha akıcı kaydırma için etkinleştir (animasyonları kapatır)","settings_tutorial":"Eğitim","sound_music":"Müzik","sound_effects":"Ses Efektleri","sound_volume":"Ses Seviyesi","sound_mute":"Sessiz","sound_unmute":"Sesi Aç","mode_single_player":"Tek Oyuncu","mode_two_player":"İki Oyuncu","mode_time_attack":"Zamana Karşı","mode_quick_game":"Hızlı Oyun","mode_three_strikes":"Üç Hak","mode_select_mode":"Mod Seç","mode_back":"Geri","difficulty_easy":"Kolay","difficulty_medium":"Orta","difficulty_hard":"Zor","difficulty_select":"Zorluk Seç","common_loading":"Yükleniyor...","common_error":"Hata","common_retry":"Tekrar Dene","common_cancel":"İptal","common_confirm":"Onayla","common_save":"Kaydet","common_reset":"Sıfırla","common_yes":"Evet","common_no":"Hayır","common_ok":"Tamam","edit_profile":"Profili Düzenle","edit_profile_picture":"Profil Fotoğrafı","edit_upload_photo":"Fotoğraf Yükle","edit_choose_emoji":"Veya bir emoji seç:","edit_username":"Kullanıcı Adı","edit_background":"Arka Plan Resmi","edit_upload_background":"Arka Plan Yükle","edit_save_changes":"Değişiklikleri Kaydet","edit_remove":"Kaldır","setup_save_start":"Kaydet ve Başla","quanta_title":"✦ Quanta","quanta_description":"Quanta, Quizzena'nın bilgi para birimidir. Bilmece oynayarak, doğruluğunuzu artırarak ve başarıları açarak Quanta kazanırsınız. Quanta, Kurucu ayrıcalıklarına ve gelecekteki rekabetçi özelliklere erişimi belirleyecektir.","social_coming_soon":"Quizzena Sosyal — Yakında","social_subtitle":"Bilmeceleri keşfetmenin yeni bir yolu.","social_feed":"Sosyal Akış","achievements_ritual":"Başarılar","achievements_subtitle":"Ustalığın Yedi Yolu","achievements_house_coming":"Bu yolun başarıları kozmik ateşlerde dövülüyor. Kaderinizi talep etmek için yakında geri dönün.","view_stats_chart":"İstatistik Grafiğini Görüntüle","pxp_dashboard":"P-XP Paneli","pxp_level":"SEVİYE","pxp_total_earned":"Toplam: {0} P-XP kazanıldı","pxp_1_day":"1 Gün","pxp_1_week":"1 Hafta","pxp_1_month":"1 Ay","pxp_1_year":"1 Yıl","pxp_all_time":"Tüm Zamanlar","pxp_games_each":"Oyunlar (+10 her biri)","pxp_answers_each":"Cevaplar (+1 her biri)","pxp_achievements":"Başarılar","pxp_today_breakdown":"Bugünün Dökümü","pxp_games_completed":"Tamamlanan Oyunlar","pxp_correct_answers":"Doğru Cevaplar","pxp_achievements_claimed":"Kazanılan Başarılar","pxp_total_earned_label":"Toplam Kazanılan","stats_overall":"Genel","stats_by_topic":"Konuya Göre","stats_games_label":"OYUNLAR","stats_questions_label":"SORULAR","stats_correct_label":"DOĞRU","stats_wrong_label":"YANLIŞ","stats_time_label":"SÜRE","stats_streak_label":"SERİ","stats_no_data":"Bu dönem için veri yok","stats_peak":"ZİRVE","stats_average":"ORTALAMA","stats_total":"TOPLAM","home_continue_playing":"Oynamaya Devam","home_quick_play":"Hızlı Oyun","home_random":"Rastgele","home_slot":"Slot","home_explore":"Keşfet","topic_add_to_slot":"+ Slota Ekle","topic_level":"Seviye","topic_choose_mode":"OYUN MODUNU SEÇ","topic_casual":"Normal","topic_questions":"soru","topic_time_attack":"Zamana Karşı","topic_reach_level":"Seviye {0}'a ulaşın","topic_3_hearts":"3 Can","topic_2_players":"2 Oyuncu","topic_progress":"Konu İlerlemesi","topic_level_arrow":"Seviye {0} → Seviye {1}","pxp_today_breakdown":"Bugünün Dökümü","pxp_week_breakdown":"Bu Haftanın Dökümü","pxp_month_breakdown":"Bu Ayın Dökümü","pxp_year_breakdown":"Bu Yılın Dökümü","pxp_breakdown":"Döküm","pxp_how_it_works":"ℹ️ P-XP Nasıl Çalışır","topic_flags":"Bayraklar","topic_capitals":"Başkentler","topic_area":"Ülke Alanı","topic_football":"Futbol","topic_premier_league":"Premier Lig","topic_champions_league":"Şampiyonlar Ligi","topic_movies":"Filmler","topic_marvel":"Marvel","topic_dc":"DC","topic_tv_shows":"Diziler","topic_got":"Taht Oyunları","topic_stranger_things":"Stranger Things","topic_money_heist":"La Casa de Papel","topic_logos":"Logolar","topic_world_history":"Dünya Tarihi","home_hot_topics":"🔥 Popüler Konular","home_ranked_mode":"Dereceli Moda Gir","topic_borders":"Sınırlar","topic_world_cup":"Dünya Kupası","topic_derbies":"Derbiler","topic_messi":"Messi","topic_ronaldo":"Ronaldo","topic_disney":"Disney","topic_harry_potter":"Harry Potter","topic_star_wars":"Yıldız Savaşları","topic_lotr":"Yüzüklerin Efendisi","topic_sitcoms":"Sitkomlar","topic_breaking_bad":"Breaking Bad","topic_the_office":"The Office","topic_wwii":"İkinci Dünya Savaşı","topic_wwi":"Birinci Dünya Savaşı","topic_roman_empire":"Roma İmparatorluğu","topic_ottoman":"Osmanlı İmparatorluğu","topic_egyptian":"Antik Mısır","topic_british_monarchy":"İngiliz Monarşisi","topic_ancient_civs":"Antik Medeniyetler","topic_cold_war":"Soğuk Savaş","achievement_progression":"İlerleme","achievement_skill":"Beceri","achievement_exploration":"Keşif","achievement_time_attack":"Zamana Karşı","achievement_survival":"Hayatta Kalma","achievement_casual":"Normal","achievement_behaviour":"Davranış","house_progression":"İlerleme Yolu","house_skill":"Beceri Yolu","house_exploration":"Keşif Yolu","house_time":"Zamana Karşı Yolu","house_survival":"Hayatta Kalma Yolu","house_casual":"Normal Ustalık Yolu","house_behaviour":"Davranış Yolu","house_coming_soon":"Yakında","house_progression_subtitle":"Yolculuğun başlıyor, yükseliyor ve dönüşüyor.","pillar_ascending_levels":"Yükselen Seviyeler","pillar_ascending_levels_desc":"Prestij sıralarında yüksel","pillar_topic_entry":"Konu İlerlemesi","pillar_topic_entry_desc":"Bir konuda derin uzmanlığa doğru ilerle.","pillar_games_completed":"Tamamlanan Oyunlar","pillar_games_completed_desc":"Aralıksız oyunla yolda yürü.","pillar_questions_answered":"Toplam Cevaplanan Sorular","pillar_questions_answered_desc":"Biriken bilgiyle aklını genişlet.","pillar_flawed_mind":"Kusurlu Zihin Yolu","pillar_flawed_mind_desc":"Bilgelik hata ve düzeltmeyle şekillenir.","pillar_timeless_devotion":"Zamansız Adanmışlık Yolu","pillar_timeless_devotion_desc":"Varlık, dayanıklılık ve zamanla yavaş ustalık oluşumu.","ach_tap_to_claim":"ALMAK İÇİN DOKUN","ach_prestige_level_2_name":"Yükselişin Çırağı","ach_prestige_level_2_desc":"Seviye 2'ye Ulaş","ach_prestige_level_5_name":"Adım Taşıyıcısı","ach_prestige_level_5_desc":"Seviye 5'e Ulaş","ach_prestige_level_10_name":"Yükselen","ach_prestige_level_10_desc":"Seviye 10'a Ulaş","ach_prestige_level_20_name":"Yol Yürüyücüsü","ach_prestige_level_20_desc":"Seviye 20'ye Ulaş","ach_prestige_level_30_name":"Zirve Arayıcısı","ach_prestige_level_30_desc":"Seviye 30'a Ulaş","ach_prestige_level_40_name":"Tepe Taşıyıcısı","ach_prestige_level_40_desc":"Seviye 40'a Ulaş","ach_prestige_level_50_name":"Doruk Ulaşan","ach_prestige_level_50_desc":"Seviye 50'ye Ulaş","ach_prestige_level_75_name":"Yetmiş Beşin Zirvesi","ach_prestige_level_75_desc":"Seviye 75'e Ulaş","ach_prestige_level_100_name":"Zenit Yükseleni","ach_prestige_level_100_desc":"Seviye 100'e Ulaş","ach_prestige_level_250_name":"İki Yüz Ellinin Yükseleni","ach_prestige_level_250_desc":"Seviye 250'ye Ulaş","ach_prestige_level_500_name":"Beş Yüz Adımın Taşıyıcısı","ach_prestige_level_500_desc":"Seviye 500'e Ulaş","ach_prestige_level_1000_name":"Binkat Zirve","ach_prestige_level_1000_desc":"Seviye 1000'e Ulaş","ach_games_10_name":"İlk Adımlar","ach_games_10_desc":"10 oyun tamamla","ach_games_25_name":"Beliren Ritim","ach_games_25_desc":"25 oyun tamamla","ach_games_50_name":"Sebat Nabzı","ach_games_50_desc":"50 oyun tamamla","ach_games_100_name":"İvme Koruyucusu","ach_games_100_desc":"100 oyun tamamla","ach_games_200_name":"Akışa Bağlı","ach_games_200_desc":"200 oyun tamamla","ach_games_500_name":"Kırılmaz Yürüyüş","ach_games_500_desc":"500 oyun tamamla","ach_games_1000_name":"Devamlılık Taşıyıcısı","ach_games_1000_desc":"1000 oyun tamamla","ach_games_3000_name":"Tekrar Ruhu","ach_games_3000_desc":"3000 oyun tamamla","ach_games_5000_name":"Kalıcı Nabız","ach_games_5000_desc":"5000 oyun tamamla","ach_games_10000_name":"On Bin Adımın Yankısı","ach_games_10000_desc":"10000 oyun tamamla","ach_games_50000_name":"Dayanıklının İradesi","ach_games_50000_desc":"50000 oyun tamamla","ach_games_100000_name":"Ebedi Yol Taşıyıcısı","ach_games_100000_desc":"100000 oyun tamamla","ach_questions_100_name":"İlk Parçalar","ach_questions_100_desc":"100 soruya cevap ver","ach_questions_250_name":"Düşünce Toplayıcısı","ach_questions_250_desc":"250 soruya cevap ver","ach_questions_500_name":"Hareket Eden Zihin","ach_questions_500_desc":"500 soruya cevap ver","ach_questions_750_name":"Kavrayış Kıvılcımları","ach_questions_750_desc":"750 soruya cevap ver","ach_questions_1000_name":"Anlayış Dokuyucusu","ach_questions_1000_desc":"1000 soruya cevap ver","ach_questions_1500_name":"Büyüyen Biliş","ach_questions_1500_desc":"1500 soruya cevap ver","ach_questions_2000_name":"Beliren Farkındalık","ach_questions_2000_desc":"2000 soruya cevap ver","ach_questions_2500_name":"Hatıra Koruyucusu","ach_questions_2500_desc":"2500 soruya cevap ver","ach_questions_3500_name":"Kalıp Arayıcısı","ach_questions_3500_desc":"3500 soruya cevap ver","ach_questions_5000_name":"Hakikat Hasatçısı","ach_questions_5000_desc":"5000 soruya cevap ver","ach_questions_7500_name":"Bellek Yazıcısı","ach_questions_7500_desc":"7500 soruya cevap ver","ach_questions_10000_name":"Akıl Sesi","ach_questions_10000_desc":"10000 soruya cevap ver","ach_questions_15000_name":"Sessiz Bilgin","ach_questions_15000_desc":"15000 soruya cevap ver","ach_questions_20000_name":"Anlam Taşıyıcısı","ach_questions_20000_desc":"20000 soruya cevap ver","ach_questions_25000_name":"Bilgelik Mimarı","ach_questions_25000_desc":"25000 soruya cevap ver","ach_questions_30000_name":"Sayısız Sorunun Koruyucusu","ach_questions_30000_desc":"30000 soruya cevap ver","ach_questions_40000_name":"Sonsuz Zihin","ach_questions_40000_desc":"40000 soruya cevap ver","ach_questions_50000_name":"Hakikate Bağlı","ach_questions_50000_desc":"50000 soruya cevap ver","ach_questions_60000_name":"Bilme Tacı","ach_questions_60000_desc":"60000 soruya cevap ver","ach_questions_75000_name":"Düşünceli","ach_questions_75000_desc":"75000 soruya cevap ver","ach_questions_100000_name":"Sonsuz Sorgunun Taşıyıcısı","ach_questions_100000_desc":"100000 soruya cevap ver","ach_questions_150000_name":"Ölçüsüz Zihin","ach_questions_150000_desc":"150000 soruya cevap ver","ach_questions_200000_name":"Ebedi Kavrayış","ach_questions_200000_desc":"200000 soruya cevap ver","ach_questions_250000_name":"Düşüncenin Yükseleni","ach_questions_250000_desc":"250000 soruya cevap ver","ach_questions_500000_name":"İçteki Enginlik","ach_questions_500000_desc":"500000 soruya cevap ver","ach_questions_1000000_name":"Milyonun Tacı","ach_questions_1000000_desc":"1000000 soruya cevap ver"}
 };
 
 let currentLanguage = localStorage.getItem('quizzena_language') || 'en';
@@ -1874,17 +1874,6 @@ function updateDynamicTranslations() {
   const statsHeader = document.querySelector('.stats-header h1');
   if (statsHeader && translations.stats_title) {
     statsHeader.textContent = translations.stats_title;
-  }
-
-  // Update leaderboard title
-  const leaderboardHeader = document.querySelector('.leaderboard-header h1 [data-i18n="leaderboard_title"]');
-  if (leaderboardHeader && translations.leaderboard_title) {
-    leaderboardHeader.textContent = translations.leaderboard_title;
-  }
-
-  const leaderboardSubtitle = document.querySelector('.leaderboard-header p');
-  if (leaderboardSubtitle && translations.leaderboard_global) {
-    leaderboardSubtitle.textContent = translations.leaderboard_global;
   }
 }
 
@@ -3060,6 +3049,7 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
+      playCorrectSound();
       // Track stats for all supported topics
       if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
@@ -3070,6 +3060,7 @@ function checkAnswer(selected, correct) {
       }
     } else {
       resultBox.textContent = `❌ Wrong!`;
+      playWrongSound();
       // Track stats for all supported topics
       if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
@@ -3091,6 +3082,7 @@ function checkAnswer(selected, correct) {
     if (selected === correct) {
       singlePlayerScore++;
       resultBox.textContent = `✅ Correct!`;
+      playCorrectSound();
       // Track stats for all supported topics
       if (trackedTopics.includes(currentTopic)) {
         currentSessionCorrect++;
@@ -3101,6 +3093,7 @@ function checkAnswer(selected, correct) {
       }
     } else {
       resultBox.textContent = `❌ Wrong! It was ${correct}`;
+      playWrongSound();
       // Track stats for all supported topics
       if (trackedTopics.includes(currentTopic)) {
         currentSessionWrong++;
@@ -3850,12 +3843,61 @@ function initExtraEffectsToggle() {
 const clickSound = new Audio('sounds/click.mp3');
 const xpFillSound = new Audio('sounds/xp-fill.mp3');
 const levelUpSound = new Audio('sounds/level-up.mp3');
+const correctSound = new Audio('sounds/correct.mp3');
+const wrongSound = new Audio('sounds/wrong.mp3');
+
+// Preload all sounds
+clickSound.preload = 'auto';
+xpFillSound.preload = 'auto';
+levelUpSound.preload = 'auto';
+correctSound.preload = 'auto';
+wrongSound.preload = 'auto';
+
+// Add error handlers to debug sound loading
+clickSound.onerror = () => console.error('❌ Failed to load click.mp3');
+xpFillSound.onerror = () => console.error('❌ Failed to load xp-fill.mp3');
+levelUpSound.onerror = () => console.error('❌ Failed to load level-up.mp3');
+correctSound.onerror = () => console.error('❌ Failed to load correct.mp3');
+wrongSound.onerror = () => console.error('❌ Failed to load wrong.mp3');
+
+// Log when sounds are loaded
+clickSound.oncanplaythrough = () => console.log('✅ click.mp3 loaded');
+correctSound.oncanplaythrough = () => console.log('✅ correct.mp3 loaded');
+wrongSound.oncanplaythrough = () => console.log('✅ wrong.mp3 loaded');
+
+// Audio unlock flag
+let audioUnlocked = false;
+
+// Unlock all audio on first user interaction (browser autoplay policy)
+function unlockAudio() {
+  if (audioUnlocked) return;
+  
+  const sounds = [clickSound, xpFillSound, levelUpSound, correctSound, wrongSound];
+  sounds.forEach(sound => {
+    // Play and immediately pause to unlock
+    sound.volume = 0;
+    sound.play().then(() => {
+      sound.pause();
+      sound.currentTime = 0;
+      console.log('🔓 Audio unlocked:', sound.src);
+    }).catch((e) => {
+      console.log('⚠️ Audio unlock failed:', e.message);
+    });
+  });
+  
+  audioUnlocked = true;
+  console.log('🔊 Audio system unlocked');
+}
+
+// Add unlock listeners
+document.addEventListener('click', unlockAudio, { once: true });
+document.addEventListener('touchstart', unlockAudio, { once: true });
 
 // XP Fill sound duration (animation is 2.2 seconds, sound is 4s but we stop it)
 const XP_FILL_DURATION = 2200; // 2.2 seconds
 
 // Sound Effects settings (with master toggle)
-let sfxSettings = JSON.parse(localStorage.getItem('quizzena_sfx_settings')) || {
+const defaultSfxSettings = {
   masterMuted: false,   // Master mute for all SFX
   masterVolume: 70,     // Master volume (sets all when adjusted)
   clickVolume: 70,
@@ -3863,8 +3905,16 @@ let sfxSettings = JSON.parse(localStorage.getItem('quizzena_sfx_settings')) || {
   xpFillVolume: 70,
   xpFillMuted: false,
   levelUpVolume: 70,
-  levelUpMuted: false
+  levelUpMuted: false,
+  correctVolume: 70,
+  correctMuted: false,
+  wrongVolume: 70,
+  wrongMuted: false
 };
+
+// Load settings from localStorage, merge with defaults to ensure all keys exist
+let sfxSettings = { ...defaultSfxSettings, ...JSON.parse(localStorage.getItem('quizzena_sfx_settings') || '{}') };
+console.log('🔊 SFX Settings loaded:', sfxSettings);
 
 function saveSfxSettings() {
   localStorage.setItem('quizzena_sfx_settings', JSON.stringify(sfxSettings));
@@ -3876,6 +3926,8 @@ function applyMasterVolume(volume) {
   sfxSettings.clickVolume = volume;
   sfxSettings.xpFillVolume = volume;
   sfxSettings.levelUpVolume = volume;
+  sfxSettings.correctVolume = volume;
+  sfxSettings.wrongVolume = volume;
   saveSfxSettings();
   updateAllSfxVolumeUI();
 }
@@ -3888,11 +3940,15 @@ function toggleMasterMute() {
     sfxSettings.clickMuted = true;
     sfxSettings.xpFillMuted = true;
     sfxSettings.levelUpMuted = true;
+    sfxSettings.correctMuted = true;
+    sfxSettings.wrongMuted = true;
   } else {
     // Unmute all
     sfxSettings.clickMuted = false;
     sfxSettings.xpFillMuted = false;
     sfxSettings.levelUpMuted = false;
+    sfxSettings.correctMuted = false;
+    sfxSettings.wrongMuted = false;
   }
   saveSfxSettings();
   updateAllSfxMuteUI();
@@ -3908,6 +3964,10 @@ function updateAllSfxVolumeUI() {
   const xpFillValue = document.getElementById('xpfill-volume-value');
   const levelUpSlider = document.getElementById('levelup-volume-slider');
   const levelUpValue = document.getElementById('levelup-volume-value');
+  const correctSlider = document.getElementById('correct-volume-slider');
+  const correctValue = document.getElementById('correct-volume-value');
+  const wrongSlider = document.getElementById('wrong-volume-slider');
+  const wrongValue = document.getElementById('wrong-volume-value');
 
   if (masterSlider) masterSlider.value = sfxSettings.masterVolume;
   if (masterValue) masterValue.textContent = sfxSettings.masterVolume + '%';
@@ -3917,6 +3977,10 @@ function updateAllSfxVolumeUI() {
   if (xpFillValue) xpFillValue.textContent = sfxSettings.xpFillVolume + '%';
   if (levelUpSlider) levelUpSlider.value = sfxSettings.levelUpVolume;
   if (levelUpValue) levelUpValue.textContent = sfxSettings.levelUpVolume + '%';
+  if (correctSlider) correctSlider.value = sfxSettings.correctVolume;
+  if (correctValue) correctValue.textContent = sfxSettings.correctVolume + '%';
+  if (wrongSlider) wrongSlider.value = sfxSettings.wrongVolume;
+  if (wrongValue) wrongValue.textContent = sfxSettings.wrongVolume + '%';
 }
 
 // Update all SFX mute button UIs
@@ -3925,6 +3989,8 @@ function updateAllSfxMuteUI() {
   updateClickMuteUI();
   updateXpFillMuteUI();
   updateLevelUpMuteUI();
+  updateCorrectMuteUI();
+  updateWrongMuteUI();
 }
 
 function updateMasterMuteUI() {
@@ -4023,6 +4089,74 @@ function updateLevelUpMuteUI() {
     btn.style.background = '';
     btn.style.borderColor = '';
     icon.textContent = '🎉';
+  }
+}
+
+// Play Correct answer sound
+function playCorrectSound() {
+  console.log('🎵 playCorrectSound called, masterMuted:', sfxSettings.masterMuted, 'correctMuted:', sfxSettings.correctMuted);
+  if (sfxSettings.masterMuted || sfxSettings.correctMuted) {
+    console.log('🔇 Correct sound muted, not playing');
+    return;
+  }
+  correctSound.volume = sfxSettings.correctVolume / 100;
+  correctSound.currentTime = 0;
+  correctSound.play().then(() => {
+    console.log('✅ Correct sound playing');
+  }).catch(err => {
+    console.error('❌ Correct sound blocked:', err.message);
+  });
+}
+
+// Play Wrong answer sound
+function playWrongSound() {
+  console.log('🎵 playWrongSound called, masterMuted:', sfxSettings.masterMuted, 'wrongMuted:', sfxSettings.wrongMuted);
+  if (sfxSettings.masterMuted || sfxSettings.wrongMuted) {
+    console.log('🔇 Wrong sound muted, not playing');
+    return;
+  }
+  wrongSound.volume = sfxSettings.wrongVolume / 100;
+  wrongSound.currentTime = 0;
+  wrongSound.play().then(() => {
+    console.log('✅ Wrong sound playing');
+  }).catch(err => {
+    console.error('❌ Wrong sound blocked:', err.message);
+  });
+}
+
+// Update Correct mute UI
+function updateCorrectMuteUI() {
+  const btn = document.getElementById('correct-mute-btn');
+  const icon = document.getElementById('correct-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.correctMuted) {
+    btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    icon.textContent = '✅';
+  }
+}
+
+// Update Wrong mute UI
+function updateWrongMuteUI() {
+  const btn = document.getElementById('wrong-mute-btn');
+  const icon = document.getElementById('wrong-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.wrongMuted) {
+    btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    icon.textContent = '❌';
   }
 }
 
@@ -4156,7 +4290,7 @@ function openSoundOverlay() {
     if (musicVolumeSlider) musicVolumeSlider.value = musicSettings.musicVolume;
     if (musicVolumeValue) musicVolumeValue.textContent = musicSettings.musicVolume + '%';
     updateMusicMuteButtonUI();
-
+    
     soundOverlay.classList.remove('hidden');
   }
 }
@@ -4301,6 +4435,78 @@ function initSfxControls() {
       }
       saveSfxSettings();
       updateLevelUpMuteUI();
+    });
+  }
+
+  // Correct answer controls
+  const correctSlider = document.getElementById('correct-volume-slider');
+  const correctMuteBtn = document.getElementById('correct-mute-btn');
+
+  if (correctSlider) {
+    correctSlider.value = sfxSettings.correctVolume;
+    correctSlider.addEventListener('input', (e) => {
+      sfxSettings.correctVolume = parseInt(e.target.value);
+      const correctValue = document.getElementById('correct-volume-value');
+      if (correctValue) correctValue.textContent = sfxSettings.correctVolume + '%';
+      saveSfxSettings();
+    });
+    // Preview sound on slider release
+    correctSlider.addEventListener('change', () => {
+      if (!sfxSettings.correctMuted && !sfxSettings.masterMuted) {
+        playCorrectSound();
+      }
+    });
+  }
+
+  if (correctMuteBtn) {
+    correctMuteBtn.addEventListener('click', () => {
+      sfxSettings.correctMuted = !sfxSettings.correctMuted;
+      if (!sfxSettings.correctMuted && sfxSettings.masterMuted) {
+        sfxSettings.masterMuted = false;
+        updateMasterMuteUI();
+      }
+      saveSfxSettings();
+      updateCorrectMuteUI();
+      // Preview sound when unmuting
+      if (!sfxSettings.correctMuted && !sfxSettings.masterMuted) {
+        playCorrectSound();
+      }
+    });
+  }
+
+  // Wrong answer controls
+  const wrongSlider = document.getElementById('wrong-volume-slider');
+  const wrongMuteBtn = document.getElementById('wrong-mute-btn');
+
+  if (wrongSlider) {
+    wrongSlider.value = sfxSettings.wrongVolume;
+    wrongSlider.addEventListener('input', (e) => {
+      sfxSettings.wrongVolume = parseInt(e.target.value);
+      const wrongValue = document.getElementById('wrong-volume-value');
+      if (wrongValue) wrongValue.textContent = sfxSettings.wrongVolume + '%';
+      saveSfxSettings();
+    });
+    // Preview sound on slider release
+    wrongSlider.addEventListener('change', () => {
+      if (!sfxSettings.wrongMuted && !sfxSettings.masterMuted) {
+        playWrongSound();
+      }
+    });
+  }
+
+  if (wrongMuteBtn) {
+    wrongMuteBtn.addEventListener('click', () => {
+      sfxSettings.wrongMuted = !sfxSettings.wrongMuted;
+      if (!sfxSettings.wrongMuted && sfxSettings.masterMuted) {
+        sfxSettings.masterMuted = false;
+        updateMasterMuteUI();
+      }
+      saveSfxSettings();
+      updateWrongMuteUI();
+      // Preview sound when unmuting
+      if (!sfxSettings.wrongMuted && !sfxSettings.masterMuted) {
+        playWrongSound();
+      }
     });
   }
 
@@ -5078,7 +5284,7 @@ function display3DCardQuestion(isInitial = true) {
   contentWrapper.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;padding:0;margin:0;';
   
   // Create layout with 3D sphere of flags (17 flags for full sphere)
-  contentWrapper.innerHTML = `
+    contentWrapper.innerHTML = `
     <div class="card3d-layout">
       <!-- 3D Sphere Container -->
       <div class="card3d-sphere" id="card3d-sphere">
@@ -5143,22 +5349,22 @@ function display3DCardQuestion(isInitial = true) {
       <button onclick="playClickSound(); exitUnifiedQuiz()" class="card3d-back-btn">←</button>
       
       <!-- Timer and Score at top center -->
-      <div class="card3d-top-bar">
-        <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
-        <div class="card3d-score" id="card3d-score">Score: ${singlePlayerScore}</div>
-      </div>
-      
+        <div class="card3d-top-bar">
+          <div class="card3d-timer" id="card3d-timer">${timeLeft}s</div>
+          <div class="card3d-score" id="card3d-score">Score: ${singlePlayerScore}</div>
+        </div>
+        
       <!-- Question on LEFT -->
       <div class="card3d-question-side" id="card3d-question-side">
         <h2 class="card3d-title" id="card3d-question">${currentQuestionData.questionText}</h2>
-      </div>
-      
+          </div>
+          
       <!-- Answers on RIGHT -->
-      <div class="card3d-answers-side" id="card3d-answers">
-        ${optionsHTML}
+          <div class="card3d-answers-side" id="card3d-answers">
+            ${optionsHTML}
+        </div>
       </div>
-    </div>
-  `;
+    `;
   
   // Add click handlers
   document.querySelectorAll('.card3d-answer-btn').forEach(btn => {
@@ -5290,7 +5496,7 @@ function getNextUnusedFlag() {
 function initInfiniteMenu() {
   // Wait for DOM to be ready and wrapper to have dimensions
   setTimeout(() => {
-    const canvas = document.getElementById('infinite-menu-canvas');
+  const canvas = document.getElementById('infinite-menu-canvas');
     if (!canvas) {
       console.error('InfiniteMenu: Canvas not found');
       return;
@@ -5312,16 +5518,16 @@ function initInfiniteMenu() {
     }
     
     const flagImages = sphereFlags.map(f => f.flag);
-    
-    try {
+  
+  try {
       infiniteMenuInstance = new InfiniteGridMenu(canvas, flagImages, () => {
         // Called when zoom completes
       });
-      infiniteMenuInstance.run();
+    infiniteMenuInstance.run();
       console.log('InfiniteMenu initialized successfully');
-    } catch (e) {
-      console.error('Failed to initialize InfiniteMenu:', e);
-    }
+  } catch (e) {
+    console.error('Failed to initialize InfiniteMenu:', e);
+  }
   }, 50);
 }
 
@@ -5610,12 +5816,12 @@ void main() {
         vec3 rotationAxis = uRotationAxisVelocity.xyz;
         float rotationVelocity = min(.15, uRotationAxisVelocity.w * 15.);
         if (length(centerPos) > 0.01) {
-            vec3 stretchDir = normalize(cross(centerPos, rotationAxis));
-            vec3 relativeVertexPos = normalize(worldPosition.xyz - centerPos);
-            float strength = dot(stretchDir, relativeVertexPos);
-            float invAbsStrength = min(0., abs(strength) - 1.);
-            strength = rotationVelocity * sign(strength) * abs(invAbsStrength * invAbsStrength * invAbsStrength + 1.);
-            worldPosition.xyz += stretchDir * strength;
+        vec3 stretchDir = normalize(cross(centerPos, rotationAxis));
+        vec3 relativeVertexPos = normalize(worldPosition.xyz - centerPos);
+        float strength = dot(stretchDir, relativeVertexPos);
+        float invAbsStrength = min(0., abs(strength) - 1.);
+        strength = rotationVelocity * sign(strength) * abs(invAbsStrength * invAbsStrength * invAbsStrength + 1.);
+        worldPosition.xyz += stretchDir * strength;
         }
     }
 
@@ -5693,7 +5899,7 @@ class InfiniteGridMenu {
     this.isTransitioning = false;
     this.zoomStartTime = 0;
     this.zoomStartValue = InfiniteGridMenu.ZOOM_IN;
-
+    
     this.camera = {
       position: [0, 0, InfiniteGridMenu.ZOOM_IN],
       up: [0, 1, 0],
@@ -5702,7 +5908,7 @@ class InfiniteGridMenu {
       near: 0.1,
       far: 100
     };
-
+    
     this.init();
   }
   
@@ -6274,15 +6480,15 @@ class InfiniteGridMenu {
 function check3DCardAnswer(btnElement, selected, correct) {
   if (answered) return;
   answered = true;
-
+  
   // Record answer time
   if (questionOptionsShownTime > 0) {
     const answerTime = Date.now() - questionOptionsShownTime;
     sessionAnswerTimes.push(answerTime);
   }
-
+  
   const isCorrect = selected === correct;
-
+  
   // Visual feedback
   document.querySelectorAll('.card3d-answer-btn').forEach(btn => {
     btn.style.pointerEvents = 'none';
@@ -6292,7 +6498,7 @@ function check3DCardAnswer(btnElement, selected, correct) {
       btn.classList.add('wrong');
     }
   });
-
+  
   // Update score display
   const scoreEl = document.getElementById('card3d-score');
   if (isCorrect) {
@@ -6302,19 +6508,21 @@ function check3DCardAnswer(btnElement, selected, correct) {
     currentSessionWrong++;
   }
   if (scoreEl) scoreEl.textContent = `Score: ${singlePlayerScore}`;
-
+  
   // Play sound
   if (isCorrect) {
-    playClickSound();
+    playCorrectSound();
+  } else {
+    playWrongSound();
   }
-
+  
   // Check if game should end
   if (questionCount >= maxQuestions) {
     clearInterval(timer);
     setTimeout(() => showUnifiedResults(), 800);
     return;
   }
-
+  
   // Animate to next question using CSS 3D transition
   setTimeout(() => {
     animateToNextQuestion(() => {
@@ -6578,6 +6786,9 @@ function checkUnifiedAnswer(selected, correct) {
 
   // Update scores
   if (selected === correct) {
+    // Play correct sound
+    playCorrectSound();
+    
     if (gameMode === 'two') {
       if (currentPlayer === 1) player1Score++;
       else player2Score++;
@@ -6593,6 +6804,9 @@ function checkUnifiedAnswer(selected, correct) {
       }
     }
   } else {
+    // Play wrong sound
+    playWrongSound();
+    
     if (gameMode === 'three-hearts') {
       livesRemaining--;
       if (livesRemaining <= 0) {
@@ -6829,11 +7043,11 @@ function showUnifiedResults() {
   // Build XP display HTML with circular progress
   let xpDisplayHTML = '';
   let xpAnimationData = null;
-
+  
   if (xpResult && gameMode !== 'two') {
     const topicData = getTopicXPData(currentTopic);
     const progress = getLevelProgress(topicData);
-
+    
     // Calculate existing XP percent (bright red) and new XP percent (dim red)
     let existingPercent, newPercent, leveledUp = xpResult.leveledUp;
     let oldLevelExistingPercent = 0; // For level up animation phase 1
@@ -6849,11 +7063,11 @@ function showUnifiedResults() {
       existingPercent = 0;
       newPercent = (progress.current / progress.needed) * 100;
     } else {
-      const existingXPInLevel = progress.current - xpResult.xpGained;
+    const existingXPInLevel = progress.current - xpResult.xpGained;
       existingPercent = Math.max(0, (existingXPInLevel / progress.needed) * 100);
       newPercent = (xpResult.xpGained / progress.needed) * 100;
     }
-
+    
     // Store data for animation
     xpAnimationData = {
       xpGained: xpResult.xpGained,
@@ -7052,7 +7266,7 @@ function showUnifiedResults() {
       const xpNeededEl = document.getElementById('xpNeededValue');
       const levelDisplay = document.getElementById('xpLevelNumber');
       const xpToLevelText = document.getElementById('xpToLevelText');
-
+      
       if (wrapper && circle) {
         // Play XP Fill sound
         playXpFillSound();
@@ -7099,17 +7313,17 @@ function showUnifiedResults() {
           
         } else {
           // SINGLE-PHASE ANIMATION (no level up)
-          const existingDeg = (xpAnimationData.existingPercent / 100) * 360;
-          const newDeg = (xpAnimationData.newPercent / 100) * 360;
-
-          // Animate numbers
-          if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
-          if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
-
-          // Animate circle fill
-          animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
-            positionXPArrows(existDeg, totalDeg, wrapper);
-          });
+        const existingDeg = (xpAnimationData.existingPercent / 100) * 360;
+        const newDeg = (xpAnimationData.newPercent / 100) * 360;
+        
+        // Animate numbers
+        if (xpGainedEl) animateXPNumber(xpGainedEl, 0, xpAnimationData.xpGained, XP_ANIMATION_DURATION, '+');
+        if (xpNeededEl) animateXPNumber(xpNeededEl, xpAnimationData.xpToLevel + xpAnimationData.xpGained, xpAnimationData.xpToLevel, XP_ANIMATION_DURATION);
+        
+        // Animate circle fill
+        animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
+          positionXPArrows(existDeg, totalDeg, wrapper);
+        });
           
           // Stop XP fill sound when animation ends
           setTimeout(() => {
@@ -9249,6 +9463,67 @@ function closeQuantaModal() {
 }
 
 // ========================================
+// FOUNDERS LEADERBOARD MODAL
+// ========================================
+
+// Show founders early modal
+function showFoundersEarlyModal() {
+  // Add pulse animation to button
+  const btn = document.querySelector('.lb-cta-btn');
+  if (btn) {
+    btn.classList.add('pulse');
+    setTimeout(() => btn.classList.remove('pulse'), 400);
+  }
+  
+  // Trigger haptic feedback if available
+  if (navigator.vibrate) {
+    navigator.vibrate(10);
+  }
+  
+  // Get translated text
+  const modalText = translations.lb_early_modal || "You're early. Keep playing.";
+  const okText = translations.common_ok || "OK";
+  
+  // Create modal if it doesn't exist
+  let modal = document.getElementById('lb-early-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'lb-early-modal';
+    modal.className = 'lb-early-modal';
+    modal.innerHTML = `
+      <div class="lb-early-modal-content">
+        <div class="lb-early-modal-icon">⏳</div>
+        <p class="lb-early-modal-text">${modalText.replace('. ', '.<br>')}</p>
+        <button class="lb-early-modal-btn" onclick="closeFoundersEarlyModal()">${okText}</button>
+      </div>
+    `;
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeFoundersEarlyModal();
+    });
+    document.body.appendChild(modal);
+  } else {
+    // Update text if modal already exists
+    const textEl = modal.querySelector('.lb-early-modal-text');
+    const btnEl = modal.querySelector('.lb-early-modal-btn');
+    if (textEl) textEl.innerHTML = modalText.replace('. ', '.<br>');
+    if (btnEl) btnEl.textContent = okText;
+  }
+  
+  // Show with animation (slight delay for pulse effect)
+  setTimeout(() => modal.classList.add('active'), 150);
+  playClickSound();
+}
+
+// Close founders early modal
+function closeFoundersEarlyModal() {
+  const modal = document.getElementById('lb-early-modal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+  playClickSound();
+}
+
+// ========================================
 // P-XP (Player Prestige XP) SYSTEM
 // ========================================
 
@@ -9569,7 +9844,7 @@ function renderPxpChart(period) {
     const achTodayData = achHistory[today] || { pxp: 0 };
     const achYesterdayData = achHistory[yesterday] || { pxp: 0 };
     const currentHour = new Date().getHours();
-
+    
     for (let i = 0; i < 24; i++) {
       const h = (currentHour + 1 + i) % 24;
       const hourKey = h.toString().padStart(2, '0');
@@ -9577,7 +9852,7 @@ function renderPxpChart(period) {
       const isYesterday = (currentHour + 1 + i) < 24;
       const dayData = isYesterday ? yesterdayData : todayData;
       const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0 };
-
+      
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
       gamesData.push(hourData.g);
       answersData.push(hourData.a);
@@ -9877,7 +10152,7 @@ function renderStatsChart() {
     const todayData = history[today] || { hourly: {} };
     const yesterdayData = history[yesterday] || { hourly: {} };
     const currentHour = new Date().getHours();
-
+    
     // Loop through last 24 hours (from currentHour+1 yesterday to currentHour today)
     for (let i = 0; i < 24; i++) {
       // Calculate which hour this represents (starting 23 hours ago)
@@ -9888,9 +10163,9 @@ function renderStatsChart() {
       const isYesterday = (currentHour + 1 + i) < 24;
       const dayData = isYesterday ? yesterdayData : todayData;
       const hourData = dayData.hourly?.[hourKey] || { g: 0, c: 0, w: 0, t: 0, s: 0 };
-
+      
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
-
+      
       let value = 0;
       switch (currentStatType) {
         case 'games': value = hourData.g; break;
@@ -9900,12 +10175,12 @@ function renderStatsChart() {
         case 'time': value = hourData.t; break; // Seconds (raw)
         case 'streak': value = hourData.s; break;
       }
-
+      
       data.push(value);
       total += (currentStatType === 'streak') ? 0 : value;
       if (value > peak) peak = value;
     }
-
+    
     // For streak, total is the max observed in the 24h window
     if (currentStatType === 'streak') {
       total = Math.max(todayData.streak || 0, yesterdayData.streak || 0);
