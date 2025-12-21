@@ -309,7 +309,7 @@ window.addEventListener('pagehide', () => {
 // Set to FALSE when launching to production!
 // When true: Data only saves to localStorage (no cloud sync)
 // When false: Data syncs to Firebase for cross-device play
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 // When true: Shows dev panel button
 // When false: Hides dev panel (production UI)
@@ -521,6 +521,7 @@ function saveUserData() {
   
   // Sync to Firebase if not in dev mode
   if (!DEV_MODE && firebaseDb && firebaseUser) {
+    console.log("[FIREBASE SYNC] Writing user:", firebaseUser?.uid);
     syncToFirebase();
   }
 }
