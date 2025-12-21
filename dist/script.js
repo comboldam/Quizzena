@@ -9769,11 +9769,50 @@ function closePxpDashboard() {
   if (dashboard) dashboard.classList.add('hidden');
 }
 
+// Calculate all-time P-XP from history
+function calculateAllTimePxp() {
+  const history = userData.prestige?.history || {};
+  const achHistory = userData.achievements?.history || {};
+  let total = 0;
+  
+  // Sum all days from prestige history
+  Object.keys(history).forEach(dateKey => {
+    const day = history[dateKey];
+    // Sum from hourly data
+    if (day.hourly) {
+      Object.values(day.hourly).forEach(h => {
+        total += (h.g || 0) + (h.a || 0);
+      });
+    }
+  });
+  
+  // Sum from achievements history
+  Object.keys(achHistory).forEach(dateKey => {
+    total += achHistory[dateKey]?.pxp || 0;
+  });
+  
+  return total;
+}
+
 // Update P-XP Dashboard display
 function updatePxpDashboard() {
-  // Update level status section
-  const progress = getPxpProgress();
+  // Calculate all-time total from history (source of truth)
+  const allTimeTotal = calculateAllTimePxp();
   
+  // Calculate level from all-time total
+  let remainingPxp = allTimeTotal;
+  let level = 1;
+  let required = getPxpRequiredForLevel(level);
+  
+  while (remainingPxp >= required) {
+    remainingPxp -= required;
+    level++;
+    required = getPxpRequiredForLevel(level);
+  }
+  
+  const progressPercent = Math.min((remainingPxp / required) * 100, 100);
+  
+  // Update DOM elements
   const levelNum = document.getElementById('pxp-level-number');
   const currentEl = document.getElementById('pxp-current');
   const requiredEl = document.getElementById('pxp-required');
@@ -9781,17 +9820,27 @@ function updatePxpDashboard() {
   const progressFill = document.getElementById('pxp-progress-fill');
   const ringProgress = document.getElementById('pxp-ring-progress');
   
-  if (levelNum) levelNum.textContent = progress.level;
-  if (currentEl) currentEl.textContent = progress.currentPxp;
-  if (requiredEl) requiredEl.textContent = progress.required;
-  if (totalEl) totalEl.textContent = userData.prestige?.totalPxp || 0;
-  if (progressFill) progressFill.style.width = `${progress.progress}%`;
+  if (levelNum) levelNum.textContent = level;
+  if (currentEl) currentEl.textContent = remainingPxp;
+  if (requiredEl) requiredEl.textContent = required;
+  if (totalEl) totalEl.textContent = allTimeTotal;
+  if (progressFill) progressFill.style.width = `${progressPercent}%`;
   
   // Update ring progress
   if (ringProgress) {
     const circumference = 2 * Math.PI * 52;
-    const offset = circumference * (1 - progress.progress / 100);
+    const offset = circumference * (1 - progressPercent / 100);
     ringProgress.style.strokeDashoffset = offset;
+  }
+  
+  // Sync userData.prestige if needed
+  if (!userData.prestige) userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+  if (userData.prestige.totalPxp !== allTimeTotal || userData.prestige.level !== level) {
+    userData.prestige.totalPxp = allTimeTotal;
+    userData.prestige.level = level;
+    userData.prestige.pxp = remainingPxp;
+    saveUserData();
+    updateGlobalLevelBadge();
   }
   
   // Render chart
