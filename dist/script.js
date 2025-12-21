@@ -3538,8 +3538,39 @@ function showTopics() {
   navTopics.classList.add('active');
 }
 
+// Currently viewed profile data (null = viewing own profile)
+let viewingProfileData = null;
+let viewingProfileUserId = null;
+
+// Get profile data - returns userData for self, or viewingProfileData for others
+function getProfileData() {
+  return viewingProfileData || userData;
+}
+
+// Check if viewing own profile
+function isViewingOwnProfile() {
+  return viewingProfileUserId === null;
+}
+
 // Show Profile screen (no animation - instant display)
-function showProfile() {
+// userId: optional - if provided, shows that user's profile; if null/undefined, shows own profile
+function showProfile(userId = null) {
+  // Store which profile we're viewing
+  viewingProfileUserId = userId;
+  
+  if (userId && userId !== userData.odooId) {
+    // Viewing another user's profile - load their data
+    loadOtherUserProfile(userId);
+  } else {
+    // Viewing own profile
+    viewingProfileData = null;
+    viewingProfileUserId = null;
+    displayProfile();
+  }
+}
+
+// Display profile with current data (own or other user's)
+function displayProfile() {
   currentNavIndex = NAV_ORDER.indexOf('profile');
 
   hideAllViewsExcept('profile');
@@ -3547,21 +3578,44 @@ function showProfile() {
   // Remove any animation classes for instant display
   profileView.classList.remove('slide-from-left', 'slide-from-right', 'slide-from-bottom');
 
-  // Update active state
-  document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-  navProfile.classList.add('active');
+  // Update active state only if viewing own profile
+  if (isViewingOwnProfile()) {
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    navProfile.classList.add('active');
+  }
+  
+  // Get the data to display (own or other user's)
+  const profileData = getProfileData();
+  
+  // Update profile display with the data
+  updateProfileDisplayWithData(profileData);
   
   // Populate stats section in profile
-  populateStatsSection();
+  populateStatsSectionWithData(profileData);
   
   // Update achievement count
-  updateAchievementCount();
+  updateAchievementCountWithData(profileData);
 
   // Update best streak
-  updateBestStreakDisplay();
+  updateBestStreakDisplayWithData(profileData);
   
   // Update topic progress
-  updateTopicProgress();
+  updateTopicProgressWithData(profileData);
+}
+
+// Load another user's profile from Firebase (placeholder for now)
+function loadOtherUserProfile(userId) {
+  console.log('Loading profile for user:', userId);
+  
+  // TODO: Implement Firebase fetch for other user's public profile
+  // For now, show a loading state then display what we have
+  viewingProfileData = null;
+  
+  // Placeholder: In future, this will fetch from Firebase
+  // firebase.firestore().collection('users').doc(userId).get()...
+  
+  // For now, just display the profile view (will show empty/default)
+  displayProfile();
 }
 
 // Nav button click handlers - using addEventListener for iOS compatibility
@@ -7408,16 +7462,21 @@ function toggleStatsBox(boxId) {
   }
 }
 
-// Populate Stats section (now inside Profile page)
+// Populate Stats section (wrapper)
 function populateStatsSection() {
-  // Populate Overall Performance stats from userData
-  const totalGames = userData.stats.totalGames || 0;
-  const correctAnswers = userData.stats.correctAnswers || 0;
-  const wrongAnswers = userData.stats.wrongAnswers || 0;
+  populateStatsSectionWithData(getProfileData());
+}
+
+// Populate Stats section with provided data
+function populateStatsSectionWithData(data) {
+  // Populate Overall Performance stats from data
+  const totalGames = data.stats?.totalGames || 0;
+  const correctAnswers = data.stats?.correctAnswers || 0;
+  const wrongAnswers = data.stats?.wrongAnswers || 0;
   const totalQuestions = correctAnswers + wrongAnswers;
-  const accuracy = userData.stats.accuracy || 0;
-  const bestStreak = userData.stats.bestStreak || 0;
-  const totalTimeSeconds = userData.stats.totalTimeSeconds || 0;
+  const accuracy = data.stats?.accuracy || 0;
+  const bestStreak = data.stats?.bestStreak || 0;
+  const totalTimeSeconds = data.stats?.totalTimeSeconds || 0;
 
   // Update stat elements
   const statTotalGames = document.getElementById('stat-total-games');
@@ -7440,8 +7499,9 @@ function populateStatsSection() {
 
   // Calculate avg time per question (overall) - sum totalAnswerTimeMs across all topics
   let globalTotalAnswerTimeMs = 0;
-  for (const topicId in userData.stats.topics) {
-    globalTotalAnswerTimeMs += userData.stats.topics[topicId].totalAnswerTimeMs || 0;
+  const topics = data.stats?.topics || {};
+  for (const topicId in topics) {
+    globalTotalAnswerTimeMs += topics[topicId].totalAnswerTimeMs || 0;
   }
   const avgTimeSeconds = totalQuestions > 0 ? (globalTotalAnswerTimeMs / totalQuestions) / 1000 : 0;
   const statAvgTime = document.getElementById('stat-avg-time');
@@ -7460,7 +7520,7 @@ function populateStatsSection() {
 
   // Get stats for each topic and sort by games played (descending), then alphabetically
   const topicsWithStats = topicDefinitions.map(topic => {
-    const stats = userData.stats.topics[topic.id] || { 
+    const stats = topics[topic.id] || { 
       games: 0, 
       accuracy: 0, 
       bestStreak: 0,
@@ -8279,9 +8339,15 @@ if (setupSaveBtn) {
   };
 }
 
+// Wrapper that uses current profile data
 function updateProfileDisplay() {
-  const profilePicture = userData.profile.profilePicture;
-  const avatar = userData.profile.avatar || '👤';
+  updateProfileDisplayWithData(getProfileData());
+}
+
+// Display profile with provided data
+function updateProfileDisplayWithData(data) {
+  const profilePicture = data.profile.profilePicture;
+  const avatar = data.profile.avatar || '👤';
   
   // Top bar - show profile picture or avatar
   const navAvatar = document.getElementById('nav-avatar');
@@ -8335,32 +8401,37 @@ function updateProfileDisplay() {
 
   // Profile name
   const name = document.querySelector('.profile-name');
-  if (name) name.textContent = userData.profile.username;
+  if (name) name.textContent = data.profile.username;
 
   // Profile location/country with flag image
   const location = document.querySelector('.profile-location');
   if (location) {
-    if (userData.profile.country && userData.profile.countryName) {
-      const flagCode = userData.profile.country.toLowerCase();
-      location.innerHTML = `<img class="profile-country-flag" src="topic_images/flags/${flagCode}.png" alt="${userData.profile.countryName}" onerror="this.style.display='none'"> ${userData.profile.countryName}`;
-    } else if (userData.profile.country) {
-      const flagCode = userData.profile.country.toLowerCase();
-      location.innerHTML = `<img class="profile-country-flag" src="topic_images/flags/${flagCode}.png" alt="${userData.profile.country}" onerror="this.style.display='none'"> ${userData.profile.country}`;
+    if (data.profile.country && data.profile.countryName) {
+      const flagCode = data.profile.country.toLowerCase();
+      location.innerHTML = `<img class="profile-country-flag" src="topic_images/flags/${flagCode}.png" alt="${data.profile.countryName}" onerror="this.style.display='none'"> ${data.profile.countryName}`;
+    } else if (data.profile.country) {
+      const flagCode = data.profile.country.toLowerCase();
+      location.innerHTML = `<img class="profile-country-flag" src="topic_images/flags/${flagCode}.png" alt="${data.profile.country}" onerror="this.style.display='none'"> ${data.profile.country}`;
     } else {
       location.textContent = '🌍 Location not set';
     }
   }
   
-  // Update profile banner
-  updateProfileBanner();
+  // Update profile banner with data
+  updateProfileBannerWithData(data);
 }
 
-// Update profile banner background
+// Update profile banner background (wrapper)
 function updateProfileBanner() {
+  updateProfileBannerWithData(getProfileData());
+}
+
+// Update profile banner with provided data
+function updateProfileBannerWithData(data) {
   const banner = document.getElementById('profile-banner');
   if (!banner) return;
   
-  const backgroundPicture = userData.profile?.backgroundPicture;
+  const backgroundPicture = data.profile?.backgroundPicture;
   
   if (backgroundPicture) {
     // Apply custom background image using full background shorthand to override CSS
@@ -12753,35 +12824,50 @@ function claimAchievement(achievementId) {
   return true;
 }
 
-// Update achievement count in profile
+// Update achievement count in profile (wrapper)
 function updateAchievementCount() {
+  updateAchievementCountWithData(getProfileData());
+}
+
+// Update achievement count with provided data
+function updateAchievementCountWithData(data) {
   const countEl = document.getElementById('profile-achievements-count');
   if (countEl) {
-    const claimedCount = userData.achievements?.unlocked?.length || 0;
+    const claimedCount = data.achievements?.unlocked?.length || 0;
     countEl.textContent = claimedCount;
   }
 }
 
-// Update best streak in profile
+// Update best streak in profile (wrapper)
 function updateBestStreakDisplay() {
+  updateBestStreakDisplayWithData(getProfileData());
+}
+
+// Update best streak with provided data
+function updateBestStreakDisplayWithData(data) {
   const streakEl = document.getElementById('profile-best-streak');
   if (streakEl) {
-    const bestStreak = userData.stats?.bestStreak || 0;
+    const bestStreak = data.stats?.bestStreak || 0;
     streakEl.textContent = bestStreak;
   }
 }
 
-// Update Topic Progress section - shows top 3 topics by XP
+// Update Topic Progress section (wrapper)
 function updateTopicProgress() {
+  updateTopicProgressWithData(getProfileData());
+}
+
+// Update Topic Progress section - shows top 3 topics by XP
+function updateTopicProgressWithData(data) {
   const container = document.getElementById('topic-progress-list');
   if (!container) return;
   
   // Get all topics with their XP data
   const topicsWithXP = [];
   
-  if (userData.stats?.topics) {
-    for (const topicId in userData.stats.topics) {
-      const topicStats = userData.stats.topics[topicId];
+  if (data.stats?.topics) {
+    for (const topicId in data.stats.topics) {
+      const topicStats = data.stats.topics[topicId];
       if (topicStats && topicStats.xp > 0) {
         const config = TOPIC_CONFIG[topicId];
         if (config) {
