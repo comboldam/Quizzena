@@ -9771,6 +9771,7 @@ function closePxpDashboard() {
 
 // Repair P-XP data from history (fixes desync issues)
 function repairPxpFromHistory() {
+  // Ensure prestige object exists
   if (!userData.prestige) {
     userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
   }
@@ -9778,25 +9779,28 @@ function repairPxpFromHistory() {
   const history = userData.prestige.history || {};
   const achHistory = userData.achievements?.history || {};
   
-  // Calculate total from history
+  // Calculate total P-XP from all history
   let calculatedTotal = 0;
   
-  // Sum from prestige history (games + answers)
-  Object.values(history).forEach(dayData => {
-    calculatedTotal += (dayData.games || 0) + (dayData.answers || 0);
+  // Sum from prestige history (games P-XP + answers P-XP)
+  Object.keys(history).forEach(dateKey => {
+    const dayData = history[dateKey];
+    const dayGames = dayData.games || 0;
+    const dayAnswers = dayData.answers || 0;
+    calculatedTotal += dayGames + dayAnswers;
   });
   
   // Sum from achievements history
-  Object.values(achHistory).forEach(dayData => {
+  Object.keys(achHistory).forEach(dateKey => {
+    const dayData = achHistory[dateKey];
     calculatedTotal += (dayData.pxp || 0);
   });
   
-  // If history total is higher than stored total, we have a desync
-  if (calculatedTotal > userData.prestige.totalPxp) {
-    console.log(`🔧 P-XP Repair: History shows ${calculatedTotal}, stored was ${userData.prestige.totalPxp}`);
-    userData.prestige.totalPxp = calculatedTotal;
-    
-    // Recalculate level from total P-XP
+  console.log(`🔧 P-XP Check: Calculated ${calculatedTotal} from history, stored totalPxp: ${userData.prestige.totalPxp}, stored level: ${userData.prestige.level}, stored pxp: ${userData.prestige.pxp}`);
+  
+  // Always recalculate if there's history data and level is wrong
+  if (calculatedTotal > 0) {
+    // Recalculate correct level from total P-XP
     let remainingPxp = calculatedTotal;
     let level = 1;
     let required = getPxpRequiredForLevel(level);
@@ -9807,14 +9811,23 @@ function repairPxpFromHistory() {
       required = getPxpRequiredForLevel(level);
     }
     
-    userData.prestige.level = level;
-    userData.prestige.pxp = remainingPxp;
+    // Check if stored values are wrong
+    const needsRepair = (
+      userData.prestige.totalPxp !== calculatedTotal ||
+      userData.prestige.level !== level ||
+      userData.prestige.pxp !== remainingPxp
+    );
     
-    console.log(`🔧 P-XP Repair: Level ${level}, Current P-XP ${remainingPxp}/${required}`);
-    saveUserData();
-    
-    // Update global level badge after repair
-    updateGlobalLevelBadge();
+    if (needsRepair) {
+      console.log(`🔧 P-XP Repair: Fixing! Total: ${calculatedTotal}, Level: ${level}, Current P-XP: ${remainingPxp}/${required}`);
+      
+      userData.prestige.totalPxp = calculatedTotal;
+      userData.prestige.level = level;
+      userData.prestige.pxp = remainingPxp;
+      
+      saveUserData();
+      updateGlobalLevelBadge();
+    }
   }
 }
 
