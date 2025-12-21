@@ -1499,10 +1499,11 @@ function createDevPanelButton() {
   document.body.appendChild(devBtn);
 }
 
-// Initialize dev button when DOM is ready
-document.addEventListener('DOMContentLoaded', createDevPanelButton);
-
-console.log('Dev Panel initialized');
+// Initialize dev button when DOM is ready (only in DEV_MODE)
+if (DEV_MODE) {
+  document.addEventListener('DOMContentLoaded', createDevPanelButton);
+  console.log('Dev Panel initialized');
+}
 
 // ============================================
 // 🌍 TRANSLATION SYSTEM (BUNDLED FOR NATIVE APPS)
