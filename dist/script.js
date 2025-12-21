@@ -3845,9 +3845,10 @@ function initExtraEffectsToggle() {
 
 // Sound effect audio elements
 const clickSound = new Audio('sounds/click.mp3');
+const xpFillSound = new Audio('sounds/xp-fill.mp3');
 const levelUpSound = new Audio('sounds/level-up.mp3');
 
-// XP Fill sound duration (trimmed file is 2.2 seconds)
+// XP Fill sound duration (animation is 2.2 seconds, sound is 4s but we stop it)
 const XP_FILL_DURATION = 2200; // 2.2 seconds
 
 // Sound Effects settings (with master toggle)
@@ -3857,7 +3858,9 @@ let sfxSettings = JSON.parse(localStorage.getItem('quizzena_sfx_settings')) || {
   clickVolume: 70,
   clickMuted: false,
   xpFillVolume: 70,
-  xpFillMuted: false
+  xpFillMuted: false,
+  levelUpVolume: 70,
+  levelUpMuted: false
 };
 
 function saveSfxSettings() {
@@ -3869,6 +3872,7 @@ function applyMasterVolume(volume) {
   sfxSettings.masterVolume = volume;
   sfxSettings.clickVolume = volume;
   sfxSettings.xpFillVolume = volume;
+  sfxSettings.levelUpVolume = volume;
   saveSfxSettings();
   updateAllSfxVolumeUI();
 }
@@ -3880,10 +3884,12 @@ function toggleMasterMute() {
     // Mute all
     sfxSettings.clickMuted = true;
     sfxSettings.xpFillMuted = true;
+    sfxSettings.levelUpMuted = true;
   } else {
     // Unmute all
     sfxSettings.clickMuted = false;
     sfxSettings.xpFillMuted = false;
+    sfxSettings.levelUpMuted = false;
   }
   saveSfxSettings();
   updateAllSfxMuteUI();
@@ -3897,13 +3903,17 @@ function updateAllSfxVolumeUI() {
   const clickValue = document.getElementById('sfx-volume-value');
   const xpFillSlider = document.getElementById('xpfill-volume-slider');
   const xpFillValue = document.getElementById('xpfill-volume-value');
-  
+  const levelUpSlider = document.getElementById('levelup-volume-slider');
+  const levelUpValue = document.getElementById('levelup-volume-value');
+
   if (masterSlider) masterSlider.value = sfxSettings.masterVolume;
   if (masterValue) masterValue.textContent = sfxSettings.masterVolume + '%';
   if (clickSlider) clickSlider.value = sfxSettings.clickVolume;
   if (clickValue) clickValue.textContent = sfxSettings.clickVolume + '%';
   if (xpFillSlider) xpFillSlider.value = sfxSettings.xpFillVolume;
   if (xpFillValue) xpFillValue.textContent = sfxSettings.xpFillVolume + '%';
+  if (levelUpSlider) levelUpSlider.value = sfxSettings.levelUpVolume;
+  if (levelUpValue) levelUpValue.textContent = sfxSettings.levelUpVolume + '%';
 }
 
 // Update all SFX mute button UIs
@@ -3911,6 +3921,7 @@ function updateAllSfxMuteUI() {
   updateMasterMuteUI();
   updateClickMuteUI();
   updateXpFillMuteUI();
+  updateLevelUpMuteUI();
 }
 
 function updateMasterMuteUI() {
@@ -3967,20 +3978,49 @@ function updateXpFillMuteUI() {
   }
 }
 
-// Play XP Fill sound (2.2 second trimmed file)
+// Play XP Fill sound (4s file, stops at 2.2s when animation ends)
 function playXpFillSound() {
   if (sfxSettings.masterMuted || sfxSettings.xpFillMuted) return;
-  
-  levelUpSound.volume = sfxSettings.xpFillVolume / 100;
-  levelUpSound.currentTime = 0;
-  levelUpSound.play().catch(err => {
+
+  xpFillSound.volume = sfxSettings.xpFillVolume / 100;
+  xpFillSound.currentTime = 0;
+  xpFillSound.play().catch(err => {
     console.log('XP Fill sound blocked:', err.message);
   });
 }
 
 function stopXpFillSound() {
-  levelUpSound.pause();
+  xpFillSound.pause();
+  xpFillSound.currentTime = 0;
+}
+
+// Play Level Up sound (when player levels up)
+function playLevelUpSound() {
+  if (sfxSettings.masterMuted || sfxSettings.levelUpMuted) return;
+
+  levelUpSound.volume = sfxSettings.levelUpVolume / 100;
   levelUpSound.currentTime = 0;
+  levelUpSound.play().catch(err => {
+    console.log('Level Up sound blocked:', err.message);
+  });
+}
+
+// Update Level Up mute UI
+function updateLevelUpMuteUI() {
+  const btn = document.getElementById('levelup-mute-btn');
+  const icon = document.getElementById('levelup-mute-icon');
+  if (!btn || !icon) return;
+  if (sfxSettings.levelUpMuted) {
+    btn.classList.add('muted');
+    btn.style.background = 'rgba(239, 68, 68, 0.3)';
+    btn.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+    icon.textContent = '🔇';
+  } else {
+    btn.classList.remove('muted');
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    icon.textContent = '🎉';
+  }
 }
 
 // Background music audio element
@@ -4233,7 +4273,34 @@ function initSfxControls() {
       updateXpFillMuteUI();
     });
   }
-  
+
+  // Level Up controls
+  const levelUpSlider = document.getElementById('levelup-volume-slider');
+  const levelUpMuteBtn = document.getElementById('levelup-mute-btn');
+
+  if (levelUpSlider) {
+    levelUpSlider.value = sfxSettings.levelUpVolume;
+    levelUpSlider.addEventListener('input', (e) => {
+      sfxSettings.levelUpVolume = parseInt(e.target.value);
+      const levelUpValue = document.getElementById('levelup-volume-value');
+      if (levelUpValue) levelUpValue.textContent = sfxSettings.levelUpVolume + '%';
+      saveSfxSettings();
+    });
+  }
+
+  if (levelUpMuteBtn) {
+    levelUpMuteBtn.addEventListener('click', () => {
+      sfxSettings.levelUpMuted = !sfxSettings.levelUpMuted;
+      // If unmuting individual, also unmute master
+      if (!sfxSettings.levelUpMuted && sfxSettings.masterMuted) {
+        sfxSettings.masterMuted = false;
+        updateMasterMuteUI();
+      }
+      saveSfxSettings();
+      updateLevelUpMuteUI();
+    });
+  }
+
   // Initialize UI
   updateAllSfxMuteUI();
 }
@@ -7002,6 +7069,10 @@ function showUnifiedResults() {
           
           // Phase 2: After phase 1, flash and start new level
           setTimeout(() => {
+            // Stop XP fill sound, play level up sound
+            stopXpFillSound();
+            playLevelUpSound();
+            
             // Flash effect
             circle.style.transition = 'opacity 0.15s';
             circle.style.opacity = '0.3';
@@ -7036,6 +7107,11 @@ function showUnifiedResults() {
           animateXPCircleFill(circle, existingDeg, newDeg, XP_ANIMATION_DURATION, (existDeg, totalDeg) => {
             positionXPArrows(existDeg, totalDeg, wrapper);
           });
+          
+          // Stop XP fill sound when animation ends
+          setTimeout(() => {
+            stopXpFillSound();
+          }, XP_ANIMATION_DURATION);
         }
       }
     }, 300);
