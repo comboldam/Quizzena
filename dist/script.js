@@ -3,12 +3,12 @@
 // ============================================
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI",
-  authDomain: "quizzena-app.firebaseapp.com",
-  projectId: "quizzena-app",
-  storageBucket: "quizzena-app.firebasestorage.app",
-  messagingSenderId: "839227999302",
-  appId: "1:839227999302:android:b63322d2425eb123067647"
+  apiKey: "AIzaSyCoBauMU89GBogHSteLh1T5aeKQRKsO72U",
+  authDomain: "quizzena-testing.firebaseapp.com",
+  projectId: "quizzena-testing",
+  storageBucket: "quizzena-testing.firebasestorage.app",
+  messagingSenderId: "521712948758",
+  appId: "1:521712948758:web:f4719bb3337d4d0b9b4737"
 };
 
 // Initialize Firebase
@@ -22,6 +22,7 @@ if (typeof firebase !== 'undefined') {
   firebaseAuth = firebase.auth();
   firebaseDb = firebase.firestore();
   console.log('🔥 Firebase initialized successfully');
+  console.log('[FIREBASE] Connected to Quizzena-Testing');
 } else {
   console.warn('Firebase SDK not loaded');
 }
@@ -45,6 +46,9 @@ async function initFirebaseAuth() {
     
     firebaseUser = user;
     
+    console.log("[AUTH] Ready, retrying sync");
+    saveUserData();
+
     // Create/update Firestore user document
     await updateFirestoreUser(user.uid);
     
@@ -516,12 +520,20 @@ async function loadFromFirebase() {
 }
 
 function saveUserData() {
+  console.log("[SYNC CHECK] saveUserData called");
+  console.log("[SYNC CHECK] DEV_MODE:", DEV_MODE);
+  console.log("[SYNC CHECK] firebaseDb:", !!firebaseDb);
+  console.log("[SYNC CHECK] firebaseUser:", firebaseUser?.uid || "NULL - AUTH NOT COMPLETE!");
+  
   // Always save to localStorage (fast, works offline)
   localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
   
   // Sync to Firebase if not in dev mode
   if (!DEV_MODE && firebaseDb && firebaseUser) {
+    console.log("[FIREBASE SYNC] Writing user:", firebaseUser?.uid);
     syncToFirebase();
+  } else {
+    console.warn("[SYNC CHECK] Firebase sync SKIPPED! Conditions not met.");
   }
 }
 
@@ -534,7 +546,11 @@ async function syncToFirebase() {
     await userRef.set({
       // Profile & Setup
       isSetupComplete: userData.isSetupComplete,
-      profile: userData.profile,
+      profile: {
+        username: userData.profile?.username ?? null,
+        country: userData.profile?.country ?? null,
+        createdAt: userData.profile?.createdAt ?? null
+      },
       
       // All Stats (includes XP, levels, modesUnlocked per topic)
       stats: userData.stats,
@@ -553,6 +569,7 @@ async function syncToFirebase() {
     }, { merge: true });
     
     console.log('🔥 Data synced to Firebase');
+    console.log('[FIREBASE SYNC] Stats synced', userData.stats);
   } catch (error) {
     console.error('🔥 Firebase sync error:', error);
     // Silent fail - localStorage still has the data
@@ -1979,6 +1996,7 @@ let currentTopic = '';
 let selectedDifficulty = '';
 let areaQuestions = { easy: [], medium: [], hard: [] };
 let allCountriesData = [];
+let currentAreaCountryName = ''; // Track current area question's country for unlock tracking
 
 // ========================================
 // 📊 STATS TRACKING VARIABLES
@@ -4837,12 +4855,229 @@ function getTopicImagePath(topicId) {
   return imageMap[topicId] || 'icons/topics/geography/flags.png';
 }
 
-// Track follow state per topic (temporary - will be Firebase later)
-let topicFollowState = {};
+// ============================================
+// 🔔 TOPIC FOLLOW SYSTEM (FIREBASE-SYNCED)
+// ============================================
 
-// Get follower count for a topic (will be Firebase later)
+// Local cache for follow state and counts (hydrated from Firebase)
+let topicFollowState = {};
+let topicFollowerCounts = {};
+let topicFollowListeners = {}; // Store active listeners for cleanup
+
+// Get follower count for a topic (from cache, updated by listener)
 function getTopicFollowers(topicId) {
-  return 0;
+  return topicFollowerCounts[topicId] || 0;
+}
+
+// Check if current user follows a topic (from Firebase or cache)
+async function checkUserFollowsTopic(topicId) {
+  // DEV_MODE: use local cache only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    return topicFollowState[topicId] || false;
+  }
+  
+  try {
+    const followDoc = await firebaseDb
+      .collection('users')
+      .doc(firebaseUser.uid)
+      .collection('follows')
+      .doc(topicId)
+      .get();
+    
+    const isFollowing = followDoc.exists;
+    topicFollowState[topicId] = isFollowing; // Update cache
+    return isFollowing;
+  } catch (error) {
+    console.error('Error checking follow status:', error);
+    return topicFollowState[topicId] || false;
+  }
+}
+
+// Follow a topic (with atomic transaction)
+async function followTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if already following
+      const followDoc = await transaction.get(userFollowRef);
+      if (followDoc.exists) {
+        throw new Error('Already following');
+      }
+      
+      // Get current topic doc (may not exist)
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Create follow record
+      transaction.set(userFollowRef, {
+        followedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      
+      // Increment or create topic counter
+      if (topicDoc.exists) {
+        transaction.update(topicRef, {
+          followersCount: currentCount + 1
+        });
+      } else {
+        transaction.set(topicRef, {
+          followersCount: 1
+        });
+      }
+    });
+    
+    // Update local cache (optimistic)
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    
+    console.log(`✅ Followed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Already following') {
+      console.log(`Already following: ${topicId}`);
+      topicFollowState[topicId] = true;
+      return false;
+    }
+    console.error('Error following topic:', error);
+    return false;
+  }
+}
+
+// Unfollow a topic (with atomic transaction + safety guard)
+async function unfollowTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if following (safety guard)
+      const followDoc = await transaction.get(userFollowRef);
+      if (!followDoc.exists) {
+        throw new Error('Not following');
+      }
+      
+      // Get current topic doc
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Delete follow record
+      transaction.delete(userFollowRef);
+      
+      // Decrement counter (never below 0)
+      if (topicDoc.exists && currentCount > 0) {
+        transaction.update(topicRef, {
+          followersCount: currentCount - 1
+        });
+      }
+    });
+    
+    // Update local cache
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    
+    console.log(`✅ Unfollowed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Not following') {
+      console.log(`Not following: ${topicId}`);
+      topicFollowState[topicId] = false;
+      return false;
+    }
+    console.error('Error unfollowing topic:', error);
+    return false;
+  }
+}
+
+// Start real-time listener for topic follower count
+function startTopicFollowerListener(topicId) {
+  // DEV_MODE: no listener needed
+  if (DEV_MODE || !firebaseDb) {
+    return null;
+  }
+  
+  // Don't create duplicate listeners
+  if (topicFollowListeners[topicId]) {
+    return topicFollowListeners[topicId];
+  }
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  const unsubscribe = topicRef.onSnapshot((doc) => {
+    if (doc.exists) {
+      const count = doc.data().followersCount || 0;
+      topicFollowerCounts[topicId] = count;
+      
+      // Update UI if on topic detail page
+      updateFollowerCountUI(topicId, count);
+    } else {
+      topicFollowerCounts[topicId] = 0;
+      updateFollowerCountUI(topicId, 0);
+    }
+  }, (error) => {
+    console.error('Follower listener error:', error);
+  });
+  
+  topicFollowListeners[topicId] = unsubscribe;
+  return unsubscribe;
+}
+
+// Stop real-time listener for topic
+function stopTopicFollowerListener(topicId) {
+  if (topicFollowListeners[topicId]) {
+    topicFollowListeners[topicId](); // Call unsubscribe function
+    delete topicFollowListeners[topicId];
+    console.log(`🔕 Stopped listener for: ${topicId}`);
+  }
+}
+
+// Update follower count in UI (called by listener)
+function updateFollowerCountUI(topicId, count) {
+  // Only update if we're viewing this topic's detail page
+  if (currentTopic !== topicId) return;
+  
+  const followerValueEl = document.getElementById('td-follower-count');
+  if (followerValueEl) {
+    followerValueEl.textContent = count;
+  }
+}
+
+// Update follow button UI
+function updateFollowButtonUI(isFollowing) {
+  const btn = document.getElementById('td-follow-btn');
+  if (btn) {
+    if (isFollowing) {
+      btn.innerHTML = `<span class="td-btn-icon">➖</span> Unfollow`;
+      btn.classList.add('td-following');
+    } else {
+      btn.innerHTML = `<span class="td-btn-icon">➕</span> Follow`;
+      btn.classList.remove('td-following');
+    }
+  }
 }
 
 // Get next title unlock level
@@ -4891,9 +5126,40 @@ async function loadAllFlagsData() {
 
 // Get total questions count for a topic
 async function getTotalQuestionsCount(topicId) {
+  // Flags - load from codes.json
   if (topicId === 'flags') {
     const data = await loadAllFlagsData();
     return data.length;
+  }
+  // Capitals - load from capitals.json
+  if (topicId === 'capitals') {
+    try {
+      const response = await fetch('capitals.json');
+      const data = await response.json();
+      return data.length;
+    } catch (err) {
+      return 0;
+    }
+  }
+  // Borders - placeholder count (not trackable yet)
+  if (topicId === 'borders') {
+    return 0; // Border questions generate dynamically
+  }
+  // Area - load from REST Countries API (same as quiz)
+  if (topicId === 'area') {
+    // If allCountriesData is already loaded, use it
+    if (allCountriesData && allCountriesData.length > 0) {
+      return allCountriesData.length;
+    }
+    // Otherwise fetch fresh
+    try {
+      const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+      if (!res.ok) throw new Error('API failed');
+      const data = await res.json();
+      return data.filter(c => c.area && c.cca2).length;
+    } catch (err) {
+      return 0;
+    }
   }
   // For JSON topics, load and count
   if (JSON_TOPICS.includes(topicId)) {
@@ -4963,10 +5229,26 @@ function resetSessionUnlocks() {
 // 🏳️ FLAGS COLLECTION PAGE
 // ============================================
 
+// Generic function to open questions collection for any topic
+function openQuestionsCollection() {
+  if (currentTopic === 'flags') {
+    openFlagsCollection();
+  } else if (currentTopic === 'capitals') {
+    openCapitalsCollection();
+  } else if (currentTopic === 'logos') {
+    openLogosCollection();
+  } else if (currentTopic === 'area') {
+    openAreaCollection();
+  } else {
+    // Show coming soon for other topics
+    showToast('📚 Collection coming soon for this topic!');
+  }
+}
+
 async function openFlagsCollection() {
-  // Only show collection for flags topic for now
+  // Only show collection for flags topic
   if (currentTopic !== 'flags') {
-    showToast('Collection coming soon for this topic!');
+    showToast('📚 Collection coming soon for this topic!');
     return;
   }
   
@@ -5046,6 +5328,335 @@ function closeFlagsCollection() {
   }
 }
 
+// ============================================
+// 🏛️ CAPITALS COLLECTION PAGE
+// ============================================
+
+async function openCapitalsCollection() {
+  // Only show collection for capitals topic
+  if (currentTopic !== 'capitals') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Fetch capitals data from REST Countries API (same source as quiz)
+  let allCapitals = [];
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+    if (!res.ok) throw new Error('API failed');
+    const data = await res.json();
+    
+    allCapitals = data
+      .filter(c => c.capital && c.capital[0])
+      .map(c => {
+        const capitalName = c.capital[0];
+        const sanitizedCapital = capitalName.replace(/[/\\?%*:|"<>]/g, "_");
+        const imageBase = USE_LOCAL_IMAGES ? './topic_images/capital_images/' : CLOUDINARY_BASE_URL;
+        return {
+          country: c.name.common,
+          capital: capitalName,
+          image: `${imageBase}${sanitizedCapital}.jpg`
+        };
+      });
+  } catch (err) {
+    console.error('Failed to load capitals data:', err);
+    showToast('❌ Failed to load capitals data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('capitals');
+  
+  // Sort: Unlocked first (A-Z by capital), then Locked (A-Z by capital)
+  const sortedCapitals = [...allCapitals].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.capital);
+    const bUnlocked = unlockedQuestions.includes(b.capital);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return a.capital.localeCompare(b.capital);
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('capitals-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'capitals-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allCapitals.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeCapitalsCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">🏛️ Capitals Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Capitals Grid -->
+      <div class="fc-grid">
+        ${sortedCapitals.map(cap => {
+          const isUnlocked = unlockedQuestions.includes(cap.capital);
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-flag-grayscale fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${cap.capital}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeCapitalsCollection() {
+  const modal = document.getElementById('capitals-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// ============================================
+// 🏷️ LOGOS COLLECTION PAGE
+// ============================================
+
+async function openLogosCollection() {
+  // Only show collection for logos topic
+  if (currentTopic !== 'logos') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Load logos data from questions.json
+  let allLogos = [];
+  try {
+    const response = await fetch('topics/logos/questions.json');
+    if (!response.ok) throw new Error('Failed to load logos');
+    const questions = await response.json();
+    
+    allLogos = questions.map(q => ({
+      brand: q.answer,
+      image: `topic_images/${q.image}`
+    }));
+  } catch (err) {
+    console.error('Failed to load logos data:', err);
+    showToast('❌ Failed to load logos data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('logos');
+  
+  // Sort: Unlocked first (A-Z by brand), then Locked (A-Z by brand)
+  const sortedLogos = [...allLogos].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.brand);
+    const bUnlocked = unlockedQuestions.includes(b.brand);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return a.brand.localeCompare(b.brand);
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('logos-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'logos-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allLogos.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeLogosCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">🏷️ Logos Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Logos Grid -->
+      <div class="fc-grid">
+        ${sortedLogos.map(logo => {
+          const isUnlocked = unlockedQuestions.includes(logo.brand);
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper fc-logo-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-flag-grayscale fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${logo.brand}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeLogosCollection() {
+  const modal = document.getElementById('logos-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// ============================================
+// 📏 AREA COLLECTION PAGE
+// ============================================
+
+async function openAreaCollection() {
+  // Only show collection for area topic
+  if (currentTopic !== 'area') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Fetch area data from REST Countries API (same source as quiz)
+  let allAreas = [];
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+    if (!res.ok) throw new Error('API failed');
+    const data = await res.json();
+    
+    allAreas = data
+      .filter(c => c.area && c.cca2)
+      .map(c => ({
+        country: c.name.common.replace(/\bStates\b/gi, '').trim(),
+        area: c.area,
+        isoCode: c.cca2.toLowerCase()
+      }))
+      .sort((a, b) => b.area - a.area); // Sort by area (largest first)
+  } catch (err) {
+    console.error('Failed to load area data:', err);
+    showToast('❌ Failed to load area data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('area');
+  
+  // Sort: Unlocked first (by area descending), then Locked (by area descending)
+  const sortedAreas = [...allAreas].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.country);
+    const bUnlocked = unlockedQuestions.includes(b.country);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return b.area - a.area; // Sort by area within each group
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('area-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'area-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allAreas.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  // Check which countries are missing border images
+  const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeAreaCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">📏 Area Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Area Grid -->
+      <div class="fc-grid">
+        ${sortedAreas.map(item => {
+          const isUnlocked = unlockedQuestions.includes(item.country);
+          const imageSrc = missingBorders.includes(item.isoCode) 
+            ? `topic_images/flags/${item.isoCode}.png`
+            : `topic_images/country_silhouettes/${item.isoCode}.png`;
+          const imageClass = missingBorders.includes(item.isoCode) ? '' : 'fc-border-image';
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${imageSrc}" alt="${item.country}" class="fc-flag-image ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${imageSrc}" alt="${item.country}" class="fc-flag-image fc-flag-grayscale ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${item.country}</span>
+              ${isUnlocked ? `<span class="fc-area-value">${formatArea(item.area)}</span>` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeAreaCollection() {
+  const modal = document.getElementById('area-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
 // Format time spent (seconds to h/m/s format)
 function formatTopicTime(seconds) {
   if (!seconds || seconds === 0) return '0s';
@@ -5063,17 +5674,23 @@ function formatAvgTime(totalMs, totalQuestions) {
   return avgSeconds < 10 ? `${avgSeconds.toFixed(1)}s` : `${Math.round(avgSeconds)}s`;
 }
 
-function toggleTopicFollow(topicId) {
-  topicFollowState[topicId] = !topicFollowState[topicId];
-  const btn = document.getElementById('td-follow-btn');
-  if (btn) {
-    if (topicFollowState[topicId]) {
-      btn.innerHTML = `<span class="td-btn-icon">➖</span> Unfollow`;
-      btn.classList.add('td-following');
-    } else {
-      btn.innerHTML = `<span class="td-btn-icon">➕</span> Follow`;
-      btn.classList.remove('td-following');
-    }
+// Toggle follow state for a topic (main entry point)
+async function toggleTopicFollow(topicId) {
+  const isCurrentlyFollowing = topicFollowState[topicId] || false;
+  
+  // Optimistic UI update (immediate feedback)
+  updateFollowButtonUI(!isCurrentlyFollowing);
+  
+  let success;
+  if (isCurrentlyFollowing) {
+    success = await unfollowTopic(topicId);
+  } else {
+    success = await followTopic(topicId);
+  }
+  
+  // Revert UI if failed
+  if (!success) {
+    updateFollowButtonUI(isCurrentlyFollowing);
   }
 }
 
@@ -5087,12 +5704,23 @@ async function showUnifiedModeSelection(quizName, icon) {
   const topicConfig = TOPIC_CONFIG[currentTopic] || {};
   const categoryName = topicConfig.category ? topicConfig.category.charAt(0).toUpperCase() + topicConfig.category.slice(1) : 'Quiz';
   const topicImagePath = getTopicImagePath(currentTopic);
-  const isFollowing = topicFollowState[currentTopic] || false;
+  
+  // Check follow status (Firebase or cache)
+  const isFollowing = await checkUserFollowsTopic(currentTopic);
+  
+  // Start real-time listener for follower count
+  startTopicFollowerListener(currentTopic);
   
   // Get questions completed data
   const unlockedQuestions = getUnlockedQuestions(currentTopic);
   const totalQuestions = await getTotalQuestionsCount(currentTopic);
   const questionsCompletedPercent = totalQuestions > 0 ? Math.round((unlockedQuestions.length / totalQuestions) * 100) : 0;
+  
+  // Determine progress section type
+  const excludedTopics = ['borders'];
+  const collectionTopics = ['flags', 'capitals', 'logos', 'area']; // Topics with clickable collection
+  const showProgressSection = !excludedTopics.includes(currentTopic);
+  const isClickableProgress = collectionTopics.includes(currentTopic);
 
   // Create or get mode selection screen
   let modeScreen = document.getElementById('unified-mode-screen');
@@ -5155,7 +5783,7 @@ async function showUnifiedModeSelection(quizName, icon) {
         <div class="td-stat-divider"></div>
         <div class="td-stat-item">
           <div class="td-stat-label">FOLLOWERS</div>
-          <div class="td-stat-value">${getTopicFollowers(currentTopic)}</div>
+          <div class="td-stat-value" id="td-follower-count">${getTopicFollowers(currentTopic)}</div>
         </div>
         <div class="td-stat-divider"></div>
         <div class="td-stat-item">
@@ -5164,11 +5792,12 @@ async function showUnifiedModeSelection(quizName, icon) {
         </div>
       </div>
 
-      <!-- Progress Section (Clickable to open collection) -->
-      <div class="td-progress-section td-progress-clickable" onclick="playClickSound(); openFlagsCollection()">
+      <!-- Progress Section -->
+      ${showProgressSection ? `
+      <div class="td-progress-section ${isClickableProgress ? 'td-progress-clickable' : ''}" ${isClickableProgress ? 'onclick="playClickSound(); openQuestionsCollection()"' : ''}>
         <div class="td-progress-header">
           <div class="td-progress-label">QUESTIONS COMPLETED</div>
-          <span class="td-progress-arrow">›</span>
+          ${isClickableProgress ? '<span class="td-progress-arrow">›</span>' : ''}
         </div>
         <div class="td-progress-row">
           <div class="td-progress-bar">
@@ -5176,8 +5805,9 @@ async function showUnifiedModeSelection(quizName, icon) {
           </div>
           <span class="td-progress-percent" id="td-questions-progress-text">${questionsCompletedPercent}%</span>
         </div>
-        <div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>
+        ${isClickableProgress ? `<div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>` : ''}
       </div>
+      ` : ''}
 
       <!-- Stats Cards Grid -->
       <div class="td-stats-grid">
@@ -7208,6 +7838,7 @@ function displayUnifiedQuestion() {
     questionText = "Which country's border is this?";
   } else if (currentTopic === 'area') {
     questionText = `What is the area of ${randomFlag.country}?`;
+    currentAreaCountryName = randomFlag.country; // Store for tracking
   } else if (currentTopic === 'flags' && randomFlag.entityType) {
     questionText = getQuestionTextForEntity(randomFlag.entityType);
   } else {
@@ -7413,9 +8044,11 @@ function checkUnifiedAnswer(selected, correct) {
       }
       
       // Track unlocked question (Questions Completed system)
-      const isNewUnlock = trackUnlockedQuestion(currentTopic, correct);
+      // For area quiz, track by country name instead of formatted area value
+      const trackingId = currentTopic === 'area' ? currentAreaCountryName : correct;
+      const isNewUnlock = trackUnlockedQuestion(currentTopic, trackingId);
       if (isNewUnlock) {
-        sessionNewUnlocks.push(correct);
+        sessionNewUnlocks.push(trackingId);
       }
     }
   } else {
@@ -7629,7 +8262,11 @@ function showUnifiedResults() {
   }
 
   const quizScreen = document.getElementById('unified-quiz-screen');
-  if (!quizScreen) return;
+  if (!quizScreen) {
+    console.error('[DEBUG] showUnifiedResults: quiz screen not found!');
+    return;
+  }
+  console.log('[DEBUG] showUnifiedResults: displaying results...');
 
   let resultText = '';
   let scoreDisplay = '';
@@ -7976,6 +8613,9 @@ function exitUnifiedQuiz() {
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
+
+  // Stop follower count listener
+  stopTopicFollowerListener(currentTopic);
 
   // Destroy galaxy background
   destroyGalaxyBackground();
