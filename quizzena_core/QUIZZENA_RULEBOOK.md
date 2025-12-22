@@ -229,6 +229,15 @@ These rules govern background system behavior.
 13. **JSON topics work offline once loaded**
 14. **Area quiz difficulty affects country selection by size ranking**
 
+### Questions Completed Rules
+15. **A question is unlocked by answering it correctly once**
+16. **Duplicate correct answers do not count again**
+17. **Questions Completed only updates on quiz completion**
+18. **All game modes contribute to Questions Completed**
+19. **Trackable collection topics:** Flags, Capitals, Logos, Area
+20. **Area tracking uses country name** (not formatted area value)
+21. **Excluded topic (borders):** Questions Completed section hidden
+
 ---
 
 ## 📌 FINAL OWNER PRINCIPLES

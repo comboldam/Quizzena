@@ -161,6 +161,28 @@ Core play experience of Quizzena.
 - Area quiz has 3 difficulty levels: Easy, Medium, Hard
 - Difficulty affects which countries appear (by size ranking)
 
+### Questions Completed System
+- Tracks unique correct answers per topic
+- Each correct answer "unlocks" that question permanently
+- Progress updates after quiz completion
+- Data stored in `userData.stats.topics[topicId].unlockedQuestions`
+- Synced to Firebase
+- **Trackable topics with collections:**
+  - **Flags:** ~200 countries, opens Flags Collection
+  - **Capitals:** ~195 capitals, opens Capitals Collection
+  - **Logos:** 230 brands, opens Logos Collection
+  - **Area:** ~195 countries, opens Area Collection
+- **Text-based topics:** Progress bar only (not clickable)
+- **Excluded (borders):** Hidden (not trackable)
+
+### Area Collection
+- Accessible via Questions Completed click (Area topic only)
+- Shows all ~195 countries with their silhouettes
+- Unlocked countries: Full color silhouette + country name + area value
+- Locked countries: Grayscale silhouette + lock icon + country name
+- Tracking by country name (e.g., "Russia", "Canada")
+- Sorting: Unlocked first, then by area (largest to smallest)
+
 ### Quiz of the Day
 - Daily rotating quiz
 - Determined by calendar date
