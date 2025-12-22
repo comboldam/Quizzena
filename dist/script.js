@@ -3,12 +3,12 @@
 // ============================================
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI",
-  authDomain: "quizzena-app.firebaseapp.com",
-  projectId: "quizzena-app",
-  storageBucket: "quizzena-app.firebasestorage.app",
-  messagingSenderId: "839227999302",
-  appId: "1:839227999302:android:b63322d2425eb123067647"
+  apiKey: "AIzaSyCoBauMU89GBogHSteLh1T5aeKQRKsO72U",
+  authDomain: "quizzena-testing.firebaseapp.com",
+  projectId: "quizzena-testing",
+  storageBucket: "quizzena-testing.firebasestorage.app",
+  messagingSenderId: "521712948758",
+  appId: "1:521712948758:web:f4719bb3337d4d0b9b4737"
 };
 
 // Initialize Firebase
@@ -22,6 +22,7 @@ if (typeof firebase !== 'undefined') {
   firebaseAuth = firebase.auth();
   firebaseDb = firebase.firestore();
   console.log('🔥 Firebase initialized successfully');
+  console.log('[FIREBASE] Connected to Quizzena-Testing');
 } else {
   console.warn('Firebase SDK not loaded');
 }
@@ -45,6 +46,9 @@ async function initFirebaseAuth() {
     
     firebaseUser = user;
     
+    console.log("[AUTH] Ready, retrying sync");
+    saveUserData();
+
     // Create/update Firestore user document
     await updateFirestoreUser(user.uid);
     
@@ -516,12 +520,20 @@ async function loadFromFirebase() {
 }
 
 function saveUserData() {
+  console.log("[SYNC CHECK] saveUserData called");
+  console.log("[SYNC CHECK] DEV_MODE:", DEV_MODE);
+  console.log("[SYNC CHECK] firebaseDb:", !!firebaseDb);
+  console.log("[SYNC CHECK] firebaseUser:", firebaseUser?.uid || "NULL - AUTH NOT COMPLETE!");
+  
   // Always save to localStorage (fast, works offline)
   localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
   
   // Sync to Firebase if not in dev mode
   if (!DEV_MODE && firebaseDb && firebaseUser) {
+    console.log("[FIREBASE SYNC] Writing user:", firebaseUser?.uid);
     syncToFirebase();
+  } else {
+    console.warn("[SYNC CHECK] Firebase sync SKIPPED! Conditions not met.");
   }
 }
 
@@ -534,7 +546,11 @@ async function syncToFirebase() {
     await userRef.set({
       // Profile & Setup
       isSetupComplete: userData.isSetupComplete,
-      profile: userData.profile,
+      profile: {
+        username: userData.profile?.username ?? null,
+        country: userData.profile?.country ?? null,
+        createdAt: userData.profile?.createdAt ?? null
+      },
       
       // All Stats (includes XP, levels, modesUnlocked per topic)
       stats: userData.stats,
@@ -553,6 +569,7 @@ async function syncToFirebase() {
     }, { merge: true });
     
     console.log('🔥 Data synced to Firebase');
+    console.log('[FIREBASE SYNC] Stats synced', userData.stats);
   } catch (error) {
     console.error('🔥 Firebase sync error:', error);
     // Silent fail - localStorage still has the data
@@ -1979,6 +1996,7 @@ let currentTopic = '';
 let selectedDifficulty = '';
 let areaQuestions = { easy: [], medium: [], hard: [] };
 let allCountriesData = [];
+let currentAreaCountryName = ''; // Track current area question's country for unlock tracking
 
 // ========================================
 // 📊 STATS TRACKING VARIABLES
@@ -4781,15 +4799,928 @@ navProfile.addEventListener('click', () => {
 // 🎮 UNIFIED QUIZ SYSTEM - ALL QUIZZES USE THIS
 // ============================================
 
-function showUnifiedModeSelection(quizName, icon) {
+// Get topic image path based on topic ID
+function getTopicImagePath(topicId) {
+  const config = TOPIC_CONFIG[topicId];
+  if (!config) return 'icons/topics/geography/flags.png';
+  
+  const category = config.category;
+  const imageName = topicId.replace(/-/g, '-');
+  
+  // Map topic IDs to their image file names
+  const imageMap = {
+    // Geography
+    'flags': 'icons/topics/geography/flags.png',
+    'capitals': 'icons/topics/geography/capitals.png',
+    'borders': 'icons/topics/geography/flags.png',
+    'area': 'icons/topics/geography/area.png',
+    // Football
+    'football': 'icons/topics/football/football.png',
+    'premier-league': 'icons/topics/football/premier-league.png',
+    'champions-league': 'icons/topics/football/champions-league.png',
+    'world-cup': 'icons/topics/football/world-cup.png',
+    'messi': 'icons/topics/football/messi.png',
+    'ronaldo': 'icons/topics/football/ronaldo.png',
+    'derbies': 'icons/topics/football/derbies.png',
+    // History
+    'world-history': 'icons/topics/history/world-history.png',
+    'ancient-civs': 'icons/topics/history/ancient-civilizations.png',
+    'ww2': 'icons/topics/history/wwii.png',
+    'ww1': 'icons/topics/history/wwi.png',
+    'egyptian': 'icons/topics/history/egyptian.png',
+    'roman-empire': 'icons/topics/history/roman-empire.png',
+    'ottoman': 'icons/topics/history/ottoman-empire.png',
+    'british-monarchy': 'icons/topics/history/british-monarchy.png',
+    'cold-war': 'icons/topics/history/cold-war.png',
+    // Movies
+    'movies': 'icons/topics/movies/movies.png',
+    'marvel': 'icons/topics/movies/marvel.png',
+    'dc': 'icons/topics/movies/dc.png',
+    'harry-potter': 'icons/topics/movies/harry-potter.png',
+    'star-wars': 'icons/topics/movies/star-wars.png',
+    'lotr': 'icons/topics/movies/lotr.png',
+    'disney': 'icons/topics/movies/disney.png',
+    // TV Shows
+    'tv-shows': 'icons/topics/tvshows/tvshows.png',
+    'sitcoms': 'icons/topics/tvshows/sitcoms.png',
+    'game-of-thrones': 'icons/topics/tvshows/game-of-thrones.png',
+    'breaking-bad': 'icons/topics/tvshows/breaking-bad.png',
+    'stranger-things': 'icons/topics/tvshows/stranger-things.png',
+    'money-heist': 'icons/topics/tvshows/money-heist.png',
+    'the-office': 'icons/topics/tvshows/the-office.png',
+    // Logos
+    'logos': 'icons/topics/logos/logos.png'
+  };
+  
+  return imageMap[topicId] || 'icons/topics/geography/flags.png';
+}
+
+// ============================================
+// 🔔 TOPIC FOLLOW SYSTEM (FIREBASE-SYNCED)
+// ============================================
+
+// Local cache for follow state and counts (hydrated from Firebase)
+let topicFollowState = {};
+let topicFollowerCounts = {};
+let topicFollowListeners = {}; // Store active listeners for cleanup
+
+// Get follower count for a topic (from cache, updated by listener)
+function getTopicFollowers(topicId) {
+  return topicFollowerCounts[topicId] || 0;
+}
+
+// Check if current user follows a topic (from Firebase or cache)
+async function checkUserFollowsTopic(topicId) {
+  // DEV_MODE: use local cache only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    return topicFollowState[topicId] || false;
+  }
+  
+  try {
+    const followDoc = await firebaseDb
+      .collection('users')
+      .doc(firebaseUser.uid)
+      .collection('follows')
+      .doc(topicId)
+      .get();
+    
+    const isFollowing = followDoc.exists;
+    topicFollowState[topicId] = isFollowing; // Update cache
+    return isFollowing;
+  } catch (error) {
+    console.error('Error checking follow status:', error);
+    return topicFollowState[topicId] || false;
+  }
+}
+
+// Follow a topic (with atomic transaction)
+async function followTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if already following
+      const followDoc = await transaction.get(userFollowRef);
+      if (followDoc.exists) {
+        throw new Error('Already following');
+      }
+      
+      // Get current topic doc (may not exist)
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Create follow record
+      transaction.set(userFollowRef, {
+        followedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      
+      // Increment or create topic counter
+      if (topicDoc.exists) {
+        transaction.update(topicRef, {
+          followersCount: currentCount + 1
+        });
+      } else {
+        transaction.set(topicRef, {
+          followersCount: 1
+        });
+      }
+    });
+    
+    // Update local cache (optimistic)
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    
+    console.log(`✅ Followed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Already following') {
+      console.log(`Already following: ${topicId}`);
+      topicFollowState[topicId] = true;
+      return false;
+    }
+    console.error('Error following topic:', error);
+    return false;
+  }
+}
+
+// Unfollow a topic (with atomic transaction + safety guard)
+async function unfollowTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if following (safety guard)
+      const followDoc = await transaction.get(userFollowRef);
+      if (!followDoc.exists) {
+        throw new Error('Not following');
+      }
+      
+      // Get current topic doc
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Delete follow record
+      transaction.delete(userFollowRef);
+      
+      // Decrement counter (never below 0)
+      if (topicDoc.exists && currentCount > 0) {
+        transaction.update(topicRef, {
+          followersCount: currentCount - 1
+        });
+      }
+    });
+    
+    // Update local cache
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    
+    console.log(`✅ Unfollowed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Not following') {
+      console.log(`Not following: ${topicId}`);
+      topicFollowState[topicId] = false;
+      return false;
+    }
+    console.error('Error unfollowing topic:', error);
+    return false;
+  }
+}
+
+// Start real-time listener for topic follower count
+function startTopicFollowerListener(topicId) {
+  // DEV_MODE: no listener needed
+  if (DEV_MODE || !firebaseDb) {
+    return null;
+  }
+  
+  // Don't create duplicate listeners
+  if (topicFollowListeners[topicId]) {
+    return topicFollowListeners[topicId];
+  }
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  const unsubscribe = topicRef.onSnapshot((doc) => {
+    if (doc.exists) {
+      const count = doc.data().followersCount || 0;
+      topicFollowerCounts[topicId] = count;
+      
+      // Update UI if on topic detail page
+      updateFollowerCountUI(topicId, count);
+    } else {
+      topicFollowerCounts[topicId] = 0;
+      updateFollowerCountUI(topicId, 0);
+    }
+  }, (error) => {
+    console.error('Follower listener error:', error);
+  });
+  
+  topicFollowListeners[topicId] = unsubscribe;
+  return unsubscribe;
+}
+
+// Stop real-time listener for topic
+function stopTopicFollowerListener(topicId) {
+  if (topicFollowListeners[topicId]) {
+    topicFollowListeners[topicId](); // Call unsubscribe function
+    delete topicFollowListeners[topicId];
+    console.log(`🔕 Stopped listener for: ${topicId}`);
+  }
+}
+
+// Update follower count in UI (called by listener)
+function updateFollowerCountUI(topicId, count) {
+  // Only update if we're viewing this topic's detail page
+  if (currentTopic !== topicId) return;
+  
+  const followerValueEl = document.getElementById('td-follower-count');
+  if (followerValueEl) {
+    followerValueEl.textContent = count;
+  }
+}
+
+// Update follow button UI
+function updateFollowButtonUI(isFollowing) {
+  const btn = document.getElementById('td-follow-btn');
+  if (btn) {
+    if (isFollowing) {
+      btn.innerHTML = `<span class="td-btn-icon">➖</span> Unfollow`;
+      btn.classList.add('td-following');
+    } else {
+      btn.innerHTML = `<span class="td-btn-icon">➕</span> Follow`;
+      btn.classList.remove('td-following');
+    }
+  }
+}
+
+// Get next title unlock level
+function getNextTitleLevel(currentLevel) {
+  return 'N/A';
+}
+
+// ============================================
+// 🏆 QUESTIONS COMPLETED TRACKING SYSTEM
+// ============================================
+
+// Store all flags data for collection page (loaded once)
+let allFlagsData = null;
+
+// Load all flags data for collection
+async function loadAllFlagsData() {
+  if (allFlagsData) return allFlagsData;
+  
+  try {
+    const res = await fetch("topic_images/flags/codes.json");
+    const data = await res.json();
+    
+    // Filter to only included types (same as quiz)
+    const includedTypes = ["country", "organization", "special-region", "uk-constituent",
+                           "crown-dependency", "island", "french-territory", "caribbean-territory",
+                           "special-territory"];
+    
+    allFlagsData = Object.entries(data)
+      .filter(([code, name]) => {
+        const entityType = getEntityType(name, code);
+        return includedTypes.includes(entityType);
+      })
+      .map(([code, name]) => ({
+        code: code,
+        name: name.replace(/\bStates\b/gi, '').trim(),
+        flag: `topic_images/flags/${code}.png`
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name)); // Sort A-Z
+    
+    return allFlagsData;
+  } catch (err) {
+    console.error("Failed to load flags data:", err);
+    return [];
+  }
+}
+
+// Get total questions count for a topic
+async function getTotalQuestionsCount(topicId) {
+  // Flags - load from codes.json
+  if (topicId === 'flags') {
+    const data = await loadAllFlagsData();
+    return data.length;
+  }
+  // Capitals - load from capitals.json
+  if (topicId === 'capitals') {
+    try {
+      const response = await fetch('capitals.json');
+      const data = await response.json();
+      return data.length;
+    } catch (err) {
+      return 0;
+    }
+  }
+  // Borders - placeholder count (not trackable yet)
+  if (topicId === 'borders') {
+    return 0; // Border questions generate dynamically
+  }
+  // Area - load from REST Countries API (same as quiz)
+  if (topicId === 'area') {
+    // If allCountriesData is already loaded, use it
+    if (allCountriesData && allCountriesData.length > 0) {
+      return allCountriesData.length;
+    }
+    // Otherwise fetch fresh
+    try {
+      const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+      if (!res.ok) throw new Error('API failed');
+      const data = await res.json();
+      return data.filter(c => c.area && c.cca2).length;
+    } catch (err) {
+      return 0;
+    }
+  }
+  // For JSON topics, load and count
+  if (JSON_TOPICS.includes(topicId)) {
+    const config = TOPIC_CONFIG[topicId];
+    try {
+      const response = await fetch(config.path);
+      const questions = await response.json();
+      return questions.length;
+    } catch (err) {
+      return 0;
+    }
+  }
+  return 0;
+}
+
+// Get unlocked questions for a topic
+function getUnlockedQuestions(topicId) {
+  if (!userData.stats.topics[topicId]) return [];
+  return userData.stats.topics[topicId].unlockedQuestions || [];
+}
+
+// Track a correctly answered question (unlock it)
+function trackUnlockedQuestion(topicId, questionId) {
+  // Ensure topic exists
+  if (!userData.stats.topics[topicId]) {
+    userData.stats.topics[topicId] = {
+      games: 0, correct: 0, wrong: 0, accuracy: 0,
+      bestStreak: 0, level: 1, xp: 0,
+      modesUnlocked: { casual: true, timeAttack: false, threeHearts: false },
+      timeSpentSeconds: 0, totalQuestionsAnswered: 0,
+      unlockedQuestions: []
+    };
+  }
+  
+  // Ensure unlockedQuestions array exists
+  if (!userData.stats.topics[topicId].unlockedQuestions) {
+    userData.stats.topics[topicId].unlockedQuestions = [];
+  }
+  
+  const unlocked = userData.stats.topics[topicId].unlockedQuestions;
+  
+  // Only add if not already unlocked
+  if (!unlocked.includes(questionId)) {
+    unlocked.push(questionId);
+    return true; // New question unlocked!
+  }
+  return false; // Already unlocked
+}
+
+// Get questions completed percentage
+async function getQuestionsCompletedPercent(topicId) {
+  const unlocked = getUnlockedQuestions(topicId);
+  const total = await getTotalQuestionsCount(topicId);
+  if (total === 0) return 0;
+  return Math.round((unlocked.length / total) * 100);
+}
+
+// Track new unlocks in current session (for end screen animation)
+let sessionNewUnlocks = [];
+
+// Reset session unlocks at start of game
+function resetSessionUnlocks() {
+  sessionNewUnlocks = [];
+}
+
+// ============================================
+// 🏳️ FLAGS COLLECTION PAGE
+// ============================================
+
+// Generic function to open questions collection for any topic
+function openQuestionsCollection() {
+  if (currentTopic === 'flags') {
+    openFlagsCollection();
+  } else if (currentTopic === 'capitals') {
+    openCapitalsCollection();
+  } else if (currentTopic === 'logos') {
+    openLogosCollection();
+  } else if (currentTopic === 'area') {
+    openAreaCollection();
+  } else {
+    // Show coming soon for other topics
+    showToast('📚 Collection coming soon for this topic!');
+  }
+}
+
+async function openFlagsCollection() {
+  // Only show collection for flags topic
+  if (currentTopic !== 'flags') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  const allFlags = await loadAllFlagsData();
+  const unlockedQuestions = getUnlockedQuestions('flags');
+  
+  // Sort: Unlocked first (A-Z), then Locked (A-Z)
+  const sortedFlags = [...allFlags].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.name);
+    const bUnlocked = unlockedQuestions.includes(b.name);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return a.name.localeCompare(b.name);
+  });
+  
+  // Create collection modal
+  let collectionModal = document.getElementById('flags-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'flags-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allFlags.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  collectionModal.className = 'flags-collection-modal';
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeFlagsCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">🏳️ Flags Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Flags Grid -->
+      <div class="fc-grid">
+        ${sortedFlags.map(flag => {
+          const isUnlocked = unlockedQuestions.includes(flag.name);
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${flag.flag}" alt="${flag.name}" class="fc-flag-image" onerror="this.src='topic_images/flags/un.png'">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${flag.flag}" alt="${flag.name}" class="fc-flag-image fc-flag-grayscale" onerror="this.src='topic_images/flags/un.png'">`
+                }
+              </div>
+              <span class="fc-flag-name">${flag.name}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeFlagsCollection() {
+  const modal = document.getElementById('flags-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// ============================================
+// 🏛️ CAPITALS COLLECTION PAGE
+// ============================================
+
+async function openCapitalsCollection() {
+  // Only show collection for capitals topic
+  if (currentTopic !== 'capitals') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Fetch capitals data from REST Countries API (same source as quiz)
+  let allCapitals = [];
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+    if (!res.ok) throw new Error('API failed');
+    const data = await res.json();
+    
+    allCapitals = data
+      .filter(c => c.capital && c.capital[0])
+      .map(c => {
+        const capitalName = c.capital[0];
+        const sanitizedCapital = capitalName.replace(/[/\\?%*:|"<>]/g, "_");
+        const imageBase = USE_LOCAL_IMAGES ? './topic_images/capital_images/' : CLOUDINARY_BASE_URL;
+        return {
+          country: c.name.common,
+          capital: capitalName,
+          image: `${imageBase}${sanitizedCapital}.jpg`
+        };
+      });
+  } catch (err) {
+    console.error('Failed to load capitals data:', err);
+    showToast('❌ Failed to load capitals data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('capitals');
+  
+  // Sort: Unlocked first (A-Z by capital), then Locked (A-Z by capital)
+  const sortedCapitals = [...allCapitals].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.capital);
+    const bUnlocked = unlockedQuestions.includes(b.capital);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return a.capital.localeCompare(b.capital);
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('capitals-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'capitals-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allCapitals.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeCapitalsCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">🏛️ Capitals Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Capitals Grid -->
+      <div class="fc-grid">
+        ${sortedCapitals.map(cap => {
+          const isUnlocked = unlockedQuestions.includes(cap.capital);
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-flag-grayscale fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${cap.capital}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeCapitalsCollection() {
+  const modal = document.getElementById('capitals-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// ============================================
+// 🏷️ LOGOS COLLECTION PAGE
+// ============================================
+
+async function openLogosCollection() {
+  // Only show collection for logos topic
+  if (currentTopic !== 'logos') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Load logos data from questions.json
+  let allLogos = [];
+  try {
+    const response = await fetch('topics/logos/questions.json');
+    if (!response.ok) throw new Error('Failed to load logos');
+    const questions = await response.json();
+    
+    allLogos = questions.map(q => ({
+      brand: q.answer,
+      image: `topic_images/${q.image}`
+    }));
+  } catch (err) {
+    console.error('Failed to load logos data:', err);
+    showToast('❌ Failed to load logos data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('logos');
+  
+  // Sort: Unlocked first (A-Z by brand), then Locked (A-Z by brand)
+  const sortedLogos = [...allLogos].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.brand);
+    const bUnlocked = unlockedQuestions.includes(b.brand);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return a.brand.localeCompare(b.brand);
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('logos-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'logos-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allLogos.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeLogosCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">🏷️ Logos Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Logos Grid -->
+      <div class="fc-grid">
+        ${sortedLogos.map(logo => {
+          const isUnlocked = unlockedQuestions.includes(logo.brand);
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper fc-logo-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-flag-grayscale fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${logo.brand}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeLogosCollection() {
+  const modal = document.getElementById('logos-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// ============================================
+// 📏 AREA COLLECTION PAGE
+// ============================================
+
+async function openAreaCollection() {
+  // Only show collection for area topic
+  if (currentTopic !== 'area') {
+    showToast('📚 Collection coming soon for this topic!');
+    return;
+  }
+  
+  // Fetch area data from REST Countries API (same source as quiz)
+  let allAreas = [];
+  try {
+    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+    if (!res.ok) throw new Error('API failed');
+    const data = await res.json();
+    
+    allAreas = data
+      .filter(c => c.area && c.cca2)
+      .map(c => ({
+        country: c.name.common.replace(/\bStates\b/gi, '').trim(),
+        area: c.area,
+        isoCode: c.cca2.toLowerCase()
+      }))
+      .sort((a, b) => b.area - a.area); // Sort by area (largest first)
+  } catch (err) {
+    console.error('Failed to load area data:', err);
+    showToast('❌ Failed to load area data');
+    return;
+  }
+  
+  const unlockedQuestions = getUnlockedQuestions('area');
+  
+  // Sort: Unlocked first (by area descending), then Locked (by area descending)
+  const sortedAreas = [...allAreas].sort((a, b) => {
+    const aUnlocked = unlockedQuestions.includes(a.country);
+    const bUnlocked = unlockedQuestions.includes(b.country);
+    
+    if (aUnlocked && !bUnlocked) return -1;
+    if (!aUnlocked && bUnlocked) return 1;
+    return b.area - a.area; // Sort by area within each group
+  });
+  
+  // Create collection modal (reuse flags collection modal structure)
+  let collectionModal = document.getElementById('area-collection-modal');
+  if (!collectionModal) {
+    collectionModal = document.createElement('div');
+    collectionModal.id = 'area-collection-modal';
+    document.body.appendChild(collectionModal);
+  }
+  
+  const unlockedCount = unlockedQuestions.length;
+  const totalCount = allAreas.length;
+  const percentage = Math.round((unlockedCount / totalCount) * 100);
+  
+  // Check which countries are missing border images
+  const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
+  
+  collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+  collectionModal.innerHTML = `
+    <div class="fc-container">
+      <!-- Header -->
+      <div class="fc-header">
+        <button onclick="playClickSound(); closeAreaCollection()" class="fc-back-btn">←</button>
+        <div class="fc-header-info">
+          <h2 class="fc-title">📏 Area Collection</h2>
+          <p class="fc-subtitle">${unlockedCount}/${totalCount} Unlocked (${percentage}%)</p>
+        </div>
+      </div>
+      
+      <!-- Area Grid -->
+      <div class="fc-grid">
+        ${sortedAreas.map(item => {
+          const isUnlocked = unlockedQuestions.includes(item.country);
+          const imageSrc = missingBorders.includes(item.isoCode) 
+            ? `topic_images/flags/${item.isoCode}.png`
+            : `topic_images/country_silhouettes/${item.isoCode}.png`;
+          const imageClass = missingBorders.includes(item.isoCode) ? '' : 'fc-border-image';
+          return `
+            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
+              <div class="fc-flag-image-wrapper">
+                ${isUnlocked 
+                  ? `<img src="${imageSrc}" alt="${item.country}" class="fc-flag-image ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
+                  : `<div class="fc-flag-locked-overlay">
+                       <span class="fc-lock-icon">🔒</span>
+                     </div>
+                     <img src="${imageSrc}" alt="${item.country}" class="fc-flag-image fc-flag-grayscale ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
+                }
+              </div>
+              <span class="fc-flag-name">${item.country}</span>
+              ${isUnlocked ? `<span class="fc-area-value">${formatArea(item.area)}</span>` : ''}
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  collectionModal.classList.remove('hidden');
+  requestAnimationFrame(() => {
+    collectionModal.classList.add('show');
+  });
+}
+
+function closeAreaCollection() {
+  const modal = document.getElementById('area-collection-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+}
+
+// Format time spent (seconds to h/m/s format)
+function formatTopicTime(seconds) {
+  if (!seconds || seconds === 0) return '0s';
+  if (seconds < 60) return `${seconds}s`;
+  if (seconds < 3600) return `${Math.floor(seconds / 60)}m`;
+  const hours = Math.floor(seconds / 3600);
+  const mins = Math.floor((seconds % 3600) / 60);
+  return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
+}
+
+// Format average answer time (ms to seconds)
+function formatAvgTime(totalMs, totalQuestions) {
+  if (!totalMs || !totalQuestions || totalQuestions === 0) return '0s';
+  const avgSeconds = (totalMs / totalQuestions) / 1000;
+  return avgSeconds < 10 ? `${avgSeconds.toFixed(1)}s` : `${Math.round(avgSeconds)}s`;
+}
+
+// Toggle follow state for a topic (main entry point)
+async function toggleTopicFollow(topicId) {
+  const isCurrentlyFollowing = topicFollowState[topicId] || false;
+  
+  // Optimistic UI update (immediate feedback)
+  updateFollowButtonUI(!isCurrentlyFollowing);
+  
+  let success;
+  if (isCurrentlyFollowing) {
+    success = await unfollowTopic(topicId);
+  } else {
+    success = await followTopic(topicId);
+  }
+  
+  // Revert UI if failed
+  if (!success) {
+    updateFollowButtonUI(isCurrentlyFollowing);
+  }
+}
+
+async function showUnifiedModeSelection(quizName, icon) {
   // Hide home screen
   home.classList.add('hidden');
 
   // Get topic XP data for mode unlock checks
   const topicData = getTopicXPData(currentTopic);
-  const timeAttackUnlocked = isModeUnlocked(topicData, 'time-attack');
-  const threeHeartsUnlocked = isModeUnlocked(topicData, 'three-hearts');
   const progress = getLevelProgress(topicData);
+  const topicConfig = TOPIC_CONFIG[currentTopic] || {};
+  const categoryName = topicConfig.category ? topicConfig.category.charAt(0).toUpperCase() + topicConfig.category.slice(1) : 'Quiz';
+  const topicImagePath = getTopicImagePath(currentTopic);
+  
+  // Check follow status (Firebase or cache)
+  const isFollowing = await checkUserFollowsTopic(currentTopic);
+  
+  // Start real-time listener for follower count
+  startTopicFollowerListener(currentTopic);
+  
+  // Get questions completed data
+  const unlockedQuestions = getUnlockedQuestions(currentTopic);
+  const totalQuestions = await getTotalQuestionsCount(currentTopic);
+  const questionsCompletedPercent = totalQuestions > 0 ? Math.round((unlockedQuestions.length / totalQuestions) * 100) : 0;
+  
+  // Determine progress section type
+  const excludedTopics = ['borders'];
+  const collectionTopics = ['flags', 'capitals', 'logos', 'area']; // Topics with clickable collection
+  const showProgressSection = !excludedTopics.includes(currentTopic);
+  const isClickableProgress = collectionTopics.includes(currentTopic);
 
   // Create or get mode selection screen
   let modeScreen = document.getElementById('unified-mode-screen');
@@ -4799,85 +5730,209 @@ function showUnifiedModeSelection(quizName, icon) {
     document.body.appendChild(modeScreen);
   }
 
-  // Use premium design for all topics
-  modeScreen.className = 'premium-mode-screen';
+  // Use new Topic Detail design (QuizUp style)
+  modeScreen.className = 'topic-detail-screen';
   modeScreen.style.cssText = '';
-  
-  // Build premium Time Attack button
-  const timeAttackBtn = timeAttackUnlocked 
-    ? `<button onclick="playClickSound(); startUnifiedGame('time-attack')" class="pm-mode-btn pm-mode-unlocked">
-         <span class="pm-mode-icon">⏱️</span>
-         <span>${t('topic_time_attack') || 'Time Attack'} (60s)</span>
-       </button>`
-    : `<div class="pm-mode-btn pm-mode-locked">
-         <div class="pm-mode-main">
-           <span class="pm-lock-icon">🔒</span>
-           <span>${t('topic_time_attack') || 'Time Attack'}</span>
-         </div>
-         <span class="pm-unlock-hint">${(t('topic_reach_level') || 'Reach Level {0} to unlock').replace('{0}', '5')}</span>
-       </div>`;
-
-  // Build premium 3 Hearts button
-  const threeHeartsBtn = threeHeartsUnlocked
-    ? `<button onclick="playClickSound(); startUnifiedGame('three-hearts')" class="pm-mode-btn pm-mode-unlocked">
-         <span class="pm-mode-icon">💜</span>
-         <span>${t('topic_3_hearts') || '3 Hearts'}</span>
-       </button>`
-    : `<div class="pm-mode-btn pm-mode-locked">
-         <div class="pm-mode-main">
-           <span class="pm-lock-icon">🔒</span>
-           <span>${t('topic_3_hearts') || '3 Hearts'}</span>
-         </div>
-         <span class="pm-unlock-hint">${(t('topic_reach_level') || 'Reach Level {0} to unlock').replace('{0}', '10')}</span>
-       </div>`;
 
   modeScreen.innerHTML = `
-    <!-- Header buttons -->
-    <div class="pm-header">
-      <button onclick="playClickSound(); exitUnifiedQuiz()" class="pm-back-btn">←</button>
-      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" class="pm-slot-btn">
-        <span style="font-size:1rem;">+</span> ${t('topic_add_to_slot') || 'Add to Slot'}
-      </button>
+    <!-- Top Bar -->
+    <div class="td-top-bar">
+      <button onclick="playClickSound(); exitUnifiedQuiz()" class="td-back-btn">←</button>
+      <div class="td-top-title">${quizName}</div>
+      <button onclick="playClickSound(); openSlotModal('${currentTopic}')" class="td-slot-btn">+</button>
     </div>
 
-    <!-- Content -->
-    <div class="pm-content">
-      <!-- Hero section -->
-      <div class="pm-hero">
-        <div class="pm-icon-wrapper">
-          <div class="pm-icon-glow"></div>
-          <div class="pm-icon-ring">
-            <span class="pm-icon">${icon}</span>
+    <!-- Scrollable Content -->
+    <div class="td-scroll-container">
+      <!-- Topic Header Section -->
+      <div class="td-header-section">
+        <h1 class="td-title">${quizName}</h1>
+        <p class="td-subtitle">${categoryName} Quiz</p>
+      </div>
+
+      <!-- Hero Row: Card + Buttons -->
+      <div class="td-hero-row">
+        <!-- Topic Card (Left) -->
+        <div class="td-topic-card">
+          <div class="td-card-glow"></div>
+          <div class="td-card-image-wrapper">
+            <img src="${topicImagePath}" alt="${quizName}" class="td-card-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'td-card-emoji\\'>${icon}</span>';">
           </div>
         </div>
-        <h2 class="pm-title">${quizName} Quiz</h2>
-      </div>
 
-      <!-- Level card -->
-      <div class="pm-level-card">
-        <div class="pm-level-badge">
-          <span class="pm-level-star">⭐</span>
-          <span class="pm-level-text">Level ${topicData.level}</span>
+        <!-- Action Buttons (Right) -->
+        <div class="td-action-buttons">
+          <button onclick="playClickSound(); openModeModal()" class="td-play-btn">
+            <span class="td-btn-icon">⚡</span> Play
+          </button>
+          <button onclick="playClickSound(); toggleTopicFollow('${currentTopic}')" class="td-follow-btn ${isFollowing ? 'td-following' : ''}" id="td-follow-btn">
+            <span class="td-btn-icon">${isFollowing ? '➖' : '➕'}</span> ${isFollowing ? 'Unfollow' : 'Follow'}
+          </button>
+          <button onclick="playClickSound(); showLeaderboard()" class="td-rankings-btn">
+            <span class="td-btn-icon">🏆</span> Rankings
+          </button>
         </div>
-        <div class="pm-xp-bar">
-          <div class="pm-xp-fill" style="width:${progress.percentage}%"></div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="td-stats-row">
+        <div class="td-stat-item">
+          <div class="td-stat-label">YOUR LEVEL</div>
+          <div class="td-stat-value">${topicData.level}</div>
         </div>
-        <div class="pm-xp-text">${progress.current}/${progress.needed} XP</div>
+        <div class="td-stat-divider"></div>
+        <div class="td-stat-item">
+          <div class="td-stat-label">FOLLOWERS</div>
+          <div class="td-stat-value" id="td-follower-count">${getTopicFollowers(currentTopic)}</div>
+        </div>
+        <div class="td-stat-divider"></div>
+        <div class="td-stat-item">
+          <div class="td-stat-label">NEXT TITLE AT LVL</div>
+          <div class="td-stat-value">${getNextTitleLevel(topicData.level)}</div>
+        </div>
       </div>
 
-      <!-- Section header -->
-      <div class="pm-section-header">
-        <div class="pm-section-line"></div>
-        <span class="pm-section-title">Choose Game Mode</span>
-        <div class="pm-section-line"></div>
+      <!-- Progress Section -->
+      ${showProgressSection ? `
+      <div class="td-progress-section ${isClickableProgress ? 'td-progress-clickable' : ''}" ${isClickableProgress ? 'onclick="playClickSound(); openQuestionsCollection()"' : ''}>
+        <div class="td-progress-header">
+          <div class="td-progress-label">QUESTIONS COMPLETED</div>
+          ${isClickableProgress ? '<span class="td-progress-arrow">›</span>' : ''}
+        </div>
+        <div class="td-progress-row">
+          <div class="td-progress-bar">
+            <div class="td-progress-fill" id="td-questions-progress-fill" style="width: ${questionsCompletedPercent}%"></div>
+          </div>
+          <span class="td-progress-percent" id="td-questions-progress-text">${questionsCompletedPercent}%</span>
+        </div>
+        ${isClickableProgress ? `<div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>` : ''}
+      </div>
+      ` : ''}
+
+      <!-- Stats Cards Grid -->
+      <div class="td-stats-grid">
+        <div class="td-stats-grid-row">
+          <div class="td-stat-card">
+            <span class="td-stat-card-icon">🎮</span>
+            <span class="td-stat-card-value">${topicData.games || 0}</span>
+            <span class="td-stat-card-label">GAMES</span>
+          </div>
+          <div class="td-stat-card">
+            <span class="td-stat-card-icon">🎯</span>
+            <span class="td-stat-card-value">${topicData.accuracy || 0}%</span>
+            <span class="td-stat-card-label">ACCURACY</span>
+          </div>
+          <div class="td-stat-card">
+            <span class="td-stat-card-icon">🔥</span>
+            <span class="td-stat-card-value">${topicData.bestStreak || 0}</span>
+            <span class="td-stat-card-label">STREAK</span>
+          </div>
+        </div>
+        <div class="td-stats-grid-row">
+          <div class="td-stat-card">
+            <span class="td-stat-card-icon">⏱️</span>
+            <span class="td-stat-card-value">${formatTopicTime(topicData.timeSpentSeconds || 0)}</span>
+            <span class="td-stat-card-label">TIME</span>
+          </div>
+          <div class="td-stat-card td-stat-card-highlight">
+            <span class="td-stat-card-icon">⚡</span>
+            <span class="td-stat-card-value">${formatAvgTime(topicData.totalAnswerTimeMs, topicData.totalQuestionsAnswered)}</span>
+            <span class="td-stat-card-label">A.TIME</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Mode buttons -->
-      <div class="pm-modes">
+      <!-- Level Card -->
+      <div class="td-level-card">
+        <div class="td-level-badge">
+          <span class="td-level-star">⭐</span>
+          <span class="td-level-text">Level ${topicData.level}</span>
+        </div>
+        <div class="td-xp-bar">
+          <div class="td-xp-fill" style="width:${progress.percentage}%"></div>
+        </div>
+        <div class="td-xp-text">${progress.current}/${progress.needed} XP</div>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="td-bottom-nav">
+      <div class="td-nav-item" onclick="playClickSound(); exitUnifiedQuiz(); showHome();">
+        🏠<br><span>${t('nav_home') || 'Home'}</span>
+      </div>
+      <div class="td-nav-item" onclick="playClickSound(); exitUnifiedQuiz(); showTopics();">
+        🌍<br><span>${t('nav_topics') || 'Topics'}</span>
+      </div>
+      <div class="td-nav-item" onclick="playClickSound(); exitUnifiedQuiz(); openSocialTeaser();">
+        👥<br><span>${t('nav_social') || 'Social'}</span>
+      </div>
+      <div class="td-nav-item" onclick="playClickSound(); exitUnifiedQuiz(); showLeaderboard();">
+        🏆<br><span>${t('nav_leaderboard') || 'Leaderboard'}</span>
+      </div>
+      <div class="td-nav-item" onclick="playClickSound(); exitUnifiedQuiz(); showProfile();">
+        👤<br><span>${t('nav_profile') || 'Profile'}</span>
+      </div>
+    </div>
+  `;
+
+  modeScreen.classList.remove('hidden');
+}
+
+// Open Mode Selection Modal
+function openModeModal() {
+  const topicData = getTopicXPData(currentTopic);
+  const timeAttackUnlocked = isModeUnlocked(topicData, 'time-attack');
+  const threeHeartsUnlocked = isModeUnlocked(topicData, 'three-hearts');
+
+  // Build Time Attack button
+  const timeAttackBtn = timeAttackUnlocked 
+    ? `<button onclick="playClickSound(); closeModeModal(); startUnifiedGame('time-attack')" class="mode-modal-btn mode-unlocked">
+         <span class="mode-modal-icon">⏱️</span>
+         <span class="mode-modal-text">${t('topic_time_attack') || 'Time Attack'} (60s)</span>
+       </button>`
+    : `<div class="mode-modal-btn mode-locked">
+         <div class="mode-modal-main">
+           <span class="mode-modal-icon">🔒</span>
+           <span class="mode-modal-text">${t('topic_time_attack') || 'Time Attack'}</span>
+         </div>
+         <span class="mode-modal-hint">${(t('topic_reach_level') || 'Reach Level {0} to unlock').replace('{0}', '5')}</span>
+       </div>`;
+
+  // Build 3 Hearts button
+  const threeHeartsBtn = threeHeartsUnlocked
+    ? `<button onclick="playClickSound(); closeModeModal(); startUnifiedGame('three-hearts')" class="mode-modal-btn mode-unlocked">
+         <span class="mode-modal-icon">💜</span>
+         <span class="mode-modal-text">${t('topic_3_hearts') || '3 Hearts'}</span>
+       </button>`
+    : `<div class="mode-modal-btn mode-locked">
+         <div class="mode-modal-main">
+           <span class="mode-modal-icon">🔒</span>
+           <span class="mode-modal-text">${t('topic_3_hearts') || '3 Hearts'}</span>
+         </div>
+         <span class="mode-modal-hint">${(t('topic_reach_level') || 'Reach Level {0} to unlock').replace('{0}', '10')}</span>
+       </div>`;
+
+  // Create modal
+  let modal = document.getElementById('mode-select-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'mode-select-modal';
+    document.body.appendChild(modal);
+  }
+
+  modal.className = 'mode-select-modal';
+  modal.innerHTML = `
+    <div class="mode-modal-backdrop" onclick="playClickSound(); closeModeModal()"></div>
+    <div class="mode-modal-content">
+      <div class="mode-modal-header">
+        <h3 class="mode-modal-title">${t('mode_choose') || 'Choose Game Mode'}</h3>
+        <button class="mode-modal-close" onclick="playClickSound(); closeModeModal()">✕</button>
+      </div>
+      <div class="mode-modal-buttons">
         <!-- Casual - Always unlocked -->
-        <button onclick="playClickSound(); startUnifiedGame('casual')" class="pm-mode-btn pm-mode-unlocked">
-          <span class="pm-mode-icon">⚡</span>
-          <span>${t('topic_casual') || 'Casual'} (5 ${t('topic_questions') || 'questions'})</span>
+        <button onclick="playClickSound(); closeModeModal(); startUnifiedGame('casual')" class="mode-modal-btn mode-unlocked">
+          <span class="mode-modal-icon">⚡</span>
+          <span class="mode-modal-text">${t('topic_casual') || 'Casual'} (5 ${t('topic_questions') || 'questions'})</span>
         </button>
 
         <!-- Time Attack -->
@@ -4887,15 +5942,30 @@ function showUnifiedModeSelection(quizName, icon) {
         ${threeHeartsBtn}
 
         <!-- 2 Players - Always unlocked -->
-        <button onclick="playClickSound(); startUnifiedGame('two')" class="pm-mode-btn pm-mode-unlocked pm-mode-2p">
-          <span class="pm-mode-icon">👥</span>
-          <span>${t('topic_2_players') || '2 Players'}</span>
+        <button onclick="playClickSound(); closeModeModal(); startUnifiedGame('two')" class="mode-modal-btn mode-unlocked mode-2p">
+          <span class="mode-modal-icon">👥</span>
+          <span class="mode-modal-text">${t('topic_2_players') || '2 Players'}</span>
         </button>
       </div>
     </div>
   `;
 
-  modeScreen.classList.remove('hidden');
+  modal.classList.remove('hidden');
+  // Animate in
+  requestAnimationFrame(() => {
+    modal.classList.add('show');
+  });
+}
+
+// Close Mode Selection Modal
+function closeModeModal() {
+  const modal = document.getElementById('mode-select-modal');
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
 }
 
 // Area difficulty selection handler
@@ -5068,6 +6138,7 @@ function startUnifiedGame(mode) {
   showQuizLoadingScreen(() => {
     // CRITICAL: Reset ALL game state variables
     resetGame(); // Call the existing resetGame() function
+    resetSessionUnlocks(); // Reset new unlocks tracking for this session
 
     // Set game mode and parameters
     gameMode = mode;
@@ -6767,6 +7838,7 @@ function displayUnifiedQuestion() {
     questionText = "Which country's border is this?";
   } else if (currentTopic === 'area') {
     questionText = `What is the area of ${randomFlag.country}?`;
+    currentAreaCountryName = randomFlag.country; // Store for tracking
   } else if (currentTopic === 'flags' && randomFlag.entityType) {
     questionText = getQuestionTextForEntity(randomFlag.entityType);
   } else {
@@ -6956,7 +8028,7 @@ function checkUnifiedAnswer(selected, correct) {
   if (selected === correct) {
     // Play correct sound
     playCorrectSound();
-    
+
     if (gameMode === 'two') {
       if (currentPlayer === 1) player1Score++;
       else player2Score++;
@@ -6969,6 +8041,14 @@ function checkUnifiedAnswer(selected, correct) {
       currentStreak++;
       if (currentStreak > bestSessionStreak) {
         bestSessionStreak = currentStreak;
+      }
+      
+      // Track unlocked question (Questions Completed system)
+      // For area quiz, track by country name instead of formatted area value
+      const trackingId = currentTopic === 'area' ? currentAreaCountryName : correct;
+      const isNewUnlock = trackUnlockedQuestion(currentTopic, trackingId);
+      if (isNewUnlock) {
+        sessionNewUnlocks.push(trackingId);
       }
     }
   } else {
@@ -7182,7 +8262,11 @@ function showUnifiedResults() {
   }
 
   const quizScreen = document.getElementById('unified-quiz-screen');
-  if (!quizScreen) return;
+  if (!quizScreen) {
+    console.error('[DEBUG] showUnifiedResults: quiz screen not found!');
+    return;
+  }
+  console.log('[DEBUG] showUnifiedResults: displaying results...');
 
   let resultText = '';
   let scoreDisplay = '';
@@ -7529,6 +8613,9 @@ function exitUnifiedQuiz() {
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
+
+  // Stop follower count listener
+  stopTopicFollowerListener(currentTopic);
 
   // Destroy galaxy background
   destroyGalaxyBackground();
@@ -14164,7 +15251,7 @@ const GUIDED_TUTORIAL_STEPS = [
   // Step 10: Mode Selection
   {
     type: 'highlight',
-    target: '.unified-mode-selection',
+    target: '.topic-detail-screen',
     title: 'Game Modes',
     text: '<b>Casual</b> — Relaxed, no penalties<br><b>Time Attack</b> — Race the clock (Lvl 5)<br><b>3 Hearts</b> — Survival mode (Lvl 10)<br><br>Level up to unlock all modes!',
     screen: 'mode-selection',
@@ -14654,7 +15741,7 @@ function closeUnifiedModeSelection() {
     modeScreen.classList.add('hidden');
   }
   // Also hide any mode selection overlays
-  const modeOverlay = document.querySelector('.unified-mode-selection');
+  const modeOverlay = document.querySelector('.topic-detail-screen');
   if (modeOverlay) {
     // The mode selection is part of the unified screen, just show topics
     showTopics();
