@@ -95,9 +95,12 @@ Systems that define growth, mastery, and long-term engagement.
 - Data stored in `userData.stats.topics[topicId].unlockedQuestions`
 - Synced to Firebase
 - **Display varies by topic type:**
-  - **Flags:** Percentage + bar + count + clickable (opens collection)
+  - **Flags:** Percentage + bar + count + clickable (opens Flags Collection)
+  - **Capitals:** Percentage + bar + count + clickable (opens Capitals Collection)
+  - **Logos:** Percentage + bar + count + clickable (opens Logos Collection)
+  - **Area:** Percentage + bar + count + clickable (opens Area Collection)
   - **Text-based topics:** Percentage + bar only (not clickable)
-  - **Excluded (borders, area, capitals, logos):** Hidden (not trackable)
+  - **Excluded (borders only):** Hidden (not trackable)
 
 ---
 
@@ -129,7 +132,7 @@ Core play experience of Quizzena.
   - Questions Completed progress bar (clickable)
   - Stats cards: Games, Accuracy, Best Streak, Time Spent, Avg Time
 - Play button opens Mode Selection Modal
-- Questions Completed click opens collection page (for Flags)
+- Questions Completed click opens collection page (for Flags, Capitals, and Logos)
 
 ### Mode Selection Modal
 - Triggered by Play button on Topic Detail Page
@@ -162,16 +165,53 @@ Core play experience of Quizzena.
 - Shows all 200+ country flags in a grid
 - Unlocked flags: Full color, earned by answering correctly
 - Locked flags: Grayscale with lock icon overlay
+
+### Capitals Collection
+- Accessible via Questions Completed click (Capitals topic only)
+- Shows all capital cities with their images
+- Unlocked capitals: Full color image, capital name visible
+- Locked capitals: Grayscale image with lock icon, capital name visible
+- Data fetched from REST Countries API (same source as quiz)
 - Country names always visible (locked or unlocked)
 - Sorting: Unlocked first (A-Z), then Locked (A-Z)
 - Header shows progress: "X/Y Unlocked (Z%)"
+
+### Logos Collection
+- Accessible via Questions Completed click (Logos topic only)
+- Shows all 230 brand logos in a grid
+- Unlocked logos: Full color SVG, brand name visible
+- Locked logos: Grayscale image with lock icon, brand name visible
+- Data loaded from `topics/logos/questions.json`
+- Sorting: Unlocked first (A-Z), then Locked (A-Z)
+- Header shows progress: "X/Y Unlocked (Z%)"
 - Other topics: "Coming soon" placeholder (text-based questions)
+
+### Area Collection
+- Accessible via Questions Completed click (Area topic only)
+- Shows all ~195 countries with their silhouettes
+- Unlocked countries: Full color silhouette, country name + area value visible
+- Locked countries: Grayscale silhouette with lock icon, country name visible
+- Data fetched from REST Countries API (same source as quiz)
+- Tracking by country name (e.g., "Russia", "Canada")
+- Sorting: Unlocked first, then by area (largest to smallest)
+- Header shows progress: "X/Y Unlocked (Z%)"
 
 ---
 
 ## 5️⃣ SOCIAL SYSTEMS (PARTIAL / EXPANDING)
 
 Social foundations that are present or prepared.
+
+### Topic Follow System (LIVE)
+- Users can follow/unfollow any topic
+- Follower counts update in real-time across all players
+- Data model:
+  - `users/{uid}/follows/{topicId}` - User's follow records
+  - `topics/{topicId}.followersCount` - Aggregate counter
+- Atomic transactions prevent race conditions
+- Counter never goes below 0
+- DEV_MODE: Falls back to local-only state
+- Real-time listeners attached on Topic Detail Page, detached on exit
 
 ### Leaderboard (Preview)
 - UI exists

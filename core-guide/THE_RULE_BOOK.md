@@ -130,14 +130,37 @@ How question unlocking works.
 - All game modes contribute to Questions Completed
 
 ### Display rules by topic type:
-- **Flags:** Shows percentage + bar + count, clickable (opens collection)
+- **Flags:** Shows percentage + bar + count, clickable (opens Flags Collection)
+- **Capitals:** Shows percentage + bar + count, clickable (opens Capitals Collection)
+- **Logos:** Shows percentage + bar + count, clickable (opens Logos Collection)
+- **Area:** Shows percentage + bar + count, clickable (opens Area Collection)
 - **Text-based topics:** Shows percentage + bar only, NOT clickable
-- **Excluded topics (borders, area, capitals, logos):** Section hidden
+- **Excluded topics (borders only):** Section hidden
 
 ### For Flags topic specifically:
 - Each country flag is a "question"
 - Unlocking a flag shows it in full color in the collection
 - Locked flags appear grayscale with names visible
+
+### For Capitals topic specifically:
+- Each capital city is a "question"
+- The unlocked ID is the capital name (e.g., "Paris")
+- Unlocking a capital shows its image in full color
+- Locked capitals appear grayscale with capital names visible
+
+### For Logos topic specifically:
+- Each brand logo is a "question"
+- The unlocked ID is the brand name (e.g., "Nike", "Apple")
+- Unlocking a logo shows it in full color
+- Locked logos appear grayscale with brand names visible
+
+### For Area topic specifically:
+- Each country is a "question"
+- The unlocked ID is the country name (e.g., "Russia", "Canada")
+- Tracking uses country name, not the formatted area value
+- Unlocking a country shows its silhouette in full color with area value
+- Locked countries appear grayscale with country names visible
+- Total question count: ~195 countries from REST Countries API
 
 ### Questions Completed data is per-topic
 - Each topic tracks its own unlocked questions
@@ -169,6 +192,9 @@ Rules for the pre-game topic screen.
 
 ### Questions Completed is clickable
 - For Flags: Opens Flags Collection page
+- For Capitals: Opens Capitals Collection page
+- For Logos: Opens Logos Collection page
+- For Area: Opens Area Collection page
 - For other topics: Shows "Coming soon" message
 
 ### Follow and Rankings buttons are UI placeholders
@@ -197,8 +223,17 @@ Rules governing interaction between players.
 
 - Profile viewing is allowed without friendship
 - Leaderboard clicks open profiles
-- Followers/following do not yet affect gameplay
 - Social Feed is non-functional until implemented
+
+### Topic Follow Rules (LIVE)
+- A user can follow or unfollow any topic
+- Following is **atomic** (transaction-based, no duplicates)
+- Follower count is **global** (shared across all users)
+- Follower count **never goes below 0**
+- Unfollowing requires existing follow record (safety guard)
+- Follow state is derived from Firebase, not local state alone
+- Real-time updates: All users see count changes instantly
+- DEV_MODE: Follow works locally only (no Firebase sync)
 
 ---
 
