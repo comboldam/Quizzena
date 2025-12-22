@@ -173,6 +173,17 @@ Core play experience of Quizzena.
 
 Social foundations that are present or prepared.
 
+### Topic Follow System (LIVE)
+- Users can follow/unfollow any topic
+- Follower counts update in real-time across all players
+- Data model:
+  - `users/{uid}/follows/{topicId}` - User's follow records
+  - `topics/{topicId}.followersCount` - Aggregate counter
+- Atomic transactions prevent race conditions
+- Counter never goes below 0
+- DEV_MODE: Falls back to local-only state
+- Real-time listeners attached on Topic Detail Page, detached on exit
+
 ### Leaderboard (Preview)
 - UI exists
 - Clickable rows

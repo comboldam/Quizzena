@@ -4854,12 +4854,229 @@ function getTopicImagePath(topicId) {
   return imageMap[topicId] || 'icons/topics/geography/flags.png';
 }
 
-// Track follow state per topic (temporary - will be Firebase later)
-let topicFollowState = {};
+// ============================================
+// 🔔 TOPIC FOLLOW SYSTEM (FIREBASE-SYNCED)
+// ============================================
 
-// Get follower count for a topic (will be Firebase later)
+// Local cache for follow state and counts (hydrated from Firebase)
+let topicFollowState = {};
+let topicFollowerCounts = {};
+let topicFollowListeners = {}; // Store active listeners for cleanup
+
+// Get follower count for a topic (from cache, updated by listener)
 function getTopicFollowers(topicId) {
-  return 0;
+  return topicFollowerCounts[topicId] || 0;
+}
+
+// Check if current user follows a topic (from Firebase or cache)
+async function checkUserFollowsTopic(topicId) {
+  // DEV_MODE: use local cache only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    return topicFollowState[topicId] || false;
+  }
+  
+  try {
+    const followDoc = await firebaseDb
+      .collection('users')
+      .doc(firebaseUser.uid)
+      .collection('follows')
+      .doc(topicId)
+      .get();
+    
+    const isFollowing = followDoc.exists;
+    topicFollowState[topicId] = isFollowing; // Update cache
+    return isFollowing;
+  } catch (error) {
+    console.error('Error checking follow status:', error);
+    return topicFollowState[topicId] || false;
+  }
+}
+
+// Follow a topic (with atomic transaction)
+async function followTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if already following
+      const followDoc = await transaction.get(userFollowRef);
+      if (followDoc.exists) {
+        throw new Error('Already following');
+      }
+      
+      // Get current topic doc (may not exist)
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Create follow record
+      transaction.set(userFollowRef, {
+        followedAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      
+      // Increment or create topic counter
+      if (topicDoc.exists) {
+        transaction.update(topicRef, {
+          followersCount: currentCount + 1
+        });
+      } else {
+        transaction.set(topicRef, {
+          followersCount: 1
+        });
+      }
+    });
+    
+    // Update local cache (optimistic)
+    topicFollowState[topicId] = true;
+    topicFollowerCounts[topicId] = (topicFollowerCounts[topicId] || 0) + 1;
+    
+    console.log(`✅ Followed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Already following') {
+      console.log(`Already following: ${topicId}`);
+      topicFollowState[topicId] = true;
+      return false;
+    }
+    console.error('Error following topic:', error);
+    return false;
+  }
+}
+
+// Unfollow a topic (with atomic transaction + safety guard)
+async function unfollowTopic(topicId) {
+  // DEV_MODE: local only
+  if (DEV_MODE || !firebaseDb || !firebaseUser) {
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    return true;
+  }
+  
+  const userFollowRef = firebaseDb
+    .collection('users')
+    .doc(firebaseUser.uid)
+    .collection('follows')
+    .doc(topicId);
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  try {
+    await firebaseDb.runTransaction(async (transaction) => {
+      // Check if following (safety guard)
+      const followDoc = await transaction.get(userFollowRef);
+      if (!followDoc.exists) {
+        throw new Error('Not following');
+      }
+      
+      // Get current topic doc
+      const topicDoc = await transaction.get(topicRef);
+      const currentCount = topicDoc.exists ? (topicDoc.data().followersCount || 0) : 0;
+      
+      // Delete follow record
+      transaction.delete(userFollowRef);
+      
+      // Decrement counter (never below 0)
+      if (topicDoc.exists && currentCount > 0) {
+        transaction.update(topicRef, {
+          followersCount: currentCount - 1
+        });
+      }
+    });
+    
+    // Update local cache
+    topicFollowState[topicId] = false;
+    topicFollowerCounts[topicId] = Math.max(0, (topicFollowerCounts[topicId] || 0) - 1);
+    
+    console.log(`✅ Unfollowed topic: ${topicId}`);
+    return true;
+  } catch (error) {
+    if (error.message === 'Not following') {
+      console.log(`Not following: ${topicId}`);
+      topicFollowState[topicId] = false;
+      return false;
+    }
+    console.error('Error unfollowing topic:', error);
+    return false;
+  }
+}
+
+// Start real-time listener for topic follower count
+function startTopicFollowerListener(topicId) {
+  // DEV_MODE: no listener needed
+  if (DEV_MODE || !firebaseDb) {
+    return null;
+  }
+  
+  // Don't create duplicate listeners
+  if (topicFollowListeners[topicId]) {
+    return topicFollowListeners[topicId];
+  }
+  
+  const topicRef = firebaseDb.collection('topics').doc(topicId);
+  
+  const unsubscribe = topicRef.onSnapshot((doc) => {
+    if (doc.exists) {
+      const count = doc.data().followersCount || 0;
+      topicFollowerCounts[topicId] = count;
+      
+      // Update UI if on topic detail page
+      updateFollowerCountUI(topicId, count);
+    } else {
+      topicFollowerCounts[topicId] = 0;
+      updateFollowerCountUI(topicId, 0);
+    }
+  }, (error) => {
+    console.error('Follower listener error:', error);
+  });
+  
+  topicFollowListeners[topicId] = unsubscribe;
+  return unsubscribe;
+}
+
+// Stop real-time listener for topic
+function stopTopicFollowerListener(topicId) {
+  if (topicFollowListeners[topicId]) {
+    topicFollowListeners[topicId](); // Call unsubscribe function
+    delete topicFollowListeners[topicId];
+    console.log(`🔕 Stopped listener for: ${topicId}`);
+  }
+}
+
+// Update follower count in UI (called by listener)
+function updateFollowerCountUI(topicId, count) {
+  // Only update if we're viewing this topic's detail page
+  if (currentTopic !== topicId) return;
+  
+  const followerValueEl = document.getElementById('td-follower-count');
+  if (followerValueEl) {
+    followerValueEl.textContent = count;
+  }
+}
+
+// Update follow button UI
+function updateFollowButtonUI(isFollowing) {
+  const btn = document.getElementById('td-follow-btn');
+  if (btn) {
+    if (isFollowing) {
+      btn.innerHTML = `<span class="td-btn-icon">➖</span> Unfollow`;
+      btn.classList.add('td-following');
+    } else {
+      btn.innerHTML = `<span class="td-btn-icon">➕</span> Follow`;
+      btn.classList.remove('td-following');
+    }
+  }
 }
 
 // Get next title unlock level
@@ -5105,17 +5322,23 @@ function formatAvgTime(totalMs, totalQuestions) {
   return avgSeconds < 10 ? `${avgSeconds.toFixed(1)}s` : `${Math.round(avgSeconds)}s`;
 }
 
-function toggleTopicFollow(topicId) {
-  topicFollowState[topicId] = !topicFollowState[topicId];
-  const btn = document.getElementById('td-follow-btn');
-  if (btn) {
-    if (topicFollowState[topicId]) {
-      btn.innerHTML = `<span class="td-btn-icon">➖</span> Unfollow`;
-      btn.classList.add('td-following');
-    } else {
-      btn.innerHTML = `<span class="td-btn-icon">➕</span> Follow`;
-      btn.classList.remove('td-following');
-    }
+// Toggle follow state for a topic (main entry point)
+async function toggleTopicFollow(topicId) {
+  const isCurrentlyFollowing = topicFollowState[topicId] || false;
+  
+  // Optimistic UI update (immediate feedback)
+  updateFollowButtonUI(!isCurrentlyFollowing);
+  
+  let success;
+  if (isCurrentlyFollowing) {
+    success = await unfollowTopic(topicId);
+  } else {
+    success = await followTopic(topicId);
+  }
+  
+  // Revert UI if failed
+  if (!success) {
+    updateFollowButtonUI(isCurrentlyFollowing);
   }
 }
 
@@ -5129,7 +5352,12 @@ async function showUnifiedModeSelection(quizName, icon) {
   const topicConfig = TOPIC_CONFIG[currentTopic] || {};
   const categoryName = topicConfig.category ? topicConfig.category.charAt(0).toUpperCase() + topicConfig.category.slice(1) : 'Quiz';
   const topicImagePath = getTopicImagePath(currentTopic);
-  const isFollowing = topicFollowState[currentTopic] || false;
+  
+  // Check follow status (Firebase or cache)
+  const isFollowing = await checkUserFollowsTopic(currentTopic);
+  
+  // Start real-time listener for follower count
+  startTopicFollowerListener(currentTopic);
   
   // Get questions completed data
   const unlockedQuestions = getUnlockedQuestions(currentTopic);
@@ -5203,7 +5431,7 @@ async function showUnifiedModeSelection(quizName, icon) {
         <div class="td-stat-divider"></div>
         <div class="td-stat-item">
           <div class="td-stat-label">FOLLOWERS</div>
-          <div class="td-stat-value">${getTopicFollowers(currentTopic)}</div>
+          <div class="td-stat-value" id="td-follower-count">${getTopicFollowers(currentTopic)}</div>
         </div>
         <div class="td-stat-divider"></div>
         <div class="td-stat-item">
@@ -8030,6 +8258,9 @@ function exitUnifiedQuiz() {
   if (trackedTopics.includes(currentTopic)) {
     saveQuizStats(currentTopic, false);
   }
+
+  // Stop follower count listener
+  stopTopicFollowerListener(currentTopic);
 
   // Destroy galaxy background
   destroyGalaxyBackground();

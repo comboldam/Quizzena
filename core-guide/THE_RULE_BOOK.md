@@ -197,8 +197,17 @@ Rules governing interaction between players.
 
 - Profile viewing is allowed without friendship
 - Leaderboard clicks open profiles
-- Followers/following do not yet affect gameplay
 - Social Feed is non-functional until implemented
+
+### Topic Follow Rules (LIVE)
+- A user can follow or unfollow any topic
+- Following is **atomic** (transaction-based, no duplicates)
+- Follower count is **global** (shared across all users)
+- Follower count **never goes below 0**
+- Unfollowing requires existing follow record (safety guard)
+- Follow state is derived from Firebase, not local state alone
+- Real-time updates: All users see count changes instantly
+- DEV_MODE: Follow works locally only (no Firebase sync)
 
 ---
 
