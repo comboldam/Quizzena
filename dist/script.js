@@ -4891,9 +4891,24 @@ async function loadAllFlagsData() {
 
 // Get total questions count for a topic
 async function getTotalQuestionsCount(topicId) {
+  // Flags - load from codes.json
   if (topicId === 'flags') {
     const data = await loadAllFlagsData();
     return data.length;
+  }
+  // Capitals - load from capitals.json
+  if (topicId === 'capitals') {
+    try {
+      const response = await fetch('capitals.json');
+      const data = await response.json();
+      return data.length;
+    } catch (err) {
+      return 0;
+    }
+  }
+  // Borders & Area - placeholder count (API-based, not trackable yet)
+  if (topicId === 'borders' || topicId === 'area') {
+    return 0; // These generate questions dynamically
   }
   // For JSON topics, load and count
   if (JSON_TOPICS.includes(topicId)) {
@@ -4963,10 +4978,20 @@ function resetSessionUnlocks() {
 // 🏳️ FLAGS COLLECTION PAGE
 // ============================================
 
+// Generic function to open questions collection for any topic
+function openQuestionsCollection() {
+  if (currentTopic === 'flags') {
+    openFlagsCollection();
+  } else {
+    // Show coming soon for other topics
+    showToast('📚 Collection coming soon for this topic!');
+  }
+}
+
 async function openFlagsCollection() {
-  // Only show collection for flags topic for now
+  // Only show collection for flags topic
   if (currentTopic !== 'flags') {
-    showToast('Collection coming soon for this topic!');
+    showToast('📚 Collection coming soon for this topic!');
     return;
   }
   
@@ -5093,6 +5118,12 @@ async function showUnifiedModeSelection(quizName, icon) {
   const unlockedQuestions = getUnlockedQuestions(currentTopic);
   const totalQuestions = await getTotalQuestionsCount(currentTopic);
   const questionsCompletedPercent = totalQuestions > 0 ? Math.round((unlockedQuestions.length / totalQuestions) * 100) : 0;
+  
+  // Determine progress section type
+  const excludedTopics = ['borders', 'area', 'capitals', 'logos'];
+  const flagsTopic = currentTopic === 'flags';
+  const showProgressSection = !excludedTopics.includes(currentTopic);
+  const isClickableProgress = flagsTopic; // Only flags is clickable
 
   // Create or get mode selection screen
   let modeScreen = document.getElementById('unified-mode-screen');
@@ -5164,11 +5195,12 @@ async function showUnifiedModeSelection(quizName, icon) {
         </div>
       </div>
 
-      <!-- Progress Section (Clickable to open collection) -->
-      <div class="td-progress-section td-progress-clickable" onclick="playClickSound(); openFlagsCollection()">
+      <!-- Progress Section -->
+      ${showProgressSection ? `
+      <div class="td-progress-section ${isClickableProgress ? 'td-progress-clickable' : ''}" ${isClickableProgress ? 'onclick="playClickSound(); openQuestionsCollection()"' : ''}>
         <div class="td-progress-header">
           <div class="td-progress-label">QUESTIONS COMPLETED</div>
-          <span class="td-progress-arrow">›</span>
+          ${isClickableProgress ? '<span class="td-progress-arrow">›</span>' : ''}
         </div>
         <div class="td-progress-row">
           <div class="td-progress-bar">
@@ -5176,8 +5208,9 @@ async function showUnifiedModeSelection(quizName, icon) {
           </div>
           <span class="td-progress-percent" id="td-questions-progress-text">${questionsCompletedPercent}%</span>
         </div>
-        <div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>
+        ${isClickableProgress ? `<div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>` : ''}
       </div>
+      ` : ''}
 
       <!-- Stats Cards Grid -->
       <div class="td-stats-grid">
