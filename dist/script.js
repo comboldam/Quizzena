@@ -3,12 +3,12 @@
 // ============================================
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAaAO22Tl4QkEYnICaEd8g7WpITKsIWvYI",
-  authDomain: "quizzena-app.firebaseapp.com",
-  projectId: "quizzena-app",
-  storageBucket: "quizzena-app.firebasestorage.app",
-  messagingSenderId: "839227999302",
-  appId: "1:839227999302:android:b63322d2425eb123067647"
+  apiKey: "AIzaSyCoBauMU89GBogHSteLh1T5aeKQRKsO72U",
+  authDomain: "quizzena-testing.firebaseapp.com",
+  projectId: "quizzena-testing",
+  storageBucket: "quizzena-testing.firebasestorage.app",
+  messagingSenderId: "521712948758",
+  appId: "1:521712948758:web:f4719bb3337d4d0b9b4737"
 };
 
 // Initialize Firebase
@@ -22,6 +22,7 @@ if (typeof firebase !== 'undefined') {
   firebaseAuth = firebase.auth();
   firebaseDb = firebase.firestore();
   console.log('🔥 Firebase initialized successfully');
+  console.log('[FIREBASE] Connected to Quizzena-Testing');
 } else {
   console.warn('Firebase SDK not loaded');
 }
@@ -45,6 +46,9 @@ async function initFirebaseAuth() {
     
     firebaseUser = user;
     
+    console.log("[AUTH] Ready, retrying sync");
+    saveUserData();
+
     // Create/update Firestore user document
     await updateFirestoreUser(user.uid);
     
@@ -313,7 +317,7 @@ const DEV_MODE = false;
 
 // When true: Shows dev panel button
 // When false: Hides dev panel (production UI)
-const SHOW_DEV_UI = false;
+const SHOW_DEV_UI = true;
 
 // ============================================
 // USER DATA SYSTEM
@@ -516,6 +520,11 @@ async function loadFromFirebase() {
 }
 
 function saveUserData() {
+  console.log("[SYNC CHECK] saveUserData called");
+  console.log("[SYNC CHECK] DEV_MODE:", DEV_MODE);
+  console.log("[SYNC CHECK] firebaseDb:", !!firebaseDb);
+  console.log("[SYNC CHECK] firebaseUser:", firebaseUser?.uid || "NULL - AUTH NOT COMPLETE!");
+  
   // Always save to localStorage (fast, works offline)
   localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
   
@@ -523,6 +532,8 @@ function saveUserData() {
   if (!DEV_MODE && firebaseDb && firebaseUser) {
     console.log("[FIREBASE SYNC] Writing user:", firebaseUser?.uid);
     syncToFirebase();
+  } else {
+    console.warn("[SYNC CHECK] Firebase sync SKIPPED! Conditions not met.");
   }
 }
 
@@ -535,7 +546,11 @@ async function syncToFirebase() {
     await userRef.set({
       // Profile & Setup
       isSetupComplete: userData.isSetupComplete,
-      profile: userData.profile,
+      profile: {
+        username: userData.profile?.username ?? null,
+        country: userData.profile?.country ?? null,
+        createdAt: userData.profile?.createdAt ?? null
+      },
       
       // All Stats (includes XP, levels, modesUnlocked per topic)
       stats: userData.stats,
@@ -554,6 +569,7 @@ async function syncToFirebase() {
     }, { merge: true });
     
     console.log('🔥 Data synced to Firebase');
+    console.log('[FIREBASE SYNC] Stats synced', userData.stats);
   } catch (error) {
     console.error('🔥 Firebase sync error:', error);
     // Silent fail - localStorage still has the data
@@ -7183,7 +7199,11 @@ function showUnifiedResults() {
   }
 
   const quizScreen = document.getElementById('unified-quiz-screen');
-  if (!quizScreen) return;
+  if (!quizScreen) {
+    console.error('[DEBUG] showUnifiedResults: quiz screen not found!');
+    return;
+  }
+  console.log('[DEBUG] showUnifiedResults: displaying results...');
 
   let resultText = '';
   let scoreDisplay = '';
