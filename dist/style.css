@@ -5667,18 +5667,9 @@ footer button:hover {
 }
 
 /* Small Topic Cards - 3D Glass Effect */
-/* Hide borders quiz on Firebase and Android branches (not fully ready for launch) */
-#borders-topic-btn {
+/* Hide borders quiz when SHOW_BORDERS_QUIZ is false */
+.topic-card-small:has(#borders-topic-btn) {
   display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/* Hide the parent container that holds the borders button */
-.topic-card-small:has(#borders-topic-btn),
-div:has(#borders-topic-btn) {
-  display: none !important;
-  visibility: hidden !important;
 }
 
 .topic-card-small {
@@ -6214,9 +6205,10 @@ div:has(#borders-topic-btn) {
 .profile-name-row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 12px;
-  margin-bottom: 0;
+  margin-bottom: 8px;
+  padding: 0 10px;
 }
 
 .profile-name {
@@ -6224,8 +6216,14 @@ div:has(#borders-topic-btn) {
   font-size: 1.6rem;
   font-weight: 700;
   color: white;
-  margin: 0 0 2px 0;
+  margin: 0;
   text-shadow: 0 2px 15px rgba(124, 58, 237, 0.3);
+  flex: 1;
+  text-align: left;
+}
+
+.profile-name-row .profile-level-badge {
+  flex-shrink: 0;
 }
 
 /* Profile Level Badge - identical to top bar, just scaled */
@@ -6244,6 +6242,48 @@ div:has(#borders-topic-btn) {
 
 .profile-level-badge .level-badge-number {
   font-size: 0.85rem;
+}
+
+/* Profile Titles Button */
+.profile-titles-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(124, 58, 237, 0.4);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+  max-width: 200px;
+}
+
+.profile-titles-btn:hover {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.3), rgba(139, 92, 246, 0.25));
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  transform: translateY(-1px);
+}
+
+.profile-titles-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+}
+
+.profile-titles-btn-icon {
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.5));
+}
+
+.profile-titles-btn-text {
+  letter-spacing: 0.5px;
 }
 
 .profile-bio {

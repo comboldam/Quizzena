@@ -2391,29 +2391,21 @@ capitalsTopicBtn.onclick = () => {
   showUnifiedModeSelection('Capitals', '🏛️');
 };
 
-// Hide borders quiz on Firebase and Android branches (not fully ready for launch)
-const HIDE_BORDERS_QUIZ = true; // Set to false when ready to launch
+// Borders quiz visibility toggle (set to false to hide from users)
+const SHOW_BORDERS_QUIZ = false;
 
-if (HIDE_BORDERS_QUIZ) {
-  // Hide the button and its parent container visually
-  if (bordersTopicBtn) {
-    bordersTopicBtn.style.display = 'none';
-    bordersTopicBtn.style.visibility = 'hidden';
-    bordersTopicBtn.style.pointerEvents = 'none';
-    if (bordersTopicBtn.parentElement) {
-      bordersTopicBtn.parentElement.style.display = 'none';
-      bordersTopicBtn.parentElement.style.visibility = 'hidden';
-    }
-    // Disable onclick
-    bordersTopicBtn.onclick = null;
-    bordersTopicBtn.disabled = true;
-  }
-} else {
+if (SHOW_BORDERS_QUIZ) {
   bordersTopicBtn.onclick = () => {
     playClickSound();
     currentTopic = 'borders';
     showUnifiedModeSelection('Borders', '🗺️');
   };
+} else {
+  // Hide borders quiz - keep code ready for when we want to enable it
+  if (bordersTopicBtn && bordersTopicBtn.parentElement) {
+    bordersTopicBtn.parentElement.style.display = 'none';
+  }
+  bordersTopicBtn.onclick = null;
 }
 
 areaTopicBtn.onclick = () => {
@@ -10021,7 +10013,7 @@ function renderTopicStatsChart() {
       
       let value = 0;
       switch (currentTopicStatType) {
-        case 'games': value = hourData.g; break;
+        case 'games': value = Math.round(hourData.g || 0); break; // Games must be whole numbers
         case 'accuracy': 
           const totalQ = hourData.c + hourData.w;
           value = totalQ > 0 ? Math.round((hourData.c / totalQ) * 100) : 0;
@@ -10062,7 +10054,7 @@ function renderTopicStatsChart() {
       
       let value = 0;
       switch (currentTopicStatType) {
-        case 'games': value = dayData.games; break;
+        case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
         case 'accuracy':
           const totalQ = dayData.correct + dayData.wrong;
           value = totalQ > 0 ? Math.round((dayData.correct / totalQ) * 100) : 0;
@@ -10096,7 +10088,7 @@ function renderTopicStatsChart() {
       
       let value = 0;
       switch (currentTopicStatType) {
-        case 'games': value = dayData.games; break;
+        case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
         case 'accuracy':
           const totalQ = dayData.correct + dayData.wrong;
           value = totalQ > 0 ? Math.round((dayData.correct / totalQ) * 100) : 0;
@@ -10143,7 +10135,7 @@ function renderTopicStatsChart() {
       
       let value = 0;
       switch (currentTopicStatType) {
-        case 'games': value = monthTotal.games; break;
+        case 'games': value = Math.round(monthTotal.games || 0); break; // Games must be whole numbers
         case 'accuracy':
           const totalQ = monthTotal.correct + monthTotal.wrong;
           value = totalQ > 0 ? Math.round((monthTotal.correct / totalQ) * 100) : 0;
@@ -12605,7 +12597,7 @@ function renderStatsChart() {
       
       let value = 0;
       switch (currentStatType) {
-        case 'games': value = hourData.g; break;
+        case 'games': value = Math.round(hourData.g || 0); break; // Games must be whole numbers
         case 'questions': value = hourData.c + hourData.w; break;
         case 'correct': value = hourData.c; break;
         case 'wrong': value = hourData.w; break;
@@ -12637,7 +12629,7 @@ function renderStatsChart() {
       
       let value = 0;
       switch (currentStatType) {
-        case 'games': value = dayData.games; break;
+        case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
         case 'questions': value = dayData.correct + dayData.wrong; break;
         case 'correct': value = dayData.correct; break;
         case 'wrong': value = dayData.wrong; break;
@@ -12670,7 +12662,7 @@ function renderStatsChart() {
         
         let value = 0;
         switch (currentStatType) {
-          case 'games': value = dayData.games; break;
+          case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
           case 'questions': value = dayData.correct + dayData.wrong; break;
           case 'correct': value = dayData.correct; break;
           case 'wrong': value = dayData.wrong; break;
@@ -12721,7 +12713,7 @@ function renderStatsChart() {
           
           let value = 0;
           switch (currentStatType) {
-            case 'games': value = dayData.games || 0; break;
+            case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
             case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
             case 'correct': value = dayData.correct || 0; break;
             case 'wrong': value = dayData.wrong || 0; break;
@@ -12749,55 +12741,118 @@ function renderStatsChart() {
     }
     
   } else if (currentStatsPeriod === 'all') {
-    // Show all time data grouped by month
+    // Show all time data from first recorded day
+    // If more than a year, group by years; otherwise show daily
     const allDates = Object.keys(history).sort();
     
     if (allDates.length === 0) {
       labels = ['No Data'];
       data = [0];
     } else {
-      const monthlyData = {};
+      // Get first and last dates
+      const firstDate = new Date(allDates[0]);
+      const lastDate = new Date(allDates[allDates.length - 1]);
+      const daysDiff = Math.floor((lastDate - firstDate) / (1000 * 60 * 60 * 24));
+      const yearsDiff = (lastDate.getFullYear() - firstDate.getFullYear()) + 
+                       (lastDate.getMonth() - firstDate.getMonth()) / 12;
       
-      allDates.forEach(dateKey => {
-        const date = new Date(dateKey);
-        const monthKey = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}`;
+      // If more than 1 year, group by years; otherwise show daily for time, monthly for others
+      if (yearsDiff > 1 && currentStatType === 'time') {
+        // Group by years
+        const yearlyData = {};
         
-        if (!monthlyData[monthKey]) {
-          monthlyData[monthKey] = { total: 0, peak: 0 };
-        }
-        
-        const dayData = history[dateKey];
-        let value = 0;
-        switch (currentStatType) {
-          case 'games': value = dayData.games || 0; break;
-          case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
-          case 'correct': value = dayData.correct || 0; break;
-          case 'wrong': value = dayData.wrong || 0; break;
-          case 'time': value = dayData.time || 0; break; // Seconds (raw)
-          case 'streak': value = dayData.streak || 0; break;
-        }
-        
-        if (currentStatType === 'streak') {
-          if (value > monthlyData[monthKey].peak) {
-            monthlyData[monthKey].peak = value;
+        allDates.forEach(dateKey => {
+          const date = new Date(dateKey);
+          const yearKey = date.getFullYear().toString();
+          
+          if (!yearlyData[yearKey]) {
+            yearlyData[yearKey] = { total: 0, peak: 0 };
           }
-        } else {
-          monthlyData[monthKey].total += value;
-        }
-      });
-      
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      const sortedMonths = Object.keys(monthlyData).sort();
-      
-      sortedMonths.forEach(monthKey => {
-        const [year, month] = monthKey.split('-');
-        labels.push(`${monthNames[parseInt(month)-1]} '${year.slice(2)}`);
+          
+          const dayData = history[dateKey];
+          let value = dayData.time || 0; // Seconds (raw)
+          
+          yearlyData[yearKey].total += value;
+          if (value > yearlyData[yearKey].peak) {
+            yearlyData[yearKey].peak = value;
+          }
+        });
         
-        const val = currentStatType === 'streak' ? monthlyData[monthKey].peak : monthlyData[monthKey].total;
-        data.push(val);
-        total += (currentStatType === 'streak') ? 0 : val;
-        if (val > peak) peak = val;
-      });
+        const sortedYears = Object.keys(yearlyData).sort();
+        sortedYears.forEach(yearKey => {
+          labels.push(yearKey);
+          const val = yearlyData[yearKey].total;
+          data.push(val);
+          total += val;
+          if (val > peak) peak = val;
+        });
+      } else if (yearsDiff > 1) {
+        // For non-time stats, still group by month if more than a year
+        const monthlyData = {};
+        
+        allDates.forEach(dateKey => {
+          const date = new Date(dateKey);
+          const monthKey = `${date.getFullYear()}-${(date.getMonth()+1).toString().padStart(2, '0')}`;
+          
+          if (!monthlyData[monthKey]) {
+            monthlyData[monthKey] = { total: 0, peak: 0 };
+          }
+          
+          const dayData = history[dateKey];
+          let value = 0;
+          switch (currentStatType) {
+            case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
+            case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
+            case 'correct': value = dayData.correct || 0; break;
+            case 'wrong': value = dayData.wrong || 0; break;
+            case 'time': value = dayData.time || 0; break; // Seconds (raw)
+            case 'streak': value = dayData.streak || 0; break;
+          }
+          
+          if (currentStatType === 'streak') {
+            if (value > monthlyData[monthKey].peak) {
+              monthlyData[monthKey].peak = value;
+            }
+          } else {
+            monthlyData[monthKey].total += value;
+          }
+        });
+        
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const sortedMonths = Object.keys(monthlyData).sort();
+        
+        sortedMonths.forEach(monthKey => {
+          const [year, month] = monthKey.split('-');
+          labels.push(`${monthNames[parseInt(month)-1]} '${year.slice(2)}`);
+          
+          const val = currentStatType === 'streak' ? monthlyData[monthKey].peak : monthlyData[monthKey].total;
+          data.push(val);
+          total += (currentStatType === 'streak') ? 0 : val;
+          if (val > peak) peak = val;
+        });
+      } else {
+        // Less than 1 year: show daily data for all recorded days
+        allDates.forEach(dateKey => {
+          const date = new Date(dateKey);
+          const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+          labels.push(`${monthNames[date.getMonth()]} ${date.getDate()}`);
+          
+          const dayData = history[dateKey];
+          let value = 0;
+          switch (currentStatType) {
+            case 'games': value = Math.round(dayData.games || 0); break; // Games must be whole numbers
+            case 'questions': value = (dayData.correct || 0) + (dayData.wrong || 0); break;
+            case 'correct': value = dayData.correct || 0; break;
+            case 'wrong': value = dayData.wrong || 0; break;
+            case 'time': value = dayData.time || 0; break; // Seconds (raw)
+            case 'streak': value = dayData.streak || 0; break;
+          }
+          
+          data.push(value);
+          total += (currentStatType === 'streak') ? 0 : value;
+          if (value > peak) peak = value;
+        });
+      }
       
       if (currentStatType === 'streak') {
         total = Math.max(...data, 0);
@@ -12983,6 +13038,7 @@ function renderStatsChart() {
           ticks: {
             color: 'rgba(255, 255, 255, 0.5)',
             font: { size: 10 },
+            stepSize: currentStatType === 'games' ? 1 : undefined,
             callback: function(value) {
               if (currentStatType === 'time') {
                 if (timeUnit === 'hours') {
@@ -12998,6 +13054,10 @@ function renderStatsChart() {
                 }
                 // Seconds - whole numbers
                 return Math.round(value) + 's';
+              }
+              // For games, ensure whole numbers on Y-axis
+              if (currentStatType === 'games') {
+                return Math.round(value);
               }
               return value;
             }
@@ -15326,6 +15386,13 @@ function openAchievementsRitual() {
       navigator.vibrate(10);
     }
   }
+}
+
+// Open Titles Modal (placeholder)
+function openTitlesModal() {
+  // TODO: Implement titles modal
+  console.log('Titles modal - coming soon');
+  showToast('👑 Titles feature coming soon!', 'info');
 }
 
 // Close the Achievements Ritual page
