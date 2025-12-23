@@ -317,7 +317,7 @@ const DEV_MODE = false;
 
 // When true: Shows dev panel button
 // When false: Hides dev panel (production UI)
-const SHOW_DEV_UI = true;
+const SHOW_DEV_UI = false;
 
 // ============================================
 // USER DATA SYSTEM
