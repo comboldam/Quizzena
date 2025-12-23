@@ -5667,6 +5667,20 @@ footer button:hover {
 }
 
 /* Small Topic Cards - 3D Glass Effect */
+/* Hide borders quiz on Firebase and Android branches (not fully ready for launch) */
+#borders-topic-btn {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Hide the parent container that holds the borders button */
+.topic-card-small:has(#borders-topic-btn),
+div:has(#borders-topic-btn) {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 .topic-card-small {
   flex-shrink: 0;
   width: 110px;

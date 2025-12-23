@@ -400,6 +400,56 @@ async function loadFromFirebase() {
               const cloudTopic = cloudData.stats.topics[topicId];
               const localTopic = userData.stats.topics[topicId] || {};
               
+              // Merge unlockedQuestions - merge both local and cloud, keeping the most complete data
+              let mergedUnlockedQuestions = {};
+              
+              // Start with local unlockedQuestions
+              if (localTopic.unlockedQuestions) {
+                if (Array.isArray(localTopic.unlockedQuestions)) {
+                  // Legacy array format - migrate first
+                  localTopic.unlockedQuestions.forEach(qId => {
+                    mergedUnlockedQuestions[qId] = {
+                      unlockedAt: new Date().toISOString(),
+                      claimed: false
+                    };
+                  });
+                } else if (typeof localTopic.unlockedQuestions === 'object') {
+                  mergedUnlockedQuestions = { ...localTopic.unlockedQuestions };
+                }
+              }
+              
+              // Merge cloud unlockedQuestions (cloud wins if exists, merge claim status)
+              if (cloudTopic.unlockedQuestions) {
+                if (Array.isArray(cloudTopic.unlockedQuestions)) {
+                  // Legacy array format from cloud - migrate
+                  cloudTopic.unlockedQuestions.forEach(qId => {
+                    if (!mergedUnlockedQuestions[qId]) {
+                      mergedUnlockedQuestions[qId] = {
+                        unlockedAt: new Date().toISOString(),
+                        claimed: false
+                      };
+                    }
+                  });
+                } else if (typeof cloudTopic.unlockedQuestions === 'object') {
+                  // New object format - merge with local
+                  for (const qId in cloudTopic.unlockedQuestions) {
+                    const cloudQ = cloudTopic.unlockedQuestions[qId];
+                    const localQ = mergedUnlockedQuestions[qId];
+                    
+                    if (!localQ) {
+                      // Cloud has it, local doesn't - use cloud
+                      mergedUnlockedQuestions[qId] = { ...cloudQ };
+                    } else {
+                      // Both have it - merge, keeping earlier unlockedAt and true if either claimed
+                      mergedUnlockedQuestions[qId] = {
+                        unlockedAt: localQ.unlockedAt < cloudQ.unlockedAt ? localQ.unlockedAt : cloudQ.unlockedAt,
+                        claimed: localQ.claimed || cloudQ.claimed
+                      };
+                    }
+                  }
+                }
+              }
+              
               userData.stats.topics[topicId] = {
                 games: Math.max(localTopic.games || 0, cloudTopic.games || 0),
                 correct: Math.max(localTopic.correct || 0, cloudTopic.correct || 0),
@@ -415,7 +465,9 @@ async function loadFromFirebase() {
                 },
                 // Time tracking fields - take higher values
                 timeSpentSeconds: Math.max(localTopic.timeSpentSeconds || 0, cloudTopic.timeSpentSeconds || 0),
-                totalQuestionsAnswered: Math.max(localTopic.totalQuestionsAnswered || 0, cloudTopic.totalQuestionsAnswered || 0)
+                totalQuestionsAnswered: Math.max(localTopic.totalQuestionsAnswered || 0, cloudTopic.totalQuestionsAnswered || 0),
+                // Unlocked questions - merged from both local and cloud
+                unlockedQuestions: mergedUnlockedQuestions
               };
             }
           }
@@ -572,7 +624,23 @@ async function syncToFirebase() {
     }, { merge: true });
     
     console.log('🔥 Data synced to Firebase');
-    console.log('[FIREBASE SYNC] Stats synced', userData.stats);
+    console.log('[FIREBASE SYNC] Stats synced:', userData.stats);
+    console.log('[FIREBASE SYNC] Prestige synced:', userData.prestige);
+    console.log('[FIREBASE SYNC] Quanta synced:', userData.quanta);
+    console.log('[FIREBASE SYNC] Achievements synced:', userData.achievements);
+    
+    // Log unlocked questions per topic for verification
+    if (userData.stats && userData.stats.topics) {
+      for (const topicId in userData.stats.topics) {
+        const topic = userData.stats.topics[topicId];
+        if (topic.unlockedQuestions) {
+          const unlockedCount = Array.isArray(topic.unlockedQuestions) 
+            ? topic.unlockedQuestions.length 
+            : Object.keys(topic.unlockedQuestions).length;
+          console.log(`[FIREBASE SYNC] Topic ${topicId}: ${unlockedCount} unlocked questions synced`);
+        }
+      }
+    }
   } catch (error) {
     console.error('🔥 Firebase sync error:', error);
     // Silent fail - localStorage still has the data
@@ -2323,11 +2391,30 @@ capitalsTopicBtn.onclick = () => {
   showUnifiedModeSelection('Capitals', '🏛️');
 };
 
-bordersTopicBtn.onclick = () => {
-  playClickSound();
-  currentTopic = 'borders';
-  showUnifiedModeSelection('Borders', '🗺️');
-};
+// Hide borders quiz on Firebase and Android branches (not fully ready for launch)
+const HIDE_BORDERS_QUIZ = true; // Set to false when ready to launch
+
+if (HIDE_BORDERS_QUIZ) {
+  // Hide the button and its parent container visually
+  if (bordersTopicBtn) {
+    bordersTopicBtn.style.display = 'none';
+    bordersTopicBtn.style.visibility = 'hidden';
+    bordersTopicBtn.style.pointerEvents = 'none';
+    if (bordersTopicBtn.parentElement) {
+      bordersTopicBtn.parentElement.style.display = 'none';
+      bordersTopicBtn.parentElement.style.visibility = 'hidden';
+    }
+    // Disable onclick
+    bordersTopicBtn.onclick = null;
+    bordersTopicBtn.disabled = true;
+  }
+} else {
+  bordersTopicBtn.onclick = () => {
+    playClickSound();
+    currentTopic = 'borders';
+    showUnifiedModeSelection('Borders', '🗺️');
+  };
+}
 
 areaTopicBtn.onclick = () => {
   playClickSound();
@@ -5799,8 +5886,12 @@ async function openCapitalsCollection() {
                   ${isUnlocked 
                     ? `<img src="${cap.image || 'topic_images/capital_images/placeholder.jpg'}" alt="${cap.capital || 'Unknown'}" class="fc-flag-image fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">
                        ${hasUnclaimedReward ? `
-                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('capitals', '${(cap.capital || '').replace(/'/g, "\\'")}')" title="Claim reward: +5 P-XP, +5 Quanta">
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('capitals', '${(cap.capital || '').replace(/'/g, "\\'")}')" title="Claim reward: +${getPxpPerQuestion('capitals')} P-XP, +${getQuantaPerQuestion('capitals')} Quanta">
                          <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : isClaimed ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:rgba(34,197,94,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10;" title="Reward claimed">
+                         <span style="font-size:14px;color:#22c55e;">✓</span>
                        </div>
                        ` : ''}`
                     : `<div class="fc-flag-locked-overlay">
@@ -5952,8 +6043,12 @@ async function openLogosCollection() {
                   ${isUnlocked 
                     ? `<img src="${logo.image || 'topic_images/logo_images/placeholder.svg'}" alt="${logo.brand || 'Unknown'}" class="fc-flag-image fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">
                        ${hasUnclaimedReward ? `
-                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('logos', '${(logo.brand || '').replace(/'/g, "\\'")}')" title="Claim reward: +5 P-XP, +5 Quanta">
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('logos', '${(logo.brand || '').replace(/'/g, "\\'")}')" title="Claim reward: +${getPxpPerQuestion('logos')} P-XP, +${getQuantaPerQuestion('logos')} Quanta">
                          <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : isClaimed ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:rgba(34,197,94,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10;" title="Reward claimed">
+                         <span style="font-size:14px;color:#22c55e;">✓</span>
                        </div>
                        ` : ''}`
                     : `<div class="fc-flag-locked-overlay">
@@ -7185,7 +7280,7 @@ function buildUnifiedQuizScreen() {
 
 // Check if 3D Card mode should be used
 function shouldUse3DCardMode() {
-  return card3dModeEnabled && currentTopic === 'flags' && gameMode === 'casual';
+  return card3dModeEnabled && (currentTopic === 'flags' || currentTopic === 'capitals' || currentTopic === 'logos') && gameMode === 'casual';
 }
 
 // ==========================================
@@ -7222,93 +7317,159 @@ function display3DCardQuestion(isInitial = true) {
     carouselIndex = 0;
   }
   
-  // Get current flag (the one at front/center)
-  const currentFlag = carouselFlags[carouselIndex];
-  if (!currentFlag) return;
+  // Get current item (flag/capital/logo) - the one at front/center
+  const currentItem = carouselFlags[carouselIndex];
+  if (!currentItem) return;
   
-  usedFlags.push(currentFlag.country);
+  // Track used items (by country for flags/capitals, by image for logos)
+  if (currentTopic === 'logos') {
+    usedFlags.push(currentItem.image);
+  } else {
+    usedFlags.push(currentItem.country);
+  }
   questionCount++;
+  
+  // Determine image source and question text based on topic
+  let imageSrc, questionText, correctAnswer, trackingKey;
+  
+  if (currentTopic === 'capitals') {
+    const sanitizedCapital = currentItem.capital.replace(/[/\\?%*:|"<>]/g, "_");
+    imageSrc = USE_LOCAL_IMAGES
+      ? `./topic_images/capital_images/${sanitizedCapital}.jpg`
+      : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
+    questionText = `What is the capital of ${currentItem.country}?`;
+    correctAnswer = currentItem.capital;
+    trackingKey = 'capital';
+  } else if (currentTopic === 'logos') {
+    // Logos is a JSON topic with options and correctAnswer built-in
+    if (currentItem.image) {
+      const filename = currentItem.image.replace('logo_images/', '');
+      imageSrc = `topic_images/logo_images/${filename}`;
+    }
+    questionText = currentItem.question || "Which brand's logo is this?";
+    correctAnswer = currentItem.correctAnswer;
+    trackingKey = 'image';
+  } else {
+    // Flags topic
+    imageSrc = currentItem.flag;
+    questionText = currentItem.entityType 
+      ? getQuestionTextForEntity(currentItem.entityType) 
+      : "Which country's flag is this?";
+    correctAnswer = currentItem.country;
+    trackingKey = 'country';
+  }
   
   // Store current question data
   currentQuestionData = {
-    imageSrc: currentFlag.flag,
-    questionText: currentFlag.entityType 
-      ? getQuestionTextForEntity(currentFlag.entityType) 
-      : "Which country's flag is this?",
-    correctAnswer: currentFlag.country
+    imageSrc: imageSrc,
+    questionText: questionText,
+    correctAnswer: correctAnswer
   };
   
   // Generate options
-  const wrongAnswers = generateBaitAnswers(currentFlag);
-  let options = shuffle([currentFlag, ...wrongAnswers]).map(opt => opt.country);
+  let options, optionsHTML;
   
-  // Build options HTML
-  const optionsHTML = options.map(country => 
-    `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
-  ).join('');
+  if (currentTopic === 'logos') {
+    // Logos already have options in the question data
+    options = shuffle([...currentItem.options]);
+    optionsHTML = options.map(opt => 
+      `<button class="card3d-answer-btn" data-answer="${opt.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${opt}</button>`
+    ).join('');
+  } else {
+    const wrongAnswers = generateBaitAnswers(currentItem);
+    if (currentTopic === 'capitals') {
+      options = shuffle([currentItem, ...wrongAnswers]).map(opt => opt.capital);
+      optionsHTML = options.map(capital => 
+        `<button class="card3d-answer-btn" data-answer="${capital.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${capital}</button>`
+      ).join('');
+    } else {
+      options = shuffle([currentItem, ...wrongAnswers]).map(opt => opt.country);
+      optionsHTML = options.map(country => 
+        `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
+      ).join('');
+    }
+  }
+  
+  // Get image source for each carousel item
+  function getCarouselImageSrc(item) {
+    if (currentTopic === 'capitals') {
+      const sanitizedCapital = item.capital.replace(/[/\\?%*:|"<>]/g, "_");
+      return USE_LOCAL_IMAGES
+        ? `./topic_images/capital_images/${sanitizedCapital}.jpg`
+        : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
+    } else if (currentTopic === 'logos') {
+      if (item.image) {
+        const filename = item.image.replace('logo_images/', '');
+        return `topic_images/logo_images/${filename}`;
+      }
+      return '';
+    } else {
+      return item.flag;
+    }
+  }
   
   // Set content wrapper to full screen
   contentWrapper.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;padding:0;margin:0;';
   
-  // Create layout with 3D sphere of flags (17 flags for full sphere)
+  // Create layout with 3D sphere (17 items for full sphere effect)
     contentWrapper.innerHTML = `
     <div class="card3d-layout">
       <!-- 3D Sphere Container -->
       <div class="card3d-sphere" id="card3d-sphere">
-        <!-- Center flag (current question) -->
+        <!-- Center item (current question) -->
         <div class="card3d-flag card3d-flag-center" data-pos="0">
-          <img src="${carouselFlags[0].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[0])}" alt="">
         </div>
         <!-- Inner ring (4 corners) -->
         <div class="card3d-flag card3d-flag-tl" data-pos="1">
-          <img src="${carouselFlags[1].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[1])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-tr" data-pos="2">
-          <img src="${carouselFlags[2].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[2])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-bl" data-pos="3">
-          <img src="${carouselFlags[3].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[3])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-br" data-pos="4">
-          <img src="${carouselFlags[4].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[4])}" alt="">
         </div>
         <!-- Middle ring (4 edges) -->
         <div class="card3d-flag card3d-flag-l" data-pos="5">
-          <img src="${carouselFlags[5].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[5])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-r" data-pos="6">
-          <img src="${carouselFlags[6].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[6])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-t" data-pos="7">
-          <img src="${carouselFlags[7].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[7])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-b" data-pos="8">
-          <img src="${carouselFlags[8].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[8])}" alt="">
         </div>
-        <!-- Outer ring (8 more flags for full sphere) -->
+        <!-- Outer ring (8 more items for full sphere) -->
         <div class="card3d-flag card3d-flag-far-tl" data-pos="9">
-          <img src="${carouselFlags[9].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[9])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-tr" data-pos="10">
-          <img src="${carouselFlags[10].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[10])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-bl" data-pos="11">
-          <img src="${carouselFlags[11].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[11])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-br" data-pos="12">
-          <img src="${carouselFlags[12].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[12])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-l" data-pos="13">
-          <img src="${carouselFlags[13].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[13])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-r" data-pos="14">
-          <img src="${carouselFlags[14].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[14])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-t" data-pos="15">
-          <img src="${carouselFlags[15].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[15])}" alt="">
         </div>
         <div class="card3d-flag card3d-flag-far-b" data-pos="16">
-          <img src="${carouselFlags[16].flag}" alt="">
+          <img src="${getCarouselImageSrc(carouselFlags[16])}" alt="">
         </div>
       </div>
       
@@ -7382,22 +7543,56 @@ function animateToNextQuestion(callback) {
         carouselFlags[carouselFlags.length - 1] = newFlag;
       }
       
-      // Update all flag images
+      // Update all images (flags, capitals, or logos)
       const flagElements = sphere.querySelectorAll('.card3d-flag img');
       flagElements.forEach((img, i) => {
         if (carouselFlags[i]) {
-          img.src = carouselFlags[i].flag;
+          if (currentTopic === 'capitals') {
+            const sanitizedCapital = carouselFlags[i].capital.replace(/[/\\?%*:|"<>]/g, "_");
+            img.src = USE_LOCAL_IMAGES
+              ? `./topic_images/capital_images/${sanitizedCapital}.jpg`
+              : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
+          } else if (currentTopic === 'logos') {
+            if (carouselFlags[i].image) {
+              const filename = carouselFlags[i].image.replace('logo_images/', '');
+              img.src = `topic_images/logo_images/${filename}`;
+            }
+          } else {
+            img.src = carouselFlags[i].flag;
+          }
         }
       });
       
       // Update question data now
-      const currentFlag = carouselFlags[0];
+      const currentItem = carouselFlags[0];
+      let imageSrc, questionText, correctAnswer;
+      
+      if (currentTopic === 'capitals') {
+        const sanitizedCapital = currentItem.capital.replace(/[/\\?%*:|"<>]/g, "_");
+        imageSrc = USE_LOCAL_IMAGES
+          ? `./topic_images/capital_images/${sanitizedCapital}.jpg`
+          : `${CLOUDINARY_BASE_URL}${sanitizedCapital}.jpg`;
+        questionText = `What is the capital of ${currentItem.country}?`;
+        correctAnswer = currentItem.capital;
+      } else if (currentTopic === 'logos') {
+        if (currentItem.image) {
+          const filename = currentItem.image.replace('logo_images/', '');
+          imageSrc = `topic_images/logo_images/${filename}`;
+        }
+        questionText = currentItem.question || "Which brand's logo is this?";
+        correctAnswer = currentItem.correctAnswer;
+      } else {
+        imageSrc = currentItem.flag;
+        questionText = currentItem.entityType 
+          ? getQuestionTextForEntity(currentItem.entityType) 
+          : "Which country's flag is this?";
+        correctAnswer = currentItem.country;
+      }
+      
       currentQuestionData = {
-        imageSrc: currentFlag.flag,
-        questionText: currentFlag.entityType 
-          ? getQuestionTextForEntity(currentFlag.entityType) 
-          : "Which country's flag is this?",
-        correctAnswer: currentFlag.country
+        imageSrc: imageSrc,
+        questionText: questionText,
+        correctAnswer: correctAnswer
       };
       
       // Phase 4: Settle to front - 100ms
@@ -7416,14 +7611,32 @@ function animateToNextQuestion(callback) {
             if (questionEl) questionEl.textContent = currentQuestionData.questionText;
             
             // Generate new options
-            const wrongAnswers = generateBaitAnswers(currentFlag);
-            let options = shuffle([currentFlag, ...wrongAnswers]).map(opt => opt.country);
+            let options, optionsHTML;
+            
+            if (currentTopic === 'logos') {
+              // Logos already have options in the question data
+              options = shuffle([...currentItem.options]);
+              optionsHTML = options.map(opt => 
+                `<button class="card3d-answer-btn" data-answer="${opt.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${opt}</button>`
+              ).join('');
+            } else {
+              const wrongAnswers = generateBaitAnswers(currentItem);
+              if (currentTopic === 'capitals') {
+                options = shuffle([currentItem, ...wrongAnswers]).map(opt => opt.capital);
+                optionsHTML = options.map(capital => 
+                  `<button class="card3d-answer-btn" data-answer="${capital.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${capital}</button>`
+                ).join('');
+              } else {
+                options = shuffle([currentItem, ...wrongAnswers]).map(opt => opt.country);
+                optionsHTML = options.map(country => 
+                  `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
+                ).join('');
+              }
+            }
             
             // Update answer buttons
             if (answersSide) {
-              answersSide.innerHTML = options.map(country => 
-                `<button class="card3d-answer-btn" data-answer="${country.replace(/"/g, '&quot;')}" data-correct="${currentQuestionData.correctAnswer.replace(/"/g, '&quot;')}">${country}</button>`
-              ).join('');
+              answersSide.innerHTML = optionsHTML;
               
               answersSide.querySelectorAll('.card3d-answer-btn').forEach(btn => {
                 btn.onclick = () => check3DCardAnswer(btn, btn.dataset.answer, btn.dataset.correct);
@@ -7434,7 +7647,12 @@ function animateToNextQuestion(callback) {
             if (questionSide) questionSide.classList.remove('hidden');
             if (answersSide) answersSide.classList.remove('hidden');
             
-            usedFlags.push(currentFlag.country);
+            // Track used items (by country for flags/capitals, by image for logos)
+            if (currentTopic === 'logos') {
+              usedFlags.push(currentItem.image);
+            } else {
+              usedFlags.push(currentItem.country);
+            }
             questionCount++;
             
             callback && callback();
@@ -7445,12 +7663,23 @@ function animateToNextQuestion(callback) {
   }, 130);
 }
 
-// Get next unused flag for carousel
+// Get next unused item for carousel (works for flags, capitals, and logos)
 function getNextUnusedFlag() {
-  const remaining = flags.filter(f => 
-    !usedFlags.includes(f.country) && 
-    !carouselFlags.some(cf => cf.country === f.country)
-  );
+  let remaining;
+  
+  if (currentTopic === 'logos') {
+    // Logos track by image
+    remaining = flags.filter(f => 
+      !usedFlags.includes(f.image) && 
+      !carouselFlags.some(cf => cf.image === f.image)
+    );
+  } else {
+    // Flags and capitals track by country
+    remaining = flags.filter(f => 
+      !usedFlags.includes(f.country) && 
+      !carouselFlags.some(cf => cf.country === f.country)
+    );
+  }
   
   if (remaining.length === 0) {
     return shuffle([...flags])[0];
@@ -8471,8 +8700,48 @@ function check3DCardAnswer(btnElement, selected, correct) {
   if (isCorrect) {
     singlePlayerScore++;
     currentSessionCorrect++;
+    
+    // Track stats for all supported topics
+    const trackedTopics = ALL_TOPICS;
+    if (trackedTopics.includes(currentTopic)) {
+      currentStreak++;
+      if (currentStreak > bestSessionStreak) {
+        bestSessionStreak = currentStreak;
+      }
+      
+      // Track unlocked question (Questions Completed system)
+      // For area quiz, track by country name instead of formatted area value
+      // For capitals, track by capital name
+      // For logos, track by correctAnswer (brand name)
+      // For flags, track by country name
+      let trackingId = correct;
+      
+      if (currentTopic === 'area') {
+        trackingId = currentAreaCountryName;
+      } else if (currentTopic === 'capitals') {
+        // correct is already the capital name
+        trackingId = correct;
+      } else if (currentTopic === 'logos') {
+        // correct is already the correctAnswer (brand name)
+        trackingId = correct;
+      } else if (currentTopic === 'flags') {
+        // correct is already the country name
+        trackingId = correct;
+      }
+      
+      const isNewUnlock = trackUnlockedQuestion(currentTopic, trackingId);
+      if (isNewUnlock) {
+        sessionNewUnlocks.push(trackingId);
+      }
+    }
   } else {
     currentSessionWrong++;
+    
+    // Track stats for all supported topics
+    const trackedTopics = ALL_TOPICS;
+    if (trackedTopics.includes(currentTopic)) {
+      currentStreak = 0;
+    }
   }
   if (scoreEl) scoreEl.textContent = `Score: ${singlePlayerScore}`;
   
