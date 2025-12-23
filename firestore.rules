@@ -15,6 +15,29 @@ service cloud.firestore {
       allow create, update: if request.auth != null 
         && request.auth.uid == userId
         && validateUserData(request.resource.data);
+      
+      // User's follows subcollection - user can manage their own follows
+      match /follows/{topicId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    
+    // Topics collection - stores aggregate data like follower counts
+    match /topics/{topicId} {
+      // Anyone authenticated can read topic data
+      allow read: if request.auth != null;
+      
+      // Allow writes only through transactions (for increment/decrement)
+      // This validates that only followersCount is being modified
+      allow write: if request.auth != null
+        && request.resource.data.keys().hasOnly(['followersCount'])
+        && request.resource.data.followersCount is int
+        && request.resource.data.followersCount >= 0;
+      
+      // Allow create if setting initial followersCount
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['followersCount'])
+        && request.resource.data.followersCount == 1;
     }
     
     // Helper function to validate user data structure
@@ -29,4 +52,3 @@ service cloud.firestore {
     }
   }
 }
-

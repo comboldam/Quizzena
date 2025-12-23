@@ -313,11 +313,11 @@ window.addEventListener('pagehide', () => {
 // Set to FALSE when launching to production!
 // When true: Data only saves to localStorage (no cloud sync)
 // When false: Data syncs to Firebase for cross-device play
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 // When true: Shows dev panel button
 // When false: Hides dev panel (production UI)
-const SHOW_DEV_UI = false;
+const SHOW_DEV_UI = true;
 
 // ============================================
 // USER DATA SYSTEM
@@ -503,6 +503,9 @@ async function loadFromFirebase() {
             }
           }
         }
+        
+        // Note: pendingUnlockRewards system has been replaced with per-question claiming
+        // Legacy data will be ignored - rewards are now stored in unlockedQuestions structure
         
         // Save merged data locally
         localStorage.setItem('quizzena_user_data', JSON.stringify(userData));
@@ -5175,11 +5178,7 @@ async function getTotalQuestionsCount(topicId) {
   return 0;
 }
 
-// Get unlocked questions for a topic
-function getUnlockedQuestions(topicId) {
-  if (!userData.stats.topics[topicId]) return [];
-  return userData.stats.topics[topicId].unlockedQuestions || [];
-}
+// getUnlockedQuestions is defined in the per-question rewards system section
 
 // Track a correctly answered question (unlock it)
 function trackUnlockedQuestion(topicId, questionId) {
@@ -5194,16 +5193,33 @@ function trackUnlockedQuestion(topicId, questionId) {
     };
   }
   
-  // Ensure unlockedQuestions array exists
+  // Auto-migrate if needed
+  migrateUnlockedQuestions(topicId);
+  
+  // Ensure unlockedQuestions object exists
   if (!userData.stats.topics[topicId].unlockedQuestions) {
-    userData.stats.topics[topicId].unlockedQuestions = [];
+    userData.stats.topics[topicId].unlockedQuestions = {};
+  }
+  
+  // Handle legacy array format
+  if (Array.isArray(userData.stats.topics[topicId].unlockedQuestions)) {
+    migrateUnlockedQuestions(topicId);
   }
   
   const unlocked = userData.stats.topics[topicId].unlockedQuestions;
   
-  // Only add if not already unlocked
-  if (!unlocked.includes(questionId)) {
-    unlocked.push(questionId);
+  // Only add if not already unlocked (check both formats)
+  const isUnlocked = Array.isArray(unlocked) 
+    ? unlocked.includes(questionId)
+    : unlocked[questionId] !== undefined;
+  
+  if (!isUnlocked) {
+    // Add to new object format
+    unlocked[questionId] = {
+      unlockedAt: new Date().toISOString(),
+      claimed: false // New unlocks start as unclaimed
+    };
+    
     return true; // New question unlocked!
   }
   return false; // Already unlocked
@@ -5226,56 +5242,353 @@ function resetSessionUnlocks() {
 }
 
 // ============================================
+// 🎁 PER-QUESTION UNLOCK REWARDS SYSTEM
+// ============================================
+
+// Reward values per unlocked question (topic-specific)
+function getPxpPerQuestion(topicId) {
+  const collectionTopics = ['flags', 'capitals', 'logos', 'area'];
+  return collectionTopics.includes(topicId) ? 5 : 2;
+}
+
+function getQuantaPerQuestion(topicId) {
+  const collectionTopics = ['flags', 'capitals', 'logos', 'area'];
+  return collectionTopics.includes(topicId) ? 5 : 2;
+}
+
+/**
+ * Economy Justification:
+ * - Normal gameplay: ~15 P-XP per 5-question game
+ * - Unlocking 1-3 new questions → +5 to +15 bonus P-XP (33-100% bonus)
+ * - Flags topic: ~200 questions = max 1000 P-XP + 1000 Quanta total
+ * - Linear, capped, non-inflationary
+ * - Manual claiming prevents accidental farming
+ */
+
+// Migrate legacy array format to object format with claim status
+function migrateUnlockedQuestions(topicId) {
+  try {
+    if (!userData || !userData.stats || !userData.stats.topics) return;
+    const topic = userData.stats.topics[topicId];
+    if (!topic) return;
+    
+    // Check if already migrated (object format)
+    if (topic.unlockedQuestions && typeof topic.unlockedQuestions === 'object' && !Array.isArray(topic.unlockedQuestions)) {
+      return; // Already migrated
+    }
+    
+    // Migrate from array format
+    if (Array.isArray(topic.unlockedQuestions)) {
+      const oldArray = topic.unlockedQuestions;
+      const newObject = {};
+      
+      oldArray.forEach(questionId => {
+        newObject[questionId] = {
+          unlockedAt: new Date().toISOString(), // Approximate timestamp
+          claimed: false // All legacy unlocks start as unclaimed
+        };
+      });
+      
+      topic.unlockedQuestions = newObject;
+      console.log(`📦 Migrated ${topicId} unlockedQuestions: ${oldArray.length} items`);
+    }
+  } catch (err) {
+    console.error('Error migrating unlocked questions:', err);
+  }
+}
+
+// Get unlocked questions (returns array of question IDs)
+function getUnlockedQuestions(topicId) {
+  try {
+    if (!userData || !userData.stats || !userData.stats.topics) return [];
+    if (!userData.stats.topics[topicId]) return [];
+    
+    // Auto-migrate if needed
+    migrateUnlockedQuestions(topicId);
+    
+    const unlockedData = userData.stats.topics[topicId].unlockedQuestions;
+    if (!unlockedData) return [];
+    
+    // Handle both old array format and new object format
+    if (Array.isArray(unlockedData)) {
+      return unlockedData; // Legacy format, return as-is
+    }
+    
+    if (unlockedData && typeof unlockedData === 'object') {
+      return Object.keys(unlockedData); // New format, return keys
+    }
+    
+    return [];
+  } catch (err) {
+    console.error('Error getting unlocked questions:', err);
+    return [];
+  }
+}
+
+// Check if a question is unlocked
+function isQuestionUnlocked(topicId, questionId) {
+  try {
+    if (!userData || !userData.stats || !userData.stats.topics) return false;
+    if (!userData.stats.topics[topicId]) return false;
+    
+    migrateUnlockedQuestions(topicId);
+    const unlockedData = userData.stats.topics[topicId].unlockedQuestions;
+    if (!unlockedData) return false;
+    
+    if (Array.isArray(unlockedData)) {
+      return unlockedData.includes(questionId); // Legacy format
+    }
+    
+    return unlockedData[questionId] !== undefined; // New format
+  } catch (err) {
+    console.error('Error checking if question is unlocked:', err);
+    return false;
+  }
+}
+
+// Check if a question's reward has been claimed
+function isQuestionRewardClaimed(topicId, questionId) {
+  try {
+    if (!userData || !userData.stats || !userData.stats.topics) return false;
+    if (!userData.stats.topics[topicId]) return false;
+    
+    migrateUnlockedQuestions(topicId);
+    const unlockedData = userData.stats.topics[topicId].unlockedQuestions;
+    if (!unlockedData) return false;
+    
+    if (Array.isArray(unlockedData)) {
+      return false; // Legacy format - all unclaimed
+    }
+    
+    const questionData = unlockedData[questionId];
+    return questionData ? (questionData.claimed === true) : false;
+  } catch (err) {
+    console.error('Error checking if reward is claimed:', err);
+    return false;
+  }
+}
+
+// Check if a topic has any unclaimed unlocked questions
+function hasUnclaimedUnlockedQuestions(topicId) {
+  try {
+    const unlockedQuestions = getUnlockedQuestions(topicId);
+    if (!unlockedQuestions || unlockedQuestions.length === 0) return false;
+    
+    for (const questionId of unlockedQuestions) {
+      if (!isQuestionRewardClaimed(topicId, questionId)) {
+        return true; // Found at least one unclaimed
+      }
+    }
+    return false; // All are claimed
+  } catch (err) {
+    console.error('Error checking unclaimed questions:', err);
+    return false;
+  }
+}
+
+// Claim reward for a single question
+function claimQuestionReward(topicId, questionId) {
+  // Verify question is unlocked
+  if (!isQuestionUnlocked(topicId, questionId)) {
+    console.warn(`Cannot claim reward: Question ${questionId} not unlocked in ${topicId}`);
+    return { claimed: false, error: 'not_unlocked' };
+  }
+  
+  // Verify reward not already claimed
+  if (isQuestionRewardClaimed(topicId, questionId)) {
+    console.warn(`Cannot claim reward: Question ${questionId} already claimed in ${topicId}`);
+    return { claimed: false, error: 'already_claimed' };
+  }
+  
+  migrateUnlockedQuestions(topicId);
+  const unlockedData = userData.stats.topics[topicId].unlockedQuestions;
+  
+  // Ensure object format
+  if (Array.isArray(unlockedData)) {
+    // This shouldn't happen after migration, but handle it
+    console.error('Data format error: unlockedQuestions is still array after migration');
+    return { claimed: false, error: 'format_error' };
+  }
+  
+  // Mark as claimed
+  if (!unlockedData[questionId]) {
+    unlockedData[questionId] = {
+      unlockedAt: new Date().toISOString(),
+      claimed: true
+    };
+  } else {
+    unlockedData[questionId].claimed = true;
+  }
+  
+  // Get topic-specific reward values
+  const pxpReward = getPxpPerQuestion(topicId);
+  const quantaReward = getQuantaPerQuestion(topicId);
+  
+  // Award P-XP
+  if (!userData.prestige) {
+    userData.prestige = { level: 1, pxp: 0, totalPxp: 0, history: {} };
+  }
+  userData.prestige.pxp += pxpReward;
+  userData.prestige.totalPxp += pxpReward;
+  
+  // Record in P-XP history (separate "questions" field)
+  const now = new Date();
+  const dateKey = `${now.getFullYear()}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getDate().toString().padStart(2,'0')}`;
+  const hour = now.getHours().toString().padStart(2, '0');
+  
+  if (!userData.prestige.history) {
+    userData.prestige.history = {};
+  }
+  if (!userData.prestige.history[dateKey]) {
+    userData.prestige.history[dateKey] = { games: 0, answers: 0, questions: 0, hourly: {} };
+  }
+  // Track Questions P-XP separately (not in answers)
+  userData.prestige.history[dateKey].questions = (userData.prestige.history[dateKey].questions || 0) + pxpReward;
+  if (!userData.prestige.history[dateKey].hourly[hour]) {
+    userData.prestige.history[dateKey].hourly[hour] = { g: 0, a: 0, q: 0 };
+  }
+  userData.prestige.history[dateKey].hourly[hour].q = (userData.prestige.history[dateKey].hourly[hour].q || 0) + pxpReward;
+  
+  // Check for level up
+  checkPxpLevelUp();
+  
+  // Award Quanta
+  userData.quanta = (userData.quanta || 0) + quantaReward;
+  
+  // Save data
+  saveUserData();
+  
+  // Update displays
+  updateGlobalLevelBadge();
+  if (typeof updateQuantaDisplay === 'function') {
+    updateQuantaDisplay();
+  }
+  
+  // Show detailed feedback toast (ALWAYS show - ensure it displays)
+  const topicName = topicId === 'flags' ? 'Flags' : 
+                    topicId === 'capitals' ? 'Capitals' : 
+                    topicId === 'logos' ? 'Logos' : 
+                    topicId === 'area' ? 'Area' : topicId;
+  const feedbackMsg = `🎁 Reward Claimed!<br>+${pxpReward} P-XP<br>+${quantaReward} Quanta<br>Question: ${questionId}<br>Topic: ${topicName}`;
+  
+  // Show toast notification immediately (don't wait for animation frame)
+  const toast = document.getElementById('toast-notification');
+  console.log('🔍 Toast element found:', !!toast);
+  
+  if (toast) {
+    const messageEl = toast.querySelector('.toast-message');
+    console.log('🔍 Toast message element found:', !!messageEl);
+    
+    if (messageEl) {
+      messageEl.innerHTML = feedbackMsg;
+      
+      // Force show with maximum z-index and inline styles
+      toast.classList.remove('hidden');
+      toast.style.cssText = `
+        position: fixed !important;
+        bottom: 100px !important;
+        left: 50% !important;
+        transform: translateX(-50%) translateY(0) !important;
+        z-index: 99999 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+      `;
+      
+      console.log('✅ Toast should be visible now');
+      
+      // Hide after 3 seconds
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.style.opacity = '0';
+        toast.style.visibility = 'hidden';
+      }, 3000);
+    } else {
+      console.error('❌ Toast message element not found');
+      // Fallback: alert
+      alert(`🎁 Reward Claimed!\n+${PXP_PER_QUESTION} P-XP\n+${QUANTA_PER_QUESTION} Quanta\nQuestion: ${questionId}\nTopic: ${topicName}`);
+    }
+  } else {
+    console.error('❌ Toast notification element not found in DOM');
+    // Fallback: alert
+    alert(`🎁 Reward Claimed!\n+${PXP_PER_QUESTION} P-XP\n+${QUANTA_PER_QUESTION} Quanta\nQuestion: ${questionId}\nTopic: ${topicName}`);
+  }
+  
+  console.log(`🎁 Claimed reward for ${questionId} in ${topicId}: +${PXP_PER_QUESTION} P-XP, +${QUANTA_PER_QUESTION} Quanta`);
+  
+  return { claimed: true, pxp: pxpReward, quanta: quantaReward };
+}
+
+// ============================================
 // 🏳️ FLAGS COLLECTION PAGE
 // ============================================
 
 // Generic function to open questions collection for any topic
 function openQuestionsCollection() {
-  if (currentTopic === 'flags') {
-    openFlagsCollection();
-  } else if (currentTopic === 'capitals') {
-    openCapitalsCollection();
-  } else if (currentTopic === 'logos') {
-    openLogosCollection();
-  } else if (currentTopic === 'area') {
-    openAreaCollection();
-  } else {
-    // Show coming soon for other topics
-    showToast('📚 Collection coming soon for this topic!');
+  try {
+    console.log('🔍 openQuestionsCollection called for topic:', currentTopic);
+    
+    if (!currentTopic) {
+      console.error('❌ currentTopic is not set');
+      showToast('⚠️ Unable to open collection');
+      return;
+    }
+    
+    if (currentTopic === 'flags') {
+      openFlagsCollection();
+    } else if (currentTopic === 'capitals') {
+      openCapitalsCollection();
+    } else if (currentTopic === 'logos') {
+      openLogosCollection();
+    } else if (currentTopic === 'area') {
+      openAreaCollection();
+    } else {
+      // Show coming soon for other topics
+      showToast('📚 Collection coming soon for this topic!');
+    }
+  } catch (err) {
+    console.error('❌ Error opening questions collection:', err);
+    showToast('⚠️ Unable to open collection');
   }
 }
 
 async function openFlagsCollection() {
-  // Only show collection for flags topic
-  if (currentTopic !== 'flags') {
-    showToast('📚 Collection coming soon for this topic!');
-    return;
-  }
-  
-  const allFlags = await loadAllFlagsData();
-  const unlockedQuestions = getUnlockedQuestions('flags');
-  
-  // Sort: Unlocked first (A-Z), then Locked (A-Z)
-  const sortedFlags = [...allFlags].sort((a, b) => {
-    const aUnlocked = unlockedQuestions.includes(a.name);
-    const bUnlocked = unlockedQuestions.includes(b.name);
+  try {
+    // Only show collection for flags topic
+    if (currentTopic !== 'flags') {
+      showToast('📚 Collection coming soon for this topic!');
+      return;
+    }
     
-    if (aUnlocked && !bUnlocked) return -1;
-    if (!aUnlocked && bUnlocked) return 1;
-    return a.name.localeCompare(b.name);
-  });
-  
-  // Create collection modal
-  let collectionModal = document.getElementById('flags-collection-modal');
-  if (!collectionModal) {
-    collectionModal = document.createElement('div');
-    collectionModal.id = 'flags-collection-modal';
-    document.body.appendChild(collectionModal);
-  }
-  
-  const unlockedCount = unlockedQuestions.length;
-  const totalCount = allFlags.length;
-  const percentage = Math.round((unlockedCount / totalCount) * 100);
+    const allFlags = await loadAllFlagsData();
+    if (!allFlags || !Array.isArray(allFlags)) {
+      showToast('❌ Failed to load flags data');
+      return;
+    }
+    
+    const unlockedQuestions = getUnlockedQuestions('flags') || [];
+    
+    // Sort: Unlocked first (A-Z), then Locked (A-Z)
+    const sortedFlags = [...allFlags].sort((a, b) => {
+      const aUnlocked = unlockedQuestions.includes(a.name);
+      const bUnlocked = unlockedQuestions.includes(b.name);
+      
+      if (aUnlocked && !bUnlocked) return -1;
+      if (!aUnlocked && bUnlocked) return 1;
+      return a.name.localeCompare(b.name);
+    });
+    
+    // Create collection modal
+    let collectionModal = document.getElementById('flags-collection-modal');
+    if (!collectionModal) {
+      collectionModal = document.createElement('div');
+      collectionModal.id = 'flags-collection-modal';
+      document.body.appendChild(collectionModal);
+    }
+    
+    const unlockedCount = unlockedQuestions.length;
+    const totalCount = allFlags.length;
+    const percentage = totalCount > 0 ? Math.round((unlockedCount / totalCount) * 100) : 0;
   
   collectionModal.className = 'flags-collection-modal';
   collectionModal.innerHTML = `
@@ -5292,30 +5605,66 @@ async function openFlagsCollection() {
       <!-- Flags Grid -->
       <div class="fc-grid">
         ${sortedFlags.map(flag => {
-          const isUnlocked = unlockedQuestions.includes(flag.name);
-          return `
-            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
-              <div class="fc-flag-image-wrapper">
-                ${isUnlocked 
-                  ? `<img src="${flag.flag}" alt="${flag.name}" class="fc-flag-image" onerror="this.src='topic_images/flags/un.png'">`
-                  : `<div class="fc-flag-locked-overlay">
-                       <span class="fc-lock-icon">🔒</span>
-                     </div>
-                     <img src="${flag.flag}" alt="${flag.name}" class="fc-flag-image fc-flag-grayscale" onerror="this.src='topic_images/flags/un.png'">`
-                }
+          try {
+            const isUnlocked = isQuestionUnlocked('flags', flag.name);
+            const isClaimed = isQuestionRewardClaimed('flags', flag.name);
+            const hasUnclaimedReward = isUnlocked && !isClaimed;
+            
+            return `
+              <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}" style="position:relative;">
+                <div class="fc-flag-image-wrapper">
+                  ${isUnlocked 
+                    ? `<img src="${flag.flag || 'topic_images/flags/un.png'}" alt="${flag.name || 'Unknown'}" class="fc-flag-image" onerror="this.src='topic_images/flags/un.png'">
+                       ${hasUnclaimedReward ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('flags', '${(flag.name || '').replace(/'/g, "\\'")}')" title="Claim reward: +5 P-XP, +5 Quanta">
+                         <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : ''}`
+                    : `<div class="fc-flag-locked-overlay">
+                         <span class="fc-lock-icon">🔒</span>
+                       </div>
+                       <img src="${flag.flag || 'topic_images/flags/un.png'}" alt="${flag.name || 'Unknown'}" class="fc-flag-image fc-flag-grayscale" onerror="this.src='topic_images/flags/un.png'">`
+                  }
+                </div>
+                <span class="fc-flag-name">${flag.name || 'Unknown'}</span>
               </div>
-              <span class="fc-flag-name">${flag.name}</span>
-            </div>
-          `;
+            `;
+          } catch (err) {
+            console.error('Error rendering flag item:', err);
+            return '';
+          }
         }).join('')}
       </div>
     </div>
   `;
   
-  collectionModal.classList.remove('hidden');
-  requestAnimationFrame(() => {
+    // Ensure modal is ready to show
+    collectionModal.classList.remove('hidden');
+    
+    // Hide the topic detail screen BEFORE showing modal
+    const modeScreen = document.getElementById('unified-mode-screen');
+    if (modeScreen) {
+      modeScreen.style.display = 'none';
+    }
+    
+    // Force inline styles to override CSS
+    collectionModal.style.opacity = '1';
+    collectionModal.style.visibility = 'visible';
+    collectionModal.style.display = 'block';
+    
+    // Add show class for CSS transitions
     collectionModal.classList.add('show');
-  });
+    
+    console.log('✅ Flags collection modal should be visible now', {
+      classes: collectionModal.classList.toString(),
+      display: window.getComputedStyle(collectionModal).display,
+      opacity: window.getComputedStyle(collectionModal).opacity,
+      visibility: window.getComputedStyle(collectionModal).visibility
+    });
+  } catch (err) {
+    console.error('Error opening flags collection:', err);
+    showToast('⚠️ Unable to load Flags Collection');
+  }
 }
 
 function closeFlagsCollection() {
@@ -5324,7 +5673,37 @@ function closeFlagsCollection() {
     modal.classList.remove('show');
     setTimeout(() => {
       modal.classList.add('hidden');
+      modal.style.display = 'none';
     }, 300);
+  }
+  
+  // Show the topic detail screen again
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.style.display = '';
+    modeScreen.classList.remove('hidden');
+  }
+}
+
+// Claim reward for a single question and refresh the collection view
+function claimQuestionRewardAndRefresh(topicId, questionId) {
+  const result = claimQuestionReward(topicId, questionId);
+  
+  if (result && result.claimed) {
+    // Note: Toast is already shown in claimQuestionReward(), don't duplicate
+    
+    // Refresh the collection view after a short delay to let toast show
+    setTimeout(() => {
+      if (topicId === 'flags') {
+        openFlagsCollection();
+      } else if (topicId === 'capitals') {
+        openCapitalsCollection();
+      } else if (topicId === 'logos') {
+        openLogosCollection();
+      } else if (topicId === 'area') {
+        openAreaCollection();
+      }
+    }, 100); // Small delay to ensure toast is visible
   }
 }
 
@@ -5333,60 +5712,66 @@ function closeFlagsCollection() {
 // ============================================
 
 async function openCapitalsCollection() {
-  // Only show collection for capitals topic
-  if (currentTopic !== 'capitals') {
-    showToast('📚 Collection coming soon for this topic!');
-    return;
-  }
-  
-  // Fetch capitals data from REST Countries API (same source as quiz)
-  let allCapitals = [];
   try {
-    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
-    if (!res.ok) throw new Error('API failed');
-    const data = await res.json();
+    // Only show collection for capitals topic
+    if (currentTopic !== 'capitals') {
+      showToast('📚 Collection coming soon for this topic!');
+      return;
+    }
     
-    allCapitals = data
-      .filter(c => c.capital && c.capital[0])
-      .map(c => {
-        const capitalName = c.capital[0];
-        const sanitizedCapital = capitalName.replace(/[/\\?%*:|"<>]/g, "_");
-        const imageBase = USE_LOCAL_IMAGES ? './topic_images/capital_images/' : CLOUDINARY_BASE_URL;
-        return {
-          country: c.name.common,
-          capital: capitalName,
-          image: `${imageBase}${sanitizedCapital}.jpg`
-        };
-      });
-  } catch (err) {
-    console.error('Failed to load capitals data:', err);
-    showToast('❌ Failed to load capitals data');
-    return;
-  }
-  
-  const unlockedQuestions = getUnlockedQuestions('capitals');
-  
-  // Sort: Unlocked first (A-Z by capital), then Locked (A-Z by capital)
-  const sortedCapitals = [...allCapitals].sort((a, b) => {
-    const aUnlocked = unlockedQuestions.includes(a.capital);
-    const bUnlocked = unlockedQuestions.includes(b.capital);
+    // Fetch capitals data from REST Countries API (same source as quiz)
+    let allCapitals = [];
+    try {
+      const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+      if (!res.ok) throw new Error('API failed');
+      const data = await res.json();
+      
+      allCapitals = data
+        .filter(c => c.capital && c.capital[0])
+        .map(c => {
+          const capitalName = c.capital[0];
+          const sanitizedCapital = capitalName.replace(/[/\\?%*:|"<>]/g, "_");
+          const imageBase = USE_LOCAL_IMAGES ? './topic_images/capital_images/' : CLOUDINARY_BASE_URL;
+          return {
+            country: c.name.common,
+            capital: capitalName,
+            image: `${imageBase}${sanitizedCapital}.jpg`
+          };
+        });
+    } catch (err) {
+      console.error('Failed to load capitals data:', err);
+      showToast('❌ Failed to load capitals data');
+      return;
+    }
     
-    if (aUnlocked && !bUnlocked) return -1;
-    if (!aUnlocked && bUnlocked) return 1;
-    return a.capital.localeCompare(b.capital);
-  });
-  
-  // Create collection modal (reuse flags collection modal structure)
-  let collectionModal = document.getElementById('capitals-collection-modal');
-  if (!collectionModal) {
-    collectionModal = document.createElement('div');
-    collectionModal.id = 'capitals-collection-modal';
-    document.body.appendChild(collectionModal);
-  }
-  
-  const unlockedCount = unlockedQuestions.length;
-  const totalCount = allCapitals.length;
-  const percentage = Math.round((unlockedCount / totalCount) * 100);
+    if (!allCapitals || !Array.isArray(allCapitals)) {
+      showToast('❌ Failed to load capitals data');
+      return;
+    }
+    
+    const unlockedQuestions = getUnlockedQuestions('capitals') || [];
+    
+    // Sort: Unlocked first (A-Z by capital), then Locked (A-Z by capital)
+    const sortedCapitals = [...allCapitals].sort((a, b) => {
+      const aUnlocked = unlockedQuestions.includes(a.capital);
+      const bUnlocked = unlockedQuestions.includes(b.capital);
+      
+      if (aUnlocked && !bUnlocked) return -1;
+      if (!aUnlocked && bUnlocked) return 1;
+      return a.capital.localeCompare(b.capital);
+    });
+    
+    // Create collection modal (reuse flags collection modal structure)
+    let collectionModal = document.getElementById('capitals-collection-modal');
+    if (!collectionModal) {
+      collectionModal = document.createElement('div');
+      collectionModal.id = 'capitals-collection-modal';
+      document.body.appendChild(collectionModal);
+    }
+    
+    const unlockedCount = unlockedQuestions.length;
+    const totalCount = allCapitals.length;
+    const percentage = totalCount > 0 ? Math.round((unlockedCount / totalCount) * 100) : 0;
   
   collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
   collectionModal.innerHTML = `
@@ -5403,30 +5788,66 @@ async function openCapitalsCollection() {
       <!-- Capitals Grid -->
       <div class="fc-grid">
         ${sortedCapitals.map(cap => {
-          const isUnlocked = unlockedQuestions.includes(cap.capital);
-          return `
-            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
-              <div class="fc-flag-image-wrapper">
-                ${isUnlocked 
-                  ? `<img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
-                  : `<div class="fc-flag-locked-overlay">
-                       <span class="fc-lock-icon">🔒</span>
-                     </div>
-                     <img src="${cap.image}" alt="${cap.capital}" class="fc-flag-image fc-flag-grayscale fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
-                }
+          try {
+            const isUnlocked = isQuestionUnlocked('capitals', cap.capital);
+            const isClaimed = isQuestionRewardClaimed('capitals', cap.capital);
+            const hasUnclaimedReward = isUnlocked && !isClaimed;
+            
+            return `
+              <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}" style="position:relative;">
+                <div class="fc-flag-image-wrapper">
+                  ${isUnlocked 
+                    ? `<img src="${cap.image || 'topic_images/capital_images/placeholder.jpg'}" alt="${cap.capital || 'Unknown'}" class="fc-flag-image fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">
+                       ${hasUnclaimedReward ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('capitals', '${(cap.capital || '').replace(/'/g, "\\'")}')" title="Claim reward: +5 P-XP, +5 Quanta">
+                         <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : ''}`
+                    : `<div class="fc-flag-locked-overlay">
+                         <span class="fc-lock-icon">🔒</span>
+                       </div>
+                       <img src="${cap.image || 'topic_images/capital_images/placeholder.jpg'}" alt="${cap.capital || 'Unknown'}" class="fc-flag-image fc-flag-grayscale fc-capital-image" onerror="this.src='topic_images/capital_images/placeholder.jpg'; this.onerror=null;">`
+                  }
+                </div>
+                <span class="fc-flag-name">${cap.capital || 'Unknown'}</span>
               </div>
-              <span class="fc-flag-name">${cap.capital}</span>
-            </div>
-          `;
+            `;
+          } catch (err) {
+            console.error('Error rendering capital item:', err);
+            return '';
+          }
         }).join('')}
       </div>
     </div>
   `;
   
-  collectionModal.classList.remove('hidden');
-  requestAnimationFrame(() => {
+    // Ensure modal is ready to show
+    collectionModal.classList.remove('hidden');
+    
+    // Hide the topic detail screen BEFORE showing modal
+    const modeScreen = document.getElementById('unified-mode-screen');
+    if (modeScreen) {
+      modeScreen.style.display = 'none';
+    }
+    
+    // Force inline styles to override CSS
+    collectionModal.style.opacity = '1';
+    collectionModal.style.visibility = 'visible';
+    collectionModal.style.display = 'block';
+    
+    // Add show class for CSS transitions
     collectionModal.classList.add('show');
-  });
+    
+    console.log('✅ Capitals collection modal should be visible now', {
+      classes: collectionModal.classList.toString(),
+      display: window.getComputedStyle(collectionModal).display,
+      opacity: window.getComputedStyle(collectionModal).opacity,
+      visibility: window.getComputedStyle(collectionModal).visibility
+    });
+  } catch (err) {
+    console.error('Error opening capitals collection:', err);
+    showToast('⚠️ Unable to load Capitals Collection');
+  }
 }
 
 function closeCapitalsCollection() {
@@ -5435,7 +5856,15 @@ function closeCapitalsCollection() {
     modal.classList.remove('show');
     setTimeout(() => {
       modal.classList.add('hidden');
+      modal.style.display = 'none';
     }, 300);
+  }
+  
+  // Show the topic detail screen again
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.style.display = '';
+    modeScreen.classList.remove('hidden');
   }
 }
 
@@ -5444,52 +5873,58 @@ function closeCapitalsCollection() {
 // ============================================
 
 async function openLogosCollection() {
-  // Only show collection for logos topic
-  if (currentTopic !== 'logos') {
-    showToast('📚 Collection coming soon for this topic!');
-    return;
-  }
-  
-  // Load logos data from questions.json
-  let allLogos = [];
   try {
-    const response = await fetch('topics/logos/questions.json');
-    if (!response.ok) throw new Error('Failed to load logos');
-    const questions = await response.json();
+    // Only show collection for logos topic
+    if (currentTopic !== 'logos') {
+      showToast('📚 Collection coming soon for this topic!');
+      return;
+    }
     
-    allLogos = questions.map(q => ({
-      brand: q.answer,
-      image: `topic_images/${q.image}`
-    }));
-  } catch (err) {
-    console.error('Failed to load logos data:', err);
-    showToast('❌ Failed to load logos data');
-    return;
-  }
-  
-  const unlockedQuestions = getUnlockedQuestions('logos');
-  
-  // Sort: Unlocked first (A-Z by brand), then Locked (A-Z by brand)
-  const sortedLogos = [...allLogos].sort((a, b) => {
-    const aUnlocked = unlockedQuestions.includes(a.brand);
-    const bUnlocked = unlockedQuestions.includes(b.brand);
+    // Load logos data from questions.json
+    let allLogos = [];
+    try {
+      const response = await fetch('topics/logos/questions.json');
+      if (!response.ok) throw new Error('Failed to load logos');
+      const questions = await response.json();
+      
+      allLogos = questions.map(q => ({
+        brand: q.answer,
+        image: `topic_images/${q.image}`
+      }));
+    } catch (err) {
+      console.error('Failed to load logos data:', err);
+      showToast('❌ Failed to load logos data');
+      return;
+    }
     
-    if (aUnlocked && !bUnlocked) return -1;
-    if (!aUnlocked && bUnlocked) return 1;
-    return a.brand.localeCompare(b.brand);
-  });
-  
-  // Create collection modal (reuse flags collection modal structure)
-  let collectionModal = document.getElementById('logos-collection-modal');
-  if (!collectionModal) {
-    collectionModal = document.createElement('div');
-    collectionModal.id = 'logos-collection-modal';
-    document.body.appendChild(collectionModal);
-  }
-  
-  const unlockedCount = unlockedQuestions.length;
-  const totalCount = allLogos.length;
-  const percentage = Math.round((unlockedCount / totalCount) * 100);
+    if (!allLogos || !Array.isArray(allLogos)) {
+      showToast('❌ Failed to load logos data');
+      return;
+    }
+    
+    const unlockedQuestions = getUnlockedQuestions('logos') || [];
+    
+    // Sort: Unlocked first (A-Z by brand), then Locked (A-Z by brand)
+    const sortedLogos = [...allLogos].sort((a, b) => {
+      const aUnlocked = unlockedQuestions.includes(a.brand);
+      const bUnlocked = unlockedQuestions.includes(b.brand);
+      
+      if (aUnlocked && !bUnlocked) return -1;
+      if (!aUnlocked && bUnlocked) return 1;
+      return a.brand.localeCompare(b.brand);
+    });
+    
+    // Create collection modal (reuse flags collection modal structure)
+    let collectionModal = document.getElementById('logos-collection-modal');
+    if (!collectionModal) {
+      collectionModal = document.createElement('div');
+      collectionModal.id = 'logos-collection-modal';
+      document.body.appendChild(collectionModal);
+    }
+    
+    const unlockedCount = unlockedQuestions.length;
+    const totalCount = allLogos.length;
+    const percentage = totalCount > 0 ? Math.round((unlockedCount / totalCount) * 100) : 0;
   
   collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
   collectionModal.innerHTML = `
@@ -5506,30 +5941,66 @@ async function openLogosCollection() {
       <!-- Logos Grid -->
       <div class="fc-grid">
         ${sortedLogos.map(logo => {
-          const isUnlocked = unlockedQuestions.includes(logo.brand);
-          return `
-            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
-              <div class="fc-flag-image-wrapper fc-logo-wrapper">
-                ${isUnlocked 
-                  ? `<img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
-                  : `<div class="fc-flag-locked-overlay">
-                       <span class="fc-lock-icon">🔒</span>
-                     </div>
-                     <img src="${logo.image}" alt="${logo.brand}" class="fc-flag-image fc-flag-grayscale fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
-                }
+          try {
+            const isUnlocked = isQuestionUnlocked('logos', logo.brand);
+            const isClaimed = isQuestionRewardClaimed('logos', logo.brand);
+            const hasUnclaimedReward = isUnlocked && !isClaimed;
+            
+            return `
+              <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}" style="position:relative;">
+                <div class="fc-flag-image-wrapper fc-logo-wrapper">
+                  ${isUnlocked 
+                    ? `<img src="${logo.image || 'topic_images/logo_images/placeholder.svg'}" alt="${logo.brand || 'Unknown'}" class="fc-flag-image fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">
+                       ${hasUnclaimedReward ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('logos', '${(logo.brand || '').replace(/'/g, "\\'")}')" title="Claim reward: +5 P-XP, +5 Quanta">
+                         <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : ''}`
+                    : `<div class="fc-flag-locked-overlay">
+                         <span class="fc-lock-icon">🔒</span>
+                       </div>
+                       <img src="${logo.image || 'topic_images/logo_images/placeholder.svg'}" alt="${logo.brand || 'Unknown'}" class="fc-flag-image fc-flag-grayscale fc-logo-image" onerror="this.src='topic_images/logo_images/placeholder.svg'; this.onerror=null;">`
+                  }
+                </div>
+                <span class="fc-flag-name">${logo.brand || 'Unknown'}</span>
               </div>
-              <span class="fc-flag-name">${logo.brand}</span>
-            </div>
-          `;
+            `;
+          } catch (err) {
+            console.error('Error rendering logo item:', err);
+            return '';
+          }
         }).join('')}
       </div>
     </div>
   `;
   
-  collectionModal.classList.remove('hidden');
-  requestAnimationFrame(() => {
+    // Ensure modal is ready to show
+    collectionModal.classList.remove('hidden');
+    
+    // Hide the topic detail screen BEFORE showing modal
+    const modeScreen = document.getElementById('unified-mode-screen');
+    if (modeScreen) {
+      modeScreen.style.display = 'none';
+    }
+    
+    // Force inline styles to override CSS
+    collectionModal.style.opacity = '1';
+    collectionModal.style.visibility = 'visible';
+    collectionModal.style.display = 'block';
+    
+    // Add show class for CSS transitions
     collectionModal.classList.add('show');
-  });
+    
+    console.log('✅ Logos collection modal should be visible now', {
+      classes: collectionModal.classList.toString(),
+      display: window.getComputedStyle(collectionModal).display,
+      opacity: window.getComputedStyle(collectionModal).opacity,
+      visibility: window.getComputedStyle(collectionModal).visibility
+    });
+  } catch (err) {
+    console.error('Error opening logos collection:', err);
+    showToast('⚠️ Unable to load Logos Collection');
+  }
 }
 
 function closeLogosCollection() {
@@ -5538,7 +6009,15 @@ function closeLogosCollection() {
     modal.classList.remove('show');
     setTimeout(() => {
       modal.classList.add('hidden');
+      modal.style.display = 'none';
     }, 300);
+  }
+  
+  // Show the topic detail screen again
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.style.display = '';
+    modeScreen.classList.remove('hidden');
   }
 }
 
@@ -5547,56 +6026,62 @@ function closeLogosCollection() {
 // ============================================
 
 async function openAreaCollection() {
-  // Only show collection for area topic
-  if (currentTopic !== 'area') {
-    showToast('📚 Collection coming soon for this topic!');
-    return;
-  }
-  
-  // Fetch area data from REST Countries API (same source as quiz)
-  let allAreas = [];
   try {
-    const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
-    if (!res.ok) throw new Error('API failed');
-    const data = await res.json();
+    // Only show collection for area topic
+    if (currentTopic !== 'area') {
+      showToast('📚 Collection coming soon for this topic!');
+      return;
+    }
     
-    allAreas = data
-      .filter(c => c.area && c.cca2)
-      .map(c => ({
-        country: c.name.common.replace(/\bStates\b/gi, '').trim(),
-        area: c.area,
-        isoCode: c.cca2.toLowerCase()
-      }))
-      .sort((a, b) => b.area - a.area); // Sort by area (largest first)
-  } catch (err) {
-    console.error('Failed to load area data:', err);
-    showToast('❌ Failed to load area data');
-    return;
-  }
-  
-  const unlockedQuestions = getUnlockedQuestions('area');
-  
-  // Sort: Unlocked first (by area descending), then Locked (by area descending)
-  const sortedAreas = [...allAreas].sort((a, b) => {
-    const aUnlocked = unlockedQuestions.includes(a.country);
-    const bUnlocked = unlockedQuestions.includes(b.country);
+    // Fetch area data from REST Countries API (same source as quiz)
+    let allAreas = [];
+    try {
+      const res = await fetch("https://restcountries.com/v3.1/independent?status=true");
+      if (!res.ok) throw new Error('API failed');
+      const data = await res.json();
+      
+      allAreas = data
+        .filter(c => c.area && c.cca2)
+        .map(c => ({
+          country: c.name.common.replace(/\bStates\b/gi, '').trim(),
+          area: c.area,
+          isoCode: c.cca2.toLowerCase()
+        }))
+        .sort((a, b) => b.area - a.area); // Sort by area (largest first)
+    } catch (err) {
+      console.error('Failed to load area data:', err);
+      showToast('❌ Failed to load area data');
+      return;
+    }
     
-    if (aUnlocked && !bUnlocked) return -1;
-    if (!aUnlocked && bUnlocked) return 1;
-    return b.area - a.area; // Sort by area within each group
-  });
-  
-  // Create collection modal (reuse flags collection modal structure)
-  let collectionModal = document.getElementById('area-collection-modal');
-  if (!collectionModal) {
-    collectionModal = document.createElement('div');
-    collectionModal.id = 'area-collection-modal';
-    document.body.appendChild(collectionModal);
-  }
-  
-  const unlockedCount = unlockedQuestions.length;
-  const totalCount = allAreas.length;
-  const percentage = Math.round((unlockedCount / totalCount) * 100);
+    if (!allAreas || !Array.isArray(allAreas)) {
+      showToast('❌ Failed to load area data');
+      return;
+    }
+    
+    const unlockedQuestions = getUnlockedQuestions('area') || [];
+    
+    // Sort: Unlocked first (by area descending), then Locked (by area descending)
+    const sortedAreas = [...allAreas].sort((a, b) => {
+      const aUnlocked = unlockedQuestions.includes(a.country);
+      const bUnlocked = unlockedQuestions.includes(b.country);
+      
+      if (aUnlocked && !bUnlocked) return -1;
+      if (!aUnlocked && bUnlocked) return 1;
+      return b.area - a.area; // Sort by area within each group
+    });
+    
+    // Create collection modal (reuse flags collection modal structure)
+    let collectionModal = document.getElementById('area-collection-modal');
+    if (!collectionModal) {
+      collectionModal = document.createElement('div');
+      collectionModal.id = 'area-collection-modal';
+      document.body.appendChild(collectionModal);
+    }
+    
+    const unlockedCount = unlockedQuestions.length;
+    const totalCount = allAreas.length;
+    const percentage = totalCount > 0 ? Math.round((unlockedCount / totalCount) * 100) : 0;
   
   // Check which countries are missing border images
   const missingBorders = ['xk', 'mh', 'fm', 'ps', 'tv'];
@@ -5616,35 +6101,71 @@ async function openAreaCollection() {
       <!-- Area Grid -->
       <div class="fc-grid">
         ${sortedAreas.map(item => {
-          const isUnlocked = unlockedQuestions.includes(item.country);
-          const imageSrc = missingBorders.includes(item.isoCode) 
-            ? `topic_images/flags/${item.isoCode}.png`
-            : `topic_images/country_silhouettes/${item.isoCode}.png`;
-          const imageClass = missingBorders.includes(item.isoCode) ? '' : 'fc-border-image';
-          return `
-            <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}">
-              <div class="fc-flag-image-wrapper">
-                ${isUnlocked 
-                  ? `<img src="${imageSrc}" alt="${item.country}" class="fc-flag-image ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
-                  : `<div class="fc-flag-locked-overlay">
-                       <span class="fc-lock-icon">🔒</span>
-                     </div>
-                     <img src="${imageSrc}" alt="${item.country}" class="fc-flag-image fc-flag-grayscale ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode}.png'; this.onerror=null;">`
-                }
+          try {
+            const isUnlocked = isQuestionUnlocked('area', item.country);
+            const isClaimed = isQuestionRewardClaimed('area', item.country);
+            const hasUnclaimedReward = isUnlocked && !isClaimed;
+            const imageSrc = missingBorders.includes(item.isoCode) 
+              ? `topic_images/flags/${item.isoCode}.png`
+              : `topic_images/country_silhouettes/${item.isoCode}.png`;
+            const imageClass = missingBorders.includes(item.isoCode) ? '' : 'fc-border-image';
+            
+            return `
+              <div class="fc-flag-item ${isUnlocked ? 'fc-unlocked' : 'fc-locked'}" style="position:relative;">
+                <div class="fc-flag-image-wrapper">
+                  ${isUnlocked 
+                    ? `<img src="${imageSrc}" alt="${item.country || 'Unknown'}" class="fc-flag-image ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode || 'un'}.png'; this.onerror=null;">
+                       ${hasUnclaimedReward ? `
+                       <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefresh('area', '${(item.country || '').replace(/'/g, "\\'")}')" title="Claim reward: +${getPxpPerQuestion('area')} P-XP, +${getQuantaPerQuestion('area')} Quanta">
+                         <span style="font-size:14px;">🎁</span>
+                       </div>
+                       ` : ''}`
+                    : `<div class="fc-flag-locked-overlay">
+                         <span class="fc-lock-icon">🔒</span>
+                       </div>
+                       <img src="${imageSrc}" alt="${item.country || 'Unknown'}" class="fc-flag-image fc-flag-grayscale ${imageClass}" onerror="this.src='topic_images/flags/${item.isoCode || 'un'}.png'; this.onerror=null;">`
+                  }
+                </div>
+                <span class="fc-flag-name">${item.country || 'Unknown'}</span>
+                ${isUnlocked ? `<span class="fc-area-value">${formatArea(item.area || 0)}</span>` : ''}
               </div>
-              <span class="fc-flag-name">${item.country}</span>
-              ${isUnlocked ? `<span class="fc-area-value">${formatArea(item.area)}</span>` : ''}
-            </div>
-          `;
+            `;
+          } catch (err) {
+            console.error('Error rendering area item:', err);
+            return '';
+          }
         }).join('')}
       </div>
     </div>
   `;
   
-  collectionModal.classList.remove('hidden');
-  requestAnimationFrame(() => {
+    // Ensure modal is ready to show
+    collectionModal.classList.remove('hidden');
+    
+    // Hide the topic detail screen BEFORE showing modal
+    const modeScreen = document.getElementById('unified-mode-screen');
+    if (modeScreen) {
+      modeScreen.style.display = 'none';
+    }
+    
+    // Force inline styles to override CSS
+    collectionModal.style.opacity = '1';
+    collectionModal.style.visibility = 'visible';
+    collectionModal.style.display = 'block';
+    
+    // Add show class for CSS transitions
     collectionModal.classList.add('show');
-  });
+    
+    console.log('✅ Area collection modal should be visible now', {
+      classes: collectionModal.classList.toString(),
+      display: window.getComputedStyle(collectionModal).display,
+      opacity: window.getComputedStyle(collectionModal).opacity,
+      visibility: window.getComputedStyle(collectionModal).visibility
+    });
+  } catch (err) {
+    console.error('Error opening area collection:', err);
+    showToast('⚠️ Unable to load Area Collection');
+  }
 }
 
 function closeAreaCollection() {
@@ -5653,7 +6174,202 @@ function closeAreaCollection() {
     modal.classList.remove('show');
     setTimeout(() => {
       modal.classList.add('hidden');
+      modal.style.display = 'none';
     }, 300);
+  }
+  
+  // Show the topic detail screen again
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.style.display = '';
+    modeScreen.classList.remove('hidden');
+  }
+}
+
+// ============================================
+// 📚 GENERIC QUESTIONS COLLECTION PAGE (for other topics)
+// ============================================
+
+async function openGenericQuestionsCollection(topicId) {
+  try {
+    if (!topicId) {
+      showToast('❌ Topic not specified');
+      return;
+    }
+    
+    const unlockedQuestions = getUnlockedQuestions(topicId) || [];
+    
+    if (unlockedQuestions.length === 0) {
+      showToast('📚 No questions completed yet. Play the quiz to unlock questions!');
+      return;
+    }
+    
+    // Get topic config for display
+    const topicConfig = TOPIC_CONFIG[topicId] || {};
+    const topicName = topicConfig.name || topicId;
+    const topicIcon = topicConfig.icon || '📚';
+    const topicImagePath = getTopicImagePath(topicId);
+    
+    // Sort: Unclaimed first, then Claimed (both A-Z)
+    const sortedQuestions = [...unlockedQuestions].sort((a, b) => {
+      const aClaimed = isQuestionRewardClaimed(topicId, a);
+      const bClaimed = isQuestionRewardClaimed(topicId, b);
+      
+      if (!aClaimed && bClaimed) return -1; // Unclaimed first
+      if (aClaimed && !bClaimed) return 1;
+      return a.localeCompare(b); // A-Z within each group
+    });
+    
+    // Create collection modal
+    let collectionModal = document.getElementById(`generic-collection-modal-${topicId}`);
+    if (!collectionModal) {
+      collectionModal = document.createElement('div');
+      collectionModal.id = `generic-collection-modal-${topicId}`;
+      document.body.appendChild(collectionModal);
+    }
+    
+    const unclaimedCount = sortedQuestions.filter(q => !isQuestionRewardClaimed(topicId, q)).length;
+    const claimedCount = sortedQuestions.filter(q => isQuestionRewardClaimed(topicId, q)).length;
+    const totalCount = unlockedQuestions.length;
+    
+    const pxpReward = getPxpPerQuestion(topicId);
+    const quantaReward = getQuantaPerQuestion(topicId);
+    
+    collectionModal.className = 'flags-collection-modal'; // Reuse same CSS
+    collectionModal.innerHTML = `
+      <div class="fc-container">
+        <!-- Header -->
+        <div class="fc-header">
+          <button onclick="playClickSound(); closeGenericQuestionsCollection('${topicId}')" class="fc-back-btn">←</button>
+          <div class="fc-header-info">
+            <h2 class="fc-title">${topicName} Collection</h2>
+            <p class="fc-subtitle">${unclaimedCount} Unclaimed • ${claimedCount} Claimed • ${totalCount} Total</p>
+          </div>
+        </div>
+        
+        <!-- Questions List -->
+        <div class="fc-grid">
+          ${sortedQuestions.map(questionId => {
+            try {
+              const isClaimed = isQuestionRewardClaimed(topicId, questionId);
+              
+              return `
+                <div class="fc-flag-item fc-unlocked" style="position:relative;">
+                  <div class="fc-flag-image-wrapper" style="width:100%;height:60px;display:flex;align-items:center;justify-content:center;position:relative;">
+                    <img src="${topicImagePath}" alt="${topicName}" style="max-width:100%;max-height:100%;object-fit:contain;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span style="display:none;font-size:32px;align-items:center;justify-content:center;">${topicIcon}</span>
+                    ${!isClaimed ? `
+                    <div class="generic-claim-btn" data-topic="${topicId}" data-question="${questionId.replace(/'/g, "&apos;")}" style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:linear-gradient(135deg,#a78bfa,#8b5cf6);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 8px rgba(167,139,250,0.6);z-index:10;" onclick="playClickSound(); claimQuestionRewardAndRefreshGeneric('${topicId}', '${questionId.replace(/'/g, "\\'")}')" title="Claim reward: +${pxpReward} P-XP, +${quantaReward} Quanta">
+                      <span style="font-size:14px;">🎁</span>
+                    </div>
+                    ` : `
+                    <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:rgba(34,197,94,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10;" title="Reward claimed">
+                      <span style="font-size:14px;color:#22c55e;">✓</span>
+                    </div>
+                    `}
+                  </div>
+                  <span class="fc-flag-name" style="font-size:0.75rem;text-align:center;word-wrap:break-word;max-width:100%;">${questionId}</span>
+                  ${isClaimed ? '<span style="color:#22c55e;font-size:0.7rem;margin-top:2px;">Claimed</span>' : '<span style="color:#fbbf24;font-size:0.7rem;margin-top:2px;">Unclaimed</span>'}
+                </div>
+              `;
+            } catch (err) {
+              console.error('Error rendering question item:', err);
+              return '';
+            }
+          }).join('')}
+        </div>
+      </div>
+    `;
+    
+    // Ensure modal is ready to show
+    collectionModal.classList.remove('hidden');
+    
+    // Hide the topic detail screen BEFORE showing modal
+    const modeScreen = document.getElementById('unified-mode-screen');
+    if (modeScreen) {
+      modeScreen.style.display = 'none';
+    }
+    
+    // Force inline styles to override CSS
+    collectionModal.style.opacity = '1';
+    collectionModal.style.visibility = 'visible';
+    collectionModal.style.display = 'block';
+    
+    // Add show class for CSS transitions
+    collectionModal.classList.add('show');
+    
+    console.log('✅ Generic collection modal should be visible now', {
+      classes: collectionModal.classList.toString(),
+      display: window.getComputedStyle(collectionModal).display,
+      opacity: window.getComputedStyle(collectionModal).opacity,
+      visibility: window.getComputedStyle(collectionModal).visibility
+    });
+  } catch (err) {
+    console.error('Error opening generic collection:', err);
+    showToast('⚠️ Unable to load Questions Collection');
+  }
+}
+
+function closeGenericQuestionsCollection(topicId) {
+  const modal = document.getElementById(`generic-collection-modal-${topicId}`);
+  if (modal) {
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      modal.style.display = 'none';
+    }, 300);
+  }
+  
+  // Show the topic detail screen again
+  const modeScreen = document.getElementById('unified-mode-screen');
+  if (modeScreen) {
+    modeScreen.style.display = '';
+    modeScreen.classList.remove('hidden');
+  }
+}
+
+// Claim reward for generic topics and update UI immediately
+function claimQuestionRewardAndRefreshGeneric(topicId, questionId) {
+  const result = claimQuestionReward(topicId, questionId);
+  
+  if (result && result.claimed) {
+    // Find the question item in the current collection view
+    const collectionModal = document.getElementById(`generic-collection-modal-${topicId}`);
+    if (collectionModal) {
+      // Find the specific question item
+      const questionItems = collectionModal.querySelectorAll('.fc-flag-item');
+      questionItems.forEach(item => {
+        const nameSpan = item.querySelector('.fc-flag-name');
+        if (nameSpan && nameSpan.textContent === questionId) {
+          // Update the claim button to checkmark
+          const claimBtn = item.querySelector('.generic-claim-btn');
+          if (claimBtn) {
+            claimBtn.outerHTML = `
+              <div style="position:absolute;top:4px;right:4px;width:28px;height:28px;background:rgba(34,197,94,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:10;" title="Reward claimed">
+                <span style="font-size:14px;color:#22c55e;">✓</span>
+              </div>
+            `;
+          }
+          
+          // Update the status text
+          const statusSpan = item.querySelector('.fc-flag-name').nextElementSibling;
+          if (statusSpan) {
+            statusSpan.outerHTML = '<span style="color:#22c55e;font-size:0.75rem;">Claimed</span>';
+          }
+          
+          // Update header counts
+          const unlockedQuestions = getUnlockedQuestions(topicId) || [];
+          const unclaimedCount = unlockedQuestions.filter(q => !isQuestionRewardClaimed(topicId, q)).length;
+          const claimedCount = unlockedQuestions.filter(q => isQuestionRewardClaimed(topicId, q)).length;
+          const totalCount = unlockedQuestions.length;
+          
+          const subtitle = collectionModal.querySelector('.fc-subtitle');
+          if (subtitle) {
+            subtitle.textContent = `${unclaimedCount} Unclaimed • ${claimedCount} Claimed • ${totalCount} Total`;
+          }
+        }
+      });
+    }
   }
 }
 
@@ -5718,9 +6434,21 @@ async function showUnifiedModeSelection(quizName, icon) {
   
   // Determine progress section type
   const excludedTopics = ['borders'];
-  const collectionTopics = ['flags', 'capitals', 'logos', 'area']; // Topics with clickable collection
+  const collectionTopics = ['flags', 'capitals', 'logos', 'area']; // Topics with full collection (always clickable)
   const showProgressSection = !excludedTopics.includes(currentTopic);
-  const isClickableProgress = collectionTopics.includes(currentTopic);
+  
+  // For collection topics: always clickable
+  // For other topics: clickable if there are any unlocked questions (so user can see their collection)
+  let isClickableProgress = collectionTopics.includes(currentTopic);
+  if (!isClickableProgress) {
+    try {
+      const unlocked = getUnlockedQuestions(currentTopic);
+      isClickableProgress = unlocked && unlocked.length > 0;
+    } catch (err) {
+      console.error('Error checking clickability:', err);
+      isClickableProgress = false;
+    }
+  }
 
   // Create or get mode selection screen
   let modeScreen = document.getElementById('unified-mode-screen');
@@ -5794,7 +6522,7 @@ async function showUnifiedModeSelection(quizName, icon) {
 
       <!-- Progress Section -->
       ${showProgressSection ? `
-      <div class="td-progress-section ${isClickableProgress ? 'td-progress-clickable' : ''}" ${isClickableProgress ? 'onclick="playClickSound(); openQuestionsCollection()"' : ''}>
+      <div class="td-progress-section ${isClickableProgress ? 'td-progress-clickable' : ''}" ${isClickableProgress ? (currentTopic === 'flags' ? `onclick="playClickSound(); console.log('OPENING FLAGS COLLECTION'); openFlagsCollection();"` : currentTopic === 'capitals' ? `onclick="playClickSound(); console.log('OPENING CAPITALS COLLECTION'); currentTopic = 'capitals'; openCapitalsCollection();"` : currentTopic === 'logos' ? `onclick="playClickSound(); console.log('OPENING LOGOS COLLECTION'); currentTopic = 'logos'; openLogosCollection();"` : currentTopic === 'area' ? `onclick="playClickSound(); console.log('OPENING AREA COLLECTION'); currentTopic = 'area'; openAreaCollection();"` : `onclick="playClickSound(); console.log('OPENING GENERIC COLLECTION'); openGenericQuestionsCollection('${currentTopic}');"`) : ''}>
         <div class="td-progress-header">
           <div class="td-progress-label">QUESTIONS COMPLETED</div>
           ${isClickableProgress ? '<span class="td-progress-arrow">›</span>' : ''}
@@ -5805,7 +6533,7 @@ async function showUnifiedModeSelection(quizName, icon) {
           </div>
           <span class="td-progress-percent" id="td-questions-progress-text">${questionsCompletedPercent}%</span>
         </div>
-        ${isClickableProgress ? `<div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>` : ''}
+        ${isClickableProgress && collectionTopics.includes(currentTopic) ? `<div class="td-progress-count">${unlockedQuestions.length}/${totalQuestions} questions unlocked</div>` : ''}
       </div>
       ` : ''}
 
@@ -10942,19 +11670,27 @@ function recordPxpHistory(gamesXp, answersXp) {
   }
   
   if (!userData.prestige.history[dateKey]) {
-    userData.prestige.history[dateKey] = { games: 0, answers: 0, hourly: {} };
+    userData.prestige.history[dateKey] = { games: 0, answers: 0, questions: 0, hourly: {} };
   }
   
   const dayData = userData.prestige.history[dateKey];
   dayData.games += gamesXp;
   dayData.answers += answersXp;
+  // Initialize questions if not exists (for backward compatibility)
+  if (dayData.questions === undefined) {
+    dayData.questions = 0;
+  }
   
   // Hourly breakdown for "1 Day" view
   if (!dayData.hourly[hour]) {
-    dayData.hourly[hour] = { g: 0, a: 0 };
+    dayData.hourly[hour] = { g: 0, a: 0, q: 0 };
   }
   dayData.hourly[hour].g += gamesXp;
   dayData.hourly[hour].a += answersXp;
+  // Initialize q if not exists (for backward compatibility)
+  if (dayData.hourly[hour].q === undefined) {
+    dayData.hourly[hour].q = 0;
+  }
 }
 
 // Record stats history (games, correct, wrong, time, streak, topic, answerTime)
@@ -11217,9 +11953,11 @@ function renderPxpChart(period) {
   let labels = [];
   let gamesData = [];
   let answersData = [];
+  let questionsData = [];
   let achievementsData = [];
   let totalGames = 0;
   let totalAnswers = 0;
+  let totalQuestions = 0;
   let totalAchievements = 0;
   
   if (period === 'day') {
@@ -11238,15 +11976,17 @@ function renderPxpChart(period) {
       
       const isYesterday = (currentHour + 1 + i) < 24;
       const dayData = isYesterday ? yesterdayData : todayData;
-      const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0 };
+      const hourData = dayData.hourly?.[hourKey] || { g: 0, a: 0, q: 0 };
       
       labels.push(h === 0 ? '12a' : h === 12 ? '12p' : h < 12 ? `${h}a` : `${h-12}p`);
-      gamesData.push(hourData.g);
-      answersData.push(hourData.a);
+      gamesData.push(hourData.g || 0);
+      answersData.push(hourData.a || 0);
+      questionsData.push(hourData.q || 0);
       // Show achievements at the current hour (last point)
       achievementsData.push(i === 23 ? (achTodayData.pxp || 0) : 0);
-      totalGames += hourData.g;
-      totalAnswers += hourData.a;
+      totalGames += (hourData.g || 0);
+      totalAnswers += (hourData.a || 0);
+      totalQuestions += (hourData.q || 0);
     }
     totalAchievements = (achTodayData.pxp || 0) + (achYesterdayData.pxp || 0);
   } else if (period === 'week') {
@@ -11254,35 +11994,39 @@ function renderPxpChart(period) {
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     for (let i = 6; i >= 0; i--) {
       const dateKey = getDateString(i);
-      const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const dayData = history[dateKey] || { games: 0, answers: 0, questions: 0 };
       const achDayData = achHistory[dateKey] || { pxp: 0 };
       const date = new Date();
       date.setDate(date.getDate() - i);
       
       labels.push(dayNames[date.getDay()]);
-      gamesData.push(dayData.games);
-      answersData.push(dayData.answers);
+      gamesData.push(dayData.games || 0);
+      answersData.push(dayData.answers || 0);
+      questionsData.push(dayData.questions || 0);
       achievementsData.push(achDayData.pxp || 0);
-      totalGames += dayData.games;
-      totalAnswers += dayData.answers;
-      totalAchievements += achDayData.pxp || 0;
+      totalGames += (dayData.games || 0);
+      totalAnswers += (dayData.answers || 0);
+      totalQuestions += (dayData.questions || 0);
+      totalAchievements += (achDayData.pxp || 0);
     }
   } else if (period === 'month') {
     // Show last 30 days
     for (let i = 29; i >= 0; i--) {
       const dateKey = getDateString(i);
-      const dayData = history[dateKey] || { games: 0, answers: 0 };
+      const dayData = history[dateKey] || { games: 0, answers: 0, questions: 0 };
       const achDayData = achHistory[dateKey] || { pxp: 0 };
       const date = new Date();
       date.setDate(date.getDate() - i);
       
       labels.push(date.getDate().toString());
-      gamesData.push(dayData.games);
-      answersData.push(dayData.answers);
+      gamesData.push(dayData.games || 0);
+      answersData.push(dayData.answers || 0);
+      questionsData.push(dayData.questions || 0);
       achievementsData.push(achDayData.pxp || 0);
-      totalGames += dayData.games;
-      totalAnswers += dayData.answers;
-      totalAchievements += achDayData.pxp || 0;
+      totalGames += (dayData.games || 0);
+      totalAnswers += (dayData.answers || 0);
+      totalQuestions += (dayData.questions || 0);
+      totalAchievements += (achDayData.pxp || 0);
     }
   } else if (period === 'year') {
     // Show 12 months
@@ -11297,11 +12041,14 @@ function renderPxpChart(period) {
       let monthAnswers = 0;
       let monthAchievements = 0;
       
+      let monthQuestions = 0;
+      
       // Sum all days in this month
       Object.keys(history).forEach(dateKey => {
         if (dateKey.startsWith(monthKey)) {
           monthGames += history[dateKey].games || 0;
           monthAnswers += history[dateKey].answers || 0;
+          monthQuestions += history[dateKey].questions || 0;
         }
       });
       
@@ -11314,9 +12061,11 @@ function renderPxpChart(period) {
       labels.push(monthNames[targetDate.getMonth()]);
       gamesData.push(monthGames);
       answersData.push(monthAnswers);
+      questionsData.push(monthQuestions);
       achievementsData.push(monthAchievements);
       totalGames += monthGames;
       totalAnswers += monthAnswers;
+      totalQuestions += monthQuestions;
       totalAchievements += monthAchievements;
     }
   }
@@ -11326,6 +12075,8 @@ function renderPxpChart(period) {
   const gamesPxp = document.getElementById('pxp-games-pxp');
   const answersCount = document.getElementById('pxp-answers-count');
   const answersPxp = document.getElementById('pxp-answers-pxp');
+  const questionsCount = document.getElementById('pxp-questions-count');
+  const questionsPxp = document.getElementById('pxp-questions-pxp');
   const achievementsCount = document.getElementById('pxp-achievements-count');
   const achievementsPxp = document.getElementById('pxp-achievements-pxp');
   const periodTotal = document.getElementById('pxp-period-total');
@@ -11334,9 +12085,26 @@ function renderPxpChart(period) {
   if (gamesPxp) gamesPxp.textContent = `+${totalGames}`;
   if (answersCount) answersCount.textContent = totalAnswers;
   if (answersPxp) answersPxp.textContent = `+${totalAnswers}`;
+  if (questionsCount) questionsCount.textContent = totalQuestions / 5; // Convert back to question count
+  if (questionsPxp) questionsPxp.textContent = `+${totalQuestions}`;
   if (achievementsCount) achievementsCount.textContent = (userData.achievements?.unlocked?.length || 0);
   if (achievementsPxp) achievementsPxp.textContent = `+${totalAchievements}`;
-  if (periodTotal) periodTotal.textContent = `+${totalGames + totalAnswers + totalAchievements} P-XP`;
+  if (periodTotal) periodTotal.textContent = `+${totalGames + totalAnswers + totalQuestions + totalAchievements} P-XP`;
+  
+  // Ensure all data arrays have the same length (fail-safe)
+  const maxLength = Math.max(
+    labels.length,
+    gamesData.length,
+    answersData.length,
+    questionsData.length,
+    achievementsData.length
+  );
+  
+  // Pad any missing data with zeros to prevent chart errors
+  while (gamesData.length < maxLength) gamesData.push(0);
+  while (answersData.length < maxLength) answersData.push(0);
+  while (questionsData.length < maxLength) questionsData.push(0);
+  while (achievementsData.length < maxLength) achievementsData.push(0);
   
   // Destroy existing chart if any
   if (pxpChart) {
@@ -11369,6 +12137,19 @@ function renderPxpChart(period) {
           backgroundColor: 'rgba(251, 191, 36, 0.1)',
           pointBackgroundColor: '#fbbf24',
           pointBorderColor: '#fbbf24',
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          borderWidth: 2,
+          tension: 0.3,
+          fill: true
+        },
+        {
+          label: 'Questions P-XP',
+          data: questionsData,
+          borderColor: '#f97316',
+          backgroundColor: 'rgba(249, 115, 22, 0.1)',
+          pointBackgroundColor: '#f97316',
+          pointBorderColor: '#f97316',
           pointRadius: 4,
           pointHoverRadius: 6,
           borderWidth: 2,
